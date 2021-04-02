@@ -23,14 +23,15 @@
 
 #include "timetable_defs.h"		//needed, because of QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 #include "statisticsexport.h"
-#include "timetableexport.h"		//needed because of TimetableExport::computeHashForIDs();
 
-extern QHash<QString, QString> hashSubjectIDs;
-extern QHash<QString, QString> hashActivityTagIDs;
-extern QHash<QString, QString> hashStudentIDs;
-extern QHash<QString, QString> hashTeacherIDs;
-extern QHash<QString, QString> hashRoomIDs;
-extern QHash<QString, QString> hashDayIDs;
+// BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
+
+QHash<QString, QString> hashSubjectIDsStatistics;
+QHash<QString, QString> hashActivityTagIDsStatistics;
+QHash<QString, QString> hashStudentIDsStatistics;
+QHash<QString, QString> hashTeacherIDsStatistics;
+QHash<QString, QString> hashRoomIDsStatistics;
+QHash<QString, QString> hashDayIDsStatistics;
 
 #include <QMessageBox>
 
@@ -89,7 +90,7 @@ void StatisticsExport::exportStatistics(){
 	assert(TIMETABLE_HTML_LEVEL>=0);
 	assert(TIMETABLE_HTML_LEVEL<=6);
 
-	TimetableExport::computeHashForIDs();
+	computeHashForIDsStatistics();
 
 	DIRECTORY_STATISTICS=OUTPUT_DIR+FILE_SEP+"statistics";
 	PREFIX_STATISTICS=DIRECTORY_STATISTICS+FILE_SEP;
@@ -277,7 +278,80 @@ void StatisticsExport::exportStatistics(){
 	subjectsActivities.clear();
 
 	//allStudentsNamesSet.clear();
+	hashSubjectIDsStatistics.clear();
+	hashActivityTagIDsStatistics.clear();
+	hashStudentIDsStatistics.clear();
+	hashTeacherIDsStatistics.clear();
+	hashRoomIDsStatistics.clear();
+	hashDayIDsStatistics.clear();
 }
+
+
+
+void StatisticsExport::computeHashForIDsStatistics(){		// by Volker Dirr
+
+//TODO if an use a relational data base this is unneded, because we can use the primary key id of the database 
+//This is very similar to timetable compute hash. so always check it if you change something here!
+
+/*	QSet<QString> usedStudents;
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		foreach(QString st, gt.rules.activitiesList[i].studentsNames){ //check if active
+			if(!usedStudents.contains(st))
+				usedStudents<<st;
+		}
+	}*/
+	hashStudentIDsStatistics.clear();
+	int cnt=1;
+	for(int i=0; i<gt.rules.yearsList.size(); i++){
+		StudentsYear* sty=gt.rules.yearsList[i];
+		//if(usedStudents.contains(sty->name)){
+		if(!hashStudentIDsStatistics.contains(sty->name)){
+			hashStudentIDsStatistics.insert(sty->name, QString::number(cnt));
+			cnt++;
+		}
+		//}
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+		//	if(usedStudents.contains(stg->name)){
+			if(!hashStudentIDsStatistics.contains(stg->name)){
+				hashStudentIDsStatistics.insert(stg->name, QString::number(cnt));
+				cnt++;
+			}
+		//	}
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+		//		if(usedStudents.contains(sts->name)){
+				if(!hashStudentIDsStatistics.contains(sts->name)){
+					hashStudentIDsStatistics.insert(sts->name, QString::number(cnt));
+					cnt++;
+				}
+		//		}
+			}
+		}
+	}
+
+	hashSubjectIDsStatistics.clear();
+	for(int i=0; i<gt.rules.subjectsList.size(); i++){
+		hashSubjectIDsStatistics.insert(gt.rules.subjectsList[i]->name, QString::number(i+1));
+	}
+	hashActivityTagIDsStatistics.clear();
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		hashActivityTagIDsStatistics.insert(gt.rules.activityTagsList[i]->name, QString::number(i+1));
+	}
+	hashTeacherIDsStatistics.clear();
+	for(int i=0; i<gt.rules.teachersList.size(); i++){
+		hashTeacherIDsStatistics.insert(gt.rules.teachersList[i]->name, QString::number(i+1));
+	}
+	hashRoomIDsStatistics.clear();
+	for(int room=0; room<gt.rules.roomsList.size(); room++){
+		hashRoomIDsStatistics.insert(gt.rules.roomsList[room]->name, QString::number(room+1));
+	}
+	hashDayIDsStatistics.clear();
+	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+		hashDayIDsStatistics.insert(gt.rules.daysOfTheWeek[k], QString::number(k+1));
+	}
+}
+
 
 
 
@@ -298,10 +372,12 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QString saveTime){
 
 	//get used students	//similar in timetableexport.cpp, so maybe use a function?
 	QSet<QString> usedStudents;
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		foreach(QString st, gt.rules.internalActivitiesList[i].studentsNames){
-			if(!usedStudents.contains(st))
-				usedStudents<<st;
+	for(int i=0; i<gt.rules.activitiesList.size(); i++){
+		foreach(QString st, gt.rules.activitiesList[i]->studentsNames){
+			if(gt.rules.activitiesList[i]->active){
+				if(!usedStudents.contains(st))
+					usedStudents<<st;
+			}
 		}
 	}
 
@@ -329,31 +405,31 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QString saveTime){
 	}
 	if(TIMETABLE_HTML_LEVEL>=4){ // must be written before LEVEL 3, because LEVEL 3 should have higher priority
 		for(int i=0; i<gt.rules.subjectsList.size(); i++){
-			tos << "span.s_"<<hashSubjectIDs.value(gt.rules.subjectsList[i]->name)<<" { /* subject "<<gt.rules.subjectsList[i]->name<<" */\n\n}\n\n";
+			tos << "span.s_"<<hashSubjectIDsStatistics.value(gt.rules.subjectsList[i]->name)<<" { /* subject "<<gt.rules.subjectsList[i]->name<<" */\n\n}\n\n";
 		}
 		for(int i=0; i<gt.rules.activityTagsList.size(); i++){
-			tos << "span.at_"<<hashActivityTagIDs.value(gt.rules.activityTagsList[i]->name)<<" { /* activity tag "<<gt.rules.activityTagsList[i]->name<<" */\n\n}\n\n";
+			tos << "span.at_"<<hashActivityTagIDsStatistics.value(gt.rules.activityTagsList[i]->name)<<" { /* activity tag "<<gt.rules.activityTagsList[i]->name<<" */\n\n}\n\n";
 		}
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
+		for(int i=0; i<gt.rules.yearsList.size(); i++){
+			StudentsYear* sty=gt.rules.yearsList[i];
 			if(usedStudents.contains(sty->name))
-				tos << "span.ss_"<<hashStudentIDs.value(sty->name)<<" { /* students set "<<sty->name<<" */\n\n}\n\n";
+				tos << "span.ss_"<<hashStudentIDsStatistics.value(sty->name)<<" { /* students set "<<sty->name<<" */\n\n}\n\n";
 			for(int j=0; j<sty->groupsList.size(); j++){
 				StudentsGroup* stg=sty->groupsList[j];
 				if(usedStudents.contains(stg->name))
-					tos << "span.ss_"<<hashStudentIDs.value(stg->name)<<" { /* students set "<<stg->name<<" */\n\n}\n\n";
+					tos << "span.ss_"<<hashStudentIDsStatistics.value(stg->name)<<" { /* students set "<<stg->name<<" */\n\n}\n\n";
 				for(int k=0; k<stg->subgroupsList.size(); k++){
 					StudentsSubgroup* sts=stg->subgroupsList[k];
 					if(usedStudents.contains(sts->name))
-						tos << "span.ss_"<<hashStudentIDs.value(sts->name)<<" { /* students set "<<sts->name<<" */\n\n}\n\n";
+						tos << "span.ss_"<<hashStudentIDsStatistics.value(sts->name)<<" { /* students set "<<sts->name<<" */\n\n}\n\n";
 				}
 			}
 		}
-		for(int i=0; i<gt.rules.nInternalTeachers; i++){
-			tos << "span.t_"<<hashTeacherIDs.value(gt.rules.internalTeachersList[i]->name)<<" { /* teacher "<<gt.rules.internalTeachersList[i]->name<<" */\n\n}\n\n";
+		for(int i=0; i<gt.rules.teachersList.size(); i++){
+			tos << "span.t_"<<hashTeacherIDsStatistics.value(gt.rules.teachersList[i]->name)<<" { /* teacher "<<gt.rules.teachersList[i]->name<<" */\n\n}\n\n";
 		}
-		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			tos << "span.r_"<<hashRoomIDs.value(gt.rules.internalRoomsList[room]->name)<<" { /* room "<<gt.rules.internalRoomsList[room]->name<<" */\n\n}\n\n";
+		for(int room=0; room<gt.rules.roomsList.size(); room++){
+			tos << "span.r_"<<hashRoomIDsStatistics.value(gt.rules.roomsList[room]->name)<<" { /* room "<<gt.rules.roomsList[room]->name<<" */\n\n}\n\n";
 		}
 	}
 	if(TIMETABLE_HTML_LEVEL>=3){
@@ -603,9 +679,9 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 					if(act->studentsNames.size()>0){
 						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDs.value(*st)+"\">"+protect2(*st)+"</span>"; break;
+								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
 								case 5 : ;
-								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDs.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDs.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
+								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
 								default: tmpSt+=protect2(*st); break;
 								}
 							if(st!=act->studentsNames.end()-1)
@@ -811,9 +887,9 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 					if(act->studentsNames.size()>0){
 						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDs.value(*st)+"\">"+protect2(*st)+"</span>"; break;
+								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
 								case 5 : ;
-								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDs.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDs.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
+								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
 								default: tmpSt+=protect2(*st); break;
 								}
 							if(st!=act->studentsNames.end()-1)
@@ -1022,17 +1098,17 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 						if(act->subjectName.size()>0)
 							switch(TIMETABLE_HTML_LEVEL){
 								case 3 : tmpS+="<span class=\"subject\">"+protect2(act->subjectName)+"</span>"; break;
-								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDs.value(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
+								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
 								case 5 : ;
-								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDs.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDs.value(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
+								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsStatistics.value(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
 								default: tmpS+=protect2(act->subjectName); break;
 							}
 						for(QStringList::Iterator atn=act->activityTagsNames.begin(); atn!=act->activityTagsNames.end(); atn++){
 							switch(TIMETABLE_HTML_LEVEL){
 								case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDs.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
 								case 5 : ;
-								case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDs.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDs.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+								case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 								default: tmpS+=" "+protect2(*atn); break;
 							}
 							if(atn!=act->activityTagsNames.end()-1)
@@ -1241,17 +1317,17 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 						if(act->subjectName.size()>0)
 							switch(TIMETABLE_HTML_LEVEL){
 								case 3 : tmpS+="<span class=\"subject\">"+protect2(act->subjectName)+"</span>"; break;
-								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDs.value(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
+								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
 								case 5 : ;
-								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDs.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDs.value(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
+								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsStatistics.value(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
 								default: tmpS+=protect2(act->subjectName); break;
 							}
 						for(QStringList::Iterator atn=act->activityTagsNames.begin(); atn!=act->activityTagsNames.end(); atn++){
 							switch(TIMETABLE_HTML_LEVEL){
 								case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDs.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
 								case 5 : ;
-								case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDs.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDs.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+								case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
 								default: tmpS+=" "+protect2(*atn); break;
 							}
 							if(atn!=act->activityTagsNames.end()-1)
@@ -1457,9 +1533,9 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 					if(act->teachersNames.size()>0){
 						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDs.value(*it)+"\">"+protect2(*it)+"</span>"; break;
+								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
 								case 5 : ;
-								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDs.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDs.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
+								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
 								default: tmpT+=protect2(*it); break;
 							}
 							if(it!=act->teachersNames.end()-1)
@@ -1667,9 +1743,9 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 					if(act->teachersNames.size()>0){
 						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDs.value(*it)+"\">"+protect2(*it)+"</span>"; break;
+								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
 								case 5 : ;
-								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDs.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDs.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
+								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
 								default: tmpT+=protect2(*it); break;
 							}
 							if(it!=act->teachersNames.end()-1)

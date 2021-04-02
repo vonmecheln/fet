@@ -529,15 +529,21 @@ void TimetableGenerateForm::activityPlaced(int na){
 	s+=TimetableGenerateForm::tr("Elapsed time:");
 	int t=gen.searchTime; //seconds
 	int h=t/3600;
-	if(h>0)
-		s+=TimetableGenerateForm::tr(" %1 h").arg(h);
+	if(h>0){
+		s+=" ";
+		s+=TimetableGenerateForm::tr("%1 h").arg(h);
+	}
 	t=t%3600;
 	int m=t/60;
-	if(m>0)
-		s+=TimetableGenerateForm::tr(" %1 m").arg(m);
+	if(m>0){
+		s+=" ";
+		s+=TimetableGenerateForm::tr("%1 m").arg(m);
+	}
 	t=t%60;
-	if(t>0)
-		s+=TimetableGenerateForm::tr(" %1 s").arg(t);
+	if(t>0){
+		s+=" ";
+		s+=TimetableGenerateForm::tr("%1 s").arg(t);
+	}
 
 	mutex.unlock();
 

@@ -130,4 +130,9 @@ New, added 10 Jan 2009:
  and put it into the directory "translations". Then, rename the file as 
  fet_ro.qm (or any other implemented translation), overwriting the old one,
  and try the Romanian language.
- 
+
+New, added 31 May 2009:
+	If you want to add your translation into FET sources, you need to modify in 2 places:
+	src/interface/fet.cpp (for now, in line 197) and src/interface/fetmainform.cpp
+	(for now, in line 2545), minor modifications, follow the other languages format. 
+	

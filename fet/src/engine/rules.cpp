@@ -5370,37 +5370,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				}
 				xmlReadingLog+="   Found "+elem3.tagName()+" tag\n";
 				if(elem3.tagName()=="ConstraintBasicCompulsoryTime"){
-					ConstraintBasicCompulsoryTime* cn=new ConstraintBasicCompulsoryTime();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - generating automatic 100% weight percentage\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readBasicCompulsoryTime(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherNotAvailable"){
 					if(reportTeacherNotAvailableChange){
@@ -5412,617 +5382,25 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							reportTeacherNotAvailableChange=false;
 					}
 
-					QList<int> days;
-					QList<int> hours;
-					QString teacher;
-					double weightPercentage=100;
-					int d=-1, h1=-1, h2=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Day"){
-							for(d=0; d<this->nDaysPerWeek; d++)
-								if(this->daysOfTheWeek[d]==elem4.text())
-									break;
-							if(d>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
-								 .arg(teacher)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(d<this->nDaysPerWeek);
-							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
-						}
-						else if(elem4.tagName()=="Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(teacher)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
-						}
-						else if(elem4.tagName()=="End_Hour"){
-							for(h2=0; h2 < this->nHoursPerDay; h2++)
-								if(this->hoursOfTheDay[h2]==elem4.text())
-									break;
-							if(h2<=0 || h2>this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(teacher)
-								 .arg(elem4.text()));
-								goto corruptConstraintTime;
-							}
-							assert(h2>0 && h2 <= this->nHoursPerDay);
-							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							teacher=elem4.text();
-							xmlReadingLog+="    Read teacher name="+teacher+"\n";
-						}
-					}
-					
-					assert(weightPercentage>=0);
-					assert(d>=0 && h1>=0 && h2>=0);
-					
-					ConstraintTeacherNotAvailableTimes* cn = NULL;
-					
-					bool found=false;
-					foreach(TimeConstraint* c, this->timeConstraintsList)
-						if(c->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
-							ConstraintTeacherNotAvailableTimes* tna=(ConstraintTeacherNotAvailableTimes*) c;
-							if(tna->teacher==teacher){
-								found=true;
-								
-								for(int hh=h1; hh<h2; hh++){
-									int k;
-									for(k=0; k<tna->days.count(); k++)
-										if(tna->days.at(k)==d && tna->hours.at(k)==hh)
-											break;
-									if(k==tna->days.count()){
-										tna->days.append(d);
-										tna->hours.append(hh);
-									}
-								}
-								
-								assert(tna->days.count()==tna->hours.count());
-							}
-						}
-					if(!found){
-						days.clear();
-						hours.clear();
-						for(int hh=h1; hh<h2; hh++){
-							days.append(d);
-							hours.append(hh);
-						}
-					
-						cn=new ConstraintTeacherNotAvailableTimes(weightPercentage, teacher, days, hours);
-
-						crt_constraint=cn;
-					}
+					crt_constraint=readTeacherNotAvailable(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherNotAvailableTimes"){
-					ConstraintTeacherNotAvailableTimes* cn=new ConstraintTeacherNotAvailableTimes();
-					int nNotAvailableSlots=-1;
-					int i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-
-						else if(elem4.tagName()=="Number_of_Not_Available_Times"){
-							nNotAvailableSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of not available times="+QString::number(nNotAvailableSlots)+"\n";
-						}
-
-						else if(elem4.tagName()=="Not_Available_Time"){
-							xmlReadingLog+="    Read: not available time\n";
-							
-							int d=-1;
-							int h=-1;
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Day"){
-									for(d=0; d<this->nDaysPerWeek; d++)
-										if(this->daysOfTheWeek[d]==elem5.text())
-											break;
-
-									if(d>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
-										 .arg(cn->teacher)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-						
-									assert(d<this->nDaysPerWeek);
-									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Hour"){
-									for(h=0; h < this->nHoursPerDay; h++)
-										if(this->hoursOfTheDay[h]==elem5.text())
-											break;
-									
-									if(h>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
-										 .arg(cn->teacher)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-									
-									assert(h>=0 && h < this->nHoursPerDay);
-									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
-								}
-							}
-							i++;
-							
-							cn->days.append(d);
-							cn->hours.append(h);
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacher=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacher+"\n";
-						}
-					}
-					assert(i==cn->days.count() && i==cn->hours.count());
-					assert(i==nNotAvailableSlots);
-					crt_constraint=cn;
+					crt_constraint=readTeacherNotAvailableTimes(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxDaysPerWeek"){
-					ConstraintTeacherMaxDaysPerWeek* cn=new ConstraintTeacherMaxDaysPerWeek();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Max_Days_Per_Week"){
-							cn->maxDaysPerWeek=elem4.text().toInt();
-							if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
-								 .arg(cn->teacherName)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
-							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMaxDaysPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherIntervalMaxDaysPerWeek"){
-					ConstraintTeacherIntervalMaxDaysPerWeek* cn=new ConstraintTeacherIntervalMaxDaysPerWeek();
-					cn->maxDaysPerWeek=this->nDaysPerWeek;
-					cn->startHour=this->nHoursPerDay;
-					cn->endHour=this->nHoursPerDay;
-					int h1, h2;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Max_Days_Per_Week"){
-							cn->maxDaysPerWeek=elem4.text().toInt();
-							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
-								 .arg(cn->teacherName)
-								 .arg(elem4.text()));
-								/*delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;*/
-							}
-							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
-							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
-						}
-						else if(elem4.tagName()=="Interval_Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint Teacher interval max days per week start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(cn->teacherName)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
-							cn->startHour=h1;
-						}
-						else if(elem4.tagName()=="Interval_End_Hour"){
-							if(elem4.text()==""){
-								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
-								cn->endHour=this->nHoursPerDay;
-							}
-							else{
-								for(h2=0; h2 < this->nHoursPerDay; h2++)
-									if(this->hoursOfTheDay[h2]==elem4.text())
-										break;
-								if(h2>=this->nHoursPerDay){
-									QMessageBox::information(NULL, QObject::tr("FET information"), 
-									 QObject::tr("Constraint Teacher interval max days per week end hour corrupt for teacher %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
-									 .arg(cn->teacherName)
-									 .arg(elem4.text()));
-									//cn=NULL;
-									goto corruptConstraintTime;
-								}
-								assert(h2>=0 && h2 < this->nHoursPerDay);
-								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
-								cn->endHour=h2;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherIntervalMaxDaysPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersIntervalMaxDaysPerWeek"){
-					ConstraintTeachersIntervalMaxDaysPerWeek* cn=new ConstraintTeachersIntervalMaxDaysPerWeek();
-					cn->maxDaysPerWeek=this->nDaysPerWeek;
-					cn->startHour=this->nHoursPerDay;
-					cn->endHour=this->nHoursPerDay;
-					int h1, h2;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						/*else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}*/
-						else if(elem4.tagName()=="Max_Days_Per_Week"){
-							cn->maxDaysPerWeek=elem4.text().toInt();
-							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
-								 //.arg(cn->teacherName)
-								 .arg(elem4.text()));
-								/*delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;*/
-							}
-							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
-							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
-						}
-						else if(elem4.tagName()=="Interval_Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint")
-								 //.arg(cn->teacherName)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
-							cn->startHour=h1;
-						}
-						else if(elem4.tagName()=="Interval_End_Hour"){
-							if(elem4.text()==""){
-								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
-								cn->endHour=this->nHoursPerDay;
-							}
-							else{
-								for(h2=0; h2 < this->nHoursPerDay; h2++)
-									if(this->hoursOfTheDay[h2]==elem4.text())
-										break;
-								if(h2>=this->nHoursPerDay){
-									QMessageBox::information(NULL, QObject::tr("FET information"), 
-									 QObject::tr("Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
-									 //.arg(cn->teacherName)
-									 .arg(elem4.text()));
-									//cn=NULL;
-									goto corruptConstraintTime;
-								}
-								assert(h2>=0 && h2 < this->nHoursPerDay);
-								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
-								cn->endHour=h2;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersIntervalMaxDaysPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetIntervalMaxDaysPerWeek"){
-					ConstraintStudentsSetIntervalMaxDaysPerWeek* cn=new ConstraintStudentsSetIntervalMaxDaysPerWeek();
-					cn->maxDaysPerWeek=this->nDaysPerWeek;
-					cn->startHour=this->nHoursPerDay;
-					cn->endHour=this->nHoursPerDay;
-					int h1, h2;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students set name="+cn->students+"\n";
-						}
-						else if(elem4.tagName()=="Max_Days_Per_Week"){
-							cn->maxDaysPerWeek=elem4.text().toInt();
-							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
-								 .arg(cn->students)
-								 .arg(elem4.text()));
-								/*delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;*/
-							}
-							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
-							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
-						}
-						else if(elem4.tagName()=="Interval_Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint Students set interval max days per week start hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(cn->students)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
-							cn->startHour=h1;
-						}
-						else if(elem4.tagName()=="Interval_End_Hour"){
-							if(elem4.text()==""){
-								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
-								cn->endHour=this->nHoursPerDay;
-							}
-							else{
-								for(h2=0; h2 < this->nHoursPerDay; h2++)
-									if(this->hoursOfTheDay[h2]==elem4.text())
-										break;
-								if(h2>=this->nHoursPerDay){
-									QMessageBox::information(NULL, QObject::tr("FET information"), 
-									 QObject::tr("Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
-									 .arg(cn->students)
-									 .arg(elem4.text()));
-									//cn=NULL;
-									goto corruptConstraintTime;
-								}
-								assert(h2>=0 && h2 < this->nHoursPerDay);
-								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
-								cn->endHour=h2;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetIntervalMaxDaysPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsIntervalMaxDaysPerWeek"){
-					ConstraintStudentsIntervalMaxDaysPerWeek* cn=new ConstraintStudentsIntervalMaxDaysPerWeek();
-					cn->maxDaysPerWeek=this->nDaysPerWeek;
-					cn->startHour=this->nHoursPerDay;
-					cn->endHour=this->nHoursPerDay;
-					int h1, h2;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						/*else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students set name="+cn->students+"\n";
-						}*/
-						else if(elem4.tagName()=="Max_Days_Per_Week"){
-							cn->maxDaysPerWeek=elem4.text().toInt();
-							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 >nDaysPerWeek, constraint added, please correct constraint")
-								 .arg(elem4.text()));
-								/*delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;*/
-							}
-							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
-							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
-						}
-						else if(elem4.tagName()=="Interval_Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint")
-								 //.arg(cn->students)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
-							cn->startHour=h1;
-						}
-						else if(elem4.tagName()=="Interval_End_Hour"){
-							if(elem4.text()==""){
-								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
-								cn->endHour=this->nHoursPerDay;
-							}
-							else{
-								for(h2=0; h2 < this->nHoursPerDay; h2++)
-									if(this->hoursOfTheDay[h2]==elem4.text())
-										break;
-								if(h2>=this->nHoursPerDay){
-									QMessageBox::information(NULL, QObject::tr("FET information"), 
-									 QObject::tr("Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
-									 //.arg(cn->students)
-									 .arg(elem4.text()));
-									//cn=NULL;
-									goto corruptConstraintTime;
-								}
-								assert(h2>=0 && h2 < this->nHoursPerDay);
-								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
-								cn->endHour=h2;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsIntervalMaxDaysPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNotAvailable"){
 					if(reportStudentsSetNotAvailableChange){
@@ -6034,783 +5412,54 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 							reportStudentsSetNotAvailableChange=false;
 					}
 
-					//ConstraintStudentsSetNotAvailableTimes* cn=new ConstraintStudentsSetNotAvailableTimes();
-					QList<int> days;
-					QList<int> hours;
-					QString students;
-					double weightPercentage=100;
-					int d=-1, h1=-1, h2=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Day"){
-							for(d=0; d<this->nDaysPerWeek; d++)
-								if(this->daysOfTheWeek[d]==elem4.text())
-									break;
-							if(d>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
-								 .arg(students)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(d<this->nDaysPerWeek);
-							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
-						}
-						else if(elem4.tagName()=="Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(students)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
-						}
-						else if(elem4.tagName()=="End_Hour"){
-							for(h2=0; h2 < this->nHoursPerDay; h2++)
-								if(this->hoursOfTheDay[h2]==elem4.text())
-									break;
-							if(h2<=0 || h2>this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(students)
-								 .arg(elem4.text()));
-								goto corruptConstraintTime;
-							}
-							assert(h2>0 && h2 <= this->nHoursPerDay);
-							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							students=elem4.text();
-							xmlReadingLog+="    Read students name="+students+"\n";
-						}
-					}
-					
-					assert(weightPercentage>=0);
-					assert(d>=0 && h1>=0 && h2>=0);
-					
-					ConstraintStudentsSetNotAvailableTimes* cn = NULL;
-					
-					bool found=false;
-					foreach(TimeConstraint* c, this->timeConstraintsList)
-						if(c->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
-							ConstraintStudentsSetNotAvailableTimes* ssna=(ConstraintStudentsSetNotAvailableTimes*) c;
-							if(ssna->students==students){
-								found=true;
-								
-								for(int hh=h1; hh<h2; hh++){
-									int k;
-									for(k=0; k<ssna->days.count(); k++)
-										if(ssna->days.at(k)==d && ssna->hours.at(k)==hh)
-											break;
-									if(k==ssna->days.count()){
-										ssna->days.append(d);
-										ssna->hours.append(hh);
-									}
-								}
-								
-								assert(ssna->days.count()==ssna->hours.count());
-							}
-						}
-					if(!found){
-						days.clear();
-						hours.clear();
-						for(int hh=h1; hh<h2; hh++){
-							days.append(d);
-							hours.append(hh);
-						}
-					
-						cn=new ConstraintStudentsSetNotAvailableTimes(weightPercentage, students, days, hours);
-
-						crt_constraint=cn;
-					}
+					crt_constraint=readStudentsSetNotAvailable(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNotAvailableTimes"){
-					ConstraintStudentsSetNotAvailableTimes* cn=new ConstraintStudentsSetNotAvailableTimes();
-					int nNotAvailableSlots=0;
-					int i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-
-						else if(elem4.tagName()=="Number_of_Not_Available_Times"){
-							nNotAvailableSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of not available times="+QString::number(nNotAvailableSlots)+"\n";
-						}
-
-						else if(elem4.tagName()=="Not_Available_Time"){
-							xmlReadingLog+="    Read: not available time\n";
-							
-							int d=-1;
-							int h=-1;
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Day"){
-									for(d=0; d<this->nDaysPerWeek; d++)
-										if(this->daysOfTheWeek[d]==elem5.text())
-											break;
-
-									if(d>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
-										 .arg(cn->students)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-						
-									assert(d<this->nDaysPerWeek);
-									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Hour"){
-									for(h=0; h < this->nHoursPerDay; h++)
-										if(this->hoursOfTheDay[h]==elem5.text())
-											break;
-									
-									if(h>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
-										 .arg(cn->students)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-									
-									assert(h>=0 && h < this->nHoursPerDay);
-									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
-								}
-							}
-							i++;
-							
-							cn->days.append(d);
-							cn->hours.append(h);
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					assert(i==cn->days.count() && i==cn->hours.count());
-					assert(i==nNotAvailableSlots);
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetNotAvailableTimes(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintMinNDaysBetweenActivities"){
-					ConstraintMinNDaysBetweenActivities* cn=new ConstraintMinNDaysBetweenActivities();
-					bool foundCISD=false;
-					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - generating weightPercentage=95%\n";
-							cn->weightPercentage=95;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Consecutive_If_Same_Day" || elem4.tagName()=="Adjacent_If_Broken"){
-							if(elem4.text()=="yes" || elem4.text()=="true" || elem4.text()=="1"){
-								cn->consecutiveIfSameDay=true;
-								foundCISD=true;
-								xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
-							}
-							else{
-								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-									QMessageBox::warning(NULL, QObject::tr("FET warning"),
-									 QObject::tr("Found constraint min n days between activities with tag consecutive if same day"
-									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
-									 " The tag will be considered false",
-									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
-								}
-								//assert(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0");
-								cn->consecutiveIfSameDay=false;
-								foundCISD=true;
-								xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
-							}
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=95;
-								cn->consecutiveIfSameDay=true;
-								foundCISD=true;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-								cn->consecutiveIfSameDay=false;
-								foundCISD=true;
-							}
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-						else if(elem4.tagName()=="MinDays"){
-							cn->minDays=elem4.text().toInt();
-							xmlReadingLog+="    Read MinDays="+QString::number(cn->minDays)+"\n";
-						}
-					}
-					if(!foundCISD){
-						xmlReadingLog+="    Could not find consecutive if same day information - making it true\n";
-						cn->consecutiveIfSameDay=true;
-					}
-					assert(n_act==cn->n_activities);
-					crt_constraint=cn;
-#if 0&0&0
-					if(0 && reportIncorrectMinNDays && cn->n_activities > this->nDaysPerWeek){
-						QString s=QObject::tr("You have a constraint min n days between activities with more activities than the number of days per week.");
-						s+=" ";
-						s+=QObject::tr("Constraint is:");
-						s+="\n";
-						s+=crt_constraint->getDescription(*this);
-						s+="\n";
-						s+=QObject::tr("This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).");
-			 			s+="\n\n";
-						s+=QObject::tr("To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:");
-			 			s+="\n\n";
-						s+=QObject::tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
-			  			 ". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
-						 " (possibly raising the weight of added constraint min n days between activities up to 100%)");
-			 			s+="\n\n";
-
-						s+=QObject::tr("2. If you don't add 'force consecutive if same day', then add a larger activity splitted into a number of"
-						  " activities equal with the number of days per week and the remaining components into other larger splitted activity."
-						  " For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
-						  " first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1"
-						  " (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)");
-						
-					 	int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
-						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
-						 1, 0 );
-													 
-						if(t==0)
-							reportIncorrectMinNDays=false;
-					}
-#endif
+					crt_constraint=readMinNDaysBetweenActivities(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintMinGapsBetweenActivities"){
-					ConstraintMinGapsBetweenActivities* cn=new ConstraintMinGapsBetweenActivities();
-					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId.append(elem4.text().toInt());
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-						else if(elem4.tagName()=="MinGaps"){
-							cn->minGaps=elem4.text().toInt();
-							xmlReadingLog+="    Read MinGaps="+QString::number(cn->minGaps)+"\n";
-						}
-					}
-					assert(n_act==cn->n_activities);
-					assert(n_act==cn->activitiesId.count());
-					crt_constraint=cn;
+					crt_constraint=readMinGapsBetweenActivities(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesNotOverlapping"){
-					ConstraintActivitiesNotOverlapping* cn=new ConstraintActivitiesNotOverlapping();
-					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-					}
-					assert(n_act==cn->n_activities);
-					crt_constraint=cn;
+					crt_constraint=readActivitiesNotOverlapping(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesSameStartingTime"){
-					ConstraintActivitiesSameStartingTime* cn=new ConstraintActivitiesSameStartingTime();
-					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-					}
-					assert(cn->n_activities==n_act);
-					crt_constraint=cn;
+					crt_constraint=readActivitiesSameStartingTime(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesSameStartingHour"){
-					ConstraintActivitiesSameStartingHour* cn=new ConstraintActivitiesSameStartingHour();
-					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-					}
-					assert(cn->n_activities==n_act);
-					crt_constraint=cn;
+					crt_constraint=readActivitiesSameStartingHour(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesSameStartingDay"){
-					ConstraintActivitiesSameStartingDay* cn=new ConstraintActivitiesSameStartingDay();
-					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-					}
-					assert(cn->n_activities==n_act);
-					crt_constraint=cn;
+					crt_constraint=readActivitiesSameStartingDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMaxHoursDaily"){
-					ConstraintTeachersMaxHoursDaily* cn=new ConstraintTeachersMaxHoursDaily();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Daily"){
-							cn->maxHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMaxHoursDaily(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxHoursDaily"){
-					ConstraintTeacherMaxHoursDaily* cn=new ConstraintTeacherMaxHoursDaily();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Daily"){
-							cn->maxHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMaxHoursDaily(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMaxHoursContinuously"){
-					ConstraintTeachersMaxHoursContinuously* cn=new ConstraintTeachersMaxHoursContinuously();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxHoursContinuously"){
-					ConstraintTeacherMaxHoursContinuously* cn=new ConstraintTeacherMaxHoursContinuously();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherActivityTagMaxHoursContinuously"){
-					ConstraintTeacherActivityTagMaxHoursContinuously* cn=new ConstraintTeacherActivityTagMaxHoursContinuously();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherActivityTagMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersActivityTagMaxHoursContinuously"){
-					ConstraintTeachersActivityTagMaxHoursContinuously* cn=new ConstraintTeachersActivityTagMaxHoursContinuously();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersActivityTagMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMinHoursDaily"){
-					ConstraintTeachersMinHoursDaily* cn=new ConstraintTeachersMinHoursDaily();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Minimum_Hours_Daily"){
-							cn->minHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMinHoursDaily(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMinHoursDaily"){
-					ConstraintTeacherMinHoursDaily* cn=new ConstraintTeacherMinHoursDaily();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Minimum_Hours_Daily"){
-							cn->minHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMinHoursDaily(elem3, xmlReadingLog);
 				}
-				if((elem3.tagName()=="ConstraintTeachersSubgroupsMaxHoursDaily"
+				else if((elem3.tagName()=="ConstraintTeachersSubgroupsMaxHoursDaily"
 				 //TODO: erase the line below. It is only kept for compatibility with older versions
 				 || elem3.tagName()=="ConstraintTeachersSubgroupsNoMoreThanXHoursDaily") && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -6964,306 +5613,28 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMaxHoursDaily"){
-					ConstraintStudentsMaxHoursDaily* cn=new ConstraintStudentsMaxHoursDaily();
-					cn->maxHoursDaily=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Daily"){
-							cn->maxHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
-						}
-					}
-					assert(cn->maxHoursDaily>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsMaxHoursDaily(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetMaxHoursDaily"){
-					ConstraintStudentsSetMaxHoursDaily* cn=new ConstraintStudentsSetMaxHoursDaily();
-					cn->maxHoursDaily=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Daily"){
-							cn->maxHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					assert(cn->maxHoursDaily>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetMaxHoursDaily(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMaxHoursContinuously"){
-					ConstraintStudentsMaxHoursContinuously* cn=new ConstraintStudentsMaxHoursContinuously();
-					cn->maxHoursContinuously=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-					}
-					assert(cn->maxHoursContinuously>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetMaxHoursContinuously"){
-					ConstraintStudentsSetMaxHoursContinuously* cn=new ConstraintStudentsSetMaxHoursContinuously();
-					cn->maxHoursContinuously=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					assert(cn->maxHoursContinuously>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetActivityTagMaxHoursContinuously"){
-					ConstraintStudentsSetActivityTagMaxHoursContinuously* cn=new ConstraintStudentsSetActivityTagMaxHoursContinuously();
-					cn->maxHoursContinuously=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-					}
-					assert(cn->maxHoursContinuously>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetActivityTagMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsActivityTagMaxHoursContinuously"){
-					ConstraintStudentsActivityTagMaxHoursContinuously* cn=new ConstraintStudentsActivityTagMaxHoursContinuously();
-					cn->maxHoursContinuously=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-					}
-					assert(cn->maxHoursContinuously>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsActivityTagMaxHoursContinuously(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMinHoursDaily"){
-					ConstraintStudentsMinHoursDaily* cn=new ConstraintStudentsMinHoursDaily();
-					cn->minHoursDaily=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Minimum_Hours_Daily"){
-							cn->minHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
-						}
-					}
-					assert(cn->minHoursDaily>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsMinHoursDaily(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetMinHoursDaily"){
-					ConstraintStudentsSetMinHoursDaily* cn=new ConstraintStudentsSetMinHoursDaily();
-					cn->minHoursDaily=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Minimum_Hours_Daily"){
-							cn->minHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					assert(cn->minHoursDaily>=0);
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetMinHoursDaily(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredTime"){
 					if(reportActivityPreferredTimeChange){
@@ -7275,488 +5646,29 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(t==0)
 							reportActivityPreferredTimeChange=false;
 					}
-				
-					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
-					cn->day = cn->hour = -1;
-					cn->permanentlyLocked=false; //default not locked
-					bool foundLocked=false;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Permanently_Locked"){
-							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
-								xmlReadingLog+="    Permanently locked\n";
-								cn->permanentlyLocked=true;
-							}
-							else{
-								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-									QMessageBox::warning(NULL, QObject::tr("FET warning"),
-									 QObject::tr("Found constraint activity preferred starting time with tag permanently locked"
-									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
-									 " The tag will be considered false",
-									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
-								}
-								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
-								xmlReadingLog+="    Not permanently locked\n";
-								cn->permanentlyLocked=false;
-							}
-							foundLocked=true;
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Day"){
-							for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
-								if(this->daysOfTheWeek[cn->day]==elem4.text())
-									break;
-							if(cn->day>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
-								 .arg(cn->activityId)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(cn->day<this->nDaysPerWeek);
-							xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Hour"){
-							for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
-								if(this->hoursOfTheDay[cn->hour]==elem4.text())
-									break;
-							if(cn->hour>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(cn->activityId)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
-							xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
-						}
-					}
-					crt_constraint=cn;
-
-					if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
-						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
-						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
-						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
-						 " by editing the constraint in the 'Data' menu")+"\n\n"
-						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
-						 " activity preferred starting time has"
-						 " a new tag, 'permanently locked' (true or false)."
-						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
-						 " need to be not modifiable from the 'Timetable' menu"
-						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
-						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
-						 " This way, when viewing the timetable"
-						 " and locking/unlocking some activities, you will not unlock the constraints which"
-						 " need to be locked all the time."
-						 ),
-						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
-						if(t==0)
-							reportUnspecifiedPermanentlyLockedTime=false;
-					}
 					
-					if(cn->hour==-1 || cn->day==-1){
-						if(reportUnspecifiedDayOrHourPreferredStartingTime){
-							int t=QMessageBox::information(NULL, QObject::tr("FET information"),
-							 QObject::tr("Found constraint activity preferred starting time, with unspecified day or hour."
-							  " This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
-							  " This change is done in FET versions 5.8.1 and higher."
-							 ),
-							  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
-							if(t==0)
-								reportUnspecifiedDayOrHourPreferredStartingTime=false;
-						}
-							
-						ConstraintActivityPreferredStartingTimes* cgood=new ConstraintActivityPreferredStartingTimes();
-						if(cn->day==-1){
-							cgood->activityId=cn->activityId;
-							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=i;
-								cgood->hours[i]=cn->hour;
-							}
-						}
-						else{
-							assert(cn->hour==-1);
-							cgood->activityId=cn->activityId;
-							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nHoursPerDay;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=cn->day;
-								cgood->hours[i]=i;
-							}
-						}
-						
-						delete cn;
-						crt_constraint=cgood;
-					}
+					crt_constraint=readActivityPreferredTime(elem3, xmlReadingLog,
+						reportUnspecifiedPermanentlyLockedTime, reportUnspecifiedDayOrHourPreferredStartingTime);
 				}
+				
 				else if(elem3.tagName()=="ConstraintActivityPreferredStartingTime"){
-					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
-					cn->day = cn->hour = -1;
-					cn->permanentlyLocked=false; //default false
-					bool foundLocked=false;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Permanently_Locked"){
-							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
-								xmlReadingLog+="    Permanently locked\n";
-								cn->permanentlyLocked=true;
-							}
-							else{
-								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-									QMessageBox::warning(NULL, QObject::tr("FET warning"),
-									 QObject::tr("Found constraint activity preferred starting time with tag permanently locked"
-									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
-									 " The tag will be considered false",
-									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
-								}
-								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
-								xmlReadingLog+="    Not permanently locked\n";
-								cn->permanentlyLocked=false;
-							}
-							foundLocked=true;
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Day"){
-							for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
-								if(this->daysOfTheWeek[cn->day]==elem4.text())
-									break;
-							if(cn->day>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
-								 .arg(cn->activityId)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(cn->day<this->nDaysPerWeek);
-							xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Hour"){
-							for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
-								if(this->hoursOfTheDay[cn->hour]==elem4.text())
-									break;
-							if(cn->hour>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(cn->activityId)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
-							xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
-						}
-					}
-					crt_constraint=cn;
-
-					if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
-						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
-						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
-						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
-						 " by editing the constraint in the 'Data' menu")+"\n\n"
-						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
-						 " activity preferred starting time has"
-						 " a new tag, 'permanently locked' (true or false)."
-						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
-						 " need to be not modifiable from the 'Timetable' menu"
-						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
-						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
-						 " This way, when viewing the timetable"
-						 " and locking/unlocking some activities, you will not unlock the constraints which"
-						 " need to be locked all the time."
-						 ),
-						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
-						if(t==0)
-							reportUnspecifiedPermanentlyLockedTime=false;
-					}
-
-					if(cn->hour==-1 || cn->day==-1){
-						if(reportUnspecifiedDayOrHourPreferredStartingTime){
-							int t=QMessageBox::information(NULL, QObject::tr("FET information"),
-							 QObject::tr("Found constraint activity preferred starting time, with unspecified day or hour."
-							  " This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
-							  " This change is done in FET versions 5.8.1 and higher."
-							 ),
-							  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
-							if(t==0)
-								reportUnspecifiedDayOrHourPreferredStartingTime=false;
-						}
-							
-						ConstraintActivityPreferredStartingTimes* cgood=new ConstraintActivityPreferredStartingTimes();
-						if(cn->day==-1){
-							cgood->activityId=cn->activityId;
-							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=i;
-								cgood->hours[i]=cn->hour;
-							}
-						}
-						else{
-							assert(cn->hour==-1);
-							cgood->activityId=cn->activityId;
-							cgood->weightPercentage=cn->weightPercentage;
-							cgood->nPreferredStartingTimes=this->nHoursPerDay;
-							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
-								cgood->days[i]=cn->day;
-								cgood->hours[i]=i;
-							}
-						}
-						
-						delete cn;
-						crt_constraint=cgood;
-					}
+					crt_constraint=readActivityPreferredStartingTime(elem3, xmlReadingLog,
+						reportUnspecifiedPermanentlyLockedTime, reportUnspecifiedDayOrHourPreferredStartingTime);
 				}
 				else if(elem3.tagName()=="ConstraintActivityEndsStudentsDay"){
-					ConstraintActivityEndsStudentsDay* cn=new ConstraintActivityEndsStudentsDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readActivityEndsStudentsDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesEndStudentsDay"){
-					ConstraintActivitiesEndStudentsDay* cn=new ConstraintActivitiesEndStudentsDay();
-					cn->teacherName="";
-					cn->studentsName="";
-					cn->subjectName="";
-					cn->activityTagName="";
-					
-					//i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Students_Name"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Name"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readActivitiesEndStudentsDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="Constraint2ActivitiesConsecutive"){
-					Constraint2ActivitiesConsecutive* cn=new Constraint2ActivitiesConsecutive();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="First_Activity_Id"){
-							cn->firstActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
-						}
-						else if(elem4.tagName()=="Second_Activity_Id"){
-							cn->secondActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=read2ActivitiesConsecutive(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="Constraint2ActivitiesGrouped"){
-					Constraint2ActivitiesGrouped* cn=new Constraint2ActivitiesGrouped();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="First_Activity_Id"){
-							cn->firstActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
-						}
-						else if(elem4.tagName()=="Second_Activity_Id"){
-							cn->secondActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=read2ActivitiesGrouped(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="Constraint2ActivitiesOrdered"){
-					Constraint2ActivitiesOrdered* cn=new Constraint2ActivitiesOrdered();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="First_Activity_Id"){
-							cn->firstActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
-						}
-						else if(elem4.tagName()=="Second_Activity_Id"){
-							cn->secondActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=read2ActivitiesOrdered(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivityEndsDay" && !skipDeprecatedConstraints ){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -7816,299 +5728,14 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(t==0)
 							reportActivityPreferredTimesChange=false;
 					}
-				
-					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
-						cn->days[i] = cn->hours[i] = -1;
-					}
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Time"){
-							xmlReadingLog+="    Read: preferred time\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
-											break;
-
-									if(cn->days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
-										 .arg(cn->activityId)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-						
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
-											break;
-									
-									if(cn->hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
-										 .arg(cn->activityId)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-									
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->nPreferredStartingTimes);
-					crt_constraint=cn;
+					
+					crt_constraint=readActivityPreferredTimes(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredTimeSlots"){
-					ConstraintActivityPreferredTimeSlots* cn=new ConstraintActivityPreferredTimeSlots();
-					cn->p_nPreferredTimeSlots=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS; i++){
-						cn->p_days[i] = cn->p_hours[i] = -1;
-					}
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->p_activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->p_activityId)+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
-							cn->p_nPreferredTimeSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Time_Slot"){
-							xmlReadingLog+="    Read: preferred time slot\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
-										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
-											break;
-
-									if(cn->p_days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
-										 .arg(cn->p_activityId)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-						
-									assert(cn->p_days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
-										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
-											break;
-									
-									if(cn->p_hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
-										 .arg(cn->p_activityId)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-									
-									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->p_nPreferredTimeSlots);
-					crt_constraint=cn;
+					crt_constraint=readActivityPreferredTimeSlots(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredStartingTimes"){
-					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
-						cn->days[i] = cn->hours[i] = -1;
-					}
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Starting_Time"){
-							xmlReadingLog+="    Read: preferred starting time\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Starting_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
-											break;
-
-									if(cn->days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
-										 .arg(cn->activityId)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-						
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Starting_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
-											break;
-									
-									if(cn->hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
-										 .arg(cn->activityId)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-									
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->nPreferredStartingTimes);
-					crt_constraint=cn;
+					crt_constraint=readActivityPreferredStartingTimes(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintBreak"){
 					if(reportBreakChange){
@@ -8119,182 +5746,11 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(t==0)
 							reportBreakChange=false;
 					}
-
-					QList<int> days;
-					QList<int> hours;
-					double weightPercentage=100;
-					int d=-1, h1=-1, h2=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Day"){
-							for(d=0; d<this->nDaysPerWeek; d++)
-								if(this->daysOfTheWeek[d]==elem4.text())
-									break;
-							if(d>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint")
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(d<this->nDaysPerWeek);
-							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
-						}
-						else if(elem4.tagName()=="Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint")
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintTime;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
-						}
-						else if(elem4.tagName()=="End_Hour"){
-							for(h2=0; h2 < this->nHoursPerDay; h2++)
-								if(this->hoursOfTheDay[h2]==elem4.text())
-									break;
-							if(h2<=0 || h2>this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint")
-								 .arg(elem4.text()));
-								goto corruptConstraintTime;
-							}
-							assert(h2>0 && h2 <= this->nHoursPerDay);
-							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
-						}
-					}
 					
-					assert(weightPercentage>=0);
-					assert(d>=0 && h1>=0 && h2>=0);
-					
-					ConstraintBreakTimes* cn = NULL;
-					
-					bool found=false;
-					foreach(TimeConstraint* c, this->timeConstraintsList)
-						if(c->type==CONSTRAINT_BREAK_TIMES){
-							ConstraintBreakTimes* tna=(ConstraintBreakTimes*) c;
-							if(true){
-								found=true;
-								
-								for(int hh=h1; hh<h2; hh++){
-									int k;
-									for(k=0; k<tna->days.count(); k++)
-										if(tna->days.at(k)==d && tna->hours.at(k)==hh)
-											break;
-									if(k==tna->days.count()){
-										tna->days.append(d);
-										tna->hours.append(hh);
-									}
-								}
-								
-								assert(tna->days.count()==tna->hours.count());
-							}
-						}
-					if(!found){
-						days.clear();
-						hours.clear();
-						for(int hh=h1; hh<h2; hh++){
-							days.append(d);
-							hours.append(hh);
-						}
-					
-						cn=new ConstraintBreakTimes(weightPercentage, days, hours);
-
-						crt_constraint=cn;
-					}
+					crt_constraint=readBreak(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintBreakTimes"){
-					ConstraintBreakTimes* cn=new ConstraintBreakTimes();
-					int nNotAvailableSlots=-1;
-					int i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-
-						else if(elem4.tagName()=="Number_of_Break_Times"){
-							nNotAvailableSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of break times="+QString::number(nNotAvailableSlots)+"\n";
-						}
-
-						else if(elem4.tagName()=="Break_Time"){
-							xmlReadingLog+="    Read: not available time\n";
-							
-							int d=-1;
-							int h=-1;
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Day"){
-									for(d=0; d<this->nDaysPerWeek; d++)
-										if(this->daysOfTheWeek[d]==elem5.text())
-											break;
-
-									if(d>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint")
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-						
-									assert(d<this->nDaysPerWeek);
-									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Hour"){
-									for(h=0; h < this->nHoursPerDay; h++)
-										if(this->hoursOfTheDay[h]==elem5.text())
-											break;
-									
-									if(h>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint")
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-									
-									assert(h>=0 && h < this->nHoursPerDay);
-									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
-								}
-							}
-							i++;
-							
-							cn->days.append(d);
-							cn->hours.append(h);
-						}
-					}
-					assert(i==cn->days.count() && i==cn->hours.count());
-					assert(i==nNotAvailableSlots);
-					crt_constraint=cn;
+					crt_constraint=readBreakTimes(elem3, xmlReadingLog);
 				}
 				/*else if(elem3.tagName()=="ConstraintBreak"){
 					ConstraintBreak* cn=new ConstraintBreak();
@@ -8381,195 +5837,19 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					crt_constraint=cn;
 				}*/
 				else if(elem3.tagName()=="ConstraintTeachersNoGaps"){
-					ConstraintTeachersMaxGapsPerWeek* cn=new ConstraintTeachersMaxGapsPerWeek();
-					cn->maxGaps=0;
-					//ConstraintTeachersNoGaps* cn=new ConstraintTeachersNoGaps();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersNoGaps(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMaxGapsPerWeek"){
-					ConstraintTeachersMaxGapsPerWeek* cn=new ConstraintTeachersMaxGapsPerWeek();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Gaps"){
-							cn->maxGaps=elem4.text().toInt();
-							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMaxGapsPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxGapsPerWeek"){
-					ConstraintTeacherMaxGapsPerWeek* cn=new ConstraintTeacherMaxGapsPerWeek();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Gaps"){
-							cn->maxGaps=elem4.text().toInt();
-							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMaxGapsPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMaxGapsPerDay"){
-					ConstraintTeachersMaxGapsPerDay* cn=new ConstraintTeachersMaxGapsPerDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Gaps"){
-							cn->maxGaps=elem4.text().toInt();
-							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMaxGapsPerDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxGapsPerDay"){
-					ConstraintTeacherMaxGapsPerDay* cn=new ConstraintTeacherMaxGapsPerDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Gaps"){
-							cn->maxGaps=elem4.text().toInt();
-							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMaxGapsPerDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsNoGaps"){
 					if(reportMaxGapsChange){
@@ -8582,43 +5862,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(t==0)
 							reportMaxGapsChange=false;
 					}
-
-					ConstraintStudentsMaxGapsPerWeek* cn=new ConstraintStudentsMaxGapsPerWeek();
 					
-					cn->maxGaps=0;
-					
-					//bool compulsory_read=false;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-							//compulsory_read=true;
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsNoGaps(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNoGaps"){
 					if(reportMaxGapsChange){
@@ -8631,137 +5876,16 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(t==0)
 							reportMaxGapsChange=false;
 					}
-
-					ConstraintStudentsSetMaxGapsPerWeek* cn=new ConstraintStudentsSetMaxGapsPerWeek();
 					
-					cn->maxGaps=0;
-					
-					//bool compulsory_read=false;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-							//compulsory_read=true;
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetNoGaps(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMaxGapsPerWeek"){
-					ConstraintStudentsMaxGapsPerWeek* cn=new ConstraintStudentsMaxGapsPerWeek();
-
-					//bool compulsory_read=false;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Gaps"){
-							cn->maxGaps=elem4.text().toInt();
-							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-							//compulsory_read=true;
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsMaxGapsPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetMaxGapsPerWeek"){
-					ConstraintStudentsSetMaxGapsPerWeek* cn=new ConstraintStudentsSetMaxGapsPerWeek();
-					
-					//bool compulsory_read=false;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Gaps"){
-							cn->maxGaps=elem4.text().toInt();
-							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-							//compulsory_read=true;
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetMaxGapsPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsEarly"){
-					ConstraintStudentsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour();
-					
-					cn->maxBeginningsAtSecondHour=0;
-					
 					if(reportMaxBeginningsAtSecondHourChange){
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted"
@@ -8772,82 +5896,13 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
  						if(t==0)
 							reportMaxBeginningsAtSecondHourChange=false;
 					}
-
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
+					
+					crt_constraint=readStudentsEarly(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsEarlyMaxBeginningsAtSecondHour"){
-					ConstraintStudentsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour();
-					cn->maxBeginningsAtSecondHour=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Beginnings_At_Second_Hour"){
-							cn->maxBeginningsAtSecondHour=elem4.text().toInt();
-							xmlReadingLog+="    Adding max beginnings at second hour="+QString::number(cn->maxBeginningsAtSecondHour)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-					}
-					crt_constraint=cn;
-					assert(cn->maxBeginningsAtSecondHour>=0);
+					crt_constraint=readStudentsEarlyMaxBeginningsAtSecondHour(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetEarly"){
-					ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour();
-					
-					cn->maxBeginningsAtSecondHour=0;
-					
 					if(reportMaxBeginningsAtSecondHourChange){
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted"
@@ -8858,138 +5913,12 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(t==0)
 							reportMaxBeginningsAtSecondHourChange=false;
 					}
-
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					crt_constraint=cn;
+					
+					crt_constraint=readStudentsSetEarly(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour"){
-					ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour();
-					cn->maxBeginningsAtSecondHour=-1;					
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Beginnings_At_Second_Hour"){
-							cn->maxBeginningsAtSecondHour=elem4.text().toInt();
-							xmlReadingLog+="    Adding max beginnings at second hour="+QString::number(cn->maxBeginningsAtSecondHour)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					crt_constraint=cn;
-					assert(cn->maxBeginningsAtSecondHour>=0);
+					crt_constraint=readStudentsSetEarlyMaxBeginningsAtSecondHour(elem3, xmlReadingLog);
 				}
-#if 0
-				else if(elem3.tagName()=="Constraint2ActivitiesGrouped" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("File contains deprecated constraint 2 activities grouped - will be ignored\n"),
-					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
-					 1, 0 );
-													 
-					if(t==0)
-						skipDeprecatedConstraints=true;
-					/*
-					Constraint2ActivitiesGrouped* cn=new Constraint2ActivitiesGrouped();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="First_Activity_Id"){
-							cn->firstActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
-						}
-						else if(elem4.tagName()=="Second_Activity_Id"){
-							cn->secondActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
-						}
-					}
-					crt_constraint=cn;
-					*/
-					crt_constraint=NULL;
-				}
-#endif
 				else if(elem3.tagName()=="ConstraintActivitiesPreferredTimes"){
 					if(reportActivitiesPreferredTimesChange){
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
@@ -9002,642 +5931,21 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(t==0)
 							reportActivitiesPreferredTimesChange=false;
 					}
-				
-					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
-						cn->days[i] = cn->hours[i] = -1;
-					}
-					cn->teacherName="";
-					cn->studentsName="";
-					cn->subjectName="";
-					cn->activityTagName="";
 					
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Students_Name"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Name"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Time"){
-							xmlReadingLog+="    Read: preferred time\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
-											break;
-											
-									if(cn->days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
-										 .arg(cn->teacherName)
-										 .arg(cn->studentsName)
-										 .arg(cn->subjectName)
-										 .arg(cn->activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
-											break;
-											
-									if(cn->hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
-										 .arg(cn->teacherName)
-										 .arg(cn->studentsName)
-										 .arg(cn->subjectName)
-										 .arg(cn->activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->nPreferredStartingTimes);
-					crt_constraint=cn;
+					crt_constraint=readActivitiesPreferredTimes(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesPreferredTimeSlots"){
-					ConstraintActivitiesPreferredTimeSlots* cn=new ConstraintActivitiesPreferredTimeSlots();
-					cn->p_nPreferredTimeSlots=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS; i++){
-						cn->p_days[i] = cn->p_hours[i] = -1;
-					}
-					cn->p_teacherName="";
-					cn->p_studentsName="";
-					cn->p_subjectName="";
-					cn->p_activityTagName="";
-					
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->p_teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Students_Name"){
-							cn->p_studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Name"){
-							cn->p_subjectName=elem4.text();
-							xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag_Name"){
-							cn->p_activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->p_activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
-							cn->p_nPreferredTimeSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Time_Slot"){
-							xmlReadingLog+="    Read: preferred time slot\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
-										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
-											break;
-											
-									if(cn->p_days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
-										 .arg(cn->p_teacherName)
-										 .arg(cn->p_studentsName)
-										 .arg(cn->p_subjectName)
-										 .arg(cn->p_activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->p_days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
-										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
-											break;
-											
-									if(cn->p_hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
-										 .arg(cn->p_teacherName)
-										 .arg(cn->p_studentsName)
-										 .arg(cn->p_subjectName)
-										 .arg(cn->p_activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->p_nPreferredTimeSlots);
-					crt_constraint=cn;
+					crt_constraint=readActivitiesPreferredTimeSlots(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesPreferredStartingTimes"){
-					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
-						cn->days[i] = cn->hours[i] = -1;
-					}
-					cn->teacherName="";
-					cn->studentsName="";
-					cn->subjectName="";
-					cn->activityTagName="";
-					
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Students_Name"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Name"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Starting_Time"){
-							xmlReadingLog+="    Read: preferred starting time\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Starting_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
-											break;
-											
-									if(cn->days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
-										 .arg(cn->teacherName)
-										 .arg(cn->studentsName)
-										 .arg(cn->subjectName)
-										 .arg(cn->activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Starting_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
-											break;
-											
-									if(cn->hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
-										 .arg(cn->teacherName)
-										 .arg(cn->studentsName)
-										 .arg(cn->subjectName)
-										 .arg(cn->activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->nPreferredStartingTimes);
-					crt_constraint=cn;
+					crt_constraint=readActivitiesPreferredStartingTimes(elem3, xmlReadingLog);
 				}
-
 ////////////////
 				else if(elem3.tagName()=="ConstraintSubactivitiesPreferredTimeSlots"){
-					ConstraintSubactivitiesPreferredTimeSlots* cn=new ConstraintSubactivitiesPreferredTimeSlots();
-					cn->p_nPreferredTimeSlots=0;
-					cn->componentNumber=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS; i++){
-						cn->p_days[i] = cn->p_hours[i] = -1;
-					}
-					cn->p_teacherName="";
-					cn->p_studentsName="";
-					cn->p_subjectName="";
-					cn->p_activityTagName="";
-					
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Component_Number"){
-							cn->componentNumber=elem4.text().toInt();
-							xmlReadingLog+="    Adding component number="+QString::number(cn->componentNumber)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->p_teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Students_Name"){
-							cn->p_studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Name"){
-							cn->p_subjectName=elem4.text();
-							xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag_Name"){
-							cn->p_activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->p_activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
-							cn->p_nPreferredTimeSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Time_Slot"){
-							xmlReadingLog+="    Read: preferred time slot\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Day"){
-									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
-										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
-											break;
-											
-									if(cn->p_days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
-										 .arg(cn->p_teacherName)
-										 .arg(cn->p_studentsName)
-										 .arg(cn->p_subjectName)
-										 .arg(cn->p_activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->p_days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Hour"){
-									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
-										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
-											break;
-											
-									if(cn->p_hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
-										 .arg(cn->p_teacherName)
-										 .arg(cn->p_studentsName)
-										 .arg(cn->p_subjectName)
-										 .arg(cn->p_activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->p_nPreferredTimeSlots);
-					crt_constraint=cn;
+					crt_constraint=readSubactivitiesPreferredTimeSlots(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintSubactivitiesPreferredStartingTimes"){
-					ConstraintSubactivitiesPreferredStartingTimes* cn=new ConstraintSubactivitiesPreferredStartingTimes();
-					cn->nPreferredStartingTimes=0;
-					cn->componentNumber=0;
-					int i;
-					for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES; i++){
-						cn->days[i] = cn->hours[i] = -1;
-					}
-					cn->teacherName="";
-					cn->studentsName="";
-					cn->subjectName="";
-					cn->activityTagName="";
-					
-					i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Component_Number"){
-							cn->componentNumber=elem4.text().toInt();
-							xmlReadingLog+="    Adding component number="+QString::number(cn->componentNumber)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Teacher_Name"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Students_Name"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Name"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag_Name"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
-							cn->nPreferredStartingTimes=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
-						}
-						else if(elem4.tagName()=="Preferred_Starting_Time"){
-							xmlReadingLog+="    Read: preferred starting time\n";
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Preferred_Starting_Day"){
-									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
-										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
-											break;
-											
-									if(cn->days[i]>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
-										 .arg(cn->teacherName)
-										 .arg(cn->studentsName)
-										 .arg(cn->subjectName)
-										 .arg(cn->activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->days[i]<this->nDaysPerWeek);
-									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Preferred_Starting_Hour"){
-									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
-										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
-											break;
-											
-									if(cn->hours[i]>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
-										 .arg(cn->teacherName)
-										 .arg(cn->studentsName)
-										 .arg(cn->subjectName)
-										 .arg(cn->activityTagName)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintTime;
-									}
-											
-									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
-									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
-								}
-							}
-
-							i++;
-						}
-					}
-					assert(i==cn->nPreferredStartingTimes);
-					crt_constraint=cn;
+					crt_constraint=readSubactivitiesPreferredStartingTimes(elem3, xmlReadingLog);
 				}
 ////////////////
 
@@ -9740,7 +6048,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					crt_constraint=NULL;
 				}
 
-corruptConstraintTime:
+//corruptConstraintTime:
 				//here we skip invalid constraint or add valid one
 				if(crt_constraint!=NULL){
 					assert(crt_constraint!=NULL);
@@ -9751,7 +6059,8 @@ corruptConstraintTime:
 						 arg(crt_constraint->getDetailedDescription(*this)));
 						delete crt_constraint;
 					}
-					nc++;
+					else
+						nc++;
 				}
 			}
 			xmlReadingLog+="  Added "+QString::number(nc)+" time constraints\n";
@@ -9763,6 +6072,7 @@ corruptConstraintTime:
 
 			int nc=0;
 			SpaceConstraint *crt_constraint;
+			
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				crt_constraint=NULL;
 				QDomElement elem3=node3.toElement();
@@ -9772,53 +6082,7 @@ corruptConstraintTime:
 				}
 				xmlReadingLog+="   Found "+elem3.tagName()+" tag\n";
 				if(elem3.tagName()=="ConstraintBasicCompulsorySpace"){
-					ConstraintBasicCompulsorySpace* cn=new ConstraintBasicCompulsorySpace();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						/*if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}*/
-					}
-					crt_constraint=cn;
+					crt_constraint=readBasicCompulsorySpace(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintRoomNotAvailable"){
 					if(reportRoomNotAvailableChange){
@@ -9829,302 +6093,11 @@ corruptConstraintTime:
 						if(t==0)
 							reportRoomNotAvailableChange=false;
 					}
-
-					QList<int> days;
-					QList<int> hours;
-					QString room;
-					double weightPercentage=100;
-					int d=-1, h1=-1, h2=-1;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Day"){
-							for(d=0; d<this->nDaysPerWeek; d++)
-								if(this->daysOfTheWeek[d]==elem4.text())
-									break;
-							if(d>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
-								 .arg(room)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintSpace;
-							}
-							assert(d<this->nDaysPerWeek);
-							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
-						}
-						else if(elem4.tagName()=="Start_Hour"){
-							for(h1=0; h1 < this->nHoursPerDay; h1++)
-								if(this->hoursOfTheDay[h1]==elem4.text())
-									break;
-							if(h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(room)
-								 .arg(elem4.text()));
-								//cn=NULL;
-								goto corruptConstraintSpace;
-							}
-							assert(h1>=0 && h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
-						}
-						else if(elem4.tagName()=="End_Hour"){
-							for(h2=0; h2 < this->nHoursPerDay; h2++)
-								if(this->hoursOfTheDay[h2]==elem4.text())
-									break;
-							if(h2<=0 || h2>this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(room)
-								 .arg(elem4.text()));
-								goto corruptConstraintSpace;
-							}
-							assert(h2>0 && h2 <= this->nHoursPerDay);
-							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
-						}
-						else if(elem4.tagName()=="Room_Name"){
-							room=elem4.text();
-							xmlReadingLog+="    Read room name="+room+"\n";
-						}
-					}
 					
-					assert(weightPercentage>=0);
-					assert(d>=0 && h1>=0 && h2>=0);
-					
-					ConstraintRoomNotAvailableTimes* cn = NULL;
-					
-					bool found=false;
-					foreach(SpaceConstraint* c, this->spaceConstraintsList)
-						if(c->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
-							ConstraintRoomNotAvailableTimes* tna=(ConstraintRoomNotAvailableTimes*) c;
-							if(tna->room==room){
-								found=true;
-								
-								for(int hh=h1; hh<h2; hh++){
-									int k;
-									for(k=0; k<tna->days.count(); k++)
-										if(tna->days.at(k)==d && tna->hours.at(k)==hh)
-											break;
-									if(k==tna->days.count()){
-										tna->days.append(d);
-										tna->hours.append(hh);
-									}
-								}
-								
-								assert(tna->days.count()==tna->hours.count());
-							}
-						}
-					if(!found){
-						days.clear();
-						hours.clear();
-						for(int hh=h1; hh<h2; hh++){
-							days.append(d);
-							hours.append(hh);
-						}
-					
-						cn=new ConstraintRoomNotAvailableTimes(weightPercentage, room, days, hours);
-
-						crt_constraint=cn;
-					}
+					crt_constraint=readRoomNotAvailable(elem3, xmlReadingLog);
 				}
-				/*
-				else if(elem3.tagName()=="ConstraintRoomNotAvailable"){
-					ConstraintRoomNotAvailable* cn=new ConstraintRoomNotAvailable();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						//if(elem4.tagName()=="Weight"){
-						//	cn->weight=elem4.text().toDouble();
-						//	xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						//}
-						//else if(elem4.tagName()=="Compulsory"){
-						//	if(elem4.text()=="yes"){
-						//		cn->compulsory=true;
-						//		xmlReadingLog+="    Current constraint is compulsory\n";
-						//	}
-						//	else{
-						//		cn->compulsory=false;
-						//		xmlReadingLog+="    Current constraint is not compulsory\n";
-						//	}
-						//}
-						else if(elem4.tagName()=="Room_Name"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room name="+cn->roomName+"\n";
-						}
-						else if(elem4.tagName()=="Day"){
-							for(cn->d=0; cn->d<this->nDaysPerWeek; cn->d++)
-								if(this->daysOfTheWeek[cn->d]==elem4.text())
-									break;
-
-							if(cn->d>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
-								 .arg(cn->roomName)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintSpace;
-							}
-
-							assert(cn->d<this->nDaysPerWeek);
-							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[cn->d]+"\n";
-						}
-						else if(elem4.tagName()=="Start_Hour"){
-							for(cn->h1=0; cn->h1 < this->nHoursPerDay; cn->h1++)
-								if(this->hoursOfTheDay[cn->h1]==elem4.text())
-									break;
-
-							if(cn->h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(cn->roomName)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintSpace;
-							}
-
-							assert(cn->h1>=0 && cn->h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[cn->h1]+"\n";
-						}
-						else if(elem4.tagName()=="End_Hour"){
-							for(cn->h2=0; cn->h2 < this->nHoursPerDay; cn->h2++)
-								if(this->hoursOfTheDay[cn->h2]==elem4.text())
-									break;
-
-							if(cn->h2<=0 || cn->h2>this->nHoursPerDay){
-								QMessageBox::information(NULL, QObject::tr("FET information"), 
-								 QObject::tr("Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
-								 .arg(cn->roomName)
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintSpace;
-							}
-
-							assert(cn->h2>0 && cn->h2 <= this->nHoursPerDay);
-							xmlReadingLog+="    End hour="+this->hoursOfTheDay[cn->h2]+"\n";
-						}
-					}
-					crt_constraint=cn;
-				}*/
 				else if(elem3.tagName()=="ConstraintRoomNotAvailableTimes"){
-					ConstraintRoomNotAvailableTimes* cn=new ConstraintRoomNotAvailableTimes();
-					int nNotAvailableSlots=-1;
-					int i=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-
-						else if(elem4.tagName()=="Number_of_Not_Available_Times"){
-							nNotAvailableSlots=elem4.text().toInt();
-							xmlReadingLog+="    Read number of not available times="+QString::number(nNotAvailableSlots)+"\n";
-						}
-
-						else if(elem4.tagName()=="Not_Available_Time"){
-							xmlReadingLog+="    Read: not available time\n";
-							
-							int d=-1;
-							int h=-1;
-
-							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
-								QDomElement elem5=node5.toElement();
-								if(elem5.isNull()){
-									xmlReadingLog+="    Null node here\n";
-									continue;
-								}
-								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
-								if(elem5.tagName()=="Day"){
-									for(d=0; d<this->nDaysPerWeek; d++)
-										if(this->daysOfTheWeek[d]==elem5.text())
-											break;
-
-									if(d>=this->nDaysPerWeek){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
-										 .arg(cn->room)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintSpace;
-									}
-						
-									assert(d<this->nDaysPerWeek);
-									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
-								}
-								else if(elem5.tagName()=="Hour"){
-									for(h=0; h < this->nHoursPerDay; h++)
-										if(this->hoursOfTheDay[h]==elem5.text())
-											break;
-									
-									if(h>=this->nHoursPerDay){
-										QMessageBox::information(NULL, QObject::tr("FET information"), 
-										 QObject::tr("Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
-										 .arg(cn->room)
-										 .arg(elem5.text()));
-										delete cn;
-										cn=NULL;
-										goto corruptConstraintSpace;
-									}
-									
-									assert(h>=0 && h < this->nHoursPerDay);
-									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
-								}
-							}
-							i++;
-							
-							cn->days.append(d);
-							cn->hours.append(h);
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->room=elem4.text();
-							xmlReadingLog+="    Read room name="+cn->room+"\n";
-						}
-					}
-					assert(i==cn->days.count() && i==cn->hours.count());
-					assert(i==nNotAvailableSlots);
-					crt_constraint=cn;
+					crt_constraint=readRoomNotAvailableTimes(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintRoomTypeNotAllowedSubjects" && !skipDeprecatedConstraints){
 				
@@ -10428,164 +6401,10 @@ corruptConstraintTime:
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredRoom"){
-					ConstraintActivityPreferredRoom* cn=new ConstraintActivityPreferredRoom();
-					cn->permanentlyLocked=false; //default
-					bool foundLocked=false;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Permanently_Locked"){
-							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
-								xmlReadingLog+="    Permanently locked\n";
-								cn->permanentlyLocked=true;
-							}
-							else{
-								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-									QMessageBox::warning(NULL, QObject::tr("FET warning"),
-									 QObject::tr("Found constraint activity preferred room with tag permanently locked"
-									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
-									 " The tag will be considered false",
-									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
-								}
-								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
-								xmlReadingLog+="    Not permanently locked\n";
-								cn->permanentlyLocked=false;
-							}
-							foundLocked=true;
-						}
-
-						/*if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}*/
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					crt_constraint=cn;
-
-					if(!foundLocked && reportUnspecifiedPermanentlyLockedSpace){
-						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
-						 QObject::tr("Found constraint activity preferred room, with unspecified tag"
-						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
-						 " by editing the constraint in the 'Data' menu")+"\n\n"
-						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
-						 " activity preferred room has"
-						 " a new tag, 'permanently locked' (true or false)."
-						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
-						 " need to be not modifiable from the 'Timetable' menu"
-						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
-						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
-						 " This way, when viewing the timetable"
-						 " and locking/unlocking some activities, you will not unlock the constraints which"
-						 " need to be locked all the time."
-						 ),
-						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
-						if(t==0)
-							reportUnspecifiedPermanentlyLockedSpace=false;
-					}
+					crt_constraint=readActivityPreferredRoom(elem3, xmlReadingLog, reportUnspecifiedPermanentlyLockedSpace);
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredRooms"){
-					int _n_preferred_rooms=0;
-					ConstraintActivityPreferredRooms* cn=new ConstraintActivityPreferredRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						/*if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}*/
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
-							assert(_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
+					crt_constraint=readActivityPreferredRooms(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesSameRoom" && !skipDeprecatedConstraints){
 				
@@ -10635,455 +6454,41 @@ corruptConstraintTime:
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintSubjectPreferredRoom"){
-					ConstraintSubjectPreferredRoom* cn=new ConstraintSubjectPreferredRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+cn->roomName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readSubjectPreferredRoom(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintSubjectPreferredRooms"){
-					int _n_preferred_rooms=0;
-					ConstraintSubjectPreferredRooms* cn=new ConstraintSubjectPreferredRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
-							assert(_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
+					crt_constraint=readSubjectPreferredRooms(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRoom"){
-					ConstraintSubjectActivityTagPreferredRoom* cn=new ConstraintSubjectActivityTagPreferredRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+cn->roomName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readSubjectSubjectTagPreferredRoom(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRooms"){
-					int _n_preferred_rooms=0;
-					ConstraintSubjectActivityTagPreferredRooms* cn=new ConstraintSubjectActivityTagPreferredRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
-							assert(_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
+					crt_constraint=readSubjectSubjectTagPreferredRooms(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintSubjectActivityTagPreferredRoom"){
-					ConstraintSubjectActivityTagPreferredRoom* cn=new ConstraintSubjectActivityTagPreferredRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+cn->roomName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readSubjectActivityTagPreferredRoom(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintSubjectActivityTagPreferredRooms"){
-					int _n_preferred_rooms=0;
-					ConstraintSubjectActivityTagPreferredRooms* cn=new ConstraintSubjectActivityTagPreferredRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
-							assert(_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
+					crt_constraint=readSubjectActivityTagPreferredRooms(elem3, xmlReadingLog);
 				}
-				
 				//added 6 apr 2009
 				else if(elem3.tagName()=="ConstraintActivityTagPreferredRoom"){
-					ConstraintActivityTagPreferredRoom* cn=new ConstraintActivityTagPreferredRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+cn->roomName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readActivityTagPreferredRoom(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivityTagPreferredRooms"){
-					int _n_preferred_rooms=0;
-					ConstraintActivityTagPreferredRooms* cn=new ConstraintActivityTagPreferredRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Tag"){
-							cn->activityTagName=elem4.text();
-							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
-							assert(_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
+					crt_constraint=readActivityTagPreferredRooms(elem3, xmlReadingLog);
 				}
-				
 				else if(elem3.tagName()=="ConstraintStudentsSetHomeRoom"){
-					ConstraintStudentsSetHomeRoom* cn=new ConstraintStudentsSetHomeRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+cn->roomName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetHomeRoom(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetHomeRooms"){
-					int _n_preferred_rooms=0;
-					ConstraintStudentsSetHomeRooms* cn=new ConstraintStudentsSetHomeRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
-							assert(_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetHomeRooms(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherHomeRoom"){
-					ConstraintTeacherHomeRoom* cn=new ConstraintTeacherHomeRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+cn->roomName+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherHomeRoom(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherHomeRooms"){
-					int _n_preferred_rooms=0;
-					ConstraintTeacherHomeRooms* cn=new ConstraintTeacherHomeRooms();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
-							_n_preferred_rooms=elem4.text().toInt();
-							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
-							assert(_n_preferred_rooms>=2);
-						}
-						else if(elem4.tagName()=="Preferred_Room"){
-							cn->roomsNames.append(elem4.text());
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					assert(_n_preferred_rooms==cn->roomsNames.count());
-					crt_constraint=cn;
+					crt_constraint=readTeacherHomeRooms(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForTeachers" && !skipDeprecatedConstraints){
 				
@@ -11246,271 +6651,43 @@ corruptConstraintTime:
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxBuildingChangesPerDay"){
-					ConstraintTeacherMaxBuildingChangesPerDay* cn=new ConstraintTeacherMaxBuildingChangesPerDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
-							cn->maxBuildingChangesPerDay=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMaxBuildingChangesPerDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMaxBuildingChangesPerDay"){
-					ConstraintTeachersMaxBuildingChangesPerDay* cn=new ConstraintTeachersMaxBuildingChangesPerDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
-							cn->maxBuildingChangesPerDay=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMaxBuildingChangesPerDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxBuildingChangesPerWeek"){
-					ConstraintTeacherMaxBuildingChangesPerWeek* cn=new ConstraintTeacherMaxBuildingChangesPerWeek();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
-							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMaxBuildingChangesPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMaxBuildingChangesPerWeek"){
-					ConstraintTeachersMaxBuildingChangesPerWeek* cn=new ConstraintTeachersMaxBuildingChangesPerWeek();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
-							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMaxBuildingChangesPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMinGapsBetweenBuildingChanges"){
-					ConstraintTeacherMinGapsBetweenBuildingChanges* cn=new ConstraintTeacherMinGapsBetweenBuildingChanges();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
-							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
-							xmlReadingLog+="    Min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeacherMinGapsBetweenBuildingChanges(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintTeachersMinGapsBetweenBuildingChanges"){
-					ConstraintTeachersMinGapsBetweenBuildingChanges* cn=new ConstraintTeachersMinGapsBetweenBuildingChanges();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
-							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
-							xmlReadingLog+="    Min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readTeachersMinGapsBetweenBuildingChanges(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetMaxBuildingChangesPerDay"){
-					ConstraintStudentsSetMaxBuildingChangesPerDay* cn=new ConstraintStudentsSetMaxBuildingChangesPerDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
-							cn->maxBuildingChangesPerDay=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetMaxBuildingChangesPerDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMaxBuildingChangesPerDay"){
-					ConstraintStudentsMaxBuildingChangesPerDay* cn=new ConstraintStudentsMaxBuildingChangesPerDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
-							cn->maxBuildingChangesPerDay=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsMaxBuildingChangesPerDay(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetMaxBuildingChangesPerWeek"){
-					ConstraintStudentsSetMaxBuildingChangesPerWeek* cn=new ConstraintStudentsSetMaxBuildingChangesPerWeek();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
-							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetMaxBuildingChangesPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMaxBuildingChangesPerWeek"){
-					ConstraintStudentsMaxBuildingChangesPerWeek* cn=new ConstraintStudentsMaxBuildingChangesPerWeek();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
-							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
-							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsMaxBuildingChangesPerWeek(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetMinGapsBetweenBuildingChanges"){
-					ConstraintStudentsSetMinGapsBetweenBuildingChanges* cn=new ConstraintStudentsSetMinGapsBetweenBuildingChanges();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->studentsName=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
-						}
-						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
-							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
-							xmlReadingLog+="    min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsSetMinGapsBetweenBuildingChanges(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMinGapsBetweenBuildingChanges"){
-					ConstraintStudentsMinGapsBetweenBuildingChanges* cn=new ConstraintStudentsMinGapsBetweenBuildingChanges();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
-							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
-							xmlReadingLog+="    min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;
+					crt_constraint=readStudentsMinGapsBetweenBuildingChanges(elem3, xmlReadingLog);
 				}
 
-corruptConstraintSpace:
+//corruptConstraintSpace:
 				//here we skip invalid constraint or add valid one
 				if(crt_constraint!=NULL){
 					assert(crt_constraint!=NULL);
@@ -11525,7 +6702,8 @@ corruptConstraintSpace:
 						 arg(crt_constraint->getDetailedDescription(*this)));
 						delete crt_constraint;
 					}
-					nc++;
+					else
+						nc++;
 				}
 			}
 			xmlReadingLog+="  Added "+QString::number(nc)+" space constraints\n";
@@ -11864,4 +7042,5219 @@ int Rules::deactivateActivityTag(const QString& activityTagName)
 	this->internalStructureComputed=false;
 	
 	return count;
+}
+
+
+TimeConstraint* Rules::readBasicCompulsoryTime(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintBasicCompulsoryTime");
+					ConstraintBasicCompulsoryTime* cn=new ConstraintBasicCompulsoryTime();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - generating automatic 100% weight percentage\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherNotAvailable(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherNotAvailable");
+
+					QList<int> days;
+					QList<int> hours;
+					QString teacher;
+					double weightPercentage=100;
+					int d=-1, h1=-1, h2=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Day"){
+							for(d=0; d<this->nDaysPerWeek; d++)
+								if(this->daysOfTheWeek[d]==elem4.text())
+									break;
+							if(d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(teacher)
+								 .arg(elem4.text()));
+								//cn=NULL;
+								
+								return NULL;
+								//goto corruptConstraintTime;
+							}
+							assert(d<this->nDaysPerWeek);
+							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
+						}
+						else if(elem4.tagName()=="Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(teacher)
+								 .arg(elem4.text()));
+								//cn=NULL;
+								
+								return NULL;
+								//goto corruptConstraintTime;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
+						}
+						else if(elem4.tagName()=="End_Hour"){
+							for(h2=0; h2 < this->nHoursPerDay; h2++)
+								if(this->hoursOfTheDay[h2]==elem4.text())
+									break;
+							if(h2<=0 || h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(teacher)
+								 .arg(elem4.text()));
+								 
+								return NULL;
+								//goto corruptConstraintTime;
+							}
+							assert(h2>0 && h2 <= this->nHoursPerDay);
+							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							teacher=elem4.text();
+							xmlReadingLog+="    Read teacher name="+teacher+"\n";
+						}
+					}
+					
+					assert(weightPercentage>=0);
+					assert(d>=0 && h1>=0 && h2>=0);
+					
+					ConstraintTeacherNotAvailableTimes* cn = NULL;
+					
+					bool found=false;
+					foreach(TimeConstraint* c, this->timeConstraintsList)
+						if(c->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
+							ConstraintTeacherNotAvailableTimes* tna=(ConstraintTeacherNotAvailableTimes*) c;
+							if(tna->teacher==teacher){
+								found=true;
+								
+								for(int hh=h1; hh<h2; hh++){
+									int k;
+									for(k=0; k<tna->days.count(); k++)
+										if(tna->days.at(k)==d && tna->hours.at(k)==hh)
+											break;
+									if(k==tna->days.count()){
+										tna->days.append(d);
+										tna->hours.append(hh);
+									}
+								}
+								
+								assert(tna->days.count()==tna->hours.count());
+							}
+						}
+					if(!found){
+						days.clear();
+						hours.clear();
+						for(int hh=h1; hh<h2; hh++){
+							days.append(d);
+							hours.append(hh);
+						}
+					
+						cn=new ConstraintTeacherNotAvailableTimes(weightPercentage, teacher, days, hours);
+
+						return cn;
+					}
+					else
+						return NULL;
+}
+				
+TimeConstraint* Rules::readTeacherNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherNotAvailableTimes");
+					
+					ConstraintTeacherNotAvailableTimes* cn=new ConstraintTeacherNotAvailableTimes();
+					int nNotAvailableSlots=-1;
+					int i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+
+						else if(elem4.tagName()=="Number_of_Not_Available_Times"){
+							nNotAvailableSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of not available times="+QString::number(nNotAvailableSlots)+"\n";
+						}
+
+						else if(elem4.tagName()=="Not_Available_Time"){
+							xmlReadingLog+="    Read: not available time\n";
+							
+							int d=-1;
+							int h=-1;
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Day"){
+									for(d=0; d<this->nDaysPerWeek; d++)
+										if(this->daysOfTheWeek[d]==elem5.text())
+											break;
+
+									if(d>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->teacher)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+						
+									assert(d<this->nDaysPerWeek);
+									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Hour"){
+									for(h=0; h < this->nHoursPerDay; h++)
+										if(this->hoursOfTheDay[h]==elem5.text())
+											break;
+									
+									if(h>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->teacher)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+									
+									assert(h>=0 && h < this->nHoursPerDay);
+									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
+								}
+							}
+							i++;
+							
+							cn->days.append(d);
+							cn->hours.append(h);
+						}
+						else if(elem4.tagName()=="Teacher"){
+							cn->teacher=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacher+"\n";
+						}
+					}
+					assert(i==cn->days.count() && i==cn->hours.count());
+					assert(i==nNotAvailableSlots);
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMaxDaysPerWeek");
+					
+					ConstraintTeacherMaxDaysPerWeek* cn=new ConstraintTeacherMaxDaysPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Max_Days_Per_Week"){
+							cn->maxDaysPerWeek=elem4.text().toInt();
+							if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
+								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								return NULL;
+							}
+							assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherIntervalMaxDaysPerWeek");
+					ConstraintTeacherIntervalMaxDaysPerWeek* cn=new ConstraintTeacherIntervalMaxDaysPerWeek();
+					cn->maxDaysPerWeek=this->nDaysPerWeek;
+					cn->startHour=this->nHoursPerDay;
+					cn->endHour=this->nHoursPerDay;
+					int h1, h2;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Max_Days_Per_Week"){
+							cn->maxDaysPerWeek=elem4.text().toInt();
+							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
+								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								/*delete cn;
+								cn=NULL;
+								goto corruptConstraintTime;*/
+							}
+							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
+						}
+						else if(elem4.tagName()=="Interval_Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Teacher interval max days per week start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->teacherName)
+								 .arg(elem4.text()));
+								delete cn;
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+							cn->startHour=h1;
+						}
+						else if(elem4.tagName()=="Interval_End_Hour"){
+							if(elem4.text()==""){
+								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+								cn->endHour=this->nHoursPerDay;
+							}
+							else{
+								for(h2=0; h2 < this->nHoursPerDay; h2++)
+									if(this->hoursOfTheDay[h2]==elem4.text())
+										break;
+								if(h2>=this->nHoursPerDay){
+									QMessageBox::information(NULL, QObject::tr("FET information"), 
+									 QObject::tr("Constraint Teacher interval max days per week end hour corrupt for teacher %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
+									 .arg(cn->teacherName)
+									 .arg(elem4.text()));
+									delete cn;
+									//cn=NULL;
+									//goto corruptConstraintTime;
+									return NULL;
+								}
+								assert(h2>=0 && h2 < this->nHoursPerDay);
+								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+								cn->endHour=h2;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersIntervalMaxDaysPerWeek");
+					ConstraintTeachersIntervalMaxDaysPerWeek* cn=new ConstraintTeachersIntervalMaxDaysPerWeek();
+					cn->maxDaysPerWeek=this->nDaysPerWeek;
+					cn->startHour=this->nHoursPerDay;
+					cn->endHour=this->nHoursPerDay;
+					int h1, h2;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}*/
+						else if(elem4.tagName()=="Max_Days_Per_Week"){
+							cn->maxDaysPerWeek=elem4.text().toInt();
+							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
+								 //.arg(cn->teacherName)
+								 .arg(elem4.text()));
+								/*delete cn;
+								cn=NULL;
+								goto corruptConstraintTime;*/
+							}
+							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
+						}
+						else if(elem4.tagName()=="Interval_Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint")
+								 //.arg(cn->teacherName)
+								 .arg(elem4.text()));
+								delete cn;
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+							cn->startHour=h1;
+						}
+						else if(elem4.tagName()=="Interval_End_Hour"){
+							if(elem4.text()==""){
+								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+								cn->endHour=this->nHoursPerDay;
+							}
+							else{
+								for(h2=0; h2 < this->nHoursPerDay; h2++)
+									if(this->hoursOfTheDay[h2]==elem4.text())
+										break;
+								if(h2>=this->nHoursPerDay){
+									QMessageBox::information(NULL, QObject::tr("FET information"), 
+									 QObject::tr("Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
+									 //.arg(cn->teacherName)
+									 .arg(elem4.text()));
+									delete cn;
+									//cn=NULL;
+									//goto corruptConstraintTime;
+									return NULL;
+								}
+								assert(h2>=0 && h2 < this->nHoursPerDay);
+								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+								cn->endHour=h2;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetIntervalMaxDaysPerWeek");
+					ConstraintStudentsSetIntervalMaxDaysPerWeek* cn=new ConstraintStudentsSetIntervalMaxDaysPerWeek();
+					cn->maxDaysPerWeek=this->nDaysPerWeek;
+					cn->startHour=this->nHoursPerDay;
+					cn->endHour=this->nHoursPerDay;
+					int h1, h2;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students set name="+cn->students+"\n";
+						}
+						else if(elem4.tagName()=="Max_Days_Per_Week"){
+							cn->maxDaysPerWeek=elem4.text().toInt();
+							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
+								 .arg(cn->students)
+								 .arg(elem4.text()));
+								/*delete cn;
+								cn=NULL;
+								goto corruptConstraintTime;*/
+							}
+							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
+						}
+						else if(elem4.tagName()=="Interval_Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Students set interval max days per week start hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->students)
+								 .arg(elem4.text()));
+								delete cn;
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+							cn->startHour=h1;
+						}
+						else if(elem4.tagName()=="Interval_End_Hour"){
+							if(elem4.text()==""){
+								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+								cn->endHour=this->nHoursPerDay;
+							}
+							else{
+								for(h2=0; h2 < this->nHoursPerDay; h2++)
+									if(this->hoursOfTheDay[h2]==elem4.text())
+										break;
+								if(h2>=this->nHoursPerDay){
+									QMessageBox::information(NULL, QObject::tr("FET information"), 
+									 QObject::tr("Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
+									 .arg(cn->students)
+									 .arg(elem4.text()));
+									delete cn;
+									//cn=NULL;
+									//goto corruptConstraintTime;
+									return NULL;
+								}
+								assert(h2>=0 && h2 < this->nHoursPerDay);
+								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+								cn->endHour=h2;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsIntervalMaxDaysPerWeek");
+					ConstraintStudentsIntervalMaxDaysPerWeek* cn=new ConstraintStudentsIntervalMaxDaysPerWeek();
+					cn->maxDaysPerWeek=this->nDaysPerWeek;
+					cn->startHour=this->nHoursPerDay;
+					cn->endHour=this->nHoursPerDay;
+					int h1, h2;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - generating 100% weight percentage\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students set name="+cn->students+"\n";
+						}*/
+						else if(elem4.tagName()=="Max_Days_Per_Week"){
+							cn->maxDaysPerWeek=elem4.text().toInt();
+							if(cn->maxDaysPerWeek>this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 >nDaysPerWeek, constraint added, please correct constraint")
+								 .arg(elem4.text()));
+								/*delete cn;
+								cn=NULL;
+								goto corruptConstraintTime;*/
+							}
+							//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
+							xmlReadingLog+="    Max. days per week="+QString::number(cn->maxDaysPerWeek)+"\n";
+						}
+						else if(elem4.tagName()=="Interval_Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint")
+								 //.arg(cn->students)
+								 .arg(elem4.text()));
+								delete cn;
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
+							cn->startHour=h1;
+						}
+						else if(elem4.tagName()=="Interval_End_Hour"){
+							if(elem4.text()==""){
+								xmlReadingLog+="    Interval end hour void, meaning end of day\n";
+								cn->endHour=this->nHoursPerDay;
+							}
+							else{
+								for(h2=0; h2 < this->nHoursPerDay; h2++)
+									if(this->hoursOfTheDay[h2]==elem4.text())
+										break;
+								if(h2>=this->nHoursPerDay){
+									QMessageBox::information(NULL, QObject::tr("FET information"), 
+									 QObject::tr("Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
+									 //.arg(cn->students)
+									 .arg(elem4.text()));
+									delete cn;
+									//cn=NULL;
+									//goto corruptConstraintTime;
+									return NULL;
+								}
+								assert(h2>=0 && h2 < this->nHoursPerDay);
+								xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
+								cn->endHour=h2;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetNotAvailable(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetNotAvailable");
+
+					//ConstraintStudentsSetNotAvailableTimes* cn=new ConstraintStudentsSetNotAvailableTimes();
+					QList<int> days;
+					QList<int> hours;
+					QString students;
+					double weightPercentage=100;
+					int d=-1, h1=-1, h2=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Day"){
+							for(d=0; d<this->nDaysPerWeek; d++)
+								if(this->daysOfTheWeek[d]==elem4.text())
+									break;
+							if(d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(students)
+								 .arg(elem4.text()));
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(d<this->nDaysPerWeek);
+							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
+						}
+						else if(elem4.tagName()=="Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(students)
+								 .arg(elem4.text()));
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
+						}
+						else if(elem4.tagName()=="End_Hour"){
+							for(h2=0; h2 < this->nHoursPerDay; h2++)
+								if(this->hoursOfTheDay[h2]==elem4.text())
+									break;
+							if(h2<=0 || h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(students)
+								 .arg(elem4.text()));
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h2>0 && h2 <= this->nHoursPerDay);
+							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							students=elem4.text();
+							xmlReadingLog+="    Read students name="+students+"\n";
+						}
+					}
+					
+					assert(weightPercentage>=0);
+					assert(d>=0 && h1>=0 && h2>=0);
+					
+					ConstraintStudentsSetNotAvailableTimes* cn = NULL;
+					
+					bool found=false;
+					foreach(TimeConstraint* c, this->timeConstraintsList)
+						if(c->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
+							ConstraintStudentsSetNotAvailableTimes* ssna=(ConstraintStudentsSetNotAvailableTimes*) c;
+							if(ssna->students==students){
+								found=true;
+								
+								for(int hh=h1; hh<h2; hh++){
+									int k;
+									for(k=0; k<ssna->days.count(); k++)
+										if(ssna->days.at(k)==d && ssna->hours.at(k)==hh)
+											break;
+									if(k==ssna->days.count()){
+										ssna->days.append(d);
+										ssna->hours.append(hh);
+									}
+								}
+								
+								assert(ssna->days.count()==ssna->hours.count());
+							}
+						}
+					if(!found){
+						days.clear();
+						hours.clear();
+						for(int hh=h1; hh<h2; hh++){
+							days.append(d);
+							hours.append(hh);
+						}
+					
+						cn=new ConstraintStudentsSetNotAvailableTimes(weightPercentage, students, days, hours);
+
+						//crt_constraint=cn;
+						return cn;
+					}
+					else
+						return NULL;
+}
+
+TimeConstraint* Rules::readStudentsSetNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetNotAvailableTimes");
+					
+					ConstraintStudentsSetNotAvailableTimes* cn=new ConstraintStudentsSetNotAvailableTimes();
+					int nNotAvailableSlots=0;
+					int i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+
+						else if(elem4.tagName()=="Number_of_Not_Available_Times"){
+							nNotAvailableSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of not available times="+QString::number(nNotAvailableSlots)+"\n";
+						}
+
+						else if(elem4.tagName()=="Not_Available_Time"){
+							xmlReadingLog+="    Read: not available time\n";
+							
+							int d=-1;
+							int h=-1;
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Day"){
+									for(d=0; d<this->nDaysPerWeek; d++)
+										if(this->daysOfTheWeek[d]==elem5.text())
+											break;
+
+									if(d>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->students)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+						
+									assert(d<this->nDaysPerWeek);
+									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Hour"){
+									for(h=0; h < this->nHoursPerDay; h++)
+										if(this->hoursOfTheDay[h]==elem5.text())
+											break;
+									
+									if(h>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->students)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+									
+									assert(h>=0 && h < this->nHoursPerDay);
+									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
+								}
+							}
+							i++;
+							
+							cn->days.append(d);
+							cn->hours.append(h);
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					assert(i==cn->days.count() && i==cn->hours.count());
+					assert(i==nNotAvailableSlots);
+					return cn;
+}
+
+TimeConstraint* Rules::readMinNDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintMinNDaysBetweenActivities");
+					
+					ConstraintMinNDaysBetweenActivities* cn=new ConstraintMinNDaysBetweenActivities();
+					bool foundCISD=false;
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - generating weightPercentage=95%\n";
+							cn->weightPercentage=95;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Consecutive_If_Same_Day" || elem4.tagName()=="Adjacent_If_Broken"){
+							if(elem4.text()=="yes" || elem4.text()=="true" || elem4.text()=="1"){
+								cn->consecutiveIfSameDay=true;
+								foundCISD=true;
+								xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint min n days between activities with tag consecutive if same day"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0");
+								cn->consecutiveIfSameDay=false;
+								foundCISD=true;
+								xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
+							}
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=95;
+								cn->consecutiveIfSameDay=true;
+								foundCISD=true;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+								cn->consecutiveIfSameDay=false;
+								foundCISD=true;
+							}
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId[n_act]=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+						else if(elem4.tagName()=="MinDays"){
+							cn->minDays=elem4.text().toInt();
+							xmlReadingLog+="    Read MinDays="+QString::number(cn->minDays)+"\n";
+						}
+					}
+					if(!foundCISD){
+						xmlReadingLog+="    Could not find consecutive if same day information - making it true\n";
+						cn->consecutiveIfSameDay=true;
+					}
+					assert(n_act==cn->n_activities);
+					return cn;
+#if 0&0&0
+					if(0 && reportIncorrectMinNDays && cn->n_activities > this->nDaysPerWeek){
+						QString s=QObject::tr("You have a constraint min n days between activities with more activities than the number of days per week.");
+						s+=" ";
+						s+=QObject::tr("Constraint is:");
+						s+="\n";
+						s+=crt_constraint->getDescription(*this);
+						s+="\n";
+						s+=QObject::tr("This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).");
+			 			s+="\n\n";
+						s+=QObject::tr("To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:");
+			 			s+="\n\n";
+						s+=QObject::tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+			  			 ". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
+						 " (possibly raising the weight of added constraint min n days between activities up to 100%)");
+			 			s+="\n\n";
+
+						s+=QObject::tr("2. If you don't add 'force consecutive if same day', then add a larger activity splitted into a number of"
+						  " activities equal with the number of days per week and the remaining components into other larger splitted activity."
+						  " For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
+						  " first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1"
+						  " (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)");
+						
+					 	int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+													 
+						if(t==0)
+							reportIncorrectMinNDays=false;
+					}
+#endif
+}
+
+TimeConstraint* Rules::readMinGapsBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintMinGapsBetweenActivities");
+					ConstraintMinGapsBetweenActivities* cn=new ConstraintMinGapsBetweenActivities();
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId.append(elem4.text().toInt());
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+						else if(elem4.tagName()=="MinGaps"){
+							cn->minGaps=elem4.text().toInt();
+							xmlReadingLog+="    Read MinGaps="+QString::number(cn->minGaps)+"\n";
+						}
+					}
+					assert(n_act==cn->n_activities);
+					assert(n_act==cn->activitiesId.count());
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesNotOverlapping(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesNotOverlapping");
+					ConstraintActivitiesNotOverlapping* cn=new ConstraintActivitiesNotOverlapping();
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId[n_act]=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+					}
+					assert(n_act==cn->n_activities);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesSameStartingTime(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesSameStartingTime");
+					ConstraintActivitiesSameStartingTime* cn=new ConstraintActivitiesSameStartingTime();
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId[n_act]=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+					}
+					assert(cn->n_activities==n_act);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesSameStartingHour(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesSameStartingHour");
+					ConstraintActivitiesSameStartingHour* cn=new ConstraintActivitiesSameStartingHour();
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId[n_act]=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+					}
+					assert(cn->n_activities==n_act);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesSameStartingDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesSameStartingDay");
+					ConstraintActivitiesSameStartingDay* cn=new ConstraintActivitiesSameStartingDay();
+					int n_act=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId[n_act]=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+					}
+					assert(cn->n_activities==n_act);
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMaxHoursDaily");
+					ConstraintTeachersMaxHoursDaily* cn=new ConstraintTeachersMaxHoursDaily();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Daily"){
+							cn->maxHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMaxHoursDaily");
+					ConstraintTeacherMaxHoursDaily* cn=new ConstraintTeacherMaxHoursDaily();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Daily"){
+							cn->maxHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMaxHoursContinuously");
+					ConstraintTeachersMaxHoursContinuously* cn=new ConstraintTeachersMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMaxHoursContinuously");
+					ConstraintTeacherMaxHoursContinuously* cn=new ConstraintTeacherMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherActivityTagMaxHoursContinuously");
+					ConstraintTeacherActivityTagMaxHoursContinuously* cn=new ConstraintTeacherActivityTagMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersActivityTagMaxHoursContinuously");
+					ConstraintTeachersActivityTagMaxHoursContinuously* cn=new ConstraintTeachersActivityTagMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMinHoursDaily");
+					ConstraintTeachersMinHoursDaily* cn=new ConstraintTeachersMinHoursDaily();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Minimum_Hours_Daily"){
+							cn->minHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMinHoursDaily");
+					ConstraintTeacherMinHoursDaily* cn=new ConstraintTeacherMinHoursDaily();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Minimum_Hours_Daily"){
+							cn->minHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsMaxHoursDaily");
+					ConstraintStudentsMaxHoursDaily* cn=new ConstraintStudentsMaxHoursDaily();
+					cn->maxHoursDaily=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Daily"){
+							cn->maxHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
+						}
+					}
+					assert(cn->maxHoursDaily>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetMaxHoursDaily");
+					ConstraintStudentsSetMaxHoursDaily* cn=new ConstraintStudentsSetMaxHoursDaily();
+					cn->maxHoursDaily=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Daily"){
+							cn->maxHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					assert(cn->maxHoursDaily>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsMaxHoursContinuously");
+					ConstraintStudentsMaxHoursContinuously* cn=new ConstraintStudentsMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetMaxHoursContinuously");
+					ConstraintStudentsSetMaxHoursContinuously* cn=new ConstraintStudentsSetMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetActivityTagMaxHoursContinuously");
+					ConstraintStudentsSetActivityTagMaxHoursContinuously* cn=new ConstraintStudentsSetActivityTagMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsActivityTagMaxHoursContinuously");
+					ConstraintStudentsActivityTagMaxHoursContinuously* cn=new ConstraintStudentsActivityTagMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsMinHoursDaily");
+					ConstraintStudentsMinHoursDaily* cn=new ConstraintStudentsMinHoursDaily();
+					cn->minHoursDaily=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Minimum_Hours_Daily"){
+							cn->minHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
+						}
+					}
+					assert(cn->minHoursDaily>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetMinHoursDaily");
+					ConstraintStudentsSetMinHoursDaily* cn=new ConstraintStudentsSetMinHoursDaily();
+					cn->minHoursDaily=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Minimum_Hours_Daily"){
+							cn->minHoursDaily=elem4.text().toInt();
+							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					assert(cn->minHoursDaily>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivityPreferredTime(const QDomElement& elem3, QString& xmlReadingLog,
+	bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime){
+					assert(elem3.tagName()=="ConstraintActivityPreferredTime");
+				
+					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
+					cn->day = cn->hour = -1;
+					cn->permanentlyLocked=false; //default not locked
+					bool foundLocked=false;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Permanently_Locked"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
+								xmlReadingLog+="    Permanently locked\n";
+								cn->permanentlyLocked=true;
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint activity preferred starting time with tag permanently locked"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
+								xmlReadingLog+="    Not permanently locked\n";
+								cn->permanentlyLocked=false;
+							}
+							foundLocked=true;
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Day"){
+							for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
+								if(this->daysOfTheWeek[cn->day]==elem4.text())
+									break;
+							if(cn->day>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(cn->day<this->nDaysPerWeek);
+							xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Hour"){
+							for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
+								if(this->hoursOfTheDay[cn->hour]==elem4.text())
+									break;
+							if(cn->hour>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
+							xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
+						}
+					}
+					//crt_constraint=cn;
+
+					if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
+						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
+						 " by editing the constraint in the 'Data' menu")+"\n\n"
+						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
+						 " activity preferred starting time has"
+						 " a new tag, 'permanently locked' (true or false)."
+						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
+						 " need to be not modifiable from the 'Timetable' menu"
+						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
+						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
+						 " This way, when viewing the timetable"
+						 " and locking/unlocking some activities, you will not unlock the constraints which"
+						 " need to be locked all the time."
+						 ),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportUnspecifiedPermanentlyLockedTime=false;
+					}
+					
+					if(cn->hour==-1 || cn->day==-1){
+						if(reportUnspecifiedDayOrHourPreferredStartingTime){
+							int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+							 QObject::tr("Found constraint activity preferred starting time, with unspecified day or hour."
+							  " This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
+							  " This change is done in FET versions 5.8.1 and higher."
+							 ),
+							  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+							if(t==0)
+								reportUnspecifiedDayOrHourPreferredStartingTime=false;
+						}
+							
+						ConstraintActivityPreferredStartingTimes* cgood=new ConstraintActivityPreferredStartingTimes();
+						if(cn->day==-1){
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=i;
+								cgood->hours[i]=cn->hour;
+							}
+						}
+						else{
+							assert(cn->hour==-1);
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nHoursPerDay;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=cn->day;
+								cgood->hours[i]=i;
+							}
+						}
+						
+						delete cn;
+						return cgood;
+					}
+					
+					return cn;
+}
+
+TimeConstraint* Rules::readActivityPreferredStartingTime(const QDomElement& elem3, QString& xmlReadingLog,
+	bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime){
+					assert(elem3.tagName()=="ConstraintActivityPreferredStartingTime");
+					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
+					cn->day = cn->hour = -1;
+					cn->permanentlyLocked=false; //default false
+					bool foundLocked=false;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Permanently_Locked"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
+								xmlReadingLog+="    Permanently locked\n";
+								cn->permanentlyLocked=true;
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint activity preferred starting time with tag permanently locked"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
+								xmlReadingLog+="    Not permanently locked\n";
+								cn->permanentlyLocked=false;
+							}
+							foundLocked=true;
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Day"){
+							for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
+								if(this->daysOfTheWeek[cn->day]==elem4.text())
+									break;
+							if(cn->day>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(cn->day<this->nDaysPerWeek);
+							xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Hour"){
+							for(cn->hour=0; cn->hour < this->nHoursPerDay; cn->hour++)
+								if(this->hoursOfTheDay[cn->hour]==elem4.text())
+									break;
+							if(cn->hour>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(cn->activityId)
+								 .arg(elem4.text()));
+								delete cn;
+								cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
+							xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
+						}
+					}
+					//crt_constraint=cn;
+
+					if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
+						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
+						 " by editing the constraint in the 'Data' menu")+"\n\n"
+						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
+						 " activity preferred starting time has"
+						 " a new tag, 'permanently locked' (true or false)."
+						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
+						 " need to be not modifiable from the 'Timetable' menu"
+						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
+						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
+						 " This way, when viewing the timetable"
+						 " and locking/unlocking some activities, you will not unlock the constraints which"
+						 " need to be locked all the time."
+						 ),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportUnspecifiedPermanentlyLockedTime=false;
+					}
+
+					if(cn->hour==-1 || cn->day==-1){
+						if(reportUnspecifiedDayOrHourPreferredStartingTime){
+							int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+							 QObject::tr("Found constraint activity preferred starting time, with unspecified day or hour."
+							  " This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
+							  " This change is done in FET versions 5.8.1 and higher."
+							 ),
+							  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+							if(t==0)
+								reportUnspecifiedDayOrHourPreferredStartingTime=false;
+						}
+							
+						ConstraintActivityPreferredStartingTimes* cgood=new ConstraintActivityPreferredStartingTimes();
+						if(cn->day==-1){
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nDaysPerWeek;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=i;
+								cgood->hours[i]=cn->hour;
+							}
+						}
+						else{
+							assert(cn->hour==-1);
+							cgood->activityId=cn->activityId;
+							cgood->weightPercentage=cn->weightPercentage;
+							cgood->nPreferredStartingTimes=this->nHoursPerDay;
+							for(int i=0; i<cgood->nPreferredStartingTimes; i++){
+								cgood->days[i]=cn->day;
+								cgood->hours[i]=i;
+							}
+						}
+						
+						delete cn;
+						return cgood;
+					}
+					
+					return cn;
+}
+
+TimeConstraint* Rules::readActivityEndsStudentsDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivityEndsStudentsDay");
+					ConstraintActivityEndsStudentsDay* cn=new ConstraintActivityEndsStudentsDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesEndStudentsDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesEndStudentsDay");
+					ConstraintActivitiesEndStudentsDay* cn=new ConstraintActivitiesEndStudentsDay();
+					cn->teacherName="";
+					cn->studentsName="";
+					cn->subjectName="";
+					cn->activityTagName="";
+					
+					//i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::read2ActivitiesConsecutive(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="Constraint2ActivitiesConsecutive");
+					Constraint2ActivitiesConsecutive* cn=new Constraint2ActivitiesConsecutive();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::read2ActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="Constraint2ActivitiesGrouped");
+					Constraint2ActivitiesGrouped* cn=new Constraint2ActivitiesGrouped();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::read2ActivitiesOrdered(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="Constraint2ActivitiesOrdered");
+					Constraint2ActivitiesOrdered* cn=new Constraint2ActivitiesOrdered();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivityPreferredTimes");
+				
+					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
+						cn->days[i] = cn->hours[i] = -1;
+					}
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Times"){
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Time"){
+							xmlReadingLog+="    Read: preferred time\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Day"){
+									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
+										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+											break;
+
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+						
+									assert(cn->days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Hour"){
+									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
+										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+											break;
+									
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+									
+									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->nPreferredStartingTimes);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivityPreferredTimeSlots");
+					ConstraintActivityPreferredTimeSlots* cn=new ConstraintActivityPreferredTimeSlots();
+					cn->p_nPreferredTimeSlots=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS; i++){
+						cn->p_days[i] = cn->p_hours[i] = -1;
+					}
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->p_activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->p_activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
+							cn->p_nPreferredTimeSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Time_Slot"){
+							xmlReadingLog+="    Read: preferred time slot\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Day"){
+									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
+										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+											break;
+
+									if(cn->p_days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->p_activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+						
+									assert(cn->p_days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Hour"){
+									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
+										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+											break;
+									
+									if(cn->p_hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->p_activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+									
+									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->p_nPreferredTimeSlots);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivityPreferredStartingTimes");
+					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES; i++){
+						cn->days[i] = cn->hours[i] = -1;
+					}
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Starting_Time"){
+							xmlReadingLog+="    Read: preferred starting time\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Starting_Day"){
+									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
+										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+											break;
+
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+						
+									assert(cn->days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Starting_Hour"){
+									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
+										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+											break;
+									
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->activityId)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+									
+									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->nPreferredStartingTimes);
+					return cn;
+}
+
+TimeConstraint* Rules::readBreak(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintBreak");
+
+					QList<int> days;
+					QList<int> hours;
+					double weightPercentage=100;
+					int d=-1, h1=-1, h2=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Day"){
+							for(d=0; d<this->nDaysPerWeek; d++)
+								if(this->daysOfTheWeek[d]==elem4.text())
+									break;
+							if(d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint")
+								 .arg(elem4.text()));
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(d<this->nDaysPerWeek);
+							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
+						}
+						else if(elem4.tagName()=="Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint")
+								 .arg(elem4.text()));
+								//cn=NULL;
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
+						}
+						else if(elem4.tagName()=="End_Hour"){
+							for(h2=0; h2 < this->nHoursPerDay; h2++)
+								if(this->hoursOfTheDay[h2]==elem4.text())
+									break;
+							if(h2<=0 || h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint")
+								 .arg(elem4.text()));
+								//goto corruptConstraintTime;
+								return NULL;
+							}
+							assert(h2>0 && h2 <= this->nHoursPerDay);
+							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
+						}
+					}
+					
+					assert(weightPercentage>=0);
+					assert(d>=0 && h1>=0 && h2>=0);
+					
+					ConstraintBreakTimes* cn = NULL;
+					
+					bool found=false;
+					foreach(TimeConstraint* c, this->timeConstraintsList)
+						if(c->type==CONSTRAINT_BREAK_TIMES){
+							ConstraintBreakTimes* tna=(ConstraintBreakTimes*) c;
+							if(true){
+								found=true;
+								
+								for(int hh=h1; hh<h2; hh++){
+									int k;
+									for(k=0; k<tna->days.count(); k++)
+										if(tna->days.at(k)==d && tna->hours.at(k)==hh)
+											break;
+									if(k==tna->days.count()){
+										tna->days.append(d);
+										tna->hours.append(hh);
+									}
+								}
+								
+								assert(tna->days.count()==tna->hours.count());
+							}
+						}
+					if(!found){
+						days.clear();
+						hours.clear();
+						for(int hh=h1; hh<h2; hh++){
+							days.append(d);
+							hours.append(hh);
+						}
+					
+						cn=new ConstraintBreakTimes(weightPercentage, days, hours);
+
+						return cn;
+					}
+					else
+						return NULL;
+}
+
+TimeConstraint* Rules::readBreakTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintBreakTimes");
+					ConstraintBreakTimes* cn=new ConstraintBreakTimes();
+					int nNotAvailableSlots=-1;
+					int i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+
+						else if(elem4.tagName()=="Number_of_Break_Times"){
+							nNotAvailableSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of break times="+QString::number(nNotAvailableSlots)+"\n";
+						}
+
+						else if(elem4.tagName()=="Break_Time"){
+							xmlReadingLog+="    Read: not available time\n";
+							
+							int d=-1;
+							int h=-1;
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Day"){
+									for(d=0; d<this->nDaysPerWeek; d++)
+										if(this->daysOfTheWeek[d]==elem5.text())
+											break;
+
+									if(d>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint")
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+						
+									assert(d<this->nDaysPerWeek);
+									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Hour"){
+									for(h=0; h < this->nHoursPerDay; h++)
+										if(this->hoursOfTheDay[h]==elem5.text())
+											break;
+									
+									if(h>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint")
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+									
+									assert(h>=0 && h < this->nHoursPerDay);
+									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
+								}
+							}
+							i++;
+							
+							cn->days.append(d);
+							cn->hours.append(h);
+						}
+					}
+					assert(i==cn->days.count() && i==cn->hours.count());
+					assert(i==nNotAvailableSlots);
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersNoGaps(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersNoGaps");
+					ConstraintTeachersMaxGapsPerWeek* cn=new ConstraintTeachersMaxGapsPerWeek();
+					cn->maxGaps=0;
+					//ConstraintTeachersNoGaps* cn=new ConstraintTeachersNoGaps();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMaxGapsPerWeek");
+					ConstraintTeachersMaxGapsPerWeek* cn=new ConstraintTeachersMaxGapsPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Gaps"){
+							cn->maxGaps=elem4.text().toInt();
+							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMaxGapsPerWeek");
+					ConstraintTeacherMaxGapsPerWeek* cn=new ConstraintTeacherMaxGapsPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Gaps"){
+							cn->maxGaps=elem4.text().toInt();
+							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMaxGapsPerDay");
+					ConstraintTeachersMaxGapsPerDay* cn=new ConstraintTeachersMaxGapsPerDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Gaps"){
+							cn->maxGaps=elem4.text().toInt();
+							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMaxGapsPerDay");
+					ConstraintTeacherMaxGapsPerDay* cn=new ConstraintTeacherMaxGapsPerDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Gaps"){
+							cn->maxGaps=elem4.text().toInt();
+							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsNoGaps(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsNoGaps");
+
+					ConstraintStudentsMaxGapsPerWeek* cn=new ConstraintStudentsMaxGapsPerWeek();
+					
+					cn->maxGaps=0;
+					
+					//bool compulsory_read=false;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+							//compulsory_read=true;
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetNoGaps(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetNoGaps");
+
+					ConstraintStudentsSetMaxGapsPerWeek* cn=new ConstraintStudentsSetMaxGapsPerWeek();
+					
+					cn->maxGaps=0;
+					
+					//bool compulsory_read=false;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+							//compulsory_read=true;
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsMaxGapsPerWeek");
+					ConstraintStudentsMaxGapsPerWeek* cn=new ConstraintStudentsMaxGapsPerWeek();
+
+					//bool compulsory_read=false;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Gaps"){
+							cn->maxGaps=elem4.text().toInt();
+							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+							//compulsory_read=true;
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetMaxGapsPerWeek");
+					ConstraintStudentsSetMaxGapsPerWeek* cn=new ConstraintStudentsSetMaxGapsPerWeek();
+					
+					//bool compulsory_read=false;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Gaps"){
+							cn->maxGaps=elem4.text().toInt();
+							xmlReadingLog+="    Adding max gaps="+QString::number(cn->maxGaps)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+							//compulsory_read=true;
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsEarly(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsEarly");
+					ConstraintStudentsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour();
+					
+					cn->maxBeginningsAtSecondHour=0;
+					
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsEarlyMaxBeginningsAtSecondHour");
+					ConstraintStudentsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour();
+					cn->maxBeginningsAtSecondHour=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Beginnings_At_Second_Hour"){
+							cn->maxBeginningsAtSecondHour=elem4.text().toInt();
+							xmlReadingLog+="    Adding max beginnings at second hour="+QString::number(cn->maxBeginningsAtSecondHour)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+					}
+					assert(cn->maxBeginningsAtSecondHour>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetEarly(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetEarly");
+					ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour();
+					
+					cn->maxBeginningsAtSecondHour=0;
+					
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour");
+					ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour();
+					cn->maxBeginningsAtSecondHour=-1;					
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Beginnings_At_Second_Hour"){
+							cn->maxBeginningsAtSecondHour=elem4.text().toInt();
+							xmlReadingLog+="    Adding max beginnings at second hour="+QString::number(cn->maxBeginningsAtSecondHour)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					assert(cn->maxBeginningsAtSecondHour>=0);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesPreferredTimes");
+				
+					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
+						cn->days[i] = cn->hours[i] = -1;
+					}
+					cn->teacherName="";
+					cn->studentsName="";
+					cn->subjectName="";
+					cn->activityTagName="";
+					
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Times"){
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Time"){
+							xmlReadingLog+="    Read: preferred time\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Day"){
+									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
+										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+											break;
+											
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Hour"){
+									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
+										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+											break;
+											
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->nPreferredStartingTimes);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesPreferredTimeSlots");
+					ConstraintActivitiesPreferredTimeSlots* cn=new ConstraintActivitiesPreferredTimeSlots();
+					cn->p_nPreferredTimeSlots=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS; i++){
+						cn->p_days[i] = cn->p_hours[i] = -1;
+					}
+					cn->p_teacherName="";
+					cn->p_studentsName="";
+					cn->p_subjectName="";
+					cn->p_activityTagName="";
+					
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->p_teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->p_studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->p_subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->p_activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->p_activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
+							cn->p_nPreferredTimeSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Time_Slot"){
+							xmlReadingLog+="    Read: preferred time slot\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Day"){
+									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
+										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+											break;
+											
+									if(cn->p_days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->p_teacherName)
+										 .arg(cn->p_studentsName)
+										 .arg(cn->p_subjectName)
+										 .arg(cn->p_activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->p_days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Hour"){
+									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
+										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+											break;
+											
+									if(cn->p_hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->p_teacherName)
+										 .arg(cn->p_studentsName)
+										 .arg(cn->p_subjectName)
+										 .arg(cn->p_activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->p_nPreferredTimeSlots);
+					return cn;
+}
+
+TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivitiesPreferredStartingTimes");
+					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES; i++){
+						cn->days[i] = cn->hours[i] = -1;
+					}
+					cn->teacherName="";
+					cn->studentsName="";
+					cn->subjectName="";
+					cn->activityTagName="";
+					
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Starting_Time"){
+							xmlReadingLog+="    Read: preferred starting time\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Starting_Day"){
+									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
+										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+											break;
+											
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Starting_Hour"){
+									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
+										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+											break;
+											
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->nPreferredStartingTimes);
+					return cn;
+}
+
+////////////////
+TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubactivitiesPreferredTimeSlots");
+					ConstraintSubactivitiesPreferredTimeSlots* cn=new ConstraintSubactivitiesPreferredTimeSlots();
+					cn->p_nPreferredTimeSlots=0;
+					cn->componentNumber=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS; i++){
+						cn->p_days[i] = cn->p_hours[i] = -1;
+					}
+					cn->p_teacherName="";
+					cn->p_studentsName="";
+					cn->p_subjectName="";
+					cn->p_activityTagName="";
+					
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Component_Number"){
+							cn->componentNumber=elem4.text().toInt();
+							xmlReadingLog+="    Adding component number="+QString::number(cn->componentNumber)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->p_teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->p_teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->p_studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->p_studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->p_subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->p_subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->p_activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->p_activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->p_activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Time_Slots"){
+							cn->p_nPreferredTimeSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred times="+QString::number(cn->p_nPreferredTimeSlots)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Time_Slot"){
+							xmlReadingLog+="    Read: preferred time slot\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Day"){
+									for(cn->p_days[i]=0; cn->p_days[i]<this->nDaysPerWeek; cn->p_days[i]++)
+										if(this->daysOfTheWeek[cn->p_days[i]]==elem5.text())
+											break;
+											
+									if(cn->p_days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->p_teacherName)
+										 .arg(cn->p_studentsName)
+										 .arg(cn->p_subjectName)
+										 .arg(cn->p_activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->p_days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->p_days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Hour"){
+									for(cn->p_hours[i]=0; cn->p_hours[i] < this->nHoursPerDay; cn->p_hours[i]++)
+										if(this->hoursOfTheDay[cn->p_hours[i]]==elem5.text())
+											break;
+											
+									if(cn->p_hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->p_teacherName)
+										 .arg(cn->p_studentsName)
+										 .arg(cn->p_subjectName)
+										 .arg(cn->p_activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->p_hours[i]>=0 && cn->p_hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->p_nPreferredTimeSlots);
+					return cn;
+}
+
+TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubactivitiesPreferredStartingTimes");
+					ConstraintSubactivitiesPreferredStartingTimes* cn=new ConstraintSubactivitiesPreferredStartingTimes();
+					cn->nPreferredStartingTimes=0;
+					cn->componentNumber=0;
+					int i;
+					for(i=0; i<MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES; i++){
+						cn->days[i] = cn->hours[i] = -1;
+					}
+					cn->teacherName="";
+					cn->studentsName="";
+					cn->subjectName="";
+					cn->activityTagName="";
+					
+					i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Component_Number"){
+							cn->componentNumber=elem4.text().toInt();
+							xmlReadingLog+="    Adding component number="+QString::number(cn->componentNumber)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Students_Name"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Name"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject name="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag_Name"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Starting_Times"){
+							cn->nPreferredStartingTimes=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred starting times="+QString::number(cn->nPreferredStartingTimes)+"\n";
+						}
+						else if(elem4.tagName()=="Preferred_Starting_Time"){
+							xmlReadingLog+="    Read: preferred starting time\n";
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Preferred_Starting_Day"){
+									for(cn->days[i]=0; cn->days[i]<this->nDaysPerWeek; cn->days[i]++)
+										if(this->daysOfTheWeek[cn->days[i]]==elem5.text())
+											break;
+											
+									if(cn->days[i]>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->days[i]<this->nDaysPerWeek);
+									xmlReadingLog+="    Preferred starting day="+this->daysOfTheWeek[cn->days[i]]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Preferred_Starting_Hour"){
+									for(cn->hours[i]=0; cn->hours[i] < this->nHoursPerDay; cn->hours[i]++)
+										if(this->hoursOfTheDay[cn->hours[i]]==elem5.text())
+											break;
+											
+									if(cn->hours[i]>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
+										 .arg(cn->teacherName)
+										 .arg(cn->studentsName)
+										 .arg(cn->subjectName)
+										 .arg(cn->activityTagName)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintTime;
+										return NULL;
+									}
+											
+									assert(cn->hours[i]>=0 && cn->hours[i] < this->nHoursPerDay);
+									xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours[i]]+"\n";
+								}
+							}
+
+							i++;
+						}
+					}
+					assert(i==cn->nPreferredStartingTimes);
+					return cn;
+}
+////////////////
+
+
+///space constraints reading routines
+SpaceConstraint* Rules::readBasicCompulsorySpace(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintBasicCompulsorySpace");
+					ConstraintBasicCompulsorySpace* cn=new ConstraintBasicCompulsorySpace();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
+							cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								cn->compulsory=true;
+								xmlReadingLog+="    Current constraint is compulsory\n";
+							}
+							else{
+								cn->compulsory=false;
+								xmlReadingLog+="    Current constraint is not compulsory\n";
+							}
+						}*/
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readRoomNotAvailable(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintRoomNotAvailable");
+
+					QList<int> days;
+					QList<int> hours;
+					QString room;
+					double weightPercentage=100;
+					int d=-1, h1=-1, h2=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Day"){
+							for(d=0; d<this->nDaysPerWeek; d++)
+								if(this->daysOfTheWeek[d]==elem4.text())
+									break;
+							if(d>=this->nDaysPerWeek){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
+								 .arg(room)
+								 .arg(elem4.text()));
+								//cn=NULL;
+								//goto corruptConstraintSpace;
+								return NULL;
+							}
+							assert(d<this->nDaysPerWeek);
+							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
+						}
+						else if(elem4.tagName()=="Start_Hour"){
+							for(h1=0; h1 < this->nHoursPerDay; h1++)
+								if(this->hoursOfTheDay[h1]==elem4.text())
+									break;
+							if(h1>=this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(room)
+								 .arg(elem4.text()));
+								//cn=NULL;
+								//goto corruptConstraintSpace;
+								return NULL;
+							}
+							assert(h1>=0 && h1 < this->nHoursPerDay);
+							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
+						}
+						else if(elem4.tagName()=="End_Hour"){
+							for(h2=0; h2 < this->nHoursPerDay; h2++)
+								if(this->hoursOfTheDay[h2]==elem4.text())
+									break;
+							if(h2<=0 || h2>this->nHoursPerDay){
+								QMessageBox::information(NULL, QObject::tr("FET information"), 
+								 QObject::tr("Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
+								 .arg(room)
+								 .arg(elem4.text()));
+								//goto corruptConstraintSpace;
+								return NULL;
+							}
+							assert(h2>0 && h2 <= this->nHoursPerDay);
+							xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
+						}
+						else if(elem4.tagName()=="Room_Name"){
+							room=elem4.text();
+							xmlReadingLog+="    Read room name="+room+"\n";
+						}
+					}
+					
+					assert(weightPercentage>=0);
+					assert(d>=0 && h1>=0 && h2>=0);
+					
+					ConstraintRoomNotAvailableTimes* cn = NULL;
+					
+					bool found=false;
+					foreach(SpaceConstraint* c, this->spaceConstraintsList)
+						if(c->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
+							ConstraintRoomNotAvailableTimes* tna=(ConstraintRoomNotAvailableTimes*) c;
+							if(tna->room==room){
+								found=true;
+								
+								for(int hh=h1; hh<h2; hh++){
+									int k;
+									for(k=0; k<tna->days.count(); k++)
+										if(tna->days.at(k)==d && tna->hours.at(k)==hh)
+											break;
+									if(k==tna->days.count()){
+										tna->days.append(d);
+										tna->hours.append(hh);
+									}
+								}
+								
+								assert(tna->days.count()==tna->hours.count());
+							}
+						}
+					if(!found){
+						days.clear();
+						hours.clear();
+						for(int hh=h1; hh<h2; hh++){
+							days.append(d);
+							hours.append(hh);
+						}
+					
+						cn=new ConstraintRoomNotAvailableTimes(weightPercentage, room, days, hours);
+
+						return cn;
+					}
+					else
+						return NULL;
+}
+
+SpaceConstraint* Rules::readRoomNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintRoomNotAvailableTimes");
+					ConstraintRoomNotAvailableTimes* cn=new ConstraintRoomNotAvailableTimes();
+					int nNotAvailableSlots=-1;
+					int i=0;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Read weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+
+						else if(elem4.tagName()=="Number_of_Not_Available_Times"){
+							nNotAvailableSlots=elem4.text().toInt();
+							xmlReadingLog+="    Read number of not available times="+QString::number(nNotAvailableSlots)+"\n";
+						}
+
+						else if(elem4.tagName()=="Not_Available_Time"){
+							xmlReadingLog+="    Read: not available time\n";
+							
+							int d=-1;
+							int h=-1;
+
+							for(QDomNode node5=elem4.firstChild(); !node5.isNull(); node5=node5.nextSibling()){
+								QDomElement elem5=node5.toElement();
+								if(elem5.isNull()){
+									xmlReadingLog+="    Null node here\n";
+									continue;
+								}
+								xmlReadingLog+="    Found "+elem5.tagName()+" tag\n";
+								if(elem5.tagName()=="Day"){
+									for(d=0; d<this->nDaysPerWeek; d++)
+										if(this->daysOfTheWeek[d]==elem5.text())
+											break;
+
+									if(d>=this->nDaysPerWeek){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
+										 .arg(cn->room)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										return NULL;
+										//goto corruptConstraintSpace;
+									}
+						
+									assert(d<this->nDaysPerWeek);
+									xmlReadingLog+="    Day="+this->daysOfTheWeek[d]+"("+QString::number(i)+")"+"\n";
+								}
+								else if(elem5.tagName()=="Hour"){
+									for(h=0; h < this->nHoursPerDay; h++)
+										if(this->hoursOfTheDay[h]==elem5.text())
+											break;
+									
+									if(h>=this->nHoursPerDay){
+										QMessageBox::information(NULL, QObject::tr("FET information"), 
+										 QObject::tr("Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
+										 .arg(cn->room)
+										 .arg(elem5.text()));
+										delete cn;
+										cn=NULL;
+										//goto corruptConstraintSpace;
+										return NULL;
+									}
+									
+									assert(h>=0 && h < this->nHoursPerDay);
+									xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
+								}
+							}
+							i++;
+							
+							cn->days.append(d);
+							cn->hours.append(h);
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->room=elem4.text();
+							xmlReadingLog+="    Read room name="+cn->room+"\n";
+						}
+					}
+					assert(i==cn->days.count() && i==cn->hours.count());
+					assert(i==nNotAvailableSlots);
+					return cn;
+}
+
+SpaceConstraint* Rules::readActivityPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog,
+	bool& reportUnspecifiedPermanentlyLockedSpace){
+					assert(elem3.tagName()=="ConstraintActivityPreferredRoom");
+					ConstraintActivityPreferredRoom* cn=new ConstraintActivityPreferredRoom();
+					cn->permanentlyLocked=false; //default
+					bool foundLocked=false;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Permanently_Locked"){
+							if(elem4.text()=="true" || elem4.text()=="1" || elem4.text()=="yes"){
+								xmlReadingLog+="    Permanently locked\n";
+								cn->permanentlyLocked=true;
+							}
+							else{
+								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
+									QMessageBox::warning(NULL, QObject::tr("FET warning"),
+									 QObject::tr("Found constraint activity preferred room with tag permanently locked"
+									 " which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+									 " The tag will be considered false",
+									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+								}
+								//assert(elem4.text()=="false" || elem4.text()=="0" || elem4.text()=="no");
+								xmlReadingLog+="    Not permanently locked\n";
+								cn->permanentlyLocked=false;
+							}
+							foundLocked=true;
+						}
+
+						/*if(elem4.tagName()=="Weight"){
+							cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								cn->compulsory=true;
+								xmlReadingLog+="    Current constraint is compulsory\n";
+							}
+							else{
+								cn->compulsory=false;
+								xmlReadingLog+="    Current constraint is not compulsory\n";
+							}
+						}*/
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					if(!foundLocked && reportUnspecifiedPermanentlyLockedSpace){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Found constraint activity preferred room, with unspecified tag"
+						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
+						 " by editing the constraint in the 'Data' menu")+"\n\n"
+						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
+						 " activity preferred room has"
+						 " a new tag, 'permanently locked' (true or false)."
+						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
+						 " need to be not modifiable from the 'Timetable' menu"
+						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
+						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
+						 " This way, when viewing the timetable"
+						 " and locking/unlocking some activities, you will not unlock the constraints which"
+						 " need to be locked all the time."
+						 ),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportUnspecifiedPermanentlyLockedSpace=false;
+					}
+
+					return cn;
+}
+
+SpaceConstraint* Rules::readActivityPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivityPreferredRooms");
+					int _n_preferred_rooms=0;
+					ConstraintActivityPreferredRooms* cn=new ConstraintActivityPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						/*if(elem4.tagName()=="Weight"){
+							cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								cn->compulsory=true;
+								xmlReadingLog+="    Current constraint is compulsory\n";
+							}
+							else{
+								cn->compulsory=false;
+								xmlReadingLog+="    Current constraint is not compulsory\n";
+							}
+						}*/
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activityId=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					return cn;
+}
+
+SpaceConstraint* Rules::readSubjectPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubjectPreferredRoom");
+					ConstraintSubjectPreferredRoom* cn=new ConstraintSubjectPreferredRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readSubjectPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubjectPreferredRooms");
+					int _n_preferred_rooms=0;
+					ConstraintSubjectPreferredRooms* cn=new ConstraintSubjectPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					return cn;
+}
+
+SpaceConstraint* Rules::readSubjectSubjectTagPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRoom");
+					ConstraintSubjectActivityTagPreferredRoom* cn=new ConstraintSubjectActivityTagPreferredRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRooms");
+					int _n_preferred_rooms=0;
+					ConstraintSubjectActivityTagPreferredRooms* cn=new ConstraintSubjectActivityTagPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Subject_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					return cn;
+}
+
+SpaceConstraint* Rules::readSubjectActivityTagPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubjectActivityTagPreferredRoom");
+					ConstraintSubjectActivityTagPreferredRoom* cn=new ConstraintSubjectActivityTagPreferredRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintSubjectActivityTagPreferredRooms");
+					int _n_preferred_rooms=0;
+					ConstraintSubjectActivityTagPreferredRooms* cn=new ConstraintSubjectActivityTagPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Subject"){
+							cn->subjectName=elem4.text();
+							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					return cn;
+}
+
+SpaceConstraint* Rules::readActivityTagPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+					//added 6 apr 2009
+					assert(elem3.tagName()=="ConstraintActivityTagPreferredRoom");
+					ConstraintActivityTagPreferredRoom* cn=new ConstraintActivityTagPreferredRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readActivityTagPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintActivityTagPreferredRooms");
+					int _n_preferred_rooms=0;
+					ConstraintActivityTagPreferredRooms* cn=new ConstraintActivityTagPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsSetHomeRoom(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetHomeRoom");
+					ConstraintStudentsSetHomeRoom* cn=new ConstraintStudentsSetHomeRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsSetHomeRooms(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetHomeRooms");
+					int _n_preferred_rooms=0;
+					ConstraintStudentsSetHomeRooms* cn=new ConstraintStudentsSetHomeRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeacherHomeRoom(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherHomeRoom");
+					ConstraintTeacherHomeRoom* cn=new ConstraintTeacherHomeRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeacherHomeRooms(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherHomeRooms");
+					int _n_preferred_rooms=0;
+					ConstraintTeacherHomeRooms* cn=new ConstraintTeacherHomeRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMaxBuildingChangesPerDay");
+					ConstraintTeacherMaxBuildingChangesPerDay* cn=new ConstraintTeacherMaxBuildingChangesPerDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
+							cn->maxBuildingChangesPerDay=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMaxBuildingChangesPerDay");
+					ConstraintTeachersMaxBuildingChangesPerDay* cn=new ConstraintTeachersMaxBuildingChangesPerDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
+							cn->maxBuildingChangesPerDay=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMaxBuildingChangesPerWeek");
+					ConstraintTeacherMaxBuildingChangesPerWeek* cn=new ConstraintTeacherMaxBuildingChangesPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
+							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMaxBuildingChangesPerWeek");
+					ConstraintTeachersMaxBuildingChangesPerWeek* cn=new ConstraintTeachersMaxBuildingChangesPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
+							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeacherMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeacherMinGapsBetweenBuildingChanges");
+					ConstraintTeacherMinGapsBetweenBuildingChanges* cn=new ConstraintTeacherMinGapsBetweenBuildingChanges();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
+							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
+							xmlReadingLog+="    Min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readTeachersMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintTeachersMinGapsBetweenBuildingChanges");
+					ConstraintTeachersMinGapsBetweenBuildingChanges* cn=new ConstraintTeachersMinGapsBetweenBuildingChanges();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
+							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
+							xmlReadingLog+="    Min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetMaxBuildingChangesPerDay");
+					ConstraintStudentsSetMaxBuildingChangesPerDay* cn=new ConstraintStudentsSetMaxBuildingChangesPerDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
+							cn->maxBuildingChangesPerDay=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsMaxBuildingChangesPerDay");
+					ConstraintStudentsMaxBuildingChangesPerDay* cn=new ConstraintStudentsMaxBuildingChangesPerDay();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Day"){
+							cn->maxBuildingChangesPerDay=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per day="+QString::number(cn->maxBuildingChangesPerDay)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetMaxBuildingChangesPerWeek");
+					ConstraintStudentsSetMaxBuildingChangesPerWeek* cn=new ConstraintStudentsSetMaxBuildingChangesPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
+							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsMaxBuildingChangesPerWeek");
+					ConstraintStudentsMaxBuildingChangesPerWeek* cn=new ConstraintStudentsMaxBuildingChangesPerWeek();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Max_Building_Changes_Per_Week"){
+							cn->maxBuildingChangesPerWeek=elem4.text().toInt();
+							xmlReadingLog+="    Max. building changes per week="+QString::number(cn->maxBuildingChangesPerWeek)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsSetMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsSetMinGapsBetweenBuildingChanges");
+					ConstraintStudentsSetMinGapsBetweenBuildingChanges* cn=new ConstraintStudentsSetMinGapsBetweenBuildingChanges();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->studentsName=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->studentsName+"\n";
+						}
+						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
+							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
+							xmlReadingLog+="    min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
+						}
+					}
+					return cn;
+}
+
+SpaceConstraint* Rules::readStudentsMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintStudentsMinGapsBetweenBuildingChanges");
+					ConstraintStudentsMinGapsBetweenBuildingChanges* cn=new ConstraintStudentsMinGapsBetweenBuildingChanges();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Min_Gaps_Between_Building_Changes"){
+							cn->minGapsBetweenBuildingChanges=elem4.text().toInt();
+							xmlReadingLog+="    min gaps between building changes="+QString::number(cn->minGapsBetweenBuildingChanges)+"\n";
+						}
+					}
+					return cn;
 }

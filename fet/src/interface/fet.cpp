@@ -190,15 +190,27 @@ void setLanguage(QApplication& qapplication)
 	
 	bool translation_loaded=false;
 	
+	//this is one place (out of 2) in which you need to add a new language
 	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="ca" || FET_LANGUAGE=="de" || FET_LANGUAGE=="es" || FET_LANGUAGE=="el" || FET_LANGUAGE=="fr"
 	 || FET_LANGUAGE=="hu" || FET_LANGUAGE=="mk" || FET_LANGUAGE=="ms" || FET_LANGUAGE=="nl" || FET_LANGUAGE=="pl" || FET_LANGUAGE=="ro"
-	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it" || FET_LANGUAGE=="lt"){
+	 || FET_LANGUAGE=="tr" || FET_LANGUAGE=="id" || FET_LANGUAGE=="it" || FET_LANGUAGE=="lt"
+	 || FET_LANGUAGE=="ru" || FET_LANGUAGE=="fa"){
+	 /*
 		if(d.exists())
 			translation_loaded=translator.load("fet_"+FET_LANGUAGE, "/usr/share/fet/translations");
 		if(!d.exists() || !translation_loaded){
 			translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath()+"/translations");
 			if(!translation_loaded)
 				translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath());
+		}*/
+		translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath());
+		if(!translation_loaded){
+			translation_loaded=translator.load("fet_"+FET_LANGUAGE, qapplication.applicationDirPath()+"/translations");
+			if(!translation_loaded){
+				if(d.exists()){
+					translation_loaded=translator.load("fet_"+FET_LANGUAGE, "/usr/share/fet/translations");
+				}
+			}
 		}
 	}
 	else{
@@ -217,11 +229,11 @@ void setLanguage(QApplication& qapplication)
 		QMessageBox::warning(NULL, QObject::tr("FET warning"), 
 		 QObject::tr("Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)")
 		+"\n\n"+
-		QObject::tr("FET searched for translation file %1 in directories %2 (on UNIX like systems), %3 and %4 and could not find it.")
+		QObject::tr("FET searched for translation file %1 in directories %2 and %3 (and %4 under UNIX like systems), but could not find it.")
 		 .arg("fet_"+FET_LANGUAGE+".qm")
+		 .arg(QDir::toNativeSeparators(qapplication.applicationDirPath()))
+		 .arg(QDir::toNativeSeparators(qapplication.applicationDirPath()+"/translations"))
 		 .arg("/usr/share/fet/translations")
-		 .arg(qapplication.applicationDirPath()+"/translations")
-		 .arg(qapplication.applicationDirPath())
 		 );
 		FET_LANGUAGE="en_GB";
 	}

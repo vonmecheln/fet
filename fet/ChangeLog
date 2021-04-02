@@ -1351,4 +1351,16 @@ Versions 5.9.0 - 5.9.x
 	- Improvements and corrections in the import filter.
 - Version 5.9.3
 	- Added constraint activity tag preferred room(s) - suggested by Horatiu Halmajan and Catalin Maican
+- Version 5.9.4
+	- Added the Russian translation (incomplete) - by Ilya V. Paramonov
+	- Added the Persian translation (incomplete) - by Hamed SadeghiNeshat
+	- Minor bug fix by Volker Dirr - highlighting the same teacher or student set, for html level >= 5, did not work
+	correctly for advanced statistics export.
+	- Improved compilation time and memory consumption by modifying the data reading and parsing routines
+	(additional checking/tests needed here).
+	- Minor memory leak fix (normally, not noticeable).
+	- Minor interface bug fix (description of constraint teacher max gaps per day displayed incorrectly information about the
+	gaps, writing "per week" instead of "per day").
+	- Modified the order of search for translation files (firstly in current directory, then in current directory/translations,
+	then, under Unix-like, in /usr/share/fet/translations).
 	

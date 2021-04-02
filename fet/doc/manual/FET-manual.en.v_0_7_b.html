@@ -74,7 +74,7 @@
 -->
   <body id="id_0">
     <p style="font-size:400%; text-align:center;">FET Manual</p>
-    <p style="text-align:center;"><strong>Version 0.7a</strong><br />last modified 10.01.2009</p>
+    <p style="text-align:center;"><strong>Version 0.7b</strong><br />last modified 10.05.2009</p>
     <p style="font-size:75%; text-align:center;">FET written by Liviu Lalescu<br />http://www.lalescu.ro/liviu/</p>
     <p style="font-size:75%; text-align:center;">Manual written by Volker Dirr<br />http://www.timetabling.de/</p>
     <p style="font-size:75%; text-align:center;">FET Homepage<br />http://www.lalescu.ro/liviu/fet/</p>
@@ -514,7 +514,7 @@ TODO: command line using FET
       Also these names are printed into the timetable. So use short cuts to get smaller timetables.
     </p>
     <p class="definition" id="id_34">
-      A activity tag is an optional information to an activity.
+      An activity tag is an optional information to an activity.
     </p>
     <p>
       Activity tags are for example <em>lecture</em> (<em>reading</em>), <em>exercise</em> or <em>laboratory</em>.
@@ -527,9 +527,8 @@ TODO: command line using FET
       Before using activity tags please read whole chapter <a href="#id_16">Constraints</a> and very carefully section <a href="#id_26">preferred time(s)</a>.
     </div>
     <p class="waning">
-      Think at least twice before using activity tags. I recommend to use activity tags only to set constraints.
-      Try to set constraint as long as (easily) possible without an activity tag.
-      Activity tags are very powerful, but every activity has only one tag.
+      Think twice before using activity tags. I recommend to use activity tags only to set constraints.
+      First of all try to set constraints without a activity tags, because it will be easier.
     </p>
 
     <p>
@@ -629,7 +628,7 @@ TODO: command line using FET
     </div>
     <p class="warning">
       Be careful if you have a (nearly) 100% filled timetable.
-      This activities are scheduled simultaneously if the timetable is 100% filled.
+      These activities are necessarily scheduled simultaneously if pupils of these activities have no unused period in their timetable.
       So if you do the activity planing you have to be sure that the timetable is solvable.
       In this example the duration of a course is 4+1+2=7.
       So it's impossible that all physics activities are instructed by the same teacher because physics has total duration 2+2+4=8.
@@ -659,7 +658,7 @@ TODO: command line using FET
       The students have different religions in the same classes. So they have religion in courses.
     </div>
     <div class="answer">
-      If there is only one subject, then it the easiest (and in (nearly) 100% filled timetables the only possible solution) to scheduled all at the same time.
+      If there is only one subject, then it the easiest (and if pupils have no unused period in their table it is the only possible solution) to scheduled all at the same time.
       There are several possibilities to do it
        (compare <a href="#id_15">Add an activity</a> and constraint <a href="#id_27">A set of activities has same starting time (day+hour)</a>).
       In most cases you just add the subject <em>religion</em>.
@@ -673,7 +672,8 @@ TODO: command line using FET
     <p class="warning">
       Maybe you know that (by accident) no students is in Group 10A and 10Bio at the same time.
       You can delete the corresponding subgroups. You maybe get better timetables by this.
-      But you need to do it only if your timetable is not 100% filled. Be careful!
+      But you need to do it only if pupils have unused periods in their timetable.
+      Be careful!
       This also mean you (maybe) cannot put a students with group 10Bio into 10A later.
       You maybe get new students (because parents moved house). So I highly don't recommend this!
     </p>
@@ -703,7 +703,7 @@ TODO: command line using FET
       An activity contain normally a subject, a student set, a teacher and a duration.
     </div>
     <div class="answer">
-      It can also contain an activity tag, more student sets or more teachers.
+      It can also contain activity tags, more student sets or more teachers.
       It can be splitted into several (sub)-activities.
       Also pseudo activities are possible. (They don't have any teacher or student)
     </div>
@@ -798,7 +798,7 @@ TODO: command line using FET
       Subject religion is instructed 2 periods per week.
       It should be instructed on different days.
       Maybe religion is a course of the 4th category (compare section <a href="#id_12">Years, groups and subgroups</a>) and you don't want to add that category manually,
-       or you was to lazy to add an other category or your timetable is (nearly) 100% filled, so it's clear that this activities must be simultaneously.
+       or you was to lazy to add an other category or pupils have no unused period in their timetable, so it's clear that these activities must be simultaneously.
     </div>
     <div class="answer">
       If you don't have room problems you can add all religion teachers, the year (you can also add all groups, but that will flood the printed timetable with too much information) and the subject.
@@ -807,9 +807,9 @@ TODO: command line using FET
       They just differ in the visual printed timetable.<br />
       Variant 1: The sweetest timetables are printed if you add a new category. And add activities like always.<br />
       Variant 2: Add "all" activities just as one activity (like without room problems),
-      add as many pseudo activities (without a teacher and room) as rooms are needed and add constraint <a href="#id_27">Same starting time</a> to this activities.<br />
+      add as many pseudo activities (without a teacher and room) as rooms are needed and add constraint <a href="#id_27">Same starting time</a> to these activities.<br />
       Variant 3: Add several activities. Each activity contain a teacher and one group.
-      Add constraint <a href="#id_27">Same starting time</a> to this activities.
+      Add constraint <a href="#id_27">Same starting time</a> to these activities.
       If you have more teachers then groups, then one or more teachers don't have a group in their activity.
       If you have more groups then teachers, then one or more groups don't have a teacher in their group.
     </div>
@@ -909,9 +909,9 @@ TODO: command line using FET
       But consider that only one room is reserved. So just use this if you have no room problems.<br />
       The next two variants should be used if you have room problems. They doesn't differ in the timetable solution.
       They just differ in the visual printed timetable.<br />
-      Variant 2: Add two activities and add constraint <a href="#id_27">Same starting time</a> to this activities.
+      Variant 2: Add two activities and add constraint <a href="#id_27">Same starting time</a> to these activities.
       Variant 3: Add "both" activities just as one activity (like variant 1),
-      add a pseudo activity (with no teacher and no room) and add constraint <a href="#id_27">Same starting time</a> to this activities.<br />
+      add a pseudo activity (with no teacher and no room) and add constraint <a href="#id_27">Same starting time</a> to these activities.<br />
       Variant 3: Add four different activities for this.
       This will effect that four different periods are needed! So in many cases this is not recommended.
       Especially if you have room problems.
@@ -952,7 +952,7 @@ TODO: command line using FET
     <p></p>
     <div class="example">
       An activity is splitted into 4 activities per week.
-      Only one of this activities should be instructed by two (or more) teachers.
+      Only one of these activities should be instructed by two (or more) teachers.
     </div>
     <div class="answer">
       There are two variants that differ only in the visual output.<br />
@@ -1004,7 +1004,7 @@ TODO: command line using FET
     </div>
     <div class="answer">
       So just add needed constraint.
-      For example if your timetable is (nearly) 100% filled you (maybe) don't need to add constraints like min or max periods per day.
+      For example if teachers/pupils have (nearly) no unused period in their timetable you (maybe) don't need to add constraints like min or max periods per day.
     </div>
     <p></p>
     <div class="hint">
@@ -1167,7 +1167,7 @@ TODO: command line using FET
       </tr>
     </table>
     <div class="warning">
-      Be careful if you have a (nearly) 100% filled timetable.
+      Be careful if pupils have (nearly) no unused period in their timetable.
       Timetables might became impossible to solve, because in 100% filled timetables activities of the same courses (category) are scheduled simultaneously.
     </div>
     <div class="answer">
@@ -1497,7 +1497,7 @@ TODO: command line using FET
     </p>
     <div class="example">
       The school offer remedial education to the students of an year. So not every students need to visit this activity.
-      But you don't want to add a new <a href="#id_12">category</a>, because you are to lazy or your timetable is (nearly) 100% filled.
+      But you don't want to add a new <a href="#id_12">category</a>, because you are to lazy or pupils have (nearly) no unused period in their timetable.
     </div>
     <div class="answer">
       There are two variants:<br />
@@ -1522,13 +1522,13 @@ TODO: command line using FET
       <em>Time constraints (activities)</em> &rarr; <em>2 activities are consecutive</em>
     </p>
     <p>
-      Constraint consecutive mean that this activities are scheduled at the same day without any gap, break or an other activity between them.
+      Constraint consecutive mean that these activities are scheduled at the same day without any gap, break or an other activity between them.
     </p>
     <div class="example">
       Students have subjects mathematics listening first and directly after this activity they should have mathematics practise by an other teacher.
     </div>
     <div class="answer">
-      Add constraint <em>2 activities are consecutive</em> to this activities.
+      Add constraint <em>2 activities are consecutive</em> to these activities.
     </div>
     <p></p>
 
@@ -1547,7 +1547,7 @@ TODO: command line using FET
       Students have subjects mathematics listening and mathematics practise. Of listening should be before practise.
     </div>
     <div class="answer">
-      Add constraint <em>2 activities are ordered</em> to this activities. So if listining is on Wendesday 3th period, then practise will be later in that week.
+      Add constraint <em>2 activities are ordered</em> to these activities. So if listining is on Wendesday 3th period, then practise will be later in that week.
     </div>
     <p class="warning">
       Be careful with this constraint, because it is very restrict the timetable very much.
@@ -1607,7 +1607,6 @@ TODO: command line using FET
       Preferred times are very powerful and fundamental constraints, you can nearly do everything with them.
       Especially constraint <em>A set of (sub)-activities has a set of preferred times</em> is very helpful (compare next example).
       It can care about activities with the same teacher, the same students, the same subject or the same activity tag.
-      But don't forget, every activity has only one activity tag!
     </p>
     <table class="example" border="1">
       <tr>
@@ -1729,7 +1728,7 @@ TODO: command line using FET
       Students have subjects mathematics listening first and directly after this activity they should have mathematics practise by an other teacher.
     </div>
     <div class="answer">
-      Add constraint <em>2 activities are consecutive</em> to this activities.
+      Add constraint <em>2 activities are consecutive</em> to these activities.
     </div>
     <p></p>
 
@@ -1904,7 +1903,7 @@ TODO: command line using FET
     <p></p>
     <div class="example">
       An activity is splitted into 4 activities per week.
-      Only one of this activities need the computer lab and not the home room.
+      Only one of these activities need the computer lab and not the home room.
     </div>
     <div class="answer">
 <!--      There are several variants. The first two one differ only in the visual output.<br />
@@ -1912,7 +1911,7 @@ TODO: command line using FET
 <!--      Variant 2: You should add an activity with the group, one teacher and split it into only 3 activities.
       Add a second activity with the group and both teacher.
       Add this activity to the already existing min n days constraint.
-      Care about correct room constraints of this activities.
+      Care about correct room constraints of these activities.
       The exact way depend on your special way of added room constraint. -->
     </div>
     <p></p>

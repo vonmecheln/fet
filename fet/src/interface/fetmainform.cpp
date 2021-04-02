@@ -2521,6 +2521,7 @@ void FetMainForm::on_languageAction_activated()
 		tr("Lithuanian"), tr("Macedonian"), tr("Malay"), tr("Dutch"), tr("Polish"),
 		tr("Romanian"), tr("Turkish")};*/
 		
+	//this is the other place (out of 2) in which you need to add a new language
 	QMap<QString, QString> languagesMap;
 	languagesMap.insert("en_GB", tr("British English"));
 	languagesMap.insert("ar", tr("Arabic"));
@@ -2539,6 +2540,8 @@ void FetMainForm::on_languageAction_activated()
 	languagesMap.insert("pl", tr("Polish"));
 	languagesMap.insert("ro", tr("Romanian"));
 	languagesMap.insert("tr", tr("Turkish"));
+	languagesMap.insert("ru", tr("Russian"));
+	languagesMap.insert("fa", tr("Persian"));
 	
 	//assert(languagesMap.count()==N_LANGUAGES);
 	

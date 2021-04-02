@@ -4117,7 +4117,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teachers max gaps per week");s+="\n";
 	s+=QObject::tr("(breaks and teacher not available not counted)");s+="\n";
-	s+=QObject::tr("Max gaps per week:%1").arg(this->maxGaps); s+="\n";
+	s+=QObject::tr("Max gaps per week: %1").arg(this->maxGaps); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 
@@ -4519,7 +4519,7 @@ QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r){
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teachers max gaps per day");s+="\n";
 	s+=QObject::tr("(breaks and teacher not available not counted)");s+="\n";
-	s+=QObject::tr("Max gaps per day:%1").arg(this->maxGaps); s+="\n";
+	s+=QObject::tr("Max gaps per day: %1").arg(this->maxGaps); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 
@@ -4709,7 +4709,7 @@ QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r){
 	s+=QObject::tr("Teacher max gaps per day"); s+="\n";
 	s+=QObject::tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=QObject::tr("Teacher: %1").arg(this->teacherName); s+="\n";
-	s+=QObject::tr("Max gaps per week: %1").arg(this->maxGaps); s+="\n";
+	s+=QObject::tr("Max gaps per day: %1").arg(this->maxGaps); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage); s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 

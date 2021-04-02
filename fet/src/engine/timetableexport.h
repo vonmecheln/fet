@@ -28,35 +28,22 @@ public:
 	TimetableExport();
 	~TimetableExport();
 
-
 	static void getStudentsTimetable(Solution& c);
-
 	static void getTeachersTimetable(Solution& c);
-
 	static void getRoomsTimetable(Solution& c);
 
-
 	static void writeSimulationResults();
-
 	static void writeSimulationResults(int n); //write in a directory with number n (for multiple generation)
-	
 	static void writeSimulationResultsCommandLine();
 	
 	static void writeTimetableDataFile(const QString& filename);
 
-	//this function must be called before export html files (also statistics), because it compute the IDs
-	static void computeHashForIDs();
 private:
-	//the following functions return QStrings, because they are 'only' subfunctions to the writeXxxHtml functions
-	static QString writeHead(const bool java, const int placedActivities, const bool printInstitution);
-	static QString writeTOCDays(const bool detailed);
-	static QString writeStartTagTDofActivities(const Activity* act, const bool detailed, const bool colspan, const bool rowspan);
-	static QString writeSubjectAndActivityTags(const Activity* act, const QString startTag, const QString startTagAttribute, const bool activityTagsOnly);
-	static QString writeStudents(const Activity* act, const QString startTag, const QString startTagAttribute);
-	static QString writeTeachers(const Activity* act, const QString startTag, const QString startTagAttribute);
-	static QString writeRoom(const int ai, const QString startTag, const QString startTagAttribute);
-	static QString writeNotAvailable(const QString weight);
-	static QString writeEmpty();
+	//this function must be called before export html files, because it compute the IDs
+	static void computeHashForIDsTimetable();
+
+	//this function must be called before export html files, because it is needed for the allActivities tables
+	static void computeActivitiesAtTime();
 
 	//the following functions write the conflicts text and the xml files
 	static void writeSubgroupsTimetableXml(const QString& xmlfilename);
@@ -111,6 +98,24 @@ private:
 	static void writeSubjectsTimetableTimeVerticalDailyHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 	static void writeTeachersFreePeriodsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 	static void writeTeachersFreePeriodsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	//the following functions return QStrings, because they are 'only' subfunctions to the writeXxxHtml functions
+	static QString writeActivityStudents(const int ai, const int day, const int hour, const bool notAvailable, const bool colspan, const bool rowspan);
+	static QString writeActivitiesStudents(const QList<qint16>& allActivities);
+	static QString writeActivityTeacher(const int teacher, const int day, const int hour, const bool colspan, const bool rowspan);
+	static QString writeActivityRoom(const int room, const int day, const int hour, const bool colspan, const bool rowspan);
+	static QString writeActivitiesSubjects(const QList<qint16>& allActivities);
+
+	//the following functions return QStrings, because they are 'only' subfunctions to the writeActivity-iesXxx functions
+	static QString writeHead(const bool java, const int placedActivities, const bool printInstitution);
+	static QString writeTOCDays(const bool detailed);
+	static QString writeStartTagTDofActivities(const Activity* act, const bool detailed, const bool colspan, const bool rowspan);
+	static QString writeSubjectAndActivityTags(const Activity* act, const QString startTag, const QString startTagAttribute, const bool activityTagsOnly);
+	static QString writeStudents(const Activity* act, const QString startTag, const QString startTagAttribute);
+	static QString writeTeachers(const Activity* act, const QString startTag, const QString startTagAttribute);
+	static QString writeRoom(const int ai, const QString startTag, const QString startTagAttribute);
+	static QString writeNotAvailable(const QString weight);
+	static QString writeEmpty();
 };
 
 #endif

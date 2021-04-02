@@ -754,7 +754,7 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
 	//if(&r!=NULL)
 	//	;
 
-	QString s="Activity preferred room"; s+=", ";
+	QString s=QObject::tr("Activity preferred room"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	s+=QObject::tr("A:%1").arg(this->activityId);
 
@@ -1070,7 +1070,7 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
 }
 
 QString ConstraintActivityPreferredRooms::getDescription(Rules& r){
-	QString s="Activity preferred rooms"; s+=", ";
+	QString s=QObject::tr("Activity preferred rooms"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	s+=QObject::tr("A:%1").arg(this->activityId);
 
@@ -1365,7 +1365,7 @@ QString ConstraintStudentsSetHomeRoom::getDescription(Rules& r)
 	//if(&r!=NULL)
 	//	;
 
-	QString s="Students set home room"; s+=", ";
+	QString s=QObject::tr("Students set home room"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -1618,7 +1618,7 @@ QString ConstraintStudentsSetHomeRooms::getXmlDescription(Rules& r){
 QString ConstraintStudentsSetHomeRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="Students set home rooms"; s+=", ";
+	QString s=QObject::tr("Students set home rooms"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 
 	s+=QObject::tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
@@ -1855,7 +1855,7 @@ QString ConstraintTeacherHomeRoom::getDescription(Rules& r)
 	//if(&r!=NULL)
 	//	;
 
-	QString s="Teacher home room"; s+=", ";
+	QString s=QObject::tr("Teacher home room"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -2102,7 +2102,7 @@ QString ConstraintTeacherHomeRooms::getXmlDescription(Rules& r){
 QString ConstraintTeacherHomeRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
-	QString s="Teacher home rooms"; s+=", ";
+	QString s=QObject::tr("Teacher home rooms"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 
 	s+=QObject::tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
@@ -3736,7 +3736,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Students set max building changes per day"; s+=", ";
+	QString s=QObject::tr("Students set max building changes per day"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -3939,7 +3939,7 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Students max building changes per day"; s+=", ";
+	QString s=QObject::tr("Students max building changes per day"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -4188,7 +4188,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Students set max building changes per week"; s+=", ";
+	QString s=QObject::tr("Students set max building changes per week"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -4390,7 +4390,7 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Students max building changes per week"; s+=", ";
+	QString s=QObject::tr("Students max building changes per week"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -4638,13 +4638,13 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDescription(Rules
 {
 	Q_UNUSED(r);
 
-	QString s="Students set min gaps between building changes"; s+=", ";
+	QString s=QObject::tr("Students set min gaps between building changes"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
 	s+=QObject::tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
-	s+=QObject::tr("MG:%1", "MC means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -4853,11 +4853,11 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDescription(Rules& r
 {
 	Q_UNUSED(r);
 
-	QString s="Students min gaps between building changes"; s+=", ";
+	QString s=QObject::tr("Students min gaps between building changes"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MG:%1", "MC means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -5077,7 +5077,7 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Teacher max building changes per day"; s+=", ";
+	QString s=QObject::tr("Teacher max building changes per day"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -5281,7 +5281,7 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Teachers max building changes per day"; s+=", ";
+	QString s=QObject::tr("Teachers max building changes per day"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -5491,7 +5491,7 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Teacher max building changes per week"; s+=", ";
+	QString s=QObject::tr("Teacher max building changes per week"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -5695,7 +5695,7 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Teachers max building changes per week"; s+=", ";
+	QString s=QObject::tr("Teachers max building changes per week"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
@@ -5871,7 +5871,7 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(Ru
 	
 	if(this->teacher_ID<0){
 		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint teacher min gaps between building change is wrong because it refers to inexistent teacher."
+		 QObject::tr("Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 							 		 
 		return false;
@@ -5905,13 +5905,13 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDescription(Rules& r)
 {
 	Q_UNUSED(r);
 
-	QString s="Teacher min gaps between building change"; s+=", ";
+	QString s=QObject::tr("Teacher min gaps between building changes"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
 	s+=QObject::tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
-	s+=QObject::tr("MG:%1", "MC means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -5924,13 +5924,13 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(R
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teacher min gaps between building change"); s+="\n";
+	s+=QObject::tr("Teacher min gaps between building changes"); s+="\n";
 
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
 	s+=QObject::tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	s+=QObject::tr("Min gaps between building change=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
+	s+=QObject::tr("Min gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	return s;
 }
@@ -6121,11 +6121,11 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDescription(Rules& r
 {
 	Q_UNUSED(r);
 
-	QString s="Teachers min gaps between building change"; s+=", ";
+	QString s=QObject::tr("Teachers min gaps between building changes"); s+=", ";
 
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	
-	s+=QObject::tr("MG:%1", "MC means min gaps").arg(this->minGapsBetweenBuildingChanges);
+	s+=QObject::tr("MG:%1", "MG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
 	return s;
 }
@@ -6138,11 +6138,11 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(
 
 	QString s=QObject::tr("Space constraint"); s+="\n";
 
-	s+=QObject::tr("Teachers min gaps between building change"); s+="\n";
+	s+=QObject::tr("Teachers min gaps between building changes"); s+="\n";
 
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 
-	s+=QObject::tr("Min gaps between building change=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
+	s+=QObject::tr("Min gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	return s;
 }

@@ -5,7 +5,7 @@ Program description:
 
 	FET is free timetabling software.
 	This program aims to automatically generate the timetable of a school, high-school
-	or university, by a heuristic algorithm. 
+	or university, by a heuristic algorithm.
 	FET can mean "Free Educational Timetabling".
 
 
@@ -18,10 +18,8 @@ Requirements:
 	GNU/Linux, Mac OS X and similar OS's:
 	Software:
 		make (GNU make command)
-		gcc 4.3.2 or similar (3.x.x and 4.1.x are fine, gcc 4.2.x does NOT work) (you might though sometimes
-				find that you can compile with gcc 4.2.x - if FET compiles completely then everything is OK. The gcc 4.2.3
-				crashed on my computer when compiling the file rules.cpp because of lack of memory. If you have
-				a newer like 4.2.4 or above gcc or more memory, you might try with it)
+		gcc 4.3.2 or similar (3.x.x and 4.1.x are fine, gcc 4.2.x might have problems) (you might though compile
+				with gcc 4.2.x - if FET compiles completely without crashing gcc, then everything is all right).
 		gcc-c++ (or g++, the name may vary)
 		Qt 4.4.3 or compatible (4.3.x is fine, Qt 4.2.x does NOT work) (Qt 4.2.x makes some buttons inactive,
 				so you cannot work with FET - for instance you cannot add groups or rooms).
@@ -87,22 +85,24 @@ Getting - compiling - installing Qt by Nokia (formerly by Trolltech):
 
 
 Compiling FET:
-	Note: compilation takes long (maybe even 1 hour, if you are using an older computer). Also, the file
-	rules.cpp takes long to compile, maybe even 5 minutes or more.
+	Note: compilation takes long (maybe even 1 hour, if you are using an older computer). The file
+	rules.cpp takes the longest time to compile, maybe even 1 minute or more.
 	
 	Note2: under my openSUSE GNU/Linux, the intermediary files and the executable are very large, with default settings.
 	(the fet executable is over 100 MB!). To avoid this, you need to modify the /usr/share/qt4/mkspecs/common/g++.conf
-	line 10, remove the "-g" flag for the release version (root access needed to make this change)
+	line 10, remove the "-g" flag for the release version (from QMAKE_CFLAGS_RELEASE section)
+	(root access needed to make this change).
+	Under Fedora GNU/Linux for the same problem, a user told me that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
+	and /usr/lib/qt4/mkspecs/linux-g++/qmake.conf (remove the -g flag from QMAKE_CFLAGS_RELEASE section).
 	
 	Currently FET can be compiled using Qt 4.4.3 or compatible (4.3.x OK, 4.2.x NOT OK).
 	But the majority of interface files are Qt 3.3 forms and to modify them
 	you will need Qt 3.3, which unfortunately has no free Windows version.
 	
-	Important note for all platforms: it seems that FET cannot be compiled with gcc 4.2.x.
+	Important note for all platforms: it seems that sometimes FET cannot be compiled with gcc 4.2.x.
 	This is a bug of gcc, which was solved in gcc 4.3.x. So, you can compile FET with gcc 4.1.x or
 	gcc 4.3.x or compatible (not 4.2.x), gcc 3.x.x should also work.
-	(Note3: the reason is that it crashes compiling rules.cpp - but if you can compile all FET with 4.2.x,
-	then everything is OK, maybe you have more memory or the bug was fixed in later 4.2.x versions)
+	(Note3: if you can compile all FET with gcc 4.2.x, without crash, then everything is OK).
 
 
 	GNU/Linux and similar OS's:
@@ -189,7 +189,7 @@ Running FET:
 			y is integer (seconds) (default 2000000000, which is practically infinite)
 			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes)
-			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, lt, mk, ms, nl, pl, ro, tr (default en_GB)
+			t is one of en_GB, ar, ca, de, el, es, fa, fr, hu, id, it, lt, mk, ms, nl, pl, ro, ru, tr (default en_GB)
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true)
 			v is either true or false, represents if you want html timetables with time-axis divided by days (default false).
@@ -204,21 +204,22 @@ Running FET:
 
 Languages (translations):
 	
-	FET will search for translations (fet_xx.qm files) in the following order: directory /usr/share/fet/translations
-	(under Unix like or Mac), then directory "translations" in the directory where fet executable is,
-	then directly in the directory where the fet executable is. 
+	FET will search for translations (fet_xx.qm files) in the following order:
+	1) directly in the directory where the fet executable is,
+	2) the directory "translations" in the directory where fet executable is,
+	3) the directory /usr/share/fet/translations (under Unix like or Mac).
 	
-	So, on Windows: if fet.exe is in C:\fet-x.x.x, fet will search for file fet_xx.qm in 
-	C:\fet-x.x.x\translations and then in C:\fet-x.x.x\.
-		On UNIX like: if fet executable is in /home/liviu/fet-x.x.x, fet will search for file fet_xx.qm in 
-	/usr/share/fet/translations, then in /home/liviu/fet-x.x.x/translations and then in 
-	/home/liviu/fet-x.x.x
+	So, on Windows: if fet.exe is in C:\fet-x.x.x, fet will search for file fet_xx.qm in
+	C:\fet-x.x.x\ and then in C:\fet-x.x.x\translations
+		On UNIX like: if fet executable is in /home/liviu/fet-x.x.x, fet will search for file fet_xx.qm in
+	/home/liviu/fet-x.x.x, then in /home/liviu/fet-x.x.x/translations and then in
+	/usr/share/fet/translations
 	
 	
 Documentation:
 
 	Some hints in the directory "/.../fet-x.x.x/doc/".
-	Some other hints in Help menu.
+	Some other hints in the Help menu.
 
 
 Input files:

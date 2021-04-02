@@ -4,9 +4,11 @@ Bibliography:
 Ideas for the backtracking swapping algorithm:
 
 [1] Michael Marte - Models And Algorithms For School Timetabling - 
-A Constraint Programming Approach - (free, on the internet, I lost the link)
- - Section 2.2.5 - Manual Timetabling - pages 23-24.
+A Constraint Programming Approach - ( free, on the internet, one possible link 
+is: http://www.pms.ifi.lmu.de/publikationen/dissertationen/PMS-DISS-2003-1/PMS-DISS-2003-1.pdf ) 
+- Section 2.2.5 - Manual Timetabling - pages 23-24.
 
 [2] Jantien Hartog - Timetabling on Dutch High-Schools - 
-Satifiability versus gp-Untis (free, on the internet, I lost the link)
- - Section 5.2 - page 27.
+Satifiability versus gp-Untis ( free, on the internet, one possible link 
+is: http://www.st.ewi.tudelft.nl/sat/theses/jantien.pdf ) 
+- Section 5.2 - page 27.

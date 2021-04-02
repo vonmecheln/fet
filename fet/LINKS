@@ -22,23 +22,20 @@ Tutorial and help for FET in Romanian:
 Other open source free software for school administration/timetabling:
 ----------------------------------------------------------
 
-TABLIX - a free software kernel for solving general timetabling problems
+TABLIX - a free software kernel for solving general timetabling problems - open source (GNU/GPL)
 	http://www.tablix.org/
 
-G-stpl - The Swing Timetable PLatform (GNU/GPL)
-	http://gstpl.sourceforge.net/
-	
-Open Course Timetabler - a free and open source application for university and school course timetabling
-	http://www.openctt.org/
+TimeFinder - manual and computer controlled scheduling for high schools and universities (Apache license - free software, open source)
+	http://timefinder.de/
 	
 University Course Timetabling & Student Sectioning Application - open source (GNU/GPL)
 	http://www.unitime.org/
 	
-ClaSS - a web-based information management and administration system for schools (GNU/GPL).
+ClaSS - a web-based information management and administration system for schools (GNU/GPL)
 Includes FET export
 	http://laex.org/class/
 	
-Web based school administration software
+Web based school administration software - open source (GNU/GPL)
 	http://sourceforge.net/projects/schooladmin/
 	
 Open Admin for Schools - a web based school administration program written in perl and released 
@@ -49,5 +46,5 @@ SchoolTool - a project to develop a common global school administration infrastr
 that is freely available under an Open Source licence
 	http://www.schooltool.org/
 
-intime - a free, open source program for editing school time tables (old)
+intime - a free, open source program for editing school time tables (old) - open source
 	http://intime.sourceforge.net/

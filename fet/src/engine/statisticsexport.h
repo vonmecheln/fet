@@ -34,6 +34,10 @@ public:
 
 	static void exportStatistics();
 private:
+	//this function must be called before export html files, because it compute the IDs
+	static void computeHashForIDsStatistics();
+
+	//the following functions write the css and html statistics files
 	static bool exportStatisticsStylesheetCss(QString saveTime);
 	static bool exportStatisticsIndex(QString saveTime);
 	static bool exportStatisticsTeachersSubjects(QString saveTime);
@@ -42,7 +46,6 @@ private:
 	static bool exportStatisticsStudentsTeachers(QString saveTime);
 	static bool exportStatisticsSubjectsStudents(QString saveTime);
 	static bool exportStatisticsStudentsSubjects(QString saveTime);
-
 };
 
 #endif
