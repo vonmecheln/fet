@@ -55,4 +55,7 @@ void showWarningForInvisibleSubgroupActivity(QWidget* parent, const QString& ini
 
 int populateStudentsComboBox(QComboBox* studentsComboBox, const QString& selectedStudentsSet=QString(""), bool addEmptyAtBeginning=false);
 
+//void closeAllTimetableViewDialogs();
+void updateAllTimetableViewDialogs();
+
 #endif

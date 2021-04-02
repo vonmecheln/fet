@@ -70,6 +70,7 @@ static QSet<QString> languagesSet;
 
 #ifndef FET_COMMAND_LINE
 #include <QApplication>
+#include <QWidgetList>
 
 #include <QSettings>
 #include <QRect>
@@ -106,7 +107,9 @@ extern int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
 int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
 #endif
 
-extern bool students_schedule_ready, teachers_schedule_ready, rooms_schedule_ready;
+extern bool students_schedule_ready;
+extern bool teachers_schedule_ready;
+extern bool rooms_schedule_ready;
 
 #ifndef FET_COMMAND_LINE
 extern QMutex myMutex;
@@ -536,7 +539,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 #endif
 {
-	Q_UNUSED(qapplication); //silence MSVC wrong warning
+	Q_UNUSED(qapplication); //silence wrong MSVC warning
 
 	static int cntTranslators=0;
 	
@@ -619,10 +622,12 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 		qapplication.setLayoutDirection(Qt::RightToLeft);
 	
 	//retranslate
-	QList<QWidget*> tlwl=qapplication.topLevelWidgets();
+	//QList<QWidget*> tlwl=qapplication.topLevelWidgets();
+	QWidgetList tlwl=QApplication::topLevelWidgets();
 
 	for(QWidget* wi : qAsConst(tlwl))
-		if(wi->isVisible()){
+		if(1){
+		//if(wi->isVisible()){
 			FetMainForm* mainform=qobject_cast<FetMainForm*>(wi);
 			if(mainform!=NULL){
 				mainform->retranslateUi(mainform);
@@ -783,8 +788,8 @@ int main(int argc, char **argv)
 
 	terminateGeneratePointer=NULL;
 	
-	students_schedule_ready=false;
 	teachers_schedule_ready=false;
+	students_schedule_ready=false;
 	rooms_schedule_ready=false;
 
 #ifndef FET_COMMAND_LINE

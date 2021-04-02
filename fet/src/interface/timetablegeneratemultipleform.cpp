@@ -248,6 +248,8 @@ void TimetableGenerateMultipleForm::help()
 }
 
 void TimetableGenerateMultipleForm::start(){
+	//closeAllTimetableViewDialogs();
+
 	nTimetables=timetablesSpinBox->value();
 	assert(nTimetables>0);
 	timeLimit=60*minutesSpinBox->value(); //seconds
@@ -361,6 +363,8 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 
 		for(const QString& t : qAsConst(best_solution.conflictsDescriptionList))
 			conflictsString+=t+"\n";
+		
+		updateAllTimetableViewDialogs();
 	}
 
 	semaphoreTimetableFinished.release();
