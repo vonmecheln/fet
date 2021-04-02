@@ -8,16 +8,16 @@ Program's description:
 	
 Requirements:
 	FET is created in the following environment: Kubuntu 7.0.4 GNU/Linux distribution,
-	Midnight Commander 4.6.1, Qt 4.1.2, gcc 4.1.2, Linux 2.6.20, 
+	Midnight Commander 4.6.1, Qt 4.3.0, gcc 4.1.2, Linux 2.6.20, 
 	other great free tools.
 	
 	GNU/Linux and similar OS's:
-	Software: gcc 4.1.2 or similar, Qt 4.1.2 or compatible.
+	Software: gcc 4.1.2 or similar, Qt 4.3.0 or compatible.
 	
 	Mac OS X:
 	Mac OS X 10.4.x or compatible.
 	Apple's developer tools installed.	
-	Qt 4.1.2 or compatible (Qt 4.1.0 works all right).
+	Qt 4.3.0 or compatible (!!!! NOT Qt 4.2.x)
 	
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains
@@ -28,7 +28,7 @@ Download:
 	Older versions: you will have to contact the author if you are interested.
 
 Getting - compiling - installing Qt:
-	You will need Qt 4.1.2 or compatible to compile FET. You can get your
+	You will need Qt 4.3.0 or compatible to compile FET. You can get your
 	corresponding version of Qt from http://www.trolltech.com . Please get
 	the opensource version of Qt, which is available for now on
 	http://www.trolltech.com/developer/downloads/qt/x11 .
@@ -36,7 +36,7 @@ Getting - compiling - installing Qt:
 	For GNU/Linux - there are instructions in the Qt package on how to install-compile it.
 	Basically, type ./configure, make, make install. Then, add or create .profile
 	in your home directory, adding or creating the following lines:
-	PATH=/usr/local/Trolltech/Qt-4.1.x/bin:$PATH
+	PATH=/usr/local/Trolltech/Qt-4.3.0/bin:$PATH
 	export PATH
 	where x is your corresponding number of the version.
 		
@@ -45,7 +45,7 @@ Getting - compiling - installing Qt:
 	http://www.trolltech.com/developer/downloads/qt/windows )
 	Install and let Qt download and install MinGW.
 	Please make sure, after installing Qt and MinGW, that you have
-	an environment variable named "QTDIR" which is C:\Qt\4.1.x"
+	an environment variable named "QTDIR" which is C:\Qt\4.3.0"
 	and you have in the PATH environmental variable the contents
 	QTDIR and C:\MinGW\bin.
 	
@@ -63,18 +63,18 @@ Getting - compiling - installing Qt:
 
 Compiling FET:
 	
-	First of all, currently FET can be compiled using just Qt 4.1.2 or compatible.
+	First of all, currently FET can be compiled using just Qt 4.3.0 or compatible.
 	But the majority of interface files are Qt 3.3 forms and to modify them
 	you will need Qt 3.3, which unfortunately has no free Windows version.
 
 	GNU/Linux and similar OS's:
-	- You will need Qt 4.1.2 or compatible to compile this program.
+	- You will need Qt 4.3.0 or compatible to compile this program.
 	- type "qmake fet.pro".
 	- type "make"
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	
 	Mac OS X:
-	- You will need Qt 4.1.2 or compatible to compile this program.
+	- You will need Qt 4.3.0 or compatible to compile this program.
 	- type "qmake fet.pro".
 	- type "make"
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
@@ -88,10 +88,10 @@ Compiling FET:
 	to save up space.
 	If you want to obtain a version which can be run on other computers, 
 	you have to copy 7 files into the FET directory:
-	C:\MinGW\bin\mingwm10.dll, C:\Qt\4.1.x\bin\Qt3Support4.dll,
-	C:\Qt\4.1.x\bin\QtCore4.dll, C:\Qt\4.1.x\bin\QtGui4.dll,
-	C:\Qt\4.1.x\bin\QtNetwork4.dll, C:\Qt\4.1.x\bin\QtSQl4.dll,
-	C:\Qt\4.1.x\bin\QtXml4.dll.
+	C:\MinGW\bin\mingwm10.dll, C:\Qt\4.3.0\bin\Qt3Support4.dll,
+	C:\Qt\4.3.0\bin\QtCore4.dll, C:\Qt\4.3.0\bin\QtGui4.dll,
+	C:\Qt\4.3.0\bin\QtNetwork4.dll, C:\Qt\4.3.0\bin\QtSQl4.dll,
+	C:\Qt\4.3.0\bin\QtXml4.dll.
 	E-mail author or the mailing list for more details.
 	
 Installing FET:

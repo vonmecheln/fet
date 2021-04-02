@@ -107,7 +107,9 @@ bool processTimeConstraints()
 	assert(gt.rules.internalStructureComputed);
 
 	/////1. BASIC TIME CONSTRAINTS
-	computeActivitiesConflictingPercentage();
+	bool t=computeActivitiesConflictingPercentage();
+	if(!t)
+		return false;
 	sortActivities();
 	//////////////////////////////
 	
@@ -122,7 +124,7 @@ bool processTimeConstraints()
 	
 	/////4. students no gaps and early
 	computeNHoursPerSubgroup();
-	bool t=computeSubgroupsEarlyAndNoGapsPercentages();
+	t=computeSubgroupsEarlyAndNoGapsPercentages();
 	if(!t)
 		return false;
 	//////////////////////////////////
@@ -733,6 +735,17 @@ bool computeSubgroupsEarlyAndNoGapsPercentages() //st no gaps & early - part 2
 					subgroupsEarlyPercentage[j] = int(se->weightPercentage);
 		}
 
+		//students set early
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_EARLY){
+			ConstraintStudentsSetEarly* se=(ConstraintStudentsSetEarly*) gt.rules.internalTimeConstraintsList[i];
+			for(int q=0; q<se->nSubgroups; q++){
+			//for(int j=0; j<gt.rules.nInternalSubgroups; j++)
+				int j=se->subgroups[q];
+				if(subgroupsEarlyPercentage[j] < se->weightPercentage)
+					subgroupsEarlyPercentage[j] = int(se->weightPercentage);
+			}
+		}
+
 		//students no gaps
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_NO_GAPS){
 			ConstraintStudentsNoGaps* sg=(ConstraintStudentsNoGaps*) gt.rules.internalTimeConstraintsList[i];
@@ -1003,15 +1016,25 @@ void computeMinNDays()
 			}*/
 }
 
-void computeActivitiesConflictingPercentage()
+bool computeActivitiesConflictingPercentage()
 {
 	//get maximum weight percent of a basic time constraint
 	int m=-1;
 	
+	bool ok=false;
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
+			ok=true;
 			if(gt.rules.internalTimeConstraintsList[i]->weightPercentage>m)
 				m=int(gt.rules.internalTimeConstraintsList[i]->weightPercentage);
+		}
+		
+	if(!ok){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Cannot optimize, because you have no basic time constraints\n"
+		 "Please add a basic time constraint (recommended with 100% weight)"));
+		return false;
+	}
 	
 	assert(m>=0 && m<=100);
 
@@ -1050,6 +1073,8 @@ void computeActivitiesConflictingPercentage()
 			else
 				activitiesConflictingPercentage[i][j]=activitiesConflictingPercentage[j][i]=-1;
 		}
+		
+	return true;
 }
 	
 /*void Rules::computeActivitiesSimilar()

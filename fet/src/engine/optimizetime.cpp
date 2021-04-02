@@ -1206,7 +1206,7 @@ void OptimizeTime::randomswap(int ai, int level){
 		}
 		
 		//allowed from same starting time
-		bool oksamestartingtime=true;
+		//bool oksamestartingtime=true;
 		for(int i=0; i<activitiesSameStartingTimeActivities[ai].count(); i++){
 			int ai2=activitiesSameStartingTimeActivities[ai].at(i);
 			int perc=activitiesSameStartingTimePercentages[ai].at(i);
@@ -1229,7 +1229,7 @@ void OptimizeTime::randomswap(int ai, int level){
 		}*/
 		
 		//allowed from same starting hour
-		bool oksamestartinghour=true;
+		//bool oksamestartinghour=true;
 		for(int i=0; i<activitiesSameStartingHourActivities[ai].count(); i++){
 			int ai2=activitiesSameStartingHourActivities[ai].at(i);
 			int perc=activitiesSameStartingHourPercentages[ai].at(i);
@@ -1251,7 +1251,7 @@ void OptimizeTime::randomswap(int ai, int level){
 		}*/
 		
 		//allowed from not overlapping
-		bool oknotoverlapping=true;
+		//bool oknotoverlapping=true;
 		for(int i=0; i<activitiesNotOverlappingActivities[ai].count(); i++){
 		//foreach(int ai2, activitiesNotOverlapping[ai])
 			int ai2=activitiesNotOverlappingActivities[ai].at(i);

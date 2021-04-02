@@ -39,6 +39,7 @@
 #include "modifyconstraintstudentssetnogapsform.h"
 #include "modifyconstraintstudentsnogapsform.h"
 #include "modifyconstraintstudentsearlyform.h"
+#include "modifyconstraintstudentssetearlyform.h"
 #include "modifyconstraintstudentssetintervalmaxdaysperweekform.h"
 #include "modifyconstraintteacherintervalmaxdaysperweekform.h"
 #include "modifyconstraintstudentssetnhoursdailyform.h"
@@ -235,6 +236,11 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_STUDENTS_EARLY){
 		ModifyConstraintStudentsEarlyForm* form=
 		 new ModifyConstraintStudentsEarlyForm((ConstraintStudentsEarly*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
+		ModifyConstraintStudentsSetEarlyForm* form=
+		 new ModifyConstraintStudentsSetEarlyForm((ConstraintStudentsSetEarly*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){

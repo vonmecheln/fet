@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>FetMainForm_template</class>
  <widget class="QMainWindow" name="FetMainForm_template" >
   <property name="geometry" >
@@ -157,6 +154,7 @@
      </property>
      <addaction name="dataTimeConstraintsStudentsEarlyAction" />
      <addaction name="dataTimeConstraintsStudentsNoGapsAction" />
+     <addaction name="dataTimeConstraintsStudentsSetEarlyAction" />
      <addaction name="dataTimeConstraintsStudentsSetNoGapsAction" />
      <addaction name="dataTimeConstraintsStudentsSetNotAvailableAction" />
     </widget>
@@ -1078,9 +1076,13 @@
     <string>Teacher max gaps per week</string>
    </property>
   </action>
+  <action name="dataTimeConstraintsStudentsSetEarlyAction" >
+   <property name="text" >
+    <string>Students set early</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
  <resources/>
  <connections/>
 </ui>

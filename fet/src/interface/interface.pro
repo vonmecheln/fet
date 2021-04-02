@@ -208,6 +208,9 @@ SOURCES += fet.cpp \
 		   constraintstudentsearlyform.cpp \
 		   addconstraintstudentsearlyform.cpp \
 		   modifyconstraintstudentsearlyform.cpp \
+		   constraintstudentssetearlyform.cpp \
+		   addconstraintstudentssetearlyform.cpp \
+		   modifyconstraintstudentssetearlyform.cpp \
 		   constraintstudentssetintervalmaxdaysperweekform.cpp \
 		   addconstraintstudentssetintervalmaxdaysperweekform.cpp \
 		   modifyconstraintstudentssetintervalmaxdaysperweekform.cpp \
@@ -442,6 +445,9 @@ HEADERS += fet.h \
 		   constraintstudentsearlyform.h \
 		   addconstraintstudentsearlyform.h \
 		   modifyconstraintstudentsearlyform.h \
+		   constraintstudentssetearlyform.h \
+		   addconstraintstudentssetearlyform.h \
+		   modifyconstraintstudentssetearlyform.h \
 		   constraintstudentssetintervalmaxdaysperweekform.h \
 		   addconstraintstudentssetintervalmaxdaysperweekform.h \
 		   modifyconstraintstudentssetintervalmaxdaysperweekform.h \
@@ -667,6 +673,9 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintstudentsearlyform_template.ui \
 		   addconstraintstudentsearlyform_template.ui \
 		   modifyconstraintstudentsearlyform_template.ui \
+		   constraintstudentssetearlyform_template.ui \
+		   addconstraintstudentssetearlyform_template.ui \
+		   modifyconstraintstudentssetearlyform_template.ui \
 		   constraintstudentssetintervalmaxdaysperweekform_template.ui \
 		   addconstraintstudentssetintervalmaxdaysperweekform_template.ui \
 		   modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui \

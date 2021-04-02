@@ -100,6 +100,7 @@ public slots:
 	void on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated();
 	void on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated();
 	void on_dataTimeConstraintsStudentsEarlyAction_activated();
+	void on_dataTimeConstraintsStudentsSetEarlyAction_activated();
 	void on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsStudentsSetNHoursDailyAction_activated();

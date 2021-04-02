@@ -843,3 +843,9 @@ Versions 5.0.0 -
 - Version 5.0.0-preview11
 	- Improved the algorithm
 	- Fixed bug for constraint teachers max gaps per week
+- Version 5.0.0-preview12
+	- Crash bug fix
+- Version 5.0.0-preview13
+	- Students set early (suggested by Constantin Romulus)
+	- Cannot allocate now without basic time constraints (no more crashing otherwise)
+	(reported by Constantin Romulus)

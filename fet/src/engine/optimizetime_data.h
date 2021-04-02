@@ -41,7 +41,7 @@ extern const int PERCENTAGE_THRESHOLD;
 extern qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES]; //-1 for not conflicting,
 //a value >=0 equal with the weight of the maximum weightPercentage of a basic time constraint
 
-void computeActivitiesConflictingPercentage();
+bool computeActivitiesConflictingPercentage();
 //void computeActivitiesConflicting();
 
 void sortActivities();

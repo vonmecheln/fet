@@ -83,6 +83,8 @@ const int CONSTRAINT_TEACHERS_SUBJECT_TAG_MAX_HOURS_CONTINUOUSLY		=30;
 const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK							=31;
 const int CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK							=32;
 
+const int CONSTRAINT_STUDENTS_SET_EARLY									=33;
+
 /**
 This class represents a time constraint
 */
@@ -974,6 +976,48 @@ public:
 	ConstraintStudentsEarly();
 
 	ConstraintStudentsEarly(double wp);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(TimeChromosome& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsSetEarly: public TimeConstraint{
+public:
+	/**
+	The name of the students
+	*/
+	QString students;
+
+	/**
+	The number of subgroups involved in this restriction
+	*/
+	int nSubgroups;
+
+	/**
+	The subgroups involved in this restriction
+	*/
+	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+
+	ConstraintStudentsSetEarly();
+
+	ConstraintStudentsSetEarly(double wp, const QString& students);
 
 	bool computeInternalStructure(Rules& r);
 

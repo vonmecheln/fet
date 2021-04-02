@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>AddConstraintStudentsEarlyForm_template</class>
+<class>AddConstraintStudentsSetEarlyForm_template</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>AddConstraintStudentsEarlyForm_template</cstring>
+        <cstring>AddConstraintStudentsSetEarlyForm_template</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -13,13 +13,13 @@
         </rect>
     </property>
     <property name="caption">
-        <string>FET - Add new constraint students early dialog</string>
+        <string>FET - Add new constraint students set early dialog</string>
     </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>addConstraintPushButton</cstring>
             </property>
@@ -27,7 +27,7 @@
                 <string>Add current constraint</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="3" column="2">
+        <widget class="QPushButton" row="5" column="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -49,7 +49,7 @@
                 <string>Current constraint</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="2" colspan="1">
+        <widget class="QTextEdit" row="1" column="2" rowspan="4" colspan="1">
             <property name="name">
                 <cstring>currentConstraintTextEdit</cstring>
             </property>
@@ -57,7 +57,7 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLineEdit" row="2" column="1">
+        <widget class="QLineEdit" row="4" column="1">
             <property name="name">
                 <cstring>weightLineEdit</cstring>
             </property>
@@ -65,7 +65,7 @@
                 <string>100</string>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="0">
+        <widget class="QLabel" row="4" column="0">
             <property name="name">
                 <cstring>weightTextLabel</cstring>
             </property>
@@ -99,25 +99,56 @@ Please try to use weight percentage 100%, because
 otherwise you will get poor timetables.</string>
             </property>
         </widget>
+        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>studentsComboBox</cstring>
+            </property>
+            <property name="editable">
+                <bool>false</bool>
+            </property>
+            <property name="insertionPolicy">
+                <enum>NoInsertion</enum>
+            </property>
+            <property name="autoCompletion">
+                <bool>false</bool>
+            </property>
+            <property name="duplicatesEnabled">
+                <bool>false</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>studentsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Students set</string>
+            </property>
+        </widget>
     </grid>
 </widget>
 <connections>
     <connection>
         <sender>weightLineEdit</sender>
         <signal>textChanged(const QString&amp;)</signal>
-        <receiver>AddConstraintStudentsEarlyForm_template</receiver>
+        <receiver>AddConstraintStudentsSetEarlyForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>
     <connection>
         <sender>addConstraintPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>AddConstraintStudentsEarlyForm_template</receiver>
+        <receiver>AddConstraintStudentsSetEarlyForm_template</receiver>
         <slot>addCurrentConstraint()</slot>
     </connection>
     <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
-        <receiver>AddConstraintStudentsEarlyForm_template</receiver>
+        <receiver>AddConstraintStudentsSetEarlyForm_template</receiver>
         <slot>close()</slot>
     </connection>
 </connections>
