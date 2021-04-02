@@ -27,12 +27,16 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.4.10";
+const QString FET_VERSION="5.4.11";
 
 /**
 FET language
 */
 QString FET_LANGUAGE="en_GB";
+
+bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
+
+QString LANGUAGE_FOR_HTML;
 
 /**
 Timetable html css javaScript Level, by Volker Dirr

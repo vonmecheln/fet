@@ -297,9 +297,11 @@ void AddActivityForm::activityChanged()
 	//s+=tr("Current activity:");s+="\n";
 	if(selectedTeachersListBox->count()==0){
 		if(splitSpinBox->value()==1)
-			s+=tr("No teachers for this activity\n");
+			s+=tr("No teachers for this activity");
 		else
-			s+=tr("No teachers for these activities\n");
+			s+=tr("No teachers for these activities");
+			
+		s+="\n";
 	}
 	else
 		for(uint i=0; i<selectedTeachersListBox->count(); i++){
@@ -316,9 +318,11 @@ void AddActivityForm::activityChanged()
 	}
 	if(selectedStudentsListBox->count()==0){
 		if(splitSpinBox->value()==1)
-			s+=tr("No students for this activity\n");
+			s+=tr("No students for this activity");
 		else
-			s+=tr("No students for these activities\n");
+			s+=tr("No students for these activities");
+			
+		s+="\n";
 	}
 	else
 		for(uint i=0; i<selectedStudentsListBox->count(); i++){

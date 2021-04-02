@@ -1099,5 +1099,9 @@ Versions 5.4.0 - 5.4.
 	works even if activity has preferred times with high weight on impossible slots
 	(the idea is that if you have constraints activity(ies) preferred times for impossible
 	slots with weight under 100%, you will get eventually a timetable which contradicts these constraints
-	and is viable. This can be considered important bug fix
+	and is viable). This can be considered important bug fix
 	- Greek translation by Dimitrios Ropokis
+- Version 5.4.11
+	- Arabic translation (partial), by Hatim Ali
+	- Small bug fixes in export to html by Volker Dirr
+	

@@ -183,6 +183,7 @@
       <string>Language</string>
      </property>
      <addaction name="languageEnglishAction" />
+     <addaction name="languageArabicAction" />
      <addaction name="languageCatalanAction" />
      <addaction name="languageGermanAction" />
      <addaction name="languageGreekAction" />
@@ -439,7 +440,7 @@
     <string>A set of activities has a set of preferred times</string>
    </property>
    <property name="iconText" >
-    <string>Activities preferred times</string>
+    <string>A set of activities has a set of preferred times</string>
    </property>
   </action>
   <action name="languageFrenchAction" >
@@ -458,7 +459,7 @@
     <string>A set of activities has same starting time (day+hour)</string>
    </property>
    <property name="iconText" >
-    <string>Activities same starting time</string>
+    <string>A set of activities has same starting time (day+hour)</string>
    </property>
   </action>
   <action name="timetableViewStudentsWithRoomsAction" >
@@ -485,10 +486,13 @@
     <string>A teacher is not available</string>
    </property>
    <property name="iconText" >
-    <string>Teacher not available</string>
+    <string>A teacher is not available</string>
    </property>
   </action>
   <action name="dataTimeConstraintsBasicCompulsoryTimeAction" >
+   <property name="text" >
+    <string>Basic compulsory time constraints</string>
+   </property>
    <property name="iconText" >
     <string>Basic compulsory time constraints</string>
    </property>
@@ -498,7 +502,7 @@
     <string>A students set is not available</string>
    </property>
    <property name="iconText" >
-    <string>Students set not available</string>
+    <string>A students set is not available</string>
    </property>
   </action>
   <action name="dataTimeConstraintsBreakAction" >
@@ -506,7 +510,7 @@
     <string>Break (all teachers+all students not available)</string>
    </property>
    <property name="iconText" >
-    <string>Break</string>
+    <string>Break (all teachers+all students not available)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" >
@@ -514,7 +518,7 @@
     <string>Max days per week for a teacher</string>
    </property>
    <property name="iconText" >
-    <string>Teacher max days per week</string>
+    <string>Max days per week for a teacher</string>
    </property>
   </action>
   <action name="dataTime_constraints_teachersAction" >
@@ -554,7 +558,7 @@
     <string>Max hours daily for all teachers</string>
    </property>
    <property name="iconText" >
-    <string>Teachers max hours daily</string>
+    <string>Max hours daily for all teachers</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivityPreferredTimeAction" >
@@ -562,7 +566,7 @@
     <string>An activity has a preferred time</string>
    </property>
    <property name="iconText" >
-    <string>Activity preferred time</string>
+    <string>An activity has a preferred time</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsSetNoGapsAction" >
@@ -570,7 +574,7 @@
     <string>No gaps for a students set</string>
    </property>
    <property name="iconText" >
-    <string>Students set no gaps</string>
+    <string>No gaps for a students set</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsNoGapsAction" >
@@ -578,7 +582,7 @@
     <string>No gaps for all students</string>
    </property>
    <property name="iconText" >
-    <string>Students no gaps</string>
+    <string>No gaps for all students</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsEarlyAction" >
@@ -586,7 +590,7 @@
     <string>All students begin early</string>
    </property>
    <property name="iconText" >
-    <string>Students early</string>
+    <string>All students begin early</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivitiesNotOverlappingAction" >
@@ -594,7 +598,7 @@
     <string>A set of activities are not overlapping</string>
    </property>
    <property name="iconText" >
-    <string>Activities not overlapping</string>
+    <string>A set of activities are not overlapping</string>
    </property>
   </action>
   <action name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" >
@@ -602,7 +606,7 @@
     <string>Min n days between a set of activities</string>
    </property>
    <property name="iconText" >
-    <string>Min n days between activities</string>
+    <string>Min n days between a set of activities</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivityPreferredTimesAction" >
@@ -610,7 +614,7 @@
     <string>An activity has a set of preferred times</string>
    </property>
    <property name="iconText" >
-    <string>Activity preferred times</string>
+    <string>An activity has a set of preferred times</string>
    </property>
   </action>
   <action name="dataAllSpaceConstraintsAction" >
@@ -645,7 +649,7 @@
     <string>Basic compulsory space constraints</string>
    </property>
    <property name="iconText" >
-    <string>Basic compulsory space</string>
+    <string>Basic compulsory space constraints</string>
    </property>
   </action>
   <action name="dataSpaceConstraintsRoomNotAvailableAction" >
@@ -653,7 +657,7 @@
     <string>A room is not available</string>
    </property>
    <property name="iconText" >
-    <string>Room not available</string>
+    <string>A room is not available</string>
    </property>
   </action>
   <action name="dataSpace_constraints_roomsAction" >
@@ -669,7 +673,7 @@
     <string>An activity has a preferred room</string>
    </property>
    <property name="iconText" >
-    <string>Activity preferred room</string>
+    <string>An activity has a preferred room</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivitiesSameStartingHourAction" >
@@ -677,7 +681,7 @@
     <string>A set of activities has same starting hour (any days)</string>
    </property>
    <property name="iconText" >
-    <string>Activities same starting hour</string>
+    <string>A set of activities has same starting hour (any days)</string>
    </property>
   </action>
   <action name="dataSubjectTagsAction" >
@@ -709,7 +713,7 @@
     <string>An activity has a set of preferred rooms</string>
    </property>
    <property name="iconText" >
-    <string>Activity preferred rooms</string>
+    <string>An activity has a set of preferred rooms</string>
    </property>
   </action>
   <action name="languageCatalanAction" >
@@ -739,7 +743,7 @@
     <string>A subject has a preferred room</string>
    </property>
    <property name="iconText" >
-    <string>Subject preferred room</string>
+    <string>A subject has a preferred room</string>
    </property>
   </action>
   <action name="dataSpaceConstraintsSubjectPreferredRoomsAction" >
@@ -747,7 +751,7 @@
     <string>A subject has a set of preferred rooms</string>
    </property>
    <property name="iconText" >
-    <string>Subject preferred rooms</string>
+    <string>A subject has a set of preferred rooms</string>
    </property>
   </action>
   <action name="languagePolishAction" >
@@ -833,10 +837,10 @@
     <string>Max gaps per week for all teachers</string>
    </property>
    <property name="iconText" >
-    <string>Teachers max gaps per week</string>
+    <string>Max gaps per week for all teachers</string>
    </property>
    <property name="toolTip" >
-    <string>Teachers max gaps per week</string>
+    <string>Max gaps per week for all teachers</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" >
@@ -962,6 +966,14 @@
    </property>
    <property name="text" >
     <string>e&amp;l (Greek)</string>
+   </property>
+  </action>
+  <action name="languageArabicAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>&amp;ar (Arabic)</string>
    </property>
   </action>
  </widget>

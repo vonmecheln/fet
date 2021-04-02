@@ -210,6 +210,7 @@ void TimetableGenerateForm::stop()
 		s+=", ";
 
 		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
+		s+=",";
 		s+=TimetableGenerateForm::tr(" TN: ");
 		bool first=true;
 		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){

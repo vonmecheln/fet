@@ -57,7 +57,8 @@ extern bool teachers_schedule_ready;
 extern bool rooms_schedule_ready;
 
 extern Solution best_solution;
-
+extern bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
+extern QString LANGUAGE_FOR_HTML;
 
 extern Timetable gt;
 extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -647,7 +648,10 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -679,7 +683,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 
 	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
 	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
-		
+
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -847,7 +851,10 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -878,7 +885,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 		tos<<"    <h1>"<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
-	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n";
 		
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of content")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
@@ -1050,7 +1057,10 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -1218,7 +1228,10 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -1389,7 +1402,10 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -1556,10 +1572,11 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -1580,14 +1597,14 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1608,14 +1625,14 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1631,15 +1648,15 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1713,7 +1730,10 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -1880,10 +1900,11 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -1904,14 +1925,14 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1932,14 +1953,14 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -1955,15 +1976,15 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2038,7 +2059,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -2189,10 +2213,11 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -2213,14 +2238,14 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2241,14 +2266,14 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2264,15 +2289,15 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2346,7 +2371,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -2497,10 +2525,11 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -2521,14 +2550,14 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2549,14 +2578,14 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2572,15 +2601,15 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2656,7 +2685,10 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -2818,10 +2850,11 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -2842,14 +2875,14 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2870,14 +2903,14 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2893,15 +2926,15 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -2973,7 +3006,10 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -3136,10 +3172,11 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -3160,14 +3197,14 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3188,14 +3225,14 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3211,15 +3248,15 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3293,7 +3330,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -3441,10 +3481,11 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -3465,14 +3506,14 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3493,14 +3534,14 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3516,15 +3557,15 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3596,7 +3637,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -3747,10 +3791,11 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 						} else{
 							if(PRINT_DETAILED==false) tos<<"          <td>\?\?\?</td>\n";
 							else{
-								tos<<"          <td><table class=\"detailed\"";
+								tos<<"          <td><table class=\"detailed\">";
 								
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<tr class=\"student line0\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -3771,14 +3816,14 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"line1\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"line1\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3799,14 +3844,14 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"teacher line2\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"teacher line2\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(act->teachersNames.size()>0){
 											for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3822,15 +3867,15 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 									}
 								}
 								tos<<"</tr>";
-								tos<<"<tr class=\"room line3\">";
+								if(TIMETABLE_HTML_LEVEL>=3)
+									tos<<"<tr class=\"room line3\">";
+								else	tos<<"<tr>";
 								for(int a=0; a<allActivities.size(); a++){
 									ai=allActivities[a];
 									Activity* act=&gt.rules.internalActivitiesList[ai];
 									if(ai!=UNALLOCATED_ACTIVITY){
 										int r=best_solution.rooms[ai];
-										if(TIMETABLE_HTML_LEVEL>=3)
-											tos<<"<td>";
-										else tos<<"<td>";
+										tos<<"<td>";
 										if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
@@ -3906,7 +3951,10 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -4095,7 +4143,10 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -4285,7 +4336,10 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -4452,7 +4506,10 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -4620,7 +4677,10 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -4813,7 +4873,10 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -4844,7 +4907,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 		tos<<"    <h1> "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <p>\n      <strong>"<<TimetableExport::tr("Institution name")<<":</strong> "<<protect2(gt.rules.institutionName)<<"<br />\n";
-	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 	
+	tos<<"      <strong>"<<TimetableExport::tr("Comments")<<":</strong> "<<protect2(gt.rules.comments)<<"\n    </p>\n"; 
 		
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
@@ -5009,7 +5072,10 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
@@ -5180,7 +5246,10 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+	else
+		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";

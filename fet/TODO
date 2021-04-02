@@ -88,6 +88,15 @@ From my80s:
 If u could add constraint 'teacher max gaps daily'
 it would be really very helpfull for me.
 
+
+> also in program we have
+> a matrix with days x hours = n x n
+> if this is allocated from some activity it should get error in
+> precomputing in real time
+> if we put another activity 100% in same cell
+>
+> that would take less time to find mistakes
+
 ----------------------------------------------------------------------------------
 
 From Danail Traichev:

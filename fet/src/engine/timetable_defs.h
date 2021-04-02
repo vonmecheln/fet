@@ -53,6 +53,10 @@ extern QString FET_LANGUAGE;
 //English has to be counted also
 extern const int NUMBER_OF_LANGUAGES;
 
+extern bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
+
+extern QString LANGUAGE_FOR_HTML;
+
 /**
 Timetable html css javaScript Level, added by Volker Dirr
 */

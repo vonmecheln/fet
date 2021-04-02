@@ -215,6 +215,12 @@ int main(int argc, char **argv){
 		else
 			translator.load("fet_el", "translations");
 	}
+	else if(FET_LANGUAGE=="ar"){
+		if(d.exists())
+			translator.load("fet_ar", "/usr/share/fet/translations");
+		else
+			translator.load("fet_ar", "translations");
+	}
 	else{
 		if(FET_LANGUAGE!="en_GB"){
 			QMessageBox::warning(NULL, QObject::tr("FET warning"), 
@@ -224,6 +230,23 @@ int main(int argc, char **argv){
 		
 		assert(FET_LANGUAGE=="en_GB");
 	}
+	
+	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="he" /* or others??? */){
+		LANGUAGE_STYLE_RIGHT_TO_LEFT=true;
+	}
+	else{
+		LANGUAGE_STYLE_RIGHT_TO_LEFT=false;
+	}
+	
+	//if(FET_LANGUAGE=="en_GB")
+	//	LANGUAGE_FOR_HTML="en";
+	//else
+	if(FET_LANGUAGE=="zh_CN")
+		LANGUAGE_FOR_HTML="zh-Hans";
+	else if(FET_LANGUAGE=="zh_TW")
+		LANGUAGE_FOR_HTML="zh-Hant";
+	else
+		LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
 		
 	qapplication.installTranslator(&translator);	
 	

@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="ar">
 <context>
     <name>ActivitiesForm_template</name>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="16"/>
         <source>FET - the activities (lectures, courses, seminars, etc.)</source>
-        <translation>FET - les activitats (conferències, cursos, seminaris, etc.)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="57"/>
-        <source>New Item</source>
-        <translation>Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="87"/>
-        <source>Current activity&apos;s description</source>
-        <translation>Descripció de l&apos;activitat actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="206"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="198"/>
-        <source>Remove</source>
-        <translation>Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="105"/>
-        <source>Filter</source>
-        <translation>Filtre</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="116"/>
-        <source>Teacher</source>
-        <translation>Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="129"/>
-        <source>Students set</source>
-        <translation>Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="142"/>
-        <source>Subject</source>
-        <translation>Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="182"/>
-        <source>Add</source>
-        <translation>Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="190"/>
-        <source>Modify</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform_template.ui" line="155"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المهام (حصص,محاضرات,دورات,الخ )</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="51"/>
         <source>Activities (dbl. click edits)</source>
-        <translation type="unfinished"></translation>
+        <translation>المهام (نقرتين للتحرير)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="57"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="87"/>
+        <source>Current activity&apos;s description</source>
+        <translation>&apos;وصف المهمة الحالية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="105"/>
+        <source>Filter</source>
+        <translation>المرشح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="116"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="129"/>
+        <source>Students set</source>
+        <translation>طلاب معينين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="142"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="155"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="182"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="190"/>
+        <source>Modify</source>
+        <translation>تعديل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="198"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform_template.ui" line="206"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
@@ -73,68 +73,85 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="267"/>
         <source>Add current activities</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة المهام الحالية</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="268"/>
         <source>Current activities</source>
-        <translation type="unfinished"></translation>
+        <translation>المهام الحالية</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="271"/>
         <source>Add current activity</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة المهمة الحالية</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="272"/>
         <source>Current activity</source>
-        <translation type="unfinished">Activitat Actual</translation>
+        <translation>المهمة الحالية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="300"/>
+        <source>No teachers for this activity
+</source>
+        <translation type="obsolete">لا مدرسين لهذه المهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="302"/>
+        <source>No teachers for these activities
+</source>
+        <translation type="obsolete">لا يوجد مدرسين لهذه المهام</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="308"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Professor=%1</translation>
+        <translation>المدرس=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="313"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">Assignatura=%1
-</translation>
+        <translation>المادة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="316"/>
         <source>Subject tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="321"/>
+        <source>No students for these activities
+</source>
+        <translation type="obsolete">لا طلاب لهذه المهام</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="329"/>
         <source>Students=%1</source>
-        <translation type="unfinished">Estudiants=%1</translation>
+        <translation>الطلاب=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="334"/>
         <source>Number of students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الطلاب=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="338"/>
         <source>Number of students: automatically computed from component students sets</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="385"/>
         <source>Duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>الفترة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="388"/>
         <source>Active activity</source>
-        <translation type="unfinished"></translation>
+        <translation>تفعيل المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="392"/>
         <source>Non-active activity</source>
-        <translation type="unfinished"></translation>
+        <translation>مهمة غير مفعلة</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="355"/>
@@ -144,7 +161,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="363"/>
         <source>The distance between any pair of activities must be at least %1 days</source>
-        <translation type="unfinished"></translation>
+        <translation>الزمن بين أي مهمتين يجب أن يقل عن %1 يوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="366"/>
@@ -157,14 +174,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="379"/>
-        <source>Componenent %1:</source>
-        <translation type="obsolete">Component %1:</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform.cpp" line="565"/>
         <source>FET information</source>
-        <translation type="unfinished">Infomació FET</translation>
+        <translation>معلومات FET</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="409"/>
@@ -174,7 +186,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="502"/>
         <source>FET question</source>
-        <translation type="unfinished">Preguna FET</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="417"/>
@@ -190,7 +202,7 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="442"/>
         <source>Invalid subject</source>
-        <translation type="unfinished">Assignatura invàlida</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="451"/>
@@ -205,32 +217,32 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="476"/>
         <source>Invalid duration</source>
-        <translation type="unfinished">Durada invàlida</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="503"/>
         <source>This activity already exists. Insert it again?</source>
-        <translation type="unfinished">Aquesta activitat ja existeix. La insereixc altra vegada?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="504"/>
         <source>Yes</source>
-        <translation type="unfinished">Sí</translation>
+        <translation>نعم</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="504"/>
-        <source>No</source>
-        <translation type="unfinished">No</translation>
+        <source>no</source>
+        <translation type="obsolete">لا</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="516"/>
         <source>Activity added</source>
-        <translation type="unfinished">Afegida l&apos;activitat </translation>
+        <translation>المهمة اضيفت</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="518"/>
         <source>Activity NOT added - please report error</source>
-        <translation type="unfinished">Activitat no afegida - per faver reporteu l&apos;errada</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="563"/>
@@ -240,17 +252,7 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="565"/>
         <source>Split activity NOT added - error???</source>
-        <translation type="unfinished">Activitat dividida no afegida - errada???</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="647"/>
-        <source>FET - help on adding activity(ies)</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="653"/>
-        <source>OK</source>
-        <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="642"/>
@@ -281,29 +283,44 @@ Starting with version 5.0.0, it is possible to add activities with no students o
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addactivityform.cpp" line="647"/>
+        <source>FET - help on adding activity(ies)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="653"/>
+        <source>OK</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="300"/>
+        <source>No teachers for this activity</source>
+        <translation>لا مدرسين لهذه المهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="302"/>
+        <source>No teachers for these activities</source>
+        <translation>لا مدرسين لهذه المهام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="321"/>
+        <source>No students for this activity</source>
+        <translation>لا طلاب لهذه المهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="323"/>
+        <source>No students for these activities</source>
+        <translation>لا طلاب لهذه المهام</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addactivityform.cpp" line="383"/>
         <source>Component %1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="300"/>
-        <source>No teachers for this activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="302"/>
-        <source>No teachers for these activities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="321"/>
-        <source>No students for this activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="323"/>
-        <source>No students for these activities</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addactivityform.cpp" line="504"/>
+        <source>No</source>
+        <translation>لا</translation>
     </message>
 </context>
 <context>
@@ -311,112 +328,62 @@ Starting with version 5.0.0, it is possible to add activities with no students o
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="16"/>
         <source>FET - add new activity dialog</source>
-        <translation>Fet - Afegir nou diàleg d&apos;activitats</translation>
+        <translation>FET - اضافة مهمة جديدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="332"/>
-        <source>Current activity</source>
-        <translation>Activitat Actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="127"/>
-        <source>Subject</source>
-        <translation>Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1074"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1041"/>
-        <source>Add current activity</source>
-        <translation>Afegir activitat actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="281"/>
-        <source>Show years</source>
-        <translation>Mostra anys</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="292"/>
-        <source>Show groups</source>
-        <translation>Mostra grups</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="303"/>
-        <source>Show subgroups</source>
-        <translation>Mostra subgrups</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="386"/>
-        <source>Split this activity into ... lessons per week.</source>
-        <translation type="obsolete">Divideix aquesta activitat en ... lliçons per setmana.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="464"/>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="944"/>
-        <source>Duration</source>
-        <translation>Durada</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="513"/>
-        <source>2</source>
-        <translation>2</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="562"/>
-        <source>3</source>
-        <translation>3</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="611"/>
-        <source>4</source>
-        <translation>4</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="660"/>
-        <source>5</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="709"/>
-        <source>6</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="758"/>
-        <source>7</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="807"/>
-        <source>8</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="162"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addactivityform_template.ui" line="51"/>
+        <source>Teachers</source>
+        <translation>المدرسون</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="239"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="233"/>
+        <source>Selected</source>
+        <translation>الاختيار</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="259"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>مسح</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="930"/>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addactivityform_template.ui" line="127"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="162"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="205"/>
+        <source>Students</source>
+        <translation>الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="281"/>
+        <source>Show years</source>
+        <translation>عرض الفصول</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="292"/>
+        <source>Show groups</source>
+        <translation>عرض المجموعات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="303"/>
+        <source>Show subgroups</source>
+        <translation>عرض المجموعات الفرعية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="332"/>
+        <source>Current activity</source>
+        <translation>المهمة الحالية</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="359"/>
@@ -424,57 +391,75 @@ Starting with version 5.0.0, it is possible to add activities with no students o
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1000"/>
-        <source>%</source>
+        <location filename="../src/interface/addactivityform_template.ui" line="386"/>
+        <source>Split into ... activities per week.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="856"/>
-        <source>9</source>
-        <translation type="unfinished">9</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="905"/>
-        <source>10</source>
-        <translation type="unfinished">10</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1066"/>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1010"/>
-        <source>If activities on 
-same day, force
-consecutive?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="989"/>
-        <source>95.0</source>
-        <translation type="obsolete">95.0</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="233"/>
-        <source>Selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="51"/>
-        <source>Teachers</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="205"/>
-        <source>Students</source>
-        <translation type="unfinished">studiants</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="437"/>
         <source>The minimum required 
 distance in days between 
 each pair of activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="464"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="930"/>
+        <source>Active</source>
+        <translation>مفعل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="944"/>
+        <source>duration</source>
+        <translation type="obsolete">الفترة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="513"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="562"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="611"/>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="660"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="709"/>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="758"/>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="807"/>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="856"/>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="905"/>
+        <source>10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -490,12 +475,39 @@ Recommended:
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="989"/>
         <source>95</source>
-        <translation type="unfinished">95</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="386"/>
-        <source>Split into ... activities per week.</source>
+        <location filename="../src/interface/addactivityform_template.ui" line="1000"/>
+        <source>%</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1010"/>
+        <source>If activities on 
+same day, force
+consecutive?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1041"/>
+        <source>Add current activity</source>
+        <translation>اضافة المهمة الحالية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1066"/>
+        <source>Help</source>
+        <translation>مساعدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1074"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="944"/>
+        <source>Duration</source>
+        <translation>الفترة</translation>
     </message>
 </context>
 <context>
@@ -508,63 +520,63 @@ Recommended:
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="76"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="117"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="139"/>
-        <source>First activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="186"/>
-        <source>Second activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="219"/>
-        <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="235"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="248"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="261"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="269"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="67"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="76"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="117"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation>المهمة الاولى</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation>المهمة الثانية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="219"/>
+        <source>Filter</source>
+        <translation>المرشح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="235"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="248"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="261"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="269"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -577,17 +589,22 @@ Recommended:
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="35"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>اضافة التقييد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="67"/>
+        <source>Selected (dbl. click or Enter to remove)</source>
+        <translation>الاختيار (نقرتين او انتر للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="119"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="87"/>
@@ -599,23 +616,18 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="67"/>
-        <source>Selected (dbl. click or Enter to remove)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="113"/>
         <source>All activities (dbl. click or Enter to add)</source>
-        <translation type="unfinished"></translation>
+        <translation>كل المهام (نقرتين أو انتر للإضافة)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -624,12 +636,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="192"/>
         <source>FET question</source>
-        <translation type="unfinished">Preguna FET</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="162"/>
         <source>Are you sure you want to add this constraint for all activities? (no teacher, students, subject or subject tag specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(هل ترغب بإضافة التقييد لجميع المهام ؟ معلمين,طلاب,مواد,مواد مكملة)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="193"/>
@@ -642,47 +654,47 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activities preferred times</source>
-        <translation>FET - Afegir una nova restricció de les hores preferides de l&apos;activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="81"/>
-        <source>Add constraint</source>
-        <translation>Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="73"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="128"/>
-        <source>Subject</source>
-        <translation>Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="141"/>
-        <source>Teacher</source>
-        <translation>Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="115"/>
-        <source>Students set</source>
-        <translation>Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="97"/>
-        <source>Subject tag</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="49"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="49"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="73"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="81"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="97"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="115"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="128"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="141"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="151"/>
@@ -699,24 +711,19 @@ blank for all teachers), students set, subject and subject tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="153"/>
-        <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="161"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="57"/>
+        <source>All activities (dbl. click adds)</source>
+        <translation>كل المهام (نقرتين للإضافة)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="97"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="135"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="91"/>
+        <source>Selected (dbl. click removes)</source>
+        <translation>الاختيار (نقرتين للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="127"/>
@@ -724,14 +731,19 @@ blank for all teachers), students set, subject and subject tag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="57"/>
-        <source>All activities (dbl. click adds)</source>
+        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="135"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="91"/>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="153"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="161"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
@@ -739,52 +751,17 @@ blank for all teachers), students set, subject and subject tag.</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="16"/>
         <source>FET - Add new constraint activities same starting time</source>
-        <translation>FET - Afegir una nova restricció de les activitats amb la mateixa hora d&apos;inici</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="35"/>
         <source>Add constraint</source>
-        <translation>Restricció actual</translation>
+        <translation>اضافة التقييد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="43"/>
         <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="122"/>
-        <source>New Item</source>
-        <translation>Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="205"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="223"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="236"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="249"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="142"/>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="176"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="53"/>
@@ -796,24 +773,59 @@ careful at the order, it might be different from what you need)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="82"/>
+        <source>All activities (dbl. click adds)</source>
+        <translation>كل المهام (نقرتين للإضافة)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="122"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="116"/>
+        <source>Selected (dbl. click removes)</source>
+        <translation>الاختيار (نقرتين للحذف)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="142"/>
+        <source>Clear</source>
+        <translation>مسح</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="168"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="176"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="186"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="82"/>
-        <source>All activities (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="205"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="116"/>
-        <source>Selected (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="223"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="236"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="249"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
 </context>
 <context>
@@ -826,57 +838,57 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="49"/>
         <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
+        <translation>المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="113"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="143"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="151"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="171"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="179"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="189"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="205"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="218"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="231"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="239"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -887,29 +899,19 @@ careful at the order, it might be different from what you need)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="57"/>
-        <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="96"/>
-        <source>Room</source>
-        <translation type="unfinished">Àula</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="46"/>
         <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
+        <translation>المهمة</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="107"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="57"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="82"/>
@@ -917,29 +919,39 @@ careful at the order, it might be different from what you need)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="96"/>
+        <source>Room</source>
+        <translation>القاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="107"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="115"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="131"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="144"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="157"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="165"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -950,49 +962,14 @@ careful at the order, it might be different from what you need)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="93"/>
-        <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="101"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="35"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="43"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="176"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="190"/>
-        <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="125"/>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="170"/>
-        <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="75"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="67"/>
@@ -1000,29 +977,64 @@ careful at the order, it might be different from what you need)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="75"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="93"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="101"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="125"/>
+        <source>All rooms (dbl. click adds)</source>
+        <translation>كل القاعات (نقرتين للإضافة)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="176"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="170"/>
+        <source>Selected rooms (dbl. click removes)</source>
+        <translation>القاعات المختارة (نقرتين للحذف)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="190"/>
+        <source>Activity</source>
+        <translation>المهمة</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="198"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="214"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="227"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="240"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="248"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -1033,74 +1045,74 @@ careful at the order, it might be different from what you need)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="216"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="224"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="49"/>
+        <source>Activity</source>
+        <translation>المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="113"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="121"/>
         <source>Period</source>
-        <translation type="unfinished">Període</translation>
+        <translation>المدة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="132"/>
         <source>Day</source>
-        <translation type="unfinished">Dia</translation>
+        <translation>اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="148"/>
         <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="49"/>
-        <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="234"/>
-        <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="250"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="263"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="276"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="284"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="196"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>حصة البدء</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="188"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="196"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="216"/>
+        <source>Add current constraint</source>
+        <translation>اضافة التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="224"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="234"/>
+        <source>Filter</source>
+        <translation>المرشح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="250"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="263"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="276"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="284"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -1108,7 +1120,7 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="227"/>
         <source>FET question</source>
-        <translation type="unfinished">Preguna FET</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="228"/>
@@ -1121,57 +1133,57 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="16"/>
         <source>FET - Adding a new constraint activity preferred times</source>
-        <translation>FET - Afegint una nova restricció d&apos;ativitat per horer preferides</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="61"/>
-        <source>Activity</source>
-        <translation>Activitats</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="35"/>
         <source>Add constraint</source>
-        <translation>Restricció actual</translation>
+        <translation>اضافة التقييد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="43"/>
         <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="145"/>
-        <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="161"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="174"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="192"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="200"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="61"/>
+        <source>Activity</source>
+        <translation>المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="145"/>
+        <source>Filter</source>
+        <translation>المرشح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="161"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="174"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="192"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="200"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
     </message>
 </context>
 <context>
@@ -1184,22 +1196,22 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="79"/>
@@ -1217,22 +1229,22 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="79"/>
@@ -1250,47 +1262,47 @@ careful at the order, it might be different from what you need)</source>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="65"/>
         <source>Period</source>
-        <translation type="unfinished">Període</translation>
+        <translation>المدة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="76"/>
         <source>Day</source>
-        <translation type="unfinished">Dia</translation>
+        <translation>اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="92"/>
         <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
+        <translation>حصة البدء</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="108"/>
         <source>End hour</source>
-        <translation type="unfinished">Hora final</translation>
+        <translation>الحصة الأخيرة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="140"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="148"/>
@@ -1307,55 +1319,20 @@ not induce gaps for teachers or students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="263"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="47"/>
-        <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="55"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="116"/>
-        <source>Min days</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="27"/>
         <source>If activities on same day,
 force activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="145"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="47"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="163"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="176"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="189"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="87"/>
-        <source>95.0</source>
-        <translation type="obsolete">95.0</translation>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="55"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="79"/>
@@ -1363,29 +1340,59 @@ force activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="87"/>
+        <source>95</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="116"/>
+        <source>Min days</source>
+        <translation>اقل ايام</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="126"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="145"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="163"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="176"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="189"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="223"/>
         <source>All activities (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>كل المهام (نقرتين للإضافة)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="263"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="257"/>
         <source>Selected (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="87"/>
-        <source>95</source>
-        <translation type="unfinished">95</translation>
+        <translation>الاختيار (نقرتين للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="275"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>مسح</translation>
     </message>
 </context>
 <context>
@@ -1393,52 +1400,52 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="16"/>
         <source>FET - Adding a new constraint room not available</source>
-        <translation>FET - Afegir una nova restricció d&apos;aula no disponible</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="27"/>
         <source>Add constraint</source>
-        <translation>Restricció actual</translation>
+        <translation>اضافة التقييد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="35"/>
         <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="87"/>
-        <source>Period</source>
-        <translation>Període</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="98"/>
-        <source>End hour</source>
-        <translation>Hora final</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="106"/>
-        <source>Day</source>
-        <translation>Dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="133"/>
-        <source>Start hour</source>
-        <translation>Hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="71"/>
-        <source>Room</source>
-        <translation>Àula</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="57"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="49"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="57"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="71"/>
+        <source>Room</source>
+        <translation>القاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="87"/>
+        <source>Period</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="98"/>
+        <source>End hour</source>
+        <translation>الحصة الأخيرة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="106"/>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="133"/>
+        <source>Start hour</source>
+        <translation>حصة البدء</translation>
     </message>
 </context>
 <context>
@@ -1449,29 +1456,14 @@ force activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="139"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="147"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="121"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="90"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="104"/>
@@ -1486,6 +1478,21 @@ constraint).
 Note: students set not available and break are not counted as
 gaps (early gaps).</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="121"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="139"/>
+        <source>Add current constraint</source>
+        <translation>اضافة التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="147"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="163"/>
@@ -1508,32 +1515,32 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="49"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="57"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="93"/>
-        <source>Max hours</source>
-        <translation type="unfinished"></translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="93"/>
+        <source>Max hours</source>
+        <translation>اقصى حصص</translation>
     </message>
 </context>
 <context>
@@ -1546,32 +1553,32 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="57"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="93"/>
-        <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (needed: 100%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="93"/>
+        <source>Min hours</source>
+        <translation>ادنى حصص</translation>
     </message>
 </context>
 <context>
@@ -1582,24 +1589,24 @@ them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="41"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="67"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="75"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="41"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="93"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="107"/>
@@ -1618,7 +1625,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="130"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن النسبي (ضروري: 100%)</translation>
     </message>
 </context>
 <context>
@@ -1626,32 +1633,12 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set early dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="170"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="178"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="144"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>FET - اضافة تقييد جديد لطلاب معينين باكراً</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="35"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="120"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="66"/>
@@ -1670,7 +1657,27 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="89"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="120"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="144"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="170"/>
+        <source>Add current constraint</source>
+        <translation>اضافة التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="178"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="194"/>
@@ -1693,37 +1700,37 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="72"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="80"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="88"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="124"/>
-        <source>Max hours</source>
-        <translation type="unfinished"></translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="110"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="124"/>
+        <source>Max hours</source>
+        <translation>اقصى حصص</translation>
     </message>
 </context>
 <context>
@@ -1736,37 +1743,37 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="72"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="80"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="88"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="124"/>
-        <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="124"/>
+        <source>Min hours</source>
+        <translation>ادنى حصص</translation>
     </message>
 </context>
 <context>
@@ -1777,29 +1784,34 @@ them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="41"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="67"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="75"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="41"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="116"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="124"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="155"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="169"/>
@@ -1815,11 +1827,6 @@ Note: students set not available and break are not counted as
 gaps.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="155"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>AddConstraintStudentsSetNotAvailableForm_template</name>
@@ -1829,60 +1836,60 @@ gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="163"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="147"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="58"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="66"/>
         <source>Period</source>
-        <translation type="unfinished">Període</translation>
+        <translation>المدة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="77"/>
         <source>Day</source>
-        <translation type="unfinished">Dia</translation>
+        <translation>اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="93"/>
         <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
+        <translation>حصة البدء</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="109"/>
         <source>End hour</source>
-        <translation type="unfinished">Hora final</translation>
+        <translation>الحصة الأخيرة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="133"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="147"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="163"/>
+        <source>Add current constraint</source>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="171"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="179"/>
         <source>This constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after this
 not available period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="58"/>
-        <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1894,34 +1901,34 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="49"/>
-        <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="57"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="71"/>
-        <source>Room</source>
-        <translation type="unfinished">Àula</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="93"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="27"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="49"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="57"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="71"/>
+        <source>Room</source>
+        <translation>القاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="93"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
     </message>
 </context>
 <context>
@@ -1932,54 +1939,54 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="67"/>
-        <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="75"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="93"/>
-        <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="101"/>
-        <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="165"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="184"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="125"/>
-        <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="159"/>
-        <source>Selected rooms (dbl. click removes)</source>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="67"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="75"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="93"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="101"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="125"/>
+        <source>All rooms (dbl. click adds)</source>
+        <translation>كل القاعات (نقرتين للإضافة)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="165"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="159"/>
+        <source>Selected rooms (dbl. click removes)</source>
+        <translation>القاعات المختارة (نقرتين للحذف)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="184"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
     </message>
 </context>
 <context>
@@ -1992,37 +1999,37 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="33"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="55"/>
         <source>Room</source>
-        <translation type="unfinished">Àula</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="80"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="93"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="101"/>
-        <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="120"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>القاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="80"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="93"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="101"/>
+        <source>Add constraint</source>
+        <translation>اضافة التقييد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform_template.ui" line="120"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -2033,59 +2040,59 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="67"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>اضافة التقييد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="75"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="90"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="112"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>كل القاعات (نقرتين للإضافة)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="178"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="140"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="148"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="172"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>القاعات المختارة (نقرتين للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="192"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -2098,37 +2105,37 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="96"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="129"/>
-        <source>Max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="96"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="129"/>
+        <source>Max days per week</source>
+        <translation>الحد الأقصى لأيام لدوام الاسبوعي</translation>
     </message>
 </context>
 <context>
@@ -2141,37 +2148,17 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="149"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="188"/>
-        <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="163"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="141"/>
-        <source>Weight (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="116"/>
@@ -2184,6 +2171,26 @@ need to use higher values. Note: teacher not
 available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="141"/>
+        <source>Weight (necessary: 100%)</source>
+        <translation>الوزن (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="149"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="163"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="188"/>
+        <source>Max gaps per week</source>
+        <translation>الفراغات الاسبوعية القصوى</translation>
+    </message>
 </context>
 <context>
     <name>AddConstraintTeacherMaxHoursDailyForm_template</name>
@@ -2195,37 +2202,37 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="90"/>
-        <source>Max hours daily</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="104"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="129"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="71"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="90"/>
+        <source>Max hours daily</source>
+        <translation>أقصى حصص يومية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="104"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="129"/>
+        <source>Add current constraint</source>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
 </context>
 <context>
@@ -2238,37 +2245,37 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="33"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="47"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="55"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="88"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="102"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>الحد الادنى من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="110"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="132"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="146"/>
@@ -2287,54 +2294,54 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="157"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="66"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="96"/>
-        <source>Period</source>
-        <translation type="unfinished">Període</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="107"/>
-        <source>Day</source>
-        <translation type="unfinished">Dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="123"/>
-        <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="139"/>
-        <source>End hour</source>
-        <translation type="unfinished">Hora final</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="171"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="58"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="66"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="88"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="96"/>
+        <source>Period</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="107"/>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="123"/>
+        <source>Start hour</source>
+        <translation>حصة البدء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="139"/>
+        <source>End hour</source>
+        <translation>الحصة الأخيرة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="157"/>
+        <source>Add current constraint</source>
+        <translation>اضافة التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="171"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="179"/>
@@ -2349,36 +2356,31 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="107"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="153"/>
-        <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="99"/>
         <source>Weight (necessary: 100%)</source>
+        <translation>الوزن (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="107"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2393,43 +2395,48 @@ need to use higher values. Note: teacher not
 available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="153"/>
+        <source>Max gaps per week</source>
+        <translation>الفراغات الاسبوعية القصوى</translation>
+    </message>
 </context>
 <context>
     <name>AddConstraintTeachersMaxHoursDailyForm_template</name>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="27"/>
-        <source>Add current constraint</source>
-        <translation type="unfinished">Afegir activitat actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="35"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="49"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="98"/>
-        <source>Max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max hours daily dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="27"/>
+        <source>Add current constraint</source>
+        <translation>اضافة التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="35"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="49"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="98"/>
+        <source>Max hours daily</source>
+        <translation>الحد الاقصى من الحصص اليومية</translation>
     </message>
 </context>
 <context>
@@ -2437,37 +2444,37 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="49"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>الحد الادنى من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="79"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="93"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="101"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="115"/>
@@ -2484,65 +2491,80 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="16"/>
         <source>Add Room Dialog</source>
-        <translation>Afegeix Diàleg d&apos;àules</translation>
+        <translation>اضافة قاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="35"/>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation>الاسم</translation>
     </message>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="58"/>
         <source>Capacity</source>
-        <translation>Capacitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addroomform_template.ui" line="98"/>
-        <source>Add room</source>
-        <translation>Afegeix Diàleg</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addroomform_template.ui" line="106"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>الاستيعاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="90"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>مساعدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addroomform_template.ui" line="98"/>
+        <source>Add room</source>
+        <translation>اضافة قاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addroomform_template.ui" line="106"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
     <name>AddStudentsGroupForm_template</name>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="16"/>
-        <source>Add Students Group Dialog</source>
-        <translation>Afegeix diàleg de grup d&apos;estudiants</translation>
+        <source>add students group dialog</source>
+        <translation type="obsolete">اضافة مجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="27"/>
         <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="35"/>
         <source>Add</source>
-        <translation>Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="43"/>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform_template.ui" line="51"/>
+        <source>number of students</source>
+        <translation type="obsolete">عدد الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform_template.ui" line="73"/>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform_template.ui" line="16"/>
+        <source>Add Students Group Dialog</source>
+        <translation>اضافة مجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="51"/>
         <source>Number of students</source>
-        <translation>Nombre d&apos;estudiants</translation>
+        <translation>عدد الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="73"/>
         <source>Year</source>
-        <translation>Any</translation>
+        <translation>الفصل</translation>
     </message>
 </context>
 <context>
@@ -2550,37 +2572,52 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="16"/>
         <source>Add Students Subgroup Dialog</source>
-        <translation>Afegeix diàleg de subgrup d&apos;estudiants</translation>
+        <translation>اضافة مجموعة طلاب فرعية</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="27"/>
-        <source>Year</source>
-        <translation>Any</translation>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="43"/>
         <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="51"/>
         <source>Add</source>
-        <translation>Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="73"/>
-        <source>Number of students</source>
-        <translation>Nombre d&apos;estudiants</translation>
+        <source>number of students</source>
+        <translation type="obsolete">عدد الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="86"/>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform_template.ui" line="102"/>
+        <source>group</source>
+        <translation type="obsolete">المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform_template.ui" line="27"/>
+        <source>Year</source>
+        <translation>الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform_template.ui" line="73"/>
+        <source>Number of students</source>
+        <translation>عدد الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="102"/>
         <source>Group</source>
-        <translation>Grup</translation>
+        <translation>المجموعة</translation>
     </message>
 </context>
 <context>
@@ -2588,27 +2625,32 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="16"/>
         <source>Add Students Year Dialog</source>
-        <translation>Afegeix diàleg de  Any Estudiants</translation>
+        <translation>اضافة فصل</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="27"/>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation>الاسم</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="40"/>
-        <source>Number of students</source>
-        <translation>Nombre d&apos;estudiants</translation>
+        <source>number of students</source>
+        <translation type="obsolete">عدد الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="62"/>
         <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform_template.ui" line="70"/>
         <source>Add</source>
-        <translation>Afegir</translation>
+        <translation>اضافة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsyearform_template.ui" line="40"/>
+        <source>Number of students</source>
+        <translation>عدد الطلاب</translation>
     </message>
 </context>
 <context>
@@ -2616,37 +2658,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="16"/>
         <source>FET - All space constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="35"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="41"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="61"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="69"/>
-        <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="77"/>
-        <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - كل التقييدات المكانية</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="27"/>
         <source>Constraints (dbl. click modifies)</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييدات (نقرتين للتعديل)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="35"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="41"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="61"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="69"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/allspaceconstraintsform_template.ui" line="77"/>
+        <source>Modify</source>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2654,37 +2696,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="16"/>
         <source>FET - All time constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - جميع التقييدات الزمنية</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="51"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="67"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="75"/>
-        <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="83"/>
-        <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="43"/>
         <source>Constraints (dbl. click modifies)</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييدات (نقرتين للتعديل)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="51"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="67"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/alltimeconstraintsform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2692,17 +2734,17 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/commentsform_template.ui" line="16"/>
         <source>FET - timetable data - comments</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - بيانات الجدول - شرح</translation>
     </message>
     <message>
         <location filename="../src/interface/commentsform_template.ui" line="27"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/commentsform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
 </context>
 <context>
@@ -2715,37 +2757,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation type="unfinished">التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2758,37 +2800,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2796,42 +2838,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="16"/>
         <source>FET - ConstraintActivitiesPreferredTimes</source>
-        <translation></translation>
+        <translation>FET - تقييد التفضيلات الزمنية للمهمام</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="35"/>
         <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="83"/>
-        <source>Add</source>
-        <translation>Afegir</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="43"/>
         <source>Remove</source>
-        <translation>Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="57"/>
         <source>Constraints</source>
-        <translation>Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="65"/>
         <source>Current constraint</source>
-        <translation>Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="71"/>
         <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="83"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiespreferredtimesform_template.ui" line="91"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2844,37 +2886,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="43"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="57"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="65"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="71"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="83"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="91"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2882,42 +2924,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="16"/>
         <source>FET - ConstraintActivitiesSameStartingTime</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="35"/>
         <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="43"/>
         <source>Add</source>
-        <translation>Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="83"/>
-        <source>Remove</source>
-        <translation>Esborrar</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="57"/>
         <source>Constraints</source>
-        <translation>Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="65"/>
         <source>Current constraint</source>
-        <translation>Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="71"/>
         <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="83"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="91"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2930,37 +2972,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -2981,72 +3023,67 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="99"/>
-        <source>Filter</source>
-        <translation type="obsolete">Filtre</translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="91"/>
         <source>Filter rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>مرشح القاعات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="109"/>
         <source>Filter activities</source>
-        <translation type="unfinished"></translation>
+        <translation>مرشح المهام</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="120"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="133"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="151"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="164"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
 </context>
 <context>
@@ -3060,69 +3097,69 @@ but they might be too large and you might get a impossible timetable.</source>
 <context>
     <name>ConstraintActivityPreferredRoomsForm_template</name>
     <message>
-        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="27"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="35"/>
-        <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="49"/>
-        <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="57"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="63"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="75"/>
-        <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="83"/>
-        <source>Modify</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="16"/>
         <source>FET - ConstraintActivityPreferredRooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="49"/>
+        <source>Constraints</source>
+        <translation>التقييدات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="57"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="63"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation>تعديل</translation>
+    </message>
+    <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="91"/>
         <source>Filter activities</source>
-        <translation type="unfinished"></translation>
+        <translation>مرشح المهام</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="102"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="115"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="133"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="146"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
 </context>
 <context>
@@ -3143,62 +3180,62 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="110"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="123"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="141"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeform_template.ui" line="154"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
 </context>
 <context>
@@ -3219,62 +3256,62 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="159"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="67"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="78"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="94"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="105"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="118"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="136"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="149"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitypreferredtimesform_template.ui" line="159"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
     </message>
 </context>
 <context>
@@ -3287,37 +3324,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -3325,42 +3362,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="16"/>
         <source>FET - Basic compulsory time constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - تقييد زمني أجباري اساسي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -3373,37 +3410,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintbreakform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreakform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreakform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreakform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreakform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreakform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreakform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -3424,37 +3461,32 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="91"/>
-        <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="45"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="69"/>
-        <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="37"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="45"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="53"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="61"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="69"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="77"/>
@@ -3462,29 +3494,34 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="91"/>
+        <source>Constraints</source>
+        <translation>التقييدات</translation>
+    </message>
+    <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="107"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="118"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="131"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="149"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="162"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
 </context>
 <context>
@@ -3497,42 +3534,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintroomnotavailableform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -3545,37 +3582,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentsearlyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsearlyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -3588,37 +3625,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -3631,37 +3668,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -3674,37 +3711,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentsnogapsform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsnogapsform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation type="unfinished">التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsnogapsform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsnogapsform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsnogapsform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsnogapsform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsnogapsform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
@@ -3717,42 +3754,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>تقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -3765,42 +3802,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>تقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -3813,42 +3850,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -3861,42 +3898,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnogapsform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -3909,42 +3946,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetnotavailableform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -3957,90 +3994,90 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
     <name>ConstraintSubjectPreferredRoomsForm_template</name>
     <message>
+        <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="16"/>
+        <source>FET - ConstraintSubjectPreferredRooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="35"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="49"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="57"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="63"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintsubjectpreferredroomsform_template.ui" line="16"/>
-        <source>FET - ConstraintSubjectPreferredRooms</source>
-        <translation type="unfinished"></translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4053,42 +4090,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4101,42 +4138,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="35"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="57"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="63"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectsubjecttagpreferredroomsform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4144,47 +4181,47 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Time constraints teacher max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - التقييد الزمني لايام الدوام الأسبوعي للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4197,42 +4234,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4245,42 +4282,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="83"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4293,42 +4330,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="83"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4341,42 +4378,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailableform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
 </context>
 <context>
@@ -4389,80 +4426,80 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
 </context>
 <context>
     <name>ConstraintTeachersMaxHoursDailyForm_template</name>
     <message>
+        <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="16"/>
+        <source>FET - Time constraints teachers max hours daily</source>
+        <translation>FET - التقييدات الزمنية لاقصى حصص يومية للمدرسين</translation>
+    </message>
+    <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="16"/>
-        <source>FET - Time constraints teachers max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييدات</translation>
     </message>
 </context>
 <context>
@@ -4470,42 +4507,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints teachers min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - التقييدات الزمنية لاقل حصص يومية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation type="unfinished">Restriccions</translation>
+        <translation>التقييدات</translation>
     </message>
 </context>
 <context>
@@ -4513,92 +4550,92 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="16"/>
         <source>FET - timetable data - the days of the week</source>
-        <translation></translation>
+        <translation>FET - بيانات الجدول - ايام العمل الاسبوعي</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="27"/>
         <source>Day 10</source>
-        <translation>Dia 10</translation>
+        <translation>يوم 10</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="35"/>
         <source>Day 3</source>
-        <translation>Dia 3</translation>
+        <translation>يوم 3</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="63"/>
         <source>Day 6</source>
-        <translation>Dia 6</translation>
+        <translation>6 يوم</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="71"/>
         <source>Day 14</source>
-        <translation>Dia 14</translation>
+        <translation>14 يوم</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="89"/>
         <source>Day 7</source>
-        <translation>Dia 7</translation>
+        <translation>يوم 7</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="97"/>
         <source>Day 2</source>
-        <translation>Dia 2</translation>
+        <translation>يوم 2</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="105"/>
         <source>Day 9</source>
-        <translation>Dia 9</translation>
+        <translation>يوم 9</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="118"/>
         <source>Day 5</source>
-        <translation>Dia 5</translation>
+        <translation>يوم 5</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="146"/>
         <source>Day 13</source>
-        <translation>Dia 13</translation>
+        <translation>13 يوم</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="154"/>
         <source>Day 11</source>
-        <translation>Dia 11</translation>
+        <translation>يوم 11</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="167"/>
         <source>Day 8</source>
-        <translation>Dia 8</translation>
+        <translation>يوم 8</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="180"/>
         <source>Day 4</source>
-        <translation>Dia 4</translation>
+        <translation>يوم 4</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="193"/>
         <source>Day 1</source>
-        <translation>Dia 1</translation>
+        <translation>يوم 1</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="201"/>
         <source>Day 12</source>
-        <translation>Dia 12</translation>
+        <translation>يوم 12</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="209"/>
         <source>Ok</source>
-        <translation>D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="217"/>
         <source>Cancel</source>
-        <translation>Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="225"/>
         <source>Number of working days per week</source>
-        <translation>Nombre de dies de feina per setmana</translation>
+        <translation>عدد أيام العمل الاسبوعي</translation>
     </message>
 </context>
 <context>
@@ -4622,12 +4659,12 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="625"/>
         <source>FET - information about statistics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET - معلومات عن الاحصاءات</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1166"/>
         <source>OK</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1150"/>
@@ -4647,394 +4684,309 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1159"/>
         <source>FET - help in other languages</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - مساعدة بلغات أخرى</translation>
     </message>
 </context>
 <context>
     <name>FetMainForm_template</name>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="41"/>
-        <source>&amp;File</source>
-        <translation>&amp;Arxiu</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="74"/>
-        <source>&amp;Data</source>
-        <translation>&amp;Dades</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="52"/>
-        <source>&amp;Timetable</source>
-        <translation>&amp;Horari</translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="13"/>
+        <source>FET - a free timetabling program</source>
+        <translation>FET - برنامج الجداول المجاني</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="30"/>
         <source>&amp;Help</source>
-        <translation>&amp;Ajuda</translation>
+        <translation>&amp;مساعدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="218"/>
-        <source>New</source>
-        <translation>Nou</translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="41"/>
+        <source>&amp;File</source>
+        <translation>&amp;ملف</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="215"/>
-        <source>&amp;New</source>
-        <translation>&amp;Nou</translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="52"/>
+        <source>&amp;Timetable</source>
+        <translation>&amp;جدول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="221"/>
-        <source>Ctrl+N</source>
-        <translation></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="64"/>
+        <source>Statistics</source>
+        <translation>احصاءات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="229"/>
-        <source>Open</source>
-        <translation>Obre</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="226"/>
-        <source>&amp;Open...</source>
-        <translation>&amp;Obre...</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="232"/>
-        <source>Ctrl+O</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="240"/>
-        <source>Save</source>
-        <translation>Desa</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
-        <source>&amp;Save</source>
-        <translation>&amp;Desa</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="243"/>
-        <source>Ctrl+S</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="251"/>
-        <source>Save As</source>
-        <translation>Desa com</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="248"/>
-        <source>Save &amp;As...</source>
-        <translation>Anomena i &amp;desa...</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="262"/>
-        <source>Exit</source>
-        <translation>Surt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="259"/>
-        <source>E&amp;xit</source>
-        <translation>S&amp;urt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="273"/>
-        <source>Frequently asked questions</source>
-        <translation>Preguntes més frequents</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="270"/>
-        <source>&amp;Frequently asked questions</source>
-        <translation type="unfinished">&amp;Preguntes més frequents</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="284"/>
-        <source>About</source>
-        <translation>Quant a</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="281"/>
-        <source>&amp;About...</source>
-        <translation>&amp;Quant a...</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="295"/>
-        <source>Teachers</source>
-        <translation>Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="292"/>
-        <source>&amp;Teachers</source>
-        <translation>&amp;Professors</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="303"/>
-        <source>Subjects</source>
-        <translation>Assignatures</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="300"/>
-        <source>&amp;Subjects</source>
-        <translation>&amp;Assignatures</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="311"/>
-        <source>Years</source>
-        <translation>Anys</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="319"/>
-        <source>Groups</source>
-        <translation>Grups</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="316"/>
-        <source>&amp;Groups</source>
-        <translation>&amp;Grups</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="327"/>
-        <source>Subgroups</source>
-        <translation>Subgrups</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="324"/>
-        <source>S&amp;ubgroups</source>
-        <translation>S&amp;ubgrups</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="335"/>
-        <source>Activities</source>
-        <translation>Activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="332"/>
-        <source>&amp;Activities</source>
-        <translation>&amp;Activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="435"/>
-        <source>Time constraints</source>
-        <translation>Restricció d&apos;hores</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="432"/>
-        <source>T&amp;ime constraints</source>
-        <translation>Restr&amp;icció d&apos;hores</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="351"/>
-        <source>View (students)</source>
-        <translation>Veure (estudiants)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
-        <source>View (&amp;students)</source>
-        <translation>Veure (E&amp;studiants)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
-        <source>View (teachers)</source>
-        <translation>Veure (professors)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
-        <source>View (&amp;teachers)</source>
-        <translation>Veure (&amp;Professors)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
-        <source>Show conflicts (time)</source>
-        <translation>Mostra conflictes (hora)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
-        <source>Days per week</source>
-        <translation>Dies per setmana</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="372"/>
-        <source>&amp;Days per week</source>
-        <translation>&amp;Dies per setmana</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="383"/>
-        <source>Hours per day</source>
-        <translation>Hores per dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="394"/>
-        <source>Rooms</source>
-        <translation>Àules</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="391"/>
-        <source>&amp;Rooms</source>
-        <translation type="unfinished">&amp;Àules</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="644"/>
-        <source>Space constraints</source>
-        <translation>Restricció d&apos;espais</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="402"/>
-        <source>View (r&amp;ooms)</source>
-        <translation type="unfinished">Veure (À&amp;ules)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="442"/>
-        <source>Activities preferred times</source>
-        <translation type="obsolete">hores preferides d&apos;activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="461"/>
-        <source>Activities same starting time</source>
-        <translation type="obsolete">Activitats amb la mateixa hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="553"/>
-        <source>Time constraints (misc)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="529"/>
-        <source>Time constraints (teachers)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="537"/>
-        <source>Time constraints (students)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="545"/>
-        <source>Time constraints (activities)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="74"/>
+        <source>&amp;Data</source>
+        <translation>&amp;بيانات</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="636"/>
         <source>Space constraints (misc)</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييدات المكانية العامة</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="668"/>
         <source>Space constraints (rooms)</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييدات المكانية للقاعات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="553"/>
+        <source>Time constraints (misc)</source>
+        <translation>التقييدات الزمنية العامة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="537"/>
+        <source>Time constraints (students)</source>
+        <translation>التقييدات الزمنية للطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="545"/>
+        <source>Time constraints (activities)</source>
+        <translation type="unfinished">التقييدات الزمنية للمهام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="529"/>
+        <source>Time constraints (teachers)</source>
+        <translation>التقييدات الزمنية للمدرسين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="179"/>
+        <source>Settings</source>
+        <translation>اعدادات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="183"/>
+        <source>Language</source>
+        <translation>للغة/Language</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="215"/>
+        <source>&amp;New</source>
+        <translation>&amp;جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="218"/>
+        <source>New</source>
+        <translation>جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="221"/>
+        <source>Ctrl+N</source>
+        <translation>Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="226"/>
+        <source>&amp;Open...</source>
+        <translation>&amp;فتح...</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="229"/>
+        <source>Open</source>
+        <translation>فتح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="232"/>
+        <source>Ctrl+O</source>
+        <translation>Ctrl+O</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
+        <source>&amp;Save</source>
+        <translation>&amp;حفظ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="240"/>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="243"/>
+        <source>Ctrl+S</source>
+        <translation>Ctrl+S</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="248"/>
+        <source>Save &amp;As...</source>
+        <translation>&amp;حفظ باسم...</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="251"/>
+        <source>Save As</source>
+        <translation>حفظ باسم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="259"/>
+        <source>E&amp;xit</source>
+        <translation>&amp;خروج</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="262"/>
+        <source>Exit</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="270"/>
+        <source>&amp;Frequently asked questions</source>
+        <translation>&amp;الاسئلة المكررة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="273"/>
+        <source>Frequently asked questions</source>
+        <translation>الاسئلة المتكررة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="281"/>
+        <source>&amp;About...</source>
+        <translation>&amp;حول...</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="284"/>
+        <source>About</source>
+        <translation>حول</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="292"/>
+        <source>&amp;Teachers</source>
+        <translation>&amp;المدرسون</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="295"/>
+        <source>Teachers</source>
+        <translation>المدرسون</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="300"/>
+        <source>&amp;Subjects</source>
+        <translation>&amp;المواد الدراسية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="303"/>
+        <source>Subjects</source>
+        <translation>المواد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="308"/>
+        <source>&amp;Years (forms, classes)</source>
+        <translation>&amp;الدفعة الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="311"/>
+        <source>Years</source>
+        <translation>الفصول</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="316"/>
+        <source>&amp;Groups</source>
+        <translation>&amp;المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="319"/>
+        <source>Groups</source>
+        <translation>المجموعات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="324"/>
+        <source>S&amp;ubgroups</source>
+        <translation>&amp;المجموعة الفرعية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="327"/>
+        <source>Subgroups</source>
+        <translation>المجموعات الفرعية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="332"/>
+        <source>&amp;Activities</source>
+        <translation>&amp;المهام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="335"/>
+        <source>Activities</source>
+        <translation>المهام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="340"/>
+        <source>&amp;Generate new</source>
+        <translation>&amp;انتاج جدول</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="343"/>
+        <source>Generate new</source>
+        <translation>انتاج جدول</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
+        <source>View (&amp;students)</source>
+        <translation>عرض (&amp;الطلاب)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="351"/>
+        <source>View (students)</source>
+        <translation>عرض (الطلاب)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
+        <source>View (&amp;teachers)</source>
+        <translation>عرض (&amp;المدرسين)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
+        <source>View (teachers)</source>
+        <translation>عرض (المدرسين)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
+        <source>Show soft conflicts</source>
+        <translation>عرض التعارضات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
+        <source>Show conflicts (time)</source>
+        <translation>عرض لتعارضات (الزمن)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="372"/>
+        <source>&amp;Days per week</source>
+        <translation>&amp;الايام في الاسبوع</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
+        <source>Days per week</source>
+        <translation>ايام العمل الأسبوعي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="380"/>
+        <source>&amp;Hours (periods) per day</source>
+        <translation>&amp;الساعات أو الحصص اليومية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="383"/>
+        <source>Hours per day</source>
+        <translation>الحصص في اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="391"/>
+        <source>&amp;Rooms</source>
+        <translation>&amp;القاعات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="394"/>
+        <source>Rooms</source>
+        <translation>القاعات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="402"/>
+        <source>View (r&amp;ooms)</source>
+        <translation>عرض (&amp;القاعات)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="405"/>
         <source>View (rooms)</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض (القاعات)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="473"/>
-        <source>View (students-with rooms)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="481"/>
-        <source>All time constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="478"/>
-        <source>All t&amp;ime constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="488"/>
-        <source>Teacher not available</source>
-        <translation type="obsolete">Professor no disponible</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="497"/>
-        <source>Basic compulsory time constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="501"/>
-        <source>Students set not available</source>
-        <translation type="obsolete">Estudiants no disponibles</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="509"/>
-        <source>Break</source>
-        <translation type="obsolete">Esmorçar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="517"/>
-        <source>Teacher max days per week</source>
-        <translation type="obsolete">Nombre de dies maxim a la setmana per professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="565"/>
-        <source>Activity preferred time</source>
-        <translation type="obsolete">Hora preferida de l&apos;activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="573"/>
-        <source>Students set no gaps</source>
-        <translation type="obsolete">Conjunt  d&apos;estudians sense forats </translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="581"/>
-        <source>Students no gaps</source>
-        <translation type="obsolete">Estudiants sense forats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="589"/>
-        <source>Students early</source>
-        <translation type="obsolete">Estudiants matí</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="597"/>
-        <source>Activities not overlapping</source>
-        <translation type="obsolete">Activitats no solapades</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="613"/>
-        <source>Activity preferred times</source>
-        <translation type="obsolete">Hora preferida de l&apos;activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="628"/>
-        <source>All space constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="656"/>
-        <source>Room not available</source>
-        <translation type="obsolete">Àula no disponible</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="692"/>
-        <source>Subject tags</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="689"/>
-        <source>Su&amp;bject tags</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="700"/>
-        <source>Institution name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="697"/>
-        <source>I&amp;nstitution name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="708"/>
-        <source>Comments</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="705"/>
-        <source>&amp;Comments</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="413"/>
+        <source>&amp;en_GB (British English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5043,8 +4995,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="413"/>
-        <source>&amp;en_GB (British English)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="424"/>
+        <source>&amp;ro (Romanian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5053,8 +5005,28 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="424"/>
-        <source>&amp;ro (Romanian)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="432"/>
+        <source>T&amp;ime constraints</source>
+        <translation>&amp;التقييدات الزمنية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="435"/>
+        <source>Time constraints</source>
+        <translation>التقييدات الزمنية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="443"/>
+        <source>A set of activities has a set of preferred times</source>
+        <translation type="unfinished">تفضيلات زمنية لكل مجموعة مهام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="441"/>
+        <source>Activities preferred times</source>
+        <translation type="obsolete">التفضيلات الزمنية للفعاليات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
+        <source>&amp;fr (French)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5063,8 +5035,208 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
-        <source>&amp;fr (French)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
+        <source>A set of activities has same starting time (day+hour)</source>
+        <translation>حصص لها نفس الوقت واليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
+        <source>View (st&amp;udents-with rooms)</source>
+        <translation>عرض (&amp;الطلاب-مع القاعات)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="473"/>
+        <source>View (students-with rooms)</source>
+        <translation>عرض (الطلاب-مع القاعات)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="478"/>
+        <source>All t&amp;ime constraints</source>
+        <translation>&amp;جميع التقييدات الزمنية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="481"/>
+        <source>All time constraints</source>
+        <translation>جميع التقييدات الزمنية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="489"/>
+        <source>A teacher is not available</source>
+        <translation>تفريغ مدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="487"/>
+        <source>Teacher not available</source>
+        <translation type="obsolete">تفريغ مدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="497"/>
+        <source>Basic compulsory time constraints</source>
+        <translation>تقييد زمني أجباري اساسي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="505"/>
+        <source>A students set is not available</source>
+        <translation>تفريغ طلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="500"/>
+        <source>Students set not available</source>
+        <translation type="obsolete">تفريغ طلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="513"/>
+        <source>Break (all teachers+all students not available)</source>
+        <translation>ايقاف تام للمدرسين والطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="521"/>
+        <source>Max days per week for a teacher</source>
+        <translation>الحد الأقصى لأيام العمل  الأسبوعي للمدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="516"/>
+        <source>Teacher max days per week</source>
+        <translation type="obsolete">الحد الأقصى لايام العمل الاسبوعي للمدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
+        <source>Max hours daily for all teachers</source>
+        <translation>الحد الأقصى للحصص اليومية للمدرسين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="556"/>
+        <source>Teachers max hours daily</source>
+        <translation type="obsolete">الحد الأقصى من الحصص اليومية للمدرسين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
+        <source>An activity has a preferred time</source>
+        <translation>التفضيل الزمني للبعض لحصة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="564"/>
+        <source>Activity preferred time</source>
+        <translation type="obsolete">وقت مفضل للحصة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="577"/>
+        <source>No gaps for a students set</source>
+        <translation>لا فراغات للطلاب المعينين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="585"/>
+        <source>No gaps for all students</source>
+        <translation>لا فراغات لجميع الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="593"/>
+        <source>All students begin early</source>
+        <translation>جميع الطلاب يبدأون مبكراً</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="601"/>
+        <source>A set of activities are not overlapping</source>
+        <translation>حصص ليست في نفس التوقيت</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="609"/>
+        <source>Min n days between a set of activities</source>
+        <translation type="unfinished">الحد الادنى من الايام بين المهام المحددة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="604"/>
+        <source>Min n days between activities</source>
+        <translation type="obsolete">الحد الادنى من الايام بين المهام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="617"/>
+        <source>An activity has a set of preferred times</source>
+        <translation type="unfinished">تفضيلات زمنية لكل مهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="625"/>
+        <source>All s&amp;pace constraints</source>
+        <translation>&amp;جميع التقييدات المكانية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="628"/>
+        <source>All space constraints</source>
+        <translation>جميع التقييدات المكانية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="644"/>
+        <source>Space constraints</source>
+        <translation>التقييدات المكانية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="652"/>
+        <source>Basic compulsory space constraints</source>
+        <translation>تقييد مكاني أجباري اساسي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="660"/>
+        <source>A room is not available</source>
+        <translation>اخلاء قاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="655"/>
+        <source>Room not available</source>
+        <translation type="obsolete">القاعة غير متاحة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="676"/>
+        <source>An activity has a preferred room</source>
+        <translation>التفضيل المكاني للبعض لقاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="684"/>
+        <source>A set of activities has same starting hour (any days)</source>
+        <translation>حصص لها نفس الوقت والايام قد تتغير</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="679"/>
+        <source>Activities same starting hour</source>
+        <translation type="obsolete">حصص تبدأ في نفس الوقت</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="689"/>
+        <source>Su&amp;bject tags</source>
+        <translation>&amp;المواد التكميلية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="692"/>
+        <source>subject tags</source>
+        <translation type="obsolete">مواد تكميلية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="697"/>
+        <source>I&amp;nstitution name</source>
+        <translation>&amp;اسم المنشأة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="700"/>
+        <source>Institution name</source>
+        <translation>اسم المنشأة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="705"/>
+        <source>&amp;Comments</source>
+        <translation>&amp;شرح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="708"/>
+        <source>Comments</source>
+        <translation>شرح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="716"/>
+        <source>An activity has a set of preferred rooms</source>
+        <translation>التفضيل المكاني للبعض لعدة قاعات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="724"/>
+        <source>&amp;ca (Catalan)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5073,8 +5245,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="724"/>
-        <source>&amp;ca (Catalan)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="735"/>
+        <source>&amp;ms (Malay)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5083,8 +5255,18 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="735"/>
-        <source>&amp;ms (Malay)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="746"/>
+        <source>A subject has a preferred room</source>
+        <translation>ربط مادة بقاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="754"/>
+        <source>A subject has a set of preferred rooms</source>
+        <translation>ربط مادة بعدة قاعات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="762"/>
+        <source>&amp;pl (Polish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5093,8 +5275,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="762"/>
-        <source>&amp;pl (Polish)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="773"/>
+        <source>&amp;tr (Turkish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5103,18 +5285,13 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="773"/>
-        <source>&amp;tr (Turkish)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="784"/>
+        <source>&amp;nl (Dutch)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="787"/>
         <source>nl (Dutch)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="784"/>
-        <source>&amp;nl (Dutch)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5125,22 +5302,17 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="800"/>
         <source>Teachers statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>احصاءات المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="811"/>
         <source>Students statistics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="64"/>
-        <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>احصاءات الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="816"/>
         <source>Subjects statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>احصاءات المواد</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="824"/>
@@ -5148,74 +5320,89 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="179"/>
-        <source>Settings</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="832"/>
+        <source>m&amp;k (Macedonian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="183"/>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="843"/>
+        <source>Max gaps per week for all teachers</source>
+        <translation>الحد الأقصى للفراغات في الأسبوع للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="884"/>
-        <source>Search for updates on startup</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="848"/>
+        <source>Max gaps per week for a teacher</source>
+        <translation>الحد الأقصى للفراغات في الأسبوع للمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="13"/>
-        <source>FET - a free timetabling program</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="853"/>
+        <source>A students set begins early</source>
+        <translation>طلاب معينين يبدأون باكراً</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
-        <source>View (st&amp;udents-with rooms)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="858"/>
+        <source>Max hours daily for a teacher</source>
+        <translation>الحد الأقصى للحصص اليومية لمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="625"/>
-        <source>All s&amp;pace constraints</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="863"/>
+        <source>Max hours daily for a students set</source>
+        <translation>الحد الأقصى للحصص اليومية لطلاب معينين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="868"/>
+        <source>Max hours daily for all students</source>
+        <translation>الحد الأقصى للحصص اليومية لجميع الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="873"/>
         <source>Instructions</source>
-        <translation type="unfinished"></translation>
+        <translation>التعليمات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="308"/>
-        <source>&amp;Years (forms, classes)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="884"/>
+        <source>Search for updates on startup</source>
+        <translation>تحديث عند بدء التشغيل</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
-        <source>Show soft conflicts</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="889"/>
+        <source>Min hours daily for all students</source>
+        <translation>الحد الادنى من الحصص اليومية لجميع الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="340"/>
-        <source>&amp;Generate new</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
+        <source>Min hours daily for a students set</source>
+        <translation>الحد الادنى من الحصص اليومية لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="343"/>
-        <source>Generate new</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="899"/>
+        <source>A subject+subject tag have a preferred room</source>
+        <translation>ربط مادة ومادة مكملة بقاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
+        <source>A subject+subject tag have a set of preferred rooms</source>
+        <translation>ربط مادة ومادة مكملة بقاعات معينة</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="909"/>
         <source>Generate &amp;multiple variants</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;انتاج عدة جداول</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="912"/>
         <source>Generate multiple variants</source>
-        <translation type="unfinished"></translation>
+        <translation>انتاج عدة جداول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="832"/>
-        <source>m&amp;k (Macedonian)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/fetmainform_template.ui" line="917"/>
+        <source>2 activities are consecutive</source>
+        <translation>حصتين متتاليتين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="922"/>
+        <source>An activity ends students day</source>
+        <translation>تعيين الحصة الأخيرة</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="930"/>
@@ -5225,202 +5412,32 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="935"/>
         <source>Restore default settings</source>
-        <translation type="unfinished"></translation>
+        <translation>اعادة الاعدادات الافترضية</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="940"/>
         <source>Timetable html level</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="489"/>
-        <source>A teacher is not available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="505"/>
-        <source>A students set is not available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="513"/>
-        <source>Break (all teachers+all students not available)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="521"/>
-        <source>Max days per week for a teacher</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
-        <source>Max hours daily for all teachers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="577"/>
-        <source>No gaps for a students set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="585"/>
-        <source>No gaps for all students</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="593"/>
-        <source>All students begin early</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="652"/>
-        <source>Basic compulsory space constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="660"/>
-        <source>A room is not available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="843"/>
-        <source>Max gaps per week for all teachers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="848"/>
-        <source>Max gaps per week for a teacher</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="853"/>
-        <source>A students set begins early</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="858"/>
-        <source>Max hours daily for a teacher</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="863"/>
-        <source>Max hours daily for a students set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="868"/>
-        <source>Max hours daily for all students</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="889"/>
-        <source>Min hours daily for all students</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
-        <source>Min hours daily for a students set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="917"/>
-        <source>2 activities are consecutive</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="922"/>
-        <source>An activity ends students day</source>
-        <translation type="unfinished"></translation>
+        <translation>مستوى تنسيق الجدول</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="945"/>
         <source>Min hours daily for all teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>الحد الأدنى للحصص اليومية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="950"/>
         <source>Min hours daily for a teacher</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="601"/>
-        <source>A set of activities are not overlapping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
-        <source>A set of activities has same starting time (day+hour)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="684"/>
-        <source>A set of activities has same starting hour (any days)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="380"/>
-        <source>&amp;Hours (periods) per day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="443"/>
-        <source>A set of activities has a set of preferred times</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
-        <source>An activity has a preferred time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="609"/>
-        <source>Min n days between a set of activities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="617"/>
-        <source>An activity has a set of preferred times</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="676"/>
-        <source>An activity has a preferred room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="716"/>
-        <source>An activity has a set of preferred rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="746"/>
-        <source>A subject has a preferred room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="754"/>
-        <source>A subject has a set of preferred rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="899"/>
-        <source>A subject+subject tag have a preferred room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
-        <source>A subject+subject tag have a set of preferred rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>الحد الأدنى للحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="955"/>
         <source>Help on statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>مساعد الاحصاءات</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="960"/>
         <source>Help in other languages than English</source>
-        <translation type="unfinished"></translation>
+        <translation>المساعدة بلغات غير الانجليزية</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="968"/>
@@ -5431,6 +5448,11 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/interface/fetmainform_template.ui" line="976"/>
         <source>&amp;ar (Arabic)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="692"/>
+        <source>Subject tags</source>
+        <translation>المواد المكملة</translation>
     </message>
 </context>
 <context>
@@ -5456,122 +5478,130 @@ Having a subgroup with too little working hours per week means that you inputted
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="16"/>
         <source>FET - groups of students</source>
-        <translation>FET - grup d&apos;estudiants</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform_template.ui" line="61"/>
-        <source>Year</source>
-        <translation>Any</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform_template.ui" line="85"/>
-        <source>Remove current</source>
-        <translation>Esborra actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform_template.ui" line="77"/>
-        <source>Add group</source>
-        <translation>Afegeix grup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform_template.ui" line="109"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform_template.ui" line="133"/>
-        <source>Details</source>
-        <translation>Detalls</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform_template.ui" line="69"/>
-        <source>Group</source>
-        <translation>Grup</translation>
+        <translation>FET - مجموعات الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="49"/>
         <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="61"/>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="69"/>
+        <source>group</source>
+        <translation type="obsolete">المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="77"/>
+        <source>Add group</source>
+        <translation>اضافة مجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="85"/>
+        <source>Remove current</source>
+        <translation>حذف المحدد</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="93"/>
         <source>Modify current</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="101"/>
         <source>Sort current groups alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation>فرز المجموعات الحالية ابجدياً</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="109"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="117"/>
         <source>Activate all activities for selected students group</source>
-        <translation type="unfinished"></translation>
+        <translation>تفعيل كل المهام لمجموعة الطلاب المحددة</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform_template.ui" line="125"/>
         <source>De-activate all activities for selected students group</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="133"/>
+        <source>details</source>
+        <translation type="obsolete">التفاصيل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="61"/>
+        <source>Year</source>
+        <translation>الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="69"/>
+        <source>Group</source>
+        <translation>المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform_template.ui" line="133"/>
+        <source>Details</source>
+        <translation>الوصف</translation>
+    </message>
 </context>
 <context>
     <name>HelpAboutForm_template</name>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="13"/>
+        <source>About FET - a free timetabling program</source>
+        <translation>حول FET - برنامج الجداول المجاني</translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
         <source>Author</source>
+        <translation>المؤلف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="92"/>
+        <source>Contributors</source>
+        <translation>المساهمات</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="116"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemented and tested &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>two-point and uniform crossover. Two-point crossover is clearly &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>an improvement over the 1-point crossover, originally implemented in FET &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>--------- 30 June 2007 - evolutionary algorithm is deprecated by Liviu Lalescu (so no crossover anymore)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Lots of helping with testing, bug reports, suggestions, comparisons&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>(old code by Liviu Lalescu)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>added features: - xhtml 1.0 strict valide&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- colspan and rowspan using&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- times vertical&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- table of content with hyperlinks&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- css and JavaScript support&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- print rooms timetable&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- TIMETABLE_HTML_LEVEL&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- print groups and years timetable&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="144"/>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>المترجمون</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="221"/>
         <source>References</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="281"/>
-        <source>Thanks to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="424"/>
-        <source>Guestbook</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="13"/>
-        <source>About FET - a free timetabling program</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="92"/>
-        <source>Contributors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="775"/>
-        <source>Sponsors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="781"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In chronological order:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2005 - Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2005 - Raita Mihail Doru - 15$&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2005 - Tom Hosty - 40 English pounds&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2006 - Volker Dirr - 50 euros + Qt 4 book&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>اشارات</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="245"/>
@@ -5607,27 +5637,34 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="116"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="281"/>
+        <source>Thanks to</source>
+        <translation>الشكر</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="424"/>
+        <source>Guestbook</source>
+        <translation>سجل الزوار</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="775"/>
+        <source>Sponsors</source>
+        <translation>الرعاة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="781"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemented and tested &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>two-point and uniform crossover. Two-point crossover is clearly &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>an improvement over the 1-point crossover, originally implemented in FET &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>--------- 30 June 2007 - evolutionary algorithm is deprecated by Liviu Lalescu (so no crossover anymore)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In chronological order:&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Lots of helping with testing, bug reports, suggestions, comparisons&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>(old code by Liviu Lalescu)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>added features: - xhtml 1.0 strict valide&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- colspan and rowspan using&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- times vertical&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- table of content with hyperlinks&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- css and JavaScript support&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- print rooms timetable&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- TIMETABLE_HTML_LEVEL&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- print groups and years timetable&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2005 - Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2005 - Raita Mihail Doru - 15$&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2005 - Tom Hosty - 40 English pounds&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2006 - Volker Dirr - 50 euros + Qt 4 book&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6151,12 +6188,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="16"/>
         <source>FET - Frequently asked questions</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - الاسئلة المتكررة</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="33"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message encoding="UTF-8">
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
@@ -6538,7 +6575,7 @@ A: It is not a good practice to allow unnecessary duplicate constraints. For act
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="33"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
@@ -6595,172 +6632,172 @@ Also, if you input only partial data, you might get impossible timetables (see F
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="16"/>
         <source>FET - timetable data - the hours of the day</source>
-        <translation>FET - dades de horari - les hores del dia</translation>
+        <translation>FET - بيانات الجدول - الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="32"/>
         <source>Hour 22</source>
-        <translation>Hora 22</translation>
+        <translation>الحصة 22</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="45"/>
         <source>Hour 14</source>
-        <translation>Hora 14</translation>
+        <translation>الحصة 14</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="58"/>
         <source>Hour 9</source>
-        <translation>Hora 9</translation>
+        <translation>الحصة 9</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="76"/>
         <source>Hour 30</source>
-        <translation>Hora 30</translation>
+        <translation>الحصة 30</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="89"/>
         <source>Hour 17</source>
-        <translation>Hora 17</translation>
+        <translation>الحصة 17</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="102"/>
         <source>Hour 29</source>
-        <translation>Hora 29</translation>
+        <translation>الحصة 29</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="120"/>
         <source>Hour 24</source>
-        <translation>Hora 24</translation>
+        <translation>الحصة 24</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="133"/>
         <source>Hour 19</source>
-        <translation>Hora 19</translation>
+        <translation>الحصة 19</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="146"/>
         <source>Hour 15</source>
-        <translation>Hora 15</translation>
+        <translation>الحصة 15</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="154"/>
         <source>Hour 11</source>
-        <translation>Hora 11</translation>
+        <translation>الحصة 11</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="172"/>
         <source>Hour 4</source>
-        <translation>Hora 4</translation>
+        <translation>الحصة 4</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="185"/>
         <source>Hour 8</source>
-        <translation>Hora 8</translation>
+        <translation>الحصة 8</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="193"/>
         <source>Hour 26</source>
-        <translation>Hora 26</translation>
+        <translation>الحصة 26</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="206"/>
         <source>Hour 5</source>
-        <translation>Hora 5</translation>
+        <translation>الحصة 5</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="214"/>
         <source>Hour 21</source>
-        <translation>Hora 21</translation>
+        <translation>الحصة 21</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="227"/>
         <source>Hour 13</source>
-        <translation>Hora 13</translation>
+        <translation>الحصة 13</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="245"/>
         <source>Hour 31</source>
-        <translation>Hora 31</translation>
+        <translation>الحصة 31</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="253"/>
         <source>Hour 16</source>
-        <translation>Hora 16</translation>
+        <translation>الحصة 13</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="261"/>
         <source>Hour 6</source>
-        <translation>Hora 6</translation>
+        <translation>الحصة 6</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="274"/>
         <source>Hour 28</source>
-        <translation>Hora 28</translation>
+        <translation>الحصة 28</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="292"/>
         <source>Hour 23</source>
-        <translation>Hora 23</translation>
+        <translation>الحصة 23</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="310"/>
         <source>Hour 18</source>
-        <translation>Hora 18</translation>
+        <translation>الحصة 18</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="323"/>
         <source>Hour 10</source>
-        <translation>Hora 10</translation>
+        <translation>الحصة 10</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="336"/>
         <source>Hour 7</source>
-        <translation>Hora 7</translation>
+        <translation>الحصة 7</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="344"/>
         <source>Hour 25</source>
-        <translation>Hora 25</translation>
+        <translation>الحصة 25</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="357"/>
         <source>Hour 1</source>
-        <translation>Hora 1</translation>
+        <translation>الحصة 1</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="370"/>
         <source>Hour 2</source>
-        <translation>Hora 2</translation>
+        <translation>الحصة 2</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="383"/>
         <source>Hour 3</source>
-        <translation>Hora 3</translation>
+        <translation>الحصة 3</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="391"/>
         <source>Hour 20</source>
-        <translation>Hora 20</translation>
+        <translation>الحصة 20</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="404"/>
         <source>Hour 12</source>
-        <translation>Hora 12</translation>
+        <translation>الحصة 12</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="417"/>
         <source>Hour 27</source>
-        <translation>Hora 27</translation>
+        <translation>الحصة 27</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="430"/>
         <source>Cancel</source>
-        <translation>Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="438"/>
         <source>Ok</source>
-        <translation>D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform_template.ui" line="446"/>
@@ -6777,65 +6814,74 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</source>
     <message>
         <location filename="../src/interface/institutionnameform_template.ui" line="16"/>
         <source>FET - timetable data - institution name</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - بيانات الجدول - اسم المنشأة</translation>
     </message>
     <message>
         <location filename="../src/interface/institutionnameform_template.ui" line="27"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/institutionnameform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
 </context>
 <context>
     <name>ModifyActivityForm</name>
     <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="105"/>
+        <source>Current activity</source>
+        <translation type="unfinished">المهمة الحالية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="107"/>
+        <source>Current activities</source>
+        <translation type="unfinished">المهام الحالية</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="276"/>
         <source>No teachers for this activity
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لا مدرسين لهذه المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="278"/>
         <source>No teachers for these activities
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لا مدرسين لهذه المهام</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="282"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Professor=%1</translation>
+        <translation>مدرس=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="286"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">Assignatura=%1
-</translation>
+        <translation>مادة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="289"/>
         <source>Subject tag=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="294"/>
         <source>No students for this activity
 </source>
-        <translation type="unfinished"></translation>
+        <translation>لا طلاب لهذه المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="296"/>
         <source>No students for these activities
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لا طلاب لهذه المهام</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="300"/>
         <source>Students=%1</source>
-        <translation type="unfinished">Estudiants=%1</translation>
+        <translation>الطلاب=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="305"/>
@@ -6845,22 +6891,22 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="309"/>
         <source>Number of students=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الطلاب=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="338"/>
         <source>Duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>المدة=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="345"/>
         <source>Active activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تفعيل المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="349"/>
         <source>Non-active activity</source>
-        <translation type="unfinished"></translation>
+        <translation>مهمة غير مفعلة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="331"/>
@@ -6870,12 +6916,12 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="336"/>
         <source>Componenent %1:</source>
-        <translation type="unfinished">Component %1:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="411"/>
         <source>FET question</source>
-        <translation type="unfinished">Preguna FET</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="370"/>
@@ -6885,7 +6931,7 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</source>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="403"/>
         <source>FET information</source>
-        <translation type="unfinished">Infomació FET</translation>
+        <translation type="unfinished">معلومات FET</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="380"/>
@@ -6896,7 +6942,7 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="395"/>
         <source>Invalid subject</source>
-        <translation type="unfinished">Assignatura invàlida</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="404"/>
@@ -6906,16 +6952,6 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="412"/>
         <source>Do you really want to have the activity with no student set(s)?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="105"/>
-        <source>Current activity</source>
-        <translation type="unfinished">Activitat Actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="107"/>
-        <source>Current activities</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6929,117 +6965,12 @@ If you really need more teachers per activity, please talk to the author</source
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="41"/>
         <source>Current activity</source>
-        <translation type="unfinished">Activitat Actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="128"/>
-        <source>1</source>
-        <translation type="unfinished">1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="583"/>
-        <source>Duration</source>
-        <translation type="unfinished">Durada</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="177"/>
-        <source>2</source>
-        <translation type="unfinished">2</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="226"/>
-        <source>3</source>
-        <translation type="unfinished">3</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="275"/>
-        <source>4</source>
-        <translation type="unfinished">4</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="324"/>
-        <source>5</source>
-        <translation type="unfinished">5</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="373"/>
-        <source>6</source>
-        <translation type="unfinished">6</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="422"/>
-        <source>7</source>
-        <translation type="unfinished">7</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="471"/>
-        <source>8</source>
-        <translation type="unfinished">8</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="635"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="627"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="747"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="782"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="859"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="879"/>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="605"/>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>المهمة الحالية</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="57"/>
         <source>Number of students (-1 for automatic computing)</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="520"/>
-        <source>9</source>
-        <translation type="unfinished">9</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="569"/>
-        <source>10</source>
-        <translation type="unfinished">10</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="671"/>
-        <source>Teachers</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="853"/>
-        <source>Selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="825"/>
-        <source>Students</source>
-        <translation type="unfinished">studiants</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="87"/>
@@ -7053,6 +6984,116 @@ modify it, please remove the corresponding
 activities and add a new split activity</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="128"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="583"/>
+        <source>duration</source>
+        <translation type="obsolete">الفترة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="605"/>
+        <source>Active</source>
+        <translation>مفعل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="177"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="226"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="275"/>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="324"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="373"/>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="422"/>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="471"/>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="520"/>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="569"/>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="627"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="635"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="671"/>
+        <source>Teachers</source>
+        <translation>المدرسين</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="859"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="853"/>
+        <source>Selected</source>
+        <translation>الاختيار</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="879"/>
+        <source>Clear</source>
+        <translation>مسح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="747"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="782"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="825"/>
+        <source>Students</source>
+        <translation>الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="583"/>
+        <source>Duration</source>
+        <translation>الفترة</translation>
+    </message>
 </context>
 <context>
     <name>ModifyConstraint2ActivitiesConsecutiveForm_template</name>
@@ -7064,38 +7105,38 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="98"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="139"/>
-        <source>First activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="186"/>
-        <source>Second activity</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="89"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="98"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation>المهمة الاولى</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation>المهمة الثانية</translation>
     </message>
 </context>
 <context>
@@ -7108,17 +7149,27 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="67"/>
+        <source>All activities (dbl. click or Enter to add)</source>
+        <translation>كل المهام (نقرتين أو انتر للإضافة)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="107"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="101"/>
+        <source>Selected (dbl. click or Enter to remove)</source>
+        <translation>الاختيار (نقرتين او انتر للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="121"/>
@@ -7130,23 +7181,13 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="67"/>
-        <source>All activities (dbl. click or Enter to add)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="101"/>
-        <source>Selected (dbl. click or Enter to remove)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7155,12 +7196,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="253"/>
         <source>FET question</source>
-        <translation type="unfinished">Preguna FET</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="223"/>
         <source>Are you sure you want to add this constraint for all activities? (no teacher, students, subject or subject tag specified)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(هل ترغب بإضافة التقييد لجميع المهام ؟ معلمين,طلاب,مواد,مواد مكملة)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="254"/>
@@ -7178,42 +7219,42 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="141"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="120"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="133"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="112"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="65"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="57"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="65"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="112"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="120"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="133"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="141"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
     </message>
 </context>
 <context>
@@ -7224,39 +7265,39 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="89"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="145"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="153"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="127"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="49"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>كل المهام (نقرتين أو انتر للإضافة)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="89"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="83"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>الاختيار (نقرتين أو انتر للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="119"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="127"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="145"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="153"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -7267,39 +7308,39 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="113"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="135"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="143"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="73"/>
         <source>All activities (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>كل المهام (نقرتين أو انتر للحذف)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="113"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="107"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>الاختيار (نقرتين أو انتر للحذف)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="135"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="143"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -7312,42 +7353,42 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="27"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="43"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="56"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="69"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="77"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="100"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="108"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="149"/>
         <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
+        <translation>المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="229"/>
@@ -7358,12 +7399,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="238"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="264"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
 </context>
 <context>
@@ -7374,29 +7415,29 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="27"/>
+        <source>-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="57"/>
         <source>Room</source>
-        <translation type="unfinished">Àula</translation>
+        <translation>القاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="79"/>
         <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="27"/>
-        <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="107"/>
@@ -7412,34 +7453,9 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="67"/>
-        <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="75"/>
-        <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="93"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="101"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="175"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="200"/>
-        <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="49"/>
@@ -7447,19 +7463,44 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="67"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="93"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="101"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="135"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>كل القاعات (نقرتين للإضافة)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="175"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="169"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>القاعات المختارة (نقرتين للحذف)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="200"/>
+        <source>Activity</source>
+        <translation>المهمة</translation>
     </message>
 </context>
 <context>
@@ -7470,74 +7511,74 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="147"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="155"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="249"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="198"/>
-        <source>Period</source>
-        <translation type="unfinished">Període</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="209"/>
-        <source>Day</source>
-        <translation type="unfinished">Dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="225"/>
-        <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="106"/>
-        <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="27"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
+        <translation>مرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="43"/>
         <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation>تعيين الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="56"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="69"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="77"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="280"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="106"/>
+        <source>Activity</source>
+        <translation>المهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="147"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="155"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="198"/>
+        <source>Period</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="209"/>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="225"/>
+        <source>Start hour</source>
+        <translation>ساعة البدء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="249"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="271"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="280"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7546,7 +7587,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="266"/>
         <source>FET question</source>
-        <translation type="unfinished">Preguna FET</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="267"/>
@@ -7564,52 +7605,52 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="49"/>
         <source>Activity</source>
-        <translation type="unfinished">Activitats</translation>
+        <translation>المهمة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="78"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="86"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="145"/>
-        <source>Filter</source>
-        <translation type="unfinished">Filtre</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="161"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="174"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="187"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="195"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="135"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="135"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="145"/>
+        <source>Filter</source>
+        <translation>المرشح</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="161"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="174"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="187"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="195"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -7622,17 +7663,17 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="65"/>
@@ -7642,7 +7683,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="79"/>
         <source>Weight (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن (يتطلب: 100%)</translation>
     </message>
 </context>
 <context>
@@ -7655,27 +7696,27 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="79"/>
         <source>Weight (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الوزن (يتطلب: 100%)</translation>
     </message>
 </context>
 <context>
@@ -7688,46 +7729,46 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="79"/>
-        <source>Period</source>
-        <translation type="unfinished">Període</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="90"/>
-        <source>Day</source>
-        <translation type="unfinished">Dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="106"/>
-        <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="122"/>
-        <source>End hour</source>
-        <translation type="unfinished">Hora final</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="140"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="71"/>
         <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="79"/>
+        <source>Period</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="90"/>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="106"/>
+        <source>Start hour</source>
+        <translation>حصة البدء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="122"/>
+        <source>End hour</source>
+        <translation>الحصة الأخيرة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="140"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7745,38 +7786,33 @@ not induce gaps for teachers or students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="41"/>
+        <source>All activities (dbl. click or Enter adds)</source>
+        <translation>كل المهام (نقرتين أو انتر للإضافة)</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="81"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="176"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="184"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="75"/>
+        <source>Selected (dbl. click or Enter removes)</source>
+        <translation>الاختيار (نقرتين أو انتر للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="114"/>
         <source>Min days</source>
+        <translation>ادنى ايام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="138"/>
+        <source>Weight percentage (recommended: 95.0%-100.0%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="146"/>
         <source>95</source>
-        <translation type="unfinished">95</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="41"/>
-        <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="75"/>
-        <source>Selected (dbl. click or Enter removes)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7786,9 +7822,14 @@ force activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="138"/>
-        <source>Weight percentage (recommended: 95.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="176"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="184"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -7801,37 +7842,17 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="71"/>
-        <source>Room</source>
-        <translation type="unfinished">Àula</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="87"/>
-        <source>Period</source>
-        <translation type="unfinished">Període</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="98"/>
-        <source>End hour</source>
-        <translation type="unfinished">Hora final</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="106"/>
-        <source>Day</source>
-        <translation type="unfinished">Dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="133"/>
-        <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
+        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="49"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="57"/>
@@ -7839,9 +7860,29 @@ force activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="49"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="71"/>
+        <source>Room</source>
+        <translation>القاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="87"/>
+        <source>Period</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="98"/>
+        <source>End hour</source>
+        <translation>الحصة الأخيرة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="106"/>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="133"/>
+        <source>Start hour</source>
+        <translation>حصة البدء</translation>
     </message>
 </context>
 <context>
@@ -7850,26 +7891,6 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="16"/>
         <source>FET - Modify constraint students early dialog</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="139"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="147"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="113"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="75"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="58"/>
@@ -7886,9 +7907,29 @@ gaps (early gaps).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="75"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="89"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="113"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="139"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="147"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="163"/>
@@ -7911,32 +7952,32 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="77"/>
-        <source>Max hours</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="90"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="98"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="77"/>
+        <source>Max hours</source>
+        <translation>اقصى حصص</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="90"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="98"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
     </message>
 </context>
 <context>
@@ -7949,32 +7990,32 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="77"/>
-        <source>Min hours</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="90"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="98"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="77"/>
+        <source>Min hours</source>
+        <translation>ادنى حصص</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="90"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="98"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
     </message>
 </context>
 <context>
@@ -7985,29 +8026,29 @@ them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="41"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="41"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="93"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="124"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="138"/>
@@ -8032,34 +8073,19 @@ gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="170"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="178"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="67"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="152"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="81"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="129"/>
@@ -8074,6 +8100,21 @@ constraint).
 Note: students set not available and break are not counted as
 gaps (early gaps).</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="152"/>
+        <source>Students set</source>
+        <translation>تعيين الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="170"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="178"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="194"/>
@@ -8096,37 +8137,37 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="94"/>
-        <source>Students</source>
-        <translation type="unfinished">studiants</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="108"/>
-        <source>Max hours</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="121"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="129"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="94"/>
+        <source>Students</source>
+        <translation>الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="108"/>
+        <source>Max hours</source>
+        <translation>اقصى حصص</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="121"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="129"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
     </message>
 </context>
 <context>
@@ -8139,37 +8180,37 @@ them with not available/breaks in the last slots of the days</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="94"/>
-        <source>Students</source>
-        <translation type="unfinished">studiants</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="108"/>
-        <source>Min hours</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="121"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="129"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="94"/>
+        <source>Students</source>
+        <translation>الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="108"/>
+        <source>Min hours</source>
+        <translation>ادنى حصص</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="121"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="129"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
     </message>
 </context>
 <context>
@@ -8180,29 +8221,24 @@ them with not available/breaks in the last slots of the days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="41"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="67"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="75"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="41"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="161"/>
-        <source>Students</source>
-        <translation type="unfinished">studiants</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="130"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="99"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="113"/>
@@ -8219,9 +8255,14 @@ gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="99"/>
-        <source>Weight percentage (necessary: 100%)</source>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="130"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="161"/>
+        <source>Students</source>
+        <translation>الطلاب</translation>
     </message>
 </context>
 <context>
@@ -8232,54 +8273,54 @@ gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="171"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="163"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="155"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="80"/>
-        <source>Period</source>
-        <translation type="unfinished">Període</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="91"/>
-        <source>Day</source>
-        <translation type="unfinished">Dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="107"/>
-        <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="123"/>
-        <source>End hour</source>
-        <translation type="unfinished">Hora final</translation>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="33"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="47"/>
         <source>Students</source>
-        <translation type="unfinished">studiants</translation>
+        <translation>الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="72"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="33"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="80"/>
+        <source>Period</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="91"/>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="107"/>
+        <source>Start hour</source>
+        <translation>حصة البدء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="123"/>
+        <source>End hour</source>
+        <translation>الحصة الأخيرة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="155"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="163"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="171"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="179"/>
@@ -8299,31 +8340,31 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="49"/>
         <source>Room</source>
-        <translation type="unfinished">Àula</translation>
+        <translation>القاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="71"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="101"/>
-        <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="93"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="101"/>
+        <source>-1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8335,34 +8376,9 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="67"/>
-        <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="75"/>
-        <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="93"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="101"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="175"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="194"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="49"/>
@@ -8370,19 +8386,44 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="67"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="93"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="101"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="135"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>جميع القاعات(نقرتين للإضافة)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="175"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="169"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>القاعات المختارة (نقرتين للحذف)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="194"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
     </message>
 </context>
 <context>
@@ -8395,22 +8436,27 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="33"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="55"/>
         <source>Room</source>
-        <translation type="unfinished">Àula</translation>
+        <translation>القاعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="85"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="93"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="101"/>
@@ -8420,12 +8466,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="120"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomform_template.ui" line="72"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -8436,6 +8477,11 @@ not available period, there will be no gaps counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="49"/>
         <source>-1</source>
         <translation type="unfinished"></translation>
@@ -8443,52 +8489,47 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="67"/>
         <source>Add</source>
-        <translation type="unfinished">Afegir</translation>
+        <translation>اضافة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Esborrar</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="93"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="101"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="121"/>
         <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="143"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>كل القاعات (نقرتين للإضافة)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="183"/>
         <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="177"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>القاعات المختارة (نقرتين للحذف)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="202"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished"></translation>
+        <translation>المادة المكملة</translation>
     </message>
 </context>
 <context>
@@ -8501,37 +8542,37 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="96"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="129"/>
-        <source>Max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="96"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="129"/>
+        <source>Max days per week</source>
+        <translation>الحد الاقصى لايام العمل الاسبوعي</translation>
     </message>
 </context>
 <context>
@@ -8544,32 +8585,12 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="178"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="115"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="154"/>
-        <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="90"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="72"/>
@@ -8581,9 +8602,29 @@ available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="90"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="115"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="129"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="154"/>
+        <source>Max gaps per week</source>
+        <translation>الفراغات الاسبوعية القصوى</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="178"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
     </message>
 </context>
 <context>
@@ -8596,37 +8637,37 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="98"/>
-        <source>Max hours daily</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="129"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="98"/>
+        <source>Max hours daily</source>
+        <translation>الحصص اليومية القصوى</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="129"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
 </context>
 <context>
@@ -8639,32 +8680,37 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="27"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="54"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>الحصص اليومية القصوى</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="62"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="76"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="84"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="115"/>
         <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="143"/>
@@ -8672,11 +8718,6 @@ available and break are not counted as gaps.</source>
 for this teacher (so it is a flexible constraint). Please be careful with 
 this constraint, not to get impossible timetables. It is recommended
 to start with 2 min hours and highten them as you find new timetables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
-        <source>Weight percentage (necessary: 100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8688,54 +8729,54 @@ to start with 2 min hours and highten them as you find new timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="157"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="80"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="50"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="96"/>
-        <source>Period</source>
-        <translation type="unfinished">Període</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="107"/>
-        <source>Day</source>
-        <translation type="unfinished">Dia</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="123"/>
-        <source>Start hour</source>
-        <translation type="unfinished">Hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="139"/>
-        <source>End hour</source>
-        <translation type="unfinished">Hora final</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="171"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="88"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="64"/>
         <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="80"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="88"/>
+        <source>100</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="96"/>
+        <source>Period</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="107"/>
+        <source>Day</source>
+        <translation>اليوم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="123"/>
+        <source>Start hour</source>
+        <translation>حصة البدء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="139"/>
+        <source>End hour</source>
+        <translation>الحصة الأخيرة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="157"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="171"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="179"/>
@@ -8755,32 +8796,12 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="43"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="148"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="94"/>
-        <source>100</source>
-        <translation type="unfinished">100</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="102"/>
-        <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="86"/>
-        <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="67"/>
@@ -8792,43 +8813,63 @@ lower it as you find new timetables. Note: teacher not
 available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="86"/>
+        <source>Weight percentage (necessary: 100%)</source>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="94"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="102"/>
+        <source>Max gaps per week</source>
+        <translation>الفراغات الاسبوعية القصوى</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="148"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
 </context>
 <context>
     <name>ModifyConstraintTeachersMaxHoursDailyForm_template</name>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="27"/>
-        <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="35"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="49"/>
-        <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="98"/>
-        <source>Max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max hours daily dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="27"/>
+        <source>Ok</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="35"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="49"/>
+        <source>Current constraint</source>
+        <translation>التقييد الحالي</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="98"/>
+        <source>Max hours daily</source>
+        <translation>الحصص اليومية القصوى</translation>
     </message>
 </context>
 <context>
@@ -8841,32 +8882,32 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="49"/>
         <source>Min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الحصص اليومية الدنيا</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="68"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="76"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="98"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Restricció actual</translation>
+        <translation>التقييد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="112"/>
@@ -8883,27 +8924,27 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="16"/>
         <source>Modify Room Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل قاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="27"/>
         <source>Name</source>
-        <translation type="unfinished">Nom</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyroomform_template.ui" line="43"/>
-        <source>Capacity</source>
-        <translation type="unfinished">Capacitat</translation>
+        <translation>الاسم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="35"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyroomform_template.ui" line="43"/>
+        <source>Capacity</source>
+        <translation>الاستيعاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="51"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -8911,32 +8952,42 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="16"/>
         <source>Modify Students Group Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل مجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="33"/>
         <source>Name</source>
-        <translation type="unfinished">Nom</translation>
+        <translation>الاسم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="41"/>
-        <source>Year</source>
-        <translation type="unfinished">Any</translation>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="62"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="84"/>
-        <source>Number of students</source>
-        <translation type="unfinished">Nombre d&apos;estudiants</translation>
+        <source>number of students</source>
+        <translation type="obsolete">عدد الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="92"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentsgroupform_template.ui" line="41"/>
+        <source>Year</source>
+        <translation>الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentsgroupform_template.ui" line="84"/>
+        <source>Number of students</source>
+        <translation>عدد الطلاب</translation>
     </message>
 </context>
 <context>
@@ -8944,37 +8995,52 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="16"/>
         <source>Modify Students Subgroup Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل مجموعة طلاب فرعية</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="27"/>
-        <source>Year</source>
-        <translation type="unfinished">Any</translation>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="35"/>
-        <source>Number of students</source>
-        <translation type="unfinished">Nombre d&apos;estudiants</translation>
+        <source>number of students</source>
+        <translation type="obsolete">عدد الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="43"/>
         <source>Name</source>
-        <translation type="unfinished">Nom</translation>
+        <translation>الاسم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="51"/>
-        <source>Group</source>
-        <translation type="unfinished">Grup</translation>
+        <source>group</source>
+        <translation type="obsolete">المجموعة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="94"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="102"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="27"/>
+        <source>Year</source>
+        <translation>الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="35"/>
+        <source>Number of students</source>
+        <translation>عدد الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="51"/>
+        <source>Group</source>
+        <translation>المجموعة</translation>
     </message>
 </context>
 <context>
@@ -8982,1323 +9048,54 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="16"/>
         <source>Modify Students Year Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل فصل</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="27"/>
-        <source>Number of students</source>
-        <translation type="unfinished">Nombre d&apos;estudiants</translation>
+        <source>number of students</source>
+        <translation type="obsolete">عدد الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="54"/>
         <source>Name</source>
-        <translation type="unfinished">Nom</translation>
+        <translation>الاسم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="62"/>
         <source>Ok</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="70"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentsyearform_template.ui" line="27"/>
+        <source>Number of students</source>
+        <translation>عدد الطلاب</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="156"/>
-        <source>FET information</source>
-        <translation>Infomació FET</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="109"/>
-        <source>Invalid selected activity</source>
-        <translation>Ativitat seleccionada invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform.cpp" line="169"/>
-        <source>Removing activity:</source>
-        <translation type="obsolete">Esborrant activitat:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform.cpp" line="171"/>
-        <source>Removing sub-activity:</source>
-        <translation type="obsolete">Esborrant subactivitat:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform.cpp" line="175"/>
-        <source>There will also be removed all the
-sub-activities from the same split activity</source>
-        <translation type="obsolete">Seran esborrades tambe totes les
-subactivitats de la mateixa activitat dividida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="235"/>
-        <source>FET warning</source>
-        <translation>Advertencia FET</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="112"/>
-        <source>OK</source>
-        <translation>D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="112"/>
-        <source>Cancel</source>
-        <translation>Cancel·la</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="226"/>
-        <source>Invalid activity</source>
-        <translation>Activitat invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="168"/>
-        <source>Any</source>
-        <translation>Qualsevol</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="274"/>
-        <source>Current activity:</source>
-        <translation type="obsolete">Activitat actual:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="354"/>
-        <source>The distance between any pair of subactivities must be at least %1 days</source>
-        <translation type="obsolete">Distància entre qualsevol parell de subactivitats h de ser al mens de %1 dies</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="331"/>
-        <source>Componenent %1:</source>
-        <translation type="obsolete">Component %1:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform.cpp" line="159"/>
-        <source>Invalid subject</source>
-        <translation>Assignatura invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="472"/>
-        <source>Invalid duration</source>
-        <translation type="obsolete">Durada invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/hoursform.cpp" line="124"/>
-        <source>FET question</source>
-        <translation>Preguna FET</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="499"/>
-        <source>This activity already exists. Insert it again?</source>
-        <translation type="obsolete">Aquesta activitat ja existeix. La insereixc altra vegada?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform.cpp" line="78"/>
-        <source>Yes</source>
-        <translation>Sí</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform.cpp" line="78"/>
-        <source>No</source>
-        <translation>No</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="512"/>
-        <source>Activity added</source>
-        <translation type="obsolete">Afegida l&apos;activitat </translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="514"/>
-        <source>Activity NOT added - please report error</source>
-        <translation type="obsolete">Activitat no afegida - per faver reporteu l&apos;errada</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="561"/>
-        <source>Split activity NOT added - error???</source>
-        <translation type="obsolete">Activitat dividida no afegida - errada???</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifystudentsyearform.cpp" line="55"/>
-        <source>Incorrect name</source>
-        <translation>Nom incorrecte</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addroomform.cpp" line="85"/>
-        <source>Room insertion dialog</source>
-        <translation>Diàleg d&apos;inserció d&apos;àules</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="66"/>
-        <source>Could not insert item. Must be a duplicate</source>
-        <translation>No es pot insertar l&apos;element. Deu ser duplicat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addroomform.cpp" line="86"/>
-        <source>Room added</source>
-        <translation>Àula afegida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsyearform.cpp" line="59"/>
-        <source>Year insertion dialog</source>
-        <translation>Diàleg d&apos;inserció d&apos;any</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsgroupform.cpp" line="88"/>
-        <source>Group insertion dialog</source>
-        <translation>Diàleg d&apos;inserció de grup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsgroupform.cpp" line="53"/>
-        <source>Could not insert item. Duplicate</source>
-        <translation>No es pot insertar l&apos;element. Duplicat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentssubgroupform.cpp" line="62"/>
-        <source>This name is taken for a year - please consider another name</source>
-        <translation>Aquest nom s&apos;ha donat per un any - Considereu un altre nom</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsgroupform.cpp" line="64"/>
-        <source>This name is taken for a subgroup - please consider another name</source>
-        <translation>Aquest nom ja el te un subgrup - considereu un altre nom</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform.cpp" line="76"/>
-        <source>FET</source>
-        <translation>FET</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsgroupform.cpp" line="74"/>
-        <source>This group already exists, but in another year
-If you insert current group to current year, that
-means that some years share the same group (overlap)
-If you want to make a new group, independent,
-please abort now and give it another name
-</source>
-        <translation>Aquest grup ja existeix, però a un altre any
-Si inserteu el grup actual a l&apos;any acual, això 
-signifique que alguns anys comparteixen el mateix grup (solapen)
-Si teniu que fer un nou grup, independent,
-per favor aborteu ara i doneu-li unaltre nom
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentssubgroupform.cpp" line="78"/>
-        <source>Add</source>
-        <translation>Afegir</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentssubgroupform.cpp" line="78"/>
-        <source>Abort</source>
-        <translation>Aborta</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsgroupform.cpp" line="89"/>
-        <source>Group added</source>
-        <translation>Grup afegit</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentssubgroupform.cpp" line="90"/>
-        <source>Subgroup insertion dialog</source>
-        <translation>Diàleg d&apos;inserció de subgrup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentssubgroupform.cpp" line="67"/>
-        <source>This name is taken for a group - please consider another name</source>
-        <translation>Aques nom s&apos;ha donat a un grup - considereu un altre nom</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentssubgroupform.cpp" line="77"/>
-        <source>This subgroup already exists, but in another group
-If you insert current subgroup to current group, that
-means that some groups share the same subgroup (overlap)
-If you want to make a new subgroup, independent,
-please abort now and give it another name
-</source>
-        <translation>Aquest subgrup ja existeix, però a un altre grup
-Si inserteu el subgrup actual al grup actual, això 
-significa que alguns grups comparteixen el mateix subgrup (solapen)
-Si teniu que fer un nou subgrup, independent,
-per favor aborteu ara i doneu-li unaltre nom
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentssubgroupform.cpp" line="91"/>
-        <source>Subgroup added</source>
-        <translation>Afegit el subgrup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="27"/>
-        <source>no</source>
-        <translation>no</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="27"/>
-        <source>yes</source>
-        <translation>sí</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="93"/>
-        <source>Teacher max days per week</source>
-        <translation>Nombre de dies maxim a la setmana per professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="104"/>
-        <source>Teacher not available</source>
-        <translation>Professor no disponible</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="191"/>
-        <source>Activity preferred time</source>
-        <translation>Hora preferida de l&apos;activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform.cpp" line="119"/>
-        <source>Students set not available</source>
-        <translation>Estudiants no disponibles</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="160"/>
-        <source>Invalid day</source>
-        <translation>Dia invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="166"/>
-        <source>Invalid start hour</source>
-        <translation>Hora d&apos;inici invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="173"/>
-        <source>Invalid end hour</source>
-        <translation>Hora final invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="98"/>
-        <source>Invalid weight</source>
-        <translation>Pes invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="99"/>
-        <source>Constraint added</source>
-        <translation>Restricció afegida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintroomnotavailableform.cpp" line="125"/>
-        <source>Constraint NOT added - duplicate?</source>
-        <translation>Restricció no afegida - duplicada?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="178"/>
-        <source>End hour &lt;= start hour - impossible</source>
-        <translation>Hora final &lt;= Hora inici - impossible</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="156"/>
-        <source>Invalid teacher</source>
-        <translation>Professor invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="261"/>
-        <source>Please specify at least a day or an hour</source>
-        <translation type="unfinished">Especifiqueu al menus un dia o un hora</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="250"/>
-        <source>Not enough slots (too many &quot;Yes&quot; values).</source>
-        <translation>No hi ha prou forats (massa valors «Sí»).</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="252"/>
-        <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES</source>
-        <translation>Incrementeu la variable MAX_N_CNOSTRAINT_ACTIVITY_PREFERRED_TIMES</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="254"/>
-        <source>Currently, it is %1</source>
-        <translation>Actualment, és %1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform.cpp" line="120"/>
-        <source>Constraint added:</source>
-        <translation>Restricció afegida:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/roomsform.cpp" line="112"/>
-        <source>Invalid room</source>
-        <translation>Àula invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform.cpp" line="125"/>
-        <source>Constraint NOT added - error ?</source>
-        <translation>Restricció NO afegida - errada ?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="102"/>
-        <source>Invalid selected constraint</source>
-        <translation>Restricció seleccionada invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="107"/>
-        <source>Removing constraint:
-</source>
-        <translation>Esborrant restriccions:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="109"/>
-        <source>
-Are you sure?</source>
-        <translation>Esteu segurs?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform.cpp" line="156"/>
-        <source>Invalid selected year</source>
-        <translation>Any seleccionat invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="279"/>
-        <source>Invalid selected group</source>
-        <translation>Grup seleccionat invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform.cpp" line="90"/>
-        <source>Are you sure you want to delete this group and all related subgroup, activities and constraints?
-</source>
-        <translation>Esteu segurs que voleu esborrar aquest grup i tots els subgrups relacionats, activitats i restriccions?
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/groupsform.cpp" line="101"/>
-        <source>This group still exists into another year
-The related subgroups, activities and constraints were not removed</source>
-        <translation>Aquest grup encara existeix a un altre any
-Els subgrups relacionats, activitats i restriccions no s&apos;han esborrat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="287"/>
-        <source>Invalid selected subgroup</source>
-        <translation>Subgrup seleccionat invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subgroupsform.cpp" line="107"/>
-        <source>Are you sure you want to delete this subgroup and all related activities and constraints?
-</source>
-        <translation>Esteu segurs que voleu esborrar aquest subgrup i totes les seves activitats i restriccions relacionades?
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="126"/>
-        <source>User input</source>
-        <translation>Entrada d&apos;usuari</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform.cpp" line="61"/>
-        <source>Please enter subject&apos;s name</source>
-        <translation>Introduïu el nom de l&apos;assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform.cpp" line="135"/>
-        <source>Subject insertion dialog</source>
-        <translation>Diàleg d&apos;inserció de assignatures</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform.cpp" line="185"/>
-        <source>Invalid selected subject</source>
-        <translation>Assignatura seleccionada invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="59"/>
-        <source>Please enter teacher&apos;s name</source>
-        <translation>Introduïu el nom del professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="132"/>
-        <source>Teacher insertion dialog</source>
-        <translation>Diàleg d&apos;introducció de professors</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="181"/>
-        <source>Invalid selected teacher</source>
-        <translation>Professor seleccionat invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="95"/>
-        <source>Are you sure you want to delete this teacher and all related activities and constraints?
-</source>
-        <translation>Esteu segurs que voleu esborrar aquest professor i totes les seves activitats i restriccions relacionades?
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="275"/>
-        <source>FET - exiting</source>
-        <translation>FET - sortint</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1463"/>
-        <source>&amp;Yes</source>
-        <translation>&amp;Si</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1463"/>
-        <source>&amp;No</source>
-        <translation>&amp;No</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1462"/>
-        <source>FET application</source>
-        <translation>Aplicació FET</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="319"/>
-        <source>Are you sure you want to load new data (rules) ?</source>
-        <translation>Esteu segurs que voleu carregar les noves dades (regles)?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="361"/>
-        <source>open file dialog</source>
-        <translation>Obre dialeg de Arxiu</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="361"/>
-        <source>Choose a file</source>
-        <translation>Escolliu un fitxer</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="430"/>
-        <source>FET info</source>
-        <translation>Informació de FET</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="399"/>
-        <source>Invalid file</source>
-        <translation>Arxiu Invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="399"/>
-        <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="414"/>
-        <source>Save file dialog</source>
-        <translation>Diàlg de desar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="414"/>
-        <source>Choose a filename to save under</source>
-        <translation>Escolli un nom de fitxer per desar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="446"/>
-        <source>File exists - are you sure you want to overwrite existing file?</source>
-        <translation>El fitxer ja existeix - esteu segurs que voleu sobreescriure el fitxer?</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="149"/>
-        <source>Students</source>
-        <translation>studiants</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform.cpp" line="77"/>
-        <source>Are you sure you want to delete this year and all related groups, subgroups, activities and constraints?
-</source>
-        <translation>Esteu segurs qeu voleu esborrar aquest any i tots els grups relacionats, subgrups, activitats i restriccions?
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="108"/>
-        <source>The teacher&apos;s timetable cannot be printed,
-because the teacher is invalid</source>
-        <translation>L&apos;horari del professor no es pot imprimir,
-ja que el professor és invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="155"/>
-        <source>The teacher is invalid</source>
-        <translation>El professor és invàlid</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/hoursform.cpp" line="108"/>
-        <source>Empty names not allowed
-</source>
-        <translation>No estan permesos noms buits 
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/hoursform.cpp" line="115"/>
-        <source>Duplicates not allowed
-</source>
-        <translation>No estan permesos duplicats
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/hoursform.cpp" line="122"/>
-        <source>Please note that FET will NOT take care
-of old constraints using erased hours
-(only renamed hours will be handled correctly)
-</source>
-        <translation>Fixeu-vos que FET NO anirà amb compte
-amb les restriccións antigues fent us d&apos;hores esborrades
-(tan sols es fora us correcte de hores renombrats)
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/daysform.cpp" line="104"/>
-        <source>Please note that FET will NOT take care
-of old constraints using erased days
-(only renamed days will be handled correctly)
-</source>
-        <translation>Fixeu-vos que FET NO anirà amb compte
-amb les restriccións antigues fent us de dies  esborrats
-(tan sols es fora us correcte de dies renombrats)
-</translation>
-    </message>
-    <message>
         <location filename="../src/engine/activity.cpp" line="326"/>
         <source>Activity: </source>
-        <translation>Activitat:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="325"/>
-        <source>Sub-activity: </source>
-        <translation type="obsolete">Subactivitat:</translation>
+        <translation>المهمة:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6476"/>
         <source>T:</source>
-        <translation>T:</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="331"/>
+        <source> no teachers, </source>
+        <translation>لا مدرسين,</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="335"/>
         <source>S:</source>
-        <translation>S:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="338"/>
-        <source>St:</source>
-        <translation>St:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="345"/>
-        <source>Id:</source>
-        <translation>ld:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="347"/>
-        <source>AGId:</source>
-        <translation>AGId:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="349"/>
-        <source>D:</source>
-        <translation>D:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="351"/>
-        <source>TD:</source>
-        <translation>TD:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="375"/>
-        <source>Activity:
-</source>
-        <translation>Activitat:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="370"/>
-        <source>Sub-activity:
-</source>
-        <translation type="obsolete">Subactivitat:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="383"/>
-        <source>Teacher=</source>
-        <translation>Professor=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="384"/>
-        <source>Subject=</source>
-        <translation>Assignatura=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="391"/>
-        <source>Students=</source>
-        <translation>estudiants=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="393"/>
-        <source>Id=</source>
-        <translation>ld=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="395"/>
-        <source>Activity group id=</source>
-        <translation>Id de l&apos;activitat del grup=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="397"/>
-        <source>Duration=</source>
-        <translation>Durada=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="399"/>
-        <source>Total duration=</source>
-        <translation>Durada total=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="416"/>
-        <source>Total number of students=%1</source>
-        <translation>Nombre total d&apos;estudiants=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2640"/>
-        <source>Monday</source>
-        <translation>Dilluns</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2641"/>
-        <source>Tuesday</source>
-        <translation>Dimarts</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2642"/>
-        <source>Wednesday</source>
-        <translation>Dimecres</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2643"/>
-        <source>Thursday</source>
-        <translation>Dijous</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2644"/>
-        <source>Friday</source>
-        <translation>Divendres</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="130"/>
-        <source>Basic compulsory constraints (time)</source>
-        <translation>Restriccions bàsiques compulsives (temps)</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="140"/>
-        <source>These are the basic compulsory constraints
-(referring to time allocation) for any timetable
-</source>
-        <translation>Hi ha restriccions compulsives bàsiques
-(d&apos;assignació de temps) per qualsevol horari
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform.cpp" line="59"/>
-        <source>Weight=%1</source>
-        <translation>Pes=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="144"/>
-        <source>The basic time constraints try to avoid:
-</source>
-        <translation>Les restriccions bàsiques de temps a prohibir:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="147"/>
-        <source>- teachers assigned to more than one activity simultaneously
-</source>
-        <translation>- professors assignats a mes d&apos;una activitat simultàniament
-</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="148"/>
-        <source>- students assigned to more than one activity simultaneously
-</source>
-        <translation>- estudiants assignats a més d&apos;una activitat simultàniament
-</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="361"/>
-        <source>Time constraint basic compulsory</source>
-        <translation>Restricció bàsica de temps compulsiva</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="303"/>
-        <source>activity with id=%1 is late.</source>
-        <translation>activitat amb id=%1 es massa tard.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="334"/>
-        <source>teacher with name %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation>el professor amb nom %1 té mes d&apos;una activitat assignada el dia %2, hora %3</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="364"/>
-        <source>subgroup %1 has more than one allocated activity on day %2, hour %3</source>
-        <translation>el subgrup %1 te més d&apos;una activitat assignada el dia %2, hora %3</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2726"/>
-        <source>T:%1</source>
-        <translation>T:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2885"/>
-        <source>D:%1</source>
-        <translation>D:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2886"/>
-        <source>SH:%1</source>
-        <translation>SH:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2887"/>
-        <source>EH:%1</source>
-        <translation>EH:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6838"/>
-        <source>Time constraint</source>
-        <translation>Restricció de temps</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="106"/>
-        <source>Teacher=%1</source>
-        <translation>Professor=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2897"/>
-        <source>Day=%1</source>
-        <translation>Dia=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2898"/>
-        <source>Start hour=%1</source>
-        <translation>Hora d&apos;inici=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2899"/>
-        <source>End hour=%1</source>
-        <translation>Hora final=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="584"/>
-        <source>Time constraint teacher not available broken for teacher %1 on day %2, hour %3</source>
-        <translation>No està disponible la restricció del professor, trencada pl professor %1 el dia %2, hora %3</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3705"/>
-        <source>S:%1</source>
-        <translation>Trasllat</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3345"/>
-        <source>Students=%1</source>
-        <translation>Estudiants=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="832"/>
-        <source>Time constraint students not available</source>
-        <translation>Restricció de temps per estudiants no disponible</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="835"/>
-        <source>broken for subgroup: %1 on day %2, hour %3</source>
-        <translation>trencat pel subgrup: %1 el dia %2, hora %3</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="987"/>
-        <source>Activities same starting time</source>
-        <translation>Les activitats tenen la mateixa hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5839"/>
-        <source>NA:%1</source>
-        <translation>NA:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5841"/>
-        <source>ID:%1</source>
-        <translation>ID:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1005"/>
-        <source>Activities must have the same starting time</source>
-        <translation>Les activitats han de tenir la mateixa hora d&apos;inici</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5857"/>
-        <source>Number of activities=%1</source>
-        <translation>Nombre d&apos;activitats=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5859"/>
-        <source>Activity with id=%1</source>
-        <translation>Activitat amb id=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5986"/>
-        <source>conflicts factor increase=%1</source>
-        <translation>increment del factor de conflicte=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1290"/>
-        <source>Activities not overlapping</source>
-        <translation>Activitats no solapades</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1306"/>
-        <source>Activities must not overlap</source>
-        <translation>Les activitats no han de solapar-se</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1832"/>
-        <source>broken:</source>
-        <translation>trencat:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1474"/>
-        <source>activity with id=%1 overlaps with activity with id=%2 on a number of %3 periods</source>
-        <translation>l&apos;activitat amb id=%1 solapa am l&apos;activitat am id=%2 en %3 períodes</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1653"/>
-        <source>Min N days between activities</source>
-        <translation>Com a mínim N dies entre activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1661"/>
-        <source>N:%1</source>
-        <translation>N:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1671"/>
-        <source>Minimum N days between activities</source>
-        <translation>Com a mínim N dies entre activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1722"/>
-        <source>Minimum number of days=%1</source>
-        <translation>Nombre mínim de dies=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1830"/>
-        <source>Time constraint min n days between activities</source>
-        <translation>Restriccios de temps de al menys n dies entre activitats</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1835"/>
-        <source>activity with id=%1 conflicts with activity with id=%2 on %3 hours</source>
-        <translation>activitat amb id=%1 te un conflicte amb l&apos;activitat amb id=%2 al hora %3</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2005"/>
-        <source>Teachers must not have more than %1 hours daily</source>
-        <translation>Els professors no han de tenir més de %1 hores diàriament</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2355"/>
-        <source>MD:%1</source>
-        <translation>MD:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2365"/>
-        <source>Teacher max. days per week</source>
-        <translation>Dies per setmana màxim del professor</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2369"/>
-        <source>Max. days per week=%1</source>
-        <translation>Dies màxim per setmana=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2451"/>
-        <source>Time constraint teacher max days per week broken for</source>
-        <translation>La restricció dies per setmana com a màxim pel professor està trencada per</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2454"/>
-        <source>teacher: %1.</source>
-        <translation>professor: %1.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreakform.cpp" line="86"/>
-        <source>Break</source>
-        <translation>Esmorçar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsnogapsform.cpp" line="66"/>
-        <source>Students no gaps</source>
-        <translation>Estudiants sense forats</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3132"/>
-        <source>Students must not have gaps</source>
-        <translation>Els estudiants no han de tenir forats</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnogapsform.cpp" line="100"/>
-        <source>Students set no gaps</source>
-        <translation>Conjunt  d&apos;estudians sense forats </translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4510"/>
-        <source>St:%1</source>
-        <translation>St:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3342"/>
-        <source>Students set must not have gaps</source>
-        <translation>Conjunt d&apos;estudians no han de tenir forats</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4074"/>
-        <source>MH:%1</source>
-        <translation>MH:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4096"/>
-        <source>Maximum recommended hours daily=%1</source>
-        <translation>Màxim recomanat d&apos;hores diàries=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform.cpp" line="121"/>
-        <source>Students set=%1</source>
-        <translation>Conjunt d&apos;estudiants=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5088"/>
-        <source>Act. id:%1</source>
-        <translation>Act. id: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5501"/>
-        <source>must be scheduled at: </source>
-        <translation>Ha de programar-se a:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5543"/>
-        <source>must be scheduled at:
-</source>
-        <translation>ha de planificar-se a:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5484"/>
-        <source>Activities with </source>
-        <translation>Activitats amb</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5486"/>
-        <source>teacher=%1, </source>
-        <translation>professor=%1,</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5490"/>
-        <source>students=%1, </source>
-        <translation>estudiants=%1,</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5494"/>
-        <source>subject=%1, </source>
-        <translation>assignatura=%1,</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5524"/>
-        <source>Activities with:</source>
-        <translation>Activitats amb:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5527"/>
-        <source>Teacher=%1
-</source>
-        <translation>Professor=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5531"/>
-        <source>Students=%1
-</source>
-        <translation>Estudiants=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5535"/>
-        <source>Subject=%1
-</source>
-        <translation>Assignatura=%1
-</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="130"/>
-        <source>The basic space constraints try to avoid:
-</source>
-        <translation>Les restriccions bàsiques de temps a prohibir:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="132"/>
-        <source>- activities with more students than the capacity of the room
-</source>
-        <translation>- activitats amb mes estudiants que la capacitat de l&apos;àula
-
-</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="131"/>
-        <source>- rooms assigned to more than one activity simultaneously
-</source>
-        <translation>- àula assignada a mes d&apos;una activitat simultània
-</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="269"/>
-        <source>Space constraint basic compulsory: room %1 has allocated activity with id %2 and the capacity of the room is overloaded</source>
-        <translation>Restricció de temps compulsiva: l&apos;àula %1 te assignada l&apos;activitat amb id %2 i s&apos;ha sobrecarregat la capacitat de l&apos;àula</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="418"/>
-        <source>Room not available</source>
-        <translation>Àula no disponible</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1802"/>
-        <source>R:%1</source>
-        <translation>R:%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1812"/>
-        <source>Space constraint</source>
-        <translation>Restricció d&apos;espais</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1818"/>
-        <source>Room=%1</source>
-        <translation>Àula=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="517"/>
-        <source>Space constraint room not available broken for room %1 on day %2, hour %3</source>
-        <translation>Restricció d&apos;espai de aula no disponible trencada per l&apos;àula %1 al dia 52, hora %3</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1815"/>
-        <source>Subject=%1</source>
-        <translation>Assignatura=%1
-</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="77"/>
-        <source>Yn:</source>
-        <translation>Yn:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="263"/>
-        <source>No:</source>
-        <translation>No:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="89"/>
-        <source>Students set - year</source>
-        <translation>Conjunt d&apos;estudiants - any</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="91"/>
-        <source>Year name=</source>
-        <translation>Nom de l&apos;any=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="277"/>
-        <source>Number of students=</source>
-        <translation>Nombre d&apos;estudiants=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="181"/>
-        <source>Gn:</source>
-        <translation>Gn:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="193"/>
-        <source>Students set - group</source>
-        <translation>Conjunt d&apos;estudiants - grup</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="195"/>
-        <source>Group name=</source>
-        <translation>Nom del grup=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="260"/>
-        <source>Sgn:</source>
-        <translation>Sgn:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="272"/>
-        <source>Students set - subgroup</source>
-        <translation>Conjunt d&apos;estudiants - subgrup</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="274"/>
-        <source>Subgroup name=</source>
-        <translation>Nom del subgrup=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/room.cpp" line="51"/>
-        <source>N:</source>
-        <translation>N:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/room.cpp" line="62"/>
-        <source>C:</source>
-        <translation>C:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/room.cpp" line="74"/>
-        <source>Name=</source>
-        <translation>Nom=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/room.cpp" line="85"/>
-        <source>Capacity=</source>
-        <translation>Capacitat=</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/teacher.cpp" line="37"/>
-        <source>Name=%1</source>
-        <translation>Nom=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/roomsform.cpp" line="135"/>
-        <source>Invalid selected room</source>
-        <translation>Àula seleccionada invàlida</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/roomsform.cpp" line="95"/>
-        <source>Are you sure you want to delete this room and all related constraints?
-</source>
-        <translation>Esteu segurs que voleu esborrar aquesta àula i les seves restriccions relacionades?
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="239"/>
-        <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</source>
-        <translation>Incrementeu la variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="191"/>
-        <source>Empty list of simultaneous activities</source>
-        <translation>La llista d&apos;activitats simultànies esta buïda</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="237"/>
-        <source>Sub-activities do not correspond. Mistake:
-</source>
-        <translation>Les subactivitats no corresponen. Equivocació:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="239"/>
-        <source>1. First (sub)activity has id=%1 and represents %2 sub-activities
-</source>
-        <translation>1. La primera (sub)activitat te id=%1 i representa %2 sub-activitats
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="242"/>
-        <source>2. Current (sub)activity has id=%1 and represents %2 sub-activities
-</source>
-        <translation>2. La (sub)activitat actual té id=%1 i representa %2 sub-activitats
-</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="160"/>
-        <source>Invalid subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifystudentsyearform.cpp" line="59"/>
-        <source>Name existing - please choose another</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="108"/>
-        <source>Empty list of selected rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="105"/>
-        <source>Only one selected activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform.cpp" line="192"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="102"/>
-        <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="103"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many selected rooms)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform.cpp" line="97"/>
-        <source>Are you sure you want to delete this subject and all related activities and constraints?
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform.cpp" line="129"/>
-        <source>Please enter new subject&apos;s name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="133"/>
-        <source>Could not modify item. New name must be a duplicate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="62"/>
-        <source>Please enter subject tag&apos;s name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="136"/>
-        <source>Subject tag insertion dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="185"/>
-        <source>Invalid selected subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="98"/>
-        <source>Are you sure you want to delete this subject tag?
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="130"/>
-        <source>Please enter new subject tag&apos;s name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform.cpp" line="126"/>
-        <source>Please enter new teacher&apos;s name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="360"/>
-        <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="413"/>
-        <source>FET xml files (*.fet);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10307,9 +9104,573 @@ MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many sele
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/engine/activity.cpp" line="338"/>
+        <source>St:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="340"/>
+        <source> no students, </source>
+        <translation>لا طلاب,</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="345"/>
+        <source>Id:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="347"/>
+        <source>AGId:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="349"/>
+        <source>D:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="351"/>
+        <source>TD:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="354"/>
+        <source>A: yes</source>
+        <translation>A: نعم</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="356"/>
+        <source>A: no</source>
+        <translation>A: لا</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="359"/>
+        <source>NSt:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="375"/>
+        <source>Activity:
+</source>
+        <translation>المهمة:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="380"/>
+        <source>No teachers for this activity
+</source>
+        <translation type="unfinished">لا مدرسين لهذه المهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="383"/>
+        <source>Teacher=</source>
+        <translation>المدرس=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="384"/>
+        <source>Subject=</source>
+        <translation>المادة=</translation>
+    </message>
+    <message>
         <location filename="../src/engine/activity.cpp" line="386"/>
         <source>Subject tag=</source>
+        <translation>المادة المكملة=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="388"/>
+        <source>No students sets for this activity
+</source>
+        <translation type="unfinished">لا طلاب معينين لهذه المهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="391"/>
+        <source>Students=</source>
+        <translation>الطلاب=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="393"/>
+        <source>Id=</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="395"/>
+        <source>Activity group id=</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="397"/>
+        <source>Duration=</source>
+        <translation>الفترة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="399"/>
+        <source>total duration=</source>
+        <translation type="obsolete">مجموع الفترات</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="402"/>
+        <source>Active: yes
+</source>
+        <translation>مفعل: نعم</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="404"/>
+        <source>Active: no
+</source>
+        <translation>مفعل: لا</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="416"/>
+        <source>Total number of students=%1</source>
+        <translation>العدد الكلي للطلاب=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="428"/>
+        <source>Time constraints directly related to this activity:</source>
+        <translation>التقييد الزمني لهذه المهمة:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="439"/>
+        <source>Space constraints directly related to this activity:</source>
+        <translation>التقييدات المكانية لهذه المهمة:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="235"/>
+        <source>FET warning</source>
+        <translation type="unfinished">FET تحذير</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="331"/>
+        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.
+
+ For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1315"/>
+        <source>Skip rest of max hours problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1315"/>
+        <source>See next incompatibility max hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="400"/>
+        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="472"/>
+        <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1312"/>
+        <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="513"/>
+        <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1068"/>
+        <source>Skip rest of min hours problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1068"/>
+        <source>See next incompatibility min hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="532"/>
+        <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="604"/>
+        <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="627"/>
+        <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they are generated if you start allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="651"/>
+        <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
+
+Please modify your data accordingly and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="798"/>
+        <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="920"/>
+        <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="963"/>
+        <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="979"/>
+        <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1005"/>
+        <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1021"/>
+        <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1048"/>
+        <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1065"/>
+        <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1204"/>
+        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1254"/>
+        <source>Skip rest of teachers problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1254"/>
+        <source>See next teacher problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1228"/>
+        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1231"/>
+        <source>Skip rest of teach. not avail. problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1231"/>
+        <source>See next teach. not avail. problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1250"/>
+        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1307"/>
+        <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1344"/>
+        <source>Cannot optimize, because you have constraint teachers max gaps with weight (percentage) below 100. Please make weight 100% and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1427"/>
+        <source>Skip rest of max gaps problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1427"/>
+        <source>See next incompatibility max gaps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1362"/>
+        <source>Cannot optimize, because you have constraint teacher max gaps with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1426"/>
+        <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1464"/>
+        <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1468"/>
+        <source>Skip rest of students problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1468"/>
+        <source>See next students problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1488"/>
+        <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1491"/>
+        <source>Skip rest of stud. not avail. problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1491"/>
+        <source>See next stud. not avail. problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1548"/>
+        <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1549"/>
+        <source>Skip rest of max days problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1549"/>
+        <source>See next incompatibility max days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1567"/>
+        <source>Cannot optimize for teacher %1, because it has at least two constraints max days per week. Please modify your data correspondingly (leave maximum one constraint of type constraint teacher max days per week for each teacher) and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1568"/>
+        <source>Skip rest of max days per week problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1568"/>
+        <source>See next incompatibility max days per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1661"/>
+        <source>Cannot optimize for subgroup %1, because you have a no gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint no gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1716"/>
+        <source>Skip rest of early - no gaps problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1716"/>
+        <source>See next incompatibility no gaps - early</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1677"/>
+        <source>Cannot optimize for subgroup %1, because you have an early constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1694"/>
+        <source>Cannot optimize for subgroup %1, because a students early constraint exists for this subgroup, and you have not &apos;no gaps&apos; requirements for this subgroup. The algorithm can 1. optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or 2. only &apos;no gaps&apos; optimization without &apos;early&apos;. Please modify your data correspondingly and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1713"/>
+        <source>Cannot optimize for subgroup %1, because early constraint has weight percentage %2, and &apos;no gaps&apos; constraint has weight percentage %3.. The algorithm can:
+1: Optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or
+2. Only &apos;no gaps&apos; optimization without &apos;early&apos;.
+Please modify your data correspondingly and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1791"/>
+        <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1829"/>
+        <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1863"/>
+        <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1908"/>
+        <source>Cannot optimize, because you have constraints of type activity preferred time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2168"/>
+        <source>Skip rest of constraints problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2417"/>
+        <source>See next incorrect constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2045"/>
+        <source>Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. Please add a basic time constraint (100% weight)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2057"/>
+        <source>Precomputing ... please wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="156"/>
+        <source>FET information</source>
+        <translation type="unfinished">معلومات FET</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2067"/>
+        <source>Canceled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2167"/>
+        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2263"/>
+        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2417"/>
+        <source>Skip rest of min n days problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2286"/>
+        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
+        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2612"/>
+        <source>Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. Please add a basic space constraint with 100% weight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2800"/>
+        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from constraints subject (subject tag) preferred room(s) and activity preferred room(s) )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2825"/>
+        <source>Skip rest of activities without rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2825"/>
+        <source>See next problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2824"/>
+        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from the allowed number of students)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/room.cpp" line="51"/>
+        <source>N:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/room.cpp" line="62"/>
+        <source>C:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/room.cpp" line="74"/>
+        <source>Name=</source>
+        <translation>الاسم=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/room.cpp" line="85"/>
+        <source>Capacity=</source>
+        <translation>الاستيعاب=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/room.cpp" line="116"/>
+        <source>Space constraints directly related to this room:</source>
+        <translation>التقييدات المكانية لهذه القاعة:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="2640"/>
+        <source>Monday</source>
+        <translation>السبت</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="2641"/>
+        <source>Tuesday</source>
+        <translation>الاحد</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="2642"/>
+        <source>Wednesday</source>
+        <translation>الاثنين</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="2643"/>
+        <source>Thursday</source>
+        <translation>الثلاثاء</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="2644"/>
+        <source>Friday</source>
+        <translation>الاربعاء</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2646"/>
@@ -10319,203 +9680,7 @@ MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many sele
     <message>
         <location filename="../src/engine/rules.cpp" line="2647"/>
         <source>Default comments</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2304"/>
-        <source>The constraint
-%1 will be modified into constraint
-%2 because there is only one room left in the constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3017"/>
-        <source>Activity with id=%1 contains invalid data - skipping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5836"/>
-        <source>Activities same starting hour</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5854"/>
-        <source>Activities must have the same starting hour</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="238"/>
-        <source>Space constraint basic compulsory: unallocated activity with id=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="291"/>
-        <source>Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1816"/>
-        <source>Subject tag=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="936"/>
-        <source>A:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="716"/>
-        <source>Activity preferred room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="204"/>
-        <source>Activity id=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="989"/>
-        <source>Activity preferred rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="196"/>
-        <source>Only one selected activity - impossible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="201"/>
-        <source>Too many activities - please report error
-(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="100"/>
-        <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform.cpp" line="105"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="59"/>
-        <source>Current constraint:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="115"/>
-        <source>Day:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="125"/>
-        <source>Start hour:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="135"/>
-        <source>End hour:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform.cpp" line="53"/>
-        <source>Basic compulsory time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform.cpp" line="53"/>
-        <source>Basic compulsory space</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform.cpp" line="201"/>
-        <source>Invalid students set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="98"/>
-        <source>Max days per week=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="78"/>
-        <source>Max hours daily=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform.cpp" line="93"/>
-        <source>Max. hours:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="111"/>
-        <source>Max hours:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform.cpp" line="93"/>
-        <source>Empty list of not overlapping activities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform.cpp" line="103"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="110"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform.cpp" line="105"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too many activities)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1614"/>
-        <source>Room name=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1215"/>
-        <source>Subject preferred room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1413"/>
-        <source>Subject preferred rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform.cpp" line="94"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="118"/>
-        <source>Please report error to the author
-MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM must be increased (you have too many selected rooms)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="220"/>
-        <source>Constraint
-%1 NOT added - duplicate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="187"/>
-        <source>Allocation in course.
-Please stop simulation before this.</source>
-        <translation type="unfinished"></translation>
+        <translation>التعليق الافتراضي</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="83"/>
@@ -10554,311 +9719,113 @@ Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="137"/>
-        <source>You have too many rooms.
-Please talk to the author or increase variable MAX_ROOMS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="428"/>
-        <source>Time constraints directly related to this activity:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="439"/>
-        <source>Space constraints directly related to this activity:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="6246"/>
-        <source>Constraint
-%1
-not added - must be a duplicate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersstatisticsform.cpp" line="45"/>
-        <source>Teacher</source>
-        <translation type="unfinished">Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/teacher.cpp" line="48"/>
-        <source>Time constraints directly related to this teacher:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/teacher.cpp" line="59"/>
-        <source>Space constraints directly related to this teacher:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsstatisticsform.cpp" line="45"/>
-        <source>Subject</source>
-        <translation type="unfinished">Assignatura</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/subjecttag.cpp" line="35"/>
-        <source>Subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="106"/>
-        <source>Time constraints directly related to this students year:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="117"/>
-        <source>Space constraints directly related to this students year:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="210"/>
-        <source>Time constraints directly related to this students group:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="221"/>
-        <source>Space constraints directly related to this students group:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="289"/>
-        <source>Time constraints directly related to this students subgroup:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/studentsset.cpp" line="300"/>
-        <source>Space constraints directly related to this students subgroup:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/subject.cpp" line="48"/>
-        <source>Time constraints directly related to this subject:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/subject.cpp" line="59"/>
-        <source>Space constraints directly related to this subject:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/subjecttag.cpp" line="48"/>
-        <source>Time constraints directly related to this subject tag:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/subjecttag.cpp" line="59"/>
-        <source>Space constraints directly related to this subject tag:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/room.cpp" line="116"/>
-        <source>Space constraints directly related to this room:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1993"/>
-        <source>Teachers max %1 hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5498"/>
-        <source>subject tag=%1, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5539"/>
-        <source>Subject tag=%1
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5488"/>
-        <source>all teachers, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5492"/>
-        <source>all students, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5496"/>
-        <source>all subjects, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5500"/>
-        <source>all subject tags, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5529"/>
-        <source>All teachers
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5533"/>
-        <source>All students
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5537"/>
-        <source>All subjects
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5541"/>
-        <source>All subject tags
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="354"/>
-        <source>A: yes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="356"/>
-        <source>A: no</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="402"/>
-        <source>Active: yes
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="404"/>
-        <source>Active: no
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/rules.cpp" line="131"/>
         <source>You have too many active activities.
 Please talk to the author or increase variable MAX_ACTIVITIES</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1469"/>
-        <source>Time constraint activities not overlapping</source>
+        <location filename="../src/engine/rules.cpp" line="137"/>
+        <source>You have too many rooms.
+Please talk to the author or increase variable MAX_ROOMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="138"/>
-        <source>Activated a number of %1 activities</source>
+        <location filename="../src/engine/rules.cpp" line="143"/>
+        <source>You have too many time constraints.
+Please talk to the author or increase variable MAX_TIME_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform.cpp" line="150"/>
-        <source>De-activated a number of %1 activities</source>
+        <location filename="../src/engine/rules.cpp" line="149"/>
+        <source>You have too many space constraints.
+Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6903"/>
-        <source>This increases the conflicts total by %1</source>
+        <location filename="../src/engine/rules.cpp" line="2304"/>
+        <source>The constraint
+%1 will be modified into constraint
+%2 because there is only one room left in the constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3014"/>
-        <source>This increases the conflicts total by</source>
+        <location filename="../src/engine/rules.cpp" line="2547"/>
+        <source>Cannot create or use directory %1 - cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="270"/>
-        <source> - this increases the conflicts total by %1</source>
+        <location filename="../src/interface/fet.cpp" line="138"/>
+        <source>FET critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="268"/>
-        <source>unallocated activity with id=%1</source>
-        <translation type="unfinished">activitat sense assignar amb id=%1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="277"/>
-        <source>&amp;Cancel</source>
+        <location filename="../src/engine/rules.cpp" line="2557"/>
+        <source>Cannot open log file for writing ... please check your disk free space. Opening of file aborted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1442"/>
-        <source>Please exit and restart FET to activate language change</source>
+        <location filename="../src/engine/rules.cpp" line="2616"/>
+        <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
+
+Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/institutionnameform.cpp" line="53"/>
-        <source>Cannot update institution name during simulation
-Please stop simulation before this</source>
+        <location filename="../src/engine/rules.cpp" line="2621"/>
+        <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/commentsform.cpp" line="53"/>
-        <source>Cannot update comments during simulation
-Please stop simulation before this</source>
+        <location filename="../src/engine/rules.cpp" line="3017"/>
+        <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="217"/>
-        <source>Added the following constraint:
-%1</source>
+        <location filename="../src/engine/rules.cpp" line="3025"/>
+        <source>File contains deprecated equipments list - will be ignored
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="332"/>
-        <source>FET - a free evolutionary timetabling program</source>
-        <translation type="unfinished">FET - Un revolucionari programa lliure d&apos;horaris </translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="452"/>
-        <source>FET - %1</source>
+        <location filename="../src/engine/rules.cpp" line="3062"/>
+        <source>File contains deprecated buildings list - will be ignored
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersstatisticsform.cpp" line="47"/>
-        <source>No. of hours</source>
+        <location filename="../src/engine/rules.cpp" line="3239"/>
+        <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/studentsstatisticsform.cpp" line="74"/>
-        <source>Students set</source>
-        <translation type="unfinished">Conjunt d&apos;estudians</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6485"/>
-        <source>,S:</source>
+        <location filename="../src/engine/rules.cpp" line="3254"/>
+        <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6491"/>
-        <source>,St:</source>
+        <location filename="../src/engine/rules.cpp" line="3269"/>
+        <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="359"/>
-        <source>NSt:</source>
+        <location filename="../src/engine/rules.cpp" line="3319"/>
+        <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform.cpp" line="271"/>
-        <source>Constraint NOT added - duplicate</source>
+        <location filename="../src/engine/rules.cpp" line="3367"/>
+        <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="282"/>
-        <source>This activity id has other constraint of this type attached
-Please remove the other constraints of type activity preferred time
-referring to this activity before proceeding</source>
+        <location filename="../src/engine/rules.cpp" line="3382"/>
+        <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="238"/>
-        <source>This activity id has other constraint of this type attached
-Please remove the other constraints of type activity preferred times
-referring to this activity before proceeding</source>
+        <location filename="../src/engine/rules.cpp" line="3397"/>
+        <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10886,9 +9853,44 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/engine/rules.cpp" line="4178"/>
+        <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4193"/>
+        <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/rules.cpp" line="4267"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4373"/>
+        <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4390"/>
+        <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4445"/>
+        <source>Constraint Break day corrupt,  day %1 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4461"/>
+        <source>Constraint Break start hour corrupt, hour %! is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4477"/>
+        <source>Constraint Break end hour corrupt, hour %1 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10916,6 +9918,16 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/engine/rules.cpp" line="5056"/>
+        <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, day %5 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5076"/>
+        <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/rules.cpp" line="5098"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
@@ -10928,380 +9940,25 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6829"/>
-        <source>WP:%1%</source>
+        <location filename="../src/engine/rules.cpp" line="6246"/>
+        <source>Constraint
+%1
+not added - must be a duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="95"/>
-        <source>Weight (percentage)=%1%</source>
+        <location filename="../src/engine/rules.cpp" line="5327"/>
+        <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1840"/>
-        <source>on days %1 and %2</source>
+        <location filename="../src/engine/rules.cpp" line="5344"/>
+        <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1866"/>
-        <source>teachers1 %1, students sets1 %2, subject1 %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1875"/>
-        <source>teachers2 %1, students sets2 %2, subject2 %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="73"/>
-        <source>Teachers max gaps per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2727"/>
-        <source>MG:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2570"/>
-        <source>Max gaps per week:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2622"/>
-        <source>Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform.cpp" line="89"/>
-        <source>Teacher max gaps per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2740"/>
-        <source>Teacher: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2741"/>
-        <source>Max gaps per week: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2795"/>
-        <source>Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3011"/>
-        <source>Time constraint break not respected for activity with id %1, on day %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3722"/>
-        <source>Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3179"/>
-        <source>Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="65"/>
-        <source>Weight (percentage)=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3391"/>
-        <source>Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3768"/>
-        <source>Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4936"/>
-        <source>Time constraint activity preferred time broken for activity with id=%1, increases conflicts total by %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5145"/>
-        <source>WP:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5260"/>
-        <source>Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5641"/>
-        <source>Time constraint activities preferred times broken for activity with id=%1,  increases conflicts total by %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="84"/>
-        <source>Invalid weight (percentage)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="71"/>
-        <source>Weight percentage=%1%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform.cpp" line="78"/>
-        <source>Invalid weight(percentage)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="70"/>
-        <source>Max gaps=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsform.cpp" line="223"/>
-        <source>Added the following constraint:
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1426"/>
-        <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1567"/>
-        <source>Cannot optimize for teacher %1, because it has at least two constraints max days per week. Please modify your data correspondingly (leave maximum one constraint of type constraint teacher max days per week for each teacher) and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1661"/>
-        <source>Cannot optimize for subgroup %1, because you have a no gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint no gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1677"/>
-        <source>Cannot optimize for subgroup %1, because you have an early constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1713"/>
-        <source>Cannot optimize for subgroup %1, because early constraint has weight percentage %2, and &apos;no gaps&apos; constraint has weight percentage %3.. The algorithm can:
-1: Optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or
-2. Only &apos;no gaps&apos; optimization without &apos;early&apos;.
-Please modify your data correspondingly and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2172"/>
-        <source>Teacher max %1 hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6828"/>
-        <source>TN:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2185"/>
-        <source>Teacher %1 must not have more than %2 hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="70"/>
-        <source>Students max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3894"/>
-        <source>All students sets must have the maximum number of hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3967"/>
-        <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="104"/>
-        <source>Students set max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4092"/>
-        <source>Students set must respect the maximum number of hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4218"/>
-        <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="77"/>
-        <source>Teacher max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform.cpp" line="71"/>
-        <source>Teachers max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="92"/>
-        <source>Teacher max hours daily </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="75"/>
-        <source>Teachers max hours daily </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1656"/>
-        <source>CSD:%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1674"/>
-        <source>Consecutive if same day=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2168"/>
-        <source>Skip rest of constraints problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1315"/>
-        <source>Skip rest of max hours problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1315"/>
-        <source>See next incompatibility max hours</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1427"/>
-        <source>Skip rest of max gaps problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1427"/>
-        <source>See next incompatibility max gaps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1568"/>
-        <source>Skip rest of max days per week problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1568"/>
-        <source>See next incompatibility max days per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1716"/>
-        <source>Skip rest of early - no gaps problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1716"/>
-        <source>See next incompatibility no gaps - early</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1694"/>
-        <source>Cannot optimize for subgroup %1, because a students early constraint exists for this subgroup, and you have not &apos;no gaps&apos; requirements for this subgroup. The algorithm can 1. optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or 2. only &apos;no gaps&apos; optimization without &apos;early&apos;. Please modify your data correspondingly and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1863"/>
-        <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1908"/>
-        <source>Cannot optimize, because you have constraints of type activity preferred time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2417"/>
-        <source>See next incorrect constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2616"/>
-        <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
-
-Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1890"/>
-        <source>The activities are placed consecutively in the timetable, because you selected this option in case the activities are in the same day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="243"/>
-        <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
-
-If you want, you can turn off automatic search for updates in Settings menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="331"/>
-        <source> no teachers, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="340"/>
-        <source> no students, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="380"/>
-        <source>No teachers for this activity
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="388"/>
-        <source>No students sets for this activity
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2825"/>
-        <source>Skip rest of activities without rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2825"/>
-        <source>See next problem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2824"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from the allowed number of students)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3025"/>
-        <source>File contains deprecated equipments list - will be ignored
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3062"/>
-        <source>File contains deprecated buildings list - will be ignored
-</source>
+        <location filename="../src/engine/rules.cpp" line="5361"/>
+        <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11387,6 +10044,31 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/engine/rules.cpp" line="6263"/>
+        <source>Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="6282"/>
+        <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="6384"/>
+        <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="27"/>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="27"/>
+        <source>yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="116"/>
         <source>Basic compulsory constraints (space), WP:%1%</source>
         <translation type="unfinished"></translation>
@@ -11399,8 +10081,146 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="95"/>
+        <source>Weight (percentage)=%1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="130"/>
+        <source>The basic space constraints try to avoid:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="131"/>
+        <source>- rooms assigned to more than one activity simultaneously
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="132"/>
+        <source>- activities with more students than the capacity of the room
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="238"/>
+        <source>Space constraint basic compulsory: unallocated activity with id=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="270"/>
+        <source> - this increases the conflicts total by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="269"/>
+        <source>Space constraint basic compulsory: room %1 has allocated activity with id %2 and the capacity of the room is overloaded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="271"/>
         <source>This increases conflicts total by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="291"/>
+        <source>Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6903"/>
+        <source>This increases the conflicts total by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="418"/>
+        <source>Room not available</source>
+        <translation>القاعة غير متاحة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6829"/>
+        <source>WP:%1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1802"/>
+        <source>R:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2885"/>
+        <source>D:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2886"/>
+        <source>SH:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2887"/>
+        <source>EH:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1812"/>
+        <source>Space constraint</source>
+        <translation>التقييد المكاني</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1818"/>
+        <source>Room=%1</source>
+        <translation>القاعة=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2897"/>
+        <source>Day=%1</source>
+        <translation>اليوم=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2898"/>
+        <source>Start hour=%1</source>
+        <translation>حصة البدء=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2899"/>
+        <source>End hour=%1</source>
+        <translation>حصة النهاية=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="434"/>
+        <source>Constraint room not available is wrong because it refers to inexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="441"/>
+        <source>Constraint room not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing it and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="448"/>
+        <source>Constraint room not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="455"/>
+        <source>Constraint room not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="462"/>
+        <source>Constraint room not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="517"/>
+        <source>Space constraint room not available broken for room %1 on day %2, hour %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11415,8 +10235,53 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="936"/>
+        <source>A:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="728"/>
+        <source> Invalid (inexistent) activity id for constraint activity preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6485"/>
+        <source>,S:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6489"/>
+        <source>,ST:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6491"/>
+        <source>,St:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="716"/>
+        <source>Activity preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="204"/>
+        <source>Activity id=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="800"/>
         <source>Space constraint activity preferred room broken for activity with id=%1 (subject=%2), room=%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1001"/>
+        <source> Invalid (inexistent) activity id for constraint activity preferred rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="989"/>
+        <source>Activity preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11425,8 +10290,33 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3705"/>
+        <source>S:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1215"/>
+        <source>Subject preferred room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1815"/>
+        <source>Subject=%1</source>
+        <translation>المادة=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1614"/>
+        <source>Room name=%1</source>
+        <translation>اسم القاعة=%1</translation>
+    </message>
+    <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1269"/>
         <source>Space constraint subject preferred room broken for activity with id %1 (subject=%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1413"/>
+        <source>Subject preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11435,60 +10325,743 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="98"/>
-        <source>Only one selected room - please use constraint activity preferred room if you want a single room</source>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1799"/>
+        <source>ST:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="113"/>
-        <source>Only one selected room - please use constraint subject preferred room if you want a single room</source>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1610"/>
+        <source>Subject subject tag preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addroomform.cpp" line="102"/>
-        <source>It is advisable to only input special rooms, which are not available, or for activities with special rooms needed (no need to input home rooms for teachers or students)
-
-It is advisable to generate the timetable without the rooms, then, if a solution is possible, to add rooms</source>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1816"/>
+        <source>Subject tag=%1</source>
+        <translation>المادة المكملة=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1665"/>
+        <source>Space constraint subject subject tag preferred room broken for activity with id %1 (subject=%2, subject tag=%3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addroomform.cpp" line="107"/>
-        <source>FET - help on adding room(s)</source>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1813"/>
+        <source>Subject subject tag preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1202"/>
-        <source>Please input at least two active activities before generating</source>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1875"/>
+        <source>Space constraint subject subject tag preferred rooms broken for activity with id %1 (subject=%2, subject tag=%3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1275"/>
-        <source>Please generate, firstly</source>
+        <location filename="../src/engine/studentsset.cpp" line="77"/>
+        <source>Yn:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="126"/>
-        <source>R:</source>
+        <location filename="../src/engine/studentsset.cpp" line="263"/>
+        <source>No:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="174"/>
-        <source>Room: </source>
+        <location filename="../src/engine/studentsset.cpp" line="89"/>
+        <source>Students set - year</source>
+        <translation>طلاب معينين - فصل</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="91"/>
+        <source>Year name=</source>
+        <translation>اسم الفصل=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="277"/>
+        <source>Number of students=</source>
+        <translation>عدد اطلاب=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="106"/>
+        <source>Time constraints directly related to this students year:</source>
+        <translation>التقييدات الزمنية لهذا الفصل:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="117"/>
+        <source>Space constraints directly related to this students year:</source>
+        <translation>التقييدات المكانية لهذا الفصل:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="181"/>
+        <source>Gn:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="604"/>
-        <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <location filename="../src/engine/studentsset.cpp" line="193"/>
+        <source>Students set - group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1068"/>
-        <source>Skip rest of min hours problems</source>
+        <location filename="../src/engine/studentsset.cpp" line="195"/>
+        <source>Group name=</source>
+        <translation>اسم المجموعة=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="210"/>
+        <source>Time constraints directly related to this students group:</source>
+        <translation>التقييدات الزمنية لهذه المجموعة الطلابية:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="221"/>
+        <source>Space constraints directly related to this students group:</source>
+        <translation>التقييدات المكانية لهذه المجموعة الطلابية:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="260"/>
+        <source>Sgn:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1068"/>
-        <source>See next incompatibility min hours</source>
+        <location filename="../src/engine/studentsset.cpp" line="272"/>
+        <source>Students set - subgroup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="274"/>
+        <source>Subgroup name=</source>
+        <translation>اسم المجموعة الفرعية=</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="289"/>
+        <source>Time constraints directly related to this students subgroup:</source>
+        <translation>التقييدات الزمنية لهذه المجموعة الفرعيةالطلابية:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/studentsset.cpp" line="300"/>
+        <source>Space constraints directly related to this students subgroup:</source>
+        <translation>التقييدات المكانية لهذه المجموعة الفرعية الطلابية:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsstatisticsform.cpp" line="45"/>
+        <source>Subject</source>
+        <translation>المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/teacher.cpp" line="37"/>
+        <source>Name=%1</source>
+        <translation>الاسم=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/subject.cpp" line="48"/>
+        <source>Time constraints directly related to this subject:</source>
+        <translation>التقييدات الزمنية لهذه المادة:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/subject.cpp" line="59"/>
+        <source>Space constraints directly related to this subject:</source>
+        <translation>التقييدات المكانية لهذه المادة:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/subjecttag.cpp" line="35"/>
+        <source>Subject tag</source>
+        <translation>المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/subjecttag.cpp" line="48"/>
+        <source>Time constraints directly related to this subject tag:</source>
+        <translation>التقييدات الزمنية لهذه المادة المكملة:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/subjecttag.cpp" line="59"/>
+        <source>Space constraints directly related to this subject tag:</source>
+        <translation>التقييدات المكانية لهذه المادة المكملة:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="45"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/teacher.cpp" line="48"/>
+        <source>Time constraints directly related to this teacher:</source>
+        <translation>التقييدات الزمنية لهذا المدرس:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/teacher.cpp" line="59"/>
+        <source>Space constraints directly related to this teacher:</source>
+        <translation>التقييدات المكانية لهذا المدرس:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="130"/>
+        <source>Basic compulsory constraints (time)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="140"/>
+        <source>These are the basic compulsory constraints
+(referring to time allocation) for any timetable
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="144"/>
+        <source>The basic time constraints try to avoid:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="147"/>
+        <source>- teachers assigned to more than one activity simultaneously
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="148"/>
+        <source>- students assigned to more than one activity simultaneously
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="361"/>
+        <source>Time constraint basic compulsory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="268"/>
+        <source>unallocated activity with id=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="303"/>
+        <source>activity with id=%1 is late.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="334"/>
+        <source>teacher with name %1 has more than one allocated activity on day %2, hour %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="364"/>
+        <source>subgroup %1 has more than one allocated activity on day %2, hour %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="104"/>
+        <source>Teacher not available</source>
+        <translation>تفريغ مدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2726"/>
+        <source>T:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6838"/>
+        <source>Time constraint</source>
+        <translation>تقييد زمني</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="106"/>
+        <source>Teacher=%1</source>
+        <translation>مدرس=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="505"/>
+        <source>Constraint teacher not available is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="512"/>
+        <source>Constraint teacher not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="519"/>
+        <source>Constraint teacher not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="526"/>
+        <source>Constraint teacher not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="533"/>
+        <source>Constraint teacher not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="584"/>
+        <source>Time constraint teacher not available broken for teacher %1 on day %2, hour %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="669"/>
+        <source>Constraint students set not available is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="676"/>
+        <source>Constraint students set not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="683"/>
+        <source>Constraint students set not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="690"/>
+        <source>Constraint students set not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="697"/>
+        <source>Constraint students set not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform.cpp" line="119"/>
+        <source>Students set not available</source>
+        <translation>تفريغ طلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3345"/>
+        <source>Students=%1</source>
+        <translation>الطلاب=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="832"/>
+        <source>Time constraint students not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="835"/>
+        <source>broken for subgroup: %1 on day %2, hour %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5786"/>
+        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="987"/>
+        <source>Activities same starting time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5839"/>
+        <source>NA:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5841"/>
+        <source>ID:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1005"/>
+        <source>Activities must have the same starting time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5857"/>
+        <source>Number of activities=%1</source>
+        <translation>عدد المهام=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5859"/>
+        <source>Activity with id=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1686"/>
+        <source> Invalid (inexistent) id for activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5874"/>
+        <source>T: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5883"/>
+        <source> , S: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5887"/>
+        <source> , ST: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5889"/>
+        <source> , St: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1134"/>
+        <source>Time constraint activities same starting time broken, because activity with id=%1 is not at the same starting time with activity with id=%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5986"/>
+        <source>conflicts factor increase=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1290"/>
+        <source>Activities not overlapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1306"/>
+        <source>Activities must not overlap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1474"/>
+        <source>activity with id=%1 overlaps with activity with id=%2 on a number of %3 periods</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1469"/>
+        <source>Time constraint activities not overlapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1832"/>
+        <source>broken:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1653"/>
+        <source>Min N days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1656"/>
+        <source>CSD:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1661"/>
+        <source>N:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1671"/>
+        <source>Minimum N days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1674"/>
+        <source>Consecutive if same day=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1722"/>
+        <source>Minimum number of days=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1830"/>
+        <source>Time constraint min n days between activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1835"/>
+        <source>activity with id=%1 conflicts with activity with id=%2 on %3 hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1840"/>
+        <source>on days %1 and %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1866"/>
+        <source>teachers1 %1, students sets1 %2, subject1 %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5663"/>
+        <source>, subject tag %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1875"/>
+        <source>teachers2 %1, students sets2 %2, subject2 %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1890"/>
+        <source>The activities are placed consecutively in the timetable, because you selected this option in case the activities are in the same day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="1993"/>
+        <source>Teachers max %1 hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2005"/>
+        <source>Teachers must not have more than %1 hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2061"/>
+        <source>Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2172"/>
+        <source>Teacher max %1 hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6828"/>
+        <source>TN:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2185"/>
+        <source>Teacher %1 must not have more than %2 hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2244"/>
+        <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="93"/>
+        <source>Teacher max days per week</source>
+        <translation>أقصى عدد لايام الدوام الأسبوعي للمدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2355"/>
+        <source>MD:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2365"/>
+        <source>Teacher max. days per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2369"/>
+        <source>Max. days per week=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2451"/>
+        <source>Time constraint teacher max days per week broken for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2454"/>
+        <source>teacher: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="73"/>
+        <source>Teachers max gaps per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2727"/>
+        <source>MG:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2570"/>
+        <source>Max gaps per week:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2622"/>
+        <source>Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform.cpp" line="89"/>
+        <source>Teacher max gaps per week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2740"/>
+        <source>Teacher: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2741"/>
+        <source>Max gaps per week: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2795"/>
+        <source>Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreakform.cpp" line="86"/>
+        <source>Break</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2912"/>
+        <source>Constraint break is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2919"/>
+        <source>Constraint break is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2926"/>
+        <source>Constraint break is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2933"/>
+        <source>Constraint break is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3011"/>
+        <source>Time constraint break not respected for activity with id %1, on day %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3014"/>
+        <source>This increases the conflicts total by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsnogapsform.cpp" line="66"/>
+        <source>Students no gaps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3132"/>
+        <source>Students must not have gaps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3722"/>
+        <source>Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3179"/>
+        <source>Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnogapsform.cpp" line="100"/>
+        <source>Students set no gaps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="4510"/>
+        <source>St:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3342"/>
+        <source>Students set must not have gaps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="65"/>
+        <source>Weight (percentage)=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3391"/>
+        <source>Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3511"/>
+        <source>Students must begin their courses as early as possible (permitted by breaks and students not available)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3726"/>
+        <source>This is a strong constraint (for instance, if students X are available all the time, they must begin their activities at first hour, not a bit later)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3768"/>
+        <source>Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3719"/>
+        <source>Students set must begin their courses as early as possible (permitted by breaks and students not available)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform.cpp" line="121"/>
+        <source>Students set=%1</source>
+        <translation>الطلاب المعينين=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="70"/>
+        <source>Students max hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="4074"/>
+        <source>MH:%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3894"/>
+        <source>All students sets must have the maximum number of hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="4096"/>
+        <source>Maximum recommended hours daily=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="3967"/>
+        <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="104"/>
+        <source>Students set max hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="4092"/>
+        <source>Students set must respect the maximum number of hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="4218"/>
+        <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11532,115 +11105,256 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="93"/>
-        <source>Min. hours:%1</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="6380"/>
+        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="111"/>
-        <source>Min hours:%1</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="4731"/>
+        <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="513"/>
-        <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="4738"/>
+        <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="532"/>
-        <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="4745"/>
+        <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1791"/>
-        <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5088"/>
+        <source>Act. id:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1829"/>
-        <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="4850"/>
+        <source> Invalid (inexistent) activity id for constraint activity preferred time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3511"/>
-        <source>Students must begin their courses as early as possible (permitted by breaks and students not available)</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5501"/>
+        <source>must be scheduled at: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3719"/>
-        <source>Students set must begin their courses as early as possible (permitted by breaks and students not available)</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="4936"/>
+        <source>Time constraint activity preferred time broken for activity with id=%1, increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="149"/>
-        <source>Invalid weight (percentage). It has to be 100</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5025"/>
+        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5874"/>
-        <source>T: </source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5034"/>
+        <source>Constraint activity preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5883"/>
-        <source> , S: </source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5041"/>
+        <source>Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5889"/>
-        <source> , St: </source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5048"/>
+        <source>Constraint activity preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1799"/>
-        <source>ST:%1</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5163"/>
+        <source> Invalid (inexistent) activity id for constraint activity preferred times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1610"/>
-        <source>Subject subject tag preferred room</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5145"/>
+        <source>WP:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1665"/>
-        <source>Space constraint subject subject tag preferred room broken for activity with id %1 (subject=%2, subject tag=%3)</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5543"/>
+        <source>must be scheduled at:
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1813"/>
-        <source>Subject subject tag preferred rooms</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5260"/>
+        <source>Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1875"/>
-        <source>Space constraint subject subject tag preferred rooms broken for activity with id %1 (subject=%2, subject tag=%3)</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5659"/>
+        <source>teachers %1, students sets %2, subject %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="627"/>
-        <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they are generated if you start allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5417"/>
+        <source>Constraint activities preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2800"/>
-        <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from constraints subject (subject tag) preferred room(s) and activity preferred room(s) )</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5424"/>
+        <source>Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="143"/>
-        <source>You have too many time constraints.
-Please talk to the author or increase variable MAX_TIME_CONSTRAINTS</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5431"/>
+        <source>Constraint activities preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="149"/>
-        <source>You have too many space constraints.
-Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5442"/>
+        <source>Following constraint is wrong (refers to no activities. Please correct it):
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1232"/>
-        <source>Please input at least two active activities before generating multiple</source>
+        <location filename="../src/engine/timeconstraint.cpp" line="5484"/>
+        <source>Activities with </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5486"/>
+        <source>teacher=%1, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5488"/>
+        <source>all teachers, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5490"/>
+        <source>students=%1, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5492"/>
+        <source>all students, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5494"/>
+        <source>subject=%1, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5496"/>
+        <source>all subjects, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5498"/>
+        <source>subject tag=%1, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5500"/>
+        <source>all subject tags, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5524"/>
+        <source>Activities with:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5527"/>
+        <source>Teacher=%1
+</source>
+        <translation>المدرس=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5529"/>
+        <source>All teachers
+</source>
+        <translation>جميع المدرسين</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5531"/>
+        <source>Students=%1
+</source>
+        <translation>الطلاب=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5533"/>
+        <source>All students
+</source>
+        <translation>كل الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5535"/>
+        <source>Subject=%1
+</source>
+        <translation>المادة=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5537"/>
+        <source>All subjects
+</source>
+        <translation>كل المواد</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5539"/>
+        <source>Subject tag=%1
+</source>
+        <translation>المادة المكملة=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5541"/>
+        <source>All subject tags
+</source>
+        <translation>كل المواد المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5641"/>
+        <source>Time constraint activities preferred times broken for activity with id=%1,  increases conflicts total by %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5836"/>
+        <source>Activities same starting hour</source>
+        <translation>حصص تبدأ في نفس الوقت</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5854"/>
+        <source>Activities must have the same starting hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6470"/>
+        <source> Invalid (inexistent) activity id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5983"/>
+        <source>Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6093"/>
+        <source>Following constraint is wrong (refers to inexistent activity ids):
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6102"/>
+        <source>Following constraint is wrong (refers to same activities):
+%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11669,575 +11383,23 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="144"/>
-        <source>Second activity id=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6293"/>
-        <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="117"/>
-        <source>2 activities consecutive</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="167"/>
-        <source>Invalid first activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="177"/>
-        <source>Invalid second activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="184"/>
-        <source>Same activities - impossible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform.cpp" line="244"/>
-        <source>Constraint NOT added - error?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1219"/>
-        <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3239"/>
-        <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3254"/>
-        <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3269"/>
-        <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3367"/>
-        <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3382"/>
-        <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3397"/>
-        <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4178"/>
-        <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4193"/>
-        <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4373"/>
-        <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4390"/>
-        <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4445"/>
-        <source>Constraint Break day corrupt,  day %1 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4461"/>
-        <source>Constraint Break start hour corrupt, hour %! is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4477"/>
-        <source>Constraint Break end hour corrupt, hour %1 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5056"/>
-        <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, day %5 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5076"/>
-        <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/hoursform.cpp" line="126"/>
-        <source>Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5327"/>
-        <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5344"/>
-        <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5361"/>
-        <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1204"/>
-        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1254"/>
-        <source>Skip rest of teachers problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1254"/>
-        <source>See next teacher problem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1231"/>
-        <source>Skip rest of teach. not avail. problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1231"/>
-        <source>See next teach. not avail. problem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1464"/>
-        <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1468"/>
-        <source>Skip rest of students problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1468"/>
-        <source>See next students problem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1491"/>
-        <source>Skip rest of stud. not avail. problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1491"/>
-        <source>See next stud. not avail. problem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5786"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5442"/>
-        <source>Following constraint is wrong (refers to no activities. Please correct it):
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6093"/>
-        <source>Following constraint is wrong (refers to inexistent activity ids):
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6102"/>
-        <source>Following constraint is wrong (refers to same activities):
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1344"/>
-        <source>Cannot optimize, because you have constraint teachers max gaps with weight (percentage) below 100. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1362"/>
-        <source>Cannot optimize, because you have constraint teacher max gaps with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentsearlyform.cpp" line="66"/>
-        <source>Students must begin activities as early as possible (permitted by not available and break)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="91"/>
-        <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentsnogapsform.cpp" line="83"/>
-        <source>Invalid weight(percentage) - it must be 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetearlyform.cpp" line="96"/>
-        <source>Students set must begin activities as early as possible (permitted by not available and break)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6380"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5025"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2547"/>
-        <source>Cannot create or use directory %1 - cannot continue</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="434"/>
-        <source>Constraint room not available is wrong because it refers to inexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="441"/>
-        <source>Constraint room not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing it and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="448"/>
-        <source>Constraint room not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="455"/>
-        <source>Constraint room not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="462"/>
-        <source>Constraint room not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="505"/>
-        <source>Constraint teacher not available is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="512"/>
-        <source>Constraint teacher not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="519"/>
-        <source>Constraint teacher not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="526"/>
-        <source>Constraint teacher not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="533"/>
-        <source>Constraint teacher not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="669"/>
-        <source>Constraint students set not available is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="676"/>
-        <source>Constraint students set not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="683"/>
-        <source>Constraint students set not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="690"/>
-        <source>Constraint students set not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="697"/>
-        <source>Constraint students set not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2912"/>
-        <source>Constraint break is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2919"/>
-        <source>Constraint break is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2926"/>
-        <source>Constraint break is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2933"/>
-        <source>Constraint break is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4731"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4745"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5034"/>
-        <source>Constraint activity preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5048"/>
-        <source>Constraint activity preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5417"/>
-        <source>Constraint activities preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5431"/>
-        <source>Constraint activities preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fet.cpp" line="138"/>
-        <source>FET critical</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fet.cpp" line="138"/>
-        <source>Cannot create or use %1 directory - FET will now abort</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4738"/>
-        <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5041"/>
-        <source>Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5424"/>
-        <source>Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addstudentsyearform.cpp" line="65"/>
-        <source>Year added. You might want to divide it into sections - this is done in the years dialog - button &apos;Divide year ...&apos;, or by manually adding groups and subgroups in the groups or subgroups menus
-
- Important note: if you plan to use option &apos;divide&apos;, please try to use it only once for each year at the beginning, because a second use of option &apos;divide&apos; for the same year will remove all activities and constraints referring to old groups and subgroups from this year.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2057"/>
-        <source>Precomputing ... please wait</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2067"/>
-        <source>Canceled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1134"/>
-        <source>Time constraint activities same starting time broken, because activity with id=%1 is not at the same starting time with activity with id=%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5983"/>
-        <source>Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1549"/>
-        <source>Skip rest of max days problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1549"/>
-        <source>See next incompatibility max days</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="116"/>
-        <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="651"/>
-        <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
-
-Please modify your data accordingly and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1228"/>
-        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1250"/>
-        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1488"/>
-        <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1548"/>
-        <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2045"/>
-        <source>Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. Please add a basic time constraint (100% weight)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2612"/>
-        <source>Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. Please add a basic space constraint with 100% weight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="3319"/>
-        <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="89"/>
-        <source>Invalid weight (percentage) - must be 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="114"/>
-        <source>Invalid weight - it has to be 100%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="260"/>
-        <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
-
-You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
-
-You can choose to disable automatic search for updates in the Settings menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2167"/>
-        <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1686"/>
-        <source> Invalid (inexistent) id for activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4850"/>
-        <source> Invalid (inexistent) activity id for constraint activity preferred time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5163"/>
-        <source> Invalid (inexistent) activity id for constraint activity preferred times</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6470"/>
-        <source> Invalid (inexistent) activity id</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6159"/>
         <source> Invalid (inexistent) activity id for first activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="144"/>
+        <source>Second activity id=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6201"/>
         <source> Invalid (inexistent) activity id for second activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6293"/>
+        <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12253,156 +11415,6 @@ You can choose to disable automatic search for updates in the Settings menu</sou
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6551"/>
         <source>Time constraint activity ends students&apos; day broken for activity with id=%1, increases conflicts total by %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform.cpp" line="172"/>
-        <source>Activity ends students day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform.cpp" line="212"/>
-        <source>Constraint NOT added - please report bug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="472"/>
-        <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1312"/>
-        <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="920"/>
-        <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1307"/>
-        <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1453"/>
-        <source>Are you sure you want to reset all settings to defaults?
-
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1460"/>
-        <source>(these are:
-1. Mainform geometry will be reset to default
-2. Check for updates at startup will be disabled
-3. Language will be en_GB (restart needed to activate language change)
-4. Working directory will be sample_inputs
-5. Timetable html level will be 2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2263"/>
-        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2417"/>
-        <source>Skip rest of min n days problems</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2286"/>
-        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2621"/>
-        <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="250"/>
-        <source>Modifying all weights for min n days</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="252"/>
-        <source>Warning: all min n days weights will be
- changed to selected value. Are you sure?
- If yes, please enter weight percentage for all constraints of
- type min n days between activities (any integer/fractional
-number between 0.0 and 100.0, recommended 95.0 at least)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="260"/>
-        <source>Invalid weight (percentage) - has to be &gt;=0.0 and &lt;=100.0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2061"/>
-        <source>Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2244"/>
-        <source>Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="331"/>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.
-
- For more details, join the mailing list or email the author</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="400"/>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="798"/>
-        <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="276"/>
-        <source>File might have been changed - do you want to save it?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="963"/>
-        <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1005"/>
-        <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1048"/>
-        <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1065"/>
-        <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12443,190 +11455,6 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6896"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteacherminhoursdailyform.cpp" line="75"/>
-        <source>Teacher min hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="71"/>
-        <source>Min hours daily=%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="65"/>
-        <source>Teachers min hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="86"/>
-        <source>Teacher min hours daily </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="68"/>
-        <source>Teachers min hours daily </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="979"/>
-        <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1021"/>
-        <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3726"/>
-        <source>This is a strong constraint (for instance, if students X are available all the time, they must begin their activities at first hour, not a bit later)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="125"/>
-        <source>Constraint added.
-
-Note: this constraint is strong. It means that students must have hours beginning at the very first available slot for them. If such constraint is too strong and your school allows later beginning of courses, you might want to use a combination of students set not available/break in the last slots of each day or other constraints instead</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="2557"/>
-        <source>Cannot open log file for writing ... please check your disk free space. Opening of file aborted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="6263"/>
-        <source>Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="6282"/>
-        <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="6384"/>
-        <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="728"/>
-        <source> Invalid (inexistent) activity id for constraint activity preferred room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6489"/>
-        <source>,ST:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1001"/>
-        <source> Invalid (inexistent) activity id for constraint activity preferred rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5887"/>
-        <source> , ST: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5663"/>
-        <source>, subject tag %4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform.cpp" line="173"/>
-        <source>Removing:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform.cpp" line="178"/>
-        <source>There will also be removed the related activities from the same larger split activity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5659"/>
-        <source>teachers %1, students sets %2, subject %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="371"/>
-        <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="377"/>
-        <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="383"/>
-        <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="422"/>
-        <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="426"/>
-        <source>Please do not use semicolon ; in filename, the html css code does not work</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="430"/>
-        <source>Please do not use # in filename, the html css code does not work</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="196"/>
-        <source>FET help on subject tags</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform.cpp" line="199"/>
-        <source>Subject tag is a field which can be used or not, depending on your wish (optional field). It is designed to help you with some constraints. Each activity has a possible empty subject tag (if you don&apos;t use subject tags, it will be empty)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
-        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
-        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/activitiesform.cpp" line="215"/>
-        <source>Cannot modify this large activity, because it contains more than activities.
-If you really need that, please talk to the author
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersstatisticsform.cpp" line="46"/>
-        <source>No. of activities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="212"/>
-        <source>Constraint NOT added - it must be a duplicate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifystudentsgroupform.cpp" line="68"/>
-        <source>Name exists. If you would like to make more years to contain a group (overlapping years), please remove current group (FET will unfortunately remove all related activities and constraints) and add a new group with desired name in current year. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifystudentssubgroupform.cpp" line="72"/>
-        <source>Name exists. If you would like to make more groups to contain a subgroup (overlapping groups), please remove current subgroup (FET will unfortunately remove all related activities and constraints) and add a new subgroup with desired name in current group. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12870,8 +11698,1139 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="109"/>
+        <source>Invalid selected activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform.cpp" line="173"/>
+        <source>Removing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform.cpp" line="178"/>
+        <source>There will also be removed the related activities from the same larger split activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="112"/>
+        <source>OK</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="112"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform.cpp" line="215"/>
+        <source>Cannot modify this large activity, because it contains more than activities.
+If you really need that, please talk to the author
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="226"/>
+        <source>Invalid activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="59"/>
+        <source>Current constraint:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="117"/>
+        <source>2 activities consecutive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="167"/>
+        <source>Invalid first activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="177"/>
+        <source>Invalid second activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="84"/>
+        <source>Invalid weight (percentage)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="184"/>
+        <source>Same activities - impossible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="99"/>
+        <source>Constraint added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform.cpp" line="244"/>
+        <source>Constraint NOT added - error?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform.cpp" line="93"/>
+        <source>Empty list of not overlapping activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="105"/>
+        <source>Only one selected activity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform.cpp" line="103"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform.cpp" line="120"/>
+        <source>Constraint added:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="102"/>
+        <source>Constraint NOT added - please report error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="78"/>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="250"/>
+        <source>Not enough slots (too many &quot;Yes&quot; values).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="239"/>
+        <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="254"/>
+        <source>Currently, it is %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailableform.cpp" line="125"/>
+        <source>Constraint NOT added - duplicate?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="100"/>
+        <source>Empty list of selected activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform.cpp" line="105"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="191"/>
+        <source>Empty list of simultaneous activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="196"/>
+        <source>Only one selected activity - impossible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="201"/>
+        <source>Too many activities - please report error
+(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="237"/>
+        <source>Sub-activities do not correspond. Mistake:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="239"/>
+        <source>1. First (sub)activity has id=%1 and represents %2 sub-activities
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="242"/>
+        <source>2. Current (sub)activity has id=%1 and represents %2 sub-activities
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform.cpp" line="172"/>
+        <source>Activity ends students day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="89"/>
+        <source>Invalid weight (percentage) - must be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform.cpp" line="212"/>
+        <source>Constraint NOT added - please report bug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/roomsform.cpp" line="112"/>
+        <source>Invalid room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="204"/>
         <source>Constraint NOT added - must be a duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="108"/>
+        <source>Empty list of selected rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="98"/>
+        <source>Only one selected room - please use constraint activity preferred room if you want a single room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform.cpp" line="192"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="168"/>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="191"/>
+        <source>Activity preferred time</source>
+        <translation>وقت مفضل للمهمة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="160"/>
+        <source>Invalid day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="115"/>
+        <source>Day:%1</source>
+        <translation>اليوم:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="166"/>
+        <source>Invalid start hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="125"/>
+        <source>Start hour:%1</source>
+        <translation>حصة البدء:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="261"/>
+        <source>Please specify at least a day or an hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform.cpp" line="271"/>
+        <source>Constraint NOT added - duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="252"/>
+        <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="238"/>
+        <source>This activity id has other constraint of this type attached
+Please remove the other constraints of type activity preferred times
+referring to this activity before proceeding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform.cpp" line="53"/>
+        <source>Basic compulsory space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="98"/>
+        <source>Invalid weight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform.cpp" line="53"/>
+        <source>Basic compulsory time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="173"/>
+        <source>Invalid end hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="135"/>
+        <source>End hour:%1</source>
+        <translation>حصة النهاية:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="149"/>
+        <source>Invalid weight (percentage). It has to be 100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailableform.cpp" line="178"/>
+        <source>End hour &lt;= start hour - impossible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="110"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="212"/>
+        <source>Constraint NOT added - it must be a duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="71"/>
+        <source>Weight percentage=%1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsearlyform.cpp" line="66"/>
+        <source>Students must begin activities as early as possible (permitted by not available and break)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="91"/>
+        <source>Invalid weight (percentage) - it must be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="125"/>
+        <source>Constraint added.
+
+Note: this constraint is strong. It means that students must have hours beginning at the very first available slot for them. If such constraint is too strong and your school allows later beginning of courses, you might want to use a combination of students set not available/break in the last slots of each day or other constraints instead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform.cpp" line="93"/>
+        <source>Max. hours:%1</source>
+        <translation>اقصى حصص:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="93"/>
+        <source>Min. hours:%1</source>
+        <translation>ادنى حصص:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="116"/>
+        <source>Invalid weight (percentage) - it has to be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsnogapsform.cpp" line="78"/>
+        <source>Invalid weight(percentage)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsnogapsform.cpp" line="83"/>
+        <source>Invalid weight(percentage) - it must be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetearlyform.cpp" line="96"/>
+        <source>Students set must begin activities as early as possible (permitted by not available and break)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailableform.cpp" line="201"/>
+        <source>Invalid students set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="114"/>
+        <source>Invalid weight - it has to be 100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform.cpp" line="159"/>
+        <source>Invalid subject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomform.cpp" line="125"/>
+        <source>Constraint NOT added - error ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="113"/>
+        <source>Only one selected room - please use constraint subject preferred room if you want a single room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectsubjecttagpreferredroomsform.cpp" line="94"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform.cpp" line="185"/>
+        <source>Invalid selected subject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="160"/>
+        <source>Invalid subject tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="185"/>
+        <source>Invalid selected subject tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="98"/>
+        <source>Max days per week=%1</source>
+        <translation>ايام الدوام الاسبوعي القصوى=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="156"/>
+        <source>Invalid teacher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="70"/>
+        <source>Max gaps=%1</source>
+        <translation>اقصى فراغات=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="77"/>
+        <source>Teacher max hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="78"/>
+        <source>Max hours daily=%1</source>
+        <translation>اقصى حصص يومية=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteacherminhoursdailyform.cpp" line="75"/>
+        <source>Teacher min hours daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="71"/>
+        <source>Min hours daily=%1</source>
+        <translation>ادنى حصص يومية=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform.cpp" line="71"/>
+        <source>Teachers max hours daily</source>
+        <translation>الحد الاقصى من الحصص اليومية للمدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="65"/>
+        <source>Teachers min hours daily</source>
+        <translation>الحد الادنى من الحصص اليومية للمدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentsyearform.cpp" line="55"/>
+        <source>Incorrect name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addroomform.cpp" line="85"/>
+        <source>Room insertion dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="66"/>
+        <source>Could not insert item. Must be a duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addroomform.cpp" line="86"/>
+        <source>Room added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addroomform.cpp" line="102"/>
+        <source>It is advisable to only input special rooms, which are not available, or for activities with special rooms needed (no need to input home rooms for teachers or students)
+
+It is advisable to generate the timetable without the rooms, then, if a solution is possible, to add rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addroomform.cpp" line="107"/>
+        <source>FET - help on adding room(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform.cpp" line="88"/>
+        <source>group insertion dialog</source>
+        <translation type="obsolete">اضافة مجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform.cpp" line="53"/>
+        <source>Could not insert item. Duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform.cpp" line="62"/>
+        <source>This name is taken for a year - please consider another name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform.cpp" line="64"/>
+        <source>This name is taken for a subgroup - please consider another name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="76"/>
+        <source>FET</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform.cpp" line="74"/>
+        <source>This group already exists, but in another year
+If you insert current group to current year, that
+means that some years share the same group (overlap)
+If you want to make a new group, independent,
+please abort now and give it another name
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform.cpp" line="78"/>
+        <source>Add</source>
+        <translation>اضافة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform.cpp" line="78"/>
+        <source>Abort</source>
+        <translation>تخطي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform.cpp" line="89"/>
+        <source>group added</source>
+        <translation type="obsolete">المجموعة اضيفت</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform.cpp" line="90"/>
+        <source>Subgroup insertion dialog</source>
+        <translation>اضافة مجموعة فرعية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform.cpp" line="67"/>
+        <source>This name is taken for a group - please consider another name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform.cpp" line="77"/>
+        <source>This subgroup already exists, but in another group
+If you insert current subgroup to current group, that
+means that some groups share the same subgroup (overlap)
+If you want to make a new subgroup, independent,
+please abort now and give it another name
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentssubgroupform.cpp" line="91"/>
+        <source>Subgroup added</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsyearform.cpp" line="59"/>
+        <source>Year insertion dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsyearform.cpp" line="65"/>
+        <source>Year added. You might want to divide it into sections - this is done in the years dialog - button &apos;Divide year ...&apos;, or by manually adding groups and subgroups in the groups or subgroups menus
+
+ Important note: if you plan to use option &apos;divide&apos;, please try to use it only once for each year at the beginning, because a second use of option &apos;divide&apos; for the same year will remove all activities and constraints referring to old groups and subgroups from this year.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="102"/>
+        <source>Invalid selected constraint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="107"/>
+        <source>Removing constraint:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersminhoursdailyform.cpp" line="109"/>
+        <source>
+Are you sure?</source>
+        <translation>هل أنت متأكد؟</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/commentsform.cpp" line="53"/>
+        <source>Cannot update comments during simulation
+Please stop simulation before this</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="250"/>
+        <source>Modifying all weights for min n days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="252"/>
+        <source>Warning: all min n days weights will be
+ changed to selected value. Are you sure?
+ If yes, please enter weight percentage for all constraints of
+ type min n days between activities (any integer/fractional
+number between 0.0 and 100.0, recommended 95.0 at least)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="260"/>
+        <source>Invalid weight (percentage) - has to be &gt;=0.0 and &lt;=100.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform.cpp" line="108"/>
+        <source>Empty names not allowed
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform.cpp" line="115"/>
+        <source>Duplicates not allowed
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform.cpp" line="104"/>
+        <source>Please note that FET will NOT take care
+of old constraints using erased days
+(only renamed days will be handled correctly)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="138"/>
+        <source>Cannot create or use %1 directory - FET will now abort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="243"/>
+        <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
+
+If you want, you can turn off automatic search for updates in Settings menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="260"/>
+        <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
+
+You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
+
+You can choose to disable automatic search for updates in the Settings menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="275"/>
+        <source>FET - exiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="276"/>
+        <source>File might have been changed - do you want to save it?</source>
+        <translation>هل ترغب بحفظ التغييرات على الملف؟</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1463"/>
+        <source>&amp;Yes</source>
+        <translation>&amp;نعم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1463"/>
+        <source>&amp;No</source>
+        <translation>&amp;لا</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="277"/>
+        <source>&amp;Cancel</source>
+        <translation>&amp;الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="187"/>
+        <source>Allocation in course.
+Please stop simulation before this.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1462"/>
+        <source>FET application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="319"/>
+        <source>Are you sure you want to load new data (rules) ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="332"/>
+        <source>FET - a free evolutionary timetabling program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="360"/>
+        <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="361"/>
+        <source>open file dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="361"/>
+        <source>Choose a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="430"/>
+        <source>FET info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="371"/>
+        <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="377"/>
+        <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="383"/>
+        <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="399"/>
+        <source>Invalid file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="399"/>
+        <source>&amp;OK</source>
+        <translation>&amp;موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="452"/>
+        <source>FET - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="413"/>
+        <source>FET xml files (*.fet);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="414"/>
+        <source>Save file dialog</source>
+        <translation type="unfinished">حفظ ملف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="414"/>
+        <source>Choose a filename to save under</source>
+        <translation type="unfinished">اختر اسم ملف</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="422"/>
+        <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="426"/>
+        <source>Please do not use semicolon ; in filename, the html css code does not work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="430"/>
+        <source>Please do not use # in filename, the html css code does not work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="446"/>
+        <source>File exists - are you sure you want to overwrite existing file?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1202"/>
+        <source>Please input at least two active activities before generating</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1219"/>
+        <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1232"/>
+        <source>Please input at least two active activities before generating multiple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1275"/>
+        <source>Please generate, firstly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1442"/>
+        <source>Please exit and restart FET to activate language change</source>
+        <translation>فضلاً اعد تشغيل البرنامج لتفعيل اللغة الجديدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1453"/>
+        <source>Are you sure you want to reset all settings to defaults?
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1460"/>
+        <source>(these are:
+1. Mainform geometry will be reset to default
+2. Check for updates at startup will be disabled
+3. Language will be en_GB (restart needed to activate language change)
+4. Working directory will be sample_inputs
+5. Timetable html level will be 2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="156"/>
+        <source>Invalid selected year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform.cpp" line="279"/>
+        <source>Invalid selected group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform.cpp" line="90"/>
+        <source>Are you sure you want to delete this group and all related subgroup, activities and constraints?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/groupsform.cpp" line="101"/>
+        <source>This group still exists into another year
+The related subgroups, activities and constraints were not removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="138"/>
+        <source>Activated a number of %1 activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="150"/>
+        <source>De-activated a number of %1 activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform.cpp" line="122"/>
+        <source>Please note that FET will NOT take care
+of old constraints using erased hours
+(only renamed hours will be handled correctly)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform.cpp" line="124"/>
+        <source>FET question</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform.cpp" line="126"/>
+        <source>Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/institutionnameform.cpp" line="53"/>
+        <source>Cannot update institution name during simulation
+Please stop simulation before this</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform.cpp" line="105"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too many activities)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="103"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many selected rooms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="282"/>
+        <source>This activity id has other constraint of this type attached
+Please remove the other constraints of type activity preferred time
+referring to this activity before proceeding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform.cpp" line="59"/>
+        <source>Weight=%1</source>
+        <translation>الوزن=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="111"/>
+        <source>Max hours:%1</source>
+        <translation>اقصى حصص:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="111"/>
+        <source>Min hours:%1</source>
+        <translation>ادنى حصص:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubjectsubjecttagpreferredroomsform.cpp" line="118"/>
+        <source>Please report error to the author
+MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM must be increased (you have too many selected rooms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="92"/>
+        <source>Teacher max hours daily </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="86"/>
+        <source>Teacher min hours daily </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="75"/>
+        <source>Teachers max hours daily </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="68"/>
+        <source>Teachers min hours daily </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentsyearform.cpp" line="59"/>
+        <source>Name existing - please choose another</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentsgroupform.cpp" line="68"/>
+        <source>Name exists. If you would like to make more years to contain a group (overlapping years), please remove current group (FET will unfortunately remove all related activities and constraints) and add a new group with desired name in current year. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentssubgroupform.cpp" line="72"/>
+        <source>Name exists. If you would like to make more groups to contain a subgroup (overlapping groups), please remove current subgroup (FET will unfortunately remove all related activities and constraints) and add a new subgroup with desired name in current group. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/roomsform.cpp" line="135"/>
+        <source>Invalid selected room</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/roomsform.cpp" line="95"/>
+        <source>Are you sure you want to delete this room and all related constraints?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="74"/>
+        <source>Students set</source>
+        <translation>تعيين طلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="46"/>
+        <source>No. of activities</source>
+        <translation>عدد المهام</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="47"/>
+        <source>No. of hours</source>
+        <translation>عدد الحصص</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform.cpp" line="287"/>
+        <source>Invalid selected subgroup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform.cpp" line="107"/>
+        <source>Are you sure you want to delete this subgroup and all related activities and constraints?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="126"/>
+        <source>User input</source>
+        <translation>مدخلات المستخدم</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform.cpp" line="61"/>
+        <source>Please enter subject&apos;s name</source>
+        <translation>&apos;فضلاً ادخل اسم المادة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform.cpp" line="135"/>
+        <source>Subject insertion dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform.cpp" line="97"/>
+        <source>Are you sure you want to delete this subject and all related activities and constraints?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform.cpp" line="129"/>
+        <source>Please enter new subject&apos;s name</source>
+        <translation>&apos;فضلاً ادخل اسم المادة الجديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="133"/>
+        <source>Could not modify item. New name must be a duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="62"/>
+        <source>Please enter subject tag&apos;s name</source>
+        <translation>&apos;فضلاً ادخل اسم المادة المكملة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="136"/>
+        <source>Subject tag insertion dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="98"/>
+        <source>Are you sure you want to delete this subject tag?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="130"/>
+        <source>Please enter new subject tag&apos;s name</source>
+        <translation>&apos;فضلاً ادخل اسم المادة المكملة الجديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="196"/>
+        <source>FET help on subject tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="199"/>
+        <source>Subject tag is a field which can be used or not, depending on your wish (optional field). It is designed to help you with some constraints. Each activity has a possible empty subject tag (if you don&apos;t use subject tags, it will be empty)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="59"/>
+        <source>Please enter teacher&apos;s name</source>
+        <translation>&apos;فضلاً ادخل اسم المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="132"/>
+        <source>Teacher insertion dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="181"/>
+        <source>Invalid selected teacher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="95"/>
+        <source>Are you sure you want to delete this teacher and all related activities and constraints?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform.cpp" line="126"/>
+        <source>Please enter new teacher&apos;s name</source>
+        <translation>&apos;فضلاً ادخل اسم المدرس الجديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsform.cpp" line="223"/>
+        <source>Added the following constraint:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="220"/>
+        <source>Constraint
+%1 NOT added - duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="217"/>
+        <source>Added the following constraint:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="149"/>
+        <source>Students</source>
+        <translation>الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="126"/>
+        <source>R:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="174"/>
+        <source>Room: </source>
+        <translation>القاعة: </translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="108"/>
+        <source>The teacher&apos;s timetable cannot be printed,
+because the teacher is invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="155"/>
+        <source>The teacher is invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="77"/>
+        <source>Are you sure you want to delete this year and all related groups, subgroups, activities and constraints?
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12879,43 +12838,63 @@ If you really need that, please talk to the author
         <source>Specified language is incorrect - making it en_GB (English)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="399"/>
+        <source>Total duration=</source>
+        <translation>مجموع الفترات=</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform.cpp" line="78"/>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform.cpp" line="88"/>
+        <source>Group insertion dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addstudentsgroupform.cpp" line="89"/>
+        <source>Group added</source>
+        <translation>المجموعة اضيفت</translation>
+    </message>
 </context>
 <context>
     <name>RoomsForm_template</name>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="16"/>
         <source>Rooms</source>
-        <translation>Àules</translation>
+        <translation>القاعات</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="27"/>
         <source>Add room</source>
-        <translation>Afegeix Diàleg</translation>
+        <translation>اضافة قاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="35"/>
         <source>Remove current</source>
-        <translation>Esborra actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/roomsform_template.ui" line="65"/>
-        <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>حذف المحدد</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="43"/>
         <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="51"/>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>فرز بالاسم</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="59"/>
         <source>Modify current</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/roomsform_template.ui" line="65"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/roomsform_template.ui" line="85"/>
@@ -12931,12 +12910,12 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="75"/>
         <source>FET warning</source>
-        <translation type="unfinished">Advertencia FET</translation>
+        <translation>FET تحذير</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="68"/>
         <source>No level selected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار مستوى</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="77"/>
@@ -12949,12 +12928,12 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="13"/>
         <source>Settings - timetable html level</source>
-        <translation type="unfinished"></translation>
+        <translation>اعدادات - مستوى تنسيق الجدول</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="19"/>
         <source>The html level for generated timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>مستويات html لانتاج الجدول</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="25"/>
@@ -12962,16 +12941,6 @@ Note: each room can hold a single activity at the same time
 - smallest filesize
 - no css file</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="112"/>
-        <source>OK</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="119"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="34"/>
@@ -13011,6 +12980,16 @@ Note: each room can hold a single activity at the same time
   (needs JavaScript - just move mouse over a word and wait a little bit)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="112"/>
+        <source>OK</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="119"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
 </context>
 <context>
     <name>SplitYearForm</name>
@@ -13022,7 +13001,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform.cpp" line="706"/>
         <source>FET information</source>
-        <translation type="unfinished">Infomació FET</translation>
+        <translation type="unfinished">معلومات FET</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="457"/>
@@ -13032,12 +13011,22 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform.cpp" line="474"/>
         <source>FET question</source>
-        <translation type="unfinished">Preguna FET</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="479"/>
+        <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. This means that all the activities and constraints for the groups and subgroups in this year will be removed. It is strongly recommended to save your file before continuing. You might also want, as an alternative, to modify manually the groups/subgroups from the corresponding menu, so that you will not lose constraints and activities referring to them. Do you really want to empty year?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="485"/>
         <source>FET warning</source>
-        <translation type="unfinished">Advertencia FET</translation>
+        <translation type="unfinished">FET تحذير</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="487"/>
+        <source>Year %1 will be emptied. This means that all constraints and activities referring to groups/subgroups in year %1 will be removed. Are you absolutely sure?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="521"/>
@@ -13060,23 +13049,23 @@ Note: each room can hold a single activity at the same time
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="479"/>
-        <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. This means that all the activities and constraints for the groups and subgroups in this year will be removed. It is strongly recommended to save your file before continuing. You might also want, as an alternative, to modify manually the groups/subgroups from the corresponding menu, so that you will not lose constraints and activities referring to them. Do you really want to empty year?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="487"/>
-        <source>Year %1 will be emptied. This means that all constraints and activities referring to groups/subgroups in year %1 will be removed. Are you absolutely sure?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/splityearform.cpp" line="753"/>
         <source>This help by Liviu Lalescu, last modified 1 Oct. 2007</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/splityearform.cpp" line="761"/>
+        <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/splityearform.cpp" line="771"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions If you need 4 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 3 categories (more details below). For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="779"/>
+        <source>If you need to make a division of say year 9 in 4 categories (category1: a, b,c, d, category2: language, category3: religion, category4: boys/girls), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 3 categories: language, religion and boys/girls. For activities with year 9 - language 1 for instance, you need to add to these activities the groups 9a_language1+9b_language1+9c_language1+9d_language1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13107,17 +13096,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/splityearform.cpp" line="816"/>
         <source>OK</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="779"/>
-        <source>If you need to make a division of say year 9 in 4 categories (category1: a, b,c, d, category2: language, category3: religion, category4: boys/girls), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 3 categories: language, religion and boys/girls. For activities with year 9 - language 1 for instance, you need to add to these activities the groups 9a_language1+9b_language1+9c_language1+9d_language1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="761"/>
-        <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
-        <translation type="unfinished"></translation>
+        <translation>موافق</translation>
     </message>
 </context>
 <context>
@@ -13128,39 +13107,14 @@ Note: each room can hold a single activity at the same time
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="186"/>
-        <source>OK</source>
-        <translation type="unfinished">D&apos;acord</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="194"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <location filename="../src/interface/splityearform_template.ui" line="35"/>
+        <source>Number of categories (you can select 1-3 categories)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="98"/>
         <source>Splitting year:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="326"/>
-        <source>Separator character(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="202"/>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="210"/>
-        <source>Reset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform_template.ui" line="35"/>
-        <source>Number of categories (you can select 1-3 categories)</source>
-        <translation type="unfinished"></translation>
+        <translation>تقسيم فصل:</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="106"/>
@@ -13168,8 +13122,33 @@ Note: each room can hold a single activity at the same time
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/splityearform_template.ui" line="186"/>
+        <source>OK</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="194"/>
+        <source>Cancel</source>
+        <translation>الغاء</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="202"/>
+        <source>Help</source>
+        <translation>مساعدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="210"/>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/splityearform_template.ui" line="254"/>
         <source>Category 2 (you can select 2-6 divisions)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="326"/>
+        <source>Separator character(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13183,12 +13162,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="16"/>
         <source>FET - Students statistics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/studentsstatisticsform_template.ui" line="117"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>FET - احصاءات الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="36"/>
@@ -13198,17 +13172,22 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="48"/>
         <source>Show subgroups</source>
-        <translation type="unfinished">Mostra subgrups</translation>
+        <translation>عرض المجموعات الفرعية</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="58"/>
         <source>Show groups</source>
-        <translation type="unfinished">Mostra grups</translation>
+        <translation>عرض المجموعات</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="68"/>
         <source>Show Years</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض الفصول</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform_template.ui" line="117"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
@@ -13216,51 +13195,56 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="16"/>
         <source>FET - subgroups of students</source>
-        <translation>FET - subgrups d&apos;estudiants</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subgroupsform_template.ui" line="111"/>
-        <source>Details</source>
-        <translation>Detalls</translation>
+        <translation>FET - مجموعات الطلاب الفرعية</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="33"/>
-        <source>Year</source>
-        <translation>Any</translation>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="41"/>
-        <source>Group</source>
-        <translation>Grup</translation>
+        <source>group</source>
+        <translation type="obsolete">المجموعة</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="83"/>
         <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="69"/>
         <source>Add subgroup</source>
-        <translation>Afegeix subgrup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subgroupsform_template.ui" line="95"/>
-        <source>Remove current</source>
-        <translation>Esborra actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subgroupsform_template.ui" line="103"/>
-        <source>Subgroup</source>
-        <translation>Subgrups</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subgroupsform_template.ui" line="151"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اضافة مجموعة فرعية</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="77"/>
         <source>Modify current</source>
+        <translation>تعديل الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform_template.ui" line="95"/>
+        <source>Remove current</source>
+        <translation>حذف المحدد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform_template.ui" line="103"/>
+        <source>Subgroup</source>
+        <translation>المجموعة الفرعية</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform_template.ui" line="111"/>
+        <source>details</source>
+        <translation type="obsolete">التفاصيل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform_template.ui" line="127"/>
+        <source>Activate all activities for selected students subgroup</source>
+        <translation>تفعيل كل المهام لمجموعة الطلاب الفرعية المحددة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform_template.ui" line="135"/>
+        <source>De-activate all activities for selected students subgroup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13269,14 +13253,24 @@ Note: each room can hold a single activity at the same time
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform_template.ui" line="127"/>
-        <source>Activate all activities for selected students subgroup</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/subgroupsform_template.ui" line="151"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
-        <location filename="../src/interface/subgroupsform_template.ui" line="135"/>
-        <source>De-activate all activities for selected students subgroup</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/subgroupsform_template.ui" line="33"/>
+        <source>Year</source>
+        <translation>الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform_template.ui" line="41"/>
+        <source>Group</source>
+        <translation>المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subgroupsform_template.ui" line="111"/>
+        <source>Details</source>
+        <translation>الوصف</translation>
     </message>
 </context>
 <context>
@@ -13284,42 +13278,42 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="16"/>
         <source>FET - subject tags</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="81"/>
-        <source>Remove current</source>
-        <translation type="unfinished">Esborra actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="97"/>
-        <source>Add subject tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="53"/>
-        <source>New Item</source>
-        <translation type="unfinished">Nova activitat</translation>
+        <translation>Fet - المواد التكميلية</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="31"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="129"/>
-        <source>Rename current</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="53"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="81"/>
+        <source>Remove current</source>
+        <translation>حذف المحدد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="97"/>
+        <source>Add subject tag</source>
+        <translation>اضافة مادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="113"/>
         <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation>فرز ابجدي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="129"/>
+        <source>Rename current</source>
+        <translation>اعادة التسمية</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="145"/>
         <source>Activate all activities for selected subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>تفعيل كل المهام للمادة التكميلية المحددة</translation>
     </message>
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="161"/>
@@ -13329,7 +13323,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subjecttagsform_template.ui" line="177"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>مساعدة</translation>
     </message>
 </context>
 <context>
@@ -13337,42 +13331,42 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="16"/>
         <source>FET - subjects</source>
-        <translation>FET - assignatures</translation>
+        <translation>FET - المواد</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="33"/>
         <source>Remove current</source>
-        <translation>Esborra actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform_template.ui" line="83"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>حذف المحدد</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="41"/>
         <source>Add subject</source>
-        <translation>Afegeix àrea</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/subjectsform_template.ui" line="63"/>
-        <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>اضافة مادة</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="49"/>
         <source>Rename current</source>
-        <translation type="unfinished"></translation>
+        <translation>اعادة التسمية</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="57"/>
         <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation>فرز ابجدي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform_template.ui" line="63"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsform_template.ui" line="83"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="91"/>
         <source>Activate all activities for selected subject</source>
-        <translation type="unfinished"></translation>
+        <translation>تفعيل كل المهام للمادة المحددة</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="99"/>
@@ -13385,12 +13379,12 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="16"/>
         <source>FET - Subjects statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - احصاءات المواد الدراسية</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="52"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
@@ -13398,42 +13392,42 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="16"/>
         <source>Teachers</source>
-        <translation>Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform_template.ui" line="41"/>
-        <source>Remove current</source>
-        <translation>Esborra actual</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/teachersform_template.ui" line="75"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>المدرسون</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="33"/>
         <source>Add teacher</source>
-        <translation>Afegeix professor</translation>
+        <translation>اضافة مدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersform_template.ui" line="55"/>
-        <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <location filename="../src/interface/teachersform_template.ui" line="41"/>
+        <source>Remove current</source>
+        <translation>حذف المحدد</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="49"/>
         <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation>فرز ابجدي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform_template.ui" line="55"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersform_template.ui" line="75"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="83"/>
         <source>Rename current</source>
-        <translation type="unfinished"></translation>
+        <translation>اعادة التسمية</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="91"/>
         <source>Activate all activities for selected teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>تفعيل كل المهام للمدرس المحدد</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform_template.ui" line="99"/>
@@ -13446,34 +13440,39 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/teachersstatisticsform_template.ui" line="16"/>
         <source>FET - Teachers statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - احصاءات المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersstatisticsform_template.ui" line="52"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="350"/>
-        <source>Conflicts of %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5280"/>
-        <source>Warning! Only %1 out of %2 activities placed!</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/engine/timetableexport.cpp" line="340"/>
+        <source>Soft conflicts of %1</source>
+        <translation>التعارضات %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="352"/>
         <source>Generated with FET %1 on %2</source>
-        <translation type="unfinished"></translation>
+        <translation>انتج بـ %1 في %2</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="609"/>
         <source>End of file.</source>
+        <translation>نهاية الملف.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="350"/>
+        <source>Conflicts of %1</source>
+        <translation>تعارضات %1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5280"/>
+        <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13492,41 +13491,6 @@ Note: each room can hold a single activity at the same time
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4915"/>
-        <source>Table of content</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3049"/>
-        <source>Year</source>
-        <translation type="unfinished">Any</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1776"/>
-        <source>Group</source>
-        <translation type="unfinished">Grup</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5304"/>
-        <source>Timetable generated with FET %1 on %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5032"/>
-        <source>back to the top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5283"/>
-        <source>No rooms recorded in fet for %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timetableexport.cpp" line="340"/>
-        <source>Soft conflicts of %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/timetableexport.cpp" line="562"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation type="unfinished"></translation>
@@ -13534,22 +13498,62 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="4909"/>
         <source>Institution name</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم المنشأة</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="4910"/>
         <source>Comments</source>
-        <translation type="unfinished"></translation>
+        <translation>شرح</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="4915"/>
+        <source>Table of content</source>
+        <translation>جدول المحتوى</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="3013"/>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1756"/>
+        <source>group</source>
+        <translation type="obsolete">المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5304"/>
+        <source>Timetable generated with FET %1 on %2</source>
+        <translation>الجدول انتج بـ FET %1 في %2</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5032"/>
+        <source>back to the top</source>
+        <translation>العودة للأعلى</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="3050"/>
         <source>Detailed</source>
-        <translation type="unfinished"></translation>
+        <translation>مفصل</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="3051"/>
         <source>Less detailed</source>
-        <translation type="unfinished"></translation>
+        <translation>غير مفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="5283"/>
+        <source>No rooms recorded in fet for %1.</source>
+        <translation>لم تسجل غرف لـ %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="3049"/>
+        <source>Year</source>
+        <translation>الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1776"/>
+        <source>Group</source>
+        <translation>المجموعة</translation>
     </message>
 </context>
 <context>
@@ -13557,7 +13561,7 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="109"/>
         <source>FET warning</source>
-        <translation type="unfinished">Advertencia FET</translation>
+        <translation type="unfinished">FET تحذير</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="109"/>
@@ -13567,12 +13571,22 @@ Note: each room can hold a single activity at the same time
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="527"/>
         <source>FET information</source>
-        <translation type="unfinished">Infomació FET</translation>
+        <translation type="unfinished">معلومات FET</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="116"/>
         <source>You have entered simulation with uninitialized rules or 0 activities...aborting</source>
-        <translation type="unfinished">Has iniciat una simulació sense inicialitzar regles o amb 0 activitats... abortant</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="122"/>
+        <source>Entering simulation....precomputing, please be patient</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="129"/>
+        <source>Cannot generate - please modify your data</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="134"/>
@@ -13638,6 +13652,11 @@ For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="350"/>
+        <source>ST: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="354"/>
         <source> StN: </source>
         <translation type="unfinished"></translation>
@@ -13645,7 +13664,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="374"/>
         <source>OK</source>
-        <translation type="unfinished">D&apos;acord</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="318"/>
@@ -13657,6 +13676,19 @@ For more information you can join the mailing list or write to author</source>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:
 
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="429"/>
+        <source>Soft conflicts listing (in decreasing order):
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="445"/>
+        <source>Allocation terminated successfully, remaining %1 weighted soft conflicts from constraints with weight percentage lower than 100% (see menu Timetable/Show soft conflicts or the text file in the output directory for details).
+
+Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %2 in html and xml mode and the soft conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13685,6 +13717,16 @@ For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="486"/>
+        <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="487"/>
+        <source>Activities are placed in order, most difficult ones first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="489"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation type="unfinished"></translation>
@@ -13695,31 +13737,8 @@ For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="129"/>
-        <source>Cannot generate - please modify your data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="529"/>
-        <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="486"/>
-        <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="429"/>
-        <source>Soft conflicts listing (in decreasing order):
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="445"/>
-        <source>Allocation terminated successfully, remaining %1 weighted soft conflicts from constraints with weight percentage lower than 100% (see menu Timetable/Show soft conflicts or the text file in the output directory for details).
-
-Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %2 in html and xml mode and the soft conflicts in txt mode</source>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="495"/>
+        <source>It is recommended to strengthen the constraints step by step (for intance min n days or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13728,23 +13747,8 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="487"/>
-        <source>Activities are placed in order, most difficult ones first</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="495"/>
-        <source>It is recommended to strengthen the constraints step by step (for intance min n days or teacher(s) max gaps), as you obtain feasible timetables.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="122"/>
-        <source>Entering simulation....precomputing, please be patient</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="350"/>
-        <source>ST: %1</source>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="529"/>
+        <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13756,24 +13760,14 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="57"/>
-        <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="33"/>
         <source>Current stage:</source>
-        <translation type="unfinished">Fase actual:</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="97"/>
-        <source>Stop and see impossible activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="86"/>
-        <source>Start</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="57"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="68"/>
@@ -13785,7 +13779,17 @@ timetable on the hard disk, in xml and html formats.</source>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="78"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>المساعدة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="86"/>
+        <source>Start</source>
+        <translation>ابدأ</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="97"/>
+        <source>Stop and see impossible activities</source>
+        <translation type="unfinished">ايقاف وعرض المهام المشكلة</translation>
     </message>
 </context>
 <context>
@@ -13793,12 +13797,24 @@ timetable on the hard disk, in xml and html formats.</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="321"/>
         <source>FET information</source>
-        <translation type="unfinished">Infomació FET</translation>
+        <translation type="unfinished">معلومات FET</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="171"/>
+        <source>Notice: you can only see generated timetables on the hard disk, in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding.
+
+Please note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
+        <source>Directory %1 exists and might not be empty, (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it) and then you can generate multiple timetables</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
         <source>FET warning</source>
-        <translation type="unfinished">Advertencia FET</translation>
+        <translation type="unfinished">FET تحذير</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
@@ -13827,19 +13843,14 @@ For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="283"/>
-        <source>Simulation interrupted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="343"/>
-        <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="258"/>
         <source>Soft conflicts listing (in decreasing order):
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="283"/>
+        <source>Simulation interrupted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13853,15 +13864,8 @@ For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="171"/>
-        <source>Notice: you can only see generated timetables on the hard disk, in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding.
-
-Please note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
-        <source>Directory %1 exists and might not be empty, (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it) and then you can generate multiple timetables</source>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="343"/>
+        <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13880,27 +13884,27 @@ Please note that, for large data, each timetable might occupy more megabytes of 
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="54"/>
         <source>Number of timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الجداول</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="81"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>ابدأ</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="92"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>ايقاف</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="100"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="108"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>المساعدة</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="116"/>
@@ -13913,12 +13917,12 @@ Please note that, for large data, each timetable might occupy more megabytes of 
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="16"/>
         <source>FET - showing the timetable conflicts</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض تعارضات الجدول</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="41"/>
         <source>Close</source>
-        <translation type="unfinished">Tancar</translation>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
@@ -13926,42 +13930,42 @@ Please note that, for large data, each timetable might occupy more megabytes of 
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="16"/>
         <source>Viewing the timetable for the rooms</source>
-        <translation>Mirant les horaris de les àules</translation>
+        <translation>عرض جدول القاعات</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="33"/>
         <source>Room</source>
-        <translation>Àula</translation>
+        <translation>القاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="41"/>
         <source>Room&apos;s name</source>
-        <translation>Nom de l&apos;àula</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewroomsform_template.ui" line="100"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
+        <translation>اسم القاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="61"/>
         <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="73"/>
-        <source>Details</source>
-        <translation>Detalls</translation>
+        <source>details</source>
+        <translation type="obsolete">التفاصيل</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="81"/>
         <source>Please click on the table for details for a specific activity.</source>
-        <translation>Cliqueu a la tabla per tenir detalls de la activitat especificada.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="92"/>
         <source>Lock selected activities</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsform_template.ui" line="100"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform_template.ui" line="108"/>
@@ -13973,53 +13977,58 @@ Please note that, for large data, each timetable might occupy more megabytes of 
         <source>Lock selected activities (time)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/timetableviewroomsform_template.ui" line="73"/>
+        <source>Details</source>
+        <translation>التفاصيل</translation>
+    </message>
 </context>
 <context>
     <name>TimetableViewStudentsForm_template</name>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="16"/>
         <source>Viewing the timetable for the students</source>
-        <translation>Mirant les horaris dels estudiants</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="33"/>
-        <source>Year</source>
-        <translation>Any</translation>
+        <source>year</source>
+        <translation type="obsolete">الفصل</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="41"/>
-        <source>Group</source>
-        <translation>Grup</translation>
+        <source>group</source>
+        <translation type="obsolete">المجموعة</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="49"/>
         <source>Subgroup</source>
-        <translation>Subgrups</translation>
+        <translation>مجموعة فرعية</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="83"/>
         <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="67"/>
         <source>Class name</source>
-        <translation>Nom de l&apos;àula</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewstudentsform_template.ui" line="128"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
+        <translation type="unfinished">اسم الفصل</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="109"/>
-        <source>Details</source>
-        <translation>Detalls</translation>
+        <source>details</source>
+        <translation type="obsolete">التفاصيل</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="117"/>
         <source>Please click on the table for details for a specific activity.</source>
-        <translation>Cliqueu a la tabla per tenir detalls de la activitat especificada.</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsform_template.ui" line="128"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="136"/>
@@ -14027,43 +14036,28 @@ Please note that, for large data, each timetable might occupy more megabytes of 
 (only the time)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsform_template.ui" line="33"/>
+        <source>Year</source>
+        <translation>الفصل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsform_template.ui" line="41"/>
+        <source>Group</source>
+        <translation>المجموعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewstudentsform_template.ui" line="109"/>
+        <source>Details</source>
+        <translation>التفاصيل</translation>
+    </message>
 </context>
 <context>
     <name>TimetableViewTeachersForm_template</name>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="16"/>
         <source>Viewing the timetable for the teachers</source>
-        <translation>Mirant les horaris dels professors</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="91"/>
-        <source>Teacher</source>
-        <translation>Professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="72"/>
-        <source>Teacher&apos;s name</source>
-        <translation>Nom del professor</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="42"/>
-        <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="97"/>
-        <source>New Item</source>
-        <translation>Nova activitat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="50"/>
-        <source>Details</source>
-        <translation>Detalls</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="80"/>
-        <source>Please click on the table for details for a specific activity.</source>
-        <translation>Cliqueu a la tabla per tenir detalls de la activitat especificada.</translation>
+        <translation>عرض جدول المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="33"/>
@@ -14071,38 +14065,58 @@ Please note that, for large data, each timetable might occupy more megabytes of 
 (only time)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="42"/>
+        <source>Close</source>
+        <translation>اغلاق</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="50"/>
+        <source>details</source>
+        <translation type="obsolete">التفاصيل</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="72"/>
+        <source>Teacher&apos;s name</source>
+        <translation>اسم المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="80"/>
+        <source>Please click on the table for details for a specific activity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="91"/>
+        <source>Teacher</source>
+        <translation>المدرس</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="97"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="50"/>
+        <source>Details</source>
+        <translation>التفاصيل</translation>
+    </message>
 </context>
 <context>
     <name>YearsForm_template</name>
     <message>
-        <location filename="../src/interface/yearsform_template.ui" line="25"/>
-        <source>New Item</source>
-        <translation>Nova activitat</translation>
+        <location filename="../src/interface/yearsform_template.ui" line="16"/>
+        <source>Years (forms, classes) of students</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform_template.ui" line="69"/>
-        <source>Remove current</source>
-        <translation>Esborra actual</translation>
+        <location filename="../src/interface/yearsform_template.ui" line="25"/>
+        <source>New Item</source>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="37"/>
         <source>Close</source>
-        <translation>Tancar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform_template.ui" line="77"/>
-        <source>Modify current</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform_template.ui" line="85"/>
-        <source>Sort alphabetically</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/yearsform_template.ui" line="101"/>
-        <source>Activate all activities for selected students year</source>
-        <translation type="unfinished"></translation>
+        <translation>اغلاق</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="45"/>
@@ -14110,18 +14124,33 @@ Please note that, for large data, each timetable might occupy more megabytes of 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform_template.ui" line="16"/>
-        <source>Years (forms, classes) of students</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/yearsform_template.ui" line="61"/>
         <source>Add year (form, class)</source>
-        <translation type="unfinished"></translation>
+        <translation>اضافة فصل أو دفعة</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform_template.ui" line="69"/>
+        <source>Remove current</source>
+        <translation>حذف المحدد</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform_template.ui" line="77"/>
+        <source>Modify current</source>
+        <translation type="unfinished">تعديل الحالي</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform_template.ui" line="85"/>
+        <source>Sort alphabetically</source>
+        <translation>فرز ابجدي</translation>
     </message>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="93"/>
         <source>Divide year automatically by selecting categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform_template.ui" line="101"/>
+        <source>Activate all activities for selected students year</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
