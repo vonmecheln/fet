@@ -38,7 +38,7 @@
 
 #include "longtextmessagebox.h"
 
-QMutex mutex;
+QMutex myMutex;
 
 static GenerateThread generateThread;
 
@@ -189,11 +189,11 @@ void TimetableGenerateForm::stop()
 
 	simulation_running=false;
 
-	mutex.lock();
+	myMutex.lock();
 	gen.abortOptimization=true;
-	mutex.unlock();
+	myMutex.unlock();
 
-	mutex.lock();
+	myMutex.lock();
 
 	Solution& c=gen.c;
 
@@ -294,7 +294,7 @@ void TimetableGenerateForm::stop()
 		s+="\n";
 	}
 
-	mutex.unlock();
+	myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -340,11 +340,11 @@ void TimetableGenerateForm::stopHighest()
 
 	simulation_running=false;
 
-	mutex.lock();
+	myMutex.lock();
 	gen.abortOptimization=true;
-	mutex.unlock();
+	myMutex.unlock();
 
-	mutex.lock();
+	myMutex.lock();
 
 	Solution& c=highestStageSolution;
 
@@ -421,7 +421,7 @@ void TimetableGenerateForm::stopHighest()
 
 	s+="\n";
 
-	mutex.unlock();
+	myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -468,11 +468,11 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	simulation_running=false;
 
-	mutex.lock();
+	myMutex.lock();
 	gen.abortOptimization=true;
-	mutex.unlock();
+	myMutex.unlock();
 
-	mutex.lock();
+	myMutex.lock();
 
 
 
@@ -542,7 +542,7 @@ void TimetableGenerateForm::impossibleToSolve()
 		s+="\n";
 	}
 
-	mutex.unlock();
+	myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -661,11 +661,11 @@ void TimetableGenerateForm::simulationFinished()
 void TimetableGenerateForm::activityPlaced(int na){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 
-	mutex.lock();
+	myMutex.lock();
 	int t=gen.searchTime; //seconds
 	int mact=maxActivitiesPlaced;
 	int seconds=gen.timeToHighestStage;
-	mutex.unlock();
+	myMutex.unlock();
 
 	//write to the Qt interface
 	QString s;
@@ -756,7 +756,7 @@ void TimetableGenerateForm::help()
 }
 
 void TimetableGenerateForm::write(){
-	mutex.lock();
+	myMutex.lock();
 
 	Solution& c=gen.c;
 
@@ -783,7 +783,7 @@ void TimetableGenerateForm::write(){
 
 	TimetableExport::writeSimulationResults(this);
 
-	mutex.unlock();
+	myMutex.unlock();
 
 	QString kk;
 	kk=FILE_SEP;
@@ -803,7 +803,7 @@ void TimetableGenerateForm::write(){
 }
 
 void TimetableGenerateForm::writeHighestStage(){
-	mutex.lock();
+	myMutex.lock();
 
 	Solution& c=highestStageSolution;
 
@@ -830,7 +830,7 @@ void TimetableGenerateForm::writeHighestStage(){
 
 	TimetableExport::writeHighestStageResults(this);
 
-	mutex.unlock();
+	myMutex.unlock();
 
 	QString kk;
 	kk=FILE_SEP;
@@ -859,7 +859,7 @@ void TimetableGenerateForm::seeImpossible()
 {
 	QString s;
 
-	mutex.lock();
+	myMutex.lock();
 
 	s+=TimetableGenerateForm::tr("Information relating difficult to schedule activities:");
 	s+="\n\n";
@@ -884,7 +884,7 @@ void TimetableGenerateForm::seeImpossible()
 		s+="\n";
 	}
 
-	mutex.unlock();
+	myMutex.unlock();
 	
 	//show the message in a dialog
 	QDialog dialog(this);

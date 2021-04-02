@@ -102,9 +102,9 @@ int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
 extern bool students_schedule_ready, teachers_schedule_ready, rooms_schedule_ready;
 
 #ifndef FET_COMMAND_LINE
-extern QMutex mutex;
+extern QMutex myMutex;
 #else
-QMutex mutex;
+QMutex myMutex;
 #endif
 
 void writeDefaultSimulationParameters();

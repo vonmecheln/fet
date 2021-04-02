@@ -1713,3 +1713,5 @@ Versions 5.23.0 - 5.23.v
 	- The teachers' timetables now show the list of teachers for team teaching; also the students' timetables now show the list
 	of students sets for team teaching or show the students set of the activity if it is different from the currently selected
 	students set (suggested and implemented by Volker Dirr).
+- Version 5.23.2
+	- Fixed a building problem under C++11 (reported by pkgsrc packager Thomas Klausner, solved by Jörg Sonnenberger).

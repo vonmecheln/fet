@@ -2947,3 +2947,44 @@ output nIncompatible for each activity, or output a line after the same group).
 
 I would prefer to add an advanced feature, not a constraint. Locked by
 default. What name to give it? Group activities in initial order? <-- DONE
+
+190---------------------------------------------------------
+From Volker Dirr:
+
+most users use the split year automaticly feature only.
+some need more categories, but that will produce to many subgroups.
+
+so how about this feature:
+a user can disable the "year-group-subgroup" fet and enable only a
+"year-group" one.
+so he can't modify, add, delete, ... subgroups anymore. subgroups will be
+only used and gererated automaticly in the pregeneration and generation
+part.
+
+split year automaticly will look the same, but it won't produce subgroups.
+instead of this it still store an integer number with the catagory number
+to each group.
+
+now only one new basic time constraint is needed:
+(i will explain in 2 steps, but i think it can be imporved by storing that
+value.)
+
+if you place an activity into a timeslot, then:
+1. step: it need to check if there is already an activity of the same year
+stored.
+no: -> place activity
+yes: -> 2. step
+
+2. step: check if that activities (same year) (in fact it need to check
+only the first one, because others are already the same) have the same
+category.
+no: -> impossible to place activity
+yes: -> place activity
+
+
+i am not 100% sure, but i think with this kind of timetabling we can save
+space and maybe also improve speed.
+
+the problem is:
+how to implement both features ("year-group-subgroup" fet and enable only
+a "year-group" one.) at the same time without confusing a user?

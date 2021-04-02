@@ -345,3 +345,7 @@ jimmyjim - suggestions for a custom version.
 Curtis Wilson - suggestions for a custom version.
 
 Mohamed Bahaj - example file.
+
+Thomas Klausner - pkgsrc packager.
+
+Jörg Sonnenberger - patch to fix a building problem for the new C++11.

@@ -35,7 +35,7 @@
 
 #include <QDir>
 
-extern QMutex mutex;
+extern QMutex myMutex;
 
 static GenerateMultipleThread generateMultipleThread;
 
@@ -93,9 +93,9 @@ void GenerateMultipleThread::run()
 		
 		bool ok;
 
-		mutex.lock();
+		myMutex.lock();
 		if(genMulti.abortOptimization){
-			mutex.unlock();
+			myMutex.unlock();
 			return;
 		}
 		else if(impossible){
@@ -163,7 +163,7 @@ void GenerateMultipleThread::run()
 
 			s+=QString(".");
 		}
-		mutex.unlock();
+		myMutex.unlock();
 		
 		emit(timetableGenerated(i+1, s, ok));
 		semaphoreTimetableFinished.acquire();
@@ -369,9 +369,9 @@ void TimetableGenerateMultipleForm::stop()
 
 	simulation_running_multi=false;
 
-	mutex.lock();
+	myMutex.lock();
 	genMulti.abortOptimization=true;
-	mutex.unlock();
+	myMutex.unlock();
 
 	QString s=TimetableGenerateMultipleForm::tr("Simulation interrupted!");
 	s+="\n\n";
