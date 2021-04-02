@@ -25,7 +25,7 @@
 
 extern Timetable gt;
 
-QLineEdit* hoursNames[31];
+QLineEdit* hoursNames[60];
 int nHours;
 
 HoursForm::HoursForm()
@@ -71,12 +71,44 @@ HoursForm::HoursForm()
 	hoursNames[29]=hour30LineEdit;
 	hoursNames[30]=hour31LineEdit;
 
+	hoursNames[31]=hour32LineEdit;
+	hoursNames[32]=hour33LineEdit;
+	hoursNames[33]=hour34LineEdit;
+	hoursNames[34]=hour35LineEdit;
+	hoursNames[35]=hour36LineEdit;
+	hoursNames[36]=hour37LineEdit;
+	hoursNames[37]=hour38LineEdit;
+	hoursNames[38]=hour39LineEdit;
+	hoursNames[39]=hour40LineEdit;
+	hoursNames[40]=hour41LineEdit;
+
+	hoursNames[41]=hour42LineEdit;
+	hoursNames[42]=hour43LineEdit;
+	hoursNames[43]=hour44LineEdit;
+	hoursNames[44]=hour45LineEdit;
+	hoursNames[45]=hour46LineEdit;
+	hoursNames[46]=hour47LineEdit;
+	hoursNames[47]=hour48LineEdit;
+	hoursNames[48]=hour49LineEdit;
+	hoursNames[49]=hour50LineEdit;
+	hoursNames[50]=hour51LineEdit;
+
+	hoursNames[51]=hour52LineEdit;
+	hoursNames[52]=hour53LineEdit;
+	hoursNames[53]=hour54LineEdit;
+	hoursNames[54]=hour55LineEdit;
+	hoursNames[55]=hour56LineEdit;
+	hoursNames[56]=hour57LineEdit;
+	hoursNames[57]=hour58LineEdit;
+	hoursNames[58]=hour59LineEdit;
+	hoursNames[59]=hour60LineEdit;
+
 	hoursSpinBox->setMinValue(1);
-	hoursSpinBox->setMaxValue(30);
+	hoursSpinBox->setMaxValue(60);
 	hoursSpinBox->setValue(gt.rules.nHoursPerDay);
 
-	for(int i=0; i<=30; i++)
-		if(i<=nHours){
+	for(int i=0; i<60; i++)
+		if(i<nHours){
 			hoursNames[i]->setEnabled(true);
 			hoursNames[i]->setText(gt.rules.hoursOfTheDay[i]);
 		}
@@ -93,8 +125,8 @@ void HoursForm::hoursChanged()
 {
 	nHours=hoursSpinBox->value();
 	assert(nHours <= MAX_HOURS_PER_DAY);
-	for(int i=0; i<=30; i++)
-		if(i<=nHours)
+	for(int i=0; i<60; i++)
+		if(i<nHours)
 			hoursNames[i]->setEnabled(true);
 		else
 			hoursNames[i]->setDisabled(true);
@@ -102,14 +134,14 @@ void HoursForm::hoursChanged()
 
 void HoursForm::ok()
 {
-	for(int i=0; i<=nHours; i++)
+	for(int i=0; i<nHours; i++)
 		if(hoursNames[i]->text()==""){
 			QMessageBox::warning(this, QObject::tr("FET information"),
 				QObject::tr("Empty names not allowed\n"));
 			return;
 		}
-	for(int i=0; i<nHours; i++)
-		for(int j=i+1; j<=nHours; j++)
+	for(int i=0; i<nHours-1; i++)
+		for(int j=i+1; j<nHours; j++)
 			if(hoursNames[i]->text()==hoursNames[j]->text()){
 				QMessageBox::warning(this, QObject::tr("FET information"),
 					QObject::tr("Duplicates not allowed\n"));
@@ -121,25 +153,27 @@ void HoursForm::ok()
 		"of old constraints using erased hours\n"
 		"(only renamed hours will be handled correctly)\n"));
 				
-	int t=QMessageBox::question(this, QObject::tr("FET question"),
+	/*int t=QMessageBox::question(this, QObject::tr("FET question"),
 		QObject::tr("Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)")
 		.arg(nHours),
 		QMessageBox::Yes, QMessageBox::Cancel
 		);		
 	if(t==QMessageBox::Cancel)
-		return;
+		return;*/
 
 	//remove old names
-	for(int i=nHours+1; i<=gt.rules.nHoursPerDay; i++)
+	for(int i=nHours; i<gt.rules.nHoursPerDay; i++)
 		gt.rules.hoursOfTheDay[i]="";
 		
 	gt.rules.nHoursPerDay=nHours;
-	for(int i=0; i<=nHours; i++)
+	for(int i=0; i<nHours; i++)
 		gt.rules.hoursOfTheDay[i]=hoursNames[i]->text();
 		
 	gt.rules.nHoursPerWeek=gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek; //not needed
 	gt.rules.internalStructureComputed=false;
 
+	assert(gt.rules.nHoursPerDay<=MAX_HOURS_PER_DAY);
+		
 	this->close();
 }
 

@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>533</width>
-            <height>505</height>
+            <width>510</width>
+            <height>542</height>
         </rect>
     </property>
     <property name="caption">
@@ -82,10 +82,11 @@
                 <cstring>textLabel1</cstring>
             </property>
             <property name="text">
-                <string>It is advisable to only add special constrained rooms,
-home rooms are not needed (teachers' or students' rooms)
-Note: each room can hold a single activity at the same time
-(you can add more rooms representing a very large room)</string>
+                <string>NOTE: each room can hold a single activity at the same time
+(you can add more rooms representing a very large room)
+NOTE 2: it is advisable to use only constrained rooms and
+not to use home rooms (only use them if you are forced). They
+can bring problems of misunderstanding.</string>
             </property>
         </widget>
     </grid>

@@ -62,13 +62,15 @@ extern QString conflictsString;
 
 Generate gen;
 
+QString initialOrderOfActivities;
+
 
 void GenerateThread::run()
 {
 	const int INF=2000000000;
 	bool impossible, timeExceeded;
 
-	gen.generate(INF, impossible, timeExceeded);
+	gen.generate(INF, impossible, timeExceeded, true); //true means threaded
 }
 
 TimetableGenerateForm::TimetableGenerateForm()
@@ -86,6 +88,8 @@ TimetableGenerateForm::TimetableGenerateForm()
 	stopPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
+	seeImpossiblePushButton->setDisabled(TRUE);
+	seeInitialOrderPushButton->setDisabled(TRUE);
 
 	connect(&gen, SIGNAL(activityPlaced(int)),
 	 this, SLOT(activityPlaced(int)));
@@ -140,6 +144,8 @@ void TimetableGenerateForm::start(){
 	stopPushButton->setEnabled(TRUE);
 	closePushButton->setDisabled(TRUE);
 	writeResultsPushButton->setEnabled(TRUE);
+	seeImpossiblePushButton->setEnabled(TRUE);
+	seeInitialOrderPushButton->setEnabled(TRUE);
 
 	simulation_running=true;
 
@@ -222,8 +228,8 @@ void TimetableGenerateForm::stop()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].subjectTagName!=""){
-			s+=TimetableGenerateForm::tr("ST: %1").arg(gt.rules.internalActivitiesList[ai].subjectTagName);
+		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
 			s+=", ";
 		}
 		first=true;
@@ -269,6 +275,7 @@ void TimetableGenerateForm::stop()
 	stopPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
+	seeImpossiblePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::impossibleToSolve()
@@ -346,8 +353,8 @@ void TimetableGenerateForm::impossibleToSolve()
 		s+=", ";
 		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
-		if(gt.rules.internalActivitiesList[ai].subjectTagName!=""){
-			s+=TimetableGenerateForm::tr("ST: %1").arg(gt.rules.internalActivitiesList[ai].subjectTagName);
+		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
 			s+=", ";
 		}
 		first=true;
@@ -393,6 +400,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	stopPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setDisabled(TRUE);
+	seeImpossiblePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::simulationFinished()
@@ -448,6 +456,7 @@ void TimetableGenerateForm::simulationFinished()
 	stopPushButton->setDisabled(TRUE);
 	closePushButton->setEnabled(TRUE);
 	writeResultsPushButton->setEnabled(TRUE);
+	seeImpossiblePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::activityPlaced(int na){
@@ -488,11 +497,17 @@ void TimetableGenerateForm::help()
 	s+=TimetableGenerateForm::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
 	s+="\n";
-	s+=TimetableGenerateForm::tr("Usually, there is no need to stop and restart the search, even if the algorithm seems stucked."
-	 " Please report to author contrary cases");
+	s+=TimetableGenerateForm::tr("Usually, there is no need to stop and restart the search."
+	 " But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever,"
+	 " and restarting might produce a very fast solution.");
 	s+="\n";
 	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
-	 " intance min n days or teacher(s) max gaps), as you obtain feasible timetables.");
+	 " instance min n days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.");
+	s+="\n";
+	s+="\n";
+	s+=TimetableGenerateForm::tr("NEW: If your timetable gets stuck on a certain activity number k (and then"
+	 " begins going back), please check the initial evaluation order and see activity number k+1 in this list. I found"
+	 " errors this way.");
 	 
 	QMessageBox::information(this, tr("FET help"), s);
 }
@@ -502,13 +517,13 @@ void TimetableGenerateForm::write(){
 
 	Solution& c=gen.c;
 
-	TimetableExport::getStudentsTimetable(c);
-	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
-
 	//needed to find the conflicts strings
 	QString tmp;
 	c.fitness(gt.rules, &tmp);
+
+	TimetableExport::getStudentsTimetable(c);
+	TimetableExport::getTeachersTimetable(c);
+	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsString = "";
@@ -533,4 +548,114 @@ void TimetableGenerateForm::closePressed()
 {
 	if(!generateThread.isRunning())
 		this->close();
+}
+
+void TimetableGenerateForm::seeImpossible()
+{
+	QString s;
+
+	mutex.lock();
+
+	s+=TimetableGenerateForm::tr("Information relating difficult to schedule activities:\n\n");
+	s+=TimetableGenerateForm::tr("Please check the constraints related to the last "
+	 "activities in the list below, which might be difficult to schedule:\n\n");
+	s+=TimetableGenerateForm::tr("Here are the placed activities which lead to a difficulty, "
+	 "in order from the first one to the last (the last one FET failed to schedule "
+	 "and the last ones are difficult):\n\n");
+	for(int i=0; i<gen.nDifficultActivities; i++){
+		int ai=gen.difficultActivities[i];
+
+		s+=TimetableGenerateForm::tr("No: %1").arg(i+1);
+
+		s+=", ";
+
+		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
+		s+=",";
+		s+=TimetableGenerateForm::tr(" TN: ", "Teacher name");
+		bool first=true;
+		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
+			if(!first)
+				s+=", ";
+			first=false;
+			s+=tn;
+		}
+		s+=", ";
+		s+=TimetableGenerateForm::tr("SN: %1", "Subject name").arg(gt.rules.internalActivitiesList[ai].subjectName);
+		s+=", ";
+		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
+			s+=", ";
+		}
+		first=true;
+		s+=TimetableGenerateForm::tr(" StN: ", "Students names");
+		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
+			if(!first)
+				s+=", ";
+			first=false;
+			s+=sn;
+		}
+
+		s+="\n";
+	}
+
+	mutex.unlock();
+	
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(tr("FET - information about difficult activities"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
+}
+
+void TimetableGenerateForm::seeInitialOrder()
+{
+	QString s=initialOrderOfActivities;
+
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(tr("FET - information about initial order of evaluation of activities"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
 }

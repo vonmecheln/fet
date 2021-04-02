@@ -37,7 +37,7 @@ class TimeConstraint;
 class Activity;
 class Teacher;
 class Subject;
-class SubjectTag;
+class ActivityTag;
 class StudentsSet;
 
 typedef QList<TimeConstraint*> TimeConstraintsList;
@@ -45,38 +45,42 @@ typedef QList<TimeConstraint*> TimeConstraintsList;
 const int CONSTRAINT_GENERIC_TIME										=0;
 
 const int CONSTRAINT_BASIC_COMPULSORY_TIME								=1;
-const int CONSTRAINT_BREAK												=2;
+const int CONSTRAINT_BREAK_TIMES										=2;
 
-const int CONSTRAINT_TEACHER_NOT_AVAILABLE								=3;
+const int CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES						=3;
 const int CONSTRAINT_TEACHERS_MAX_HOURS_DAILY							=4;
 const int CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK							=5;
 const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK							=6;
 const int CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK							=7;
 const int CONSTRAINT_TEACHER_MAX_HOURS_DAILY							=8;
 
-const int CONSTRAINT_STUDENTS_EARLY										=9;
-const int CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE							=10;
-const int CONSTRAINT_STUDENTS_NO_GAPS									=11;
-const int CONSTRAINT_STUDENTS_SET_NO_GAPS								=12;
-const int CONSTRAINT_STUDENTS_SET_EARLY									=13;
-const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY							=14;
-const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY						=15;
-const int CONSTRAINT_STUDENTS_MIN_HOURS_DAILY							=16;
-const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY						=17;
+const int CONSTRAINT_TEACHERS_MIN_HOURS_DAILY							=9;
+const int CONSTRAINT_TEACHER_MIN_HOURS_DAILY							=10;
+const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY							=11;
+const int CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY							=12;
 
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIME							=18;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME						=19;
-const int CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING							=20;
-const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=21;
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=22;
-const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=23;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=24;
-const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=25;
+const int CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR		=13;
+const int CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR	=14;
+const int CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES					=15;
+const int CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK							=16;
+const int CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK						=17;
 
-const int CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY							=26;
+const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY							=18;
+const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY						=19;
+const int CONSTRAINT_STUDENTS_MIN_HOURS_DAILY							=20;
+const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY						=21;
 
-const int CONSTRAINT_TEACHERS_MIN_HOURS_DAILY							=27;
-const int CONSTRAINT_TEACHER_MIN_HOURS_DAILY							=28;
+const int CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY							=22;
+
+const int CONSTRAINT_ACTIVITY_PREFERRED_TIME							=23;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME						=24;
+const int CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING							=25;
+const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=26;
+const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=27;
+const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=28;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=29;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=30;
+const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=31;
 
 /**
 This class represents a time constraint
@@ -162,9 +166,9 @@ public:
 	virtual bool isRelatedToSubject(Subject* s)=0;
 
 	/**
-	Returns true if this constraint is related to this subject tag
+	Returns true if this constraint is related to this activity tag
 	*/
-	virtual bool isRelatedToSubjectTag(SubjectTag* s)=0;
+	virtual bool isRelatedToActivityTag(ActivityTag* s)=0;
 
 	/**
 	Returns true if this constraint is related to this students set
@@ -198,51 +202,29 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
-/**
-This is a custom constraint.
-It returns a fitness factor a number equal
-to the product of this restriction's weight and
-the number of conflicting hours for each teacher
-(hours when he is not available, but a course is scheduled at that time).
-For the moment, this is done for a certain day and an hour interval.
-(For teacher "teacherName", on day "d", between hours "h1" and "h2").
-*/
-class ConstraintTeacherNotAvailable: public TimeConstraint{
+class ConstraintTeacherNotAvailableTimes: public TimeConstraint{
 public:
-
-	/**
-	The day
-	*/
-	int d;
-
-	/**
-	The start hour
-	*/
-	int h1;
-
-	/**
-	The end hour
-	*/
-	int h2;
+	QList<int> days;
+	QList<int> hours;
 
 	/**
 	The teacher's name
 	*/
-	QString teacherName;
+	QString teacher;
 
 	/**
 	The teacher's id, or index in the rules
 	*/
 	int teacher_ID;
 
-	ConstraintTeacherNotAvailable();
+	ConstraintTeacherNotAvailableTimes();
 
-	ConstraintTeacherNotAvailable(double wp, const QString& tn, int day, int start_hour, int end_hour);
+	ConstraintTeacherNotAvailableTimes(double wp, const QString& tn, QList<int> d, QList<int> h);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -260,34 +242,15 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
-/**
-This is a custom constraint. It returns a fitness factor equal to the product of this
-restriction's weight and the number of conflicting hours for each students' set
-(hours when it is not available, but a course is scheduled at that time).
-For the moment, this is done for a certain day and an hour interval.
-(on day "d", between hours "h1" and "h2").
-*/
-class ConstraintStudentsSetNotAvailable: public TimeConstraint{
+class ConstraintStudentsSetNotAvailableTimes: public TimeConstraint{
 public:
-	/**
-	The day
-	*/
-	int d;
-
-	/**
-	The start hour
-	*/
-	int h1;
-
-	/**
-	The end hour
-	*/
-	int h2;
+	QList<int> days;
+	QList<int> hours;
 
 	/**
 	The name of the students
@@ -295,19 +258,13 @@ public:
 	QString students;
 
 	/**
-	The number of subgroups involved in this restriction
-	*/
-	int nSubgroups;
-
-	/**
 	The subgroups involved in this restriction
 	*/
-	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
 	QList<int> iSubgroupsList;
 
-	ConstraintStudentsSetNotAvailable();
+	ConstraintStudentsSetNotAvailableTimes();
 
-	ConstraintStudentsSetNotAvailable(double wp, const QString& sn, int day, int start_hour, int end_hour);
+	ConstraintStudentsSetNotAvailableTimes(double wp, const QString& sn, QList<int> d, QList<int> h);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -325,7 +282,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -395,7 +352,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -457,7 +414,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -532,7 +489,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -568,7 +525,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -604,7 +561,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -652,7 +609,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -662,26 +619,14 @@ This is a constraint.
 It constrains the timetable to not schedule any activity
 in the specified day, during the start hour and end hour.
 */
-class ConstraintBreak: public TimeConstraint{
+class ConstraintBreakTimes: public TimeConstraint{
 public:
-	/**
-	The day
-	*/
-	int d;
+	QList<int> days;
+	QList<int> hours;
 
-	/**
-	The start hour
-	*/
-	int h1;
+	ConstraintBreakTimes();
 
-	/**
-	The end hour
-	*/
-	int h2;
-
-	ConstraintBreak();
-
-	ConstraintBreak(double wp, int day, int start_hour, int end_hour);
+	ConstraintBreakTimes(double wp, QList<int> d, QList<int> h);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -699,7 +644,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -710,11 +655,13 @@ the chromosome, a conflicts factor computed from the gaps
 existing in the timetable (regarding the students).
 The overall result is a timetable having less gaps for the students.
 */
-class ConstraintStudentsNoGaps: public TimeConstraint{
+class ConstraintStudentsMaxGapsPerWeek: public TimeConstraint{
 public:
-	ConstraintStudentsNoGaps();
+	int maxGaps;
 
-	ConstraintStudentsNoGaps(double wp);
+	ConstraintStudentsMaxGapsPerWeek();
+
+	ConstraintStudentsMaxGapsPerWeek(double wp, int mg);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -732,7 +679,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -742,8 +689,10 @@ This is a constraint. It adds, to the fitness of
 the chromosome, a conflicts factor computed from the gaps
 existing in the timetable (regarding the specified students set).
 */
-class ConstraintStudentsSetNoGaps: public TimeConstraint{
+class ConstraintStudentsSetMaxGapsPerWeek: public TimeConstraint{
 public:
+	int maxGaps;
+
 	/**
 	The name of the students set for this constraint
 	*/
@@ -759,12 +708,11 @@ public:
 	/**
 	The subgroups
 	*/
-	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
 	QList<int> iSubgroupsList;
 
-	ConstraintStudentsSetNoGaps();
+	ConstraintStudentsSetMaxGapsPerWeek();
 
-	ConstraintStudentsSetNoGaps(double wp, const QString& st );
+	ConstraintStudentsSetMaxGapsPerWeek(double wp, int mg, const QString& st );
 
 	bool computeInternalStructure(Rules& r);
 
@@ -782,7 +730,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -811,7 +759,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -844,25 +792,18 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
-/**
-This is a constraint. It adds, to the fitness of
-the chromosome, a fitness factor that is related to how early
-the students begin their courses. The result is a timetable
-having more activities scheduled at the beginning of the day.
-IMPORTANT: fortnightly activities are treated as weekly ones,
-for speed and because in normal situations this does not matter.
-*/
-class ConstraintStudentsEarly: public TimeConstraint{
+class ConstraintTeachersMaxGapsPerDay: public TimeConstraint{
 public:
+	int maxGaps;	
 
-	ConstraintStudentsEarly();
+	ConstraintTeachersMaxGapsPerDay();
 
-	ConstraintStudentsEarly(double wp);
+	ConstraintTeachersMaxGapsPerDay(double wp, int maxGaps);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -880,13 +821,86 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
-class ConstraintStudentsSetEarly: public TimeConstraint{
+class ConstraintTeacherMaxGapsPerDay: public TimeConstraint{
 public:
+	int maxGaps;
+	
+	QString teacherName;
+	
+	int teacherIndex;
+
+	ConstraintTeacherMaxGapsPerDay();
+
+	ConstraintTeacherMaxGapsPerDay(double wp, QString tn, int maxGaps);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+/**
+This is a constraint. It adds, to the fitness of
+the chromosome, a fitness factor that is related to how early
+the students begin their courses. The result is a timetable
+having more activities scheduled at the beginning of the day.
+IMPORTANT: fortnightly activities are treated as weekly ones,
+for speed and because in normal situations this does not matter.
+*/
+class ConstraintStudentsEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
+public:
+
+	int maxBeginningsAtSecondHour;
+
+	ConstraintStudentsEarlyMaxBeginningsAtSecondHour();
+
+	ConstraintStudentsEarlyMaxBeginningsAtSecondHour(double wp, int mBSH);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour: public TimeConstraint{
+public:
+	int maxBeginningsAtSecondHour;
+
 	/**
 	The name of the students
 	*/
@@ -903,9 +917,9 @@ public:
 	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
 	QList<int> iSubgroupsList;
 
-	ConstraintStudentsSetEarly();
+	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour();
 
-	ConstraintStudentsSetEarly(double wp, const QString& students);
+	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour(double wp, int mBSH, const QString& students);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -923,7 +937,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -952,7 +966,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -999,7 +1013,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1028,7 +1042,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1075,7 +1089,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1135,7 +1149,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1193,7 +1207,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1223,9 +1237,9 @@ public:
 	QString subjectName;
 
 	/**
-	The subject tag. If void, all subjects tags.
+	The activity tag. If void, all activity tags.
 	*/
-	QString subjectTagName;
+	QString activityTagName;
 
 	/**
 	The number of preferred times
@@ -1276,7 +1290,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1344,7 +1358,63 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintActivitiesSameStartingDay: public TimeConstraint{
+public:
+	/**
+	The number of activities involved in this constraint
+	*/
+	int n_activities;
+
+	/**
+	The activities involved in this constraint (id)
+	*/
+	int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+
+	/**
+	The number of activities involved in this constraint - internal structure
+	*/
+	int _n_activities;
+
+	/**
+	The activities involved in this constraint (index in the rules) - internal structure
+	*/
+	int _activities[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+
+	ConstraintActivitiesSameStartingDay();
+
+	/**
+	Constructor, using:
+	the weight, the number of activities and the list of activities' id-s.
+	*/
+	ConstraintActivitiesSameStartingDay(double wp, int n_act, const int act[]);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	/**
+	Removes useless activities from the _activities array
+	*/
+	void removeUseless(Rules& r);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1392,7 +1462,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1430,7 +1500,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1462,7 +1532,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
@@ -1498,7 +1568,7 @@ public:
 
 	bool isRelatedToSubject(Subject* s);
 
-	bool isRelatedToSubjectTag(SubjectTag* s);
+	bool isRelatedToActivityTag(ActivityTag* s);
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };

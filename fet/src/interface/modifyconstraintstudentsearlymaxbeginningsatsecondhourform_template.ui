@@ -1,0 +1,235 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>585</width>
+            <height>461</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - Modify constraint students early max beginnings at second hour dialog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="1" column="3" rowspan="4" colspan="1">
+            <property name="name">
+                <cstring>layout35</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>currentConstraintTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Current constraint</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>currentConstraintTextEdit</cstring>
+                    </property>
+                    <property name="readOnly">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>weightTextLabel_2_2</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>This represents the maximum allowed beginnings at the second
+available hour (in a week).
+You might want to allow your students to begin in some days later,
+at the second available hour, so you might put "max beginnings at
+second hour" greater than 0 (the timetable will be easier for FET).
+Default 0 is given for students which need to begin all classes at the
+first available hour. You might want to choose a greater value and
+lower it as you find new timetables</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="5" column="0">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight percentage (necessary: 100%)</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="5" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>weightLineEdit</cstring>
+            </property>
+            <property name="text">
+                <string>100</string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="6" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>layout36</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ok</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>weightTextLabel_2</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>You have to use weight percentage 100%, because
+otherwise you will get poor timetables. Currently, the algorithm
+only accepts 100% weight percentage for this constraint (or no
+constraint).
+Note: students set not available and break are not counted as
+gaps (early gaps).</string>
+            </property>
+        </widget>
+        <spacer row="3" column="0">
+            <property name="name">
+                <cstring>spacer20</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>spacer20_2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>maxBeginningsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Max beginnings at second hour (per week)</string>
+            </property>
+        </widget>
+        <widget class="QSpinBox" row="4" column="2">
+            <property name="name">
+                <cstring>maxBeginningsSpinBox</cstring>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>weightLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+    <connection>
+        <sender>okPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</receiver>
+        <slot>ok()</slot>
+    </connection>
+    <connection>
+        <sender>cancelPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</receiver>
+        <slot>cancel()</slot>
+    </connection>
+    <connection>
+        <sender>maxBeginningsSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm_template</receiver>
+        <slot>constraintChanged()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
+<slots>
+    <slot>ok()</slot>
+    <slot>constraintChanged()</slot>
+    <slot>cancel()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

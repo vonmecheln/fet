@@ -139,10 +139,10 @@ force activities consecutive</string>
                         </property>
                         <widget class="QLabel" row="0" column="3">
                             <property name="name">
-                                <cstring>subjectTagsTextLabel</cstring>
+                                <cstring>activityTagsTextLabel</cstring>
                             </property>
                             <property name="text">
-                                <string>Subject tag</string>
+                                <string>Activity tag</string>
                             </property>
                         </widget>
                         <widget class="QComboBox" row="1" column="1">
@@ -152,7 +152,7 @@ force activities consecutive</string>
                         </widget>
                         <widget class="QComboBox" row="1" column="3">
                             <property name="name">
-                                <cstring>subjectTagsComboBox</cstring>
+                                <cstring>activityTagsComboBox</cstring>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="1">
@@ -325,7 +325,7 @@ force activities consecutive</string>
         <slot>filterChanged()</slot>
     </connection>
     <connection>
-        <sender>subjectTagsComboBox</sender>
+        <sender>activityTagsComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
         <receiver>AddConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>filterChanged()</slot>
@@ -341,7 +341,7 @@ force activities consecutive</string>
     <tabstop>teachersComboBox</tabstop>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>subjectsComboBox</tabstop>
-    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>activitiesListBox</tabstop>
     <tabstop>selectedActivitiesListBox</tabstop>
     <tabstop>pushButton6</tabstop>

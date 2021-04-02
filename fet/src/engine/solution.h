@@ -48,6 +48,8 @@ public:
 	bool teachersMatrixReady;
 	bool subgroupsMatrixReady;
 	bool roomsMatrixReady;
+	
+	int nPlacedActivities;
 
 	/*
 	You will need to set this to true if altering the times array values.
@@ -143,7 +145,8 @@ public:
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
 	void getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-	
+	//return value is the number of conflicts, must be 0
+
 	/**
 	OLD COMMENT BELOW, now FET has no fortnightly activities, 
 	only one matrix is now used.
@@ -159,6 +162,7 @@ public:
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
 	void getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//return value is the number of conflicts, must be 0
 
 	/**
 	OLD COMMENT BELOW, now FET has no fortnightly activities, 
@@ -199,7 +203,10 @@ public:
 	int getRoomsMatrix(Rules& r, qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	void getRoomsTimetable(Rules& r, qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-
+	//return value is the number of conflicts, must be 0
+	
+	void getTeachersBuildingsTimetable(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getSubgroupsBuildingsTimetable(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 };
 
 #endif

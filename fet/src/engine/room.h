@@ -35,15 +35,16 @@ public:
 	//QString type;
 	int capacity;
 	//QStringList equipments;
+	
 	/**
 	If empty string, it is ignored
 	*/
-	//QString building; 
+	QString building; 
 	
 	/**
 	Internal. If -1, it is ignored
 	*/
-	//int buildingIndex;
+	int buildingIndex;
 
 	Room();
 	~Room();

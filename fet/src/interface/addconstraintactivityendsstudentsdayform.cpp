@@ -47,12 +47,12 @@ AddConstraintActivityEndsStudentsDayForm::AddConstraintActivityEndsStudentsDayFo
 	}
 	subjectsComboBox->setCurrentItem(0);
 
-	subjectTagsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
-		SubjectTag* st=gt.rules.subjectTagsList[i];
-		subjectTagsComboBox->insertItem(st->name);
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* st=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(st->name);
 	}
-	subjectTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentItem(0);
 
 	studentsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -81,7 +81,7 @@ bool AddConstraintActivityEndsStudentsDayForm::filterOk(Activity* act)
 	QString tn=teachersComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=subjectTagsComboBox->currentText();
+	QString sbtn=activityTagsComboBox->currentText();
 	int ok=true;
 
 	//teacher
@@ -100,8 +100,8 @@ bool AddConstraintActivityEndsStudentsDayForm::filterOk(Activity* act)
 	if(sbn!="" && sbn!=act->subjectName)
 		ok=false;
 		
-	//subject tag
-	if(sbtn!="" && sbtn!=act->subjectTagName)
+	//activity tag
+	if(sbtn!="" && sbtn!=act->activityTagName)
 		ok=false;
 		
 	//students

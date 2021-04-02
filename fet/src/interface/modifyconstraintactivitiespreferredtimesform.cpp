@@ -26,8 +26,8 @@
 
 #include <QDesktopWidget>
 
-#define YES	(QObject::tr("Yes"))
-#define NO	(QObject::tr("No"))
+#define YES	(QObject::tr("Allowed", "Please keep translation short"))
+#define NO	(QObject::tr("Not allowed", "Please keep translation short"))
 
 ModifyConstraintActivitiesPreferredTimesForm::ModifyConstraintActivitiesPreferredTimesForm(ConstraintActivitiesPreferredTimes* ctr)
 {
@@ -43,7 +43,7 @@ ModifyConstraintActivitiesPreferredTimesForm::ModifyConstraintActivitiesPreferre
 	updateTeachersComboBox();
 	updateStudentsComboBox();
 	updateSubjectsComboBox();
-	updateSubjectTagsComboBox();
+	updateActivityTagsComboBox();
 
 	preferredTimesTable->setNumRows(gt.rules.nHoursPerDay);
 	preferredTimesTable->setNumCols(gt.rules.nDaysPerWeek);
@@ -170,22 +170,22 @@ void ModifyConstraintActivitiesPreferredTimesForm::updateSubjectsComboBox(){
 	subjectsComboBox->setCurrentItem(j);
 }
 
-void ModifyConstraintActivitiesPreferredTimesForm::updateSubjectTagsComboBox(){
+void ModifyConstraintActivitiesPreferredTimesForm::updateActivityTagsComboBox(){
 	int i=0, j=-1;
-	subjectTagsComboBox->clear();
-	subjectTagsComboBox->insertItem("");
-	if(this->_ctr->subjectTagName=="")
+	activityTagsComboBox->clear();
+	activityTagsComboBox->insertItem("");
+	if(this->_ctr->activityTagName=="")
 		j=i;
 	i++;
-	for(int k=0; k<gt.rules.subjectTagsList.size(); k++){
-		SubjectTag* s=gt.rules.subjectTagsList[k];
-		subjectTagsComboBox->insertItem(s->name);
-		if(s->name==this->_ctr->subjectTagName)
+	for(int k=0; k<gt.rules.activityTagsList.size(); k++){
+		ActivityTag* s=gt.rules.activityTagsList[k];
+		activityTagsComboBox->insertItem(s->name);
+		if(s->name==this->_ctr->activityTagName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	subjectTagsComboBox->setCurrentItem(j);
+	activityTagsComboBox->setCurrentItem(j);
 }
 
 void ModifyConstraintActivitiesPreferredTimesForm::ok()
@@ -215,14 +215,43 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 	if(subject!="")
 		assert(gt.rules.searchSubject(subject)>=0);
 		
-	QString subjectTag=subjectTagsComboBox->currentText();
-	if(subjectTag!="")
-		assert(gt.rules.searchSubjectTag(subjectTag)>=0);
+	QString activityTag=activityTagsComboBox->currentText();
+	if(activityTag!="")
+		assert(gt.rules.searchActivityTag(activityTag)>=0);
 		
-	if(teacher=="" && students=="" && subject=="" && subjectTag==""){
+	if(teacher=="" && students=="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("Are you sure you want to add this constraint for all activities?"
-		 " (no teacher, students, subject or subject tag specified)"),
+		 tr("Note: if you use this constraint for all activities, there"
+		 " will be counted gaps for not allowed slots. You might get impossible timetables."
+		 " If you use weight 100%, a correct approach is to use constraint break."
+		 " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
+		 " Are you sure you want to add this constraint for all activities?"
+		 " (no teacher, students, subject or activity tag specified)"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
+
+	if(teacher!="" && students=="" && subject=="" && activityTag==""){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("It is not good to add such a constraint for only a teacher."
+		  " There will be counted gaps and you might get impossible data."
+		  " It is highly recommended to use teacher not available or break constraints instead."
+		  " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
+		  " Are you sure you want to add current constraint?" ),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
+	if(teacher=="" && students!="" && subject=="" && activityTag==""){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("It is not good to add such a constraint for only a students set."
+		  " There will be counted gaps and you might get impossible data."
+		  " It is highly recommended to use students set not available or break constraints instead."
+		  " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
+		  " Are you sure you want to add current constraint?" ),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.4.18">
+<!DOCTYPE FET><FET version="5.5.0-beta1">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -20,7 +20,6 @@
 	<Name>17</Name>
 	<Name>18</Name>
 	<Name>19</Name>
-	<Name>20</Name>
 </Hours_List>
 
 <Days_List>
@@ -980,14 +979,14 @@
 </Subject>
 </Subjects_List>
 
-<Subject_Tags_List>
-</Subject_Tags_List>
+<Activity_Tags_List>
+</Activity_Tags_List>
 
 <Activities_List>
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Programarea calculatoarelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>1</Id>
@@ -999,7 +998,7 @@
 <Activity>
 	<Teacher>Alina Resceanu</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>2</Id>
@@ -1010,7 +1009,7 @@
 <Activity>
 	<Teacher>Alina Resceanu</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>3</Id>
@@ -1021,7 +1020,7 @@
 <Activity>
 	<Teacher>F. Munteanu</Teacher>
 	<Subject>Algebra liniara - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>7</Id>
@@ -1032,7 +1031,7 @@
 <Activity>
 	<Teacher>F. Munteanu</Teacher>
 	<Subject>Algebra liniara - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>8</Id>
@@ -1043,7 +1042,7 @@
 <Activity>
 	<Teacher>George Popescu</Teacher>
 	<Subject>Analiza matematica I - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>9</Id>
@@ -1054,7 +1053,7 @@
 <Activity>
 	<Teacher>C. Daneti</Teacher>
 	<Subject>Analiza matematica I - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>10</Id>
@@ -1065,7 +1064,7 @@
 <Activity>
 	<Teacher>Carmen Dobre</Teacher>
 	<Subject>Programarea calculatoarelor - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>12</Id>
@@ -1076,7 +1075,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>13</Id>
@@ -1087,7 +1086,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>14</Id>
@@ -1098,7 +1097,7 @@
 <Activity>
 	<Teacher>I.Puchin</Teacher>
 	<Subject>Fizica - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>15</Id>
@@ -1109,7 +1108,7 @@
 <Activity>
 	<Teacher>I.Puchin</Teacher>
 	<Subject>Fizica - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>16</Id>
@@ -1120,7 +1119,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>17</Id>
@@ -1131,7 +1130,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>18</Id>
@@ -1142,7 +1141,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>19</Id>
@@ -1153,7 +1152,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>20</Id>
@@ -1164,7 +1163,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>21</Id>
@@ -1175,7 +1174,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>22</Id>
@@ -1186,7 +1185,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>23</Id>
@@ -1197,7 +1196,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>24</Id>
@@ -1208,7 +1207,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Programarea calculatoarelor - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>25</Id>
@@ -1219,7 +1218,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>26</Id>
@@ -1230,7 +1229,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>27</Id>
@@ -1241,7 +1240,7 @@
 <Activity>
 	<Teacher>Gheorghe Marian</Teacher>
 	<Subject>Programarea calculatoarelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>28</Id>
@@ -1253,7 +1252,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>30</Id>
@@ -1264,7 +1263,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>31</Id>
@@ -1275,7 +1274,7 @@
 <Activity>
 	<Teacher>Cristina Sosoi</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>34</Id>
@@ -1286,7 +1285,7 @@
 <Activity>
 	<Teacher>Cristina Sosoi</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>35</Id>
@@ -1297,7 +1296,7 @@
 <Activity>
 	<Teacher>L. Nicolescu</Teacher>
 	<Subject>Algebra liniara - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>36</Id>
@@ -1308,7 +1307,7 @@
 <Activity>
 	<Teacher>Gheorghe Marian</Teacher>
 	<Subject>Programarea calculatoarelor - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>37</Id>
@@ -1319,7 +1318,7 @@
 <Activity>
 	<Teacher>Gheorghe Marian</Teacher>
 	<Subject>Programarea calculatoarelor - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>38</Id>
@@ -1330,7 +1329,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>39</Id>
@@ -1341,7 +1340,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Programarea calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>40</Id>
@@ -1352,7 +1351,7 @@
 <Activity>
 	<Teacher>I.Puchin</Teacher>
 	<Subject>Fizica - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>41</Id>
@@ -1363,7 +1362,7 @@
 <Activity>
 	<Teacher>I.Puchin</Teacher>
 	<Subject>Fizica - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>42</Id>
@@ -1374,7 +1373,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>43</Id>
@@ -1385,7 +1384,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>44</Id>
@@ -1396,7 +1395,7 @@
 <Activity>
 	<Teacher>Oprea Jitianu</Teacher>
 	<Subject>Analiza matematica I - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>46</Id>
@@ -1407,7 +1406,7 @@
 <Activity>
 	<Teacher>Oprea Jitianu</Teacher>
 	<Subject>Analiza matematica I - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>47</Id>
@@ -1418,7 +1417,7 @@
 <Activity>
 	<Teacher>F. Munteanu</Teacher>
 	<Subject>Algebra liniara - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>48</Id>
@@ -1429,7 +1428,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>49</Id>
@@ -1440,7 +1439,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>50</Id>
@@ -1451,7 +1450,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>51</Id>
@@ -1462,7 +1461,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>52</Id>
@@ -1473,7 +1472,7 @@
 <Activity>
 	<Teacher>Gheorghe Marian</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>53</Id>
@@ -1484,7 +1483,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>54</Id>
@@ -1495,7 +1494,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>56</Id>
@@ -1506,7 +1505,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>57</Id>
@@ -1517,7 +1516,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>58</Id>
@@ -1528,7 +1527,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>59</Id>
@@ -1539,7 +1538,7 @@
 <Activity>
 	<Teacher>C. Sterbeti</Teacher>
 	<Subject>Matematici speciale - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>63</Id>
@@ -1550,7 +1549,7 @@
 <Activity>
 	<Teacher>C. Sterbeti</Teacher>
 	<Subject>Matematici speciale - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>64</Id>
@@ -1561,7 +1560,7 @@
 <Activity>
 	<Teacher>Alina Resceanu</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>65</Id>
@@ -1572,7 +1571,7 @@
 <Activity>
 	<Teacher>Alina Resceanu</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>66</Id>
@@ -1583,7 +1582,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>67</Id>
@@ -1594,7 +1593,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>68</Id>
@@ -1605,7 +1604,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>69</Id>
@@ -1616,7 +1615,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>70</Id>
@@ -1627,7 +1626,7 @@
 <Activity>
 	<Teacher>Romulus Militaru</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>72</Id>
@@ -1638,7 +1637,7 @@
 <Activity>
 	<Teacher>Romulus Militaru</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>73</Id>
@@ -1649,7 +1648,7 @@
 <Activity>
 	<Teacher>Romulus Militaru</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>74</Id>
@@ -1660,7 +1659,7 @@
 <Activity>
 	<Teacher>P. Vana</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>76</Id>
@@ -1671,7 +1670,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>77</Id>
@@ -1682,7 +1681,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>78</Id>
@@ -1693,7 +1692,7 @@
 <Activity>
 	<Teacher>Marilena Popa</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>79</Id>
@@ -1704,7 +1703,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Structuri de date si algoritmi - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>80</Id>
@@ -1715,7 +1714,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Structuri de date si algoritmi - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>81</Id>
@@ -1726,7 +1725,7 @@
 <Activity>
 	<Teacher>P. Vana</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>82</Id>
@@ -1737,7 +1736,7 @@
 <Activity>
 	<Teacher>P. Vana</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>83</Id>
@@ -1748,7 +1747,7 @@
 <Activity>
 	<Teacher>P. Vana</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>84</Id>
@@ -1759,7 +1758,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Structuri de date si algoritmi</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>87</Id>
@@ -1771,7 +1770,7 @@
 <Activity>
 	<Teacher>I.Puchin</Teacher>
 	<Subject>Fizica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>88</Id>
@@ -1785,7 +1784,7 @@
 <Activity>
 	<Teacher>Maria Predoi</Teacher>
 	<Subject>Analiza matematica I</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>89</Id>
@@ -1799,7 +1798,7 @@
 <Activity>
 	<Teacher>Ion Vladimirescu</Teacher>
 	<Subject>Algebra liniara</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>90</Id>
@@ -1813,7 +1812,7 @@
 <Activity>
 	<Teacher>D. Popa</Teacher>
 	<Subject>Desen si Autocad</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>91</Id>
@@ -1827,7 +1826,7 @@
 <Activity>
 	<Teacher>Trandafir Balan</Teacher>
 	<Subject>Matematici speciale</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>92</Id>
@@ -1841,7 +1840,7 @@
 <Activity>
 	<Teacher>Romulus Militaru</Teacher>
 	<Subject>Calcul numeric</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>93</Id>
@@ -1855,7 +1854,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>94</Id>
@@ -1869,7 +1868,7 @@
 <Activity>
 	<Teacher>Elena Niculescu</Teacher>
 	<Subject>Dispozitive si circuite electronice I</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>95</Id>
@@ -1883,7 +1882,7 @@
 <Activity>
 	<Teacher>Romulus Militaru</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>96</Id>
@@ -1894,7 +1893,7 @@
 <Activity>
 	<Teacher>Romulus Militaru</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>97</Id>
@@ -1905,7 +1904,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>98</Id>
@@ -1916,7 +1915,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>99</Id>
@@ -1927,7 +1926,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>100</Id>
@@ -1938,7 +1937,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>101</Id>
@@ -1949,7 +1948,7 @@
 <Activity>
 	<Teacher>Petre Nicolae</Teacher>
 	<Subject>Electrotehnica II - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>102</Id>
@@ -1960,7 +1959,7 @@
 <Activity>
 	<Teacher>M. Ivanovici</Teacher>
 	<Subject>Matematici speciale - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>103</Id>
@@ -1971,7 +1970,7 @@
 <Activity>
 	<Teacher>C. Sterbeti</Teacher>
 	<Subject>Matematici speciale - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>104</Id>
@@ -1982,7 +1981,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Structuri de date si algoritmi</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>105</Id>
@@ -1994,7 +1993,7 @@
 <Activity>
 	<Teacher>M. Leoveanu</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>106</Id>
@@ -2005,7 +2004,7 @@
 <Activity>
 	<Teacher>M. Leoveanu</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>107</Id>
@@ -2016,7 +2015,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>108</Id>
@@ -2027,7 +2026,7 @@
 <Activity>
 	<Teacher>prof. Sport</Teacher>
 	<Subject>Educatie fizica si sport</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>109</Id>
@@ -2038,7 +2037,7 @@
 <Activity>
 	<Teacher>A. Busu</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>110</Id>
@@ -2049,7 +2048,7 @@
 <Activity>
 	<Teacher>A. Busu</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>111</Id>
@@ -2060,7 +2059,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Structuri de date si algoritmi - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>112</Id>
@@ -2071,7 +2070,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Structuri de date si algoritmi - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>113</Id>
@@ -2082,7 +2081,7 @@
 <Activity>
 	<Teacher>Marilena Popa</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>114</Id>
@@ -2093,7 +2092,7 @@
 <Activity>
 	<Teacher>Marilena Popa</Teacher>
 	<Subject>Calcul numeric - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>115</Id>
@@ -2104,7 +2103,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>116</Id>
@@ -2115,7 +2114,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>117</Id>
@@ -2126,7 +2125,7 @@
 <Activity>
 	<Teacher>P. Vana</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>118</Id>
@@ -2137,7 +2136,7 @@
 <Activity>
 	<Teacher>P. Vana</Teacher>
 	<Subject>Dispozitive si circuite electronice I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>119</Id>
@@ -2148,7 +2147,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structrui de date si algoritmi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>120</Id>
@@ -2159,7 +2158,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>121</Id>
@@ -2171,7 +2170,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>122</Id>
@@ -2183,7 +2182,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>123</Id>
@@ -2194,7 +2193,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>124</Id>
@@ -2205,7 +2204,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>125</Id>
@@ -2216,7 +2215,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>126</Id>
@@ -2227,7 +2226,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>127</Id>
@@ -2238,7 +2237,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>128</Id>
@@ -2249,7 +2248,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>129</Id>
@@ -2260,7 +2259,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>130</Id>
@@ -2275,7 +2274,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Elemente de contabilitate</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>131</Id>
@@ -2290,7 +2289,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>132</Id>
@@ -2301,7 +2300,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>133</Id>
@@ -2312,7 +2311,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>134</Id>
@@ -2323,7 +2322,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>135</Id>
@@ -2334,7 +2333,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>136</Id>
@@ -2345,7 +2344,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>137</Id>
@@ -2356,7 +2355,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>138</Id>
@@ -2367,7 +2366,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>139</Id>
@@ -2378,7 +2377,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Elemente de contabilitate - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>140</Id>
@@ -2389,7 +2388,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Elemente de contabilitate - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>141</Id>
@@ -2400,7 +2399,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Elemente de contabilitate - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>142</Id>
@@ -2411,7 +2410,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>143</Id>
@@ -2422,7 +2421,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>144</Id>
@@ -2433,7 +2432,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>145</Id>
@@ -2444,7 +2443,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>146</Id>
@@ -2455,7 +2454,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>147</Id>
@@ -2466,7 +2465,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>148</Id>
@@ -2477,7 +2476,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>149</Id>
@@ -2488,7 +2487,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>150</Id>
@@ -2499,7 +2498,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>151</Id>
@@ -2510,7 +2509,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Programarea orientata pe obiecte</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>152</Id>
@@ -2523,7 +2522,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>153</Id>
@@ -2534,7 +2533,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>154</Id>
@@ -2545,7 +2544,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Bazele logice ale proiectarii calculatoarelor II - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>155</Id>
@@ -2556,7 +2555,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Bazele logice ale proiectarii calculatoarelor II - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>156</Id>
@@ -2567,7 +2566,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Bazele logice ale proiectarii calculatoarelor II - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>157</Id>
@@ -2578,7 +2577,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Bazele logice ale proiectarii calculatoarelor II</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>158</Id>
@@ -2591,7 +2590,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>159</Id>
@@ -2604,7 +2603,7 @@
 <Activity>
 	<Teacher>Oleg Cernian</Teacher>
 	<Subject>Arhitectura calculatoarelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>160</Id>
@@ -2617,7 +2616,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Inteligenta artificiala - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>161</Id>
@@ -2628,7 +2627,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Inteligenta artificiala - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>162</Id>
@@ -2639,7 +2638,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Inteligenta artificiala - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>163</Id>
@@ -2650,7 +2649,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>164</Id>
@@ -2661,7 +2660,7 @@
 <Activity>
 	<Teacher>Adrian Neatu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>165</Id>
@@ -2672,7 +2671,7 @@
 <Activity>
 	<Teacher>Oleg Cernian</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>166</Id>
@@ -2683,7 +2682,7 @@
 <Activity>
 	<Teacher>Adrian Neatu</Teacher>
 	<Subject>Bazele logice ale proiectarii calculatoarelor II - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>167</Id>
@@ -2694,7 +2693,7 @@
 <Activity>
 	<Teacher>Adrian Neatu</Teacher>
 	<Subject>Bazele logice ale proiectarii calculatoarelor II - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>168</Id>
@@ -2705,7 +2704,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>171</Id>
@@ -2716,7 +2715,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>172</Id>
@@ -2727,7 +2726,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>173</Id>
@@ -2738,7 +2737,7 @@
 <Activity>
 	<Teacher>Adrian Neatu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>174</Id>
@@ -2749,7 +2748,7 @@
 <Activity>
 	<Teacher>Adrian Neatu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>175</Id>
@@ -2760,7 +2759,7 @@
 <Activity>
 	<Teacher>Adrian Neatu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>176</Id>
@@ -2771,7 +2770,7 @@
 <Activity>
 	<Teacher>Adrian Neatu</Teacher>
 	<Subject>Arhitectura calculatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>177</Id>
@@ -2782,7 +2781,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>178</Id>
@@ -2793,7 +2792,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>179</Id>
@@ -2804,7 +2803,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Programarea orientata pe obiecte - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>180</Id>
@@ -2815,7 +2814,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Programarea orientata pe obiecte - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>181</Id>
@@ -2826,7 +2825,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Programarea orientata pe obiecte</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>182</Id>
@@ -2838,7 +2837,7 @@
 <Activity>
 	<Teacher>Oleg Cernian</Teacher>
 	<Subject>Arhitectura calculatoarelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>183</Id>
@@ -2850,7 +2849,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>184</Id>
@@ -2861,7 +2860,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>185</Id>
@@ -2872,7 +2871,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Elemente de contabilitate - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>186</Id>
@@ -2883,7 +2882,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Elemente de contabilitate - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>187</Id>
@@ -2894,7 +2893,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>188</Id>
@@ -2905,7 +2904,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>189</Id>
@@ -2916,7 +2915,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>190</Id>
@@ -2927,7 +2926,7 @@
 <Activity>
 	<Teacher>Sorin Nicola</Teacher>
 	<Subject>Circuite digitale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>191</Id>
@@ -2938,7 +2937,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>192</Id>
@@ -2949,7 +2948,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Programarea orientata pe obiecte - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>193</Id>
@@ -2960,7 +2959,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Inteligenta artificiala</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>195</Id>
@@ -2972,7 +2971,7 @@
 <Activity>
 	<Teacher>Oleg Cernian</Teacher>
 	<Subject>Bazele logice ale proiectarii calculatoarelor II</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>196</Id>
@@ -2984,7 +2983,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>197</Id>
@@ -2995,7 +2994,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>198</Id>
@@ -3006,7 +3005,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>199</Id>
@@ -3017,7 +3016,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>200</Id>
@@ -3028,7 +3027,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>201</Id>
@@ -3039,7 +3038,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>202</Id>
@@ -3050,7 +3049,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>203</Id>
@@ -3061,7 +3060,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>204</Id>
@@ -3072,7 +3071,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>205</Id>
@@ -3084,7 +3083,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>206</Id>
@@ -3098,7 +3097,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Managementul proiectelor informationale</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>207</Id>
@@ -3112,7 +3111,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>208</Id>
@@ -3123,7 +3122,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>209</Id>
@@ -3134,7 +3133,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>210</Id>
@@ -3145,7 +3144,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>211</Id>
@@ -3156,7 +3155,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>212</Id>
@@ -3167,7 +3166,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>213</Id>
@@ -3178,7 +3177,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>214</Id>
@@ -3189,7 +3188,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>215</Id>
@@ -3200,7 +3199,7 @@
 <Activity>
 	<Teacher>Cosmin Stoica-Spahiu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>216</Id>
@@ -3211,7 +3210,7 @@
 <Activity>
 	<Teacher>Cosmin Stoica-Spahiu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>217</Id>
@@ -3222,7 +3221,7 @@
 <Activity>
 	<Teacher>Cosmin Stoica-Spahiu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>218</Id>
@@ -3233,7 +3232,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>219</Id>
@@ -3244,7 +3243,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>220</Id>
@@ -3255,7 +3254,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>221</Id>
@@ -3266,7 +3265,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>222</Id>
@@ -3277,7 +3276,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>223</Id>
@@ -3288,7 +3287,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>224</Id>
@@ -3299,7 +3298,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>225</Id>
@@ -3310,7 +3309,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>226</Id>
@@ -3321,7 +3320,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>227</Id>
@@ -3332,7 +3331,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>228</Id>
@@ -3343,7 +3342,7 @@
 <Activity>
 	<Teacher>Razvan Tanasie</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>229</Id>
@@ -3354,7 +3353,7 @@
 <Activity>
 	<Teacher>Razvan Tanasie</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>230</Id>
@@ -3365,7 +3364,7 @@
 <Activity>
 	<Teacher>Razvan Tanasie</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>231</Id>
@@ -3376,7 +3375,7 @@
 <Activity>
 	<Teacher>Razvan Tanasie</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>232</Id>
@@ -3387,7 +3386,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Sisteme de operare</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>233</Id>
@@ -3399,7 +3398,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Retele de calculatoare</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>234</Id>
@@ -3411,7 +3410,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Baze de date</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>235</Id>
@@ -3423,7 +3422,7 @@
 <Activity>
 	<Teacher>Cosmin Stoica-Spahiu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>236</Id>
@@ -3434,7 +3433,7 @@
 <Activity>
 	<Teacher>Cosmin Stoica-Spahiu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>237</Id>
@@ -3445,7 +3444,7 @@
 <Activity>
 	<Teacher>Cosmin Stoica-Spahiu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>238</Id>
@@ -3456,7 +3455,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>239</Id>
@@ -3467,7 +3466,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>240</Id>
@@ -3478,7 +3477,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>241</Id>
@@ -3489,7 +3488,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>242</Id>
@@ -3500,7 +3499,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>243</Id>
@@ -3511,7 +3510,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>244</Id>
@@ -3522,7 +3521,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Baze de date</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>245</Id>
@@ -3534,7 +3533,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>246</Id>
@@ -3546,7 +3545,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>247</Id>
@@ -3558,7 +3557,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Retele de calculatoare</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>248</Id>
@@ -3570,7 +3569,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>249</Id>
@@ -3581,7 +3580,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>250</Id>
@@ -3592,7 +3591,7 @@
 <Activity>
 	<Teacher>Adelina Popescu</Teacher>
 	<Subject>Managementul proiectelor informationale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>251</Id>
@@ -3603,7 +3602,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>252</Id>
@@ -3614,7 +3613,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>253</Id>
@@ -3625,7 +3624,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Baze de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>254</Id>
@@ -3636,7 +3635,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>255</Id>
@@ -3647,7 +3646,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>256</Id>
@@ -3658,7 +3657,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Sisteme de operare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>257</Id>
@@ -3669,7 +3668,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>258</Id>
@@ -3680,7 +3679,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>259</Id>
@@ -3691,7 +3690,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Microprocesoare si microcontrolere - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>260</Id>
@@ -3702,7 +3701,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>261</Id>
@@ -3713,7 +3712,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>262</Id>
@@ -3724,7 +3723,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Retele de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>263</Id>
@@ -3735,7 +3734,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>264</Id>
@@ -3746,7 +3745,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>265</Id>
@@ -3757,7 +3756,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>266</Id>
@@ -3768,7 +3767,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>267</Id>
@@ -3779,7 +3778,7 @@
 <Activity>
 	<Teacher>Cosmin Stoica-Spahiu</Teacher>
 	<Subject>Modelarea si simularea sistemelor de calculatoare si a retelelor - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>268</Id>
@@ -3790,7 +3789,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>270</Id>
@@ -3801,7 +3800,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>271</Id>
@@ -3812,7 +3811,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Limbaje si algoritmi paraleli</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>272</Id>
@@ -3824,7 +3823,7 @@
 <Activity>
 	<Teacher>Gheorghe Marian</Teacher>
 	<Subject>Proiectarea compilatoarelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>273</Id>
@@ -3836,7 +3835,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Comert electronic</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>274</Id>
@@ -3851,7 +3850,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme de prelucrari grafice</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>275</Id>
@@ -3864,7 +3863,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>276</Id>
@@ -3876,7 +3875,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Administrarea retelelor de calculatoare</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>277</Id>
@@ -3889,7 +3888,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>278</Id>
@@ -3900,7 +3899,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>279</Id>
@@ -3911,7 +3910,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>280</Id>
@@ -3922,7 +3921,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>281</Id>
@@ -3933,7 +3932,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>282</Id>
@@ -3944,7 +3943,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>283</Id>
@@ -3955,7 +3954,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>284</Id>
@@ -3966,7 +3965,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>285</Id>
@@ -3977,7 +3976,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>286</Id>
@@ -3988,7 +3987,7 @@
 <Activity>
 	<Teacher>Razvan Tanasie</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>287</Id>
@@ -3999,7 +3998,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>288</Id>
@@ -4010,7 +4009,7 @@
 <Activity>
 	<Teacher>Catalin Cerbulescu</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>289</Id>
@@ -4021,7 +4020,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>290</Id>
@@ -4032,7 +4031,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>291</Id>
@@ -4043,7 +4042,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>292</Id>
@@ -4054,7 +4053,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>293</Id>
@@ -4065,7 +4064,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>294</Id>
@@ -4076,7 +4075,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>295</Id>
@@ -4087,7 +4086,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>296</Id>
@@ -4098,7 +4097,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>297</Id>
@@ -4109,7 +4108,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>298</Id>
@@ -4120,7 +4119,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Proiectarea compilatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>299</Id>
@@ -4131,7 +4130,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Proiectarea compilatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>300</Id>
@@ -4142,7 +4141,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>301</Id>
@@ -4153,7 +4152,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>302</Id>
@@ -4164,7 +4163,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>303</Id>
@@ -4175,7 +4174,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>304</Id>
@@ -4186,7 +4185,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>305</Id>
@@ -4197,7 +4196,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Proiectarea compilatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>306</Id>
@@ -4208,7 +4207,7 @@
 <Activity>
 	<Teacher>Eugen Dumitrascu</Teacher>
 	<Subject>Proiectarea compilatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>307</Id>
@@ -4219,7 +4218,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>308</Id>
@@ -4230,7 +4229,7 @@
 <Activity>
 	<Teacher>Dan Tusaliu</Teacher>
 	<Subject>Proiectarea, realizarea si testarea echipamentelor - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>309</Id>
@@ -4241,7 +4240,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>Proiectarea, realizarea si testarea echipamentelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>310</Id>
@@ -4252,7 +4251,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Structura calculatoarelor paralele</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>311</Id>
@@ -4263,7 +4262,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Medii de programare VLSI</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>312</Id>
@@ -4274,7 +4273,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Medii de programare VLSI - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>313</Id>
@@ -4285,7 +4284,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Medii de programare VLSI - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>314</Id>
@@ -4296,7 +4295,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>Proiectarea, realizarea si testarea echipamentelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>315</Id>
@@ -4307,7 +4306,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>Proiectarea, realizarea si testarea echipamentelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>316</Id>
@@ -4318,7 +4317,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>317</Id>
@@ -4329,7 +4328,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>318</Id>
@@ -4340,7 +4339,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>319</Id>
@@ -4351,7 +4350,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>DSP in comunicatii - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>320</Id>
@@ -4362,7 +4361,7 @@
 <Activity>
 	<Teacher>Stefan Matei</Teacher>
 	<Subject>DSP in comunicatii - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>321</Id>
@@ -4373,7 +4372,7 @@
 <Activity>
 	<Teacher>Catalin Cerbulescu</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>322</Id>
@@ -4384,7 +4383,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Structura calculatoarelor paralele - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>323</Id>
@@ -4395,7 +4394,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Structura calculatoarelor paralele - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>324</Id>
@@ -4406,7 +4405,7 @@
 <Activity>
 	<Teacher>Stefan Matei</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>325</Id>
@@ -4417,7 +4416,7 @@
 <Activity>
 	<Teacher>Dan Tusaliu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>326</Id>
@@ -4428,7 +4427,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>327</Id>
@@ -4439,7 +4438,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Administrarea retelelor de calculatoare</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>328</Id>
@@ -4451,7 +4450,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>330</Id>
@@ -4462,7 +4461,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>331</Id>
@@ -4473,7 +4472,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>332</Id>
@@ -4484,7 +4483,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>333</Id>
@@ -4495,7 +4494,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>334</Id>
@@ -4506,7 +4505,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>335</Id>
@@ -4517,7 +4516,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>Proiectarea, realizarea si testarea echipamentelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>336</Id>
@@ -4528,7 +4527,7 @@
 <Activity>
 	<Teacher>Oleg Cernian</Teacher>
 	<Subject>DSP in comunicatii</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>337</Id>
@@ -4539,7 +4538,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor de calculatoare - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>338</Id>
@@ -4550,7 +4549,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>Proiectarea, realizarea si testarea echipamentelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>339</Id>
@@ -4561,7 +4560,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>Proiectarea, realizarea si testarea echipamentelor - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>340</Id>
@@ -4572,7 +4571,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Medii de programare VLSI</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>341</Id>
@@ -4583,7 +4582,7 @@
 <Activity>
 	<Teacher>Ioan Lemeni</Teacher>
 	<Subject>Medii de programare VLSI - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>342</Id>
@@ -4594,7 +4593,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Structura calculatoarelor paralele</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>343</Id>
@@ -4605,7 +4604,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Structura calculatoarelor paralele - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>344</Id>
@@ -4616,7 +4615,7 @@
 <Activity>
 	<Teacher>Dan Tusaliu</Teacher>
 	<Subject>DSP in comunicatii - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>345</Id>
@@ -4627,7 +4626,7 @@
 <Activity>
 	<Teacher>Dorian Dogaru</Teacher>
 	<Subject>Sisteme pt prelucrari grafice - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>346</Id>
@@ -4638,7 +4637,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Proiectarea compilatoarelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>347</Id>
@@ -4649,7 +4648,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>348</Id>
@@ -4660,7 +4659,7 @@
 <Activity>
 	<Teacher>Mihai Mocanu</Teacher>
 	<Subject>Limbaje si algoritmi paraleli</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>349</Id>
@@ -4671,7 +4670,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>350</Id>
@@ -4682,7 +4681,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Limbaje si algoritmi paraleli - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>351</Id>
@@ -4693,7 +4692,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Dezvoltarea de aplicatii multimedia - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>352</Id>
@@ -4704,7 +4703,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Proiectarea compilatoarelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>353</Id>
@@ -4715,7 +4714,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>354</Id>
@@ -4726,7 +4725,7 @@
 <Activity>
 	<Teacher>Dan Mancas</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>355</Id>
@@ -4737,7 +4736,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Dezvoltarea aplicatiilor WWW</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>356</Id>
@@ -4748,7 +4747,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Dezvoltarea aplicatiilor WWW - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>357</Id>
@@ -4759,7 +4758,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Complexitatea calculului - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>358</Id>
@@ -4770,7 +4769,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Complexitatea calculului</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>359</Id>
@@ -4781,7 +4780,7 @@
 <Activity>
 	<Teacher>Mircea Petrescu</Teacher>
 	<Subject>Baze de date multimedia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>360</Id>
@@ -4792,7 +4791,7 @@
 <Activity>
 	<Teacher>Mircea Petrescu</Teacher>
 	<Subject>Baze de date multimedia - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>361</Id>
@@ -4803,7 +4802,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Metode formale in proiectarea software - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>362</Id>
@@ -4814,7 +4813,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Metode formale in proiectarea software</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>363</Id>
@@ -4825,7 +4824,7 @@
 <Activity>
 	<Teacher>Dorian Cojocaru</Teacher>
 	<Subject>Sisteme grafice complexe</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>364</Id>
@@ -4836,7 +4835,7 @@
 <Activity>
 	<Teacher>Dorian Cojocaru</Teacher>
 	<Subject>Sisteme grafice complexe - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>365</Id>
@@ -4847,7 +4846,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Sisteme de regasire a informatiei vizuale - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>366</Id>
@@ -4858,7 +4857,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Sisteme de regasire a informatiei vizuale</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>367</Id>
@@ -4869,7 +4868,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Metrici software si ingineria calitatii</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>368</Id>
@@ -4880,7 +4879,7 @@
 <Activity>
 	<Teacher>Marius Brezovan</Teacher>
 	<Subject>Metrici software si ingineria calitatii - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>369</Id>
@@ -4891,7 +4890,7 @@
 <Activity>
 	<Teacher>Mircea Grosu</Teacher>
 	<Subject>Proiectarea sistemelor de  timp real - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>370</Id>
@@ -4902,7 +4901,7 @@
 <Activity>
 	<Teacher>Mircea Grosu</Teacher>
 	<Subject>Proiectarea sistemelor de timp real</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>371</Id>
@@ -4913,7 +4912,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Programare si elemente de grafica I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>372</Id>
@@ -4924,7 +4923,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Programare si elemente de grafica I</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>373</Id>
@@ -4935,7 +4934,7 @@
 <Activity>
 	<Teacher>Alina Resceanu</Teacher>
 	<Subject>Limba engleza</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>374</Id>
@@ -4946,7 +4945,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Procesoare de documente</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>375</Id>
@@ -4957,7 +4956,7 @@
 <Activity>
 	<Teacher>Leonard Petrescu</Teacher>
 	<Subject>Procesoare de documente - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>376</Id>
@@ -4968,7 +4967,7 @@
 <Activity>
 	<Teacher>Leonard Petrescu</Teacher>
 	<Subject>Procesoare de documente - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>377</Id>
@@ -4979,7 +4978,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Programare si elemente de grafica I - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>378</Id>
@@ -4990,7 +4989,7 @@
 <Activity>
 	<Teacher>George Popescu</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>379</Id>
@@ -5001,7 +5000,7 @@
 <Activity>
 	<Teacher>George Popescu</Teacher>
 	<Subject>Matematica - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>380</Id>
@@ -5012,7 +5011,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Introducere in sistemele de calcul</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>381</Id>
@@ -5023,7 +5022,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Introducere in sistemele de calcul - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>382</Id>
@@ -5034,7 +5033,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Introducere in sistemele de calcul - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>383</Id>
@@ -5045,7 +5044,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Bazele logice ale calculatoarelor - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>384</Id>
@@ -5056,7 +5055,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Bazele logice ale aclculatoarelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>385</Id>
@@ -5067,7 +5066,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Programare si elemente de grafica I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>386</Id>
@@ -5078,7 +5077,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Sisteme de operare I</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>387</Id>
@@ -5090,7 +5089,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Microcalculatoare</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>388</Id>
@@ -5102,7 +5101,7 @@
 <Activity>
 	<Teacher>Dan Dumitru Burdescu</Teacher>
 	<Subject>Structuri de date</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>389</Id>
@@ -5114,7 +5113,7 @@
 <Activity>
 	<Teacher>Augustin Ionescu</Teacher>
 	<Subject>Baze de date I</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>390</Id>
@@ -5126,7 +5125,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Comunicatii de date</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>391</Id>
@@ -5138,7 +5137,7 @@
 <Activity>
 	<Teacher>Cristian Vasile</Teacher>
 	<Subject>Sisteme de operare I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>392</Id>
@@ -5149,7 +5148,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Sisteme de operare I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>393</Id>
@@ -5160,7 +5159,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Sisteme de operare I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>394</Id>
@@ -5171,7 +5170,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Sisteme de operare I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>395</Id>
@@ -5182,7 +5181,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structuri de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>396</Id>
@@ -5193,7 +5192,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structuri de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>397</Id>
@@ -5204,7 +5203,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structuri de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>398</Id>
@@ -5215,7 +5214,7 @@
 <Activity>
 	<Teacher>Cristian Mihaescu</Teacher>
 	<Subject>Structuri de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>399</Id>
@@ -5226,7 +5225,7 @@
 <Activity>
 	<Teacher>Leonard Petrescu</Teacher>
 	<Subject>Baze de date I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>400</Id>
@@ -5237,7 +5236,7 @@
 <Activity>
 	<Teacher>Leonard Petrescu</Teacher>
 	<Subject>Baze de date I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>401</Id>
@@ -5248,7 +5247,7 @@
 <Activity>
 	<Teacher>Leonard Petrescu</Teacher>
 	<Subject>Baze de date I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>402</Id>
@@ -5259,7 +5258,7 @@
 <Activity>
 	<Teacher>Leonard Petrescu</Teacher>
 	<Subject>Baze de date I - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>403</Id>
@@ -5270,7 +5269,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Microcalculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>404</Id>
@@ -5281,7 +5280,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Microcalculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>405</Id>
@@ -5292,7 +5291,7 @@
 <Activity>
 	<Teacher>Ion Carstea</Teacher>
 	<Subject>Microcalculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>406</Id>
@@ -5303,7 +5302,7 @@
 <Activity>
 	<Teacher>Constantin Pistol</Teacher>
 	<Subject>Microcalculatoare - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>407</Id>
@@ -5314,7 +5313,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Structuri de date - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>408</Id>
@@ -5325,7 +5324,7 @@
 <Activity>
 	<Teacher>Mihai Popa</Teacher>
 	<Subject>Structuri de date - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>409</Id>
@@ -5336,7 +5335,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Comunicatii de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>410</Id>
@@ -5347,7 +5346,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Comunicatii de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>411</Id>
@@ -5358,7 +5357,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Comunicatii de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>412</Id>
@@ -5369,7 +5368,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Comunicatii de date - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>413</Id>
@@ -5380,7 +5379,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>414</Id>
@@ -5391,7 +5390,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>415</Id>
@@ -5402,7 +5401,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Administrarea retelelor</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>416</Id>
@@ -5414,7 +5413,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Internet si intranet</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>417</Id>
@@ -5426,7 +5425,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Notiuni de contabilitate</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>418</Id>
@@ -5438,7 +5437,7 @@
 <Activity>
 	<Teacher>Costin Badica</Teacher>
 	<Subject>Metode de dezvoltare a aplicatiilor complexe</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>419</Id>
@@ -5450,7 +5449,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Comert electronic</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>420</Id>
@@ -5462,7 +5461,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Aplicatii economice pt intreprinderi</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>421</Id>
@@ -5474,7 +5473,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Aplicatii economice pt intreprinderi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>422</Id>
@@ -5485,7 +5484,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Aplicatii economice pt intreprinderi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>423</Id>
@@ -5496,7 +5495,7 @@
 <Activity>
 	<Teacher>Cristian Vasile</Teacher>
 	<Subject>Aplicatii economice pt intreprinderi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>424</Id>
@@ -5507,7 +5506,7 @@
 <Activity>
 	<Teacher>Cristian Vasile</Teacher>
 	<Subject>Aplicatii economice pt intreprinderi - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>425</Id>
@@ -5518,7 +5517,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>426</Id>
@@ -5529,7 +5528,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Internet si intranet - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>427</Id>
@@ -5540,7 +5539,7 @@
 <Activity>
 	<Teacher>Dan Tusaliu</Teacher>
 	<Subject>Internet si intranet - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>428</Id>
@@ -5551,7 +5550,7 @@
 <Activity>
 	<Teacher>Aurelian Popescu</Teacher>
 	<Subject>Metode de dezvoltare a aplicatiilor complexe - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>429</Id>
@@ -5562,7 +5561,7 @@
 <Activity>
 	<Teacher>Anca Ion</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>430</Id>
@@ -5573,7 +5572,7 @@
 <Activity>
 	<Teacher>Daniel Cartog</Teacher>
 	<Subject>Metode de dezvoltare a aplicatiilor complexe - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>431</Id>
@@ -5584,7 +5583,7 @@
 <Activity>
 	<Teacher>Stefan Matei</Teacher>
 	<Subject>Administrarea retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>432</Id>
@@ -5595,7 +5594,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>433</Id>
@@ -5606,7 +5605,7 @@
 <Activity>
 	<Teacher>Liana Stanescu</Teacher>
 	<Subject>Comert electonic - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>434</Id>
@@ -5617,7 +5616,7 @@
 <Activity>
 	<Teacher>Daniel Cartog</Teacher>
 	<Subject>Metode de dezvoltare a aplicatiilor complexe - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>435</Id>
@@ -5628,7 +5627,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Notiuni de contabilitate - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>436</Id>
@@ -5639,7 +5638,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Aplicatii economice pt intreprinderi - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>437</Id>
@@ -5650,7 +5649,7 @@
 <Activity>
 	<Teacher>I. Nicolae</Teacher>
 	<Subject>Aplicatii economice pt intreprinderi - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>438</Id>
@@ -5661,7 +5660,7 @@
 <Activity>
 	<Teacher>Dan Tusaliu</Teacher>
 	<Subject>Internet si intranet - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>439</Id>
@@ -5672,7 +5671,7 @@
 <Activity>
 	<Teacher>Dan Tusaliu</Teacher>
 	<Subject>Internet si intranet - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>440</Id>
@@ -5683,7 +5682,7 @@
 <Activity>
 	<Teacher>Garlesteanu</Teacher>
 	<Subject>Notiuni de contabilitate - sem</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>441</Id>
@@ -5694,7 +5693,7 @@
 <Activity>
 	<Teacher>Aurelian Popescu</Teacher>
 	<Subject>Metode de dezvoltare a aplicatiilor complexe - pr</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>442</Id>
@@ -5705,7 +5704,7 @@
 <Activity>
 	<Teacher>Daniel Cartog</Teacher>
 	<Subject>Metode de dezvoltare a aplicatiilor complexe - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>443</Id>
@@ -5716,7 +5715,7 @@
 <Activity>
 	<Teacher>Aurelian Popescu</Teacher>
 	<Subject>Metode de dezvoltare a aplicatiilor complexe - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>444</Id>
@@ -5727,7 +5726,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Administrarea retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>445</Id>
@@ -5738,7 +5737,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Administrarea retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>446</Id>
@@ -5749,7 +5748,7 @@
 <Activity>
 	<Teacher>Gabi Toma-Tumbar</Teacher>
 	<Subject>Administrarea retelelor - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>447</Id>
@@ -5760,7 +5759,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Internet si intranet - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>448</Id>
@@ -5771,7 +5770,7 @@
 <Activity>
 	<Teacher>Stefan Matei</Teacher>
 	<Subject>Internet si intranet - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>449</Id>
@@ -5782,7 +5781,7 @@
 <Activity>
 	<Teacher>Lucian Barbulescu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>450</Id>
@@ -5793,7 +5792,7 @@
 <Activity>
 	<Teacher>Dan Ovidiu Andrei</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>451</Id>
@@ -5804,7 +5803,7 @@
 <Activity>
 	<Teacher>Stefan Udristoiu</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>453</Id>
@@ -5815,7 +5814,7 @@
 <Activity>
 	<Teacher>Eugen Ganea</Teacher>
 	<Subject>Inteligenta artificiala - lab</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>454</Id>
@@ -5826,7 +5825,7 @@
 <Activity>
 	<Teacher>Constantin Patrascu</Teacher>
 	<Subject>DSP in comunicatii</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>455</Id>
@@ -5837,7 +5836,7 @@
 <Activity>
 	<Teacher>Marin Lungu</Teacher>
 	<Subject>Practica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>456</Id>
@@ -5847,97 +5846,123 @@
 </Activity>
 </Activities_List>
 
+<Buildings_List>
+</Buildings_List>
+
 <Rooms_List>
 <Room>
 	<Name>109</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>122</Name>
+	<Building></Building>
 	<Capacity>30</Capacity>
 </Room>
 <Room>
 	<Name>ACB</Name>
+	<Building></Building>
 	<Capacity>200</Capacity>
 </Room>
 <Room>
 	<Name>BA206</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>C11</Name>
+	<Building></Building>
 	<Capacity>120</Capacity>
 </Room>
 <Room>
 	<Name>C4</Name>
+	<Building></Building>
 	<Capacity>120</Capacity>
 </Room>
 <Room>
 	<Name>H1</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>H2</Name>
+	<Building></Building>
 	<Capacity>30</Capacity>
 </Room>
 <Room>
 	<Name>L1</Name>
+	<Building></Building>
 	<Capacity>30</Capacity>
 </Room>
 <Room>
 	<Name>N10</Name>
+	<Building></Building>
 	<Capacity>80</Capacity>
 </Room>
 <Room>
 	<Name>N4</Name>
+	<Building></Building>
 	<Capacity>30</Capacity>
 </Room>
 <Room>
 	<Name>S1</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>S1b</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>S2</Name>
+	<Building></Building>
 	<Capacity>30</Capacity>
 </Room>
 <Room>
 	<Name>S3</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>S31</Name>
+	<Building></Building>
 	<Capacity>50</Capacity>
 </Room>
 <Room>
 	<Name>S6N</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>S6a</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>S6b</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>S7</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>S7b</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>elth</Name>
+	<Building></Building>
 	<Capacity>20</Capacity>
 </Room>
 <Room>
 	<Name>sala sport</Name>
+	<Building></Building>
 	<Capacity>40</Capacity>
 </Room>
 </Rooms_List>
@@ -6141,275 +6166,1215 @@
 	<Activity_Id>341</Activity_Id>
 	<Preferred_Hour>8</Preferred_Hour>
 </ConstraintActivityPreferredTime>
-<ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>Master I</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>19</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>11</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>Master II</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>19</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsNoGaps>
+	<Number_of_Not_Available_Times>11</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
-</ConstraintStudentsNoGaps>
-<ConstraintStudentsSetNotAvailable>
+	<Max_Gaps>0</Max_Gaps>
+</ConstraintStudentsMaxGapsPerWeek>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10103</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10104</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE 10105</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE 10106</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10203</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10204</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE 10205</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE 10206</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>TC 10210</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>TC 10211</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10304</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>TC 10110</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10305</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C 10306</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>C 10306</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>17</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE 10307</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE 10308</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>TC 10312</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>TC 10313</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C-SSC 10403</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C-SW 10404</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE-SW 10406</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE-SSC 10405</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C-SW 10503</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C-SW 10504</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>C-SSC 10505</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE-SW 10506</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>CE-SSC 10507</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>11</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>C 10104</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>CE 10106</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>C 10204</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>CE 10206</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>CE 10308</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>C-SW 10404</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>CE-SW 10406</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Students>TC 10211</Students>
-	<Day>Saturday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>11</End_Hour>
-</ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Saturday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -6771,181 +7736,583 @@
 	<Activity_Id>335</Activity_Id>
 	<Room>S1</Room>
 </ConstraintActivityPreferredRoom>
-<ConstraintRoomNotAvailable>
+<ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C11</Room_Name>
-	<Day>Monday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
+	<Room>C11</Room>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintRoomNotAvailableTimes>
+<ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C11</Room_Name>
-	<Day>Tuesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
+	<Room>C4</Room>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintRoomNotAvailableTimes>
+<ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C11</Room_Name>
-	<Day>Wednesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
+	<Room>L1</Room>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintRoomNotAvailableTimes>
+<ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C11</Room_Name>
-	<Day>Thursday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
+	<Room>S31</Room>
+	<Number_of_Not_Available_Times>18</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>14</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>15</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>16</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>17</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>18</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>19</Hour>
+	</Not_Available_Time>
+</ConstraintRoomNotAvailableTimes>
+<ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C11</Room_Name>
-	<Day>Friday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C4</Room_Name>
-	<Day>Monday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C4</Room_Name>
-	<Day>Tuesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C4</Room_Name>
-	<Day>Wednesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C4</Room_Name>
-	<Day>Thursday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>C4</Room_Name>
-	<Day>Friday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>L1</Room_Name>
-	<Day>Monday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>L1</Room_Name>
-	<Day>Tuesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>L1</Room_Name>
-	<Day>Wednesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>L1</Room_Name>
-	<Day>Thursday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>L1</Room_Name>
-	<Day>Friday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>S31</Room_Name>
-	<Day>Monday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>S31</Room_Name>
-	<Day>Tuesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>S31</Room_Name>
-	<Day>Wednesday</Day>
-	<Start_Hour>14</Start_Hour>
-	<End_Hour>20</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>N10</Room_Name>
-	<Day>Monday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>N10</Room_Name>
-	<Day>Tuesday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>N10</Room_Name>
-	<Day>Wednesday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>N10</Room_Name>
-	<Day>Thursday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>N10</Room_Name>
-	<Day>Friday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>N10</Room_Name>
-	<Day>Monday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintRoomNotAvailable>
-<ConstraintRoomNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Room_Name>N10</Room_Name>
-	<Day>Wednesday</Day>
-	<Start_Hour>8</Start_Hour>
-	<End_Hour>14</End_Hour>
-</ConstraintRoomNotAvailable>
+	<Room>N10</Room>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Wednesday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Thursday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>8</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>9</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>10</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>11</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>12</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Friday</Day>
+		<Hour>13</Hour>
+	</Not_Available_Time>
+</ConstraintRoomNotAvailableTimes>
 </Space_Constraints_List>
 
 </FET>

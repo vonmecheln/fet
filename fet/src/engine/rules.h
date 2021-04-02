@@ -30,8 +30,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "studentsset.h"
 #include "teacher.h"
 #include "subject.h"
-#include "subjecttag.h"
+#include "activitytag.h"
 #include "room.h"
+#include "building.h"
 
 #include <qstring.h>
 #include <qfile.h>
@@ -93,9 +94,9 @@ public:
 	SubjectsList subjectsList;
 
 	/**
-	The list of subject tags
+	The list of activity tags
 	*/
-	SubjectTagsList subjectTagsList;
+	ActivityTagsList activityTagsList;
 
 	/**
 	The list of students (groups and subgroups included).
@@ -114,6 +115,11 @@ public:
 	RoomsList roomsList;
 
 	/**
+	The list of buildings
+	*/
+	BuildingsList buildingsList;
+
+	/**
 	The list of time constraints
 	*/
 	TimeConstraintsList timeConstraintsList;
@@ -128,14 +134,14 @@ public:
 	for some activities.
 	-1 means that this activity has no fixed day
 	*/
-	qint16 fixedDay[MAX_ACTIVITIES];
+	//qint16 fixedDay[MAX_ACTIVITIES];
 	
 	/**
 	This is the array which specifies a fixed hour
 	for some activities.
 	-1 means that this activity has no fixed hour
 	*/
-	qint16 fixedHour[MAX_ACTIVITIES];
+	//qint16 fixedHour[MAX_ACTIVITIES];
 	
 	/**
 	This array specifies, for each activity (1), a reference to
@@ -143,7 +149,7 @@ public:
 	as the starting day of activity 2.
 	-1 means that the activity is independent of other activities.
 	*/
-	int sameDay[MAX_ACTIVITIES];
+	//int sameDay[MAX_ACTIVITIES];
 	
 	/**
 	This array specifies, for each activity (1), a reference to
@@ -151,14 +157,14 @@ public:
 	as the starting hour of activity 2.
 	-1 means that the activity is independent of other activities.
 	*/
-	int sameHour[MAX_ACTIVITIES];
+	//int sameHour[MAX_ACTIVITIES];
 	
 	/**
 	This is the array which specifies a fixed room
 	for some activities.
 	-1 means that this activity has no fixed room
 	*/
-	qint16 fixedRoom[MAX_ACTIVITIES];
+	//qint16 fixedRoom[MAX_ACTIVITIES];
 	
 	/**
 	This array specifies, for each activity (1), a reference to
@@ -166,7 +172,7 @@ public:
 	as the room of activity 2.
 	-1 means that the activity is independent of other activities.
 	*/
-	int sameRoom[MAX_ACTIVITIES];
+	//int sameRoom[MAX_ACTIVITIES];
 
 	/**
 	true if the corresponding activities share any teacher
@@ -218,6 +224,9 @@ public:
 
 	int nInternalRooms;
 	Room* internalRoomsList[MAX_ROOMS];
+
+	int nInternalBuildings;
+	Building* internalBuildingsList[MAX_BUILDINGS];
 
 	int nInternalTimeConstraints;
 	TimeConstraint* internalTimeConstraintsList[MAX_TIME_CONSTRAINTS];
@@ -325,36 +334,36 @@ public:
 	void sortSubjectsAlphabetically();
 
 	/**
-	Adds a new subject tag to the list of subject tags
+	Adds a new activity tag to the list of activity tags
 	(if not already in the list).
 	Returns false/true (unsuccessful/successful).
 	*/
-	bool addSubjectTag(SubjectTag* subjectTag);
+	bool addActivityTag(ActivityTag* activityTag);
 
 	/**
-	Returns the index of this subject tag in the subjectTagsList,
+	Returns the index of this activity tag in the activityTagsList,
 	or -1 if not found.
 	*/
-	int searchSubjectTag(const QString& subjectTagName);
+	int searchActivityTag(const QString& activityTagName);
 
 	/**
-	Removes this subject tag. In the list of activities, the subject tag will 
+	Removes this activity tag. In the list of activities, the activity tag will 
 	be removed from all activities which posess it.
 	It returns false on failure.
 	If successful, returns true.
 	*/
-	bool removeSubjectTag(const QString& subjectTagName);
+	bool removeActivityTag(const QString& activityTagName);
 
 	/**
-	Modifies (renames) this subject tag and takes care of all related activities.
+	Modifies (renames) this activity tag and takes care of all related activities.
 	Returns true on success, false on failure (if not found)
 	*/
-	bool modifySubjectTag(const QString& initialSubjectTagName, const QString& finalSubjectTagName);
+	bool modifyActivityTag(const QString& initialActivityTagName, const QString& finalActivityTagName);
 
 	/**
-	A function to sort the subject tags alphabetically
+	A function to sort the activity tags alphabetically
 	*/
-	void sortSubjectTagsAlphabetically();
+	void sortActivityTagsAlphabetically();
 
 	/**
 	Returns a pointer to the structure containing this student container
@@ -459,7 +468,7 @@ public:
 		int _activityGroupId,
 		const QStringList& _teachersNames,
 		const QString& _subjectName,
-		const QString& _subjectTagName,
+		const QString& _activityTagName,
 		const QStringList& _studentsNames,
 		int _duration, /*duration, in hours*/
 		int _totalDuration,
@@ -483,7 +492,7 @@ public:
 		int _activityGroupId,
 		const QStringList& _teachersNames,
 		const QString& _subjectName,
-		const QString& _subjectTagName,
+		const QString& _activityTagName,
 		const QStringList& _studentsNames,
 		int _nSplits,
 		int _totalDuration,
@@ -521,7 +530,7 @@ public:
 		int _activityGroupId, 
 		const QStringList& _teachersNames,
 		const QString& _subjectName, 
-		const QString& _subjectTagName, 
+		const QString& _activityTagName, 
 		const QStringList& _studentsNames,
 		//int _nTotalStudents,
 	 	int _nSplits,
@@ -553,12 +562,40 @@ public:
 	Modifies this room and takes care of all related constraints.
 	Returns true on success, false on failure (if not found)
 	*/
-	bool modifyRoom(const QString& initialRoomName, const QString& finalRoomName, int capacity);
+	bool modifyRoom(const QString& initialRoomName, const QString& finalRoomName, const QString& building, int capacity);
 
 	/**
 	A function to sort the room alphabetically, by name
 	*/
 	void sortRoomsAlphabetically();
+
+	/**
+	Adds a new building (already allocated).
+	Returns true on success, false for already existing buildings (same name).
+	*/
+	bool addBuilding(Building* rm);
+
+	/**
+	Returns -1 if not found or the index in the buildings list if found.
+	*/
+	int searchBuilding(const QString& buildingName);
+
+	/**
+	Removes the building with this name.
+	Returns true on success, false on failure (not found).
+	*/
+	bool removeBuilding(const QString& buildingName);
+	
+	/**
+	Modifies this building and takes care of all related constraints.
+	Returns true on success, false on failure (if not found)
+	*/
+	bool modifyBuilding(const QString& initialBuildingName, const QString& finalBuildingName);
+
+	/**
+	A function to sort the buildings alphabetically, by name
+	*/
+	void sortBuildingsAlphabetically();
 
 	/**
 	Adds a new time constraint (already allocated).
@@ -601,7 +638,7 @@ public:
 	
 	int activateSubject(const QString& subjectName);
 	
-	int activateSubjectTag(const QString& subjectTagName);
+	int activateActivityTag(const QString& activityTagName);
 
 	int deactivateTeacher(const QString& teacherName);
 	
@@ -609,7 +646,7 @@ public:
 	
 	int deactivateSubject(const QString& subjectName);
 	
-	int deactivateSubjectTag(const QString& subjectTagName);
+	int deactivateActivityTag(const QString& activityTagName);
 };
 
 #endif

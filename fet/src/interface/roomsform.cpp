@@ -138,7 +138,7 @@ void RoomsForm::modifyRoom()
 	}
 	
 	Room* rm=visibleRoomsList.at(ci);
-	ModifyRoomForm* form=new ModifyRoomForm(rm->name, rm->capacity);
+	ModifyRoomForm* form=new ModifyRoomForm(rm->name, rm->building, rm->capacity);
 	form->exec();
 
 	filterChanged();

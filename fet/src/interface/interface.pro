@@ -12,6 +12,8 @@ SOURCES += fet.cpp \
            modifyactivityform.cpp \
            addroomform.cpp \
            modifyroomform.cpp \
+           addbuildingform.cpp \
+           modifybuildingform.cpp \
            addstudentsyearform.cpp \
            modifystudentsyearform.cpp \
            addstudentsgroupform.cpp \
@@ -20,24 +22,75 @@ SOURCES += fet.cpp \
            modifystudentssubgroupform.cpp \
            addconstraintactivitypreferredtimesform.cpp \
            modifyconstraintactivitypreferredtimesform.cpp \
-           addconstraintroomnotavailableform.cpp \
-           constraintroomnotavailableform.cpp \
-           modifyconstraintroomnotavailableform.cpp \
+           addconstraintroomnotavailabletimesform.cpp \
+           constraintroomnotavailabletimesform.cpp \
+           modifyconstraintroomnotavailabletimesform.cpp \
            addconstraintactivitypreferredroomform.cpp \
            constraintactivitypreferredroomform.cpp \
            modifyconstraintactivitypreferredroomform.cpp \
            addconstraintsubjectpreferredroomform.cpp \
            constraintsubjectpreferredroomform.cpp \
            modifyconstraintsubjectpreferredroomform.cpp \
-           addconstraintsubjectsubjecttagpreferredroomform.cpp \
-           constraintsubjectsubjecttagpreferredroomform.cpp \
-           modifyconstraintsubjectsubjecttagpreferredroomform.cpp \
            addconstraintsubjectpreferredroomsform.cpp \
            constraintsubjectpreferredroomsform.cpp \
            modifyconstraintsubjectpreferredroomsform.cpp \
-           addconstraintsubjectsubjecttagpreferredroomsform.cpp \
-           constraintsubjectsubjecttagpreferredroomsform.cpp \
-           modifyconstraintsubjectsubjecttagpreferredroomsform.cpp \
+           addconstraintsubjectactivitytagpreferredroomform.cpp \
+           constraintsubjectactivitytagpreferredroomform.cpp \
+           modifyconstraintsubjectactivitytagpreferredroomform.cpp \
+           addconstraintsubjectactivitytagpreferredroomsform.cpp \
+           constraintsubjectactivitytagpreferredroomsform.cpp \
+           modifyconstraintsubjectactivitytagpreferredroomsform.cpp \
+           addconstraintstudentssethomeroomform.cpp \
+\
+           addconstraintstudentssetmaxbuildingchangesperdayform.cpp \
+           constraintstudentssetmaxbuildingchangesperdayform.cpp \
+           modifyconstraintstudentssetmaxbuildingchangesperdayform.cpp \
+           addconstraintstudentsmaxbuildingchangesperdayform.cpp \
+           constraintstudentsmaxbuildingchangesperdayform.cpp \
+           modifyconstraintstudentsmaxbuildingchangesperdayform.cpp \
+           addconstraintstudentssetmaxbuildingchangesperweekform.cpp \
+           constraintstudentssetmaxbuildingchangesperweekform.cpp \
+           modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp \
+           addconstraintstudentsmaxbuildingchangesperweekform.cpp \
+           constraintstudentsmaxbuildingchangesperweekform.cpp \
+           modifyconstraintstudentsmaxbuildingchangesperweekform.cpp \
+           addconstraintstudentssetmingapsbetweenbuildingchangesform.cpp \
+           constraintstudentssetmingapsbetweenbuildingchangesform.cpp \
+           modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp \
+           addconstraintstudentsmingapsbetweenbuildingchangesform.cpp \
+           constraintstudentsmingapsbetweenbuildingchangesform.cpp \
+           modifyconstraintstudentsmingapsbetweenbuildingchangesform.cpp \
+\
+           addconstraintteachermaxbuildingchangesperdayform.cpp \
+           constraintteachermaxbuildingchangesperdayform.cpp \
+           modifyconstraintteachermaxbuildingchangesperdayform.cpp \
+           addconstraintteachersmaxbuildingchangesperdayform.cpp \
+           constraintteachersmaxbuildingchangesperdayform.cpp \
+           modifyconstraintteachersmaxbuildingchangesperdayform.cpp \
+           addconstraintteachermaxbuildingchangesperweekform.cpp \
+           constraintteachermaxbuildingchangesperweekform.cpp \
+           modifyconstraintteachermaxbuildingchangesperweekform.cpp \
+           addconstraintteachersmaxbuildingchangesperweekform.cpp \
+           constraintteachersmaxbuildingchangesperweekform.cpp \
+           modifyconstraintteachersmaxbuildingchangesperweekform.cpp \
+           addconstraintteachermingapsbetweenbuildingchangesform.cpp \
+           constraintteachermingapsbetweenbuildingchangesform.cpp \
+           modifyconstraintteachermingapsbetweenbuildingchangesform.cpp \
+           addconstraintteachersmingapsbetweenbuildingchangesform.cpp \
+           constraintteachersmingapsbetweenbuildingchangesform.cpp \
+           modifyconstraintteachersmingapsbetweenbuildingchangesform.cpp \
+\
+           constraintstudentssethomeroomform.cpp \
+           modifyconstraintstudentssethomeroomform.cpp \
+           addconstraintstudentssethomeroomsform.cpp \
+           constraintstudentssethomeroomsform.cpp \
+           modifyconstraintstudentssethomeroomsform.cpp \
+           addconstraintteacherhomeroomform.cpp \
+           constraintteacherhomeroomform.cpp \
+           modifyconstraintteacherhomeroomform.cpp \
+           addconstraintteacherhomeroomsform.cpp \
+           constraintteacherhomeroomsform.cpp \
+           modifyconstraintteacherhomeroomsform.cpp \
            addconstraintactivitypreferredroomsform.cpp \
            constraintactivitypreferredroomsform.cpp \
            modifyconstraintactivitypreferredroomsform.cpp \
@@ -46,7 +99,7 @@ SOURCES += fet.cpp \
            groupsform.cpp \
            subgroupsform.cpp \
            subjectsform.cpp \
-           subjecttagsform.cpp \
+           activitytagsform.cpp \
            teachersform.cpp \
            timetablegenerateform.cpp \
            timetablegeneratemultipleform.cpp \
@@ -69,34 +122,42 @@ SOURCES += fet.cpp \
            ../engine/studentsset.cpp \
            ../engine/teacher.cpp \
            ../engine/subject.cpp \
-           ../engine/subjecttag.cpp \
+           ../engine/activitytag.cpp \
            ../engine/room.cpp \
+           ../engine/building.cpp \
            ../engine/timetable_defs.cpp \
 		   ../engine/generate.cpp \
 		   ../engine/timetableexport.cpp \
            roomsform.cpp \
+           buildingsform.cpp \
            constraintactivitiespreferredtimesform.cpp \
            addconstraintactivitiespreferredtimesform.cpp \
            modifyconstraintactivitiespreferredtimesform.cpp \
            constraintactivitiessamestartingtimeform.cpp \
            addconstraintactivitiessamestartingtimeform.cpp \
+\
            constraintactivitiessamestartinghourform.cpp \
            addconstraintactivitiessamestartinghourform.cpp \
-		   constraintteachernotavailableform.cpp \
-		   addconstraintteachernotavailableform.cpp \
-		   modifyconstraintteachernotavailableform.cpp \
+\
+           constraintactivitiessamestartingdayform.cpp \
+           addconstraintactivitiessamestartingdayform.cpp \
+           modifyconstraintactivitiessamestartingdayform.cpp \
+\
+		   constraintteachernotavailabletimesform.cpp \
+		   addconstraintteachernotavailabletimesform.cpp \
+		   modifyconstraintteachernotavailabletimesform.cpp \
 		   constraintbasiccompulsorytimeform.cpp \
 		   addconstraintbasiccompulsorytimeform.cpp \
 		   modifyconstraintbasiccompulsorytimeform.cpp \
 		   constraintbasiccompulsoryspaceform.cpp \
 		   addconstraintbasiccompulsoryspaceform.cpp \
 		   modifyconstraintbasiccompulsoryspaceform.cpp \
-		   constraintstudentssetnotavailableform.cpp \
-		   addconstraintstudentssetnotavailableform.cpp \
-		   modifyconstraintstudentssetnotavailableform.cpp \
-		   constraintbreakform.cpp \
-		   addconstraintbreakform.cpp \
-		   modifyconstraintbreakform.cpp \
+		   constraintstudentssetnotavailabletimesform.cpp \
+		   addconstraintstudentssetnotavailabletimesform.cpp \
+		   modifyconstraintstudentssetnotavailabletimesform.cpp \
+		   constraintbreaktimesform.cpp \
+		   addconstraintbreaktimesform.cpp \
+		   modifyconstraintbreaktimesform.cpp \
 		   constraintteachermaxdaysperweekform.cpp \
 		   addconstraintteachermaxdaysperweekform.cpp \
 		   modifyconstraintteachermaxdaysperweekform.cpp \
@@ -118,24 +179,30 @@ SOURCES += fet.cpp \
 		   constraintactivityendsstudentsdayform.cpp \
 		   addconstraintactivityendsstudentsdayform.cpp \
 		   modifyconstraintactivityendsstudentsdayform.cpp \
-		   constraintstudentssetnogapsform.cpp \
-		   addconstraintstudentssetnogapsform.cpp \
-		   modifyconstraintstudentssetnogapsform.cpp \
-		   constraintstudentsnogapsform.cpp \
-		   addconstraintstudentsnogapsform.cpp \
-		   modifyconstraintstudentsnogapsform.cpp \
+		   constraintstudentssetmaxgapsperweekform.cpp \
+		   addconstraintstudentssetmaxgapsperweekform.cpp \
+		   modifyconstraintstudentssetmaxgapsperweekform.cpp \
+		   constraintstudentsmaxgapsperweekform.cpp \
+		   addconstraintstudentsmaxgapsperweekform.cpp \
+		   modifyconstraintstudentsmaxgapsperweekform.cpp \
 		   constraintteachersmaxgapsperweekform.cpp \
 		   constraintteachermaxgapsperweekform.cpp \
 		   addconstraintteachersmaxgapsperweekform.cpp \
 		   modifyconstraintteachersmaxgapsperweekform.cpp \
 		   addconstraintteachermaxgapsperweekform.cpp \
 		   modifyconstraintteachermaxgapsperweekform.cpp \
-		   constraintstudentsearlyform.cpp \
-		   addconstraintstudentsearlyform.cpp \
-		   modifyconstraintstudentsearlyform.cpp \
-		   constraintstudentssetearlyform.cpp \
-		   addconstraintstudentssetearlyform.cpp \
-		   modifyconstraintstudentssetearlyform.cpp \
+		   constraintteachersmaxgapsperdayform.cpp \
+		   constraintteachermaxgapsperdayform.cpp \
+		   addconstraintteachersmaxgapsperdayform.cpp \
+		   modifyconstraintteachersmaxgapsperdayform.cpp \
+		   addconstraintteachermaxgapsperdayform.cpp \
+		   modifyconstraintteachermaxgapsperdayform.cpp \
+		   constraintstudentsearlymaxbeginningsatsecondhourform.cpp \
+		   addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp \
+		   modifyconstraintstudentsearlymaxbeginningsatsecondhourform.cpp \
+		   constraintstudentssetearlymaxbeginningsatsecondhourform.cpp \
+		   addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp \
+		   modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp \
 		   constraintstudentssetmaxhoursdailyform.cpp \
 		   addconstraintstudentssetmaxhoursdailyform.cpp \
 		   modifyconstraintstudentssetmaxhoursdailyform.cpp \
@@ -176,6 +243,8 @@ HEADERS += fet.h \
            modifyactivityform.h \
            addroomform.h \
            modifyroomform.h \
+           addbuildingform.h \
+           modifybuildingform.h \
            addstudentsyearform.h \
            modifystudentsyearform.h \
            addstudentsgroupform.h \
@@ -184,24 +253,75 @@ HEADERS += fet.h \
            modifystudentssubgroupform.h \
            addconstraintactivitypreferredtimesform.h \
            modifyconstraintactivitypreferredtimesform.h \
-           addconstraintroomnotavailableform.h \
-           constraintroomnotavailableform.h \
-           modifyconstraintroomnotavailableform.h \
+           addconstraintroomnotavailabletimesform.h \
+           constraintroomnotavailabletimesform.h \
+           modifyconstraintroomnotavailabletimesform.h \
            addconstraintactivitypreferredroomform.h \
            constraintactivitypreferredroomform.h \
            modifyconstraintactivitypreferredroomform.h \
            addconstraintsubjectpreferredroomform.h \
            constraintsubjectpreferredroomform.h \
            modifyconstraintsubjectpreferredroomform.h \
+           addconstraintsubjectactivitytagpreferredroomform.h \
+           constraintsubjectactivitytagpreferredroomform.h \
+           modifyconstraintsubjectactivitytagpreferredroomform.h \
            addconstraintsubjectpreferredroomsform.h \
            constraintsubjectpreferredroomsform.h \
            modifyconstraintsubjectpreferredroomsform.h \
-           addconstraintsubjectsubjecttagpreferredroomform.h \
-           constraintsubjectsubjecttagpreferredroomform.h \
-           modifyconstraintsubjectsubjecttagpreferredroomform.h \
-           addconstraintsubjectsubjecttagpreferredroomsform.h \
-           constraintsubjectsubjecttagpreferredroomsform.h \
-           modifyconstraintsubjectsubjecttagpreferredroomsform.h \
+           addconstraintsubjectactivitytagpreferredroomsform.h \
+           constraintsubjectactivitytagpreferredroomsform.h \
+           modifyconstraintsubjectactivitytagpreferredroomsform.h \
+           addconstraintstudentssethomeroomform.h \
+           constraintstudentssethomeroomform.h \
+           modifyconstraintstudentssethomeroomform.h \
+           addconstraintstudentssethomeroomsform.h \
+           constraintstudentssethomeroomsform.h \
+           modifyconstraintstudentssethomeroomsform.h \
+\
+           addconstraintstudentssetmaxbuildingchangesperdayform.h \
+           constraintstudentssetmaxbuildingchangesperdayform.h \
+           modifyconstraintstudentssetmaxbuildingchangesperdayform.h \
+           addconstraintstudentsmaxbuildingchangesperdayform.h \
+           constraintstudentsmaxbuildingchangesperdayform.h \
+           modifyconstraintstudentsmaxbuildingchangesperdayform.h \
+           addconstraintstudentssetmaxbuildingchangesperweekform.h \
+           constraintstudentssetmaxbuildingchangesperweekform.h \
+           modifyconstraintstudentssetmaxbuildingchangesperweekform.h \
+           addconstraintstudentsmaxbuildingchangesperweekform.h \
+           constraintstudentsmaxbuildingchangesperweekform.h \
+           modifyconstraintstudentsmaxbuildingchangesperweekform.h \
+           addconstraintstudentssetmingapsbetweenbuildingchangesform.h \
+           constraintstudentssetmingapsbetweenbuildingchangesform.h \
+           modifyconstraintstudentssetmingapsbetweenbuildingchangesform.h \
+           addconstraintstudentsmingapsbetweenbuildingchangesform.h \
+           constraintstudentsmingapsbetweenbuildingchangesform.h \
+           modifyconstraintstudentsmingapsbetweenbuildingchangesform.h \
+\
+           addconstraintteachermaxbuildingchangesperdayform.h \
+           constraintteachermaxbuildingchangesperdayform.h \
+           modifyconstraintteachermaxbuildingchangesperdayform.h \
+           addconstraintteachersmaxbuildingchangesperdayform.h \
+           constraintteachersmaxbuildingchangesperdayform.h \
+           modifyconstraintteachersmaxbuildingchangesperdayform.h \
+           addconstraintteachermaxbuildingchangesperweekform.h \
+           constraintteachermaxbuildingchangesperweekform.h \
+           modifyconstraintteachermaxbuildingchangesperweekform.h \
+           addconstraintteachersmaxbuildingchangesperweekform.h \
+           constraintteachersmaxbuildingchangesperweekform.h \
+           modifyconstraintteachersmaxbuildingchangesperweekform.h \
+           addconstraintteachermingapsbetweenbuildingchangesform.h \
+           constraintteachermingapsbetweenbuildingchangesform.h \
+           modifyconstraintteachermingapsbetweenbuildingchangesform.h \
+           addconstraintteachersmingapsbetweenbuildingchangesform.h \
+           constraintteachersmingapsbetweenbuildingchangesform.h \
+           modifyconstraintteachersmingapsbetweenbuildingchangesform.h \
+\
+           addconstraintteacherhomeroomform.h \
+           constraintteacherhomeroomform.h \
+           modifyconstraintteacherhomeroomform.h \
+           addconstraintteacherhomeroomsform.h \
+           constraintteacherhomeroomsform.h \
+           modifyconstraintteacherhomeroomsform.h \
            addconstraintactivitypreferredroomsform.h \
            constraintactivitypreferredroomsform.h \
            modifyconstraintactivitypreferredroomsform.h \
@@ -210,7 +330,7 @@ HEADERS += fet.h \
            groupsform.h \
            subgroupsform.h \
            subjectsform.h \
-           subjecttagsform.h \
+           activitytagsform.h \
            teachersform.h \
            timetablegenerateform.h \
            timetablegeneratemultipleform.h \
@@ -234,32 +354,40 @@ HEADERS += fet.h \
            ../engine/studentsset.h \
            ../engine/teacher.h \
            ../engine/subject.h \
-           ../engine/subjecttag.h \
+           ../engine/activitytag.h \
            ../engine/room.h \
+           ../engine/building.h \
 		   ../engine/generate.h \
 		   ../engine/timetableexport.h \
            roomsform.h \
+           buildingsform.h \
            constraintactivitiespreferredtimesform.h \
            addconstraintactivitiespreferredtimesform.h \
            constraintactivitiessamestartingtimeform.h \
            addconstraintactivitiessamestartingtimeform.h \
+\
            constraintactivitiessamestartinghourform.h \
            addconstraintactivitiessamestartinghourform.h \
-		   constraintteachernotavailableform.h \
-		   addconstraintteachernotavailableform.h \
-		   modifyconstraintteachernotavailableform.h \
+\
+           constraintactivitiessamestartingdayform.h \
+           addconstraintactivitiessamestartingdayform.h \
+           modifyconstraintactivitiessamestartingdayform.h \
+\
+		   constraintteachernotavailabletimesform.h \
+		   addconstraintteachernotavailabletimesform.h \
+		   modifyconstraintteachernotavailabletimesform.h \
 		   constraintbasiccompulsorytimeform.h \
 		   addconstraintbasiccompulsorytimeform.h \
 		   modifyconstraintbasiccompulsorytimeform.h \
 		   constraintbasiccompulsoryspaceform.h \
 		   addconstraintbasiccompulsoryspaceform.h \
 		   modifyconstraintbasiccompulsoryspaceform.h \
-		   constraintstudentssetnotavailableform.h \
-		   addconstraintstudentssetnotavailableform.h \
-		   modifyconstraintstudentssetnotavailableform.h \
-		   constraintbreakform.h \
-		   addconstraintbreakform.h \
-		   modifyconstraintbreakform.h \
+		   constraintstudentssetnotavailabletimesform.h \
+		   addconstraintstudentssetnotavailabletimesform.h \
+		   modifyconstraintstudentssetnotavailabletimesform.h \
+		   constraintbreaktimesform.h \
+		   addconstraintbreaktimesform.h \
+		   modifyconstraintbreaktimesform.h \
 		   constraintteachermaxdaysperweekform.h \
 		   addconstraintteachermaxdaysperweekform.h \
 		   modifyconstraintteachermaxdaysperweekform.h \
@@ -281,24 +409,30 @@ HEADERS += fet.h \
 		   constraintactivityendsstudentsdayform.h \
 		   addconstraintactivityendsstudentsdayform.h \
 		   modifyconstraintactivityendsstudentsdayform.h \
-		   constraintstudentssetnogapsform.h \
-		   addconstraintstudentssetnogapsform.h \
-		   modifyconstraintstudentssetnogapsform.h \
-		   constraintstudentsnogapsform.h \
-		   addconstraintstudentsnogapsform.h \
-		   modifyconstraintstudentsnogapsform.h \
+		   constraintstudentssetmaxgapsperweekform.h \
+		   addconstraintstudentssetmaxgapsperweekform.h \
+		   modifyconstraintstudentssetmaxgapsperweekform.h \
+		   constraintstudentsmaxgapsperweekform.h \
+		   addconstraintstudentsmaxgapsperweekform.h \
+		   modifyconstraintstudentsmaxgapsperweekform.h \
 		   constraintteachersmaxgapsperweekform.h \
 		   addconstraintteachersmaxgapsperweekform.h \
 		   modifyconstraintteachersmaxgapsperweekform.h \
 		   constraintteachermaxgapsperweekform.h \
 		   addconstraintteachermaxgapsperweekform.h \
 		   modifyconstraintteachermaxgapsperweekform.h \
-		   constraintstudentsearlyform.h \
-		   addconstraintstudentsearlyform.h \
-		   modifyconstraintstudentsearlyform.h \
-		   constraintstudentssetearlyform.h \
-		   addconstraintstudentssetearlyform.h \
-		   modifyconstraintstudentssetearlyform.h \
+		   constraintteachersmaxgapsperdayform.h \
+		   addconstraintteachersmaxgapsperdayform.h \
+		   modifyconstraintteachersmaxgapsperdayform.h \
+		   constraintteachermaxgapsperdayform.h \
+		   addconstraintteachermaxgapsperdayform.h \
+		   modifyconstraintteachermaxgapsperdayform.h \
+		   constraintstudentsearlymaxbeginningsatsecondhourform.h \
+		   addconstraintstudentsearlymaxbeginningsatsecondhourform.h \
+		   modifyconstraintstudentsearlymaxbeginningsatsecondhourform.h \
+		   constraintstudentssetearlymaxbeginningsatsecondhourform.h \
+		   addconstraintstudentssetearlymaxbeginningsatsecondhourform.h \
+		   modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.h \
 		   constraintstudentssetmaxhoursdailyform.h \
 		   addconstraintstudentssetmaxhoursdailyform.h \
 		   modifyconstraintstudentssetmaxhoursdailyform.h \
@@ -361,6 +495,8 @@ FORMS3 += helpfaqform_template.ui \
          modifyactivityform_template.ui \
          addroomform_template.ui \
          modifyroomform_template.ui \
+         addbuildingform_template.ui \
+         modifybuildingform_template.ui \
          addstudentsyearform_template.ui \
          modifystudentsyearform_template.ui \
          addstudentsgroupform_template.ui \
@@ -369,24 +505,75 @@ FORMS3 += helpfaqform_template.ui \
          modifystudentssubgroupform_template.ui \
          addconstraintactivitypreferredtimesform_template.ui \
          modifyconstraintactivitypreferredtimesform_template.ui \
-         addconstraintroomnotavailableform_template.ui \
-         constraintroomnotavailableform_template.ui \
-         modifyconstraintroomnotavailableform_template.ui \
+         addconstraintroomnotavailabletimesform_template.ui \
+         constraintroomnotavailabletimesform_template.ui \
+         modifyconstraintroomnotavailabletimesform_template.ui \
          addconstraintactivitypreferredroomform_template.ui \
          constraintactivitypreferredroomform_template.ui \
          modifyconstraintactivitypreferredroomform_template.ui \
          addconstraintsubjectpreferredroomform_template.ui \
          constraintsubjectpreferredroomform_template.ui \
          modifyconstraintsubjectpreferredroomform_template.ui \
+		 addconstraintsubjectactivitytagpreferredroomform_template.ui \
+         constraintsubjectactivitytagpreferredroomform_template.ui \
+         modifyconstraintsubjectactivitytagpreferredroomform_template.ui \
          addconstraintsubjectpreferredroomsform_template.ui \
          constraintsubjectpreferredroomsform_template.ui \
          modifyconstraintsubjectpreferredroomsform_template.ui \
-         addconstraintsubjectsubjecttagpreferredroomform_template.ui \
-         constraintsubjectsubjecttagpreferredroomform_template.ui \
-         modifyconstraintsubjectsubjecttagpreferredroomform_template.ui \
-         addconstraintsubjectsubjecttagpreferredroomsform_template.ui \
-         constraintsubjectsubjecttagpreferredroomsform_template.ui \
-         modifyconstraintsubjectsubjecttagpreferredroomsform_template.ui \
+		 addconstraintsubjectactivitytagpreferredroomsform_template.ui \
+         constraintsubjectactivitytagpreferredroomsform_template.ui \
+         modifyconstraintsubjectactivitytagpreferredroomsform_template.ui \
+         addconstraintstudentssethomeroomform_template.ui \
+         constraintstudentssethomeroomform_template.ui \
+         modifyconstraintstudentssethomeroomform_template.ui \
+         addconstraintstudentssethomeroomsform_template.ui \
+         constraintstudentssethomeroomsform_template.ui \
+         modifyconstraintstudentssethomeroomsform_template.ui \
+\
+           addconstraintstudentssetmaxbuildingchangesperdayform_template.ui \
+           constraintstudentssetmaxbuildingchangesperdayform_template.ui \
+           modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui \
+           addconstraintstudentsmaxbuildingchangesperdayform_template.ui \
+           constraintstudentsmaxbuildingchangesperdayform_template.ui \
+           modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui \
+           addconstraintstudentssetmaxbuildingchangesperweekform_template.ui \
+           constraintstudentssetmaxbuildingchangesperweekform_template.ui \
+           modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui \
+           addconstraintstudentsmaxbuildingchangesperweekform_template.ui \
+           constraintstudentsmaxbuildingchangesperweekform_template.ui \
+           modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui \
+           addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui \
+           constraintstudentssetmingapsbetweenbuildingchangesform_template.ui \
+           modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui \
+           addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui \
+           constraintstudentsmingapsbetweenbuildingchangesform_template.ui \
+           modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui \
+\
+           addconstraintteachermaxbuildingchangesperdayform_template.ui \
+           constraintteachermaxbuildingchangesperdayform_template.ui \
+           modifyconstraintteachermaxbuildingchangesperdayform_template.ui \
+           addconstraintteachersmaxbuildingchangesperdayform_template.ui \
+           constraintteachersmaxbuildingchangesperdayform_template.ui \
+           modifyconstraintteachersmaxbuildingchangesperdayform_template.ui \
+           addconstraintteachermaxbuildingchangesperweekform_template.ui \
+           constraintteachermaxbuildingchangesperweekform_template.ui \
+           modifyconstraintteachermaxbuildingchangesperweekform_template.ui \
+           addconstraintteachersmaxbuildingchangesperweekform_template.ui \
+           constraintteachersmaxbuildingchangesperweekform_template.ui \
+           modifyconstraintteachersmaxbuildingchangesperweekform_template.ui \
+           addconstraintteachermingapsbetweenbuildingchangesform_template.ui \
+           constraintteachermingapsbetweenbuildingchangesform_template.ui \
+           modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui \
+           addconstraintteachersmingapsbetweenbuildingchangesform_template.ui \
+           constraintteachersmingapsbetweenbuildingchangesform_template.ui \
+           modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui \
+\
+         addconstraintteacherhomeroomform_template.ui \
+         constraintteacherhomeroomform_template.ui \
+         modifyconstraintteacherhomeroomform_template.ui \
+         addconstraintteacherhomeroomsform_template.ui \
+         constraintteacherhomeroomsform_template.ui \
+         modifyconstraintteacherhomeroomsform_template.ui \
          addconstraintactivitypreferredroomsform_template.ui \
          constraintactivitypreferredroomsform_template.ui \
          modifyconstraintactivitypreferredroomsform_template.ui \
@@ -395,7 +582,7 @@ FORMS3 += helpfaqform_template.ui \
          groupsform_template.ui \
          subgroupsform_template.ui \
          subjectsform_template.ui \
-         subjecttagsform_template.ui \
+         activitytagsform_template.ui \
          teachersform_template.ui \
          timetablegenerateform_template.ui \
          timetablegeneratemultipleform_template.ui \
@@ -407,27 +594,34 @@ FORMS3 += helpfaqform_template.ui \
          daysform_template.ui \
          hoursform_template.ui \
          roomsform_template.ui \
+         buildingsform_template.ui \
          constraintactivitiespreferredtimesform_template.ui \
          addconstraintactivitiespreferredtimesform_template.ui \
          constraintactivitiessamestartingtimeform_template.ui \
          addconstraintactivitiessamestartingtimeform_template.ui \
+\
          constraintactivitiessamestartinghourform_template.ui \
          addconstraintactivitiessamestartinghourform_template.ui \
-		 constraintteachernotavailableform_template.ui \
-		 addconstraintteachernotavailableform_template.ui \
-		 modifyconstraintteachernotavailableform_template.ui \
+\
+         constraintactivitiessamestartingdayform_template.ui \
+         addconstraintactivitiessamestartingdayform_template.ui \
+         modifyconstraintactivitiessamestartingdayform_template.ui \
+\
+		 constraintteachernotavailabletimesform_template.ui \
+		 addconstraintteachernotavailabletimesform_template.ui \
+		 modifyconstraintteachernotavailabletimesform_template.ui \
 		   constraintbasiccompulsorytimeform_template.ui \
 		   addconstraintbasiccompulsorytimeform_template.ui \
 		   modifyconstraintbasiccompulsorytimeform_template.ui \
 		   constraintbasiccompulsoryspaceform_template.ui \
 		   addconstraintbasiccompulsoryspaceform_template.ui \
 		   modifyconstraintbasiccompulsoryspaceform_template.ui \
-		   constraintstudentssetnotavailableform_template.ui \
-		   addconstraintstudentssetnotavailableform_template.ui \
-		   modifyconstraintstudentssetnotavailableform_template.ui \
-		   constraintbreakform_template.ui \
-		   addconstraintbreakform_template.ui \
-		   modifyconstraintbreakform_template.ui \
+		   constraintstudentssetnotavailabletimesform_template.ui \
+		   addconstraintstudentssetnotavailabletimesform_template.ui \
+		   modifyconstraintstudentssetnotavailabletimesform_template.ui \
+		   constraintbreaktimesform_template.ui \
+		   addconstraintbreaktimesform_template.ui \
+		   modifyconstraintbreaktimesform_template.ui \
 		   constraintteachermaxdaysperweekform_template.ui \
 		   addconstraintteachermaxdaysperweekform_template.ui \
 		   modifyconstraintteachermaxdaysperweekform_template.ui \
@@ -449,24 +643,30 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintactivityendsstudentsdayform_template.ui \
 		   addconstraintactivityendsstudentsdayform_template.ui \
 		   modifyconstraintactivityendsstudentsdayform_template.ui \
-		   constraintstudentssetnogapsform_template.ui \
-		   addconstraintstudentssetnogapsform_template.ui \
-		   modifyconstraintstudentssetnogapsform_template.ui \
-		   constraintstudentsnogapsform_template.ui \
-		   addconstraintstudentsnogapsform_template.ui \
-		   modifyconstraintstudentsnogapsform_template.ui \
+		   constraintstudentssetmaxgapsperweekform_template.ui \
+		   addconstraintstudentssetmaxgapsperweekform_template.ui \
+		   modifyconstraintstudentssetmaxgapsperweekform_template.ui \
+		   constraintstudentsmaxgapsperweekform_template.ui \
+		   addconstraintstudentsmaxgapsperweekform_template.ui \
+		   modifyconstraintstudentsmaxgapsperweekform_template.ui \
 		   constraintteachersmaxgapsperweekform_template.ui \
 		   addconstraintteachersmaxgapsperweekform_template.ui \
 		   modifyconstraintteachersmaxgapsperweekform_template.ui \
 		   constraintteachermaxgapsperweekform_template.ui \
 		   addconstraintteachermaxgapsperweekform_template.ui \
 		   modifyconstraintteachermaxgapsperweekform_template.ui \
-		   constraintstudentsearlyform_template.ui \
-		   addconstraintstudentsearlyform_template.ui \
-		   modifyconstraintstudentsearlyform_template.ui \
-		   constraintstudentssetearlyform_template.ui \
-		   addconstraintstudentssetearlyform_template.ui \
-		   modifyconstraintstudentssetearlyform_template.ui \
+		   constraintteachersmaxgapsperdayform_template.ui \
+		   addconstraintteachersmaxgapsperdayform_template.ui \
+		   modifyconstraintteachersmaxgapsperdayform_template.ui \
+		   constraintteachermaxgapsperdayform_template.ui \
+		   addconstraintteachermaxgapsperdayform_template.ui \
+		   modifyconstraintteachermaxgapsperdayform_template.ui \
+		   constraintstudentsearlymaxbeginningsatsecondhourform_template.ui \
+		   addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui \
+		   modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui \
+		   constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui \
+		   addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui \
+		   modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui \
 		   constraintstudentssetmaxhoursdailyform_template.ui \
 		   addconstraintstudentssetmaxhoursdailyform_template.ui \
 		   modifyconstraintstudentssetmaxhoursdailyform_template.ui \

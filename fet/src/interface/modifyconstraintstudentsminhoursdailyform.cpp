@@ -40,7 +40,7 @@ ModifyConstraintStudentsMinHoursDailyForm::ModifyConstraintStudentsMinHoursDaily
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
-	minHoursSpinBox->setMinValue(0);
+	minHoursSpinBox->setMinValue(2);
 	minHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	minHoursSpinBox->setValue(ctr->minHoursDaily);
 }

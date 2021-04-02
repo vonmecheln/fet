@@ -156,15 +156,15 @@
                         </property>
                         <widget class="QLabel">
                             <property name="name">
-                                <cstring>subjectTagsTextLabel</cstring>
+                                <cstring>activityTagsTextLabel</cstring>
                             </property>
                             <property name="text">
-                                <string>Subject tag</string>
+                                <string>Activity tag</string>
                             </property>
                         </widget>
                         <widget class="QComboBox">
                             <property name="name">
-                                <cstring>subjectTagsComboBox</cstring>
+                                <cstring>activityTagsComboBox</cstring>
                             </property>
                             <property name="editable">
                                 <bool>false</bool>
@@ -1154,10 +1154,10 @@ consecutive?</string>
         <slot>clearTeachers()</slot>
     </connection>
     <connection>
-        <sender>subjectTagsComboBox</sender>
+        <sender>activityTagsComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
         <receiver>AddActivityForm_template</receiver>
-        <slot>subjectTagChanged(const QString&amp;)</slot>
+        <slot>activityTagChanged(const QString&amp;)</slot>
     </connection>
     <connection>
         <sender>subgroupsCheckBox</sender>
@@ -1291,7 +1291,7 @@ consecutive?</string>
     <tabstop>selectedTeachersListBox</tabstop>
     <tabstop>clearTeacherPushButton</tabstop>
     <tabstop>subjectsComboBox</tabstop>
-    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>allStudentsListBox</tabstop>
     <tabstop>selectedStudentsListBox</tabstop>
     <tabstop>clearStudentsPushButton</tabstop>
@@ -1331,7 +1331,7 @@ consecutive?</string>
     <slot>showYearsChanged()</slot>
     <slot>showGroupsChanged()</slot>
     <slot>showSubgroupsChanged()</slot>
-    <slot>subjectTagChanged(const QString&amp;)</slot>
+    <slot>activityTagChanged(const QString&amp;)</slot>
     <slot>addTeacher()</slot>
     <slot>removeTeacher()</slot>
     <slot>addStudents()</slot>

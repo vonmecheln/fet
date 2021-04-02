@@ -44,7 +44,7 @@ public:
 	void updateTeachersComboBox();
 	void updateStudentsComboBox();
 	void updateSubjectsComboBox();
-	void updateSubjectTagsComboBox();
+	void updateActivityTagsComboBox();
 
 	void addConstraint();
 	

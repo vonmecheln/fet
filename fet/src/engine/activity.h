@@ -72,9 +72,9 @@ public:
 	QString subjectName;
 
 	/**
-	The name of the subject tag.
+	The name of the activity tag.
 	*/
-	QString subjectTagName;
+	QString activityTagName;
 
 	/**
 	The names of the sets of students involved in this activity (years, groups or subgroups).
@@ -156,9 +156,9 @@ public:
 	int subjectIndex;
 
 	/**
-	The index of the subject tag.
+	The index of the activity tag.
 	*/
-	int subjectTagIndex;
+	int activityTagIndex;
 
 	/**
 	The number of subgroups implied in this activity.
@@ -192,7 +192,7 @@ public:
 		int _activityGroupId,
 		const QStringList& _teachersNames,
 		const QString& _subjectName,
-		const QString& _subjectTagName,
+		const QString& _activityTagName,
 		const QStringList& _studentsNames,
 		int _duration,
 		int _totalDuration,

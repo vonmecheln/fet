@@ -42,25 +42,27 @@ bool Room::searchEquipment(const QString& equipmentName)
 
 void Room::computeInternalStructure(Rules& r)
 {
-	if(&r!=NULL)
-		;
+	if(building=="")
+		buildingIndex=-1;
+	else{
+		buildingIndex=r.searchBuilding(building);
+		assert(buildingIndex>=0 && buildingIndex<r.nInternalBuildings);
+	}
 }
 
 QString Room::getDescription()
 {
-	QString s=QObject::tr("N:");
-	s+=this->name;
+	QString s=QObject::tr("N:%1", "Name").arg(this->name);
 	s+=",";
-	/*if(this->building!=""){
-		s+=QObject::tr("B:");
-		s+=this->building;
+	
+	if(this->building!=""){
+		s+=QObject::tr("B:%1", "Building").arg(this->building);
 		s+=",";
 	}
-	s+=QObject::tr("T:");
+	/*s+=QObject::tr("T:");
 	s+=this->type;
 	s+=",";*/
-	s+=QObject::tr("C:");
-	s+=QString::number(this->capacity);
+	s+=QObject::tr("C:%1", "Capacity").arg(QString::number(this->capacity));
 	//s+=",";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
@@ -71,19 +73,17 @@ QString Room::getDescription()
 
 QString Room::getDetailedDescription()
 {
-	QString s=QObject::tr("Name=");
-	s+=this->name;
+	QString s=QObject::tr("Name=%1").arg(this->name);
 	s+="\n";
-	/*if(this->building!=""){
-		s+=QObject::tr("Building=");
-		s+=this->building;
+
+	if(this->building!=""){
+		s+=QObject::tr("Building=%1").arg(this->building);
 		s+="\n";
 	}
-	s+=QObject::tr("Type=");
+	/*s+=QObject::tr("Type=");
 	s+=this->type;
 	s+="\n";*/
-	s+=QObject::tr("Capacity=");
-	s+=QString::number(this->capacity);
+	s+=QObject::tr("Capacity=%1").arg(QString::number(this->capacity));
 	s+="\n";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
@@ -96,7 +96,7 @@ QString Room::getXmlDescription()
 {
 	QString s="<Room>\n";
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
-	//s+="	<Building>"+protect(this->building)+"</Building>\n";
+	s+="	<Building>"+protect(this->building)+"</Building>\n";
 	//s+="	<Type>"+protect(this->type)+"</Type>\n";
 	s+="	<Capacity>"+QString::number(this->capacity)+"</Capacity>\n";
 	

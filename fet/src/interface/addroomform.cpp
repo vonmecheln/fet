@@ -45,12 +45,12 @@ AddRoomForm::AddRoomForm()
 				break;
 		if(i==typesComboBox->count())
 			typesComboBox->insertItem(rm->type);
-	}
+	}*/
 
 	buildingsComboBox->clear();
 	buildingsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.buildingsList.size(); i++)
-		buildingsComboBox->insertItem(gt.rules.buildingsList.at(i)->name);*/
+		buildingsComboBox->insertItem(gt.rules.buildingsList.at(i)->name);
 		
 	capacitySpinBox->setMinValue(1);
 	capacitySpinBox->setMaxValue(MAX_ROOM_CAPACITY);
@@ -70,15 +70,15 @@ void AddRoomForm::addRoom()
 	/*if(typesComboBox->currentText().isEmpty()){
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect type"));
 		return;
-	}
+	}*/
 	if(buildingsComboBox->currentItem()<0){
 		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Incorrect building"));
 		return;
-	}*/
+	}
 	Room* rm=new Room();
 	rm->name=nameLineEdit->text();
 	//rm->type=typesComboBox->currentText();
-	//rm->building=buildingsComboBox->currentText();
+	rm->building=buildingsComboBox->currentText();
 	rm->capacity=capacitySpinBox->value();
 	if(!gt.rules.addRoom(rm)){
 		QMessageBox::information(this, QObject::tr("Room insertion dialog"),

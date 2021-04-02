@@ -89,19 +89,6 @@ const int MAX_TOTAL_SUBGROUPS=15000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUP
 
 const int MAX_ROOM_CAPACITY=15000;
 
-/**
-This constant represents the maximum number of total allowed subgroups
-for any activity.
-*/
-//const int MAX_SUBGROUPS_PER_ACTIVITY=400;//MAX_SUBGROUPS_PER_GROUP * MAX_GROUPS_PER_YEAR;
-
-/**
-This constant represents the maximum number of teachers
-for any activity.
-*/
-//const int MAX_TEACHERS_PER_ACTIVITY = 100;
-
-//const int MAX_SUBGROUPS_PER_CONSTRAINT=400;//MAX_SUBGROUPS_PER_GROUP * MAX_GROUPS_PER_YEAR;
 
 /**
 The maximum number of different teachers
@@ -121,7 +108,12 @@ const int MAX_ACTIVITIES=5000;
 /**
 The maximum number of rooms
 */
-const int MAX_ROOMS=300;
+const int MAX_ROOMS=1000;
+
+/**
+The maximum number of buildings
+*/
+const int MAX_BUILDINGS=100;
 
 /**
 This constant represents an unallocated activity
@@ -131,7 +123,7 @@ const qint16 UNALLOCATED_ACTIVITY = MAX_ACTIVITIES;
 /**
 The maximum number of working hours per day.
 */
-const int MAX_HOURS_PER_DAY=30;
+const int MAX_HOURS_PER_DAY=60;
 
 /**
 The maximum number of working days per week.
@@ -186,13 +178,13 @@ const int MAX_SPACE_CONSTRAINTS = 10000;
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES = 120;
+const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES = MAX_HOURS_PER_WEEK;
 
 /**
 The maximum number of preferred times that can be considered
 in this kind of constraint
 */
-const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES = 120;
+const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES = MAX_HOURS_PER_WEEK;
 
 /**
 The maximum number of activities that can be put in
@@ -201,21 +193,28 @@ I guess this variable must disappear and the
 restriction modified to allocate dynamically the
 necessary memory.
 */
-const int MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES = 20;
+const int MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES = 100;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameStartingTime
 */
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME=50;
+const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME=100;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameStartingHour
 */
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR=50;
+const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR=100;
+
+/**
+The maximum number of activities for a single
+constraint of type
+ConstraintActivitiesSameStartingHour
+*/
+const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY=100;
 
 /**
 The maximum number of activities for a single
@@ -223,44 +222,6 @@ constraint of type
 ConstraintActivitiesNotOverlapping
 */
 const int MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING=100;
-
-/**
-The maximum number of rooms for a single
-constraint of type
-ConstraintActivityPreferredRooms
-*/
-const int MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS=50;
-
-/**
-The maximum number of rooms for a single
-constraint of type
-ConstraintSubjectPreferredRooms
-*/
-const int MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS=50;
-
-/**
-The maximum number of rooms for a single
-constraint of type
-ConstraintSubjectSubjectTagPreferredRooms
-*/
-const int MAX_CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS=50;
-
-/**
-The maximum number of activities for a single
-constraint of type
-ConstraintActivitiesSameRoom
-*/
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_ROOM=20;
-
-/**
-The maximum number of activities which share the same subject name.
-*/
-const int MAX_ACTIVITIES_FOR_A_SUBJECT=500;
-
-/**
-The maximum number of activities which share the same subject+subject tag name.
-*/
-const int MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG=500;
 
 
 /**
@@ -558,6 +519,7 @@ An output file containing the timetable for free periods of teachers, arranged i
 Days vertical version.
 */
 const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teachers_free_periods_timetable_days_vertical.html";
+
 
 //functions below are used in iCal exporting functions
 bool isLeapYear(int year);

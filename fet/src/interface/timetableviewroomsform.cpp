@@ -116,7 +116,7 @@ void TimetableViewRoomsForm::updateRoomsTimetableTable(){
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=NULL);
-				s += act->subjectName + " " + act->subjectTagName;
+				s += act->subjectName + " " + act->activityTagName;
 			}
 			roomsTimetableTable->setText(j, k, s);
 		}

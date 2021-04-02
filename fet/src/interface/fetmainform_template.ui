@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>507</width>
-    <height>254</height>
+    <height>264</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -73,77 +73,136 @@
     <property name="title" >
      <string>&amp;Data</string>
     </property>
-    <widget class="QMenu" name="PopupMenuEditor_63" >
-     <property name="enabled" >
-      <bool>true</bool>
-     </property>
+    <widget class="QMenu" name="menuTime_constraints" >
      <property name="title" >
-      <string>Space constraints (misc)</string>
+      <string>Time constraints</string>
      </property>
-     <addaction name="dataSpaceConstraintsBasicCompulsorySpaceAction" />
-     <addaction name="dataSpaceConstraintsSubjectPreferredRoomAction" />
-     <addaction name="dataSpaceConstraintsSubjectPreferredRoomsAction" />
-     <addaction name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction" />
-     <addaction name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" />
-     <addaction name="dataSpaceConstraintsActivityPreferredRoomAction" />
-     <addaction name="dataSpaceConstraintsActivityPreferredRoomsAction" />
+     <widget class="QMenu" name="menuMisc" >
+      <property name="title" >
+       <string>Misc time constraints</string>
+      </property>
+      <addaction name="dataTimeConstraintsBasicCompulsoryTimeAction" />
+      <addaction name="dataTimeConstraintsBreakTimesAction" />
+     </widget>
+     <widget class="QMenu" name="menuTeachers" >
+      <property name="title" >
+       <string>Teachers time constraints</string>
+      </property>
+      <addaction name="dataTimeConstraintsTeacherNotAvailableTimesAction" />
+      <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
+      <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
+      <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
+      <addaction name="dataTimeConstraintsTeacherMaxGapsPerDayAction" />
+      <addaction name="dataTimeConstraintsTeachersMaxGapsPerDayAction" />
+      <addaction name="dataTimeConstraintsTeacherMaxHoursDailyAction" />
+      <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
+      <addaction name="dataTimeConstraintsTeacherMinHoursDailyAction" />
+      <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction" />
+     </widget>
+     <widget class="QMenu" name="menuStudents_time_constraints" >
+      <property name="title" >
+       <string>Students time constraints</string>
+      </property>
+      <addaction name="dataTimeConstraintsStudentsSetNotAvailableTimesAction" />
+      <addaction name="dataTimeConstraintsStudentsSetMaxGapsPerWeekAction" />
+      <addaction name="dataTimeConstraintsStudentsMaxGapsPerWeekAction" />
+      <addaction name="dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction" />
+      <addaction name="dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction" />
+      <addaction name="dataTimeConstraintsStudentsSetMaxHoursDailyAction" />
+      <addaction name="dataTimeConstraintsStudentsMaxHoursDailyAction" />
+      <addaction name="dataTimeConstraintsStudentsSetMinHoursDailyAction" />
+      <addaction name="dataTimeConstraintsStudentsMinHoursDailyAction" />
+     </widget>
+     <widget class="QMenu" name="menuActivities_time_constraints" >
+      <property name="title" >
+       <string>Activities time constraints</string>
+      </property>
+      <addaction name="dataTimeConstraintsActivityPreferredTimeAction" />
+      <addaction name="dataTimeConstraintsActivityPreferredTimesAction" />
+      <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
+      <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
+      <addaction name="dataTimeConstraintsActivityEndsStudentsDayAction" />
+      <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
+      <addaction name="dataTimeConstraintsActivitiesSameStartingDayAction" />
+      <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
+      <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
+      <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
+     </widget>
+     <addaction name="menuMisc" />
+     <addaction name="menuTeachers" />
+     <addaction name="menuStudents_time_constraints" />
+     <addaction name="menuActivities_time_constraints" />
     </widget>
-    <widget class="QMenu" name="PopupMenuEditor_83" >
-     <property name="enabled" >
-      <bool>true</bool>
-     </property>
+    <widget class="QMenu" name="menuSpace_constraints" >
      <property name="title" >
-      <string>Space constraints (rooms)</string>
+      <string>Space constraints</string>
      </property>
-     <addaction name="dataSpaceConstraintsRoomNotAvailableAction" />
-    </widget>
-    <widget class="QMenu" name="PopupMenuEditor_29" >
-     <property name="title" >
-      <string>Time constraints (misc)</string>
-     </property>
-     <addaction name="dataTimeConstraintsBasicCompulsoryTimeAction" />
-     <addaction name="dataTimeConstraintsBreakAction" />
-    </widget>
-    <widget class="QMenu" name="PopupMenuEditor_41" >
-     <property name="title" >
-      <string>Time constraints (students)</string>
-     </property>
-     <addaction name="dataTimeConstraintsStudentsSetNotAvailableAction" />
-     <addaction name="dataTimeConstraintsStudentsSetNoGapsAction" />
-     <addaction name="dataTimeConstraintsStudentsNoGapsAction" />
-     <addaction name="dataTimeConstraintsStudentsSetEarlyAction" />
-     <addaction name="dataTimeConstraintsStudentsEarlyAction" />
-     <addaction name="dataTimeConstraintsStudentsSetMaxHoursDailyAction" />
-     <addaction name="dataTimeConstraintsStudentsMaxHoursDailyAction" />
-     <addaction name="dataTimeConstraintsStudentsSetMinHoursDailyAction" />
-     <addaction name="dataTimeConstraintsStudentsMinHoursDailyAction" />
-    </widget>
-    <widget class="QMenu" name="PopupMenuEditor_49" >
-     <property name="title" >
-      <string>Time constraints (activities)</string>
-     </property>
-     <addaction name="dataTimeConstraintsActivityPreferredTimeAction" />
-     <addaction name="dataTimeConstraintsActivityPreferredTimesAction" />
-     <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
-     <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
-     <addaction name="dataTimeConstraintsActivityEndsStudentsDayAction" />
-     <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
-     <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
-     <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
-     <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
-    </widget>
-    <widget class="QMenu" name="PopupMenuEditor_35" >
-     <property name="title" >
-      <string>Time constraints (teachers)</string>
-     </property>
-     <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
-     <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
-     <addaction name="dataTimeConstraintsTeacherMaxGapsPerWeekAction" />
-     <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
-     <addaction name="dataTimeConstraintsTeacherMaxHoursDailyAction" />
-     <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
-     <addaction name="dataTimeConstraintsTeacherMinHoursDailyAction" />
-     <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction" />
+     <widget class="QMenu" name="menuMisc_space_constraints" >
+      <property name="title" >
+       <string>Misc space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsBasicCompulsorySpaceAction" />
+     </widget>
+     <widget class="QMenu" name="menuRooms_space_constraints" >
+      <property name="title" >
+       <string>Rooms space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsRoomNotAvailableTimesAction" />
+     </widget>
+     <widget class="QMenu" name="menuActivities_space_constraints" >
+      <property name="title" >
+       <string>Activities space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsActivityPreferredRoomAction" />
+      <addaction name="dataSpaceConstraintsActivityPreferredRoomsAction" />
+     </widget>
+     <widget class="QMenu" name="menuSubjects_space_constraints" >
+      <property name="title" >
+       <string>Subjects space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsSubjectPreferredRoomAction" />
+      <addaction name="dataSpaceConstraintsSubjectPreferredRoomsAction" />
+     </widget>
+     <widget class="QMenu" name="menuSubjects_and_activity_tags_space_constraints" >
+      <property name="title" >
+       <string>Subjects and activity tags space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsSubjectActivityTagPreferredRoomAction" />
+      <addaction name="dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction" />
+     </widget>
+     <widget class="QMenu" name="menuStudents_space_constraints" >
+      <property name="title" >
+       <string>Students space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsStudentsSetHomeRoomAction" />
+      <addaction name="dataSpaceConstraintsStudentsSetHomeRoomsAction" />
+      <addaction name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction" />
+      <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction" />
+      <addaction name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction" />
+      <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction" />
+      <addaction name="dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction" />
+      <addaction name="dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction" />
+     </widget>
+     <widget class="QMenu" name="menuTeachers_space_constraints" >
+      <property name="title" >
+       <string>Teachers space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsTeacherHomeRoomAction" />
+      <addaction name="dataSpaceConstraintsTeacherHomeRoomsAction" />
+      <addaction name="dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction" />
+      <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction" />
+      <addaction name="dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction" />
+      <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction" />
+      <addaction name="dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction" />
+      <addaction name="dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction" />
+     </widget>
+     <addaction name="menuMisc_space_constraints" />
+     <addaction name="menuRooms_space_constraints" />
+     <addaction name="menuTeachers_space_constraints" />
+     <addaction name="menuStudents_space_constraints" />
+     <addaction name="menuSubjects_space_constraints" />
+     <addaction name="menuSubjects_and_activity_tags_space_constraints" />
+     <addaction name="menuActivities_space_constraints" />
     </widget>
     <addaction name="dataInstitutionNameAction" />
     <addaction name="dataCommentsAction" />
@@ -151,10 +210,11 @@
     <addaction name="dataDaysAction" />
     <addaction name="dataHoursAction" />
     <addaction name="separator" />
-    <addaction name="dataTeachersAction" />
-    <addaction name="separator" />
     <addaction name="dataSubjectsAction" />
-    <addaction name="dataSubjectTagsAction" />
+    <addaction name="separator" />
+    <addaction name="dataActivityTagsAction" />
+    <addaction name="separator" />
+    <addaction name="dataTeachersAction" />
     <addaction name="separator" />
     <addaction name="dataYearsAction" />
     <addaction name="dataGroupsAction" />
@@ -162,17 +222,14 @@
     <addaction name="separator" />
     <addaction name="dataActivitiesAction" />
     <addaction name="separator" />
+    <addaction name="dataBuildingsAction" />
     <addaction name="dataRoomsAction" />
     <addaction name="separator" />
     <addaction name="dataAllTimeConstraintsAction" />
-    <addaction name="PopupMenuEditor_29" />
-    <addaction name="PopupMenuEditor_35" />
-    <addaction name="PopupMenuEditor_41" />
-    <addaction name="PopupMenuEditor_49" />
+    <addaction name="menuTime_constraints" />
     <addaction name="separator" />
     <addaction name="dataAllSpaceConstraintsAction" />
-    <addaction name="PopupMenuEditor_63" />
-    <addaction name="PopupMenuEditor_83" />
+    <addaction name="menuSpace_constraints" />
    </widget>
    <widget class="QMenu" name="menuSettings" >
     <property name="title" >
@@ -483,9 +540,9 @@
     <string>All time constraints</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsTeacherNotAvailableAction" >
+  <action name="dataTimeConstraintsTeacherNotAvailableTimesAction" >
    <property name="text" >
-    <string>A teacher is not available</string>
+    <string>A teacher's not available times</string>
    </property>
    <property name="iconText" >
     <string>A teacher is not available</string>
@@ -499,17 +556,17 @@
     <string>Basic compulsory time constraints</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsStudentsSetNotAvailableAction" >
+  <action name="dataTimeConstraintsStudentsSetNotAvailableTimesAction" >
    <property name="text" >
-    <string>A students set is not available</string>
+    <string>A students set's not available times</string>
    </property>
    <property name="iconText" >
     <string>A students set is not available</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsBreakAction" >
+  <action name="dataTimeConstraintsBreakTimesAction" >
    <property name="text" >
-    <string>Break (all teachers+all students not available)</string>
+    <string>Break times (all teachers+all students not available)</string>
    </property>
    <property name="iconText" >
     <string>Break (all teachers+all students not available)</string>
@@ -571,25 +628,25 @@
     <string>An activity has a preferred time</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsStudentsSetNoGapsAction" >
+  <action name="dataTimeConstraintsStudentsSetMaxGapsPerWeekAction" >
    <property name="text" >
-    <string>No gaps for a students set</string>
+    <string>Max gaps per week for a students set</string>
    </property>
    <property name="iconText" >
     <string>No gaps for a students set</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsStudentsNoGapsAction" >
+  <action name="dataTimeConstraintsStudentsMaxGapsPerWeekAction" >
    <property name="text" >
-    <string>No gaps for all students</string>
+    <string>Max gaps per week for all students</string>
    </property>
    <property name="iconText" >
     <string>No gaps for all students</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsStudentsEarlyAction" >
+  <action name="dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction" >
    <property name="text" >
-    <string>All students begin early</string>
+    <string>All students begin early (max beginnings at second hour)</string>
    </property>
    <property name="iconText" >
     <string>All students begin early</string>
@@ -654,9 +711,9 @@
     <string>Basic compulsory space constraints</string>
    </property>
   </action>
-  <action name="dataSpaceConstraintsRoomNotAvailableAction" >
+  <action name="dataSpaceConstraintsRoomNotAvailableTimesAction" >
    <property name="text" >
-    <string>A room is not available</string>
+    <string>A room's not available times</string>
    </property>
    <property name="iconText" >
     <string>A room is not available</string>
@@ -686,12 +743,12 @@
     <string>A set of activities has same starting hour (any days)</string>
    </property>
   </action>
-  <action name="dataSubjectTagsAction" >
+  <action name="dataActivityTagsAction" >
    <property name="text" >
-    <string>Su&amp;bject tags</string>
+    <string>Activity tags</string>
    </property>
    <property name="iconText" >
-    <string>Subject tags</string>
+    <string>Activity tags</string>
    </property>
   </action>
   <action name="dataInstitutionNameAction" >
@@ -740,17 +797,17 @@
     <string>ms (Malay)</string>
    </property>
   </action>
-  <action name="dataSpaceConstraintsSubjectPreferredRoomAction" >
+  <action name="dataSpaceConstraintsStudentsSetHomeRoomAction" >
    <property name="text" >
-    <string>A subject has a preferred room</string>
+    <string>A set of students has a home room</string>
    </property>
    <property name="iconText" >
     <string>A subject has a preferred room</string>
    </property>
   </action>
-  <action name="dataSpaceConstraintsSubjectPreferredRoomsAction" >
+  <action name="dataSpaceConstraintsStudentsSetHomeRoomsAction" >
    <property name="text" >
-    <string>A subject has a set of preferred rooms</string>
+    <string>A set of students has a set of home rooms</string>
    </property>
    <property name="iconText" >
     <string>A subject has a set of preferred rooms</string>
@@ -850,9 +907,9 @@
     <string>Max gaps per week for a teacher</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsStudentsSetEarlyAction" >
+  <action name="dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction" >
    <property name="text" >
-    <string>A students set begins early</string>
+    <string>A students set begins early (max beginnings at second hour)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeacherMaxHoursDailyAction" >
@@ -894,16 +951,6 @@
   <action name="dataTimeConstraintsStudentsSetMinHoursDailyAction" >
    <property name="text" >
     <string>Min hours daily for a students set</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction" >
-   <property name="text" >
-    <string>A subject+subject tag have a preferred room</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" >
-   <property name="text" >
-    <string>A subject+subject tag have a set of preferred rooms</string>
    </property>
   </action>
   <action name="timetableGenerateMultipleAction" >
@@ -992,6 +1039,121 @@
    </property>
    <property name="text" >
     <string>it (Italian)</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersMaxGapsPerDayAction" >
+   <property name="text" >
+    <string>Max gaps per day for all teachers</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherMaxGapsPerDayAction" >
+   <property name="text" >
+    <string>Max gaps per day for a teacher</string>
+   </property>
+  </action>
+  <action name="dataBuildingsAction" >
+   <property name="text" >
+    <string>Buildings</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectPreferredRoomAction" >
+   <property name="text" >
+    <string>A subject has a preferred room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectPreferredRoomsAction" >
+   <property name="text" >
+    <string>A subject has a set of preferred rooms</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectActivityTagPreferredRoomAction" >
+   <property name="text" >
+    <string>A subject+an activity tag have a preferred room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction" >
+   <property name="text" >
+    <string>A subject+an activity tag have a set of preferred rooms</string>
+   </property>
+  </action>
+  <action name="actionSpace_constraints_activitiies" >
+   <property name="text" >
+    <string>Space constraints (activities)</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherHomeRoomAction" >
+   <property name="text" >
+    <string>A teacher has a home room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherHomeRoomsAction" >
+   <property name="text" >
+    <string>A teacher has a set of home rooms</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction" >
+   <property name="text" >
+    <string>Max building changes per day for a students set</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction" >
+   <property name="text" >
+    <string>Max building changes per day for all students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction" >
+   <property name="text" >
+    <string>Max building changes per week for a students set</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction" >
+   <property name="text" >
+    <string>Max building changes per week for all students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction" >
+   <property name="text" >
+    <string>Min gaps between building changes for a students set</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction" >
+   <property name="text" >
+    <string>Min gaps between building changes for all students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction" >
+   <property name="text" >
+    <string>Max building changes per day for a teacher</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction" >
+   <property name="text" >
+    <string>Max building changes per day for all teachers</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction" >
+   <property name="text" >
+    <string>Max building changes per week for a teacher</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction" >
+   <property name="text" >
+    <string>Max building changes per week for all teachers</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction" >
+   <property name="text" >
+    <string>Min gaps between building changes for a teacher</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction" >
+   <property name="text" >
+    <string>Min gaps between building changes for all teachers</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesSameStartingDayAction" >
+   <property name="text" >
+    <string>A set of activities has same starting day (any hours)</string>
    </property>
   </action>
  </widget>

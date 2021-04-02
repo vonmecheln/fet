@@ -1,0 +1,266 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ActivityTagsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ActivityTagsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>704</width>
+            <height>537</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - activity tags</string>
+    </property>
+    <widget class="QListBox">
+        <item>
+            <property name="text">
+                <string>New Item</string>
+            </property>
+        </item>
+        <property name="name">
+            <cstring>activityTagsListBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>11</y>
+                <width>338</width>
+                <height>395</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>currentActivityTagTextEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>11</y>
+                <width>338</width>
+                <height>395</height>
+            </rect>
+        </property>
+        <property name="readOnly">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>addActivityTagPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>412</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Add activity tag</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>removeActivityTagPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>412</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Remove current</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>renameActivityTagPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>442</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Rename current</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>sortActivityTagsPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>442</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Sort alphabetically</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>activateActivityTagPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>472</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Activate all activities for selected activity tag</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>deactivateActivityTagPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>472</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>De-activate all activities for selected activity tag</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>closePushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>502</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Close</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>helpPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>500</y>
+                <width>330</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Help</string>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>addActivityTagPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>addActivityTag()</slot>
+    </connection>
+    <connection>
+        <sender>removeActivityTagPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>removeActivityTag()</slot>
+    </connection>
+    <connection>
+        <sender>renameActivityTagPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>renameActivityTag()</slot>
+    </connection>
+    <connection>
+        <sender>sortActivityTagsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>sortActivityTags()</slot>
+    </connection>
+    <connection>
+        <sender>activityTagsListBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>activityTagChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>activateActivityTagPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>activateActivityTag()</slot>
+    </connection>
+    <connection>
+        <sender>deactivateActivityTagPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>deactivateActivityTag()</slot>
+    </connection>
+    <connection>
+        <sender>activityTagsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>renameActivityTag()</slot>
+    </connection>
+    <connection>
+        <sender>helpPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ActivityTagsForm_template</receiver>
+        <slot>help()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>activityTagsListBox</tabstop>
+    <tabstop>addActivityTagPushButton</tabstop>
+    <tabstop>removeActivityTagPushButton</tabstop>
+    <tabstop>renameActivityTagPushButton</tabstop>
+    <tabstop>sortActivityTagsPushButton</tabstop>
+    <tabstop>activateActivityTagPushButton</tabstop>
+    <tabstop>deactivateActivityTagPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+    <tabstop>helpPushButton</tabstop>
+    <tabstop>currentActivityTagTextEdit</tabstop>
+</tabstops>
+<slots>
+    <slot>addActivityTag()</slot>
+    <slot>removeActivityTag()</slot>
+    <slot>renameActivityTag()</slot>
+    <slot>sortActivityTags()</slot>
+    <slot>activityTagChanged(int)</slot>
+    <slot>activateActivityTag()</slot>
+    <slot>deactivateActivityTag()</slot>
+    <slot>help()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

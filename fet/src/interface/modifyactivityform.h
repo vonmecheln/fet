@@ -46,7 +46,7 @@ public:
 	Activity* _activity;
 	QStringList _teachers;
 	QString _subject;
-	QString _subjectTag;
+	QString _activityTag;
 	QStringList _students;
 
 	ModifyActivityForm(int id, int activityGroupId);
@@ -59,13 +59,13 @@ public:
 	void updateStudentsListBox();
 	void updateTeachersListBox();
 	void updateSubjectsComboBox();
-	void updateSubjectTagsComboBox();
+	void updateActivityTagsComboBox();
 	
 	void clearTeachers();
 	void clearStudents();
 
 	void subjectChanged(const QString& dummy);
-	void subjectTagChanged(const QString& dummy);
+	void activityTagChanged(const QString& dummy);
 	//void parityChanged();
 	void durationChanged();
 	void activityChanged();

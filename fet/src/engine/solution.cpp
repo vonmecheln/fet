@@ -39,6 +39,9 @@ using namespace std;
 extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
+#include <QMap>
+
+
 //critical function here - must be optimized for speed
 void Solution::copy(Rules& r, Solution& c){
 	this->_fitness=c._fitness;
@@ -61,6 +64,8 @@ void Solution::copy(Rules& r, Solution& c){
 	teachersMatrixReady=c.teachersMatrixReady;
 	subgroupsMatrixReady=c.subgroupsMatrixReady;
 	roomsMatrixReady=c.roomsMatrixReady;
+	
+	nPlacedActivities=c.nPlacedActivities;
 }
 
 void Solution::init(Rules& r){
@@ -255,10 +260,20 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 	this->subgroupsMatrixReady=false;
 	this->roomsMatrixReady=false;
 	
+	this->nPlacedActivities=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(this->times[i]!=UNALLOCATED_TIME)
+			this->nPlacedActivities++;
+		
 	for(int i=0; i<r.nInternalTimeConstraints; i++){
 		QList<QString> sl;
 		QList<double> cl;
 		this->_fitness += r.internalTimeConstraintsList[i]->fitness(*this, r, cl, sl, conflictsString);
+		
+		//if(cl.count()>0)
+		//	cout<<"cl.count()=="<<cl.count()<<endl;
+		//cout<<"conflictsString=="<<conflictsString<<endl;
+			
 		conflictsWeightList+=cl;
 		conflictsDescriptionList+=sl;
 	}	
@@ -271,11 +286,46 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 	}
 		
 	this->conflictsTotal=0;
-	foreach(double cn, conflictsWeightList)
+	foreach(double cn, conflictsWeightList){
+		//cout<<"cn=="<<cn<<endl;
 		conflictsTotal+=cn;
+	}
 		
-	//sort descending according to conflicts
-	for(int i=0; i<conflictsWeightList.size(); i++)
+	//cout<<"this->_fitness=="<<this->_fitness<<", conflictsTotal=="<<conflictsTotal<<endl;
+#if 0
+	//I cannot put this test. I got situations of assert failed with 15.2 != 15.2 ??? Maybe rounding errors
+	if(this->_fitness!=conflictsTotal){
+		cout<<"this->_fitness=="<<this->_fitness<<endl;
+		cout<<"conflictsTotal=="<<conflictsTotal<<endl;
+	}
+	assert(this->_fitness==conflictsTotal);//TODO
+#endif
+		
+	//sort descending according to conflicts in O(n log n)	
+	int ttt=conflictsWeightList.count();
+		
+	QMultiMap<double, QString> map;
+	assert(conflictsWeightList.count()==conflictsDescriptionList.count());
+	for(int i=0; i<conflictsWeightList.count(); i++)
+		map.insert(conflictsWeightList.at(i), conflictsDescriptionList.at(i));
+		
+	conflictsWeightList.clear();
+	conflictsDescriptionList.clear();
+	
+	QMapIterator<double, QString> i(map);
+	while (i.hasNext()) {
+		i.next();
+		conflictsWeightList.prepend(i.key());
+		conflictsDescriptionList.prepend(i.value());
+	}
+	
+	for(int i=0; i<conflictsWeightList.count()-1; i++)
+		assert(conflictsWeightList.at(i) >= conflictsWeightList.at(i+1));
+		
+	assert(conflictsWeightList.count()==conflictsDescriptionList.count());
+	assert(conflictsWeightList.count()==ttt);
+	
+	/*for(int i=0; i<conflictsWeightList.size(); i++)
 		for(int j=0; j<i; j++)
 			if(conflictsWeightList[i]>conflictsWeightList[j]){
 				double t=conflictsWeightList[i];
@@ -285,7 +335,7 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 				QString s=conflictsDescriptionList[i];
 				conflictsDescriptionList[i]=conflictsDescriptionList[j];
 				conflictsDescriptionList[j]=s;
-			}
+			}*/
 			
 	this->changedForMatrixCalculation=false;
 
@@ -376,13 +426,13 @@ int Solution::getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS
 
 //The following 2 functions (GetTeachersTimetable & GetSubgroupsTimetable)
 //are very similar to the above 2 ones (GetTeachersMatrix & GetSubgroupsMatrix)
-void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 //void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 	//assert(HFitness()==0); //This is only for perfect solutions, that do not have any non-satisfied hard constrains
 
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
-
+	
 	int i, j, k;
 	for(i=0; i<r.nInternalTeachers; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
@@ -396,7 +446,8 @@ void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PE
 			act=&r.internalActivitiesList[i];
 			int hour=this->times[i]/r.nDaysPerWeek;
 			int day=this->times[i]%r.nDaysPerWeek;
-			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++)
+			for(int dd=0; dd < act->duration; dd++){
+				assert(hour+dd<r.nHoursPerDay);
 				for(int ti=0; ti<act->iTeachersList.count(); ti++){
 					int tch = act->iTeachersList.at(ti); //teacher index
 					/*if(a1[tch][day][hour+dd]==UNALLOCATED_ACTIVITY)
@@ -406,6 +457,7 @@ void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PE
 					assert(a[tch][day][hour+dd]==UNALLOCATED_ACTIVITY);
 					a[tch][day][hour+dd]=i;
 				}
+			}
 		}
 
 	//Prepare teachers free periods timetable.
@@ -509,7 +561,7 @@ void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX
 
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
-
+	
 	int i, j, k;
 	for(i=0; i<r.nInternalSubgroups; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
@@ -523,7 +575,9 @@ void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX
 			act=&r.internalActivitiesList[i];
 			int hour=this->times[i]/r.nDaysPerWeek;
 			int day=this->times[i]%r.nDaysPerWeek;
-			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++){
+			for(int dd=0; dd < act->duration; dd++){
+				assert(hour+dd<r.nHoursPerDay);
+			
 				for(int isg=0; isg < act->iSubgroupsList.count(); isg++){ //isg -> index subgroup
 					int sg = act->iSubgroupsList.at(isg); //sg -> subgroup
 					/*if(a1[sg][day][hour+dd]==UNALLOCATED_ACTIVITY)
@@ -588,7 +642,7 @@ void Solution::getRoomsTimetable(
 {
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
-
+	
 	int i, j, k;
 	for(i=0; i<r.nInternalRooms; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
@@ -605,7 +659,9 @@ void Solution::getRoomsTimetable(
 		//int day=days[i];
 		//int hour=hours[i];
 		if(room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM && day!=UNALLOCATED_TIME && hour!=UNALLOCATED_TIME){
-			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++){
+			for(int dd=0; dd < act->duration; dd++){
+				assert(hour+dd<r.nHoursPerDay);
+			
 				/*if(a1[room][day][hour+dd]==UNALLOCATED_ACTIVITY)
 					a1[room][day][hour+dd]=i;
 				else
@@ -615,4 +671,70 @@ void Solution::getRoomsTimetable(
 			}
 		}
 	}
+}
+
+void Solution::getSubgroupsBuildingsTimetable(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+{
+	assert(r.initialized);
+	assert(r.internalStructureComputed);
+	
+	int i, j, k;
+	for(i=0; i<r.nInternalSubgroups; i++)
+		for(j=0; j<r.nDaysPerWeek; j++)
+			for(k=0; k<r.nHoursPerDay; k++)
+				a[i][j][k]=-1;
+
+	Activity *act;
+	for(i=0; i<r.nInternalActivities; i++)
+		if(this->times[i]!=UNALLOCATED_TIME) {
+			act=&r.internalActivitiesList[i];
+			int hour=this->times[i]/r.nDaysPerWeek;
+			int day=this->times[i]%r.nDaysPerWeek;
+			for(int dd=0; dd < act->duration; dd++){
+				assert(hour+dd<r.nHoursPerDay);
+			
+				for(int isg=0; isg < act->iSubgroupsList.count(); isg++){ //isg -> index subgroup
+					int sg = act->iSubgroupsList.at(isg); //sg -> subgroup
+					assert(a[sg][day][hour+dd]==-1);
+
+					if(this->rooms[i]!=UNSPECIFIED_ROOM && this->rooms[i]!=UNALLOCATED_SPACE){
+						assert(this->rooms[i]>=0 && this->rooms[i]<r.nInternalRooms);
+						a[sg][day][hour+dd]=r.internalRoomsList[this->rooms[i]]->buildingIndex;
+					}
+				}
+			}
+		}
+}
+
+void Solution::getTeachersBuildingsTimetable(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+{
+	assert(r.initialized);
+	assert(r.internalStructureComputed);
+	
+	int i, j, k;
+	for(i=0; i<r.nInternalTeachers; i++)
+		for(j=0; j<r.nDaysPerWeek; j++)
+			for(k=0; k<r.nHoursPerDay; k++)
+				a[i][j][k]=-1;
+
+	Activity *act;
+	for(i=0; i<r.nInternalActivities; i++) 
+		if(this->times[i]!=UNALLOCATED_TIME) {
+			act=&r.internalActivitiesList[i];
+			int hour=this->times[i]/r.nDaysPerWeek;
+			int day=this->times[i]%r.nDaysPerWeek;
+			for(int dd=0; dd < act->duration; dd++){
+				assert(hour+dd<r.nHoursPerDay);
+				for(int ti=0; ti<act->iTeachersList.count(); ti++){
+					int tch = act->iTeachersList.at(ti); //teacher index
+					assert(a[tch][day][hour+dd]==-1);
+
+					if(this->rooms[i]!=UNSPECIFIED_ROOM && this->rooms[i]!=UNALLOCATED_SPACE){
+						assert(this->rooms[i]>=0 && this->rooms[i]<r.nInternalRooms);
+						a[tch][day][hour+dd]=r.internalRoomsList[this->rooms[i]]->buildingIndex;
+					}
+
+				}
+			}
+		}
 }

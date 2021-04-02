@@ -22,13 +22,34 @@ using namespace std;
 #include "allspaceconstraintsform.h"
 
 #include "modifyconstraintbasiccompulsoryspaceform.h"
-#include "modifyconstraintroomnotavailableform.h"
+#include "modifyconstraintroomnotavailabletimesform.h"
 #include "modifyconstraintactivitypreferredroomform.h"
 #include "modifyconstraintactivitypreferredroomsform.h"
+
+#include "modifyconstraintstudentssethomeroomform.h"
+#include "modifyconstraintstudentssethomeroomsform.h"
+
+#include "modifyconstraintteacherhomeroomform.h"
+#include "modifyconstraintteacherhomeroomsform.h"
+
+#include "modifyconstraintstudentssetmaxbuildingchangesperdayform.h"
+#include "modifyconstraintstudentsmaxbuildingchangesperdayform.h"
+#include "modifyconstraintstudentssetmaxbuildingchangesperweekform.h"
+#include "modifyconstraintstudentsmaxbuildingchangesperweekform.h"
+#include "modifyconstraintstudentssetmingapsbetweenbuildingchangesform.h"
+#include "modifyconstraintstudentsmingapsbetweenbuildingchangesform.h"
+
+#include "modifyconstraintteachermaxbuildingchangesperdayform.h"
+#include "modifyconstraintteachersmaxbuildingchangesperdayform.h"
+#include "modifyconstraintteachermaxbuildingchangesperweekform.h"
+#include "modifyconstraintteachersmaxbuildingchangesperweekform.h"
+#include "modifyconstraintteachermingapsbetweenbuildingchangesform.h"
+#include "modifyconstraintteachersmingapsbetweenbuildingchangesform.h"
+
 #include "modifyconstraintsubjectpreferredroomform.h"
 #include "modifyconstraintsubjectpreferredroomsform.h"
-#include "modifyconstraintsubjectsubjecttagpreferredroomform.h"
-#include "modifyconstraintsubjectsubjecttagpreferredroomsform.h"
+#include "modifyconstraintsubjectactivitytagpreferredroomform.h"
+#include "modifyconstraintsubjectactivitytagpreferredroomsform.h"
 
 #include <QDesktopWidget>
 
@@ -100,9 +121,9 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		 new ModifyConstraintBasicCompulsorySpaceForm((ConstraintBasicCompulsorySpace*)ctr);
 		form->exec();
 	}
-	else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE){
-		ModifyConstraintRoomNotAvailableForm* form=
-		 new ModifyConstraintRoomNotAvailableForm((ConstraintRoomNotAvailable*)ctr);
+	else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
+		ModifyConstraintRoomNotAvailableTimesForm* form=
+		 new ModifyConstraintRoomNotAvailableTimesForm((ConstraintRoomNotAvailableTimes*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
@@ -115,6 +136,26 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		 new ModifyConstraintActivityPreferredRoomsForm((ConstraintActivityPreferredRooms*)ctr);
 		form->exec();
 	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
+		ModifyConstraintStudentsSetHomeRoomForm* form=
+		 new ModifyConstraintStudentsSetHomeRoomForm((ConstraintStudentsSetHomeRoom*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
+		ModifyConstraintStudentsSetHomeRoomsForm* form=
+		 new ModifyConstraintStudentsSetHomeRoomsForm((ConstraintStudentsSetHomeRooms*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOM){
+		ModifyConstraintTeacherHomeRoomForm* form=
+		 new ModifyConstraintTeacherHomeRoomForm((ConstraintTeacherHomeRoom*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOMS){
+		ModifyConstraintTeacherHomeRoomsForm* form=
+		 new ModifyConstraintTeacherHomeRoomsForm((ConstraintTeacherHomeRooms*)ctr);
+		form->exec();
+	}
 	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
 		ModifyConstraintSubjectPreferredRoomForm* form=
 		 new ModifyConstraintSubjectPreferredRoomForm((ConstraintSubjectPreferredRoom*)ctr);
@@ -125,14 +166,75 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		 new ModifyConstraintSubjectPreferredRoomsForm((ConstraintSubjectPreferredRooms*)ctr);
 		form->exec();
 	}
-	else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOM){
-		ModifyConstraintSubjectSubjectTagPreferredRoomForm* form=
-		 new ModifyConstraintSubjectSubjectTagPreferredRoomForm((ConstraintSubjectSubjectTagPreferredRoom*)ctr);
+	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
+		ModifyConstraintSubjectActivityTagPreferredRoomForm* form=
+		 new ModifyConstraintSubjectActivityTagPreferredRoomForm((ConstraintSubjectActivityTagPreferredRoom*)ctr);
 		form->exec();
 	}
-	else if(ctr->type==CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS){
-		ModifyConstraintSubjectSubjectTagPreferredRoomsForm* form=
-		 new ModifyConstraintSubjectSubjectTagPreferredRoomsForm((ConstraintSubjectSubjectTagPreferredRooms*)ctr);
+	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
+		ModifyConstraintSubjectActivityTagPreferredRoomsForm* form=
+		 new ModifyConstraintSubjectActivityTagPreferredRoomsForm((ConstraintSubjectActivityTagPreferredRooms*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY){
+		ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm* form=
+		 new ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm((ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY){
+		ModifyConstraintStudentsMaxBuildingChangesPerDayForm* form=
+		 new ModifyConstraintStudentsMaxBuildingChangesPerDayForm((ConstraintStudentsMaxBuildingChangesPerDay*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK){
+		ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm* form=
+		 new ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm((ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK){
+		ModifyConstraintStudentsMaxBuildingChangesPerWeekForm* form=
+		 new ModifyConstraintStudentsMaxBuildingChangesPerWeekForm((ConstraintStudentsMaxBuildingChangesPerWeek*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+		ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm* form=
+		 new ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm((ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+		ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm* form=
+		 new ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm((ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr);
+		form->exec();
+	}
+
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY){
+		ModifyConstraintTeacherMaxBuildingChangesPerDayForm* form=
+		 new ModifyConstraintTeacherMaxBuildingChangesPerDayForm((ConstraintTeacherMaxBuildingChangesPerDay*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY){
+		ModifyConstraintTeachersMaxBuildingChangesPerDayForm* form=
+		 new ModifyConstraintTeachersMaxBuildingChangesPerDayForm((ConstraintTeachersMaxBuildingChangesPerDay*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK){
+		ModifyConstraintTeacherMaxBuildingChangesPerWeekForm* form=
+		 new ModifyConstraintTeacherMaxBuildingChangesPerWeekForm((ConstraintTeacherMaxBuildingChangesPerWeek*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK){
+		ModifyConstraintTeachersMaxBuildingChangesPerWeekForm* form=
+		 new ModifyConstraintTeachersMaxBuildingChangesPerWeekForm((ConstraintTeachersMaxBuildingChangesPerWeek*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+		ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm* form=
+		 new ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm((ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+		ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm* form=
+		 new ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm((ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
 		form->exec();
 	}
 	else{

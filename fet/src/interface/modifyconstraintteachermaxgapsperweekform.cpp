@@ -24,8 +24,6 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 ModifyConstraintTeacherMaxGapsPerWeekForm::ModifyConstraintTeacherMaxGapsPerWeekForm(ConstraintTeacherMaxGapsPerWeek* ctr)
 {
 	//setWindowFlags(Qt::Window);
@@ -77,12 +75,6 @@ void ModifyConstraintTeacherMaxGapsPerWeekForm::constraintChanged()
 	s+=QObject::tr("Teacher=%1").arg(teachersComboBox->currentText());
 	s+="\n";
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
-	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";*/
-	
 	s+=QObject::tr("Max gaps=%1").arg(maxGapsSpinBox->value());
 	s+="\n";
 
@@ -108,12 +100,7 @@ void ModifyConstraintTeacherMaxGapsPerWeekForm::ok()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	this->_ctr->weightPercentage=weight;
-	//this->_ctr->compulsory=compulsory;
 	
 	this->_ctr->maxGaps=maxGapsSpinBox->value();
 

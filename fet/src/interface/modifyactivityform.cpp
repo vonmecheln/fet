@@ -66,7 +66,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 			
 	this->_teachers=this->_activity->teachersNames;
 	this->_subject = this->_activity->subjectName;
-	this->_subjectTag = this->_activity->subjectTagName;
+	this->_activityTag = this->_activity->activityTagName;
 	this->_students=this->_activity->studentsNames;
 	
 	int nSplit;
@@ -116,7 +116,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	updateStudentsListBox();
 	updateTeachersListBox();
 	updateSubjectsComboBox();
-	updateSubjectTagsComboBox();
+	updateActivityTagsComboBox();
 
 	for(int i=0; i<10; i++)
 		if(i<nSplit)
@@ -160,24 +160,24 @@ void ModifyActivityForm::updateSubjectsComboBox()
 	subjectChanged("");
 }
 
-void ModifyActivityForm::updateSubjectTagsComboBox()
+void ModifyActivityForm::updateActivityTagsComboBox()
 {
 	int i=0, j=-1;
-	subjectTagsComboBox->clear();
-	subjectTagsComboBox->insertItem("");
-	if(this->_subjectTag=="")
+	activityTagsComboBox->clear();
+	activityTagsComboBox->insertItem("");
+	if(this->_activityTag=="")
 		j=i;
 	i++;
-	for(int k=0; k<gt.rules.subjectTagsList.size(); k++, i++){
-		SubjectTag* sbt=gt.rules.subjectTagsList[k];
-		subjectTagsComboBox->insertItem(sbt->name);
-		if(sbt->name==this->_subjectTag)
+	for(int k=0; k<gt.rules.activityTagsList.size(); k++, i++){
+		ActivityTag* sbt=gt.rules.activityTagsList[k];
+		activityTagsComboBox->insertItem(sbt->name);
+		if(sbt->name==this->_activityTag)
 			j=i;
 	}
 	assert(j!=-1);
-	subjectTagsComboBox->setCurrentItem(j);
+	activityTagsComboBox->setCurrentItem(j);
 
-	subjectTagChanged("");
+	activityTagChanged("");
 }
 
 void ModifyActivityForm::updateStudentsListBox()
@@ -262,7 +262,7 @@ void ModifyActivityForm::subjectChanged(const QString& dummy)
 	activityChanged();
 }
 
-void ModifyActivityForm::subjectTagChanged(const QString& dummy)
+void ModifyActivityForm::activityTagChanged(const QString& dummy)
 {
 	Q_UNUSED(dummy);
 	//if(dummy=="")
@@ -291,8 +291,8 @@ void ModifyActivityForm::activityChanged()
 
 	s+=tr("Subject=%1").arg(subjectsComboBox->currentText());
 	s+="\n";
-	if(subjectTagsComboBox->currentText()!=""){
-		s+=tr("Subject tag=%1").arg(subjectTagsComboBox->currentText());
+	if(activityTagsComboBox->currentText()!=""){
+		s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
 		s+="\n";
 	}
 	if(selectedStudentsListBox->count()==0){
@@ -402,12 +402,12 @@ void ModifyActivityForm::ok()
 		return;
 	}
 
-	//subject tag
-	QString subject_tag_name=subjectTagsComboBox->currentText();
-	int subject_tag_index=gt.rules.searchSubjectTag(subject_tag_name);
-	if(subject_tag_index<0 && subject_tag_name!=""){
+	//activity tag
+	QString activity_tag_name=activityTagsComboBox->currentText();
+	int activity_tag_index=gt.rules.searchActivityTag(activity_tag_name);
+	if(activity_tag_index<0 && activity_tag_name!=""){
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid subject tag"));
+			tr("Invalid activity tag"));
 		return;
 	}
 
@@ -453,12 +453,12 @@ void ModifyActivityForm::ok()
 
 	if(nStudentsSpinBox->value()==-1){
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 subject_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
+		 activity_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
 		 (nStudentsSpinBox->value()==-1), total_number_of_students);
 	}
 	else{
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 subject_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
+		 activity_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
 		 (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 	}
 	

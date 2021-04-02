@@ -140,6 +140,8 @@ Running FET:
 	
 	Microsoft Windows:
 	Run the executable fet.exe
+	
+	NEW: Command line, no GUI, just run "fet inputfile.fet [timelimitseconds] [timetablehtmllevel (0..5)]".
 
 	
 Documentation:

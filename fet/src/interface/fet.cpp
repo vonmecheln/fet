@@ -22,6 +22,13 @@ along with timetable; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
+#include <QDate>
+#include <QTime>
+#include <QLocale>
+
+#include "timetableexport.h"
+#include "generate.h"
+
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fetmainform.h"
@@ -39,6 +46,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <fstream>
 #include <iostream>
 using namespace std;
+
+extern Solution best_solution;
 
 extern bool students_schedule_ready, teachers_schedule_ready, rooms_schedule_ready;
 
@@ -216,6 +225,167 @@ int main(int argc, char **argv){
 		}*/
 		checkForUpdates=0;
 	}
+
+
+	/////////////////////////////////////////////////
+	//begin command line
+	if(argc>1){
+		if(argc>=5){
+			cout<<"Usage: fet inputfile.fet [timelimitseconds] [timetablehtmllevel (0..5)]"<<endl;
+			return 1;
+		}
+	
+		QString filename=argv[1];
+		
+		int secondsLimit=2000000000;
+		
+		if(argc>=3)
+			sscanf(argv[2], "%d", &secondsLimit);
+			
+		TIMETABLE_HTML_LEVEL=2;
+		if(argc>=4)
+			sscanf(argv[3], "%d", &TIMETABLE_HTML_LEVEL);
+		if(TIMETABLE_HTML_LEVEL>5 || TIMETABLE_HTML_LEVEL<0)
+			TIMETABLE_HTML_LEVEL=2;
+	
+		bool t=gt.rules.read(filename);
+		if(!t){
+			cout<<"Cannot read file - aborting"<<endl;
+			return 1;
+		}
+		
+		t=gt.rules.computeInternalStructure();
+		if(!t){
+			cout<<"Cannot compute internal structure - aborting"<<endl;
+			return 1;
+		}
+	
+		Generate gen;
+	
+		gen.abortOptimization=false;
+		bool ok=gen.precompute();
+		
+		if(!ok){
+			cout<<"Cannot precompute - data is wrong - aborting"<<endl;
+			return 1;
+		}
+	
+		bool impossible, timeExceeded;
+		
+		cout<<"secondsLimit=="<<secondsLimit<<endl;
+				
+		gen.generate(secondsLimit, impossible, timeExceeded, false); //false means no thread
+	
+		if(impossible){
+			cout<<"Impossible"<<endl;
+		}
+		else if(timeExceeded){
+			cout<<"Time exceeded"<<endl;
+		}
+		else{
+			Solution& c=gen.c;
+
+			//needed to find the conflicts strings
+			QString tmp;
+			c.fitness(gt.rules, &tmp);
+			
+			TimetableExport::getStudentsTimetable(c);
+			TimetableExport::getTeachersTimetable(c);
+			TimetableExport::getRoomsTimetable(c);
+			
+			TimetableExport::writeSubgroupsTimetableXml(SUBGROUPS_TIMETABLE_FILENAME_XML);
+			TimetableExport::writeTeachersTimetableXml(TEACHERS_TIMETABLE_FILENAME_XML);
+			
+			//get the time
+			QDate dat=QDate::currentDate();
+			QTime tim=QTime::currentTime();
+			QLocale loc(FET_LANGUAGE);
+			QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
+							
+			//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
+			int na=0;
+			for(int i=0; i<gt.rules.nInternalActivities; i++)
+				if(best_solution.times[i]!=UNALLOCATED_TIME)
+					na++;
+															
+			//write the conflicts in txt mode
+			QString s=CONFLICTS_FILENAME;
+			TimetableExport::writeConflictsTxt(s, sTime, na);
+	
+			//now write the solution in html files
+			if(TIMETABLE_HTML_LEVEL>=1){
+				s="_"+STYLESHEET_CSS;
+				TimetableExport::writeStylesheetCss(s, sTime, na);
+			}
+			
+			//subgroups
+			s=SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
+			s=SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(s, sTime, na);
+			s=SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(s, sTime, na);
+			s=SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(s, sTime, na);
+			//groups
+			s=GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeGroupsTimetableDaysHorizontalHtml(s, sTime, na);
+			s=GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeGroupsTimetableDaysVerticalHtml(s, sTime, na);
+			s=GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeGroupsTimetableTimeHorizontalHtml(s, sTime, na);
+			s=GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeGroupsTimetableTimeVerticalHtml(s, sTime, na);
+			//years
+			s=YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeYearsTimetableDaysHorizontalHtml(s, sTime, na);
+			s=YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeYearsTimetableDaysVerticalHtml(s, sTime, na);
+			s=YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeYearsTimetableTimeHorizontalHtml(s, sTime, na);
+			s=YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeYearsTimetableTimeVerticalHtml(s, sTime, na);
+			//teachers
+			s=TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeTeachersTimetableDaysHorizontalHtml(s, sTime, na);
+			s=TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeTeachersTimetableDaysVerticalHtml(s, sTime, na);
+			s=TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeTeachersTimetableTimeHorizontalHtml(s, sTime, na);
+			s=TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeTeachersTimetableTimeVerticalHtml(s, sTime, na);
+			//rooms
+			s=ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeRoomsTimetableDaysHorizontalHtml(s, sTime, na);
+			s=ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeRoomsTimetableDaysVerticalHtml(s, sTime, na);
+			s=ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeRoomsTimetableTimeHorizontalHtml(s, sTime, na);
+			s=ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeRoomsTimetableTimeVerticalHtml(s, sTime, na);
+			//subjects
+			s=SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(s, sTime, na);
+			s=SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeSubjectsTimetableDaysVerticalHtml(s, sTime, na);
+			s=SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(s, sTime, na);
+			s=SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
+	
+			//teachers free periods
+			s=TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
+			TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
+			s=TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
+			TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
+		}
+	
+		return 0;
+	}
+	//end command line
+	/////////////////////////////////////////////////
+
+
 
 	pqapplication=&qapplication;
 	FetMainForm fetMainForm;

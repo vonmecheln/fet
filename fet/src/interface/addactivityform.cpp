@@ -65,7 +65,7 @@ AddActivityForm::AddActivityForm()
 	updateStudentsListBox();
 	updateTeachersListBox();
 	updateSubjectsComboBox();
-	updateSubjectTagsComboBox();
+	updateActivityTagsComboBox();
 
 	minDayDistanceSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
 	minDayDistanceSpinBox->setMinValue(0);
@@ -170,18 +170,18 @@ void AddActivityForm::updateSubjectsComboBox()
 	subjectChanged(subjectsComboBox->currentText());
 }
 
-void AddActivityForm::updateSubjectTagsComboBox()
+void AddActivityForm::updateActivityTagsComboBox()
 {
-	subjectTagsComboBox->clear();
-	subjectTagsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
-		SubjectTag* sbt=gt.rules.subjectTagsList[i];
-		subjectTagsComboBox->insertItem(sbt->name);
+	activityTagsComboBox->clear();
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* sbt=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(sbt->name);
 	}
 		
-	subjectTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentItem(0);
 
-	subjectTagChanged(subjectTagsComboBox->currentText());
+	activityTagChanged(activityTagsComboBox->currentText());
 }
 
 void AddActivityForm::showYearsChanged()
@@ -256,7 +256,7 @@ void AddActivityForm::subjectChanged(const QString& dummy)
 	activityChanged();
 }
 
-void AddActivityForm::subjectTagChanged(const QString& dummy)
+void AddActivityForm::activityTagChanged(const QString& dummy)
 {
 	Q_UNUSED(dummy);
 	//if(dummy=="")
@@ -318,8 +318,8 @@ void AddActivityForm::activityChanged()
 
 	s+=tr("Subject=%1").arg(subjectsComboBox->currentText());
 	s+="\n";
-	if(subjectTagsComboBox->currentText()!=""){
-		s+=tr("Subject tag=%1").arg(subjectTagsComboBox->currentText());
+	if(activityTagsComboBox->currentText()!=""){
+		s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
 		s+="\n";
 	}
 	if(selectedStudentsListBox->count()==0){
@@ -449,12 +449,12 @@ void AddActivityForm::addActivity()
 		return;
 	}
 
-	//subject tag
-	QString subject_tag_name=subjectTagsComboBox->currentText();
-	int subject_tag_index=gt.rules.searchSubjectTag(subject_tag_name);
-	if(subject_tag_index<0 && subject_tag_name!=""){
+	//activity tag
+	QString activity_tag_name=activityTagsComboBox->currentText();
+	int activity_tag_index=gt.rules.searchActivityTag(activity_tag_name);
+	if(activity_tag_index<0 && activity_tag_name!=""){
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid subject tag"));
+			tr("Invalid activity tag"));
 		return;
 	}
 
@@ -494,7 +494,7 @@ void AddActivityForm::addActivity()
 				activityid = act->id;
 		}
 		activityid++;
-		Activity a(gt.rules, activityid, 0, teachers_names, subject_name, subject_tag_name, students_names,
+		Activity a(gt.rules, activityid, 0, teachers_names, subject_name, activity_tag_name, students_names,
 			duration, duration, /*parity,*/ active, (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 
 		bool already_existing=false;
@@ -515,7 +515,7 @@ void AddActivityForm::addActivity()
 				return;
 		}
 
-		bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, subject_tag_name,
+		bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tag_name,
 			students_names,	duration, duration, /*parity,*/ active, /*preferred_day, preferred_hour,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
@@ -559,7 +559,7 @@ void AddActivityForm::addActivity()
 
 		int minD=minDayDistanceSpinBox->value();
 		bool tmp=gt.rules.addSplitActivity(firstactivityid, firstactivityid,
-			teachers_names, subject_name, subject_tag_name, students_names,
+			teachers_names, subject_name, activity_tag_name, students_names,
 			nsplit, totalduration, durations,
 			/*parities,*/ active, minD, /*percentageSpinBox->value()*/weight, forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());

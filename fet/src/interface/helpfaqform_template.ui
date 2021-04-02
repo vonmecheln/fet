@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 6 October 2007
+this documentation by Liviu Lalescu, reviewed and modified - 10 March 2008
 
 --------
 
@@ -53,11 +53,11 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 
 - Subjects (the names of the possible courses, eg. Maths, Physics, etc.).
 
-- Subject tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity). A better name for them would have been "Activity tags", but now it is too late to fix that.
+- Activity tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity). A better name for them would have been "Activity tags", but now it is too late to fix that.
 
 - Rooms (classrooms).
 
-- Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on. An activity can have optionally a subject tag, to help you with some constraints.
+- Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on. An activity can have optionally an activity tag, to help you with some constraints.
 
 - Constraints. They can be: time constraints (referring to the allocated day and hour) or space constraints (referring to rooms allocation). They have a weight percentage, from 0.0% to 100.0%. 100% means that the constraint will always be respected and if this constraint is impossible, FET will not be able to generate a timetable.
 
@@ -79,13 +79,11 @@ A: Yes. Using values like 99.75% might be good sometimes.
 -------------------------------------------------------------------------------
 
 
-Q: Help on ConstraintStudentsEarly.
+Q: Help on ConstraintStudentsEarlyMaxBeginningsAtSecondHour.
 
-A: Constraint students (set) early: this constraint is a very restrictive one, saying that the students must have hours beginning at the first free slot (possible from breaks and students set not available constraints). If your school accepts beginning lessons at later hours, and some "early" constraints are too strong, you might have to use constraints students set not available/break in the last slots of the days or other constraints instead. You might try with constraint early only on some students sets.
+You can specify the maximum number of beginnings at second available hour (arrivals at third hour not possible).
 
-For instance, if students X are not available on Monday from 8 to 9 and available in rest and you add students set early X, they must begin each day (without Monday) at 8 and Monday at 9, not even a bit later.
-
-If you input only partial data, please use with caution. You might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
+If you input only partial data, please use with caution. If you add a constraint with max 0 beginnings at second hour: you might for instance input only 4+4 hourly activities of math with the same teacher for 2 students sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.
 
 
 -------------------------------------------------------------------------------
@@ -281,12 +279,6 @@ A: Yes, you have to add more constraint students set not available accordingly (
 
 -------------------------------------------------------------------------------
 
-Q: How can you allow one gap (or more) for students?
-
-A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.
-
--------------------------------------------------------------------------------
-
 Q: What are groups of type "year1 WHOLE YEAR" and subgroups of type "group1 WHOLE GROUP"?
 
 A: FET old versions (prior to 5.4.17) inserted automatically them. Please remove them now.
@@ -313,14 +305,6 @@ A: You can use for the constraint min n days the weight you want. It can be 95%,
 You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value for all constraints of this type, the easiest way is in Data/Time constraints/Min n days between activities dialog, where starting with version 5.3.6 there is a simple command for that.
 
 You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)
-
--------------------------------------------------------------------------------
-
-Q: The students set X has a day off and I need to add min hours daily for this subgroup. I cannot add constraint students set not available for this day off, because the min hours cannot be respected for this day. How to instruct FET this situation?
-
-A: (by Volker Dirr) Keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set if you added it, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
-
-This approach might be adapted to suit your needs.
 
 -------------------------------------------------------------------------------
 
@@ -352,7 +336,7 @@ A: Each room can host a single activity at the same time. How to implement what 
 
 Q: Help me! I got an impossible to solve timetable
 
-A: If you get an impossible timetable, maybe removing some/all of the constraints students (set) early and/or replacing them with others (students set not available or break) might help you. Also teachers' min hours daily might be too strong. Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.
+A: If you get an impossible timetable, maybe the constraints students (set) early are too difficult. Maybe you can allow more arrivals at second hour. Also teachers' min hours daily might be too strong. Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.
 
 -------------------------------------------------------------------------------
 
@@ -388,7 +372,7 @@ This is not 100% correct. Activities might get unallocated, and cycle reopened.
 
 Q: Help on constraint activities preferred times (a set of activities has a set of preferred times)
 
-A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and a subject tag (if empty, all subject tags) and a set of allowed days.
+A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed days.
 
 -------------------------------------------------------------------------------
 
@@ -402,7 +386,7 @@ When seeing the students statistics, probably the most useful are for subgroups.
 
 Q: What if I enter accidentally duplicate constraints?
 
-A: It is not a good practice to allow unnecessary duplicate constraints. For activity(ies) preferred time(s) and min n days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware.</string>
+A: It is not a good practice to allow unnecessary duplicate constraints. For min n days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware. For constraint activity(ies) preferred time(s) the chosen weight is the largest value, so you can use more constraints of this type for same activities.</string>
             </property>
         </widget>
     </grid>

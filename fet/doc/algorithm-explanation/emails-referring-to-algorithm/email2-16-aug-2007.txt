@@ -1,7 +1,0 @@
-I forgot: The routine random_swap will only search (recursively) the first 
-(best) slot if level>=5. That is, we search at level 0 all slots, at level 1 
-the same, ..., at level 4 the same, at level 5 only the first (best) slot, at 
-level 6 only the first (best) slot, etc., we reach level 13, then we go back 
-to level 4 and choose the next slot, etc. This is to allow FET more liberty, 
-I think. This trick was found practically to be good. It may not always be good.
-

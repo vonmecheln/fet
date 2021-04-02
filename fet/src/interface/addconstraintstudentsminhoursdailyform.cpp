@@ -35,9 +35,9 @@ AddConstraintStudentsMinHoursDailyForm::AddConstraintStudentsMinHoursDailyForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
-	minHoursSpinBox->setMinValue(0);
+	minHoursSpinBox->setMinValue(2);
 	minHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
-	minHoursSpinBox->setValue(0);
+	minHoursSpinBox->setValue(2);
 }
 
 AddConstraintStudentsMinHoursDailyForm::~AddConstraintStudentsMinHoursDailyForm()

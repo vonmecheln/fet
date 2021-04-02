@@ -125,15 +125,15 @@
                 </widget>
                 <widget class="QLabel" row="6" column="0">
                     <property name="name">
-                        <cstring>subjectTagsTextLabel</cstring>
+                        <cstring>activityTagsTextLabel</cstring>
                     </property>
                     <property name="text">
-                        <string>Subject tag</string>
+                        <string>Activity tag</string>
                     </property>
                 </widget>
                 <widget class="QComboBox" row="7" column="0">
                     <property name="name">
-                        <cstring>subjectTagsComboBox</cstring>
+                        <cstring>activityTagsComboBox</cstring>
                     </property>
                 </widget>
                 <widget class="QComboBox" row="5" column="0">
@@ -228,7 +228,7 @@
         <slot>filterChanged()</slot>
     </connection>
     <connection>
-        <sender>subjectTagsComboBox</sender>
+        <sender>activityTagsComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
         <receiver>ConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>filterChanged()</slot>
@@ -240,7 +240,7 @@
     <tabstop>teachersComboBox</tabstop>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>subjectsComboBox</tabstop>
-    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>

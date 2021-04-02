@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.4.18">
+<!DOCTYPE FET><FET version="5.5.0-beta1">
 
 <Institution_Name>Institutie implicita</Institution_Name>
 
@@ -13,7 +13,6 @@
 	<Name>2</Name>
 	<Name>3</Name>
 	<Name>4</Name>
-	<Name>5</Name>
 </Hours_List>
 
 <Days_List>
@@ -215,14 +214,14 @@
 </Subject>
 </Subjects_List>
 
-<Subject_Tags_List>
-</Subject_Tags_List>
+<Activity_Tags_List>
+</Activity_Tags_List>
 
 <Activities_List>
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>1</Id>
@@ -233,7 +232,7 @@
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>2</Id>
@@ -244,7 +243,7 @@
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>3</Id>
@@ -255,7 +254,7 @@
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>4</Id>
@@ -266,7 +265,7 @@
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>5</Id>
@@ -277,7 +276,7 @@
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>6</Id>
@@ -288,7 +287,7 @@
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>7</Id>
@@ -299,7 +298,7 @@
 <Activity>
 	<Teacher>Gilmar</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>8</Id>
@@ -310,7 +309,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>9</Id>
@@ -321,7 +320,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>10</Id>
@@ -332,7 +331,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>11</Id>
@@ -343,7 +342,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>12</Id>
@@ -354,7 +353,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>15</Id>
@@ -365,7 +364,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>16</Id>
@@ -376,7 +375,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>17</Id>
@@ -387,7 +386,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>18</Id>
@@ -398,7 +397,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>19</Id>
@@ -409,7 +408,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>20</Id>
@@ -420,7 +419,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>21</Id>
@@ -431,7 +430,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>22</Id>
@@ -442,7 +441,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>23</Id>
@@ -453,7 +452,7 @@
 <Activity>
 	<Teacher>Helvecio</Teacher>
 	<Subject>Filosofia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>24</Id>
@@ -464,7 +463,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>25</Id>
@@ -475,7 +474,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>26</Id>
@@ -486,7 +485,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>27</Id>
@@ -497,7 +496,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>28</Id>
@@ -508,7 +507,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>29</Id>
@@ -519,7 +518,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>30</Id>
@@ -530,7 +529,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>31</Id>
@@ -541,7 +540,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>32</Id>
@@ -552,7 +551,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>33</Id>
@@ -563,7 +562,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>34</Id>
@@ -574,7 +573,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>35</Id>
@@ -585,7 +584,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>36</Id>
@@ -596,7 +595,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>37</Id>
@@ -607,7 +606,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>38</Id>
@@ -618,7 +617,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>39</Id>
@@ -629,7 +628,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>40</Id>
@@ -640,7 +639,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>41</Id>
@@ -651,7 +650,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>42</Id>
@@ -662,7 +661,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>43</Id>
@@ -673,7 +672,7 @@
 <Activity>
 	<Teacher>Luzia</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>44</Id>
@@ -684,7 +683,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>45</Id>
@@ -695,7 +694,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>46</Id>
@@ -706,7 +705,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>47</Id>
@@ -717,7 +716,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>48</Id>
@@ -728,7 +727,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>49</Id>
@@ -739,7 +738,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>50</Id>
@@ -750,7 +749,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>51</Id>
@@ -761,7 +760,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>52</Id>
@@ -772,7 +771,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>53</Id>
@@ -783,7 +782,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>54</Id>
@@ -794,7 +793,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>55</Id>
@@ -805,7 +804,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>56</Id>
@@ -816,7 +815,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>57</Id>
@@ -827,7 +826,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>58</Id>
@@ -838,7 +837,7 @@
 <Activity>
 	<Teacher>Maria da Luz</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>59</Id>
@@ -849,7 +848,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>60</Id>
@@ -860,7 +859,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>61</Id>
@@ -871,7 +870,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>62</Id>
@@ -882,7 +881,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>63</Id>
@@ -893,7 +892,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>64</Id>
@@ -904,7 +903,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>65</Id>
@@ -915,7 +914,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>66</Id>
@@ -926,7 +925,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>67</Id>
@@ -937,7 +936,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>68</Id>
@@ -948,7 +947,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>69</Id>
@@ -959,7 +958,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>70</Id>
@@ -970,7 +969,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>71</Id>
@@ -981,7 +980,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>72</Id>
@@ -992,7 +991,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>73</Id>
@@ -1003,7 +1002,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>74</Id>
@@ -1014,7 +1013,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>75</Id>
@@ -1025,7 +1024,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>76</Id>
@@ -1036,7 +1035,7 @@
 <Activity>
 	<Teacher>Tania</Teacher>
 	<Subject>Lingua Portuguesa</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>77</Id>
@@ -1047,7 +1046,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>78</Id>
@@ -1058,7 +1057,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>79</Id>
@@ -1069,7 +1068,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>80</Id>
@@ -1080,7 +1079,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>81</Id>
@@ -1091,7 +1090,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>82</Id>
@@ -1102,7 +1101,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>83</Id>
@@ -1113,7 +1112,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>84</Id>
@@ -1124,7 +1123,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>85</Id>
@@ -1135,7 +1134,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>86</Id>
@@ -1146,7 +1145,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>87</Id>
@@ -1157,7 +1156,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>88</Id>
@@ -1168,7 +1167,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>89</Id>
@@ -1179,7 +1178,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>90</Id>
@@ -1190,7 +1189,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>91</Id>
@@ -1201,7 +1200,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>92</Id>
@@ -1212,7 +1211,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>93</Id>
@@ -1223,7 +1222,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>94</Id>
@@ -1234,7 +1233,7 @@
 <Activity>
 	<Teacher>Bruna</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>95</Id>
@@ -1245,7 +1244,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>96</Id>
@@ -1256,7 +1255,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>97</Id>
@@ -1267,7 +1266,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>98</Id>
@@ -1278,7 +1277,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>99</Id>
@@ -1289,7 +1288,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>100</Id>
@@ -1300,7 +1299,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>101</Id>
@@ -1311,7 +1310,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>102</Id>
@@ -1322,7 +1321,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>103</Id>
@@ -1333,7 +1332,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>104</Id>
@@ -1344,7 +1343,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>105</Id>
@@ -1355,7 +1354,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>106</Id>
@@ -1366,7 +1365,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>107</Id>
@@ -1377,7 +1376,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>108</Id>
@@ -1388,7 +1387,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>109</Id>
@@ -1399,7 +1398,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>110</Id>
@@ -1410,7 +1409,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>111</Id>
@@ -1421,7 +1420,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>112</Id>
@@ -1432,7 +1431,7 @@
 <Activity>
 	<Teacher>Silvania</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>113</Id>
@@ -1443,7 +1442,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>114</Id>
@@ -1454,7 +1453,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>115</Id>
@@ -1465,7 +1464,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>116</Id>
@@ -1476,7 +1475,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>117</Id>
@@ -1487,7 +1486,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>118</Id>
@@ -1498,7 +1497,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>119</Id>
@@ -1509,7 +1508,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>120</Id>
@@ -1520,7 +1519,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>121</Id>
@@ -1531,7 +1530,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>122</Id>
@@ -1542,7 +1541,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>123</Id>
@@ -1553,7 +1552,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>124</Id>
@@ -1564,7 +1563,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>125</Id>
@@ -1575,7 +1574,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>126</Id>
@@ -1586,7 +1585,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>127</Id>
@@ -1597,7 +1596,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>128</Id>
@@ -1608,7 +1607,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>129</Id>
@@ -1619,7 +1618,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>130</Id>
@@ -1630,7 +1629,7 @@
 <Activity>
 	<Teacher>Wellington</Teacher>
 	<Subject>Matematica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>131</Id>
@@ -1641,7 +1640,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>132</Id>
@@ -1652,7 +1651,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>133</Id>
@@ -1663,7 +1662,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>134</Id>
@@ -1674,7 +1673,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>135</Id>
@@ -1685,7 +1684,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>136</Id>
@@ -1696,7 +1695,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>137</Id>
@@ -1707,7 +1706,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>138</Id>
@@ -1718,7 +1717,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>139</Id>
@@ -1729,7 +1728,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>140</Id>
@@ -1740,7 +1739,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>141</Id>
@@ -1751,7 +1750,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>142</Id>
@@ -1762,7 +1761,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>143</Id>
@@ -1773,7 +1772,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>144</Id>
@@ -1784,7 +1783,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>145</Id>
@@ -1795,7 +1794,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>146</Id>
@@ -1806,7 +1805,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>147</Id>
@@ -1817,7 +1816,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>148</Id>
@@ -1828,7 +1827,7 @@
 <Activity>
 	<Teacher>Marli</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>149</Id>
@@ -1839,7 +1838,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>150</Id>
@@ -1850,7 +1849,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>151</Id>
@@ -1861,7 +1860,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>152</Id>
@@ -1872,7 +1871,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>153</Id>
@@ -1883,7 +1882,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>154</Id>
@@ -1894,7 +1893,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>155</Id>
@@ -1905,7 +1904,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>156</Id>
@@ -1916,7 +1915,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>157</Id>
@@ -1927,7 +1926,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>158</Id>
@@ -1938,7 +1937,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>159</Id>
@@ -1949,7 +1948,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>160</Id>
@@ -1960,7 +1959,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>161</Id>
@@ -1971,7 +1970,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>162</Id>
@@ -1982,7 +1981,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>163</Id>
@@ -1993,7 +1992,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>164</Id>
@@ -2004,7 +2003,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>165</Id>
@@ -2015,7 +2014,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>166</Id>
@@ -2026,7 +2025,7 @@
 <Activity>
 	<Teacher>Dulcimar</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>167</Id>
@@ -2037,7 +2036,7 @@
 <Activity>
 	<Teacher>Andreia</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>168</Id>
@@ -2048,7 +2047,7 @@
 <Activity>
 	<Teacher>Andreia</Teacher>
 	<Subject>Historia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>169</Id>
@@ -2059,7 +2058,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>170</Id>
@@ -2070,7 +2069,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>171</Id>
@@ -2081,7 +2080,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>172</Id>
@@ -2092,7 +2091,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>173</Id>
@@ -2103,7 +2102,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>174</Id>
@@ -2114,7 +2113,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>175</Id>
@@ -2125,7 +2124,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>176</Id>
@@ -2136,7 +2135,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>177</Id>
@@ -2147,7 +2146,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>178</Id>
@@ -2158,7 +2157,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>179</Id>
@@ -2169,7 +2168,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>180</Id>
@@ -2180,7 +2179,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>181</Id>
@@ -2191,7 +2190,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>182</Id>
@@ -2202,7 +2201,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>183</Id>
@@ -2213,7 +2212,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>184</Id>
@@ -2224,7 +2223,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>185</Id>
@@ -2235,7 +2234,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>186</Id>
@@ -2246,7 +2245,7 @@
 <Activity>
 	<Teacher>Aparacida</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>187</Id>
@@ -2257,7 +2256,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>188</Id>
@@ -2268,7 +2267,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>189</Id>
@@ -2279,7 +2278,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>190</Id>
@@ -2290,7 +2289,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>191</Id>
@@ -2301,7 +2300,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>192</Id>
@@ -2312,7 +2311,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>193</Id>
@@ -2323,7 +2322,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>194</Id>
@@ -2334,7 +2333,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>195</Id>
@@ -2345,7 +2344,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>196</Id>
@@ -2356,7 +2355,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>197</Id>
@@ -2367,7 +2366,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>198</Id>
@@ -2378,7 +2377,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>199</Id>
@@ -2389,7 +2388,7 @@
 <Activity>
 	<Teacher>Viviane</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>200</Id>
@@ -2400,7 +2399,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>201</Id>
@@ -2411,7 +2410,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>202</Id>
@@ -2422,7 +2421,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>203</Id>
@@ -2433,7 +2432,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>204</Id>
@@ -2444,7 +2443,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>205</Id>
@@ -2455,7 +2454,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>206</Id>
@@ -2466,7 +2465,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>207</Id>
@@ -2477,7 +2476,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>208</Id>
@@ -2488,7 +2487,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>209</Id>
@@ -2499,7 +2498,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>210</Id>
@@ -2510,7 +2509,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>211</Id>
@@ -2521,7 +2520,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>212</Id>
@@ -2532,7 +2531,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>213</Id>
@@ -2543,7 +2542,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>214</Id>
@@ -2554,7 +2553,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>215</Id>
@@ -2565,7 +2564,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>216</Id>
@@ -2576,7 +2575,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>217</Id>
@@ -2587,7 +2586,7 @@
 <Activity>
 	<Teacher>Anderson</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>218</Id>
@@ -2598,7 +2597,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>219</Id>
@@ -2609,7 +2608,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>220</Id>
@@ -2620,7 +2619,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>221</Id>
@@ -2631,7 +2630,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>222</Id>
@@ -2642,7 +2641,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>223</Id>
@@ -2653,7 +2652,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>224</Id>
@@ -2664,7 +2663,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>225</Id>
@@ -2675,7 +2674,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>226</Id>
@@ -2686,7 +2685,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>227</Id>
@@ -2697,7 +2696,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>228</Id>
@@ -2708,7 +2707,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>229</Id>
@@ -2719,7 +2718,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>230</Id>
@@ -2730,7 +2729,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>231</Id>
@@ -2741,7 +2740,7 @@
 <Activity>
 	<Teacher>Renata</Teacher>
 	<Subject>Educccao Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>232</Id>
@@ -2752,7 +2751,7 @@
 <Activity>
 	<Teacher>Carla</Teacher>
 	<Subject>Artes</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>233</Id>
@@ -2763,7 +2762,7 @@
 <Activity>
 	<Teacher>Carla</Teacher>
 	<Subject>Artes</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>234</Id>
@@ -2774,7 +2773,7 @@
 <Activity>
 	<Teacher>Carla</Teacher>
 	<Subject>Artes</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>235</Id>
@@ -2785,7 +2784,7 @@
 <Activity>
 	<Teacher>Carla</Teacher>
 	<Subject>Artes</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>236</Id>
@@ -2796,7 +2795,7 @@
 <Activity>
 	<Teacher>Carla</Teacher>
 	<Subject>Artes</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>237</Id>
@@ -2807,7 +2806,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>238</Id>
@@ -2818,7 +2817,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>239</Id>
@@ -2829,7 +2828,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>240</Id>
@@ -2840,7 +2839,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>241</Id>
@@ -2851,7 +2850,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>242</Id>
@@ -2862,7 +2861,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>243</Id>
@@ -2873,7 +2872,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>244</Id>
@@ -2884,7 +2883,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>245</Id>
@@ -2895,7 +2894,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>246</Id>
@@ -2906,7 +2905,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>247</Id>
@@ -2917,7 +2916,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>248</Id>
@@ -2928,7 +2927,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>249</Id>
@@ -2939,7 +2938,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>250</Id>
@@ -2950,7 +2949,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>251</Id>
@@ -2961,7 +2960,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>252</Id>
@@ -2972,7 +2971,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>253</Id>
@@ -2983,7 +2982,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>254</Id>
@@ -2994,7 +2993,7 @@
 <Activity>
 	<Teacher>Lima</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>255</Id>
@@ -3005,7 +3004,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>256</Id>
@@ -3016,7 +3015,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>257</Id>
@@ -3027,7 +3026,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>258</Id>
@@ -3038,7 +3037,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>259</Id>
@@ -3049,7 +3048,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>260</Id>
@@ -3060,7 +3059,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>261</Id>
@@ -3071,7 +3070,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>262</Id>
@@ -3082,7 +3081,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>263</Id>
@@ -3093,7 +3092,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>264</Id>
@@ -3104,7 +3103,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>265</Id>
@@ -3115,7 +3114,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>266</Id>
@@ -3126,7 +3125,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>267</Id>
@@ -3137,7 +3136,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>268</Id>
@@ -3148,7 +3147,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>269</Id>
@@ -3159,7 +3158,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>270</Id>
@@ -3170,7 +3169,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>271</Id>
@@ -3181,7 +3180,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>272</Id>
@@ -3192,7 +3191,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>273</Id>
@@ -3203,7 +3202,7 @@
 <Activity>
 	<Teacher>Andreia2</Teacher>
 	<Subject>Fisica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>274</Id>
@@ -3214,7 +3213,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>275</Id>
@@ -3225,7 +3224,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>276</Id>
@@ -3236,7 +3235,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>277</Id>
@@ -3247,7 +3246,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>278</Id>
@@ -3258,7 +3257,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>279</Id>
@@ -3269,7 +3268,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>280</Id>
@@ -3280,7 +3279,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>281</Id>
@@ -3291,7 +3290,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>282</Id>
@@ -3302,7 +3301,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>283</Id>
@@ -3313,7 +3312,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>284</Id>
@@ -3324,7 +3323,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>285</Id>
@@ -3335,7 +3334,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>286</Id>
@@ -3346,7 +3345,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>287</Id>
@@ -3357,7 +3356,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>288</Id>
@@ -3368,7 +3367,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>289</Id>
@@ -3379,7 +3378,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>290</Id>
@@ -3390,7 +3389,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>291</Id>
@@ -3401,7 +3400,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>292</Id>
@@ -3412,7 +3411,7 @@
 <Activity>
 	<Teacher>Carlos</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>293</Id>
@@ -3423,7 +3422,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>294</Id>
@@ -3434,7 +3433,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>295</Id>
@@ -3445,7 +3444,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>296</Id>
@@ -3456,7 +3455,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>297</Id>
@@ -3467,7 +3466,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>298</Id>
@@ -3478,7 +3477,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>299</Id>
@@ -3489,7 +3488,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>300</Id>
@@ -3500,7 +3499,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>301</Id>
@@ -3511,7 +3510,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>302</Id>
@@ -3522,7 +3521,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>303</Id>
@@ -3533,7 +3532,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>304</Id>
@@ -3544,7 +3543,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>305</Id>
@@ -3555,7 +3554,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>306</Id>
@@ -3566,7 +3565,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>307</Id>
@@ -3577,7 +3576,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>308</Id>
@@ -3588,7 +3587,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>309</Id>
@@ -3599,7 +3598,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>310</Id>
@@ -3610,7 +3609,7 @@
 <Activity>
 	<Teacher>Marcelo</Teacher>
 	<Subject>Quimica</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>311</Id>
@@ -3621,7 +3620,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>312</Id>
@@ -3632,7 +3631,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>313</Id>
@@ -3643,7 +3642,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>314</Id>
@@ -3654,7 +3653,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>315</Id>
@@ -3665,7 +3664,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>316</Id>
@@ -3676,7 +3675,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>317</Id>
@@ -3687,7 +3686,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>318</Id>
@@ -3698,7 +3697,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>319</Id>
@@ -3709,7 +3708,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>320</Id>
@@ -3720,7 +3719,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>321</Id>
@@ -3731,7 +3730,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>322</Id>
@@ -3742,7 +3741,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>323</Id>
@@ -3753,7 +3752,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>324</Id>
@@ -3764,7 +3763,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>325</Id>
@@ -3775,7 +3774,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>326</Id>
@@ -3786,7 +3785,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>327</Id>
@@ -3797,7 +3796,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>328</Id>
@@ -3808,7 +3807,7 @@
 <Activity>
 	<Teacher>Giselle</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>329</Id>
@@ -3819,7 +3818,7 @@
 <Activity>
 	<Teacher>Osvaldo</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>330</Id>
@@ -3830,7 +3829,7 @@
 <Activity>
 	<Teacher>Osvaldo</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>331</Id>
@@ -3841,7 +3840,7 @@
 <Activity>
 	<Teacher>Osvaldo</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>332</Id>
@@ -3852,7 +3851,7 @@
 <Activity>
 	<Teacher>Osvaldo</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>333</Id>
@@ -3863,7 +3862,7 @@
 <Activity>
 	<Teacher>Osvaldo</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>334</Id>
@@ -3874,7 +3873,7 @@
 <Activity>
 	<Teacher>Osvaldo</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>335</Id>
@@ -3885,7 +3884,7 @@
 <Activity>
 	<Teacher>Osvaldo</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>336</Id>
@@ -3896,7 +3895,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>337</Id>
@@ -3907,7 +3906,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>338</Id>
@@ -3918,7 +3917,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>339</Id>
@@ -3929,7 +3928,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>340</Id>
@@ -3940,7 +3939,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>341</Id>
@@ -3951,7 +3950,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>342</Id>
@@ -3962,7 +3961,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>343</Id>
@@ -3973,7 +3972,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>344</Id>
@@ -3984,7 +3983,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>345</Id>
@@ -3995,7 +3994,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>346</Id>
@@ -4006,7 +4005,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>347</Id>
@@ -4017,7 +4016,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>348</Id>
@@ -4028,7 +4027,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>349</Id>
@@ -4039,7 +4038,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>350</Id>
@@ -4050,7 +4049,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>351</Id>
@@ -4061,7 +4060,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>352</Id>
@@ -4072,7 +4071,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>353</Id>
@@ -4083,7 +4082,7 @@
 <Activity>
 	<Teacher>Cristiane</Teacher>
 	<Subject>Biologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>354</Id>
@@ -4094,7 +4093,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>355</Id>
@@ -4105,7 +4104,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>356</Id>
@@ -4116,7 +4115,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>357</Id>
@@ -4127,7 +4126,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>358</Id>
@@ -4138,7 +4137,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>359</Id>
@@ -4149,7 +4148,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>360</Id>
@@ -4160,7 +4159,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>361</Id>
@@ -4171,7 +4170,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>362</Id>
@@ -4182,7 +4181,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>363</Id>
@@ -4193,7 +4192,7 @@
 <Activity>
 	<Teacher>Roberto</Teacher>
 	<Subject>Sociologia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>364</Id>
@@ -4204,7 +4203,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>365</Id>
@@ -4215,7 +4214,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>366</Id>
@@ -4226,7 +4225,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>367</Id>
@@ -4237,7 +4236,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>368</Id>
@@ -4248,7 +4247,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>369</Id>
@@ -4259,7 +4258,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>370</Id>
@@ -4270,7 +4269,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>371</Id>
@@ -4281,7 +4280,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>372</Id>
@@ -4292,7 +4291,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>373</Id>
@@ -4303,7 +4302,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>374</Id>
@@ -4314,7 +4313,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>375</Id>
@@ -4325,7 +4324,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>376</Id>
@@ -4336,7 +4335,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>377</Id>
@@ -4347,7 +4346,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>378</Id>
@@ -4358,7 +4357,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>379</Id>
@@ -4369,7 +4368,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>380</Id>
@@ -4380,7 +4379,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>381</Id>
@@ -4391,7 +4390,7 @@
 <Activity>
 	<Teacher>Rosilene</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>382</Id>
@@ -4402,7 +4401,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>383</Id>
@@ -4413,7 +4412,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>384</Id>
@@ -4424,7 +4423,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>385</Id>
@@ -4435,7 +4434,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>386</Id>
@@ -4446,7 +4445,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>387</Id>
@@ -4457,7 +4456,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>388</Id>
@@ -4468,7 +4467,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>389</Id>
@@ -4479,7 +4478,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>390</Id>
@@ -4490,7 +4489,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>391</Id>
@@ -4501,7 +4500,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>392</Id>
@@ -4512,7 +4511,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>393</Id>
@@ -4523,7 +4522,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>394</Id>
@@ -4534,7 +4533,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>395</Id>
@@ -4545,7 +4544,7 @@
 <Activity>
 	<Teacher>Silvana</Teacher>
 	<Subject>Ingles</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>396</Id>
@@ -4556,7 +4555,7 @@
 <Activity>
 	<Teacher>Terezinha</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>397</Id>
@@ -4567,7 +4566,7 @@
 <Activity>
 	<Teacher>Terezinha</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>398</Id>
@@ -4578,7 +4577,7 @@
 <Activity>
 	<Teacher>Terezinha</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>399</Id>
@@ -4589,7 +4588,7 @@
 <Activity>
 	<Teacher>Terezinha</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>400</Id>
@@ -4600,7 +4599,7 @@
 <Activity>
 	<Teacher>Terezinha</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>401</Id>
@@ -4611,7 +4610,7 @@
 <Activity>
 	<Teacher>Terezinha</Teacher>
 	<Subject>Geografia</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>402</Id>
@@ -4620,6 +4619,9 @@
 	<Students>103</Students>
 </Activity>
 </Activities_List>
+
+<Buildings_List>
+</Buildings_List>
 
 <Rooms_List>
 </Rooms_List>
@@ -5983,342 +5985,833 @@
 	<Activity_Id>402</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintTeacherNotAvailable>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Gilmar</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Gilmar</Teacher>
+	<Number_of_Not_Available_Times>17</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Gilmar</Teacher_Name>
-	<Day>Marti</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Helvecio</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Gilmar</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Luzia</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Gilmar</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>1</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Tania</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Gilmar</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>1</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Silvania</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Helvecio</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Wellington</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Luzia</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Marli</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Tania</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Dulcimar</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Silvania</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Andreia</Teacher>
+	<Number_of_Not_Available_Times>15</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Wellington</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Aparacida</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marli</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Viviane</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Dulcimar</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Anderson</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Andreia</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Renata</Teacher>
+	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Andreia</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Carla</Teacher>
+	<Number_of_Not_Available_Times>20</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Andreia</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Lima</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aparacida</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>4</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Andreia2</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aparacida</Teacher_Name>
-	<Day>Marti</Day>
-	<Start_Hour>4</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Carlos</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aparacida</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>1</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Marcelo</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aparacida</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>4</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Giselle</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aparacida</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>4</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Osvaldo</Teacher>
+	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aparacida</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>4</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Roberto</Teacher>
+	<Number_of_Not_Available_Times>15</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Marti</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Joi</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Viviane</Teacher_Name>
-	<Day>Marti</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Rosilene</Teacher>
+	<Number_of_Not_Available_Times>5</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Vineri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Anderson</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Renata</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Renata</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Carla</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Carla</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Carla</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Carla</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Lima</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Andreia2</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Carlos</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marcelo</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Giselle</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Osvaldo</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Osvaldo</Teacher_Name>
-	<Day>Marti</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>1</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>3</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Marti</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>1</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Marti</Day>
-	<Start_Hour>3</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>1</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Joi</Day>
-	<Start_Hour>4</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>1</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Roberto</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>4</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Rosilene</Teacher_Name>
-	<Day>Vineri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Terezinha</Teacher_Name>
-	<Day>Luni</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Terezinha</Teacher_Name>
-	<Day>Miercuri</Day>
-	<Start_Hour>0</Start_Hour>
-	<End_Hour>5</End_Hour>
-</ConstraintTeacherNotAvailable>
+	<Teacher>Terezinha</Teacher>
+	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Luni</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>0</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Miercuri</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
 <ConstraintTeacherMaxDaysPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Gilmar</Teacher_Name>

@@ -42,7 +42,7 @@ ModifyConstraintStudentsSetMinHoursDailyForm::ModifyConstraintStudentsSetMinHour
 	
 	updateStudentsComboBox();
 
-	minHoursSpinBox->setMinValue(0);
+	minHoursSpinBox->setMinValue(2);
 	minHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	minHoursSpinBox->setValue(ctr->minHoursDaily);
 

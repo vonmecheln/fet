@@ -54,7 +54,6 @@ using namespace std;
 #include <QTime>
 #include <QDate>
 
-
 //Represents the current status of the simulation - running or stopped.
 extern bool simulation_running;
 
@@ -457,7 +456,7 @@ void TimetableExport::writeSubgroupsTimetableXml(const QString& xmlfilename)
 					for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
 						tos<<" <Teacher name=\""<<protect(*it)<<"\"></Teacher>";
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
-					tos<<"<Subject_Tag name=\""<<protect(act->subjectTagName)<<"\"></Subject_Tag>";
+					tos<<"<Activity_Tag name=\""<<protect(act->activityTagName)<<"\"></Activity_Tag>";
 
 					int r=best_solution.rooms[ai];
 					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
@@ -475,7 +474,7 @@ void TimetableExport::writeSubgroupsTimetableXml(const QString& xmlfilename)
 					for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
 						tos<<" <Teacher name=\""<<protect(*it)<<"\"></Teacher>";
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
-					tos<<"<Subject_Tag name=\""<<protect(act->subjectTagName)<<"\"></Subject_Tag>";
+					tos<<"<Activity_Tag name=\""<<protect(act->activityTagName)<<"\"></Activity_Tag>";
 				}
 
 				//tos<<"</Week2>\n";
@@ -532,7 +531,7 @@ void TimetableExport::writeTeachersTimetableXml(const QString& xmlfilename)
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
-					tos<<"<Subject_Tag name=\""<<protect(act->subjectTagName)<<"\"></Subject_Tag>";
+					tos<<"<Activity_Tag name=\""<<protect(act->activityTagName)<<"\"></Activity_Tag>";
 					for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
 						tos << "<Students name=\"" << protect(*it) << "\"></Students>";
 
@@ -622,8 +621,8 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 		for(int i=0; i<gt.rules.subjectsList.size(); i++){
 			tos << "span.subject_"<<protect2id(gt.rules.subjectsList[i]->name)<<" {\n\n}\n\n";
 		}
-		for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
-			tos << "span.subjecttag_"<<protect2id(gt.rules.subjectTagsList[i]->name)<<" {\n\n}\n\n";
+		for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+			tos << "span.activitytag_"<<protect2id(gt.rules.activityTagsList[i]->name)<<" {\n\n}\n\n";
 		}
 		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 			StudentsYear* sty=gt.rules.augmentedYearsList[i];
@@ -642,7 +641,7 @@ void TimetableExport::writeStylesheetCss(const QString& htmlfilename, QString sa
 	}
 	if(TIMETABLE_HTML_LEVEL>=3){
 		tos<<"span.subject {\n\n}\n\n";
-		tos<<"span.subjecttag {\n\n}\n\n";
+		tos<<"span.activitytag {\n\n}\n\n";
 		tos<<"td.student, div.student {\n\n}\n\n";
 		tos<<"td.teacher, div.teacher {\n\n}\n\n";
 		tos<<"td.room, div.room {\n\n}\n\n";
@@ -797,7 +796,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 							tos<<"          <td>";
 						else
 							tos<<"          <td rowspan=\""<<act->duration<<"\">";
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line1\">";
 							if(act->subjectName.size()>0)
@@ -807,12 +806,12 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(const QString& h
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -1000,7 +999,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 							tos<<"          <td>";
 						else
 							tos<<"          <td colspan=\""<<act->duration<<"\">";
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line1\">";
 							if(act->subjectName.size()>0)
@@ -1010,12 +1009,12 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(const QString& htm
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -1181,7 +1180,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 							tos<<"          <td>";
 						else
 							tos<<"          <td rowspan=\""<<act->duration<<"\">";
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line1\">";
 							if(act->subjectName.size()>0)
@@ -1191,12 +1190,12 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(const QString& htm
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -1353,7 +1352,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 							tos<<"          <td>";
 						else
 							tos<<"          <td colspan=\""<<act->duration<<"\">";
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line1\">";
 							if(act->subjectName.size()>0)
@@ -1363,12 +1362,12 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(const QString& h
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -1570,7 +1569,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 										tos<<"          <td>";
 									else
 										tos<<"          <td rowspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -1580,12 +1579,12 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -1670,7 +1669,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -1678,12 +1677,12 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(const QString& html
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -1917,7 +1916,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 										tos<<"          <td>";
 									else
 										tos<<"          <td colspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -1927,12 +1926,12 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -2017,7 +2016,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -2025,12 +2024,12 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(const QString& htmlfi
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -2249,7 +2248,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 										tos<<"          <td>";
 									else
 										tos<<"          <td rowspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -2259,12 +2258,12 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -2349,7 +2348,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -2357,12 +2356,12 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(const QString& htmlfi
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -2578,7 +2577,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 										tos<<"          <td>";
 									else
 										tos<<"          <td colspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -2588,12 +2587,12 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -2678,7 +2677,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -2686,12 +2685,12 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(const QString& html
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -2920,7 +2919,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 										tos<<"          <td>";
 									else
 										tos<<"          <td rowspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -2930,12 +2929,12 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -3020,7 +3019,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -3028,12 +3027,12 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(const QString& htmlf
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -3261,7 +3260,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 										tos<<"          <td>";
 									else
 										tos<<"          <td colspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -3271,12 +3270,12 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -3361,7 +3360,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -3369,12 +3368,12 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(const QString& htmlfil
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -3589,7 +3588,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 										tos<<"          <td>";
 									else
 										tos<<"          <td rowspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -3599,12 +3598,12 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -3689,7 +3688,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -3697,12 +3696,12 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(const QString& htmlfil
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -3916,7 +3915,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 										tos<<"          <td>";
 									else
 										tos<<"          <td colspan=\""<<act->duration<<"\">";
-									if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+									if(act->subjectName.size()>0||act->activityTagName.size()>0){
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"<div class=\"line1\">";
 										if(act->subjectName.size()>0)
@@ -3926,12 +3925,12 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 												case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 												default: tos<<protect2(act->subjectName); break;
 											}
-										if(act->subjectTagName.size()>0)
+										if(act->activityTagName.size()>0)
 											switch(TIMETABLE_HTML_LEVEL){
-												case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-												case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-												default: tos<<" "<<protect2(act->subjectTagName); break;
+												case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+												case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+												default: tos<<" "<<protect2(act->activityTagName); break;
 											}
 										if(TIMETABLE_HTML_LEVEL>=3)
 											tos<<"</div>";
@@ -4016,7 +4015,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 											tos<<"<td class=\"detailed\">";
 										else
 											tos<<"<td>";
-										if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+										if(act->subjectName.size()>0||act->activityTagName.size()>0){
 											if(act->subjectName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
 													case 3 : tos<<"<span class=\"subject\">"<<protect2(act->subjectName)<<"</span>"; break;
@@ -4024,12 +4023,12 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(const QString& htmlf
 													case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 													default: tos<<protect2(act->subjectName); break;
 												}
-											if(act->subjectTagName.size()>0)
+											if(act->activityTagName.size()>0)
 												switch(TIMETABLE_HTML_LEVEL){
-													case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-													case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-													default: tos<<" "<<protect2(act->subjectTagName); break;
+													case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+													case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+													default: tos<<" "<<protect2(act->activityTagName); break;
 												}
 										}
 										tos<<"</td>";
@@ -4246,7 +4245,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 								tos<<"</div>";
 							else tos<<"<br />";
 						}
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line2\">";
 							if(act->subjectName.size()>0)
@@ -4256,12 +4255,12 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(const QString& ht
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4438,7 +4437,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 								tos<<"</div>";
 							else tos<<"<br />";
 						}
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line2\">";
 							if(act->subjectName.size()>0)
@@ -4448,12 +4447,12 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(const QString& html
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4615,7 +4614,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 								tos<<"</div>";
 							else tos<<"<br />";
 						}
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line2\">";
 							if(act->subjectName.size()>0)
@@ -4625,12 +4624,12 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(const QString& html
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4787,7 +4786,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 								tos<<"</div>";
 							else tos<<"<br />";
 						}
-						if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+						if(act->subjectName.size()>0||act->activityTagName.size()>0){
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"<div class=\"line2\">";
 							if(act->subjectName.size()>0)
@@ -4797,12 +4796,12 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(const QString& ht
 									case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 									default: tos<<protect2(act->subjectName); break;
 								}
-							if(act->subjectTagName.size()>0)
+							if(act->activityTagName.size()>0)
 								switch(TIMETABLE_HTML_LEVEL){
-									case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-									case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-									default: tos<<" "<<protect2(act->subjectTagName); break;
+									case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+									case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+									default: tos<<" "<<protect2(act->activityTagName); break;
 								}
 							if(TIMETABLE_HTML_LEVEL>=3)
 								tos<<"</div>";
@@ -4987,7 +4986,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 									tos<<"</div>";
 								else tos<<"<br />";
 							}
-							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(act->subjectName.size()>0||act->activityTagName.size()>0){
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<div class=\"line3\">";
 								if(act->subjectName.size()>0)
@@ -4997,12 +4996,12 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlf
 										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 										default: tos<<protect2(act->subjectName); break;
 									}
-								if(act->subjectTagName.size()>0)
+								if(act->activityTagName.size()>0)
 									switch(TIMETABLE_HTML_LEVEL){
-										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<" "<<protect2(act->subjectTagName); break;
+										case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										default: tos<<" "<<protect2(act->activityTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -5184,7 +5183,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 									tos<<"</div>";
 								else tos<<"<br />";
 							}
-							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(act->subjectName.size()>0||act->activityTagName.size()>0){
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<div class=\"line3\">";
 								if(act->subjectName.size()>0)
@@ -5194,12 +5193,12 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfil
 										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 										default: tos<<protect2(act->subjectName); break;
 									}
-								if(act->subjectTagName.size()>0)
+								if(act->activityTagName.size()>0)
 									switch(TIMETABLE_HTML_LEVEL){
-										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<" "<<protect2(act->subjectTagName); break;
+										case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										default: tos<<" "<<protect2(act->activityTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -5366,7 +5365,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 									tos<<"</div>";
 								else tos<<"<br />";
 							}
-							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(act->subjectName.size()>0||act->activityTagName.size()>0){
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<div class=\"line3\">";
 								if(act->subjectName.size()>0)
@@ -5376,12 +5375,12 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfil
 										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 										default: tos<<protect2(act->subjectName); break;
 									}
-								if(act->subjectTagName.size()>0)
+								if(act->activityTagName.size()>0)
 									switch(TIMETABLE_HTML_LEVEL){
-										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<" "<<protect2(act->subjectTagName); break;
+										case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										default: tos<<" "<<protect2(act->activityTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -5543,7 +5542,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 									tos<<"</div>";
 								else tos<<"<br />";
 							}
-							if(act->subjectName.size()>0||act->subjectTagName.size()>0){
+							if(act->subjectName.size()>0||act->activityTagName.size()>0){
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"<div class=\"line3\">";
 								if(act->subjectName.size()>0)
@@ -5553,12 +5552,12 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlf
 										case 5 : tos<<"<span class=\"subject\"><span class=\"subject_"<<protect2id(act->subjectName)<<"\" onmouseover=\"highlight('subject_"<<protect2id(act->subjectName)<<"')\">"<<protect2(act->subjectName)<<"</span></span>"; break;
 										default: tos<<protect2(act->subjectName); break;
 									}
-								if(act->subjectTagName.size()>0)
+								if(act->activityTagName.size()>0)
 									switch(TIMETABLE_HTML_LEVEL){
-										case 3 : tos<<" <span class=\"subjecttag\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-										case 4 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										case 5 : tos<<" <span class=\"subjecttag\"><span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span></span>"; break;
-										default: tos<<" "<<protect2(act->subjectTagName); break;
+										case 3 : tos<<" <span class=\"activitytag\">"<<protect2(act->activityTagName)<<"</span>"; break;
+										case 4 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										case 5 : tos<<" <span class=\"activitytag\"><span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span></span>"; break;
+										default: tos<<" "<<protect2(act->activityTagName); break;
 									}
 								if(TIMETABLE_HTML_LEVEL>=3)
 									tos<<"</div>";
@@ -5743,7 +5742,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 					else
 						tos<<"          <td><table>";
 					if(TIMETABLE_HTML_LEVEL>=3)
-						tos<<"<tr class=\"line0 subjecttag\">";
+						tos<<"<tr class=\"line0 activitytag\">";
 					else	tos<<"<tr>";
 					for(int a=0; a<allActivities.size(); a++){
 						ai=allActivities[a];
@@ -5752,11 +5751,11 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(const QString& ht
 							tos<<"<td class=\"detailed\">";
 						else
 							tos<<"<td>";
-						if(act->subjectTagName.size()>0)
+						if(act->activityTagName.size()>0)
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								default: tos<<protect2(act->subjectTagName); break;
+								case 4 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								case 5 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								default: tos<<protect2(act->activityTagName); break;
 							}
 						tos<<"</td>";
 					}
@@ -6013,7 +6012,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 					else
 						tos<<"          <td><table>";
 					if(TIMETABLE_HTML_LEVEL>=3)
-						tos<<"<tr class=\"line0 subjecttag\">";
+						tos<<"<tr class=\"line0 activitytag\">";
 					else	tos<<"<tr>";
 					for(int a=0; a<allActivities.size(); a++){
 						ai=allActivities[a];
@@ -6022,11 +6021,11 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(const QString& html
 							tos<<"<td class=\"detailed\">";
 						else
 							tos<<"<td>";
-						if(act->subjectTagName.size()>0)
+						if(act->activityTagName.size()>0)
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								default: tos<<protect2(act->subjectTagName); break;
+								case 4 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								case 5 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								default: tos<<protect2(act->activityTagName); break;
 							}
 						tos<<"</td>";
 					}
@@ -6278,7 +6277,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 					else
 						tos<<"          <td><table>";
 					if(TIMETABLE_HTML_LEVEL>=3)
-						tos<<"<tr class=\"line0 subjecttag\">";
+						tos<<"<tr class=\"line0 activitytag\">";
 					else	tos<<"<tr>";
 					for(int a=0; a<allActivities.size(); a++){
 						ai=allActivities[a];
@@ -6287,11 +6286,11 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(const QString& html
 							tos<<"<td class=\"detailed\">";
 						else
 							tos<<"<td>";
-						if(act->subjectTagName.size()>0)
+						if(act->activityTagName.size()>0)
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								default: tos<<protect2(act->subjectTagName); break;
+								case 4 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								case 5 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								default: tos<<protect2(act->activityTagName); break;
 							}
 						tos<<"</td>";
 					}
@@ -6525,7 +6524,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 					else
 						tos<<"          <td><table>";
 					if(TIMETABLE_HTML_LEVEL>=3)
-						tos<<"<tr class=\"line0 subjecttag\">";
+						tos<<"<tr class=\"line0 activitytag\">";
 					else	tos<<"<tr>";
 					for(int a=0; a<allActivities.size(); a++){
 						ai=allActivities[a];
@@ -6534,11 +6533,11 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(const QString& ht
 							tos<<"<td class=\"detailed\">";
 						else
 							tos<<"<td>";
-						if(act->subjectTagName.size()>0)
+						if(act->activityTagName.size()>0)
 							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								case 5 : tos<<"<span class=\"subjecttag_"<<protect2id(act->subjectTagName)<<"\" onmouseover=\"highlight('subjecttag_"<<protect2id(act->subjectTagName)<<"')\">"<<protect2(act->subjectTagName)<<"</span>"; break;
-								default: tos<<protect2(act->subjectTagName); break;
+								case 4 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								case 5 : tos<<"<span class=\"activitytag_"<<protect2id(act->activityTagName)<<"\" onmouseover=\"highlight('activitytag_"<<protect2id(act->activityTagName)<<"')\">"<<protect2(act->activityTagName)<<"</span>"; break;
+								default: tos<<protect2(act->activityTagName); break;
 							}
 						tos<<"</td>";
 					}

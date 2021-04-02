@@ -91,10 +91,10 @@
                 </property>
                 <widget class="QLabel" row="0" column="3">
                     <property name="name">
-                        <cstring>subjectTagsTextLabel</cstring>
+                        <cstring>activityTagsTextLabel</cstring>
                     </property>
                     <property name="text">
-                        <string>Subject tag</string>
+                        <string>Activity tag</string>
                     </property>
                 </widget>
                 <widget class="QComboBox" row="1" column="1">
@@ -104,7 +104,7 @@
                 </widget>
                 <widget class="QComboBox" row="1" column="3">
                     <property name="name">
-                        <cstring>subjectTagsComboBox</cstring>
+                        <cstring>activityTagsComboBox</cstring>
                     </property>
                 </widget>
                 <widget class="QLabel" row="0" column="1">
@@ -149,7 +149,7 @@
             </property>
             <property name="text">
                 <string>Instructions: you can choose a set of activities with a certain teacher (or
-blank for all teachers), students set, subject and subject tag.</string>
+blank for all teachers), students set, subject and activity tag.</string>
             </property>
         </widget>
     </grid>
@@ -178,7 +178,7 @@ blank for all teachers), students set, subject and subject tag.</string>
     <tabstop>teachersComboBox</tabstop>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>subjectsComboBox</tabstop>
-    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>preferredTimesTable</tabstop>
     <tabstop>weightLineEdit</tabstop>
     <tabstop>addConstraintPushButton</tabstop>

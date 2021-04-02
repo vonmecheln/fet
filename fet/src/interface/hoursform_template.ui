@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>541</width>
-            <height>562</height>
+            <width>717</width>
+            <height>570</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,35 +19,15 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="2" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>cancelPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Cancel</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>okPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Ok</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QLabel" row="0" column="0">
             <property name="name">
                 <cstring>hoursTextLabel</cstring>
             </property>
             <property name="text">
-                <string>Number of start hours (periods) per day
-(please specify also the name of the last hour of the day)
-Please be careful, you will have to input n+1 names
-It is recommended to use names like 08:00 or 13:45 for instance,
-not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
+                <string>Number of periods (start hours) per day</string>
             </property>
         </widget>
-        <widget class="QSpinBox" row="0" column="2">
+        <widget class="QSpinBox" row="0" column="1">
             <property name="name">
                 <cstring>hoursSpinBox</cstring>
             </property>
@@ -61,353 +41,43 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
                 <number>1</number>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout1</cstring>
+                <cstring>layout3</cstring>
             </property>
             <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="6" column="3">
+                <widget class="QLabel" row="0" column="6">
                     <property name="name">
-                        <cstring>hour28TextLabel</cstring>
+                        <cstring>hour49TextLabel</cstring>
                     </property>
                     <property name="text">
-                        <string>Hour 28</string>
+                        <string>Hour 49</string>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="9" column="0">
+                <widget class="QLineEdit" row="7" column="7">
                     <property name="name">
-                        <cstring>hour5LineEdit</cstring>
+                        <cstring>hour60LineEdit</cstring>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="3" column="0">
+                <widget class="QLabel" row="0" column="7">
                     <property name="name">
-                        <cstring>hour2LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="6" column="1">
-                    <property name="name">
-                        <cstring>hour12TextLabel</cstring>
+                        <cstring>hour57TextLabel</cstring>
                     </property>
                     <property name="text">
-                        <string>Hour 12</string>
+                        <string>Hour 57</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="0" column="0">
+                <widget class="QLineEdit" row="11" column="4">
                     <property name="name">
-                        <cstring>hour1TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 1</string>
+                        <cstring>hour38LineEdit</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="12" column="2">
+                <widget class="QLineEdit" row="13" column="1">
                     <property name="name">
-                        <cstring>hour23TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 23</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="4" column="1">
-                    <property name="name">
-                        <cstring>hour11TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 11</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="2">
-                    <property name="name">
-                        <cstring>hour17TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 17</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="4" column="3">
-                    <property name="name">
-                        <cstring>hour27TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 27</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="0">
-                    <property name="name">
-                        <cstring>hour2TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 2</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="8" column="1">
-                    <property name="name">
-                        <cstring>hour13TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 13</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="13" column="0">
-                    <property name="name">
-                        <cstring>hour7LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="4" column="0">
-                    <property name="name">
-                        <cstring>hour3TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 3</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="5" column="3">
-                    <property name="name">
-                        <cstring>hour27LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="8" column="0">
-                    <property name="name">
-                        <cstring>hour5TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 5</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="3">
-                    <property name="name">
-                        <cstring>hour26TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 26</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="10" column="3">
-                    <property name="name">
-                        <cstring>hour30TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 30</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="15" column="0">
-                    <property name="name">
-                        <cstring>hour8LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="14" column="2">
-                    <property name="name">
-                        <cstring>hour24TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 24</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="12" column="0">
-                    <property name="name">
-                        <cstring>hour7TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 7</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="2">
-                    <property name="name">
-                        <cstring>hour18TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 18</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="4" column="2">
-                    <property name="name">
-                        <cstring>hour19TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 19</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="13" column="3">
-                    <property name="name">
-                        <cstring>hour31LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="10" column="2">
-                    <property name="name">
-                        <cstring>hour22TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 22</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="15" column="2">
-                    <property name="name">
-                        <cstring>hour24LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="1">
-                    <property name="name">
-                        <cstring>hour10TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 10</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="11" column="2">
-                    <property name="name">
-                        <cstring>hour22LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="12" column="3">
-                    <property name="name">
-                        <cstring>hour31TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 31</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="12" column="1">
-                    <property name="name">
-                        <cstring>hour15TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 15</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="10" column="1">
-                    <property name="name">
-                        <cstring>hour14TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 14</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="9" column="2">
-                    <property name="name">
-                        <cstring>hour21LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="3" column="3">
-                    <property name="name">
-                        <cstring>hour26LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="5" column="2">
-                    <property name="name">
-                        <cstring>hour19LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="1">
-                    <property name="name">
-                        <cstring>hour9TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 9</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="5" column="1">
-                    <property name="name">
-                        <cstring>hour11LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="1" column="0">
-                    <property name="name">
-                        <cstring>hour1LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="7" column="2">
-                    <property name="name">
-                        <cstring>hour20LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="6" column="0">
-                    <property name="name">
-                        <cstring>hour4TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 4</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="15" column="1">
-                    <property name="name">
-                        <cstring>hour16LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="7" column="0">
-                    <property name="name">
-                        <cstring>hour4LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="7" column="1">
-                    <property name="name">
-                        <cstring>hour12LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="14" column="0">
-                    <property name="name">
-                        <cstring>hour8TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 8</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="7" column="3">
-                    <property name="name">
-                        <cstring>hour28LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="11" column="3">
-                    <property name="name">
-                        <cstring>hour30LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="1" column="1">
-                    <property name="name">
-                        <cstring>hour9LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="10" column="0">
-                    <property name="name">
-                        <cstring>hour6TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 6</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="1" column="2">
-                    <property name="name">
-                        <cstring>hour17LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="3" column="1">
-                    <property name="name">
-                        <cstring>hour10LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="9" column="3">
-                    <property name="name">
-                        <cstring>hour29LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="1" column="3">
-                    <property name="name">
-                        <cstring>hour25LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="13" column="2">
-                    <property name="name">
-                        <cstring>hour23LineEdit</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="8" column="3">
-                    <property name="name">
-                        <cstring>hour29TextLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Hour 29</string>
+                        <cstring>hour15LineEdit</cstring>
                     </property>
                 </widget>
                 <widget class="QLabel" row="6" column="2">
@@ -418,17 +88,30 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
                         <string>Hour 20</string>
                     </property>
                 </widget>
-                <widget class="QLabel" row="14" column="1">
+                <widget class="QLabel" row="10" column="1">
                     <property name="name">
-                        <cstring>hour16TextLabel</cstring>
+                        <cstring>hour14TextLabel</cstring>
                     </property>
                     <property name="text">
-                        <string>Hour 16</string>
+                        <string>Hour 14</string>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="3" column="2">
+                <widget class="QLabel" row="8" column="1">
                     <property name="name">
-                        <cstring>hour18LineEdit</cstring>
+                        <cstring>hour13TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 13</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="11" column="5">
+                    <property name="name">
+                        <cstring>hour46LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="11" column="6">
+                    <property name="name">
+                        <cstring>hour54LineEdit</cstring>
                     </property>
                 </widget>
                 <widget class="QLabel" row="0" column="3">
@@ -439,6 +122,418 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
                         <string>Hour 25</string>
                     </property>
                 </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>hour1TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 1</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="14" column="3">
+                    <property name="name">
+                        <cstring>hour32TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 32</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="5">
+                    <property name="name">
+                        <cstring>hour43LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="4">
+                    <property name="name">
+                        <cstring>hour36TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 36</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="3">
+                    <property name="name">
+                        <cstring>hour28TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 28</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="10" column="5">
+                    <property name="name">
+                        <cstring>hour46TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 46</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="7" column="5">
+                    <property name="name">
+                        <cstring>hour44LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="12" column="4">
+                    <property name="name">
+                        <cstring>hour39TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 39</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="7" column="0">
+                    <property name="name">
+                        <cstring>hour4LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="1">
+                    <property name="name">
+                        <cstring>hour11LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="3">
+                    <property name="name">
+                        <cstring>hour26LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="12" column="1">
+                    <property name="name">
+                        <cstring>hour15TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 15</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="2">
+                    <property name="name">
+                        <cstring>hour19TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 19</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>hour2TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 2</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="11" column="1">
+                    <property name="name">
+                        <cstring>hour14LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="11" column="0">
+                    <property name="name">
+                        <cstring>hour6LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="1">
+                    <property name="name">
+                        <cstring>hour10LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>hour3TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 3</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="5">
+                    <property name="name">
+                        <cstring>hour42LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="9" column="4">
+                    <property name="name">
+                        <cstring>hour37LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="4">
+                    <property name="name">
+                        <cstring>hour35TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 35</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="7" column="3">
+                    <property name="name">
+                        <cstring>hour28LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="0">
+                    <property name="name">
+                        <cstring>hour4TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 4</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="8" column="0">
+                    <property name="name">
+                        <cstring>hour5TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 5</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="15" column="6">
+                    <property name="name">
+                        <cstring>hour56LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="7">
+                    <property name="name">
+                        <cstring>hour59TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 59</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="12" column="5">
+                    <property name="name">
+                        <cstring>hour47TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 47</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="7" column="6">
+                    <property name="name">
+                        <cstring>hour52LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="5">
+                    <property name="name">
+                        <cstring>hour43TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 43</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="12" column="6">
+                    <property name="name">
+                        <cstring>hour55TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 55</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="13" column="6">
+                    <property name="name">
+                        <cstring>hour55LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="10" column="4">
+                    <property name="name">
+                        <cstring>hour38TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 38</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="2">
+                    <property name="name">
+                        <cstring>hour18LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="8" column="3">
+                    <property name="name">
+                        <cstring>hour29TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 29</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="10" column="0">
+                    <property name="name">
+                        <cstring>hour6TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 6</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="2">
+                    <property name="name">
+                        <cstring>hour18TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 18</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="3">
+                    <property name="name">
+                        <cstring>hour27TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 27</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="0">
+                    <property name="name">
+                        <cstring>hour2LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="4">
+                    <property name="name">
+                        <cstring>hour34LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="14" column="6">
+                    <property name="name">
+                        <cstring>hour56TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 56</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="15" column="5">
+                    <property name="name">
+                        <cstring>hour48LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="5">
+                    <property name="name">
+                        <cstring>hour44TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 44</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="5">
+                    <property name="name">
+                        <cstring>hour42TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 42</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="4">
+                    <property name="name">
+                        <cstring>hour33LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="4">
+                    <property name="name">
+                        <cstring>hour34TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 34</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="7" column="1">
+                    <property name="name">
+                        <cstring>hour12LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="2">
+                    <property name="name">
+                        <cstring>hour19LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="15" column="0">
+                    <property name="name">
+                        <cstring>hour8LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="6">
+                    <property name="name">
+                        <cstring>hour49LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="6">
+                    <property name="name">
+                        <cstring>hour51TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 51</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="0">
+                    <property name="name">
+                        <cstring>hour3LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="9" column="3">
+                    <property name="name">
+                        <cstring>hour29LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="7">
+                    <property name="name">
+                        <cstring>hour60TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 60</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="13" column="5">
+                    <property name="name">
+                        <cstring>hour47LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="10" column="6">
+                    <property name="name">
+                        <cstring>hour54TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 54</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="8" column="4">
+                    <property name="name">
+                        <cstring>hour37TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 37</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="10" column="2">
+                    <property name="name">
+                        <cstring>hour22TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 22</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="2">
+                    <property name="name">
+                        <cstring>hour17TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 17</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="1">
+                    <property name="name">
+                        <cstring>hour12TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 12</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="5">
+                    <property name="name">
+                        <cstring>hour41LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="14" column="4">
+                    <property name="name">
+                        <cstring>hour40TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 40</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="15" column="4">
+                    <property name="name">
+                        <cstring>hour40LineEdit</cstring>
+                    </property>
+                </widget>
                 <widget class="QLabel" row="8" column="2">
                     <property name="name">
                         <cstring>hour21TextLabel</cstring>
@@ -447,9 +542,159 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
                         <string>Hour 21</string>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="11" column="0">
+                <widget class="QLabel" row="2" column="1">
                     <property name="name">
-                        <cstring>hour6LineEdit</cstring>
+                        <cstring>hour10TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 10</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="7">
+                    <property name="name">
+                        <cstring>hour58LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="9" column="6">
+                    <property name="name">
+                        <cstring>hour53LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="9" column="5">
+                    <property name="name">
+                        <cstring>hour45LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="6">
+                    <property name="name">
+                        <cstring>hour51LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="5">
+                    <property name="name">
+                        <cstring>hour41TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 41</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="7" column="4">
+                    <property name="name">
+                        <cstring>hour36LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="7">
+                    <property name="name">
+                        <cstring>hour58TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 58</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="9" column="2">
+                    <property name="name">
+                        <cstring>hour21LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="12" column="3">
+                    <property name="name">
+                        <cstring>hour31TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 31</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="12" column="0">
+                    <property name="name">
+                        <cstring>hour7TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 7</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="13" column="0">
+                    <property name="name">
+                        <cstring>hour7LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="6">
+                    <property name="name">
+                        <cstring>hour52TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 52</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="7">
+                    <property name="name">
+                        <cstring>hour59LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="14" column="1">
+                    <property name="name">
+                        <cstring>hour16TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 16</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="3">
+                    <property name="name">
+                        <cstring>hour25LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="11" column="3">
+                    <property name="name">
+                        <cstring>hour30LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="0">
+                    <property name="name">
+                        <cstring>hour1LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="3">
+                    <property name="name">
+                        <cstring>hour27LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="1">
+                    <property name="name">
+                        <cstring>hour11TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 11</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="9" column="0">
+                    <property name="name">
+                        <cstring>hour5LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="6">
+                    <property name="name">
+                        <cstring>hour50TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 50</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="8" column="5">
+                    <property name="name">
+                        <cstring>hour45TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 45</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="6">
+                    <property name="name">
+                        <cstring>hour50LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="13" column="4">
+                    <property name="name">
+                        <cstring>hour39LineEdit</cstring>
                     </property>
                 </widget>
                 <widget class="QLineEdit" row="9" column="1">
@@ -457,22 +702,160 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
                         <cstring>hour13LineEdit</cstring>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="13" column="1">
+                <widget class="QLineEdit" row="15" column="1">
                     <property name="name">
-                        <cstring>hour15LineEdit</cstring>
+                        <cstring>hour16LineEdit</cstring>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="11" column="1">
+                <widget class="QLabel" row="14" column="2">
                     <property name="name">
-                        <cstring>hour14LineEdit</cstring>
+                        <cstring>hour24TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 24</string>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="5" column="0">
+                <widget class="QLabel" row="10" column="3">
                     <property name="name">
-                        <cstring>hour3LineEdit</cstring>
+                        <cstring>hour30TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 30</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="4">
+                    <property name="name">
+                        <cstring>hour33TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 33</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="2">
+                    <property name="name">
+                        <cstring>hour17LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="14" column="0">
+                    <property name="name">
+                        <cstring>hour8TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 8</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="1">
+                    <property name="name">
+                        <cstring>hour9TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 9</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="13" column="3">
+                    <property name="name">
+                        <cstring>hour31LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="8" column="6">
+                    <property name="name">
+                        <cstring>hour53TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 53</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="5" column="4">
+                    <property name="name">
+                        <cstring>hour35LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="7" column="2">
+                    <property name="name">
+                        <cstring>hour20LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="15" column="2">
+                    <property name="name">
+                        <cstring>hour24LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="12" column="2">
+                    <property name="name">
+                        <cstring>hour23TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 23</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="7">
+                    <property name="name">
+                        <cstring>hour57LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="14" column="5">
+                    <property name="name">
+                        <cstring>hour48TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 48</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="15" column="3">
+                    <property name="name">
+                        <cstring>hour32LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="13" column="2">
+                    <property name="name">
+                        <cstring>hour23LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="1">
+                    <property name="name">
+                        <cstring>hour9LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="11" column="2">
+                    <property name="name">
+                        <cstring>hour22LineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="3">
+                    <property name="name">
+                        <cstring>hour26TextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Hour 26</string>
                     </property>
                 </widget>
             </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout2</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ok</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
     </grid>
 </widget>
@@ -529,6 +912,35 @@ not the interval (not like 08:00-09:00 or like 13:45-14:55)</string>
     <tabstop>hour29LineEdit</tabstop>
     <tabstop>hour30LineEdit</tabstop>
     <tabstop>hour31LineEdit</tabstop>
+    <tabstop>hour32LineEdit</tabstop>
+    <tabstop>hour33LineEdit</tabstop>
+    <tabstop>hour34LineEdit</tabstop>
+    <tabstop>hour35LineEdit</tabstop>
+    <tabstop>hour36LineEdit</tabstop>
+    <tabstop>hour37LineEdit</tabstop>
+    <tabstop>hour38LineEdit</tabstop>
+    <tabstop>hour39LineEdit</tabstop>
+    <tabstop>hour40LineEdit</tabstop>
+    <tabstop>hour41LineEdit</tabstop>
+    <tabstop>hour42LineEdit</tabstop>
+    <tabstop>hour43LineEdit</tabstop>
+    <tabstop>hour44LineEdit</tabstop>
+    <tabstop>hour45LineEdit</tabstop>
+    <tabstop>hour46LineEdit</tabstop>
+    <tabstop>hour47LineEdit</tabstop>
+    <tabstop>hour48LineEdit</tabstop>
+    <tabstop>hour49LineEdit</tabstop>
+    <tabstop>hour50LineEdit</tabstop>
+    <tabstop>hour51LineEdit</tabstop>
+    <tabstop>hour52LineEdit</tabstop>
+    <tabstop>hour53LineEdit</tabstop>
+    <tabstop>hour54LineEdit</tabstop>
+    <tabstop>hour55LineEdit</tabstop>
+    <tabstop>hour56LineEdit</tabstop>
+    <tabstop>hour57LineEdit</tabstop>
+    <tabstop>hour58LineEdit</tabstop>
+    <tabstop>hour59LineEdit</tabstop>
+    <tabstop>hour60LineEdit</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>
 </tabstops>

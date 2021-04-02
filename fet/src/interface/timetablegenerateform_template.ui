@@ -4,6 +4,9 @@
     <property name="name">
         <cstring>TimetableGenerateForm_template</cstring>
     </property>
+    <property name="enabled">
+        <bool>true</bool>
+    </property>
     <property name="geometry">
         <rect>
             <x>0</x>
@@ -15,7 +18,7 @@
     <property name="caption">
         <string>Automatically generate</string>
     </property>
-    <vbox>
+    <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
@@ -25,7 +28,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QLabel">
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>textLabel1</cstring>
             </property>
@@ -33,7 +36,7 @@
                 <string>Current stage:</string>
             </property>
         </widget>
-        <widget class="QTextEdit">
+        <widget class="QTextEdit" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>currentResultsTextEdit</cstring>
             </property>
@@ -41,65 +44,78 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="QPushButton" row="6" column="0">
             <property name="name">
-                <cstring>layout1</cstring>
+                <cstring>helpPushButton</cstring>
             </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton" row="2" column="1">
-                    <property name="name">
-                        <cstring>closePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Close</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="1" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>writeResultsPushButton</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="text">
-                        <string>Write (save, update) the results on hard disk, without 
+            <property name="text">
+                <string>Help</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>writeResultsPushButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string>Write (save, update) the results on hard disk, without 
 stopping the simulation. You can see the partial 
 timetable on the hard disk, in xml and html formats.</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="2" column="0">
-                    <property name="name">
-                        <cstring>helpPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Help</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="0" column="0">
-                    <property name="name">
-                        <cstring>startPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Start</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="0" column="1">
-                    <property name="name">
-                        <cstring>stopPushButton</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="text">
-                        <string>Stop and see impossible activities</string>
-                    </property>
-                </widget>
-            </grid>
+            </property>
         </widget>
-    </vbox>
+        <widget class="QPushButton" row="6" column="1">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="0">
+            <property name="name">
+                <cstring>startPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Start</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="1">
+            <property name="name">
+                <cstring>stopPushButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string>Stop and see impossible activities</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>seeImpossiblePushButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string>See difficult activities without stoping simulation</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>seeInitialOrderPushButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string>See initial order of placing the activities, without stopping simulation
+(might help with impossible timetables).</string>
+            </property>
+        </widget>
+    </grid>
 </widget>
 <connections>
     <connection>
@@ -132,6 +148,18 @@ timetable on the hard disk, in xml and html formats.</string>
         <receiver>TimetableGenerateForm_template</receiver>
         <slot>help()</slot>
     </connection>
+    <connection>
+        <sender>seeImpossiblePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableGenerateForm_template</receiver>
+        <slot>seeImpossible()</slot>
+    </connection>
+    <connection>
+        <sender>seeInitialOrderPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableGenerateForm_template</receiver>
+        <slot>seeInitialOrder()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>currentResultsTextEdit</tabstop>
@@ -152,6 +180,8 @@ timetable on the hard disk, in xml and html formats.</string>
     <slot>initializeUnallocated()</slot>
     <slot>closePressed()</slot>
     <slot>help()</slot>
+    <slot>seeImpossible()</slot>
+    <slot>seeInitialOrder()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

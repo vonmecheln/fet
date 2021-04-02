@@ -49,12 +49,12 @@ AddConstraintActivityPreferredRoomsForm::AddConstraintActivityPreferredRoomsForm
 	}
 	subjectsComboBox->setCurrentItem(0);
 
-	subjectTagsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
-		SubjectTag* st=gt.rules.subjectTagsList[i];
-		subjectTagsComboBox->insertItem(st->name);
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* st=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(st->name);
 	}
-	subjectTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentItem(0);
 
 	studentsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -93,7 +93,7 @@ bool AddConstraintActivityPreferredRoomsForm::filterOk(Activity* act)
 	QString tn=teachersComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=subjectTagsComboBox->currentText();
+	QString sbtn=activityTagsComboBox->currentText();
 	int ok=true;
 
 	//teacher
@@ -112,8 +112,8 @@ bool AddConstraintActivityPreferredRoomsForm::filterOk(Activity* act)
 	if(sbn!="" && sbn!=act->subjectName)
 		ok=false;
 		
-	//subject tag
-	if(sbtn!="" && sbtn!=act->subjectTagName)
+	//activity tag
+	if(sbtn!="" && sbtn!=act->activityTagName)
 		ok=false;
 		
 	//students
@@ -187,12 +187,6 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 			QObject::tr("Only one selected room - please use constraint activity preferred room if you want a single room"));
 		return;
 	}
-	if(selectedRoomsListBox->count()>(uint)(MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS)){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please report error to the author\nMAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS must be increased (you have too many selected rooms)"));
-		return;
-	}
-	
 
 
 	int id;

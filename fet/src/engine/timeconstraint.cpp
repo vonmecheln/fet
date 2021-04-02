@@ -29,7 +29,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "activity.h"
 #include "teacher.h"
 #include "subject.h"
-#include "subjecttag.h"
+#include "activitytag.h"
 #include "studentsset.h"
 
 #include <qstring.h>
@@ -57,13 +57,13 @@ static qint8 teachersMatrix[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 static int teachers_conflicts=-1;
 static int subgroups_conflicts=-1;
 
-extern bool breakTime[MAX_HOURS_PER_WEEK];
+//extern bool breakTime[MAX_HOURS_PER_WEEK];
 extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
-extern bool teacherNotAvailableTime[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
+//extern bool teacherNotAvailableTime[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
 extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
-extern bool subgroupNotAvailableTime[MAX_TOTAL_SUBGROUPS][MAX_HOURS_PER_WEEK];
+//extern bool subgroupNotAvailableTime[MAX_TOTAL_SUBGROUPS][MAX_HOURS_PER_WEEK];
 extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -428,7 +428,7 @@ bool ConstraintBasicCompulsoryTime::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintBasicCompulsoryTime::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintBasicCompulsoryTime::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -452,72 +452,100 @@ bool ConstraintBasicCompulsoryTime::isRelatedToStudentsSet(Rules& r, StudentsSet
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintTeacherNotAvailable::ConstraintTeacherNotAvailable()
+ConstraintTeacherNotAvailableTimes::ConstraintTeacherNotAvailableTimes()
 	: TimeConstraint()
 {
-	this->type=CONSTRAINT_TEACHER_NOT_AVAILABLE;
+	this->type=CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES;
 }
 
-ConstraintTeacherNotAvailable::ConstraintTeacherNotAvailable(double wp, const QString& tn, int day, int start_hour, int end_hour)
+ConstraintTeacherNotAvailableTimes::ConstraintTeacherNotAvailableTimes(double wp, const QString& tn, QList<int> d, QList<int> h)
 	: TimeConstraint(wp)
 {
-	this->teacherName=tn;
-	this->d=day;
-	this->h1=start_hour;
-	this->h2=end_hour;
-	this->type=CONSTRAINT_TEACHER_NOT_AVAILABLE;
+	this->teacher=tn;
+	assert(d.count()==h.count());
+	this->days=d;
+	this->hours=h;
+	this->type=CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES;
 }
 
-QString ConstraintTeacherNotAvailable::getXmlDescription(Rules& r){
-	QString s="<ConstraintTeacherNotAvailable>\n";
+QString ConstraintTeacherNotAvailableTimes::getXmlDescription(Rules& r){
+	QString s="<ConstraintTeacherNotAvailableTimes>\n";
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	/*s+="	<Compulsory>";
-	s+=yesNo(this->compulsory);
-	s+="</Compulsory>\n";*/
-	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
-	s+="	<Day>"+protect(r.daysOfTheWeek[this->d])+"</Day>\n";
-	s+="	<Start_Hour>"+protect(r.hoursOfTheDay[this->h1])+"</Start_Hour>\n";
-	s+="	<End_Hour>"+protect(r.hoursOfTheDay[this->h2])+"</End_Hour>\n";
-	s+="</ConstraintTeacherNotAvailable>\n";
+	s+="	<Teacher>"+protect(this->teacher)+"</Teacher>\n";
+
+	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		s+="	<Not_Available_Time>\n";
+		if(this->days.at(i)>=0)
+			s+="		<Day>"+protect(r.daysOfTheWeek[this->days.at(i)])+"</Day>\n";
+		if(this->hours.at(i)>=0)
+			s+="		<Hour>"+protect(r.hoursOfTheDay[this->hours.at(i)])+"</Hour>\n";
+		s+="	</Not_Available_Time>\n";
+	}
+
+	s+="</ConstraintTeacherNotAvailableTimes>\n";
 	return s;
 }
 
-QString ConstraintTeacherNotAvailable::getDescription(Rules& r){
+QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r){
 	QString s=QObject::tr("Teacher not available");s+=",";
-	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
-	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
-	s+=(QObject::tr("T:%1").arg(this->teacherName));s+=", ";
-	s+=(QObject::tr("D:%1").arg(r.daysOfTheWeek[this->d]));s+=", ";
-	s+=(QObject::tr("SH:%1").arg(r.hoursOfTheDay[this->h1]));s+=", ";
-	s+=(QObject::tr("EH:%1").arg(r.hoursOfTheDay[this->h2]));
+	s+=(QObject::tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage));s+=", ";
+	s+=(QObject::tr("T:%1", "Teacher").arg(this->teacher));s+=", ";
+
+	s+=QObject::tr("NA at:", "Not available at");
+	s+=" ";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		if(this->days.at(i)>=0){
+			s+=r.daysOfTheWeek[this->days.at(i)];
+			s+=" ";
+		}
+		if(this->hours.at(i)>=0){
+			s+=r.hoursOfTheDay[this->hours.at(i)];
+		}
+		if(i<days.count()-1)
+			s+="; ";
+	}
 
 	return s;
 }
 
-QString ConstraintTeacherNotAvailable::getDetailedDescription(Rules& r){
+QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r){
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teacher not available");s+="\n";
 	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
-	s+=(QObject::tr("Teacher=%1").arg(this->teacherName));s+="\n";
-	s+=(QObject::tr("Day=%1").arg(r.daysOfTheWeek[this->d]));s+="\n";
-	s+=(QObject::tr("Start hour=%1").arg(r.hoursOfTheDay[this->h1]));s+="\n";
-	s+=(QObject::tr("End hour=%1").arg(r.hoursOfTheDay[this->h2]));s+="\n";
+	s+=(QObject::tr("Teacher=%1").arg(this->teacher));s+="\n";
+
+	s+=QObject::tr("Not available at:");
+	s+="\n";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		if(this->days.at(i)>=0){
+			s+=r.daysOfTheWeek[this->days.at(i)];
+			s+=" ";
+		}
+		if(this->hours.at(i)>=0){
+			s+=r.hoursOfTheDay[this->hours.at(i)];
+		}
+		if(i<days.count()-1)
+			s+="; ";
+	}
 
 	return s;
 }
 
-bool ConstraintTeacherNotAvailable::computeInternalStructure(Rules& r){
-	this->teacher_ID=r.searchTeacher(this->teacherName);
+bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(Rules& r){
+	this->teacher_ID=r.searchTeacher(this->teacher);
 
 	if(this->teacher_ID<0){
 		QMessageBox::warning(NULL, QObject::tr("FET warning"),
-		 QObject::tr("Constraint teacher not available is wrong because it refers to inexistent teacher."
+		 QObject::tr("Constraint teacher not available times is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
 	}	
-	if(this->d >= r.nDaysPerWeek){
+	/*if(this->d >= r.nDaysPerWeek){
 		QMessageBox::information(NULL, QObject::tr("FET information"),
 		 QObject::tr("Constraint teacher not available is wrong because it refers to removed day. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -544,13 +572,30 @@ bool ConstraintTeacherNotAvailable::computeInternalStructure(Rules& r){
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
+	}*/
+	assert(days.count()==hours.count());
+	for(int k=0; k<days.count(); k++){
+		if(this->days.at(k) >= r.nDaysPerWeek){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint teacher not available times is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}		
+		if(this->hours.at(k) >= r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint teacher not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
 	}
 
 	assert(this->teacher_ID>=0);
 	return true;
 }
 
-double ConstraintTeacherNotAvailable::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
+double ConstraintTeacherNotAvailableTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -573,38 +618,37 @@ double ConstraintTeacherNotAvailable::fitness(Solution& c, Rules& r, QList<doubl
 	//5 broken restrictions for that function.
 	//TODO: decide if it is better to consider only 2 or 10 as a return value in this particular case
 	//(currently it is 10)
-	int i=this->teacher_ID;
-	int j=this->d;
+	int tch=this->teacher_ID;
+
 	int nbroken;
 
-	//without logging
-	if(conflictsString==NULL){
-		nbroken=0;
-		for(int k=h1; k<h2; k++)
-			if(teachersMatrix[i][j][k]>0)
-				//teachersMatrix[i][j][k]>=0 at anytime. Can I improve this if I get rid of the "if"?
-				nbroken+=teachersMatrix[i][j][k];
-	}
-	//with logging
-	else{
-		nbroken=0;
-		for(int k=h1; k<h2; k++)
-			if(teachersMatrix[i][j][k]>0){
-				if(conflictsString!=NULL){
-					QString s=(QObject::tr("Time constraint teacher not available broken for teacher %1 on day %2, hour %3")
-					 .arg(r.internalTeachersList[i]->name)
-					 .arg(r.daysOfTheWeek[j])
-					 .arg(r.hoursOfTheDay[k]));
-					s += ". ";
-					s += (QObject::tr("This increases the conflicts total by %1").arg(teachersMatrix[i][j][k]*weightPercentage/100));
-				
-					*conflictsString+= s+"\n";
-					
-					dl.append(s);
-					cl.append(teachersMatrix[i][j][k]*weightPercentage/100);
-				}
-				nbroken+=teachersMatrix[i][j][k];
+	nbroken=0;
+
+	assert(days.count()==hours.count());
+	for(int k=0; k<days.count(); k++){
+		int d=days.at(k);
+		int h=hours.at(k);
+		
+		if(teachersMatrix[tch][d][h]>0){
+			nbroken+=teachersMatrix[tch][d][h];
+	
+			if(conflictsString!=NULL){
+				QString s= QObject::tr("Time constraint teacher not available times");
+				s += " ";
+				s += (QObject::tr("broken for teacher: %1 on day %2, hour %3")
+				 .arg(r.internalTeachersList[tch]->name)
+				 .arg(r.daysOfTheWeek[d])
+				 .arg(r.hoursOfTheDay[h]));
+				s += ". ";
+				s += (QObject::tr("This increases the conflicts total by %1")
+				 .arg(teachersMatrix[tch][d][h]*weightPercentage/100));
+				 
+				dl.append(s);
+				cl.append(teachersMatrix[tch][d][h]*weightPercentage/100);
+			
+				*conflictsString += s+"\n";
 			}
+		}
 	}
 
 	if(weightPercentage==100.0)
@@ -612,48 +656,38 @@ double ConstraintTeacherNotAvailable::fitness(Solution& c, Rules& r, QList<doubl
 	return weightPercentage/100 * nbroken;
 }
 
-bool ConstraintTeacherNotAvailable::isRelatedToActivity(Activity* a)
+bool ConstraintTeacherNotAvailableTimes::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
-	/*if(a)
-		;*/
 
 	return false;
 }
 
-bool ConstraintTeacherNotAvailable::isRelatedToTeacher(Teacher* t)
+bool ConstraintTeacherNotAvailableTimes::isRelatedToTeacher(Teacher* t)
 {
-	if(this->teacherName==t->name)
+	if(this->teacher==t->name)
 		return true;
 	return false;
 }
 
-bool ConstraintTeacherNotAvailable::isRelatedToSubject(Subject* s)
+bool ConstraintTeacherNotAvailableTimes::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
-	/*if(s)
-		;*/
 
 	return false;
 }
 
-bool ConstraintTeacherNotAvailable::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeacherNotAvailableTimes::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	/*if(s)
-		;*/
 
 	return false;
 }
 
-bool ConstraintTeacherNotAvailable::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintTeacherNotAvailableTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -661,32 +695,32 @@ bool ConstraintTeacherNotAvailable::isRelatedToStudentsSet(Rules& r, StudentsSet
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintStudentsSetNotAvailable::ConstraintStudentsSetNotAvailable()
+ConstraintStudentsSetNotAvailableTimes::ConstraintStudentsSetNotAvailableTimes()
 	: TimeConstraint()
 {
-	this->type=CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE;
+	this->type=CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES;
 }
 
-ConstraintStudentsSetNotAvailable::ConstraintStudentsSetNotAvailable(double wp, const QString& sn, int day, int start_hour, int end_hour)
+ConstraintStudentsSetNotAvailableTimes::ConstraintStudentsSetNotAvailableTimes(double wp, const QString& sn, QList<int> d, QList<int> h)
 	 : TimeConstraint(wp){
 	this->students = sn;
-	this->d=day;
-	this->h1=start_hour;
-	this->h2=end_hour;
-	this->type=CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE;
+	assert(d.count()==h.count());
+	this->days=d;
+	this->hours=h;
+	this->type=CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES;
 }
 
-bool ConstraintStudentsSetNotAvailable::computeInternalStructure(Rules& r){
+bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(Rules& r){
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
-	if(!ss<0){
+	if(ss==NULL){
 		QMessageBox::warning(NULL, QObject::tr("FET warning"),
 		 QObject::tr("Constraint students set not available is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
 	}	
-	if(this->d >= r.nDaysPerWeek){
+	/*if(this->d >= r.nDaysPerWeek){
 		QMessageBox::information(NULL, QObject::tr("FET information"),
 		 QObject::tr("Constraint students set not available is wrong because it refers to removed day. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -713,6 +747,24 @@ bool ConstraintStudentsSetNotAvailable::computeInternalStructure(Rules& r){
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
+	}*/
+	
+	assert(days.count()==hours.count());
+	for(int k=0; k<days.count(); k++){
+		if(this->days.at(k) >= r.nDaysPerWeek){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint students set not available times is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}		
+		if(this->hours.at(k) >= r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint students set not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
 	}
 	
 	assert(ss);
@@ -771,45 +823,77 @@ bool ConstraintStudentsSetNotAvailable::computeInternalStructure(Rules& r){
 	return true;
 }
 
-QString ConstraintStudentsSetNotAvailable::getXmlDescription(Rules& r){
-	QString s="<ConstraintStudentsSetNotAvailable>\n";
+QString ConstraintStudentsSetNotAvailableTimes::getXmlDescription(Rules& r){
+	QString s="<ConstraintStudentsSetNotAvailableTimes>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
 	s+="	<Students>"+protect(this->students)+"</Students>\n";
-	s+="	<Day>"+protect(r.daysOfTheWeek[this->d])+"</Day>\n";
-	s+="	<Start_Hour>"+protect(r.hoursOfTheDay[this->h1])+"</Start_Hour>\n";
-	s+="	<End_Hour>"+protect(r.hoursOfTheDay[this->h2])+"</End_Hour>\n";
-	s+="</ConstraintStudentsSetNotAvailable>\n";
+
+	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		s+="	<Not_Available_Time>\n";
+		if(this->days.at(i)>=0)
+			s+="		<Day>"+protect(r.daysOfTheWeek[this->days.at(i)])+"</Day>\n";
+		if(this->hours.at(i)>=0)
+			s+="		<Hour>"+protect(r.hoursOfTheDay[this->hours.at(i)])+"</Hour>\n";
+		s+="	</Not_Available_Time>\n";
+	}
+
+	s+="</ConstraintStudentsSetNotAvailableTimes>\n";
 	return s;
 }
 
-QString ConstraintStudentsSetNotAvailable::getDescription(Rules& r){
+QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r){
 	QString s;
-	s=QObject::tr("Students set not available");s+=", ";
-	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
-	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
-	s+=(QObject::tr("S:%1").arg(this->students));s+=", ";
-	s+=(QObject::tr("D:%1").arg(r.daysOfTheWeek[this->d]));s+=", ";
-	s+=(QObject::tr("SH:%1").arg(r.hoursOfTheDay[this->h1]));s+=", ";
-	s+=(QObject::tr("EH:%1").arg(r.hoursOfTheDay[this->h2]));
+	s=QObject::tr("Students set not available times");s+=", ";
+	s+=(QObject::tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage));s+=", ";
+	s+=(QObject::tr("S:%1", "Students").arg(this->students));s+=", ";
+
+	s+=QObject::tr("NA at:", "Not available at");
+	s+=" ";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		if(this->days.at(i)>=0){
+			s+=r.daysOfTheWeek[this->days.at(i)];
+			s+=" ";
+		}
+		if(this->hours.at(i)>=0){
+			s+=r.hoursOfTheDay[this->hours.at(i)];
+		}
+		if(i<days.count()-1)
+			s+="; ";
+	}
 
 	return s;
 }
 
-QString ConstraintStudentsSetNotAvailable::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r){
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Students set not available");s+="\n";
+	s+=QObject::tr("Students set not available times");s+="\n";
 	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+
 	s+=(QObject::tr("Students=%1").arg(this->students));s+="\n";
-	s+=(QObject::tr("Day=%1").arg(r.daysOfTheWeek[this->d]));s+="\n";
-	s+=(QObject::tr("Start hour=%1").arg(r.hoursOfTheDay[this->h1]));s+="\n";
-	s+=(QObject::tr("End hour=%1").arg(r.hoursOfTheDay[this->h2]));s+="\n";
+
+	s+=QObject::tr("Not available at:");
+	s+="\n";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		if(this->days.at(i)>=0){
+			s+=r.daysOfTheWeek[this->days.at(i)];
+			s+=" ";
+		}
+		if(this->hours.at(i)>=0){
+			s+=r.hoursOfTheDay[this->hours.at(i)];
+		}
+		if(i<days.count()-1)
+			s+="; ";
+	}
 
 	return s;
 }
 
-double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
+double ConstraintStudentsSetNotAvailableTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -825,53 +909,37 @@ double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<d
 		c.changedForMatrixCalculation=false;
 	}
 
-	//Calculates the number of hours when the students' set is supposed to be attend the course,
-	//but it is not available
-	//This function consideres all the hours, I mean if there are for example 5 weekly courses
-	//scheduled on that hour (which is already a broken hard restriction - we only
-	//are allowed 1 weekly course for a certain students' year at a certain hour) we calculate
-	//5 broken restrictions for that function.
-	//TODO: decide if it is better to consider only 2 or 10 as a return value in that case
-	//(currently it is 10)
 	int nbroken;
 
-	//without logging
-	if(conflictsString==NULL){
-		nbroken=0;
-		for(int m=0; m<this->iSubgroupsList.count(); m++){
-			int i=this->iSubgroupsList.at(m);
-			int j=d;
-			for(int k=h1; k<h2; k++)
-				//subgroupsMatrix[i][j][k]>=0 at anytime. Can I improve this if I get rid of the "if"?
-				if(subgroupsMatrix[i][j][k]>0)
-					nbroken+=subgroupsMatrix[i][j][k];
-		}
-	}
-	//with logging
-	else{
-		nbroken=0;
-		for(int m=0; m<this->iSubgroupsList.count(); m++){
-			int i=this->iSubgroupsList.at(m), j=d;
-			for(int k=h1; k<h2; k++)
-				if(subgroupsMatrix[i][j][k]>0){
-					if(conflictsString!=NULL){
-						QString s= QObject::tr("Time constraint students not available");
-						s += " ";
-						s += (QObject::tr("broken for subgroup: %1 on day %2, hour %3")
-						 .arg(r.internalSubgroupsList[i]->name)
-						 .arg(r.daysOfTheWeek[j])
-						 .arg(r.hoursOfTheDay[k]));
-						s += ". ";
-						s += (QObject::tr("This increases the conflicts total by %1")
-						 .arg(subgroupsMatrix[i][j][k]*weightPercentage/100));
-						 
-						dl.append(s);
-						cl.append(subgroupsMatrix[i][j][k]*weightPercentage/100);
-					
-						*conflictsString += s+"\n";
-					}
-					nbroken+=subgroupsMatrix[i][j][k];
+	nbroken=0;
+	for(int m=0; m<this->iSubgroupsList.count(); m++){
+		int sbg=this->iSubgroupsList.at(m);
+		
+		assert(days.count()==hours.count());
+		for(int k=0; k<days.count(); k++){
+			int d=days.at(k);
+			int h=hours.at(k);
+			
+			if(subgroupsMatrix[sbg][d][h]>0){
+				nbroken+=subgroupsMatrix[sbg][d][h];
+
+				if(conflictsString!=NULL){
+					QString s= QObject::tr("Time constraint students not available times");
+					s += " ";
+					s += (QObject::tr("broken for subgroup: %1 on day %2, hour %3")
+					 .arg(r.internalSubgroupsList[sbg]->name)
+					 .arg(r.daysOfTheWeek[d])
+					 .arg(r.hoursOfTheDay[h]));
+					s += ". ";
+					s += (QObject::tr("This increases the conflicts total by %1")
+					 .arg(subgroupsMatrix[sbg][d][h]*weightPercentage/100));
+					 
+					dl.append(s);
+					cl.append(subgroupsMatrix[sbg][d][h]*weightPercentage/100);
+				
+					*conflictsString += s+"\n";
 				}
+			}
 		}
 	}
 
@@ -880,7 +948,7 @@ double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<d
 	return weightPercentage/100 * nbroken;
 }
 
-bool ConstraintStudentsSetNotAvailable::isRelatedToActivity(Activity* a)
+bool ConstraintStudentsSetNotAvailableTimes::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
 	//if(a)
@@ -889,7 +957,7 @@ bool ConstraintStudentsSetNotAvailable::isRelatedToActivity(Activity* a)
 	return false;
 }
 
-bool ConstraintStudentsSetNotAvailable::isRelatedToTeacher(Teacher* t)
+bool ConstraintStudentsSetNotAvailableTimes::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	/*if(t)
@@ -898,7 +966,7 @@ bool ConstraintStudentsSetNotAvailable::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool ConstraintStudentsSetNotAvailable::isRelatedToSubject(Subject* s)
+bool ConstraintStudentsSetNotAvailableTimes::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	/*if(s)
@@ -907,7 +975,7 @@ bool ConstraintStudentsSetNotAvailable::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintStudentsSetNotAvailable::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsSetNotAvailableTimes::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	/*if(s)
@@ -916,7 +984,7 @@ bool ConstraintStudentsSetNotAvailable::isRelatedToSubjectTag(SubjectTag* s)
 	return false;
 }
 
-bool ConstraintStudentsSetNotAvailable::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintStudentsSetNotAvailableTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	return r.studentsSetsRelated(this->students, s->name);
 }
@@ -1067,8 +1135,8 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
 		
-		if(r.activitiesList[ai]->subjectTagName!="")
-			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
+		if(r.activitiesList[ai]->activityTagName!="")
+			s+=QObject::tr(" , AT: ", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 		s+=QObject::tr(" , St: ");
 		k=0;
@@ -1211,7 +1279,7 @@ bool ConstraintActivitiesSameStartingTime::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivitiesSameStartingTime::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintActivitiesSameStartingTime::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -1376,8 +1444,8 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
 	
-		if(r.activitiesList[ai]->subjectTagName!="")
-			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
+		if(r.activitiesList[ai]->activityTagName!="")
+			s+=QObject::tr(" , AT: ", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 		s+=QObject::tr(" , St: ");
 		k=0;
@@ -1560,7 +1628,7 @@ bool ConstraintActivitiesNotOverlapping::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivitiesNotOverlapping::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintActivitiesNotOverlapping::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -1750,8 +1818,8 @@ QString ConstraintMinNDaysBetweenActivities::getDetailedDescription(Rules& r){
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
 	
-		if(r.activitiesList[ai]->subjectTagName!="")
-			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
+		if(r.activitiesList[ai]->activityTagName!="")
+			s+=QObject::tr(" , AT: ", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 		s+=QObject::tr(" , St: ");
 		k=0;
@@ -1916,8 +1984,8 @@ double ConstraintMinNDaysBetweenActivities::fitness(Solution& c, Rules& r, QList
 							 .arg(sn1)
 							 .arg(r.internalActivitiesList[this->_activities[i]].subjectName));
 
-							if(r.internalActivitiesList[this->_activities[i]].subjectTagName!="")
-								s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[this->_activities[i]].subjectTagName);
+							if(r.internalActivitiesList[this->_activities[i]].activityTagName!="")
+								s+=QObject::tr(", activity tag %4").arg(r.internalActivitiesList[this->_activities[i]].activityTagName);
 
 							s+=", ";
 							s+=(QObject::tr("teachers2 %1, students sets2 %2, subject2 %3")
@@ -1925,8 +1993,8 @@ double ConstraintMinNDaysBetweenActivities::fitness(Solution& c, Rules& r, QList
 							 .arg(sn2)
 							 .arg(r.internalActivitiesList[this->_activities[j]].subjectName));
 
-							if(r.internalActivitiesList[this->_activities[j]].subjectTagName!="")
-								s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[this->_activities[j]].subjectTagName);
+							if(r.internalActivitiesList[this->_activities[j]].activityTagName!="")
+								s+=QObject::tr(", activity tag %4").arg(r.internalActivitiesList[this->_activities[j]].activityTagName);
 
 							s+=", ";
 							s+=(QObject::tr("conflicts factor increase=%1").arg(tmp*weightPercentage/100));
@@ -1981,7 +2049,7 @@ bool ConstraintMinNDaysBetweenActivities::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintMinNDaysBetweenActivities::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintMinNDaysBetweenActivities::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -2169,7 +2237,7 @@ bool ConstraintTeachersMaxHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintTeachersMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeachersMaxHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -2358,7 +2426,7 @@ bool ConstraintTeacherMaxHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintTeacherMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeacherMaxHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -2568,7 +2636,7 @@ bool ConstraintTeacherMaxDaysPerWeek::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintTeacherMaxDaysPerWeek::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeacherMaxDaysPerWeek::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -2652,6 +2720,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 
 	QString s=QObject::tr("Time constraint");s+="\n";
 	s+=QObject::tr("Teachers max gaps per week");s+="\n";
+	s+=QObject::tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=QObject::tr("Max gaps per week:%1").arg(this->maxGaps); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
@@ -2715,13 +2784,30 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 		}
 	}
 	
-	int na=0;
+	/*int na=0;
 	for(int i=0; i<r.nInternalActivities; i++)
 		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
-		if(weightPercentage==100)
+			na++;*/
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+	//if(na==r.nInternalActivities)
+		if(weightPercentage==100){
+		
+			/*if(totalGaps>0){
+				cout<<"c.nPlacedActivities=="<<c.nPlacedActivities<<endl;
+				
+				int k=0;
+				for(int j=0; j<r.nInternalActivities; j++){
+					cout<<"j=="<<j<<", c.times[j]=="<<c.times[j]<<endl;
+					if(c.times[j]!=UNALLOCATED_TIME)
+						k++;
+				}
+				
+				cout<<"sum(allocated activities)=="<<k<<endl;
+			}*/
+				
 			assert(totalGaps==0); //for partial solutions this rule might be broken
+		}
 	return weightPercentage/100 * totalGaps;
 }
 
@@ -2752,7 +2838,7 @@ bool ConstraintTeachersMaxGapsPerWeek::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintTeachersMaxGapsPerWeek::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeachersMaxGapsPerWeek::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -2836,6 +2922,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
 
 	QString s=QObject::tr("Time constraint"); s+="\n";
 	s+=QObject::tr("Teacher max gaps per week"); s+="\n";
+	s+=QObject::tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=QObject::tr("Teacher: %1").arg(this->teacherName); s+="\n";
 	s+=QObject::tr("Max gaps per week: %1").arg(this->maxGaps); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage); s+="\n";
@@ -2901,11 +2988,12 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<dou
 		}
 	}
 
-	int na=0;
+	/*int na=0;
 	for(int i=0; i<r.nInternalActivities; i++)
 		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+			na++;*/
+	if(c.nPlacedActivities==r.nInternalActivities)
+	//if(na==r.nInternalActivities)
 		if(weightPercentage==100)
 			assert(totalGaps==0); //for partial solutions this rule might be broken
 	return weightPercentage/100 * totalGaps;
@@ -2936,7 +3024,7 @@ bool ConstraintTeacherMaxGapsPerWeek::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintTeacherMaxGapsPerWeek::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeacherMaxGapsPerWeek::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -2960,63 +3048,472 @@ bool ConstraintTeacherMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, StudentsS
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintBreak::ConstraintBreak()
+ConstraintTeachersMaxGapsPerDay::ConstraintTeachersMaxGapsPerDay()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_BREAK;
+	this->type = CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY;
 }
 
-ConstraintBreak::ConstraintBreak(double wp, int day, int start_hour, int end_hour)
+ConstraintTeachersMaxGapsPerDay::ConstraintTeachersMaxGapsPerDay(double wp, int mg)
 	: TimeConstraint(wp)
 {
-	this->d = day;
-	this->h1 = start_hour;
-	this->h2 = end_hour;
-	this->type = CONSTRAINT_BREAK;
+	this->type = CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY;
+	this->maxGaps=mg;
 }
 
-QString ConstraintBreak::getXmlDescription(Rules& r){
-	QString s="<ConstraintBreak>\n";
-	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
-	s+="	<Day>"+protect(r.daysOfTheWeek[this->d])+"</Day>\n";
-	s+="	<Start_Hour>"+protect(r.hoursOfTheDay[this->h1])+"</Start_Hour>\n";
-	s+="	<End_Hour>"+protect(r.hoursOfTheDay[this->h2])+"</End_Hour>\n";
-	s+="</ConstraintBreak>\n";
-	return s;
-}
-
-QString ConstraintBreak::getDescription(Rules& r){
-	QString s;
-	s+=QObject::tr("Break");s+=", ";
-	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
-	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
-	s+=(QObject::tr("D:%1").arg(r.daysOfTheWeek[this->d]));s+=", ";
-	s+=(QObject::tr("SH:%1").arg(r.hoursOfTheDay[this->h1]));s+=", ";
-	s+=(QObject::tr("EH:%1").arg(r.hoursOfTheDay[this->h2]));
-
-	return s;
-}
-
-QString ConstraintBreak::getDetailedDescription(Rules& r){
-	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Break");s+="\n";
-	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
-	s+=(QObject::tr("Day=%1").arg(r.daysOfTheWeek[this->d]));s+="\n";
-	s+=(QObject::tr("Start hour=%1").arg(r.hoursOfTheDay[this->h1]));s+="\n";
-	s+=(QObject::tr("End hour=%1").arg(r.hoursOfTheDay[this->h2]));s+="\n";
-
-	return s;
-}
-
-bool ConstraintBreak::computeInternalStructure(Rules& r)
+bool ConstraintTeachersMaxGapsPerDay::computeInternalStructure(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
+	/*if(&r!=NULL)
+		;*/
+
+	/*do nothing*/
+	return true;
+}
+
+QString ConstraintTeachersMaxGapsPerDay::getXmlDescription(Rules& r){
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	/*if(&r==NULL)
+		;*/
+
+	QString s="<ConstraintTeachersMaxGapsPerDay>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Gaps>"+QString::number(this->maxGaps)+"</Max_Gaps>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="</ConstraintTeachersMaxGapsPerDay>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r){
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	/*if(&r==NULL)
+		;*/
+
+	QString s;
+	s+=QObject::tr("Teachers max gaps per day");s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("MG:%1").arg(this->maxGaps);
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
+
+	return s;
+}
+
+QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r){
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	/*if(&r==NULL)
+		;*/
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Teachers max gaps per day");s+="\n";
+	s+=QObject::tr("(breaks and teacher not available not counted)");s+="\n";
+	s+=QObject::tr("Max gaps per day:%1").arg(this->maxGaps); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+
+	return s;
+}
+
+double ConstraintTeachersMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{ 
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
 		
-	if(this->d >= r.nDaysPerWeek){
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int tg;
+	int i, j, k;
+	int totalGaps;
+
+	totalGaps=0;
+	for(i=0; i<r.nInternalTeachers; i++){
+		for(j=0; j<r.nDaysPerWeek; j++){
+			tg=0;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(teachersMatrix[i][j][k]>0){
+					assert(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]);
+					break;
+				}
+
+			int cnt=0;
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]){
+				if(teachersMatrix[i][j][k]>0){
+					tg+=cnt;
+					cnt=0;
+				}
+				else
+					cnt++;
+			}
+			if(tg>this->maxGaps){
+				totalGaps+=tg-maxGaps;
+				//assert(this->weightPercentage<100); partial solutions might break this rule
+				if(conflictsString!=NULL){
+					QString s=QObject::tr("Time constraint teachers max gaps per day broken: teacher: %1, day: %2, conflicts factor increase=%3")
+						.arg(r.internalTeachersList[i]->name)
+						.arg(r.daysOfTheWeek[j])
+						.arg((tg-maxGaps)*weightPercentage/100);
+					
+					*conflictsString+= s+"\n";
+								
+					dl.append(s);
+					cl.append((tg-maxGaps)*weightPercentage/100);
+				}
+			}
+		}
+	}
+	
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(totalGaps==0); //for partial solutions this rule might be broken
+	return weightPercentage/100 * totalGaps;
+}
+
+bool ConstraintTeachersMaxGapsPerDay::isRelatedToActivity(Activity* a)
+{
+	Q_UNUSED(a);
+	//if(a)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerDay::isRelatedToTeacher(Teacher* t)
+{	
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return true;
+}
+
+bool ConstraintTeachersMaxGapsPerDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+
+	return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxGapsPerDay::ConstraintTeacherMaxGapsPerDay()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY;
+}
+
+ConstraintTeacherMaxGapsPerDay::ConstraintTeacherMaxGapsPerDay(double wp, QString tn, int mg)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY;
+	this->teacherName=tn;
+	this->maxGaps=mg;
+}
+
+bool ConstraintTeacherMaxGapsPerDay::computeInternalStructure(Rules& r)
+{
+	this->teacherIndex=r.searchTeacher(this->teacherName);
+	assert(this->teacherIndex>=0);
+	return true;
+}
+
+QString ConstraintTeacherMaxGapsPerDay::getXmlDescription(Rules& r){
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s="<ConstraintTeacherMaxGapsPerDay>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Max_Gaps>"+QString::number(this->maxGaps)+"</Max_Gaps>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="</ConstraintTeacherMaxGapsPerDay>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r){
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s;
+	s+=QObject::tr("Teacher max gaps per day");s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("T:%1").arg(this->teacherName); s+=", ";
+	s+=QObject::tr("MG:%1").arg(this->maxGaps);
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
+
+	return s;
+}
+
+QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r){
+	//to avoid non-used parameter warning
+	Q_UNUSED(r);
+	//if(&r==NULL)
+	//	;
+
+	QString s=QObject::tr("Time constraint"); s+="\n";
+	s+=QObject::tr("Teacher max gaps per day"); s+="\n";
+	s+=QObject::tr("(breaks and teacher not available not counted)");s+="\n";
+	s+=QObject::tr("Teacher: %1").arg(this->teacherName); s+="\n";
+	s+=QObject::tr("Max gaps per week: %1").arg(this->maxGaps); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage); s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+
+	return s;
+}
+
+double ConstraintTeacherMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{ 
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int tg;
+	int i, j, k;
+	int totalGaps;
+
+	totalGaps=0;
+		
+	i=this->teacherIndex;
+	
+	for(j=0; j<r.nDaysPerWeek; j++){
+		tg=0;
+		for(k=0; k<r.nHoursPerDay; k++)
+			if(teachersMatrix[i][j][k]>0){
+				assert(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]);
+				break;
+			}
+
+		int cnt=0;
+		for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]){
+			if(teachersMatrix[i][j][k]>0){
+				tg+=cnt;
+				cnt=0;
+			}
+			else
+				cnt++;
+		}
+		if(tg>this->maxGaps){
+			totalGaps+=tg-maxGaps;
+			//assert(this->weightPercentage<100); partial solutions might break this rule
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Time constraint teacher max gaps per day broken: teacher: %1, day: %2, conflicts factor increase=%3")
+					.arg(r.internalTeachersList[i]->name)
+					.arg(r.daysOfTheWeek[j])
+					.arg((tg-maxGaps)*weightPercentage/100);
+						
+				*conflictsString+= s+"\n";
+							
+				dl.append(s);
+				cl.append((tg-maxGaps)*weightPercentage/100);
+			}
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(totalGaps==0); //for partial solutions this rule might be broken
+	return weightPercentage/100 * totalGaps;
+}
+
+bool ConstraintTeacherMaxGapsPerDay::isRelatedToActivity(Activity* a)
+{
+	Q_UNUSED(a);
+	//if(a)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerDay::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+
+	return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintBreakTimes::ConstraintBreakTimes()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_BREAK_TIMES;
+}
+
+ConstraintBreakTimes::ConstraintBreakTimes(double wp, QList<int> d, QList<int> h)
+	: TimeConstraint(wp)
+{
+	this->days = d;
+	this->hours = h;
+	this->type = CONSTRAINT_BREAK_TIMES;
+}
+
+QString ConstraintBreakTimes::getXmlDescription(Rules& r){
+	QString s="<ConstraintBreakTimes>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+
+	s+="	<Number_of_Break_Times>"+QString::number(this->days.count())+"</Number_of_Break_Times>\n";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		s+="	<Break_Time>\n";
+		if(this->days.at(i)>=0)
+			s+="		<Day>"+protect(r.daysOfTheWeek[this->days.at(i)])+"</Day>\n";
+		if(this->hours.at(i)>=0)
+			s+="		<Hour>"+protect(r.hoursOfTheDay[this->hours.at(i)])+"</Hour>\n";
+		s+="	</Break_Time>\n";
+	}
+
+	s+="</ConstraintBreakTimes>\n";
+	return s;
+}
+
+QString ConstraintBreakTimes::getDescription(Rules& r){
+	QString s;
+	s+=QObject::tr("Break times");s+=", ";
+	s+=QObject::tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+
+	s+=QObject::tr("B at:", "Break at");
+	s+=" ";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		if(this->days.at(i)>=0){
+			s+=r.daysOfTheWeek[this->days.at(i)];
+			s+=" ";
+		}
+		if(this->hours.at(i)>=0){
+			s+=r.hoursOfTheDay[this->hours.at(i)];
+		}
+		if(i<days.count()-1)
+			s+="; ";
+	}
+	
+	return s;
+}
+
+QString ConstraintBreakTimes::getDetailedDescription(Rules& r){
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Break times");s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+
+	s+=QObject::tr("Break at:");
+	s+="\n";
+	assert(days.count()==hours.count());
+	for(int i=0; i<days.count(); i++){
+		if(this->days.at(i)>=0){
+			s+=r.daysOfTheWeek[this->days.at(i)];
+			s+=" ";
+		}
+		if(this->hours.at(i)>=0){
+			s+=r.hoursOfTheDay[this->hours.at(i)];
+		}
+		if(i<days.count()-1)
+			s+="; ";
+	}
+	
+	return s;
+}
+
+bool ConstraintBreakTimes::computeInternalStructure(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	assert(days.count()==hours.count());
+	for(int k=0; k<days.count(); k++){
+		if(this->days.at(k) >= r.nDaysPerWeek){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint break times is wrong because it refers to removed day. Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}		
+		if(this->hours.at(k) >= r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint break times is wrong because an hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+	}
+
+	/*if(this->d >= r.nDaysPerWeek){
 		QMessageBox::information(NULL, QObject::tr("FET information"),
 		 QObject::tr("Constraint break is wrong because it refers to removed day. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -3043,12 +3540,12 @@ bool ConstraintBreak::computeInternalStructure(Rules& r)
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
-	}
+	}*/
 
 	return true;
 }
 
-double ConstraintBreak::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintBreakTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
@@ -3077,58 +3574,35 @@ double ConstraintBreak::fitness(Solution& c, Rules& r, QList<double>& cl, QList<
 	//int j=this->d;
 	int nbroken;
 	
-	//without logging
-	if(conflictsString==NULL){
-		nbroken=0;
+	nbroken=0;
 		
-		int begintimebreak=this->d+r.nDaysPerWeek*this->h1;
-		int endtimebreak=this->d+r.nDaysPerWeek*this->h2;
+	for(int i=0; i<r.nInternalActivities; i++){
+		int dayact=c.times[i]%r.nDaysPerWeek;
+		int houract=c.times[i]/r.nDaysPerWeek;
 		
-		for(int i=0; i<r.nInternalActivities; i++){
-			int dayact=c.times[i]%r.nDaysPerWeek;
-			if(dayact==this->d){
-				int begintimeact=c.times[i];
-				int endtimeact=c.times[i]+r.nDaysPerWeek*r.internalActivitiesList[i].duration;
+		assert(days.count()==hours.count());
+		for(int kk=0; kk<days.count(); kk++){
+			int d=days.at(kk);
+			int h=hours.at(kk);
 			
-				if(!(endtimeact<=begintimebreak || begintimeact>=endtimebreak)){ //they intersect
-					nbroken++;
-				}
-			}
-		}
-	}
-	//with logging
-	else{
-		nbroken=0;
-		
-		int begintimebreak=this->d+r.nDaysPerWeek*this->h1;
-		int endtimebreak=this->d+r.nDaysPerWeek*this->h2;
-		
-		for(int i=0; i<r.nInternalActivities; i++){
-			int dayact=c.times[i]%r.nDaysPerWeek;
-			if(dayact==this->d){
-				int begintimeact=c.times[i];
-				int endtimeact=c.times[i]+r.nDaysPerWeek*r.internalActivitiesList[i].duration;
-			
-				if(!(endtimeact<=begintimebreak || begintimeact>=endtimebreak)){ //they intersect
-					/*cout<<"Activity with id=="<<r.internalActivitiesList[i].id<<", duration=="<<r.internalActivitiesList[i].duration
-					 <<" is scheduled on day "<<qPrintable(r.daysOfTheWeek[begintimeact%r.nDaysPerWeek])<<", hour "<<
-					 qPrintable(r.hoursOfTheDay[begintimeact/r.nDaysPerWeek])<<endl;*/
-				
-					nbroken++;
+			int dur=r.internalActivitiesList[i].duration;
+			if(d==dayact && !(houract+dur<=h || houract>h))
+			{			
+				nbroken++;
 
-					if(conflictsString!=NULL){
-						QString s=QObject::tr("Time constraint break not respected for activity with id %1, on day %2")
-							.arg(r.internalActivitiesList[i].id)
-							.arg(r.daysOfTheWeek[dayact]);
-						s+=". ";
-						s+=QObject::tr("This increases the conflicts total by");
-						s+=" "+QString::number(weightPercentage/100);
-						
-						dl.append(s);
-						cl.append(weightPercentage/100);
+				if(conflictsString!=NULL){
+					QString s=QObject::tr("Time constraint break not respected for activity with id %1, on day %2, hours %3")
+						.arg(r.internalActivitiesList[i].id)
+						.arg(r.daysOfTheWeek[dayact])
+						.arg(r.daysOfTheWeek[houract]);
+					s+=". ";
+					s+=QObject::tr("This increases the conflicts total by");
+					s+=" "+QString::number(weightPercentage/100);
 					
-						*conflictsString+= s+"\n";
-					}
+					dl.append(s);
+					cl.append(weightPercentage/100);
+				
+					*conflictsString+= s+"\n";
 				}
 			}
 		}
@@ -3139,50 +3613,38 @@ double ConstraintBreak::fitness(Solution& c, Rules& r, QList<double>& cl, QList<
 	return weightPercentage/100 * nbroken;
 }
 
-bool ConstraintBreak::isRelatedToActivity(Activity* a)
+bool ConstraintBreakTimes::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
-	//if(a)
-	//	;
 
 	return false;
 }
 
-bool ConstraintBreak::isRelatedToTeacher(Teacher* t)
+bool ConstraintBreakTimes::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
 
-bool ConstraintBreak::isRelatedToSubject(Subject* s)
+bool ConstraintBreakTimes::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
 
-bool ConstraintBreak::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintBreakTimes::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
 
-bool ConstraintBreak::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintBreakTimes::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -3190,19 +3652,20 @@ bool ConstraintBreak::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintStudentsNoGaps::ConstraintStudentsNoGaps()
+ConstraintStudentsMaxGapsPerWeek::ConstraintStudentsMaxGapsPerWeek()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_STUDENTS_NO_GAPS;
+	this->type = CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK;
 }
 
-ConstraintStudentsNoGaps::ConstraintStudentsNoGaps(double wp)
+ConstraintStudentsMaxGapsPerWeek::ConstraintStudentsMaxGapsPerWeek(double wp, int mg)
 	: TimeConstraint(wp)
 {
-	this->type = CONSTRAINT_STUDENTS_NO_GAPS;
+	this->type = CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK;
+	this->maxGaps=mg;
 }
 
-bool ConstraintStudentsNoGaps::computeInternalStructure(Rules& r)
+bool ConstraintStudentsMaxGapsPerWeek::computeInternalStructure(Rules& r)
 {
 	Q_UNUSED(r);
 	//if(&r!=NULL)
@@ -3212,53 +3675,49 @@ bool ConstraintStudentsNoGaps::computeInternalStructure(Rules& r)
 	return true;
 }
 
-QString ConstraintStudentsNoGaps::getXmlDescription(Rules& r)
+QString ConstraintStudentsMaxGapsPerWeek::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<ConstraintStudentsNoGaps>\n";
+	QString s="<ConstraintStudentsMaxGapsPerWeek>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
-	s+="</ConstraintStudentsNoGaps>\n";
+	s+="	<Max_Gaps>"+QString::number(this->maxGaps)+"</Max_Gaps>\n";
+	s+="</ConstraintStudentsMaxGapsPerWeek>\n";
 	return s;
 }
 
-QString ConstraintStudentsNoGaps::getDescription(Rules& r)
+QString ConstraintStudentsMaxGapsPerWeek::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
 	QString s;
-	s+=QObject::tr("Students no gaps");s+=", ";
-	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));//s+=", ";
-	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
+	s+=QObject::tr("Students max gaps per week");s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	s+=QObject::tr("MG:%1").arg(this->maxGaps);
 
 	return s;
 }
 
-QString ConstraintStudentsNoGaps::getDetailedDescription(Rules& r)
+QString ConstraintStudentsMaxGapsPerWeek::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Students must not have gaps");s+="\n";
-	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
-	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
+	s+=QObject::tr("Students max gaps per week");s+="\n";
+	s+=QObject::tr("(breaks and students set not available not counted)");s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Max gaps=%1").arg(this->maxGaps);s+="\n";
 	s+="\n";
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 
 	return s;
 }
 
-double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintStudentsMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//returns a number equal to the number of windows of the subgroups (in hours)
 
@@ -3279,9 +3738,11 @@ double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& c
 	int windows;
 	int tmp;
 	int i;
+	
+	int tIllegalWindows=0;
 
-	windows=0;
-	for(i=0; i<r.nInternalSubgroups; i++)
+	for(i=0; i<r.nInternalSubgroups; i++){
+		windows=0;
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			int k;
 			tmp=0;
@@ -3293,81 +3754,70 @@ double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& c
 			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
 				if(subgroupsMatrix[i][j][k]>0){
 					windows+=tmp;
-
-					if(tmp>0 && conflictsString!=NULL){
-						QString s=QObject::tr("Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5")
-						 .arg(r.internalSubgroupsList[i]->name)
-						 .arg(r.daysOfTheWeek[j])
-						 .arg(r.hoursOfTheDay[k])
-						 .arg(tmp)
-						 .arg(tmp*weightPercentage/100);
-						 
-						dl.append(s);
-						cl.append(tmp*weightPercentage/100);
-					
-						*conflictsString+= s+"\n";
-					}
 					tmp=0;
 				}
 				else
 					tmp++;
 			}
 		}
+		
+		int illegalWindows=windows-this->maxGaps;
+		if(illegalWindows<0)
+			illegalWindows=0;
 
-	int na=0;
-	for(int i=0; i<r.nInternalActivities; i++)
-		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+		if(illegalWindows>0 && conflictsString!=NULL){
+			QString s=QObject::tr("Time constraint students max gaps broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3")
+			 .arg(r.internalSubgroupsList[i]->name)
+			 .arg(illegalWindows)
+			 .arg(illegalWindows*weightPercentage/100);
+						 
+			dl.append(s);
+			cl.append(illegalWindows*weightPercentage/100);
+					
+			*conflictsString+= s+"\n";
+		}
+		
+		tIllegalWindows+=illegalWindows;
+	}
+		
+	if(c.nPlacedActivities==r.nInternalActivities)
 		if(weightPercentage==100)    //for partial solutions it might be broken
-			assert(windows==0);		
-	return weightPercentage/100 * windows;
+			assert(tIllegalWindows==0);
+	return weightPercentage/100 * tIllegalWindows;
 }
 
-bool ConstraintStudentsNoGaps::isRelatedToActivity(Activity* a)
+bool ConstraintStudentsMaxGapsPerWeek::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
-	//if(a)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsNoGaps::isRelatedToTeacher(Teacher* t)
+bool ConstraintStudentsMaxGapsPerWeek::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsNoGaps::isRelatedToSubject(Subject* s)
+bool ConstraintStudentsMaxGapsPerWeek::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsNoGaps::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsMaxGapsPerWeek::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsNoGaps::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintStudentsMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return true;
 }
@@ -3375,21 +3825,31 @@ bool ConstraintStudentsNoGaps::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintStudentsSetNoGaps::ConstraintStudentsSetNoGaps()
+ConstraintStudentsSetMaxGapsPerWeek::ConstraintStudentsSetMaxGapsPerWeek()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_STUDENTS_SET_NO_GAPS;
+	this->type = CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK;
 }
 
-ConstraintStudentsSetNoGaps::ConstraintStudentsSetNoGaps(double wp, const QString& st )
+ConstraintStudentsSetMaxGapsPerWeek::ConstraintStudentsSetMaxGapsPerWeek(double wp, int mg, const QString& st )
 	: TimeConstraint(wp)
 {
-	this->type = CONSTRAINT_STUDENTS_SET_NO_GAPS;
+	this->type = CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK;
+	this->maxGaps=mg;
 	this->students = st;
 }
 
-bool ConstraintStudentsSetNoGaps::computeInternalStructure(Rules& r){
+bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(Rules& r){
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+
+	if(ss==NULL){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Constraint students set max gaps per week is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+
 	assert(ss);
 
 	//this->nSubgroups=0;
@@ -3447,53 +3907,46 @@ bool ConstraintStudentsSetNoGaps::computeInternalStructure(Rules& r){
 	return true;
 }
 
-QString ConstraintStudentsSetNoGaps::getXmlDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerWeek::getXmlDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
-	QString s="<ConstraintStudentsSetNoGaps>\n";
+	QString s="<ConstraintStudentsSetMaxGapsPerWeek>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="	<Max_Gaps>"+QString::number(this->maxGaps)+"</Max_Gaps>\n";
 	s+="	<Students>"; s+=protect(this->students); s+="</Students>\n";
-	s+="</ConstraintStudentsSetNoGaps>\n";
+	s+="</ConstraintStudentsSetMaxGapsPerWeek>\n";
 	return s;
 }
 
-QString ConstraintStudentsSetNoGaps::getDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
 	QString s;
-	s+=QObject::tr("Students set no gaps"); s+=", ";
-	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage)); s+=", ";
-	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory))); s+=", ";
-	s+=(QObject::tr("St:%1").arg(this->students));
+	s+=QObject::tr("Students set max gaps per week"); s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage); s+=", ";
+	s+=QObject::tr("MG:%1").arg(this->maxGaps);s+=", ";
+	s+=QObject::tr("St:%1").arg(this->students);
 
 	return s;
 }
 
-QString ConstraintStudentsSetNoGaps::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Students set must not have gaps");s+="\n";
-	s+=(QObject::tr("Weight (percentage)=%1").arg(this->weightPercentage));s+="\n";
-	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	s+=QObject::tr("Students set max gaps per week");s+="\n";
+	s+=QObject::tr("(breaks and students set not available not counted)");s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Max gaps=%1").arg(this->maxGaps);s+="\n";
 	s+=QObject::tr("Students=%1").arg(this->students); s+="\n";
-	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
-	s+="\n";
-
+	
 	return s;
 }
 
-double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintStudentsSetMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//OLD COMMENT
 	//returns a number equal to the number of windows of the subgroups (in hours)
@@ -3515,8 +3968,10 @@ double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>
 	int windows;
 	int tmp;
 	
-	windows=0;
+	int tIllegalWindows=0;
+	
 	for(int sg=0; sg<this->iSubgroupsList.count(); sg++){
+		windows=0;
 		int i=this->iSubgroupsList.at(sg);
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			int k;
@@ -3529,75 +3984,67 @@ double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>
 			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
 				if(subgroupsMatrix[i][j][k]>0){
 					windows+=tmp;
-
-					if(tmp>0 && conflictsString!=NULL){
-						QString s=QObject::tr("Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5")
-						 .arg(r.internalSubgroupsList[i]->name)
-						 .arg(r.daysOfTheWeek[j])
-						 .arg(r.hoursOfTheDay[k])
-						 .arg(tmp)
-						 .arg(weightPercentage/100*tmp);
-						 
-						dl.append(s);
-						cl.append(weightPercentage/100*tmp);
-					
-						*conflictsString+= s+"\n";
-					}
 					tmp=0;
 				}
 				else
 					tmp++;
 			}
 		}
+		
+		int illegalWindows=windows-this->maxGaps;
+		if(illegalWindows<0)
+			illegalWindows=0;
+
+		if(illegalWindows>0 && conflictsString!=NULL){
+			QString s=QObject::tr("Time constraint students set max gaps broken for subgroup: %1, extra gaps=%2, conflicts increase=%3")
+			 .arg(r.internalSubgroupsList[i]->name)
+			 .arg(illegalWindows)
+			 .arg(weightPercentage/100*illegalWindows);
+						 
+			dl.append(s);
+			cl.append(weightPercentage/100*illegalWindows);
+				
+			*conflictsString+= s+"\n";
+		}
+		
+		tIllegalWindows+=illegalWindows;
 	}
 
-	int na=0;
-	for(int i=0; i<r.nInternalActivities; i++)
-		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+	if(c.nPlacedActivities==r.nInternalActivities)
 		if(weightPercentage==100)     //for partial solutions it might be broken
-			assert(windows==0);
-	return weightPercentage/100 * windows;
+			assert(tIllegalWindows==0);
+	return weightPercentage/100 * tIllegalWindows;
 }
 
-bool ConstraintStudentsSetNoGaps::isRelatedToActivity(Activity* a)
+bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
-	//if(a)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsSetNoGaps::isRelatedToTeacher(Teacher* t)
+bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsSetNoGaps::isRelatedToSubject(Subject* s)
+bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsSetNoGaps::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
 
-bool ConstraintStudentsSetNoGaps::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintStudentsSetMaxGapsPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	return r.studentsSetsRelated(this->students, s->name);
 }
@@ -3605,79 +4052,68 @@ bool ConstraintStudentsSetNoGaps::isRelatedToStudentsSet(Rules& r, StudentsSet* 
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintStudentsEarly::ConstraintStudentsEarly()
+ConstraintStudentsEarlyMaxBeginningsAtSecondHour::ConstraintStudentsEarlyMaxBeginningsAtSecondHour()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_STUDENTS_EARLY;
+	this->type = CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
 }
 
-ConstraintStudentsEarly::ConstraintStudentsEarly(double wp)
+ConstraintStudentsEarlyMaxBeginningsAtSecondHour::ConstraintStudentsEarlyMaxBeginningsAtSecondHour(double wp, int mBSH)
 	: TimeConstraint(wp)
 {
-	this->type = CONSTRAINT_STUDENTS_EARLY;
+	this->type = CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+	this->maxBeginningsAtSecondHour=mBSH;
 }
 
-bool ConstraintStudentsEarly::computeInternalStructure(Rules& r)
+bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::computeInternalStructure(Rules& r)
 {
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
-
-	/*do nothing*/
 	
 	return true;
 }
 
-QString ConstraintStudentsEarly::getXmlDescription(Rules& r)
+QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
-	QString s="<ConstraintStudentsEarly>\n";
+	QString s="<ConstraintStudentsEarlyMaxBeginningsAtSecondHour>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
-	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
-	s+="</ConstraintStudentsEarly>\n";
+	s+="	<Max_Beginnings_At_Second_Hour>"+QString::number(this->maxBeginningsAtSecondHour)+"</Max_Beginnings_At_Second_Hour>\n";
+	s+="</ConstraintStudentsEarlyMaxBeginningsAtSecondHour>\n";
 	return s;
 }
 
-QString ConstraintStudentsEarly::getDescription(Rules& r)
+QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
 	QString s;
-	s+=QObject::tr("Students must begin their courses as early as possible (permitted by breaks and students not available)");s+=", ";
+	s+=QObject::tr("Students must arrive early, respecting %1 maximum arrivals at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);
+	s+=", ";
 	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));//s+=", ";
-	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
 
 	return s;
 }
 
-QString ConstraintStudentsEarly::getDetailedDescription(Rules& r)
+QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
-	//if(&r==NULL)
-	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Students must begin their courses as early as possible (permitted by breaks and students not available)");s+="\n";
+	s+=QObject::tr("Students must begin their courses early, respecting %1 maximum later arrivals, at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=QObject::tr("(breaks and students set not available not counted)");s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
-	s+="\n";
-
-	s+=QObject::tr("This is a strong constraint (for instance, if students X are available all the time, they must begin "
-	 "their activities at first hour, not a bit later)");
 	s+="\n";
 
 	return s;
 }
 
-double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//considers the condition that the hours of subgroups begin as early as possible
 
@@ -3695,47 +4131,106 @@ double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl
 		c.changedForMatrixCalculation=false;
 	}
 	
-	int free;
-	int i;
+	//int free;
+	//int i;
 	
-	free=0; //number of free hours before starting the courses
-	for(i=0; i<r.nInternalSubgroups; i++)
+	int conflTotal=0;
+	
+	//free=0; //number of free hours before starting the courses
+	for(int i=0; i<r.nInternalSubgroups; i++){
+		int nGapsFirstHour=0;
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			int k;
-			int weekly=0;
-			for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
+			for(k=0; k<r.nHoursPerDay; k++)
 				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
-					weekly++;
-			if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
-				free+=weekly;
+					break;
 				
+			bool firstHourOccupied=false;
+			if(k<r.nHoursPerDay && subgroupsMatrix[i][j][k]>0)
+				firstHourOccupied=true;
+					
+			bool dayOccupied=firstHourOccupied;
+			
+			bool illegalGap=false;
+				
+			for(k++; k<r.nHoursPerDay && !dayOccupied; k++)
+				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+					if(subgroupsMatrix[i][j][k]>0)
+						dayOccupied=true;
+					else
+						illegalGap=true;
+				}
+				
+			if(dayOccupied && illegalGap){
 				if(conflictsString!=NULL){
-					QString s=QObject::tr("Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3")
+					QString s=QObject::tr("Constraint students early max %1 beginnings at second hour broken for subgroup %2, on day %3,"
+					 " because students have an illegal gap, increases conflicts total by %4")
+					 .arg(this->maxBeginningsAtSecondHour)
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
-					 .arg(weekly*weightPercentage/100);
+					 .arg(1*weightPercentage/100);
 					 
 					dl.append(s);
-					cl.append(weekly*weightPercentage/100);
+					cl.append(1*weightPercentage/100);
 						
 					*conflictsString+= s+"\n";
+					
+					conflTotal+=1;
+				}
+				
+				if(c.nPlacedActivities==r.nInternalActivities){
+					cout<<"day=="<<j<<endl;
+					cout<<"subgroup=="<<qPrintable(r.internalSubgroupsList[i]->name)<<endl;
+					for(int h2=0; h2<r.nHoursPerDay; h2++){
+						for(int d2=0; d2<r.nDaysPerWeek; d2++)
+							cout<<int(subgroupsMatrix[i][d2][h2]);
+						cout<<endl;
+					}
+				
+					assert(0);
 				}
 			}
-			//else
-				//empty day or early assignment
+			
+			if(dayOccupied && !firstHourOccupied)
+				nGapsFirstHour++;
 		}
-
-	int na=0;
-	for(int i=0; i<r.nInternalActivities; i++)
-		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+		
+		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Constraint students early max %1 beginnings at second hour broken for subgroup %2,"
+				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 .arg(this->maxBeginningsAtSecondHour)
+				 .arg(r.internalSubgroupsList[i]->name)
+				 .arg((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+				 
+				dl.append(s);
+				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+					
+				*conflictsString+= s+"\n";
+				
+				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
+			}
+			
+			if(c.nPlacedActivities==r.nInternalActivities){
+				for(int h=0; h<r.nHoursPerDay; h++){
+					for(int d=0; d<r.nDaysPerWeek; d++)
+						cout<<int(subgroupsMatrix[i][d][h]);
+					cout<<endl;
+				}
+				cout<<endl;
+			
+				assert(0);
+			}
+		}
+	}
+					
+	if(c.nPlacedActivities==r.nInternalActivities)
 		if(weightPercentage==100)    //might be broken for partial solutions
-			assert(free==0);
-	return weightPercentage/100 * free;
+			assert(conflTotal==0);
+	return weightPercentage/100 * conflTotal;
 }
 
-bool ConstraintStudentsEarly::isRelatedToActivity(Activity* a)
+bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
 	//if(a)
@@ -3744,7 +4239,7 @@ bool ConstraintStudentsEarly::isRelatedToActivity(Activity* a)
 	return false;
 }
 
-bool ConstraintStudentsEarly::isRelatedToTeacher(Teacher* t)
+bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -3753,7 +4248,7 @@ bool ConstraintStudentsEarly::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool ConstraintStudentsEarly::isRelatedToSubject(Subject* s)
+bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -3762,7 +4257,7 @@ bool ConstraintStudentsEarly::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintStudentsEarly::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -3771,7 +4266,7 @@ bool ConstraintStudentsEarly::isRelatedToSubjectTag(SubjectTag* s)
 	return false;
 }
 
-bool ConstraintStudentsEarly::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintStudentsEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -3786,22 +4281,32 @@ bool ConstraintStudentsEarly::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-ConstraintStudentsSetEarly::ConstraintStudentsSetEarly()
+ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour()
 	: TimeConstraint()
 {
-	this->type = CONSTRAINT_STUDENTS_SET_EARLY;
+	this->type = CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
 }
 
-ConstraintStudentsSetEarly::ConstraintStudentsSetEarly(double wp, const QString& students)
+ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour(double wp, int mBSH, const QString& students)
 	: TimeConstraint(wp)
 {
-	this->type = CONSTRAINT_STUDENTS_SET_EARLY;
+	this->type = CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
 	this->students=students;
+	this->maxBeginningsAtSecondHour=mBSH;
 }
 
-bool ConstraintStudentsSetEarly::computeInternalStructure(Rules& r)
+bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructure(Rules& r)
 {
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	
+	if(ss==NULL){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Constraint students set early is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+
 	assert(ss);
 
 	//this->nSubgroups=0;
@@ -3858,30 +4363,34 @@ bool ConstraintStudentsSetEarly::computeInternalStructure(Rules& r)
 	return true;
 }
 
-QString ConstraintStudentsSetEarly::getXmlDescription(Rules& r)
+QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
 
-	QString s="<ConstraintStudentsSetEarly>\n";
+	QString s="<ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>\n";
 	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Beginnings_At_Second_Hour>"+QString::number(this->maxBeginningsAtSecondHour)+"</Max_Beginnings_At_Second_Hour>\n";
 	s+="	<Students>"+protect(this->students)+"</Students>\n";
-	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
-	s+="</ConstraintStudentsSetEarly>\n";
+	s+="</ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>\n";
 	return s;
 }
 
-QString ConstraintStudentsSetEarly::getDescription(Rules& r)
+QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
 	//if(&r==NULL)
 	//	;
-
 	QString s;
-	s+=QObject::tr("Students set must begin their courses as early as possible (permitted by breaks and students not available)");s+=", ";
+	//s+=QObject::tr("Students set must begin their courses as early as possible (permitted by breaks and students not available)");s+=", ";
+
+	s+=QObject::tr("Students set must arrive early, respecting %1 maximum arrivals at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);
+	s+=", ";
+
 	s+=QObject::tr("S:%1").arg(this->students); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);//s+=", ";
 	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
@@ -3889,7 +4398,7 @@ QString ConstraintStudentsSetEarly::getDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
+QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
 {
 	//to avoid non-used parameter warning
 	Q_UNUSED(r);
@@ -3897,20 +4406,18 @@ QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
 	//	;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Students set must begin their courses as early as possible (permitted by breaks and students not available)");s+="\n";
+
+	s+=QObject::tr("Students set must begin their courses early, respecting %1 maximum later arrivals, at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=QObject::tr("(breaks and students set not available not counted)");s+="\n";
+
 	s+=QObject::tr("Students set=%1").arg(this->students); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
-	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
-	s+="\n";
-
-	s+=QObject::tr("This is a strong constraint (for instance, if students X are available all the time, they must begin "
-	 "their activities at first hour, not a bit later)");
-	s+="\n";
 
 	return s;
 }
 
-double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//considers the condition that the hours of subgroups begin as early as possible
 
@@ -3928,50 +4435,89 @@ double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>&
 		c.changedForMatrixCalculation=false;
 	}
 	
-	int free;
-	int i;
+	//int free;
+	//int i;
 	
-	free=0; //number of free hours before starting the courses
-	for(int q=0; q<this->iSubgroupsList.count(); q++){
-	//for(i=0; i<r.nInternalSubgroups; i++)
-		i=this->iSubgroupsList.at(q);
+	int conflTotal=0;
+
+	foreach(int i, this->iSubgroupsList){
+	//for(i=0; i<r.nInternalSubgroups; i++){
+		int nGapsFirstHour=0;
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			int k;
-			int weekly=0;
-			for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
+			for(k=0; k<r.nHoursPerDay; k++)
 				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
-					weekly++;
-			if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
-				free+=weekly;
+					break;
 				
+			bool firstHourOccupied=false;
+			if(k<r.nHoursPerDay && subgroupsMatrix[i][j][k]>0)
+				firstHourOccupied=true;
+					
+			bool dayOccupied=firstHourOccupied;
+			
+			bool illegalGap=false;
+				
+			for(k++; k<r.nHoursPerDay && !dayOccupied; k++)
+				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+					if(subgroupsMatrix[i][j][k]>0)
+						dayOccupied=true;
+					else
+						illegalGap=true;
+				}
+				
+			if(dayOccupied && illegalGap){
 				if(conflictsString!=NULL){
-					QString s=QObject::tr("Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3")
+					QString s=QObject::tr("Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3,"
+					 " because students have an illegal gap, increases conflicts total by %4")
+					 .arg(this->maxBeginningsAtSecondHour)
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
-					 .arg(weekly*weightPercentage/100);
-				 
+					 .arg(1*weightPercentage/100);
+					 
 					dl.append(s);
-					cl.append(weekly*weightPercentage/100);
-					
+					cl.append(1*weightPercentage/100);
+						
 					*conflictsString+= s+"\n";
+					
+					conflTotal+=1;
 				}
+				
+				if(c.nPlacedActivities==r.nInternalActivities)
+					assert(0);
 			}
-			//else
-				//empty day or early assignment
+			
+			if(dayOccupied && !firstHourOccupied)
+				nGapsFirstHour++;
+		}
+		
+		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Constraint students set early max %1 beginnings at second hour broken for subgroup %2,"
+				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 .arg(this->maxBeginningsAtSecondHour)
+				 .arg(r.internalSubgroupsList[i]->name)
+				 .arg((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+				 
+				dl.append(s);
+				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+					
+				*conflictsString+= s+"\n";
+				
+				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
+			}
+			
+			if(c.nPlacedActivities==r.nInternalActivities)
+				assert(0);
 		}
 	}
-
-	int na=0;
-	for(int i=0; i<r.nInternalActivities; i++)
-		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
-		if(weightPercentage==100)      //might be broken for partial solutions
-			assert(free==0);
-	return weightPercentage/100 * free;
+					
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)    //might be broken for partial solutions
+			assert(conflTotal==0);
+	return weightPercentage/100 * conflTotal;
 }
 
-bool ConstraintStudentsSetEarly::isRelatedToActivity(Activity* a)
+bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
 	//if(a)
@@ -3980,7 +4526,7 @@ bool ConstraintStudentsSetEarly::isRelatedToActivity(Activity* a)
 	return false;
 }
 
-bool ConstraintStudentsSetEarly::isRelatedToTeacher(Teacher* t)
+bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
 	//if(t)
@@ -3989,7 +4535,7 @@ bool ConstraintStudentsSetEarly::isRelatedToTeacher(Teacher* t)
 	return false;
 }
 
-bool ConstraintStudentsSetEarly::isRelatedToSubject(Subject* s)
+bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -3998,7 +4544,7 @@ bool ConstraintStudentsSetEarly::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintStudentsSetEarly::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -4007,7 +4553,7 @@ bool ConstraintStudentsSetEarly::isRelatedToSubjectTag(SubjectTag* s)
 	return false;
 }
 
-bool ConstraintStudentsSetEarly::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	return r.studentsSetsRelated(this->students, s->name);
 }
@@ -4205,7 +4751,7 @@ bool ConstraintStudentsMaxHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintStudentsMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsMaxHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -4310,6 +4856,15 @@ QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(Rules &r)
 {
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	
+	if(ss==NULL){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Constraint students set max hours daily is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+
 	assert(ss);
 
 	//this->nSubgroups=0;
@@ -4477,7 +5032,7 @@ bool ConstraintStudentsSetMaxHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintStudentsSetMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsSetMaxHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -4609,7 +5164,7 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 			
 			//if(tmp>0) - smart, for empty days does not consider
 			
-			if(this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no less than minHoursDaily hours per day.
+			if(tmp>0 && this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no less than minHoursDaily hours per day.
 				too_little += - tmp + this->minHoursDaily;
 
 				if(conflictsString!=NULL){
@@ -4631,11 +5186,12 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 			
 	assert(too_little>=0);
 
-	int na=0;
+	/*int na=0;
 	for(int i=0; i<r.nInternalActivities; i++)
 		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+			na++;*/
+	if(c.nPlacedActivities==r.nInternalActivities)
+	//if(na==r.nInternalActivities)
 		if(weightPercentage==100) //does not work for partial solutions
 			assert(too_little==0);
 
@@ -4669,7 +5225,7 @@ bool ConstraintStudentsMinHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintStudentsMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsMinHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -4774,6 +5330,15 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(Rules &r)
 {
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	
+	if(ss==NULL){
+		QMessageBox::warning(NULL, QObject::tr("FET warning"),
+		 QObject::tr("Constraint students set min hours daily is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+
 	assert(ss);
 
 	this->iSubgroupsList.clear();
@@ -4860,7 +5425,7 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 				if(subgroupsMatrix[i][j][k]>=1)
 					tmp++;
 			}
-			if(this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no more than max_hours_daily hours per day.
+			if(tmp>0 && this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no more than max_hours_daily hours per day.
 				too_little += - tmp + this->minHoursDaily;
 
 				if(conflictsString!=NULL){
@@ -4881,11 +5446,12 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 	
 	assert(too_little>=0);
 
-	int na=0;
+	/*int na=0;
 	for(int i=0; i<r.nInternalActivities; i++)
 		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+			na++;*/
+	if(c.nPlacedActivities==r.nInternalActivities)
+	//if(na==r.nInternalActivities)
 		if(weightPercentage==100) //does not work for partial solutions
 			assert(too_little==0);
 
@@ -4919,7 +5485,7 @@ bool ConstraintStudentsSetMinHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintStudentsSetMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintStudentsSetMinHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -5062,8 +5628,8 @@ QString ConstraintActivityPreferredTime::getDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -5124,8 +5690,8 @@ QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -5231,7 +5797,7 @@ bool ConstraintActivityPreferredTime::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivityPreferredTime::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintActivityPreferredTime::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -5378,8 +5944,8 @@ QString ConstraintActivityPreferredTimes::getDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -5444,8 +6010,8 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -5544,8 +6110,8 @@ double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<do
 		 .arg(tn)
 		 .arg(sn)
 		 .arg(r.internalActivitiesList[this->activityIndex].subjectName);
-		if(r.internalActivitiesList[this->activityIndex].subjectTagName!="")
-			s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[this->activityIndex].subjectTagName);
+		if(r.internalActivitiesList[this->activityIndex].activityTagName!="")
+			s+=QObject::tr(", activity tag %4").arg(r.internalActivitiesList[this->activityIndex].activityTagName);
 
 		s+=")";
 
@@ -5587,7 +6153,7 @@ bool ConstraintActivityPreferredTimes::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivityPreferredTimes::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintActivityPreferredTimes::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -5623,7 +6189,7 @@ ConstraintActivitiesPreferredTimes::ConstraintActivitiesPreferredTimes(double wp
 {
 	this->teacherName=te;
 	this->subjectName=su;
-	this->subjectTagName=sut;
+	this->activityTagName=sut;
 	this->studentsName=st;
 	this->nPreferredTimes=nPT;
 	assert(nPT<=MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES);
@@ -5671,8 +6237,8 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 		if(this->subjectName!="" && act->subjectName!=this->subjectName){
 				continue;
 		}
-		//check if this activity has the corresponding subject tag
-		if(this->subjectTagName!="" && act->subjectTagName!=this->subjectTagName){
+		//check if this activity has the corresponding activity tag
+		if(this->activityTagName!="" && act->activityTagName!=this->activityTagName){
 				continue;
 		}
 	
@@ -5732,7 +6298,7 @@ QString ConstraintActivitiesPreferredTimes::getXmlDescription(Rules& r)
 	//if(this->subjectName!="")
 		s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
 	//if(this->subjectTagName!="")
-		s+="	<Subject_Tag_Name>"+protect(this->subjectTagName)+"</Subject_Tag_Name>\n";
+		s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
 	s+="	<Number_of_Preferred_Times>"+QString::number(this->nPreferredTimes)+"</Number_of_Preferred_Times>\n";
 	for(int i=0; i<nPreferredTimes; i++){
 		s+="	<Preferred_Time>\n";
@@ -5767,10 +6333,10 @@ QString ConstraintActivitiesPreferredTimes::getDescription(Rules& r)
 		s+=QObject::tr("subject=%1, ").arg(this->subjectName);
 	else
 		s+=QObject::tr("all subjects, ");
-	if(this->subjectTagName!="")
-		s+=QObject::tr("subject tag=%1, ").arg(this->subjectTagName);
+	if(this->activityTagName!="")
+		s+=QObject::tr("activity tag=%1, ").arg(this->activityTagName);
 	else
-		s+=QObject::tr("all subject tags, ");
+		s+=QObject::tr("all activity tags, ");
 	s+=QObject::tr("must be scheduled at: ");
 	for(int i=0; i<this->nPreferredTimes; i++){
 		//s+=QString::number(i+1);
@@ -5808,10 +6374,10 @@ QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
 		s+=QObject::tr("Subject=%1\n").arg(this->subjectName);
 	else
 		s+=QObject::tr("All subjects\n");
-	if(this->subjectTagName!="")
-		s+=QObject::tr("Subject tag=%1\n").arg(this->subjectTagName);
+	if(this->activityTagName!="")
+		s+=QObject::tr("Activity tag=%1\n").arg(this->activityTagName);
 	else
-		s+=QObject::tr("All subject tags\n");
+		s+=QObject::tr("All activity tags\n");
 
 	s+=QObject::tr("must be scheduled at:\n");
 	for(int i=0; i<this->nPreferredTimes; i++){
@@ -5932,8 +6498,8 @@ double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<
 				 .arg(tn)
 				 .arg(sn)
 				 .arg(r.internalActivitiesList[ai].subjectName);
-				if(r.internalActivitiesList[ai].subjectTagName!="")
-					s+=QObject::tr(", subject tag %4").arg(r.internalActivitiesList[ai].subjectTagName);
+				if(r.internalActivitiesList[ai].activityTagName!="")
+					s+=QObject::tr(", activity tag %4").arg(r.internalActivitiesList[ai].activityTagName);
 	
 				s+=")";
 
@@ -5972,8 +6538,8 @@ bool ConstraintActivitiesPreferredTimes::isRelatedToActivity(Activity* a)
 	//check if this activity has the corresponding subject
 	if(this->subjectName!="" && a->subjectName!=this->subjectName)
 		return false;
-	//check if this activity has the corresponding subject tag
-	if(this->subjectTagName!="" && a->subjectTagName!=this->subjectTagName)
+	//check if this activity has the corresponding activity tag
+	if(this->activityTagName!="" && a->activityTagName!=this->activityTagName)
 		return false;
 
 	return true;
@@ -5997,7 +6563,7 @@ bool ConstraintActivitiesPreferredTimes::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivitiesPreferredTimes::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintActivitiesPreferredTimes::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -6164,8 +6730,8 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
 		s+=QObject::tr(" , S: ");
 		s+=r.activitiesList[ai]->subjectName;
 	
-		if(r.activitiesList[ai]->subjectTagName!="")
-			s+=QObject::tr(" , ST: ")+r.activitiesList[ai]->subjectTagName;
+		if(r.activitiesList[ai]->activityTagName!="")
+			s+=QObject::tr(" , AT: ", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 		s+=QObject::tr(" , St: ");
 		k=0;
@@ -6308,7 +6874,7 @@ bool ConstraintActivitiesSameStartingHour::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivitiesSameStartingHour::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintActivitiesSameStartingHour::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -6318,6 +6884,297 @@ bool ConstraintActivitiesSameStartingHour::isRelatedToSubjectTag(SubjectTag* s)
 }
 
 bool ConstraintActivitiesSameStartingHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+		
+	return false;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesSameStartingDay::ConstraintActivitiesSameStartingDay()
+	: TimeConstraint()
+{
+	type=CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY;
+}
+
+ConstraintActivitiesSameStartingDay::ConstraintActivitiesSameStartingDay(double wp, int nact, const int act[])
+ : TimeConstraint(wp)
+ {
+	assert(nact>=2 && nact<=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
+	this->n_activities=nact;
+	for(int i=0; i<nact; i++)
+		this->activitiesId[i]=act[i];
+
+	this->type=CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY;
+}
+
+bool ConstraintActivitiesSameStartingDay::computeInternalStructure(Rules &r)
+{
+	//compute the indices of the activities,
+	//based on their unique ID
+
+	for(int j=0; j<n_activities; j++)
+		this->_activities[j]=-1;
+
+	this->_n_activities=0;
+	for(int i=0; i<this->n_activities; i++){
+		int j;
+		Activity* act;
+		for(j=0; j<r.nInternalActivities; j++){
+			act=&r.internalActivitiesList[j];
+			if(act->id==this->activitiesId[i]){
+				this->_activities[this->_n_activities++]=j;
+				break;
+			}
+		}
+	}
+	
+	if(this->_n_activities<=1){
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	return true;
+}
+
+void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
+{
+	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+
+	for(int j=0; j<this->n_activities; j++)
+		this->_activities[j]=-1;
+
+	for(int i=0; i<this->n_activities; i++){
+		for(int k=0; k<r.activitiesList.size(); k++){
+			Activity* act=r.activitiesList[k];
+			if(act->id==this->activitiesId[i])
+				this->_activities[i]=act->id;
+		}
+	}
+
+	int i, j;
+	i=0;
+	for(j=0; j<this->n_activities; j++)
+		if(this->_activities[j]>=0) //valid activity
+			this->activitiesId[i++]=this->_activities[j];
+	this->n_activities=i;
+}
+
+QString ConstraintActivitiesSameStartingDay::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s="<ConstraintActivitiesSameStartingDay>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="	<Number_of_Activities>"+QString::number(this->n_activities)+"</Number_of_Activities>\n";
+	for(int i=0; i<this->n_activities; i++)
+		s+="	<Activity_Id>"+QString::number(this->activitiesId[i])+"</Activity_Id>\n";
+	s+="</ConstraintActivitiesSameStartingDay>\n";
+	return s;
+}
+
+QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s;
+	s+=QObject::tr("Activities same starting day");s+=", ";
+	s+=(QObject::tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage));s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
+	s+=(QObject::tr("NA:%1", "Number of activities").arg(this->n_activities));s+=", ";
+	for(int i=0; i<this->n_activities; i++){
+		s+=(QObject::tr("ID:%1").arg(this->activitiesId[i]));s+=", ";
+	}
+
+	return s;
+}
+
+QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s;
+	
+	s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Activities must have the same starting day");s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
+	for(int i=0; i<this->n_activities; i++){
+		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));
+		
+		//* write the teachers, subject and students sets
+		//added in version 5.1.10
+		int ai;
+		for(ai=0; ai<r.activitiesList.size(); ai++)
+			if(r.activitiesList[ai]->id==this->activitiesId[i])
+				break;
+		if(ai==r.activitiesList.size()){
+			s+=QObject::tr(" Invalid (inexistent) activity id");
+			return s;
+		}
+		assert(ai<r.activitiesList.size());
+		s+=" ( ";
+	
+		s+=QObject::tr("T: ", "Teacher");
+		int k=0;
+		foreach(QString ss, r.activitiesList[ai]->teachersNames){
+			if(k>0)
+				s+=" ,";
+			s+=ss;
+			k++;
+		}
+	
+		s+=QObject::tr(" , S: ", "Subject");
+		s+=r.activitiesList[ai]->subjectName;
+	
+		if(r.activitiesList[ai]->activityTagName!="")
+			s+=QObject::tr(" , AT: ", "Activity tag")+r.activitiesList[ai]->activityTagName;
+	
+		s+=QObject::tr(" , St: ", "Students");
+		k=0;
+		foreach(QString ss, r.activitiesList[ai]->studentsNames){
+			if(k>0)
+				s+=",";
+			s+=ss;
+			k++;
+		}
+	
+		s+=" )";
+		//* end section
+
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivitiesSameStartingDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	assert(r.internalStructureComputed);
+
+	int nbroken;
+
+	//We do not use the matrices 'subgroupsMatrix' nor 'teachersMatrix'.
+
+	//sum the differences in the scheduled hour for all pairs of activities.
+
+	//without logging
+	if(conflictsString==NULL){
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				//int hour1=t1/r.nDaysPerWeek;
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						//int hour2=t2/r.nDaysPerWeek;
+						int tmp=0;
+
+						if(day1!=day2)
+							tmp=1;
+
+						nbroken+=tmp;
+					}
+				}
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				//int hour1=t1/r.nDaysPerWeek;
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						//int hour2=t2/r.nDaysPerWeek;
+						int tmp=0;
+
+						if(day1!=day2)
+							tmp=1;
+
+						nbroken+=tmp;
+
+						if(tmp>0 && conflictsString!=NULL){
+							QString s=QObject::tr("Time constraint activities same starting day broken, because activity with id=%1 is not in the same day with activity with id=%2")
+							 .arg(this->activitiesId[i])
+							 .arg(this->activitiesId[j]);
+							s+=", ";
+							s+=QObject::tr("conflicts factor increase=%1").arg(tmp*weightPercentage/100);
+							
+							dl.append(s);
+							cl.append(tmp*weightPercentage/100);
+						
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintActivitiesSameStartingDay::isRelatedToActivity(Activity* a)
+{
+	for(int i=0; i<this->n_activities; i++)
+		if(this->activitiesId[i]==a->id)
+			return true;
+	return false;
+}
+
+bool ConstraintActivitiesSameStartingDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivitiesSameStartingDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivitiesSameStartingDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+	//if(s)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivitiesSameStartingDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
@@ -6462,8 +7319,8 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -6504,8 +7361,8 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -6620,7 +7477,7 @@ bool Constraint2ActivitiesConsecutive::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool Constraint2ActivitiesConsecutive::isRelatedToSubjectTag(SubjectTag* s)
+bool Constraint2ActivitiesConsecutive::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -6728,8 +7585,8 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -6780,8 +7637,8 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
 	s+=QObject::tr(",S:");
 	s+=r.activitiesList[ai]->subjectName;
 	
-	if(r.activitiesList[ai]->subjectTagName!="")
-		s+=QObject::tr(",ST:")+r.activitiesList[ai]->subjectTagName;
+	if(r.activitiesList[ai]->activityTagName!="")
+		s+=QObject::tr(",AT:", "Activity tag")+r.activitiesList[ai]->activityTagName;
 	
 	s+=QObject::tr(",St:");
 	k=0;
@@ -6882,7 +7739,7 @@ bool ConstraintActivityEndsStudentsDay::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintActivityEndsStudentsDay::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintActivityEndsStudentsDay::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -7038,11 +7895,12 @@ double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 		}
 	}
 
-	int na=0;
+	/*int na=0;
 	for(int i=0; i<r.nInternalActivities; i++)
 		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+			na++;*/
+	if(c.nPlacedActivities==r.nInternalActivities)
+	//if(na==r.nInternalActivities)
 		//does not work for partial solutions
 		if(weightPercentage==100)	
 			assert(nbroken==0);
@@ -7076,7 +7934,7 @@ bool ConstraintTeachersMinHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintTeachersMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeachersMinHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)
@@ -7230,11 +8088,12 @@ double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 		}
 	}
 
-	int na=0;
+	/*int na=0;
 	for(int i=0; i<r.nInternalActivities; i++)
 		if(c.times[i]!=UNALLOCATED_TIME)
-			na++;
-	if(na==r.nInternalActivities)
+			na++;*/
+	if(c.nPlacedActivities==r.nInternalActivities)
+	//if(na==r.nInternalActivities)
 		//does not work for partial solutions
 		if(weightPercentage==100)
 			assert(nbroken==0);
@@ -7267,7 +8126,7 @@ bool ConstraintTeacherMinHoursDaily::isRelatedToSubject(Subject* s)
 	return false;
 }
 
-bool ConstraintTeacherMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+bool ConstraintTeacherMinHoursDaily::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
 	//if(s)

@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>585</width>
-            <height>224</height>
+            <height>319</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,29 +19,15 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLabel" row="0" column="2">
+        <widget class="QPushButton" row="7" column="2">
             <property name="name">
-                <cstring>currentConstraintTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
+                <cstring>closePushButton</cstring>
             </property>
             <property name="text">
-                <string>Current constraint</string>
+                <string>Close</string>
             </property>
         </widget>
-        <widget class="QLineEdit" row="2" column="1">
-            <property name="name">
-                <cstring>weightLineEdit</cstring>
-            </property>
-            <property name="text">
-                <string>100</string>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="QComboBox" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>studentsComboBox</cstring>
             </property>
@@ -58,7 +44,7 @@
                 <bool>false</bool>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>studentsTextLabel</cstring>
             </property>
@@ -72,7 +58,15 @@
                 <string>Students set</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="6" column="0" rowspan="1" colspan="2">
+        <widget class="QLineEdit" row="5" column="1">
+            <property name="name">
+                <cstring>weightLineEdit</cstring>
+            </property>
+            <property name="text">
+                <string>100</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="7" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>addConstraintPushButton</cstring>
             </property>
@@ -80,37 +74,7 @@
                 <string>Add current constraint</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="6" column="2">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="5" colspan="1">
-            <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel" row="2" column="0">
-            <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Weight percentage (necessary: 100%)</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="0">
+        <widget class="QLabel" row="6" column="0">
             <property name="name">
                 <cstring>maxHoursTextLabel</cstring>
             </property>
@@ -124,9 +88,78 @@
                 <string>Min hours</string>
             </property>
         </widget>
-        <widget class="QSpinBox" row="4" column="1">
+        <widget class="QSpinBox" row="6" column="1">
             <property name="name">
                 <cstring>minHoursSpinBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="5" column="0">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight percentage (necessary: 100%)</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="2">
+            <property name="name">
+                <cstring>currentConstraintTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Current constraint</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="2" rowspan="6" colspan="1">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <spacer row="2" column="0">
+            <property name="name">
+                <cstring>spacer2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>100</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="2">
+            <property name="name">
+                <cstring>teacherTextLabel_2</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Note: every day should have the minimum hours daily
+(so this constraint is not flexible to allow empty days for
+students)</string>
             </property>
         </widget>
     </grid>

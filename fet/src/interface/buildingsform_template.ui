@@ -1,0 +1,145 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>BuildingsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>BuildingsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>533</width>
+            <height>505</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Buildings</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="2" column="0">
+            <property name="name">
+                <cstring>addBuildingPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add building</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="1">
+            <property name="name">
+                <cstring>removeBuildingPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Remove current</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="1">
+            <property name="name">
+                <cstring>sortBuildingsPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Sort by name</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="0">
+            <property name="name">
+                <cstring>modifyBuildingPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Modify current</string>
+            </property>
+        </widget>
+        <widget class="QListBox" row="1" column="0">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>buildingsListBox</cstring>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="1">
+            <property name="name">
+                <cstring>currentBuildingTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>addBuildingPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>BuildingsForm_template</receiver>
+        <slot>addBuilding()</slot>
+    </connection>
+    <connection>
+        <sender>removeBuildingPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>BuildingsForm_template</receiver>
+        <slot>removeBuilding()</slot>
+    </connection>
+    <connection>
+        <sender>buildingsListBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>BuildingsForm_template</receiver>
+        <slot>buildingChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>BuildingsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>modifyBuildingPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>BuildingsForm_template</receiver>
+        <slot>modifyBuilding()</slot>
+    </connection>
+    <connection>
+        <sender>sortBuildingsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>BuildingsForm_template</receiver>
+        <slot>sortBuildings()</slot>
+    </connection>
+    <connection>
+        <sender>buildingsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>BuildingsForm_template</receiver>
+        <slot>modifyBuilding()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>buildingsListBox</tabstop>
+    <tabstop>currentBuildingTextEdit</tabstop>
+    <tabstop>addBuildingPushButton</tabstop>
+    <tabstop>removeBuildingPushButton</tabstop>
+    <tabstop>modifyBuildingPushButton</tabstop>
+    <tabstop>sortBuildingsPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
+<slots>
+    <slot>addBuilding()</slot>
+    <slot>removeBuilding()</slot>
+    <slot>buildingChanged(int)</slot>
+    <slot>buildingEquipments()</slot>
+    <slot>sortBuildings()</slot>
+    <slot>modifyBuilding()</slot>
+    <slot>filterChanged()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

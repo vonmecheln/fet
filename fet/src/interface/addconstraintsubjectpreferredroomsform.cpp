@@ -84,12 +84,7 @@ void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 			QObject::tr("Only one selected room - please use constraint subject preferred room if you want a single room"));
 		return;
 	}
-	if(selectedRoomsListBox->count()>(uint)(MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS)){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please report error to the author\nMAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS must be increased (you have too many selected rooms)"));
-		return;
-	}
-	
+
 	if(subjectsComboBox->currentItem()<0 || subjectsComboBox->count()<=0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid selected subject"));

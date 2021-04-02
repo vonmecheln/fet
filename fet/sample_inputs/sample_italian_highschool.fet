@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.4.18">
+<!DOCTYPE FET><FET version="5.5.0-beta1">
 
 <Institution_Name>Liceo Scientifico Mazzini - Ancona</Institution_Name>
 
@@ -14,7 +14,6 @@
 	<Name>11:00</Name>
 	<Name>12:00</Name>
 	<Name>13:00</Name>
-	<Name>14:00</Name>
 </Hours_List>
 
 <Days_List>
@@ -395,23 +394,23 @@
 </Subject>
 </Subjects_List>
 
-<Subject_Tags_List>
-<Subject_Tag>
+<Activity_Tags_List>
+<Activity_Tag>
 	<Name>centrale</Name>
-</Subject_Tag>
-<Subject_Tag>
+</Activity_Tag>
+<Activity_Tag>
 	<Name>via fiorani</Name>
-</Subject_Tag>
-<Subject_Tag>
+</Activity_Tag>
+<Activity_Tag>
 	<Name>palasport</Name>
-</Subject_Tag>
-</Subject_Tags_List>
+</Activity_Tag>
+</Activity_Tags_List>
 
 <Activities_List>
 <Activity>
 	<Teacher>Cecconi</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>9</Id>
@@ -422,7 +421,7 @@
 <Activity>
 	<Teacher>Cecconi</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>10</Id>
@@ -433,7 +432,7 @@
 <Activity>
 	<Teacher>Cecconi</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>11</Id>
@@ -444,7 +443,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>14</Id>
@@ -455,7 +454,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>15</Id>
@@ -466,7 +465,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>16</Id>
@@ -477,7 +476,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>22</Id>
@@ -488,7 +487,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>23</Id>
@@ -499,7 +498,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>24</Id>
@@ -510,7 +509,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>25</Id>
@@ -521,7 +520,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>26</Id>
@@ -532,7 +531,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>40</Id>
@@ -543,7 +542,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>41</Id>
@@ -554,7 +553,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>42</Id>
@@ -565,7 +564,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>48</Id>
@@ -576,7 +575,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>49</Id>
@@ -587,7 +586,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>50</Id>
@@ -598,7 +597,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>51</Id>
@@ -609,7 +608,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>52</Id>
@@ -620,7 +619,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>66</Id>
@@ -631,7 +630,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>67</Id>
@@ -642,7 +641,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>68</Id>
@@ -653,7 +652,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>74</Id>
@@ -664,7 +663,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>75</Id>
@@ -676,7 +675,7 @@
 	<Teacher>Aldighieri</Teacher>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>76</Id>
@@ -688,7 +687,7 @@
 	<Teacher>Aldighieri</Teacher>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>77</Id>
@@ -699,7 +698,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>78</Id>
@@ -710,7 +709,7 @@
 <Activity>
 	<Teacher>Cecconi</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>87</Id>
@@ -721,7 +720,7 @@
 <Activity>
 	<Teacher>Cecconi</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>88</Id>
@@ -732,7 +731,7 @@
 <Activity>
 	<Teacher>Cecconi</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>89</Id>
@@ -743,7 +742,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>92</Id>
@@ -754,7 +753,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>93</Id>
@@ -765,7 +764,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>94</Id>
@@ -776,7 +775,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>100</Id>
@@ -787,7 +786,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>101</Id>
@@ -798,7 +797,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>105</Id>
@@ -809,7 +808,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>114</Id>
@@ -820,7 +819,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>115</Id>
@@ -831,7 +830,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>116</Id>
@@ -842,7 +841,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>119</Id>
@@ -853,7 +852,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>120</Id>
@@ -864,7 +863,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>121</Id>
@@ -875,7 +874,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>127</Id>
@@ -886,7 +885,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>128</Id>
@@ -898,7 +897,7 @@
 	<Teacher>Galli</Teacher>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>129</Id>
@@ -910,7 +909,7 @@
 	<Teacher>Galli</Teacher>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>130</Id>
@@ -921,7 +920,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>131</Id>
@@ -932,7 +931,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>143</Id>
@@ -943,7 +942,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>144</Id>
@@ -954,7 +953,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>145</Id>
@@ -965,7 +964,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>146</Id>
@@ -976,7 +975,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>147</Id>
@@ -987,7 +986,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>148</Id>
@@ -998,7 +997,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>153</Id>
@@ -1009,7 +1008,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>154</Id>
@@ -1021,7 +1020,7 @@
 	<Teacher>Aldighieri</Teacher>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>155</Id>
@@ -1033,7 +1032,7 @@
 	<Teacher>Aldighieri</Teacher>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>156</Id>
@@ -1044,7 +1043,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>157</Id>
@@ -1055,7 +1054,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>169</Id>
@@ -1066,7 +1065,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>170</Id>
@@ -1077,7 +1076,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>171</Id>
@@ -1088,7 +1087,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>172</Id>
@@ -1099,7 +1098,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>173</Id>
@@ -1110,7 +1109,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>174</Id>
@@ -1121,7 +1120,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>179</Id>
@@ -1132,7 +1131,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>180</Id>
@@ -1143,7 +1142,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>181</Id>
@@ -1154,7 +1153,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>182</Id>
@@ -1165,7 +1164,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>183</Id>
@@ -1176,7 +1175,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>195</Id>
@@ -1187,7 +1186,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>196</Id>
@@ -1198,7 +1197,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>197</Id>
@@ -1209,7 +1208,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>198</Id>
@@ -1220,7 +1219,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>199</Id>
@@ -1231,7 +1230,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>200</Id>
@@ -1242,7 +1241,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>205</Id>
@@ -1253,7 +1252,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>206</Id>
@@ -1264,7 +1263,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>207</Id>
@@ -1275,7 +1274,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>208</Id>
@@ -1286,7 +1285,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>209</Id>
@@ -1297,7 +1296,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>221</Id>
@@ -1308,7 +1307,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>222</Id>
@@ -1319,7 +1318,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>223</Id>
@@ -1330,7 +1329,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>224</Id>
@@ -1341,7 +1340,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>225</Id>
@@ -1352,7 +1351,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>226</Id>
@@ -1363,7 +1362,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>232</Id>
@@ -1374,7 +1373,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>233</Id>
@@ -1385,7 +1384,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>234</Id>
@@ -1396,7 +1395,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>235</Id>
@@ -1407,7 +1406,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>236</Id>
@@ -1418,7 +1417,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>248</Id>
@@ -1429,7 +1428,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>249</Id>
@@ -1440,7 +1439,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>250</Id>
@@ -1451,7 +1450,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>251</Id>
@@ -1462,7 +1461,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>252</Id>
@@ -1473,7 +1472,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>253</Id>
@@ -1484,7 +1483,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>259</Id>
@@ -1495,7 +1494,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>260</Id>
@@ -1506,7 +1505,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>261</Id>
@@ -1517,7 +1516,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>262</Id>
@@ -1528,7 +1527,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>263</Id>
@@ -1539,7 +1538,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>276</Id>
@@ -1550,7 +1549,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>277</Id>
@@ -1561,7 +1560,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>278</Id>
@@ -1572,7 +1571,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>279</Id>
@@ -1583,7 +1582,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>280</Id>
@@ -1594,7 +1593,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>281</Id>
@@ -1605,7 +1604,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>285</Id>
@@ -1616,7 +1615,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>286</Id>
@@ -1627,7 +1626,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>287</Id>
@@ -1638,7 +1637,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>288</Id>
@@ -1649,7 +1648,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>291</Id>
@@ -1660,7 +1659,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>FILOSOFIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>300</Id>
@@ -1671,7 +1670,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>FILOSOFIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>301</Id>
@@ -1682,7 +1681,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>302</Id>
@@ -1693,7 +1692,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>303</Id>
@@ -1704,7 +1703,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>304</Id>
@@ -1715,7 +1714,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>305</Id>
@@ -1726,7 +1725,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>306</Id>
@@ -1737,7 +1736,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>307</Id>
@@ -1748,7 +1747,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>308</Id>
@@ -1759,7 +1758,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>309</Id>
@@ -1770,7 +1769,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>313</Id>
@@ -1781,7 +1780,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>314</Id>
@@ -1792,7 +1791,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>315</Id>
@@ -1803,7 +1802,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>316</Id>
@@ -1814,7 +1813,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>317</Id>
@@ -1825,7 +1824,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>318</Id>
@@ -1836,7 +1835,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>319</Id>
@@ -1847,7 +1846,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>332</Id>
@@ -1858,7 +1857,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>333</Id>
@@ -1869,7 +1868,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>334</Id>
@@ -1880,7 +1879,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>335</Id>
@@ -1891,7 +1890,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>336</Id>
@@ -1902,7 +1901,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>337</Id>
@@ -1913,7 +1912,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>343</Id>
@@ -1924,7 +1923,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>344</Id>
@@ -1935,7 +1934,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>345</Id>
@@ -1946,7 +1945,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>346</Id>
@@ -1957,7 +1956,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>347</Id>
@@ -1968,7 +1967,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>348</Id>
@@ -1979,7 +1978,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>349</Id>
@@ -1990,7 +1989,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>362</Id>
@@ -2001,7 +2000,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>363</Id>
@@ -2012,7 +2011,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>364</Id>
@@ -2023,7 +2022,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>365</Id>
@@ -2034,7 +2033,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>366</Id>
@@ -2045,7 +2044,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>367</Id>
@@ -2056,7 +2055,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>375</Id>
@@ -2067,7 +2066,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>376</Id>
@@ -2078,7 +2077,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>377</Id>
@@ -2089,7 +2088,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>378</Id>
@@ -2100,7 +2099,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>379</Id>
@@ -2111,7 +2110,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>392</Id>
@@ -2122,7 +2121,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>393</Id>
@@ -2133,7 +2132,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>394</Id>
@@ -2144,7 +2143,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>401</Id>
@@ -2155,7 +2154,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>402</Id>
@@ -2166,7 +2165,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>403</Id>
@@ -2177,7 +2176,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>404</Id>
@@ -2188,7 +2187,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>405</Id>
@@ -2199,7 +2198,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>408</Id>
@@ -2210,7 +2209,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>421</Id>
@@ -2221,7 +2220,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>422</Id>
@@ -2232,7 +2231,7 @@
 <Activity>
 	<Teacher>Paolini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>423</Id>
@@ -2243,7 +2242,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>430</Id>
@@ -2254,7 +2253,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>431</Id>
@@ -2265,7 +2264,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>432</Id>
@@ -2276,7 +2275,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>433</Id>
@@ -2287,7 +2286,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>434</Id>
@@ -2298,7 +2297,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>435</Id>
@@ -2309,7 +2308,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>436</Id>
@@ -2320,7 +2319,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>440</Id>
@@ -2331,7 +2330,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>448</Id>
@@ -2342,7 +2341,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>STORIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>449</Id>
@@ -2353,7 +2352,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>FILOSOFIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>450</Id>
@@ -2364,7 +2363,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>FILOSOFIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>451</Id>
@@ -2375,7 +2374,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>FILOSOFIA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>452</Id>
@@ -2386,7 +2385,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>453</Id>
@@ -2397,7 +2396,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>454</Id>
@@ -2408,7 +2407,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>455</Id>
@@ -2419,7 +2418,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>461</Id>
@@ -2430,7 +2429,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>462</Id>
@@ -2441,7 +2440,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>463</Id>
@@ -2452,7 +2451,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>464</Id>
@@ -2463,7 +2462,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>465</Id>
@@ -2474,7 +2473,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>466</Id>
@@ -2485,7 +2484,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>467</Id>
@@ -2496,7 +2495,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>468</Id>
@@ -2507,7 +2506,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>469</Id>
@@ -2518,7 +2517,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>470</Id>
@@ -2529,7 +2528,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>471</Id>
@@ -2540,7 +2539,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>484</Id>
@@ -2551,7 +2550,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>485</Id>
@@ -2562,7 +2561,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>486</Id>
@@ -2573,7 +2572,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>495</Id>
@@ -2584,7 +2583,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>496</Id>
@@ -2595,7 +2594,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>497</Id>
@@ -2606,7 +2605,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>498</Id>
@@ -2617,7 +2616,7 @@
 <Activity>
 	<Teacher>Conti</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>499</Id>
@@ -2628,7 +2627,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>500</Id>
@@ -2639,7 +2638,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>501</Id>
@@ -2650,7 +2649,7 @@
 <Activity>
 	<Teacher>Bernardi</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>502</Id>
@@ -2661,7 +2660,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>591</Id>
@@ -2672,7 +2671,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>592</Id>
@@ -2683,7 +2682,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>593</Id>
@@ -2694,7 +2693,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>594</Id>
@@ -2705,7 +2704,7 @@
 <Activity>
 	<Teacher>Tonelli</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>597</Id>
@@ -2717,7 +2716,7 @@
 	<Teacher>Galli</Teacher>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>598</Id>
@@ -2729,7 +2728,7 @@
 	<Teacher>Galli</Teacher>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>599</Id>
@@ -2740,7 +2739,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>614</Id>
@@ -2751,7 +2750,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>615</Id>
@@ -2762,7 +2761,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>616</Id>
@@ -2773,7 +2772,7 @@
 <Activity>
 	<Teacher>Giacinti</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>617</Id>
@@ -2784,7 +2783,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>624</Id>
@@ -2795,7 +2794,7 @@
 <Activity>
 	<Teacher>Pezzolesi</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>625</Id>
@@ -2806,7 +2805,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>626</Id>
@@ -2817,7 +2816,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>627</Id>
@@ -2828,7 +2827,7 @@
 <Activity>
 	<Teacher>Tonelli</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>630</Id>
@@ -2839,7 +2838,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>655</Id>
@@ -2850,7 +2849,7 @@
 <Activity>
 	<Teacher>Gattari</Teacher>
 	<Subject>SCIENZE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>656</Id>
@@ -2861,7 +2860,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>657</Id>
@@ -2872,7 +2871,7 @@
 <Activity>
 	<Teacher>Baioni</Teacher>
 	<Subject>ST.ARTE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>658</Id>
@@ -2883,7 +2882,7 @@
 <Activity>
 	<Teacher>Tonelli</Teacher>
 	<Subject>RELIGIONE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>664</Id>
@@ -2894,7 +2893,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>675</Id>
@@ -2905,7 +2904,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>676</Id>
@@ -2916,7 +2915,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>677</Id>
@@ -2927,7 +2926,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>684</Id>
@@ -2938,7 +2937,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>685</Id>
@@ -2949,7 +2948,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>686</Id>
@@ -2960,7 +2959,7 @@
 <Activity>
 	<Teacher>Grimaldi</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>687</Id>
@@ -2971,7 +2970,7 @@
 <Activity>
 	<Teacher>Grimaldi</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>688</Id>
@@ -2982,7 +2981,7 @@
 <Activity>
 	<Teacher>Grimaldi</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>689</Id>
@@ -2993,7 +2992,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>708</Id>
@@ -3004,7 +3003,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>709</Id>
@@ -3015,7 +3014,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>725</Id>
@@ -3026,7 +3025,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>726</Id>
@@ -3037,7 +3036,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>727</Id>
@@ -3048,7 +3047,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>737</Id>
@@ -3059,7 +3058,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>738</Id>
@@ -3070,7 +3069,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>739</Id>
@@ -3081,7 +3080,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>749</Id>
@@ -3092,7 +3091,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>750</Id>
@@ -3103,7 +3102,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>751</Id>
@@ -3114,7 +3113,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>752</Id>
@@ -3125,7 +3124,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>753</Id>
@@ -3136,7 +3135,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>754</Id>
@@ -3147,7 +3146,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>755</Id>
@@ -3158,7 +3157,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>756</Id>
@@ -3169,7 +3168,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>765</Id>
@@ -3180,7 +3179,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>766</Id>
@@ -3191,7 +3190,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>767</Id>
@@ -3202,7 +3201,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>768</Id>
@@ -3213,7 +3212,7 @@
 <Activity>
 	<Teacher>Grimaldi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>781</Id>
@@ -3224,7 +3223,7 @@
 <Activity>
 	<Teacher>Grimaldi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>782</Id>
@@ -3235,7 +3234,7 @@
 <Activity>
 	<Teacher>Grimaldi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>783</Id>
@@ -3246,7 +3245,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>799</Id>
@@ -3257,7 +3256,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>800</Id>
@@ -3268,7 +3267,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>801</Id>
@@ -3279,7 +3278,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>802</Id>
@@ -3290,7 +3289,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>803</Id>
@@ -3301,7 +3300,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>804</Id>
@@ -3312,7 +3311,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>805</Id>
@@ -3323,7 +3322,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>806</Id>
@@ -3334,7 +3333,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>807</Id>
@@ -3345,7 +3344,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>808</Id>
@@ -3356,7 +3355,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>809</Id>
@@ -3367,7 +3366,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>810</Id>
@@ -3378,7 +3377,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>811</Id>
@@ -3389,7 +3388,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>812</Id>
@@ -3400,7 +3399,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>813</Id>
@@ -3411,7 +3410,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>814</Id>
@@ -3422,7 +3421,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>815</Id>
@@ -3433,7 +3432,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>816</Id>
@@ -3444,7 +3443,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>817</Id>
@@ -3455,7 +3454,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>818</Id>
@@ -3466,7 +3465,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>819</Id>
@@ -3477,7 +3476,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>820</Id>
@@ -3488,7 +3487,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>821</Id>
@@ -3499,7 +3498,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>822</Id>
@@ -3510,7 +3509,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>823</Id>
@@ -3521,7 +3520,7 @@
 <Activity>
 	<Teacher>Farina</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>824</Id>
@@ -3532,7 +3531,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>825</Id>
@@ -3543,7 +3542,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>826</Id>
@@ -3554,7 +3553,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>827</Id>
@@ -3565,7 +3564,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>828</Id>
@@ -3576,7 +3575,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>829</Id>
@@ -3587,7 +3586,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>830</Id>
@@ -3598,7 +3597,7 @@
 <Activity>
 	<Teacher>Baldelli</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>831</Id>
@@ -3609,7 +3608,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>832</Id>
@@ -3620,7 +3619,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>833</Id>
@@ -3631,7 +3630,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>834</Id>
@@ -3642,7 +3641,7 @@
 <Activity>
 	<Teacher>Ricci</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>835</Id>
@@ -3653,7 +3652,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>836</Id>
@@ -3664,7 +3663,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>837</Id>
@@ -3675,7 +3674,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>838</Id>
@@ -3686,7 +3685,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>839</Id>
@@ -3697,7 +3696,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>840</Id>
@@ -3708,7 +3707,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>841</Id>
@@ -3719,7 +3718,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>842</Id>
@@ -3730,7 +3729,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>843</Id>
@@ -3741,7 +3740,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>852</Id>
@@ -3752,7 +3751,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>853</Id>
@@ -3763,7 +3762,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>854</Id>
@@ -3774,7 +3773,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>855</Id>
@@ -3785,7 +3784,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>856</Id>
@@ -3796,7 +3795,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>857</Id>
@@ -3807,7 +3806,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>858</Id>
@@ -3818,7 +3817,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>MATEMATICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>859</Id>
@@ -3829,7 +3828,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>868</Id>
@@ -3840,7 +3839,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>869</Id>
@@ -3851,7 +3850,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>870</Id>
@@ -3862,7 +3861,7 @@
 <Activity>
 	<Teacher>Rossini</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>871</Id>
@@ -3873,7 +3872,7 @@
 <Activity>
 	<Teacher>Tesei</Teacher>
 	<Subject>TEDESCO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>872</Id>
@@ -3884,7 +3883,7 @@
 <Activity>
 	<Teacher>Tesei</Teacher>
 	<Subject>TEDESCO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>873</Id>
@@ -3895,7 +3894,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>874</Id>
@@ -3906,7 +3905,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>875</Id>
@@ -3917,7 +3916,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>876</Id>
@@ -3928,7 +3927,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>877</Id>
@@ -3939,7 +3938,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>878</Id>
@@ -3950,7 +3949,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>879</Id>
@@ -3961,7 +3960,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>880</Id>
@@ -3972,7 +3971,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>881</Id>
@@ -3983,7 +3982,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>882</Id>
@@ -3994,7 +3993,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>883</Id>
@@ -4005,7 +4004,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>884</Id>
@@ -4016,7 +4015,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>885</Id>
@@ -4027,7 +4026,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>886</Id>
@@ -4038,7 +4037,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>887</Id>
@@ -4049,7 +4048,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>888</Id>
@@ -4060,7 +4059,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>909</Id>
@@ -4071,7 +4070,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>910</Id>
@@ -4082,7 +4081,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>911</Id>
@@ -4093,7 +4092,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>912</Id>
@@ -4104,7 +4103,7 @@
 <Activity>
 	<Teacher>Sasso</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>913</Id>
@@ -4115,7 +4114,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>914</Id>
@@ -4126,7 +4125,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>915</Id>
@@ -4137,7 +4136,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>916</Id>
@@ -4148,7 +4147,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>917</Id>
@@ -4159,7 +4158,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>918</Id>
@@ -4170,7 +4169,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>919</Id>
@@ -4181,7 +4180,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>920</Id>
@@ -4192,7 +4191,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>921</Id>
@@ -4203,7 +4202,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>via fiorani</Subject_Tag>
+	<Activity_Tag>via fiorani</Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>924</Id>
@@ -4214,7 +4213,7 @@
 <Activity>
 	<Teacher>Aldighieri</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>925</Id>
@@ -4225,7 +4224,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>via fiorani</Subject_Tag>
+	<Activity_Tag>via fiorani</Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>926</Id>
@@ -4236,7 +4235,7 @@
 <Activity>
 	<Teacher>Galli</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>palasport</Subject_Tag>
+	<Activity_Tag>palasport</Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>927</Id>
@@ -4247,7 +4246,7 @@
 <Activity>
 	<Teacher>Montanari</Teacher>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>palasport</Subject_Tag>
+	<Activity_Tag>palasport</Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>2</Total_Duration>
 	<Id>928</Id>
@@ -4258,7 +4257,7 @@
 <Activity>
 	<Teacher>Tesei</Teacher>
 	<Subject>TEDESCO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>929</Id>
@@ -4269,7 +4268,7 @@
 <Activity>
 	<Teacher>Tesei</Teacher>
 	<Subject>TEDESCO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>930</Id>
@@ -4280,7 +4279,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>936</Id>
@@ -4291,7 +4290,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>937</Id>
@@ -4302,7 +4301,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>938</Id>
@@ -4313,7 +4312,7 @@
 <Activity>
 	<Teacher>Lucaboni</Teacher>
 	<Subject>INGLESE</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>939</Id>
@@ -4324,7 +4323,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>940</Id>
@@ -4335,7 +4334,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>941</Id>
@@ -4346,7 +4345,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>942</Id>
@@ -4357,7 +4356,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>943</Id>
@@ -4368,7 +4367,7 @@
 <Activity>
 	<Teacher>Marzioni</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>947</Id>
@@ -4379,7 +4378,7 @@
 <Activity>
 	<Teacher>Marzioni</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>948</Id>
@@ -4390,7 +4389,7 @@
 <Activity>
 	<Teacher>Marzioni</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>949</Id>
@@ -4401,7 +4400,7 @@
 <Activity>
 	<Teacher>Marzioni</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>950</Id>
@@ -4412,7 +4411,7 @@
 <Activity>
 	<Teacher>Marzioni</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>951</Id>
@@ -4423,7 +4422,7 @@
 <Activity>
 	<Teacher>Marzioni</Teacher>
 	<Subject>ITALIANO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>952</Id>
@@ -4434,7 +4433,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>953</Id>
@@ -4445,7 +4444,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>954</Id>
@@ -4456,7 +4455,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>955</Id>
@@ -4467,7 +4466,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>956</Id>
@@ -4478,7 +4477,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>957</Id>
@@ -4489,7 +4488,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>958</Id>
@@ -4500,7 +4499,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>LATINO</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>959</Id>
@@ -4511,7 +4510,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>960</Id>
@@ -4522,7 +4521,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>961</Id>
@@ -4533,7 +4532,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>962</Id>
@@ -4544,7 +4543,7 @@
 <Activity>
 	<Teacher>Luzi</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>963</Id>
@@ -4555,7 +4554,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>geo_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>964</Id>
@@ -4566,7 +4565,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>geo_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>965</Id>
@@ -4577,7 +4576,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>geo_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>966</Id>
@@ -4588,7 +4587,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>geo_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>967</Id>
@@ -4599,7 +4598,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>968</Id>
@@ -4610,7 +4609,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>969</Id>
@@ -4621,7 +4620,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>970</Id>
@@ -4632,7 +4631,7 @@
 <Activity>
 	<Teacher>Casali</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>971</Id>
@@ -4643,7 +4642,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>972</Id>
@@ -4654,7 +4653,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>973</Id>
@@ -4665,7 +4664,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>974</Id>
@@ -4676,7 +4675,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>975</Id>
@@ -4687,7 +4686,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>976</Id>
@@ -4698,7 +4697,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>977</Id>
@@ -4709,7 +4708,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>978</Id>
@@ -4720,7 +4719,7 @@
 <Activity>
 	<Teacher>Corradi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>979</Id>
@@ -4731,7 +4730,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>983</Id>
@@ -4742,7 +4741,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>984</Id>
@@ -4753,7 +4752,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>985</Id>
@@ -4764,7 +4763,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>986</Id>
@@ -4775,7 +4774,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>987</Id>
@@ -4786,7 +4785,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>988</Id>
@@ -4797,7 +4796,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>989</Id>
@@ -4808,7 +4807,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>990</Id>
@@ -4819,7 +4818,7 @@
 <Activity>
 	<Teacher>Frulla</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>991</Id>
@@ -4830,7 +4829,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>992</Id>
@@ -4841,7 +4840,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>993</Id>
@@ -4852,7 +4851,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>994</Id>
@@ -4863,7 +4862,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>995</Id>
@@ -4874,7 +4873,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>996</Id>
@@ -4885,7 +4884,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>997</Id>
@@ -4896,7 +4895,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>998</Id>
@@ -4907,7 +4906,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>999</Id>
@@ -4918,7 +4917,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1000</Id>
@@ -4929,7 +4928,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1001</Id>
@@ -4940,7 +4939,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1002</Id>
@@ -4951,7 +4950,7 @@
 <Activity>
 	<Teacher>Lombardi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1003</Id>
@@ -4962,7 +4961,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1004</Id>
@@ -4973,7 +4972,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1005</Id>
@@ -4984,7 +4983,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1006</Id>
@@ -4995,7 +4994,7 @@
 <Activity>
 	<Teacher>Lucentini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1007</Id>
@@ -5006,7 +5005,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1008</Id>
@@ -5017,7 +5016,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1009</Id>
@@ -5028,7 +5027,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1010</Id>
@@ -5039,7 +5038,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1011</Id>
@@ -5050,7 +5049,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1012</Id>
@@ -5061,7 +5060,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1013</Id>
@@ -5072,7 +5071,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1014</Id>
@@ -5083,7 +5082,7 @@
 <Activity>
 	<Teacher>Olivetti</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1015</Id>
@@ -5094,7 +5093,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>1016</Id>
@@ -5105,7 +5104,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>1017</Id>
@@ -5116,7 +5115,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>1018</Id>
@@ -5127,7 +5126,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>5</Total_Duration>
 	<Id>1019</Id>
@@ -5138,7 +5137,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>1020</Id>
@@ -5149,7 +5148,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>1021</Id>
@@ -5160,7 +5159,7 @@
 <Activity>
 	<Teacher>Pellegrini</Teacher>
 	<Subject>sto_fil</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>4</Total_Duration>
 	<Id>1022</Id>
@@ -5171,7 +5170,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1023</Id>
@@ -5182,7 +5181,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1024</Id>
@@ -5193,7 +5192,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1025</Id>
@@ -5204,7 +5203,7 @@
 <Activity>
 	<Teacher>Piccinini</Teacher>
 	<Subject>mat_fis</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1026</Id>
@@ -5215,7 +5214,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1027</Id>
@@ -5226,7 +5225,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1028</Id>
@@ -5237,7 +5236,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1029</Id>
@@ -5248,7 +5247,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1030</Id>
@@ -5259,7 +5258,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1031</Id>
@@ -5270,7 +5269,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1032</Id>
@@ -5281,7 +5280,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1033</Id>
@@ -5292,7 +5291,7 @@
 <Activity>
 	<Teacher>Renzi</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1034</Id>
@@ -5303,7 +5302,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1035</Id>
@@ -5314,7 +5313,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1036</Id>
@@ -5325,7 +5324,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1037</Id>
@@ -5336,7 +5335,7 @@
 <Activity>
 	<Teacher>Santarelli</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1038</Id>
@@ -5347,7 +5346,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1039</Id>
@@ -5358,7 +5357,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1040</Id>
@@ -5369,7 +5368,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1041</Id>
@@ -5380,7 +5379,7 @@
 <Activity>
 	<Teacher>Sbarbati</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1042</Id>
@@ -5391,7 +5390,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1043</Id>
@@ -5402,7 +5401,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1044</Id>
@@ -5413,7 +5412,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1045</Id>
@@ -5424,7 +5423,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1046</Id>
@@ -5435,7 +5434,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1047</Id>
@@ -5446,7 +5445,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1048</Id>
@@ -5457,7 +5456,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1049</Id>
@@ -5468,7 +5467,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_geo</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1050</Id>
@@ -5479,7 +5478,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1051</Id>
@@ -5490,7 +5489,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1052</Id>
@@ -5501,7 +5500,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1053</Id>
@@ -5512,7 +5511,7 @@
 <Activity>
 	<Teacher>Spadoni</Teacher>
 	<Subject>ita_sto</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>6</Total_Duration>
 	<Id>1054</Id>
@@ -5523,7 +5522,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>3</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1055</Id>
@@ -5534,7 +5533,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1056</Id>
@@ -5545,7 +5544,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1057</Id>
@@ -5556,7 +5555,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>8</Total_Duration>
 	<Id>1058</Id>
@@ -5567,7 +5566,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1059</Id>
@@ -5578,7 +5577,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1060</Id>
@@ -5589,7 +5588,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1061</Id>
@@ -5600,7 +5599,7 @@
 <Activity>
 	<Teacher>Valeri</Teacher>
 	<Subject>ita_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1062</Id>
@@ -5611,7 +5610,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>1063</Id>
@@ -5622,7 +5621,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>1064</Id>
@@ -5633,7 +5632,7 @@
 <Activity>
 	<Teacher>Marrocchi</Teacher>
 	<Subject>FISICA</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>3</Total_Duration>
 	<Id>1065</Id>
@@ -5644,7 +5643,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1066</Id>
@@ -5655,7 +5654,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1067</Id>
@@ -5666,7 +5665,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>2</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1068</Id>
@@ -5677,7 +5676,7 @@
 <Activity>
 	<Teacher>Girelli</Teacher>
 	<Subject>sto_lat</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>7</Total_Duration>
 	<Id>1069</Id>
@@ -5687,37 +5686,48 @@
 </Activity>
 </Activities_List>
 
+<Buildings_List>
+</Buildings_List>
+
 <Rooms_List>
 <Room>
 	<Name>Palestra</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 <Room>
 	<Name>Palestra Via fiorani</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 <Room>
 	<Name>Lab.Informatica 1</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 <Room>
 	<Name>Lab.Informatica 2</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 <Room>
 	<Name>Lab.Fisica</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 <Room>
 	<Name>Lab.Chimica</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 <Room>
 	<Name>Lab.Lingue</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 <Room>
 	<Name>Palasport</Name>
+	<Building></Building>
 	<Capacity>1000</Capacity>
 </Room>
 </Rooms_List>
@@ -5760,12 +5770,14 @@
 	<Activity_Id>25</Activity_Id>
 	<MinDays>2</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintStudentsNoGaps>
+<ConstraintStudentsMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>
-</ConstraintStudentsNoGaps>
-<ConstraintStudentsEarly>
+	<Max_Gaps>0</Max_Gaps>
+</ConstraintStudentsMaxGapsPerWeek>
+<ConstraintStudentsEarlyMaxBeginningsAtSecondHour>
 	<Weight_Percentage>100</Weight_Percentage>
-</ConstraintStudentsEarly>
+	<Max_Beginnings_At_Second_Hour>0</Max_Beginnings_At_Second_Hour>
+</ConstraintStudentsEarlyMaxBeginningsAtSecondHour>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>90</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -6402,300 +6414,1427 @@
 	<Activity_Id>599</Activity_Id>
 	<MinDays>2</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintTeacherNotAvailable>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Baioni</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Baioni</Teacher>
+	<Number_of_Not_Available_Times>7</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Baldelli</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Baldelli</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Bernardi</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Bernardi</Teacher>
+	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Casali</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Casali</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Cecconi</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Cecconi</Teacher>
+	<Number_of_Not_Available_Times>26</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Cecconi</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Conti</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Cecconi</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Corradi</Teacher>
+	<Number_of_Not_Available_Times>7</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Cecconi</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Farina</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Cecconi</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Frulla</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Conti</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Galli</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Corradi</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Giacinti</Teacher>
+	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Farina</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Girelli</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Frulla</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Grimaldi</Teacher>
+	<Number_of_Not_Available_Times>26</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Galli</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Lombardi</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Giacinti</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Lucaboni</Teacher>
+	<Number_of_Not_Available_Times>8</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Girelli</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Lucentini</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Grimaldi</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Luzi</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Grimaldi</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Marrocchi</Teacher>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Grimaldi</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Marzioni</Teacher>
+	<Number_of_Not_Available_Times>15</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Grimaldi</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Montanari</Teacher>
+	<Number_of_Not_Available_Times>10</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Grimaldi</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Olivetti</Teacher>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Lombardi</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Paolini</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Lucaboni</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Pellegrini</Teacher>
+	<Number_of_Not_Available_Times>11</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Lucentini</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Pezzolesi</Teacher>
+	<Number_of_Not_Available_Times>9</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Luzi</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Piccinini</Teacher>
+	<Number_of_Not_Available_Times>8</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marrocchi</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Renzi</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marzioni</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Ricci</Teacher>
+	<Number_of_Not_Available_Times>8</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Montanari</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Rossini</Teacher>
+	<Number_of_Not_Available_Times>8</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Olivetti</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Santarelli</Teacher>
+	<Number_of_Not_Available_Times>11</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Paolini</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Sasso</Teacher>
+	<Number_of_Not_Available_Times>8</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pellegrini</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Sbarbati</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pezzolesi</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Spadoni</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Piccinini</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Renzi</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Ricci</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Ricci</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>12:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Rossini</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Santarelli</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Sasso</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Sbarbati</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Spadoni</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Tonelli</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
+	<Teacher>Tonelli</Teacher>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Lunedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
 <ConstraintStudentsSetMaxHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Maximum_Hours_Daily>5</Maximum_Hours_Daily>
@@ -7013,7 +8152,7 @@
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>1</Students_Name>
 	<Subject_Name>ITALIANO</Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>18</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -7093,7 +8232,7 @@
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name>MATEMATICA</Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>21</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -7185,7 +8324,7 @@
 	<Teacher_Name></Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name>LATINO</Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>30</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -7343,83 +8482,154 @@
 	<Minimum_Hours_Daily>4</Minimum_Hours_Daily>
 	<Students>2</Students>
 </ConstraintStudentsSetMinHoursDaily>
-<ConstraintTeacherNotAvailable>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aldighieri</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Aldighieri</Teacher>
+	<Number_of_Not_Available_Times>13</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Martedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aldighieri</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Gattari</Teacher>
+	<Number_of_Not_Available_Times>7</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Giovedi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Bernardi</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
+	<Teacher>Tesei</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Venerdi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Cecconi</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>09:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Gattari</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pellegrini</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Tonelli</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Tonelli</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Tonelli</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Tesei</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Valeri</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
+	<Teacher>Valeri</Teacher>
+	<Number_of_Not_Available_Times>6</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>08:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>12:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Mercoledi</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintTeacherNotAvailableTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -7498,27 +8708,33 @@
 	<Activity_Id>918</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintStudentsSetNotAvailable>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>5 B</Students>
-	<Day>Sabato</Day>
-	<Start_Hour>13:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>1</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>5 A</Students>
-	<Day>Sabato</Day>
-	<Start_Hour>13:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintStudentsSetNotAvailable>
-<ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>1</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Students>5 CD</Students>
-	<Day>Sabato</Day>
-	<Start_Hour>13:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintStudentsSetNotAvailable>
+	<Number_of_Not_Available_Times>1</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Not_Available_Time>
+</ConstraintStudentsSetNotAvailableTimes>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -7528,33 +8744,14 @@
 	<Activity_Id>921</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintTeacherNotAvailable>
+<ConstraintBreakTimes>
 	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Santarelli</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Tonelli</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marzioni</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintBreak>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Day>Sabato</Day>
-	<Start_Hour>13:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintBreak>
+	<Number_of_Break_Times>1</Number_of_Break_Times>
+	<Break_Time>
+		<Day>Sabato</Day>
+		<Hour>13:00</Hour>
+	</Break_Time>
+</ConstraintBreakTimes>
 <ConstraintActivityPreferredTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>924</Activity_Id>
@@ -7582,13 +8779,6 @@
 	<Teacher_Name>Corradi</Teacher_Name>
 	<Max_Gaps>1</Max_Gaps>
 </ConstraintTeacherMaxGapsPerWeek>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Aldighieri</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -7635,13 +8825,6 @@
 	<Activity_Id>952</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Cecconi</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>08:00</Start_Hour>
-	<End_Hour>09:00</End_Hour>
-</ConstraintTeacherNotAvailable>
 <ConstraintActivityPreferredTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>624</Activity_Id>
@@ -8091,54 +9274,12 @@
 	<Preferred_Day>Sabato</Preferred_Day>
 	<Preferred_Hour>12:00</Preferred_Hour>
 </ConstraintActivityPreferredTime>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Corradi</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Baioni</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Giacinti</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Giacinti</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Lucaboni</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Lucaboni</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
 <ConstraintActivitiesPreferredTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name>Luzi</Teacher_Name>
 	<Students_Name>3</Students_Name>
 	<Subject_Name></Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>12</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Mercoledi</Preferred_Day>
@@ -8189,152 +9330,12 @@
 		<Preferred_Hour>13:00</Preferred_Hour>
 	</Preferred_Time>
 </ConstraintActivitiesPreferredTimes>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marrocchi</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>12:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marrocchi</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marrocchi</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>12:00</Start_Hour>
-	<End_Hour>13:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marzioni</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marzioni</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Marzioni</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>12:00</Start_Hour>
-	<End_Hour>13:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Olivetti</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Olivetti</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Olivetti</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>12:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pellegrini</Teacher_Name>
-	<Day>Martedi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pellegrini</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pezzolesi</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pezzolesi</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Pezzolesi</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Piccinini</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>12:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Rossini</Teacher_Name>
-	<Day>Venerdi</Day>
-	<Start_Hour>12:00</Start_Hour>
-	<End_Hour>13:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Rossini</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Santarelli</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>09:00</Start_Hour>
-	<End_Hour>10:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Sasso</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>12:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Sasso</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>10:00</Start_Hour>
-	<End_Hour>11:00</End_Hour>
-</ConstraintTeacherNotAvailable>
 <ConstraintActivitiesPreferredTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>2</Students_Name>
 	<Subject_Name>ITALIANO</Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>18</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -8414,7 +9415,7 @@
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>3</Students_Name>
 	<Subject_Name>ita_lat</Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>18</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -8494,7 +9495,7 @@
 	<Teacher_Name></Teacher_Name>
 	<Students_Name>4</Students_Name>
 	<Subject_Name>ITALIANO</Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>18</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -8815,34 +9816,6 @@
 	<Activity_Id>1062</Activity_Id>
 	<MinDays>1</MinDays>
 </ConstraintMinNDaysBetweenActivities>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Gattari</Teacher_Name>
-	<Day>Mercoledi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>12:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Montanari</Teacher_Name>
-	<Day>Giovedi</Day>
-	<Start_Hour>12:00</Start_Hour>
-	<End_Hour>13:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Piccinini</Teacher_Name>
-	<Day>Lunedi</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>12:00</End_Hour>
-</ConstraintTeacherNotAvailable>
-<ConstraintTeacherNotAvailable>
-	<Weight_Percentage>100</Weight_Percentage>
-	<Teacher_Name>Montanari</Teacher_Name>
-	<Day>Sabato</Day>
-	<Start_Hour>11:00</Start_Hour>
-	<End_Hour>14:00</End_Hour>
-</ConstraintTeacherNotAvailable>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Consecutive_If_Same_Day>yes</Consecutive_If_Same_Day>
@@ -8869,7 +9842,7 @@
 	<Teacher_Name>Bernardi</Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>30</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -8997,7 +9970,7 @@
 	<Teacher_Name>Rossini</Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>24</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -9101,7 +10074,7 @@
 	<Teacher_Name>Casali</Teacher_Name>
 	<Students_Name></Students_Name>
 	<Subject_Name></Subject_Name>
-	<Subject_Tag_Name></Subject_Tag_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
 	<Number_of_Preferred_Times>24</Number_of_Preferred_Times>
 	<Preferred_Time>
 		<Preferred_Day>Lunedi</Preferred_Day>
@@ -9241,24 +10214,24 @@
 <ConstraintBasicCompulsorySpace>
 	<Weight_Percentage>100</Weight_Percentage>
 </ConstraintBasicCompulsorySpace>
-<ConstraintSubjectSubjectTagPreferredRoom>
+<ConstraintSubjectActivityTagPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>centrale</Subject_Tag>
+	<Activity_Tag>centrale</Activity_Tag>
 	<Room>Palestra</Room>
-</ConstraintSubjectSubjectTagPreferredRoom>
-<ConstraintSubjectSubjectTagPreferredRoom>
+</ConstraintSubjectActivityTagPreferredRoom>
+<ConstraintSubjectActivityTagPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>via fiorani</Subject_Tag>
+	<Activity_Tag>via fiorani</Activity_Tag>
 	<Room>Palestra Via fiorani</Room>
-</ConstraintSubjectSubjectTagPreferredRoom>
-<ConstraintSubjectSubjectTagPreferredRoom>
+</ConstraintSubjectActivityTagPreferredRoom>
+<ConstraintSubjectActivityTagPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>ED.FISICA</Subject>
-	<Subject_Tag>palasport</Subject_Tag>
+	<Activity_Tag>palasport</Activity_Tag>
 	<Room>Palasport</Room>
-</ConstraintSubjectSubjectTagPreferredRoom>
+</ConstraintSubjectActivityTagPreferredRoom>
 </Space_Constraints_List>
 
 </FET>

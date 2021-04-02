@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.4.18">
+<!DOCTYPE FET><FET version="5.5.0-beta1">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -12,7 +12,6 @@
 	<Name>14.40 - 15.40</Name>
 	<Name>15.50 - 16.50</Name>
 	<Name>17.00 - 18.00</Name>
-	<Name>Aftensmad</Name>
 </Hours_List>
 
 <Days_List>
@@ -403,14 +402,14 @@
 </Subject>
 </Subjects_List>
 
-<Subject_Tags_List>
-</Subject_Tags_List>
+<Activity_Tags_List>
+</Activity_Tags_List>
 
 <Activities_List>
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Air</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>1</Id>
@@ -426,7 +425,7 @@
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Air</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>2</Id>
@@ -443,7 +442,7 @@
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Sangteknik</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>3</Id>
@@ -459,7 +458,7 @@
 <Activity>
 	<Teacher>Glenda</Teacher>
 	<Subject>Vokal een</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>4</Id>
@@ -474,7 +473,7 @@
 <Activity>
 	<Teacher>Hans</Teacher>
 	<Subject>Bologna</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>5</Id>
@@ -491,7 +490,7 @@
 <Activity>
 	<Teacher>Hans</Teacher>
 	<Subject>Venedig</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>6</Id>
@@ -512,7 +511,7 @@
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>Fl. komsammen</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>7</Id>
@@ -526,7 +525,7 @@
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>CCR</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>8</Id>
@@ -540,7 +539,7 @@
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>CCR</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>9</Id>
@@ -554,7 +553,7 @@
 <Activity>
 	<Teacher>Ingrid</Teacher>
 	<Subject>Tyskland</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>10</Id>
@@ -572,7 +571,7 @@
 <Activity>
 	<Teacher>Jens</Teacher>
 	<Subject>Sevilla</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>11</Id>
@@ -589,7 +588,7 @@
 <Activity>
 	<Teacher>Jens</Teacher>
 	<Subject>Improvisation</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>12</Id>
@@ -603,7 +602,7 @@
 <Activity>
 	<Teacher>Joergen</Teacher>
 	<Subject>Vokal een</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>13</Id>
@@ -618,7 +617,7 @@
 <Activity>
 	<Teacher>Joergen</Teacher>
 	<Subject>Dans</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>14</Id>
@@ -636,7 +635,7 @@
 <Activity>
 	<Teacher>Michael</Teacher>
 	<Subject>Wien</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>15</Id>
@@ -652,7 +651,7 @@
 <Activity>
 	<Teacher>Michael</Teacher>
 	<Subject>Oxford</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>16</Id>
@@ -671,7 +670,7 @@
 <Activity>
 	<Teacher>Michael</Teacher>
 	<Subject>Beg. Blaes</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>17</Id>
@@ -682,7 +681,7 @@
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>18</Id>
@@ -698,7 +697,7 @@
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>19</Id>
@@ -710,7 +709,7 @@
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>20</Id>
@@ -725,7 +724,7 @@
 <Activity>
 	<Teacher>Oliver</Teacher>
 	<Subject>Gambe</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>21</Id>
@@ -739,7 +738,7 @@
 <Activity>
 	<Teacher>Per</Teacher>
 	<Subject>Lut</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>22</Id>
@@ -753,7 +752,7 @@
 <Activity>
 	<Teacher>Ute</Teacher>
 	<Subject>Vokal flere</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>23</Id>
@@ -772,7 +771,7 @@
 <Activity>
 	<Teacher>Ute</Teacher>
 	<Subject>Vokal een</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>24</Id>
@@ -787,7 +786,7 @@
 <Activity>
 	<Teacher>Ute</Teacher>
 	<Subject>Vokal een</Subject>
-	<Subject_Tag></Subject_Tag>
+	<Activity_Tag></Activity_Tag>
 	<Duration>1</Duration>
 	<Total_Duration>1</Total_Duration>
 	<Id>25</Id>
@@ -800,6 +799,9 @@
 	<Students>Sigurdur</Students>
 </Activity>
 </Activities_List>
+
+<Buildings_List>
+</Buildings_List>
 
 <Rooms_List>
 </Rooms_List>

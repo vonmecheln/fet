@@ -62,12 +62,16 @@ extern QString conflictsString;
 
 time_t start_time;
 
+time_t initial_time;
+
 extern int permutation[MAX_ACTIVITIES];
 int savedPermutation[MAX_ACTIVITIES];
 
 void GenerateMultipleThread::run()
 {
 	genMulti.abortOptimization=false;
+	
+	time(&initial_time);
 
 	for(int i=0; i<nTimetables; i++){
 		time(&start_time);
@@ -80,7 +84,7 @@ void GenerateMultipleThread::run()
 		for(int qq=0; qq<gt.rules.nInternalActivities; qq++)
 			permutation[qq]=savedPermutation[qq];
 
-		genMulti.generate(timeLimit, impossible, timeExceeded);
+		genMulti.generate(timeLimit, impossible, timeExceeded, true); //true means threaded
 
 		QString s;
 
@@ -168,7 +172,9 @@ void TimetableGenerateMultipleForm::help()
 	 " %1 to be emptied+deleted before proceeeding.\n\nPlease note that, for large data, each timetable might occupy more"
 	 " megabytes of hard disk space,"
 	 " so make sure you have enough space (you can check the dimension of a single timetable as a precaution).")
-	 .arg(destDir));
+	 .arg(destDir)
+	 +"\n\n"+tr("If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities,"
+	 " this might help."));
 }
 
 void TimetableGenerateMultipleForm::start(){
@@ -242,6 +248,8 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 
 	//needed to get the conflicts string
 	QString tmp;
+	//cout<<"tmp=="<<qPrintable(tmp)<<endl;
+	//cout<<"&tmp=="<<&tmp<<endl;
 	genMulti.c.fitness(gt.rules, &tmp);
 	
 	TimetableExport::getStudentsTimetable(genMulti.c);
@@ -286,8 +294,18 @@ void TimetableGenerateMultipleForm::stop()
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
 
+	time_t final_time;
+	time(&final_time);
+	int sec=final_time-initial_time;
+	int h=sec/3600;
+	sec%=3600;
+	int m=sec/60;
+	sec%=60;
+
 	s+=TimetableGenerateMultipleForm::tr("The results for the generated timetables are saved in the directory %1 in html and xml mode"
 	 " and the soft conflicts in txt mode").arg(destDir);
+	 
+	s+="\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(sec);
 	 
 	QMessageBox::information(this, tr("FET information"), s);
 
@@ -317,10 +335,18 @@ void TimetableGenerateMultipleForm::simulationFinished()
 
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
+	
+	time_t final_time;
+	time(&final_time);
+	int s=final_time-initial_time;
+	int h=s/3600;
+	s%=3600;
+	int m=s/60;
+	s%=60;
 
 	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
 		TimetableGenerateMultipleForm::tr("Simulation terminated successfully. The results are saved in directory %1 in html"
-		" and xml mode and the soft conflicts in txt mode.").arg(destDir));
+		" and xml mode and the soft conflicts in txt mode.").arg(destDir)+"\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s));
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);

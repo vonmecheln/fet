@@ -62,6 +62,10 @@ private slots:
 	void simulationFinished();
 
 	void impossibleToSolve();
+	
+	void seeImpossible();
+	
+	void seeInitialOrder();
 };
 
 #endif

@@ -1,5 +1,5 @@
 /***************************************************************************
-                          constraintactivitiessamestartinghour.h  -  description
+                          constraintactivitiessamestartinghourform.h  -  description
                              -------------------
     begin                : 15 Feb 2005
     copyright            : (C) 2005 by Lalescu Liviu

@@ -1,3 +1,10 @@
+from Maciej Deorowicz:
+
+> I have idea for two features. First: possibility to disable contraint
+> without removing it. Such 'Active' checkbox like on activities dialog.
+
+--------------------------------------------------------------------------------
+
 to save results in a format that can reload and modify later.
 
 --------------------------------------------------------------------------------
@@ -5,48 +12,6 @@ to save results in a format that can reload and modify later.
 Multiple processor - split multiple timetable generation on multiple processors
 
 --------------------------------------------------------------------------------
-
-ConstraintsStudentsEarlyMaxBeginningsAtSecondHour
-
-Students min hours daily to consider only working days (???)
-
-ConstraintTeacher(s)MaxGapsPerDay
-
-----------------------------------------------------------------------------------
-
-From Maciej Deorowicz:
-
-Buildings for rooms and constraint students max building changes per day
-and constraint students min gaps between building changes.
-
-ConstraintActivitiesPreferredRoom(s) (like acts. pref. times)
-
-
-Maybe similar request with min gaps between building changes, from Marco Barsotti:
-
->    - I have more teachers with some activity in some classes at a *first
->    address* (subject tag 1). They have also some activity with some *other
->    classes* at a *second address* (subject tag 2). When I define an
->    activity and I add a subject tag, I would like to be able (select)
-> impose a gap after that activity IF (and only IF) *next activity (for
-> teacher*) has a different subject tag. Can you plan to add a such
-> constraint? - 
-
-
-Maybe similar request from Horatiu Halmajan:
-
-Students moving between buildings - we have classrooms in 5 different
-locations and we are trying to limit the number of daily movements for
-students
-
-----------------------------------------------------------------------------------
-
-From Amin Haj-Ali:
-
-	How would I constraint activities in the same day but not necessarily
-	consecutive?
-
-----------------------------------------------------------------------------------
 
 From Hatim Ali:
 
@@ -56,19 +21,6 @@ ConstraintTeachersMaxHoursContinuously
 > please can you add "A set teachers has same timetabe (day+hour)" to make 2
 > teachers or more work in the same time (not same subject) and off in the
 > same time, (all period , all gaps ) . thanks
-
-----------------------------------------------------------------------------------
-
-From Peter Ambroz:
-
- It would be fine to have a new space constraint(s): A student set has a  
- preferred room / set of rooms
- In our school, we create timetables for every room in the building, not  
- only for those constrained by number of students or time. Therefore it  
- would be nice if I could create every room and set it as a default room  
- for some class (set of students) with some weight, so that the generated  
- timetable will contain room name for every activity. And then I could  
- print timetable for each particular room.
 
 ----------------------------------------------------------------------------------
 
@@ -167,9 +119,6 @@ From my80s:
 > i hope these my one opinions are for better eye-candy,
 > and usefull for othrs to enjoin the team
 
-
-If u could add constraint 'teacher max gaps daily'
-it would be really very helpfull for me.
 
 
 > also in program we have

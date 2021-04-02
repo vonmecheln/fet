@@ -25,8 +25,8 @@
 
 #include <QDesktopWidget>
 
-#define YES	(QObject::tr("Yes"))
-#define NO	(QObject::tr("No"))
+#define YES	(QObject::tr("Allowed", "Please keep translation short"))
+#define NO	(QObject::tr("Not allowed", "Please keep translation short"))
 
 AddConstraintActivitiesPreferredTimesForm::AddConstraintActivitiesPreferredTimesForm()
 {
@@ -40,7 +40,7 @@ AddConstraintActivitiesPreferredTimesForm::AddConstraintActivitiesPreferredTimes
 	updateTeachersComboBox();
 	updateStudentsComboBox();
 	updateSubjectsComboBox();
-	updateSubjectTagsComboBox();
+	updateActivityTagsComboBox();
 
 	preferredTimesTable->setNumRows(gt.rules.nHoursPerDay);
 	preferredTimesTable->setNumCols(gt.rules.nDaysPerWeek);
@@ -54,7 +54,7 @@ AddConstraintActivitiesPreferredTimesForm::AddConstraintActivitiesPreferredTimes
 
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-			preferredTimesTable->setText(i, j, NO);
+			preferredTimesTable->setText(i, j, YES);
 }
 
 AddConstraintActivitiesPreferredTimesForm::~AddConstraintActivitiesPreferredTimesForm()
@@ -116,12 +116,12 @@ void AddConstraintActivitiesPreferredTimesForm::updateSubjectsComboBox(){
 	}
 }
 
-void AddConstraintActivitiesPreferredTimesForm::updateSubjectTagsComboBox(){
-	subjectTagsComboBox->clear();
-	subjectTagsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
-		SubjectTag* s=gt.rules.subjectTagsList[i];
-		subjectTagsComboBox->insertItem(s->name);
+void AddConstraintActivitiesPreferredTimesForm::updateActivityTagsComboBox(){
+	activityTagsComboBox->clear();
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* s=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(s->name);
 	}
 }
 
@@ -154,14 +154,43 @@ void AddConstraintActivitiesPreferredTimesForm::addConstraint()
 	if(subject!="")
 		assert(gt.rules.searchSubject(subject)>=0);
 		
-	QString subjectTag=subjectTagsComboBox->currentText();
-	if(subjectTag!="")
-		assert(gt.rules.searchSubjectTag(subjectTag)>=0);
+	QString activityTag=activityTagsComboBox->currentText();
+	if(activityTag!="")
+		assert(gt.rules.searchActivityTag(activityTag)>=0);
 		
-	if(teacher=="" && students=="" && subject=="" && subjectTag==""){
+	if(teacher=="" && students=="" && subject=="" && activityTag==""){
 		int t=QMessageBox::question(this, tr("FET question"),
-		 tr("Are you sure you want to add this constraint for all activities?"
-		 " (no teacher, students, subject or subject tag specified)"),
+		 tr("Note: if you use this constraint for all activities, there will be counted"
+		 " gaps for not allowed slots. You might get impossible timetables. If you use weight 100%,"
+		 " a more correct approach is to use constraint break."
+		 " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
+		 " Are you sure you want to add this constraint for all activities?"
+		 " (no teacher, students, subject or activity tag specified)"),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
+
+	if(teacher!="" && students=="" && subject=="" && activityTag==""){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("It is not good to add such a constraint for only a teacher."
+		  " There will be counted gaps and you might get impossible data."
+		  " It is highly recommended to use teacher not available or break constraints instead."
+		  " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
+		  " Are you sure you want to add current constraint?" ),
+		 QMessageBox::Yes, QMessageBox::Cancel);
+						 
+		if(t==QMessageBox::Cancel)
+				return;
+	}
+	if(teacher=="" && students!="" && subject=="" && activityTag==""){
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("It is not good to add such a constraint for only a students set."
+		  " There will be counted gaps and you might get impossible data."
+		  " It is highly recommended to use students set not available or break constraints instead."
+		  " Only if you need weight less than 100% you might be forced to use this constraint, but be careful."
+		  " Are you sure you want to add current constraint?" ),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)
@@ -199,7 +228,7 @@ void AddConstraintActivitiesPreferredTimesForm::addConstraint()
 				return;
 	}
 
-	ctr=new ConstraintActivitiesPreferredTimes(weight, /*compulsory,*/ teacher, students, subject, subjectTag, n, days, hours);
+	ctr=new ConstraintActivitiesPreferredTimes(weight, /*compulsory,*/ teacher, students, subject, activityTag, n, days, hours);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){

@@ -45,12 +45,12 @@ ConstraintActivityPreferredTimeForm::ConstraintActivityPreferredTimeForm()
 	}
 	subjectsComboBox->setCurrentItem(0);
 
-	subjectTagsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
-		SubjectTag* st=gt.rules.subjectTagsList[i];
-		subjectTagsComboBox->insertItem(st->name);
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* st=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(st->name);
 	}
-	subjectTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentItem(0);
 
 	studentsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -84,7 +84,7 @@ bool ConstraintActivityPreferredTimeForm::filterOk(TimeConstraint* ctr)
 	
 	QString tn=teachersComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=subjectTagsComboBox->currentText();
+	QString sbtn=activityTagsComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 		
 	bool found=true;
@@ -114,8 +114,8 @@ bool ConstraintActivityPreferredTimeForm::filterOk(TimeConstraint* ctr)
 		if(sbn!="" && sbn!=act->subjectName)
 			found=false;
 	
-		//subject tag
-		if(sbtn!="" && sbtn!=act->subjectTagName)
+		//activity tag
+		if(sbtn!="" && sbtn!=act->activityTagName)
 			found=false;
 	
 		//students

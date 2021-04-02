@@ -199,10 +199,10 @@ careful at the order, it might be different from what you need)</string>
                         </property>
                         <widget class="QLabel" row="0" column="3">
                             <property name="name">
-                                <cstring>subjectTagsTextLabel</cstring>
+                                <cstring>activityTagsTextLabel</cstring>
                             </property>
                             <property name="text">
-                                <string>Subject tag</string>
+                                <string>Activity tag</string>
                             </property>
                         </widget>
                         <widget class="QComboBox" row="1" column="1">
@@ -212,7 +212,7 @@ careful at the order, it might be different from what you need)</string>
                         </widget>
                         <widget class="QComboBox" row="1" column="3">
                             <property name="name">
-                                <cstring>subjectTagsComboBox</cstring>
+                                <cstring>activityTagsComboBox</cstring>
                             </property>
                         </widget>
                         <widget class="QLabel" row="0" column="1">
@@ -293,7 +293,7 @@ careful at the order, it might be different from what you need)</string>
         <slot>filterChanged()</slot>
     </connection>
     <connection>
-        <sender>subjectTagsComboBox</sender>
+        <sender>activityTagsComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
         <receiver>AddConstraintActivitiesSameStartingTimeForm_template</receiver>
         <slot>filterChanged()</slot>
@@ -321,7 +321,7 @@ careful at the order, it might be different from what you need)</string>
     <tabstop>teachersComboBox</tabstop>
     <tabstop>studentsComboBox</tabstop>
     <tabstop>subjectsComboBox</tabstop>
-    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activityTagsComboBox</tabstop>
     <tabstop>activitiesListBox</tabstop>
     <tabstop>simultaneousActivitiesListBox</tabstop>
     <tabstop>clearPushButton</tabstop>

@@ -47,12 +47,12 @@ ConstraintMinNDaysBetweenActivitiesForm::ConstraintMinNDaysBetweenActivitiesForm
 	}
 	subjectsComboBox->setCurrentItem(0);
 
-	subjectTagsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
-		SubjectTag* st=gt.rules.subjectTagsList[i];
-		subjectTagsComboBox->insertItem(st->name);
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* st=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(st->name);
 	}
-	subjectTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentItem(0);
 
 	studentsComboBox->insertItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -86,10 +86,10 @@ bool ConstraintMinNDaysBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 	
 	QString tn=teachersComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=subjectTagsComboBox->currentText();
+	QString sbtn=activityTagsComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	
-	bool foundTeacher=false, foundStudents=false, foundSubject=false, foundSubjectTag=false;
+	bool foundTeacher=false, foundStudents=false, foundSubject=false, foundActivityTag=false;
 		
 	for(int i=0; i<c->n_activities; i++){
 		//bool found=true;
@@ -124,12 +124,12 @@ bool ConstraintMinNDaysBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 				//found=false;
 				foundSubject=true;
 		
-			//subject tag
-			if(sbtn!="" && sbtn!=act->subjectTagName)
+			//activity tag
+			if(sbtn!="" && sbtn!=act->activityTagName)
 				;
 			else
 				//found=false;
-				foundSubjectTag=true;
+				foundActivityTag=true;
 		
 			//students
 			if(stn!=""){
@@ -152,7 +152,7 @@ bool ConstraintMinNDaysBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 		//	return true;
 	}
 	
-	if(foundTeacher && foundStudents && foundSubject && foundSubjectTag)
+	if(foundTeacher && foundStudents && foundSubject && foundActivityTag)
 		return true;
 	else
 		return false;

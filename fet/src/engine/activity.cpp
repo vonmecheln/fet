@@ -42,7 +42,7 @@ Activity::Activity(
 	int _activityGroupId,
 	const QStringList& _teachersNames,
 	const QString& _subjectName,
-	const QString& _subjectTagName,
+	const QString& _activityTagName,
 	const QStringList& _studentsNames,
 	int _duration,
 	int _totalDuration,
@@ -54,7 +54,7 @@ Activity::Activity(
 	this->activityGroupId=_activityGroupId;
 	this->teachersNames = _teachersNames;
 	this->subjectName = _subjectName;
-	this->subjectTagName = _subjectTagName;
+	this->activityTagName = _activityTagName;
 	this->studentsNames = _studentsNames;
 	this->duration=_duration;
 	this->totalDuration=_totalDuration;
@@ -81,7 +81,7 @@ bool Activity::operator==(Activity& a)
 		return false;
 	if(this->subjectName != a.subjectName)
 		return false;
-	if(this->subjectTagName != a.subjectTagName)
+	if(this->activityTagName != a.activityTagName)
 		return false;
 	if(this->studentsNames != a.studentsNames)
 		return false;
@@ -185,8 +185,8 @@ void Activity::computeInternalStructure(Rules& r)
 	this->subjectIndex = r.searchSubject(this->subjectName);
 	assert(this->subjectIndex>=0);
 
-	//subject tags
-	this->subjectTagIndex = r.searchSubjectTag(this->subjectTagName);
+	//activity tags
+	this->activityTagIndex = r.searchActivityTag(this->activityTagName);
 
 	//students	
 	//this->nSubgroups=0;
@@ -298,7 +298,7 @@ QString Activity::getXmlDescription(Rules& r)
 	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
 		s+="	<Teacher>" + protect(*it) + "</Teacher>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
-	s+="	<Subject_Tag>"+protect(this->subjectTagName)+"</Subject_Tag>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 
 	s+="	<Duration>"+QString::number(this->duration)+"</Duration>\n";
 	s+="	<Total_Duration>"+QString::number(this->totalDuration)+"</Total_Duration>\n";
@@ -349,7 +349,7 @@ QString Activity::getDescription(Rules& r)
 
 	QString _subject=this->subjectName;
 	
-	QString _subjectTag=this->subjectTagName;
+	QString _activityTag=this->activityTagName;
 
 	QString _students="";
 	if(studentsNames.count()==0)
@@ -393,73 +393,73 @@ QString Activity::getDescription(Rules& r)
 	if(_indent)
 		s+="   ";
 
-	if(_subjectTag!="" && this->isSplit() && _nstudents!=""){
-		s+=QObject::tr("Act: T:%1, S:%2, ST:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9, NSt:%10",
+	if(_activityTag!="" && this->isSplit() && _nstudents!=""){
+		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9, NSt:%10",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Subject Tag, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students")
-		 .arg(_teachers).arg(_subject).arg(_subjectTag).arg(_students)
+		 "Activity: Teacher, Subject, Activity Tag, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students")
+		 .arg(_teachers).arg(_subject).arg(_activityTag).arg(_students)
 		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active).arg(_nstudents);
 	}
-	else if(_subjectTag=="" && this->isSplit() && _nstudents!=""){
+	else if(_activityTag=="" && this->isSplit() && _nstudents!=""){
 		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8, NSt:%9",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
 		 "Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no), Number of Students")
 		 .arg(_teachers).arg(_subject).arg(_students)
 		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active).arg(_nstudents);
 	}
-	else if(_subjectTag!="" && !this->isSplit() && _nstudents!=""){
-		s+=QObject::tr("Act: T:%1, S:%2, ST:%3, St:%4, Id:%5, D:%6, A:%7, NSt:%8",
+	else if(_activityTag!="" && !this->isSplit() && _nstudents!=""){
+		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7, NSt:%8",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Subject Tag, Students, Id, Duration, Active (yes/no), Number of Students")
-		 .arg(_teachers).arg(_subject).arg(_subjectTag).arg(_students)
+		 "Activity: Teacher, Subject, Activity Tag, Students, Id, Duration, Active (yes/no), Number of Students")
+		 .arg(_teachers).arg(_subject).arg(_activityTag).arg(_students)
 		 .arg(_id).arg(_duration).arg(_active).arg(_nstudents);
 	}
-	else if(_subjectTag=="" && !this->isSplit() && _nstudents!=""){
+	else if(_activityTag=="" && !this->isSplit() && _nstudents!=""){
 		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6, NSt:%7",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
 		 "Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no), Number of Students")
 		 .arg(_teachers).arg(_subject).arg(_students)
 		 .arg(_id).arg(_duration).arg(_active).arg(_nstudents);
 	}
-	else if(_subjectTag!="" && this->isSplit() && _nstudents==""){
-		s+=QObject::tr("Act: T:%1, S:%2, ST:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9",
+	else if(_activityTag!="" && this->isSplit() && _nstudents==""){
+		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Subject Tag, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)")
-		 .arg(_teachers).arg(_subject).arg(_subjectTag).arg(_students)
+		 "Activity: Teacher, Subject, Activity Tag, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)")
+		 .arg(_teachers).arg(_subject).arg(_activityTag).arg(_students)
 		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active);
 	}
-	else if(_subjectTag=="" && this->isSplit() && _nstudents==""){
+	else if(_activityTag=="" && this->isSplit() && _nstudents==""){
 		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, AGId:%5, D:%6, TD:%7, A:%8",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
 		 "Activity: Teacher, Subject, Students, Id, Activity Group Id, Duration, Total Duration, Active (yes/no)")
 		 .arg(_teachers).arg(_subject).arg(_students)
 		 .arg(_id).arg(_agid).arg(_duration).arg(_totalDuration).arg(_active);
 	}
-	else if(_subjectTag!="" && !this->isSplit() && _nstudents==""){
-		s+=QObject::tr("Act: T:%1, S:%2, ST:%3, St:%4, Id:%5, D:%6, A:%7",
+	else if(_activityTag!="" && !this->isSplit() && _nstudents==""){
+		s+=QObject::tr("Act: T:%1, S:%2, AT:%3, St:%4, Id:%5, D:%6, A:%7",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
-		 "Activity: Teacher, Subject, Subject Tag, Students, Id, Duration, Active (yes/no)")
-		 .arg(_teachers).arg(_subject).arg(_subjectTag).arg(_students)
+		 "Activity: Teacher, Subject, Activity Tag, Students, Id, Duration, Active (yes/no)")
+		 .arg(_teachers).arg(_subject).arg(_activityTag).arg(_students)
 		 .arg(_id).arg(_duration).arg(_active);
 	}
-	else if(_subjectTag=="" && !this->isSplit() && _nstudents==""){
+	else if(_activityTag=="" && !this->isSplit() && _nstudents==""){
 		s+=QObject::tr("Act: T:%1, S:%2, St:%3, Id:%4, D:%5, A:%6",
 		 "Comment for translators (do not translate this comment):\n"
-		 "This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)"
+		 "This is one of the 8 variants for description of an activity, depending on activity (if it has activity tag, etc.)"
 		 "Please be careful and respect arrangement.\n"
 		 "Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)")
 		 .arg(_teachers).arg(_subject).arg(_students)
@@ -500,7 +500,7 @@ QString Activity::getDescription(Rules& r)
 			s += *it + ", ";
 	s+=QObject::tr("S:", "Initial letter from Subject") + this->subjectName + ", ";
 	if(this->subjectTagName!="")
-		s+=QObject::tr("ST:", "Initial letters from Subject Tag") + this->subjectTagName + ", ";
+		s+=QObject::tr("AT:", "Initial letters from Activity Tag") + this->activityTagName + ", ";
 	s+=QObject::tr("St:", "Initial letter from Students");
 	if(studentsNames.count()==0){
 		s+=" ";
@@ -568,8 +568,8 @@ QString Activity::getDetailedDescription(Rules &r)
 		}
 	s+=QObject::tr("Subject=%1").arg(this->subjectName);
 	s+="\n";
-	if(this->subjectTagName!=""){
-		s+=QObject::tr("Subject tag=%1").arg(this->subjectTagName);
+	if(this->activityTagName!=""){
+		s+=QObject::tr("Activity tag=%1").arg(this->activityTagName);
 		s+="\n";
 	}
 	if(studentsNames.count()==0){

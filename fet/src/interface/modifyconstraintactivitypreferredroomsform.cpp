@@ -98,11 +98,6 @@ void ModifyConstraintActivityPreferredRoomsForm::ok()
 			QObject::tr("Only one selected room - please use constraint activity preferred room if you want a single room"));
 		return;
 	}
-	if(selectedRoomsListBox->count()>(uint)(MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS)){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Please report error to the author\nMAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many selected rooms)"));
-		return;
-	}
 	
 	if(activitiesComboBox->currentItem()<0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
