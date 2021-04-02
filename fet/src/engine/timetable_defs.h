@@ -227,13 +227,6 @@ const int MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS=50;
 /**
 The maximum number of rooms for a single
 constraint of type
-ConstraintSubjectTagPreferredRooms
-*/
-const int MAX_CONSTRAINT_SUBJECT_TAG_PREFERRED_ROOMS=50;
-
-/**
-The maximum number of rooms for a single
-constraint of type
 ConstraintSubjectSubjectTagPreferredRooms
 */
 const int MAX_CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS=50;

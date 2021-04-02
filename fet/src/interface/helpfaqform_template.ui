@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 21 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 23 August 2007
 
 --------
 
@@ -174,6 +174,8 @@ Example: 3 activities and N=2. Then, one can place them on Monday, Wednesday and
 
 Example2: 2 activities, N=3. Then, one can place them on Monday and Thursday, on Monday and Friday, then on Tuesday and Friday (5 days week).
 
+The weight is recommended to be between 95.0%-100.0%. It might be the case that you can use 99.75% for instance and timetable still solveable, and 100% not solveable. Please experiment with these.
+
 
 -------------------------------------------------------------------------------
 
@@ -226,7 +228,30 @@ A: There is a small workaround: add for each SUBGROUP (careful, for each subgrou
 
 Q: What are groups of type "year1 WHOLE YEAR" and subgroups of type "group1 WHOLE GROUP"?
 
-A: These are groups and subgroups inserted automatically by FET if year or group is empty. They are added only when generating timetable. You don't need to use them, just ignore them. It is recommended to remove them if for instance you generate the timetable, they are added and you insert other groups or subgroups after that. They cannot be removed automatically. I know that this is not elegant, but I have no solution for the moment.</string>
+A: These are groups and subgroups inserted automatically by FET if year or group is empty. They are added only when generating timetable. You don't need to use them, just ignore them. It is recommended to remove them if for instance you generate the timetable, they are added and you insert other groups or subgroups after that. They cannot be removed automatically. I know that this is not elegant, but I have no solution for the moment.
+
+-------------------------------------------------------------------------------
+
+Q: I added an activity with min days constraint. But I cannot see the min days value in modify activity dialog
+
+A: Min days is a time constraint. You can see it in the time constraints dialog
+
+-------------------------------------------------------------------------------
+
+Q: Can I work with fortnightly activities like in older FET versions?
+
+A: Not explicitly. It would be very difficult to make fortnightly activities into the new FET algorithm (from 5.0.0 up). But I think you can apply a trick: for instance, I suppose that you would like the first week to have teacher t1 with students s1 and teacher t2 with 
+students s2, and second week teacher t1 with students s2 and teacher t2 with students s1 (simultaneously). Can't you define a weekly activity, with teachers t1&amp;t2 and students s1&amp;s2?
+
+-------------------------------------------------------------------------------
+
+Q: How to choose the weight percentage of constraint min n days between activities?
+
+A: You can use for the constraint min n days the weight you want. It can be 95%, 99%, 99.75% or even 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have under 100% weight (percentage) - best would be 0%. For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify under 100% weight (percentage) for the corresponding min n days constraint - best would be 0%.
+
+You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value, to make the timetable better, you might use a text or xml editor to change the fet datafile faster than from the FET interface (maybe use replace option, like I do, replacing for instance "Percentage&gt;95" with with "Percentage&gt;99" or with "Percentage&gt;99.75" or with "Percentage&gt;100"). It is adviceable to keep all older versions of your datafile.
+
+You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)</string>
             </property>
         </widget>
     </grid>

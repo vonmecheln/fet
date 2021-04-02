@@ -948,11 +948,6 @@ not induce gaps for teachers or students</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="121"/>
-        <source>95</source>
-        <translation type="unfinished">95</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="41"/>
         <source>All activities (dbl. click or Enter adds)</source>
         <translation type="unfinished"></translation>
@@ -966,11 +961,6 @@ not induce gaps for teachers or students</source>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="61"/>
         <source>If activities on same day,
 force activities consecutive</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="113"/>
-        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -992,6 +982,16 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="246"/>
         <source>Teacher</source>
         <translation type="unfinished">Öğretmen</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="113"/>
+        <source>Weight percentage (recommended: 95%-100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="121"/>
+        <source>95.0</source>
+        <translation type="unfinished">95.0</translation>
     </message>
 </context>
 <context>
@@ -5174,7 +5174,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.3 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.5 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -5206,7 +5206,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 21 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 23 August 2007
 
 --------
 
@@ -5340,6 +5340,8 @@ Example: 3 activities and N=2. Then, one can place them on Monday, Wednesday and
 
 Example2: 2 activities, N=3. Then, one can place them on Monday and Thursday, on Monday and Friday, then on Tuesday and Friday (5 days week).
 
+The weight is recommended to be between 95.0%-100.0%. It might be the case that you can use 99.75% for instance and timetable still solveable, and 100% not solveable. Please experiment with these.
+
 
 -------------------------------------------------------------------------------
 
@@ -5392,7 +5394,30 @@ A: There is a small workaround: add for each SUBGROUP (careful, for each subgrou
 
 Q: What are groups of type &quot;year1 WHOLE YEAR&quot; and subgroups of type &quot;group1 WHOLE GROUP&quot;?
 
-A: These are groups and subgroups inserted automatically by FET if year or group is empty. They are added only when generating timetable. You don&apos;t need to use them, just ignore them. It is recommended to remove them if for instance you generate the timetable, they are added and you insert other groups or subgroups after that. They cannot be removed automatically. I know that this is not elegant, but I have no solution for the moment.</source>
+A: These are groups and subgroups inserted automatically by FET if year or group is empty. They are added only when generating timetable. You don&apos;t need to use them, just ignore them. It is recommended to remove them if for instance you generate the timetable, they are added and you insert other groups or subgroups after that. They cannot be removed automatically. I know that this is not elegant, but I have no solution for the moment.
+
+-------------------------------------------------------------------------------
+
+Q: I added an activity with min days constraint. But I cannot see the min days value in modify activity dialog
+
+A: Min days is a time constraint. You can see it in the time constraints dialog
+
+-------------------------------------------------------------------------------
+
+Q: Can I work with fortnightly activities like in older FET versions?
+
+A: Not explicitly. It would be very difficult to make fortnightly activities into the new FET algorithm (from 5.0.0 up). But I think you can apply a trick: for instance, I suppose that you would like the first week to have teacher t1 with students s1 and teacher t2 with 
+students s2, and second week teacher t1 with students s2 and teacher t2 with students s1 (simultaneously). Can&apos;t you define a weekly activity, with teachers t1&amp;t2 and students s1&amp;s2?
+
+-------------------------------------------------------------------------------
+
+Q: How to choose the weight percentage of constraint min n days between activities?
+
+A: You can use for the constraint min n days the weight you want. It can be 95%, 99%, 99.75% or even 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have under 100% weight (percentage) - best would be 0%. For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify under 100% weight (percentage) for the corresponding min n days constraint - best would be 0%.
+
+You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value, to make the timetable better, you might use a text or xml editor to change the fet datafile faster than from the FET interface (maybe use replace option, like I do, replacing for instance &quot;Percentage&gt;95&quot; with with &quot;Percentage&gt;99&quot; or with &quot;Percentage&gt;99.75&quot; or with &quot;Percentage&gt;100&quot;). It is adviceable to keep all older versions of your datafile.
+
+You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5410,7 +5435,7 @@ A: These are groups and subgroups inserted automatically by FET if year or group
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
-        <source>Updated: 14 August 2007
+        <source>Updated: 23 August 2007
 
 Instructions by Liviu Lalescu
 
@@ -5418,17 +5443,21 @@ These are some small instructions which you have to follow in order to input a s
 
 If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
 
-1) You can use for the constraint min n days the weight you want. It can be 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have 0 weight (percentage). For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify a 0 weight (percentage) for the corresponding min n days constraint.
+1) You can use for the constraint min n days the weight you want. It can be 95%, 99%, 99.75% or even 100%, but please make sure your timetable is not too constrained. Please take care of the impossible constraints, they should have under 100% weight (percentage) - best would be 0%. For instance, if a teacher teaches only two days per week and has 3 math lessons for a group, then it is clear that the constraint cannot be respected, so the correct way is to specify under 100% weight (percentage) for the corresponding min n days constraint - best would be 0%.
 
-2) It is advisable to use not available, break and preferred time(s) to make restrictions. These will not slow down the generation.
+You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value, to make the timetable better, you might use a text or xml editor to change the fet datafile faster than from the FET interface (maybe use replace option, like I do, replacing for instance &quot;Percentage&gt;95&quot; with with &quot;Percentage&gt;99&quot; or with &quot;Percentage&gt;99.75&quot; or with &quot;Percentage&gt;100&quot;). It is adviceable to keep all older versions of your datafile.
 
-3) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
+You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)
 
-4) You can input non integer weights, like 96.75%. It should work, although I didn&apos;t test enough the floating point weights.
+2) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
 
-5) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
+3) For teachers&apos; gaps: please try to use 100% weight. You could try with a large value for max allowed gaps, and lower it as you find possible timetables.
 
-6) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).</source>
+4) Please only input the special rooms with constraints. Home rooms are not necessary (teachers&apos; or students&apos; rooms). You might firstly try togenerate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
+
+5) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).
+
+6) The new algorithm (after version 5.0.0) does not accept fortnightly activities. But you might apply a trick. Please see menu Help/Frequently Asked Questions menu (it has the description of a possible trick) (the essence is to make an activity with the sum of teachers and students of both fortnightly activities)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8265,7 +8294,7 @@ Aynı Kısıt Mevcut
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2041"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1640"/>
         <source>Room=%1</source>
         <translation>Sınıf=%1</translation>
     </message>
@@ -8581,7 +8610,7 @@ Kısıt=%1 Kısıt=%2 olarak değiştirilecek</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6015"/>
+        <location filename="../src/engine/rules.cpp" line="5897"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -9150,12 +9179,12 @@ Aynı Kısıt Mevcut
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2026"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1624"/>
         <source>R:%1</source>
         <translation>R:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2036"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1634"/>
         <source>Space constraint</source>
         <translation>Yer Kısıtı</translation>
     </message>
@@ -9198,7 +9227,7 @@ Aynı Kısıt Mevcut
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1838"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1432"/>
         <source>Room name=%1</source>
         <translation>Sınıf İsmi=%1</translation>
     </message>
@@ -10084,7 +10113,7 @@ Değişiklik Yapılamaz
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="658"/>
+        <location filename="../src/interface/addactivityform.cpp" line="666"/>
         <source>FET - help on adding activity(ies)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10176,7 +10205,7 @@ Please note that the default weight percentage of constraints min n days between
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6044"/>
+        <location filename="../src/engine/rules.cpp" line="5926"/>
         <source>Cannot open filename for writing ... FET will now abort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10253,12 +10282,12 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5972"/>
+        <location filename="../src/engine/rules.cpp" line="5854"/>
         <source>Skip rest of deprecated constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5972"/>
+        <location filename="../src/engine/rules.cpp" line="5854"/>
         <source>See next deprecated constraint</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10305,25 +10334,25 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5851"/>
+        <location filename="../src/engine/rules.cpp" line="5733"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5891"/>
+        <location filename="../src/engine/rules.cpp" line="5773"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5931"/>
+        <location filename="../src/engine/rules.cpp" line="5813"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5971"/>
+        <location filename="../src/engine/rules.cpp" line="5853"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation type="unfinished"></translation>
@@ -10396,28 +10425,6 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="462"/>
         <source>Do you really want to add activity with no student set(s)?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="653"/>
-        <source>You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then double click it or press Enter to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.
-
-The same procedure (double click or Enter) applies to adding a students set or removing a students set.
-
-You can check/uncheck show years, show groups or show subgroups.
-
-If you split an activity into more sub-activities per week, you have a multitude of choices:
-You can choose the minimum distance in days between each pair of subactivities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday  to Wednesday for instance is 2 days), etc.
-
- If you have for instance an activity with 2 lessons per week and you want to spread them equally, you can add a constraint min n days with min days = 1 and weight 100%. But if you are not sure that  a timetable exists with this condition, you can lower it by the following procedure: add a constraint min n days with minimum days = 1 and weight 100% and another constraint (which has to be added manually, because the add activity dialog has only one constraint possible) with min days 2 and weight for instance 95% or lower
-
- If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in thedetailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95%-100%. Please be careful, sometimes there are situations when the constraint cannot be respected, for instance if you have 3 lessons per week with a teacher which has only 2 working days. You must set the weight of the constraint in this case to 0%. There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive. Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases. If you encounter such cases, please contact the author, I&apos;ll try to fix this problem).
-
-Note: You cannot add &apos;consecutive if same day&apos; with min n days=0. If you want this, you have to add min days at least 1 (and any weight percentage).
-
-Note: the extremely unlikely event that, given that 3 or more activities (from the same constraint min n days) must all be placed in the same day consecutively, FET will not be able to find a timetable. If you meet such cases, please write to the author. This unlikely to happen event can be managed, but I consider it neglectable.
-
-Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10677,7 +10684,7 @@ Separator character(s) is of your choice (default is space)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2023"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1621"/>
         <source>ST:%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10699,26 +10706,6 @@ Separator character(s) is of your choice (default is space)</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1698"/>
         <source>Space constraint subject subject tag preferred rooms broken for activity with id %1 (subject=%2, subject tag=%3)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1835"/>
-        <source>Subject tag preferred room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1890"/>
-        <source>Space constraint subject tag preferred room broken for activity with id %1 (subject=%2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2037"/>
-        <source>Subject tag preferred rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2099"/>
-        <source>Space constraint subject tag preferred rooms broken for activity with id %1 (subject tag=%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10811,6 +10798,32 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1026"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="661"/>
+        <source>This help by Liviu Lalescu, modified 23 August 2007
+
+You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then double click it or press Enter to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.
+
+The same procedure (double click or Enter) applies to adding a students set or removing a students set.
+
+You can check/uncheck show years, show groups or show subgroups.
+
+If you split an activity into more sub-activities per week, you have a multitude of choices:
+You can choose the minimum distance in days between each pair of subactivities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday  to Wednesday for instance is 2 days), etc.
+
+ If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min n days with min days = 2 and weight 100%. But if you are not sure that  a timetable exists with this condition, you can lower it by the following procedure: add a constraint min n days with minimum days = 1 and weight 100% and another constraint (which has to be added manually, because the add activity dialog has only one constraint possible) with min days 2 and weight for instance 95% or lower
+
+Please note that the min days distance is a time constraint and you can only see/modify it in the time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints for each activity in the details text box of each activity
+
+ If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then with 99%, then 99.75%, or even 100.0%, but the generation time might be larger). Please be careful, sometimes there are situations when the constraint cannot be respected, for instance if you have 3 lessons per week with a teacher which has only 2 working days. It is best to set the weight of the constraint in this case to 0% (although any value less than 100.0% will work). There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive. Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases. If you encounter such cases, please contact the author, I&apos;ll try to fix this problem).
+
+Note: You cannot add &apos;consecutive if same day&apos; with min n days=0. If you want this, you have to add min days at least 1 (and any weight percentage).
+
+Note: the extremely unlikely event that, given that 3 or more activities (from the same constraint min n days) must all be placed in the same day consecutively, FET will not be able to find a timetable. If you meet such cases, please write to the author. This unlikely to happen event can be managed, but I consider it neglectable.
+
+Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11438,11 +11451,6 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="470"/>
-        <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="472"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation type="unfinished"></translation>
@@ -11453,24 +11461,8 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="1091"/>
-        <source>Group</source>
-        <translation type="obsolete">Grup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="2135"/>
-        <source>Timetable generated with FET %1 on %2</source>
-        <translation type="obsolete">Ders Programı, %2 de Fet %1 Tarafından Üretilmiştir
-</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="478"/>
         <source>It is recommended to strengthen the constraints step by step (for intance min n days or teachers max gaps), as you obtain feasible timetables.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="481"/>
-        <source>For nearly impossible timetables, the time of generation might be larger. I am not sure if stop+restart might help sometimes for such timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11481,6 +11473,16 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="519"/>
         <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="470"/>
+        <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="481"/>
+        <source>For very difficult timetables, the time of generation might be larger. I am not sure if stop+restart might help sometimes for such timetables</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11522,89 +11524,89 @@ timetable on the hard disk, in xml and html formats.</source>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="311"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="312"/>
         <source>FET information</source>
         <translation type="unfinished"> FET Bilgi
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="186"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
         <source>FET warning</source>
         <translation type="unfinished">FET Uyarı
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="186"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="193"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
         <source>You have entered simulation with uninitialized rules or 0 activities...aborting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="205"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="206"/>
         <source>Cannot optimize - please modify your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="210"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="211"/>
         <source>Your data cannot be processed - please modify it as instructed
 For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="229"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="230"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="248"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="249"/>
         <source>Conflicts listing (in decreasing order):
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="262"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="263"/>
         <source>Simulation stopped but the simulation is not running. This should not happen. Maybe you aborted simulation previously. Please report possible bug to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="273"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="274"/>
         <source>Simulation interrupted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="280"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="281"/>
         <source>The results for the generated timetables are saved in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="301"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="302"/>
         <source>Simulation finished but the simulation is not running. This should not happen. Maybe you aborted simulation previously. Please report possible bug to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="313"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="314"/>
         <source>Simulation terminated successfully. The results are saved in directory %1 in html and xml mode.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="179"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="180"/>
         <source>Cannot proceeed, directory %1 exists and might not be empty, (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="335"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="336"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="164"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="165"/>
         <source>Notice: you can only see generated timetables on the hard disk, in html or xml format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding.
 
-Please note that each timetable might occupy 1 MB of hard disk space or more, so make sure you have enough space.</source>
+Please note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

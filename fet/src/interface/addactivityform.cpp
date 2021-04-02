@@ -602,6 +602,8 @@ void AddActivityForm::help()
 	QString s;
 	
 	s=QObject::tr(	
+	 "This help by Liviu Lalescu, modified 23 August 2007\n\n"
+	
 	 "You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
 	 "double click it or press Enter to add it to the selected teachers for current activity. "
 	 "You can then choose to remove a teacher from the selected teachers. You can highlight it "
@@ -617,20 +619,26 @@ void AddActivityForm::help()
 	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday "
 	 " to Wednesday for instance is 2 days), etc.\n\n"
 	 
-	 " If you have for instance an activity with 2 lessons per week and you want to spread them equally, "
-	 "you can add a constraint min n days with min days = 1 and weight 100%. But if you are not sure that "
+	 " If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, "
+	 "you can add a constraint min n days with min days = 2 and weight 100%. But if you are not sure that "
 	 " a timetable exists with this condition, you can lower it by the following procedure: "
 	 "add a constraint min n days with minimum days = 1 and weight 100% and another constraint "
 	 "(which has to be added manually, because the add activity dialog has only one constraint possible) "
 	 "with min days 2 and weight for instance 95% or lower\n\n"
 	 
+	 "Please note that the min days distance is a time constraint and you can only see/modify it in the "
+	 "time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints "
+	 "for each activity in the details text box of each activity\n\n"
+	 
 	 " If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically "
-	 "(you can see this constraint in the time constraints list or you can see this constraint in the"
+	 "(you can see this constraint in the time constraints list or you can see this constraint in the "
 	 "detailed description of the activity). You can select a weight percentage for this constraint. "
 	 "If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance "
-	 "that the timetable will not respect this constraint. Recommended values are 95%-100%. Please be careful, sometimes "
+	 "that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try "
+	 "with 95%, then with 99%, then 99.75%, or even 100.0%, but the generation time might be larger). Please be careful, sometimes "
 	 "there are situations when the constraint cannot be respected, for instance if you have 3 lessons per week "
-	 "with a teacher which has only 2 working days. You must set the weight of the constraint in this case to 0%. "
+	 "with a teacher which has only 2 working days. It is best to set the weight of the constraint in this case to 0% (although "
+	 "any value less than 100.0% will work). "
 	 "There is another option, if the activities are in the same day, force consecutive activities. You can select "
 	 "this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects "
 	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
@@ -680,8 +688,6 @@ void AddActivityForm::help()
 	dialog->exec();
 }
 
-//#undef prefDay
-//#undef prefHour
 #undef subTab
 #undef activ
 #undef dur

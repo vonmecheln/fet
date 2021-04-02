@@ -197,7 +197,7 @@ void TimetableGenerateMultipleForm::start(){
 		return;
 	}
 
-	currentResultsTextEdit->setText(TimetableGenerateMultipleForm::tr(""));
+	currentResultsTextEdit->setText("");
 	//currentResultsTextEdit->repaint();
 
 	bool ok=genMulti.precompute();

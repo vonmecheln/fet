@@ -477,7 +477,7 @@ void TimetableGenerateForm::activityPlaced(int na){
 	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
 	 " intance min n days or teachers max gaps), as you obtain feasible timetables.");
 	s+="\n";
-	s+=TimetableGenerateForm::tr("For nearly impossible timetables, the time of generation might be larger."
+	s+=TimetableGenerateForm::tr("For very difficult timetables, the time of generation might be larger."
 	 " I am not sure if stop+restart might help sometimes for such timetables");
 
 	mutex.unlock();

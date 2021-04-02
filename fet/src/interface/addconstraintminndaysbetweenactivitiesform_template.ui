@@ -110,7 +110,7 @@ force activities consecutive</string>
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight percentage (recommended: 90%-100%)</string>
+                        <string>Weight percentage (recommended: 95%-100%)</string>
                     </property>
                 </widget>
                 <widget class="QLineEdit">
@@ -118,7 +118,7 @@ force activities consecutive</string>
                         <cstring>weightLineEdit</cstring>
                     </property>
                     <property name="text">
-                        <string>95</string>
+                        <string>95.0</string>
                     </property>
                 </widget>
             </vbox>
