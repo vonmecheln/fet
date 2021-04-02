@@ -189,6 +189,15 @@ not induce gaps for teachers or students</string>
         <slot>constraintChanged()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>dayComboBox</tabstop>
+    <tabstop>startHourComboBox</tabstop>
+    <tabstop>endHourComboBox</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>addCurrentConstraint()</slot>
     <slot>constraintChanged()</slot>

@@ -163,7 +163,10 @@
     <tabstop>removeTeacherPushButton</tabstop>
     <tabstop>renameTeacherPushButton</tabstop>
     <tabstop>sortTeachersPushButton</tabstop>
+    <tabstop>activateTeacherPushButton</tabstop>
+    <tabstop>deactivateTeacherPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>currentTeacherTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>addTeacher()</slot>

@@ -43,6 +43,13 @@ public:
 	void updateRoomsComboBox();
 
 	void addConstraint();
+
+	bool filterOk(Activity* a);
+	void filterChanged();
+	
+private:
+	//the id's of the activities listed in the activities combo
+	QList<int> activitiesList;
 };
 
 #endif

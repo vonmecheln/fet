@@ -144,6 +144,13 @@ but they might be too large and you might get a impossible timetable.</string>
         <slot>constraintChanged()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>minHoursSpinBox</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>constraintChanged()</slot>

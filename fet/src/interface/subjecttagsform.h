@@ -31,6 +31,8 @@ public:
 	
 	void activateSubjectTag();
 	void deactivateSubjectTag();
+	
+	void help();
 };
 
 #endif

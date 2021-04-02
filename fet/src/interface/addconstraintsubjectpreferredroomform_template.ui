@@ -117,6 +117,13 @@
         <slot>addConstraint()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>roomsComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addConstraint()</slot>
 </slots>

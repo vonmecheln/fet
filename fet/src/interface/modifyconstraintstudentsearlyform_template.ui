@@ -190,6 +190,12 @@ them with not available/breaks in the last slots of the days</string>
         <slot>cancel()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>constraintChanged()</slot>

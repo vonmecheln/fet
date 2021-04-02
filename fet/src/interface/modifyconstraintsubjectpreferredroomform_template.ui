@@ -117,6 +117,13 @@
         <slot>ok()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>roomsComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>cancel()</slot>

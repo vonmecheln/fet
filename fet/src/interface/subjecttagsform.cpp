@@ -190,3 +190,11 @@ void SubjectTagsForm::deactivateSubjectTag()
 	int count=gt.rules.deactivateSubjectTag(text);
 	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("De-activated a number of %1 activities").arg(count));
 }
+
+void SubjectTagsForm::help()
+{
+	QMessageBox::information(this, QObject::tr("FET help on subject tags"), 
+	 QObject::tr("Subject tag is a field which can be used or not, depending on your wish (optional field)."
+	 " It is designed to help you with some constraints. Each activity has a possible empty subject tag"
+	 " (if you don't use subject tags, it will be empty)"));
+}

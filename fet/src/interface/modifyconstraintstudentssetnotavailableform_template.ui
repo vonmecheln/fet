@@ -227,6 +227,16 @@ not available period, there will be no gaps counted</string>
         <slot>constraintChanged()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>dayComboBox</tabstop>
+    <tabstop>startHourComboBox</tabstop>
+    <tabstop>endHourComboBox</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+    <tabstop>okPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>constraintChanged()</slot>

@@ -247,7 +247,7 @@ Versions 3.8.0 - 3.8.5 - Liviu Lalescu
 	- Doxygen options bug corrected
 	- Got rid of some compiler warnings
 - Version 3.8.4
-	- Bug fix: Timetable->Allocate rooms->Start/Continue  - crushed FET if there was no
+	- Bug fix: Timetable->Allocate rooms->Start/Continue ï¿½- crushed FET if there was no
 	previous Initialization (thanks to Marek Jaszuk)
 	- "Time constraint teacher max days per week broken for teacher:
 	XY.This increases the conflicts factor with 0" (thanks to Marek Jaszuk)
@@ -1066,10 +1066,17 @@ Versions 5.3.0 - 5.3.6
 	- Improvement in Spanish translation by Jose Cesar Fernandez Lopez
 	- The min hours per day for teachers works even when a teacher has 0 hours in a week
 - Version 5.4.2
-	- Main interface improvements
+	- Main form interface improvements
 	- Updates in Romanian, German and Spanish translations
 	- Corrected crash bug when disk is full - reported by Maciej Deorowicz
 	- Added detailed activity description in activity preferred room(s) constraints
 	- Bug fix - when removing a room, related constraints subject subject tag preferred rooms
 	are updated correspondingly (unlikely to happen bug)
+- Version 5.4.3
+	- Larger values for maximum number of years, groups and subgroups (suggested by Volker Dirr)
+	- The split activities are now indented, for easier visualization
+	- Improved add constraint activity preferred room(s) dialogs, by adding filters
+- Version 5.4.4
+	- It is allowed now to save the file name containing parentheses (), quotation marks " are not allowed anymore,
+	and neither is semicolon ; because the html code does not work correctly
 	

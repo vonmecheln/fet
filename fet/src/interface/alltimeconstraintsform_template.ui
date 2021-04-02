@@ -119,10 +119,10 @@
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
-    <tabstop>currentConstraintTextEdit</tabstop>
     <tabstop>modifyConstraintPushButton</tabstop>
     <tabstop>removeConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>addConstraint()</slot>

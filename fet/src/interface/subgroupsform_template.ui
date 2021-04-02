@@ -221,6 +221,19 @@
         <slot>modifySubgroup()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>yearsListBox</tabstop>
+    <tabstop>groupsListBox</tabstop>
+    <tabstop>subgroupsListBox</tabstop>
+    <tabstop>subgroupTextEdit</tabstop>
+    <tabstop>addSubgroupPushButton</tabstop>
+    <tabstop>modifySubgroupPushButton</tabstop>
+    <tabstop>removeSubgroupPushButton</tabstop>
+    <tabstop>removeSubgroupPushButton_2</tabstop>
+    <tabstop>activateStudentsPushButton</tabstop>
+    <tabstop>deactivateStudentsPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addSubgroup()</slot>
     <slot>groupChanged(const QString&amp;)</slot>

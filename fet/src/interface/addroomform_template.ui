@@ -133,6 +133,7 @@
 <tabstops>
     <tabstop>nameLineEdit</tabstop>
     <tabstop>capacitySpinBox</tabstop>
+    <tabstop>pushButton3</tabstop>
     <tabstop>addRoomPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>

@@ -165,14 +165,17 @@ void ActivitiesForm::removeActivity()
 	assert(act!=NULL);
 
 	QString s;
+	/*
 	if(!act->isSplit())
 		s=QObject::tr("Removing activity:");
 	else
-		s=QObject::tr("Removing sub-activity:");
+		s=QObject::tr("Removing sub-activity:");*/
+	s=QObject::tr("Removing:");
 	s+="\n";
 	s+=act->getDetailedDescription(gt.rules);
+	s+="\n";
 	if(act->isSplit())
-		s+=QObject::tr("There will also be removed all the\nsub-activities from the same split activity");
+		s+=QObject::tr("There will also be removed the related activities from the same larger split activity");
 
 	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
 	s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){

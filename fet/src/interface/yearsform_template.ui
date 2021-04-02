@@ -172,6 +172,9 @@
     <tabstop>removeYearPushButton</tabstop>
     <tabstop>modifyYearPushButton</tabstop>
     <tabstop>sortYearsPushButton</tabstop>
+    <tabstop>divisionsPushButton</tabstop>
+    <tabstop>activateStudentsPushButton</tabstop>
+    <tabstop>deactivateStudentsPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>
 <slots>

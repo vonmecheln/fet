@@ -15,91 +15,168 @@
     <property name="caption">
         <string>FET - subject tags</string>
     </property>
-    <grid>
+    <widget class="QPushButton">
         <property name="name">
-            <cstring>unnamed</cstring>
+            <cstring>closePushButton</cstring>
         </property>
-        <property name="margin">
-            <number>11</number>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>502</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
         </property>
-        <property name="spacing">
-            <number>6</number>
+        <property name="text">
+            <string>Close</string>
         </property>
-        <widget class="QPushButton" row="4" column="0">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>currentSubjectTagTextEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>11</y>
+                <width>338</width>
+                <height>395</height>
+            </rect>
+        </property>
+        <property name="readOnly">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QListBox">
+        <item>
             <property name="text">
-                <string>Close</string>
+                <string>New Item</string>
             </property>
-        </widget>
-        <widget class="QTextEdit" row="0" column="1">
-            <property name="name">
-                <cstring>currentSubjectTagTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QListBox" row="0" column="0">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>subjectTagsListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="1">
-            <property name="name">
-                <cstring>removeSubjectPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Remove current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="0">
-            <property name="name">
-                <cstring>addSubjectPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add subject tag</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="1">
-            <property name="name">
-                <cstring>sortSubjectsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Sort alphabetically</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>renameSubjectPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Rename current</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="0">
-            <property name="name">
-                <cstring>activateSubjectTagPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Activate all activities for selected subject tag</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="1">
-            <property name="name">
-                <cstring>deactivateSubjectTagPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>De-activate all activities for selected subject tag</string>
-            </property>
-        </widget>
-    </grid>
+        </item>
+        <property name="name">
+            <cstring>subjectTagsListBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>11</y>
+                <width>338</width>
+                <height>395</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>removeSubjectPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>412</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Remove current</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>addSubjectPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>412</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Add subject tag</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>sortSubjectsPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>442</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Sort alphabetically</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>renameSubjectPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>442</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Rename current</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>activateSubjectTagPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>472</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Activate all activities for selected subject tag</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>deactivateSubjectTagPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>355</x>
+                <y>472</y>
+                <width>338</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>De-activate all activities for selected subject tag</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>helpPushButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>500</y>
+                <width>330</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Help</string>
+        </property>
+    </widget>
 </widget>
 <connections>
     <connection>
@@ -156,6 +233,12 @@
         <receiver>SubjectTagsForm_template</receiver>
         <slot>renameSubjectTag()</slot>
     </connection>
+    <connection>
+        <sender>helpPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>SubjectTagsForm_template</receiver>
+        <slot>help()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>subjectTagsListBox</tabstop>
@@ -163,7 +246,11 @@
     <tabstop>removeSubjectPushButton</tabstop>
     <tabstop>renameSubjectPushButton</tabstop>
     <tabstop>sortSubjectsPushButton</tabstop>
+    <tabstop>activateSubjectTagPushButton</tabstop>
+    <tabstop>deactivateSubjectTagPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>helpPushButton</tabstop>
+    <tabstop>currentSubjectTagTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>addSubjectTag()</slot>
@@ -173,6 +260,7 @@
     <slot>subjectTagChanged(int)</slot>
     <slot>activateSubjectTag()</slot>
     <slot>deactivateSubjectTag()</slot>
+    <slot>help()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

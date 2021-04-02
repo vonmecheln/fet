@@ -135,13 +135,13 @@ Note: each room can hold a single activity at the same time
     </connection>
 </connections>
 <tabstops>
+    <tabstop>roomsListBox</tabstop>
+    <tabstop>currentRoomTextEdit</tabstop>
     <tabstop>addRoomPushButton</tabstop>
     <tabstop>removeRoomPushButton</tabstop>
     <tabstop>modifyRoomPushButton</tabstop>
     <tabstop>sortRoomsPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
-    <tabstop>roomsListBox</tabstop>
-    <tabstop>currentRoomTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>addRoom()</slot>

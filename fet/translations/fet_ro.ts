@@ -69,6 +69,247 @@
     </message>
 </context>
 <context>
+    <name>AddActivityForm</name>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="267"/>
+        <source>Add current activities</source>
+        <translation>Adauga activitatile curente</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="268"/>
+        <source>Current activities</source>
+        <translation>Activitatile curente</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="271"/>
+        <source>Add current activity</source>
+        <translation>Adauga activitatea curenta</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="272"/>
+        <source>Current activity</source>
+        <translation>Activitatea curenta</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="300"/>
+        <source>No teachers for this activity
+</source>
+        <translation>Fara profesori pentru aceasta activitate
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="302"/>
+        <source>No teachers for these activities
+</source>
+        <translation>Fara profesori pentru aceste activitati
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="306"/>
+        <source>Teacher=%1</source>
+        <translation>Profesor=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="311"/>
+        <source>Subject=%1</source>
+        <translation>disciplina=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="314"/>
+        <source>Subject tag=%1</source>
+        <translation>Eticheta disciplina=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="319"/>
+        <source>No students for this activity
+</source>
+        <translation>Fara studenti pentru aceasta activitate
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="321"/>
+        <source>No students for these activities
+</source>
+        <translation>Fara studenti pentru aceste activitati
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="325"/>
+        <source>Students=%1</source>
+        <translation>Studenti=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="330"/>
+        <source>Number of students=%1</source>
+        <translation>Numar de studenti=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="334"/>
+        <source>Number of students: automatically computed from component students sets</source>
+        <translation>Numar de studenti: calculat automat din seturile de studenti componente</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="381"/>
+        <source>Duration=%1</source>
+        <translation>Durata=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="384"/>
+        <source>Active activity</source>
+        <translation>Activitate activa</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="388"/>
+        <source>Non-active activity</source>
+        <translation>Activitate inactiva</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="351"/>
+        <source>This larger activity will be split into %1 smaller activities per week</source>
+        <translation>Aceasta activitate mai mare va fi impartita in %1 activitati mai mici pe saptamana</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="359"/>
+        <source>The distance between any pair of activities must be at least %1 days</source>
+        <translation>Distanta intre oricare pereche de activitati trebuie sa fie cel putin %1 zile</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="362"/>
+        <source>Weight percentage of added min n days constraint: %1%</source>
+        <translation>Importanta (procent) a constrangerii min n zile adaugate: %1%</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="366"/>
+        <source>If activities on same day, then place activities consecutive, in a bigger duration lesson</source>
+        <translation>Daca activitatile sunt in aceeasi zi, trebuie puse consecutiv, in o lectie cu durata mai mare</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="379"/>
+        <source>Componenent %1:</source>
+        <translation>Componenta %1:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="561"/>
+        <source>FET information</source>
+        <translation>FET - informatie</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="405"/>
+        <source>Invalid weight (percentage) for added constraint min n days between activities</source>
+        <translation>Importanta (procentaj) invalid pentru constrangerea min n zile intre activitati adaugata</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="498"/>
+        <source>FET question</source>
+        <translation>FET intrebare</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="413"/>
+        <source>Do you really want to add activity with no teacher(s)?</source>
+        <translation>Chiar doriti sa adaugati o activitate fara profesori?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="423"/>
+        <source>Too many teachers for an activity. The current maximum is %1.
+If you really need more teachers per activity, please talk to the author</source>
+        <translation>Prea multi profesori pentru o activitate. Maximul curent este %1
+Daca chiar aveti nevoie de mai multi profesori pentru o activitate, vorbiti cu autorul</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="438"/>
+        <source>Invalid subject</source>
+        <translation>Disciplina invalida</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="447"/>
+        <source>Invalid subject tag</source>
+        <translation>Eticheta disciplina invalida</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="455"/>
+        <source>Do you really want to add activity with no student set(s)?</source>
+        <translation>Chiar doriti sa adaugati o activitate fara studenti?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="472"/>
+        <source>Invalid duration</source>
+        <translation>Durata invalida</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="499"/>
+        <source>This activity already exists. Insert it again?</source>
+        <translation>Aceasta activitate exista. Sa o inserez iar?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="500"/>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="500"/>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="512"/>
+        <source>Activity added</source>
+        <translation>Activitate adaugata</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="514"/>
+        <source>Activity NOT added - please report error</source>
+        <translation>Activitate NEadaugata - eroare</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="559"/>
+        <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
+        <translation>Activitate impartita adaugata. Va rugam sa luati aminte ca FET in versiunea actuala nu poate verifica duplicatele cand adaugati activitate impartita. Este recomandat sa vedeti statisticile dupa ce ati adaugat toate activitatile</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="561"/>
+        <source>Split activity NOT added - error???</source>
+        <translation>Activitatea impartita NU poate fi adaugata - eroare???</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="638"/>
+        <source>This help by Liviu Lalescu, modified 19 September 2007
+
+You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then double click it or press Enter to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.
+
+The same procedure (double click or Enter) applies to adding a students set or removing a students set.
+
+You can check/uncheck show years, show groups or show subgroups.
+
+If you split an activity into more sub-activities per week, you have a multitude of choices:
+You can choose the minimum distance in days between each pair of subactivities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday  to Wednesday for instance is 2 days), etc.
+
+ If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min n days with min days = 2 and weight 100%. But if you are not sure that  a timetable exists with this condition, you can lower it by the following procedure: add a constraint min n days with minimum days = 1 and weight 100% and another constraint (which has to be added manually, because the add activity dialog has only one constraint possible) with min days 2 and weight for instance 95% or lower
+
+Please note that the min days distance is a time constraint and you can only see/modify it in the time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints for each activity in the details text box of each activity
+
+ If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min n days between activities dialog.
+
+There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive.
+
+Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases. If you encounter such cases, please contact the author, I&apos;ll try to fix this problem).
+
+Note: You cannot add &apos;consecutive if same day&apos; with min n days=0. If you want this, you have to add min days at least 1 (and any weight percentage).
+
+Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="643"/>
+        <source>FET - help on adding activity(ies)</source>
+        <translation>FET - ajutor la adaugare activitate(activitati)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="649"/>
+        <source>OK</source>
+        <translation>Bine</translation>
+    </message>
+</context>
+<context>
     <name>AddActivityForm_template</name>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="16"/>
@@ -98,7 +339,7 @@
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="386"/>
         <source>Split this activity into ... lessons per week.</source>
-        <translation>Imparte aceasta activitate in ... lectii pe saptamana.</translation>
+        <translation type="obsolete">Imparte aceasta activitate in ... lectii pe saptamana.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="464"/>
@@ -195,7 +436,7 @@
         <source>The minimum required 
 distance in days between 
 each pair of subactivities</source>
-        <translation>Distanta minima necesara
+        <translation type="obsolete">Distanta minima necesara
 in zile dintre fiecare
 pereche de subactivitati</translation>
     </message>
@@ -217,7 +458,7 @@ added constraint
 activities constraint)
 Recommended:
 95%-100%</source>
-        <translation>Procentaj al
+        <translation type="obsolete">Procentaj al
 constrangerii adaugate
 (min zile intre activitati)
 Recomandat:
@@ -241,7 +482,7 @@ consecutive?</translation>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="989"/>
         <source>95.0</source>
-        <translation>95.0</translation>
+        <translation type="obsolete">95.0</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="233"/>
@@ -257,6 +498,49 @@ consecutive?</translation>
         <location filename="../src/interface/addactivityform_template.ui" line="205"/>
         <source>Students</source>
         <translation>Studenti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="437"/>
+        <source>The minimum required 
+distance in days between 
+each pair of activities</source>
+        <translation>Distanta minima necesara
+in zile dintre fiecare
+pereche de activitati</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="968"/>
+        <source>Percentage of 
+added constraint
+ (min days between 
+activities constraint)
+Recommended:
+95.0%-100.0%</source>
+        <translation>Procentaj al
+constrangerii adaugate
+(min zile intre activitati)
+Recomandat:
+95.0%-100.0%</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="386"/>
+        <source>Split this activity into ... activities per week.</source>
+        <translation type="obsolete">Imparte activitatea in ... activitati pe saptamana.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="989"/>
+        <source>95</source>
+        <translation>95</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="386"/>
+        <source>Split activity into ... activities per week.</source>
+        <translation type="obsolete">Imparte activitatea in ... activitati pe saptamana.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="386"/>
+        <source>Split into ... activities per week.</source>
+        <translation>Imparte in ... activitati pe saptamana.</translation>
     </message>
 </context>
 <context>
@@ -628,34 +912,59 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
         <translation>FET - Dialogul de adaugare a unei noi constrangeri activititate sala preferata</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="57"/>
         <source>Add constraint</source>
         <translation>Adauga constrangere</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="57"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="27"/>
         <source>Close</source>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="71"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="90"/>
         <source>Room</source>
         <translation>Sala</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="93"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="46"/>
         <source>Activity</source>
         <translation>Activitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="101"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="41"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="76"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="109"/>
+        <source>Filter</source>
+        <translation type="unfinished">Filtru</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="125"/>
+        <source>Students set</source>
+        <translation type="unfinished">Set de studenti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="138"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Profesor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="151"/>
+        <source>Subject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="159"/>
+        <source>Subject tag</source>
+        <translation type="unfinished">Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -666,27 +975,27 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
         <translation>FET - Adaugare noua constrangere activitate sali preferate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="67"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="93"/>
         <source>Add constraint</source>
         <translation>Adauga constrangere</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="75"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="101"/>
         <source>Close</source>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="93"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="35"/>
         <source>Add</source>
         <translation>Adauga</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="101"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="43"/>
         <source>Remove</source>
         <translation>Sterge</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="165"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="170"/>
         <source>New Item</source>
         <translation>Nou</translation>
     </message>
@@ -701,19 +1010,44 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
         <translation>Toate salile (dbl. click adauga)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="159"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="164"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation>Salile selectate (dbl. click sterge)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="75"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="41"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="67"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="192"/>
+        <source>Filter</source>
+        <translation type="unfinished">Filtru</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="208"/>
+        <source>Students set</source>
+        <translation type="unfinished">Set de studenti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="221"/>
+        <source>Teacher</source>
+        <translation type="unfinished">Profesor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="234"/>
+        <source>Subject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="242"/>
+        <source>Subject tag</source>
+        <translation type="unfinished">Eticheta disciplina</translation>
     </message>
 </context>
 <context>
@@ -5602,7 +5936,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.2 (September 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.4 (September 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -6209,6 +6543,137 @@ nu intervalul (nu precum 08:00-09:00 sau 13:45-14:55)</translation>
     </message>
 </context>
 <context>
+    <name>ModifyActivityForm</name>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="276"/>
+        <source>No teachers for this activity
+</source>
+        <translation>Fara profesori pentru aceasta activitate
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="278"/>
+        <source>No teachers for these activities
+</source>
+        <translation>Fara profesori pentru aceste activitati</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="282"/>
+        <source>Teacher=%1</source>
+        <translation>Profesor=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="286"/>
+        <source>Subject=%1</source>
+        <translation>disciplina=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="289"/>
+        <source>Subject tag=%1</source>
+        <translation>Eticheta disciplina=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="294"/>
+        <source>No students for this activity
+</source>
+        <translation>Fara studenti pentru aceasta activitate
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="296"/>
+        <source>No students for these activities
+</source>
+        <translation>Fara studenti pentru aceste activitati</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="300"/>
+        <source>Students=%1</source>
+        <translation>Studenti=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="305"/>
+        <source>Number of students: computed from corresponding students sets</source>
+        <translation>Numar de studenti: calculat din seturile de studenti componente</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="309"/>
+        <source>Number of students=%1</source>
+        <translation>Numar de studenti=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="338"/>
+        <source>Duration=%1</source>
+        <translation>Durata=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="345"/>
+        <source>Active activity</source>
+        <translation>Activitate activa</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="349"/>
+        <source>Non-active activity</source>
+        <translation>Activitate inactiva</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="331"/>
+        <source>This larger activity is split into %1 smaller activities per week</source>
+        <translation>Aceasta activitate mai mare este impartita in %1 activitati mai mici pe saptamana</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="336"/>
+        <source>Componenent %1:</source>
+        <translation>Componenta %1:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="411"/>
+        <source>FET question</source>
+        <translation>FET intrebare</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="370"/>
+        <source>Do you really want to have the activity with no teacher(s)?</source>
+        <translation>Chiar doriti sa aveti activitate fara profesori?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="403"/>
+        <source>FET information</source>
+        <translation>FET - informatie</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="380"/>
+        <source>Too many teachers for an activity. The current maximum is %1.
+If you really need more teachers per activity, please talk to the author</source>
+        <translation>Prea multi profesori pentru o activitate. Maximul curent este %1
+Daca chiar aveti nevoie de mai multi profesori pentru o activitate, vorbiti cu autorul</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="395"/>
+        <source>Invalid subject</source>
+        <translation>Disciplina invalida</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="404"/>
+        <source>Invalid subject tag</source>
+        <translation>Eticheta disciplina invalida</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="412"/>
+        <source>Do you really want to have the activity with no student set(s)?</source>
+        <translation>Chiar doriti sa aveti activitate fara studenti?</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="105"/>
+        <source>Current activity</source>
+        <translation>Activitatea curenta</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform.cpp" line="107"/>
+        <source>Current activities</source>
+        <translation>Activitatile curente</translation>
+    </message>
+</context>
+<context>
     <name>ModifyActivityForm_template</name>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="16"/>
@@ -6223,7 +6688,7 @@ nu intervalul (nu precum 08:00-09:00 sau 13:45-14:55)</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="87"/>
         <source>This activity is split into ... lessons per week.</source>
-        <translation>Aceasta activitate este impartita in ... lectii pe saptamana.</translation>
+        <translation type="obsolete">Aceasta activitate este impartita in ... lectii pe saptamana.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="128"/>
@@ -6310,7 +6775,7 @@ nu intervalul (nu precum 08:00-09:00 sau 13:45-14:55)</translation>
         <source>This value cannot be changed. If you need to 
 modify it, please remove the corresponding 
 (sub-)activities and add a new split activity</source>
-        <translation>Aceasta valoare nu poate fi modificata. Daca trebuie
+        <translation type="obsolete">Aceasta valoare nu poate fi modificata. Daca trebuie
 sa o modificati, va rog stergeti (sub-)activitatile
 corespunzatoare si adaugati o noua activitate impartita</translation>
     </message>
@@ -6343,6 +6808,20 @@ corespunzatoare si adaugati o noua activitate impartita</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="825"/>
         <source>Students</source>
         <translation>Studenti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="87"/>
+        <source>Is split into ... activities per week.</source>
+        <translation>Este impartita in ... activitati pe saptamana.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="112"/>
+        <source>This value cannot be changed. If you need to 
+modify it, please remove the corresponding 
+activities and add a new split activity</source>
+        <translation>Aceasta valoare nu poate fi modificata. Daca trebuie
+sa o modificati, va rog stergeti activitatile
+corespunzatoare si adaugati o noua activitate impartita</translation>
     </message>
 </context>
 <context>
@@ -8332,14 +8811,14 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="323"/>
+        <location filename="../src/engine/activity.cpp" line="329"/>
         <source>Activity: </source>
         <translation>Activitate: </translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="325"/>
         <source>Sub-activity: </source>
-        <translation>Sub-activitate: </translation>
+        <translation type="obsolete">Sub-activitate: </translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6442"/>
@@ -8347,37 +8826,37 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>P:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="332"/>
+        <location filename="../src/engine/activity.cpp" line="338"/>
         <source>S:</source>
         <translation>S:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="335"/>
+        <location filename="../src/engine/activity.cpp" line="341"/>
         <source>St:</source>
         <translation>St:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="342"/>
+        <location filename="../src/engine/activity.cpp" line="348"/>
         <source>Id:</source>
         <translation>Id:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="344"/>
+        <location filename="../src/engine/activity.cpp" line="350"/>
         <source>AGId:</source>
         <translation>AGId:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="346"/>
+        <location filename="../src/engine/activity.cpp" line="352"/>
         <source>D:</source>
         <translation>D:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="348"/>
+        <location filename="../src/engine/activity.cpp" line="354"/>
         <source>TD:</source>
         <translation>DT:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="368"/>
+        <location filename="../src/engine/activity.cpp" line="376"/>
         <source>Activity:
 </source>
         <translation>Activitate:
@@ -8387,41 +8866,41 @@ but they might be too large and you might get a impossible timetable.</source>
         <location filename="../src/engine/activity.cpp" line="370"/>
         <source>Sub-activity:
 </source>
-        <translation>Sub-activitate:
+        <translation type="obsolete">Sub-activitate:
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="375"/>
+        <location filename="../src/engine/activity.cpp" line="384"/>
         <source>Teacher=</source>
         <translation>Profesor=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="376"/>
+        <location filename="../src/engine/activity.cpp" line="385"/>
         <source>Subject=</source>
         <translation>Disciplina=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="383"/>
+        <location filename="../src/engine/activity.cpp" line="392"/>
         <source>Students=</source>
         <translation>Studenti=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="385"/>
+        <location filename="../src/engine/activity.cpp" line="394"/>
         <source>Id=</source>
         <translation>Id=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="387"/>
+        <location filename="../src/engine/activity.cpp" line="396"/>
         <source>Activity group id=</source>
         <translation>Grupul activitatii=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="389"/>
+        <location filename="../src/engine/activity.cpp" line="398"/>
         <source>Duration=</source>
         <translation>Durata=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="391"/>
+        <location filename="../src/engine/activity.cpp" line="400"/>
         <source>Total duration=</source>
         <translation>Durata totala=</translation>
     </message>
@@ -8607,18 +9086,18 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="169"/>
         <source>Removing activity:</source>
-        <translation>Sterg activitatea:</translation>
+        <translation type="obsolete">Sterg activitatea:</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="171"/>
         <source>Removing sub-activity:</source>
-        <translation>Sterg sub-activitatea:</translation>
+        <translation type="obsolete">Sterg sub-activitatea:</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="175"/>
         <source>There will also be removed all the
 sub-activities from the same split activity</source>
-        <translation>Vor fi de asemenea sterse toate sub-activitatile
+        <translation type="obsolete">Vor fi de asemenea sterse toate sub-activitatile
 din aceeasi activitate impartita</translation>
     </message>
     <message>
@@ -8634,7 +9113,7 @@ din aceeasi activitate impartita</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="274"/>
         <source>Current activity:</source>
-        <translation>Activitatea curenta:</translation>
+        <translation type="obsolete">Activitatea curenta:</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="156"/>
@@ -8649,27 +9128,27 @@ din aceeasi activitate impartita</translation>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="479"/>
         <source>Invalid duration</source>
-        <translation>Durata invalida</translation>
+        <translation type="obsolete">Durata invalida</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="522"/>
         <source>This activity already exists. Insert it again?</source>
-        <translation>Aceasta activitate exista. Sa o inserez iar?</translation>
+        <translation type="obsolete">Aceasta activitate exista. Sa o inserez iar?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="535"/>
         <source>Activity added</source>
-        <translation>Activitate adaugata</translation>
+        <translation type="obsolete">Activitate adaugata</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="537"/>
         <source>Activity NOT added - please report error</source>
-        <translation>Activitate NEadaugata - eroare</translation>
+        <translation type="obsolete">Activitate NEadaugata - eroare</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="584"/>
         <source>Split activity NOT added - error???</source>
-        <translation>Activitatea impartita NU poate fi adaugata - eroare???</translation>
+        <translation type="obsolete">Activitatea impartita NU poate fi adaugata - eroare???</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform.cpp" line="191"/>
@@ -8945,7 +9424,7 @@ pentru ca profesorul este invalid</translation>
         <translation>S:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="295"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3358"/>
         <source>Students=%1</source>
         <translation>Studenti=%1</translation>
     </message>
@@ -9042,7 +9521,7 @@ pentru ca profesorul este invalid</translation>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="354"/>
         <source>The distance between any pair of subactivities must be at least %1 days</source>
-        <translation>Distanta minima intre oricare pereche de activitati trebuie sa fie cel putin %1 zile</translation>
+        <translation type="obsolete">Distanta minima intre oricare pereche de activitati trebuie sa fie cel putin %1 zile</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1658"/>
@@ -9097,7 +9576,7 @@ pentru ca profesorul este invalid</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="331"/>
         <source>Componenent %1:</source>
-        <translation>Componenta %1:</translation>
+        <translation type="obsolete">Componenta %1:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="55"/>
@@ -9202,7 +9681,7 @@ pentru ca profesorul este invalid</translation>
         <translation>Constrangere de spatiu - sala indisponibila - nerespectata pentru sala %1 in ziua %2, ora %3</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="285"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1823"/>
         <source>Subject=%1</source>
         <translation>disciplina=%1</translation>
     </message>
@@ -9257,7 +9736,7 @@ va rog abandonati acum si dati-i un alt nume
         <translation>Constrangere NEadaugata - eroare?</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="413"/>
+        <location filename="../src/engine/activity.cpp" line="422"/>
         <source>Total number of students=%1</source>
         <translation>Numarul total de studenti=%1</translation>
     </message>
@@ -9525,7 +10004,7 @@ vor fi manipulate corect)</translation>
         <translation>subgrupul %1 are mai mult de o activitate alocata in ziua %2, ora %3</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="406"/>
+        <location filename="../src/interface/hoursform.cpp" line="124"/>
         <source>FET question</source>
         <translation>FET intrebare</translation>
     </message>
@@ -9694,12 +10173,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
         <translation>Va rog introduceti noul nume al etichetei disciplinaului</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="334"/>
+        <location filename="../src/engine/activity.cpp" line="340"/>
         <source>ST:</source>
         <translation>ED:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="378"/>
+        <location filename="../src/engine/activity.cpp" line="387"/>
         <source>Subject tag=</source>
         <translation>Eticheta disciplina=</translation>
     </message>
@@ -9739,7 +10218,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
         <translation>Max ore zilnic=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="288"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1824"/>
         <source>Subject tag=%1</source>
         <translation>Eticheta disciplina=%1</translation>
     </message>
@@ -9784,7 +10263,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR trebuie crescuta (aveti prea multe 
         <translation>Lista de sali preferate vida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform.cpp" line="89"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform.cpp" line="192"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
         <translation>Va rog raportati eroarea autorului
@@ -9904,12 +10383,12 @@ Please talk to the author or increase variable MAX_ROOMS</source>
 Va rog vorbiti cu autorul sau mariti variabila MAX_ROOMS</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="425"/>
+        <location filename="../src/engine/activity.cpp" line="434"/>
         <source>Time constraints directly related to this activity:</source>
         <translation>Constrangeri de timp in legatura directa cu aceasta activitate:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="436"/>
+        <location filename="../src/engine/activity.cpp" line="445"/>
         <source>Space constraints directly related to this activity:</source>
         <translation>Constrangeri de spatiu in legatura directa cu aceasta activitate:</translation>
     </message>
@@ -10078,38 +10557,38 @@ neadaugata - trebuie sa fie un duplicat</translation>
         <location filename="../src/interface/modifyactivityform.cpp" line="375"/>
         <source>Too many teachers for an activity. The current maximum is %1.
 If you really need more teachers per activity, please talk to the author</source>
-        <translation>Prea multi profesori pentru o activitate. Maximul curent este %1
+        <translation type="obsolete">Prea multi profesori pentru o activitate. Maximul curent este %1
 Daca chiar aveti nevoie de mai multi profesori pentru o activitate, vorbiti cu autorul</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="340"/>
         <source>Active activity</source>
-        <translation>Activitate activa</translation>
+        <translation type="obsolete">Activitate activa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="344"/>
         <source>Non-active activity</source>
-        <translation>Activitate inactiva</translation>
+        <translation type="obsolete">Activitate inactiva</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="354"/>
+        <location filename="../src/engine/activity.cpp" line="360"/>
         <source>A: yes</source>
         <translation>A: da</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="356"/>
+        <location filename="../src/engine/activity.cpp" line="362"/>
         <source>A: no</source>
         <translation>A: nu</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="399"/>
+        <location filename="../src/engine/activity.cpp" line="408"/>
         <source>Active: yes
 </source>
         <translation>Activa: da
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="401"/>
+        <location filename="../src/engine/activity.cpp" line="410"/>
         <source>Active: no
 </source>
         <translation>Activa: nu
@@ -10140,7 +10619,7 @@ Va rugam vorbiti cu autorul sau mariti variabila MAX_ACTIVITIES</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="326"/>
         <source>This activity will be split into %1 lessons per week</source>
-        <translation>Aceasta activitate va fi impartita in %1 lectii pe saptamana</translation>
+        <translation type="obsolete">Aceasta activitate va fi impartita in %1 lectii pe saptamana</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6870"/>
@@ -10231,20 +10710,20 @@ Va rog opriti simularea inainte de aceasta</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="304"/>
         <source>Number of students=%1</source>
-        <translation>Numar de studenti=%1</translation>
+        <translation type="obsolete">Numar de studenti=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="317"/>
         <source>Number of students: automatically computed from component students sets</source>
-        <translation>Numar de studenti: calculat automat din seturile de studenti componente</translation>
+        <translation type="obsolete">Numar de studenti: calculat automat din seturile de studenti componente</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="300"/>
         <source>Number of students: computed from corresponding students sets</source>
-        <translation>Numar de studenti: calculat din seturile de studenti componente</translation>
+        <translation type="obsolete">Numar de studenti: calculat din seturile de studenti componente</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="359"/>
+        <location filename="../src/engine/activity.cpp" line="365"/>
         <source>NSt:</source>
         <translation>NSt:</translation>
     </message>
@@ -10274,7 +10753,7 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="333"/>
         <source>Duration=%1</source>
-        <translation>Durata=%1</translation>
+        <translation type="obsolete">Durata=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="3616"/>
@@ -10460,7 +10939,7 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="357"/>
         <source>Weight percentage of added min n days constraint: %1%</source>
-        <translation>Importanta (procent) a constrangerii min n zile adaugate: %1%</translation>
+        <translation type="obsolete">Importanta (procent) a constrangerii min n zile adaugate: %1%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="84"/>
@@ -10583,7 +11062,7 @@ Please modify your data correspondingly and try again</source>
         <translation>Profesori max ore zilnic </translation>
     </message>
     <message>
-        <location filename="../src/interface/activitiesform.cpp" line="212"/>
+        <location filename="../src/interface/activitiesform.cpp" line="215"/>
         <source>Cannot modify this activity, because it contains more than 10 subactivities.
 If you really need that, please talk to the author
 </source>
@@ -10594,12 +11073,12 @@ Daca aveti nevoie neaparat, vorbiti cu autorul
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="582"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
-        <translation>Activitate impartita adaugata. Va rugam sa luati aminte ca FET in versiunea actuala nu poate verifica duplicatele cand adaugati activitate impartita. Este recomandat sa vedeti statisticile dupa ce ati adaugat toate activitatile</translation>
+        <translation type="obsolete">Activitate impartita adaugata. Va rugam sa luati aminte ca FET in versiunea actuala nu poate verifica duplicatele cand adaugati activitate impartita. Este recomandat sa vedeti statisticile dupa ce ati adaugat toate activitatile</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="666"/>
         <source>FET - help on adding activity(ies)</source>
-        <translation>FET - ajutor la adaugare activitate(activitati)</translation>
+        <translation type="obsolete">FET - ajutor la adaugare activitate(activitati)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1661"/>
@@ -10614,7 +11093,7 @@ Daca aveti nevoie neaparat, vorbiti cu autorul
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="361"/>
         <source>If activities on same day, then place activities consecutive, in a bigger duration lesson</source>
-        <translation>Daca activitatile sunt in aceeasi zi, trebuie puse consecutiv, in o lectie cu durata mai mare</translation>
+        <translation type="obsolete">Daca activitatile sunt in aceeasi zi, trebuie puse consecutiv, in o lectie cu durata mai mare</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2168"/>
@@ -10706,24 +11185,24 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="328"/>
+        <location filename="../src/engine/activity.cpp" line="334"/>
         <source> no teachers, </source>
         <translation> fara profesori, </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="337"/>
+        <location filename="../src/engine/activity.cpp" line="343"/>
         <source> no students, </source>
         <translation> fara studenti, </translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="278"/>
+        <location filename="../src/engine/activity.cpp" line="381"/>
         <source>No teachers for this activity
 </source>
         <translation>Fara profesori pentru aceasta activitate
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="380"/>
+        <location filename="../src/engine/activity.cpp" line="389"/>
         <source>No students sets for this activity
 </source>
         <translation>Fara studenti pentru aceasta activitate
@@ -10892,18 +11371,18 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <location filename="../src/interface/modifyactivityform.cpp" line="292"/>
         <source>No students for this activity
 </source>
-        <translation>Fara studenti pentru aceasta activitate
+        <translation type="obsolete">Fara studenti pentru aceasta activitate
 </translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="420"/>
         <source>Do you really want to add activity with no teacher(s)?</source>
-        <translation>Chiar doriti sa adaugati o activitate fara profesori?</translation>
+        <translation type="obsolete">Chiar doriti sa adaugati o activitate fara profesori?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="462"/>
         <source>Do you really want to add activity with no student set(s)?</source>
-        <translation>Chiar doriti sa adaugati o activitate fara studenti?</translation>
+        <translation type="obsolete">Chiar doriti sa adaugati o activitate fara studenti?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="98"/>
@@ -10940,12 +11419,12 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="365"/>
         <source>Do you really want to have the activity with no teacher(s)?</source>
-        <translation>Chiar doriti sa aveti activitate fara profesori?</translation>
+        <translation type="obsolete">Chiar doriti sa aveti activitate fara profesori?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="407"/>
         <source>Do you really want to have the activity with no student set(s)?</source>
-        <translation>Chiar doriti sa aveti activitate fara studenti?</translation>
+        <translation type="obsolete">Chiar doriti sa aveti activitate fara studenti?</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="126"/>
@@ -10960,7 +11439,7 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="412"/>
         <source>Invalid weight (percentage) for added constraint min n days between activities</source>
-        <translation>Importanta (procentaj) invalid pentru constrangerea min n zile intre activitati adaugata</translation>
+        <translation type="obsolete">Importanta (procentaj) invalid pentru constrangerea min n zile intre activitati adaugata</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="513"/>
@@ -11811,34 +12290,6 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="661"/>
-        <source>This help by Liviu Lalescu, modified 19 September 2007
-
-You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then double click it or press Enter to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.
-
-The same procedure (double click or Enter) applies to adding a students set or removing a students set.
-
-You can check/uncheck show years, show groups or show subgroups.
-
-If you split an activity into more sub-activities per week, you have a multitude of choices:
-You can choose the minimum distance in days between each pair of subactivities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday  to Wednesday for instance is 2 days), etc.
-
- If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min n days with min days = 2 and weight 100%. But if you are not sure that  a timetable exists with this condition, you can lower it by the following procedure: add a constraint min n days with minimum days = 1 and weight 100% and another constraint (which has to be added manually, because the add activity dialog has only one constraint possible) with min days 2 and weight for instance 95% or lower
-
-Please note that the min days distance is a time constraint and you can only see/modify it in the time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints for each activity in the details text box of each activity
-
- If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min n days between activities dialog.
-
-There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive.
-
-Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases. If you encounter such cases, please contact the author, I&apos;ll try to fix this problem).
-
-Note: You cannot add &apos;consecutive if same day&apos; with min n days=0. If you want this, you have to add min days at least 1 (and any weight percentage).
-
-Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform.cpp" line="132"/>
         <source>Modifying all weights for min n days</source>
         <translation type="unfinished"></translation>
@@ -12222,6 +12673,16 @@ Note: this constraint is strong. It means that students must have hours beginnin
         <location filename="../src/engine/timetableexport.cpp" line="2767"/>
         <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform.cpp" line="173"/>
+        <source>Removing:</source>
+        <translation>Sterg:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform.cpp" line="178"/>
+        <source>There will also be removed the related activities from the same larger split activity</source>
+        <translation>Vor fi sterse de asemenea si activitatile inrudite din aceeasi activitate impartita mai mare</translation>
     </message>
 </context>
 <context>

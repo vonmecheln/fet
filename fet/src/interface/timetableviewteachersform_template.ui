@@ -25,47 +25,24 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="0" column="2" rowspan="2" colspan="1">
             <property name="name">
-                <cstring>teachersTextLabel</cstring>
+                <cstring>lockPushButton</cstring>
             </property>
             <property name="text">
-                <string>Teacher</string>
+                <string>Lock selected activities
+(only time)</string>
             </property>
         </widget>
-        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="2" column="2">
             <property name="name">
-                <cstring>teacherNameTextLabel</cstring>
+                <cstring>closePushButton</cstring>
             </property>
             <property name="text">
-                <string>Teacher's name</string>
+                <string>Close</string>
             </property>
         </widget>
-        <widget class="QTable" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>teachersTimetableTable</cstring>
-            </property>
-            <property name="numRows">
-                <number>3</number>
-            </property>
-            <property name="numCols">
-                <number>3</number>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="1">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
-            <property name="name">
-                <cstring>teachersListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="1" column="1">
+        <widget class="QLabel" row="0" column="1">
             <property name="name">
                 <cstring>detailsTextLabel</cstring>
             </property>
@@ -73,7 +50,29 @@
                 <string>Details</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="2" column="1">
+        <widget class="QTable" row="4" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>teachersTimetableTable</cstring>
+            </property>
+            <property name="numRows">
+                <number>12</number>
+            </property>
+            <property name="numCols">
+                <number>5</number>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>teacherNameTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Teacher's name</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="1" rowspan="2" colspan="1">
             <property name="name">
                 <cstring>detailsTextEdit</cstring>
             </property>
@@ -84,20 +83,22 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QPushButton" row="5" column="1">
+        <widget class="QLabel" row="0" column="0">
             <property name="name">
-                <cstring>closePushButton</cstring>
+                <cstring>teachersTextLabel</cstring>
             </property>
             <property name="text">
-                <string>Close</string>
+                <string>Teacher</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="5" column="0">
+        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="1">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
             <property name="name">
-                <cstring>lockPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Lock selected activities (only time)</string>
+                <cstring>teachersListBox</cstring>
             </property>
         </widget>
     </grid>
@@ -128,6 +129,13 @@
         <slot>lock()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>teachersListBox</tabstop>
+    <tabstop>teachersTimetableTable</tabstop>
+    <tabstop>lockPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+    <tabstop>detailsTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>detailActivity(int, int)</slot>
     <slot>teacherChanged(const QString&amp;)</slot>

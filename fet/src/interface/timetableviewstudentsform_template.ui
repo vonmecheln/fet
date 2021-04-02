@@ -92,10 +92,10 @@
                 <cstring>studentsTimetableTable</cstring>
             </property>
             <property name="numRows">
-                <number>3</number>
+                <number>12</number>
             </property>
             <property name="numCols">
-                <number>3</number>
+                <number>5</number>
             </property>
             <property name="readOnly">
                 <bool>true</bool>
@@ -177,6 +177,15 @@
         <slot>lock()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>yearsListBox</tabstop>
+    <tabstop>groupsListBox</tabstop>
+    <tabstop>subgroupsListBox</tabstop>
+    <tabstop>studentsTimetableTable</tabstop>
+    <tabstop>lockPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+    <tabstop>detailsTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>groupChanged(const QString&amp;)</slot>
     <slot>detailActivity(int, int)</slot>

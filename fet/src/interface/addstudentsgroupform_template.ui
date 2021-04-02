@@ -103,6 +103,7 @@
     </connection>
 </connections>
 <tabstops>
+    <tabstop>yearNameLineEdit</tabstop>
     <tabstop>nameLineEdit</tabstop>
     <tabstop>numberSpinBox</tabstop>
     <tabstop>addStudentsYearPushButton</tabstop>

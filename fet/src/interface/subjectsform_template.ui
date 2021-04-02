@@ -163,7 +163,10 @@
     <tabstop>removeSubjectPushButton</tabstop>
     <tabstop>renameSubjectPushButton</tabstop>
     <tabstop>sortSubjectsPushButton</tabstop>
+    <tabstop>activateSubjectPushButton</tabstop>
+    <tabstop>deactivateSubjectPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
+    <tabstop>currentSubjectTextEdit</tabstop>
 </tabstops>
 <slots>
     <slot>addSubject()</slot>

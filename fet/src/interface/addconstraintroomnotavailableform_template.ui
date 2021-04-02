@@ -159,6 +159,15 @@
         <slot>close()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>roomsComboBox</tabstop>
+    <tabstop>dayComboBox</tabstop>
+    <tabstop>startHourComboBox</tabstop>
+    <tabstop>endHourComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addConstraint()</slot>
 </slots>

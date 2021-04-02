@@ -26,14 +26,6 @@
 #include <QDesktopWidget>
 
 #define subTab(i)	subactivitiesTabWidget->page(i)
-/*#define par(i)		(i==0?parity1CheckBox:			\
-			(i==1?parity2CheckBox:					\
-			(i==2?parity3CheckBox:					\
-			(i==3?parity4CheckBox:					\
-			(i==4?parity5CheckBox:					\
-			(i==5?parity6CheckBox:					\
-			(i==6?parity7CheckBox:					\
-			(parity8CheckBox))))))))*/
 #define dur(i)		(i==0?duration1SpinBox:			\
 			(i==1?duration2SpinBox:					\
 			(i==2?duration3SpinBox:					\
@@ -108,6 +100,11 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	splitSpinBox->setMinValue(nSplit);
 	splitSpinBox->setMaxValue(nSplit);	
 	splitSpinBox->setValue(nSplit);	
+	
+	if(nSplit==1)
+		currentActivityTextLabel->setText(tr("Current activity"));
+	else
+		currentActivityTextLabel->setText(tr("Current activities"));
 	
 	if(this->_activity->computeNTotalStudents==false)
 		nStudentsSpinBox->setValue(this->_activity->nTotalStudents);
@@ -271,77 +268,85 @@ void ModifyActivityForm::subjectTagChanged(const QString& dummy)
 void ModifyActivityForm::activityChanged()
 {
 	QString s;
-	s+=QObject::tr("Current activity:");
-	s+="\n";
+	//s+=tr("Current activity:");
+	//s+="\n";
 	
-	if(selectedTeachersListBox->count()==0)
-		s+=QObject::tr("No teachers for this activity\n");
+	if(selectedTeachersListBox->count()==0){
+		if(splitSpinBox->value()==1)
+			s+=tr("No teachers for this activity\n");
+		else
+			s+=tr("No teachers for these activities\n");
+	}
 	else
 		for(uint i=0; i<selectedTeachersListBox->count(); i++){
-			s+=QObject::tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
+			s+=tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
 			s+="\n";
 		}
 
-	s+=QObject::tr("Subject=%1").arg(subjectsComboBox->currentText());
+	s+=tr("Subject=%1").arg(subjectsComboBox->currentText());
 	s+="\n";
 	if(subjectTagsComboBox->currentText()!=""){
-		s+=QObject::tr("Subject tag=%1").arg(subjectTagsComboBox->currentText());
+		s+=tr("Subject tag=%1").arg(subjectTagsComboBox->currentText());
 		s+="\n";
 	}
-	if(selectedStudentsListBox->count()==0)
-		s+=QObject::tr("No students for this activity\n");
+	if(selectedStudentsListBox->count()==0){
+		if(splitSpinBox->value()==1)
+			s+=tr("No students for this activity\n");
+		else
+			s+=tr("No students for these activities\n");
+	}
 	else
 		for(uint i=0; i<selectedStudentsListBox->count(); i++){
-			s+=QObject::tr("Students=%1").arg(selectedStudentsListBox->text(i));
+			s+=tr("Students=%1").arg(selectedStudentsListBox->text(i));
 			s+="\n";
 		}
 	
 	if(nStudentsSpinBox->value()==-1){
-		s+=QObject::tr("Number of students: computed from corresponding students sets");
+		s+=tr("Number of students: computed from corresponding students sets");
 		s+="\n";	
 	}
 	else{
-		s+=QObject::tr("Number of students=%1").arg(nStudentsSpinBox->value());
+		s+=tr("Number of students=%1").arg(nStudentsSpinBox->value());
 		s+="\n";	
 	}
 
 	if(splitSpinBox->value()==1){
-		s+=QObject::tr("Duration=%1").arg(dur(0)->value());
+		s+=tr("Duration=%1").arg(dur(0)->value());
 		s+="\n";
 		/*if(par(0)->isChecked()){
-			s+=QObject::tr("Fortnightly activity");
+			s+=tr("Fortnightly activity");
 			s+="\n";
 		}*/
 		
 		if(activ(0)->isChecked()){
-			s+=QObject::tr("Active activity");
+			s+=tr("Active activity");
 			s+="\n";
 		}
 		else{
-			s+=QObject::tr("Non-active activity");
+			s+=tr("Non-active activity");
 			s+="\n";
 		}
 	}
 	else{
-		s+=QObject::tr("This activity will be split into %1 lessons per week").arg(splitSpinBox->value());
+		s+=tr("This larger activity is split into %1 smaller activities per week").arg(splitSpinBox->value());
 		s+="\n";
 		s+="\n";
 
 		for(int i=0; i<splitSpinBox->value(); i++){
-			s+=QObject::tr("Componenent %1:").arg(i+1);
+			s+=tr("Componenent %1:").arg(i+1);
 			s+="\n";
-			s+=QObject::tr("Duration=%1").arg(dur(i)->value());
+			s+=tr("Duration=%1").arg(dur(i)->value());
 			s+="\n";
 			/*if(par(i)->isChecked()){
-				s+=QObject::tr("Fortnightly activity");
+				s+=tr("Fortnightly activity");
 				s+="\n";
 			}*/
 			if(activ(i)->isChecked()){
-				s+=QObject::tr("Active activity");
+				s+=tr("Active activity");
 				s+="\n";
 			}
 			else{
-				s+=QObject::tr("Non-active activity");
+				s+=tr("Non-active activity");
 				s+="\n";
 			}
 			s+="\n";
@@ -361,16 +366,16 @@ void ModifyActivityForm::ok()
 	//teachers
 	QStringList teachers_names;
 	if(selectedTeachersListBox->count()<=0){
-		int t=QMessageBox::question(this, QObject::tr("FET question"),
-		 QObject::tr("Do you really want to have the activity with no teacher(s)?"),
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Do you really want to have the activity with no teacher(s)?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 
 		if(t==QMessageBox::Cancel)
 			return;
 	}
 	else if(selectedTeachersListBox->count()>(uint)(MAX_TEACHERS_PER_ACTIVITY)){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Too many teachers for an activity. The current maximum is %1.\n"
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Too many teachers for an activity. The current maximum is %1.\n"
 			"If you really need more teachers per activity, please talk to the author").
 			arg(MAX_TEACHERS_PER_ACTIVITY));
 		return;
@@ -386,8 +391,8 @@ void ModifyActivityForm::ok()
 	QString subject_name=subjectsComboBox->currentText();
 	int subject_index=gt.rules.searchSubject(subject_name);
 	if(subject_index<0){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid subject"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid subject"));
 		return;
 	}
 
@@ -395,16 +400,16 @@ void ModifyActivityForm::ok()
 	QString subject_tag_name=subjectTagsComboBox->currentText();
 	int subject_tag_index=gt.rules.searchSubjectTag(subject_tag_name);
 	if(subject_tag_index<0 && subject_tag_name!=""){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid subject tag"));
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid subject tag"));
 		return;
 	}
 
 	//students
 	QStringList students_names;
 	if(selectedStudentsListBox->count()<=0){
-		int t=QMessageBox::question(this, QObject::tr("FET question"),
-		 QObject::tr("Do you really want to have the activity with no student set(s)?"),
+		int t=QMessageBox::question(this, tr("FET question"),
+		 tr("Do you really want to have the activity with no student set(s)?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 
 		if(t==QMessageBox::Cancel)

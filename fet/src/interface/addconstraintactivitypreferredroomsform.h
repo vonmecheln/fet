@@ -41,11 +41,19 @@ public:
 	~AddConstraintActivityPreferredRoomsForm();
 
 	void updateRoomsListBox();
+	void updateActivitiesComboBox();	
 	
 	void addRoom();
 	void removeRoom();
 
 	void addConstraint();
+
+	bool filterOk(Activity* a);
+	void filterChanged();
+	
+private:
+	//the id's of the activities listed in the activities combo
+	QList<int> activitiesList;
 };
 
 #endif

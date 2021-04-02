@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>598</width>
+            <width>655</width>
             <height>589</height>
         </rect>
     </property>
@@ -234,6 +234,16 @@
         <slot>removeRoom()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>activitiesComboBox</tabstop>
+    <tabstop>roomsListBox</tabstop>
+    <tabstop>addPushButton</tabstop>
+    <tabstop>removePushButton</tabstop>
+    <tabstop>selectedRoomsListBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addRoom()</slot>
     <slot>removeRoom()</slot>

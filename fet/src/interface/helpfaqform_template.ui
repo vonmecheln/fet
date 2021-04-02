@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 21 September 2007
+this documentation by Liviu Lalescu, reviewed and modified - 26 September 2007
 
 --------
 
@@ -53,18 +53,28 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 
 - Subjects (the names of the possible courses, eg. Maths, Physics, etc.).
 
+- Subject tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity)
+
 - Rooms (classrooms).
 
-- Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on.
+- Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on. An activity can have optionally a subject tag, to help you with some constraints.
 
 - Constraints. They can be: time constraints (referring to the allocated day and hour) or space constraints (referring to rooms allocation). They have a weight percentage, from 0.0% to 100.0%. 100% means that the constraint will always be respected and if this constraint is impossible, FET will not be able to generate a timetable.
 
 
 -------------------------------------------------------------------------------
 
+Q: Why some activities appear indented while others not?
+
+A: The activities are indented for easier visualization. The non-indented ones are the representatives of a larger split activity (their id is the group id of the larger split activity), while indented ones are the other components of this larger split activity.
+
+-------------------------------------------------------------------------------
+
+
 Q: Is it possible to use non-integer weights for constraints?
 
 A: Yes. Using values like 99.75% might be good sometimes.
+
 
 -------------------------------------------------------------------------------
 

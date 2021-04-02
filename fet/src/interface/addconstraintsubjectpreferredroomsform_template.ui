@@ -224,6 +224,16 @@
         <slot>removeRoom()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>roomsListBox</tabstop>
+    <tabstop>addPushButton</tabstop>
+    <tabstop>removePushButton</tabstop>
+    <tabstop>selectedRoomsListBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addRoom()</slot>
     <slot>removeRoom()</slot>

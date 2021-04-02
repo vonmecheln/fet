@@ -61,17 +61,17 @@ extern int TIMETABLE_HTML_LEVEL;
 /**
 The maximum number of different years of students
 */
-const int MAX_YEARS=100;
+const int MAX_YEARS=500;
 
 /**
 Maximum number of allowed groups per year of students
 */
-const int MAX_GROUPS_PER_YEAR=100;
+const int MAX_GROUPS_PER_YEAR=500;
 
 /**
 Maximum number of allowed subgroups per group of students
 */
-const int MAX_SUBGROUPS_PER_GROUP=100;
+const int MAX_SUBGROUPS_PER_GROUP=500;
 
 /**
 The maximum total number of different groups of students

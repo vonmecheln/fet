@@ -27,7 +27,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.4.2";
+const QString FET_VERSION="5.4.4";
 
 const int NUMBER_OF_LANGUAGES=12;
 

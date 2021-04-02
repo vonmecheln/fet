@@ -208,6 +208,13 @@ gaps.</string>
         <slot>constraintChanged()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>addCurrentConstraint()</slot>
     <slot>constraintChanged()</slot>

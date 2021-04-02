@@ -321,8 +321,14 @@ QString Activity::getDescription(Rules& r)
 	QString s;
 	if(!this->isSplit())
 		s=QObject::tr("Activity: ");
-	else
-		s=QObject::tr("Sub-activity: ");
+	else{
+		if(this->id==this->activityGroupId)
+			s="";
+		else
+			s="   ";
+		s+=QObject::tr("Activity: ");
+		//s=QObject::tr("Sub-activity: ");
+	}
 	s+=QObject::tr("T:");
 	if(teachersNames.count()==0)
 		s+=QObject::tr(" no teachers, ");
@@ -366,8 +372,11 @@ QString Activity::getDetailedDescription(Rules &r)
 	QString s;
 	if(!this->isSplit())
 		s=QObject::tr("Activity:\n");
-	else
-		s=QObject::tr("Sub-activity:\n");
+	else{
+		s=QObject::tr("Activity:\n");
+		//s+=QObject::tr("Component of a split activity\n");
+		//s=QObject::tr("Sub-activity:\n");
+	}
 	if(teachersNames.count()==0)
 		s+=QObject::tr("No teachers for this activity\n");
 	else

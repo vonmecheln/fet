@@ -37,6 +37,8 @@
 
 
 class AddActivityForm : public AddActivityForm_template  {
+	Q_OBJECT
+
 public: 
 	AddActivityForm();
 	~AddActivityForm();

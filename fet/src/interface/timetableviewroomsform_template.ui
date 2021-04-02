@@ -46,10 +46,10 @@
                 <cstring>roomsTimetableTable</cstring>
             </property>
             <property name="numRows">
-                <number>3</number>
+                <number>12</number>
             </property>
             <property name="numCols">
-                <number>3</number>
+                <number>5</number>
             </property>
             <property name="readOnly">
                 <bool>true</bool>
@@ -156,6 +156,15 @@
         <slot>lockSpace()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>roomsListBox</tabstop>
+    <tabstop>detailsTextEdit</tabstop>
+    <tabstop>roomsTimetableTable</tabstop>
+    <tabstop>lockTimePushButton</tabstop>
+    <tabstop>lockSpacePushButton</tabstop>
+    <tabstop>lockPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>detailActivity(int, int)</slot>
     <slot>roomChanged(const QString&amp;)</slot>

@@ -342,6 +342,19 @@
         <slot>filterChanged()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activitiesComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>dayComboBox</tabstop>
+    <tabstop>startHourComboBox</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>constraintChanged()</slot>

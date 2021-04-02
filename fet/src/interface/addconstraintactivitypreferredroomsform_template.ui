@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>614</width>
-            <height>540</height>
+            <width>694</width>
+            <height>533</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,7 +19,33 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="3" column="1">
+            <property name="name">
+                <cstring>layout12</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>removePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Remove</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -51,7 +77,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="3">
+        <widget class="QLayoutWidget" row="5" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -77,33 +103,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="1">
-            <property name="name">
-                <cstring>layout12</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>removePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Remove</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="2" column="0">
+        <widget class="QLayoutWidget" row="3" column="0">
             <property name="name">
                 <cstring>layout10</cstring>
             </property>
@@ -137,7 +137,12 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="2">
+        <widget class="QComboBox" row="2" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>activitiesComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="3" column="2">
             <property name="name">
                 <cstring>layout9</cstring>
             </property>
@@ -171,18 +176,78 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>activitiesComboBox</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+        <widget class="QLabel" row="1" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>activitiesTextLabel</cstring>
             </property>
             <property name="text">
                 <string>Activity</string>
             </property>
+        </widget>
+        <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>periodGroupBox_2</cstring>
+            </property>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QComboBox" row="1" column="1">
+                    <property name="name">
+                        <cstring>studentsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="1">
+                    <property name="name">
+                        <cstring>studentsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Students set</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="1" column="0">
+                    <property name="name">
+                        <cstring>teachersComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>teachersTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Teacher</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="4" column="0">
+                    <property name="name">
+                        <cstring>subjectsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>subjectsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Subject</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="1">
+                    <property name="name">
+                        <cstring>subjectTagsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Subject tag</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="3" column="1" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>subjectTagsComboBox</cstring>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>
@@ -223,11 +288,50 @@
         <receiver>AddConstraintActivityPreferredRoomsForm_template</receiver>
         <slot>removeRoom()</slot>
     </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomsForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomsForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomsForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomsForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activitiesComboBox</tabstop>
+    <tabstop>roomsListBox</tabstop>
+    <tabstop>addPushButton</tabstop>
+    <tabstop>removePushButton</tabstop>
+    <tabstop>selectedRoomsListBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addRoom()</slot>
     <slot>removeRoom()</slot>
     <slot>addConstraint()</slot>
+    <slot>filterChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

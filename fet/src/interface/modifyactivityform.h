@@ -38,6 +38,8 @@
 
 
 class ModifyActivityForm : public ModifyActivityForm_template  {
+	Q_OBJECT
+
 public:
 	int _id;
 	int _activityGroupId;

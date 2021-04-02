@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>523</width>
+            <width>622</width>
             <height>231</height>
         </rect>
     </property>
@@ -117,6 +117,13 @@
         <slot>ok()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>activitiesComboBox</tabstop>
+    <tabstop>roomsComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>cancel()</slot>

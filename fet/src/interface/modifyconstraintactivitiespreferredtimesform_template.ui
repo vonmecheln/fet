@@ -165,6 +165,16 @@
         <slot>ok()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>preferredTimesTable</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>okPushButton</tabstop>
+    <tabstop>cancelPushButton</tabstop>
+</tabstops>
 <slots>
     <slot>ok()</slot>
     <slot>tableClicked(int,int,int,const QPoint&amp;)</slot>

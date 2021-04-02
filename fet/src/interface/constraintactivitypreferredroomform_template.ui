@@ -155,6 +155,15 @@
         <slot>modifyConstraint()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>constraintsListBox</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>modifyConstraintPushButton</tabstop>
+    <tabstop>removeConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+    <tabstop>roomsComboBox</tabstop>
+    <tabstop>currentConstraintTextEdit</tabstop>
+</tabstops>
 <slots>
     <slot>addConstraint()</slot>
     <slot>constraintChanged(int)</slot>

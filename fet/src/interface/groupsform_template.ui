@@ -197,6 +197,18 @@
         <slot>modifyGroup()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>yearsListBox</tabstop>
+    <tabstop>groupsListBox</tabstop>
+    <tabstop>groupTextEdit</tabstop>
+    <tabstop>addGroupPushButton</tabstop>
+    <tabstop>removeGroupPushButton</tabstop>
+    <tabstop>modifyGroupPushButton</tabstop>
+    <tabstop>sortGroupsPushButton</tabstop>
+    <tabstop>activateStudentsPushButton</tabstop>
+    <tabstop>deactivateStudentsPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addGroup()</slot>
     <slot>removeGroup()</slot>

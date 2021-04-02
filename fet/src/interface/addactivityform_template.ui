@@ -383,7 +383,7 @@
                         <cstring>splitGroupBox</cstring>
                     </property>
                     <property name="title">
-                        <string>Split this activity into ... lessons per week.</string>
+                        <string>Split into ... activities per week.</string>
                     </property>
                     <grid>
                         <property name="name">
@@ -436,7 +436,7 @@
                                             <property name="text">
                                                 <string>The minimum required 
 distance in days between 
-each pair of subactivities</string>
+each pair of activities</string>
                                             </property>
                                         </widget>
                                         <widget class="QSpinBox">
@@ -970,7 +970,7 @@ added constraint
  (min days between 
 activities constraint)
 Recommended:
-95%-100%</string>
+95.0%-100.0%</string>
                                     </property>
                                 </widget>
                                 <widget class="QLayoutWidget">
@@ -986,7 +986,7 @@ Recommended:
                                                 <cstring>percentageLineEdit</cstring>
                                             </property>
                                             <property name="text">
-                                                <string>95.0</string>
+                                                <string>95</string>
                                             </property>
                                         </widget>
                                         <widget class="QLabel">

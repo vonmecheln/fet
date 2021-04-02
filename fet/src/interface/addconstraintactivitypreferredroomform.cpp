@@ -33,7 +33,43 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
-						
+
+	teachersComboBox->insertItem("");
+	for(int i=0; i<gt.rules.teachersList.size(); i++){
+		Teacher* tch=gt.rules.teachersList[i];
+		teachersComboBox->insertItem(tch->name);
+	}
+	teachersComboBox->setCurrentItem(0);
+
+	subjectsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.subjectsList.size(); i++){
+		Subject* sb=gt.rules.subjectsList[i];
+		subjectsComboBox->insertItem(sb->name);
+	}
+	subjectsComboBox->setCurrentItem(0);
+
+	subjectTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.subjectTagsList.size(); i++){
+		SubjectTag* st=gt.rules.subjectTagsList[i];
+		subjectTagsComboBox->insertItem(st->name);
+	}
+	subjectTagsComboBox->setCurrentItem(0);
+
+	studentsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.yearsList.size(); i++){
+		StudentsYear* sty=gt.rules.yearsList[i];
+		studentsComboBox->insertItem(sty->name);
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+			studentsComboBox->insertItem(stg->name);
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+				studentsComboBox->insertItem(sts->name);
+			}
+		}
+	}
+	studentsComboBox->setCurrentItem(0);
+	
 	updateActivitiesComboBox();
 	updateRoomsComboBox();
 }
@@ -42,13 +78,66 @@ AddConstraintActivityPreferredRoomForm::~AddConstraintActivityPreferredRoomForm(
 {
 }
 
-void AddConstraintActivityPreferredRoomForm::updateActivitiesComboBox()
+bool AddConstraintActivityPreferredRoomForm::filterOk(Activity* act)
 {
+	QString tn=teachersComboBox->currentText();
+	QString stn=studentsComboBox->currentText();
+	QString sbn=subjectsComboBox->currentText();
+	QString sbtn=subjectTagsComboBox->currentText();
+	int ok=true;
+
+	//teacher
+	if(tn!=""){
+		bool ok2=false;
+		for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
+			if(*it == tn){
+				ok2=true;
+				break;
+			}
+		if(!ok2)
+			ok=false;
+	}
+
+	//subject
+	if(sbn!="" && sbn!=act->subjectName)
+		ok=false;
+		
+	//subject tag
+	if(sbtn!="" && sbtn!=act->subjectTagName)
+		ok=false;
+		
+	//students
+	if(stn!=""){
+		bool ok2=false;
+		for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
+			if(*it == stn){
+				ok2=true;
+				break;
+			}
+		if(!ok2)
+			ok=false;
+	}
+	
+	return ok;
+}
+
+void AddConstraintActivityPreferredRoomForm::updateActivitiesComboBox(){
 	activitiesComboBox->clear();
+	activitiesList.clear();
+	
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		Activity* act=gt.rules.activitiesList[i];
-		activitiesComboBox->insertItem(act->getDescription(gt.rules));
+		
+		if(filterOk(act)){
+			activitiesComboBox->insertItem(act->getDescription(gt.rules));
+			this->activitiesList.append(act->id);
+		}
 	}
+}
+
+void AddConstraintActivityPreferredRoomForm::filterChanged()
+{
+	this->updateActivitiesComboBox();
 }
 
 void AddConstraintActivityPreferredRoomForm::updateRoomsComboBox()
@@ -73,19 +162,27 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	int i=activitiesComboBox->currentItem();
+	int id;
+	int tmp2=activitiesComboBox->currentItem();
+	//assert(tmp2<gt.rules.activitiesList.size());
+	//assert(tmp2<activitiesList.size());
+	if(tmp2<0 || tmp2>=gt.rules.activitiesList.size() || tmp2>=activitiesList.size()){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid activity"));
+		return;
+	}
+	else
+		id=activitiesList.at(tmp2);
+		
+	/*int i=activitiesComboBox->currentItem();
 	if(i<0 || activitiesComboBox->count()<=0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid activity"));
 		return;
 	}
-	Activity* act=gt.rules.activitiesList.at(i);
+	Activity* act=gt.rules.activitiesList.at(i);*/
 
-	i=roomsComboBox->currentItem();
+	int i=roomsComboBox->currentItem();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Invalid room"));
@@ -93,10 +190,10 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	}
 	QString room=roomsComboBox->currentText();
 
-	ctr=new ConstraintActivityPreferredRoom(weight/*, compulsory*/, act->id, room);
+	ctr=new ConstraintActivityPreferredRoom(weight, id, room);
 
-	bool tmp2=gt.rules.addSpaceConstraint(ctr);
-	if(tmp2){
+	bool tmp3=gt.rules.addSpaceConstraint(ctr);
+	if(tmp3){
 		QString s=QObject::tr("Constraint added:");
 		s+="\n";
 		s+=ctr->getDetailedDescription(gt.rules);

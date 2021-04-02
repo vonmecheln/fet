@@ -84,7 +84,7 @@
                         <cstring>splitGroupBox</cstring>
                     </property>
                     <property name="title">
-                        <string>This activity is split into ... lessons per week.</string>
+                        <string>Is split into ... activities per week.</string>
                     </property>
                     <vbox>
                         <property name="name">
@@ -111,7 +111,7 @@
                             <property name="text">
                                 <string>This value cannot be changed. If you need to 
 modify it, please remove the corresponding 
-(sub-)activities and add a new split activity</string>
+activities and add a new split activity</string>
                             </property>
                         </widget>
                     </vbox>

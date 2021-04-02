@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>523</width>
-            <height>231</height>
+            <width>665</width>
+            <height>370</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,37 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLineEdit" row="5" column="2">
-            <property name="name">
-                <cstring>weightLineEdit</cstring>
-            </property>
-            <property name="text">
-                <string>100</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Weight percentage (recommended: 0.0%-100.0%)</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="6" column="0">
-            <property name="name">
-                <cstring>addConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add constraint</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="6" column="2">
+        <widget class="QPushButton" row="7" column="1">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -57,29 +27,12 @@
                 <string>Close</string>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>roomsTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Room</string>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>roomsComboBox</cstring>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="3" column="0" rowspan="1" colspan="3">
+        <widget class="QComboBox" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>roomsComboBox</cstring>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QLabel" row="1" column="0">
             <property name="name">
                 <cstring>activitiesTextLabel</cstring>
             </property>
@@ -96,10 +49,122 @@
                 <cstring>roomsComboBox</cstring>
             </property>
         </widget>
-        <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="3">
+        <widget class="QPushButton" row="7" column="0">
+            <property name="name">
+                <cstring>addConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Add constraint</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>activitiesComboBox</cstring>
             </property>
+        </widget>
+        <widget class="QLabel" row="5" column="1">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight percentage (recommended: 0.0%-100.0%)</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0">
+            <property name="name">
+                <cstring>roomsTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Room</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>roomsComboBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="6" column="1">
+            <property name="name">
+                <cstring>weightLineEdit</cstring>
+            </property>
+            <property name="text">
+                <string>100</string>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>periodGroupBox_2</cstring>
+            </property>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QComboBox" row="1" column="1">
+                    <property name="name">
+                        <cstring>studentsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="1">
+                    <property name="name">
+                        <cstring>studentsTextLabel_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Students set</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="1" column="0">
+                    <property name="name">
+                        <cstring>teachersComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>teachersTextLabel_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Teacher</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="4" column="0">
+                    <property name="name">
+                        <cstring>subjectsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>subjectsTextLabel_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Subject</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="1">
+                    <property name="name">
+                        <cstring>subjectTagsTextLabel_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Subject tag</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="3" column="1" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>subjectTagsComboBox</cstring>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>
@@ -116,9 +181,45 @@
         <receiver>AddConstraintActivityPreferredRoomForm_template</receiver>
         <slot>addConstraint()</slot>
     </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>AddConstraintActivityPreferredRoomForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>teachersComboBox</tabstop>
+    <tabstop>studentsComboBox</tabstop>
+    <tabstop>subjectsComboBox</tabstop>
+    <tabstop>subjectTagsComboBox</tabstop>
+    <tabstop>activitiesComboBox</tabstop>
+    <tabstop>roomsComboBox</tabstop>
+    <tabstop>weightLineEdit</tabstop>
+    <tabstop>addConstraintPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>addConstraint()</slot>
+    <slot>filterChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
