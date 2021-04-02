@@ -404,13 +404,13 @@ void TimetableGenerateForm::simulationFinished()
 
 	Solution& c=gen.c;
 
-	TimetableExport::getStudentsTimetable(c);
-	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
-
 	//needed to find the conflicts strings
 	QString tmp;
 	c.fitness(gt.rules, &tmp);
+
+	TimetableExport::getStudentsTimetable(c);
+	TimetableExport::getTeachersTimetable(c);
+	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsString = "";

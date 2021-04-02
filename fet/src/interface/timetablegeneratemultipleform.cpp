@@ -159,8 +159,8 @@ void TimetableGenerateMultipleForm::help()
 
 	QMessageBox::information(this, tr("FET information"), tr("Notice: you can only see generated timetables on the hard disk,"
 	 " in html or xml format, or latest timetable in the FET Timetable/View menu. It is needed that the directory"
-	 " %1 to be emptied+deleted before proceeeding."
-	 " Please note that multiple generation is a new feature (20 Aug. 2007) so it may have problems. Please report any bug.")
+	 " %1 to be emptied+deleted before proceeeding.\n\nPlease note that each timetable might occupy 1 MB of hard disk space or more,"
+	 " so make sure you have enough space.")
 	 .arg(destDir));
 }
 
@@ -230,6 +230,10 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 	s+="\n";
 	currentResultsTextEdit->setText(s);
 
+	//needed to get the conflicts string
+	QString tmp;
+	genMulti.c.fitness(gt.rules, &tmp);
+	
 	TimetableExport::getStudentsTimetable(genMulti.c);
 	TimetableExport::getTeachersTimetable(genMulti.c);
 	TimetableExport::getRoomsTimetable(genMulti.c);

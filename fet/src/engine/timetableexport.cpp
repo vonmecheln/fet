@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 //**********************************************************************************************************************/
+//August 2007
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 //(old code by Liviu Lalescu)
 //added features: - xhtml 1.0 strict valide

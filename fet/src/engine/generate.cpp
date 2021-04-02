@@ -1701,7 +1701,9 @@ impossiblenotoverlapping:
 
 		//allowed from 2 activities consecutive
 		bool ok2activitiesconsecutive=true;
+		
 		for(int i=0; i<constr2ActivitiesConsecutiveActivities[ai].count(); i++){
+			//direct
 			int ai2=constr2ActivitiesConsecutiveActivities[ai].at(i);
 			double perc=constr2ActivitiesConsecutivePercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
@@ -1751,7 +1753,6 @@ impossiblenotoverlapping:
 				
 				if(d2!=d)
 					ok=false;
-				//else if(h+act->duration > h2)
 				else if(h2+gt.rules.internalActivitiesList[ai2].duration > h)
 					ok=false;
 				else if(d==d2){
@@ -1780,6 +1781,7 @@ impossiblenotoverlapping:
 				}
 			}
 		}
+		
 impossible2activitiesconsecutive:
 		if(!ok2activitiesconsecutive){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
