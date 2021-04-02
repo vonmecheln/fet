@@ -1652,14 +1652,16 @@ void sortActivities()
 {
 	//computeMinNDays();
 	
-	static int nCompatible[MAX_ACTIVITIES];
+	static int nIncompatible[MAX_ACTIVITIES];
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		nCompatible[i]=0;
+		nIncompatible[i]=0;
 		
 		for(int j=0; j<gt.rules.nInternalActivities; j++)
-			if(i!=j && activitiesConflictingPercentage[i][j]==-1)
-				nCompatible[i]++;
+			if(i!=j && activitiesConflictingPercentage[i][j]>=0)
+				nIncompatible[i]+=gt.rules.internalActivitiesList[j].duration;
+
+		nIncompatible[i]*=gt.rules.internalActivitiesList[i].duration;
 				
 	/*	nCompatible[i] -= 5
 		 *minNDaysListOfActivities[i].count()
@@ -1676,7 +1678,7 @@ void sortActivities()
 		
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		for(int j=i+1; j<gt.rules.nInternalActivities; j++){
-			if(nCompatible[permutation[i]]>nCompatible[permutation[j]]){
+			if(nIncompatible[permutation[i]]<nIncompatible[permutation[j]]){
 				int t=permutation[i];
 				permutation[i]=permutation[j];
 				permutation[j]=t;

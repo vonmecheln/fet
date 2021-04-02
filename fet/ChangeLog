@@ -953,4 +953,6 @@ Versions 5.1.0 -
 	not remove activities any longer) (suggested by Volker Dirr)
 	- Improvement in adding constraint min n days between activities (filter) (suggested by
 	Volker Dirr)
+- Version 5.1.9
+	- Better initial sorting -> better automatic generation
 	
