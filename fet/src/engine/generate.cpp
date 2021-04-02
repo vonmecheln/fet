@@ -115,6 +115,9 @@ int tabu_times[MAX_TABU];
 static int tchTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 
+const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=100000;
+
+
 inline bool skipRandom(double weightPercentage)
 {
 	if(weightPercentage<0)
@@ -1435,7 +1438,11 @@ void Generate::randomswap(int ai, int level){
 #if 0
 	int perm[MAX_HOURS_PER_WEEK];
 #endif
-	
+
+	int activity_count_impossible_tries=1;
+
+again_if_impossible_activity:
+
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		perm[i]=i;
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++){
@@ -5130,7 +5137,18 @@ impossibleroomnotavailable:
 			foreach(int ai2, conflActivities[newtime])
 				assert(!swappedActivities[ai2]);
 	}*/
-	
+
+	if(level==0 && (nConflActivities[conflPerm[perm[0]]]==MAX_ACTIVITIES)){
+		if(activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
+			activity_count_impossible_tries++;
+			goto again_if_impossible_activity;
+		}
+		else{
+			cout<<__FILE__<<" line "<<__LINE__<<"- WARNING - after retrying for "<<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0
+			<<" times - no possible timeslots for activity with id=="<<gt.rules.internalActivitiesList[ai].id<<endl;
+		}
+	}
+		
 	if(level==0){
 		int minIndexAct[MAX_HOURS_PER_WEEK];
 		int nWrong[MAX_HOURS_PER_WEEK];

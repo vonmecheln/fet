@@ -1054,6 +1054,7 @@ Versions 5.3.0 - 5.3.6
 	- Added additional tests to check for impossible constraint min n days between activities
 	- Added possibility to change all min n days constraints' weight by a single command
 ---------------------------------------------------------------------------------
+Versions 5.4.0 - 5.4.
 - Version 5.4.0
 	- Improvement in Spanish translation by Jose Cesar Fernandez Lopez
 	- Now the max hours daily for teachers and students has any weight percentage allowed, again
@@ -1093,4 +1094,10 @@ Versions 5.3.0 - 5.3.6
 	- Groups and years timetable by Volker Dirr (in addition to old subgroups timetable)
 	- Small interface improvements (added filters in dialog of constraints: activity preferred time(s),
 	min n days between activities, activity preferred room(s))
-	
+- Version 5.4.10
+	- Improvement in generation, now retrying 100,000 times before giving up for a specific activity,
+	works even if activity has preferred times with high weight on impossible slots
+	(the idea is that if you have constraints activity(ies) preferred times for impossible
+	slots with weight under 100%, you will get eventually a timetable which contradicts these constraints
+	and is viable. This can be considered important bug fix
+	- Greek translation by Dimitrios Ropokis

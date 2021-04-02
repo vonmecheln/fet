@@ -124,20 +124,21 @@ static HttpGet getter;
 static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
 
 //English has to be counted also
-const int NUMBER_OF_LANGUAGES=12;
+const int NUMBER_OF_LANGUAGES=13;
 
 const int LANGUAGE_EN_GB_POSITION=0;
 const int LANGUAGE_CA_POSITION=1;
 const int LANGUAGE_DE_POSITION=2;
-const int LANGUAGE_ES_POSITION=3;
-const int LANGUAGE_FR_POSITION=4;
-const int LANGUAGE_HU_POSITION=5;
-const int LANGUAGE_MK_POSITION=6;
-const int LANGUAGE_MS_POSITION=7;
-const int LANGUAGE_NL_POSITION=8;
-const int LANGUAGE_PL_POSITION=9;
-const int LANGUAGE_RO_POSITION=10;
-const int LANGUAGE_TR_POSITION=11;
+const int LANGUAGE_EL_POSITION=3;
+const int LANGUAGE_ES_POSITION=4;
+const int LANGUAGE_FR_POSITION=5;
+const int LANGUAGE_HU_POSITION=6;
+const int LANGUAGE_MK_POSITION=7;
+const int LANGUAGE_MS_POSITION=8;
+const int LANGUAGE_NL_POSITION=9;
+const int LANGUAGE_PL_POSITION=10;
+const int LANGUAGE_RO_POSITION=11;
+const int LANGUAGE_TR_POSITION=12;
 
 
 FetMainForm::FetMainForm()
@@ -190,6 +191,8 @@ FetMainForm::FetMainForm()
 		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_MK_POSITION), true);
 	else if(FET_LANGUAGE=="es")
 		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_ES_POSITION), true);
+	else if(FET_LANGUAGE=="el")
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EL_POSITION), true);
 
 	//new data
 	if(gt.rules.initialized)
@@ -1416,6 +1419,18 @@ void FetMainForm::on_languageSpanishAction_activated()
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
 	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_ES_POSITION), true);
+}
+
+void FetMainForm::on_languageGreekAction_activated()
+{
+	QMessageBox::information(this, QObject::tr("FET information"), 
+	 QObject::tr("Please exit and restart FET to activate language change"));
+	
+	FET_LANGUAGE="el";
+	
+	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
+		languageMenu->setItemChecked(languageMenu->idAt(i), false);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EL_POSITION), true);
 }
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()

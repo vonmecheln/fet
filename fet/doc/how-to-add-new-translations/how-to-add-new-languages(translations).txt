@@ -5,6 +5,8 @@ PLEASE E-MAIL THE AUTHOR OR THE MAILING LIST IF YOU WANT TO
 TRANSLATE FET INTO YOUR LANGUAGE. ANOTHER PERSON MIGHT WORK
 ON THE SAME TRANSLATION AS YOU AND TIME MIGHT BE WASTED.
 
+PLEASE READ INSTRUCTIONS BELOW VERY CAREFULLY AND FOLLOW THEM
+
 PLEASE FOLLOW THE ENGLISH WORDS AND DO NOT TRANSLATE A SINGLE
 TERM INCOMPLETELY. EITHER TRANSLATE IT OR NOT, BUT NOT PARTIALLY.
 
@@ -65,7 +67,7 @@ Some other details follow:
 
  Important note: maybe it is best to translate, in FetMainForm_template, only the field "Language" 
  both in your language and in English, separated by a slash (like: Limba/Language).
- Preferrably keep language names untranslated (or translat them as original), because people might choose
+ Please keep language names untranslated (or translate them as the original), because people might choose
  a wrong language and become stucked.
 
  Important: please take care of difference between activity and activities,
@@ -73,7 +75,9 @@ Some other details follow:
  are very important differences in constraints.
  
  Important: indications for abbreviations: T means teacher, S subject, ST subject tag, St students, 
- D duration, TD total duration, A active. Also StN means students names
+ D duration, TD total duration, A activity or active, depending on context (please check your translation
+ in the FET program if unsure). Also StN means students names. AGId means activity
+ group id.
  
  Maybe try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
  to a minimum, otherwise they will look too big.

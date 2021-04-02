@@ -209,7 +209,19 @@ int main(int argc, char **argv){
 		else
 			translator.load("fet_es", "translations");
 	}
+	else if(FET_LANGUAGE=="el"){
+		if(d.exists())
+			translator.load("fet_el", "/usr/share/fet/translations");
+		else
+			translator.load("fet_el", "translations");
+	}
 	else{
+		if(FET_LANGUAGE!="en_GB"){
+			QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+			 QObject::tr("Specified language is incorrect - making it en_GB (English)"));
+			FET_LANGUAGE="en_GB";
+		}
+		
 		assert(FET_LANGUAGE=="en_GB");
 	}
 		

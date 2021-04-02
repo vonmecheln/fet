@@ -185,6 +185,7 @@
      <addaction name="languageEnglishAction" />
      <addaction name="languageCatalanAction" />
      <addaction name="languageGermanAction" />
+     <addaction name="languageGreekAction" />
      <addaction name="languageSpanishAction" />
      <addaction name="languageFrenchAction" />
      <addaction name="languageHungarianAction" />
@@ -953,6 +954,14 @@
   <action name="helpInOtherLanguagesAction" >
    <property name="text" >
     <string>Help in other languages than English</string>
+   </property>
+  </action>
+  <action name="languageGreekAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>e&amp;l (Greek)</string>
    </property>
   </action>
  </widget>

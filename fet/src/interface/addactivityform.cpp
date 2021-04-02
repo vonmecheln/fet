@@ -376,7 +376,7 @@ void AddActivityForm::activityChanged()
 		s+="\n";
 
 		for(int i=0; i<splitSpinBox->value(); i++){
-			s+=tr("Componenent %1:").arg(i+1);
+			s+=tr("Component %1:").arg(i+1);
 			s+="\n";
 			s+=tr("Duration=%1").arg(dur(i)->value());
 			s+="\n";

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="es_ES">
+<defaultcodec></defaultcodec>
 <context>
     <name>ActivitiesForm_template</name>
     <message>
@@ -186,7 +187,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="379"/>
         <source>Componenent %1:</source>
-        <translation>Componente %1:</translation>
+        <translation type="obsolete">Componente %1:</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="561"/>
@@ -307,6 +308,11 @@ Note: You cannot add &apos;consecutive if same day&apos; with min n days=0. If y
 
 Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="379"/>
+        <source>Component %1:</source>
+        <translation>Componente %1:</translation>
     </message>
 </context>
 <context>
@@ -533,32 +539,32 @@ Recomendado:
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="180"/>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="186"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="207"/>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="219"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="223"/>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="235"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="236"/>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="248"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="249"/>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="261"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="257"/>
+        <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="269"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
@@ -861,52 +867,52 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="107"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="113"/>
         <source>Current constraint</source>
         <translation>Restricción actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="137"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="143"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="145"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="151"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="165"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="171"/>
         <source>Add current constraint</source>
         <translation>Añadir restricción actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="173"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="179"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="183"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="189"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="199"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="205"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="212"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="218"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="225"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="231"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="233"/>
+        <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="239"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
@@ -919,7 +925,7 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>FET - Añadir nueva restricción de aula preferida para actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="101"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="107"/>
         <source>100</source>
         <translation>100</translation>
     </message>
@@ -934,7 +940,7 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="90"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="96"/>
         <source>Room</source>
         <translation>Aula</translation>
     </message>
@@ -944,32 +950,32 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="76"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="82"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="109"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="115"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="125"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="131"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="138"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="144"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="151"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="157"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="159"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="165"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
@@ -1012,17 +1018,17 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Todas las aulas (doble click añade)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="170"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="176"/>
         <source>New Item</source>
         <translation>Nuevo elemento</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="164"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="170"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation>Aulas seleccionadas (doble click elimina)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="184"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="190"/>
         <source>Activity</source>
         <translation>Actividad</translation>
     </message>
@@ -1032,27 +1038,27 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="192"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="198"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="208"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="214"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="221"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="227"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="234"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="240"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="242"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="248"/>
         <source>Subject tag</source>
         <translation>Etiqueta materia</translation>
     </message>
@@ -1070,67 +1076,67 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="107"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="113"/>
         <source>Current constraint</source>
         <translation>Restricción actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="115"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="121"/>
         <source>Period</source>
         <translation>Período</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="126"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="132"/>
         <source>Day</source>
         <translation>Día</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="142"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="148"/>
         <source>Start hour</source>
         <translation>Hora de comienzo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="190"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="196"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="210"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="216"/>
         <source>Add current constraint</source>
         <translation>Añadir restricción actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="218"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="224"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="228"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="234"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="244"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="250"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="257"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="263"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="270"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="276"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="278"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="284"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="182"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="188"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
@@ -1171,37 +1177,37 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="129"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="139"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="145"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="161"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="168"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="174"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="186"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="192"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="194"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="200"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="121"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
@@ -5699,17 +5705,17 @@ Teniendo un subgrupo con muy pocas horas por semana siginifica que se han introd
         <translation>Contribuciones</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="145"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="144"/>
         <source>Translators</source>
         <translation>Traductores</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="216"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="215"/>
         <source>References</source>
         <translation>Referencias</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="240"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="239"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5742,22 +5748,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="276"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="275"/>
         <source>Thanks to</source>
         <translation>Agradecimientos</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="419"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="418"/>
         <source>Guestbook</source>
         <translation>Libro de invitados</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="735"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="734"/>
         <source>Sponsors</source>
         <translation>Patrocinadores</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="741"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="740"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5774,7 +5780,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="169"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="168"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5818,7 +5824,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="443"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="442"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -6107,33 +6113,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="116"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Code contributors:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemented and tested &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>two-point and uniform crossover. Two-point crossover is clearly &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>an improvement over the 1-point crossover, originally implemented in FET &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>--------- 30 June 2007 - evolutionary algorithm is deprecated by Liviu Lalescu (so no crossover anymore)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Lots of helping with testing, bug reports, suggestions, comparisons&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>(old code by Liviu Lalescu)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>added features: - xhtml 1.0 strict valide&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>                - span using&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>                - times vertical&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>                - table of content with hyperlinks&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>                - css and JavaScript support&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>                - rooms&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>                - TIMETABLE_HTML_LEVEL&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="300"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="299"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -6257,7 +6237,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.9 (October 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.10 (October 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -6270,6 +6250,31 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="116"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemented and tested &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>two-point and uniform crossover. Two-point crossover is clearly &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>an improvement over the 1-point crossover, originally implemented in FET &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>--------- 30 June 2007 - evolutionary algorithm is deprecated by Liviu Lalescu (so no crossover anymore)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>Lots of helping with testing, bug reports, suggestions, comparisons&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>(old code by Liviu Lalescu)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>added features: - xhtml 1.0 strict valide&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- colspan and rowspan using&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- times vertical&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- table of content with hyperlinks&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- css and JavaScript support&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- print rooms timetable&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- TIMETABLE_HTML_LEVEL&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/><byte value="x9"/>- print groups and years timetable&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7224,7 +7229,7 @@ y añada una nueva actividad partida</translation>
         <translation>Primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="180"/>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform_template.ui" line="186"/>
         <source>Second activity</source>
         <translation>Segunda actividad</translation>
     </message>
@@ -7492,19 +7497,19 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="223"/>
+        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="229"/>
         <source>Weight percentage
 (necessary: 100%)</source>
         <translation>Ponderación
 (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="232"/>
+        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="238"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="258"/>
+        <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="264"/>
         <source>Current constraint</source>
         <translation>Restricción actual</translation>
     </message>
@@ -7542,7 +7547,7 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="101"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="107"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
@@ -7595,7 +7600,7 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
         <translation>Aulas seleccionadas (doble click elimina)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="194"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="200"/>
         <source>Activity</source>
         <translation>Actividad</translation>
     </message>
@@ -7643,42 +7648,42 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="147"/>
         <source>Ok</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="149"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="155"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="192"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="198"/>
         <source>Period</source>
         <translation>Período</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="203"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="209"/>
         <source>Day</source>
         <translation>Día</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="219"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="225"/>
         <source>Start hour</source>
         <translation>Hora de comienzo</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="243"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="249"/>
         <source>Current constraint</source>
         <translation>Restricción actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="274"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="280"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="265"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="271"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación
@@ -7711,47 +7716,47 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
         <translation>Actividad</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="72"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="78"/>
         <source>Ok</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="80"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="86"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="129"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="135"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="139"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="145"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="155"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="161"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="168"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="174"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="181"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="187"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="189"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="195"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="121"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
     </message>
@@ -13303,6 +13308,11 @@ Si realmente necesita eso, comuníquese con el autor
         <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="204"/>
         <source>Constraint NOT added - must be a duplicate</source>
         <translation>Restriccion NO añadida - debe estar duplicada</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fet.cpp" line="215"/>
+        <source>Specified language is incorrect - making it en_GB (English)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
