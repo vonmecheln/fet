@@ -40919,29 +40919,29 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <translation>Questa è la lista del massimo numero di attività piazzate, in ordine cronologico. Se FET ha raggiunto al massimo la ennesima attività, esamina l&apos;attività numero enne+1 nell&apos;ordine iniziale delle attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1851"/>
+        <location filename="../src/interface/fet.cpp" line="1850"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>FET ha organizzato di ordinare correttamente le prime %1 attività più difficili. Si può osservare l&apos;ordine iniziale di piazzamento delle attività nella finestra di generazione. Le attività che poptrebbero creare problemi potrebbero essere le attività successive nell&apos;iniziale ordine di valutazione. Questa attività è indicata di seguito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1858"/>
-        <location filename="../src/interface/fet.cpp" line="1878"/>
+        <location filename="../src/interface/fet.cpp" line="1857"/>
+        <location filename="../src/interface/fet.cpp" line="1877"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id:%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1863"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Una attività difficile non riesce ad essere sistemata - per favore riporta un possibile bug all&apos;autore</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1867"/>
+        <location filename="../src/interface/fet.cpp" line="1866"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Qui si trovano attività che portano ad una incoerenza, in ordine dalla prima all&apos;ultima (FET ha fallito la sistemazione dell&apos;ultima e il gruppo delle ultime è, probabilmente, impossibile da collocare): </translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1874"/>
+        <location filename="../src/interface/fet.cpp" line="1873"/>
         <source>No: %1</source>
         <translation>No: %1</translation>
     </message>
@@ -56062,12 +56062,12 @@ Nota: insegnanti non disponibili e interruzioni non sono ore buche.</translation
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="53"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>March</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>April</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62460,17 +62460,17 @@ Sotto %4</translation>
         <translation>senzanome</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1732"/>
+        <location filename="../src/interface/fet.cpp" line="1731"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished">Controlla i vincoli connessi alle attività sottostanti, che sembrerebbe impossibile sistemare:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1738"/>
+        <location filename="../src/interface/fet.cpp" line="1737"/>
         <source>No: %1</source>
         <translation type="unfinished">No: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1742"/>
+        <location filename="../src/interface/fet.cpp" line="1741"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished">Id:%1 (%2)</translation>

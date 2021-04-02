@@ -206,13 +206,13 @@ void RandomSeedForm::ok()
 
 	if(okNumber1 && (s10==0 && s11==0 && s12==0)){
 		errors+=tr("Not all of component 1 values can be zero (at least one of %1, %2, or %3 must be nonzero).",
-		 "%1, %2, and %3 are variable names.").arg("s10").arg("s11").arg("a12");
+		 "%1, %2, and %3 are variable names.").arg("s10").arg("s11").arg("s12");
 		errors+="\n";
 	}
 
 	if(okNumber2 && (s20==0 && s21==0 && s22==0)){
 		errors+=tr("Not all of component 2 values can be zero (at least one of %1, %2, or %3 must be nonzero).",
-		 "%1, %2, and %3 are variable names.").arg("s20").arg("s21").arg("a22");
+		 "%1, %2, and %3 are variable names.").arg("s20").arg("s21").arg("s22");
 		errors+="\n";
 	}
 

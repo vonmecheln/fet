@@ -26,7 +26,7 @@ examples/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-m
 students max span per day).*/
 
 /*
-Note: Since FET-5.44.0 the random number generator changed, and the seed has 2x5=10 components instead of only two. But probably
+Note: Since FET-5.44.0 the random number generator changed, and the seed has 2x3=6 components instead of only 2. But probably
 the problem below still remains.
 Note: TODO item #398
 (In fact this is an anti-TODO):

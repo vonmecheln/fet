@@ -2248,3 +2248,7 @@ Versions 5.44.0 - 5.44.v
 	- Bug fix for the future Qt versions: Qt reverted back from the signal QComboBox::currentIndexChanged(int, const QString &) used in their snapshot
 	to the signal QComboBox::currentIndexChanged(int). The combo boxes should work now correctly with the future versions of Qt.
 	- Code cleanup.
+- Version 5.44.1
+	- Updated to Qt 5.14.2.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Minor fixes.

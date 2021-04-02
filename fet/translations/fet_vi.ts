@@ -40736,29 +40736,29 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <translation>Để bắt đầu FET trong chế độ giao diện , xin vui lòng không đưa ra bất cứ thông số dòng lệnh để thực thi các FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1851"/>
+        <location filename="../src/interface/fet.cpp" line="1850"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>Phần mềm đã cố xếp lịch đúng cho %1 tiết giảng khó nhất. Bạn có thể thấy danh sách các tiết giảng được lập lịch trong tệp đầu ra tương ứng. Tiết giảng có vấn đề có lẽ là tiết giảng tiếp theo trong lịch trình đánh giá. Tiết giảng đó được ghi dưới đây:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1858"/>
-        <location filename="../src/interface/fet.cpp" line="1878"/>
+        <location filename="../src/interface/fet.cpp" line="1857"/>
+        <location filename="../src/interface/fet.cpp" line="1877"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id:%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1863"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Tiết giảng khó không thể xếp được. Hãy liên hệ với đơn vị phát triển vì lỗi này</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1867"/>
+        <location filename="../src/interface/fet.cpp" line="1866"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Đây là những tiết giảng đã được xếp lịch dẫn tới tình huống không nhất quán, theo trình tự từ tiết đầu tới tiết cuối (tiết cuối không thể xếp được lịch và khả năng lớn nhất là không thể xếp được):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1874"/>
+        <location filename="../src/interface/fet.cpp" line="1873"/>
         <source>No: %1</source>
         <translation>Số: %1</translation>
     </message>
@@ -55807,12 +55807,12 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="53"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>March</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>April</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62178,17 +62178,17 @@ Bottom: %4</source>
         <translation>chưa đặt tên</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1732"/>
+        <location filename="../src/interface/fet.cpp" line="1731"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished">Hãy kiểm tra các RB của tiết giảng dưới đây, có lẽ là không thể xếp lịch được:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1738"/>
+        <location filename="../src/interface/fet.cpp" line="1737"/>
         <source>No: %1</source>
         <translation type="unfinished">Số: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1742"/>
+        <location filename="../src/interface/fet.cpp" line="1741"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished">Id:%1 (%2)</translation>

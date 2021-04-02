@@ -40982,29 +40982,29 @@ G1 ستظهر مرتين في الجدول</translation>
         <translation>هذه قائمة الأنشطة القصوى التي وُضعت في الجدول، حسب ترتيبها الزمني. إذا FET استطاع أن يصل إلى أقصى n-th نشاط أعد النظر في النشاط n+1، وذلك في الترتيب الأولي لوضع الأنشطة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1851"/>
+        <location filename="../src/interface/fet.cpp" line="1850"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>تمكن FET بشكل صحيح من جدولة أولى %1 أصعب الأنشطة. يمكنك النظر في الترتيب الأولي لوضع الأنشطة في مربع الحوار للانتاج. النشاط الذي من المحتمل أنه يسبّب مشاكل يمكن أن يكون النشاط الموالي في الترتيب الأولي لتقدير الأنشطة. هذا النشاط مدرج أدناه:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1858"/>
-        <location filename="../src/interface/fet.cpp" line="1878"/>
+        <location filename="../src/interface/fet.cpp" line="1857"/>
+        <location filename="../src/interface/fet.cpp" line="1877"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1863"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>نشاط صعبة لا يمكن معالجتها - فضلاً ابلغنا بالمشكلة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1867"/>
+        <location filename="../src/interface/fet.cpp" line="1866"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>وهنا وضعت الأنشطة التي تؤدي إلى عدم التناسق في الجدول ، مرتبة من الاول إلى الاخير (النشاط الأخير فشل FET في جدولته و الأنشطة الأخيرة هي على الأرجح جدّ صعبة):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1874"/>
+        <location filename="../src/interface/fet.cpp" line="1873"/>
         <source>No: %1</source>
         <translation>رقم: %1</translation>
     </message>
@@ -56442,12 +56442,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="53"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>March</source>
         <translation>مارس</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>April</source>
         <translation>أفريل</translation>
     </message>
@@ -56621,133 +56621,133 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/randomseedform.cpp" line="75"/>
         <source>This random number generator has a large period of about %1 or about %2 and an internal state of %3 32-bit integers.</source>
         <comment>%1 and %2 are variants of writing the size, %3 is the number of integers in the internal state</comment>
-        <translation type="unfinished"></translation>
+        <translation>يحتوي مولد الرقم العشوائي هذا على فترة كبيرة من حوالي%1 أو حوالي%2 وحالة داخلية من%3 من 32 بايت  أعداد صحيحة.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="83"/>
         <source>Includes ideas and code from the files: %1, %2, and/or %3.</source>
         <comment>%1, %2, and %3 are files from the internet</comment>
-        <translation type="unfinished"></translation>
+        <translation>يتضمن أفكارًا ورموزًا من الملفات:%1 و%2 و / أو%3.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="88"/>
         <source>9 March 2020</source>
-        <translation type="unfinished"></translation>
+        <translation>9 مارس 2020</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="91"/>
         <source>The random seed is the state of the random number generator.</source>
-        <translation type="unfinished">البذرة العشوائية هي حالة مولد الرقم العشوائي.</translation>
+        <translation>البذرة العشوائية هي حالة مولد الرقم العشوائي.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="91"/>
         <source>It has two components, each with 3 components in turn.</source>
-        <translation type="unfinished"></translation>
+        <translation>يتكون من مركبتين ، كل مركبة تتكون بدورها من 3 مركبات.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="107"/>
         <source>Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed, due to possible changes in the generation algorithm.</source>
-        <translation type="unfinished"></translation>
+        <translation>ملاحظة: من أجل نسخ مختلفة ل FET ، سلوك النتاج يمكن أن يكون مختلفا بشكل كلي، حتى من أجل نفس المبيانات ونفس البذرة العشوائية، وهذا بسبب التغيرات المحتملة في خوارزمية الانتاج.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="120"/>
         <source>Of course, if you use the same FET instance, you don&apos;t need to be worried about same starting random seeds for the same input file, since the period of the random number generator is very large.</source>
-        <translation type="unfinished"></translation>
+        <translation>بطبيعة الحال، إذا كنت تستخدم نفس مثيل FET ، فلا داعي للقلق بشأن نفس بذور البداية العشوائية لنفس ملف الإدخال ، نظرًا لأن فترة مولد الرقم العشوائي واسعة جدًا.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="78"/>
         <source>Reference for the %1 random number generator code:</source>
         <comment>%1 is the name of the random number generator</comment>
-        <translation type="unfinished"></translation>
+        <translation>مرجع  من أجل %1 لشفرة مولد الرقم العشوائي:</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="42"/>
         <source>Component 1: each from min %1 to max %2, not all zero.</source>
         <comment>Component 1 has 3 values, each is constrained to be &gt;= %1 and &lt;=%2, and not all 3 should be 0. Keep the translation short.</comment>
-        <translation type="unfinished"></translation>
+        <translation>المركبة 1: كل مركبة منها تتراوح من أدنى قيمة %1 إلى أقصى قيمة %2 وليس كلها مساوية للصفر.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="45"/>
         <source>Component 2: each from min %1 to max %2, not all zero.</source>
         <comment>Component 2 has 3 values, each is constrained to be &gt;= %1 and &lt;=%2, and not all 3 should be 0. Keep the translation short.</comment>
-        <translation type="unfinished"></translation>
+        <translation>المركبة 2: كل مركبة منها تتراوح من أدنى قيمة %1 إلى أقصى قيمة %2 وليس كلها مساوية للصفر.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="70"/>
         <source>You can set the initial state (seed) of the random number generator of FET using this option.</source>
-        <translation type="unfinished"></translation>
+        <translation>يمكنك تعيين الحالة الأولية (البذور) لمولد الرقم العشوائي لـ FET باستخدام هذا الخيار.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="72"/>
         <source>FET uses the random number generator named %1, authored by %2 (used with permission).</source>
-        <translation type="unfinished"></translation>
+        <translation>يستخدم FET  مولد الرقم العشوائي المسمى %1، المؤلف من طرف %2 (بعد أخذ إذن المؤلف).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="73"/>
         <source>(The original code was a bit modified to use 64-bit integer operations instead of the not so reliable &apos;double&apos; real number format.)</source>
         <comment>It is indicated to keep the word &apos;double&apos; as in English, but you are allowed to translate it if you consider this to be more appropriate.</comment>
-        <translation type="unfinished"></translation>
+        <translation>(تم تعديل الرمز الأصلي قليلاً لاستخدام عمليات بأعداد صحيحة من 64 بايت بدلاً من تنسيق الرقم الحقيقي &quot;المزدوج&quot; غير الموثوق به.)</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="87"/>
         <source>Used with permission from the author, %1 (%2).</source>
         <comment>%1 is the author of the used random number generator, %2 is the date of email correspondence when we got the permission to use it in FET.</comment>
-        <translation type="unfinished"></translation>
+        <translation>مستخدم بعد أخذ إذن المؤلف، %1 (%2).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="92"/>
         <location filename="../src/interface/randomseedform.cpp" line="94"/>
         <source>Component %1 consists of 3 integers named %2, %3, and %4, and each one should be initialized with an integer value between minimum %5 and maximum %6, and not all of them should be zero.</source>
         <comment>%1 is the number of the component, 1 or 2.</comment>
-        <translation type="unfinished"></translation>
+        <translation>تتكون المركبة %1 من 3 أعداد صحيحة باسم %2 و %3 و %4، ويجب تهيئة كل واحد بقيمة صحيحة بين الحد الأدنى %5 والحد الأقصى %6، ويجب ألا تكون جميعها مساوية للصفر.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="97"/>
         <source>The random seed before the generation of a timetable (the %1 integer components) and the random seed after the generation are both saved on the disk in the corresponding timetables directory, so that you can replicate the same generation after that and verify that the random seed after the generation corresponds.</source>
         <comment>%1 is the number of integer components of the random seed.</comment>
-        <translation type="unfinished"></translation>
+        <translation>يتم حفظ البذرة العشوائية قبل إنتاج جدول زمني (المركبات %1 الصحيحة) والبذرة العشواءية بعد الإنتاج كلاهما محفظتان على القرص في مجلد الجداول الزمنية الموافق ، بحيث يمكنك نسخ الإنتاج نفسه بعد ذلك والتحقق من أن البذرة العشوائية بعد الإنتاج تتوافق.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="100"/>
         <source>Mode of operation: if the FET version is the same (or if the generation code did not change), if the input file is identical, and if the starting random seed is exactly the same, the generation and the results should be identical on any generation process on any computer.</source>
-        <translation type="unfinished"></translation>
+        <translation>طريقة التشغيل: إذا كان إصدار FET هو نفسه (أو إذا لم تتغير شفرة الإنتاج) ، إذا كان ملف الإدخال متطابقًا ، وإذا كانت بذرة البداية العشوائية هي نفسها تمامًا ، فيجب أن يكون الإنتاج والنتائج متطابقة في أي عملية إنتاج على أي جهاز كمبيوتر.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="102"/>
         <source>If you generate multiple timetables, the generation will follow the same path, under these conditions. So, if you generate 10 timetables twice starting with the same random seed, the results will be the same, pairwise.</source>
-        <translation type="unfinished"></translation>
+        <translation>إذا قمت بإنتاج جداول متعددة، فسيتبع الإنتاج نفس المسار ،تحت هذه الظروف، لذلك ، إذا قمت بإنتاج 10 جداول زمنية مرتين انطلاقا من نفس البذور العشوائية، فستكون النتائج هي نفسها، زوجًا زوجًا.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="104"/>
         <source>Note: of course, you need exactly the same conditions to replicate the same generation (so, you need exactly the same data - activities, constraints, etc., in the exact same order - well, sometimes the order might be different and you can still replicate the same generation, because the internal representation in FET will be the same, but this will not be generally true - in other words an identical file).</source>
-        <translation type="unfinished"></translation>
+        <translation>ملاحظة: بطبيعة الحال ، أنت بحاجة إلى نفس الشروط بالضبط لتكرار نفس الإنتاج (لذا، تحتاج إلى نفس البيانات بالضبط - الأنشطة والقيود، وما إلى ذلك ، بنفس الترتيب بالضبط - حسنًا، في بعض الأحيان قد يكون الترتيب مختلفًا وولا يزال بإمكانك تكرار نفس الإنتاج ، لأن التمثيل الداخلي في FET سيكون هو نفسه ، ولكن هذا لن يكون صحيحًا بشكل عام - بمعنى آخر ملف متطابق).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="109"/>
         <source>The initialization of the random seed when you start FET is done using the elapsed time since the beginning of 1 January 1970, expressed in seconds and nanoseconds. %1 and %2 will be the number of seconds (they will be both initialized from a variable computed a single time, so they will be equal), %3 and %4 will be the current number of nanoseconds (modulo %5) (they might slightly differ, depending on the computer and compiler; they might slightly differ because they are computed one after the other, not both at exactly the same moment), and the remaining components (%6 and %7) will be %8 (this should not be a problem).</source>
         <comment>%1, %2, %3, %4, %6, and %7 are components of the random seed, %5 is a number, %8 is a number.</comment>
-        <translation type="unfinished"></translation>
+        <translation>تتم تهيئة البذور العشوائية عند بدء تشغيل FET باستخدام الوقت المنقضي منذ بداية 1 يناير 1970، معبرًا عنه بالثواني والنانوثانية. سيكون %1 و %2 عدد الثواني (سيتم تهيئتهما من متغير محسوب مرة واحدة ، لذلك سيكونان متساويين) ،%3 و%4 سيكونان العدد الحالي من النانو ثانية (بمقياس %5) ( قد تختلف اختلافًا طفيفًا ، اعتمادًا على الكمبيوتر والمترجم ؛ قد تختلف اختلافًا طفيفًا لأنها محسوبة واحدة تلوى الأخرى ، وليس كلاهما في نفس اللحظة بالضبط) ، والمركبات المتبقية (%6 و %7) ستكون %8( هذا لا ينبغي أن يكون مشكلة).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="115"/>
         <source>It is very important to note that if you open two or more instances of FET when the number of seconds since the beginning of 1 January 1970 is the same (that is, if you start them at the same time), you should check that the initial random seeds will not be identical value-per-value, which would lead to the same timetable generation behavior for an identical input file (hopefully this will not happen, since the elapsed nanoseconds will probably be different, but please check). If you intend to generate different timetables for the same file using more FET instances, you need to ensure that the starting random seeds are different (you can change them also manually, from the menu Settings-&gt;Advanced-&gt;Seed of random number generator).</source>
-        <translation type="unfinished"></translation>
+        <translation>من المهم جدًا ملاحظة أنه إذا فتحت مثيلين أو أكثر من FET عندما يكون عدد الثواني منذ بداية 1 يناير 1970 هو نفسه (أي إذا قمت ببدءها في نفس الوقت) ، فيجب عليك التحقق من أنه لن تكون البذور العشوائية الأولية متطابقة قيمة بقيمة ، مما قد يؤدي إلى نفس سلوك إنتاج الجدول الزمني لملف إدخال متطابق (نأمل ألا يحدث ذلك، لأن النانو ثانية المنقضية ستكون مختلفة على الأرجح، ولكن يرجى التحقق). إذا كنت تنوي إنتاج جداول زمنية مختلفة للملف نفسه باستخدام المزيد من مثيلات FET ، فأنت بحاجة إلى التأكد من أن بذور البداية العشوائية مختلفة (يمكنك أيضًا تغييرها يدويًا ، من القائمة إعدادات-&gt; إعدادات متقدمة -&gt; بذور مولد الرقم العشوائي).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="122"/>
         <source>After you generate (even partially), the random seed will change very much (each call of the random number generator updates the random seed components to the next numbers in the sequences, and there are many calls to this random number generating routine from the generate function).</source>
-        <translation type="unfinished"></translation>
+        <translation>بعد الإنتاج (ولو بشكل جزئي) ، ستتغير البذرة العشوائية كثيرًا (تقوم كل نداء لمولد الرقم العشوائي بتحديث مركبات البذرة العشوائية إلى الأرقام التالية في السلسة، وهناك العديد من النداءات لهذا الرقم العشوائي بشكل منتظم إنطلاقا من وظيفة الإنتاج).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="124"/>
         <source>This setting is useful for more purposes; one purpose is bug report: send your file along with the random seed at the start of the generation and, if available, the random seed at the end of the generation (the %1 components are saved in the timetable directory at the start and at the end of the generation).</source>
         <comment>%1 is the number of components of the random seed.</comment>
-        <translation type="unfinished"></translation>
+        <translation>هذا الإعداد مفيد لمزيد من الأغراض؛ غرض واحد هو تقرير الخطأ: أرسل ملفك مع البذور العشوائية في بداية الإنتاج ، وإذا كانت متاحة، البذور العشوائية في نهاية الإنتاج (المركبات %1 محفوظة في مجلد الجدول الزمني في بداية وفي نهاية الإنتاج).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="128"/>
         <source>FET Help</source>
-        <translation type="unfinished">FET مساعدة</translation>
+        <translation>FET مساعدة</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="141"/>
@@ -56758,7 +56758,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/randomseedform.cpp" line="197"/>
         <source>%1 is not a valid integer number.</source>
         <comment>%1 is a variable name</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 ليس عددا صحيحا صالحا.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="146"/>
@@ -56769,24 +56769,24 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/randomseedform.cpp" line="202"/>
         <source>%1 must be &gt;= %2 and &lt;= %3.</source>
         <comment>%1 is the name of an integer variable, %2 is the minimum allowed value, %3 is the maximum allowed value.</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 يجب أن تكون &gt;= %2 و &lt;= %3.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="208"/>
         <source>Not all of component 1 values can be zero (at least one of %1, %2, or %3 must be nonzero).</source>
         <comment>%1, %2, and %3 are variable names.</comment>
-        <translation type="unfinished"></translation>
+        <translation>ليس كل قيم المركبة 1 يمكنها أن تكون صفرا (على الأقل واحدة من %1، %2، أو %3 يجب ألا تساوي صفر).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="214"/>
         <source>Not all of component 2 values can be zero (at least one of %1, %2, or %3 must be nonzero).</source>
         <comment>%1, %2, and %3 are variable names.</comment>
-        <translation type="unfinished"></translation>
+        <translation>ليس كل قيم المركبة 2 يمكنها أن تكون صفرا (على الأقل واحدة من %1، %2، أو %3 يجب ألا تساوي صفر).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="220"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET تحذير</translation>
+        <translation>FET تحذير</translation>
     </message>
 </context>
 <context>
@@ -56795,22 +56795,22 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/randomseedform_template.ui" line="14"/>
         <source>Random seed</source>
         <extracomment>The name of the random seed dialog</extracomment>
-        <translation type="unfinished">البذرة العشوائية</translation>
+        <translation>البذرة العشوائية</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform_template.ui" line="163"/>
         <source>Help</source>
-        <translation type="unfinished">مساعدة</translation>
+        <translation>مساعدة</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform_template.ui" line="183"/>
         <source>OK</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform_template.ui" line="190"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
 </context>
 <context>
@@ -61924,7 +61924,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
         <location filename="../src/engine/timetableexport.cpp" line="894"/>
         <source>The random seed at the start of generation is:</source>
         <comment>The random seed has 6 components, to follow on the next 2 lines (3 values on each line).</comment>
-        <translation type="unfinished"></translation>
+        <translation>البذرة العشوائية في بداية الانتاج هي:</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="875"/>
@@ -61946,7 +61946,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
         <location filename="../src/engine/timetableexport.cpp" line="906"/>
         <source>The random seed at the end of generation is:</source>
         <comment>The random seed has 6 components, to follow on the next 2 lines (3 values on each line).</comment>
-        <translation type="unfinished"></translation>
+        <translation>البذرة العشوائية في نهاية الانتاج هي:</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1777"/>
@@ -62844,17 +62844,17 @@ N1 ( C1(G1,G2), C2(G1, G3) )
         <translation>غير مسمى</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1732"/>
+        <location filename="../src/interface/fet.cpp" line="1731"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation>يرجى التحقق من القيود المتصلة بالنشاط أدناه ، والتي قد يكون من المستحيل جدواتها زمنيا:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1738"/>
+        <location filename="../src/interface/fet.cpp" line="1737"/>
         <source>No: %1</source>
         <translation>رقم: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1742"/>
+        <location filename="../src/interface/fet.cpp" line="1741"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>
@@ -63329,7 +63329,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="419"/>
         <source>Total searching time: %1h %2m %3s.</source>
-        <translation type="unfinished"></translation>
+        <translation>الوقت الكلي للبحث: %1سا %2د %3ثا.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="472"/>
@@ -63341,12 +63341,12 @@ N1 ( C1(G1,G2), C2(G1, G3) )
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="483"/>
         <source>This file was automatically generated by FET %1 on %2.</source>
         <comment>%1 is the FET version, %2 is the date and time when this file was generated.</comment>
-        <translation type="unfinished"></translation>
+        <translation>تم انتاج هذا الجدول آليا باستخدام برنامج FET %1 في %2.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="476"/>
         <source>Total searching time was %1h %2m %3s.</source>
-        <translation type="unfinished"></translation>
+        <translation>الوقت الكلي للبحث كان: %1سا %2د %3ثا.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="541"/>

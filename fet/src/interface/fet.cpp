@@ -1561,7 +1561,6 @@ int main(int argc, char **argv)
 			else
 				notSpecified.append("s22");
 				
-
 			usage(NULL, QString("If you want to specify the random seed, you need to specify all the 6 components. You specified %1, but you did not"
 			 " specify %2.").arg(specified.join(", ")).arg(notSpecified.join(", ")));
 			logFile.close();

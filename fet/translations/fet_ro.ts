@@ -40956,29 +40956,29 @@ Vă rog opriți simularea înainte de aceasta.</translation>
         <translation>Aceasta este lista activităților maxim plasate, cronologic. Dacă FET a putut atinge maximum a n-a activitate, uitați-vă la a n+1-a activitate în ordinea inițiala a activităților</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1851"/>
+        <location filename="../src/interface/fet.cpp" line="1850"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>FET a reușit să programeze corect primele %1 cele mai dificile activități. Puteți vedea ordinea inițială de plasare a activităților în fișierul de ieșire corespunzător. Activitatea care poate cauzează probleme s-ar putea să fie următoarea activitate în ordinea inițială de evaluare. Această activitate este listata mai jos:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1858"/>
-        <location filename="../src/interface/fet.cpp" line="1878"/>
+        <location filename="../src/interface/fet.cpp" line="1857"/>
+        <location filename="../src/interface/fet.cpp" line="1877"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1863"/>
+        <location filename="../src/interface/fet.cpp" line="1862"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Activitate dificilă nu poate fi calculată - vă rog raportați posibila greșeală</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1867"/>
+        <location filename="../src/interface/fet.cpp" line="1866"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Acestea sunt activitățile plasate care au dus la o inconsistență, în ordine de la prima la ultima (pe ultima pe care FET nu a putut să o programeze și ultimele sunt cel mai probabil imposibile):</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1874"/>
+        <location filename="../src/interface/fet.cpp" line="1873"/>
         <source>No: %1</source>
         <translation>Nr: %1</translation>
     </message>
@@ -56449,12 +56449,12 @@ Notă: profesor indisponibil și pauză nu sunt socotite ca ferestre.</translati
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="53"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>March</source>
         <translation>Martie</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="55"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>April</source>
         <translation>Aprilie</translation>
     </message>
@@ -62845,17 +62845,17 @@ Jos: %4</translation>
         <translation>fără nume</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1732"/>
+        <location filename="../src/interface/fet.cpp" line="1731"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation>Vă rugăm verificați constrângerile referitoare la activitatea de mai jos, care ar putea fi imposibil de programat:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1738"/>
+        <location filename="../src/interface/fet.cpp" line="1737"/>
         <source>No: %1</source>
         <translation>Nr: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1742"/>
+        <location filename="../src/interface/fet.cpp" line="1741"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>
