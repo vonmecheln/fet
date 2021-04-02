@@ -132,7 +132,7 @@ bool processTimeConstraints()
 	bool t=computeActivitiesConflictingPercentage();
 	if(!t)
 		return false;
-	sortActivities();
+	//sortActivities(); - done last time, because taking care of other constraints
 	//////////////////////////////
 	
 	/////2. min n days between activities
@@ -201,6 +201,8 @@ bool processTimeConstraints()
 	if(!t)
 		return false;
 	//////////////////
+	
+	sortActivities();
 	
 	bool ok=true;
 	
@@ -1648,6 +1650,146 @@ bool computeActivitiesRoomsPreferences()
 	return ok;
 }
 
+#if 1
+void sortActivities()
+{
+	const double THRESHOLD=80.0;
+	
+	static int nIncompatible[MAX_ACTIVITIES];
+	
+	
+	
+	//rooms init
+	int nRoomsIncompat[MAX_ROOMS];
+	for(int j=0; j<gt.rules.nInternalRooms; j++){
+		nRoomsIncompat[j]=0;
+		for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+			if(allowedRoomTimePercentages[j][k]>=THRESHOLD)
+				nRoomsIncompat[j]++;
+	}
+	int nHoursForRoom[MAX_ROOMS];	
+
+	for(int j=0; j<gt.rules.nInternalRooms; j++)
+		nHoursForRoom[j]=0;
+
+	for(int j=0; j<gt.rules.nInternalActivities; j++)
+		if(activitiesPreferredRoomsPercentage[j]>=THRESHOLD){
+			assert(!unspecifiedRoom[j]);
+			foreach(int rm, activitiesPreferredRoomsPreferredRooms[j])
+				nHoursForRoom[rm]+=gt.rules.internalActivitiesList[j].duration;
+		}
+
+	
+
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		nIncompatible[i]=0;
+		
+		//basic
+		for(int j=0; j<gt.rules.nInternalActivities; j++)
+			if(i!=j && activitiesConflictingPercentage[i][j]>=THRESHOLD){
+				assert(activitiesConflictingPercentage[i][j]==100.0);
+				nIncompatible[i]+=gt.rules.internalActivitiesList[j].duration;
+			}
+				
+		//not available, break, preferred time(s)
+		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+			if(allowedTimesPercentages[i][j]>=THRESHOLD)
+				nIncompatible[i]++;
+		
+		//min n days
+		/*for(int j=0; j<minNDaysListOfActivities[i].count(); j++){
+			int md=minNDaysListOfMinDays[i].at(j);
+			double wp=minNDaysListOfWeightPercentages[i].at(j);
+			if(wp>=THRESHOLD)
+				nImpossibleSlots+=gt.rules.nHoursPerDay*md;
+		}*/
+		
+
+		//teachers max days per week
+		foreach(int t, teachersWithMaxDaysPerWeekForActivities[i]){
+			if(teachersMaxDaysPerWeekWeightPercentages[t]>=THRESHOLD)
+				assert(gt.rules.nDaysPerWeek-teachersMaxDaysPerWeekMaxDays[t] >=0 );
+				nIncompatible[i]+=(gt.rules.nDaysPerWeek-teachersMaxDaysPerWeekMaxDays[t])*gt.rules.nHoursPerDay;
+		}
+
+		
+		//rooms
+		if(activitiesPreferredRoomsPercentage[i]>=THRESHOLD){
+			int cnt=0;
+			assert(!unspecifiedRoom[i]);
+			foreach(int rm, activitiesPreferredRoomsPreferredRooms[i])
+				cnt+=nRoomsIncompat[rm]+nHoursForRoom[rm]-1; //-1 because we considered also current activity
+				
+			nIncompatible[i] += cnt / activitiesPreferredRoomsPreferredRooms[i].count(); //average for all the rooms
+		}
+				
+		
+
+		nIncompatible[i]*=gt.rules.internalActivitiesList[i].duration;
+	}
+
+	//same starting time - not computing, the algo takes care even without correct sorting
+	//it is difficult to sort about same starting time
+	/*
+	careful - must pass more than one time
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		for(int j=0; j<activitiesSameStartingTimeActivities[i].count(); j++){
+			int a2=activitiesSameStartingTimeActivities[i].at(j);
+			int wp=activitiesSameStartingTimePercentages[i].at(j);
+			if(wp>=THRESHOLD)
+				nIncompatible[i]=max(nIncompatible[i], nIncompatible[a2]);
+		}
+	}*/
+	
+	//Sort activities in in-creasing order of number of the other activities with which
+	//this activity does not conflict
+	//Selection sort, based on a permutation
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		permutation[i]=i;
+		
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		for(int j=i+1; j<gt.rules.nInternalActivities; j++){
+			if(nIncompatible[permutation[i]]<nIncompatible[permutation[j]]){
+				int t=permutation[i];
+				permutation[i]=permutation[j];
+				permutation[j]=t;
+			}
+		}
+	}
+	
+	cout<<"The order of activities (id-s):"<<endl;
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		cout<<"No: "<<i+1<<", nIncompatible[permutation[i]]=="<<nIncompatible[permutation[i]]<<", ";
+	
+		Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
+		cout<<"id=="<<act->id;
+		cout<<", teachers: ";
+		foreach(QString s, act->teachersNames)
+			cout<<qPrintable(s)<<" ";
+		cout<<", subj=="<<qPrintable(act->subjectName);
+		cout<<", students: ";
+		foreach(QString s, act->studentsNames)
+			cout<<qPrintable(s)<<" ";
+		cout<<endl;
+	}
+	cout<<"End - the order of activities (id-s):"<<endl;
+	//assert(0);
+
+	//RANDOM ORDER
+	/*for(int i=0; i<gt.rules.nInternalActivities; i++)
+		permutation[i]=i;
+	for(int i=0; i<gt.rules.nInternalActivities*gt.rules.nInternalActivities/2; i++){
+		int j=randomKnuth()%gt.rules.nInternalActivities;
+		int k=randomKnuth()%gt.rules.nInternalActivities;
+		int tmp;
+		tmp=permutation[j];
+		permutation[j]=permutation[k];
+		permutation[k]=tmp;
+	}*/
+}
+#endif
+
+#if 0
 void sortActivities()
 {
 	//computeMinNDays();
@@ -1703,3 +1845,4 @@ void sortActivities()
 		permutation[k]=tmp;
 	}*/
 }
+#endif

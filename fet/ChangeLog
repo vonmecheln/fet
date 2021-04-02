@@ -955,4 +955,9 @@ Versions 5.1.0 -
 	Volker Dirr)
 - Version 5.1.9
 	- Better initial sorting -> better automatic generation
+- Version 5.1.10
+	- Detailed constraint activity ... (min n days, preferred time(s), same starting time,
+	same starting hour, not overlapping) now contain the teacher, subj, subj tag and students)
+	(suggested by Volker Dirr).
+	- Better initial sorting - better automatic generation
 	

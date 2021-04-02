@@ -936,7 +936,42 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
 	for(int i=0; i<this->n_activities; i++){
-		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));s+="\n";
+		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));
+
+		//* write the teachers, subject and students sets
+		//added in version 5.1.10
+		int ai;
+		for(ai=0; ai<r.activitiesList.size(); ai++)
+			if(r.activitiesList[ai]->id==this->activitiesId[i])
+				break;
+		assert(ai<r.activitiesList.size());
+		s+=" ( ";
+	
+		s+=QObject::tr("T: ");
+		int k=0;
+		foreach(QString ss, r.activitiesList[ai]->teachersNames){
+			if(k>0)
+				s+=" ,";
+			s+=ss;
+			k++;
+		}
+	
+		s+=QObject::tr(" , S: ");
+		s+=r.activitiesList[ai]->subjectName;
+	
+		s+=QObject::tr(" , St: ");
+		k=0;
+		foreach(QString ss, r.activitiesList[ai]->studentsNames){
+			if(k>0)
+				s+=",";
+			s+=ss;
+			k++;
+		}
+	
+		s+=" )";
+		//* end section
+		
+		s+="\n";
 	}
 
 	return s;
@@ -1190,7 +1225,42 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
 	for(int i=0; i<this->n_activities; i++){
-		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));s+="\n";
+		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));
+
+		//* write the teachers, subject and students sets
+		//added in version 5.1.10
+		int ai;
+		for(ai=0; ai<r.activitiesList.size(); ai++)
+			if(r.activitiesList[ai]->id==this->activitiesId[i])
+				break;
+		assert(ai<r.activitiesList.size());
+		s+=" ( ";
+	
+		s+=QObject::tr("T: ");
+		int k=0;
+		foreach(QString ss, r.activitiesList[ai]->teachersNames){
+			if(k>0)
+				s+=" ,";
+			s+=ss;
+			k++;
+		}
+	
+		s+=QObject::tr(" , S: ");
+		s+=r.activitiesList[ai]->subjectName;
+	
+		s+=QObject::tr(" , St: ");
+		k=0;
+		foreach(QString ss, r.activitiesList[ai]->studentsNames){
+			if(k>0)
+				s+=",";
+			s+=ss;
+			k++;
+		}
+	
+		s+=" )";
+		//* end section
+		
+		s+="\n";
 	}
 
 	return s;
@@ -1515,7 +1585,43 @@ QString ConstraintMinNDaysBetweenActivities::getDetailedDescription(Rules& r){
 	s+=(QObject::tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay)));s+="\n";
 	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
 	for(int i=0; i<this->n_activities; i++){
-		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));s+="\n";
+		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));
+		
+		//* write the teachers, subject and students sets
+		//added in version 5.1.10
+		int ai;
+		for(ai=0; ai<r.activitiesList.size(); ai++)
+			if(r.activitiesList[ai]->id==this->activitiesId[i])
+				break;
+		assert(ai<r.activitiesList.size());
+		s+=" ( ";
+	
+		s+=QObject::tr("T: ");
+		int k=0;
+		foreach(QString ss, r.activitiesList[ai]->teachersNames){
+			if(k>0)
+				s+=" ,";
+			s+=ss;
+			k++;
+		}
+	
+		s+=QObject::tr(" , S: ");
+		s+=r.activitiesList[ai]->subjectName;
+	
+		s+=QObject::tr(" , St: ");
+		k=0;
+		foreach(QString ss, r.activitiesList[ai]->studentsNames){
+			if(k>0)
+				s+=",";
+			s+=ss;
+			k++;
+		}
+	
+		s+=" )";
+		//* end section
+		
+		s+="\n";
+
 	}
 	s+=(QObject::tr("Minimum number of days=%1").arg(this->minDays));s+="\n";
 
@@ -5459,7 +5565,42 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
 	s+=(QObject::tr("Number of activities=%1").arg(this->n_activities));s+="\n";
 	for(int i=0; i<this->n_activities; i++){
-		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));s+="\n";
+		s+=(QObject::tr("Activity with id=%1").arg(this->activitiesId[i]));
+		
+		//* write the teachers, subject and students sets
+		//added in version 5.1.10
+		int ai;
+		for(ai=0; ai<r.activitiesList.size(); ai++)
+			if(r.activitiesList[ai]->id==this->activitiesId[i])
+				break;
+		assert(ai<r.activitiesList.size());
+		s+=" ( ";
+	
+		s+=QObject::tr("T: ");
+		int k=0;
+		foreach(QString ss, r.activitiesList[ai]->teachersNames){
+			if(k>0)
+				s+=" ,";
+			s+=ss;
+			k++;
+		}
+	
+		s+=QObject::tr(" , S: ");
+		s+=r.activitiesList[ai]->subjectName;
+	
+		s+=QObject::tr(" , St: ");
+		k=0;
+		foreach(QString ss, r.activitiesList[ai]->studentsNames){
+			if(k>0)
+				s+=",";
+			s+=ss;
+			k++;
+		}
+	
+		s+=" )";
+		//* end section
+
+		s+="\n";
 	}
 
 	return s;
