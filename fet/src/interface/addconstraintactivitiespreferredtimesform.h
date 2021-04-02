@@ -49,6 +49,10 @@ public:
 	void addConstraint();
 	
 	void tableClicked(int, int, int, const QPoint&);
+	
+public slots:
+	void setAllSlotsAllowed();
+	void setAllSlotsNotAllowed();
 };
 
 #endif

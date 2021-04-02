@@ -47,6 +47,9 @@ public:
 	void cancel();
 public slots:	
 	void tableClicked(int, int, int, const QPoint&);
+
+	void setAllAvailable();
+	void setAllNotAvailable();
 };
 
 #endif

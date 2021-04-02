@@ -82,6 +82,20 @@ ModifyConstraintActivitiesPreferredTimesForm::~ModifyConstraintActivitiesPreferr
 {
 }
 
+void ModifyConstraintActivitiesPreferredTimesForm::setAllSlotsAllowed()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			preferredTimesTable->setText(i, j, YES);
+}
+
+void ModifyConstraintActivitiesPreferredTimesForm::setAllSlotsNotAllowed()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			preferredTimesTable->setText(i, j, NO);
+}
+
 void ModifyConstraintActivitiesPreferredTimesForm::tableClicked(int row, int col, int button, const QPoint& mousePos)
 {
 	Q_UNUSED(button);

@@ -707,3 +707,46 @@ Lab 3
  
 So when user want to add "an activity have a set of preferred rooms" for all the tutorial room, instead 
 of clicking 20 tutorial room one by one, user just click the group that is Tutorial. Easy right???
+
+13---------------------------------------------------------
+From kdsayang
+
+What I meant is in Data --> Time Constraints --> Teacher Time Constraints --> A Teachers not available time, 
+1. If u double clicked Afida, 
+2. It will show Afida not available time right. 
+3. Then If u want to change Sambilan not available time by choosing Teacher drop down menu, nothing happen. In fact, It still shows Afida not available time. 
+4. So, if u want to change Sambilan not available time, u have to clicked Cancel button first, 
+5. then double clicked Sambilan. 
+6. Now u can see that Sambilan not available time is updated.
+
+My suggestion is that It will be better If FET can update to Sambilan from Afida in Step no 3. 
+TQ
+
+14---------------------------------------------------------
+From kdsayang
+
+Hi,
+ 
+I have some other suggestion.
+ 
+1. It will be GREAT if FET can be turn to tree structure. We can show/hide the structure
+2. In the tree structure, we can use the copy, cut and paste to edit the subject, activities, etc in the tree structure
+ 
+example of tree structure can be seen in attachment
+ 
+Thanks 
+
+15---------------------------------------------------------
+From kdsayang
+
+If  I want to change many teacher not available time, I need to add one by one although the teacher not available time is the SAME.  
+ 
+So, I suggest that u can add A set of teacher not available time. Same as A rooms not available time feature. 
+
+16---------------------------------------------------------
+From kdsayang
+On current version, there is no group for subject and teacher. It is quite annoying if u have to look for certain subject X and teacher Y in that list. When the list grow bigger (let say 100), it's kinda hard because u have to find that lecture and subject in that 100 lists. Although the sorting is a good way to find the subject and teacher, IMHO maybe we can make groups in that teacher and subject section
+
+For example I wanna find teacher X and subject X. Teacher X is a teacher that teach Diploma IT student. So, I just search that teacher in Diploma IT group rather than searching 100 other list. Same as subject X.
+
+This feature is needed if my/our/your university/school is a big one where teacher and subject are hundreds...

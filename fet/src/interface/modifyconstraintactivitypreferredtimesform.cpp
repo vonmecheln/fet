@@ -114,6 +114,20 @@ ModifyConstraintActivityPreferredTimesForm::~ModifyConstraintActivityPreferredTi
 {
 }
 
+void ModifyConstraintActivityPreferredTimesForm::setAllSlotsAllowed()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			preferredTimesTable->setText(i, j, YES);
+}
+
+void ModifyConstraintActivityPreferredTimesForm::setAllSlotsNotAllowed()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			preferredTimesTable->setText(i, j, NO);
+}
+
 bool ModifyConstraintActivityPreferredTimesForm::filterOk(Activity* act)
 {
 	QString tn=teachersComboBox->currentText();

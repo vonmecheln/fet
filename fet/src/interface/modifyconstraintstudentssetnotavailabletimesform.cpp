@@ -75,6 +75,20 @@ ModifyConstraintStudentsSetNotAvailableTimesForm::~ModifyConstraintStudentsSetNo
 {
 }
 
+void ModifyConstraintStudentsSetNotAvailableTimesForm::setAllAvailable()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			notAllowedTimesTable->setText(i, j, NO);
+}
+
+void ModifyConstraintStudentsSetNotAvailableTimesForm::setAllNotAvailable()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			notAllowedTimesTable->setText(i, j, YES);
+}
+
 void ModifyConstraintStudentsSetNotAvailableTimesForm::tableClicked(int row, int col, int button, const QPoint& mousePos)
 {
 	Q_UNUSED(button);

@@ -56,6 +56,20 @@ AddConstraintRoomNotAvailableTimesForm::~AddConstraintRoomNotAvailableTimesForm(
 {
 }
 
+void AddConstraintRoomNotAvailableTimesForm::setAllAvailable()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			notAllowedTimesTable->setText(i, j, NO);
+}
+
+void AddConstraintRoomNotAvailableTimesForm::setAllNotAvailable()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			notAllowedTimesTable->setText(i, j, YES);
+}
+
 void AddConstraintRoomNotAvailableTimesForm::updateRoomsComboBox()
 {
 	roomsComboBox->clear();

@@ -55,6 +55,10 @@ public:
 private:
 	//the id's of the activities listed in the activities combo
 	QList<int> activitiesList;
+	
+public slots:
+	void setAllSlotsAllowed();
+	void setAllSlotsNotAllowed();
 };
 
 #endif

@@ -44,6 +44,9 @@ public:
 
 public slots:
 	void tableClicked(int, int, int, const QPoint&);
+
+	void setAllAllowed();
+	void setAllBreak();
 };
 
 #endif

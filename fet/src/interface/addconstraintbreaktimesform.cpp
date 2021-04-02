@@ -53,6 +53,20 @@ AddConstraintBreakTimesForm::~AddConstraintBreakTimesForm()
 {
 }
 
+void AddConstraintBreakTimesForm::setAllAllowed()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			notAllowedTimesTable->setText(i, j, NO);
+}
+
+void AddConstraintBreakTimesForm::setAllBreak()
+{
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			notAllowedTimesTable->setText(i, j, YES);
+}
+
 void AddConstraintBreakTimesForm::tableClicked(int row, int col, int button, const QPoint& mousePos)
 {
 	Q_UNUSED(button);

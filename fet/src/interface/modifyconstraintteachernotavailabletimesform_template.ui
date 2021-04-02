@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>634</width>
-            <height>540</height>
+            <height>555</height>
         </rect>
     </property>
     <property name="caption">
@@ -118,7 +118,21 @@ before and after this not available period, there will be no gaps counted</strin
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QTable" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>notAllowedTimesTable</cstring>
+            </property>
+            <property name="numRows">
+                <number>3</number>
+            </property>
+            <property name="numCols">
+                <number>0</number>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout14</cstring>
             </property>
@@ -144,19 +158,31 @@ before and after this not available period, there will be no gaps counted</strin
                 </widget>
             </hbox>
         </widget>
-        <widget class="QTable" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>notAllowedTimesTable</cstring>
+                <cstring>layout7</cstring>
             </property>
-            <property name="numRows">
-                <number>3</number>
-            </property>
-            <property name="numCols">
-                <number>0</number>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>setAllAvailablePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set all slots available</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>setAllNotAvailablePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set all slots not available</string>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
     </grid>
 </widget>
@@ -179,6 +205,18 @@ before and after this not available period, there will be no gaps counted</strin
         <receiver>ModifyConstraintTeacherNotAvailableTimesForm_template</receiver>
         <slot>tableClicked(int,int,int,const QPoint&amp;)</slot>
     </connection>
+    <connection>
+        <sender>setAllAvailablePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyConstraintTeacherNotAvailableTimesForm_template</receiver>
+        <slot>setAllAvailable()</slot>
+    </connection>
+    <connection>
+        <sender>setAllNotAvailablePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>ModifyConstraintTeacherNotAvailableTimesForm_template</receiver>
+        <slot>setAllNotAvailable()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>teachersComboBox</tabstop>
@@ -190,6 +228,8 @@ before and after this not available period, there will be no gaps counted</strin
     <slot>ok()</slot>
     <slot>cancel()</slot>
     <slot>tableClicked(int,int,int,const QPoint&amp;)</slot>
+    <slot>setAllAvailable()</slot>
+    <slot>setAllNotAvailable()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

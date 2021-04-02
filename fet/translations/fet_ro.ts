@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ro">
-<defaultcodec></defaultcodec>
 <context>
     <name>ActivitiesForm_template</name>
     <message>
@@ -821,17 +820,17 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
 <context>
     <name>AddConstraintActivitiesPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="236"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="250"/>
         <source>FET question</source>
         <translation>FET intrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="237"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="251"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Avertisment: 0 sloturi selectate. Sunteti sigur?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="172"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="186"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -844,7 +843,7 @@ Cea mai buna practica ar fi sa folositi constrangerea timpi de pauza.
 Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrangere, dar fiti atent sa nu obtineti un orar imposibil (daca un profesor/studenti sunt constransi pe ferestre sau ferestre devreme si lasati un slot nepermis intre 2 sloturi permise sau un slot nepermis devreme in zi si mai multe sloturi permise dupa el, aceasta posibila fereastra poate fi numarata in orarul profesorilor si studentilor)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="189"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="203"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -857,7 +856,7 @@ Cea mai buna practica ar fi sa folositi constrangerea profesor timpi indisponibi
 Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrangere, dar fiti atent sa nu obtineti orar imposibil (daca profesorul este constrans pe ferestre si lasati un slot nepermis intre 2 sloturi permise, aceasta posibila fereastra poate fi numarata in orarul profesorului)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="206"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="220"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -870,7 +869,7 @@ Cea mai buna practica ar fi sa folositi constrangerea set de studenti timpi indi
 Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrangere, dar fiti atent sa nu obtineti orar imposibil (daca setul de studenti este constrans pe ferestre sau ferestre devreme si lasati un slot nepermis intre 2 sloturi permise (sau un slot nepermis inainte de sloturi permise), aceasta posibila fereastra poate fi numarata in orarul studentilor)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="206"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="220"/>
         <source>Do you want to add current constraint?</source>
         <translation>Doriti sa adaugati constrangerea curenta?</translation>
     </message>
@@ -883,51 +882,61 @@ Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrang
         <translation>FET - Dialogul de adaugare a unei constrangeri activititati perioade preferate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="81"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="152"/>
         <source>Add constraint</source>
         <translation>Adauga constrangere</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="73"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="160"/>
         <source>Close</source>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="115"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="53"/>
         <source>Students set</source>
         <translation>Set de studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="141"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="79"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="128"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="66"/>
         <source>Subject</source>
         <translation>Disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="134"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="41"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="126"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="97"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="35"/>
         <source>Activity tag</source>
         <translation>Eticheta activitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="151"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="89"/>
         <source>Instructions: you can choose a set of activities with a certain teacher (or
 blank for all teachers), students set, subject and activity tag.</source>
         <translation>Instructiuni: puteti alege un set de activitati cu un profesor anume (sau
 gol pentru toti profesorii), set de studenti, disciplina si eticheta activitate.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="178"/>
+        <source>Set all slots allowed</source>
+        <translation>Seteaza toate sloturile permis</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="186"/>
+        <source>Set all slots not allowed</source>
+        <translation>Seteaza toate sloturile nepermis</translation>
     </message>
 </context>
 <context>
@@ -1422,12 +1431,12 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
 <context>
     <name>AddConstraintActivityPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="229"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="243"/>
         <source>FET question</source>
         <translation>FET intrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="230"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="244"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Atentiune: 0 sloturi selectate. Sunteti sigur?</translation>
     </message>
@@ -1440,54 +1449,64 @@ si fiti atenti la ordine, s-ar putea sa fie diferita de ceea ce aveti nevoie</tr
         <translation>FET - Dialogul de adaugare a unei noi constrangeri activititate perioade preferate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="61"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="35"/>
         <source>Activity</source>
         <translation>Activitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="192"/>
         <source>Add constraint</source>
         <translation>Adauga constrangere</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="43"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="200"/>
         <source>Close</source>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="145"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="119"/>
         <source>Filter</source>
         <translation>Filtru</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="161"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
         <source>Students set</source>
         <translation>Set de studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="174"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="148"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="200"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="174"/>
         <source>Subject</source>
         <translation>Disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="109"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="127"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="101"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="192"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="166"/>
         <source>Activity tag</source>
         <translation>Eticheta activitate</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="218"/>
+        <source>Set all slots allowed</source>
+        <translation>Seteaza toate sloturile permis</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="226"/>
+        <source>Set all slots not allowed</source>
+        <translation>Seteaza toate sloturile nepermis</translation>
     </message>
 </context>
 <context>
@@ -1589,6 +1608,16 @@ pentru profesori sau studenti</translation>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="84"/>
         <source>Close</source>
         <translation>Inchide</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="116"/>
+        <source>Set all slots allowed</source>
+        <translation>Seteaza toate sloturile permis</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="124"/>
+        <source>Set all slots break</source>
+        <translation>Seteaza toate sloturile pauza</translation>
     </message>
 </context>
 <context>
@@ -1732,14 +1761,24 @@ zi, forteaza consecutive</translation>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="130"/>
         <source>Add constraint</source>
         <translation>Adauga constrangere</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="124"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="138"/>
         <source>Close</source>
         <translation>Inchide</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="156"/>
+        <source>Set all slots available</source>
+        <translation>Seteaza toate sloturile disponibil</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="164"/>
+        <source>Set all slots not available</source>
+        <translation>Seteaza toate sloturile indisponibil</translation>
     </message>
 </context>
 <context>
@@ -2707,42 +2746,42 @@ permite zile goale pentru studenti)</translation>
 <context>
     <name>AddConstraintStudentsSetNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="129"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="143"/>
         <source>FET information</source>
         <translation>FET - informatie</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="101"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="115"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Importanta (procentuala) invalida. Trebuie sa fie 100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="109"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="123"/>
         <source>Invalid students set</source>
         <translation>Set de studenti invalid</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="127"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="141"/>
         <source>Constraint added</source>
         <translation>Constrangere adaugata</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="131"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="145"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same students set. Please edit that one</source>
         <translation>Constrangere NE-adaugata - trebuie ca exista alta constragere de acest tip care se refera la acelasi set de studenti. Va rog editati pe aceea</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="141"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="155"/>
         <source>This constraint does not induce gaps (or early gaps) for students. If a student set has lessons before and after a not available period, gaps will not be counted.</source>
         <translation>Aceasta constrangere nu induce ferestre (sau ferestre &quot;devreme&quot;) pentru studenti. Daca un set de studenti are lectii inainte si dupa perioada indisponibila, ferestrele nu vor fi numarate.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="149"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="163"/>
         <source>FET help</source>
         <translation>FET ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="161"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable</source>
         <translation>Daca chiar aveti nevoie de importanta sub 100%, atunci puteti folosi activitati timpi preferati doar cu setul de studenti specificat, dar aceasta poate duce la probleme, pentru ca ferestrele posibile vor fi numarate si poate obtineti orar imposibil</translation>
     </message>
@@ -2755,43 +2794,53 @@ permite zile goale pentru studenti)</translation>
         <translation>FET - Dialogul de adaugare a unei noi constrangeri set de studenti timpi de indisponibilitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="93"/>
         <source>Add current constraint</source>
         <translation>Adauga constrangerea curenta</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="143"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="109"/>
         <source>Close</source>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="175"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="133"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="183"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="79"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="75"/>
         <source>Students set</source>
         <translation>Set de studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="135"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="101"/>
         <source>Help</source>
         <translation>Ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="201"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="151"/>
         <source>Note: this constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after a
 not available period, there will be no gaps counted</source>
         <translation>Nota: aceasta constrangere nu induce ferestre (sau &quot;devreme&quot; nerespectate)
 pentru studenti. Daca un set de studenti are lectii inainte si dupa o
 perioada &quot;indisponibil&quot;, nu vor fi numarate ferestre</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="183"/>
+        <source>Set all slots available</source>
+        <translation>Seteaza toate sloturile disponibil</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="191"/>
+        <source>Set all slots not available</source>
+        <translation>Seteaza toate sloturile indisponibil</translation>
     </message>
 </context>
 <context>
@@ -3525,42 +3574,42 @@ sa incepeti cu minim 2 ore si sa le mariti cand obtineti noi orare</translation>
 <context>
     <name>AddConstraintTeacherNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="120"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="134"/>
         <source>FET information</source>
         <translation>FET - informatie</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="92"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="106"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Importanta (procentuala) invalida. Trebuie sa fie 100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="100"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="114"/>
         <source>Invalid teacher</source>
         <translation>Profesor invalid</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="118"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="132"/>
         <source>Constraint added</source>
         <translation>Constrangere adaugata</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="122"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="136"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same teacher. Please edit that one</source>
         <translation>Constrangere NE-adaugata - trebuie ca exista alta constragere de acest tip care se refera la acelasi profesor. Va rog editati-o pe aceea</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="132"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="146"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has lessons before and after a not available period, gaps will not be counted.</source>
         <translation>Aceasta constrangere nu induce ferestre pentru profesori. Daca un profesor are lectii inainte si dupa o perioada indisponibila, ferestrele nu vor fi numarate.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="140"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="154"/>
         <source>FET help</source>
         <translation>FET ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="138"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="152"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
         <translation>Daca chiar aveti nevoie de importanta sub 100%, atunci puteti folosi activitati timpi preferati doar cu profesorul specificat, dar aceasta poate duce la probleme, pentru ca ferestrele posibile vor fi numarate si poate obtineti orar imposibil.</translation>
     </message>
@@ -3573,43 +3622,53 @@ sa incepeti cu minim 2 ore si sa le mariti cand obtineti noi orare</translation>
         <translation>FET - Dialogul de adaugare a unei noi constrangeri profesor timpi de indisponibilitate</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="131"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="83"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="107"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Importanta - procente (necesar: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="163"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="115"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
         <source>Add current constraint</source>
         <translation>Adauga constrangerea curenta</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="51"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="175"/>
         <source>Close</source>
         <translation>Inchide</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="43"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="167"/>
         <source>Help</source>
         <translation>Ajutor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="175"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="127"/>
         <source>Note: this constraint does not induce gaps for teachers.
 If a teacher has lessons before and after a not available
 period, there will be no gaps counted</source>
         <translation>Nota: aceasta constrangere nu induce ferestre pentru profesori.
 Daca un profesor are lectii inainte si dupa o perioada &quot;indisponibil&quot;,
 nu vor fi numarate ferestre</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="193"/>
+        <source>Set all slots available</source>
+        <translation>Seteaza toate sloturile disponibil</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="201"/>
+        <source>Set all slots not available</source>
+        <translation>Seteaza toate sloturile indisponibil</translation>
     </message>
 </context>
 <context>
@@ -8948,12 +9007,12 @@ Va rog opriti simularea inainte de aceasta.</translation>
         <translation>Referinte</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="438"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="442"/>
         <source>Guestbook</source>
         <translation>Carte de oaspeti</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="894"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="908"/>
         <source>Sponsors</source>
         <translation>Sponsori</translation>
     </message>
@@ -9082,6 +9141,53 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="914"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In decreasing amount order:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;kentuckyclassroom.com &lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;- 100 euros (21 April 2008) &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Josep M. Fontana - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Marco Barsotti - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.6 (May 2008)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="311"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -9201,32 +9307,29 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Romeu Veloso - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hatim Alahmadi - Arabic translation ,sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="900"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In decreasing amount order:&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;kdsayang - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;didit - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="462"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="466"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Bobby&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Namibia&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Posted: 15.05.2008 15:16&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I&apos;ve tested with primary &amp;amp; secondary school data and FET has passed with flying colours. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Horatiu&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Romania&lt;/p&gt;
@@ -9649,30 +9752,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.5 (April 2008)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10969,17 +11048,17 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
 <context>
     <name>ModifyConstraintActivitiesPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="297"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="311"/>
         <source>FET question</source>
         <translation>FET intrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="298"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="312"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Avertisment: 0 sloturi selectate. Sunteti sigur?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="233"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="247"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -10992,7 +11071,7 @@ Cea mai buna practica ar fi sa folositi constrangerea timpi de pauza.
 Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrangere, dar fiti atent sa nu obtineti un orar imposibil (daca un profesor/studenti sunt constransi pe ferestre sau ferestre devreme si lasati un slot nepermis intre 2 sloturi permise sau un slot nepermis devreme in zi si mai multe sloturi permise dupa el, aceasta posibila fereastra poate fi numarata in orarul profesorilor si studentilor)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="250"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="264"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -11005,7 +11084,7 @@ Cea mai buna practica ar fi sa folositi constrangerea profesor timpi indisponibi
 Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrangere, dar fiti atent sa nu obtineti orar imposibil (daca profesorul este constrans pe ferestre si lasati un slot nepermis intre 2 sloturi permise, aceasta posibila fereastra poate fi numarata in orarul profesorului)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="267"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="281"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -11018,7 +11097,7 @@ Cea mai buna practica ar fi sa folositi constrangerea set de studenti timpi indi
 Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrangere, dar fiti atent sa nu obtineti orar imposibil (daca setul de studenti este constrans pe ferestre sau ferestre devreme si lasati un slot nepermis intre 2 sloturi permise (sau un slot nepermis inainte de sloturi permise), aceasta posibila fereastra poate fi numarata in orarul studentilor)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="267"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="281"/>
         <source>Do you want to add current constraint?</source>
         <translation>Doriti sa adaugati constrangerea curenta?</translation>
     </message>
@@ -11031,44 +11110,54 @@ Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrang
         <translation>FET - Modificare constrangere timpii preferati ai activitatilor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="169"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="177"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="79"/>
         <source>Subject</source>
         <translation>Disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="120"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="58"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="133"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="71"/>
         <source>Students set</source>
         <translation>Set de studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="125"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="57"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="117"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat:0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="50"/>
         <source>Activity tag</source>
         <translation>Eticheta activitate</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="143"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished">Seteaza toate sloturile permis</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="151"/>
+        <source>Set all slots not allowed</source>
+        <translation type="unfinished">Seteaza toate sloturile nepermis</translation>
     </message>
 </context>
 <context>
@@ -11444,12 +11533,12 @@ Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrang
 <context>
     <name>ModifyConstraintActivityPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="268"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="282"/>
         <source>FET question</source>
         <translation>FET intrebare</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="269"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="283"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Avertisment: 0 sloturi selectate. Sunteti sigur?</translation>
     </message>
@@ -11477,39 +11566,49 @@ Daca aveti nevoie de importanta sub 100%, atunci puteti folosi aceasta constrang
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="145"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="96"/>
         <source>Filter</source>
         <translation>Filtru</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="161"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="112"/>
         <source>Students set</source>
         <translation>Set de studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="174"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="125"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="187"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="138"/>
         <source>Subject</source>
         <translation>Disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="135"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="200"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="127"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="192"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Importanta - procentaj (recomandat: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="195"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="146"/>
         <source>Activity tag</source>
         <translation>Eticheta activitate</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="218"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished">Seteaza toate sloturile permis</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="226"/>
+        <source>Set all slots not allowed</source>
+        <translation type="unfinished">Seteaza toate sloturile nepermis</translation>
     </message>
 </context>
 <context>
@@ -11611,6 +11710,16 @@ pentru profesori sau studenti</translation>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="84"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="116"/>
+        <source>Set all slots allowed</source>
+        <translation>Seteaza toate sloturile permis</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="124"/>
+        <source>Set all slots break</source>
+        <translation>Seteaza toate sloturile pauza</translation>
     </message>
 </context>
 <context>
@@ -11734,14 +11843,24 @@ zi, forteaza consecutive</translation>
         <translation>-1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="116"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="130"/>
         <source>Ok</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="124"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="138"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="156"/>
+        <source>Set all slots available</source>
+        <translation>Seteaza toate sloturile disponibil</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="164"/>
+        <source>Set all slots not available</source>
+        <translation>Seteaza toate sloturile indisponibil</translation>
     </message>
 </context>
 <context>
@@ -12888,17 +13007,17 @@ permite zile goale pentru studenti)</translation>
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="137"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="151"/>
         <source>FET information</source>
         <translation>FET - informatie</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="130"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="144"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Importanta (procentuala) invalida. Trebuie sa fie 100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="138"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="152"/>
         <source>Invalid students set</source>
         <translation>Set de studenti invalid</translation>
     </message>
@@ -12943,6 +13062,16 @@ perioada &quot;indisponibil&quot;, nu vor calculate fi ferestre</translation>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="143"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="175"/>
+        <source>Set all slots available</source>
+        <translation>Seteaza toate sloturile disponibil</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="183"/>
+        <source>Set all slots not available</source>
+        <translation>Seteaza toate sloturile indisponibil</translation>
     </message>
 </context>
 <context>
@@ -13784,17 +13913,17 @@ sa incepeti cu minim 2 ore si sa le mariti cand obtineti noi orare</translation>
 <context>
     <name>ModifyConstraintTeacherNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="122"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="136"/>
         <source>FET information</source>
         <translation>FET - informatie</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="115"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="129"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Importanta (procentuala) invalida. Trebuie sa fie 100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="123"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="137"/>
         <source>Invalid teacher</source>
         <translation>Profesor invalid</translation>
     </message>
@@ -13829,14 +13958,24 @@ are lectii inainte si dupa aceasta perioada indisponibila, nu vor fi numarate fe
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="142"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="156"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="174"/>
+        <source>Set all slots available</source>
+        <translation>Seteaza toate sloturile disponibil</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="182"/>
+        <source>Set all slots not available</source>
+        <translation>Seteaza toate sloturile indisponibil</translation>
     </message>
 </context>
 <context>
@@ -14524,7 +14663,7 @@ dar poate sunt prea mari si veti avea un orar imposibil.</translation>
         <translation>Activitate invalida</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="228"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="242"/>
         <source>Invalid activity</source>
         <translation>Activitate invalida</translation>
     </message>
@@ -14569,7 +14708,7 @@ dar poate sunt prea mari si veti avea un orar imposibil.</translation>
         <translation>Constrangere adaugata</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="261"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="275"/>
         <source>Constraint NOT added - duplicate?</source>
         <translation>Constrangere NEadaugata - duplicat?</translation>
     </message>
@@ -14912,17 +15051,17 @@ pentru ca profesorul este invalid</translation>
         <translation>Va rog specificati cel putin o zi sau o ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="252"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="266"/>
         <source>Not enough slots (too many &quot;Yes&quot; values).</source>
         <translation>Spatiu insuficient (prea multe valori &quot;Da&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="254"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="268"/>
         <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES</source>
         <translation>Va rog mariti valoarea variabilei MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="256"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="270"/>
         <source>Currently, it is %1</source>
         <translation>In prezent, este %1</translation>
     </message>
@@ -15202,7 +15341,7 @@ va rog abandonati acum si dati-i un alt nume
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="283"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="297"/>
         <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</source>
         <translation>Va rog mariti variabila MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</translation>
     </message>
@@ -15760,7 +15899,7 @@ atasata. Va rugam stergeti intai celelalte constrangeri de tip timp preferat
 al activitatii, care se refera la aceasta activitate, inainte de a continua</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="240"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="254"/>
         <source>This activity id has other constraint of this type attached
 Please remove the other constraints of type activity preferred times
 referring to this activity before proceeding</source>
@@ -16312,7 +16451,7 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="100"/>
+        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="114"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Importanta (procentuala) invalida. Trebuie sa fie 100</translation>
     </message>
@@ -18265,12 +18404,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="104"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="118"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation>Constrangere NE-adaugata - trebuie ca exista alta constrangere de acest tip. Va rog editati pe aceea</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="127"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="141"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same room. Please edit that one</source>
         <translation>Constrangere NE-adaugata - trebuie ca exista alta constragere de acest tip care se refera la aceeasi sala. Va rog editati-o pe aceea</translation>
     </message>
@@ -18353,17 +18492,17 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="141"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="155"/>
         <source>A constraint of this type exists for the same room - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="161"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="132"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="146"/>
         <source>A constraint of this type exists for the same teacher - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>

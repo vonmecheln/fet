@@ -349,32 +349,32 @@ Starting with version 5.0.0, it is possible to add activities with no students o
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="528"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET - avvertenza</translation>
+        <translation>FET - avvertenza</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="545"/>
         <source>Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi aggiungere le attività correnti così come sono (non raccomandato) o annullare e modificarle come suggerito?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="531"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi aggiungere un insieme di attività suddivise in numero maggiore dei giorni per settimana e aggiungere anche il numero minimo di giorni tra attività. Questa è una pessima pratica per il modo in cui l&apos;algoritmo funziona (rallenta la generazione e rende più difficile risolvere l&apos;orario).</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="533"/>
         <source>The best way to add the activities would be:</source>
-        <translation type="unfinished"></translation>
+        <translation>Il miglior modo di aggiungere attività dovrebbe essere:</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="537"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Se selezioni &apos;forza consecutive se stesso giorno&apos;,  allora accoppia più attività per ottenere un numero di lezioni uguale al numero di giorni a settimana. Esempio: 7 attività di durata 1 in una settimana di 5 giorni possono diventare 5 attività di durata 2,2,1,1,1 così da aggiungere un singolo insieme di attività con queste 5 componenti (possibilmente aumentando il peso del vincolo minimo n giorni tra attività fino al 100%) </translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="543"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Se non selezioni &apos;forza consecutive se stesso giorno&apos;, allora aggiungi un contenitore contenente un numero di attività uguale al numero di giorni per settimana e ulteriori attività previste in un altro contenitore suddiviso. Per esempio supponi di avere 7 attività di durata 1 in una settimana di 5 giorni. Aggiungi 2 contenitori di attività più ampi, il primo suddiviso in 5 attività di durata 1 e il secondo diviso in 2 attività di durata 1 (possibilmente aumentando il peso del vincolo minimo n giorni tra attività per ciascuno dei 2 contenitori fino al 100%)</translation>
     </message>
 </context>
 <context>
@@ -666,69 +666,69 @@ Raccomandato:
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="16"/>
         <source>FET - Add new constraint 2 activities ordered dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Aggiungi nuovo vincolo per 2 attività ordinate </translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="35"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi il vincolo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="43"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="67"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Peso percentuale
+        <translation>Peso percentuale
 (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="76"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="117"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="139"/>
         <source>First activity</source>
-        <translation type="unfinished">Prima attività</translation>
+        <translation>Prima attività</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="186"/>
         <source>Second activity</source>
-        <translation type="unfinished">Seconda attività</translation>
+        <translation>Seconda attività</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="219"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="235"/>
         <source>Students set</source>
-        <translation type="unfinished">Insieme di studenti</translation>
+        <translation>Insieme di studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="248"/>
         <source>Teacher</source>
-        <translation type="unfinished">Insegnante</translation>
+        <translation>Insegnante</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="261"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="269"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Chiave dell&apos;attività</translation>
+        <translation>Chiave dell&apos;attività</translation>
     </message>
 </context>
 <context>
@@ -790,12 +790,12 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
 <context>
     <name>AddConstraintActivitiesPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="236"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="250"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="237"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="251"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -815,16 +815,20 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation type="obsolete">Non è consigliabile aggiungere questo vincolo solo per un insieme di studenti. Si otterrano buchi e potrebbe essere impossibile chiudere un orario. Meglio usare, invece, il vincolo di studenti non disponibili  o il vincoli di interruzione. Solo se occorre un peso inferiore al 100% potrebbe essere necessario usare questo vincolo, ma con prudenza. Sicuro di voler aggiungere questo vincolo?  </translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="172"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="186"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hai specificato tutte le attività. Ciò potrebbe costituire un problema: se scegli una posizione non consentita fra due posizioni consentite, questa posizione non permessa sarà consderata un buco nell&apos;orario dell&apos;insegnante e della classe.
+
+ La miglior scelta è far uso del vincolo di interruzione.
+
+ Se occorre un peso sotto il 100% allora potresti usare questo vincolo, ma fai attenzione a non ottenere un orario impossibile (se i tuoi insegnanti/studenti sono vincolati ad avere buchi o ingressi posticipati e se lasci una posizione non permessa tra due posizioni consentite oppure una posizione non consentita ad inizio giornata e più posizioni consentite dopo di essa, questo possibile buco potrebbe essere contato nell&apos;orario di insegnante e studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="189"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="203"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -833,7 +837,7 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="206"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="220"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -842,7 +846,7 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="206"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="220"/>
         <source>Do you want to add current constraint?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -855,51 +859,61 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation>FET - Aggiungi nuovo vincolo per attività preferite in certi orari</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="81"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="152"/>
         <source>Add constraint</source>
         <translation>Aggiungi il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="73"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="160"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="41"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="126"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="49"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="134"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="115"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="53"/>
         <source>Students set</source>
         <translation>Insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="128"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="66"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="141"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="79"/>
         <source>Teacher</source>
         <translation>Insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="97"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="35"/>
         <source>Activity tag</source>
         <translation>Chiave dell&apos;attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="151"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="89"/>
         <source>Instructions: you can choose a set of activities with a certain teacher (or
 blank for all teachers), students set, subject and activity tag.</source>
         <translation>Istruzioni: potete scegliere un gruppo di attività con un certo insegnante
 (o spazio per tutti gli insegnanti), insieme di studenti, materia e chiave d&apos;attività.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="178"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="186"/>
+        <source>Set all slots not allowed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1394,12 +1408,12 @@ potrebbe essere diverso da quello che vi occorre)</translation>
 <context>
     <name>AddConstraintActivityPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="229"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="243"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="230"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="244"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -1412,54 +1426,64 @@ potrebbe essere diverso da quello che vi occorre)</translation>
         <translation>FET - Aggiungi vincolo di ore preferite per attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="192"/>
         <source>Add constraint</source>
         <translation>Aggiungi il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="43"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="200"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="61"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="35"/>
         <source>Activity</source>
         <translation>Attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="127"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="101"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="109"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="145"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="119"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="161"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="135"/>
         <source>Students set</source>
         <translation>Insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="174"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="148"/>
         <source>Teacher</source>
         <translation>Insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="200"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="174"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="192"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="166"/>
         <source>Activity tag</source>
         <translation>Chiave dell&apos;attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="218"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="226"/>
+        <source>Set all slots not allowed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1562,6 +1586,16 @@ comporta buchi per insegnanti o studenti</translation>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
+    <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="116"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="124"/>
+        <source>Set all slots break</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddConstraintMinNDaysBetweenActivitiesForm</name>
@@ -1573,17 +1607,17 @@ comporta buchi per insegnanti o studenti</translation>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="198"/>
         <source>The best way to add the activities would be:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Il miglior modo di aggiungere attività dovrebbe essere:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="204"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1. Se selezioni &apos;forza consecutive se stesso giorno&apos;,  allora accoppia più attività per ottenere un numero di lezioni uguale al numero di giorni a settimana. Esempio: 7 attività di durata 1 in una settimana di 5 giorni possono diventare 5 attività di durata 2,2,1,1,1 così da aggiungere un singolo insieme di attività con queste 5 componenti (possibilmente aumentando il peso del vincolo minimo n giorni tra attività fino al 100%) </translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="212"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2. Se non selezioni &apos;forza consecutive se stesso giorno&apos;, allora aggiungi un contenitore contenente un numero di attività uguale al numero di giorni per settimana e ulteriori attività previste in un altro contenitore suddiviso. Per esempio supponi di avere 7 attività di durata 1 in una settimana di 5 giorni. Aggiungi 2 contenitori di attività più ampi, il primo suddiviso in 5 attività di durata 1 e il secondo diviso in 2 attività di durata 1 (possibilmente aumentando il peso del vincolo minimo n giorni tra attività per ciascuno dei 2 contenitori fino al 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="214"/>
@@ -1704,14 +1738,24 @@ giorno, forza consecutività</translation>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="130"/>
         <source>Add constraint</source>
         <translation>Aggiungi il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="124"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="138"/>
         <source>Close</source>
         <translation>Chiudi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="156"/>
+        <source>Set all slots available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="164"/>
+        <source>Set all slots not available</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1961,37 +2005,37 @@ buchi,neppure a inizio giornata.</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint students max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Aggiungi vincolo per studenti: numero massimo di ore ininterrotte</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="49"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi il vincolo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="93"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive</translation>
     </message>
 </context>
 <context>
@@ -2034,7 +2078,7 @@ buchi,neppure a inizio giornata.</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="93"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Numero massimo di ore al giorno</translation>
+        <translation>Numero massimo di ore al giorno</translation>
     </message>
 </context>
 <context>
@@ -2495,42 +2539,42 @@ buchi,neppure a inizio giornata.</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Aggiungi vincolo per classi: numero massimo di ore consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="72"/>
         <source>Students set</source>
-        <translation type="unfinished">Insieme di studenti</translation>
+        <translation>Insieme di studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="80"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi il vincolo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="88"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="110"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="124"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive</translation>
     </message>
 </context>
 <context>
@@ -2578,7 +2622,7 @@ buchi,neppure a inizio giornata.</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="124"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Numero massimo di ore al giorno</translation>
+        <translation>Numero massimo di ore al giorno</translation>
     </message>
 </context>
 <context>
@@ -2677,32 +2721,32 @@ students)</source>
 <context>
     <name>AddConstraintStudentsSetNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="129"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="143"/>
         <source>FET information</source>
         <translation>FET - informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="101"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="115"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="109"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="123"/>
         <source>Invalid students set</source>
         <translation>Insieme di studenti non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="127"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="141"/>
         <source>Constraint added</source>
         <translation>Vincolo inserito</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="131"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="145"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same students set. Please edit that one</source>
         <translation>Vincolo NON aggiunto - ci deve essere un altro vincolo di questo tipo riferito allo stesso insieme di studenti. Modificare quello</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="141"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="155"/>
         <source>This constraint does not induce gaps (or early gaps) for students. If a student set has lessons before and after a not available period, gaps will not be counted.</source>
         <translation>Vincolo che non induce buchi (o inizio tardato) per gli studenti. Se un insieme di studenti ha lezioni prima e dopo un periodo di indisponibilità, non saranno contati buchi.</translation>
     </message>
@@ -2712,12 +2756,12 @@ students)</source>
         <translation type="obsolete">Se davvero occorre usare un peso inferiore al 100% si potrà usare ore preferenziali per attività solo con gli insiemi di studenti specificati, ma ciò è sconsigliato, perchè saranno contati buchi che possono rendere l&apos;orario impossibile. Meglio NON USARE questo metodo se non necessario. Oppure usa questo metodo in sicurezza specificando solo le ultime ore della giornata, così non appariranno buchi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="149"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="163"/>
         <source>FET help</source>
         <translation>FET - Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="161"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2730,43 +2774,53 @@ students)</source>
         <translation>FET - Aggiungi nuovo vincolo di indisponibilità di classi</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="93"/>
         <source>Add current constraint</source>
         <translation>Aggiungi il vincolo descritto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="143"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="109"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="175"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="133"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso percentuale (occorre il 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="183"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="79"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="75"/>
         <source>Students set</source>
         <translation>Insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="135"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="101"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="201"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="151"/>
         <source>Note: this constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after a
 not available period, there will be no gaps counted</source>
         <translation>Vincolo che non induce buchi (o inizio tardato)per gli studenti.
 Se un insieme di studenti ha lezioni prima e dopo un periodo
 di indisponibilità, non saranno contati buchi.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="183"/>
+        <source>Set all slots available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="191"/>
+        <source>Set all slots not available</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3316,42 +3370,42 @@ non sono considerate buchi. </translation>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Aggiungi nuovo vincolo: numero massimo di ore consecutive al giorno per insegnante</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="71"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="90"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="104"/>
         <source>Teacher</source>
-        <translation type="unfinished">Insegnante</translation>
+        <translation>Insegnante</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="129"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi il vincolo</translation>
     </message>
 </context>
 <context>
@@ -3497,32 +3551,32 @@ poi di aumentarne il valore man mano che trovate nuovi orari</translation>
 <context>
     <name>AddConstraintTeacherNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="120"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="134"/>
         <source>FET information</source>
         <translation>FET - informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="92"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="106"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="100"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="114"/>
         <source>Invalid teacher</source>
         <translation>Insegnante non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="118"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="132"/>
         <source>Constraint added</source>
         <translation>Vincolo inserito</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="122"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="136"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same teacher. Please edit that one</source>
         <translation>Vincolo NON aggiunto - ci deve essere un altro vincolo di questo tipo riferito allo stesso insegnante. Modificare quello</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="132"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="146"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has lessons before and after a not available period, gaps will not be counted.</source>
         <translation>Questo vincolo non comporta buchi per l&apos;insegnante. Se questi ha lezioni prima e dopo un periodo di indisponibilità, non saranno contati buchi.</translation>
     </message>
@@ -3532,12 +3586,12 @@ poi di aumentarne il valore man mano che trovate nuovi orari</translation>
         <translation type="obsolete">Se ti occorrono un peso sotto il 100%, potresti usare gli orari preferiti per attività con il solo insegnante specificato, ma questo è sconsigliato, dato che i buchi saranno contati e potresti ottenere un orario impossibile. Meglio NON usare questo metodo a meno che non sia indispensabile. Oppure potresti usare questo metodo specificando solo le ultime ore giornaliere, così non ci saranno buchi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="140"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="154"/>
         <source>FET help</source>
         <translation>FET - Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="138"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="152"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3550,41 +3604,51 @@ poi di aumentarne il valore man mano che trovate nuovi orari</translation>
         <translation>FET - Aggiungi nuovo vincolo di indisponibilità per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="131"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="83"/>
         <source>Teacher</source>
         <translation>Insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="155"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="107"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Peso percentuale (occorre il 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="163"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="115"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
         <source>Add current constraint</source>
         <translation>Aggiungi il vincolo descritto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="51"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="175"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="43"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="167"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="175"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="127"/>
         <source>Note: this constraint does not induce gaps for teachers.
 If a teacher has lessons before and after a not available
 period, there will be no gaps counted</source>
         <translation>Questo vincolo non comporta buchi per l&apos;insegnante.Se questi ha lezioni prima e dopo un periodo di indisponibilità, non saranno contati buchi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="193"/>
+        <source>Set all slots available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="201"/>
+        <source>Set all slots not available</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3776,37 +3840,37 @@ non sono considerate buchi. </translation>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Aggiungi nuovo vincolo: numero massimo di ore consecutive al giorno per insegnanti</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi il vincolo</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="98"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive</translation>
     </message>
 </context>
 <context>
@@ -4259,7 +4323,7 @@ after A1, same day, possibly separated by breaks</source>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="16"/>
         <source>FET - Time constraints 2 activies ordered</source>
-        <translation type="unfinished"></translation>
+        <translation>FET- Vincoli di tempo: 2 attività ordinate</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="27"/>
@@ -5359,42 +5423,42 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints students max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Vincoli di tempo: massimo numero di ore consecutive per studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuovo Elemento</translation>
+        <translation>Nuovo Elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Vincoli</translation>
+        <translation>Vincoli</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Aggiungi</translation>
+        <translation>Aggiungi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
 </context>
 <context>
@@ -5881,47 +5945,47 @@ rooms override the home rooms.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints students set max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Vincoli di tempo: massimo numero di ore consecutive per classe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuovo Elemento</translation>
+        <translation>Nuovo Elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Vincoli</translation>
+        <translation>Vincoli</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Aggiungi</translation>
+        <translation>Aggiungi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
 </context>
 <context>
@@ -6707,47 +6771,47 @@ Preferred rooms override the home rooms.</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teacher max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Vincoli di tempo: massimo numero di ore consecutive per insegnante</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuovo Elemento</translation>
+        <translation>Nuovo Elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Aggiungi</translation>
+        <translation>Aggiungi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="83"/>
         <source>Constraints</source>
-        <translation type="unfinished">Vincoli</translation>
+        <translation>Vincoli</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
 </context>
 <context>
@@ -7160,42 +7224,42 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teachers max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Vincoli di tempo: massimo numero di ore consecutive per insegnanti</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nuovo Elemento</translation>
+        <translation>Nuovo Elemento</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Aggiungi</translation>
+        <translation>Aggiungi</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="91"/>
         <source>Constraints</source>
-        <translation type="unfinished">Vincoli</translation>
+        <translation>Vincoli</translation>
     </message>
 </context>
 <context>
@@ -7422,72 +7486,72 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="295"/>
         <source>Day 15</source>
-        <translation type="unfinished">Giorno 15</translation>
+        <translation>Giorno 15</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="308"/>
         <source>Day 16</source>
-        <translation type="unfinished">Giorno 16</translation>
+        <translation>Giorno 16</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="321"/>
         <source>Day 17</source>
-        <translation type="unfinished">Giorno 17</translation>
+        <translation>Giorno 17</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="334"/>
         <source>Day 18</source>
-        <translation type="unfinished">Giorno 18</translation>
+        <translation>Giorno 18</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="347"/>
         <source>Day 19</source>
-        <translation type="unfinished">Giorno 19</translation>
+        <translation>Giorno 19</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="360"/>
         <source>Day 20</source>
-        <translation type="unfinished">Giorno 20</translation>
+        <translation>Giorno 20</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="373"/>
         <source>Day 21</source>
-        <translation type="unfinished">Giorno 21</translation>
+        <translation>Giorno 21</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="396"/>
         <source>Day 22</source>
-        <translation type="unfinished">Giorno 22</translation>
+        <translation>Giorno 22</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="409"/>
         <source>Day 23</source>
-        <translation type="unfinished">Giorno 23</translation>
+        <translation>Giorno 23</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="422"/>
         <source>Day 24</source>
-        <translation type="unfinished">Giorno 24</translation>
+        <translation>Giorno 24</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="435"/>
         <source>Day 25</source>
-        <translation type="unfinished">Giorno 25</translation>
+        <translation>Giorno 25</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="448"/>
         <source>Day 26</source>
-        <translation type="unfinished">Giorno 26</translation>
+        <translation>Giorno 26</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="461"/>
         <source>Day 27</source>
-        <translation type="unfinished">Giorno 27</translation>
+        <translation>Giorno 27</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform_template.ui" line="474"/>
         <source>Day 28</source>
-        <translation type="unfinished">Giorno 28</translation>
+        <translation>Giorno 28</translation>
     </message>
 </context>
 <context>
@@ -7782,12 +7846,12 @@ Avere un sottogruppo con poche ore di lavoro alla settimana significa che hai im
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="519"/>
         <source>FET - Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Avvertenza</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="501"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
-        <translation type="unfinished"></translation>
+        <translation>Non hai ancora generato un orario - avvia la generazione innanzitutto</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="520"/>
@@ -8791,32 +8855,32 @@ Avere un sottogruppo con poche ore di lavoro alla settimana significa che hai im
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1168"/>
         <source>Save data+timetable as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva dati e orario come...</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1173"/>
         <source>2 activities are ordered</source>
-        <translation type="unfinished"></translation>
+        <translation>2 attività sono in ordine</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1178"/>
         <source>Max hours continuously for all teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per tutti gli insegnanti</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1183"/>
         <source>Max hours continuously for a teacher</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per un insegnante</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1188"/>
         <source>Max hours continuously for a students set</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per una classe</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1193"/>
         <source>Max hours continuously for all students</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per tutti gli studenti</translation>
     </message>
 </context>
 <context>
@@ -8966,31 +9030,14 @@ p, li { white-space: pre-wrap; }
         <translation>Si ringrazia</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="438"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="442"/>
         <source>Guestbook</source>
         <translation>Guestbook</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="894"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="908"/>
         <source>Sponsors</source>
         <translation>Sponsors</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="900"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In decreasing amount order:&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="116"/>
@@ -9070,6 +9117,53 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tr - Turkish translation&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>initial translator - Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>updates and many improvements - Mahir Nacar (mahirnacar AT email.com)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.6 (May 2008)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="914"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In decreasing amount order:&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;kentuckyclassroom.com &lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;- 100 euros (21 April 2008) &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sebastian Canagaratna, Department of Chemistry, Ohio Northern University - 50$ (2005)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Josep M. Fontana - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;Marco Barsotti - 20 euros (21 April 2008)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Raita Mihail Doru - 15$ (2005)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9193,15 +9287,29 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Romeu Veloso - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hatim Alahmadi - Arabic translation ,sample file.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;kdsayang - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;didit - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="462"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="466"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Bobby&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Namibia&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Posted: 15.05.2008 15:16&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;I&apos;ve tested with primary &amp;amp; secondary school data and FET has passed with flying colours. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Horatiu&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Romania&lt;/p&gt;
@@ -9624,30 +9732,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.5 (April 2008)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10848,7 +10932,7 @@ attività e reinseriscine un nuovo insieme</translation>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="16"/>
         <source>FET - Modify constraint 2 activities ordered dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modifica vincolo per 2 attività in ordine</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="35"/>
@@ -10947,12 +11031,12 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
 <context>
     <name>ModifyConstraintActivitiesPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="297"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="311"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="298"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="312"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -10972,16 +11056,20 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation type="obsolete">Non è consigliabile aggiungere questo vincolo solo per un insieme di studenti. Si otterrano buchi e potrebbe essere impossibile chiudere un orario. Meglio usare, invece, il vincolo di studenti non disponibili  o il vincoli di interruzione. Solo se occorre un peso inferiore al 100% potrebbe essere necessario usare questo vincolo, ma con prudenza. Sicuro di voler aggiungere questo vincolo?  </translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="233"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="247"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hai specificato tutte le attività. Ciò potrebbe costituire un problema: se scegli una posizione non consentita fra due posizioni consentite, questa posizione non permessa sarà consderata un buco nell&apos;orario dell&apos;insegnante e della classe.
+
+ La miglior scelta è far uso del vincolo di interruzione.
+
+ Se occorre un peso sotto il 100% allora potresti usare questo vincolo, ma fai attenzione a non ottenere un orario impossibile (se i tuoi insegnanti/studenti sono vincolati ad avere buchi o ingressi posticipati e se lasci una posizione non permessa tra due posizioni consentite oppure una posizione non consentita ad inizio giornata e più posizioni consentite dopo di essa, questo possibile buco potrebbe essere contato nell&apos;orario di insegnante e studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="250"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="264"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -10990,7 +11078,7 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="267"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="281"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -10999,7 +11087,7 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="267"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="281"/>
         <source>Do you want to add current constraint?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11012,44 +11100,54 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation>FET - Modifica vincolo di orario preferenziale per attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="27"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="169"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="35"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="177"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="57"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="117"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="65"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="125"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="120"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="58"/>
         <source>Teacher</source>
         <translation>Insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="133"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="71"/>
         <source>Students set</source>
         <translation>Insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="141"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="79"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="112"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="50"/>
         <source>Activity tag</source>
         <translation>Chiave dell&apos;attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="143"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="151"/>
+        <source>Set all slots not allowed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11425,12 +11523,12 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
 <context>
     <name>ModifyConstraintActivityPreferredTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="268"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="282"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="269"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="283"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -11458,39 +11556,49 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="127"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="192"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="135"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="200"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="145"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="96"/>
         <source>Filter</source>
         <translation>Filtro</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="161"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="112"/>
         <source>Students set</source>
         <translation>Insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="174"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="125"/>
         <source>Teacher</source>
         <translation>Insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="187"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="138"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="195"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="146"/>
         <source>Activity tag</source>
         <translation>Chiave dell&apos;attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="218"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="226"/>
+        <source>Set all slots not allowed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11593,6 +11701,16 @@ comporta buchi per insegnanti o studenti</translation>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="116"/>
+        <source>Set all slots allowed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="124"/>
+        <source>Set all slots break</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ModifyConstraintMinNDaysBetweenActivitiesForm</name>
@@ -11604,17 +11722,17 @@ comporta buchi per insegnanti o studenti</translation>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="120"/>
         <source>The best way to add the activities would be:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Il miglior modo di aggiungere attività dovrebbe essere:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="126"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1. Se selezioni &apos;forza consecutive se stesso giorno&apos;,  allora accoppia più attività per ottenere un numero di lezioni uguale al numero di giorni a settimana. Esempio: 7 attività di durata 1 in una settimana di 5 giorni possono diventare 5 attività di durata 2,2,1,1,1 così da aggiungere un singolo insieme di attività con queste 5 componenti (possibilmente aumentando il peso del vincolo minimo n giorni tra attività fino al 100%) </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="134"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2. Se non selezioni &apos;forza consecutive se stesso giorno&apos;, allora aggiungi un contenitore contenente un numero di attività uguale al numero di giorni per settimana e ulteriori attività previste in un altro contenitore suddiviso. Per esempio supponi di avere 7 attività di durata 1 in una settimana di 5 giorni. Aggiungi 2 contenitori di attività più ampi, il primo suddiviso in 5 attività di durata 1 e il secondo diviso in 2 attività di durata 1 (possibilmente aumentando il peso del vincolo minimo n giorni tra attività per ciascuno dei 2 contenitori fino al 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="135"/>
@@ -11715,14 +11833,24 @@ giorno, forza consecutività</translation>
         <translation>-1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="116"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="130"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="124"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="138"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="156"/>
+        <source>Set all slots available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="164"/>
+        <source>Set all slots not available</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12011,7 +12139,7 @@ buchi,neppure a inizio giornata.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint students max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modifica vincolo per studenti: numero massimo di ore consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="33"/>
@@ -12031,7 +12159,7 @@ buchi,neppure a inizio giornata.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="90"/>
@@ -12630,42 +12758,42 @@ buchi,neppure a inizio giornata.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modifica vincolo per classe: numero massimo di ore consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Vincolo attuale</translation>
+        <translation>Vincolo attuale</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="94"/>
         <source>Students</source>
-        <translation type="unfinished">Studenti</translation>
+        <translation>Studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="108"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="121"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="129"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -12850,17 +12978,17 @@ students)</source>
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="137"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="151"/>
         <source>FET information</source>
         <translation>FET - informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="130"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="144"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="138"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="152"/>
         <source>Invalid students set</source>
         <translation>Insieme di studenti non valido</translation>
     </message>
@@ -12903,6 +13031,16 @@ not available period, there will be no gaps counted</source>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="143"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="175"/>
+        <source>Set all slots available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="183"/>
+        <source>Set all slots not available</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13521,12 +13659,12 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modifica vincolo: numero massimo di ore consecutive per insegnante</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="35"/>
@@ -13551,7 +13689,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="98"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="129"/>
@@ -13737,17 +13875,17 @@ to start with 2 min hours and highten them as you find new timetables</source>
 <context>
     <name>ModifyConstraintTeacherNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="122"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="136"/>
         <source>FET information</source>
         <translation>FET - informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="115"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="129"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="123"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="137"/>
         <source>Invalid teacher</source>
         <translation>Insegnante non valido</translation>
     </message>
@@ -13782,14 +13920,24 @@ e dopo un periodo di indisponibilità, non saranno contati buchi</translation>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="148"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="142"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="156"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="174"/>
+        <source>Set all slots available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="182"/>
+        <source>Set all slots not available</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14030,12 +14178,12 @@ nsegnanti non disponibili e interruzioni non sono buchi.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max hours continuously dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Modifica vincolo: numero massimo di ore consecutive per insegnanti</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="35"/>
@@ -14060,7 +14208,7 @@ nsegnanti non disponibili e interruzioni non sono buchi.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="98"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Numero massimo di ore consecutive</translation>
     </message>
 </context>
 <context>
@@ -16211,7 +16359,7 @@ all&apos;assegnazione delle aule) per ogni orario</translation>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="228"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="242"/>
         <source>Invalid activity</source>
         <translation>Attività non valida</translation>
     </message>
@@ -16297,22 +16445,22 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many a
         <translation>Vincolo NON aggiunto - riportare l&apos;errore all&apos;autore</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="252"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="266"/>
         <source>Not enough slots (too many &quot;Yes&quot; values).</source>
         <translation>Ore disponibili insufficienti (ci sono troppi &quot;Si&quot;)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="283"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="297"/>
         <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="256"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="270"/>
         <source>Currently, it is %1</source>
         <translation>Attualmente è %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="261"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="275"/>
         <source>Constraint NOT added - duplicate?</source>
         <translation>Vincolo NON aggiunto - duplicato?</translation>
     </message>
@@ -16437,7 +16585,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <translation>Vincolo NON aggiunto - duplicato</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="254"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="268"/>
         <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIMES</source>
         <translation></translation>
     </message>
@@ -16457,7 +16605,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
         <translation>Orario di base obbligatorio</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="100"/>
+        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="114"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
@@ -16850,7 +16998,7 @@ Rimuovi gli altri vincoli di orario preferenziale per attività
 correlate a questa attività prima di procedere</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="240"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="254"/>
         <source>This activity id has other constraint of this type attached
 Please remove the other constraints of type activity preferred times
 referring to this activity before proceeding</source>
@@ -17592,38 +17740,39 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="62"/>
         <source>Please enter activity tag&apos;s name</source>
-        <translation type="unfinished"></translation>
+        <translation>Digita il nome della chiave della lezione</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="136"/>
         <source>Activity tag insertion dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserimento chiave d&apos;attività</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="126"/>
         <source>Invalid selected activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiave d&apos;attività: selezione non valida</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="98"/>
         <source>Are you sure you want to delete this activity tag?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Sicuro di voler cancellare questa chiave d&apos;attività?
+</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="130"/>
         <source>Please enter new activity tag&apos;s name</source>
-        <translation type="unfinished"></translation>
+        <translation>Digita il nuovo nome della chiave della lezione</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform.cpp" line="127"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Chiave dell&apos;attività non valida</translation>
+        <translation>Chiave dell&apos;attività non valida</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="196"/>
         <source>FET help on activity tags</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - suggerimenti su chiavi d&apos;attività</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="199"/>
@@ -18359,12 +18508,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="104"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="118"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="127"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="141"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same room. Please edit that one</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18427,17 +18576,17 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="141"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="155"/>
         <source>A constraint of this type exists for the same room - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="161"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="132"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="146"/>
         <source>A constraint of this type exists for the same teacher - cannot proceed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18504,12 +18653,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/engine/rules.cpp" line="4926"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1. Se selezioni &apos;forza consecutive se stesso giorno&apos;,  allora accoppia più attività per ottenere un numero di lezioni uguale al numero di giorni a settimana. Esempio: 7 attività di durata 1 in una settimana di 5 giorni possono diventare 5 attività di durata 2,2,1,1,1 così da aggiungere un singolo insieme di attività con queste 5 componenti (possibilmente aumentando il peso del vincolo minimo n giorni tra attività fino al 100%) </translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4933"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2. Se non selezioni &apos;forza consecutive se stesso giorno&apos;, allora aggiungi un contenitore contenente un numero di attività uguale al numero di giorni per settimana e ulteriori attività previste in un altro contenitore suddiviso. Per esempio supponi di avere 7 attività di durata 1 in una settimana di 5 giorni. Aggiungi 2 contenitori di attività più ampi, il primo suddiviso in 5 attività di durata 1 e il secondo diviso in 2 attività di durata 1 (possibilmente aumentando il peso del vincolo minimo n giorni tra attività per ciascuno dei 2 contenitori fino al 100%)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1700"/>
@@ -18574,7 +18723,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8454"/>
         <source>Constraint 2 activities ordered (second activity must be placed at any time after the first activity)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vincolo 2 attività in ordine (la seconda attività deve essere piazzata in qualsiasi momento dopo la prima attività)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8583"/>
@@ -18589,12 +18738,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="117"/>
         <source>2 activities ordered</source>
-        <translation type="unfinished"></translation>
+        <translation>2 attività in ordine</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="119"/>
         <source>(activity 2 must be after activity 1, separated by any number of days or hours)</source>
-        <translation type="unfinished"></translation>
+        <translation>(l&apos;attività 2 deve essere espletata dopo l&apos;attività 1, separata da un certo numero di giorni o ore)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8438"/>
@@ -18654,7 +18803,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform.cpp" line="90"/>
         <source>Teacher max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per un insegnante</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform.cpp" line="76"/>
@@ -18664,7 +18813,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform.cpp" line="73"/>
         <source>Teachers max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per più insegnanti</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="644"/>
@@ -18699,7 +18848,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform.cpp" line="68"/>
         <source>Students max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per studenti</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5666"/>
@@ -18725,7 +18874,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform.cpp" line="102"/>
         <source>Students set max hours continuously</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero massimo di ore consecutive per classi</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5685"/>
@@ -18736,7 +18885,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <location filename="../src/engine/timeconstraint.cpp" line="5707"/>
         <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Il vincolo di numero massimo di ore consecutive per insieme di studenti è errato perchè si riferisce ad un insieme di studenti inesistente. Correggi (rimuoverlo può essere la soluzione adatta). Segnala se ritieni che si tratti di un bug. Il vincolo è:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5828"/>

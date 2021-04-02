@@ -15,194 +15,185 @@
     <property name="caption">
         <string>FET - Add new constraint students set not available times dialog</string>
     </property>
-    <widget class="QLayoutWidget">
+    <grid>
         <property name="name">
-            <cstring>layout9</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>10</x>
-                <y>70</y>
-                <width>290</width>
-                <height>50</height>
-            </rect>
-        </property>
-        <grid>
+        <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout9</cstring>
             </property>
-            <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
+            <grid>
                 <property name="name">
-                    <cstring>studentsComboBox</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="editable">
-                    <bool>false</bool>
-                </property>
-                <property name="insertionPolicy">
-                    <enum>NoInsertion</enum>
-                </property>
-                <property name="autoCompletion">
-                    <bool>false</bool>
-                </property>
-                <property name="duplicatesEnabled">
-                    <bool>false</bool>
-                </property>
-            </widget>
-            <spacer row="0" column="1">
-                <property name="name">
-                    <cstring>spacer1</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>111</width>
-                        <height>20</height>
-                    </size>
-                </property>
-            </spacer>
-            <widget class="QLabel" row="0" column="0">
-                <property name="name">
-                    <cstring>studentsTextLabel</cstring>
-                </property>
-                <property name="frameShape">
-                    <enum>NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>Plain</enum>
-                </property>
-                <property name="text">
-                    <string>Students set</string>
-                </property>
-            </widget>
-        </grid>
-    </widget>
-    <widget class="QTable">
-        <property name="name">
-            <cstring>notAllowedTimesTable</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>10</x>
-                <y>126</y>
-                <width>585</width>
-                <height>392</height>
-            </rect>
-        </property>
-        <property name="numRows">
-            <number>3</number>
-        </property>
-        <property name="numCols">
-            <number>0</number>
-        </property>
-        <property name="readOnly">
-            <bool>true</bool>
-        </property>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout12</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>10</x>
-                <y>524</y>
-                <width>585</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <hbox>
+                <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>studentsComboBox</cstring>
+                    </property>
+                    <property name="editable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="insertionPolicy">
+                        <enum>NoInsertion</enum>
+                    </property>
+                    <property name="autoCompletion">
+                        <bool>false</bool>
+                    </property>
+                    <property name="duplicatesEnabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+                <spacer row="0" column="1">
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>111</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>studentsTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Students set</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout12</cstring>
             </property>
-            <widget class="QPushButton">
+            <hbox>
                 <property name="name">
-                    <cstring>addConstraintPushButton</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="text">
-                    <string>Add current constraint</string>
-                </property>
-            </widget>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>pushButton8</cstring>
-                </property>
-                <property name="text">
-                    <string>Help</string>
-                </property>
-            </widget>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>closePushButton</cstring>
-                </property>
-                <property name="text">
-                    <string>Close</string>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout6</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>306</x>
-                <y>70</y>
-                <width>289</width>
-                <height>50</height>
-            </rect>
-        </property>
-        <vbox>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addConstraintPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add current constraint</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton8</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Help</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>closePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="1">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout6</cstring>
             </property>
-            <widget class="QLabel">
+            <vbox>
                 <property name="name">
-                    <cstring>weightTextLabel</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="frameShape">
-                    <enum>NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>Plain</enum>
-                </property>
-                <property name="text">
-                    <string>Weight percentage (necessary: 100%)</string>
-                </property>
-            </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>weightLineEdit</cstring>
-                </property>
-                <property name="text">
-                    <string>100</string>
-                </property>
-            </widget>
-        </vbox>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>20</x>
-                <y>10</y>
-                <width>563</width>
-                <height>48</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Note: this constraint does not induce gaps (or early not respected) 
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Weight percentage (necessary: 100%)</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>100</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>Note: this constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after a
 not available period, there will be no gaps counted</string>
-        </property>
-    </widget>
+            </property>
+        </widget>
+        <widget class="QTable" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>notAllowedTimesTable</cstring>
+            </property>
+            <property name="numRows">
+                <number>3</number>
+            </property>
+            <property name="numCols">
+                <number>0</number>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>setAllAvailablePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set all slots available</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>setAllNotAvailablePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set all slots not available</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
 </widget>
 <connections>
     <connection>
@@ -229,6 +220,18 @@ not available period, there will be no gaps counted</string>
         <receiver>AddConstraintStudentsSetNotAvailableTimesForm_template</receiver>
         <slot>help()</slot>
     </connection>
+    <connection>
+        <sender>setAllAvailablePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintStudentsSetNotAvailableTimesForm_template</receiver>
+        <slot>setAllAvailable()</slot>
+    </connection>
+    <connection>
+        <sender>setAllNotAvailablePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintStudentsSetNotAvailableTimesForm_template</receiver>
+        <slot>setAllNotAvailable()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>studentsComboBox</tabstop>
@@ -242,6 +245,8 @@ not available period, there will be no gaps counted</string>
     <slot>addCurrentConstraint()</slot>
     <slot>tableClicked(int,int,int,const QPoint&amp;)</slot>
     <slot>help()</slot>
+    <slot>setAllAvailable()</slot>
+    <slot>setAllNotAvailable()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

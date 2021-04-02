@@ -1191,4 +1191,9 @@ Versions 5.5.0 - 5.5.x
 	- Very small bug fix (very unlikely to happen, also the effect is almost null)	
 	- Indonesian, Spanish and Arabic translation updates
 	- Added an additional check for inconsistency
+- Version 5.5.6
+	- Arabic, Romanian, Spanish, Italian translations update.
+	- Added an option to select all slots available or not available for constraints break, not available and preferred times
+	(suggested by didit).
+	- Added another Arabic sample by Hatim Alahmadi
 	

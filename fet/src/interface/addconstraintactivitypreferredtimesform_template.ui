@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>700</width>
-            <height>524</height>
+            <height>568</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,32 +19,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="4" column="0">
-            <property name="name">
-                <cstring>layout33</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addConstraintPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add constraint</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>closePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Close</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
         <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
                 <cstring>layout32</cstring>
@@ -202,6 +176,58 @@
                 </widget>
             </grid>
         </widget>
+        <widget class="QLayoutWidget" row="5" column="0">
+            <property name="name">
+                <cstring>layout33</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addConstraintPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add constraint</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>closePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="4" column="0">
+            <property name="name">
+                <cstring>layout9</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>setAllAllowedPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set all slots allowed</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>setAllNotAllowedPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set all slots not allowed</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
     </grid>
 </widget>
 <connections>
@@ -247,6 +273,18 @@
         <receiver>AddConstraintActivityPreferredTimesForm_template</receiver>
         <slot>filterChanged()</slot>
     </connection>
+    <connection>
+        <sender>setAllAllowedPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintActivityPreferredTimesForm_template</receiver>
+        <slot>setAllSlotsAllowed()</slot>
+    </connection>
+    <connection>
+        <sender>setAllNotAllowedPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>AddConstraintActivityPreferredTimesForm_template</receiver>
+        <slot>setAllSlotsNotAllowed()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>teachersComboBox</tabstop>
@@ -263,6 +301,8 @@
     <slot>addConstraint()</slot>
     <slot>tableClicked(int,int,int,const QPoint&amp;)</slot>
     <slot>filterChanged()</slot>
+    <slot>setAllSlotsAllowed()</slot>
+    <slot>setAllSlotsNotAllowed()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
