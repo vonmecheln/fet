@@ -144,6 +144,9 @@ using namespace std;
 #include "constraintsubjectactivitytagpreferredroomform.h"
 #include "constraintsubjectactivitytagpreferredroomsform.h"
 
+#include "constraintactivitytagpreferredroomform.h"
+#include "constraintactivitytagpreferredroomsform.h"
+
 #include "settingstimetablehtmllevelform.h"
 
 #include "spreadconfirmationform.h"
@@ -1509,6 +1512,32 @@ void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_
 	ConstraintSubjectActivityTagPreferredRoomsForm* form=new ConstraintSubjectActivityTagPreferredRoomsForm();
 	form->exec();
 }
+
+///added 6 apr 2009
+void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityTagPreferredRoomForm* form=new ConstraintActivityTagPreferredRoomForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityTagPreferredRoomsForm* form=new ConstraintActivityTagPreferredRoomsForm();
+	form->exec();
+}
+///
 
 void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomAction_activated()
 {

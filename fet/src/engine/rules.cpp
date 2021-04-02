@@ -1675,6 +1675,22 @@ bool Rules::removeActivityTag(const QString& activityTagName)
 			else
 				i++;
 		}
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintActivityTagPreferredRoom* c=(ConstraintActivityTagPreferredRoom*)ctr;
+
+			if(c->activityTagName == activityTagName)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintActivityTagPreferredRooms* c=(ConstraintActivityTagPreferredRooms*)ctr;
+
+			if(c->activityTagName == activityTagName)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
 		else
 			i++;
 	}
@@ -1813,6 +1829,16 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 		}
 		else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
 			ConstraintSubjectActivityTagPreferredRooms* c=(ConstraintSubjectActivityTagPreferredRooms*)ctr;
+			if(c->activityTagName == initialActivityTagName)
+				c->activityTagName=finalActivityTagName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintActivityTagPreferredRoom* c=(ConstraintActivityTagPreferredRoom*)ctr;
+			if(c->activityTagName == initialActivityTagName)
+				c->activityTagName=finalActivityTagName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintActivityTagPreferredRooms* c=(ConstraintActivityTagPreferredRooms*)ctr;
 			if(c->activityTagName == initialActivityTagName)
 				c->activityTagName=finalActivityTagName;
 		}
@@ -3981,6 +4007,37 @@ bool Rules::removeRoom(const QString& roomName)
 			else
 				j++;
 		}
+
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintActivityTagPreferredRoom* c=(ConstraintActivityTagPreferredRoom*)ctr;
+			if(c->roomName==roomName)
+				this->removeSpaceConstraint(ctr);
+			else
+				j++;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintActivityTagPreferredRooms* c=(ConstraintActivityTagPreferredRooms*)ctr;
+			int t=c->roomsNames.remove(roomName);
+			assert(t<=1);
+			if(t==1 && c->roomsNames.count()==0)
+				this->removeSpaceConstraint(ctr);
+			else if(t==1 && c->roomsNames.count()==1){
+				ConstraintActivityTagPreferredRoom* c2=new ConstraintActivityTagPreferredRoom
+				 (c->weightPercentage, c->activityTagName, c->roomsNames.at(0));
+
+				QMessageBox::information(NULL, QObject::tr("FET information"), 
+				 QObject::tr("The constraint\n%1 will be modified into constraint\n%2 because"
+				 " there is only one room left in the constraint")
+				 .arg(c->getDetailedDescription(*this))
+				 .arg(c2->getDetailedDescription(*this)));
+
+				this->removeSpaceConstraint(ctr);
+				this->addSpaceConstraint(c2);
+			}
+			else
+				j++;
+		}
+
 		else
 			j++;
 	}
@@ -4098,6 +4155,26 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 			assert(t<=1);
 			j++;
 		}
+
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintActivityTagPreferredRoom* c=(ConstraintActivityTagPreferredRoom*)ctr;
+			if(c->roomName==initialRoomName)
+				c->roomName=finalRoomName;
+			j++;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintActivityTagPreferredRooms* c=(ConstraintActivityTagPreferredRooms*)ctr;
+			int t=0;
+			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+				if((*it)==initialRoomName){
+					*it=finalRoomName;
+					t++;
+				}
+			}
+			assert(t<=1);
+			j++;
+		}
+
 		else
 			j++;
 	}
@@ -10840,6 +10917,64 @@ corruptConstraintTime:
 					assert(_n_preferred_rooms==cn->roomsNames.count());
 					crt_constraint=cn;
 				}
+				
+				//added 6 apr 2009
+				else if(elem3.tagName()=="ConstraintActivityTagPreferredRoom"){
+					ConstraintActivityTagPreferredRoom* cn=new ConstraintActivityTagPreferredRoom();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Room"){
+							cn->roomName=elem4.text();
+							xmlReadingLog+="    Read room="+cn->roomName+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintActivityTagPreferredRooms"){
+					int _n_preferred_rooms=0;
+					ConstraintActivityTagPreferredRooms* cn=new ConstraintActivityTagPreferredRooms();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Tag"){
+							cn->activityTagName=elem4.text();
+							xmlReadingLog+="    Read activity tag="+cn->activityTagName+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Preferred_Rooms"){
+							_n_preferred_rooms=elem4.text().toInt();
+							xmlReadingLog+="    Read number of preferred rooms: "+QString::number(_n_preferred_rooms)+"\n";
+							assert(_n_preferred_rooms>=2);
+						}
+						else if(elem4.tagName()=="Preferred_Room"){
+							cn->roomsNames.append(elem4.text());
+							xmlReadingLog+="    Read room="+elem4.text()+"\n";
+						}
+					}
+					assert(_n_preferred_rooms==cn->roomsNames.count());
+					crt_constraint=cn;
+				}
+				
 				else if(elem3.tagName()=="ConstraintStudentsSetHomeRoom"){
 					ConstraintStudentsSetHomeRoom* cn=new ConstraintStudentsSetHomeRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){

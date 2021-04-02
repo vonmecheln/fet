@@ -1349,4 +1349,6 @@ Versions 5.9.0 - 5.9.x
 - Version 5.9.2
 	- Crash bug fix when importing activities (reported by Thomas Schwartz).
 	- Improvements and corrections in the import filter.
+- Version 5.9.3
+	- Added constraint activity tag preferred room(s) - suggested by Horatiu Halmajan and Catalin Maican
 	

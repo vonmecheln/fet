@@ -287,11 +287,19 @@
       <addaction name="dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction" />
       <addaction name="dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction" />
      </widget>
+     <widget class="QMenu" name="menuActivity_tags_space_constraints" >
+      <property name="title" >
+       <string>Activity tags space constraints</string>
+      </property>
+      <addaction name="dataSpaceConstraintsActivityTagPreferredRoomAction" />
+      <addaction name="dataSpaceConstraintsActivityTagPreferredRoomsAction" />
+     </widget>
      <addaction name="menuMisc_space_constraints" />
      <addaction name="menuRooms_space_constraints" />
      <addaction name="menuTeachers_space_constraints" />
      <addaction name="menuStudents_space_constraints" />
      <addaction name="menuSubjects_space_constraints" />
+     <addaction name="menuActivity_tags_space_constraints" />
      <addaction name="menuSubjects_and_activity_tags_space_constraints" />
      <addaction name="menuActivities_space_constraints" />
     </widget>
@@ -1493,6 +1501,16 @@
   <action name="helpSettingsAction" >
    <property name="text" >
     <string>Help on settings</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsActivityTagPreferredRoomAction" >
+   <property name="text" >
+    <string>An activity tag has a preferred room</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsActivityTagPreferredRoomsAction" >
+   <property name="text" >
+    <string>An activity tag has a set of preferred rooms</string>
    </property>
   </action>
  </widget>

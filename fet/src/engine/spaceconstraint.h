@@ -79,6 +79,9 @@ const int CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK				=1022;
 const int CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES			=1023;
 const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES			=1024;
 
+const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM						=1025;
+const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS						=1026;
+
 /**
 This class represents a space constraint
 */
@@ -726,6 +729,93 @@ public:
 
 	bool isRelatedToRoom(Room* r);
 };
+
+//addded on 6 apr 2009
+class ConstraintActivityTagPreferredRoom: public SpaceConstraint{
+public:
+
+	QList<int> _activities;
+	
+	// The index of the room
+	int _room;
+	
+public:
+
+	QString activityTagName;
+
+	QString roomName;
+
+	ConstraintActivityTagPreferredRoom();
+
+	ConstraintActivityTagPreferredRoom(double wp, const QString& actTag, const QString& rm);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+};
+
+class ConstraintActivityTagPreferredRooms: public SpaceConstraint{
+public:
+	
+	QList<int> _activities;
+	
+	QList<int> _rooms;
+
+public:
+
+	QString activityTagName;
+
+	QStringList roomsNames;
+
+	ConstraintActivityTagPreferredRooms();
+
+	ConstraintActivityTagPreferredRooms(double wp, const QString& actTag, const QStringList& rms);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+};
+///////
 
 class ConstraintStudentsSetMaxBuildingChangesPerDay: public SpaceConstraint{
 public:

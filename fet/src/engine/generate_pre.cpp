@@ -4886,6 +4886,40 @@ bool computeActivitiesRoomsPreferences()
 				}*/
 			}
 		}
+
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintActivityTagPreferredRoom* spr=(ConstraintActivityTagPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
+
+			foreach(int a, spr->_activities){
+				PreferredRoomsItem it;
+				
+				it.percentage=spr->weightPercentage;
+				it.preferredRooms.insert(spr->_room);
+			
+				if(unspecifiedPreferredRoom[a])
+					unspecifiedPreferredRoom[a]=false;
+				
+				activitiesPreferredRoomsList[a].append(it);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintActivityTagPreferredRooms* spr=(ConstraintActivityTagPreferredRooms*)gt.rules.internalSpaceConstraintsList[i];
+
+			foreach(int a, spr->_activities){
+
+				PreferredRoomsItem it;
+				
+				it.percentage=spr->weightPercentage;
+				foreach(int k, spr->_rooms)
+					it.preferredRooms.insert(k);
+			
+				if(unspecifiedPreferredRoom[a])
+					unspecifiedPreferredRoom[a]=false;
+				
+				activitiesPreferredRoomsList[a].append(it);
+			}
+		}
+
 		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			ConstraintActivityPreferredRoom* apr=(ConstraintActivityPreferredRoom*)gt.rules.internalSpaceConstraintsList[i];
 			

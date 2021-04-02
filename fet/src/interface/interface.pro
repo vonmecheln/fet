@@ -47,6 +47,14 @@ SOURCES += fet.cpp \
            addconstraintsubjectactivitytagpreferredroomsform.cpp \
            constraintsubjectactivitytagpreferredroomsform.cpp \
            modifyconstraintsubjectactivitytagpreferredroomsform.cpp \
+\
+           addconstraintactivitytagpreferredroomform.cpp \
+           constraintactivitytagpreferredroomform.cpp \
+           modifyconstraintactivitytagpreferredroomform.cpp \
+           addconstraintactivitytagpreferredroomsform.cpp \
+           constraintactivitytagpreferredroomsform.cpp \
+           modifyconstraintactivitytagpreferredroomsform.cpp \
+\
            addconstraintstudentssethomeroomform.cpp \
 \
            addconstraintstudentssetmaxbuildingchangesperdayform.cpp \
@@ -373,12 +381,22 @@ HEADERS += fet.h \
            addconstraintsubjectactivitytagpreferredroomform.h \
            constraintsubjectactivitytagpreferredroomform.h \
            modifyconstraintsubjectactivitytagpreferredroomform.h \
+\
+           addconstraintactivitytagpreferredroomform.h \
+           constraintactivitytagpreferredroomform.h \
+           modifyconstraintactivitytagpreferredroomform.h \
+\
            addconstraintsubjectpreferredroomsform.h \
            constraintsubjectpreferredroomsform.h \
            modifyconstraintsubjectpreferredroomsform.h \
            addconstraintsubjectactivitytagpreferredroomsform.h \
            constraintsubjectactivitytagpreferredroomsform.h \
            modifyconstraintsubjectactivitytagpreferredroomsform.h \
+\
+           addconstraintactivitytagpreferredroomsform.h \
+           constraintactivitytagpreferredroomsform.h \
+           modifyconstraintactivitytagpreferredroomsform.h \
+\
            addconstraintstudentssethomeroomform.h \
            constraintstudentssethomeroomform.h \
            modifyconstraintstudentssethomeroomform.h \
@@ -735,12 +753,22 @@ FORMS3 += helpfaqform_template.ui \
 		 addconstraintsubjectactivitytagpreferredroomform_template.ui \
          constraintsubjectactivitytagpreferredroomform_template.ui \
          modifyconstraintsubjectactivitytagpreferredroomform_template.ui \
+\
+		 addconstraintactivitytagpreferredroomform_template.ui \
+         constraintactivitytagpreferredroomform_template.ui \
+         modifyconstraintactivitytagpreferredroomform_template.ui \
+\
          addconstraintsubjectpreferredroomsform_template.ui \
          constraintsubjectpreferredroomsform_template.ui \
          modifyconstraintsubjectpreferredroomsform_template.ui \
 		 addconstraintsubjectactivitytagpreferredroomsform_template.ui \
          constraintsubjectactivitytagpreferredroomsform_template.ui \
          modifyconstraintsubjectactivitytagpreferredroomsform_template.ui \
+\
+		 addconstraintactivitytagpreferredroomsform_template.ui \
+         constraintactivitytagpreferredroomsform_template.ui \
+         modifyconstraintactivitytagpreferredroomsform_template.ui \
+\
          addconstraintstudentssethomeroomform_template.ui \
          constraintstudentssethomeroomform_template.ui \
          modifyconstraintstudentssethomeroomform_template.ui \

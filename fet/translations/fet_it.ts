@@ -1336,7 +1336,7 @@ potrebbe essere diverso da quello che vi occorre)</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="16"/>
         <source>FET - Add new constraint activity preferred room</source>
-        <translation>FET - Aggiungi vincolo su aula preferenziale per attività</translation>
+        <translation>FET - Aggiungi vincolo di aula preferenziale per attività</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="142"/>
@@ -1415,7 +1415,7 @@ editando questo vincolo</translation>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="16"/>
         <source>FET - Add new constraint activity preferred rooms</source>
-        <translation>FET - Aggiungi vincolo su aule preferite per attività</translation>
+        <translation>FET - Aggiungi vincolo di aule preferite per attività</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="67"/>
@@ -1747,6 +1747,102 @@ editando questo vincolo</translation>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="200"/>
         <source>Set all slots not allowed</source>
         <translation>Imposta Non Disponibile per tutte le posizioni</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintActivityTagPreferredRoomForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="16"/>
+        <source>FET - Add new constraint activity tag preferred room</source>
+        <translation>FET - Aggiungi vincolo di aula preferenziale per chiave di attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="33"/>
+        <source>Room</source>
+        <translation>Aula</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="50"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="58"/>
+        <source>Close</source>
+        <translation>Chiudi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="71"/>
+        <source>100</source>
+        <translation>100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="79"/>
+        <source>Add constraint</source>
+        <translation>Aggiungi il vincolo</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="98"/>
+        <source>Activity tag</source>
+        <translation>Chiave dell&apos;attività</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintActivityTagPreferredRoomsForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="16"/>
+        <source>FET - Add new constraint activity tag preferred rooms</source>
+        <translation>FET - Aggiungi vincolo di aule preferenziali per chiave di attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="49"/>
+        <source>100</source>
+        <translation>100</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="67"/>
+        <source>Add constraint</source>
+        <translation>Aggiungi il vincolo</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="75"/>
+        <source>Close</source>
+        <translation>Chiudi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="99"/>
+        <source>All rooms (dbl. click adds)</source>
+        <translation>Tutte le aule (doppio click aggiunge)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="165"/>
+        <source>New Item</source>
+        <translation>Nuovo Elemento</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="127"/>
+        <source>Add</source>
+        <translation>Aggiungi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="135"/>
+        <source>Remove</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="159"/>
+        <source>Selected rooms (dbl. click removes)</source>
+        <translation>Aule selezionate (doppio click elimina)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="179"/>
+        <source>Activity tag</source>
+        <translation>Chiave dell&apos;attività</translation>
     </message>
 </context>
 <context>
@@ -6655,6 +6751,102 @@ per le attività di durata maggiore di 1)</translation>
     </message>
 </context>
 <context>
+    <name>ConstraintActivityTagPreferredRoomForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="16"/>
+        <source>FET - Space constraints activity tag preferred room</source>
+        <translation>FET - Vincoli di spazio: aula preferenziale per chiave di attività </translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="25"/>
+        <source>New Item</source>
+        <translation>Nuovo Elemento</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="43"/>
+        <source>Constraints</source>
+        <translation>Vincoli</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="51"/>
+        <source>Close</source>
+        <translation>Chiudi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="59"/>
+        <source>Add</source>
+        <translation>Aggiungi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation>Vincolo attuale</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation>Modifica</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="99"/>
+        <source>Filter</source>
+        <translation>Filtro</translation>
+    </message>
+</context>
+<context>
+    <name>ConstraintActivityTagPreferredRoomsForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="16"/>
+        <source>FET - ConstraintActivityTagPreferredRooms</source>
+        <translation>FET - Vincolo di aule preferenziali per chiave di attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation>Chiudi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation>Aggiungi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="49"/>
+        <source>Constraints</source>
+        <translation>Vincoli</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="57"/>
+        <source>Current constraint</source>
+        <translation>Vincolo attuale</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="63"/>
+        <source>New Item</source>
+        <translation>Nuovo Elemento</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation>Modifica</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="99"/>
+        <source>Filter</source>
+        <translation>Filtro</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintBasicCompulsorySpaceForm_template</name>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform_template.ui" line="16"/>
@@ -10153,87 +10345,87 @@ Sei sicuro?</translation>
         <translation>La prima riga è l&apos;intestazione.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="910"/>
+        <location filename="../src/engine/export.cpp" line="933"/>
         <source>FET critical. Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>FET errore critico. Impossibile aprire il file %1 in uscita. Controllare lo spazio libero nel disco. Salvataggio di %1 interrotto.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="339"/>
+        <location filename="../src/engine/export.cpp" line="344"/>
         <source>%1 activity tags exported.</source>
         <translation>%1 chiavi dell&apos;attività esportate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1106"/>
+        <location filename="../src/engine/export.cpp" line="1129"/>
         <source>FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>FET errore critico. La scrittura di %1 ha dato codice di errore %2. Salvataggio compromesso. Controllare lo spazio libero nel disco.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="378"/>
+        <location filename="../src/engine/export.cpp" line="386"/>
         <source>%1 rooms (with buildings) exported.</source>
         <translation>%1 aule (con edifici) esportate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="414"/>
+        <location filename="../src/engine/export.cpp" line="425"/>
         <source>%1 subjects exported.</source>
         <translation>%1 materie esportate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="505"/>
+        <location filename="../src/engine/export.cpp" line="522"/>
         <source>Warning! Import of activities will fail, because %1 include set separator +.</source>
         <translation>Attenzione! Impossibile importare le attività, perchè %1 include il separatore +.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="448"/>
+        <location filename="../src/engine/export.cpp" line="462"/>
         <source>%1 teachers exported.</source>
         <translation>%1 insegnanti esportati.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="510"/>
+        <location filename="../src/engine/export.cpp" line="527"/>
         <source>%1 years exported.</source>
         <translation>%1 anni esportati.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="511"/>
+        <location filename="../src/engine/export.cpp" line="528"/>
         <source>%1 groups exported.</source>
         <translation>%1 classi esportate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="512"/>
+        <location filename="../src/engine/export.cpp" line="529"/>
         <source>%1 subgroups exported.</source>
         <translation>%1 sottogruppi esportati.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="598"/>
+        <location filename="../src/engine/export.cpp" line="618"/>
         <source>was skipped, because it refers not to a whole larger container activity</source>
         <translation>saltato, perchè si riferisce non ad un intero maggiore contenitore di attività</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="611"/>
+        <location filename="../src/engine/export.cpp" line="631"/>
         <source>was skipped, because there exists another constraint of this type with larger weight percentage, referring to the same activities</source>
         <translation>saltato, perchè esiste un altro vincolo dello stesso tipo con maggior peso percentuale, riferito alle stesse attività</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="622"/>
+        <location filename="../src/engine/export.cpp" line="642"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and higher number of min days, referring to the same activities</source>
         <translation>saltato, perchè c&apos;è un altro vincolo dello stesso tipo con lo stesso peso percentuale e un più alto numero minimo di giorni, riferito alle stesse attività</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="635"/>
+        <location filename="../src/engine/export.cpp" line="655"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and same number of min days and consecutive if same day true, referring to the same activities</source>
         <translation>saltato, perchè c&apos;è un altro vincolo dello stesso tipo con lo stesso peso percentuale e lo stesso numero minimo di giorni (e consecutive se stesso giorno), riferito alle stesse attività</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="759"/>
+        <location filename="../src/engine/export.cpp" line="779"/>
         <source>%1 activities exported.</source>
         <translation>%1 attività esportate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1111"/>
+        <location filename="../src/engine/export.cpp" line="1134"/>
         <source>TODO: write content of file &quot;Exportprotokoll.log&quot; here.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1112"/>
+        <location filename="../src/engine/export.cpp" line="1135"/>
         <source>User abort export</source>
         <translation>Esportazione interrotta dall&apos;utente</translation>
     </message>
@@ -10243,7 +10435,7 @@ Sei sicuro?</translation>
         <translation>Specificare il contenuto della prima riga:</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="380"/>
+        <location filename="../src/engine/export.cpp" line="388"/>
         <source>Warning! Only %1 of %2 building names are exported, because %3 buildings don&apos;t contain any room.</source>
         <translation>Attenzione! Solo %1 dei %2 nomi di edifici è stato esportato, perchè %3 edifici non contengono alcuna aula.</translation>
     </message>
@@ -10265,62 +10457,62 @@ Importare i dati sarà più semplice con questi valori.</translation>
         <translation>Esportazione interrotta</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="843"/>
+        <location filename="../src/engine/export.cpp" line="866"/>
         <source>%1 scheduled activities exported.</source>
         <translation>esportate %1 attività fissate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="845"/>
+        <location filename="../src/engine/export.cpp" line="868"/>
         <source>0 scheduled activities exported, because no timetable was generated.</source>
         <translation>Nessuna attività esportata perchè ancora non è stato generato alcun orario.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="633"/>
+        <location filename="../src/engine/export.cpp" line="653"/>
         <source>Note: Constraint</source>
         <translation>Nota: Vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="755"/>
+        <location filename="../src/engine/export.cpp" line="775"/>
         <source>FET warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="677"/>
+        <location filename="../src/engine/export.cpp" line="697"/>
         <source>Subactivities with activity group id %1 are different between themselves (they were separately edited), so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity. Fields which were different are: %2</source>
         <translation>Le subattività del gruppo con id %1 sono diverse tra loro (sono state editate separatamente) e, pertanto, l&apos;operazione di export non potrà essere accurata. I campi diversi saranno valorizzati con il dato della subattività principale. I campi riscontrati diversi sono: %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="756"/>
+        <location filename="../src/engine/export.cpp" line="776"/>
         <source>There are subactivities which were modified separately - so the components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate.</source>
         <translation>Ci sono subattività che sono state modificate separatamente - così che le compoenti hanno valori diversi per materia, chiavi dell&apos;attività, insegnanti, studenti o numero degli studenti rispetto alla subattività primaria. L&apos;operazione di export è stata eseguita, ma potrebbe non essere stata molto accurata.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="661"/>
+        <location filename="../src/engine/export.cpp" line="681"/>
         <source>different teachers</source>
         <translation>insegnanti diversi</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="663"/>
+        <location filename="../src/engine/export.cpp" line="683"/>
         <source>different subject</source>
         <translation>materia diversa</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="667"/>
+        <location filename="../src/engine/export.cpp" line="687"/>
         <source>different students</source>
         <translation>studenti diversi</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="671"/>
+        <location filename="../src/engine/export.cpp" line="691"/>
         <source>different number of students</source>
         <translation>numero di studenti diverso</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="665"/>
+        <location filename="../src/engine/export.cpp" line="685"/>
         <source>different activity tags</source>
         <translation>chiavi dell&apos;attività diverse</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="669"/>
+        <location filename="../src/engine/export.cpp" line="689"/>
         <source>different boolean variable &apos;must compute n total students&apos;</source>
         <translation>variabile booleana diversa &apos;occorre calcolare n totale di studenti&apos;</translation>
     </message>
@@ -10328,12 +10520,12 @@ Importare i dati sarà più semplice con questi valori.</translation>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2583"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2612"/>
         <source>FET warning</source>
         <translation>FET - avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="374"/>
+        <location filename="../src/interface/fetmainform.cpp" line="377"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
@@ -10342,12 +10534,12 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
 Se lo preferite, potete disabilitare la ricerca di aggiornamenti nel menu Settings</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2985"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3014"/>
         <source>FET information</source>
         <translation>FET - informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="394"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -10360,119 +10552,119 @@ Occorre scaricare ed installare manualmente (apri la pagina Web di FET nel tuo b
 Puoi scegliere di disabilitare la ricerca automatica di aggiornamenti nel menù Opzioni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="409"/>
         <source>FET - exiting</source>
         <translation>FET - uscita</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="407"/>
+        <location filename="../src/interface/fetmainform.cpp" line="410"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation>Il file potrebbe essere stato modificato - vuoi salvarlo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2821"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2850"/>
         <source>&amp;Yes</source>
         <translation>&amp;Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2821"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2850"/>
         <source>&amp;No</source>
         <translation>&amp;No</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2937"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Annulla</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2986"/>
+        <location filename="../src/interface/fetmainform.cpp" line="3015"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Assegnazione in corso.
 Interrompere la simulazione prima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2820"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2849"/>
         <source>FET application</source>
         <translation>FET - applicazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="454"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>Sicuro di voler caricare nuovi dati (regole)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="497"/>
+        <location filename="../src/interface/fetmainform.cpp" line="500"/>
         <source>Choose a file</source>
         <translation>Scegli un file</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="775"/>
         <source>FET info</source>
         <translation>FET - informazioni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="514"/>
+        <location filename="../src/interface/fetmainform.cpp" line="517"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Non usare i doppi apici &quot; nel nome del file, il codice html css non funziona. Il File non è stato caricato. Rinominalo rimuovendo i caratteri non non ammessi e aprilo dopo di ciò con FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="520"/>
+        <location filename="../src/interface/fetmainform.cpp" line="523"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Non usare il punto e virgola ; nel nome del file, il codice html css non funziona. Il File non è stato caricato. Rinominalo rimuovendo i caratteri non non ammessi e aprilo dopo di ciò con FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="526"/>
+        <location filename="../src/interface/fetmainform.cpp" line="529"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Non usare la quadrotta # nel nome del file, il codice html css non funziona. Il File non è stato caricato. Rinominalo rimuovendo i caratteri non non ammessi e aprilo dopo di ciò con FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="547"/>
+        <location filename="../src/interface/fetmainform.cpp" line="550"/>
         <source>Invalid file</source>
         <translation>File non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="547"/>
+        <location filename="../src/interface/fetmainform.cpp" line="550"/>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="606"/>
+        <location filename="../src/interface/fetmainform.cpp" line="609"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="749"/>
+        <location filename="../src/interface/fetmainform.cpp" line="752"/>
         <source>Choose a filename to save under</source>
         <translation>Scegli un nome di file da utilizzare per salvare</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="764"/>
+        <location filename="../src/interface/fetmainform.cpp" line="767"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Non usare i doppi apici &quot; nel nome del file, il codice html e css non funziona</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="768"/>
+        <location filename="../src/interface/fetmainform.cpp" line="771"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Non usare il punto e virgola ; nel nome del file, il codice html e css non funziona</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="772"/>
+        <location filename="../src/interface/fetmainform.cpp" line="775"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Non usare la quadrotta # nel nome del file, il codice html e css non funziona</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="599"/>
+        <location filename="../src/interface/fetmainform.cpp" line="602"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="600"/>
+        <location filename="../src/interface/fetmainform.cpp" line="603"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>Il file esiste già - Sicuro di voler sovrascrivere il file esistente?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1144"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1147"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -10489,464 +10681,464 @@ Si prega di leggere le FAQ per la descrizione dettagliata sul funzionamento dell
 Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai immesso attività in modo sbagliato, e anche che alcuni vincoli (come nessun ora buca, iniziare presto, numero minimo di ore al giorno) per questo sottogruppo sono interpretati in modo sbagliato (se il sottogruppo ha solo 2 attività , allora queste devono essere poste nelle prime ore, cosa troppo difficile e frutto di errore).</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1151"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1154"/>
         <source>FET - information about statistics</source>
         <translation>FET Informazioni sulle statistiche</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2504"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2272"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2301"/>
         <source>FET - help in other languages</source>
         <translation>FET - aiuto in altre lingue</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2365"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>Il file corrente (dati) è senza nome. Assegnare un nome al file e salvarlo prima di procedere</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2460"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2489"/>
         <source>Please generate, firstly</source>
         <translation>Per prima cosa avviare la generazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2588"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2617"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Chiudere e riavviare FET per attivare il cambio della lingua</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1121"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1124"/>
         <source>This help by Liviu Lalescu, modified 7 November 2007</source>
         <translation>Aiuto di Liviu Lalescu, modificato il  novembre 2007</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2316"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2345"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Inserire almeno una attività abilitata prima di avviare la generazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2349"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2378"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Inserire almeno una attività abilitata prima di avviare la generazione multipla</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="464"/>
+        <location filename="../src/interface/fetmainform.cpp" line="467"/>
         <source>FET - a free timetabling program</source>
         <translation>FET - un programma gratuito per fare l&apos;orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="705"/>
+        <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <source>FET - Warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="687"/>
+        <location filename="../src/interface/fetmainform.cpp" line="690"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>Non hai ancora generato un orario - avvia la generazione innanzitutto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="706"/>
+        <location filename="../src/interface/fetmainform.cpp" line="709"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation>Sembra che si sia ottenuto un orario incompleto. Il salvataggio dell&apos;orario non funziona in caso di orario incompleto. Generare un orario completo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="712"/>
+        <location filename="../src/interface/fetmainform.cpp" line="715"/>
         <source>Please read this important information before proceeding:</source>
         <translation>Leggere attentamente le seguenti informazioni prima di procedere:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="733"/>
+        <location filename="../src/interface/fetmainform.cpp" line="736"/>
         <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
         <translation>Questa opzione è utile per le istituzioni dove si trova un orario, si verificano poi alcuni piccoli cambiamenti, occorre rigenerare l&apos;orario, ma senza differenze sostanziali rispetto a quello vecchio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="738"/>
+        <location filename="../src/interface/fetmainform.cpp" line="741"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
         <translation>Il corrente file dati non sarà modificato, il blocco dei vincoli sarà aggiunto al file che decidi di salvare (puoi salvare il corrente file dati e aprire l&apos;orario salvato dopo ciò per prova)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="742"/>
+        <location filename="../src/interface/fetmainform.cpp" line="745"/>
         <source>If you need more information, contact author or mailing list</source>
         <translation>Se ti occorrono altre informazioni contatta l&apos;autore o la mailing list.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="744"/>
+        <location filename="../src/interface/fetmainform.cpp" line="747"/>
         <source>FET - information about saving a timetable as</source>
         <translation>FET - informazioni circa il salvataggio dell&apos;orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="787"/>
+        <location filename="../src/interface/fetmainform.cpp" line="790"/>
         <source>File exists</source>
         <translation>Il file esiste</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="790"/>
+        <location filename="../src/interface/fetmainform.cpp" line="793"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
         <translation>Per sicurezza (per non perdere il lavoro), non è consentito sovrascrivere un file esistente bloccando e salvando i dati ed orario correnti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="792"/>
+        <location filename="../src/interface/fetmainform.cpp" line="795"/>
         <source>Please choose a non-existing name</source>
         <translation>Scegli un nome che non sia già presente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="903"/>
+        <location filename="../src/interface/fetmainform.cpp" line="906"/>
         <source>Added the following constraint to saved file:</source>
         <translation>Aggiunto il seguente vincolo al file salvato:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="905"/>
+        <location filename="../src/interface/fetmainform.cpp" line="908"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
         <translation>Vincolo%1 NON aggiunto al file salvato - duplicato</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="916"/>
+        <location filename="../src/interface/fetmainform.cpp" line="919"/>
         <source>Skip information</source>
         <translation>Salta l&apos;informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="916"/>
+        <location filename="../src/interface/fetmainform.cpp" line="919"/>
         <source>See next</source>
         <translation>Vedi il prossimo avviso</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="925"/>
+        <location filename="../src/interface/fetmainform.cpp" line="928"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space</source>
         <translation>Aggiunti %1 vincoli che fissano il tempo e %2 vincoli che fissano lo spazio al file salvato; ignorate %3 attività che sono già fissate nel tempo ed %4 attività che sono già fissate nello spazio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="941"/>
+        <location filename="../src/interface/fetmainform.cpp" line="944"/>
         <source>File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints), so you can save it also, or generate different timetables.</source>
         <translation>File salvato con successo. Puoi vederlo nell&apos;hard-disk. Il file dati corrente è rimasto invariato (vincoli bloccati) così è possibile salvarlo oppure generare nuovi e diversi orari.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="722"/>
+        <location filename="../src/interface/fetmainform.cpp" line="725"/>
         <source>This option is only useful if you need to lock current timetable into a file. Locking means that there will be added constraints activity preferred starting time and activity preferred room with 100% importance for each activity to fix it at current place in current timetable. You can save this timetable as an ordinary .fet file; when you&apos;ll open it, you&apos;ll see all old inputted data (activities, teachers, etc.) and the locking constraints as the last time/space constraints. You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again and the remaining locking constraints will be respected.</source>
         <translation>Questa opzione è utile solo se si ha bisogno di fotografare l&apos;orario corrente in un file. Ciò significa che saranno aggiunti vincoli di ora di inizio preferenziale per attività e di aula preferenziale per attività con peso del 100% per ogni attività così da fissare ogni elemento dell&apos;attuale calendario. È possibile salvare l&apos;orario in un normale file .Fet; quando verrà aperto, vedrete tutti i vecchi dati (attività, insegnanti, ecc) e i vincoli di blocco come gli ultimi vincoli di tempo / spazio. È possibile sbloccare alcune di queste attività (eliminando vincoli) se occorrono piccoli cambiamenti nella configurazione e generare nuovamente un orario con i restanti vincoli di blocco rispettati.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2798"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2827"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>Sicuro di voler resettare tutte le opzioni ai valori iniziali?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2801"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2830"/>
         <source>That means</source>
         <translation>Ciò significa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2803"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2832"/>
         <source>1. Mainform geometry will be reset to default</source>
         <translation>1. La geometria della finestra principale sarà reimpostata</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2805"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2834"/>
         <source>2. Check for updates at startup will be disabled</source>
         <translation>2. La ricerca di aggiornamenti all&apos;avvio sarà disattivata</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2807"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2836"/>
         <source>3. Language will be en_GB (restart needed to activate language change)</source>
         <translation>3. La lingua sarà it_IT (occorre riavviare per attivare il cambio della lingua)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2809"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2838"/>
         <source>4. Working directory will be sample_inputs</source>
         <translation>4. La cartella di lavoro sarà sample_inputs</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2811"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2840"/>
         <source>5. Html level of the timetables will be 2</source>
         <translation>5. Il livello dell&apos;Html degli orari sarà 2</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2813"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2842"/>
         <source>6. Import directory will be %1</source>
         <translation>6. La cartella di importazione sarà %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2259"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2288"/>
         <source>Currently (17 July 2008), there are:</source>
         <translation>Attualmente (17 luglio 2008) ci sono:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2261"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2290"/>
         <source>1. ar - Arabic - Manual</source>
         <translation>4. ar - Arabic - Manual</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2292"/>
         <source>2. es - Spanish - Instructions</source>
         <translation>1. es - Spanish - Istruzioni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2265"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2294"/>
         <source>3. it - Italian - Instructions, FAQ</source>
         <translation>2. it - Italiano - Istruzioni, FAQ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2296"/>
         <source>4. ro - Romanian - Import/Export Help</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2157"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2186"/>
         <source>FET has a forum where you can ask questions or talk about FET</source>
         <translation>FET ha un forum dove puoi chiedere chiarimenti o parlare di qualsiasi aspetto di FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2159"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2188"/>
         <source>The current address is: %1</source>
         <translation>L&apos;indirizzo corrente è: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2161"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2190"/>
         <source>Please open this address in a web browser</source>
         <translation>Apri questo indirizzo in un browser Internet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2163"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2192"/>
         <source>If it does not work, please search the FET web page, maybe the address was changed</source>
         <translation>Se non dovesse funzionare, cerca la Homepage di FET: l&apos;indirizzo potrebbe essere cambiato</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2169"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2198"/>
         <source>FET forum</source>
         <translation>Forum di FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2815"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2844"/>
         <source>7. Mark not available slots with -x- in timetables will be true</source>
         <translation>Si richiede dì marcare con -x- le ore non disponibili nell&apos;orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="485"/>
         <source>New file generated</source>
         <translation>Nuovo file prodotto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="544"/>
+        <location filename="../src/interface/fetmainform.cpp" line="547"/>
         <source>File opened</source>
         <translation>File aperto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="971"/>
+        <location filename="../src/interface/fetmainform.cpp" line="974"/>
         <source>File saved</source>
         <translation>File salvato</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2882"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2911"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Hai definito più di 6 giorni a settimana e, pertanto, probabilmente questa caratteristica non ti occorrre. Vuoi continuare comunque?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2906"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2935"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2937"/>
         <source>&amp;Continue</source>
         <translation>&amp;Continua</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2903"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2932"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation>Hai definito meno di 5 giorni a settimana e, pertanto, probabilmente questa caratteristica non ti occorrre. Vuoi continuare comunque?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="336"/>
+        <location filename="../src/interface/fetmainform.cpp" line="339"/>
         <source>Critical error - cannot check for updates because of a bug in application. FET will now continue operation, but you should visit the FET page to report this bug or to get the fixed version.</source>
         <translation>Errore critico - impossibile verificare se ci sono aggiornamenti a causa di un errore. FET continuerà l&apos;elaborazione, ma tu dovresti visitare le pagine Web di FET per segnalare questo bug o per scaricare la nuova versione corretta.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2218"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2247"/>
         <source>This manual is contributed by Volker Dirr (timetabling.de).</source>
         <translation>Volker Dirr (timetabling.de) ha contribuito alla stesura di questo manuale.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2221"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2250"/>
         <source>You can read this manual using a web browser. Please open the main html file from the specified directory in a web browser.</source>
         <translation>Puoi leggere questo manuale attraverso un browser. Apri il file html principale della cartella specificata in un web browser.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2223"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2252"/>
         <source>See the website timetabling.de for possible updated version of this manual.</source>
         <translation>Visita il sito timetabling.de per una possibile versione aggiornata del manuale.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2228"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2257"/>
         <source>FET - contributed user&apos;s manual</source>
         <translation>FET - manuale utente partecipato</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="726"/>
+        <location filename="../src/interface/fetmainform.cpp" line="729"/>
         <source>NEW, 25 December 2008:</source>
         <translation>NUOVO, 25 dicembre 2008:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="729"/>
+        <location filename="../src/interface/fetmainform.cpp" line="732"/>
         <source>The added constraints will have the &apos;permanently locked&apos; tag set to false, so you can also unlock the activities from the &apos;Timetable&apos; menu, without interfering with the initial constraints which are made by you &apos;permanently locked&apos;</source>
         <translation>I vincoli aggiunti avranno il parametro &quot;Bloccato in permanenza&quot; impostato a falso, così da poter sbloccare le attività dal menu &quot;Orario&quot;, senza interferire con i vincoli iniziali eventualmente impostati &quot;Bloccati in permanenza&quot;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2216"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2245"/>
         <source>You can read a contributed user&apos;s manual in the %1 directory of FET.</source>
         <translation>Puoi trovare un manuale utente frutto di più collaborazioni nella cartella %1 di FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2257"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2286"/>
         <source>You can see help translated into other languages in the directory %1 of FET</source>
         <translation>Puoi trovare file di aiuto tradotti in altre lingue nella cartella %1 di FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="754"/>
         <source>All files</source>
         <translation>Tutti i file</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="751"/>
+        <location filename="../src/interface/fetmainform.cpp" line="754"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
         <translation>File in formato FET XML</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2537"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2566"/>
         <source>Please select FET language</source>
         <translation>Seleziona la lingua preferita per FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2503"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2525"/>
         <source>British English</source>
         <translation>Inglese britannico</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2497"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2526"/>
         <source>Arabic</source>
         <translation>Arabo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2498"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2527"/>
         <source>Catalan</source>
         <translation>Catalano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2499"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2528"/>
         <source>German</source>
         <translation>Tedesco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2500"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2529"/>
         <source>Greek</source>
         <translation>Greco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2501"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2530"/>
         <source>Spanish</source>
         <translation>Spagnolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2502"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2531"/>
         <source>French</source>
         <translation>Francese</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2503"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2532"/>
         <source>Hungarian</source>
         <translation>Ungherese</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2504"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2533"/>
         <source>Indonesian</source>
         <translation>Indonesiano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2505"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2534"/>
         <source>Italian</source>
         <translation>Italiano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2506"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2535"/>
         <source>Lithuanian</source>
         <translation>Lituano</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2536"/>
         <source>Macedonian</source>
         <translation>Macedone</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2508"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2537"/>
         <source>Malay</source>
         <translation>Malese</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2509"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2538"/>
         <source>Dutch</source>
         <translation>Olandese</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2510"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2539"/>
         <source>Polish</source>
         <translation>Polacco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2511"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2540"/>
         <source>Romanian</source>
         <translation>Rumeno</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2512"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2541"/>
         <source>Turkish</source>
         <translation>Turco</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2531"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2560"/>
         <source>Invalid current language - making it en_GB (British English)</source>
         <translation>Linguaggio corrente non valido - si sceglie en_GB (Inglese britannico)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2583"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2612"/>
         <source>Invalid language selected - making it en_GB (British English)</source>
         <translation>Linguaggio selezionato non valido - si sceglie en_GB (Inglese britannico)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2587"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2616"/>
         <source>Language %1 selected</source>
         <translation>Linguaggio %1 selezionato</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2817"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2846"/>
         <source>8. Divide html timetables with time-axis by days will be false</source>
         <translation>8. Impostato a falso: Dividere gli orari in html secondo l&apos;asse dei tempi in base ai giorni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1105"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1108"/>
         <source>Probably a difficult to understand setting is this one:</source>
         <translation>Una impostazione probabilmente più difficile da capire è questa:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1107"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1110"/>
         <source>Divide html timetables with time-axis by days</source>
         <translation>Dividi gli orari in html secondo l&apos;asse dei tempi in base ai giorni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1110"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1113"/>
         <source>This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
         <translation>Significa, in parole povere, che gli orari in html del tipo &apos;time horizontal&apos; o &apos;time vertical&apos; (vedi gli orari prodotti in html) dovranno - o meno - essere divisi in base ai giorni.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1112"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1115"/>
         <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need this option</source>
         <translation>Se le finestre degli orari in html &apos;time horizontal&apos; o &apos;time vertical&apos; sono troppo larghe, può essere utile selezionare questa opzione</translation>
     </message>
@@ -10984,672 +11176,672 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <translation>&amp;Dati</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="787"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="795"/>
         <source>Space constraints (misc)</source>
         <translation>Vincoli di spazio (vari)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="819"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="827"/>
         <source>Space constraints (rooms)</source>
         <translation>Vincoli di spazio (aule)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="712"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="720"/>
         <source>Time constraints (misc)</source>
         <translation>vincoli di tempo (vari)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="696"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="704"/>
         <source>Time constraints (students)</source>
         <translation>vincoli di tempo (studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="704"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="712"/>
         <source>Time constraints (activities)</source>
         <translation>vincoli di tempo (attività)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="688"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="696"/>
         <source>Time constraints (teachers)</source>
         <translation>vincoli di tempo (insegnanti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="343"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="351"/>
         <source>Settings</source>
         <translation>Opzioni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1479"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1487"/>
         <source>Language</source>
         <translation>Language / Lingua</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="382"/>
         <source>&amp;New</source>
         <translation>&amp;Nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
         <source>New</source>
         <translation>Nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="380"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="393"/>
         <source>&amp;Open...</source>
         <translation>&amp;Apri...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
         <source>Open</source>
         <translation>Apri</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="391"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="399"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="404"/>
         <source>&amp;Save</source>
         <translation>&amp;Salva</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="399"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="407"/>
         <source>Save</source>
         <translation>Salva</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="402"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="410"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="407"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="415"/>
         <source>Save &amp;As...</source>
         <translation>Salva &amp;con nome...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="410"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
         <source>Save As</source>
         <translation>Salva Come</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="426"/>
         <source>E&amp;xit</source>
         <translation>&amp;Esci</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="421"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
         <source>Exit</source>
         <translation>Esci</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="437"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;FAQ - domande frequenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="432"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="440"/>
         <source>Frequently asked questions</source>
         <translation>FAQ - domande frequenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="440"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="448"/>
         <source>&amp;About...</source>
         <translation>&amp;About...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="443"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
         <source>About</source>
         <translation>Informazioni su FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="459"/>
         <source>&amp;Teachers</source>
         <translation>&amp;Insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="454"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
         <source>Teachers</source>
         <translation>Insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="459"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="467"/>
         <source>&amp;Subjects</source>
         <translation>&amp;Materie</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
         <source>Subjects</source>
         <translation>Materie</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="467"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
         <source>&amp;Years (forms, classes)</source>
         <translation>&amp;Anni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="478"/>
         <source>Years</source>
         <translation>Anni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
         <source>&amp;Groups</source>
         <translation>&amp;Classi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="478"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="486"/>
         <source>Groups</source>
         <translation>Classi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="491"/>
         <source>S&amp;ubgroups</source>
         <translation>S&amp;ottogruppi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="486"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="494"/>
         <source>Subgroups</source>
         <translation>Sottogruppi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="491"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="499"/>
         <source>&amp;Activities</source>
         <translation>&amp;Attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="494"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="502"/>
         <source>Activities</source>
         <translation>Attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="499"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="507"/>
         <source>&amp;Generate new</source>
         <translation>&amp;Genera nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="502"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="510"/>
         <source>Generate new</source>
         <translation>Genera nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="507"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="515"/>
         <source>View (&amp;students)</source>
         <translation>Vedi (&amp;studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="510"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="518"/>
         <source>View (students)</source>
         <translation>Vedi (studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="515"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="523"/>
         <source>View (&amp;teachers)</source>
         <translation>Vedi (&amp;insegnanti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="518"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="526"/>
         <source>View (teachers)</source>
         <translation>Vedi (insegnanti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="526"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="534"/>
         <source>Show soft conflicts</source>
         <translation>Mostra conflitti lievi </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="531"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Giorni per settimana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="534"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="542"/>
         <source>Days per week</source>
         <translation>Giorni per settimana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
         <source>&amp;Hours (periods) per day</source>
         <translation>&amp;Ore (periodi) per giorno</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="542"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
         <source>Hours per day</source>
         <translation>Ore per giorno</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Aule</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="553"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
         <source>Rooms</source>
         <translation>Aule</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
         <source>View (r&amp;ooms)</source>
         <translation>Vedi (a&amp;ule)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="564"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="572"/>
         <source>View (rooms)</source>
         <translation>Vista (aule)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="572"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="580"/>
         <source>&amp;en_GB (British English)</source>
         <translation>&amp;en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="575"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="583"/>
         <source>en_GB (British English)</source>
         <translation>en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="583"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="591"/>
         <source>&amp;ro (Romanian)</source>
         <translation>&amp;ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="586"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="594"/>
         <source>ro (Romanian)</source>
         <translation>ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="591"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="599"/>
         <source>T&amp;ime constraints</source>
         <translation>Vincoli di &amp;tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="594"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="602"/>
         <source>Time constraints</source>
         <translation>Vincoli di tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="610"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="618"/>
         <source>&amp;fr (French)</source>
         <translation>&amp;fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="613"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="621"/>
         <source>fr (French)</source>
         <translation>fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="621"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="629"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Un insieme di attività inizia alla stessa ora (giorno+ora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="629"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="637"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation>Vista (s&amp;tudenti con aule)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="632"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
         <source>View (students-with rooms)</source>
         <translation>Vista (studenti con aule)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="637"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="645"/>
         <source>All t&amp;ime constraints</source>
         <translation>Tutti i vincoli di tem&amp;po</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="648"/>
         <source>All time constraints</source>
         <translation>Tutti i vincoli di tempo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="648"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="656"/>
         <source>A teacher is not available</source>
         <translation>Un insegnante non è disponibile</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="656"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="664"/>
         <source>Basic compulsory time constraints</source>
         <translation>Vincoli di tempo obbligatori</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="664"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="672"/>
         <source>A students set is not available</source>
         <translation>Un gruppo di studenti non è disponibile</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="672"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="680"/>
         <source>Break (all teachers+all students not available)</source>
         <translation>Interruzione (insegnanti+studenti non disponibili)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="680"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="688"/>
         <source>Max days per week for a teacher</source>
         <translation>Numero massimo di giorni per settimana per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="720"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="728"/>
         <source>Max hours daily for all teachers</source>
         <translation>Numero massimo di ore al giorno per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="760"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="768"/>
         <source>A set of activities are not overlapping</source>
         <translation>Un gruppo di attività non sono concomitanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="768"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
         <source>Min n days between a set of activities</source>
         <translation>Numero minimo di giorni tra subattività (lezioni)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="784"/>
         <source>All s&amp;pace constraints</source>
         <translation>Tutti i vincoli di spa&amp;zio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="779"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="787"/>
         <source>All space constraints</source>
         <translation>Tutti i vincoli di spazio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="795"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="803"/>
         <source>Space constraints</source>
         <translation>Vincoli di spazio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="803"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="811"/>
         <source>Basic compulsory space constraints</source>
         <translation>Vincoli di spazio obbligatori</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="811"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="819"/>
         <source>A room is not available</source>
         <translation>Una aula non è disponibile</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="827"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="835"/>
         <source>An activity has a preferred room</source>
         <translation>Una attività ha una aula preferenziale</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="835"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="843"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>Un insieme di attività inizia alla stessa ora (tutti i giorni)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="848"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="856"/>
         <source>I&amp;nstitution name</source>
         <translation>&amp;Nome dell&apos;Istituto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="851"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="859"/>
         <source>Institution name</source>
         <translation>Nome dell&apos;Istituto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="856"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="864"/>
         <source>&amp;Comments</source>
         <translation>&amp;Commenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="859"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="867"/>
         <source>Comments</source>
         <translation>Commenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="867"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="875"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>Una attività ha una serie di aule preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="875"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="883"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="878"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="886"/>
         <source>ca (Catalan)</source>
         <translation>ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="886"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="889"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="897"/>
         <source>ms (Malay)</source>
         <translation>ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1147"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1155"/>
         <source>A subject has a preferred room</source>
         <translation>Una materia ha una aula preferenziale</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1152"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1160"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Una materia ha un insieme di aule preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="907"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="915"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="910"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="918"/>
         <source>pl (Polish)</source>
         <translation>pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="918"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="926"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="921"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="929"/>
         <source>tr (Turkish)</source>
         <translation>tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="929"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="937"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="932"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="940"/>
         <source>nl (Dutch)</source>
         <translation>nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="940"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="948"/>
         <source>&amp;de (German)</source>
         <translation>&amp;de (German)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="945"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="953"/>
         <source>Teachers statistics</source>
         <translation>Statistica insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="956"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="964"/>
         <source>Students statistics</source>
         <translation>Statistica studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="961"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="969"/>
         <source>Subjects statistics</source>
         <translation>Statistica materie</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="969"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="977"/>
         <source>&amp;hu (Hungarian)</source>
         <translation>&amp;hu (Hungarian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="977"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="985"/>
         <source>m&amp;k (Macedonian)</source>
         <translation>m&amp;k (Macedonian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="988"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="996"/>
         <source>Max gaps per week for all teachers</source>
         <translation>Numero massimo di ore buche settimanali per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="993"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1001"/>
         <source>Max gaps per week for a teacher</source>
         <translation>Numero massimo di ore buche settimanali per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1003"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1011"/>
         <source>Max hours daily for a teacher</source>
         <translation>Numero massimo di ore al giorno per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1008"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1016"/>
         <source>Max hours daily for a students set</source>
         <translation>Numero massimo di ore al giorno per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1013"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1021"/>
         <source>Max hours daily for all students</source>
         <translation>Numero massimo di ore al giorno per tutti gli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1018"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1026"/>
         <source>Instructions</source>
         <translation>Istruzioni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1029"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1037"/>
         <source>Search for updates on startup</source>
         <translation>Cerca aggiornamenti all&apos;avvio</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1034"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1042"/>
         <source>Min hours daily for all students</source>
         <translation>Numero minimo di ore al giorno per tutti gli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1039"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1047"/>
         <source>Min hours daily for a students set</source>
         <translation>Numero minimo di ore al giorno per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1044"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1052"/>
         <source>Generate &amp;multiple variants</source>
         <translation>Genera varianti &amp;multiple</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1047"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1055"/>
         <source>Generate multiple variants</source>
         <translation>Genera varianti multiple</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1052"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1060"/>
         <source>2 activities are consecutive</source>
         <translation>2 attività sono consecutive</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1057"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1065"/>
         <source>An activity ends students day</source>
         <translation>Una subattività conclude la giornata degli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1065"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1073"/>
         <source>e&amp;s (Spanish)</source>
         <translation>e&amp;s (Spanish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1070"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1078"/>
         <source>Restore default settings</source>
         <translation>Ripristina settaggi iniziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1080"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1088"/>
         <source>Min hours daily for all teachers</source>
         <translation>Numero minimo di ore al giorno per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1085"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1093"/>
         <source>Min hours daily for a teacher</source>
         <translation>Numero minimo di ore al giorno per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1090"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1098"/>
         <source>Help on statistics</source>
         <translation>Aiuto sulle statistiche</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1095"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1103"/>
         <source>Help in other languages than English</source>
         <translation>Aiuto in lingue diverse dall&apos;inglese</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1103"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1111"/>
         <source>e&amp;l (Greek)</source>
         <translation>e&amp;l (Greek)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1111"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1119"/>
         <source>&amp;ar (Arabic)</source>
         <translation>&amp;ar (Arabic)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1075"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1083"/>
         <source>Html level for generated timetables</source>
         <translation>Livello HTML per l&apos;orario generato...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1119"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1127"/>
         <source>&amp;id (Indonesian)</source>
         <translation>&amp;id (Indonesiano)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1127"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1135"/>
         <source>it (Italian)</source>
         <translation>it (Italiano)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="736"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="744"/>
         <source>Max gaps per week for a students set</source>
         <translation>Numero massimo di ore buche settimanali per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="744"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="752"/>
         <source>Max gaps per week for all students</source>
         <translation>Numero massimo di ore buche settimanali per tutti gli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="752"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="760"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>Tutti gli studenti iniziano presto (numero massimo di inizi alla seconda ora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="843"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="851"/>
         <source>Activity tags</source>
         <translation>Chiavi dell&apos;attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="998"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1006"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>Un insieme di studenti inizia presto (numero massimo di inizi alla seconda ora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1132"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1140"/>
         <source>Max gaps per day for all teachers</source>
         <translation>Numero massimo di ore buche al giorno per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1137"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1145"/>
         <source>Max gaps per day for a teacher</source>
         <translation>Numero massimo di ore buche al giorno per un insegnante</translation>
     </message>
@@ -11709,192 +11901,192 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <translation>Vincoli di spazio per insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="645"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="653"/>
         <source>A teacher&apos;s not available times</source>
         <translation>Ore non disponibili di un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="661"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="669"/>
         <source>A students set&apos;s not available times</source>
         <translation>Ore non disponibili di un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="669"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="677"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>Ore di interruzione (studenti e insegnanti non disponibili)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="808"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="816"/>
         <source>A room&apos;s not available times</source>
         <translation>Ore non disponibili di una aula</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="902"/>
         <source>A set of students has a home room</source>
         <translation>Un insieme di studenti ha una Aula assegnata</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="899"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="907"/>
         <source>A set of students has a set of home rooms</source>
         <translation>Un insieme di studenti ha un gruppo di Aule assegnate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1150"/>
         <source>Buildings</source>
         <translation>Edifici</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1157"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1165"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>Una materia con Chiave dell&apos;attività ha un&apos;aula preferenziale</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1162"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1170"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>Una materia con Chiave dell&apos;attività ha un insieme di aule preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1172"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1180"/>
         <source>A teacher has a home room</source>
         <translation>Un insegnante ha una Aula assegnata</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1177"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1185"/>
         <source>A teacher has a set of home rooms</source>
         <translation>Un insegnante ha un insieme di Aule assegnate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1182"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1190"/>
         <source>Max building changes per day for a students set</source>
         <translation>Numero massimo di cambi di edificio al giorno per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1187"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1195"/>
         <source>Max building changes per day for all students</source>
         <translation>Numero massimo di cambi di edificio al giorno per tutti gli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1192"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1200"/>
         <source>Max building changes per week for a students set</source>
         <translation>Numero massimo di cambi di edificio a settimana per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1197"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1205"/>
         <source>Max building changes per week for all students</source>
         <translation>Numero massimo di cambi di edificio a settimana per tutti gli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1202"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1210"/>
         <source>Min gaps between building changes for a students set</source>
         <translation>Numero minimo di ore buche per cambio di edificio per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1207"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1215"/>
         <source>Min gaps between building changes for all students</source>
         <translation>Numero minimo di ore buche per cambio di edificio per tutti gli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1212"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1220"/>
         <source>Max building changes per day for a teacher</source>
         <translation>Numero massimo di cambi di edificio al giorno per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1217"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1225"/>
         <source>Max building changes per day for all teachers</source>
         <translation>Numero massimo di cambi di edificio al giorno per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1222"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1230"/>
         <source>Max building changes per week for a teacher</source>
         <translation>Numero massimo di cambi di edificio a settimana per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1227"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1235"/>
         <source>Max building changes per week for all teachers</source>
         <translation>Numero massimo di cambi di edificio a settimana per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1232"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1240"/>
         <source>Min gaps between building changes for a teacher</source>
         <translation>Numero minimo di ore buche per cambio di edificio per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1237"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1245"/>
         <source>Min gaps between building changes for all teachers</source>
         <translation>Numero minimo di ore buche per cambio di edificio per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1242"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1250"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>Un insieme di attività inizia lo stesso giorno (qualsiasi ora)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1167"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1175"/>
         <source>Space constraints (activities)</source>
         <translation>Vincoli di spazio (attività)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1247"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1255"/>
         <source>Save data+timetable as...</source>
         <translation>Salva dati e orario come...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1252"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1260"/>
         <source>2 activities are ordered</source>
         <translation>2 attività sono in ordine</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1257"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1265"/>
         <source>Max hours continuously for all teachers</source>
         <translation>Numero massimo di ore consecutive per tutti gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1270"/>
         <source>Max hours continuously for a teacher</source>
         <translation>Numero massimo di ore consecutive per un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1267"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1275"/>
         <source>Max hours continuously for a students set</source>
         <translation>Numero massimo di ore consecutive per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1272"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1280"/>
         <source>Max hours continuously for all students</source>
         <translation>Numero massimo di ore consecutive per tutti gli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1277"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1285"/>
         <source>Important tips</source>
         <translation>Suggerimenti importanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="728"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="736"/>
         <source>An activity has a preferred starting time</source>
         <translation>Una attività ha un ora di inizio preferenziale</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1282"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1290"/>
         <source>A set of activities has a set of preferred starting times</source>
         <translation>Un insieme di attività ha un insieme di ore di inizio preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1295"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1303"/>
         <source>An activity has a set of preferred starting times</source>
         <translation>Una attività ha un insieme di ore di inizio preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="602"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="610"/>
         <source>A set of activities has a set of preferred time slots</source>
         <translation>Un insieme di attività ha un insieme di ore preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1290"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1298"/>
         <source>An activity has a set of preferred time slots</source>
         <translation>Una attività ha un insieme di ore preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1300"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1308"/>
         <source>Min gaps (hours) between a set of activities</source>
         <translation>Numero minimo di ore frapposte tra un insieme di attività</translation>
     </message>
@@ -11914,117 +12106,117 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <translation>Importa valori separati da virgola (testo - CSV)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1305"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1313"/>
         <source>Export comma separated values (text)</source>
         <translation>Esporta valori separati da virgola (testo - CSV)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1310"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1318"/>
         <source>Import activities from CSV file</source>
         <translation>Importa attività da un file CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1315"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1323"/>
         <source>Import activity tags from CSV file</source>
         <translation>Importa chiavi delle attività da un file CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1320"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1328"/>
         <source>Import rooms and buildings from CSV file</source>
         <translation>Importa aule ed edifici da un file CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1325"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1333"/>
         <source>Import subjects from CSV file</source>
         <translation>Importa materie da un file CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1330"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1338"/>
         <source>Import teachers from CSV file</source>
         <translation>Importa insegnanti da un file CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1335"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1343"/>
         <source>Import years, groups and subgroups from CSV file</source>
         <translation>Importa anni, classi e sottogruppi da un file CSV</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1340"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1348"/>
         <source>A set of subactivities has a set of preferred time slots</source>
         <translation>Un insieme di subattività ha un insieme di ore preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1345"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1353"/>
         <source>A set of subactivities has a set of preferred starting times</source>
         <translation>Un insieme di subattività ha un insieme di ore di inizio preferenziali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1350"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1358"/>
         <source>A teacher works in an hourly interval max days per week</source>
         <translation>Un insegnante fa lezione in un intervallo orario massimo n giorni a settimana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1355"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1363"/>
         <source>All teachers work in an hourly interval max days per week</source>
         <translation>Tutti gli insegnanti fanno lezione in un intervallo orario massimo n giorni a settimana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1360"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1368"/>
         <source>A students set works in an hourly interval max days per week</source>
         <translation>Un insieme di studenti fa lezione in un intervallo orario massimo n giorni a settimana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1365"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1373"/>
         <source>All students work in an hourly interval max days per week</source>
         <translation>Tutti gli studenti fanno lezione in un intervallo orario massimo n giorni a settimana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1370"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1378"/>
         <source>A set of activities end students day</source>
         <translation>Un insieme di attività concludono la giornata degli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1378"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1386"/>
         <source>lt (Lithuanian)</source>
         <translation>lt (Lituano)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1383"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1391"/>
         <source>Forum webpage</source>
         <translation>Pagina Web del Forum</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1394"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1402"/>
         <source>Mark not available slots with -x- in timetables</source>
         <translation>Le ore non disponibili nell&apos;orario sono marcate con -x-</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="358"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="366"/>
         <source>Advanced</source>
         <translation>Avanzate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1399"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1407"/>
         <source>Spread the activities evenly over the week</source>
         <translation>Distribuisci le subattività uniformemente nella settimana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1404"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1412"/>
         <source>Export advanced statistics to disk</source>
         <translation>Esporta su disco le statistiche approfondite</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1409"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1417"/>
         <source>Remove redundant constraints</source>
         <translation>Rimuovi i vincoli ridondanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1414"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1422"/>
         <source>A user&apos;s manual</source>
         <translation>Manuale utente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1419"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1427"/>
         <source>2 activities are grouped</source>
         <translation>2 attività sono riunite</translation>
     </message>
@@ -12034,84 +12226,99 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <translation>Blocca/Sblocca avanzato</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1424"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1432"/>
         <source>Lock all activities of a specified day</source>
         <translation>Blocca tutte le attività di un giorno specifico</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1429"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1437"/>
         <source>Unlock all activities of a specified day</source>
         <translation>Sblocca tutte le attività di un giorno specifico</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1434"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1442"/>
         <source>Lock all activities which end students day</source>
         <translation>Blocca tutte le attività che chiudono la giornata degli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1439"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1447"/>
         <source>Unlock all activities which end students day</source>
         <translation>Sblocca tutte le attività che chiudono la giornata degli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1444"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1452"/>
         <source>Lock all activities of the current timetable</source>
         <translation>Blocca tutte le attività dell&apos;orario corrente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1449"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1457"/>
         <source>Unlock all activities of the current timetable</source>
         <translation>Sblocca tutte le attività dell&apos;orario corrente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1454"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1462"/>
         <source>Max hours continuously with an activity tag for a students set</source>
         <translation>N massimo di ore consecutive per un insieme di studenti con una chiave di attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1459"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1467"/>
         <source>Max hours continuously with an activity tag for all students</source>
         <translation>N massimo di ore consecutive per tutti gli studenti con una chiave di attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1464"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1472"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
         <translation>N massimo di ore consecutive per un insegnante con una chiave di attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1469"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1477"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
         <translation>N massimo di ore consecutive per tutti gli insegnanti con una chiave di attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1474"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1482"/>
         <source>Modify subactivities</source>
         <translation>Modifica subattività</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="300"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="308"/>
         <source>Institution information</source>
         <translation>Informazioni sull&apos;Istituto</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="307"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="315"/>
         <source>Days and hours</source>
         <translation>Giorni ed ore</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="314"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="322"/>
         <source>Students</source>
         <translation>Studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1490"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1498"/>
         <source>Divide html timetables with time-axis by days</source>
         <translation>Dividi gli orari in html secondo l&apos;asse dei tempi in base ai giorni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1495"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1503"/>
         <source>Help on settings</source>
         <translation>Aiuto sulle opzioni</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="292"/>
+        <source>Activity tags space constraints</source>
+        <translation>Vincoli di spazio per chiavi di attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1508"/>
+        <source>An activity tag has a preferred room</source>
+        <translation>Una chiave di attività ha una aula preferenziale</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1513"/>
+        <source>An activity tag has a set of preferred rooms</source>
+        <translation>Una chiave di attività ha un insieme di aule preferenziali</translation>
     </message>
 </context>
 <context>
@@ -12228,12 +12435,12 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <translation>Si ringrazia</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="388"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="390"/>
         <source>Guestbook</source>
         <translation>Guestbook</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="1028"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1041"/>
         <source>Sponsors</source>
         <translation>Sponsors</translation>
     </message>
@@ -12342,7 +12549,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="1034"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1047"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -12371,193 +12578,24 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.9.2 (March 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="230"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(chronologically)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;--------------------&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Costin Badica<byte value="x9"/>- my teacher. He actually made me begin this project and provided me with documentation and advices.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Carsten Niehaus - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Imre Nagy <byte value="x9"/>- e-mail list (does not work anymore), suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sajith V. K. <byte value="x9"/>- suggestions&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Michael Towers<byte value="x9"/>- lots of bugs reported, sample files, suggestions, front/back-end.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Antti Leppik<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ian Fantom<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Ghetti<byte value="x9"/>- sample files, suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gibbon Tamba - sample file, bug reported.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marek Jaszuk - bugs reported, suggestions, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Vimal Joseph - suggestions, a script to convert the .xml results into .tex.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Gherman - bug reported, suggestions.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/>&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nicholas Robinson - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radu Spineanu <byte value="x9"/>- Debian package.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Morten Piil<byte value="x9"/>- bug reported, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Abdul Hadi Kamel - sample file, bugs reported, Malay translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Miguel Gea Milvaques - Catalan translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Frank de Bruijn - bug reported.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radoslaw Pasiok - Polish translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daan Huntjens - bug reported, sample file, suggestions, partial Dutch translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Yush Yuen - sample file, bug report.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Scott Sweeting - sample file, suggestions, icon for FET.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dragos Petrascu - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel S. - suggestions, help files for the constraints.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested Constraint2ActivitiesOrdered.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian O&apos;Halloran - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Mehmet Gezmisoglu - Turkish translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty (tomhosty@hotmail.com) - sample file, bugs reported, user&apos;s guide.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Fikse - Dutch translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Bohlin - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Les Richardson - update of the FAQ.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Viktor Ferenczi - bug report, Hungarian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Patrick Fox - improved French translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Andres Chandia - icons.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zoran Zdravkovski - bug reports, Macedonian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Constantin Romulus - bug reports, sample file (private), small improvements in Romanian translation, testing, fet forum logo.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;L. W. Johnstone - suggestions, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zsolt Udvari - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;mantas - bug reports.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;moryus - bug report.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;bb - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Maciej Deorowicz - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jose Cesar Fernandez Lopez - Spanish translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel Chiriac - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dimitrios Ropokis - suggestions, Greek translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Danail - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Peter Ambroz - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nirwan Yus - Indonesian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Romeu Veloso - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;didit - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Bobby Wise - sample files.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Willy Henckert - sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Wilfred - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;W. D. John - sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Darius Staigys - Lithuanian translation.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;alfaromeo - suggestions, testing.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Stargardt - sample file.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Balint - sample files.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Thomas Schwartz - bug report.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="400"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="402"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Raymond Seow&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Jerry&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;United States&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Posted: 23.03.2009 18:41&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Glad to finally see an open source project for this. As a college student I always had issues with scheduling, thinking there would be a program to help, but hadn&apos;t considered the other side as much, except for advising other students.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Hoping to spend more time on this for a project.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Raymond Seow&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Malaysia&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -13174,6 +13212,188 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.9.3 (April 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="230"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(chronologically)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;--------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Costin Badica<byte value="x9"/>- my teacher. He actually made me begin this project and provided me with documentation and advices.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Carsten Niehaus - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Imre Nagy <byte value="x9"/>- e-mail list (does not work anymore), suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sajith V. K. <byte value="x9"/>- suggestions&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Michael Towers<byte value="x9"/>- lots of bugs reported, sample files, suggestions, front/back-end.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Antti Leppik<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ian Fantom<byte value="x9"/>- sample file, suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Ghetti<byte value="x9"/>- sample files, suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gibbon Tamba - sample file, bug reported.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jerome Durand - bug reported, French translation (fetfr@free.fr, please also see http://fetfr.free.fr/).&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marek Jaszuk - bugs reported, suggestions, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Ramanathan Srinivasan - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Vimal Joseph - suggestions, a script to convert the .xml results into .tex.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Gherman - bug reported, suggestions.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;<byte value="x9"/><byte value="x9"/><byte value="x9"/><byte value="x9"/>&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nicholas Robinson - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radu Spineanu <byte value="x9"/>- Debian package.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Morten Piil<byte value="x9"/>- bug reported, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian Canagaratna - lots of suggestions, bugs reported, sample files.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Abdul Hadi Kamel - sample file, bugs reported, Malay translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Miguel Gea Milvaques - Catalan translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Frank de Bruijn - bug reported.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Radoslaw Pasiok - Polish translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daan Huntjens - bug reported, sample file, suggestions, partial Dutch translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Yush Yuen - sample file, bug report.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Scott Sweeting - sample file, suggestions, icon for FET.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dragos Petrascu - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel S. - suggestions, help files for the constraints.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gianluca Salvo - suggested Constraint2ActivitiesOrdered.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Sebastian O&apos;Halloran - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Mehmet Gezmisoglu - Turkish translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty (tomhosty@hotmail.com) - sample file, bugs reported, user&apos;s guide.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Fikse - Dutch translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Simon Bohlin - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - German translation, bug reports, suggestions, 2-point and uniform crossover implementation and testing.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Les Richardson - update of the FAQ.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Gabi Danon - instructions on how to compile/run FET on Mac OS X.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Manolo Par - suggested ConstraintTeachersMinHoursDaily&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Viktor Ferenczi - bug report, Hungarian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Patrick Fox - improved French translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Andres Chandia - icons.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zoran Zdravkovski - bug reports, Macedonian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Constantin Romulus - bug reports, sample file (private), small improvements in Romanian translation, testing, fet forum logo.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;L. W. Johnstone - suggestions, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Zsolt Udvari - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;mantas - bug reports.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;moryus - bug report.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;bb - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Maciej Deorowicz - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Jose Cesar Fernandez Lopez - Spanish translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Daniel Chiriac - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Dimitrios Ropokis - suggestions, Greek translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Danail - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Peter Ambroz - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Nirwan Yus - Indonesian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Romeu Veloso - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;didit - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Bobby Wise - sample files.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Willy Henckert - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Wilfred - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;W. D. John - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Darius Staigys - Lithuanian translation.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;George Miliotis [Ionio] - suggestions&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Silvia - suggestions, sample file&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;alfaromeo - suggestions, testing.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Niels Stargardt - sample file.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Cristian Balint - sample files.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;sherman - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Azu Boba - suggestion.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Thomas Schwartz - bug report.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Catalin Maican - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -15040,7 +15260,7 @@ is:</source>
     <message>
         <location filename="../src/engine/import.cpp" line="2176"/>
         <source>Warning: found tags for the min n days consecutive which are not a valid boolean value (%1) - making them %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Attenzione: trovate chiavi per il vincolo min n giorni consecutivi che non hanno un valore binario valido (%1) - si assegna loro %2</translation>
     </message>
 </context>
 <context>
@@ -16064,7 +16284,7 @@ risolvere, conviene provare prima a ottimizzare senza questi vincoli</translatio
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="16"/>
         <source>FET - Modify constraint activity preferred room</source>
-        <translation>FET - Modifica vincolo su aula preferenziale per attività</translation>
+        <translation>FET - Modifica vincolo di aula preferenziale per attività</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="27"/>
@@ -16118,7 +16338,7 @@ editando questo vincolo</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="16"/>
         <source>FET - Modify constraint activity preferred rooms</source>
-        <translation>FET - Modifica vincolo su aule preferenziali per attività</translation>
+        <translation>FET - Modifica vincolo di aule preferenziali per attività</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
@@ -16425,6 +16645,102 @@ editando questo vincolo</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="208"/>
         <source>Set all slots not allowed</source>
         <translation>Imposta Non Disponibile per tutte le posizioni</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintActivityTagPreferredRoomForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="16"/>
+        <source>FET - Modify constraint activity tag preferred room</source>
+        <translation>FET - Modifica vincolo di aula preferenziale per chiave di attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="33"/>
+        <source>Room</source>
+        <translation>Aula</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="50"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="63"/>
+        <source>Cancel</source>
+        <translation>Annulla</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="71"/>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="79"/>
+        <source>-1</source>
+        <translation>-1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="98"/>
+        <source>Activity tag</source>
+        <translation>Chiave dell&apos;attività</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintActivityTagPreferredRoomsForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="16"/>
+        <source>FET - Modify constraint activity tag preferred rooms</source>
+        <translation>FET - Modifica vincolo di aule preferenziali per chiave di attività</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="41"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation>Peso percentuale (raccomandato: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="49"/>
+        <source>-1</source>
+        <translation>-1</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="67"/>
+        <source>Add</source>
+        <translation>Aggiungi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="93"/>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="101"/>
+        <source>Cancel</source>
+        <translation>Annulla</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="135"/>
+        <source>All rooms (dbl. click adds)</source>
+        <translation>Tutte le aule (doppio click aggiunge)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="175"/>
+        <source>New Item</source>
+        <translation>Nuovo Elemento</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="169"/>
+        <source>Selected rooms (dbl. click removes)</source>
+        <translation>Aule selezionate (doppio click elimina)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="189"/>
+        <source>Activity tag</source>
+        <translation>Chiave dell&apos;attività</translation>
     </message>
 </context>
 <context>
@@ -18664,7 +18980,7 @@ Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma a
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="16"/>
         <source>FET - Modify constraint subject preferred room</source>
-        <translation>FET - Modifica vincolo su aula preferenziale per materia</translation>
+        <translation>FET - Modifica vincolo di aula preferenziale per materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="27"/>
@@ -18702,7 +19018,7 @@ Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma a
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="16"/>
         <source>FET - Modify constraint subject preferred rooms</source>
-        <translation>FET - Modifica vincolo su aule preferenziali per materia</translation>
+        <translation>FET - Modifica vincolo di aule preferenziali per materia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
@@ -20645,7 +20961,7 @@ Modifica i tuoi dati come descritto e riprova</translation>
         <translation>FET - informazione</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4987"/>
+        <location filename="../src/engine/rules.cpp" line="5064"/>
         <source>Canceled</source>
         <translation>Annullato</translation>
     </message>
@@ -20675,37 +20991,37 @@ Modifica i tuoi dati come descritto e riprova</translation>
         <translation>Vincoli di spazio direttamente collegati con questa aula:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4504"/>
+        <location filename="../src/engine/rules.cpp" line="4581"/>
         <source>Monday</source>
         <translation>Lunedì</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4505"/>
+        <location filename="../src/engine/rules.cpp" line="4582"/>
         <source>Tuesday</source>
         <translation>Martedì</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4506"/>
+        <location filename="../src/engine/rules.cpp" line="4583"/>
         <source>Wednesday</source>
         <translation>Mercoledì</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4507"/>
+        <location filename="../src/engine/rules.cpp" line="4584"/>
         <source>Thursday</source>
         <translation>Giovedì</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4508"/>
+        <location filename="../src/engine/rules.cpp" line="4585"/>
         <source>Friday</source>
         <translation>Venerdì</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4510"/>
+        <location filename="../src/engine/rules.cpp" line="4587"/>
         <source>Default institution</source>
         <translation>Istituto</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4511"/>
+        <location filename="../src/engine/rules.cpp" line="4588"/>
         <source>Default comments</source>
         <translation>Commenti</translation>
     </message>
@@ -20751,7 +21067,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 Parlane con l&apos;autore o aumenta la variabile MAX_SPACE_CONSTRAINTS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3975"/>
+        <location filename="../src/engine/rules.cpp" line="4031"/>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
@@ -20760,7 +21076,7 @@ Parlane con l&apos;autore o aumenta la variabile MAX_SPACE_CONSTRAINTS</translat
 %2 perchè è rimasta solo un&apos;aula per il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4392"/>
+        <location filename="../src/engine/rules.cpp" line="4469"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Impossibile creare o usare la directory %1 - impossibile continuare</translation>
     </message>
@@ -20770,12 +21086,12 @@ Parlane con l&apos;autore o aumenta la variabile MAX_SPACE_CONSTRAINTS</translat
         <translation>FET - criticità</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4407"/>
+        <location filename="../src/engine/rules.cpp" line="4484"/>
         <source>Cannot open log file for writing ... please check your disk free space. Opening of file aborted</source>
         <translation>Impossibile aprire il file di log in scrittura ... controlla lo spazio disponibile su disco. Apertura del file fallita</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4479"/>
+        <location filename="../src/engine/rules.cpp" line="4556"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
@@ -20784,127 +21100,127 @@ Please note that the default weight percentage of constraints min n days between
 Tieni presente che il valore predefinito di peso percentuale dei vincoli minimoi n. giorni tra attività sarà 95% (principalmente rispettato, ma non sempre) e &quot;forza consecutivi se stesso giorno&quot; sarà impostato a vero (il che significa che, se le attività sono nello stesso giorno, saranno collocate consecutivamente, in una attività di maggiore durata). Se lo desideri, puoi portare questa percentuale al 100%, manualmente modificando il file di input o dalla interfaccia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4485"/>
+        <location filename="../src/engine/rules.cpp" line="4562"/>
         <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Apertura del file di una versione di FET più nuova ... il file sarà aperto ma si raccomanda di aggiornare il software FET alla versione più recente</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5128"/>
+        <location filename="../src/engine/rules.cpp" line="5205"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation>L&apos;attività con id=%1 contiene dati non validi - si tralascia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5136"/>
+        <location filename="../src/engine/rules.cpp" line="5213"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation>Il file contiene lista di impianti non validi - si tralascia
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5361"/>
+        <location filename="../src/engine/rules.cpp" line="5438"/>
         <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Il vincolo &quot;giorno non disponibile per insegnante&quot; non è valido per l&apos;insegnante %1,  giorno %2 inesistente... si tralascia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5376"/>
+        <location filename="../src/engine/rules.cpp" line="5453"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Ora di inizio del vincolo &quot;Insegnante non disponibile&quot; inattendibile per l&apos;insegnante %1, ora %2 inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5391"/>
+        <location filename="../src/engine/rules.cpp" line="5468"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Ora di fine del vincolo &quot;Insegnante non disponibile&quot; inattendibile per l&apos;insegnante %1, ora %2 inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5567"/>
+        <location filename="../src/engine/rules.cpp" line="5644"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation>Vincolo &quot;Numero massimo di giorni a settimana per insegnante&quot; inattendibile per l&apos;insegnante %1, numero massimo di giorni %2 &lt;=0 o &gt; giorni a settimana, vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5984"/>
+        <location filename="../src/engine/rules.cpp" line="6061"/>
         <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo &quot;Giorno non disponibileper insieme di studenti&quot; non valido per studenti %1, giorno %2 è inesistente... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5999"/>
+        <location filename="../src/engine/rules.cpp" line="6076"/>
         <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Ora di inizio del vincolo &quot;Studenti non disponibili&quot; inattendibile per studenti %1, ora %2 inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6014"/>
+        <location filename="../src/engine/rules.cpp" line="6091"/>
         <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Ora di fine del vincolo &quot;Studenti non disponibili&quot; inattendibile per studenti %1, ora %2 inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6740"/>
+        <location filename="../src/engine/rules.cpp" line="6817"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation>Il file contiene vincolo errato per numero massimo di ore giornaliere per insegnanti e sottogruppi - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6787"/>
+        <location filename="../src/engine/rules.cpp" line="6864"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation>Il file contiene un vincolo errato per numero massimo di ore al giorno per studenti - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6837"/>
+        <location filename="../src/engine/rules.cpp" line="6914"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation>Il file contiene un vincolo errato per numero massimo di ore al giorno per insiemi di studenti - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7264"/>
+        <location filename="../src/engine/rules.cpp" line="7341"/>
         <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo giorno / ActivityPreferredTime errato per attività con id %1, giorno %2 è inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7280"/>
+        <location filename="../src/engine/rules.cpp" line="7357"/>
         <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo ora / ActivityPreferredTime errato per attività con id %1, ora %2 è inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7686"/>
+        <location filename="../src/engine/rules.cpp" line="7763"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation>Il file contiene vincolo errato per attività di fine giornata - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7804"/>
+        <location filename="../src/engine/rules.cpp" line="7881"/>
         <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo giorno / ActivityPreferredTimes errato per attività con id %1, giorno %2 è inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7822"/>
+        <location filename="../src/engine/rules.cpp" line="7899"/>
         <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo ora / ActivityPreferredTimes errato per attività con id %1, ora %2 è inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8866"/>
+        <location filename="../src/engine/rules.cpp" line="8943"/>
         <source>File contains deprecated constraint 2 activities grouped - will be ignored
 </source>
         <translation>Il file contiene vincolo errato per 2 attività riunite - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9569"/>
+        <location filename="../src/engine/rules.cpp" line="9646"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation>Il file contiene vincolo errato per numero massimo di ore continue per chiavi di attività di insegnanti - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9616"/>
+        <location filename="../src/engine/rules.cpp" line="9693"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation>Il file contiene vincolo errato -numero massimo di ore continue per Chiave dell&apos;attività di insegnanti - sarà ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11390"/>
+        <location filename="../src/engine/rules.cpp" line="11525"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -20913,111 +21229,111 @@ not added - must be a duplicate</source>
  non aggiunto - deve essere un duplicato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9779"/>
+        <location filename="../src/engine/rules.cpp" line="9856"/>
         <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo di giorno indisponibile per aula errato per aula %1, giorno %2 è inesistente ... vincolo ignorato </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9794"/>
+        <location filename="../src/engine/rules.cpp" line="9871"/>
         <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo di ora di inizio indisponibilità aula errato per aula %1, ora %2 è inesistente ... vincolo ignorato </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9809"/>
+        <location filename="../src/engine/rules.cpp" line="9886"/>
         <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo di ora di fine indisponibilità aula errato per aula %1, ora %2 è inesistente ... vincolo ignorato </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10055"/>
+        <location filename="../src/engine/rules.cpp" line="10132"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation>Il file contiene vincolo errato di aula non adatta ad attività - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10099"/>
+        <location filename="../src/engine/rules.cpp" line="10176"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation>Il file contiene vincolo errato di attività che richiede attrezzatura - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10143"/>
+        <location filename="../src/engine/rules.cpp" line="10220"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - una Chiave dell&apos;attività richiede dettagli - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10191"/>
+        <location filename="../src/engine/rules.cpp" line="10268"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - un insegnante richiede un&apos;aula - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10236"/>
+        <location filename="../src/engine/rules.cpp" line="10313"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - un insegnante (e una materia) richiede un&apos;aula - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10284"/>
+        <location filename="../src/engine/rules.cpp" line="10361"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - minimizza il numero di aule per studenti - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10320"/>
+        <location filename="../src/engine/rules.cpp" line="10397"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - minimizza il numero di aule per isegnanti - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10516"/>
+        <location filename="../src/engine/rules.cpp" line="10593"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - più attività nella stessa aula - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10956"/>
+        <location filename="../src/engine/rules.cpp" line="11091"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - Numero massimo di cambio edificio per insegnanti al giorno - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10996"/>
+        <location filename="../src/engine/rules.cpp" line="11131"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - Numero massimo di cambio edificio per studenti al giorno - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11036"/>
+        <location filename="../src/engine/rules.cpp" line="11171"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - Numero massimo di cambio aula per insegnanti al giorno - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11076"/>
+        <location filename="../src/engine/rules.cpp" line="11211"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation>Il file contiene vincolo errato - Numero massimo di cambio aula per studenti al giorno - sarà ignorato
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11426"/>
+        <location filename="../src/engine/rules.cpp" line="11561"/>
         <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
         <translation>Impossibile aprire il filename per scrivere ... controlla lo spazio libero del tuo disco. Salvataggio del file interrotto</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11538"/>
+        <location filename="../src/engine/rules.cpp" line="11673"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation>Il salvataggio del file ha restituito il codice di errore %1, che significa che il salvataggio è compromesso. Controlla lo spazio disponibile su disco</translation>
     </message>
@@ -21106,17 +21422,17 @@ all&apos;assegnazione delle aule) per ogni orario</translation>
         <translation>P:%1%</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3045"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3504"/>
         <source>R:%1</source>
         <translation>Aula:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5681"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6139"/>
         <source>Space constraint</source>
         <translation>Vincolo di spazio</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3062"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3520"/>
         <source>Room=%1</source>
         <translation>Aula=%1</translation>
     </message>
@@ -21126,7 +21442,7 @@ all&apos;assegnazione delle aule) per ogni orario</translation>
         <translation>FET - errore nei dati</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2982"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3443"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation>Il seguente vincolo è errato:
@@ -21198,7 +21514,7 @@ all&apos;assegnazione delle aule) per ogni orario</translation>
         <translation>Materia=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2819"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3282"/>
         <source>Room name=%1</source>
         <translation>Nome dell&apos;aula=%1</translation>
     </message>
@@ -22940,7 +23256,7 @@ perchè l&apos;insegnante non è valido</translation>
         <translation>Elaborazione interna delle attività ... attendere</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4975"/>
+        <location filename="../src/engine/rules.cpp" line="5052"/>
         <source>Loading activities ... please wait</source>
         <translation>Carico delle attività ... attendere</translation>
     </message>
@@ -22974,47 +23290,47 @@ Chiedi all&apos;autore (o fallo direttamente) di incrementare la variabile MAX_T
         <translation>Elaborazione interna dei vincoli di spazio ... attendere</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4842"/>
+        <location filename="../src/engine/rules.cpp" line="4919"/>
         <source>Your file contains group %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.</source>
         <translation>I tuoi dati comprendono la classe %1 che sembrerebbe inutile. A partire dalla versione 5.4.17 di FET sono state apportate alcuni miglioramenti al codice e, pertanto, è consigliabile, per ragioni di efficienza, rimuovere questa classe (il cui nome termina con &quot;WHOLE YEAR&quot;). </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4845"/>
+        <location filename="../src/engine/rules.cpp" line="4922"/>
         <source>You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR, so you can avoid this warning.</source>
         <translation>E&apos; possibile che tu voglia definire una classe in un anno ancora vuoto. In questo caso sei pregato di scegliere un nome che NON termini con &quot;WHOLE YEAR&quot;, così da evitare questa avvertenza.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4848"/>
+        <location filename="../src/engine/rules.cpp" line="4925"/>
         <source>From now on, if you have an empty year, there will be added an automatic group only in the generated timetables, not in the data file.</source>
         <translation>D&apos;ora in avanti se hai un anno vuoto, sarà aggiunto automaticamente un gruppo (o classe) solo nell&apos;orario generato, non nel file dei dati.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4926"/>
+        <location filename="../src/engine/rules.cpp" line="5003"/>
         <source>For more details, join the mailing list or email the author.</source>
         <translation>Per ulteriori dettagli iscriviti alla mailing list oppure scrivi all&apos;autore.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4918"/>
+        <location filename="../src/engine/rules.cpp" line="4995"/>
         <source>Your file contains subgroup %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.</source>
         <translation>I tuoi dati comprendono il sottogruppo %1 che sembrerebbe inutile. A partire dalla versione 5.4.17 di FET sono state apportate alcuni miglioramenti al codice e, pertanto, è consigliabile, per ragioni di efficienza, rimuovere questo sottogruppo  (il cui nome termina con &quot;WHOLE GROUP&quot;). </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4921"/>
+        <location filename="../src/engine/rules.cpp" line="4998"/>
         <source>You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP, so you can avoid this warning.</source>
         <translation>E&apos; possibile che tu voglia definire un sottogruppo in una classe. In questo caso sei pregato di scegliere un nome che NON termini con &quot;WHOLE GROUP&quot;, così da evitare questa avvertenza.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4924"/>
+        <location filename="../src/engine/rules.cpp" line="5001"/>
         <source>From now on, if you have an empty group, there will be added an automatic subgroup only in the generated timetables, not in the data file.</source>
         <translation>D&apos;ora in avanti se hai una classe o gruppo vuoto, sarà aggiunto automaticamente un sottogruppo solo nell&apos;orario generato, non nel file dei dati.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4357"/>
+        <location filename="../src/engine/rules.cpp" line="4434"/>
         <source>Could not open file - not existing or in use</source>
         <translation>Impossibile aprire il file: non esiste oppure è in uso</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4369"/>
+        <location filename="../src/engine/rules.cpp" line="4446"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <translation>Impossibile leggere il file - XML errore alla linea %1, colonna %2:
@@ -23119,48 +23435,48 @@ Please modify your data correspondingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè hai un vincolo di Numero massimo di inizi alla seconda ora pari a %2 ed il numero di giorni a settimana è %3 ovvero di meno. Bisogna che il Numero massimo di inizi alla seconda ora sia inferiore o (tutt&apos;al più) uguale al numero di giorni a settimana. Modifica i dati e prova di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4655"/>
+        <location filename="../src/engine/rules.cpp" line="4732"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation>I tuoi dati contengono un elenco di Chiavi della materia, che hanno cambiato nome a partire dalla versione 5.5.0 in Chiavi dell&apos;attività</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8503"/>
+        <location filename="../src/engine/rules.cpp" line="8580"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>Il tuo file contiene il vincolo di Niente ore buche per studenti che è obsoleto (è stato migliorato a partire da FET 5.5.0) e sarà tradotto nel vincolo di questo tipo, Numero massimo di ore buche per studenti a settimana, con Numero massimo di buchi = 0. Se desideri puoi modificare questo vincolo per consentire più ore buche a settimana (caso non previsto dalla maggior parte delle scuole)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8552"/>
+        <location filename="../src/engine/rules.cpp" line="8629"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>Il tuo file contiene il vincolo di Niente ore buche per insieme di studenti che è obsoleto (è stato migliorato a partire da FET 5.5.0) e sarà tradotto nel vincolo di questo tipo, Numero massimo di ore buche per insieme di studenti a settimana, con Numero massimo di buchi = 0. Se desideri puoi modificare questo vincolo per consentire più ore buche a settimana (caso non previsto dalla maggior parte delle scuole)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8693"/>
+        <location filename="../src/engine/rules.cpp" line="8770"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>Il tuo file contiene il vincolo di ingresso degli studenti presto che è obsoleto (è stato migliorato a partire da FET 5.5.0) e sarà tradotto nel vincolo di questo tipo, Numero massimo di ingressi alla seconda ora per studenti a settimana, con Numero massimo ingressi = 0. Se desideri puoi modificare questo vincolo per consentire più ingressi alla seconda ora (sopra 0 - questo renderà più semplice trovare un orario)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8779"/>
+        <location filename="../src/engine/rules.cpp" line="8856"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>Il tuo file contiene il vincolo di ingresso di un insieme di studenti presto che è obsoleto (è stato migliorato a partire da FET 5.5.0) e sarà tradotto nel vincolo di questo tipo, Numero massimo di ingressi alla seconda ora per insieme di studenti a settimana, con Numero massimo ingressi = 0. Se desideri puoi modificare questo vincolo per consentire più ingressi alla seconda ora (sopra 0 - questo renderà più semplice trovare un orario)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9011"/>
+        <location filename="../src/engine/rules.cpp" line="9088"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation>Vincolo di orario preferenziale per attività errato nel giorno, per insegnante= %1, studenti= %2, Materia= %3, chiave dell&apos;attività= %4, il giorno= %5 è inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9032"/>
+        <location filename="../src/engine/rules.cpp" line="9109"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation>Vincolo di orario preferenziale per attività errato nell&apos;ora, per insegnante= %1, studenti= %2, Materia= %3, chiave dell&apos;attività= %4, l&apos;ora= %5 è inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5454"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5912"/>
         <source>T:%1</source>
         <comment>T means teacher</comment>
         <translation>I:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4187"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4645"/>
         <source>St:%1</source>
         <comment>St means students</comment>
         <translation>St:%1</translation>
@@ -23318,98 +23634,98 @@ Please modify your data correspondingly and try again</source>
         <translation>N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5140"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5174"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5198"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per studenti al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5203"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5237"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambio di edificio per insieme di studenti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5227"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5261"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per studenti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5266"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5300"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5290"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5324"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5330"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5364"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnante al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5386"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnanti al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5391"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5425"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnante a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5413"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5447"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnanti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5486"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insegnante con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5508"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insegnanti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5918"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5952"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation>Questo è l&apos;ordine iniziale di valutazione delle attività computate da FET. Se la generazione si blocca dopo un certo numero di attività, controlla l&apos;attività corrispondente a questo numero + 1. Dovresti riscontrare un errore tra i dati in ingresso.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5920"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5954"/>
         <source>The initial order of activities (id-s):</source>
         <translation>Ordine iniziale delle attività (id):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5925"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5959"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5929"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5963"/>
         <source>id=%1</source>
         <translation>id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5932"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5966"/>
         <source>teachers:</source>
         <translation>insegnanti:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5971"/>
         <source>subject:</source>
         <translation>materia:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5941"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5975"/>
         <source>students:</source>
         <translation>studenti:</translation>
     </message>
@@ -23443,77 +23759,77 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
 Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5332"/>
+        <location filename="../src/engine/rules.cpp" line="5409"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation>Il file contiene il vincolo di insegnante non disponibile che è obsoleto (è stato migliorato in FET 5.5.0) e sarà convertito in un simile vincolo di questo tipo, vincolo di indisponibilità di un insegnante (matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5485"/>
+        <location filename="../src/engine/rules.cpp" line="5562"/>
         <source>Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Il vincolo &quot; insegnante non disponibile per volte&quot; non ha giorno valido per l&apos;insegnante %1,  giorno %2 inesistente... si tralascia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5503"/>
+        <location filename="../src/engine/rules.cpp" line="5580"/>
         <source>Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Ore del vincolo &quot;Insegnante non disponibile&quot; inattendibili per l&apos;insegnante %1, ora %2 inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5954"/>
+        <location filename="../src/engine/rules.cpp" line="6031"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation>Il file contiene il vincolo di insieme di studenti non disponibile che è obsoleto (è stato migliorato in FET 5.5.0) e sarà convertito in un simile vincolo di questo tipo, vincolo di indisponibilità di un insieme di studenti (matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6108"/>
+        <location filename="../src/engine/rules.cpp" line="6185"/>
         <source>Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Ore del vincolo Insieme di studenti non disponibile ha giorno inattendibile per insiema di studenti %1,  giorno %2 inesistente... si tralascia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6126"/>
+        <location filename="../src/engine/rules.cpp" line="6203"/>
         <source>Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Ore del vincolo Insieme di studenti non disponibile ha l&apos;ora inattendibile per insieme di studenti %1,  ora %2 inesistente... si tralascia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8040"/>
+        <location filename="../src/engine/rules.cpp" line="8117"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation>Il file contiene il vincolo di interruzione che è obsoleto (è stato migliorato in FET 5.5.0) e sarà convertito in un simile vincolo di questo tipo, vincolo di ore indisponibili (matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8068"/>
+        <location filename="../src/engine/rules.cpp" line="8145"/>
         <source>Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation>Giorno del vincolo di interruzione inattendibile per giorno %1 inesistente ... vincolo ignoraro</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8082"/>
+        <location filename="../src/engine/rules.cpp" line="8159"/>
         <source>Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation>Ora di inizio del vincolo di interruzione inattendibile per ora %1 inesistente ... vincolo ignoraro</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8096"/>
+        <location filename="../src/engine/rules.cpp" line="8173"/>
         <source>Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation>Ora di fine del vincolo di interruzione inattendibile per ora %1 inesistente ... vincolo ignoraro</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8185"/>
+        <location filename="../src/engine/rules.cpp" line="8262"/>
         <source>Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation>Giorno vincolo di interruzione inattendibile per giorno %1 inesistente ... vincolo ignoraro</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8202"/>
+        <location filename="../src/engine/rules.cpp" line="8279"/>
         <source>Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation>Ora del vincolo di ore di interruzione inattendibile per l&apos;ora %1 inesistente ... si igniìora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9750"/>
+        <location filename="../src/engine/rules.cpp" line="9827"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation>Il file contiene il vincolo di aula non disponibile che è obsoleto (è stato migliorato in FET 5.5.0) e sarà convertito in un simile vincolo di questo tipo, vincolo di ore di  indisponibilità di una aula (matrice).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10009"/>
+        <location filename="../src/engine/rules.cpp" line="10086"/>
         <source>Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Giorno del vincolo di ore di indisponibilità per aula inattendibile per aula %1, giorno %2 inesistente ... vincolo ignorato </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10027"/>
+        <location filename="../src/engine/rules.cpp" line="10104"/>
         <source>Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Ora del vincolo di indisponibilità aula errato per aula %1, ora %2 è inesistente ... vincolo ignorato </translation>
     </message>
@@ -23612,7 +23928,7 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Vincolo di spazio infranto per Aule assegnate ad un insegnante per attività con id %1 (studenti= %2)</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3042"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3501"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
         <translation>ChA:%1</translation>
@@ -23633,14 +23949,14 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Vincolo di spazio per aule preferenziali per materia con chiave dell&apos;attività, infranto per attività con id %1 (materia= %2, chiave dell&apos;attività= %3)</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3213"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3671"/>
         <source>Constraint students set max building changes per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Il vincolo di numero massimo di cambi di edificio per insieme di studenti al giorno è errato perchè si riferisce ad un insieme di studenti inesistente. Correggi (rimuoverlo può essere la soluzione adatta). Segnala se ritieni che si tratti di un bug. Il vincolo è:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5244"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5702"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation>MC:%1</translation>
@@ -23656,7 +23972,7 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio al giorno=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3377"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3835"/>
         <source>Space constraint students set max building changes per day broken for students=%1 on day %2</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per insieme di studenti al giorno infranto per gli studenti= %1 il giorno %2</translation>
     </message>
@@ -23666,12 +23982,12 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio al giorno per studenti</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3576"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4034"/>
         <source>Space constraint students max building changes per day broken for students=%1 on day %2</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per studenti al giorno infranto per gli studenti= %1 il giorno %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3665"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4123"/>
         <source>Constraint students set max building changes per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Il vincolo di numero massimo di cambi di edificio per insieme di studenti a settimana è errato perchè si riferisce ad un insieme di studenti inesistente. Correggi (rimuoverlo può essere la soluzione adatta). Segnala se ritieni che si tratti di un bug. Il vincolo è:
@@ -23688,7 +24004,7 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio a settimana=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3830"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4288"/>
         <source>Space constraint students set max building changes per week broken for students=%1</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per insieme di studenti a settimana infranto per gli studenti= %1</translation>
     </message>
@@ -23698,19 +24014,19 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio a settimana per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4028"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4486"/>
         <source>Space constraint students max building changes per week broken for students=%1</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per studenti a settimana infranto per gli studenti= %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4115"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4573"/>
         <source>Constraint students set min gaps between building changes is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Il vincolo di numero minimo di ore buche per cambio di edificio per insieme di studenti è errato perchè si riferisce ad un insieme di studenti inesistente. Correggi (rimuoverlo può essere la soluzione adatta). Segnala se ritieni che si tratti di un bug. Il vincolo è:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5670"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6128"/>
         <source>MG:%1</source>
         <comment>MC means min gaps</comment>
         <translation>mOb:%1</translation>
@@ -23726,7 +24042,7 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero minimo di ore buche per cambio di edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4283"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4741"/>
         <source>Space constraint students set min gaps between building changes broken for students=%1 on day %2</source>
         <translation>Vincolo di spazio Numero minimo di ore buche per cambio di edificio per insieme di studenti infranto per gli studenti= %1 il giorno %2</translation>
     </message>
@@ -23736,12 +24052,12 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero minimo di ore buche per cambio di edificio per un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4494"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4952"/>
         <source>Space constraint students min gaps between building changes broken for students=%1 on day %2</source>
         <translation>Vincolo di spazio Numero minimo di ore buche per cambio di edificio per studenti infranto per gli studenti= %1 il giorno %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4589"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5047"/>
         <source>Constraint teacher max building changes per day is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Il vincolo di numero massimo di cambi di edificio per insegnante al giorno è errato perchè si riferisce ad un insegnante inesistente. Correggi (rimuoverlo può essere la soluzione adatta). Segnala se ritieni che si tratti di un bug. Il vincolo è:
@@ -23753,7 +24069,7 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio al giorno per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4719"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5177"/>
         <source>Space constraint teacher max building changes per day broken for teacher=%1 on day %2</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per insegnante infranto per l&apos;insegnante= %1 il giorno %2</translation>
     </message>
@@ -23763,12 +24079,12 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio al giorno per insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4916"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5374"/>
         <source>Space constraint teachers max building changes per day broken for teacher=%1 on day %2</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per gli insegnanti infranto per l&apos;insegnante= %1 il giorno %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5003"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5461"/>
         <source>Constraint teacher max building changes per week is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Il vincolo di numero massimo di cambi di edificio per insegnante a settimana è errato perchè si riferisce ad un insegnante inesistente. Correggi (rimuoverlo può essere la soluzione adatta). Segnala se ritieni che si tratti di un bug. Il vincolo è:
@@ -23780,7 +24096,7 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio a settimana per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5135"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5593"/>
         <source>Space constraint teacher max building changes per week broken for teacher=%1</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per insegnante a settimana infranto per l&apos;insegnante= %1</translation>
     </message>
@@ -23790,39 +24106,39 @@ Parlane con l&apos;autore o aumenta la variabile MAX_BUILDINGS</translation>
         <translation>Numero massimo di cambi di edificio a settimana per insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5332"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5790"/>
         <source>Space constraint teachers max building changes per week broken for teacher=%1</source>
         <translation>Vincolo di spazio Numero massimo di cambi di edificio per gli insegnanti a settimana infranto per l&apos;insegnante= %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5417"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5875"/>
         <source>Constraint teacher min gaps between building change is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Il vincolo di numero minimo di ore buche per cambio di edificio per insegnante è errato perchè si riferisce ad un insegnante inesistente. Correggi (rimuoverlo può essere la soluzione adatta). Segnala se ritieni che si tratti di un bug. Il vincolo è:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5469"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5927"/>
         <source>Teacher min gaps between building change</source>
         <translation>Numero minimo di ore buche per cambio di edificio per insegnante</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5687"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6145"/>
         <source>Min gaps between building change=%1</source>
         <translation>Numero minimo di ore buche per cambio di edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5551"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6009"/>
         <source>Space constraint teacher min gaps between building changes broken for teacher=%1 on day %2</source>
         <translation>Vincolo di spazio Numero minimo di ore buche per cambio di edificio per insegnante infranto per l&apos;insegnante= %1 il giorno %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5683"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6141"/>
         <source>Teachers min gaps between building change</source>
         <translation>Numero minimo di ore buche per cambio di edificio per gli insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5762"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6220"/>
         <source>Space constraint teachers min gaps between building changes broken for teacher=%1 on day %2</source>
         <translation>Vincolo di spazio Numero minimo di ore buche per cambio di edificio per gli insegnanti infranto per l&apos;insegnante= %1 il giorno %2</translation>
     </message>
@@ -24084,7 +24400,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Aule assegnate ad un insieme di studenti</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5579"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5613"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation>L&apos;attività con id= %1 non ha ore possibili - correggi la situazione</translation>
     </message>
@@ -24107,12 +24423,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Disponibile</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5012"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5046"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation>Impossibile generare un orario perchè per l&apos;attività con id==%1 non ci sono aule disponibili (a causa dei vincoli di aula principale per studenti ed insegnanti)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5108"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5142"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation>Impossibile generare un orario perchè mancano aule disponibili per l&apos;attività con id==%1 (a causa del numero di studenti consentito)</translation>
     </message>
@@ -24127,7 +24443,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Impossibile generare un orario perchè esiste più di un vincolo di aula principale per l&apos;insegnante %1. Correggi e lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11407"/>
+        <location filename="../src/engine/rules.cpp" line="11542"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation>Nel salvataggio del file di log si è verificato l&apos;errore con codice %1, che indica impossibile leggere il file di log. Controlla lo spazio libero su disco</translation>
     </message>
@@ -24147,12 +24463,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Un vincolo di questo tipo esiste già per lo stesso insegnante - impossibile procedere</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5037"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5071"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from subject or subject activity tag or activity preferred room(s)). This means that a constraint preferred room(s) hos 0 rooms in it. This should not happen. Please report possible bug.</source>
         <translation>Impossibile generare l&apos;orario perchè l&apos;attività con id==%1 non ha disponibile alcuna aula preferenziale (per materia o per chiave dell&apos;attività o per il vincolo di aula/e preferenziali per attività). Ciò significa che un vincolo di aula/e preferenziale/i ha 0 aule specificate. Non  dovrebbe accadere. Segnala il possibile bug, grazie.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5058"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5092"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students)</source>
         <translation>Impossibile generare un orario perchè mancano aule preferenziali disponibili per l&apos;attività con id==%1 (a causa del numero di studenti consentito)</translation>
     </message>
@@ -24167,12 +24483,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè il numero di ore del sottogruppo è %2, ma si hanno solo %3 giorni x %4 ore in una settimana.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11077"/>
+        <location filename="../src/engine/rules.cpp" line="11212"/>
         <source>Skip rest</source>
         <translation>Salta gli altri avvisi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="11077"/>
+        <location filename="../src/engine/rules.cpp" line="11212"/>
         <source>See next</source>
         <translation>Vedi il prossimo avviso</translation>
     </message>
@@ -24187,32 +24503,32 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Nota: FET considera che ogni giorno della settimana deve avere il minimo numero di ore lavorative, così da evitare giorni vuoti per gli studenti interessati (il vincolo non è flessibile)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6229"/>
+        <location filename="../src/engine/rules.cpp" line="6306"/>
         <source>You have a constraint min n days between activities with more activities than the number of days per week.</source>
         <translation>Hai un vincolo di Numero minimo di giorni tra attività con più attività che numero di giorni a settimana.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6231"/>
+        <location filename="../src/engine/rules.cpp" line="6308"/>
         <source>Constraint is:</source>
         <translation>Il vincolo è:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6235"/>
+        <location filename="../src/engine/rules.cpp" line="6312"/>
         <source>This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translation>Questa è una pratica sconsigliabile, per il modo in cui l&apos;algoritmo funziona (rallenta la generazione e rende più difficile trovare uina soluzione).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6237"/>
+        <location filename="../src/engine/rules.cpp" line="6314"/>
         <source>To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:</source>
         <translation>Per migliorare il tuo file rimuovi le corrispondenti attività e vincoli ed aggiungi ancora attività, rispettando le seguenti prescrizioni:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6241"/>
+        <location filename="../src/engine/rules.cpp" line="6318"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
         <translation>1. Se selezioni &apos;forza consecutive se stesso giorno&apos;,  allora accoppia più attività per ottenere un numero di lezioni uguale al numero di giorni a settimana. Esempio: 7 attività di durata 1 in una settimana di 5 giorni possono diventare 5 attività di durata 2,2,1,1,1 così da aggiungere un singolo insieme di attività con queste 5 componenti (possibilmente aumentando il peso del vincolo Numero minimo di giorni tra attività fino al 100%) </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6248"/>
+        <location filename="../src/engine/rules.cpp" line="6325"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
         <translation>2. Se non selezioni &apos;forza consecutive se stesso giorno&apos;, allora aggiungi un contenitore contenente un numero di attività uguale al numero di giorni per settimana e ulteriori attività previste in un altro contenitore suddiviso. Per esempio supponi di avere 7 attività di durata 1 in una settimana di 5 giorni. Aggiungi 2 contenitori di attività più ampi, il primo suddiviso in 5 attività di durata 1 e il secondo diviso in 2 attività di durata 1 (possibilmente aumentando il peso del vincolo Numero minimo di giorni tra attività per ciascuno dei 2 contenitori fino al 100%)</translation>
     </message>
@@ -24227,47 +24543,47 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Impossibile ottimizzare il sottogruppo %1 perchè il numero di ore per il sottogruppo è %2  e si hanno solo %3 ore disponibili a causa dei vincoli studenti non disponibili e/o interruzioni. Forse hai inserito vincoli sbagliati per studenti non disponibili o interruzioni o il numero di ore al giorno è inferiore a causa di un malinteso</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4766"/>
+        <location filename="../src/engine/rules.cpp" line="4843"/>
         <source>Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere l&apos;anno %1, che tuttavia risulta già inserito come altro anno - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4768"/>
+        <location filename="../src/engine/rules.cpp" line="4845"/>
         <source>Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere l&apos;anno %1, che tuttavia risulta già inserito come altra classe  - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4770"/>
+        <location filename="../src/engine/rules.cpp" line="4847"/>
         <source>Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere l&apos;anno %1, che tuttavia risulta già inserito come altro sottogruppo - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4811"/>
+        <location filename="../src/engine/rules.cpp" line="4888"/>
         <source>Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere la classe %1, che tuttavia risulta già inserita come altro anno - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4814"/>
+        <location filename="../src/engine/rules.cpp" line="4891"/>
         <source>Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungerela classe %1 nell&apos;anno %2, ma risulta già inserito - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4820"/>
+        <location filename="../src/engine/rules.cpp" line="4897"/>
         <source>Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere la classe %1, che tuttavia risulta già inserita come altro sottogruppo - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4886"/>
+        <location filename="../src/engine/rules.cpp" line="4963"/>
         <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere il sottogruppo %1, che tuttavia risulta già inserito come altro anno - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4888"/>
+        <location filename="../src/engine/rules.cpp" line="4965"/>
         <source>Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere il sottogruppo %1, che tuttavia risulta già inserito come altra classe - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4891"/>
+        <location filename="../src/engine/rules.cpp" line="4968"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation>Tentativo di aggiungere il sottogruppo %1 nell&apos;anno %2, classe %3, ma risulta già inserito - il tuo file sarà caricato, ma probabilmente contiene errori. Verifica e correggi</translation>
     </message>
@@ -24411,7 +24727,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo = %2 ore consecutive per il sottogruppo %1 non può essere rispettato a causa dell&apos;attività con id %3 (che ha durata %4).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5752"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5786"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation>L&apos;aula %1 non ha ore sufficienti per i vincoli di Aule principali (necessarie %2, disponibili %3) - verifica e correggi</translation>
     </message>
@@ -24478,37 +24794,37 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo di orario preferenziale di inizio per attività senza giorno nè ora selezionate (per l&apos;attività con id==%1). Modifica i dati (rimuovi o completa il vincolo) e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7196"/>
+        <location filename="../src/engine/rules.cpp" line="7273"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
         <translation>Il datafile contiene un vecchio vincolo del tipo Orario preferenziale per attività che sarà convertito in un nuovo vincolo simile, Orario preferenziale DI INIZIO dell&apos;attività. Questa aggiunta è stata inserita a partire dalla versione 5.5.9</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7413"/>
+        <location filename="../src/engine/rules.cpp" line="7490"/>
         <source>Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo ActivityPreferredStartingTime - Si ha giorno errato per attività con id %1, giorno %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7429"/>
+        <location filename="../src/engine/rules.cpp" line="7506"/>
         <source>Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo ActivityPreferredStartingTime - Si ha ora errata per attività con id %1, ora %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8000"/>
+        <location filename="../src/engine/rules.cpp" line="8077"/>
         <source>Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo ActivityPreferredStartingTimes - Si ha giorno errato per attività con id %1, giorno %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8018"/>
+        <location filename="../src/engine/rules.cpp" line="8095"/>
         <source>Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo ActivityPreferredStartingTimes - Si ha ora errata per attività con id %1, ora %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9523"/>
+        <location filename="../src/engine/rules.cpp" line="9600"/>
         <source>Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation>Orario di inizio preferenziale per attività - Vincolo con giorno errato, per insegnante= %1, studenti= %2, materia= %3, chiave dell&apos;attività= %4, il giorno= %5 è inesistente ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9544"/>
+        <location filename="../src/engine/rules.cpp" line="9621"/>
         <source>Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation>Orario di inizio preferenziale per attività - Vincolo con ora errata, per insegnante= %1, studenti= %2, materia= %3, chiave dell&apos;attività= %4, l&apos;ora= %5 è inesistente ... vincolo ignorato</translation>
     </message>
@@ -24637,32 +24953,32 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>E&apos; richiesto di incrementare la varabile MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7737"/>
+        <location filename="../src/engine/rules.cpp" line="7814"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>Il tuo file contiene il vecchio vincolo di orario preferenziale per attività che sarà convertito nel nuovo vincolo equivalente di ore preferenziali di inizio dell&apos;attività. A partire da FET 5.5.9 è possibile specificare: 1. le possibili ore di inizio di una attività (vincolo di ore preferenziali di inizio di attività) oppure : 2. le ore accettabili (vincolo di ore preferenziali). Se quello che ti occorre è il tipo di vincolo 2, allora dovrai aggiungerlo tramite l&apos;apposita finestra di dialogo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7902"/>
+        <location filename="../src/engine/rules.cpp" line="7979"/>
         <source>Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>ActivityPreferredTimes - Vincolo con giorno errato per attività con id %1, giorno %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7920"/>
+        <location filename="../src/engine/rules.cpp" line="7997"/>
         <source>Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>ActivityPreferredTimesSlot - Vincolo con ora errata per attività con id %1, ora %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8923"/>
+        <location filename="../src/engine/rules.cpp" line="9000"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
         <translation>Il tuo file contiene il vecchio vincolo di orario preferenziale per più attività che sarà convertito nel nuovo vincolo equivalente di ore preferenziali di inizio di più attività. A partire da FET 5.5.9 è possibile specificare: 1. le possibili ore di inizio di più attività (vincolo di ore preferenziali di inizio di più attività) oppure : 2. le ore accettabili (vincolo di ore preferenziali). Se quello che ti occorre è il tipo di vincolo 2, allora dovrai aggiungerlo tramite l&apos;apposita finestra di dialogo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9393"/>
+        <location filename="../src/engine/rules.cpp" line="9470"/>
         <source>Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation>Vincolo Ore di inizio preferenziali per più attività con giorno errato, per insegnante= %1, studenti= %2, materia= %3, chiave dell&apos;attività= %4, giorno= %5 inesistente ... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="9414"/>
+        <location filename="../src/engine/rules.cpp" line="9491"/>
         <source>Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation>Vincolo Ore preferenziali per più attività con giorno errato, per insegnante= %1, studenti= %2, materia= %3, chiave dell&apos;attività= %4, giorno= %5 inesistente ... si ignora il vincolo</translation>
     </message>
@@ -24903,7 +25219,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>E&apos; richiesto di incrementare la varabile  MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS</translation>
     </message>
     <message>
-        <location filename="../src/interface/allspaceconstraintsform.cpp" line="246"/>
+        <location filename="../src/interface/allspaceconstraintsform.cpp" line="261"/>
         <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recongnized in all space constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Hai riscontrato un bug in FET. Per favore segnala l&apos;anomalia. Questo tipo di vincolo non è correttamente riconosciuto tra tutti i vincoli di spazio. FET trascurerà questo errore così da permetterti di continuare il tuo lavoro. Probabilmente il vincolo può essere modificato dalla specifica finestra di dialogo.</translation>
     </message>
@@ -24968,12 +25284,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>componente numero %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5622"/>
+        <location filename="../src/engine/rules.cpp" line="5699"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Vincolo Numero massimo di giorni a settimana con lezioni in intervallo per insegnante inattendibile per l&apos;insegnante %1, numero massimo di giorni %2 &gt; NumGiorniSettimanali, vincolo aggiunto. Correggi l&apos;anomalia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5638"/>
+        <location filename="../src/engine/rules.cpp" line="5715"/>
         <source>Constraint Teacher interval max days per week start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni a settimana con lezioni in un intervallo per insegnante viziato: ora di inizio errata per l&apos;insegnante %1, ora %2 inesistente... si ignora il vincolo</translation>
     </message>
@@ -25023,52 +25339,52 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezioni in intervallo per studenti con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5659"/>
+        <location filename="../src/engine/rules.cpp" line="5736"/>
         <source>Constraint Teacher interval max days per week end hour corrupt for teacher %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni a settimana con lezioni in intervallo per insegnante errato nell&apos;ora, per insegnante= %1, l&apos;ora= %2 è inesistente (è invece possibile specificare l&apos;ora di Fine della giornata)  ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5716"/>
+        <location filename="../src/engine/rules.cpp" line="5793"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Vincolo Numero massimo di giorni in intervallo a settimana per insegnanti errato, numero massimo di giorni %2 &gt; NumGiorniSettimanali, vincolo aggiunto. Correggi l&apos;anomalia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5732"/>
+        <location filename="../src/engine/rules.cpp" line="5809"/>
         <source>Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni in un intervallo a settimana per insegnanti viziato: ora %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5753"/>
+        <location filename="../src/engine/rules.cpp" line="5830"/>
         <source>Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni in intervallo a settimana per insegnanti errato perchè l&apos;ora= %2 è inesistente (è invece possibile specificare l&apos;ora di Fine della giornata)  ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5808"/>
+        <location filename="../src/engine/rules.cpp" line="5885"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Vincolo Numero massimo di giorni in un intervallo a settimana per insieme di studenti viziato per l&apos;per insieme di studenti %1, numero massimo di giorni %2 &gt; NumGiorniSettimanali, vincolo aggiunto. Correggi l&apos;anomalia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5824"/>
+        <location filename="../src/engine/rules.cpp" line="5901"/>
         <source>Constraint Students set interval max days per week start hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni in un intervallo a settimana per insieme di studenti viziato: ora di inizio errata per gli studenti %1, ora %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5845"/>
+        <location filename="../src/engine/rules.cpp" line="5922"/>
         <source>Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni in intervallo a settimana per insieme di studenti errato nell&apos;ora di fine, per studenti %1, l&apos;ora %2 è inesistente (è invece possibile specificare l&apos;ora di Fine della giornata)  ... vincolo ignorato</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5901"/>
+        <location filename="../src/engine/rules.cpp" line="5978"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
         <translation>Vincolo Numero massimo di giorni in intervallo a settimana per insieme di studenti errato, numero massimo di giorni %2 &gt; NumGiorniSettimanali, vincolo aggiunto. Correggi l&apos;anomalia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5917"/>
+        <location filename="../src/engine/rules.cpp" line="5994"/>
         <source>Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni in un intervallo a settimana per studenti viziato: ora %2 inesistente... si ignora il vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5938"/>
+        <location filename="../src/engine/rules.cpp" line="6015"/>
         <source>Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint</source>
         <translation>Vincolo Numero massimo di giorni in intervallo a settimana per studenti con ora di fine errata perchè l&apos;ora %2 è inesistente (è invece possibile specificare l&apos;ora di Fine della giornata)  ... vincolo ignorato</translation>
     </message>
@@ -25218,17 +25534,17 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Impossibile ottimizzare perche hai il vincolo Attività che chiude la giornata degli studenti con peso percentuale sotto 100%. Il vincolo Attività che chiude la giornata degli studenti può avere solo il peso del 100%. Modifica i dati (o rimuovi il vincolo) e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4443"/>
+        <location filename="../src/engine/rules.cpp" line="4520"/>
         <source>File contains a version numbering scheme which is not matched by x.x.x (3 numbers separated by points). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file)</source>
         <translation>Il file contiene un numero di versione in forma diversa da x.x.x (3 numeri separati da punto). Il file verrà aperto, ma sei invitato a verificare la versione del file .fet (all&apos;inizio del file)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4451"/>
+        <location filename="../src/engine/rules.cpp" line="4528"/>
         <source>FET version does not respect the format x.x.x (3 numbers separated by points). This is probably a bug in FET - please report it</source>
         <translation>La versione di FET non rispetta il formato x.x.x (3 numero separati da punto). Questo è probabilmente un bug di FET - Grazie per avvisare l&apos;autore dell&apos;anomalia</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4485"/>
+        <location filename="../src/engine/rules.cpp" line="4562"/>
         <source>Your FET version: %1, file version: %2</source>
         <translation>La versione di FET: %1, la versione del file: %2</translation>
     </message>
@@ -25330,22 +25646,22 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>Bloccata non in permanenza (può essere sbloccata dal menu &apos; Orario&apos;)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7445"/>
+        <location filename="../src/engine/rules.cpp" line="7522"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Trovato vincolo di orario preferenziale di inizio per attività con opzione &apos;bloccato in permanenza&apos; non specificata - questa opzione sarà impostata a &apos;falso&apos; per default. Puoi comunque modificarla editando il vincolo nel menu &apos;Dati&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10434"/>
+        <location filename="../src/engine/rules.cpp" line="10511"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
         <translation>Trovato vincolo di aula preferenziale per attività con opzione &apos;bloccato in permanenza&apos; non specificata - questa opzione sarà impostata a &apos;falso&apos; per default. Puoi comunque modificarla editando il vincolo nel menu &apos;Dati&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7456"/>
+        <location filename="../src/engine/rules.cpp" line="7533"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Chiarimento: a partire dalla versione 5.8.0 (gennaio 2009), il vincolo di orario di inizio preferenziale per attività ha una nuova opzione, &apos;bloccato in permanenza&apos; (vero o falso). E&apos; consigliabile impostare l&apos;opzione &apos;bloccato in permanenza&apos; a vero per i vincoli che preferirai non siano modificabili attraverso il menu &apos;Orario&apos; ed impostarlo invece a falso per i vincoli che preferirai poter modificare dal menu &apos;Orario&apos; (l&apos;opzione &apos;bloccato in permanenza&apos; può essere modificata editando il vincolo dal menu &apos;Dati&apos;). In questo modo, nel valutare un orario e nel bloccare/sbloccare alcune attività, non potrai sbloccare quei vincoli che devono restare bloccati in ogni caso. </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10445"/>
+        <location filename="../src/engine/rules.cpp" line="10522"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
         <translation>Chiarimento: a partire dalla versione 5.8.0 (gennaio 2009), il vincolo di aula preferenziale per attività ha una nuova opzione, &apos;bloccato in permanenza&apos; (vero o falso). E&apos; consigliabile impostare l&apos;opzione &apos;bloccato in permanenza&apos; a vero per i vincoli che preferirai non siano modificabili attraverso il menu &apos;Orario&apos; ed impostarlo invece a falso per i vincoli che preferirai poter modificare dal menu &apos;Orario&apos; (l&apos;opzione &apos;bloccato in permanenza&apos; può essere modificata editando il vincolo dal menu &apos;Dati&apos;). In questo modo, nel valutare un orario e nel bloccare/sbloccare alcune attività, non potrai sbloccare quei vincoli che devono restare bloccati in ogni caso. </translation>
     </message>
@@ -25355,45 +25671,45 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation>L&apos;insegnante non è valido - chiudi questa finestra e accedi nuovamente per vedere l&apos;orario di un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7468"/>
+        <location filename="../src/engine/rules.cpp" line="7545"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
         <translation>Esiste un vincolo di Orario preferenziale di inizio attività, con giorno e/o ora non specificati. Tale vincolo sarà trasformato in un vincolo di Orari preferenziali di inizio attività  (una serie di ore, non una sola). Questa modifica trova applicazione nelle versioni di FET 5.8.1 e superiori.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4601"/>
+        <location filename="../src/engine/rules.cpp" line="4678"/>
         <source>Duplicate teacher %1 found - ignoring</source>
         <translation>Insegnante %1 duplicato - si ignora</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4640"/>
+        <location filename="../src/engine/rules.cpp" line="4717"/>
         <source>Duplicate subject %1 found - ignoring</source>
         <translation>Materia %1 duplicata - si ignora</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4721"/>
+        <location filename="../src/engine/rules.cpp" line="4798"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
         <translation>Chiave dell&apos;attività %1 duplicata - si ignora</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7394"/>
+        <location filename="../src/engine/rules.cpp" line="7471"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Trovato vincolo Orario di inizio preferenziale per attività con opzione impostata in permanenza ad un valore diverso da &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; oppure &apos;0&apos;. L&apos;opzione sarà impostata &apos;false&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="10396"/>
+        <location filename="../src/engine/rules.cpp" line="10473"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Trovato vincolo di aula preferenziale  per attività con opzione impostata in permanenza ad un valore diverso da &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; oppure &apos;0&apos;. L&apos;opzione sarà impostata &apos;false&apos;</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5050"/>
+        <location filename="../src/engine/rules.cpp" line="5127"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Trovata opzione di abilitazione attività impostata ad un valore diverso da &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; oppure &apos;0&apos;. L&apos;attività sarà considerata disabilitata</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6183"/>
+        <location filename="../src/engine/rules.cpp" line="6260"/>
         <source>Found constraint min n days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
         <translation>Trovato vincolo di Numero minimo di giorni tra attività con opzione Consecutive se stesso giorno impostata ad un valore diverso da &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; oppure &apos;0&apos;. L&apos;opzione sarà impostata &apos;false&apos;</translation>
@@ -25647,6 +25963,26 @@ Se questa modifica occorre effettivamente, sei pregato di parlarne con l&apos;au
         <location filename="../src/interface/activitiesform.cpp" line="265"/>
         <source>different boolean variable &apos;must compute n total students&apos;</source>
         <translation>variabile booleana diversa &apos;occorre calcolare n totale di studenti&apos;</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3279"/>
+        <source>Activity tag preferred room</source>
+        <translation>Aula preferenziale per chiave dell&apos;attività</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3337"/>
+        <source>Space constraint activity tag preferred room broken for activity with id %1 (activity tag=%2)</source>
+        <translation>Vincolo di spazio per aula preferenziale per chiave dell&apos;attività violato per l&apos;attività con id=%1 (chiave dell&apos;attività=%2)</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3516"/>
+        <source>Activity tag preferred rooms</source>
+        <translation>Aule preferenziali per chiave dell&apos;attività</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3581"/>
+        <source>Space constraint activity tag preferred rooms broken for activity with id %1 (activity tag=%2)</source>
+        <translation>Vincolo di spazio per aule preferenziali per chiave dell&apos;attività violato per l&apos;attività con id=%1 (chiave dell&apos;attività=%2)</translation>
     </message>
 </context>
 <context>

@@ -2330,7 +2330,7 @@ QString ConstraintSubjectPreferredRoom::getDescription(Rules& r){
 	//if(&r!=NULL)
 	//	;
 
-	QString s="Subject preferred room"; s+=", ";
+	QString s=QObject::tr("Subject preferred room"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	s+=QObject::tr("S:%1").arg(this->subjectName);s+=",";
 	s+=QObject::tr("R:%1").arg(this->roomName);
@@ -2564,7 +2564,7 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
 	//if(&r!=NULL)
 	//	;
 
-	QString s="Subject preferred rooms"; s+=", ";
+	QString s=QObject::tr("Subject preferred rooms"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	s+=QObject::tr("S:%1").arg(this->subjectName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
@@ -2797,7 +2797,7 @@ QString ConstraintSubjectActivityTagPreferredRoom::getDescription(Rules& r){
 	//if(&r!=NULL)
 	//	;
 
-	QString s="Subject activity tag preferred room"; s+=", ";
+	QString s=QObject::tr("Subject activity tag preferred room"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	s+=QObject::tr("S:%1").arg(this->subjectName);s+=",";
 	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=",";
@@ -3036,7 +3036,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDescription(Rules& r){
 	//if(&r!=NULL)
 	//	;
 
-	QString s="Subject activity tag preferred rooms"; s+=", ";
+	QString s=QObject::tr("Subject activity tag preferred rooms"); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
 	s+=QObject::tr("S:%1").arg(this->subjectName);s+=", ";
 	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);
@@ -3183,6 +3183,464 @@ bool ConstraintSubjectActivityTagPreferredRooms::isRelatedToRoom(Room* r)
 {
 	return this->roomsNames.contains(r->name);
 }
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+////added on 6 apr 2009
+
+ConstraintActivityTagPreferredRoom::ConstraintActivityTagPreferredRoom()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM;
+}
+
+ConstraintActivityTagPreferredRoom::ConstraintActivityTagPreferredRoom(double wp, const QString& subjTag, const QString& rm)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM;
+	this->activityTagName=subjTag;
+	this->roomName=rm;
+}
+
+bool ConstraintActivityTagPreferredRoom::computeInternalStructure(Rules& r)
+{
+	//This procedure computes the internal list of all the activities
+	//which correspond to the subject of the constraint.
+	
+	this->_activities.clear();
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(/*r.internalActivitiesList[ac].subjectName == this->subjectName
+		 && */ r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
+		 	this->_activities.append(ac);
+		}
+		
+	/*this->_nActivities=0;
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(r.internalActivitiesList[ac].subjectName == this->subjectName
+		 && r.internalActivitiesList[ac].activityTagName == this->activityTagName){
+			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
+			this->_activities[this->_nActivities++]=ac;
+		}*/
+		
+	this->_room = r.searchRoom(this->roomName);
+	if(this->_room<0){
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+	assert(this->_room>=0);
+	
+	return true;
+}
+
+bool ConstraintActivityTagPreferredRoom::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+QString ConstraintActivityTagPreferredRoom::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s="<ConstraintActivityTagPreferredRoom>\n";
+	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
+	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
+		
+	s+="</ConstraintActivityTagPreferredRoom>\n";
+
+	return s;
+}
+
+QString ConstraintActivityTagPreferredRoom::getDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Activity tag preferred room"); s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=",";
+	s+=QObject::tr("R:%1").arg(this->roomName);
+
+	return s;
+}
+
+QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Space constraint"); s+="\n";
+	s+=QObject::tr("Activity tag preferred room"); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
+	s+=QObject::tr("Room name=%1").arg(this->roomName);s+="\n";
+
+	return s;
+}
+
+double ConstraintActivityTagPreferredRoom::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
+		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
+		 
+		//crt_chrom = &c;
+		//crt_rules = &r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts.
+	//The fastest way seems to iterate over all activities
+	//involved in this constraint (share the subject and activity tag of this constraint),
+	//find the scheduled room and check to see if this
+	//room is accepted or not.
+
+	int nbroken;
+	
+	bool ok2=true;
+
+	nbroken=0;
+	foreach(int ac, this->_activities){
+	//for(int i=0; i<this->_nActivities; i++){	
+	//	int ac=this->_activities[i];
+		int rm=c.rooms[ac];
+		if(rm==UNALLOCATED_SPACE) //counted as unallocated
+			continue;
+		
+		bool ok=true;
+		if(rm!=this->_room)
+			ok=false;
+
+		if(!ok){
+			if(rm!=UNALLOCATED_SPACE)
+				ok2=false;
+		
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Space constraint activity tag preferred room broken for activity with id %1 (activity tag=%2)")
+					.arg(r.internalActivitiesList[ac].id)
+					.arg(this->activityTagName);
+				s += ". ";
+				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* 1);
+				
+				*conflictsString+=s+"\n";
+			}
+
+			nbroken++;
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(ok2);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintActivityTagPreferredRoom::isRelatedToActivity(Activity* a)
+{
+	//Q_UNUSED(a);
+	//if(a)
+	//	;
+
+	//return false;
+	
+	return /*this->subjectName==a->subjectName && */ a->activityTagsNames.contains(this->activityTagName);
+}
+
+bool ConstraintActivityTagPreferredRoom::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	//if(t)
+	//	;
+
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRoom::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRoom::isRelatedToActivityTag(ActivityTag* s)
+{
+	if(this->activityTagName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	/*if(s)
+		;
+	if(&r)
+		;*/
+
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRoom::isRelatedToRoom(Room* r)
+{
+	return r->name==this->roomName;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivityTagPreferredRooms::ConstraintActivityTagPreferredRooms()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS;
+}
+
+ConstraintActivityTagPreferredRooms::ConstraintActivityTagPreferredRooms(double wp, const QString& subjTag, const QStringList& rms)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS;
+	this->activityTagName=subjTag;
+	this->roomsNames=rms;
+}
+
+bool ConstraintActivityTagPreferredRooms::computeInternalStructure(Rules& r)
+{
+	//This procedure computes the internal list of all the activities
+	//which correspond to the subject of the constraint.
+	
+	this->_activities.clear();
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(/*r.internalActivitiesList[ac].subjectName == this->subjectName
+		 && */  r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
+			this->_activities.append(ac);
+		}
+
+	this->_rooms.clear();
+	foreach(QString rm, roomsNames){
+		int t=r.searchRoom(rm);
+		if(t<0){
+			QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+				QObject::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+
+			return false;
+		}
+		assert(t>=0);
+		this->_rooms.append(t);
+	}
+	
+	/*this->_nActivities=0;
+	for(int ac=0; ac<r.nInternalActivities; ac++)
+		if(r.internalActivitiesList[ac].subjectName == this->subjectName
+		 && r.internalActivitiesList[ac].activityTagName == this->activityTagName){
+			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
+			this->_activities[this->_nActivities++]=ac;
+		}
+
+	this->_n_preferred_rooms=this->roomsNames.count();
+	int i=0;
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		this->_rooms[i] = r.searchRoom(*it);
+		assert(this->_rooms[i]>=0);
+		i++;
+	}*/
+	
+	return true;
+}
+
+bool ConstraintActivityTagPreferredRooms::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+QString ConstraintActivityTagPreferredRooms::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s="<ConstraintActivityTagPreferredRooms>\n";
+	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
+	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
+		
+	s+="</ConstraintActivityTagPreferredRooms>\n";
+
+	return s;
+}
+
+QString ConstraintActivityTagPreferredRooms::getDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Activity tag preferred rooms"); s+=", ";
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);s+=", ";
+	s+=QObject::tr("AT:%1", "Activity tag").arg(this->activityTagName);
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		s+=", ";
+		s+=QObject::tr("R:%1").arg(*it);
+	}
+
+	return s;
+}
+
+QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+	//if(&r!=NULL)
+	//	;
+
+	QString s=QObject::tr("Space constraint"); s+="\n";
+	s+=QObject::tr("Activity tag preferred rooms"); s+="\n";
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=QObject::tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
+	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+		s+=QObject::tr("Room=%1").arg(*it);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivityTagPreferredRooms::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
+		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
+		 
+		//crt_chrom = &c;
+		//crt_rules = &r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts.
+	//The fastest way seems to iterate over all activities
+	//involved in this constraint (share the subject and activity tag of this constraint),
+	//find the scheduled room and check to see if this
+	//room is accepted or not.
+
+	int nbroken;
+	
+	bool ok2=true;
+
+	nbroken=0;
+	foreach(int ac, this->_activities){
+	//for(int i=0; i<this->_nActivities; i++){	
+	//	int ac=this->_activities[i];
+		int rm=c.rooms[ac];
+		if(rm==UNALLOCATED_SPACE)
+			continue;
+	
+		bool ok=true;
+		int i;
+		for(i=0; i<this->_rooms.count(); i++)
+			if(this->_rooms.at(i)==rm)
+				break;
+		if(i==this->_rooms.count())
+			ok=false;
+
+		if(!ok){
+			if(rm!=UNALLOCATED_SPACE)
+				ok2=false;
+			
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Space constraint activity tag preferred rooms broken for activity with id %1 (activity tag=%2)")
+					.arg(r.internalActivitiesList[ac].id)
+					.arg(this->activityTagName);
+				s += ". ";
+				s += QObject::tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				
+				dl.append(s);
+				cl.append(weightPercentage/100* 1);
+			
+				*conflictsString+=s+"\n";
+			}
+			nbroken++;
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(ok2);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintActivityTagPreferredRooms::isRelatedToActivity(Activity* a)
+{
+	//Q_UNUSED(a);
+
+	//return false;
+	
+	return /*this->subjectName==a->subjectName && */ a->activityTagsNames.contains(this->activityTagName);
+}
+
+bool ConstraintActivityTagPreferredRooms::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRooms::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRooms::isRelatedToActivityTag(ActivityTag* s)
+{
+	if(this->activityTagName==s->name)
+		return true;
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRooms::isRelatedToRoom(Room* r)
+{
+	return this->roomsNames.contains(r->name);
+}
+///////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////

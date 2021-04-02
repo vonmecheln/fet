@@ -51,6 +51,9 @@ using namespace std;
 #include "modifyconstraintsubjectactivitytagpreferredroomform.h"
 #include "modifyconstraintsubjectactivitytagpreferredroomsform.h"
 
+#include "modifyconstraintactivitytagpreferredroomform.h"
+#include "modifyconstraintactivitytagpreferredroomsform.h"
+
 #include <QDesktopWidget>
 
 #include "lockunlock.h"
@@ -179,6 +182,18 @@ void AllSpaceConstraintsForm::modifyConstraint()
 		 new ModifyConstraintSubjectActivityTagPreferredRoomsForm((ConstraintSubjectActivityTagPreferredRooms*)ctr);
 		form->exec();
 	}
+	///6 apr 2009
+	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+		ModifyConstraintActivityTagPreferredRoomForm* form=
+		 new ModifyConstraintActivityTagPreferredRoomForm((ConstraintActivityTagPreferredRoom*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+		ModifyConstraintActivityTagPreferredRoomsForm* form=
+		 new ModifyConstraintActivityTagPreferredRoomsForm((ConstraintActivityTagPreferredRooms*)ctr);
+		form->exec();
+	}
+	///
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY){
 		ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm* form=
 		 new ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm((ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);

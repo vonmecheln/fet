@@ -115,6 +115,9 @@ public slots:
 	void on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_activated();
 	void on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_activated();
 
+	void on_dataSpaceConstraintsActivityTagPreferredRoomAction_activated();
+	void on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activated();
+
 
 	void on_dataTimeConstraintsBasicCompulsoryTimeAction_activated();
 	void on_dataTimeConstraintsBreakTimesAction_activated();
