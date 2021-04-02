@@ -64,6 +64,10 @@ Generate gen;
 
 QString initialOrderOfActivities;
 
+int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
+
+extern int maxActivitiesPlaced;
+
 
 void GenerateThread::run()
 {
@@ -203,6 +207,57 @@ void TimetableGenerateForm::stop()
 	s+="\n\n";
 
 	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:\n\n");
+
+	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
+	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
+	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
+	 .arg(maxActivitiesPlaced);
+	 
+	s+="\n\n";
+	
+	s+=tr("Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
+	s+="\n";
+	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
+	s+="\n";
+	
+	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities 
+	 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
+		int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
+
+		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
+		s+=",";
+		s+=TimetableGenerateForm::tr(" TN: ", "Teacher name");
+		bool first=true;
+		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
+			if(!first)
+				s+=", ";
+			first=false;
+			s+=tn;
+		}
+		s+=", ";
+		s+=TimetableGenerateForm::tr("SN: %1", "Subject name").arg(gt.rules.internalActivitiesList[ai].subjectName);
+		s+=", ";
+		if(gt.rules.internalActivitiesList[ai].activityTagName!=""){
+			s+=TimetableGenerateForm::tr("AT: %1", "Activity tag").arg(gt.rules.internalActivitiesList[ai].activityTagName);
+			s+=", ";
+		}
+		first=true;
+		s+=TimetableGenerateForm::tr(" StN: ", "Students names");
+		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
+			if(!first)
+				s+=", ";
+			first=false;
+			s+=sn;
+		}
+	}
+	else
+		s+=tr("Difficult activity cannot be computed - please report possible bug");
+
+	s+="\n";
+	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
+
+	s+="\n\n";
+
 	s+=TimetableGenerateForm::tr("Please check the constraints related to the last "
 	 "activities in the list below, which might be impossible to schedule:\n\n");
 	s+=TimetableGenerateForm::tr("Here are the placed activities which lead to an inconsistency, "

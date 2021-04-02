@@ -126,6 +126,7 @@ static qint16 sbgDayNGaps[MAX_DAYS_PER_WEEK];
 static qint16 sbgDayNFirstGaps[MAX_DAYS_PER_WEEK];
 
 
+int maxActivitiesPlaced;
 
 const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=100000;
 
@@ -2070,12 +2071,16 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded)
 {
+	nDifficultActivities=0;
+
 	impossible=false;
 	timeExceeded=false;
 
 	maxncallsrandomswap=-1;
 
 	impossibleActivity=false;
+	
+	maxActivitiesPlaced=0;
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
@@ -2428,6 +2433,8 @@ if(threaded){
 		}			
 		else{ //if foundGoodSwap==true
 			nPlacedActivities=added_act+1;
+			
+			maxActivitiesPlaced=max(maxActivitiesPlaced, added_act+1);
 			
 if(threaded){
 			mutex.unlock();

@@ -228,6 +228,8 @@ void computeMustComputeTimetableTeachers();
 
 extern QString initialOrderOfActivities;
 
+extern int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
+
 
 bool fixedActivity[MAX_ACTIVITIES];
 
@@ -2966,6 +2968,33 @@ bool checkMinNDays100Percent()
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES
 		 &&gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
 			ConstraintMinNDaysBetweenActivities* md=(ConstraintMinNDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];			
+			
+			if(md->minDays>=1){
+				int na=md->_n_activities;
+				int nd=md->minDays;
+				if((na-1)*nd+1 > gt.rules.nDaysPerWeek){
+					ok=false;
+						
+					QString s=QObject::tr("Constraint %1 cannot be respected because it contains %2 activities,"
+					 " has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for"
+					 " that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint."
+					)
+					 .arg(md->getDetailedDescription(gt.rules))
+					 .arg(na)
+					 .arg(nd)
+					 .arg((na-1)*nd+1)
+					 .arg(gt.rules.nDaysPerWeek)
+					 ;
+
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return ok;
+				}
+			}
+			
 			if(md->minDays>=1){
 				int requestedDaysForTeachers[MAX_TEACHERS];
 				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
@@ -4438,6 +4467,8 @@ void computeMustComputeTimetableTeachers()
 
 bool computeFixedActivities()
 {
+	bool ok=true;
+
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		int notAllowedSlots=0;
 		for(int tim=0; tim<gt.rules.nHoursPerWeek; tim++)
@@ -4445,6 +4476,8 @@ bool computeFixedActivities()
 				notAllowedSlots++;
 		
 		if(notAllowedSlots==gt.rules.nHoursPerWeek){
+			ok=false;
+		
 			QString s=QObject::tr("Activity with id=%1 has no allowed slot - please correct that").arg(gt.rules.internalActivitiesList[ai].id);
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
 			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
@@ -4459,7 +4492,7 @@ bool computeFixedActivities()
 			fixedActivity[ai]=false;
 	}
 	
-	return true;
+	return ok;
 }
 
 
@@ -4766,6 +4799,8 @@ void sortActivities()
 	s+=QObject::tr("The initial order of activities (id-s):");
 	s+="\n\n";
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		initialOrderOfActivitiesIndices[i]=permutation[i];
+	
 		s+=QObject::tr("No: %1", "Number").arg(i+1);
 		s+=", ";
 	

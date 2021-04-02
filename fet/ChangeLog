@@ -1187,4 +1187,8 @@ Versions 5.5.0 - 5.5.x
 	- Added more tests to ensure home rooms inputted correctly
 	- Generating multiple now saves each timetable in .fet form (suggested by kdsayang)
 	- Increased number of days per week to 28, to allow exam scheduling (suggested by kdsayang)
+- Version 5.5.5
+	- Very small bug fix (very unlikely to happen, also the effect is almost null)	
+	- Indonesian, Spanish and Arabic translation updates
+	- Added an additional check for inconsistency
 	

@@ -9487,7 +9487,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.4 (April 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.5 (April 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -15623,7 +15623,7 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2123"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2125"/>
         <source>Cannot optimize for teacher %1, because it has at least two constraints max days per week. Please modify your data correspondingly (leave maximum one constraint of type constraint teacher max days per week for each teacher) and try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15703,12 +15703,12 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2475"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2477"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2524"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2526"/>
         <source>Cannot optimize, because you have constraints of type activity preferred time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15873,7 +15873,7 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="869"/>
         <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15928,22 +15928,22 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="776"/>
+        <location filename="../src/engine/generate_pre.cpp" line="778"/>
         <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="795"/>
+        <location filename="../src/engine/generate_pre.cpp" line="797"/>
         <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2386"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2388"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2432"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2434"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16228,7 +16228,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2749"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2751"/>
         <source>Precomputing ... please wait</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16253,29 +16253,29 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="931"/>
+        <location filename="../src/engine/generate_pre.cpp" line="933"/>
         <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
 
 Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1722"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2104"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2106"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2737"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2739"/>
         <source>Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. Please add a basic time constraint (100% weight)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3349"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3378"/>
         <source>Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. Please add a basic space constraint with 100% weight</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16295,7 +16295,7 @@ Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2904"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2906"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16355,32 +16355,32 @@ Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="570"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1782"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1784"/>
         <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1200"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1202"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1777"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1779"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3000"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3029"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3023"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3052"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16419,7 +16419,7 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="446"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -16430,7 +16430,7 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="496"/>
+        <location filename="../src/engine/generate_pre.cpp" line="498"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -16439,7 +16439,7 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1078"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1080"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -16448,22 +16448,22 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1402"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1442"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1444"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1485"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1487"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1502"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1504"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16533,12 +16533,12 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1418"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1458"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1460"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16680,12 +16680,12 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3113"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3142"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3149"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3178"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16858,47 +16858,47 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1814"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1816"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1832"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1834"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1896"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1898"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1927"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1929"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1945"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1947"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2009"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2011"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2242"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2244"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2258"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2260"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2314"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2316"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
@@ -17143,98 +17143,98 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished">N:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4054"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4049"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4078"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4088"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4117"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4112"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4141"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4180"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4204"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4244"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4237"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4266"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4276"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4305"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4327"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4337"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4366"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4388"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4764"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4797"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4766"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4799"/>
         <source>The initial order of activities (id-s):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4769"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4804"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4808"/>
         <source>id=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4776"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4811"/>
         <source>teachers:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4816"/>
         <source>subject:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4785"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4820"/>
         <source>students:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17895,7 +17895,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4448"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4481"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17918,22 +17918,22 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3926"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4022"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3448"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3477"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3531"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3560"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17958,22 +17958,22 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3922"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3951"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from subject or subject activity tag or activity preferred room(s)). This means that a constraint preferred room(s) hos 0 rooms in it. This should not happen. Please report possible bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3943"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3972"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1674"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1676"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2048"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17988,7 +17988,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="907"/>
+        <location filename="../src/engine/generate_pre.cpp" line="909"/>
         <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they were generated with old versions if you started allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18028,12 +18028,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1700"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2072"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18118,7 +18118,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1320"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1322"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -18127,7 +18127,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1357"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1359"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18183,7 +18183,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="642"/>
+        <location filename="../src/engine/generate_pre.cpp" line="644"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -18194,7 +18194,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="696"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -18203,12 +18203,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="735"/>
+        <location filename="../src/engine/generate_pre.cpp" line="737"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4613"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4646"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18257,6 +18257,11 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5828"/>
         <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2982"/>
+        <source>Constraint %1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -19155,256 +19160,271 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
 <context>
     <name>TimetableGenerateForm</name>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="113"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="117"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - avertissement</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="113"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="117"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="542"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="597"/>
         <source>FET information</source>
         <translation type="unfinished">FET - information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="120"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="124"/>
         <source>You have entered simulation with uninitialized rules or 0 activities...aborting</source>
         <translation type="unfinished">Simulation sans règles initialisées ou zéro activités...arrêt</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="138"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="142"/>
         <source>Your data cannot be processed - please modify it as instructed
 For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="533"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="588"/>
         <source>Conflicts listing (in decreasing order):
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="196"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="200"/>
         <source>Simulation interrupted. FET could not find a perfect timetable. Maybe you can consider lowering the constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="330"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="385"/>
         <source>The partial results are saved in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="334"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="389"/>
         <source>Additional information relating impossible to schedule activities:
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="207"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="262"/>
         <source>Please check the constraints related to the last activities in the list below, which might be impossible to schedule:
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="210"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="265"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="568"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="623"/>
         <source>No: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="572"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="627"/>
         <source>Id: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="345"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="400"/>
         <source> TN: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="354"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="409"/>
         <source>SN: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="361"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="416"/>
         <source> StN: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="644"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="699"/>
         <source>OK</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="325"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="380"/>
         <source>FET could not find a timetable. Maybe you can consider lowering the constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="336"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="391"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="469"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="524"/>
         <source>%1 out of %2 activities placed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="471"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="526"/>
         <source>Elapsed time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="475"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="530"/>
         <source> %1 h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="479"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="534"/>
         <source> %1 m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="482"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="537"/>
         <source> %1 s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="498"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="553"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="133"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="137"/>
         <source>Cannot generate - please modify your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="544"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="599"/>
         <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="495"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="550"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="437"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="492"/>
         <source>Soft conflicts listing (in decreasing order):
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="453"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="508"/>
         <source>Allocation terminated successfully, remaining %1 weighted soft conflicts from constraints with weight percentage lower than 100% (see menu Timetable/Show soft conflicts or the text file in the output directory for details).
 
 Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %2 in html and xml mode and the soft conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="512"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="567"/>
         <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="496"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="551"/>
         <source>Activities are placed in order, most difficult ones first</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="126"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="130"/>
         <source>Entering simulation....precomputing, please be patient</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="586"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="641"/>
         <source>AT: %1</source>
         <comment>Activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="505"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="560"/>
         <source>It is recommended to strengthen the constraints step by step (for instance min n days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="510"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="565"/>
         <source>NEW: If your timetable gets stuck on a certain activity number k (and then begins going back), please check the initial evaluation order and see activity number k+1 in this list. I found errors this way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="559"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="614"/>
         <source>Information relating difficult to schedule activities:
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="561"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="616"/>
         <source>Please check the constraints related to the last activities in the list below, which might be difficult to schedule:
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="564"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="619"/>
         <source>Here are the placed activities which lead to a difficulty, in order from the first one to the last (the last one FET failed to schedule and the last ones are difficult):
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="574"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="629"/>
         <source> TN: </source>
         <comment>Teacher name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="583"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="638"/>
         <source>SN: %1</source>
         <comment>Subject name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="590"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="645"/>
         <source> StN: </source>
         <comment>Students names</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="606"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="661"/>
         <source>FET - information about difficult activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="638"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="693"/>
         <source>FET - information about initial order of evaluation of activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="502"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="557"/>
         <source>Usually, there is no need to stop and restart the search. But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever, and restarting might produce a very fast solution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="434"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="489"/>
         <source>Total soft conflicts: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="214"/>
+        <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the generate dialog. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="254"/>
+        <source>Difficult activity cannot be computed - please report possible bug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="218"/>
+        <source>Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

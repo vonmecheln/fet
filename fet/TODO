@@ -649,4 +649,61 @@ As u can see in timetable --> generate multiple variants, features in (A)(i) and
 
 can figure it out on how to implement the feature in (A)(ii). It would be marvelous.
 
---------------------------------------------------------------------------------
+11---------------------------------------------------------
+From kdsayang
+
+There are 3 types of locking and unlocking....
+ 
+A. By teachers
+(i)   Lock selected activities (only times)
+(ii)  Lock selected activities (only space)
+(iii) Lock selected activities (time&space)
+ 
+B. By students
+(i)   Lock selected activities (only times)
+(ii)  Lock selected activities (only space)
+(iii) Lock selected activities (time&space)
+ 
+C. By room
+(i)   Lock selected activities (only times)
+(ii)  Lock selected activities (only space)
+(iii) Lock selected activities  
+ 
+Before this, there is no indicator that time, space and time&space have been locked/unlocked in the 
+teachers/students/rooms time table. Unless user explore the time and space constrains in FET, they 
+will see all the rules about the locking/unlock constraints
+ 
+So, I suggest that coloring system to be use as an indicator so that it is easy for user to recognize and edit it (lock/unlock)
+ 
+No locking (unlock) = no color
+Lock selected activities (only times) = green
+Lock selected activities (only space) = yellow
+Lock selected activities (time&space) = red
+
+12---------------------------------------------------------
+From kdsayang
+
+If a user want to add "an activity have a set of preferred rooms", the user will need to click one 
+by one to add right???... So, I would like to suggest that we group them like when user want to add 
+an "activity". There (activity), we can select by years, groups and subgroup for students. Instead of 
+clicking all the student groups in years 1, user can just click year 1 to include them all into students....
+ 
+For example for rooms (room group then room subgroup)
+ 
+HALL
+Hall A
+Hall B
+Hall C
+ 
+TUTORIAL
+A-A1
+A-A2
+B-A1
+ 
+COMPUTER LAB
+Lab 1
+Lab 2
+Lab 3
+ 
+So when user want to add "an activity have a set of preferred rooms" for all the tutorial room, instead 
+of clicking 20 tutorial room one by one, user just click the group that is Tutorial. Easy right???
