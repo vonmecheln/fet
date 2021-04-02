@@ -308,7 +308,7 @@ void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::help()
 	 "of activities from those selected which can be simultaneous in each of the selected time slots.");
 	s+=QString("\n\n");
 	s+=tr("Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have "
-	 "a specified number of free teachers, for supervision of students. ");
+	 "a specified number of free teachers, for supervision of students.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

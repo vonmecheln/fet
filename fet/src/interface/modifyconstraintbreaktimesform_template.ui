@@ -65,7 +65,7 @@
      <item row="0" column="0">
       <widget class="QPushButton" name="setAllAllowedPushButton">
        <property name="text">
-        <string>Set all allowed</string>
+        <string comment="It refers to time slots">Set all allowed</string>
        </property>
       </widget>
      </item>
@@ -79,7 +79,7 @@
      <item row="1" column="0">
       <widget class="QPushButton" name="setAllBreakPushButton">
        <property name="text">
-        <string>Set all break</string>
+        <string comment="It refers to time slots">Set all break</string>
        </property>
       </widget>
      </item>

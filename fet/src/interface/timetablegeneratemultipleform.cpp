@@ -324,7 +324,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 	TimetableExport::writeRandomSeed(this, timetable, false); //false represents 'before' state
 
 	QString s=QString("");
-	s+=tr("Timetable no: %1 => %2").arg(timetable).arg(description);
+	s+=tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description").arg(timetable).arg(description);
 	currentResultsTextEdit->appendPlainText(s);
 
 	if(ok){

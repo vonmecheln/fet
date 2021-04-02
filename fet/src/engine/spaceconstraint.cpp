@@ -518,7 +518,7 @@ QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r){
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Room=%1").arg(this->room);s+="\n";
 
-	s+=tr("Not available at:");
+	s+=tr("Not available at:", "It refers to a room");
 	s+="\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){

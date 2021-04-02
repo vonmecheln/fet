@@ -141,14 +141,14 @@
            <item row="1" column="0">
             <widget class="QPushButton" name="setAllSelectedPushButton">
              <property name="text">
-              <string>Select all</string>
+              <string comment="It refers to time slots">Select all</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
             <widget class="QPushButton" name="setAllUnselectedPushButton">
              <property name="text">
-              <string>Unselect all</string>
+              <string comment="It refers to time slots">Unselect all</string>
              </property>
             </widget>
            </item>

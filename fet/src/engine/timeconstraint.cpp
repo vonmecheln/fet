@@ -583,7 +583,7 @@ QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r){
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
 
-	s+=tr("Not available at:");
+	s+=tr("Not available at:", "It refers to a teacher");
 	s+="\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
@@ -946,7 +946,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r)
 
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
-	s+=tr("Not available at:");s+="\n";
+	s+=tr("Not available at:", "It refers to a students set");s+="\n";
 	
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
@@ -1148,7 +1148,7 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 	
 	if(this->_n_activities<=1){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -1446,7 +1446,7 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 	
 	if(this->_n_activities<=1){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -1782,7 +1782,7 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	
 	if(this->_n_activities<=1){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -2120,7 +2120,7 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	
 	if(this->_n_activities<=1){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -2447,7 +2447,7 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 	
 	if(this->_n_activities<=1){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -8797,27 +8797,27 @@ bool ConstraintActivityPreferredStartingTime::computeInternalStructure(QWidget* 
 	if(i==r.nInternalActivities){
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	if(this->day >= r.nDaysPerWeek){
 		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
-		 tr("Constraint activity preferred time is wrong because it refers to removed day. Please correct"
+		 tr("Constraint activity preferred starting time is wrong because it refers to removed day. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
 	}
 	if(this->hour == r.nHoursPerDay){
 		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
-		 tr("Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct"
+		 tr("Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
 	}
 	if(this->hour > r.nHoursPerDay){
 		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
-		 tr("Constraint activity preferred time is wrong because it refers to removed hour. Please correct"
+		 tr("Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
@@ -9056,7 +9056,7 @@ bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* par
 
 	if(i==r.nInternalActivities){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -10344,7 +10344,7 @@ bool ConstraintActivityPreferredStartingTimes::computeInternalStructure(QWidget*
 
 	if(i==r.nInternalActivities){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
@@ -11598,7 +11598,7 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(QWidget* par
 	
 	if(this->_n_activities<=1){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -11896,7 +11896,7 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 	
 	if(this->_n_activities<=1){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -13345,7 +13345,7 @@ bool ConstraintActivityEndsStudentsDay::computeInternalStructure(QWidget* parent
 	if(i==r.nInternalActivities){	
 		//assert(0);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
-			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
@@ -14444,7 +14444,7 @@ bool ConstraintTeacherIntervalMaxDaysPerWeek::computeInternalStructure(QWidget* 
 	}
 	if(this->startHour<0){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
+		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour of the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -14690,21 +14690,21 @@ bool ConstraintTeachersIntervalMaxDaysPerWeek::computeInternalStructure(QWidget*
 {
 	if(this->startHour>=this->endHour){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because start hour >= end hour."
+		 tr("Constraint teachers interval max days per week is wrong because start hour >= end hour."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->startHour<0){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
+		 tr("Constraint teachers interval max days per week is wrong because start hour < first hour of the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->endHour>r.nHoursPerDay){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because end hour > number of hours per day."
+		 tr("Constraint teachers interval max days per week is wrong because end hour > number of hours per day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -14941,21 +14941,21 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidg
 {
 	if(this->startHour>=this->endHour){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because start hour >= end hour."
+		 tr("Constraint students set interval max days per week is wrong because start hour >= end hour."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->startHour<0){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
+		 tr("Constraint students set interval max days per week is wrong because start hour < first hour of the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->endHour>r.nHoursPerDay){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because end hour > number of hours per day."
+		 tr("Constraint students set interval max days per week is wrong because end hour > number of hours per day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -15245,21 +15245,21 @@ bool ConstraintStudentsIntervalMaxDaysPerWeek::computeInternalStructure(QWidget*
 {
 	if(this->startHour>=this->endHour){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because start hour >= end hour."
+		 tr("Constraint students interval max days per week is wrong because start hour >= end hour."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->startHour<0){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
+		 tr("Constraint students interval max days per week is wrong because start hour < first hour of the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->endHour>r.nHoursPerDay){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher interval max days per week is wrong because end hour > number of hours per day."
+		 tr("Constraint students interval max days per week is wrong because end hour > number of hours per day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;

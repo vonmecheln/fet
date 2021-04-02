@@ -533,8 +533,8 @@ void ModifyActivityForm::help()
 	s+="\n\n";
 	s+=tr("'Students' (the text near the spin box), means 'Number of students (-1 for automatic)'");
 	s+="\n";
-	s+=tr("'Split' means 'Is split into ... activities per week. This value cannot be changed."
-	 " If you need to modify it, please remove the corresponding activities and add a new split activity.'");
+	s+=tr("'Split' means 'Is split into ... activities per week'. This value cannot be changed."
+	 " If you need to modify it, please remove the corresponding activities and add a new split activity.");
 	s+="\n";
 	s+=tr("The 'Duration' spin box and the 'Active' check box refer to each component of current activity, you can change "
 	 "them for each component, separately, by selecting the corresponding tab in the tab widget.");

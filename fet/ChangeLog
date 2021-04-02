@@ -1641,3 +1641,9 @@ Versions 5.19.0 - 5.19.v
 	- Now you can split a year into 4 categories (suggested by Bobby Wise).
 	- When starting FET, the first shortcuts tab section (File) is selected (suggested by a user).
 	- Added three new sample files, by waleed and Bobby Wise.
+- Version 5.19.1
+	- Updated the sources to Qt 5.0.2 (but the precompiled Windows version still uses Qt 4.8.4, because of various problems).
+	- Corrected some minor string problems.
+	- Updated the Romanian translation (by Liviu Lalescu). Now it uses diacritics.
+	- Updated the Ukrainian translation (by Andriy Melnyk).
+	- Added a new sample file, by geaplanet.

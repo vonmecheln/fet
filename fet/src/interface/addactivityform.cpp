@@ -867,8 +867,8 @@ void AddActivityForm::help()
 
 	s+="\n\n";
 	
-	s+=tr("If you select a number of min days above 1, you will get the possibility "
-	 "to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click "
+	s+=tr("If you select a number of min days above 1 (say this number is n), you will get the possibility "
+	 "to add a second constraint min days between activities, with min days = n-1 and a percentage of your choice. Just click "
 	 "Add activities");
 	
 	//show the message in a dialog

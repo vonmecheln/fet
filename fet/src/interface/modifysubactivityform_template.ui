@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>790</width>
-    <height>579</height>
+    <height>599</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -309,7 +309,7 @@
              <bool>true</bool>
             </property>
             <property name="text">
-             <string>Active</string>
+             <string comment="It refers to a subactivity">Active</string>
             </property>
             <property name="checked">
              <bool>true</bool>

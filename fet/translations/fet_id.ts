@@ -1173,6 +1173,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addactivityform.cpp" line="870"/>
+        <source>If you select a number of min days above 1 (say this number is n), you will get the possibility to add a second constraint min days between activities, with min days = n-1 and a percentage of your choice. Just click Add activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addactivityform.cpp" line="784"/>
         <source>A first notice: If you use a 5 days week: when adding an activity split into only 2 components per week, the best practice is to add min days between activities to be 2. If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008</source>
         <translation>Sebuah pernyataan pertama: Jika Anda menggunakan 5 hari seminggu: saat menambahkan aktivitas split menjadi hanya 2 komponen per minggu, praktek terbaik adalah untuk menambahkan hari min antara kegiatan yang 2. Jika Anda memisahkan aktivitas menjadi 3 komponen per minggu - silakan baca FAQ pertanyaan P1-5-September-2008</translation>
@@ -1218,11 +1223,6 @@ Anda dapat memilih jarak minimum di hari antara setiap pasangan kegiatan. Perlu 
         <location filename="../src/interface/addactivityform.cpp" line="866"/>
         <source>Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation>Dimulai dengan versi 5.0.0, dimungkinkan untuk menambah kegiatan dengan tidak ada siswa atau tanpa guru</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="870"/>
-        <source>If you select a number of min days above 1, you will get the possibility to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click Add activities</source>
-        <translation>Jika Anda memilih jumlah hari min di atas 1, Anda akan mendapatkan kemungkinan untuk menambahkan hari min kendala kedua antara kegiatan, dengan hari min 1 dan persentase pilihan Anda. Cukup klik Tambah Kegiatan</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="877"/>
@@ -1338,45 +1338,6 @@ Anda dapat memilih jarak minimum di hari antara setiap pasangan kegiatan. Perlu 
         <location filename="../src/interface/addactivityform_template.ui" line="287"/>
         <source>1</source>
         <translation>1</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="338"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="402"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="466"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="530"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="594"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="658"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="722"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="850"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="914"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="978"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1042"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1170"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1234"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1298"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1362"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1426"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1490"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1554"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1618"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1682"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1746"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1810"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1874"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1938"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2002"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2066"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2130"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2194"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2258"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2322"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2386"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2450"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
-        <source>Active</source>
-        <translation>Aktif</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="298"/>
@@ -1633,6 +1594,46 @@ Anda dapat memilih jarak minimum di hari antara setiap pasangan kegiatan. Perlu 
         <translation>Tag kegiatan</translation>
     </message>
     <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="338"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="402"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="466"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="530"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="594"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="658"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="722"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="850"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="914"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="978"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1042"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1170"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1234"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1298"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1362"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1426"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1490"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1554"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1618"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1682"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1746"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1810"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1874"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1938"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2002"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2066"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2130"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2194"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2258"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2322"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2386"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2450"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Aktif</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2609"/>
         <source>Add</source>
         <translation>Tambah</translation>
@@ -1874,12 +1875,14 @@ Anda dapat memilih jarak minimum di hari antara setiap pasangan kegiatan. Perlu 
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Pilih Semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Pilih Semua</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Hapus pilihan semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Hapus pilihan semua</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
@@ -2011,7 +2014,7 @@ Anda dapat memilih jarak minimum di hari antara setiap pasangan kegiatan. Perlu 
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
-        <source> Add activities not overlapping</source>
+        <source>Add activities not overlapping</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Tambah kegiatan tidak tumpang tindih</translation>
     </message>
@@ -2218,12 +2221,14 @@ Anda dapat memilih jarak minimum di hari antara setiap pasangan kegiatan. Perlu 
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Pilih Semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Pilih Semua</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Hapus pilihan semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Hapus pilihan semua</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -2361,13 +2366,20 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="124"/>
         <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="138"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="145"/>
@@ -2378,11 +2390,6 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Tutup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="138"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
@@ -2489,6 +2496,12 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="138"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Tutup</translation>
@@ -2520,25 +2533,21 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Guru</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="138"/>
-        <source>Set all not allowed</source>
-        <translation>Atur semua slot tidak dibolehkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Add</source>
         <translation>Tambah</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -3425,13 +3434,20 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
         <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
@@ -3442,11 +3458,6 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="174"/>
         <source>Close</source>
         <translation>Tutup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="14"/>
@@ -3534,20 +3545,22 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -3872,10 +3885,22 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="75"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
+        <source>Set all break</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua istirahat</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="89"/>
@@ -3886,16 +3911,6 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="96"/>
         <source>Close</source>
         <translation>Tutup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
-        <source>Set all break</source>
-        <translation>Atur semua istirahat</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="14"/>
@@ -4328,20 +4343,22 @@ paksakan berurutan</translation>
         <translation>Ruang</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
-        <source>Set all available</source>
-        <translation>Atur semua dibolehkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="102"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua dibolehkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="109"/>
         <source>Set all not available</source>
-        <translation>Atur semua tidak ada</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua tidak ada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
@@ -6394,25 +6411,27 @@ jam kosong (jam mulai awal).
         <translation>Tambah kelas paralel  diatur tidak ada</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
-        <source>Set all available</source>
-        <translation>Atur semua dibolehkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Atur semua tidak ada</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
         <source>Students set</source>
         <translation>Kelas Paralel</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua dibolehkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua tidak ada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -6476,6 +6495,18 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Tambah sub kegiatan dengan jam mulai lebih disukai</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="191"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="205"/>
         <source>Close</source>
         <translation>Tutup</translation>
@@ -6506,20 +6537,10 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="184"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="191"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="198"/>
@@ -6586,6 +6607,12 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Tambah sub kegiatan dengan slot waktu yang lebih disukai</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="191"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="198"/>
         <source>Add</source>
         <translation>Tambah</translation>
@@ -6621,20 +6648,16 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Guru</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="177"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="184"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="191"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="177"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -8200,6 +8223,12 @@ ada dan istirahat tidak dihitung sebagai jam kosong.</translation>
         <translation>Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua dibolehkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
@@ -8208,7 +8237,8 @@ ada dan istirahat tidak dihitung sebagai jam kosong.</translation>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="138"/>
         <source>Set all not available</source>
-        <translation>Atur semua tidak ada</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua tidak ada</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="145"/>
@@ -8219,11 +8249,6 @@ ada dan istirahat tidak dihitung sebagai jam kosong.</translation>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Tutup</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
-        <source>Set all available</source>
-        <translation>Atur semua dibolehkan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
@@ -10202,7 +10227,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="456"/>
-        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
+        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Anda telah menemukan bug dalam FET. Tolong laporkan. Kendala semacam ini tidak benar diakui di semua ruang dialog kendala. FET akan melewatkan kesalahan ini, sehingga Anda dapat terus bekerja .. Mungkin kendala dapat dimodifikasi dari dialog kendala spesifik.</translation>
     </message>
     <message>
@@ -10384,7 +10409,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="724"/>
-        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
+        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Anda telah menemukan bug dalam FET. Tolong laporkan. Kendala semacam ini tidak benar diakui di semua ruang dialog kendala. FET akan melewatkan kesalahan ini, sehingga Anda dapat terus bekerja .. Mungkin kendala dapat dimodifikasi dari dialog kendala spesifik.</translation>
     </message>
     <message>
@@ -11183,7 +11208,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="310"/>
-        <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students. </source>
+        <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students.</source>
         <translation>Penggunaan kendala ini mungkin lebar. Alasan utama itu ditambahkan adalah untuk memungkinkan pengguna untuk menentukan bahwa setiap slot waktu perlu memiliki sejumlah tertentu guru gratis, untuk pengawasan siswa.</translation>
     </message>
     <message>
@@ -11275,10 +11300,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1449"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1518"/>
@@ -12439,10 +12463,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11899"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11968"/>
@@ -12625,10 +12648,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11601"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11670"/>
@@ -12791,10 +12813,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1151"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1220"/>
@@ -13002,10 +13023,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13348"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>Batasan berikut salah (karena berhubugan dengan kegiatan salah. Silahkan diperbaiki (mungkin menghapusnya adalah solusi):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13384"/>
@@ -13571,10 +13591,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8800"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>Batasan berikut salah (karena berhubugan dengan kegiatan salah. Silahkan diperbaiki (mungkin menghapusnya adalah solusi):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8805"/>
@@ -13582,27 +13601,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8819"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8806"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation>Batasan kegiatan dengan waktu tertentu karena hari terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
-%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8813"/>
-        <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation>Batasan kegiatan denga waktu tertentu salah karena jam yang dipilih terlalu lama (setelah slot terakhir yang diterima) Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi Batasan:
-%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8820"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation>Batasan kegiatan dengan waktu tertentu karena jam  terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
-%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8865"/>
@@ -13680,6 +13678,24 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8892"/>
         <source>Day=%1</source>
         <translation>Hari:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8806"/>
+        <source>Constraint activity preferred starting time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8813"/>
+        <source>Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8820"/>
+        <source>Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8894"/>
@@ -13795,10 +13811,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10347"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>Batasan berikut salah (karena berhubugan dengan id kegiatan salah. Silahkan diperbaiki (mungkin menghapusnya adalah solusi):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10353"/>
@@ -13994,10 +14009,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9059"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>Batasan berikut salah (karena berhubugan dengan id kegiatan salah. Silahkan diperbaiki (mungkin menghapusnya adalah solusi):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9066"/>
@@ -15074,10 +15088,9 @@ Batasan:
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2123"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2193"/>
@@ -15306,10 +15319,9 @@ Batasan:
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1785"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1856"/>
@@ -15460,13 +15472,13 @@ Batasan:
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="318"/>
-        <source>FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0)</source>
-        <translation>FET telah bertemu dengan kesalahan kritis - operasi saat ini batal, silahkan melaporkan bug (berat lama tidak -1 dan tidak (&gt; = 0,0 dan &lt;= 100,0)</translation>
+        <source>FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
+        <translation>FET telah bertemu dengan kesalahan kritis - operasi saat ini batal, silahkan melaporkan bug (berat lama tidak -1 dan tidak (&gt; = 0,0 dan &lt;= 100,0))</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="328"/>
-        <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0)</source>
-        <translation>FET telah bertemu dengan kesalahan kritis - operasi saat ini batal, silahkan melaporkan bug (berat baru tidak -1 dan tidak (&gt; = 0,0 dan &lt;= 100,0)</translation>
+        <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
+        <translation>FET telah bertemu dengan kesalahan kritis - operasi saat ini batal, silahkan melaporkan bug (berat baru tidak -1 dan tidak (&gt; = 0,0 dan &lt;= 100,0))</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="337"/>
@@ -15587,10 +15599,9 @@ Batasan:
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2450"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2520"/>
@@ -15855,7 +15866,8 @@ Batasan:
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="521"/>
         <source>Not available at:</source>
-        <translation>Tidak tersedia pada:</translation>
+        <comment>It refers to a room</comment>
+        <translation type="unfinished">Tidak tersedia pada:</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="538"/>
@@ -16453,24 +16465,21 @@ Batasan:
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15248"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasann guru interval maks hari per minggu adalah salah karena mulai&gt; jam = jam akhir. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15255"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasn guru interval maks hari per minggu adalah salah karena jam mulai&lt; jam pertama atau hari. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15262"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasn guru interval maks hari per minggu adalah salah karena jam akhiri &gt; jumlah jam per harii. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15307"/>
@@ -18675,24 +18684,21 @@ khusus.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14944"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasann guru interval maks hari per minggu adalah salah karena mulai&gt; jam = jam akhir. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14951"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasn guru interval maks hari per minggu adalah salah karena jam mulai &lt; jam pertama atau hari. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14958"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasn guru interval maks hari per minggu adalah salah karena jam akhiri &gt; jumlah jam per harii. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14969"/>
@@ -20357,7 +20363,8 @@ khusus.</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="949"/>
         <source>Not available at:</source>
-        <translation>Tidak tersedia pada:</translation>
+        <comment>It refers to a students set</comment>
+        <translation type="unfinished">Tidak tersedia pada:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="966"/>
@@ -22440,10 +22447,9 @@ Ruang dipilih akan menghapus ruang khusus.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14447"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasn guru interval maks hari per minggu adalah salah karena jam mulai &lt; jam pertama atau hari. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14454"/>
@@ -24325,7 +24331,8 @@ Ruang dipilih akan menghapus ruang khusus.</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="586"/>
         <source>Not available at:</source>
-        <translation>Tidak tersedia pada:</translation>
+        <comment>It refers to a teacher</comment>
+        <translation type="unfinished">Tidak tersedia pada:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="603"/>
@@ -24793,24 +24800,21 @@ Ruang dipilih akan menghapus ruang khusus.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14693"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasann guru interval maks hari per minggu adalah salah karena mulai&gt; jam = jam akhir. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14700"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasn guru interval maks hari per minggu adalah salah karena jam mulai&lt; jam pertama atau hari. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14707"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation>Batasn guru interval maks hari per minggu adalah salah karena jam akhiri &gt; jumlah jam per harii. Harap perbaiki itu. Kendala adalah:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14751"/>
@@ -28414,9 +28418,9 @@ Silahkan hentikan simulasi sebeum ini.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3468"/>
-        <source>Language will be %1 (restart needed to activate language change)</source>
+        <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
-        <translation>Bahasa akan berubah menjadi %1 (restart diperlukan untuk aktifkan perubahan bahasa)</translation>
+        <translation>Bahasa akan berubah menjadi %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3504"/>
@@ -31739,7 +31743,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.0 (January 2013).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.1 (May 2013).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -32196,11 +32200,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Anton Anthofer - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Danny Zitzman - suggestions.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;geaplanet - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Leandro Bueno - suggestions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="590"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="593"/>
         <source>Close</source>
         <translation>Tutup</translation>
     </message>
@@ -35008,8 +35015,8 @@ Silahkan hentikan simulasi sebelumnya</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="536"/>
-        <source>&apos;Split&apos; means &apos;Is split into ... activities per week. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.&apos;</source>
-        <translation>&apos;Split&apos; berarti &apos;dibagi menjadi ... kegiatan per minggu. Nilai ini tidak dapat diubah. Jika Anda perlu memodifikasi, silakan hapus kegiatan yang sesuai dan menambahkan aktivitas perpecahan baru.&apos;</translation>
+        <source>&apos;Split&apos; means &apos;Is split into ... activities per week&apos;. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.</source>
+        <translation>&apos;Split&apos; berarti &apos;dibagi menjadi ... kegiatan per minggu&apos;. Nilai ini tidak dapat diubah. Jika Anda perlu memodifikasi, silakan hapus kegiatan yang sesuai dan menambahkan aktivitas perpecahan baru.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="539"/>
@@ -35086,6 +35093,11 @@ Silahkan hentikan simulasi sebelumnya</translation>
         <translation>Durasi</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="352"/>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="339"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="403"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="467"/>
@@ -35122,12 +35134,8 @@ Silahkan hentikan simulasi sebelumnya</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2451"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2515"/>
         <source>Active</source>
-        <translation>Aktif</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="352"/>
-        <source>2</source>
-        <translation>2</translation>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Aktif</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="416"/>
@@ -35570,12 +35578,14 @@ Silahkan hentikan simulasi sebelumnya</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Pilih Semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Pilih Semua</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Hapus pilihan semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Hapus pilihan semua</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
@@ -35878,12 +35888,14 @@ Silahkan hentikan simulasi sebelumnya</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Pilih Semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Pilih Semua</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Hapus pilihan semua</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Hapus pilihan semua</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -36007,26 +36019,28 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Persentase bobot (rekomendasi: 0.0%-100.0%</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="108"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify activities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
         <translation>Ubah kegiatan dengan waktu mulai yang disukai</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="108"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="115"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="129"/>
@@ -36139,9 +36153,10 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Persentase bobot (rekomendasi: 0.0%-100.0%</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="108"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
@@ -36150,15 +36165,16 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Tambah sub kegiatan dengan slot waktu yang lebih disukai</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="108"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="115"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="129"/>
@@ -36832,6 +36848,18 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Kegiatan</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -36878,20 +36906,10 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
     </message>
 </context>
 <context>
@@ -36931,20 +36949,10 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -36991,6 +36999,18 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="125"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -37240,6 +37260,12 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <translation>Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="75"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
@@ -37248,7 +37274,8 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="82"/>
         <source>Set all break</source>
-        <translation>Atur semua istirahat</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua istirahat</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="89"/>
@@ -37259,11 +37286,6 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="96"/>
         <source>Cancel</source>
         <translation>Batal</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="14"/>
@@ -37660,25 +37682,27 @@ paksakan berturut-turut</translation>
         <translation>Ubah ruang tidak tersedia </translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua dibolehkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="102"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua tidak ada</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="116"/>
         <source>Ok</source>
         <translation>Ok</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
-        <source>Set all available</source>
-        <translation>Atur semua dibolehkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
-        <source>Set all not available</source>
-        <translation>Atur semua tidak ada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="123"/>
@@ -39355,18 +39379,20 @@ jam kosong (jam mulai awal).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
-        <translation>Atur semua dibolehkan</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua dibolehkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua tidak ada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Atur semua tidak ada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -39429,6 +39455,12 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Persentase bobot(rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="166"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -39459,20 +39491,16 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="22"/>
@@ -39512,6 +39540,12 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Ubah  sub kegiatan dengan slot waktu yang lebih diinginkan</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="166"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -39547,20 +39581,16 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Diatur semua diizinkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
-        <source>Set all not allowed</source>
-        <translation>Diatur semua tidakdiizinkan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
-        <source>Set all allowed</source>
-        <translation>Diatur semua diizinkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="22"/>
@@ -40863,25 +40893,27 @@ ada dan pecahan tidak dihitung sebagai gap.</translation>
         <translation>Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua dibolehkan</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=tidak diizinkan, kosong=diizinkan</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Atur semua tidak ada</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="141"/>
         <source>Ok</source>
         <translation>Ok</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Atur semua tidak ada</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
-        <source>Set all available</source>
-        <translation>Atur semua dibolehkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="148"/>
@@ -42219,6 +42251,12 @@ Catata: Guru tidak ada dan pecah tidakdihitung jam kosong.</translation>
         <translation>Siswa</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Aktif</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="372"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -42249,11 +42287,6 @@ Catata: Guru tidak ada dan pecah tidakdihitung jam kosong.</translation>
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
         <translation>Terpilih</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
-        <source>Active</source>
-        <translation>Aktif</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="272"/>
@@ -42326,14 +42359,14 @@ Catata: Guru tidak ada dan pecah tidakdihitung jam kosong.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="298"/>
         <source>Random seed X component:</source>
-        <comment>Means the X component of the random seed (random seed has 2 components, X and Y)</comment>
-        <translation>Bibit acak komponen X:</translation>
+        <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
+        <translation type="unfinished">Bibit acak komponen X:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="300"/>
         <source>Random seed Y component:</source>
-        <comment>Means the Y component of the random seed (random seed has 2 components, X and Y)</comment>
-        <translation>Bibit acak komponen Y:</translation>
+        <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
+        <translation type="unfinished">Bibit acak komponen Y:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="302"/>
@@ -44255,7 +44288,7 @@ tidak ditambah - duplikasi</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="1125"/>
-        <source>If you need to make a division of say year 9 in 5 categories (category1: a, b, c, d, category2: first language, category3: religion, category4: boys/girls, category 4: second language), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 4 categories: first language, religion, boys/girls, second language. For activities with year 9 - first language = 1 for instance, you need to add to these activities the groups 9a_firstlanguage1+9b_firstlanguage1+9c_firstlanguage1+9d_firstlanguage1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
+        <source>If you need to make a division of say year 9 in 5 categories (category1: a, b, c, d, category2: first language, category3: religion, category4: boys/girls, category5: second language), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 4 categories: first language, religion, boys/girls, second language. For activities with year 9 - first language = 1 for instance, you need to add to these activities the groups 9a_firstlanguage1+9b_firstlanguage1+9c_firstlanguage1+9d_firstlanguage1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -46372,6 +46405,11 @@ paksakan berurutan</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="7298"/>
+        <source>Not available</source>
+        <comment>It refers to a teacher</comment>
+        <translation type="unfinished">Tidak ada</translation>
+    </message>
+    <message>
         <location filename="../src/engine/timetableexport.cpp" line="7406"/>
         <source>Not available</source>
         <translation>Tidak ada</translation>
@@ -47183,11 +47221,6 @@ paksakan berurutan</translation>
         <translation>Tidak dapat dioptimasi - silahkan ubah data anda</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="327"/>
-        <source>Timetable no: %1 =&gt; %2</source>
-        <translation>Jadwal no: %1 =&gt; %2</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="344"/>
         <source>Total soft conflicts:</source>
         <translation>Jumlah konflik lunak:</translation>
@@ -47250,6 +47283,12 @@ paksakan berurutan</translation>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="294"/>
         <source>Your data cannot be processed - please modify it as instructed.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="327"/>
+        <source>Timetable no: %1 =&gt; %2</source>
+        <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
+        <translation type="unfinished">Jadwal no: %1 =&gt; %2</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="342"/>

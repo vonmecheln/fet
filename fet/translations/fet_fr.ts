@@ -1168,6 +1168,11 @@
         <translation>La même procédure (double click) s&apos;applique aux groupes d&apos;élèves et aux étiquettes d&apos;activité.</translation>
     </message>
     <message>
+        <location filename="../src/interface/addactivityform.cpp" line="870"/>
+        <source>If you select a number of min days above 1 (say this number is n), you will get the possibility to add a second constraint min days between activities, with min days = n-1 and a percentage of your choice. Just click Add activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addactivityform.cpp" line="784"/>
         <source>A first notice: If you use a 5 days week: when adding an activity split into only 2 components per week, the best practice is to add min days between activities to be 2. If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008</source>
         <translation>Un premier avertissement : si vous utilisez une semaine de 5 jours, quand vous ajoutez une activité divisée en seulement 2 cours par semaine, la meilleure façon de procéder est d&apos;ajouter &apos;jours minimums entre activités&apos; à 2. Si vous divisez une activité en 3 cours par semaine - merci de lire la FAQ : question Q1-5-Septembre-2008</translation>
@@ -1218,11 +1223,6 @@ Vous pouvez choisir le nombre minimum de jours entre chaque paire d&apos;activit
         <location filename="../src/interface/addactivityform.cpp" line="866"/>
         <source>Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation>À partir de la version 5.0.0, il est possible d&apos;ajouter des activités sans élève ou sans enseignant</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="870"/>
-        <source>If you select a number of min days above 1, you will get the possibility to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click Add activities</source>
-        <translation>Si vous sélectionnez un nombre minimum de jours supérieur à 1, vous aurez la possibilité d&apos;ajouter une seconde contrainte minimum de jours entre activités, avec jours mini 1 et un pourcentage à votre convenance. Cliquez simplement sur Ajouter des activités</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="877"/>
@@ -1366,6 +1366,46 @@ Vous pouvez choisir le nombre minimum de jours entre chaque paire d&apos;activit
         <translation>Durée</translation>
     </message>
     <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="338"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="402"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="466"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="530"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="594"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="658"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="722"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="850"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="914"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="978"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1042"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1170"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1234"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1298"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1362"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1426"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1490"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1554"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1618"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1682"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1746"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1810"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1874"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1938"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2002"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2066"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2130"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2194"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2258"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2322"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2386"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2450"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Active</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="351"/>
         <source>2</source>
         <translation>2</translation>
@@ -1412,45 +1452,6 @@ Vous pouvez choisir le nombre minimum de jours entre chaque paire d&apos;activit
         <location filename="../src/interface/addactivityform_template.ui" line="184"/>
         <source>Clear</source>
         <translation>Vider</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="338"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="402"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="466"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="530"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="594"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="658"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="722"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="850"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="914"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="978"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1042"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1170"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1234"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1298"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1362"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1426"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1490"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1554"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1618"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1682"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1746"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1810"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1874"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1938"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2002"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2066"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2130"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2194"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2258"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2322"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2386"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2450"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
-        <source>Active</source>
-        <translation>Active</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="799"/>
@@ -1874,12 +1875,14 @@ Vous pouvez choisir le nombre minimum de jours entre chaque paire d&apos;activit
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Tout sélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout sélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Tout désélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout désélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
@@ -1954,7 +1957,7 @@ Vous pouvez choisir le nombre minimum de jours entre chaque paire d&apos;activit
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
-        <source> Add activities not overlapping</source>
+        <source>Add activities not overlapping</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
         <translation>Ajout d&apos;activités non imbriquées</translation>
     </message>
@@ -2218,12 +2221,14 @@ Vous pouvez choisir le nombre minimum de jours entre chaque paire d&apos;activit
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Tout sélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout sélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Tout désélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout désélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -2361,13 +2366,20 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="124"/>
         <source>Set all allowed</source>
-        <translation>Autoriser tout</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="138"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="145"/>
@@ -2378,11 +2390,6 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Fermer</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="138"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
@@ -2488,6 +2495,12 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Pourcentage de poids (recommandé : 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="138"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Fermer</translation>
@@ -2519,25 +2532,21 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Enseignant</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="138"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Add</source>
         <translation>Ajouter</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
-        <source>Set all allowed</source>
-        <translation>Autoriser tout</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -3422,13 +3431,20 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
         <source>Set all allowed</source>
-        <translation>Tout autorisé</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
@@ -3439,11 +3455,6 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="174"/>
         <source>Close</source>
         <translation>Fermer</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="14"/>
@@ -3531,20 +3542,22 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Matière</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Set all allowed</source>
-        <translation>Tout autorisé</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -3869,10 +3882,22 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Pourcentage de poids (obligatoirement : 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="75"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
+        <source>Set all break</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout à pause</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="89"/>
@@ -3883,16 +3908,6 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="96"/>
         <source>Close</source>
         <translation>Fermer</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
-        <source>Set all break</source>
-        <translation>Tout à pause</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
-        <source>Set all allowed</source>
-        <translation>Autoriser tout</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="14"/>
@@ -4325,20 +4340,22 @@ forcer des activités consécutives</translation>
         <translation>Salle</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
-        <source>Set all available</source>
-        <translation>Tout autorisé</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="102"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="109"/>
         <source>Set all not available</source>
-        <translation>Tout non autorisé</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
@@ -6375,10 +6392,22 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme des t
         <translation>Elèves : Ajouter une indisponibilité</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -6389,16 +6418,6 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme des t
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="155"/>
         <source>Help</source>
         <translation>Aide</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
-        <source>Set all available</source>
-        <translation>Tout autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
@@ -6450,6 +6469,18 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme des t
         <translation>Ajouter des heures privilégiées de début de sous-activités</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="191"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="205"/>
         <source>Close</source>
         <translation>Fermer</translation>
@@ -6480,20 +6511,10 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme des t
         <translation>Enseignant</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
-        <source>Set all allowed</source>
-        <translation>Tout autorisé</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="184"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="191"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="198"/>
@@ -6560,6 +6581,12 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme des t
         <translation>Sous-activités : créneaux horaires privilégiés</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="191"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="198"/>
         <source>Add</source>
         <translation>Ajouter</translation>
@@ -6595,20 +6622,16 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme des t
         <translation>Enseignant</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="177"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="184"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="191"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="177"/>
-        <source>Set all allowed</source>
-        <translation>Tout autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -8165,6 +8188,12 @@ Note : Enseignant non disponible et pauses ne sont pas comptabilisés comme des 
         <translation>Pourcentage de poids (obligatoirement : 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
@@ -8173,7 +8202,8 @@ Note : Enseignant non disponible et pauses ne sont pas comptabilisés comme des 
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="138"/>
         <source>Set all not available</source>
-        <translation>Tout non autorisé</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="145"/>
@@ -8184,11 +8214,6 @@ Note : Enseignant non disponible et pauses ne sont pas comptabilisés comme des 
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Fermer</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
-        <source>Set all available</source>
-        <translation>Tout autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
@@ -10153,7 +10178,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="456"/>
-        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
+        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Vous venez de trouver un bug dans FET. Merci de le rapporter. Ce type de contrainte n&apos;est pas correctement reconnu dans les boites de dialogue de contraintes d&apos;espace. FET va passer cette erreur, ainsi vous pourrez continuez à travailler. La contrainte peut probablement être modifiée dans la boite de dialogue spécifique de la contrainte.</translation>
     </message>
     <message>
@@ -10335,7 +10360,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="724"/>
-        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
+        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation>Vous venez de trouver un bug dans FET. Merci de le rapporter. Ce type de contrainte n&apos;est pas correctement reconnu dans les boites de dialogue de contraintes de temps. FET va passer cette erreur, ainsi vous pourrez continuez à travailler. La contrainte peut probablement être modifiée dans la boite de dialogue spécifique de la contrainte.</translation>
     </message>
     <message>
@@ -11131,7 +11156,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="310"/>
-        <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students. </source>
+        <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students.</source>
         <translation>L&apos;utilisation de cette contrainte est probablement très large. La raison principale de son ajout est de permettre à l&apos;utilisateur de spécifier que pour chaque créneau horaire on doit avoir un nombre spécifié d&apos;enseignants libres pour le suivi des élèves.</translation>
     </message>
     <message>
@@ -11223,10 +11248,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1449"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>La contrainte suivante est fausse (nécessite 2 activités ou plus). Merci de corriger:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1518"/>
@@ -12388,10 +12412,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11899"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>La contrainte suivante est fausse (nécessite 2 activités ou plus). Merci de corriger :
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11968"/>
@@ -12574,10 +12597,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11601"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>La contrainte suivante est fausse (nécessite 2 activités ou plus). Merci de corriger:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11670"/>
@@ -12740,10 +12762,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1151"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>La contrainte suivante est fausse (nécessite 2 activités ou plus). Merci de corriger :
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1220"/>
@@ -12951,10 +12972,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13348"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>La contrainte suivante est fausse (se rapporte à un id d&apos;activité invalide). Merci de corriger (la supprimer peut-être une solution) :
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13384"/>
@@ -13520,10 +13540,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8800"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>La contrainte suivante est fausse (se rapporte à un id d&apos;activité invalide). Merci de corriger (la supprimer peut-être une solution) :
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8805"/>
@@ -13531,27 +13550,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8819"/>
         <source>FET information</source>
         <translation>FET - Information</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8806"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation>La contrainte d&apos;activité &apos;horaires privilégiés&apos; est fausse car elle réfère à un jour supprimé. Merci de corriger et d&apos;essayer à nouveau. Corriger signifie d&apos;éditer la contrainte et de mettre à jour l&apos;information. La contrainte est :
-%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8813"/>
-        <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation>La contrainte d&apos;activité &apos;horaires privilégiés&apos; est fausse car une heure privilégiée est trop tard (après le dernier créneau acceptable). Merci de corriger ceci et d&apos;essayer à nouveau. Corriger signifie d&apos;éditer la contrainte et de mettre à jour les informations. La contrainte est :
-%1</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8820"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation>La contrainte d&apos;activité &apos;horaires privilégiés&apos; est fausse car elle réfère à une heure supprimée. Merci de corriger et d&apos;essayer à nouveau. Corriger signifie d&apos;éditer la contrainte et de mettre à jour l&apos;information. La contrainte est :
-%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8865"/>
@@ -13629,6 +13627,24 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8892"/>
         <source>Day=%1</source>
         <translation>Jour=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8806"/>
+        <source>Constraint activity preferred starting time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8813"/>
+        <source>Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8820"/>
+        <source>Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8894"/>
@@ -13744,10 +13760,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10347"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>La contrainte suivante est fausse (se rapporte à un id d&apos;activité invalide). Merci de corriger (la supprimer peut-être une solution) :
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10353"/>
@@ -13943,10 +13958,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9059"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation>La contrainte suivante est fausse (se rapporte à un id d&apos;activité invalide). Merci de corriger (la supprimer peut-être une solution) :
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9066"/>
@@ -15020,10 +15034,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2123"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>La contrainte suivante est fausse (nécessite 2 activités ou plus). Merci de corriger :
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2193"/>
@@ -15252,10 +15265,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1785"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>La contrainte suivante est fausse (nécessite 2 activités ou plus). Merci de corriger:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1856"/>
@@ -15406,13 +15418,13 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="318"/>
-        <source>FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0)</source>
-        <translation>FET a rencontré une erreur critique - abandon de l&apos;opération courante, merci de rapporter le bug (ancien poids non à -1 et non (&gt;=0.0 et &lt;=100.0)</translation>
+        <source>FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
+        <translation>FET a rencontré une erreur critique - abandon de l&apos;opération courante, merci de rapporter le bug (ancien poids non à -1 et non (&gt;=0.0 et &lt;=100.0))</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="328"/>
-        <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0)</source>
-        <translation>FET a rencontré une erreur critique - abandon de l&apos;opération courante, merci de rapporter le bug (nouveau poids non à -1 et non (&gt;=0.0 et &lt;=100.0)</translation>
+        <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
+        <translation>FET a rencontré une erreur critique - abandon de l&apos;opération courante, merci de rapporter le bug (nouveau poids non à -1 et non (&gt;=0.0 et &lt;=100.0))</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="337"/>
@@ -15533,10 +15545,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2450"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>La contrainte suivante est fausse (nécessite 2 activités ou plus). Merci de corriger:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2520"/>
@@ -15801,7 +15812,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="521"/>
         <source>Not available at:</source>
-        <translation>Non disponible à :</translation>
+        <comment>It refers to a room</comment>
+        <translation type="unfinished">Non disponible à :</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="538"/>
@@ -16400,24 +16412,21 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15248"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de début &gt;= heure de fin. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15255"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de début &lt; première heure de la journée. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15262"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de fin &gt; nombre d&apos;heures de la journée. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15307"/>
@@ -18612,24 +18621,21 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14944"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de début &gt;= heure de fin. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14951"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de début &lt; première heure de la journée. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14958"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de fin &gt; nombre d&apos;heures de la journée. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14969"/>
@@ -20295,7 +20301,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="949"/>
         <source>Not available at:</source>
-        <translation>Non disponible à :</translation>
+        <comment>It refers to a students set</comment>
+        <translation type="unfinished">Non disponible à :</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="966"/>
@@ -22376,10 +22383,9 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14447"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de début &lt; première heure de la journée. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14454"/>
@@ -24261,7 +24267,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="586"/>
         <source>Not available at:</source>
-        <translation>Non disponible à :</translation>
+        <comment>It refers to a teacher</comment>
+        <translation type="unfinished">Non disponible à :</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="603"/>
@@ -24730,24 +24737,21 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14693"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de début &gt;= heure de fin. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14700"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de début &lt; première heure de la journée. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14707"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation>La contrainte enseignant &apos;jours maxi par semaine d&apos;un intervalle horaire&apos; est fausse car heure de fin &gt; nombre d&apos;heures de la journée. Merci de corriger. La contrainte est
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14751"/>
@@ -28340,9 +28344,9 @@ Merci d&apos;arrêter la simulation avant ceci.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3468"/>
-        <source>Language will be %1 (restart needed to activate language change)</source>
+        <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
-        <translation>La langue sera %1 (un redémarrage est nécessaire pour prendre en compte un changement de langue)</translation>
+        <translation>La langue sera %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3504"/>
@@ -31653,24 +31657,6 @@ Please modify your data correspondingly and try again</source>
         <translation>A propos de</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.0 (January 2013).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="94"/>
         <source>Translators</source>
         <translation>Traducteurs</translation>
@@ -32001,11 +31987,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Anton Anthofer - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Danny Zitzman - suggestions.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;geaplanet - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Leandro Bueno - suggestions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="590"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="593"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>
@@ -32013,6 +32002,24 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpaboutform_template.ui" line="60"/>
         <source>Authors</source>
         <translation>Auteurs</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.1 (May 2013).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="72"/>
@@ -34954,8 +34961,8 @@ Merci d&apos;arrêter la simulation avant</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="536"/>
-        <source>&apos;Split&apos; means &apos;Is split into ... activities per week. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.&apos;</source>
-        <translation>&apos;Découpage&apos; signifie &apos;Est fractionné entre ... activités par semaine. Cette valeur ne peut pas être changée. Si vous devez le modifier, merci de supprimer les activités correpondances et ajouter une nouvelle activité découpées.&apos;</translation>
+        <source>&apos;Split&apos; means &apos;Is split into ... activities per week&apos;. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.</source>
+        <translation>&apos;Découpage&apos; signifie &apos;Est fractionné entre ... activités par semaine&apos;. Cette valeur ne peut pas être changée. Si vous devez le modifier, merci de supprimer les activités correpondances et ajouter une nouvelle activité découpées.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="539"/>
@@ -35030,6 +35037,46 @@ Merci d&apos;arrêter la simulation avant</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2475"/>
         <source>Duration</source>
         <translation>Durée</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="339"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="403"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="467"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="531"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="595"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="659"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="723"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="787"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="851"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="915"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="979"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1043"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1107"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1171"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1235"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1299"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1363"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1427"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1491"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1555"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1619"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1683"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1747"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1811"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1875"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1939"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2003"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2067"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2131"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2195"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2259"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2323"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2387"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2451"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2515"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Active</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="352"/>
@@ -35264,45 +35311,6 @@ Merci d&apos;arrêter la simulation avant</translation>
         <translation>Sélection</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="339"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="403"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="467"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="531"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="595"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="659"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="723"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="787"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="851"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="915"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="979"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1043"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1107"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1171"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1235"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1299"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1363"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1427"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1491"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1555"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1619"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1683"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1747"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1811"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1875"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1939"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2003"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2067"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2131"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2195"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2259"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2323"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2387"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2451"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2515"/>
-        <source>Active</source>
-        <translation>Active</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="800"/>
         <source>9</source>
         <translation>9</translation>
@@ -35516,12 +35524,14 @@ Merci d&apos;arrêter la simulation avant</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Tout sélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout sélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Tout désélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout désélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
@@ -35824,12 +35834,14 @@ Merci d&apos;arrêter la simulation avant</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Tout sélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout sélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Tout désélectionner</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout désélectionner</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -35953,26 +35965,28 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Pourcentage de poids (recommandé : 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="108"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify activities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
         <translation>Modifier heures de début privilégiées des activités</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="108"/>
-        <source>Set all allowed</source>
-        <translation>Autoriser tout</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="115"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="129"/>
@@ -36085,9 +36099,10 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Pourcentage de poids (recommandé : 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="108"/>
-        <source>Set all allowed</source>
-        <translation>Tout autoriser</translation>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
@@ -36096,15 +36111,16 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Modifier des créneaux horaires privilégiés d&apos;activités</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="108"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="115"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="129"/>
@@ -36778,6 +36794,18 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Activité</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -36824,20 +36852,10 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Pourcentage de poids (recommandé : 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
-        <source>Set all allowed</source>
-        <translation>Tout autoriser</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
     </message>
 </context>
 <context>
@@ -36877,20 +36895,10 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Activité</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
-        <source>Set all allowed</source>
-        <translation>Autoriser tout</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -36937,6 +36945,18 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="125"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Pourcentage de poids (recommandé : 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
 </context>
 <context>
@@ -37185,6 +37205,12 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <translation>Pourcentage de poids (obligatoirement : 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="75"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
@@ -37193,7 +37219,8 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="82"/>
         <source>Set all break</source>
-        <translation>Tout à pause</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout à pause</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="89"/>
@@ -37204,11 +37231,6 @@ Si vous avez besoin d&apos;un poids inférieur à 100%, alors vous pouvez utilis
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="96"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
-        <source>Set all allowed</source>
-        <translation>Autoriser tout</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="14"/>
@@ -37605,25 +37627,27 @@ forcer des activités consécutives</translation>
         <translation>Salle</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="102"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="116"/>
         <source>Ok</source>
         <translation>Ok</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
-        <source>Set all available</source>
-        <translation>Tout autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
-        <source>Set all not available</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="123"/>
@@ -39285,18 +39309,20 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme trous
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
-        <translation>Tout autorisé</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -39357,10 +39383,22 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme trous
         <translation>Pourcentage de poids (recommandé : 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="166"/>
@@ -39391,16 +39429,6 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme trous
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="101"/>
         <source>Subject</source>
         <translation>Matière</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
-        <source>Set all allowed</source>
-        <translation>Tout autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="22"/>
@@ -39440,6 +39468,12 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme trous
         <translation>Modifier horaires privilégiés des sous-activités</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="166"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -39475,20 +39509,16 @@ Note : élèves non disponibles et pauses ne sont pas comptabilisés comme trous
         <translation>Matière</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
-        <source>Set all not allowed</source>
-        <translation>Tout non autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
-        <source>Set all allowed</source>
-        <translation>Tout autoriser</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="22"/>
@@ -40781,25 +40811,27 @@ Note : enseignant non disponible et pauses ne sont pas comptabilisés comme des 
         <translation>Pourcentage de poids (obligatoirement : 100%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=non autorisé, vide=autorisé</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Tout non autorisé</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="141"/>
         <source>Ok</source>
         <translation>Ok</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Tout non autorisé</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
-        <source>Set all available</source>
-        <translation>Tout autorisé</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="148"/>
@@ -42129,6 +42161,12 @@ Note : enseignant non disponible et pauses ne sont pas comptabilisés comme paus
         <translation>Elèves</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Active</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="372"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -42159,11 +42197,6 @@ Note : enseignant non disponible et pauses ne sont pas comptabilisés comme paus
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
         <translation>Sélection</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
-        <source>Active</source>
-        <translation>Active</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="272"/>
@@ -42236,14 +42269,14 @@ Note : enseignant non disponible et pauses ne sont pas comptabilisés comme paus
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="298"/>
         <source>Random seed X component:</source>
-        <comment>Means the X component of the random seed (random seed has 2 components, X and Y)</comment>
-        <translation>Composant X du générateur de nombres aléatoires :</translation>
+        <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
+        <translation type="unfinished">Composant X du générateur de nombres aléatoires :</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="300"/>
         <source>Random seed Y component:</source>
-        <comment>Means the Y component of the random seed (random seed has 2 components, X and Y)</comment>
-        <translation>Composant Y du générateur de nombres aléatoires :</translation>
+        <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
+        <translation type="unfinished">Composant Y du générateur de nombres aléatoires :</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="302"/>
@@ -44152,6 +44185,11 @@ non ajoutée - doit être un doublon</translation>
         <translation>Fractionnement de la promotion réussie, merci de vérifier les groupes et sous-groupes de la promotion afin de vous assurer que tout est OK</translation>
     </message>
     <message>
+        <location filename="../src/interface/splityearform.cpp" line="1125"/>
+        <source>If you need to make a division of say year 9 in 5 categories (category1: a, b, c, d, category2: first language, category3: religion, category4: boys/girls, category5: second language), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 4 categories: first language, religion, boys/girls, second language. For activities with year 9 - first language = 1 for instance, you need to add to these activities the groups 9a_firstlanguage1+9b_firstlanguage1+9c_firstlanguage1+9d_firstlanguage1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/splityearform.cpp" line="689"/>
         <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. This means that all the activities and constraints for the groups and subgroups in this year will be removed. It is strongly recommended to save your file before continuing. You might also want, as an alternative, to modify manually the groups/subgroups from the corresponding menu, so that you will not lose constraints and activities referring to them. Do you really want to empty year?</source>
         <translation>La promotion %1 n&apos;est pas vide et sera vidée avant d&apos;ajouter les divisions que vous avez sélectionnées. Ceci signifie que toutes les activités et contraintes pour les groupes et sous-groupes de cette promotion seront supprimées. Il est extrèmement recommandé de sauvegarder votre fichier avant de continuer. Comme alternative, vous pouvez aussi modifier manuellement les groupes/sous-groupes avec le menu correspondant, ainsi vous ne perdrez pas les activités et contraintes s&apos;y rapportant. Voulez-vous vraiment vider la promotion ?</translation>
@@ -44164,11 +44202,6 @@ non ajoutée - doit être un doublon</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="1115"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1 to 4 categories, first with 2 to 12 divisions and the second, third and fourth ones each with 2 to 6 divisions. If you need 5 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 4 categories (more details below). For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="1125"/>
-        <source>If you need to make a division of say year 9 in 5 categories (category1: a, b, c, d, category2: first language, category3: religion, category4: boys/girls, category 4: second language), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 4 categories: first language, religion, boys/girls, second language. For activities with year 9 - first language = 1 for instance, you need to add to these activities the groups 9a_firstlanguage1+9b_firstlanguage1+9c_firstlanguage1+9d_firstlanguage1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -46311,6 +46344,11 @@ activité invalide id %2
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="7298"/>
+        <source>Not available</source>
+        <comment>It refers to a teacher</comment>
+        <translation type="unfinished">Non disponible</translation>
+    </message>
+    <message>
         <location filename="../src/engine/timetableexport.cpp" line="7406"/>
         <source>Not available</source>
         <translation>Non disponible</translation>
@@ -47078,11 +47116,6 @@ activité invalide id %2
         <translation>Impossible d&apos;optimiser - merci de modifier vos données</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="327"/>
-        <source>Timetable no: %1 =&gt; %2</source>
-        <translation>Emploi du temps no : %1 =&gt; %2</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="344"/>
         <source>Total soft conflicts:</source>
         <translation>Total des conflits de bas niveau :</translation>
@@ -47171,6 +47204,12 @@ activité invalide id %2
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="294"/>
         <source>Your data cannot be processed - please modify it as instructed.</source>
         <translation>Vos données ne peuvent être traitées - merci de les modifier comme indiqué.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="327"/>
+        <source>Timetable no: %1 =&gt; %2</source>
+        <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
+        <translation type="unfinished">Emploi du temps no : %1 =&gt; %2</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="369"/>

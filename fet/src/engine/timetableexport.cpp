@@ -7295,7 +7295,7 @@ QString TimetableExport::singleTeachersFreePeriodsTimetableDaysHorizontalHtml(in
 						case TEACHER_MUST_COME_MUCH_EARLIER	: tmpString+=TimetableExport::tr("Must come much earlier"); break;
 						case TEACHER_MUST_STAY_MUCH_LONGER	: tmpString+=TimetableExport::tr("Must stay much longer"); break;
 						case TEACHER_HAS_A_FREE_DAY		: tmpString+=TimetableExport::tr("Free day"); break;
-						case TEACHER_IS_NOT_AVAILABLE		: tmpString+=TimetableExport::tr("Not available"); break;
+						case TEACHER_IS_NOT_AVAILABLE		: tmpString+=TimetableExport::tr("Not available", "It refers to a teacher"); break;
 						default: assert(0==1); break;
 					}
 					if(htmlLevel>=2)

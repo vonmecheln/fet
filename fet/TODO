@@ -2458,3 +2458,20 @@ From Anton Anthofer:
 - modify the IDs of (sub)activities.
 - possibility to remove subactivities.
 - multicore generation for multiple timetables generation.
+
+152---------------------------------------------------------
+From yasin dehghan:
+
+can you add excel export to software
+this is so useful for view and share
+
+153---------------------------------------------------------
+From Leandro Bueno:
+
+I have another question to you. If you open the file, you may have seen that the schedule of our school has 3 turns (morning, afternoon and evening),
+but, the activity hours are of one clock hour for the evening and 50 minutes (clock) for the morning and afternoon turns. I can generate the timetable,
+but the statistics only considers FET hours, but the FET hour to clock hour relationship is not defined. This relationship would help generate the work
+hours of the teachers (in clock hours). Today, I take the statistics and make a spreadsheet applying the relationship between FET hours and clock hours.
+
+I think that something like a relationship between FET and clock hours should be interesting to add in future versions, so the teachers statistics could
+be shown in terms of number of activities (as it is today) and clock hours in a quick way, right from the FET interface.

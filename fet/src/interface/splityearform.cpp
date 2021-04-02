@@ -1123,7 +1123,7 @@ void SplitYearForm::help()
 	s+="\n\n";
 	
 	s+=tr("If you need to make a division of say year 9 in 5 categories (category1: a, b, c, d, category2: first language,"
-	 " category3: religion, category4: boys/girls, category 4: second language), you might want to use this trick: consider first category to"
+	 " category3: religion, category4: boys/girls, category5: second language), you might want to use this trick: consider first category to"
 	 " define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 4 categories: first language, religion, boys/girls, second language."
 	 " For activities with year 9 - first language = 1 for instance, you need to add to these activities the groups 9a_firstlanguage1+9b_firstlanguage1+"
 	 "9c_firstlanguage1+9d_firstlanguage1. For activities with year 9a, just add year 9a to the corresponding activities.");

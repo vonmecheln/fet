@@ -38,7 +38,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="400"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese große Aktivität kann nicht geändert werden, weil sie mehr als %1 Aktivitäten enthält.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="409"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="576"/>
         <source>Activity comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentare zur Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="578"/>
@@ -374,7 +374,7 @@
         <location filename="../src/engine/activity.cpp" line="554"/>
         <source>Active=%1</source>
         <comment>Represents a boolean value, if activity is active or not, %1 is yes or no</comment>
-        <translation>Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="488"/>
@@ -411,7 +411,7 @@
     <message>
         <location filename="../src/engine/activity.cpp" line="560"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="572"/>
@@ -679,7 +679,7 @@
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1105"/>
         <source>Cannot modify this large activity, because it contains more than %1 activities.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese große Aktivität kann nicht geändert werden, weil sie mehr als %1 Aktivitäten enthält.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1387"/>
@@ -1156,7 +1156,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="780"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
-        <translation>Dauer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="784"/>
@@ -1176,6 +1176,11 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="855"/>
         <source>Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="870"/>
+        <source>If you select a number of min days above 1 (say this number is n), you will get the possibility to add a second constraint min days between activities, with min days = n-1 and a percentage of your choice. Just click Add activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1217,11 +1222,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="866"/>
         <source>Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="870"/>
-        <source>If you select a number of min days above 1, you will get the possibility to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click Add activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1267,7 +1267,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="665"/>
         <source>Possible incorrect setting. Are you sure you want to add current activity? See details below:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wahrscheinlich falsche Einstellungen. Wollen Sie die aktuelle Aktivität hinzufügen? Beachten Sie folgende Details:</translation>
     </message>
 </context>
 <context>
@@ -1329,45 +1329,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Dauer</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="338"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="402"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="466"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="530"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="594"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="658"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="722"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="850"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="914"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="978"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1042"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1170"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1234"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1298"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1362"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1426"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1490"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1554"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1618"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1682"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1746"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1810"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1874"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="1938"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2002"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2066"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2130"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2194"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2258"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2322"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2386"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2450"/>
-        <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
-        <source>Active</source>
-        <translation>Aktiv</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform_template.ui" line="14"/>
         <source>Add activity</source>
         <extracomment>This is the title of the add activity dialog</extracomment>
@@ -1405,6 +1366,46 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <source>Split</source>
         <comment>Refers to the number of components in an activity split into more components</comment>
         <translation>Aufteilung</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="338"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="402"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="466"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="530"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="594"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="658"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="722"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="850"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="914"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="978"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1042"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1170"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1234"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1298"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1362"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1426"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1490"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1554"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1618"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1682"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1746"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1810"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1874"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1938"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2002"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2066"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2130"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2194"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2258"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2322"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2386"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2450"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Aktiv</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="351"/>
@@ -1798,7 +1799,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="280"/>
         <source>Empty list of activities</source>
-        <translation type="unfinished">Keine Aktivitäten ausgewählt</translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="295"/>
@@ -1869,17 +1870,19 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>X=ausgewählt, leer=nicht ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Alle auswählen</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Alle abwählen</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Alle abwählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
@@ -1988,6 +1991,12 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Lehrer</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
+        <source>Add activities not overlapping</source>
+        <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="120"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
@@ -2008,12 +2017,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="26"/>
         <source>This constraint means that the activities should not be placed in common timeslots. You don&apos;t need to add this constraint for activities sharing a teacher or students set.</source>
         <translation>Diese Einschränkung sorgt dafür, dass die Aktivitäten nicht gleichzeitig stattfinden. Sie brauchen diese Aktivität nicht für Aktivitäten benutzen, die gemeinsame Lehrer oder Schüler haben.</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
-        <source> Add activities not overlapping</source>
-        <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2213,17 +2216,19 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>X=ausgewählt, leer=nicht ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
-        <translation>Alle auswählen</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
-        <translation>Alle abwählen</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Alle abwählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -2349,13 +2354,20 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="124"/>
         <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="138"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="145"/>
@@ -2366,11 +2378,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Schließen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="138"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
@@ -2464,6 +2471,12 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Prozentuale Gewichtung (empfohlen: 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="138"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Schließen</translation>
@@ -2495,25 +2508,21 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Lehrer</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="138"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -2545,7 +2554,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform.cpp" line="193"/>
         <source>Only one selected activity - impossible</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur eine Aktivität wurde ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform.cpp" line="211"/>
@@ -2648,7 +2657,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform.cpp" line="189"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished">Leere Liste an ausgewählten Räumen</translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform.cpp" line="194"/>
@@ -2764,7 +2773,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="220"/>
         <source>Only one selected activity - impossible</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur eine Aktivität wurde ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="256"/>
@@ -3398,13 +3407,20 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
         <source>Set all allowed</source>
-        <translation>Setze alle auf erlaubt</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
@@ -3415,11 +3431,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="174"/>
         <source>Close</source>
         <translation>Schließen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="14"/>
@@ -3507,20 +3518,22 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Unterrichtsfach</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -3845,10 +3858,22 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="75"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
+        <source>Set all break</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;Pause&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="89"/>
@@ -3859,16 +3884,6 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="96"/>
         <source>Close</source>
         <translation>Schließen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
-        <source>Set all break</source>
-        <translation>Setze alle auf &quot;Pause&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="14"/>
@@ -3901,7 +3916,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform.cpp" line="199"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform.cpp" line="204"/>
@@ -4015,7 +4030,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="193"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="198"/>
@@ -4167,7 +4182,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform.cpp" line="195"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform.cpp" line="200"/>
@@ -4301,20 +4316,22 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <translation>Raum</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
-        <source>Set all available</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="102"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="109"/>
         <source>Set all not available</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
@@ -5152,7 +5169,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="95"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="111"/>
@@ -6242,7 +6259,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="127"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="143"/>
@@ -6336,25 +6353,27 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
-        <source>Set all available</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="76"/>
         <source>Students set</source>
         <translation>Schülergruppe</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -6416,6 +6435,18 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="191"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="205"/>
         <source>Close</source>
         <translation>Schließen</translation>
@@ -6446,20 +6477,10 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="184"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="191"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="198"/>
@@ -6526,6 +6547,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="191"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="198"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
@@ -6561,20 +6588,16 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Lehrer</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="177"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="184"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="191"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="177"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="26"/>
@@ -8051,7 +8074,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="133"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="145"/>
@@ -8128,6 +8151,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="131"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
@@ -8136,7 +8165,8 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="138"/>
         <source>Set all not available</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="145"/>
@@ -8147,11 +8177,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="152"/>
         <source>Close</source>
         <translation>Schließen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
-        <source>Set all available</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
@@ -9010,7 +9035,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="101"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
     </message>
 </context>
 <context>
@@ -9797,7 +9822,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="34"/>
         <source>Advanced filter for constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Erweiterter Filter für Einschränkungen</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="36"/>
@@ -9817,24 +9842,24 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="56"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="57"/>
         <source>Detailed description</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausführliche Beschreibung</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="64"/>
         <source>Contains</source>
         <comment>A text string contains other substring</comment>
-        <translation type="unfinished"></translation>
+        <translation>Beinhalten</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="65"/>
         <source>Does not contain</source>
         <comment>A text string does not contain other substring</comment>
-        <translation type="unfinished"></translation>
+        <translation>Beinhaltet nicht</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="66"/>
@@ -9853,12 +9878,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="109"/>
         <source>More</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehr</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="110"/>
         <source>Fewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Weniger</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedfilterform.cpp" line="118"/>
@@ -10112,7 +10137,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="456"/>
-        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
+        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all space constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10294,7 +10319,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="724"/>
-        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work.. Probably the constraint can be modified from the specific constraint dialog.</source>
+        <source>You have found a bug in FET. Please report it. This kind of constraint is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work. Probably the constraint can be modified from the specific constraint dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10440,7 +10465,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/building.cpp" line="44"/>
         <source>Building</source>
-        <translation type="unfinished">Gebäude</translation>
+        <translation>Gebäude</translation>
     </message>
     <message>
         <location filename="../src/engine/building.cpp" line="46"/>
@@ -10505,7 +10530,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="64"/>
         <source>Sort</source>
-        <translation type="unfinished">Sortiere</translation>
+        <translation>Sortiere</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform_template.ui" line="73"/>
@@ -10675,7 +10700,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/commentsform.cpp" line="60"/>
         <source>Cannot update comments during simulation. Please stop simulation before this</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentar kann im Moment nicht geändert werden. Stoppen Sie erst die erstellung des Planes</translation>
     </message>
 </context>
 <context>
@@ -10684,7 +10709,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/commentsform_template.ui" line="14"/>
         <source>Comments</source>
         <extracomment>The title of the dialog to choose the comments</extracomment>
-        <translation type="unfinished">Kommentare</translation>
+        <translation>Kommentare</translation>
     </message>
     <message>
         <location filename="../src/interface/commentsform_template.ui" line="30"/>
@@ -10715,7 +10740,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15581"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15586"/>
@@ -10827,12 +10852,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15652"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15656"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15700"/>
@@ -10971,7 +10996,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17771"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17785"/>
@@ -11019,12 +11044,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17824"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17828"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17884"/>
@@ -11088,7 +11113,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="310"/>
-        <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students. </source>
+        <source>Uses of this constraint are probably wide. The main reason it was added was to enable users to specify that each time slot needs to have a specified number of free teachers, for supervision of students.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11180,16 +11205,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1449"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Folgende Einschränkung is flasch (weil mindestens 2 Aktivitäten benötigt werden). Bitte ändern Sie es:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1518"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1521"/>
@@ -11244,12 +11268,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1545"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1549"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1630"/>
@@ -11380,7 +11404,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6876"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation>Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6883"/>
@@ -11423,7 +11447,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6913"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation>Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6917"/>
@@ -11620,7 +11644,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17413"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17427"/>
@@ -11668,12 +11692,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17466"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17470"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17528"/>
@@ -11858,7 +11882,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10806"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10813"/>
@@ -11971,12 +11995,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10900"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10904"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10950"/>
@@ -12114,7 +12138,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9541"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9548"/>
@@ -12227,12 +12251,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9631"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9635"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9689"/>
@@ -12334,16 +12358,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11899"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Folgende Einschränkung is flasch (weil mindestens 2 Aktivitäten benötigt werden). Bitte ändern Sie es:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11968"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11971"/>
@@ -12398,12 +12421,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11998"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12002"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12064"/>
@@ -12520,16 +12543,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11601"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Folgende Einschränkung is flasch (weil mindestens 2 Aktivitäten benötigt werden). Bitte ändern Sie es:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11670"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11673"/>
@@ -12584,7 +12606,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11700"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11704"/>
@@ -12686,16 +12708,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1151"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Folgende Einschränkung is flasch (weil mindestens 2 Aktivitäten benötigt werden). Bitte ändern Sie es:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1220"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1223"/>
@@ -12750,12 +12771,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1248"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1252"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1318"/>
@@ -12897,7 +12918,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13348"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12905,7 +12926,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13384"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13387"/>
@@ -12944,12 +12965,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13408"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13412"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13454"/>
@@ -13077,7 +13098,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="823"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="825"/>
@@ -13144,12 +13165,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="863"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="867"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="903"/>
@@ -13287,7 +13308,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1074"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1076"/>
@@ -13338,12 +13359,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1106"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1110"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1151"/>
@@ -13464,12 +13485,6 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>Fehler in den Daten</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8800"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8805"/>
         <location filename="../src/engine/timeconstraint.cpp" line="8812"/>
         <location filename="../src/engine/timeconstraint.cpp" line="8819"/>
@@ -13477,28 +13492,10 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <translation>FET Information</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8806"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8813"/>
-        <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8820"/>
-        <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8865"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8868"/>
@@ -13553,12 +13550,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8909"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8913"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8949"/>
@@ -13570,6 +13567,30 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8892"/>
         <source>Day=%1</source>
         <translation>Tag=%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8800"/>
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8806"/>
+        <source>Constraint activity preferred starting time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8813"/>
+        <source>Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8820"/>
+        <source>Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8894"/>
@@ -13685,7 +13706,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10347"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13718,7 +13739,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10414"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10417"/>
@@ -13752,12 +13773,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10468"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10472"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10513"/>
@@ -13880,7 +13901,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9059"/>
-        <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
+        <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13920,7 +13941,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9135"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9138"/>
@@ -13959,12 +13980,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9189"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9193"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9239"/>
@@ -14105,7 +14126,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3311"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3313"/>
@@ -14150,12 +14171,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3331"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3335"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3382"/>
@@ -14266,7 +14287,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3544"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3546"/>
@@ -14316,12 +14337,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3570"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3574"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3625"/>
@@ -14420,7 +14441,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="152"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="154"/>
@@ -14462,12 +14483,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="173"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="177"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="284"/>
@@ -14638,12 +14659,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="204"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="208"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="350"/>
@@ -14684,7 +14705,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="186"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="324"/>
@@ -14792,7 +14813,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5473"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5476"/>
@@ -14831,12 +14852,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5518"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5522"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5536"/>
@@ -14950,16 +14971,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2123"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Folgende Einschränkung is flasch (weil mindestens 2 Aktivitäten benötigt werden). Bitte ändern Sie es:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2193"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2196"/>
@@ -15025,12 +15045,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2221"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2225"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2309"/>
@@ -15182,16 +15202,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1785"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Folgende Einschränkung is flasch (weil mindestens 2 Aktivitäten benötigt werden). Bitte ändern Sie es:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1856"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1859"/>
@@ -15268,12 +15287,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1886"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1890"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1974"/>
@@ -15336,12 +15355,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="318"/>
-        <source>FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0)</source>
+        <source>FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform.cpp" line="328"/>
-        <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0)</source>
+        <source>FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (&gt;=0.0 and &lt;=100.0))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -15463,16 +15482,15 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2450"/>
-        <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
+        <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation>Folgende Einschränkung is flasch (weil mindestens 2 Aktivitäten benötigt werden). Bitte ändern Sie es:
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2520"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2523"/>
@@ -15538,12 +15556,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2548"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2552"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2605"/>
@@ -15687,7 +15705,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="491"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="493"/>
@@ -15731,18 +15749,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="521"/>
         <source>Not available at:</source>
-        <translation>Nicht verfügbar um:</translation>
+        <comment>It refers to a room</comment>
+        <translation type="unfinished">Nicht verfügbar um:</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="538"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="542"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="553"/>
@@ -15869,7 +15888,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7736"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7739"/>
@@ -15911,12 +15930,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7757"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7761"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7816"/>
@@ -16021,7 +16040,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16354"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16358"/>
@@ -16069,12 +16088,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16377"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16381"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16431"/>
@@ -16187,7 +16206,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6220"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6223"/>
@@ -16224,12 +16243,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6242"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6246"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6295"/>
@@ -16327,19 +16346,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15248"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15255"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15262"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint students interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16347,7 +16366,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15307"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15309"/>
@@ -16420,12 +16439,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15340"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15344"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15385"/>
@@ -16518,7 +16537,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4050"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4052"/>
@@ -16561,12 +16580,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4074"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4078"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4143"/>
@@ -16659,7 +16678,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4573"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4575"/>
@@ -16702,12 +16721,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4597"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4601"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4667"/>
@@ -16800,7 +16819,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16862"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16866"/>
@@ -16854,12 +16873,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16885"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16889"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16941"/>
@@ -16957,7 +16976,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5750"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5753"/>
@@ -17005,12 +17024,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5771"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5775"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5827"/>
@@ -17098,7 +17117,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7210"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7213"/>
@@ -17141,12 +17160,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7230"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7234"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7267"/>
@@ -17241,7 +17260,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6755"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6758"/>
@@ -17284,12 +17303,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6775"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6779"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6819"/>
@@ -17377,7 +17396,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5107"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5109"/>
@@ -17420,12 +17439,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5131"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5135"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5204"/>
@@ -17518,7 +17537,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8316"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8322"/>
@@ -17577,12 +17596,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8345"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8349"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8392"/>
@@ -17680,7 +17699,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7981"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7984"/>
@@ -17727,12 +17746,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8003"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8007"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8022"/>
@@ -17848,7 +17867,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16568"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16572"/>
@@ -17901,12 +17920,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16592"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16596"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16611"/>
@@ -18041,7 +18060,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6511"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6515"/>
@@ -18094,12 +18113,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6536"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6540"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6589"/>
@@ -18208,7 +18227,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1320"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1324"/>
@@ -18247,12 +18266,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1346"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1350"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1408"/>
@@ -18368,7 +18387,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1589"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1591"/>
@@ -18418,12 +18437,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1619"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1623"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1684"/>
@@ -18533,19 +18552,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14944"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14951"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14958"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint students set interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18559,7 +18578,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15056"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15058"/>
@@ -18643,12 +18662,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15091"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15095"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15136"/>
@@ -18757,7 +18776,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3811"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3813"/>
@@ -18811,12 +18830,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3839"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3843"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3908"/>
@@ -18925,7 +18944,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4334"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4336"/>
@@ -18979,12 +18998,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4362"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4366"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4432"/>
@@ -19093,7 +19112,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17125"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17129"/>
@@ -19158,12 +19177,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="17149"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17153"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17206"/>
@@ -19277,7 +19296,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6009"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6012"/>
@@ -19336,12 +19355,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6031"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6035"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6088"/>
@@ -19434,7 +19453,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7430"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7433"/>
@@ -19488,12 +19507,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="7452"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7456"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="7468"/>
@@ -19604,7 +19623,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6950"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6953"/>
@@ -19658,12 +19677,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="6972"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6976"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6988"/>
@@ -19778,7 +19797,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4856"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4858"/>
@@ -19832,12 +19851,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="4884"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4888"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4957"/>
@@ -19935,7 +19954,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8535"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8541"/>
@@ -20005,12 +20024,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8566"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8570"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8582"/>
@@ -20153,7 +20172,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="917"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="920"/>
@@ -20201,18 +20220,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="949"/>
         <source>Not available at:</source>
-        <translation>Nicht verfügbar um:</translation>
+        <comment>It refers to a students set</comment>
+        <translation type="unfinished">Nicht verfügbar um:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="966"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="970"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1004"/>
@@ -20352,7 +20372,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11276"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11281"/>
@@ -20475,12 +20495,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11373"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11377"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11423"/>
@@ -20658,7 +20678,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10022"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10029"/>
@@ -20786,12 +20806,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10121"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10125"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10179"/>
@@ -20936,7 +20956,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2835"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2837"/>
@@ -20992,12 +21012,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2857"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2861"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2908"/>
@@ -21108,7 +21128,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3073"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3075"/>
@@ -21169,12 +21189,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3101"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3105"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3156"/>
@@ -21290,7 +21310,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2365"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2367"/>
@@ -21335,12 +21355,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2385"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2389"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2436"/>
@@ -21451,7 +21471,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2597"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2599"/>
@@ -21501,12 +21521,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2623"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2627"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2678"/>
@@ -21605,7 +21625,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3923"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3926"/>
@@ -21647,12 +21667,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3943"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3947"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4001"/>
@@ -21772,7 +21792,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16113"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16118"/>
@@ -21815,12 +21835,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="16135"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16139"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16189"/>
@@ -21944,7 +21964,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1850"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1854"/>
@@ -21983,12 +22003,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1876"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1880"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1937"/>
@@ -22104,7 +22124,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2117"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2119"/>
@@ -22154,12 +22174,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2147"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2151"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2212"/>
@@ -22274,7 +22294,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14447"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22288,7 +22308,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14499"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14501"/>
@@ -22372,12 +22392,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14533"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14537"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14578"/>
@@ -22486,7 +22506,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5366"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5368"/>
@@ -22540,12 +22560,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5394"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5398"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5464"/>
@@ -22654,7 +22674,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5853"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5855"/>
@@ -22708,12 +22728,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5881"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5885"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5953"/>
@@ -22811,7 +22831,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4171"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4173"/>
@@ -22865,12 +22885,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4191"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4195"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4275"/>
@@ -22968,7 +22988,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5267"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5270"/>
@@ -23027,12 +23047,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5289"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5293"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5341"/>
@@ -23125,7 +23145,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4856"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4859"/>
@@ -23184,12 +23204,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4878"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4882"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4931"/>
@@ -23282,7 +23302,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3410"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3413"/>
@@ -23330,12 +23350,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3431"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3435"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3468"/>
@@ -23441,7 +23461,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2968"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2971"/>
@@ -23489,12 +23509,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2989"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2993"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3043"/>
@@ -23609,7 +23629,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14065"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14069"/>
@@ -23652,12 +23672,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14086"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14090"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14127"/>
@@ -23766,7 +23786,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6340"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6342"/>
@@ -23820,12 +23840,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6368"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6372"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6442"/>
@@ -23949,7 +23969,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13841"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13845"/>
@@ -24003,12 +24023,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13864"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13868"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13920"/>
@@ -24106,7 +24126,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="556"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="558"/>
@@ -24154,18 +24174,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="586"/>
         <source>Not available at:</source>
-        <translation>Nicht verfügbar um:</translation>
+        <comment>It refers to a teacher</comment>
+        <translation type="unfinished">Nicht verfügbar um:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="603"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="607"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="618"/>
@@ -24297,7 +24318,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3655"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3658"/>
@@ -24339,12 +24360,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3674"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3678"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3732"/>
@@ -24460,7 +24481,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15875"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15880"/>
@@ -24497,12 +24518,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15896"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15900"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15950"/>
@@ -24620,19 +24641,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14693"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14700"/>
-        <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour or the day. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14707"/>
-        <source>Constraint teacher interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
+        <source>Constraint teachers interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24640,7 +24661,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14751"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14753"/>
@@ -24713,12 +24734,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14784"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14788"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14827"/>
@@ -24811,7 +24832,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5606"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5608"/>
@@ -24854,12 +24875,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="5630"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5634"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5699"/>
@@ -24952,7 +24973,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6093"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6095"/>
@@ -24995,12 +25016,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6117"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6121"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6188"/>
@@ -25093,7 +25114,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4406"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4408"/>
@@ -25136,12 +25157,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4424"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4428"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4516"/>
@@ -25234,7 +25255,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5061"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5064"/>
@@ -25282,12 +25303,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="5081"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5085"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5131"/>
@@ -25375,7 +25396,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4649"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4652"/>
@@ -25423,12 +25444,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4669"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4673"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4720"/>
@@ -25516,7 +25537,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3183"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3186"/>
@@ -25559,12 +25580,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="3202"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3206"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3239"/>
@@ -25659,7 +25680,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2750"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2753"/>
@@ -25702,12 +25723,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2769"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2773"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2823"/>
@@ -25810,7 +25831,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14265"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14269"/>
@@ -25848,12 +25869,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14284"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14288"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14335"/>
@@ -25941,7 +25962,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6592"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6594"/>
@@ -25984,12 +26005,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="6616"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6620"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6689"/>
@@ -26097,7 +26118,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13601"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13604"/>
@@ -26151,12 +26172,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13622"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13626"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13679"/>
@@ -26272,7 +26293,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12819"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12823"/>
@@ -26340,12 +26361,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12861"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12865"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12978"/>
@@ -26471,7 +26492,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12247"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12254"/>
@@ -26522,12 +26543,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12282"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12286"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12338"/>
@@ -26648,7 +26669,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12516"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12520"/>
@@ -26704,12 +26725,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12551"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12555"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12620"/>
@@ -26830,7 +26851,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13161"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Kommentare: %1</translation>
+        <translation>K: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13165"/>
@@ -26886,12 +26907,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13196"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Aktivität=%1</translation>
+        <translation>Aktiv=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13200"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13238"/>
@@ -27001,23 +27022,23 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/daysform.cpp" line="165"/>
         <source>%1 constraints will be removed.</source>
         <comment>%1 is the number of constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Einschränkungen werden entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform.cpp" line="169"/>
         <source>%1 constraints will be modified.</source>
         <comment>%1 is the number of constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Einschränkungen werden geändert.</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform.cpp" line="172"/>
         <source>Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform.cpp" line="174"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
 </context>
 <context>
@@ -28191,9 +28212,9 @@ Bitte stoppe vorher die Berechnung.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3468"/>
-        <source>Language will be %1 (restart needed to activate language change)</source>
+        <source>Language will be %1</source>
         <comment>%1 is the default language</comment>
-        <translation>Die Sprache wird %1 sein (Neustart erforderlich)</translation>
+        <translation>Die Sprache wird %1 sein</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3504"/>
@@ -30356,7 +30377,7 @@ Bitte stoppe vorher die Berechnung.</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="766"/>
         <source>These constraints are nonstandard. They are recommended only if the students can have free days and a solution with free days for students exists. Otherwise the solution might be impossible for FET to find.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Einschränkungen sind sehr besonders. Sie sind nur empfohlen, wenn Schüler einen freien Tag haben dürfen und können.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="844"/>
@@ -30901,13 +30922,13 @@ Bitte stoppe vorher die Berechnung.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="751"/>
         <location filename="../src/engine/generate_pre.cpp" line="774"/>
         <source>Yes</source>
-        <translation type="unfinished">Ja</translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="751"/>
         <location filename="../src/engine/generate_pre.cpp" line="774"/>
         <source>No</source>
-        <translation type="unfinished">Nein</translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="764"/>
@@ -31106,7 +31127,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/engine/generate_pre.cpp" line="4703"/>
         <location filename="../src/engine/generate_pre.cpp" line="5823"/>
         <source>Explanation:</source>
-        <translation type="unfinished">Erklärung:</translation>
+        <translation>Erklärung:</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="4705"/>
@@ -31129,13 +31150,13 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/engine/generate_pre.cpp" line="4740"/>
         <location filename="../src/engine/generate_pre.cpp" line="4755"/>
         <source>FET information</source>
-        <translation type="unfinished">FET Information</translation>
+        <translation>FET Information</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="4740"/>
         <location filename="../src/engine/generate_pre.cpp" line="4755"/>
         <source>Canceled</source>
-        <translation type="unfinished">abgebrochen</translation>
+        <translation>abgebrochen</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5077"/>
@@ -31496,6 +31517,24 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.1 (May 2013).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="94"/>
         <source>Translators</source>
         <translation>Übersetzer</translation>
@@ -31514,167 +31553,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="60"/>
-        <source>Authors</source>
-        <translation>Autoren</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="14"/>
-        <source>About FET - Free Timetabling Software</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.0 (January 2013).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="72"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- XHTML timetable export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- CSV import and export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Advanced statistics export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Speed improvements in the timetable generation.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Locking the activities.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Print timetable dialog.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="106"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nguyen Truong Thang (to contact Thang visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="243"/>
-        <source>Thanks to</source>
-        <translation>Dank an</translation>
     </message>
     <message utf8="true">
         <location filename="../src/interface/helpaboutform_template.ui" line="255"/>
@@ -31987,11 +31865,157 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Anton Anthofer - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Danny Zitzman - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;geaplanet - sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Leandro Bueno - suggestions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="60"/>
+        <source>Authors</source>
+        <translation>Autoren</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="14"/>
+        <source>About FET - Free Timetabling Software</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="72"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- XHTML timetable export.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- CSV import and export.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Advanced statistics export.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Speed improvements in the timetable generation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Locking the activities.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Activity planning dialog.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	- Print timetable dialog.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../src/interface/helpaboutform_template.ui" line="106"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nguyen Truong Thang (to contact Thang visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="590"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="243"/>
+        <source>Thanks to</source>
+        <translation>Dank an</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="593"/>
         <source>Close</source>
         <translation type="unfinished">Schließen</translation>
     </message>
@@ -32897,7 +32921,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/interface/helpfaqform_template.ui" line="14"/>
         <source>Frequently asked questions</source>
         <extracomment>This is the title of the dialog for FAQ help</extracomment>
-        <translation type="unfinished">Häufig gestellte Fragen (FAQ)</translation>
+        <translation>Häufig gestellte Fragen (FAQ)</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="23"/>
@@ -33069,7 +33093,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/interface/helpinstructionsform_template.ui" line="14"/>
         <source>Instructions</source>
         <extracomment>This is the title of the dialog with help - instructions</extracomment>
-        <translation type="unfinished">Anleitung</translation>
+        <translation>Anleitung</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="23"/>
@@ -33262,7 +33286,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/interface/helptipsform_template.ui" line="14"/>
         <source>Important tips</source>
         <extracomment>This is the title of the dialog for tips</extracomment>
-        <translation type="unfinished">Wichtige Hinweise</translation>
+        <translation>Wichtige Hinweise</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform_template.ui" line="23"/>
@@ -33292,23 +33316,23 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/interface/hoursform.cpp" line="192"/>
         <source>%1 constraints will be removed.</source>
         <comment>%1 is the number of constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Einschränkungen werden entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform.cpp" line="196"/>
         <source>%1 constraints will be modified.</source>
         <comment>%1 is the number of constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 Einschränkungen werden geändert.</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform.cpp" line="199"/>
         <source>Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/hoursform.cpp" line="201"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
 </context>
 <context>
@@ -34375,7 +34399,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/institutionnameform_template.ui" line="14"/>
         <source>Institution name</source>
         <extracomment>The title of the dialog to modify the institution name</extracomment>
-        <translation type="unfinished">Name der Institution</translation>
+        <translation>Name der Institution</translation>
     </message>
     <message>
         <location filename="../src/interface/institutionnameform_template.ui" line="20"/>
@@ -34474,13 +34498,13 @@ Bitte stoppen Sie die Plangenerierung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="536"/>
-        <source>&apos;Split&apos; means &apos;Is split into ... activities per week. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.&apos;</source>
+        <source>&apos;Split&apos; means &apos;Is split into ... activities per week&apos;. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="539"/>
         <source>The &apos;Duration&apos; spin box and the &apos;Active&apos; check box refer to each component of current activity, you can change them for each component, separately, by selecting the corresponding tab in the tab widget.</source>
-        <translation type="unfinished">Dauer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="545"/>
@@ -34516,23 +34540,23 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="114"/>
         <source>Years</source>
-        <translation type="unfinished">Jahrgänge</translation>
+        <translation>Jahrgänge</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="71"/>
         <source>Students</source>
         <comment>Refers to sets of students, but I want to keep text short</comment>
-        <translation type="unfinished">Schüler</translation>
+        <translation>Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="124"/>
         <source>Groups</source>
-        <translation type="unfinished">Gruppen</translation>
+        <translation>Gruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="134"/>
         <source>Subgroups</source>
-        <translation type="unfinished">Teilgruppen</translation>
+        <translation>Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="168"/>
@@ -34544,13 +34568,13 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="232"/>
         <source>Students</source>
         <comment>This refers to the number of students, but I want to keep the text short</comment>
-        <translation type="unfinished">Schüler</translation>
+        <translation>Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="257"/>
         <source>Split</source>
         <comment>Refers to the number of components in an activity split into more components</comment>
-        <translation type="unfinished">Aufteilung</translation>
+        <translation>Aufteilung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="288"/>
@@ -34597,45 +34621,6 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation>Dauer</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="339"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="403"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="467"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="531"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="595"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="659"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="723"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="787"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="851"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="915"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="979"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1043"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1107"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1171"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1235"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1299"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1363"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1427"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1491"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1555"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1619"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1683"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1747"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1811"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1875"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="1939"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2003"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2067"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2131"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2195"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2259"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2323"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2387"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2451"/>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="2515"/>
-        <source>Active</source>
-        <translation>Aktiv</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="352"/>
         <source>2</source>
         <translation>2</translation>
@@ -34673,127 +34658,127 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="928"/>
         <source>11</source>
-        <translation type="unfinished">11</translation>
+        <translation>11</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="992"/>
         <source>12</source>
-        <translation type="unfinished">12</translation>
+        <translation>12</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1056"/>
         <source>13</source>
-        <translation type="unfinished">13</translation>
+        <translation>13</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1120"/>
         <source>14</source>
-        <translation type="unfinished">14</translation>
+        <translation>14</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1184"/>
         <source>15</source>
-        <translation type="unfinished">15</translation>
+        <translation>15</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1248"/>
         <source>16</source>
-        <translation type="unfinished">16</translation>
+        <translation>16</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1312"/>
         <source>17</source>
-        <translation type="unfinished">17</translation>
+        <translation>17</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1376"/>
         <source>18</source>
-        <translation type="unfinished">18</translation>
+        <translation>18</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1440"/>
         <source>19</source>
-        <translation type="unfinished">19</translation>
+        <translation>19</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1504"/>
         <source>20</source>
-        <translation type="unfinished">20</translation>
+        <translation>20</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1568"/>
         <source>21</source>
-        <translation type="unfinished">21</translation>
+        <translation>21</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1632"/>
         <source>22</source>
-        <translation type="unfinished">22</translation>
+        <translation>22</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1696"/>
         <source>23</source>
-        <translation type="unfinished">23</translation>
+        <translation>23</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1760"/>
         <source>24</source>
-        <translation type="unfinished">24</translation>
+        <translation>24</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1824"/>
         <source>25</source>
-        <translation type="unfinished">25</translation>
+        <translation>25</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1888"/>
         <source>26</source>
-        <translation type="unfinished">26</translation>
+        <translation>26</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="1952"/>
         <source>27</source>
-        <translation type="unfinished">27</translation>
+        <translation>27</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2016"/>
         <source>28</source>
-        <translation type="unfinished">28</translation>
+        <translation>28</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2080"/>
         <source>29</source>
-        <translation type="unfinished">29</translation>
+        <translation>29</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2144"/>
         <source>30</source>
-        <translation type="unfinished">30</translation>
+        <translation>30</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2208"/>
         <source>31</source>
-        <translation type="unfinished">31</translation>
+        <translation>31</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2272"/>
         <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2336"/>
         <source>33</source>
-        <translation type="unfinished">33</translation>
+        <translation>33</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2400"/>
         <source>34</source>
-        <translation type="unfinished">34</translation>
+        <translation>34</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2464"/>
         <source>35</source>
-        <translation type="unfinished">35</translation>
+        <translation>35</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2540"/>
@@ -34803,7 +34788,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2547"/>
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2554"/>
@@ -34814,6 +34799,46 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="800"/>
         <source>9</source>
         <translation>9</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="339"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="403"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="467"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="531"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="595"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="659"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="723"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="787"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="851"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="915"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="979"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1043"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1107"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1171"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1235"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1299"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1363"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1427"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1491"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1555"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1619"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1683"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1747"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1811"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1875"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1939"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2003"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2067"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2131"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2195"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2259"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2323"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2387"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2451"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="2515"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Aktiv</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="864"/>
@@ -35031,16 +35056,18 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">X=ausgewählt, leer=nicht ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
+        <comment>It refers to time slots</comment>
         <translation type="unfinished">Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
+        <comment>It refers to time slots</comment>
         <translation type="unfinished">Alle abwählen</translation>
     </message>
     <message>
@@ -35278,7 +35305,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="331"/>
         <source>Empty list of activities</source>
-        <translation type="unfinished">Keine Aktivitäten ausgewählt</translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
 </context>
 <context>
@@ -35339,16 +35366,18 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">X=ausgewählt, leer=nicht ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
+        <comment>It refers to time slots</comment>
         <translation type="unfinished">Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
+        <comment>It refers to time slots</comment>
         <translation type="unfinished">Alle abwählen</translation>
     </message>
     <message>
@@ -35461,26 +35490,28 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation>Prozentuale Gewichtung (empfohlen: 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="108"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify activities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="108"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle &quot;erlaubt&quot;</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="115"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="129"/>
@@ -35581,9 +35612,10 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation>Prozentuale Gewichtung (empfohlen: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="108"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
@@ -35592,15 +35624,16 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="108"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="115"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="129"/>
@@ -35630,7 +35663,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform.cpp" line="204"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform.cpp" line="209"/>
@@ -35726,7 +35759,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform.cpp" line="203"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform.cpp" line="208"/>
@@ -36274,6 +36307,18 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation>Aktivität</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -36320,20 +36365,10 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation>Prozentuale Gewichtung (empfohlen: 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
 </context>
 <context>
@@ -36373,20 +36408,10 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation>Aktivität</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle &quot;erlaubt&quot;</translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -36433,6 +36458,18 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="125"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Prozentuale Gewichtung (empfohlen: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
 </context>
 <context>
@@ -36681,6 +36718,12 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="75"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
@@ -36689,7 +36732,8 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="82"/>
         <source>Set all break</source>
-        <translation>Setze alle auf &quot;Pause&quot;</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;Pause&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="89"/>
@@ -36700,11 +36744,6 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="96"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="14"/>
@@ -36735,7 +36774,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform.cpp" line="204"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform.cpp" line="209"/>
@@ -36838,7 +36877,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="204"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="209"/>
@@ -36983,7 +37022,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform.cpp" line="201"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform.cpp" line="206"/>
@@ -37101,25 +37140,27 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="102"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="116"/>
         <source>Ok</source>
         <translation>Ok</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
-        <source>Set all available</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
-        <source>Set all not available</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="123"/>
@@ -37782,7 +37823,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="95"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="110"/>
@@ -38713,7 +38754,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="87"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="96"/>
@@ -38771,18 +38812,20 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -38843,6 +38886,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Prozentuale Gewichtung (empfohlen: 0.0%-100.0%)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="166"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -38873,20 +38922,16 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Unterrichtsfach</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="22"/>
@@ -38926,6 +38971,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
+        <source>Set all not allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="166"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -38961,20 +39012,16 @@ Note: students set not available and break are not counted as gaps.</source>
         <translation>Unterrichtsfach</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
+        <source>Set all allowed</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
-        <source>Set all not allowed</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
-        <source>Set all allowed</source>
-        <translation>Setze alle &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="22"/>
@@ -40204,7 +40251,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="141"/>
@@ -40265,25 +40312,27 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
+        <source>Set all available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
         <translation>X=nicht erlaubt, leer=erlaubt</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
+        <source>Set all not available</source>
+        <comment>It refers to time slots</comment>
+        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="141"/>
         <source>Ok</source>
         <translation>Ok</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
-        <source>Set all not available</source>
-        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
-        <source>Set all available</source>
-        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="148"/>
@@ -40984,12 +41033,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="97"/>
         <source>Allow empty days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="109"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="116"/>
@@ -41605,6 +41654,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <translation type="unfinished">Schüler</translation>
     </message>
     <message>
+        <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
+        <source>Active</source>
+        <comment>It refers to a subactivity</comment>
+        <translation type="unfinished">Aktiv</translation>
+    </message>
+    <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="372"/>
         <source>Ok</source>
         <translation>Ok</translation>
@@ -41635,11 +41690,6 @@ Note: teacher not available and break are not counted as gaps.</source>
         <source>Selected</source>
         <comment>It refers to a list of selected teachers</comment>
         <translation>Ausgewählte</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
-        <source>Active</source>
-        <translation>Aktiv</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="272"/>
@@ -41718,14 +41768,14 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="298"/>
         <source>Random seed X component:</source>
-        <comment>Means the X component of the random seed (random seed has 2 components, X and Y)</comment>
-        <translation>Startwert für X:</translation>
+        <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
+        <translation type="unfinished">Startwert für X:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="300"/>
         <source>Random seed Y component:</source>
-        <comment>Means the Y component of the random seed (random seed has 2 components, X and Y)</comment>
-        <translation>Startwert für Y:</translation>
+        <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
+        <translation type="unfinished">Startwert für Y:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="302"/>
@@ -41829,7 +41879,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="41"/>
         <source>Please read carefully the description below:</source>
-        <translation type="unfinished">Bitte lesen Sie die folgende Beschreibung sorgfältig durch:</translation>
+        <translation>Bitte lesen Sie die folgende Beschreibung sorgfältig durch:</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="43"/>
@@ -41862,7 +41912,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform_template.ui" line="23"/>
         <source>Don&apos;t show this again</source>
-        <translation type="unfinished">Zeige dies nicht erneut an</translation>
+        <translation>Zeige dies nicht erneut an</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform_template.ui" line="43"/>
@@ -42680,7 +42730,7 @@ Please note that the default weight percentage of constraints min days between a
     <message>
         <location filename="../src/engine/rules.cpp" line="6300"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
-        <translation type="unfinished">Aktivität mit ID=%1 enthält ungültige Daten</translation>
+        <translation>Aktivität mit ID=%1 enthält ungültige Daten</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6309"/>
@@ -42790,7 +42840,7 @@ Please note that the default weight percentage of constraints min days between a
         <source>Constraint
 %1
 not added - must be a duplicate</source>
-        <translation type="unfinished">Einschränkung
+        <translation>Einschränkung
 %1
 nicht hinzugefügt - Duplikat</translation>
     </message>
@@ -43606,6 +43656,11 @@ Bitte einen anderen Namen erteilen oder die andere Gruppe löschen</translation>
         <translation>Einteilung des Jahrgangs abgeschlossen. Bitte überprüfe die Gruppen und Teilgruppen des Jahrgangs um sicherzustellen das alles funktioniert hat</translation>
     </message>
     <message>
+        <location filename="../src/interface/splityearform.cpp" line="1125"/>
+        <source>If you need to make a division of say year 9 in 5 categories (category1: a, b, c, d, category2: first language, category3: religion, category4: boys/girls, category5: second language), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 4 categories: first language, religion, boys/girls, second language. For activities with year 9 - first language = 1 for instance, you need to add to these activities the groups 9a_firstlanguage1+9b_firstlanguage1+9c_firstlanguage1+9d_firstlanguage1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/splityearform.cpp" line="689"/>
         <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. This means that all the activities and constraints for the groups and subgroups in this year will be removed. It is strongly recommended to save your file before continuing. You might also want, as an alternative, to modify manually the groups/subgroups from the corresponding menu, so that you will not lose constraints and activities referring to them. Do you really want to empty year?</source>
         <translation>Jahrgang %1 ist nicht leer. Es wird aber geleert bevor diese Eingabe hinzugefügt werden. Alle Aktivitäten und Einschräkungen für die gruppen und Teilgruppen dieses Jahrgangs werden somit gelöscht. Es wird empfolen die jetzigen Daten zu speichern oder die Gruppen und Teilgruppen manual zu ändern.
@@ -43619,11 +43674,6 @@ Soll der ahrgang wirklich gelöscht werden?</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="1115"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1 to 4 categories, first with 2 to 12 divisions and the second, third and fourth ones each with 2 to 6 divisions. If you need 5 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 4 categories (more details below). For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="1125"/>
-        <source>If you need to make a division of say year 9 in 5 categories (category1: a, b, c, d, category2: first language, category3: religion, category4: boys/girls, category 4: second language), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 4 categories: first language, religion, boys/girls, second language. For activities with year 9 - first language = 1 for instance, you need to add to these activities the groups 9a_firstlanguage1+9b_firstlanguage1+9c_firstlanguage1+9d_firstlanguage1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -43775,7 +43825,7 @@ Soll der ahrgang wirklich gelöscht werden?</translation>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="23"/>
         <source>Don&apos;t show this again</source>
-        <translation type="unfinished">Zeige dies nicht erneut an</translation>
+        <translation>Zeige dies nicht erneut an</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="43"/>
@@ -44019,12 +44069,12 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="145"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="146"/>
         <source>Printing is currently not possible, because you modified the dataset. Please generate a new timetable before printing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Drucken ist im Moment nicht möglich, da Daten geändert worden sind. Bitte generieren Sie zunächst wieder einen Stundenplan.</translation>
     </message>
 </context>
 <context>
@@ -45744,6 +45794,11 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="7298"/>
+        <source>Not available</source>
+        <comment>It refers to a teacher</comment>
+        <translation type="unfinished">Nicht verfügbar</translation>
+    </message>
+    <message>
         <location filename="../src/engine/timetableexport.cpp" line="7406"/>
         <source>Not available</source>
         <translation>Nicht verfügbar</translation>
@@ -46188,17 +46243,17 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="649"/>
         <source>Generation successful!</source>
-        <translation type="unfinished"></translation>
+        <translation>Generierung erfolgreich!</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="651"/>
         <source>Weighted soft conflicts: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gewichtung der Konflikte: %1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="653"/>
         <source>Results were saved in the directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ergebnisse wurden in Verzeichnis %1 gespeichert</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="676"/>
@@ -46223,7 +46278,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="509"/>
         <source>Simulation impossible! Maybe you can consider lowering the constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Generierung unmöglich. Bitte entfernen Sie Einschränkungen.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="805"/>
@@ -46263,13 +46318,13 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/timetablegenerateform.cpp" line="227"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="378"/>
         <source>Simulation interrupted! FET could not find a timetable. Maybe you can consider lowering the constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>Generierung unterbrochen! FET kann keine Lösung finden. Bitte entfernen Sie Einschränkungen.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="244"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="525"/>
         <source>The partial results were saved in the directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ergebnisse der Teillösung wurden in Verzeichnis %1 gespeichert</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="249"/>
@@ -46533,11 +46588,6 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <translation>Stundenplan kann nicht gelöst werden - Bitte ändere die Daten oder Einschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="327"/>
-        <source>Timetable no: %1 =&gt; %2</source>
-        <translation>Stundenplan Nummer: %1 =&gt; %2</translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="471"/>
         <source>%1 h</source>
         <comment>hours</comment>
@@ -46621,6 +46671,12 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="294"/>
         <source>Your data cannot be processed - please modify it as instructed.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="327"/>
+        <source>Timetable no: %1 =&gt; %2</source>
+        <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
+        <translation type="unfinished">Stundenplan Nummer: %1 =&gt; %2</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="369"/>

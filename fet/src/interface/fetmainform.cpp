@@ -295,9 +295,9 @@ RandomSeedDialog::RandomSeedDialog(QWidget* parent): QDialog(parent)
 {
 	setWindowTitle(tr("Random seed"));
 
-	labelX=new QLabel(tr("Random seed X component:", "Means the X component of the random seed (random seed has 2 components, X and Y)"));
+	labelX=new QLabel(tr("Random seed X component:", "Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short"));
 	lineEditX=new QLineEdit(CustomFETString::number(XX));
-	labelY=new QLabel(tr("Random seed Y component:", "Means the Y component of the random seed (random seed has 2 components, X and Y)"));
+	labelY=new QLabel(tr("Random seed Y component:", "Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short"));
 	lineEditY=new QLineEdit(CustomFETString::number(YY));
 	okPB=new QPushButton(tr("OK"));
 	okPB->setDefault(true);
@@ -3465,7 +3465,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=QString("5. ")+tr("Use colors in FET graphical user interface will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("6. ")+tr("Language will be %1 (restart needed to activate language change)", "%1 is the default language").arg(QString("en_US")+QString(" (")+tr("US English")+QString(")"));
+	s+=QString("6. ")+tr("Language will be %1", "%1 is the default language").arg(QString("en_US")+QString(" (")+tr("US English")+QString(")"));
 	s+="\n";
 
 	s+=QString("7. ")+tr("The list of recently used files will be cleared");

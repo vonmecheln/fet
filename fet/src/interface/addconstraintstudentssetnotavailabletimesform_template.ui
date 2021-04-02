@@ -117,7 +117,7 @@
      <item row="0" column="0">
       <widget class="QPushButton" name="setAllAvailablePushButton">
        <property name="text">
-        <string>Set all available</string>
+        <string comment="It refers to time slots">Set all available</string>
        </property>
       </widget>
      </item>
@@ -131,7 +131,7 @@
      <item row="1" column="0">
       <widget class="QPushButton" name="setAllNotAvailablePushButton">
        <property name="text">
-        <string>Set all not available</string>
+        <string comment="It refers to time slots">Set all not available</string>
        </property>
       </widget>
      </item>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="This is the title of the dialog to add a new constraint of this type"> Add activities not overlapping</string>
+   <string extracomment="This is the title of the dialog to add a new constraint of this type">Add activities not overlapping</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">

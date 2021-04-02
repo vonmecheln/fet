@@ -723,7 +723,7 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else{
 		QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"
 		 " is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work."
-		 ". Probably the constraint can be modified from the specific constraint dialog."));
+		 " Probably the constraint can be modified from the specific constraint dialog."));
 		//assert(0);
 		//exit(1);
 	}
