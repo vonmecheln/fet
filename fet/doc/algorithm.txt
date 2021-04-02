@@ -8,4 +8,4 @@ The important code is in src/engine/generate.cpp. Please e-mail me for details o
 join the mailing list. The algorithm mimics the operation of a human timetabler, I think.
 
 When placing an activity, I choose the place with lowest number of conflicting activities and
-recursively replace them. I use a tabu list with size 300 to avoid cycles.
+recursively replace them. I use a tabu list with size 200 to avoid cycles.

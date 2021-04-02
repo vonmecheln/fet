@@ -305,9 +305,45 @@ void Rules::kill() //clears memory for the rules, destroyes them
 	while(!subjectTagsList.isEmpty())
 		delete subjectTagsList.takeFirst();
 
+
+
 	//Years
-	while(!yearsList.isEmpty())
-		delete yearsList.takeFirst();
+	/*while(!yearsList.isEmpty())
+		delete yearsList.takeFirst();*/
+		
+	//students sets
+	QList<StudentsYear*> years;
+	QList<StudentsGroup*> groups;
+	QList<StudentsSubgroup*> subgroups;
+	foreach(StudentsYear* year, yearsList){
+		if(!years.contains(year))
+			years.append(year);
+		foreach(StudentsGroup* group, year->groupsList){
+			if(!groups.contains(group))
+				groups.append(group);
+			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+				if(!subgroups.contains(subgroup))
+					subgroups.append(subgroup);
+			}
+		}
+	}
+	foreach(StudentsYear* year, years){
+		assert(year!=NULL);
+		delete year;
+	}
+	foreach(StudentsGroup* group, groups){
+		assert(group!=NULL);
+		delete group;
+	}
+	foreach(StudentsSubgroup* subgroup, subgroups){
+		assert(subgroup!=NULL);
+		delete subgroup;
+	}
+	
+	yearsList.clear();
+		
+		
+		
 
 	//Activities
 	while(!activitiesList.isEmpty())
@@ -1026,6 +1062,13 @@ bool Rules::removeYear(const QString& yearName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
+			if(yearName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
 			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
 			if(yearName == crt_constraint->students){
@@ -1094,6 +1137,11 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialYearName == crt_constraint->students)
+				crt_constraint->students=finalYearName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
@@ -1238,6 +1286,13 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
+			if(groupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
 			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
 			if(groupName == crt_constraint->students){
@@ -1331,6 +1386,11 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialGroupName == crt_constraint->students)
+				crt_constraint->students=finalGroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
@@ -1445,6 +1505,13 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
+			if(subgroupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY){
 			ConstraintStudentsSetEarly* crt_constraint=(ConstraintStudentsSetEarly*)ctr;
 			if(subgroupName == crt_constraint->students){
@@ -1526,6 +1593,11 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialSubgroupName == crt_constraint->students)
+				crt_constraint->students=finalSubgroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}

@@ -920,4 +920,7 @@ Versions 5.1.0 -
 	- Minor cosmetic changes in code by Volker Dirr.
 	- Constraint students (set) min hours daily (suggested by Zsolt Udvari).
 	- Improved automatic generation.
+- Version 5.1.1
+	- Bug fixes (students sets).
+	- Division of years automatically (suggested by more users).
 	

@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Years of students</string>
+        <string>Years (forms, classes) of students</string>
     </property>
     <grid>
         <property name="name">
@@ -29,12 +29,28 @@
                 <cstring>yearsListBox</cstring>
             </property>
         </widget>
-        <widget class="QPushButton" row="1" column="1">
+        <widget class="QPushButton" row="6" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>removeYearPushButton</cstring>
+                <cstring>closePushButton</cstring>
             </property>
             <property name="text">
-                <string>Remove current</string>
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>deactivateStudentsPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>De-activate all activities for selected students year</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="0" column="1">
+            <property name="name">
+                <cstring>detailsTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
             </property>
         </widget>
         <widget class="QPushButton" row="1" column="0">
@@ -42,7 +58,15 @@
                 <cstring>addYearPushButton</cstring>
             </property>
             <property name="text">
-                <string>Add year</string>
+                <string>Add year (form, class)</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="1">
+            <property name="name">
+                <cstring>removeYearPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Remove current</string>
             </property>
         </widget>
         <widget class="QPushButton" row="2" column="0">
@@ -61,36 +85,20 @@
                 <string>Sort alphabetically</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="0" column="1">
+        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>detailsTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>closePushButton</cstring>
+                <cstring>divisionsPushButton</cstring>
             </property>
             <property name="text">
-                <string>Close</string>
+                <string>NEW: Divide year automatically by selecting categories</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>activateStudentsPushButton</cstring>
             </property>
             <property name="text">
                 <string>Activate all activities for selected students year</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>deactivateStudentsPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>De-activate all activities for selected students year</string>
             </property>
         </widget>
     </grid>
@@ -144,6 +152,12 @@
         <receiver>YearsForm_template</receiver>
         <slot>deactivateStudents()</slot>
     </connection>
+    <connection>
+        <sender>divisionsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>YearsForm_template</receiver>
+        <slot>divideYear()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>yearsListBox</tabstop>
@@ -162,6 +176,7 @@
     <slot>sortYears()</slot>
     <slot>activateStudents()</slot>
     <slot>deactivateStudents()</slot>
+    <slot>divideYear()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

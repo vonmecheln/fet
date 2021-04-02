@@ -45,7 +45,7 @@
 
 Q: What is the organization of FET input data?
 
-A: - Students - organized into sets (years, containing groups, containing subgroups).
+A: - Students - organized into sets (years (or forms, or classes), containing groups, containing subgroups).
 
 - Teachers.
 
@@ -97,6 +97,8 @@ Activity1: teacher A, group girls, subject sport;
 Activity2: teacher B, group boys, subject sport;
 
 Activity3: teacher C, group physics, subject optional physics.
+
+NEW: the thing can be automated now. Select year-&gt;divide in the years dialog.
 
 
 
@@ -199,7 +201,7 @@ A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPrefe
 
 
 
-this documentation by Liviu Lalescu, reviewed and modified - 2 August 2007</string>
+this documentation by Liviu Lalescu, reviewed and modified - 10 August 2007</string>
             </property>
         </widget>
     </grid>

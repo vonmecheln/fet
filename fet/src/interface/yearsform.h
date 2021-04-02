@@ -29,6 +29,8 @@ public:
 	
 	void activateStudents();
 	void deactivateStudents();
+	
+	void divideYear();
 };
 
 #endif

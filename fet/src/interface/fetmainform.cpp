@@ -221,7 +221,7 @@ void FetMainForm::httpDone(bool error)
 	
 		if(internetVersion!=FET_VERSION){
 			QMessageBox::information(this, QObject::tr("FET information"),
-			 QObject::tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/ .\n\n"
+			 QObject::tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/\n\n"
 			 "You have to manually download and install (open the FET webpage in an internet browser). "
 			 "Please read the information on web page regarding the newer version and choose whether to keep you current version or upgrade."
 			 " You might need to hit Refresh in your web browser if links do not work"

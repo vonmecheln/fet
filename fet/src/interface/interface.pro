@@ -144,7 +144,8 @@ SOURCES += fet.cpp \
 		   teachersstatisticsform.cpp \
 		   subjectsstatisticsform.cpp \
 		   studentsstatisticsform.cpp \
-		   httpget.cpp
+		   httpget.cpp \
+		   splityearform.cpp
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
@@ -286,7 +287,8 @@ HEADERS += fet.h \
 		   teachersstatisticsform.h \
 		   subjectsstatisticsform.h \
 		   studentsstatisticsform.h \
-		   httpget.h
+		   httpget.h \
+		   splityearform.h
 TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_ca.ts \
                 ../../translations/fet_fr.ts \
@@ -422,7 +424,8 @@ FORMS3 += helpfaqform_template.ui \
 		   modifyconstraintactivitiessamestartingtimeform_template.ui \
 		   modifyconstraintactivitiessamestartinghourform_template.ui \
 		   institutionnameform_template.ui \
-		   commentsform_template.ui
+		   commentsform_template.ui \
+		   splityearform_template.ui
 TEMPLATE = app 
 CONFIG += release \
           warn_on \

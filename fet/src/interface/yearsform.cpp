@@ -17,8 +17,9 @@
 #include "timetable.h"
 #include "fet.h"
 #include "yearsform.h"
-//#include "fetmainform.h"
 #include "studentsset.h"
+
+#include "splityearform.h"
 
 #include <q3listbox.h>
 #include <qinputdialog.h>
@@ -147,4 +148,17 @@ void YearsForm::deactivateStudents()
 	QString yearName=yearsListBox->currentText();
 	int count=gt.rules.deactivateStudents(yearName);
 	QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("De-activated a number of %1 activities").arg(count));
+}
+
+void YearsForm::divideYear()
+{
+	if(yearsListBox->currentItem()<0){
+		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Invalid selected year"));
+		return;
+	}
+	
+	QString yearName=yearsListBox->currentText();	
+	
+	SplitYearForm* form=new SplitYearForm(yearName);
+	form->exec();
 }
