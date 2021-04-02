@@ -37,6 +37,8 @@
 #include <QList>
 
 class AddConstraintActivityPreferredTimesForm : public AddConstraintActivityPreferredTimesForm_template  {
+	Q_OBJECT
+
 public:
 	AddConstraintActivityPreferredTimesForm();
 	~AddConstraintActivityPreferredTimesForm();

@@ -24,9 +24,9 @@
 #endif
 #include <assert.h>
 
-#ifdef WIN32
+/*#ifdef WIN32
 #define for		if(0);else for
-#endif
+#endif*/
 
 #include <stdio.h>
 #include <string.h>

@@ -43,7 +43,7 @@ TeachersStatisticsForm::TeachersStatisticsForm()
 	
 	QStringList columns;
 	columns<<QObject::tr("Teacher");
-	columns<<QObject::tr("No. of sub-activities");
+	columns<<QObject::tr("No. of activities");
 	columns<<QObject::tr("No. of hours");
 	
 	tableWidget->setHorizontalHeaderLabels(columns);

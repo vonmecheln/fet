@@ -5,7 +5,8 @@ PLEASE E-MAIL THE AUTHOR OR THE MAILING LIST IF YOU WANT TO
 TRANSLATE FET INTO YOUR LANGUAGE. ANOTHER PERSON MIGHT WORK
 ON THE SAME TRANSLATION AS YOU AND TIME MIGHT BE WASTED.
 
-
+PLEASE FOLLOW THE ENGLISH WORDS AND DO NOT TRANSLATE A SINGLE
+TERM INCOMPLETELY. EITHER TRANSLATE IT OR NOT, BUT NOT PARTIALLY.
 
 STEP 1.
 
@@ -61,13 +62,21 @@ Some other details follow:
  skip also fields you cannot translate, they will remain in English. But let them
  marked as untranslated (do NOT press Ctrl+Enter on an unfinished/untranslated field,
  skip it with the mouse)
- 
+
+ Important note: maybe it is best to translate, in FetMainForm_template, only the field "Language" 
+ both in your language and in English, separated by a slash (like: Limba/Language).
+ Preferrably keep language names untranslated (or translat them as original), because people might choose
+ a wrong language and become stucked.
+
  Important: please take care of difference between activity and activities,
  teacher and teachers, students and students set, time (day+hour) and hour (alone). These 
  are very important differences in constraints.
  
- Please keep the length of fields in fetmainform_template to a minimum,
- otherwise they will look too big.
+ Important: indications for abbreviations: T means teacher, S subject, ST subject tag, St students, 
+ D duration, TD total duration, A active.
+ 
+ Maybe try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
+ to a minimum, otherwise they will look too big.
  
  Please try to follow the original (English) line arrangement. That is, if you 
  meet: "Current activity's <lf>
@@ -76,6 +85,8 @@ Some other details follow:
  For instance, the translation would be:
  	"Descrierea activitatii
  	curente"
+	
+ sp means space, please leave a space in your translation when seeing it, at the corresponding position.
  
  Please take care to punctuation, because Linguist requires it. You have to end 
  each translation with the same punctuation mark as the English one. For 
@@ -84,6 +95,9 @@ Some other details follow:
  would become:
  	"Conflicte obligatorii:"
  If you don't do that, you will get an exclamation mark for this translation.
+ 
+ Please translate a field preferably word-by-word as in English, and if you
+ translate a field, translate it completely.
  
  You will have to save the file (in Qt Linguist) after you have done the 
  modifications (I usually save it every 10 minutes).

@@ -1081,4 +1081,7 @@ Versions 5.3.0 - 5.3.6
 	and neither is semicolon ; because the html code does not work correctly
 - Version 5.4.5
 	- Minor cosmetic changes
+- Version 5.4.6
+	- Minor cosmetic changes
+	- Improvements in Spanish translation by Jose Cesar Fernandez Lopez
 	

@@ -116,7 +116,9 @@
                         <string>You must use weight percentage 100%, because
 otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
-lower it as you find new timetables. Note: teacher not 
+lower it as you find new timetables. The default 3 given
+here might be too low for your school, in which case you 
+need to use higher values. Note: teacher not 
 available and break are not counted as gaps.</string>
                     </property>
                 </widget>

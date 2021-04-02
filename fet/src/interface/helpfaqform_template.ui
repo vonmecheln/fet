@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 27 September 2007
+this documentation by Liviu Lalescu, reviewed and modified - 29 September 2007
 
 --------
 
@@ -53,7 +53,7 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 
 - Subjects (the names of the possible courses, eg. Maths, Physics, etc.).
 
-- Subject tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity)
+- Subject tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity). A better name for them would have been "Activity tags", but now it is too late to fix that.
 
 - Rooms (classrooms).
 
@@ -206,7 +206,7 @@ Is FET the first free timetabling software (GNU/GPL)? Hmmm... the first one was 
 
 Q: Help on ConstraintMinNDaysBetweenActivities.
 
-A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, it does not allow the distance(in days) between them to be less than N. If you specify N=1, then this constraint means that no two activities can be scheduled in the same day. N=2 means that each two subactivities must be separated by at least one day
+A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, it does not allow the distance(in days) between them to be less than N. If you specify N=1, then this constraint means that no two activities can be scheduled in the same day. N=2 means that each two activities must be separated by at least one day
 
 Example: 3 activities and N=2. Then, one can place them on Monday, Wednesday and Friday (5 days week).
 
@@ -216,7 +216,7 @@ The weight is recommended to be between 95.0%-100.0%. The best might be 99.75% o
 
 You can specify consecutive if same day. Please be careful, even if constraint min n days between activities has 0% weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find a timetable with the two activities in the same day, separated by break, not available or other activities, even if the constraint has weight 0%, if you select consecutive if same day.
 
-Currently FET can put at most 2 activities in the same day if "consecutive if same day" is true. FET cannot put 3 or more subactivities in the same day if "consecutive if same day" is true.
+Currently FET can put at most 2 activities in the same day if "consecutive if same day" is true. FET cannot put 3 or more activities in the same day if "consecutive if same day" is true.
 
 ------------------------------------------------------------------------------
 

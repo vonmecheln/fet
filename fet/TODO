@@ -26,7 +26,7 @@ it would be really very helpfull for me.
 
 ----------------------------------------------------------------------------------
 
-From Danail Svoboden:
+From Danail Traichev:
 
 > Another sweet feature of FET will be the ability to load its data from
 > CSV or simple text files. This will make import from other programs a
@@ -39,6 +39,31 @@ From Danail Svoboden:
 
 > And another simple feature - to remember and open the last timetable
 > file :-)
+
+> If you make it how it is now with years, groups and subgroups, it will not
+> be complicated for entering and even will not need change in most
+> constraint dialogs. What I mean - define "groups of subjects", and allow
+> "group of subjects" name to be used in every place where subject can be
+> used. Much  like it is now with student sets - both student years, groups
+> and subgroups are placed in one control and added from one place.
+>
+> But of course, I don't know how this will fit with FET internals. And FET
+> is fine even without this. It simple will make entering constraints a bit
+> easy. The other posibility is if every activity constraint dialog has a
+> posibility to select multiple activities, and to filter them by "subject
+> group", or at least by "selected subjects". That will make entering
+> constraints like in my case easy.
+
+----------------------------------------------------------------------------------
+
+From Volker Dirr (29 September 2007):
+
+Maybe do the "not avalible" constrains like constarint "activity perferd
+times". (so a timetable with many "yes" and "no")
+the advantage is:
+- don´t need to add two constarints if a teacher/student/room is not
+avalible at two days.
+- no missanderstandig with the periods (is not avalible from X to Y)
 
 ----------------------------------------------------------------------------------
 

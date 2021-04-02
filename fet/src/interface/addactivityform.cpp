@@ -590,8 +590,8 @@ void AddActivityForm::help()
 	
 	 "You can check/uncheck show years, show groups or show subgroups.\n\n"
 	
-	 "If you split an activity into more sub-activities per week, you have a multitude of choices:\n"
-	 "You can choose the minimum distance in days between each pair of subactivities."
+	 "If you split a larger activity into more activities per week, you have a multitude of choices:\n"
+	 "You can choose the minimum distance in days between each pair of activities."
 	 " Please note that a minimum distance of 1 means that the activities must not be in the same day, "
 	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday "
 	 " to Wednesday for instance is 2 days), etc.\n\n"

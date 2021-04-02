@@ -43,7 +43,7 @@ SubjectsStatisticsForm::SubjectsStatisticsForm()
 	
 	QStringList columns;
 	columns<<QObject::tr("Subject");
-	columns<<QObject::tr("No. of sub-activities");
+	columns<<QObject::tr("No. of activities");
 	columns<<QObject::tr("No. of hours");
 	
 	tableWidget->setHorizontalHeaderLabels(columns);

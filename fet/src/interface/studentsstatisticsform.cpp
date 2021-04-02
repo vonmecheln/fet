@@ -72,7 +72,7 @@ void StudentsStatisticsForm::checkBoxesModified()
 	
 	QStringList columns;
 	columns<<QObject::tr("Students set");
-	columns<<QObject::tr("No. of sub-activities");
+	columns<<QObject::tr("No. of activities");
 	columns<<QObject::tr("No. of hours");
 	
 	tableWidget->setHorizontalHeaderLabels(columns);

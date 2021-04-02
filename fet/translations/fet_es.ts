@@ -73,200 +73,212 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="267"/>
         <source>Add current activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir actividades actuales</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="268"/>
         <source>Current activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Actividades actuales</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="271"/>
         <source>Add current activity</source>
-        <translation type="unfinished">Añadir actividad actual</translation>
+        <translation>Añadir actividad actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="272"/>
         <source>Current activity</source>
-        <translation type="unfinished">Actividad actual</translation>
+        <translation>Actividad actual</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="300"/>
         <source>No teachers for this activity
 </source>
-        <translation type="unfinished">No hay profesor para esta actividad
+        <translation>No hay profesores para esta actividad
 </translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="302"/>
         <source>No teachers for these activities
 </source>
-        <translation type="unfinished"></translation>
+        <translation>No hay profesores para estas actividades
+</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="306"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Profesor=%1</translation>
+        <translation>Profesor=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="311"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">Materia=%1</translation>
+        <translation>Materia=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="314"/>
         <source>Subject tag=%1</source>
-        <translation type="unfinished">Identificad materia=%1</translation>
+        <translation>Identificador materia=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="319"/>
         <source>No students for this activity
 </source>
-        <translation type="unfinished">No hay alumnos para esta actividad
+        <translation>No hay alumnos para esta actividad
 </translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="321"/>
         <source>No students for these activities
 </source>
-        <translation type="unfinished"></translation>
+        <translation>No hay alumnos para estas actividades
+</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="325"/>
         <source>Students=%1</source>
-        <translation type="unfinished">Alumnos=%1</translation>
+        <translation>Alumnos=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="330"/>
         <source>Number of students=%1</source>
-        <translation type="unfinished">Número de alumnos=%1</translation>
+        <translation>Número de alumnos=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="334"/>
         <source>Number of students: automatically computed from component students sets</source>
-        <translation type="unfinished">Número de alumnos: calculado a partir de los grupos correspondientes</translation>
+        <translation>Número de alumnos: calculado a partir de los grupos de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="381"/>
         <source>Duration=%1</source>
-        <translation type="unfinished">Duración=%1</translation>
+        <translation>Duración=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="384"/>
         <source>Active activity</source>
-        <translation type="unfinished">Actividad activa</translation>
+        <translation>Actividad activa</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="388"/>
         <source>Non-active activity</source>
-        <translation type="unfinished">Actividad no activa</translation>
+        <translation>Actividad no activa</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="351"/>
         <source>This larger activity will be split into %1 smaller activities per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta actividad más grande será partida en %1 actividades pequeñas por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="359"/>
         <source>The distance between any pair of activities must be at least %1 days</source>
-        <translation type="unfinished"></translation>
+        <translation>La distancia entre un par de actividades debe ser al menos de %1 días</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="362"/>
         <source>Weight percentage of added min n days constraint: %1%</source>
-        <translation type="unfinished">Restricción de mín n días en porcentaje: %1%</translation>
+        <translation>Restricción añadida de mín n días en porcentaje: %1%</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="366"/>
         <source>If activities on same day, then place activities consecutive, in a bigger duration lesson</source>
-        <translation type="unfinished">Si las actividades están en el mismo día, entonces hacerlas consecutivas</translation>
+        <translation>Si las actividades están en el mismo día, entonces hacerlas consecutivas</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="379"/>
         <source>Componenent %1:</source>
-        <translation type="unfinished">Componente %1:</translation>
+        <translation>Componente %1:</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="561"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="405"/>
         <source>Invalid weight (percentage) for added constraint min n days between activities</source>
-        <translation type="unfinished">Porcentaje inválido para restricción de mín n días entre actividades</translation>
+        <translation>Porcentaje inválido para restricción de mín n días entre actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="498"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="413"/>
         <source>Do you really want to add activity with no teacher(s)?</source>
-        <translation type="unfinished">¿Realmente necesita una actividad sin profesor?</translation>
+        <translation>¿Realmente necesita una actividad sin profesor(es)?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="423"/>
         <source>Too many teachers for an activity. The current maximum is %1.
 If you really need more teachers per activity, please talk to the author</source>
-        <translation type="unfinished">Demasiados profesores para una actividad. El máximo es %1.
+        <translation>Demasiados profesores para una actividad. El máximo es %1.
 Si realmente necesita eso comuníquese con el autor</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="438"/>
         <source>Invalid subject</source>
-        <translation type="unfinished">Materia inválida</translation>
+        <translation>Materia inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="447"/>
         <source>Invalid subject tag</source>
-        <translation type="unfinished">Identificador de materia no válido</translation>
+        <translation>Identificador de materia no válido</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="455"/>
         <source>Do you really want to add activity with no student set(s)?</source>
-        <translation type="unfinished">¿Realmente quiere añadir actividades sin grupo de alumnos?</translation>
+        <translation>¿Realmente quiere añadir actividades sin grupo(s) de alumnos?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="472"/>
         <source>Invalid duration</source>
-        <translation type="unfinished">Duración no válida</translation>
+        <translation>Duración no válida</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="499"/>
         <source>This activity already exists. Insert it again?</source>
-        <translation type="unfinished">Esta actividad ya existe. ¿Insertarla de nuevo?</translation>
+        <translation>Esta actividad ya existe. ¿Insertarla de nuevo?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="500"/>
         <source>Yes</source>
-        <translation type="unfinished">Si</translation>
+        <translation>Si</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="500"/>
         <source>No</source>
-        <translation type="unfinished">No</translation>
+        <translation>No</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="512"/>
         <source>Activity added</source>
-        <translation type="unfinished">Actividad añadida</translation>
+        <translation>Actividad añadida</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="514"/>
         <source>Activity NOT added - please report error</source>
-        <translation type="unfinished">Actividad NO añadida - informe del error</translation>
+        <translation>Actividad NO añadida - informe del error</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="559"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
-        <translation type="unfinished">Añadida actividad partida. FET actualmente no puede comprobar duplicados. Sea cuidadoso</translation>
+        <translation>Añadida actividad partida. FET actualmente no puede comprobar duplicados en este caso. Sea cuidadoso y compruebe las actividades después de añadir todas las actividades</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="561"/>
         <source>Split activity NOT added - error???</source>
-        <translation type="unfinished">Actividad partida no añadida - error???</translation>
+        <translation>Actividad partida NO añadida - error???</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="643"/>
+        <source>FET - help on adding activity(ies)</source>
+        <translation>FET - ayuda para añadir actividad(es)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="649"/>
+        <source>OK</source>
+        <translation>Vale</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="638"/>
@@ -278,8 +290,8 @@ The same procedure (double click or Enter) applies to adding a students set or r
 
 You can check/uncheck show years, show groups or show subgroups.
 
-If you split an activity into more sub-activities per week, you have a multitude of choices:
-You can choose the minimum distance in days between each pair of subactivities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday  to Wednesday for instance is 2 days), etc.
+If you split a larger activity into more activities per week, you have a multitude of choices:
+You can choose the minimum distance in days between each pair of activities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday  to Wednesday for instance is 2 days), etc.
 
  If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min n days with min days = 2 and weight 100%. But if you are not sure that  a timetable exists with this condition, you can lower it by the following procedure: add a constraint min n days with minimum days = 1 and weight 100% and another constraint (which has to be added manually, because the add activity dialog has only one constraint possible) with min days 2 and weight for instance 95% or lower
 
@@ -296,23 +308,13 @@ Note: You cannot add &apos;consecutive if same day&apos; with min n days=0. If y
 Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="643"/>
-        <source>FET - help on adding activity(ies)</source>
-        <translation type="unfinished">FET - ayuda para añadir actividades</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addactivityform.cpp" line="649"/>
-        <source>OK</source>
-        <translation type="unfinished">Vale</translation>
-    </message>
 </context>
 <context>
     <name>AddActivityForm_template</name>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="16"/>
         <source>FET - add new activity dialog</source>
-        <translation>FET - añadir nuevo diálogo de actividad</translation>
+        <translation>FET - diálogo añadir actividad</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="239"/>
@@ -669,6 +671,24 @@ encuentra una solución, quizás debas retocar esta característica</translation
     </message>
 </context>
 <context>
+    <name>AddConstraintActivitiesPreferredTimesForm</name>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="192"/>
+        <source>FET question</source>
+        <translation type="unfinished">FET pregunta</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="162"/>
+        <source>Are you sure you want to add this constraint for all activities? (no teacher, students, subject or subject tag specified)</source>
+        <translation>¿Está seguro de querer añadir esta restricción para todas las actividades? (No se especificó profesor, alumnos, materia o identificador)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="193"/>
+        <source>Warning: 0 slots selected. Are you sure?</source>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+    </message>
+</context>
+<context>
     <name>AddConstraintActivitiesPreferredTimesForm_template</name>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="16"/>
@@ -676,17 +696,17 @@ encuentra una solución, quizás debas retocar esta característica</translation
         <translation>FET - Añadir una restricción nueva de tiempos preferidos para actividades</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="27"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="81"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="35"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="73"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="65"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="49"/>
         <source>100</source>
         <translation>100</translation>
     </message>
@@ -711,9 +731,16 @@ encuentra una solución, quizás debas retocar esta característica</translation
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="57"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="151"/>
+        <source>Instructions: you can choose a set of activities with a certain teacher (or
+blank for all teachers), students set, subject and subject tag.</source>
+        <translation>Instrucciones: puede elegir un conjunto de actividades con un profesor
+(o vacío para todos los profesores), grupos alumnos, materias e identificadores.</translation>
     </message>
 </context>
 <context>
@@ -795,49 +822,54 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <translation>Todas las actividades (doble click o Entrar añade)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="184"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="122"/>
         <source>New Item</source>
         <translation>Nuevo elemento</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="110"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="205"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="128"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="223"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="141"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="236"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="154"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="249"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="178"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="116"/>
         <source>Simultaneous (dbl. click or Enter removes)</source>
         <translation>Simultáneos (doble click o Entrar elimina)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="204"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="142"/>
         <source>Clear</source>
         <translation>Eliminar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="238"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="176"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="230"/>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="168"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="186"/>
+        <source>Filter</source>
+        <translation>Filtro</translation>
     </message>
 </context>
 <context>
@@ -943,27 +975,27 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="109"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="125"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="138"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="151"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="159"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Identificador materia</translation>
     </message>
 </context>
 <context>
@@ -1026,27 +1058,27 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="192"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtro</translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="208"/>
         <source>Students set</source>
-        <translation type="unfinished">Grupo de alumnos</translation>
+        <translation>Grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="221"/>
         <source>Teacher</source>
-        <translation type="unfinished">Profesor</translation>
+        <translation>Profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="234"/>
         <source>Subject</source>
-        <translation type="unfinished">Materia</translation>
+        <translation>Materia</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="242"/>
         <source>Subject tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta materia</translation>
     </message>
 </context>
 <context>
@@ -1125,6 +1157,19 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="182"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintActivityPreferredTimesForm</name>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="227"/>
+        <source>FET question</source>
+        <translation>FET pregunta</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredtimesform.cpp" line="228"/>
+        <source>Warning: 0 slots selected. Are you sure?</source>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -1256,7 +1301,7 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="16"/>
         <source>FET - Add new constraint break dialog</source>
-        <translation>FET - Añadir restricción de interrupción</translation>
+        <translation>FET - Añadir restricción de pausa</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="27"/>
@@ -1307,7 +1352,7 @@ ser cuidadoso con el orden, puede ser diferente de lo que necesitas...)</transla
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="148"/>
         <source>The important thing to notice is that a break does
 not induce gaps for teachers or students</source>
-        <translation>Lo importante es saber que una interrupción no
+        <translation>Lo importante es saber que una pausa no
 introduce huecos para los profesores o alumnos</translation>
     </message>
 </context>
@@ -1321,69 +1366,84 @@ introduce huecos para los profesores o alumnos</translation>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="41"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation>Todas las actividades (doble click o Entrar añade)</translation>
+        <translation type="obsolete">Todas las actividades (doble click o Entrar añade)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="180"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="263"/>
         <source>New Item</source>
         <translation>Nuevo elemento</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="61"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="27"/>
         <source>If activities on same day,
 force activities consecutive</source>
         <translation>Si las actividades coinciden en el mismo día,
 forzar el que sean consecutivas</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="81"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="47"/>
         <source>Add constraint</source>
         <translation>Añadir restricción</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="89"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="55"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="121"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="87"/>
         <source>95.0</source>
         <translation>95.0</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="150"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="116"/>
         <source>Min days</source>
         <translation>Mínimo de días</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="174"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation>Seleccionado (doble click o Entrar para eliminar)</translation>
+        <translation type="obsolete">Seleccionado (doble click o Entrar para eliminar)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="202"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="145"/>
         <source>Subject tag</source>
         <translation>Identificador materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="220"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="163"/>
         <source>Students set</source>
         <translation>Grupo de alumnos</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="233"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="176"/>
         <source>Subject</source>
         <translation>Materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="246"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="189"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="113"/>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 95.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 95.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="126"/>
+        <source>Filter</source>
+        <translation>Filtro</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="223"/>
+        <source>All activities (dbl. click adds)</source>
+        <translation>Todas actividades (dbl. click añadir)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="257"/>
+        <source>Selected (dbl. click removes)</source>
+        <translation>Seleccionado (dbl. click eliminar)</translation>
     </message>
 </context>
 <context>
@@ -1487,7 +1547,7 @@ se conseguirán horarios  bastante malos.
 Actualmente el algoritmo solo acepta una
 restricción del 100% para este caso.
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos.  </translation>
+pausas no se tienen en cuenta como huecos.  </translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="121"/>
@@ -1634,7 +1694,7 @@ se conseguirán horarios  bastante malos.
 Actualmente el algoritmo solo acepta una
 restricción del 100% para este caso.
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos. </translation>
+pausas no se tienen en cuenta como huecos. </translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="130"/>
@@ -1690,7 +1750,7 @@ se conseguirán horarios  bastante malos.
 Actualmente el algoritmo solo acepta una
 restricción del 100% para este caso.
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos. </translation>
+pausas no se tienen en cuenta como huecos. </translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="89"/>
@@ -1857,7 +1917,7 @@ se conseguirán horarios  bastante malos.
 Actualmente el algoritmo solo acepta una
 restricción del 100% para este caso.
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos.  </translation>
+pausas no se tienen en cuenta como huecos.  </translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="155"/>
@@ -2206,30 +2266,47 @@ otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables. Note: teacher not 
 available and break are not counted as gaps.</source>
-        <translation>Se debe usar un porcentaje de 100%, porque
+        <translation type="obsolete">Se debe usar un porcentaje de 100%, porque
 de otra forma se conseguirán pésimos resutlados.
 Los tiempos no disponibles y las interrupciones no
 cuentan como hueco.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="139"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="141"/>
         <source>Weight (necessary: 100%)</source>
         <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="147"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="149"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="161"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="163"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="186"/>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="188"/>
         <source>Max gaps per week</source>
         <translation>Máximo de huecos por semana</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="116"/>
+        <source>You must use weight percentage 100%, because
+otherwise you will get poor timetables. Try to fix firstly
+a rather large value for max gaps per week and
+lower it as you find new timetables. The default 3 given
+here might be too low for your school, in which case you 
+need to use higher values. Note: teacher not 
+available and break are not counted as gaps.</source>
+        <translation>Debe usar una ponderación de 100%, porque
+de otra forma se conseguirán pésimos resultados.
+Intente un valor mayor de máximo de huecos por semana
+y bájelo si se encuentra solucionas. El valor 3, dado por
+omisión, puede ser muy bajo para su escuela, en cuyo caso 
+necesitará incrementarlo. Nota: las pausas y los espacios por
+profesores no disponibles no cuentan como huecos.</translation>
     </message>
 </context>
 <context>
@@ -2437,7 +2514,7 @@ otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables. Note: teacher not 
 available and break are not counted as gaps.</source>
-        <translation>Si es necesario usar únicamente una restricción
+        <translation type="obsolete">Si es necesario usar únicamente una restricción
 de este tipo, para la optimización se debe usar un
 porcentaje del 100% o se conseguirán resultados malos.
 Intente arreglarlo primero con valores más altos de huecos y
@@ -2445,9 +2522,28 @@ más bajos si se encuentran soluciones en nuevos horarios.
 Nota: Los casos de profesores indisponible no cuentan como hueco.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="152"/>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="153"/>
         <source>Max gaps per week</source>
         <translation>Máximo de huecos por semana</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="121"/>
+        <source>It is recommended to use only one constraint
+of this type. You must use weight percentage 100%,
+because otherwise you will get poor timetables. Try to 
+fix firstly a rather large value for max gaps per week and
+lower it as you find new timetables. The default given 
+here, 3, might be too low for your school and you might
+need to use higher values. Note: teacher not 
+available and break are not counted as gaps.</source>
+        <translation>Es recomendable usar una sola restricción de este tipo.
+Debe usar una ponderación de 100%, porque
+de otra forma se conseguirán pésimos resultados.
+Intente un valor mayor de máximo de huecos por semana
+y bájelo si se encuentra solucionas. El valor 3, dado por
+omisión, puede ser muy bajo para su escuela, en cuyo caso 
+necesitará incrementarlo. Nota: las pausas y los espacios por
+profesores no disponibles no cuentan como huecos.</translation>
     </message>
 </context>
 <context>
@@ -4561,7 +4657,7 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="179"/>
         <source>Language</source>
-        <translation>Idioma</translation>
+        <translation>Idioma/Language</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="209"/>
@@ -5136,7 +5232,7 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="509"/>
         <source>Max days per week for a teacher</source>
-        <translation>Máximo días por semana para profesor</translation>
+        <translation>Máximo días por semana para un profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="549"/>
@@ -5191,7 +5287,7 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="854"/>
         <source>Max hours daily for a students set</source>
-        <translation>Máximo horas diario para grupo de alumnos</translation>
+        <translation type="unfinished">Máximo horas diario para un grupo de alumnos</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="859"/>
@@ -5226,7 +5322,7 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="941"/>
         <source>Min hours daily for a teacher</source>
-        <translation>Mínimo horas diario para profesor</translation>
+        <translation>Mínimo horas diario para un profesor</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="589"/>
@@ -5271,7 +5367,7 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="664"/>
         <source>An activity has a preferred room</source>
-        <translation>Actividad que tiene aula preferida</translation>
+        <translation>Actividad que tiene un aula preferida</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="704"/>
@@ -6051,7 +6147,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <translation type="obsolete">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET es un software libre para generación de horarios automáticamente en escuelas, institutos y universidades.&lt;/p&gt;
@@ -6072,6 +6168,49 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Patrocina este proyecto: Puedes hacer una donación al autor, a los traductores, o a cualquiera relacionado con el software FET&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.3.7 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.0 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.1 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.2 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.3 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.4 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?}</translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.6 (September 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET es un software libre para generación de horarios automáticamente en escuelas, institutos y universidades.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5 (September 2007) - Consulte versión inglesa&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licenciado bajo GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Autor: Liviu Lalescu, Más detalles en http://lalescu.ro/liviu/ Para contactar con el autor encontrarás en esta página su dirección de correo electrónico&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Por favor mira contribuciones y traductores en la correspondiente pestaña&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET página web: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Este proyecto es software libre y su código es abierto. Estás invitado a contribuir. Cualquier esfuerzo será muy apreciado.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Patrocina este proyecto: Puedes hacer una donación al autor, a los traductores, o a cualquiera relacionado con el software FET&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.3.7 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.0 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.1 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.2 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.3 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.4 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {1&quot;?} {9p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {2002-2007&lt;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {5.4.6 ?} {2007)?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?}</translation>
+    </message>
 </context>
 <context>
     <name>HelpFaqForm_template</name>
@@ -6089,7 +6228,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 21 September 2007
+this documentation by Liviu Lalescu, reviewed and modified - 29 September 2007
 
 --------
 
@@ -6102,18 +6241,28 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 
 - Subjects (the names of the possible courses, eg. Maths, Physics, etc.).
 
+- Subject tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity). A better name for them would have been &quot;Activity tags&quot;, but now it is too late to fix that.
+
 - Rooms (classrooms).
 
-- Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on.
+- Activities: a coupling of one or more teachers, a subject and one or more students set. This is usually named a course, a lecture, a laboratory and so on. An activity can have optionally a subject tag, to help you with some constraints.
 
 - Constraints. They can be: time constraints (referring to the allocated day and hour) or space constraints (referring to rooms allocation). They have a weight percentage, from 0.0% to 100.0%. 100% means that the constraint will always be respected and if this constraint is impossible, FET will not be able to generate a timetable.
 
 
 -------------------------------------------------------------------------------
 
+Q: Why some activities appear indented while others not?
+
+A: The activities are indented for easier visualization. The non-indented ones are the representatives of a larger split activity (their id is the group id of the larger split activity), while indented ones are the other components of this larger split activity.
+
+-------------------------------------------------------------------------------
+
+
 Q: Is it possible to use non-integer weights for constraints?
 
 A: Yes. Using values like 99.75% might be good sometimes.
+
 
 -------------------------------------------------------------------------------
 
@@ -6245,7 +6394,7 @@ Is FET the first free timetabling software (GNU/GPL)? Hmmm... the first one was 
 
 Q: Help on ConstraintMinNDaysBetweenActivities.
 
-A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, it does not allow the distance(in days) between them to be less than N. If you specify N=1, then this constraint means that no two activities can be scheduled in the same day. N=2 means that each two subactivities must be separated by at least one day
+A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, it does not allow the distance(in days) between them to be less than N. If you specify N=1, then this constraint means that no two activities can be scheduled in the same day. N=2 means that each two activities must be separated by at least one day
 
 Example: 3 activities and N=2. Then, one can place them on Monday, Wednesday and Friday (5 days week).
 
@@ -6255,7 +6404,7 @@ The weight is recommended to be between 95.0%-100.0%. The best might be 99.75% o
 
 You can specify consecutive if same day. Please be careful, even if constraint min n days between activities has 0% weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find a timetable with the two activities in the same day, separated by break, not available or other activities, even if the constraint has weight 0%, if you select consecutive if same day.
 
-Currently FET can put at most 2 activities in the same day if &quot;consecutive if same day&quot; is true. FET cannot put 3 or more subactivities in the same day if &quot;consecutive if same day&quot; is true.
+Currently FET can put at most 2 activities in the same day if &quot;consecutive if same day&quot; is true. FET cannot put 3 or more activities in the same day if &quot;consecutive if same day&quot; is true.
 
 ------------------------------------------------------------------------------
 
@@ -6395,6 +6544,12 @@ weight = 99.99% means: In average FET retries 10000 times to place an activity w
 
 This is not 100% correct. Activities might get unallocated, and cycle reopened.
 
+-------------------------------------------------------------------------------
+
+Q: Help on constraint activities preferred times (a set of activities has a set of preferred times)
+
+A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and a subject tag (if empty, all subject tags) and a set of allowed days.
+
 -------------------------------------------------------------------------------</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6413,7 +6568,7 @@ This is not 100% correct. Activities might get unallocated, and cycle reopened.
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
-        <source>Updated: 21 September 2007
+        <source>Updated: 27 September 2007
 
 Instructions by Liviu Lalescu
 
@@ -6429,7 +6584,7 @@ You could try at first the 95% minimum recommended value, then highten the weigh
 
 You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)
 
-2) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
+2) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times (an activity has a set of preferred times) for the first three activities, with preferred times in the first half of the day and a weight percentage 100% or a bit lower. You could work with a text editor on the .fet file to add such constraints if this seems simpler. This approach worked very well with the sample German high-school data. Alternatevely, you might use constraint activities preferred times (a set of activities has a set of preferred times) with weight less than 100% for difficult subjects. This last approach is simpler to use, but the results might not be so satisfactory.
 
 3) From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred times to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.
 
@@ -6669,129 +6824,131 @@ del intervalo (no como 08:00-09:00 o como 13:45-14:55)</translation>
         <location filename="../src/interface/modifyactivityform.cpp" line="276"/>
         <source>No teachers for this activity
 </source>
-        <translation type="unfinished">No hay profesor para esta actividad
+        <translation>No hay profesores para esta actividad
 </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="278"/>
         <source>No teachers for these activities
 </source>
-        <translation type="unfinished"></translation>
+        <translation>No hay profesores para estas actividades
+</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="282"/>
         <source>Teacher=%1</source>
-        <translation type="unfinished">Profesor=%1</translation>
+        <translation>Profesor=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="286"/>
         <source>Subject=%1</source>
-        <translation type="unfinished">Materia=%1</translation>
+        <translation>Materia=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="289"/>
         <source>Subject tag=%1</source>
-        <translation type="unfinished">Identificad materia=%1</translation>
+        <translation>Identificador materia=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="294"/>
         <source>No students for this activity
 </source>
-        <translation type="unfinished">No hay alumnos para esta actividad
+        <translation>No hay alumnos para esta actividad
 </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="296"/>
         <source>No students for these activities
 </source>
-        <translation type="unfinished"></translation>
+        <translation>No hay alumnos para estas actividades
+</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="300"/>
         <source>Students=%1</source>
-        <translation type="unfinished">Alumnos=%1</translation>
+        <translation>Alumnos=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="305"/>
         <source>Number of students: computed from corresponding students sets</source>
-        <translation type="unfinished">Número de alumnos: calculado a partir de los grupos correspondientes</translation>
+        <translation>Número de alumnos: calculado a partir de los grupos correspondientes</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="309"/>
         <source>Number of students=%1</source>
-        <translation type="unfinished">Número de alumnos=%1</translation>
+        <translation>Número de alumnos=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="338"/>
         <source>Duration=%1</source>
-        <translation type="unfinished">Duración=%1</translation>
+        <translation>Duración=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="345"/>
         <source>Active activity</source>
-        <translation type="unfinished">Actividad activa</translation>
+        <translation>Actividad activa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="349"/>
         <source>Non-active activity</source>
-        <translation type="unfinished">Actividad no activa</translation>
+        <translation>Actividad no activa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="331"/>
         <source>This larger activity is split into %1 smaller activities per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta actividad más grande está partida en %1 actividades pequeñas por semana</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="336"/>
         <source>Componenent %1:</source>
-        <translation type="unfinished">Componente %1:</translation>
+        <translation>Componente %1:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="411"/>
         <source>FET question</source>
-        <translation type="unfinished">FET pregunta</translation>
+        <translation>FET pregunta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="370"/>
         <source>Do you really want to have the activity with no teacher(s)?</source>
-        <translation type="unfinished">¿Seguro que desea tener una actividad sin un profesor?</translation>
+        <translation>¿Seguro que desea tener una actividad sin un profesor(es)?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="403"/>
         <source>FET information</source>
-        <translation type="unfinished">FET información</translation>
+        <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="380"/>
         <source>Too many teachers for an activity. The current maximum is %1.
 If you really need more teachers per activity, please talk to the author</source>
-        <translation type="unfinished">Demasiados profesores para una actividad. El máximo es %1.
-Si realmente necesita eso comuníquese con el autor</translation>
+        <translation>Demasiados profesores para una actividad. El máximo es %1.
+Si realmente necesita más profesores, comuníquese con el autor</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="395"/>
         <source>Invalid subject</source>
-        <translation type="unfinished">Materia inválida</translation>
+        <translation>Materia inválida</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="404"/>
         <source>Invalid subject tag</source>
-        <translation type="unfinished">Identificador de materia no válido</translation>
+        <translation>Identificador materia no válido</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="412"/>
         <source>Do you really want to have the activity with no student set(s)?</source>
-        <translation type="unfinished">¿Seguro que quiere tener una actividad sin grupo de alumnos?</translation>
+        <translation>¿Seguro que quiere tener una actividad sin grupo(s) de alumnos?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="105"/>
         <source>Current activity</source>
-        <translation type="unfinished">Actividad actual</translation>
+        <translation>Actividad actual</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="107"/>
         <source>Current activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Actividades actuales</translation>
     </message>
 </context>
 <context>
@@ -6933,14 +7090,16 @@ y añada una actividad partida</translation>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="87"/>
         <source>Is split into ... activities per week.</source>
-        <translation type="unfinished"></translation>
+        <translation>Partido en ... actividades por semana.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="112"/>
         <source>This value cannot be changed. If you need to 
 modify it, please remove the corresponding 
 activities and add a new split activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Este valor no puede ser cambiado. Si necesita 
+modificarlo, elimine la actividad correspondiente 
+y añada una nueva actividad partida</translation>
     </message>
 </context>
 <context>
@@ -7042,6 +7201,24 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation>Ponderación (recomendado: 0.0%-100.0%)</translation>
+    </message>
+</context>
+<context>
+    <name>ModifyConstraintActivitiesPreferredTimesForm</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="253"/>
+        <source>FET question</source>
+        <translation>FET pregunta</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="223"/>
+        <source>Are you sure you want to add this constraint for all activities? (no teacher, students, subject or subject tag specified)</source>
+        <translation>¿Seguro que quiere añadir esta restricción para todas las actividades? (No se especificó profesor, alumnos, materia o identificador)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="254"/>
+        <source>Warning: 0 slots selected. Are you sure?</source>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
     </message>
 </context>
 <context>
@@ -7420,6 +7597,19 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     </message>
 </context>
 <context>
+    <name>ModifyConstraintActivityPreferredTimesForm</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="266"/>
+        <source>FET question</source>
+        <translation>FET pregunta</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimesform.cpp" line="267"/>
+        <source>Warning: 0 slots selected. Are you sure?</source>
+        <translation>Atención: 0 casillas seleccionadas. ¿Está seguro?</translation>
+    </message>
+</context>
+<context>
     <name>ModifyConstraintActivityPreferredTimesForm_template</name>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="16"/>
@@ -7548,7 +7738,7 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="16"/>
         <source>FET - Modify constraint break dialog</source>
-        <translation>FET - Modificar restricción de interrupción</translation>
+        <translation>FET - Modificar restricción de pausa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="27"/>
@@ -7599,7 +7789,8 @@ Si FET noencuentra una solución, quizás deba retocar esta característica</tra
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="148"/>
         <source>The important thing to notice is that a break does
 not induce gaps for teachers or students</source>
-        <translation>Lo importante es saber que una interrupción o rotura nointroduce huecos para los profesores o alumnos</translation>
+        <translation>Lo importante es saber que una pausa no
+cuenta como huecos para los profesores o alumnos</translation>
     </message>
 </context>
 <context>
@@ -7752,7 +7943,7 @@ Se debe usar un porcentaje de 100%, o de otro modo se conseguirán
 horarios  malos. Pora ahora, el algoritmo únicamente acepta valores
 de 100% para esta restricción. (O ninguna restricción)
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos.</translation>
+pausas no se tienen en cuenta como huecos.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="75"/>
@@ -7909,7 +8100,7 @@ se conseguirán horarios  bastante malos.
 Actualmente el algoritmo solo acepta una
 restricción del 100% para este caso.
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos. </translation>
+pausas no se tienen en cuenta como huecos. </translation>
     </message>
 </context>
 <context>
@@ -7965,7 +8156,7 @@ se conseguirán horarios  bastante malos.
 Actualmente el algoritmo solo acepta una
 restricción del 100% para este caso.
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos.  </translation>
+pausas no se tienen en cuenta como huecos.  </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="152"/>
@@ -8122,7 +8313,7 @@ se conseguirán horarios  bastante malos.
 Actualmente el algoritmo solo acepta una
 restricción del 100% para este caso.
 Nota: los grupos de estudiantes no disponibles y las
-interrupciones no se tienen en cuenta como huecos.</translation>
+pausas no se tienen en cuenta como huecos.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="130"/>
@@ -8472,8 +8663,10 @@ a rather large value for max gaps per week and
 lower it as you find new timetables. Note: teacher not 
 available and break are not counted as gaps.</source>
         <translation>Se debe usar un porcentaje de 100%, porque
-de otra forma se conseguirán pésimos resutlados.
-Los profesores no disponibles y las interrupciones no
+de otra forma se conseguirán pésimos resultados.
+Intente primero un valor mayor para hucos por semana
+y más bajo si se encuentran soluciones. Nota:
+Los profesores no disponibles y las pausas no
 cuentan como hueco.</translation>
     </message>
     <message>
@@ -8601,7 +8794,7 @@ empezar con 2 horas mínimas y subir si se encuentran soluciones</translation>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Ponderación (necesario: 100%)</translation>
+        <translation>Ponderación (necesario: 100%)</translation>
     </message>
 </context>
 <context>
@@ -8697,31 +8890,47 @@ otherwise you will get poor timetables. Try to fix firstly
 a rather large value for max gaps per week and
 lower it as you find new timetables. Note: teacher not 
 available and break are not counted as gaps.</source>
-        <translation>Es necesario emplear una sola restricción
+        <translation type="obsolete">Es necesario emplear una sola restricción
 de este tipo para que la optimización sea posible.
 Se debe emplear porcentajes de 100%. Y el ajuste
 debe ser progresivo, empleando valores altos y
 bajándolo si aparecen soluciones.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="87"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="86"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation>Ponderación (necesario: 100%)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="95"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="94"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="103"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="102"/>
         <source>Max gaps per week</source>
         <translation>Máximo de huecos por semana</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="149"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="148"/>
         <source>Current constraint</source>
         <translation>Restricción actual</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="67"/>
+        <source>It is recommended to use only one constraint
+of this type. You must use weight percentage 100%,
+because otherwise you will get poor timetables. Try to 
+fix firstly a rather large value for max gaps per week and
+lower it as you find new timetables. Note: teacher not 
+available and break are not counted as gaps.</source>
+        <translation>Es recomendable usar una sola restricción de este tipo.
+Debe usar una ponderación de 100%, porque
+de otra forma se conseguirán pésimos resultados.
+Intente un valor mayor de máximo de huecos por semana
+y bájelo si se encuentra solucionas. Nota: las pausas y los
+espacios por profesores no disponibles
+no cuentan como huecos.</translation>
     </message>
 </context>
 <context>
@@ -8943,7 +9152,7 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/engine/activity.cpp" line="329"/>
+        <location filename="../src/engine/activity.cpp" line="326"/>
         <source>Activity: </source>
         <translation>Actividad: </translation>
     </message>
@@ -8953,72 +9162,72 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
         <translation type="obsolete">Subactivdad: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6442"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6496"/>
         <source>T:</source>
-        <translation>T:</translation>
+        <translation>Pr:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="334"/>
+        <location filename="../src/engine/activity.cpp" line="331"/>
         <source> no teachers, </source>
         <translation> no profesores</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="338"/>
+        <location filename="../src/engine/activity.cpp" line="335"/>
         <source>S:</source>
-        <translation>S:</translation>
+        <translation>M:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="337"/>
+        <source>ST:</source>
+        <translation>IM:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/activity.cpp" line="338"/>
+        <source>St:</source>
+        <translation>Al:</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="340"/>
-        <source>ST:</source>
-        <translation>ST:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="341"/>
-        <source>St:</source>
-        <translation>St:</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/activity.cpp" line="343"/>
         <source> no students, </source>
         <translation> no alumnos, </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="348"/>
+        <location filename="../src/engine/activity.cpp" line="345"/>
         <source>Id:</source>
         <translation>Id:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="350"/>
+        <location filename="../src/engine/activity.cpp" line="347"/>
         <source>AGId:</source>
         <translation>AGId:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="352"/>
+        <location filename="../src/engine/activity.cpp" line="349"/>
         <source>D:</source>
         <translation>D:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="354"/>
+        <location filename="../src/engine/activity.cpp" line="351"/>
         <source>TD:</source>
-        <translation>TD:</translation>
+        <translation>DT:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="360"/>
+        <location filename="../src/engine/activity.cpp" line="354"/>
         <source>A: yes</source>
         <translation>A: si</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="362"/>
+        <location filename="../src/engine/activity.cpp" line="356"/>
         <source>A: no</source>
         <translation>A: no</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="365"/>
+        <location filename="../src/engine/activity.cpp" line="359"/>
         <source>NSt:</source>
-        <translation>NSt:</translation>
+        <translation>NAl:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="376"/>
+        <location filename="../src/engine/activity.cpp" line="375"/>
         <source>Activity:
 </source>
         <translation>Actividad:
@@ -9032,90 +9241,90 @@ aunque pueden ser demasiado grandes y hacer imposible el horario.</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="381"/>
+        <location filename="../src/engine/activity.cpp" line="380"/>
         <source>No teachers for this activity
 </source>
         <translation>No hay profesor para esta actividad
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="384"/>
+        <location filename="../src/engine/activity.cpp" line="383"/>
         <source>Teacher=</source>
         <translation>Profesor=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="385"/>
+        <location filename="../src/engine/activity.cpp" line="384"/>
         <source>Subject=</source>
         <translation>Materia=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="387"/>
+        <location filename="../src/engine/activity.cpp" line="386"/>
         <source>Subject tag=</source>
         <translation>Identificador materia=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="389"/>
+        <location filename="../src/engine/activity.cpp" line="388"/>
         <source>No students sets for this activity
 </source>
         <translation>No hay grupo alumnos para esta actividad
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="392"/>
+        <location filename="../src/engine/activity.cpp" line="391"/>
         <source>Students=</source>
         <translation>Alumnos=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="394"/>
+        <location filename="../src/engine/activity.cpp" line="393"/>
         <source>Id=</source>
         <translation>Id=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="396"/>
+        <location filename="../src/engine/activity.cpp" line="395"/>
         <source>Activity group id=</source>
         <translation>Grupo actividad id=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="398"/>
+        <location filename="../src/engine/activity.cpp" line="397"/>
         <source>Duration=</source>
         <translation>Duración=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="400"/>
+        <location filename="../src/engine/activity.cpp" line="399"/>
         <source>Total duration=</source>
         <translation>Duración total=</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="408"/>
+        <location filename="../src/engine/activity.cpp" line="402"/>
         <source>Active: yes
 </source>
         <translation>Activo: si
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="410"/>
+        <location filename="../src/engine/activity.cpp" line="404"/>
         <source>Active: no
 </source>
         <translation>Activo: no
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="422"/>
+        <location filename="../src/engine/activity.cpp" line="416"/>
         <source>Total number of students=%1</source>
         <translation>Número total de alumnos=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="434"/>
+        <location filename="../src/engine/activity.cpp" line="428"/>
         <source>Time constraints directly related to this activity:</source>
         <translation>Restricciones temporales relacionadas con esta actividad:</translation>
     </message>
     <message>
-        <location filename="../src/engine/activity.cpp" line="445"/>
+        <location filename="../src/engine/activity.cpp" line="439"/>
         <source>Space constraints directly related to this activity:</source>
         <translation>Restricciones de lugar relacionadas con esta actividad:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="212"/>
+        <location filename="../src/interface/fetmainform.cpp" line="227"/>
         <source>FET warning</source>
         <translation>FET advertencia</translation>
     </message>
@@ -9337,7 +9546,7 @@ Pruebe de nuevo cambiando esto</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1863"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
-        <translation>No puedo optimizar por una interrupción con porcentaje menor que 100%.</translation>
+        <translation>No puedo optimizar por una pausa con porcentaje menor que 100%. Actualmente FET solo puede trabajar con 100%. Modifique los datos para intentarlo de nuevo.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1908"/>
@@ -9659,17 +9868,17 @@ Please note that the default weight percentage of constraints min n days between
     <message>
         <location filename="../src/engine/rules.cpp" line="4443"/>
         <source>Constraint Break day corrupt,  day %1 is inexistent ... ignoring constraint</source>
-        <translation>Restricción de interrupción en día %1 no existe ... ignorando</translation>
+        <translation>Restricción de pausa errónea en día %1 no existe ... ignorando</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4459"/>
         <source>Constraint Break start hour corrupt, hour %! is inexistent ... ignoring constraint</source>
-        <translation>Restricción de interrupción, hora %! no existe ... ignorando</translation>
+        <translation>Restricción de pausa errónea, la hora %! no existe ... ignorando coacción</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4475"/>
         <source>Constraint Break end hour corrupt, hour %1 is inexistent ... ignoring constraint</source>
-        <translation>Restricción de interrupción, hora %1 no existe ... ignorando</translation>
+        <translation>Restricción de hora final errónea, hora %1 no existe ... ignorando</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4745"/>
@@ -9857,7 +10066,7 @@ no añadida - duplicada</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="116"/>
         <source>Basic compulsory constraints (space), WP:%1%</source>
-        <translation>Restricciones básicas obligatorias para lugar, WP:%1%</translation>
+        <translation>Restricciones básicas obligatorias para lugar, Pond:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="127"/>
@@ -9920,7 +10129,7 @@ no añadida - duplicada</translation>
         <translation>Restricción básica de lugar: el aula con nombre %1 tiene más de una actividad en el día %2, hora %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6870"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6924"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Esto incrementa el conflicto total por %1</translation>
     </message>
@@ -9930,9 +10139,9 @@ no añadida - duplicada</translation>
         <translation>Aula no disponible</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6796"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6850"/>
         <source>WP:%1%</source>
-        <translation>WP:%1%</translation>
+        <translation>Pond:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1810"/>
@@ -10020,7 +10229,7 @@ no añadida - duplicada</translation>
         <translation>Aula no disponible para %1 en día %2, hora %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6345"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6399"/>
         <source>FET error in data</source>
         <translation>FET errores en datos</translation>
     </message>
@@ -10064,7 +10273,7 @@ no añadida - duplicada</translation>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3720"/>
         <source>S:%1</source>
-        <translation>S:%1</translation>
+        <translation>M:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1220"/>
@@ -10099,7 +10308,7 @@ no añadida - duplicada</translation>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1807"/>
         <source>ST:%1</source>
-        <translation>ST:%1</translation>
+        <translation>IM:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1617"/>
@@ -10332,7 +10541,7 @@ a cualquier horario (respecto al tiempo)
         <translation>T:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6805"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6859"/>
         <source>Time constraint</source>
         <translation>Restricción temporal</translation>
     </message>
@@ -10436,7 +10645,7 @@ a cualquier horario (respecto al tiempo)
         <translation>roto por subgrupo: %1 en día %2, horas %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5750"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5804"/>
         <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
 %1</source>
         <translation>Las siguienes restricciones son erróneas.
@@ -10448,12 +10657,12 @@ a cualquier horario (respecto al tiempo)
         <translation>Las actividades comianzan la misma hora</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5803"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5857"/>
         <source>NA:%1</source>
         <translation>NA:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5805"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5859"/>
         <source>ID:%1</source>
         <translation>ID:%1</translation>
     </message>
@@ -10463,27 +10672,27 @@ a cualquier horario (respecto al tiempo)
         <translation>Actividades deben comenzar al mismo tiempo</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5821"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5875"/>
         <source>Number of activities=%1</source>
         <translation>Número de actividades=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5823"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5877"/>
         <source>Activity with id=%1</source>
         <translation>Actividad con id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5838"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5892"/>
         <source>T: </source>
         <translation>T: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5847"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5901"/>
         <source> , S: </source>
         <translation> , S: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5853"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5907"/>
         <source> , St: </source>
         <translation> , St: </translation>
     </message>
@@ -10493,7 +10702,7 @@ a cualquier horario (respecto al tiempo)
         <translation>La actividad con id=%1 no tiene el mismo momento de inicio que la id=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5951"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6005"/>
         <source>conflicts factor increase=%1</source>
         <translation>factor de conflicto incrementado=%1</translation>
     </message>
@@ -10520,7 +10729,7 @@ a cualquier horario (respecto al tiempo)
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1838"/>
         <source>broken:</source>
-        <translation>interrupción:</translation>
+        <translation>roto:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1658"/>
@@ -10598,7 +10807,7 @@ a cualquier horario (respecto al tiempo)
         <translation>Profesor máx %1 horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6795"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6849"/>
         <source>TN:%1</source>
         <translation>TN:%1</translation>
     </message>
@@ -10680,34 +10889,34 @@ a cualquier horario (respecto al tiempo)
     <message>
         <location filename="../src/interface/modifyconstraintbreakform.cpp" line="86"/>
         <source>Break</source>
-        <translation>Interrupción</translation>
+        <translation>Pausa</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2923"/>
         <source>Constraint break is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>La restricción de interrupción es errónea porque se refiere a días eliminados: Coacción:
+        <translation>La restricción de pausa es errónea porque se refiere a días eliminados. Coacción:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2930"/>
         <source>Constraint break is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>La restricción de interrupción es errónea porque se eliminó la hora. Coacción:
+        <translation>La restricción es errónea porque se eliminó la hora. Coacción:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2937"/>
         <source>Constraint break is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>La restricción de interrupción es errónea porque se eliminó la hora final. Coacción:
+        <translation>La restricción de pausa es errónea porque se eliminó la hora final. Coacción:
 %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2944"/>
         <source>Constraint break is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation>La restricción de interrupción es errónea porque las horas no son válidas. Coacción:
+        <translation>La restricción de pausa es errónea porque las horas no son válidas. Coacción:
 %1</translation>
     </message>
     <message>
@@ -10866,7 +11075,7 @@ a cualquier horario (respecto al tiempo)
         <translation>Restricción de mín de horas diarias para alumnos rotas en subgrupo: %1, día: %2, longitud=%3, conflicto=%4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6346"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6400"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
 %1</source>
         <translation>Las siguientes restricciones son erróneas:
@@ -10898,17 +11107,17 @@ a cualquier horario (respecto al tiempo)
         <translation>Act. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6451"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6505"/>
         <source>,S:</source>
-        <translation>,S:</translation>
+        <translation>,M:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6457"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6511"/>
         <source>,St:</source>
-        <translation>,St:</translation>
+        <translation>,Al:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5491"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5518"/>
         <source>must be scheduled at: </source>
         <translation>debe ser colocada en: </translation>
     </message>
@@ -10946,207 +11155,207 @@ a cualquier horario (respecto al tiempo)
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5161"/>
         <source>WP:%1</source>
-        <translation></translation>
+        <translation>Pond:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5533"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5560"/>
         <source>must be scheduled at:
 </source>
         <translation>debe ser colocada en: 
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5275"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5277"/>
         <source>Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Restricción temporal de actividad en hora preferente rota por actividad id=%1,  incrementa conflicto total por %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5407"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5434"/>
         <source>Constraint activities preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>La restricción de actividad preferida se refiere a un día eliminado.Coacción:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5414"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5441"/>
         <source>Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>La restricción es errónea porque se usa una hora preferida más tarde del último caso posible en el horario. Restricción:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5421"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5448"/>
         <source>Constraint activities preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>La restricción de actividad preferida se refiere a unas hora eliminada. Coacción:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5432"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5459"/>
         <source>Following constraint is wrong (refers to no activities. Please correct it):
 %1</source>
         <translation>La siguiente restricción es errónea:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5474"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5501"/>
         <source>Activities with </source>
         <translation>Actividades con </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5476"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5503"/>
         <source>teacher=%1, </source>
         <translation>profesor=%1  </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5478"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5505"/>
         <source>all teachers, </source>
         <translation>todos los profesores, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5480"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5507"/>
         <source>students=%1, </source>
         <translation>alumnos=%1 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5482"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5509"/>
         <source>all students, </source>
         <translation>todos los alumnos, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5484"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5511"/>
         <source>subject=%1, </source>
         <translation>materia=%1, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5486"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5513"/>
         <source>all subjects, </source>
         <translation>todas materias, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5488"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5515"/>
         <source>subject tag=%1, </source>
         <translation>Identificador=%1, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5490"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5517"/>
         <source>all subject tags, </source>
         <translation>todos identificadores, </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5514"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5541"/>
         <source>Activities with:</source>
         <translation>Actividades con:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5517"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5544"/>
         <source>Teacher=%1
 </source>
         <translation>Profesor=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5519"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5546"/>
         <source>All teachers
 </source>
         <translation>Todos profesores
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5521"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5548"/>
         <source>Students=%1
 </source>
         <translation>Alumnos=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5523"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5550"/>
         <source>All students
 </source>
         <translation>Todos los alumnos
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5525"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5552"/>
         <source>Subject=%1
 </source>
         <translation>Materia=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5527"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5554"/>
         <source>All subjects
 </source>
         <translation>Todas materias
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5529"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5556"/>
         <source>Subject tag=%1
 </source>
         <translation>Identificador=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5531"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5558"/>
         <source>All subject tags
 </source>
         <translation>Todos identificadores
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5631"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5659"/>
         <source>Time constraint activities preferred times broken for activity with id=%1,  increases conflicts total by %2</source>
         <translation>Restricción temporal de actividad en hora preferente rota por actividad id=%1,  incrementa conflicto toal por %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5800"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5854"/>
         <source>Activities same starting hour</source>
         <translation>Actividades con misma hora de comienzo</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5818"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5872"/>
         <source>Activities must have the same starting hour</source>
         <translation>Las actividades deben tener la misma hora de comienzo</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5948"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6002"/>
         <source>Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
         <translation>La actividad con id%1 no tienen la misma hora que id=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6058"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6112"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation>La siguiente restricción es errónea:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6067"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6121"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation>Las siguientes restricciones son erróneas (se refieren a las mismas actividades):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6098"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6152"/>
         <source>Constraint 2 activities consecutive: </source>
         <translation>Restricción de 2 actividades consecutivas: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6100"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6154"/>
         <source>first act. id:%1</source>
         <translation>primera act. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6102"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6156"/>
         <source>second act. id:%1</source>
         <translation>segunda act. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6113"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6167"/>
         <source>Constraint 2 activities consecutive (second activity must be placed after the first activity, possibly separated by breaks)</source>
-        <translation>Restricción 2 actividades consecutivos (segunda actividad debe ser colacada después de primera actividad... posiblemente separada por interrupción)</translation>
+        <translation>Restricción 2 actividades consecutivos (segunda actividad debe ser colacada después de primera actividad... posiblemente separada por pausas)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="130"/>
@@ -11159,7 +11368,7 @@ a cualquier horario (respecto al tiempo)
         <translation>Segunda actividad id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6259"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6313"/>
         <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
         <translation>Restricción de 2 actividades consecutivas rota por primera actividad con id=%1 y segunda actividad con id=%2, incrementa el conflicto total por un %3</translation>
     </message>
@@ -11200,7 +11409,7 @@ subactividades de la misman actividad partida</translation>
         <source>Cannot modify this activity, because it contains more than 10 subactivities.
 If you really need that, please talk to the author
 </source>
-        <translation>No puede modificar esta actividad porque contiene más de 10 subactividades.
+        <translation type="obsolete">No puede modificar esta actividad porque contiene más de 10 subactividades.
 Si realmente necesita esto, contacte con el autor
 </translation>
     </message>
@@ -11424,7 +11633,7 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING se debe incrementar</translation>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="222"/>
         <source>Please be careful - you are considering all the activities
 (no teacher, students, subject or subject tag specified)</source>
-        <translation>Sea cuidadoso - Tienen que considerar todas las actividades
+        <translation type="obsolete">Sea cuidadoso - Tienen que considerar todas las actividades
 (no se ha especificado materias, profesores, ... )</translation>
     </message>
     <message>
@@ -11433,7 +11642,7 @@ MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING se debe incrementar</translation>
         <translation>No suficientes slots (demasiados valores &quot;Si&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="233"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="239"/>
         <source>Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</source>
         <translation>Incremente la variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIMES</translation>
     </message>
@@ -11615,7 +11824,7 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too man
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform.cpp" line="66"/>
         <source>Students must begin activities as early as possible (permitted by not available and break)</source>
-        <translation>Los alumnos deben empezar las actividades tan pronto como sea posible (si es permitido por no disponible y las interrupciones)</translation>
+        <translation>Los alumnos deben empezar las actividades tan pronto como sea posible (si es permitido por los no disponibles y las pausas)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="91"/>
@@ -11655,7 +11864,7 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too man
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform.cpp" line="96"/>
         <source>Students set must begin activities as early as possible (permitted by not available and break)</source>
-        <translation>Los alumnos deben empezar las actividades tan pronto como sea posible (si es permitido por no disponible y las interrupciones)</translation>
+        <translation>Los alumnos deben empezar las actividades tan pronto como sea posible (si es permitido por no disponibles y las pausas)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform.cpp" line="201"/>
@@ -11907,7 +12116,7 @@ las restricciones antiguas en días borrados
         <translation>No puedo usar el directorio %1 - FET abandonará</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="220"/>
+        <location filename="../src/interface/fetmainform.cpp" line="235"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
@@ -11916,7 +12125,7 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
 Puede desactivar la búsqueda automática de actualizaciones en los menús de ajuste</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="252"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -11928,22 +12137,22 @@ Tiene que descargarla manualmente y proceder a la instalación (abra la página 
 Puede desactivar la búsqueda automática de actualizaciones en el menú de ajustes</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="267"/>
         <source>FET - exiting</source>
         <translation>FET - saliendo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1335"/>
         <source>&amp;Yes</source>
         <translation>&amp;Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1284"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1335"/>
         <source>&amp;No</source>
         <translation>&amp;No</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="254"/>
+        <location filename="../src/interface/fetmainform.cpp" line="269"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Cancelar</translation>
     </message>
@@ -11955,102 +12164,102 @@ Please stop simulation before this.</source>
 Detenga la simulación antes de esto.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="309"/>
+        <location filename="../src/interface/fetmainform.cpp" line="324"/>
         <source>FET - a free evolutionary timetabling program</source>
         <translation>FET - un programa de horarios libre</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1283"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1334"/>
         <source>FET application</source>
         <translation>FET aplicación</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="296"/>
+        <location filename="../src/interface/fetmainform.cpp" line="311"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>¿Está seguro de que quiere cargar nuevos datos?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="337"/>
+        <location filename="../src/interface/fetmainform.cpp" line="352"/>
         <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
         <translation>FET archivos xml (*.fet);;Antiguos FET xml (*.xml);;Todos (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="353"/>
         <source>open file dialog</source>
         <translation>abrir diálogo de archivos</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="338"/>
+        <location filename="../src/interface/fetmainform.cpp" line="353"/>
         <source>Choose a file</source>
         <translation>Elija un archivo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="422"/>
         <source>FET info</source>
         <translation>FET información</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="375"/>
         <source>Please do not use parantheses () in filename, the html code does not work</source>
-        <translation>No emplee paréntesis () en el nombre de archivo, no funcionará en html</translation>
+        <translation type="obsolete">No emplee paréntesis () en el nombre de archivo, no funcionará en html</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="355"/>
+        <location filename="../src/interface/fetmainform.cpp" line="391"/>
         <source>Invalid file</source>
         <translation>Archivo inválido</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="355"/>
+        <location filename="../src/interface/fetmainform.cpp" line="391"/>
         <source>&amp;OK</source>
         <translation>&amp;Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="393"/>
+        <location filename="../src/interface/fetmainform.cpp" line="444"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="405"/>
         <source>FET xml files (*.fet);;All files (*)</source>
         <translation>FET archivos xml (*.fet);; Todos (*)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="406"/>
         <source>Save file dialog</source>
         <translation>Diálogo guardar archivo</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="370"/>
+        <location filename="../src/interface/fetmainform.cpp" line="406"/>
         <source>Choose a filename to save under</source>
         <translation>Elija un nombre para archivar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="387"/>
+        <location filename="../src/interface/fetmainform.cpp" line="438"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>El archivo ya existe - ¿está seguro de querer reemplazarlo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1047"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1098"/>
         <source>Please input at least two active activities before generating</source>
         <translation>Introduzca al menos dos actividades antes de la generación</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1064"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1115"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>El archivo actual (datos) no tiene nombre. Guárdelo con un nombre antes de proceder</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1077"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1128"/>
         <source>Please input at least two active activities before generating multiple</source>
         <translation>Introduzca al menos dos actividades antes de la generación múltiple</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1120"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1171"/>
         <source>Please generate, firstly</source>
         <translation>Genérelo previamente</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1263"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1314"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Salga y arranque de nuevo FET para cambiar el idioma</translation>
     </message>
@@ -12210,7 +12419,7 @@ MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM se debe incrementar (demasiadas aulas)</tr
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="46"/>
         <source>No. of sub-activities</source>
-        <translation>No. de subactividades</translation>
+        <translation type="obsolete">No. de subactividades</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="47"/>
@@ -12395,32 +12604,32 @@ porque el profesor no es válido</translation>
         <translation>   actividad no válida (o no existente) para la restricción de tiempo preferido</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6436"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6490"/>
         <source> Invalid (inexistent) activity id</source>
         <translation> id de actividad no válido (o no existente)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6124"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6178"/>
         <source> Invalid (inexistent) activity id for first activity</source>
         <translation> Id no válido (o no existente) para primera actividad</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6166"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6220"/>
         <source> Invalid (inexistent) activity id for second activity</source>
         <translation> Id no válido (o no existente) para segunda actividad</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6375"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6429"/>
         <source>Act. id:%1 must end students&apos; day</source>
         <translation>Act. id:%1 debe ir al final del día del alumno</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6427"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6481"/>
         <source>Activity with id=%1 must end students&apos; day</source>
         <translation>Actividad con id=%1 debe ir al final del día del alumno</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6518"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6572"/>
         <source>Time constraint activity ends students&apos; day broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>La restricción de ir al final del día del alumno rota por la actividad con id=%1, incrementando el conflicto total por %2</translation>
     </message>
@@ -12445,7 +12654,7 @@ porque el profesor no es válido</translation>
         <translation>No puedo optimizar para el profesor %1, a causa de que existen demasiadas restricciones de máximo de días por semana para profesores, o no los hay disponibles. El número total de horas para este profesor es %2 y el número de casillas disponibles es, considerando el máximo de días por semana y el resto de restricciones, %3.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1274"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1325"/>
         <source>Are you sure you want to reset all settings to defaults?
 
 </source>
@@ -12454,7 +12663,7 @@ porque el profesor no es válido</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1281"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1332"/>
         <source>(these are:
 1. Mainform geometry will be reset to default
 2. Check for updates at startup will be disabled
@@ -12476,7 +12685,7 @@ porque el profesor no es válido</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2263"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
-        <translation>La restricción %1 no puede ser respetada porque el profesor %2 tiene al menos %3 días posible de profesor no disponible, interrupciones y máximo días por semana. Por favor, baje el factor de restricción a un valor menor que 100% (eso depende de la situación, si 0% es muy poco, ponlo a 90%, 95% o incluso 99.75%. Incluso un valor alto no debería ralentizar demasiado el programa. Una situación donde puede hacerlo más grande que 0% es un caso en el que tenga 5 actividades con 4 días posibles. Se puede repartirlo como 1, 1, 1 y 3 no como 2, 2 y 1)</translation>
+        <translation>La restricción %1 no puede ser respetada porque el profesor %2 tiene al menos %3 días de profesor no disponible, pausas o máximo días por semana. Por favor, baje el factor de restricción a un valor menor que 100% (eso depende de la situación, si 0% es muy poco, ponlo a 90%, 95% o incluso 99.75%. Incluso un valor alto no debería ralentizar demasiado el programa. Una situación donde puede hacerlo más grande que 0% es un caso en el que tenga 5 actividades con 4 días posibles. Se puede repartirlo como 1, 1, 1 y 3 no como 2, 2 y 1)</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2417"/>
@@ -12486,7 +12695,7 @@ porque el profesor no es válido</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2286"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
-        <translation>La restricción %1 no puede ser respetada porque el subgrupo %2 tiene al menos %3 días disponibles del grupo de estudiantes no disponible y interrupciones. Baje el factor de ponderación de esta restricción a un valor por debajo de 100%  (eso depende de la situación, si 0% es muy poco, póngalo a 90%, 95% o incluso 99.75%. Incluso un valor alto no debería ralentizar demasiado el programa. Una situación donde puede hacerlo más grande que 0% es un caso en el que tenga 5 actividades con 4 días posibles. Se puede repartirlo como 1, 1, 1 y 3 no como 2, 2 y 1)</translation>
+        <translation>La restricción %1 no puede ser respetada porque el subgrupo %2 tiene al menos %3 días del grupo de estudiantes no disponible y pausas. Baje el factor de ponderación de esta restricción a un valor por debajo de 100%  (eso depende de la situación, si 0% es muy poco, póngalo a 90%, 95% o incluso 99.75%. Incluso un valor alto no debería ralentizar demasiado el programa. Una situación donde puede hacerlo más grande que 0% es un caso en el que tenga 5 actividades con 4 días posibles. Se puede repartirlo como 1, 1, 1 y 3 no como 2, 2 y 1)</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2619"/>
@@ -12565,15 +12774,15 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2376"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 subactivities in the same day is consecutive if same day is true. You have 2*free days&lt;number of subactivities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation>La restricción %1 no puede ser respetada porque el profesor %2 tiene al menos %3 días libres. Ha especificado para esta restricción colocar las horas consecutivas si coinciden en el mismo día. Actualmente FET no puede hacer eso. Esta es una situación muy extraña. Cambie el archivo de datos. Desmarque la casilla de consecutivo si está el mismo día.</translation>
+        <translation type="obsolete">La restricción %1 no puede ser respetada porque el profesor %2 tiene al menos %3 días libres. Ha especificado para esta restricción colocar las horas consecutivas si coinciden en el mismo día. Actualmente FET no puede hacer eso. Esta es una situación muy extraña. Cambie el archivo de datos. Desmarque la casilla de consecutivo si está el mismo día.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2412"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 subactivities in the same day is consecutive if same day is true. You have 2*free days&lt;number of subactivities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
-        <translation>La restricción %1 no puede ser respetada porque el subgrupo %2 tiene al menos %3 días libres. Ha especificado para esta restricción colocar las horas consecutivas si coinciden en el mismo día. Actualmente FET no puede hacer eso. Esta es una situación muy extraña. Cambie el archivo de datos. Desmarque la casilla de consecutivo si está el mismo día.</translation>
+        <translation type="obsolete">La restricción %1 no puede ser respetada porque el subgrupo %2 tiene al menos %3 días libres. Ha especificado para esta restricción colocar las horas consecutivas si coinciden en el mismo día. Actualmente FET no puede hacer eso. Esta es una situación muy extraña. Cambie el archivo de datos. Desmarque la casilla de consecutivo si está el mismo día.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="253"/>
+        <location filename="../src/interface/fetmainform.cpp" line="268"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation>El archivo puede haber cambiado ¿Quiere guardalo?</translation>
     </message>
@@ -12598,42 +12807,42 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation>No puedo optimizar, porque tiene restricción de %1 horas diarias mínimas para el profesor %2. El número de horas diarias debería de ser al menos 2, para hacer una restricción no trivial</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6614"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6668"/>
         <source>Teachers min %1 hours daily</source>
         <translation>Profesores mín %1 horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6625"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6679"/>
         <source>Teachers must not have less than %1 hours daily</source>
         <translation>Los profesores no deben tener menos de %1 horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6627"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6681"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
         <translation>Nota: FET es preciso para usar esta restricción en los días de trabajo de los profesores</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6683"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6737"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>La restricción de mín %1 horas diarias para profesores rota por profesor %2, en día %3, long=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6794"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6848"/>
         <source>Teacher min %1 hours daily</source>
         <translation>Profesor mínimo %1 horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6806"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6860"/>
         <source>Teacher %1 must not have less than %2 hours daily</source>
         <translation>Profesor %1 no debe tener menos de %2 horas diarias</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6808"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6862"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
         <translation>Nota: FET es preciso para usar esta restricción en los días de trabajo de los profesores</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6863"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6917"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Restricción profesor mín %1 horas diarias rota por el profesor %2, en día %3, long=%4.</translation>
     </message>
@@ -12689,207 +12898,207 @@ Nota: esta restricción es fuerte. Los alumnos deben tener horas comenzando en l
     <message>
         <location filename="../src/engine/rules.cpp" line="2557"/>
         <source>Cannot open log file for writing ... please check your disk free space. Opening of file aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo para escritura ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6261"/>
         <source>Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6280"/>
         <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo para escritura ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6382"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="731"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred room</source>
-        <translation type="unfinished"></translation>
+        <translation> Actividad no existente para la restricción de aula preferida</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6455"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6509"/>
         <source>,ST:</source>
-        <translation type="unfinished"></translation>
+        <translation>,IM:</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1005"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred rooms</source>
-        <translation type="unfinished"></translation>
+        <translation> Actividad no existente para la restricción de aulas preferida</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5851"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5905"/>
         <source> , ST: </source>
-        <translation type="unfinished"></translation>
+        <translation> , IM: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="1886"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5681"/>
         <source>, subject tag %4</source>
-        <translation type="unfinished"></translation>
+        <translation>, identificador %4</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="290"/>
         <source>Cannot open file to write soft conflicts txt - please check you disk free space. Saving of soft conflicts aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="326"/>
         <source>Writing soft conflicts txt gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="345"/>
         <source>Cannot open file to write students timetable xml - please check you disk free space. Saving of xml students timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="407"/>
         <source>Writing students timetable xml gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="426"/>
         <source>Cannot open file to write teachers timetable xml - please check you disk free space. Saving of xml teachers timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="485"/>
         <source>Writing teachers timetable xml gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="503"/>
         <source>Cannot open file to write css style file - please check you disk free space. Saving of css style file aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="570"/>
         <source>Writing html css file gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="593"/>
         <source>Cannot open file to write students timetable html days horizontal - please check you disk free space. Saving of html students timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="771"/>
         <source>Writing students timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="793"/>
         <source>Cannot open file to write students timetable html days vertical - please check you disk free space. Saving of html students timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="974"/>
         <source>Writing students timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="997"/>
         <source>Cannot open file to write students timetable html time vertical - please check you disk free space. Saving of html students timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1144"/>
         <source>Writing students timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1165"/>
         <source>Cannot open file to write students timetable html time horizontal - please check you disk free space. Saving of html students timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1314"/>
         <source>Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1337"/>
         <source>Cannot open file to write teachers timetable html days horizontal - please check you disk free space. Saving of html teachers timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1505"/>
         <source>Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1526"/>
         <source>Cannot open file to write teachers timetable html days vertical - please check you disk free space. Saving of html teachers timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1696"/>
         <source>Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1717"/>
         <source>Cannot open file to write teachers timetable html time vertical - please check you disk free space. Saving of html teachers timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1863"/>
         <source>Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1884"/>
         <source>Cannot open file to write teachers timetable html time horizontal - please check you disk free space. Saving of html teachers timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2033"/>
         <source>Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2052"/>
         <source>Cannot open file to write rooms timetable html days horizontal - please check you disk free space. Saving of html rooms timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2226"/>
         <source>Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2245"/>
         <source>Cannot open file to write rooms timetable html days vertical - please check you disk free space. Saving of html rooms timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2421"/>
         <source>Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2441"/>
         <source>Cannot open file to write rooms timetable html time vertical - please check you disk free space. Saving of html rooms timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2592"/>
         <source>Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2612"/>
         <source>Cannot open file to write rooms timetable html time horizontal - please check you disk free space. Saving of html rooms timetable aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>No puedo abrir el archivo ... compruebe el espacio libre en disco. Cancelado</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2767"/>
         <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>El guardado de archivo dió un código de error %1 Compruebe el espacio en disco</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="173"/>
@@ -12900,6 +13109,75 @@ Nota: esta restricción es fuerte. Los alumnos deben tener horas comenzando en l
         <location filename="../src/interface/activitiesform.cpp" line="178"/>
         <source>There will also be removed the related activities from the same larger split activity</source>
         <translation>También se eliminarán las actividades relacionadas de la misma actividad partida más grande</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5677"/>
+        <source>teachers %1, students sets %2, subject %3</source>
+        <translation>profesores %1, grupos de alumnos %2, materias %3</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="363"/>
+        <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
+        <translation>No use comillas en el nombre de archivo, no es adecuado para el código html. El archivo no se ha cargado. Renómbrelo, eliminando los caractéres no permitidos y ábralo después con FET.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="369"/>
+        <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
+        <translation>No use ; en el nombre de archivo, no es adecuado para el código html. El archivo no se ha cargado. Renómbrelo, eliminando los caractéres no permitidos y ábralo después con FET.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="375"/>
+        <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
+        <translation>No use # en el nombre de archivo, no es adecuado para el código html. El archivo no se ha cargado. Renómbrelo, eliminando los caractéres no permitidos y ábralo después con FET.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="414"/>
+        <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
+        <translation>No use comillas &quot; en el nombre de archivo, no es adecuado para el código html</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="418"/>
+        <source>Please do not use semicolon ; in filename, the html css code does not work</source>
+        <translation>No use ; en el nombre de archivo, no es adecuado para el código html</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="422"/>
+        <source>Please do not use # in filename, the html css code does not work</source>
+        <translation>No use # en el nombre de archivo, no es adecuado para el código html</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="196"/>
+        <source>FET help on subject tags</source>
+        <translation>FET ayuda sobre identificadores</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform.cpp" line="199"/>
+        <source>Subject tag is a field which can be used or not, depending on your wish (optional field). It is designed to help you with some constraints. Each activity has a possible empty subject tag (if you don&apos;t use subject tags, it will be empty)</source>
+        <translation>El campo identificadores puede ser usado o no, ya que es opcional. Se ha pensado para ayudar con algunas restricciones. Cada actividad tiene una posible identificación (si no se emplea, permanecerá el campo vacío)</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <source>Constraint %1 cannot be respected because teacher %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation>Restricción %1 no puede ser respetada porque el profesor %2 tiene al menos %3 días libres. Ha especificado para esta restricción hacer las horas consecutivas si coinciden en el mismo día. FET no puede colocarl más que 2 en el mismo día si esto es cierto. Esta es una situacion no muy habitual. Si la encuentra, modifíquela (desactivando las actividades consecutivas si están en el mismo día). O cambiando las actividades.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2412"/>
+        <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 free days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*free days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
+        <translation>La restricción %1 no puede ser respetada porque el subgrupo %2 tiene al menos %3 días libres. Ha especificado para esta restricción colocar las horas consecutivas si coinciden en el mismo día. Actualmente FET no puede hacer eso. Esta es una situación muy extraña. Cambie el archivo de datos. Desmarque la casilla de consecutivo si está el mismo día.</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/activitiesform.cpp" line="215"/>
+        <source>Cannot modify this large activity, because it contains more than activities.
+If you really need that, please talk to the author
+</source>
+        <translation>No puede cambiar esta actividad grande, porque contiene más activdades.
+Si realmente necesita eso, comuníquese con el autor
+</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="46"/>
+        <source>No. of activities</source>
+        <translation>No. de actividades</translation>
     </message>
 </context>
 <context>
@@ -13149,7 +13427,7 @@ Dese cuenta de que el diálogo mantendrá la última configuración del último 
 Separator character(s) is of your choice (default is space)</source>
         <translation>
 
-El carácter de separación es su elección (lo normal es un espacio)</translation>
+El carácter de separación (lo normal es un espacio)</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="774"/>
@@ -13324,44 +13602,49 @@ El carácter de separación es su elección (lo normal es un espacio)</translati
         <translation>FET - identificador materias</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="33"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="31"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="47"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="53"/>
         <source>New Item</source>
         <translation>Nuevo elemento</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="59"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="81"/>
         <source>Remove current</source>
         <translation>Eliminar el actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="67"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="97"/>
         <source>Add subject tag</source>
         <translation>Añadir identificador materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="75"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="113"/>
         <source>Sort alphabetically</source>
         <translation>Ordenar alfabeticamente</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="83"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="129"/>
         <source>Rename current</source>
         <translation>Renombrar el actual</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="91"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="145"/>
         <source>Activate all activities for selected subject tag</source>
         <translation>Activar para el identificador materia</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjecttagsform_template.ui" line="99"/>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="161"/>
         <source>De-activate all activities for selected subject tag</source>
         <translation>Desactivar para el identificador materia</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjecttagsform_template.ui" line="177"/>
+        <source>Help</source>
+        <translation>Ayuda</translation>
     </message>
 </context>
 <context>
@@ -13587,7 +13870,7 @@ El carácter de separación es su elección (lo normal es un espacio)</translati
         <translation>Los datos son erróneas. Inténtelo de nuevo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="518"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="526"/>
         <source>FET information</source>
         <translation>FET información</translation>
     </message>
@@ -13614,7 +13897,7 @@ For more information you can join the mailing list or write to author</source>
 Para más información comuníquese con el autor</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="509"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="517"/>
         <source>Conflicts listing (in decreasing order):
 </source>
         <translation>Listado de conflictos (en orden decreciente):
@@ -13626,12 +13909,12 @@ Para más información comuníquese con el autor</translation>
         <translation>Simulación detenida. FET no puede encontrar un horario perfecto. Puede ser necesario revisar las coacciones.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="318"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="322"/>
         <source>The partial results are saved in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation>El resultado parcias es guardado en %1 en html y xml y los conflictos en texto llano</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="322"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="326"/>
         <source>Additional information relating impossible to schedule activities:
 
 </source>
@@ -13658,42 +13941,42 @@ Para más información comuníquese con el autor</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="328"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="332"/>
         <source>No: %1</source>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="332"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="336"/>
         <source>Id: %1</source>
         <translation>id: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="333"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="337"/>
         <source> TN: </source>
         <translation> TN: </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="342"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="346"/>
         <source>SN: %1</source>
         <translation>SN: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="345"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="353"/>
         <source> StN: </source>
         <translation> StN: </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="365"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="373"/>
         <source>OK</source>
         <translation>Vale</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="313"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="317"/>
         <source>FET could not find a timetable. Maybe you can consider lowering the constraints.</source>
         <translation>FET  no puede encontrar un horario. Considere el relajar las coacciones.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="324"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="328"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:
 
 </source>
@@ -13702,14 +13985,14 @@ Para más información comuníquese con el autor</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="420"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="428"/>
         <source>Soft conflicts listing (in decreasing order):
 </source>
         <translation>Conflictos leves en orden decreciente:
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="436"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="444"/>
         <source>Allocation terminated successfully, remaining %1 weighted soft conflicts from constraints with weight percentage lower than 100% (see menu Timetable/Show soft conflicts or the text file in the output directory for details).
 
 Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %2 in html and xml mode and the soft conflicts in txt mode</source>
@@ -13718,64 +14001,69 @@ Simulation results should be now written. You may check now Timetable/View. The 
 La simulación debe estar escrita en el disco. Los resultados está guardados en el directorio %2 en formato html y xml y los conflictos en texto llano txt</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="451"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="459"/>
         <source>%1 out of %2 activities placed</source>
         <translation>%1 de %2 actividades colocadas</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="453"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="461"/>
         <source>Elapsed time:</source>
         <translation>Tiempo transcurrido:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="457"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="465"/>
         <source> %1 h</source>
         <translation> %1 h</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="461"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="469"/>
         <source> %1 m</source>
         <translation> %1 m</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="464"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="472"/>
         <source> %1 s</source>
         <translation> %1 s</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="477"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="485"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
         <translation>Espere, por favor. Puede tomar hasta 5 o 20 minutos en horarios muy difíciles</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="478"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="486"/>
         <source>Activities are placed in order, most difficult ones first</source>
         <translation>Las actividades son colocadas en orden, las más difíciles primero</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="480"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="488"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation>El proceso de búsqueda es semi-aleatorio, lo que implica que se conseguirán diferentes horarios de cada vez. Puede elegir el mejor de varios cálculos</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="483"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="491"/>
         <source>Usually, there is no need to stop and restart the search, even if the algorithm seems stucked. Please report to author contrary cases</source>
         <translation>Por lo general no es necesario detener y arrancar la búsqueda</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="486"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="494"/>
         <source>It is recommended to strengthen the constraints step by step (for intance min n days or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation>Es recomendable endurecer las restricciones poco a poco, para obtener mejores resultados.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="488"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="496"/>
         <source>FET help</source>
         <translation>FET ayuda</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="520"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="528"/>
         <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation>La simulaciones se escriben en el directorio %1 en html, en xml y los conflictos en texto llano txt</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="349"/>
+        <source>ST: %1</source>
+        <translation>ST: %1</translation>
     </message>
 </context>
 <context>
@@ -14072,39 +14360,46 @@ instrucciones o contacte con el autor</translation>
         <translation>Ver el horario para los profesores</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="33"/>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="91"/>
         <source>Teacher</source>
         <translation>Profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="41"/>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="72"/>
         <source>Teacher&apos;s name</source>
         <translation>Nombre del profesor</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="61"/>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="97"/>
         <source>New Item</source>
         <translation>Nuevo elemento</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="73"/>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="50"/>
         <source>Details</source>
         <translation>Detalles</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="81"/>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="80"/>
         <source>Please click on the table for details for a specific activity.</source>
         <translation>Haz click en la tabla para detalles de una actividad.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform_template.ui" line="92"/>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="42"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform_template.ui" line="100"/>
         <source>Lock selected activities (only time)</source>
-        <translation>Bloquear actividades seleccionadas (solo tiempo)</translation>
+        <translation type="obsolete">Bloquear actividades seleccionadas (solo tiempo)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetableviewteachersform_template.ui" line="33"/>
+        <source>Lock selected activities
+(only time)</source>
+        <translation>Bloquear actividades
+(solo el tiempo)</translation>
     </message>
 </context>
 <context>

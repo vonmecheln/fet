@@ -5431,7 +5431,7 @@ impossibleroomnotavailable:
 			
 			assert(!foundGoodSwap);
 			
-			if(level>=5) //7 originally
+			if(level>=5) //7 also might be used
 				return;
 		}
 	}

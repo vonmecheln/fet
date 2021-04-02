@@ -35,6 +35,8 @@
 #include <qpoint.h>
 
 class ModifyConstraintActivityPreferredTimesForm : public ModifyConstraintActivityPreferredTimesForm_template  {
+	Q_OBJECT
+
 	ConstraintActivityPreferredTimes* _ctr;
 public:
 	ModifyConstraintActivityPreferredTimesForm(ConstraintActivityPreferredTimes* ctr);

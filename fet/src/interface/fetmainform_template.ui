@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>497</width>
-    <height>247</height>
+    <width>522</width>
+    <height>254</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -21,7 +21,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>497</width>
+     <width>522</width>
      <height>29</height>
     </rect>
    </property>
@@ -179,17 +179,17 @@
       <string>Language</string>
      </property>
      <addaction name="languageEnglishAction" />
-     <addaction name="languageFrenchAction" />
      <addaction name="languageCatalanAction" />
-     <addaction name="languageRomanianAction" />
-     <addaction name="languageMalayAction" />
-     <addaction name="languagePolishAction" />
-     <addaction name="languageTurkishAction" />
-     <addaction name="languageDutchAction" />
      <addaction name="languageGermanAction" />
+     <addaction name="languageSpanishAction" />
+     <addaction name="languageFrenchAction" />
      <addaction name="languageHungarianAction" />
      <addaction name="languageMacedonianAction" />
-     <addaction name="languageSpanishAction" />
+     <addaction name="languageMalayAction" />
+     <addaction name="languageDutchAction" />
+     <addaction name="languagePolishAction" />
+     <addaction name="languageRomanianAction" />
+     <addaction name="languageTurkishAction" />
     </widget>
     <addaction name="checkForUpdatesAction" />
     <addaction name="languageMenu" />

@@ -46,7 +46,6 @@ Activity::Activity(
 	const QStringList& _studentsNames,
 	int _duration,
 	int _totalDuration,
-	//int _parity,
 	bool _active,
 	bool _computeNTotalStudents,
 	int _nTotalStudents)
@@ -88,8 +87,6 @@ bool Activity::operator==(Activity& a)
 		return false;
 	if(this->duration != a.duration)
 	    return false;
-	//if(this->parity != a.parity)
-	  //  return false;
 	return true;
 }
 
@@ -353,9 +350,6 @@ QString Activity::getDescription(Rules& r)
 	if(this->isSplit())
 		s += QObject::tr("TD:") + QString::number(this->totalDuration) + ", ";
 
-	//if(this->parity==PARITY_FORTNIGHTLY)
-	//	s+=QObject::tr("Fortnightly, ");
-		
 	if(this->active==true)
 		s+=QObject::tr("A: yes")+", ";
 	else
@@ -373,7 +367,12 @@ QString Activity::getDetailedDescription(Rules &r)
 	if(!this->isSplit())
 		s=QObject::tr("Activity:\n");
 	else{
-		s=QObject::tr("Activity:\n");
+		s="";
+		/*if(this->id==this->activityGroupId)
+			s="";
+		else
+			s="   ";*/
+		s+=QObject::tr("Activity:\n");
 		//s+=QObject::tr("Component of a split activity\n");
 		//s=QObject::tr("Sub-activity:\n");
 	}
@@ -399,11 +398,6 @@ QString Activity::getDetailedDescription(Rules &r)
 	if(this->isSplit())
 		s += QObject::tr("Total duration=") + QString::number(this->totalDuration) + "\n";
 
-	/*if(this->parity==PARITY_FORTNIGHTLY)
-		s+=QObject::tr("Fortnightly activity\n");
-	else
-		s+=QObject::tr("Weekly activity\n");*/
-		
 	if(this->active==true)
 		s+=QObject::tr("Active: yes\n");
 	else

@@ -123,6 +123,21 @@ static HttpGet getter;
 
 static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
 
+
+const int LANGUAGE_EN_GB_POSITION=0;
+const int LANGUAGE_CA_POSITION=1;
+const int LANGUAGE_DE_POSITION=2;
+const int LANGUAGE_ES_POSITION=3;
+const int LANGUAGE_FR_POSITION=4;
+const int LANGUAGE_HU_POSITION=5;
+const int LANGUAGE_MK_POSITION=6;
+const int LANGUAGE_MS_POSITION=7;
+const int LANGUAGE_NL_POSITION=8;
+const int LANGUAGE_PL_POSITION=9;
+const int LANGUAGE_RO_POSITION=10;
+const int LANGUAGE_TR_POSITION=11;
+
+
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
@@ -150,29 +165,29 @@ FetMainForm::FetMainForm()
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
 	
 	if(FET_LANGUAGE=="en_GB")
-		languageMenu->setItemChecked(languageMenu->idAt(0), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EN_GB_POSITION), true);
 	else if(FET_LANGUAGE=="fr")
-		languageMenu->setItemChecked(languageMenu->idAt(1), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_FR_POSITION), true);
 	else if(FET_LANGUAGE=="ca")
-		languageMenu->setItemChecked(languageMenu->idAt(2), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_CA_POSITION), true);
 	else if(FET_LANGUAGE=="ro")
-		languageMenu->setItemChecked(languageMenu->idAt(3), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_RO_POSITION), true);
 	else if(FET_LANGUAGE=="ms")
-		languageMenu->setItemChecked(languageMenu->idAt(4), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_MS_POSITION), true);
 	else if(FET_LANGUAGE=="pl")
-		languageMenu->setItemChecked(languageMenu->idAt(5), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_PL_POSITION), true);
 	else if(FET_LANGUAGE=="tr")
-		languageMenu->setItemChecked(languageMenu->idAt(6), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_TR_POSITION), true);
 	else if(FET_LANGUAGE=="nl")
-		languageMenu->setItemChecked(languageMenu->idAt(7), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_NL_POSITION), true);
 	else if(FET_LANGUAGE=="de")
-		languageMenu->setItemChecked(languageMenu->idAt(8), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_DE_POSITION), true);
 	else if(FET_LANGUAGE=="hu")
-		languageMenu->setItemChecked(languageMenu->idAt(9), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_HU_POSITION), true);
 	else if(FET_LANGUAGE=="mk")
-		languageMenu->setItemChecked(languageMenu->idAt(10), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_MK_POSITION), true);
 	else if(FET_LANGUAGE=="es")
-		languageMenu->setItemChecked(languageMenu->idAt(11), true);
+		languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_ES_POSITION), true);
 
 	//new data
 	if(gt.rules.initialized)
@@ -1170,7 +1185,7 @@ void FetMainForm::on_languageEnglishAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(0), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EN_GB_POSITION), true);
 }
 
 void FetMainForm::on_languageFrenchAction_activated()
@@ -1182,7 +1197,7 @@ void FetMainForm::on_languageFrenchAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(1), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_FR_POSITION), true);
 }
 
 void FetMainForm::on_languageCatalanAction_activated()
@@ -1194,7 +1209,7 @@ void FetMainForm::on_languageCatalanAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(2), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_CA_POSITION), true);
 }
 
 void FetMainForm::on_languageRomanianAction_activated()
@@ -1206,7 +1221,7 @@ void FetMainForm::on_languageRomanianAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(3), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_RO_POSITION), true);
 }
 
 void FetMainForm::on_languageMalayAction_activated()
@@ -1218,7 +1233,7 @@ void FetMainForm::on_languageMalayAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(4), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_MS_POSITION), true);
 }
 
 void FetMainForm::on_languagePolishAction_activated()
@@ -1230,7 +1245,7 @@ void FetMainForm::on_languagePolishAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(5), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_PL_POSITION), true);
 }
 
 void FetMainForm::on_languageTurkishAction_activated()
@@ -1242,7 +1257,7 @@ void FetMainForm::on_languageTurkishAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(6), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_TR_POSITION), true);
 }
 
 void FetMainForm::on_languageDutchAction_activated()
@@ -1254,7 +1269,7 @@ void FetMainForm::on_languageDutchAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(7), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_NL_POSITION), true);
 }
 
 void FetMainForm::on_languageGermanAction_activated()
@@ -1266,7 +1281,7 @@ void FetMainForm::on_languageGermanAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(8), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_DE_POSITION), true);
 }
 
 void FetMainForm::on_languageHungarianAction_activated()
@@ -1278,7 +1293,7 @@ void FetMainForm::on_languageHungarianAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(9), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_HU_POSITION), true);
 }
 
 void FetMainForm::on_languageMacedonianAction_activated()
@@ -1290,7 +1305,7 @@ void FetMainForm::on_languageMacedonianAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(10), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_MK_POSITION), true);
 }
 
 void FetMainForm::on_languageSpanishAction_activated()
@@ -1302,7 +1317,7 @@ void FetMainForm::on_languageSpanishAction_activated()
 	
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(11), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_ES_POSITION), true);
 }
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()
@@ -1341,7 +1356,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 
 	for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
 		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(0), true);
+	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EN_GB_POSITION), true);
 	FET_LANGUAGE="en_GB";
 	
 	checkForUpdatesAction->setChecked(false);

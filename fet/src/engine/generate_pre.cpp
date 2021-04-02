@@ -2367,8 +2367,8 @@ bool checkMinNDaysConsecutiveIfSameDay()
 						
 						QString s=QObject::tr("Constraint %1 cannot be respected because teacher %2 has at most"
 						 " %3 free days. You specified for this constraint consecutive if same day=true."
-						 " Currently FET cannot put more than 2 subactivities in the same day"
-						 " is consecutive if same day is true. You have 2*free days<number of subactivities in this constraint."
+						 " Currently FET cannot put more than 2 activities in the same day"
+						 " if consecutive if same day is true. You have 2*free days<number of activities in this constraint."
 						 " This is a very unlikely situation, that is why I didn't care too much about it."
 						 " If you encounter it, please please modify your file (uncheck consecutive if same day"
 						 " or add other activities with larger duration) or contact author/mailing list."
@@ -2403,8 +2403,8 @@ bool checkMinNDaysConsecutiveIfSameDay()
 						
 						QString s=QObject::tr("Constraint %1 cannot be respected because subgroup %2 has at most"
 						 " %3 free days. You specified for this constraint consecutive if same day=true."
-						 " Currently FET cannot put more than 2 subactivities in the same day"
-						 " is consecutive if same day is true. You have 2*free days<number of subactivities in this constraint."
+						 " Currently FET cannot put more than 2 activities in the same day"
+						 " if consecutive if same day is true. You have 2*free days<number of activities in this constraint."
 						 " This is a very unlikely situation, that is why I didn't care too much about it."
 						 " If you encounter it, please modify your file (uncheck consecutive if same day"
 						 " or add other activities with larger duration) or contact author/mailing list."

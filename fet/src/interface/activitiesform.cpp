@@ -211,7 +211,7 @@ void ActivitiesForm::modifyActivity()
 				nSplit++;
 			if(nSplit>10){
 				QMessageBox::warning(this, QObject::tr("FET information"),
-					QObject::tr("Cannot modify this activity, because it contains more than 10 subactivities.\n"
+					QObject::tr("Cannot modify this large activity, because it contains more than activities.\n"
 					"If you really need that, please talk to the author\n"));
 				return;
 			}

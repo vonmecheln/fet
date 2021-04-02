@@ -64,11 +64,10 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>It is necessary to use only one constraint
-of this type for the optimization to be possible
-You must use weight percentage 100%, because
-otherwise you will get poor timetables. Try to fix firstly
-a rather large value for max gaps per week and
+                        <string>It is recommended to use only one constraint
+of this type. You must use weight percentage 100%,
+because otherwise you will get poor timetables. Try to 
+fix firstly a rather large value for max gaps per week and
 lower it as you find new timetables. Note: teacher not 
 available and break are not counted as gaps.</string>
                     </property>
