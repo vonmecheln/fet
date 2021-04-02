@@ -172,9 +172,9 @@ static Matrix1D<qint16> sbgDayNHours;
 static Matrix1D<qint16> sbgDayNGaps;
 static Matrix1D<qint16> sbgDayNFirstGaps;
 
-
 //static QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 static Matrix2D<QList<int> > teacherActivitiesOfTheDay;
+static Matrix2D<QList<int> > subgroupActivitiesOfTheDay;
 
 int maxActivitiesPlaced;
 
@@ -2024,7 +2024,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 						activitiesInRoom[ind].insert(ai2);
 					}
 					
-					if(ai2==ai || fixedTimeActivity[ai2] || swappedActivities[ai2])
+					if(ai2==ai || (fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]) || swappedActivities[ai2])
 						if(canEmptyRoom[ind]==true)
 							canEmptyRoom[ind]=false;
 				}
@@ -2155,8 +2155,39 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		
 		foreach(int ai2, tmpListFromSet){
 			assert(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2));
-			assert(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2]);
+			assert(ai2!=ai && !(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]) && !swappedActivities[ai2]);
 			tmp_list.append(ai2);
+		}
+	}
+	
+	return true;
+}
+
+//2013-09-14
+inline bool Generate::checkActivitiesSameRoomIfConsecutive(const QList<int>& globalConflActivities, int rm, int level, int ai, int d, int h, QList<int>& tmp_list)
+{
+	Q_UNUSED(level);
+
+	foreach(ActivitiesSameRoomIfConsecutive_item* item, asricListForActivity[ai]){
+		foreach(int ai2, item->activitiesList){
+			if(ai2!=ai && !globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+				int rm2=c.rooms[ai2];
+				if(rm2!=UNALLOCATED_SPACE && rm2!=UNSPECIFIED_ROOM){
+					if(c.times[ai2]!=UNALLOCATED_TIME){
+						int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+						int h2=c.times[ai2]/gt.rules.nDaysPerWeek;
+						
+						if( d==d2 && (h2==h+gt.rules.internalActivitiesList[ai].duration || h==h2+gt.rules.internalActivitiesList[ai2].duration) ){
+							if(rm!=rm2){ //not OK
+								if(!(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]) && !swappedActivities[ai2])
+									tmp_list.append(ai2);
+								else
+									return false;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -2250,6 +2281,13 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				//max occupied rooms for a set of activities - 2012-04-29
 				if(aomdrListForActivity[ai].count()>0)
 					ok=checkActivitiesOccupyMaxDifferentRooms(globalConflActivities, rm, level, ai, tmp_list);
+				
+				if(!ok)
+					continue;
+					
+				//activities same room if consecutive - introduced on 2013-09-14
+				if(asricListForActivity[ai].count()>0)
+					ok=checkActivitiesSameRoomIfConsecutive(globalConflActivities, rm, level, ai, d, h, tmp_list);
 				
 				if(!ok)
 					continue;
@@ -2550,6 +2588,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	sbgDayNFirstGaps.resize(gt.rules.nDaysPerWeek);
 	
 	teacherActivitiesOfTheDay.resize(gt.rules.nInternalTeachers, gt.rules.nDaysPerWeek);
+	subgroupActivitiesOfTheDay.resize(gt.rules.nInternalSubgroups, gt.rules.nDaysPerWeek);
 	
 	//2011-09-30
 	if(haveActivitiesOccupyOrSimultaneousConstraints){
@@ -2769,6 +2808,28 @@ if(threaded){
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 			subgroupGetNHoursGaps(i);
 
+		//////////////care for students max days per week
+		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+				subgroupActivitiesOfTheDay(i,j).clear();
+																	
+		for(int i=0; i<gt.rules.nInternalActivities/*added_act*/; i++){
+			if(i<added_act){
+			}
+			else{
+				if(c.times[permutation[i]]==UNALLOCATED_TIME)
+					continue;
+			}
+			//Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
+			int d=c.times[permutation[i]]%gt.rules.nDaysPerWeek;
+			
+			foreach(int j, subgroupsWithMaxDaysPerWeekForActivities[permutation[i]]){
+				assert(subgroupActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
+				subgroupActivitiesOfTheDay(j,d).append(permutation[i]);
+			}
+		}
+		//////////////
+
 		//teachers' timetable
 		for(int i=0; i<gt.rules.nInternalTeachers; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
@@ -2840,7 +2901,7 @@ if(threaded){
 			}
 			//Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
 			int d=c.times[permutation[i]]%gt.rules.nDaysPerWeek;
-																								
+			
 			foreach(int j, teachersWithMaxDaysPerWeekForActivities[permutation[i]]){
 				assert(teacherActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 				teacherActivitiesOfTheDay(j,d).append(permutation[i]);
@@ -3146,6 +3207,14 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 			updateSubgroupsNHoursGaps(act, ai, d);
 
+			//update students' list of activities for each day
+			/////////////////
+			foreach(int st, subgroupsWithMaxDaysPerWeekForActivities[ai]){
+				int tt=subgroupActivitiesOfTheDay(st,d).removeAll(ai);
+				assert(tt==1);
+			}
+			/////////////////
+
 			//teachers' timetable
 			for(int q=0; q<act->iTeachersList.count(); q++){
 				int tch=act->iTeachersList.at(q);	
@@ -3238,6 +3307,14 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 			updateSubgroupsNHoursGaps(act, ai, d);
 
+			//update students' list of activities for each day
+			/////////////////
+			foreach(int st, subgroupsWithMaxDaysPerWeekForActivities[ai]){
+				assert(subgroupActivitiesOfTheDay(st,d).indexOf(ai)==-1);
+				subgroupActivitiesOfTheDay(st,d).append(ai);
+			}
+			/////////////////
+
 			//teachers' timetable
 			for(int q=0; q<act->iTeachersList.count(); q++){
 				int tch=act->iTeachersList.at(q);
@@ -3260,8 +3337,6 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 			//////////
 			updateTeachersNHoursGaps(act, ai, d);
-		
-		
 		
 			//update teachers' list of activities for each day
 			/////////////////
@@ -3449,6 +3524,7 @@ again_if_impossible_activity:
 		bool okthreeactivitiesgrouped;
 		bool oktwoactivitiesordered;
 		bool okactivityendsstudentsday;
+		bool okstudentsmaxdaysperweek;
 		bool okstudentsearlymaxbeginningsatsecondhour;
 		bool okstudentsmaxgapsperweek;
 		bool okstudentsmaxgapsperday;
@@ -4726,6 +4802,195 @@ impossibleactivityendsstudentsday:
 		
 		////////////STUDENTS////////////////
 	
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//not breaking the students max days per week constraints
+		////////////////////////////BEGIN max days per week for students
+		okstudentsmaxdaysperweek=true;
+		//foreach(int tch, act->iTeachersList){
+		foreach(int st, subgroupsWithMaxDaysPerWeekForActivities[ai]){
+			if(skipRandom(subgroupsMaxDaysPerWeekWeightPercentages[st]))
+				continue;
+
+			int maxDays=subgroupsMaxDaysPerWeekMaxDays[st];
+			assert(maxDays>=0); //the list contains real information
+			
+			//preliminary test
+			int _nOc=0;
+			for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+				//comments taken from teachers constraint:
+				//if(newTeachersDayNHours(tch,d2)>0)
+				
+				//IT IS VITAL TO USE teacherActivitiesOfTheDay as a QList<int> (tch,d2)!!!!!!!
+				//The order of evaluation of activities is changed,
+				//with activities which were moved forward and back again
+				//being put at the end.
+				//If you do not follow this, you'll get impossible timetables
+				//for italian sample or samples from South Africa, I am not sure which of these 2
+								
+				if(subgroupActivitiesOfTheDay(st,d2).count()>0 || d2==d)
+					_nOc++;
+			if(_nOc<=maxDays)
+				continue; //OK, preliminary
+			
+			if(maxDays>=0){
+				assert(maxDays>0);
+				
+				//getTchTimetable(tch, conflActivities[newtime]);
+				//tchGetNHoursGaps(tch);
+
+				bool occupiedDay[MAX_DAYS_PER_WEEK];
+				bool canEmptyDay[MAX_DAYS_PER_WEEK];
+				
+				int _minWrong[MAX_DAYS_PER_WEEK];
+				int _nWrong[MAX_DAYS_PER_WEEK];
+				int _nConflActivities[MAX_DAYS_PER_WEEK];
+				int _minIndexAct[MAX_DAYS_PER_WEEK];
+				
+				QList<int> _activitiesForDay[MAX_DAYS_PER_WEEK];
+
+				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+					if(d2==d)
+						continue;
+				
+					occupiedDay[d2]=false;
+					canEmptyDay[d2]=true;
+					
+					_minWrong[d2]=INF;
+					_nWrong[d2]=0;
+					_nConflActivities[d2]=0;
+					_minIndexAct[d2]=gt.rules.nInternalActivities;
+					_activitiesForDay[d2].clear();
+					
+					foreach(int ai2, subgroupActivitiesOfTheDay(st,d2)){
+						if(ai2>=0){
+							if(!conflActivities[newtime].contains(ai2)){
+								occupiedDay[d2]=true;
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+									canEmptyDay[d2]=false;
+								else if(!_activitiesForDay[d2].contains(ai2)){
+									_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
+									_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
+									_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
+									_nConflActivities[d2]++;
+									_activitiesForDay[d2].append(ai2);
+									assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
+								}
+							}
+						}
+					}
+					
+					if(!occupiedDay[d2])
+						canEmptyDay[d2]=false;
+				}
+				occupiedDay[d]=true;
+				canEmptyDay[d]=false;
+				
+				int nOc=0;
+				bool canChooseDay=false;
+				
+				for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+					if(occupiedDay[j]){
+						nOc++;
+						if(canEmptyDay[j]){
+							canChooseDay=true;
+						}
+					}
+						
+				if(nOc>maxDays){
+					assert(nOc==maxDays+1);
+					
+					if(!canChooseDay){
+						if(level==0){
+							//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+							//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+						}
+						okstudentsmaxdaysperweek=false;
+						goto impossiblestudentsmaxdaysperweek;
+					}
+					
+					int d2=-1;
+					
+					if(level!=0){
+						//choose random day from those with minimum number of conflicting activities
+						QList<int> candidateDays;
+						
+						int m=gt.rules.nInternalActivities;
+						
+						for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
+							if(canEmptyDay[kk])
+								if(m>_nConflActivities[kk])
+									m=_nConflActivities[kk];
+						
+						candidateDays.clear();
+						for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
+							if(canEmptyDay[kk] && m==_nConflActivities[kk])
+								candidateDays.append(kk);
+								
+						assert(candidateDays.count()>0);
+						d2=candidateDays.at(randomKnuth(candidateDays.count()));
+					}
+					else{ //level==0
+						QList<int> candidateDays;
+
+						int _mW=INF;
+						int _nW=INF;
+						int _mCA=gt.rules.nInternalActivities;
+						int _mIA=gt.rules.nInternalActivities;
+
+						for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
+							if(canEmptyDay[kk]){
+								if(_mW>_minWrong[kk] ||
+								 (_mW==_minWrong[kk] && _nW>_nWrong[kk]) ||
+								 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA>_nConflActivities[kk]) ||
+								 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA>_minIndexAct[kk])){
+									_mW=_minWrong[kk];
+									_nW=_nWrong[kk];
+									_mCA=_nConflActivities[kk];
+									_mIA=_minIndexAct[kk];
+								}
+							}
+							
+						assert(_mW<INF);
+						
+						candidateDays.clear();
+						for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
+							if(canEmptyDay[kk] && _mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA==_minIndexAct[kk])
+								candidateDays.append(kk);
+								
+						assert(candidateDays.count()>0);
+						d2=candidateDays.at(randomKnuth(candidateDays.count()));
+					}
+					
+					assert(d2>=0);
+
+					assert(_activitiesForDay[d2].count()>0);
+
+					foreach(int ai2, _activitiesForDay[d2]){
+						assert(ai2!=ai);
+						assert(!swappedActivities[ai2]);
+						assert(!fixedTimeActivity[ai2]);
+						assert(!conflActivities[newtime].contains(ai2));
+						conflActivities[newtime].append(ai2);
+						nConflActivities[newtime]++;
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+						//addConflActivity(conflActivities[newtime], nConflActivities[newtime], ai2, &gt.rules.internalActivitiesList[ai2]);
+					}
+				}		
+			}
+		}
+impossiblestudentsmaxdaysperweek:
+		if(!okstudentsmaxdaysperweek){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		////////////////////////////END students max days per week
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 	
 		//BEGIN students interval max days per week
@@ -6800,7 +7065,7 @@ impossibleteachermaxdaysperweek:
 			continue;
 		}
 
-		////////////////////////////END max days per week
+		////////////////////////////END teachers max days per week
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 		//BEGIN teachers intervals max days per week

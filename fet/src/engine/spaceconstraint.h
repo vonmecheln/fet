@@ -86,6 +86,7 @@ const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM						=1025;
 const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS						=1026;
 
 const int CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS				=1027;
+const int CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE				=1028;
 
 /**
 This class represents a space constraint
@@ -1446,6 +1447,50 @@ public:
 	ConstraintActivitiesOccupyMaxDifferentRooms();
 
 	ConstraintActivitiesOccupyMaxDifferentRooms(double wp, QList<int> a_L, int max_rooms);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	void removeUseless(Rules& r);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesSameRoomIfConsecutive: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesSameRoomIfConsecutive)
+
+public:
+	QList<int> activitiesIds;
+	
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	ConstraintActivitiesSameRoomIfConsecutive();
+
+	ConstraintActivitiesSameRoomIfConsecutive(double wp, QList<int> a_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

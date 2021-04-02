@@ -101,6 +101,9 @@
 #include "modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.h"
 #include "modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h"
 
+#include "modifyconstraintstudentssetmaxdaysperweekform.h"
+#include "modifyconstraintstudentsmaxdaysperweekform.h"
+
 #include "lockunlock.h"
 
 #include "advancedfilterform.h"
@@ -716,6 +719,18 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//64
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
 		ModifyConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm form(this, (ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//65
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsSetMaxDaysPerWeekForm form(this, (ConstraintStudentsSetMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//66
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsMaxDaysPerWeekForm form(this, (ConstraintStudentsMaxDaysPerWeek*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

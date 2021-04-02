@@ -684,6 +684,8 @@ private:
 
 	TimeConstraint* readTeacherIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetNotAvailable(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
@@ -812,6 +814,7 @@ private:
 	SpaceConstraint* readStudentsMinGapsBetweenBuildingChanges(const QDomElement& elem3, FakeString& xmlReadingLog);
 
 	SpaceConstraint* readActivitiesOccupyMaxDifferentRooms(const QDomElement& elem3, FakeString& xmlReadingLog);
+	SpaceConstraint* readActivitiesSameRoomIfConsecutive(const QDomElement& elem3, FakeString& xmlReadingLog);
 };
 
 #endif

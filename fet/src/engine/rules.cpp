@@ -2400,6 +2400,13 @@ bool Rules::removeYear(const QString& yearName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetMaxDaysPerWeek*)ctr;
+			if(yearName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
 			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(yearName == crt_constraint->students){
@@ -2598,6 +2605,11 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialYearName == crt_constraint->students)
+				crt_constraint->students=finalYearName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetMaxDaysPerWeek*)ctr;
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
@@ -2895,6 +2907,13 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetMaxDaysPerWeek*)ctr;
+			if(groupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
 			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(groupName == crt_constraint->students){
@@ -3117,6 +3136,11 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialGroupName == crt_constraint->students)
+				crt_constraint->students=finalGroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetMaxDaysPerWeek*)ctr;
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
@@ -3358,6 +3382,13 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetMaxDaysPerWeek*)ctr;
+			if(subgroupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
 			ConstraintStudentsSetIntervalMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
 			if(subgroupName == crt_constraint->students){
@@ -3581,6 +3612,11 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialSubgroupName == crt_constraint->students)
+				crt_constraint->students=finalSubgroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* crt_constraint=(ConstraintStudentsSetMaxDaysPerWeek*)ctr;
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}
@@ -4163,6 +4199,19 @@ void Rules::removeActivity(int _id)
 			i++;
 	}
 
+	for(int i=0; i<this->spaceConstraintsList.size(); ){
+		SpaceConstraint* ctr=this->spaceConstraintsList[i];
+		if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
+			((ConstraintActivitiesSameRoomIfConsecutive*)ctr)->removeUseless(*this);
+			if(((ConstraintActivitiesSameRoomIfConsecutive*)ctr)->activitiesIds.count()<2)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
 	if(recomputeTime){
 		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
 	}
@@ -4485,6 +4534,19 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 		if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
 			((ConstraintActivitiesOccupyMaxDifferentRooms*)ctr)->removeUseless(*this);
 			if(((ConstraintActivitiesOccupyMaxDifferentRooms*)ctr)->activitiesIds.count()<2)
+				this->removeSpaceConstraint(ctr);
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->spaceConstraintsList.size(); ){
+		SpaceConstraint* ctr=this->spaceConstraintsList[i];
+		if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
+			((ConstraintActivitiesSameRoomIfConsecutive*)ctr)->removeUseless(*this);
+			if(((ConstraintActivitiesSameRoomIfConsecutive*)ctr)->activitiesIds.count()<2)
 				this->removeSpaceConstraint(ctr);
 			else
 				i++;
@@ -6484,6 +6546,12 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				else if(elem3.tagName()=="ConstraintTeachersIntervalMaxDaysPerWeek"){
 					crt_constraint=readTeachersIntervalMaxDaysPerWeek(parent, elem3, xmlReadingLog);
 				}
+				else if(elem3.tagName()=="ConstraintStudentsSetMaxDaysPerWeek"){
+					crt_constraint=readStudentsSetMaxDaysPerWeek(parent, elem3, xmlReadingLog);
+				}
+				else if(elem3.tagName()=="ConstraintStudentsMaxDaysPerWeek"){
+					crt_constraint=readStudentsMaxDaysPerWeek(parent, elem3, xmlReadingLog);
+				}
 				else if(elem3.tagName()=="ConstraintStudentsSetIntervalMaxDaysPerWeek"){
 					crt_constraint=readStudentsSetIntervalMaxDaysPerWeek(parent, elem3, xmlReadingLog);
 				}
@@ -7141,6 +7209,11 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 ////////////////2012-04-29
 				else if(elem3.tagName()=="ConstraintActivitiesOccupyMaxDifferentRooms"){
 					crt_constraint=readActivitiesOccupyMaxDifferentRooms(elem3, xmlReadingLog);
+				}
+////////////////
+////////////////2013-09-14
+				else if(elem3.tagName()=="ConstraintActivitiesSameRoomIfConsecutive"){
+					crt_constraint=readActivitiesSameRoomIfConsecutive(elem3, xmlReadingLog);
 				}
 ////////////////
 
@@ -8211,6 +8284,83 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
 				cn->endHour=h2;
 			}
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog){
+	assert(elem3.tagName()=="ConstraintStudentsSetMaxDaysPerWeek");
+	ConstraintStudentsSetMaxDaysPerWeek* cn=new ConstraintStudentsSetMaxDaysPerWeek();
+	cn->maxDaysPerWeek=this->nDaysPerWeek;
+	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+		QDomElement elem4=node4.toElement();
+		if(elem4.isNull()){
+			xmlReadingLog+="    Null node here\n";
+			continue;
+		}
+		xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+		if(elem4.tagName()=="Weight_Percentage"){
+			cn->weightPercentage=customFETStrToDouble(elem4.text());
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
+		else if(elem4.tagName()=="Students"){
+			cn->students=elem4.text();
+			xmlReadingLog+="    Read students set name="+cn->students+"\n";
+		}
+		else if(elem4.tagName()=="Max_Days_Per_Week"){
+			cn->maxDaysPerWeek=elem4.text().toInt();
+			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
+					tr("Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
+					.arg(cn->students)
+					.arg(elem4.text()));
+			}
+			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog){
+	assert(elem3.tagName()=="ConstraintStudentsMaxDaysPerWeek");
+	ConstraintStudentsMaxDaysPerWeek* cn=new ConstraintStudentsMaxDaysPerWeek();
+	cn->maxDaysPerWeek=this->nDaysPerWeek;
+	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+		QDomElement elem4=node4.toElement();
+		if(elem4.isNull()){
+			xmlReadingLog+="    Null node here\n";
+			continue;
+		}
+		xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+		if(elem4.tagName()=="Weight_Percentage"){
+			cn->weightPercentage=customFETStrToDouble(elem4.text());
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
+		else if(elem4.tagName()=="Max_Days_Per_Week"){
+			cn->maxDaysPerWeek=elem4.text().toInt();
+			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
+					tr("Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 >nDaysPerWeek, constraint added, please correct constraint")
+					.arg(elem4.text()));
+			}
+			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 	}
 	return cn;
@@ -14670,6 +14820,50 @@ SpaceConstraint* Rules::readActivitiesOccupyMaxDifferentRooms(const QDomElement&
 		else if(elem4.tagName()=="Max_Number_of_Different_Rooms"){
 			cn->maxDifferentRooms=elem4.text().toInt();
 			xmlReadingLog+="    Read max number of different rooms="+CustomFETString::number(cn->maxDifferentRooms)+"\n";
+		}
+	}
+	
+	assert(ac==cn->activitiesIds.count());
+	
+	return cn;
+}
+
+////////////////
+
+//2013-09-14
+SpaceConstraint* Rules::readActivitiesSameRoomIfConsecutive(const QDomElement& elem3, FakeString& xmlReadingLog){
+	assert(elem3.tagName()=="ConstraintActivitiesSameRoomIfConsecutive");
+	ConstraintActivitiesSameRoomIfConsecutive* cn=new ConstraintActivitiesSameRoomIfConsecutive();
+	
+	int ac=0;
+	
+	for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+		QDomElement elem4=node4.toElement();
+		if(elem4.isNull()){
+			xmlReadingLog+="    Null node here\n";
+			continue;
+		}
+		xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+
+		if(elem4.tagName()=="Weight_Percentage"){
+			cn->weightPercentage=customFETStrToDouble(elem4.text());
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(elem4.tagName()=="Active"){
+			if(elem4.text()=="false"){
+				cn->active=false;
+			}
+		}
+		else if(elem4.tagName()=="Comments"){
+			cn->comments=elem4.text();
+		}
+		else if(elem4.tagName()=="Number_of_Activities"){
+			ac=elem4.text().toInt();
+			xmlReadingLog+="    Read number of activities="+CustomFETString::number(ac)+"\n";
+		}
+		else if(elem4.tagName()=="Activity_Id"){
+			cn->activitiesIds.append(elem4.text().toInt());
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[cn->activitiesIds.count()-1])+"\n";
 		}
 	}
 	

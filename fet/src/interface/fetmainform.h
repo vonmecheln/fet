@@ -204,6 +204,7 @@ public slots:
 	void on_dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered();
 
 	void on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_triggered();
+	void on_dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_triggered();
 
 	void on_dataTimeConstraintsBasicCompulsoryTimeAction_triggered();
 	void on_dataTimeConstraintsBreakTimesAction_triggered();
@@ -260,6 +261,9 @@ public slots:
 	void on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered();
 	void on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered();
 	void on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered();
+
+	void on_dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered();
+	void on_dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered();
 
 	void on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered();
 	void on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered();

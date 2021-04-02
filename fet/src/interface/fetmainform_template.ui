@@ -89,16 +89,7 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_16">
-           <property name="leftMargin">
-            <number>16</number>
-           </property>
-           <property name="topMargin">
-            <number>16</number>
-           </property>
-           <property name="rightMargin">
-            <number>16</number>
-           </property>
-           <property name="bottomMargin">
+           <property name="margin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -225,16 +216,7 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_15">
-           <property name="leftMargin">
-            <number>16</number>
-           </property>
-           <property name="topMargin">
-            <number>16</number>
-           </property>
-           <property name="rightMargin">
-            <number>16</number>
-           </property>
-           <property name="bottomMargin">
+           <property name="margin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -389,16 +371,7 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
-           <property name="leftMargin">
-            <number>16</number>
-           </property>
-           <property name="topMargin">
-            <number>16</number>
-           </property>
-           <property name="rightMargin">
-            <number>16</number>
-           </property>
-           <property name="bottomMargin">
+           <property name="margin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -535,16 +508,7 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_8">
-           <property name="leftMargin">
-            <number>16</number>
-           </property>
-           <property name="topMargin">
-            <number>16</number>
-           </property>
-           <property name="rightMargin">
-            <number>16</number>
-           </property>
-           <property name="bottomMargin">
+           <property name="margin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -692,16 +656,7 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
-           <property name="leftMargin">
-            <number>16</number>
-           </property>
-           <property name="topMargin">
-            <number>16</number>
-           </property>
-           <property name="rightMargin">
-            <number>16</number>
-           </property>
-           <property name="bottomMargin">
+           <property name="margin">
             <number>16</number>
            </property>
            <item row="0" column="0">
@@ -996,6 +951,7 @@
       </property>
       <addaction name="dataTimeConstraintsStudentsSetNotAvailableTimesAction"/>
       <addaction name="separator"/>
+      <addaction name="dataTimeConstraintsStudentsSetMaxDaysPerWeekAction"/>
       <addaction name="dataTimeConstraintsStudentsSetMaxGapsPerDayAction"/>
       <addaction name="dataTimeConstraintsStudentsSetMaxGapsPerWeekAction"/>
       <addaction name="dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction"/>
@@ -1006,6 +962,7 @@
       <addaction name="dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction"/>
       <addaction name="separator"/>
+      <addaction name="dataTimeConstraintsStudentsMaxDaysPerWeekAction"/>
       <addaction name="dataTimeConstraintsStudentsMaxGapsPerDayAction"/>
       <addaction name="dataTimeConstraintsStudentsMaxGapsPerWeekAction"/>
       <addaction name="dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction"/>
@@ -1081,6 +1038,7 @@
       <addaction name="dataSpaceConstraintsActivityPreferredRoomAction"/>
       <addaction name="dataSpaceConstraintsActivityPreferredRoomsAction"/>
       <addaction name="separator"/>
+      <addaction name="dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction"/>
       <addaction name="dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction"/>
      </widget>
      <widget class="QMenu" name="menuSubjects_space_constraints">
@@ -2286,6 +2244,21 @@
   <action name="dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction">
    <property name="text">
     <string>A set of activities occupies max different rooms</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction">
+   <property name="text">
+    <string>A set of activities are in the same room if they are consecutive</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetMaxDaysPerWeekAction">
+   <property name="text">
+    <string>Max days per week for a students set</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsMaxDaysPerWeekAction">
+   <property name="text">
+    <string>Max days per week for all students</string>
    </property>
   </action>
  </widget>

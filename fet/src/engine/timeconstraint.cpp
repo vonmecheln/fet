@@ -17998,3 +17998,443 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::repairWrongDayOrHou
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMaxDaysPerWeek::ConstraintStudentsSetMaxDaysPerWeek()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK;
+}
+
+ConstraintStudentsSetMaxDaysPerWeek::ConstraintStudentsSetMaxDaysPerWeek(double wp, int maxnd, QString sn)
+	 : TimeConstraint(wp)
+{
+	this->students = sn;
+	this->maxDaysPerWeek=maxnd;
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+
+	if(ss==NULL){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set max days per week is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}	
+
+	assert(ss);
+
+	this->iSubgroupsList.clear();
+	if(ss->type==STUDENTS_SUBGROUP){
+		int tmp;
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
+		assert(tmp<r.nInternalSubgroups);
+		if(!this->iSubgroupsList.contains(tmp))
+			this->iSubgroupsList.append(tmp);
+	}
+	else if(ss->type==STUDENTS_GROUP){
+		StudentsGroup* stg=(StudentsGroup*)ss;
+		for(int i=0; i<stg->subgroupsList.size(); i++){
+			StudentsSubgroup* sts=stg->subgroupsList[i];
+			int tmp;
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
+			assert(tmp<r.nInternalSubgroups);
+			if(!this->iSubgroupsList.contains(tmp))
+				this->iSubgroupsList.append(tmp);
+		}
+	}
+	else if(ss->type==STUDENTS_YEAR){
+		StudentsYear* sty=(StudentsYear*)ss;
+		for(int i=0; i<sty->groupsList.size(); i++){
+			StudentsGroup* stg=sty->groupsList[i];
+			for(int j=0; j<stg->subgroupsList.size(); j++){
+				StudentsSubgroup* sts=stg->subgroupsList[j];
+				int tmp;
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
+				assert(tmp<r.nInternalSubgroups);
+				if(!this->iSubgroupsList.contains(tmp))
+					this->iSubgroupsList.append(tmp);
+			}
+		}
+	}
+	else
+		assert(0);
+		
+	return true;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetMaxDaysPerWeek::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsSetMaxDaysPerWeek>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Students>"+protect(this->students)+"</Students>\n";
+	s+="	<Max_Days_Per_Week>"+CustomFETString::number(this->maxDaysPerWeek)+"</Max_Days_Per_Week>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsSetMaxDaysPerWeek>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMaxDaysPerWeek::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s=tr("Students set max days per week");s+=", ";
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
+	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMaxDaysPerWeek::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A students set must respect the maximum number of days per week");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Students set=%1").arg(this->students);s+="\n";
+
+	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsSetMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+	
+	nbroken=0;
+	
+	foreach(int sbg, this->iSubgroupsList){
+		bool ocDay[MAX_DAYS_PER_WEEK];
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			ocDay[d]=false;
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(subgroupsMatrix[sbg][d][h]>0){
+					ocDay[d]=true;
+				}
+			}
+		}
+		int nOcDays=0;
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			if(ocDay[d])
+				nOcDays++;
+		if(nOcDays > this->maxDaysPerWeek){
+			nbroken+=nOcDays-this->maxDaysPerWeek;
+
+			if((nOcDays-this->maxDaysPerWeek)>0){
+				QString s= tr("Time constraint students set max days per week broken for subgroup: %1, allowed %2 days, required %3 days.")
+				 .arg(r.internalSubgroupsList[sbg]->name)
+				 .arg(this->maxDaysPerWeek)
+				 .arg(nOcDays);
+				s+=" ";
+				s += tr("This increases the conflicts total by %1")
+				 .arg(CustomFETString::number((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
+			 
+				dl.append(s);
+				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
+		
+				*conflictsString += s+"\n";
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	return false;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.setsShareStudents(this->students, s->name);
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(this->maxDaysPerWeek>r.nDaysPerWeek)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(this->maxDaysPerWeek>r.nDaysPerWeek)
+		this->maxDaysPerWeek=r.nDaysPerWeek;
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMaxDaysPerWeek::ConstraintStudentsMaxDaysPerWeek()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK;
+}
+
+ConstraintStudentsMaxDaysPerWeek::ConstraintStudentsMaxDaysPerWeek(double wp, int maxnd)
+	 : TimeConstraint(wp)
+{
+	this->maxDaysPerWeek=maxnd;
+	this->type=CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsMaxDaysPerWeek::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsMaxDaysPerWeek>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Days_Per_Week>"+CustomFETString::number(this->maxDaysPerWeek)+"</Max_Days_Per_Week>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsMaxDaysPerWeek>\n";
+	return s;
+}
+
+QString ConstraintStudentsMaxDaysPerWeek::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s=tr("Students max days per week");s+=", ";
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("MD:%1", "Abbreviation for max days").arg(this->maxDaysPerWeek);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMaxDaysPerWeek::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All students must respect the maximum number of days per week");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+	
+	nbroken=0;
+	
+	for(int sbg=0; sbg<r.nInternalSubgroups; sbg++){
+		bool ocDay[MAX_DAYS_PER_WEEK];
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			ocDay[d]=false;
+			for(int h=0; h<r.nHoursPerDay; h++){
+				if(subgroupsMatrix[sbg][d][h]>0){
+					ocDay[d]=true;
+				}
+			}
+		}
+		int nOcDays=0;
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			if(ocDay[d])
+				nOcDays++;
+		if(nOcDays > this->maxDaysPerWeek){
+			nbroken+=nOcDays-this->maxDaysPerWeek;
+
+			if((nOcDays-this->maxDaysPerWeek)>0){
+				QString s= tr("Time constraint students max days per week broken for subgroup: %1, allowed %2 days, required %3 days.")
+				 .arg(r.internalSubgroupsList[sbg]->name)
+				 .arg(this->maxDaysPerWeek)
+				 .arg(nOcDays);
+				s+=" ";
+				s += tr("This increases the conflicts total by %1")
+				 .arg(CustomFETString::number((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
+			 
+				dl.append(s);
+				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
+		
+				*conflictsString += s+"\n";
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	return false;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	return true;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(this->maxDaysPerWeek>r.nDaysPerWeek)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintStudentsMaxDaysPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(this->maxDaysPerWeek>r.nDaysPerWeek)
+		this->maxDaysPerWeek=r.nDaysPerWeek;
+
+	return true;
+}

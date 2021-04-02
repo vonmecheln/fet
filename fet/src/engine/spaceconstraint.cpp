@@ -7050,3 +7050,272 @@ bool ConstraintActivitiesOccupyMaxDifferentRooms::repairWrongDayOrHour(Rules& r)
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesSameRoomIfConsecutive::ConstraintActivitiesSameRoomIfConsecutive()
+	: SpaceConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE;
+}
+
+ConstraintActivitiesSameRoomIfConsecutive::ConstraintActivitiesSameRoomIfConsecutive(double wp,
+	QList<int> a_L)
+	: SpaceConstraint(wp)
+{
+	this->activitiesIds=a_L;
+	
+	this->type=CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	this->_activitiesIndices.clear();
+	
+	QSet<int> req=this->activitiesIds.toSet();
+	assert(req.count()==this->activitiesIds.count());
+	
+	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
+	int i;
+	for(i=0; i<r.nInternalActivities; i++)
+		if(req.contains(r.internalActivitiesList[i].id))
+			this->_activitiesIndices.append(i);
+			
+	///////////////////////
+	
+	if(this->_activitiesIndices.count()<2){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (refers to less than two activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+	else{
+		assert(this->_activitiesIndices.count()>=2);
+		return true;
+	}
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::hasInactiveActivities(Rules& r)
+{
+	//returns true if all or all but one activities are inactive
+	
+	int cnt=0;
+	foreach(int aid, this->activitiesIds)
+		if(r.inactiveActivities.contains(aid))
+			cnt++;
+			
+	if(this->activitiesIds.count()>=2 && (cnt==this->activitiesIds.count() || cnt==this->activitiesIds.count()-1) )
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintActivitiesSameRoomIfConsecutive::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivitiesSameRoomIfConsecutive>\n";
+	
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	
+	s+="	<Number_of_Activities>"+CustomFETString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
+	foreach(int aid, this->activitiesIds)
+		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
+	
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivitiesSameRoomIfConsecutive>\n";
+	return s;
+}
+
+QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString actids=QString("");
+	foreach(int aid, this->activitiesIds)
+		actids+=CustomFETString::number(aid)+QString(", ");
+	actids.chop(2);
+		
+	QString s=tr("Activities same room if consecutive, WP:%1, NA:%2, A: %3", "Constraint description. WP means weight percentage, "
+	 "NA means the number of activities, A means activities list")
+	 .arg(CustomFETString::number(this->weightPercentage))
+	 .arg(CustomFETString::number(this->activitiesIds.count()))
+	 .arg(actids);
+	
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules& r)
+{
+	QString actids=QString("");
+	foreach(int aid, this->activitiesIds)
+		actids+=CustomFETString::number(aid)+QString(", ");
+	actids.chop(2);
+		
+	QString s=tr("Space constraint"); s+="\n";
+	s+=tr("Activities same room if consecutive"); s+="\n";
+	s+=tr("Weight (percentage)=%1").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Number of activities=%1").arg(CustomFETString::number(this->activitiesIds.count())); s+="\n";
+	foreach(int id, this->activitiesIds){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+		 .arg(id)
+		 .arg(getActivityDetailedDescription(r, id));
+		s+="\n";
+	}
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+	
+	return s;
+}
+
+double ConstraintActivitiesSameRoomIfConsecutive::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	QString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	//Calculates the number of conflicts
+
+	int nbroken=0;
+	
+	for(int i=0; i<_activitiesIndices.count(); i++){
+		int ai=_activitiesIndices.at(i);
+		for(int j=i+1; j<_activitiesIndices.count(); j++){
+			int ai2=_activitiesIndices.at(j);
+			
+			if(c.times[ai]!=UNALLOCATED_TIME && c.times[ai2]!=UNALLOCATED_TIME){
+				int d=c.times[ai]%r.nDaysPerWeek;
+				int h=c.times[ai]/r.nDaysPerWeek;
+				int d2=c.times[ai2]%r.nDaysPerWeek;
+				int h2=c.times[ai2]/r.nDaysPerWeek;
+			
+				if( (d==d2) && (h+r.internalActivitiesList[ai].duration==h2 || h2+r.internalActivitiesList[ai2].duration==h) )
+					if(c.rooms[ai]!=UNALLOCATED_SPACE && c.rooms[ai]!=UNSPECIFIED_ROOM)
+						if(c.rooms[ai2]!=UNALLOCATED_SPACE && c.rooms[ai2]!=UNSPECIFIED_ROOM)
+							if(c.rooms[ai]!=c.rooms[ai2])
+								nbroken++;
+			}
+		}
+	}
+	
+	if(nbroken>0){
+		if(conflictsString!=NULL){
+			QString s=tr("Space constraint activities same rooms if consecutive broken");
+			s += QString(". ");
+			s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(nbroken*weightPercentage/100));
+	
+			dl.append(s);
+			cl.append(nbroken*weightPercentage/100);
+		
+			*conflictsString += s+"\n";
+		}
+	}
+	
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return nbroken*weightPercentage/100;
+}
+
+void ConstraintActivitiesSameRoomIfConsecutive::removeUseless(Rules& r)
+{
+	QSet<int> validActs;
+	
+	foreach(Activity* act, r.activitiesList)
+		validActs.insert(act->id);
+		
+	QList<int> newActs;
+	
+	foreach(int aid, activitiesIds)
+		if(validActs.contains(aid))
+			newActs.append(aid);
+			
+	activitiesIds=newActs;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToActivity(Activity* a)
+{
+	return this->activitiesIds.contains(a->id);
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+	
+	return false;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToRoom(Room* r)
+{
+	Q_UNUSED(r);
+	
+	return false;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintActivitiesSameRoomIfConsecutive::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////

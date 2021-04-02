@@ -53,6 +53,7 @@
 #include "modifyconstraintactivitytagpreferredroomsform.h"
 
 #include "modifyconstraintactivitiesoccupymaxdifferentroomsform.h"
+#include "modifyconstraintactivitiessameroomifconsecutiveform.h"
 
 #include "lockunlock.h"
 
@@ -449,6 +450,12 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	//27
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
 		ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm form(this, (ConstraintActivitiesOccupyMaxDifferentRooms*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//28
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
+		ModifyConstraintActivitiesSameRoomIfConsecutiveForm form(this, (ConstraintActivitiesSameRoomIfConsecutive*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

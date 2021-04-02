@@ -219,6 +219,14 @@ SOURCES += \
 	interface/addconstraintstudentsintervalmaxdaysperweekform.cpp \
 	interface/modifyconstraintstudentsintervalmaxdaysperweekform.cpp \
 	\
+	interface/constraintstudentssetmaxdaysperweekform.cpp \
+	interface/addconstraintstudentssetmaxdaysperweekform.cpp \
+	interface/modifyconstraintstudentssetmaxdaysperweekform.cpp \
+	\
+	interface/constraintstudentsmaxdaysperweekform.cpp \
+	interface/addconstraintstudentsmaxdaysperweekform.cpp \
+	interface/modifyconstraintstudentsmaxdaysperweekform.cpp \
+	\
 	interface/constraintteachersintervalmaxdaysperweekform.cpp \
 	interface/addconstraintteachersintervalmaxdaysperweekform.cpp \
 	interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp \
@@ -350,6 +358,10 @@ SOURCES += \
 	interface/constraintactivitiesoccupymaxdifferentroomsform.cpp \
 	interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp \
 	interface/modifyconstraintactivitiesoccupymaxdifferentroomsform.cpp \
+	\
+	interface/constraintactivitiessameroomifconsecutiveform.cpp \
+	interface/addconstraintactivitiessameroomifconsecutiveform.cpp \
+	interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp \
 	\
 	interface/constrainttwoactivitiesconsecutiveform.cpp \
 	interface/addconstrainttwoactivitiesconsecutiveform.cpp \
@@ -635,6 +647,14 @@ HEADERS += \
 	interface/addconstraintstudentsintervalmaxdaysperweekform.h \
 	interface/modifyconstraintstudentsintervalmaxdaysperweekform.h \
 	\
+	interface/constraintstudentssetmaxdaysperweekform.h \
+	interface/addconstraintstudentssetmaxdaysperweekform.h \
+	interface/modifyconstraintstudentssetmaxdaysperweekform.h \
+	\
+	interface/constraintstudentsmaxdaysperweekform.h \
+	interface/addconstraintstudentsmaxdaysperweekform.h \
+	interface/modifyconstraintstudentsmaxdaysperweekform.h \
+	\
 	interface/constraintteachersintervalmaxdaysperweekform.h \
 	interface/addconstraintteachersintervalmaxdaysperweekform.h \
 	interface/modifyconstraintteachersintervalmaxdaysperweekform.h \
@@ -766,6 +786,10 @@ HEADERS += \
 	interface/constraintactivitiesoccupymaxdifferentroomsform.h \
 	interface/addconstraintactivitiesoccupymaxdifferentroomsform.h \
 	interface/modifyconstraintactivitiesoccupymaxdifferentroomsform.h \
+	\
+	interface/constraintactivitiessameroomifconsecutiveform.h \
+	interface/addconstraintactivitiessameroomifconsecutiveform.h \
+	interface/modifyconstraintactivitiessameroomifconsecutiveform.h \
 	\
 	interface/constrainttwoactivitiesconsecutiveform.h \
 	interface/addconstrainttwoactivitiesconsecutiveform.h \
@@ -1041,6 +1065,14 @@ FORMS += \
 	interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui \
 	interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui \
 	\
+	interface/constraintstudentssetmaxdaysperweekform_template.ui \
+	interface/addconstraintstudentssetmaxdaysperweekform_template.ui \
+	interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui \
+	\
+	interface/constraintstudentsmaxdaysperweekform_template.ui \
+	interface/addconstraintstudentsmaxdaysperweekform_template.ui \
+	interface/modifyconstraintstudentsmaxdaysperweekform_template.ui \
+	\
 	interface/constraintteachersintervalmaxdaysperweekform_template.ui \
 	interface/addconstraintteachersintervalmaxdaysperweekform_template.ui \
 	interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui \
@@ -1172,6 +1204,10 @@ FORMS += \
 	interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui \
 	interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui \
 	interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui \
+	\
+	interface/constraintactivitiessameroomifconsecutiveform_template.ui \
+	interface/addconstraintactivitiessameroomifconsecutiveform_template.ui \
+	interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui \
 	\
 	interface/constrainttwoactivitiesconsecutiveform_template.ui \
 	interface/addconstrainttwoactivitiesconsecutiveform_template.ui \

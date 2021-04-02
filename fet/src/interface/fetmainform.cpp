@@ -105,6 +105,9 @@ using namespace std;
 #include "constraintstudentssetintervalmaxdaysperweekform.h"
 #include "constraintstudentsintervalmaxdaysperweekform.h"
 
+#include "constraintstudentssetmaxdaysperweekform.h"
+#include "constraintstudentsmaxdaysperweekform.h"
+
 #include "constraintteachermaxhoursdailyform.h"
 #include "constraintteachersmaxhoursdailyform.h"
 #include "constraintteachermaxhourscontinuouslyform.h"
@@ -180,6 +183,7 @@ using namespace std;
 #include "constraintactivitytagpreferredroomsform.h"
 
 #include "constraintactivitiesoccupymaxdifferentroomsform.h"
+#include "constraintactivitiessameroomifconsecutiveform.h"
 
 #include "settingstimetablehtmllevelform.h"
 
@@ -2441,6 +2445,32 @@ void FetMainForm::on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_tri
 	form.exec();
 }
 
+void FetMainForm::on_dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered()
 {
 	if(simulation_running){
@@ -2988,6 +3018,20 @@ void FetMainForm::on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction
 	}
 
 	ConstraintActivitiesOccupyMaxDifferentRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+//2013-09-14
+void FetMainForm::on_dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_triggered()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesSameRoomIfConsecutiveForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }

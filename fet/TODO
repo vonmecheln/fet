@@ -22,7 +22,8 @@ them. Do it like OpenOffice.org, Firefox, etc.)
 3----------------------------------------------------------
 From Horatiu Halmajan:
 
-Students set max days per week (but you can use for the moment students (set) interval max days per week).
+DONE since FET-5.20.0 on 27 September 2013 --> Students set max days per week
+(but you can use for the moment students (set) interval max days per week). <--DONE
 
 Max gaps constraints with weight under 100% (this is very difficult)
 
@@ -197,7 +198,7 @@ then we have total 400 subgroups.
 
 that is stupid, because i have only around 100 students in a year!
 
-i think in that case it is wise to enetr data not in groups, add
+i think in that case it is wise to enter data not in groups, add
 students
 individual.
 
@@ -220,8 +221,8 @@ checking the studentsname must be added as subgroup into that group.
 13---------------------------------------------------------
 From Maciej Deorowicz:
 
-Possibility to disable contraint without removing it.
-Such 'Active' checkbox like on activities dialog.
+DONE --> Possibility to disable contraint without removing it.
+Such 'Active' checkbox like on activities dialog. <--DONE
 
 14---------------------------------------------------------
 From more users:
@@ -738,7 +739,7 @@ the problem commented by Liviu of people not needing it.
 44-------DONE since FET-5.19.0-(10 January 2013)-----------
 From Zsolt Udvari:
 
-command line version which needs no X server
+DONE --> command line version which needs no X server <--DONE
 
 45---------------------------------------------------------
 From Massimo Mancini:
@@ -1119,10 +1120,10 @@ because we nearly always use 100%, not 95%.
 modifing later all to 100% isn't the best, because there are a few
 activities with min n day = 0%.
 
-62---------------------------------------------------------
+62------------------------DONE-----------------------------
 From Frans:
 
-I came across the following:
+DONE --> I came across the following:
 
 Let say one define the number of FET hours per day as 11. Now I enter preffered starting slots, not available constraints etc. and set the timetable.
 
@@ -1130,7 +1131,7 @@ Next I change the number of FET hours per day from 11 to 10 and try to generate 
 
 In changing the number FET hours from 11 to 10 the constraints were not automatically adjusted. I must now go to each constraint and change. Sometimes I had to remove the constraint and re-enter.
 
-I just want to know it it must be like that or if FET cannot change the constraints automatically.
+I just want to know it it must be like that or if FET cannot change the constraints automatically. <-- DONE
 
 63---------------------------------------------------------
 From Volker Dirr:
@@ -1213,7 +1214,7 @@ I generate again and then Fet- gives an error message and stops, namely you have
 
 In other words I must go to minimum hours and delete the constraint. It is not deactivated automatically.
 
-As said I do not know if it must be like this. Other constraints such as same starting time are automatically de-acticted.
+As said I do not know if it must be like this. Other constraints such as same starting time are automatically de-activated.
 
 Liviu:
 
@@ -1504,7 +1505,7 @@ Well, for me it would be very very (very) important thinking over the constraint
 
 So i ask, kindly, if it is possible getting a print function of all constraints (at least of time constraints).
 
-Liviu: A temporary solution would be to open two FET programs simultaneously :-)
+Liviu: A temporary solution would be to open two FET programs simultaneously.
 
 90---------------------------------------------------------
 From daviodan:
@@ -1544,7 +1545,7 @@ same room/teachers must be assigned to the same activities.
 92---------------------------------------------------------
 From Silver (on forum):
 
-Constraint "Min gaps between activites in the day for teacher".
+Constraint "Min gaps between activities in the day for teacher".
 I mean like this :
 when I select Min gaps = 2
 Saturday: activity - gap - gap - activity - gap - gap - activity
@@ -1597,14 +1598,16 @@ Liviu: Too many categories might slow down the generation and consume too much m
 
 liquid: I'd like to mention something that might be worth to consider. As we said earlier we can always make our own division of the year to groups and subgroups which are going to be most suitable to one's needs. It would be good to have the possibility to delete unused (empty) subgroups from all groups. Now, FET kindly informs us that a subgroup belongs to another group and you have to delete it again and again from every other group. 
 
-98---------------------------------------------------------
+Update: The maximum number of categories now is 4.
+
+98------------------------DONE-----------------------------
 From Juan Marcos Filgueira Gomis:
 
-One question, the update dialog shows buttons '&No' and '&Yes' that I
+DONE --> One question, the update dialog shows buttons '&No' and '&Yes' that I
 couldn't find in fet_gl.ts. How could I translate them?
 
 Liviu: These strings are in the Qt translation. It is a bit difficult to manage also the Qt translations.
-(we need some other files, qt_gl.ts, which complicate things). I'll think of some solution maybe in the future.
+(we need some other files, qt_gl.ts, which complicate things). I'll think of some solution maybe in the future. <-- DONE
 
 99---------------------------------------------------------
 From Yush Yuen (in collaboration with Liviu Lalescu):
@@ -2616,3 +2619,117 @@ things are skipped. it can warn, but not refuse generating.
 just delete for example some years; just to check if this smaller stuff is
 solveable, but some constraints might now refer to no activity anymore,
 because the activities are deleted.)
+
+166---------------------------------------------------------
+From Yush Yuen:
+
+I made a custom version for myself with a "remove all" button
+in the "all constraints" dialog box. I found it necessary for me when I
+want to unlock the time constraint for a whole year after a timetable is
+generated. The "remove all" button in combination with the filter function
+make it very easy to remove a large set of constraints. I was trying to
+change the selection box to a multi-select and have a "remove all selected"
+button, but I couldn't figure out how to do that easily (hard to manage the
+index of array after each removal), so I did the simple remove all instead.
+It worked great for me. So, maybe you can consider something similar for
+your official release.
+
+167---------------------------------------------------------
+From karim (forum personal message to Liviu Lalescu):
+
+max gaps (hours) between a set of activities
+
+Within :
+time constraints -->activities
+ -min gaps (hours) between a set of activities
++max gaps (hours) between a set of activities
+
+168---------------------------------------------------------
+From Davide Cottignoli (on forum):
+
+I would suggest a new simple constraint for teacher:
+In Italy, the work contract for a teacher is often tethered to a specific number of workdays so, to achieve the desired result, is necessary to insert two constraint:
+"Max days per week for a teacher" and "Min days per week for a teacher" that have to set the same value.
+Why not add a "Number of workdays per week for a teacher"?
+In the interface I am glad to see a button that add all teacher and set every single-type constraint to the same value so to be individually modified later.
+
+169---------------------------------------------------------
+From agemagician (on forum):
+
+I have small problem now.
+
+Each student group contains about 250 students so if we having two consecutive lectures it's very hard to move 250 student from one room to another.
+
+Is there any constrain to make consecutive activity tag for any student set should be placed in the same room ?
+
+
+My current solution :-
+1- generate the schedule and look the time.
+2- check every and each consecutive lectures for each students set and make a new constrain for those from "A set of activities occupies max different room" and set to to "1".
+
+
+I can't mark all subjects for each student set to be placed in 1 room because we have limited lectures because after many hours the program only placed tiny fraction of the activities. I don't need student group to study all their subjects in a fixed room.
+
+So is there any automated solution ?
+
+Liviu: So, a constraint: a set of activities, if consecutive, get same room. Maybe, ConstraintActivitiesSameRoomIfConsecutive?
+
+170---------------------------------------------------------
+From agemagician (on forum):
+
+1- Print the name of the year, group and class under the institute name.
+2- Print the schedule from right to left rather than left to right "very useful for Arabic countries like our academy". - Qt bug (Liviu)
+3- Make a bold line between each day in the printing and light line between periods.
+4- Make a bold line between groups in the printing.
+5- Change the font in the printing.
+6- Export the schedule to excel.
+
+171---------------------------------------------------------
+From Vlăduţ Frăţiman (personal email to Liviu Lalescu):
+
+He suggests to drop activities ids and use instead the teacher, students and subject, because ids might puzzle the new user.
+
+Also, he suggests to add icons to the buttons.
+
+172---------------------------------------------------------
+From vlad2005 (on forum):
+
+For gaps constraints (and others, maybe) specify the interval for which the constraint should action. Useful for instance
+if the user wants teachers to have zero gaps in the morning and in the afternoon, but can have gaps in between these two
+periods.
+
+173---------------------------------------------------------
+From Davide Cottignoli (on forum):
+
+I don't know if comments constraint is a widely spread practice but when I add or modify a constraint I often use these, so add a "comments" button in these dialogs it would be greatly appreciated. Also ad enable/disable constraint button would be useful.
+I often use comments to group same constraints but alphabetic sort and group by constraint-type, comments and insert order I think would be useful; could you add a preference dialog for these and others future settings?
+
+174---------------------------------------------------------
+From liquid (on forum):
+
+I'd suggest to move print command from Timetable menu to File menu. IMHO, It's more common to have print command there than anywhere else. It may be worth to implement inside Print command some kind of radio button to choose what to print. Overall, it's good to have Print command anyway.
+
+175---------------------------------------------------------
+From mouiata (on forum) (regarding the custom Algeria version)
+
+I suggest that the constraint is added under distinguishes between unloading the morning or evening, especially for a professor in the Algerian version of the program
+The program is currently the constraint
+a teacher works in an hourly interval max days per week
+This is what allows unloading of several periods of morning and evening for the professor without distinguishing between the morning and evening.
+In Algeria, a lot of professors in favor of unloading the evening than the morning
+I propose to add the the constraint
+The least possible number of evening periods that can be discharged to Professor
+The least possible number of mornings that can be discharged to Professor
+
+Liviu: Do you mean maximum number, not "least"?
+
+mouiata: I mean, the minimum number if possible
+If it is not possible The maximum number
+
+176---------------------------------------------------------
+From clouds (on forum):
+
+Topic: teachers for hour
+
+What do you think about a function that shows for each hour of the day how many teachers can be assigned at every hour (under the constraints set).
+In this way it's possible to see what are the most problematic hours

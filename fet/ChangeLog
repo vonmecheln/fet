@@ -1632,7 +1632,7 @@ Versions 5.18.0 - 5.18.2
 	- Updated the French translation, by Regis Bouguin.
 	- Added a new sample file, by Daniel.
 ---------------------------------------------------------------------------------
-Versions 5.19.0 - 5.19.v
+Versions 5.19.0 - 5.19.4
 - Version 5.19.0
 	- Updated the sources to Qt 5.0.0 (but the precompiled Windows version still uses Qt 4.8.4, because of various problems).
 	- Made a separate command-line interface without using the X-screen (suggested by Danny Zitzman, Zsolt Udvari and maybe other users).
@@ -1658,4 +1658,10 @@ Versions 5.19.0 - 5.19.v
 	- Import bugs corrected (by Volker Dirr).
 	- Added two new sample files, from Belize, by donjon.
 	- Added two new sample files, from Algeria, by Laid Messaoudi.
-	
+---------------------------------------------------------------------------------
+Versions 5.20.0 - 5.20.v
+- Version 5.20.0
+	- Added constraint activities same room if consecutive (suggested by agemagician).
+	- Added constraints students (set) max days per week (suggested by more users).
+	- Bug fix in constraint activities occupy max different rooms (not noticeable).
+	- Added a new sample file, by rapsy.

@@ -113,7 +113,7 @@ bool computeNotAllowedTimesPercentages(QWidget* parent);
 ////////activity preferred time, activities preferred times
 
 
-////////BEGIN students no gaps and early
+////////BEGIN students max gaps and early
 bool computeNHoursPerSubgroup(QWidget* parent);
 bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent);
 
@@ -130,8 +130,17 @@ bool computeSubgroupsMaxGapsPerDayPercentages(QWidget* parent);
 extern double subgroupsMaxGapsPerDayPercentage[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMaxGapsPerDayMaxGaps[MAX_TOTAL_SUBGROUPS];
 extern bool haveStudentsMaxGapsPerDay;
-////////END   students no gaps and early
+////////END   students max gaps and early
 
+
+////////BEGIN students max days per week
+//activities indices (in 0..gt.rules.nInternalActivities-1) for each subgroup
+extern int subgroupsMaxDaysPerWeekMaxDays[MAX_TOTAL_SUBGROUPS]; //-1 for not existing
+extern double subgroupsMaxDaysPerWeekWeightPercentages[MAX_TOTAL_SUBGROUPS]; //-1 for not existing
+//it is practically better to use the variable below and to put it exactly like in generate.cpp,
+//the order of activities changes
+///extern QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
+extern Matrix1D<QList<int> > subgroupsWithMaxDaysPerWeekForActivities;
 
 ////////BEGIN teachers max days per week
 //activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
@@ -143,6 +152,8 @@ extern double teachersMaxDaysPerWeekWeightPercentages[MAX_TEACHERS]; //-1 for no
 extern Matrix1D<QList<int> > teachersWithMaxDaysPerWeekForActivities;
 
 bool computeMaxDaysPerWeekForTeachers(QWidget* parent);
+
+bool computeMaxDaysPerWeekForStudents(QWidget* parent);
 ////////END   teachers max days per week
 
 
@@ -515,6 +526,21 @@ extern QList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
 extern Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
 
 bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
+
+//2013-09-14 - Constraint activities same room if consecutive
+
+class ActivitiesSameRoomIfConsecutive_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	QSet<int> activitiesSet;
+};
+
+extern QList<ActivitiesSameRoomIfConsecutive_item> asricList;
+extern Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
+
+bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
 
 /////////////////////////////////////////////////////////////////////////
 
