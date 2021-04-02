@@ -1271,7 +1271,7 @@ Puteţi alege distanţa minimă în zile între fiecare pereche de activităţi.
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="702"/>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
 </context>
@@ -4169,7 +4169,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="216"/>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
     <message>
@@ -21509,7 +21509,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="195"/>
-        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
+        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
         <translation>Notă: dacă o activitate nu aparţine unui grup mai mare (este singură), este considerată că are numărul de împărţire 1. Ca sfat, dacă aveţi activităţi să zicem de biologie împărţite în 1 sau 2 pe săptămână şi vreţi să constrângeţi doar o componentă când sunt 2 pe săptămână, adăugaţi o constrângere pentru biologie cu numărul componentei=2</translation>
     </message>
     <message>
@@ -21819,7 +21819,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="196"/>
-        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
+        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
         <translation>Notă: dacă o activitate nu aparţine unui grup mai mare (este singură), este considerată că are numărul de împărţire 1. Ca sfat, dacă aveţi activităţi să zicem de biologie împărţite în 1 sau 2 pe săptămână şi vreţi să constrângeţi doar o componentă când sunt 2 pe săptămână, adăugaţi o constrângere pentru biologie cu numărul componentei=2</translation>
     </message>
     <message>
@@ -29875,7 +29875,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1998"/>
-        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
+        <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Dacă aveţi multe subgrupuri şi nu le utilizaţi în mod explicit, este recomandat să folosiţi cele trei setări globale: ascunde subgrupurile în combo-box-uri, ascunde subgrupurile în planificarea activităţii, şi nu scrie orarele subgrupurilor pe discul fix.</translation>
     </message>
     <message>
@@ -33605,7 +33605,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.8 (August 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.9 (September 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -34053,11 +34053,17 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pavel Fric - Czech translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Michel - bug report.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;MilesM - suggestion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;adso - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;locutusofborg - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="753"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="759"/>
         <source>Close</source>
         <translation>Închide</translation>
     </message>
@@ -34733,7 +34739,7 @@ Adăugaţi altă constrângere: min 1 zi între activităţile cu id-urile 2 şi
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="965"/>
-        <source>Q: I have many subgroups and I don&apos;t explicitely use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
+        <source>Q: I have many subgroups and I don&apos;t explicitly use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
         <translation>Î: Am multe subgrupuri şi nu le folosesc în mod explicit. Pot să le ascund în combo-box-uri, pentru a adăuga mai uşor constrângerile? De asemenea, pot face interfaţa FET să meargă mai rapid?</translation>
     </message>
     <message>
@@ -34745,7 +34751,7 @@ Adăugaţi altă constrângere: min 1 zi între activităţile cu id-urile 2 şi
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="970"/>
-        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
+        <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Dacă aveţi multe subgrupuri şi nu le utilizaţi în mod explicit, este recomandat să folosiţi cele trei setări globale: ascunde subgrupurile în combo-box-uri, ascunde subgrupurile în planificarea activităţii, şi nu scrie orarele subgrupurilor pe discul fix.</translation>
     </message>
     <message>
@@ -35121,7 +35127,7 @@ The best way to add the activities would be:
 
 1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)
 
-2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>Î: Exemplu: am 7 ore de matematică într-o săptămână cu 5 zile (7 este mai mare decât 5). Cum să adaug corect această activitate împărţită?
 
 Întrebare completă: Am o activitate mai mare container împărţită în mai multe activităţi decât numărul de zile pe săptămână. Cum să o adaug pe ea şi constrângerea min zile între activităţi?
@@ -35629,7 +35635,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="130"/>
-        <source>9) Even if it takes a long time to generate your timetable with a set of constraints, strengthening the constraints might not slow the generation too much. You are adviced to try with stronger constraints after you obtain timetables, because you can obtain better timetables this way.</source>
+        <source>9) Even if it takes a long time to generate your timetable with a set of constraints, strengthening the constraints might not slow the generation too much. You are advised to try with stronger constraints after you obtain timetables, because you can obtain better timetables this way.</source>
         <translation>9) Chiar dacă durează mult timp să generaţi orarul dvs. cu un set de constrângeri, mărirea importanţei constrângerile s-ar putea să nu încetinească generarea prea mult. Sunteţi sfătuit să încercaţi cu constrângeri mai puternice după ce obţineţi orare, deoarece puteţi obţine orare mai bune în acest mod.</translation>
     </message>
     <message>
@@ -39570,7 +39576,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="227"/>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
     <message>
@@ -45360,7 +45366,7 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translati
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4325"/>
-        <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
+        <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are advised to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation>Fişierul conţine o schema de numerotare a versiunii care nu se potriveşte cu v.v.va (3 numere separate de puncte, urmate de orice şir a, care poate fi vid). Fişierul va fi deschis, dar sunteţi sfătuit să verificaţi versiunea fişierului .fet (la începutul fişierului). Dacă este o eroare FET, vă rog raportaţi-o</translation>
     </message>
     <message>
@@ -45380,7 +45386,7 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translati
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4395"/>
-        <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
+        <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are advised to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation>Deschid fişier mai vechi - el va fi convertit la cel mai nou format, asignând automat importanţe procentuale constrângerilor şi abandonând paritatea activităţilor. Sunteţi sfătuit să faceţi o rezervă a fişierului dvs. vechi înainte de a salva în noul format.
@@ -46607,12 +46613,12 @@ neadăugată - trebuie să fie un duplicat</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="717"/>
-        <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitely use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
+        <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitly use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
         <translation>Când împăţiţi din nou un an, s-ar putea să primiţi un avertisment despre subgrupuri care vor fi şterse. Dacă nu aţi folosit în mod explicit (aceste) subgrupuri în activităţile sau constrângerile dvs., probabil că puteţi ignora în siguranţă acest avertisment. În general, dacă folosiţi divizarea anilor după categorii, grupurile contează.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="727"/>
-        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
+        <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Dacă aveţi multe subgrupuri şi nu le folosiţi în mod explicit, este recomandat să folosiţi cele trei setări globale: ascunde subgrupurile în combo-box-uri, ascunde subgrupurile în planificarea activităţii, şi nu scrie orarele subgrupurilor pe discul fix.</translation>
     </message>
     <message>

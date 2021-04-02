@@ -1116,7 +1116,7 @@
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="702"/>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2.如果不加&apos;強制連續如果同一天，然後添加分裂成多個相等與剩餘成分，每週天數成其它較大劈裂活動的活動較大的活性。例如，假設您需要添加7活動持續時間1在5天一周。添加2較大的容器的活動，第一個分裂成5活動持續時間1和第二個分裂成2活動持續時間1（可能提高加約束的重量分天活動之間的每個容器2中達到100％）</translation>
     </message>
     <message>
@@ -4187,7 +4187,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="216"/>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2.如果不加&apos;強制連續如果同一天，然後添加分裂成多個相等與剩餘成分，每週天數成其它較大劈裂活動的活動較大的活性。例如，假設您需要添加7活動持續時間1在5天一周。添加2較大的容器的活動，第一個分裂成5活動持續時間1和第二個分裂成2活動持續時間1（可能提高加約束的重量分天活動之間的每個容器2中達到100％）</translation>
     </message>
     <message>
@@ -21642,7 +21642,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="195"/>
-        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
+        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
         <translation>注意：如果教學活動不屬於一個更大的教學群組（它是一個單一的活動），建議，如果你有生物學課程分成1或2次在每週的教學活動，並希望限制只有一個組成部分，組件分量數建議設:1，如果每週有2個，則添加約束生物學的組件數=2
 </translation>
     </message>
@@ -21956,7 +21956,7 @@ id編號: %1 (%2) 教學班有首選的開始課時間</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="196"/>
-        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
+        <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology split into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
         <translation>注意：如果活動不屬於一個更大的群體（一個單一的活動），它被認為是有分量數1作為一個建議，如果你有說生物學分裂成每週1或2次的教學活動，並希望限制只有一個組成部分，如果有每週2次上課時間請為生物學設定 component number=2
 </translation>
     </message>
@@ -29699,7 +29699,7 @@ Having a subgroup with too little working hours per week means that you inputted
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1998"/>
-        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
+        <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>如果你有很多次級教學子群，你使用它們的方式不明確，建議您使用三個global settings：隱藏組合框分組，隱藏在教學活動計畫，並且次級教學群組計畫排課時間表不寫入硬碟。
 </translation>
     </message>
@@ -34232,11 +34232,17 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Pavel Fric - Czech translation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Michel - bug report.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;MilesM - suggestion.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;adso - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;locutusofborg - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="753"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="759"/>
         <source>Close</source>
         <translation type="unfinished">關閉</translation>
     </message>
@@ -34255,7 +34261,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.8 (August 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.9 (September 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -34755,7 +34761,7 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="965"/>
-        <source>Q: I have many subgroups and I don&apos;t explicitely use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
+        <source>Q: I have many subgroups and I don&apos;t explicitly use them. Can I hide them in the combo boxes, to add easier the constraints? Also, can I make the FET interface work faster?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -34767,7 +34773,7 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="970"/>
-        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
+        <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished">如果你有很多次級教學子群，你使用它們的方式不明確，建議您使用三個global settings：隱藏組合框分組，隱藏在教學活動計畫，並且次級教學群組計畫排課時間表不寫入硬碟。
 </translation>
     </message>
@@ -35071,7 +35077,7 @@ The best way to add the activities would be:
 
 1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)
 
-2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -35387,7 +35393,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="130"/>
-        <source>9) Even if it takes a long time to generate your timetable with a set of constraints, strengthening the constraints might not slow the generation too much. You are adviced to try with stronger constraints after you obtain timetables, because you can obtain better timetables this way.</source>
+        <source>9) Even if it takes a long time to generate your timetable with a set of constraints, strengthening the constraints might not slow the generation too much. You are advised to try with stronger constraints after you obtain timetables, because you can obtain better timetables this way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -39302,7 +39308,7 @@ Please stop simulation before this</source>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="227"/>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
+        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity split into a number of activities equal with the number of days per week and the remaining components into other larger split activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2.如果不加&apos;強制連續如果同一天，然後添加分裂成多個相等與剩餘成分，每週天數成其它較大劈裂活動的活動較大的活性。例如，假設您需要添加7活動持續時間1在5天一周。添加2較大的容器的活動，第一個分裂成5活動持續時間1和第二個分裂成2活動持續時間1（可能提高加約束的重量分天活動之間的每個容器2中達到100％）</translation>
     </message>
     <message>
@@ -45067,7 +45073,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4325"/>
-        <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
+        <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are advised to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -45351,7 +45357,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4395"/>
-        <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
+        <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are advised to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
         <translation type="unfinished"></translation>
@@ -46243,12 +46249,12 @@ not added - must be a duplicate</source>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="717"/>
-        <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitely use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
+        <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitly use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="727"/>
-        <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
+        <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation type="unfinished">如果你有很多次級教學子群，你使用它們的方式不明確，建議您使用三個global settings：隱藏組合框分組，隱藏在教學活動計畫，並且次級教學群組計畫排課時間表不寫入硬碟。
 </translation>
     </message>
