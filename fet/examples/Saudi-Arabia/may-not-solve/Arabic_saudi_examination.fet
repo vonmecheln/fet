@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.16.0">
+<fet version="5.19.3">
 
 <Institution_Name>جدول اختبارات ثانوية سعودية</Institution_Name>
 
@@ -55,15 +55,15 @@
 
 <Days_List>
 	<Number>9</Number>
-	<Name>س1</Name>
 	<Name>ح1</Name>
 	<Name>ث1</Name>
 	<Name>ل1</Name>
 	<Name>ر1</Name>
-	<Name>س2</Name>
+	<Name>خ1</Name>
 	<Name>ح2</Name>
 	<Name>ث2</Name>
 	<Name>ل2</Name>
+	<Name>ر2</Name>
 </Days_List>
 
 <Students_List>
@@ -4516,11 +4516,11 @@
 	<Room>2ق1</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4531,11 +4531,11 @@
 	<Room>2ق2</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4546,11 +4546,11 @@
 	<Room>2ق3</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4561,11 +4561,11 @@
 	<Room>2ق4</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4576,11 +4576,11 @@
 	<Room>2ق5</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4591,11 +4591,11 @@
 	<Room>2ق6</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4606,11 +4606,11 @@
 	<Room>3ق1</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4621,11 +4621,11 @@
 	<Room>3ق2</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4636,11 +4636,11 @@
 	<Room>3ق3</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4651,11 +4651,11 @@
 	<Room>3ق4</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4666,11 +4666,11 @@
 	<Room>3ق5</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4681,11 +4681,11 @@
 	<Room>3ق6</Room>
 	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4722,19 +4722,19 @@
 	<Room>1ق1</Room>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ح2</Day>
+		<Day>ث2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ل2</Day>
+		<Day>ر2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4745,19 +4745,19 @@
 	<Room>1ق2</Room>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ح2</Day>
+		<Day>ث2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ل2</Day>
+		<Day>ر2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4768,19 +4768,19 @@
 	<Room>1ق3</Room>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ح2</Day>
+		<Day>ث2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ل2</Day>
+		<Day>ر2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4791,19 +4791,19 @@
 	<Room>1ق4</Room>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ح2</Day>
+		<Day>ث2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ل2</Day>
+		<Day>ر2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4814,19 +4814,19 @@
 	<Room>1ق5</Room>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ح2</Day>
+		<Day>ث2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ل2</Day>
+		<Day>ر2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4837,19 +4837,19 @@
 	<Room>1ق6</Room>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ح2</Day>
+		<Day>ث2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ل2</Day>
+		<Day>ر2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>
@@ -4860,19 +4860,19 @@
 	<Room>1ق7</Room>
 	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
 	<Not_Available_Time>
-		<Day>ث1</Day>
+		<Day>ل1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ر1</Day>
+		<Day>خ1</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ح2</Day>
+		<Day>ث2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Not_Available_Time>
-		<Day>ل2</Day>
+		<Day>ر2</Day>
 		<Hour>2</Hour>
 	</Not_Available_Time>
 	<Active>true</Active>

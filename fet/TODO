@@ -2495,3 +2495,124 @@ in the final HTML table.
 Amendment by Volker Dirr:
 
 Should be generalised from "hours" to "hours or days or both".
+
+156---------------------------------------------------------
+From Yush Yuen:
+
+It would be cool if there could be an interactive way to do the timetable
+generation. For example, in the middle of the generation, I can remove
+some constraints on the fly, un-allocate allocated activities, move
+activities in different order, ... etc. The work flow might be something
+like this:
+
+- hit the pause button
+- select activities to be free
+- inactivate any constraints
+- move some activities to the front
+- hit the re-start button
+
+I suppose it will only benefit some crazy hard timetable like my school.
+Even that, the timetable is probably plain impossible, but such interactive
+approach would make it easier to remove key constraints that makes things
+difficult.
+
+157---------------------------------------------------------
+From Yush Yuen:
+
+Is it possible that FET could be
+customized to do the following:
+
+- Have most of the activities with preferred time and space initially
+- but once being placed, it will be treated as if the time and space
+allocated was not "preferred" so will be free to float
+
+I am hoping that this way, I can obtain better solution by using a
+completed version, unlock some year, then let the program to run again.
+
+Liviu: I did such a custom version for Yush, but it turns out not to work
+as needed, because of broken soft constraints.
+
+158---------------------------------------------------------
+From Yush Yuen:
+
+It would be great if the list of "all time constraints" could be a
+multiple select box. Currently, the way I unlock allocated time is by going
+to the "all time constraints" list, filter out the years that I want to
+open, then remove them one at a time. Actually, before that, I go to the
+student view of the generated timetable, select all, then click unlock time.
+
+It would be nice if I can just do multiple selection and click the "remove"
+or deactivate button just once.
+
+159---------------------------------------------------------
+From Volker Dirr:
+
+FET -> Data -> Time Constraints -> Activities -> A set of subactivities
+have a set of preferred starting times / time slots.
+Need also the value to select all activities with the same duration.
+(because activities with duration 2 should start only in 1., 3. and 5. hour).
+With this constraint a user would need only to set a single constraint instead
+of adding a lot of constraints or activity tags.
+
+160---------------------------------------------------------
+From Volker Dirr:
+
+get rid of some "unneeded" tags in the xml file.
+"unneeded" means: they contain redundant data. this data can be used to
+assert the dataset, but is unneeded.
+for example:
+<Number> in hours list, days list, ...
+
+161---------------------------------------------------------
+From Volker Dirr:
+
+if fet can't generate the data ("Cannot generate - please modify your
+data"), then the "view difficult activities" pushbutton is disabled. So a
+user can't search the bug. so a) enable the pushbutton or (maybe even
+better (but only if you use only 100% constraints?)), display the
+difficult activities in that textedit with the "Cannot generate - please
+modify your data" string.
+
+162---------------------------------------------------------
+From Volker Dirr:
+
+generation_pre request: warn if activities has 100% same starting time and
+100% preferred room in the same room.
+
+163---------------------------------------------------------
+From Volker Dirr:
+
+do an other check in generation_pre.cpp:
+if an activity has only 100% one room possible (by one or more
+constraints), then sum all hours of the same room and check if (number of
+available time slots for room) >= (number of 100% needed slots for this
+room by activities).
+
+164---------------------------------------------------------
+From Volker Dirr:
+
+name of constraints isn't always the same:
+fet has for example: "teacher not available times" constraint.
+but it also has :"A set of activities has preferred times"
+But are these times preferred? The opposite times are not available.
+So this constraint should be called "A set of activities has not
+allowed/available times".
+
+maybe even the "activity prefferd time" is also bad, because it is not
+only preffered. that is a 100% constraint. even the fet interface call it
+"locked". So this constraint should be "An activity has a locked time".
+
+so we get rid of all "preferred" stuff by that. (using instead only
+"locked" or "not available").
+
+165---------------------------------------------------------
+From Volker Dirr:
+
+if a constraint doesn't refer to an activity, then generating shouldn't
+refuse generating. that constraint should be just skipped. Like inactive
+things are skipped. it can warn, but not refuse generating.
+
+(this is highly useful, because someone hunt bugs in his dataset, he can
+just delete for example some years; just to check if this smaller stuff is
+solveable, but some constraints might now refer to no activity anymore,
+because the activities are deleted.)

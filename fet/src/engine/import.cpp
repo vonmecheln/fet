@@ -989,7 +989,7 @@ int Import::readFields(QWidget* parent){
 							} else {
 								QStringList splittedList;
 								if(itemOfField[FIELD_SPLIT_DURATION].count("+")<MAX_SPLIT_OF_AN_ACTIVITY){
-									splittedList = itemOfField[FIELD_SPLIT_DURATION].split("+");
+									splittedList = itemOfField[FIELD_SPLIT_DURATION].split("+", QString::SkipEmptyParts);
 									int tmpInt=0;
 									QString splitted;
 									while(ok && !splittedList.isEmpty()){
@@ -1418,7 +1418,6 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 	//check empty buildings (end)
 
 	//check if rooms are already in memory (start)
-	QStringList dataWarning;
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* r=gt.rules.roomsList[i];
 		if(fieldList[FIELD_ROOM_NAME].contains(r->name))
@@ -2106,7 +2105,7 @@ void Import::importCSVActivities(QWidget* parent){
 		line.clear();
 		line=fieldList[FIELD_STUDENTS_SET][i];
 		students.clear();
-		students=line.split("+");
+		students=line.split("+", QString::SkipEmptyParts);
 		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty()){
 			for(int s=0; s<students.size(); s++){
 				StudentsSet* ss=gt.rules.searchStudentsSet(students[s]);
@@ -2150,7 +2149,7 @@ void Import::importCSVActivities(QWidget* parent){
 		line.clear();
 		line=fieldList[FIELD_TEACHERS_SET][i];
 		teachers.clear();
-		teachers=line.split("+");
+		teachers=line.split("+", QString::SkipEmptyParts);
 		for(int t=0; t<teachers.size(); t++){
 			bool add=true;
 			if(tmpList.contains(teachers[t]) || teachers[t]=="")
@@ -2189,7 +2188,7 @@ void Import::importCSVActivities(QWidget* parent){
 		line.clear();
 		line=fieldList[FIELD_ACTIVITY_TAGS_SET][i];
 		activityTags.clear();
-		activityTags=line.split("+");
+		activityTags=line.split("+", QString::SkipEmptyParts);
 		for(int at=0; at<activityTags.size(); at++){
 			bool add=true;
 			if(tmpList.contains(activityTags[at]) || activityTags[at]=="")
@@ -2292,21 +2291,21 @@ void Import::importCSVActivities(QWidget* parent){
 
 		QStringList teachers_names;
 		if(!fieldList[FIELD_TEACHERS_SET][i].isEmpty())
-			teachers_names = fieldList[FIELD_TEACHERS_SET][i].split("+");
+			teachers_names = fieldList[FIELD_TEACHERS_SET][i].split("+", QString::SkipEmptyParts);
 		
 		QString subject_name = fieldList[FIELD_SUBJECT_NAME][i];
 		
 		QStringList activity_tags_names;
 		if(!fieldList[FIELD_ACTIVITY_TAGS_SET][i].isEmpty())
-			activity_tags_names = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("+");
+			activity_tags_names = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("+", QString::SkipEmptyParts);
 		
 		QStringList students_names;
 		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty())
-			students_names = fieldList[FIELD_STUDENTS_SET][i].split("+");
+			students_names = fieldList[FIELD_STUDENTS_SET][i].split("+", QString::SkipEmptyParts);
 		QStringList splitDurationList;
 		splitDurationList.clear();
 		assert(!fieldList[FIELD_SPLIT_DURATION][i].isEmpty());
-		splitDurationList = fieldList[FIELD_SPLIT_DURATION][i].split("+");
+		splitDurationList = fieldList[FIELD_SPLIT_DURATION][i].split("+", QString::SkipEmptyParts);
 		int nsplit=splitDurationList.size();
 		if(nsplit==1){
 			int duration=fieldList[FIELD_TOTAL_DURATION][i].toInt(&ok2, 10);

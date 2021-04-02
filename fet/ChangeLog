@@ -1651,5 +1651,11 @@ Versions 5.19.0 - 5.19.v
 	- Minor bugs corrected (formatting in the HTML timetables), by Volker Dirr.
 	- Corrected some minor string problems.
 	- Updated the Romanian translation (by Liviu Lalescu). It is now complete.
-- Version 5.19.2
+- Version 5.19.3
 	- Corrected the Romanian translation (by Horatiu Halmajan, daviodan and Liviu Lalescu).
+- Version 5.19.4
+	- Updated the sources to Qt 5.1.1 (but the precompiled Windows version still uses Qt 4.8.5, because of various problems).
+	- Import bugs corrected (by Volker Dirr).
+	- Added two new sample files, from Belize, by donjon.
+	- Added two new sample files, from Algeria, by Laid Messaoudi.
+	

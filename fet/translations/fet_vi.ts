@@ -31471,24 +31471,6 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.3 (June 2013).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="72"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -31512,7 +31494,7 @@ p, li { white-space: pre-wrap; }
         <source>Translators</source>
         <translation>Nhóm dịch</translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="106"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -31626,7 +31608,55 @@ p, li { white-space: pre-wrap; }
         <source>References</source>
         <translation>Tham khảo</translation>
     </message>
-    <message utf8="true">
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="596"/>
+        <source>Close</source>
+        <translation>Thoát</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="60"/>
+        <source>Authors</source>
+        <translation>Tác giả</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.4 (August 2013).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="230"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="243"/>
+        <source>Thanks to</source>
+        <translation>Cảm tạ</translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="255"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -31940,38 +31970,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;geaplanet - sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Leandro Bueno - suggestions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Leandro Bueno - suggestions.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Laid Messaoudi - sample files.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="593"/>
-        <source>Close</source>
-        <translation>Thoát</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="60"/>
-        <source>Authors</source>
-        <translation>Tác giả</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="230"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="243"/>
-        <source>Thanks to</source>
-        <translation>Cảm tạ</translation>
     </message>
 </context>
 <context>
@@ -33794,7 +33797,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/engine/import.cpp" line="775"/>
         <location filename="../src/engine/import.cpp" line="784"/>
         <location filename="../src/engine/import.cpp" line="833"/>
-        <location filename="../src/engine/import.cpp" line="1999"/>
+        <location filename="../src/engine/import.cpp" line="1998"/>
         <source>FET warning</source>
         <translation>Cảnh báo</translation>
     </message>
@@ -33830,10 +33833,10 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="846"/>
-        <location filename="../src/engine/import.cpp" line="1676"/>
-        <location filename="../src/engine/import.cpp" line="1734"/>
-        <location filename="../src/engine/import.cpp" line="1804"/>
-        <location filename="../src/engine/import.cpp" line="2272"/>
+        <location filename="../src/engine/import.cpp" line="1675"/>
+        <location filename="../src/engine/import.cpp" line="1733"/>
+        <location filename="../src/engine/import.cpp" line="1803"/>
+        <location filename="../src/engine/import.cpp" line="2271"/>
         <source>Importing</source>
         <comment>Title of a progress dialog</comment>
         <translation>Nhập dữ liệu</translation>
@@ -33890,20 +33893,20 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1329"/>
-        <location filename="../src/engine/import.cpp" line="1425"/>
-        <location filename="../src/engine/import.cpp" line="1434"/>
-        <location filename="../src/engine/import.cpp" line="1530"/>
-        <location filename="../src/engine/import.cpp" line="1601"/>
+        <location filename="../src/engine/import.cpp" line="1424"/>
+        <location filename="../src/engine/import.cpp" line="1433"/>
+        <location filename="../src/engine/import.cpp" line="1529"/>
+        <location filename="../src/engine/import.cpp" line="1600"/>
         <source>%1 is already in FET data.</source>
         <translation>%1 đã có trong dữ liệu.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1349"/>
-        <location filename="../src/engine/import.cpp" line="1480"/>
-        <location filename="../src/engine/import.cpp" line="1552"/>
-        <location filename="../src/engine/import.cpp" line="1622"/>
-        <location filename="../src/engine/import.cpp" line="2338"/>
-        <location filename="../src/engine/import.cpp" line="2392"/>
+        <location filename="../src/engine/import.cpp" line="1479"/>
+        <location filename="../src/engine/import.cpp" line="1551"/>
+        <location filename="../src/engine/import.cpp" line="1621"/>
+        <location filename="../src/engine/import.cpp" line="2337"/>
+        <location filename="../src/engine/import.cpp" line="2391"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
@@ -33913,112 +33916,112 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <translation>Đã thêm %1 thông tin bổ trợ. Hãy kiểm tra form thông tin bổ trợ.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1552"/>
-        <location filename="../src/engine/import.cpp" line="2243"/>
+        <location filename="../src/engine/import.cpp" line="1551"/>
+        <location filename="../src/engine/import.cpp" line="2242"/>
         <source>%1 subjects added. Please check subjects form.</source>
         <translation>Đã thêm %1 môn học. Hãy kiểm tra form môn học.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1622"/>
-        <location filename="../src/engine/import.cpp" line="2228"/>
+        <location filename="../src/engine/import.cpp" line="1621"/>
+        <location filename="../src/engine/import.cpp" line="2227"/>
         <source>%1 teachers added. Please check teachers form.</source>
         <translation>Đã thêm %1 giáo viên. Hãy kiểm tra form giáo viên.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1678"/>
+        <location filename="../src/engine/import.cpp" line="1677"/>
         <source>Checking CSV</source>
         <translation>Kiểm tra tệp CSV</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1684"/>
+        <location filename="../src/engine/import.cpp" line="1683"/>
         <source>Checking CSV canceled by user.</source>
         <translation>Người dùng hủy kiểm tra tệp CSV.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1735"/>
+        <location filename="../src/engine/import.cpp" line="1734"/>
         <source>Checking data</source>
         <translation>Kiểm tra dữ liệu</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1744"/>
-        <location filename="../src/engine/import.cpp" line="1758"/>
-        <location filename="../src/engine/import.cpp" line="1774"/>
+        <location filename="../src/engine/import.cpp" line="1743"/>
+        <location filename="../src/engine/import.cpp" line="1757"/>
+        <location filename="../src/engine/import.cpp" line="1773"/>
         <source>Checking data canceled by user.</source>
         <translation>Người dùng hủy kiểm tra dữ liệu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1749"/>
+        <location filename="../src/engine/import.cpp" line="1748"/>
         <source>Year %1 is already in FET data.</source>
         <translation>Khối %1 đã có trong dữ liệu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1751"/>
+        <location filename="../src/engine/import.cpp" line="1750"/>
         <source>Can&apos;t import group %1. Name is already taken for a year.</source>
         <translation>Không thể nhập dữ liệu nhóm %1. Tên đã được dùng bởi một khối.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1753"/>
+        <location filename="../src/engine/import.cpp" line="1752"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a year.</source>
         <translation>Không thể nhập dữ liệu nhóm con %1. Tên đã được dùng bởi một khối.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1764"/>
+        <location filename="../src/engine/import.cpp" line="1763"/>
         <source>Can&apos;t import year %1. Name is already taken for a group.</source>
         <translation>Không thể nhập dữ liệu khối %1. Tên đã được dùng bởi một nhóm.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1766"/>
+        <location filename="../src/engine/import.cpp" line="1765"/>
         <source>Group name %1 is already in FET data (In the same or in an other year).</source>
         <translation>Tên nhóm lớp %1 đang tồn tại trong dữ liệu (trong cùng hoặc khác khối).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1768"/>
+        <location filename="../src/engine/import.cpp" line="1767"/>
         <source>Can&apos;t import subgroup %1. Name is already taken for a group.</source>
         <translation>Không thể nhập dữ liệu nhóm con %1. Tên đã được dùng bởi một nhóm.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1780"/>
+        <location filename="../src/engine/import.cpp" line="1779"/>
         <source>Can&apos;t import year %1. Name is already taken for a subgroup.</source>
         <translation>Không thể nhập dữ liệu khối %1. Tên đã được dùng bởi một nhóm con.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1782"/>
+        <location filename="../src/engine/import.cpp" line="1781"/>
         <source>Can&apos;t import group %1. Name is taken for a subgroup.</source>
         <translation>Không thể nhập dữ liệu nhóm %1. Tên đã được dùng bởi một nhóm con.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1784"/>
+        <location filename="../src/engine/import.cpp" line="1783"/>
         <source>Subgroup name %1 is already in FET data (In the same or in an other group).</source>
         <translation>Tên nhóm con %1 đang tồn tại trong dữ liệu (trong cùng hoặc khác nhóm lớp).</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1805"/>
+        <location filename="../src/engine/import.cpp" line="1804"/>
         <source>Importing data</source>
         <translation>Nhập dữ liệu</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1813"/>
-        <location filename="../src/engine/import.cpp" line="2282"/>
+        <location filename="../src/engine/import.cpp" line="1812"/>
+        <location filename="../src/engine/import.cpp" line="2281"/>
         <source>Importing data canceled by user.</source>
         <translation>Người dùng hủy nhập dữ liệu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2117"/>
+        <location filename="../src/engine/import.cpp" line="2116"/>
         <source>I recommend to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity csv file by that.</source>
         <translation>Chỉ dẫn: nên nhập dữ liệu giáo viên, lớp học, khối nhà, môn học và thông tin trợ giảng trước khi nhập dữ liệu các tiết giảng.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2273"/>
+        <location filename="../src/engine/import.cpp" line="2272"/>
         <source>Importing activities</source>
         <translation>Hoạt động nhập dữ liệu</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2338"/>
+        <location filename="../src/engine/import.cpp" line="2337"/>
         <source>Activity NOT added - please report error</source>
         <translation>Lỗi không thêm được tiết giảng</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2392"/>
+        <location filename="../src/engine/import.cpp" line="2391"/>
         <source>Split activity NOT added - error???</source>
         <translation>Lỗi không thêm được tiết giảng tổng hợp ?</translation>
     </message>
@@ -34056,8 +34059,8 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <location filename="../src/engine/import.cpp" line="1321"/>
         <location filename="../src/engine/import.cpp" line="1411"/>
         <location filename="../src/engine/import.cpp" line="1417"/>
-        <location filename="../src/engine/import.cpp" line="1522"/>
-        <location filename="../src/engine/import.cpp" line="1593"/>
+        <location filename="../src/engine/import.cpp" line="1521"/>
+        <location filename="../src/engine/import.cpp" line="1592"/>
         <source>Skipped line %1: Field &apos;%2&apos; is empty.</source>
         <translation>Bỏ qua dòng %1: Trường &apos;%2&apos; bị trống.</translation>
     </message>
@@ -34095,94 +34098,94 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <translation>Bỏ qua dòng %1: Trường &apos;%2&apos; đã có ở 1 dòng phía trước.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1481"/>
+        <location filename="../src/engine/import.cpp" line="1480"/>
         <source>%1 buildings added. Please check rooms form.</source>
         <translation>Đã thêm %1 khối nhà. Hãy kiểm tra form phòng học.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1481"/>
+        <location filename="../src/engine/import.cpp" line="1480"/>
         <source>%2 rooms added. Please check rooms form.</source>
         <translation>Đã thêm %2 phòng học. Hãy kiểm tra form phòng học.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1711"/>
+        <location filename="../src/engine/import.cpp" line="1710"/>
         <source>Problem in line %1: Year name %2 is taken for a group - please consider another name</source>
         <translation>Lỗi ở dòng %1: Tên khối %2 đã được dùng ở một nhóm lớp. Hãy nhập tên khác</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1719"/>
+        <location filename="../src/engine/import.cpp" line="1718"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a year - please consider another name</source>
         <translation>Lỗi ở dòng %1: Tên nhóm con %2 đã được dùng ở một khối. Hãy nhập tên khác</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1721"/>
+        <location filename="../src/engine/import.cpp" line="1720"/>
         <source>Problem in line %1: Subgroup name %2 is taken for a group - please consider another name</source>
         <translation>Lỗi ở dòng %1: Tên nhóm con %2 đã được dùng ở một nhóm. Hãy nhập tên khác</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1723"/>
+        <location filename="../src/engine/import.cpp" line="1722"/>
         <source>Problem in line %1: Group name %2 is taken for a subgroup - please consider another name</source>
         <translation>Lỗi ở dòng %1: Tên nhóm %2 đã được dùng ở một nhóm con. Hãy nhập tên khác</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1725"/>
+        <location filename="../src/engine/import.cpp" line="1724"/>
         <source>Problem in line %1: Year name %2 is taken for a subgroup - please consider another name</source>
         <translation>Lỗi ở dòng %1: Tên khối %2 đã được dùng ở một nhóm con. Hãy nhập tên khác</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1873"/>
-        <location filename="../src/engine/import.cpp" line="1876"/>
+        <location filename="../src/engine/import.cpp" line="1872"/>
+        <location filename="../src/engine/import.cpp" line="1875"/>
         <source>Group name %1 exists in another year. It means that some years share the same group.</source>
         <translation>Tên nhóm lớp %1 đang tồn tại ở một khối khác. Có nghĩa là vài khối chia sẻ nhóm này.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1917"/>
+        <location filename="../src/engine/import.cpp" line="1916"/>
         <source>Subgroup name %1 exists in another group. It means that some groups share the same subgroup.</source>
         <translation>Tên nhóm con %1 đang tồn tại ở một nhóm khác. Có nghĩa là vài nhóm chia sẻ nhóm con này.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1944"/>
-        <location filename="../src/engine/import.cpp" line="2404"/>
+        <location filename="../src/engine/import.cpp" line="1943"/>
+        <location filename="../src/engine/import.cpp" line="2403"/>
         <source>Notes:</source>
         <translation>Lưu ý:</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1945"/>
+        <location filename="../src/engine/import.cpp" line="1944"/>
         <source>%1 subgroups added. Please check subgroups form.</source>
         <translation>Đã thêm %1 nhóm lớp con. Hãy kiểm tra form nhóm con.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1946"/>
+        <location filename="../src/engine/import.cpp" line="1945"/>
         <source>%1 groups added. Please check groups form.</source>
         <translation>Đã thêm %1 nhóm lớp. Hãy kiểm tra form nhóm lớp.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1947"/>
+        <location filename="../src/engine/import.cpp" line="1946"/>
         <source>%1 years added. Please check years form.</source>
         <translation>Đã thêm %1 khối. Hãy kiểm tra form khối.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2122"/>
+        <location filename="../src/engine/import.cpp" line="2121"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
         <translation>Lớp học %1 không tồn tại. Bạn cần nhập dữ liệu khối, nhóm lớp và nhóm con trước.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2258"/>
+        <location filename="../src/engine/import.cpp" line="2257"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
         <translation>Đã thêm %1 thông tin bổ trợ. Hãy kiểm tra form thông tin bổ trợ.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2328"/>
+        <location filename="../src/engine/import.cpp" line="2327"/>
         <source>Activity %1 already exists. A duplicate activity is imported. Please check the dataset!</source>
         <translation>Tiết giảng %1 đang tồn tại. Một tiết trung được nhập dữ liệu. Hãy kiểm tra lại dữ liệu!</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2400"/>
+        <location filename="../src/engine/import.cpp" line="2399"/>
         <source>Warning: found tags for the &apos;consecutive&apos; field of min days which are not a valid boolean value (%1) - making them %2</source>
         <translation>Cảnh báo: thuộc tính &apos;xếp liền&apos; của số ngày tối thiểu không phải là giá tri logic (%1) - đặt chúng là %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2406"/>
+        <location filename="../src/engine/import.cpp" line="2405"/>
         <source>%1 container activities (%2 total activities) added. Please check activity form.</source>
         <translation>Đã thêm %1 tiết giảng tổng hợp (%2 tổng số tiết giảng). Hãy kiểm tra form tiết giảng.</translation>
     </message>
@@ -34192,19 +34195,19 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <translation>Bỏ qua dòng %1: Trường &apos;%2&apos; và &apos;%3&apos; không có cùng giá trị.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1709"/>
+        <location filename="../src/engine/import.cpp" line="1708"/>
         <source>Problem in line %1: Group name %2 is taken for a year - please consider another name</source>
         <translation>Lỗi ở dòng %1: Tên nhóm %2 đã được dùng ở một khối. Hãy nhập tên khác</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2115"/>
+        <location filename="../src/engine/import.cpp" line="2114"/>
         <source>FET can&apos;t import activities, because FET needs to know the stucture of the students sets. You must add (or import) years, groups and subgroups first.</source>
         <translation>Không thể nhập dữ liệu các tiết giảng vì FET cần biết cấu trúc các lớp. Bạn cần thêm mới (hay nhập dữ liệu) các khối, nhóm lớp và các nhóm con trước.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="2159"/>
-        <location filename="../src/engine/import.cpp" line="2176"/>
-        <location filename="../src/engine/import.cpp" line="2198"/>
+        <location filename="../src/engine/import.cpp" line="2158"/>
+        <location filename="../src/engine/import.cpp" line="2175"/>
+        <location filename="../src/engine/import.cpp" line="2197"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject Math will be added&apos;, so use singular</comment>
         <translation>Sẽ thêm %1 %2.</translation>
@@ -34225,7 +34228,7 @@ Probably, in practice this problem will not appear and you need not to worry. Bu
         <translation>Lưu ý về dòng %1: Dữ liệu đã có trong một dòng ở phía trước. Vì thế dữ liệu được nhập lại lần nữa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1999"/>
+        <location filename="../src/engine/import.cpp" line="1998"/>
         <source>FET need to know %1 or %2 if you import %3.</source>
         <translation>Chương trình cần biết %1 hoặc %2 nếu bạn nhập dữ liệu %3.</translation>
     </message>
