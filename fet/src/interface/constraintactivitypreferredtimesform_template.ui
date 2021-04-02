@@ -127,6 +127,12 @@
         <receiver>ConstraintActivityPreferredTimesForm_template</receiver>
         <slot>modifyConstraint()</slot>
     </connection>
+    <connection>
+        <sender>constraintsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ConstraintActivityPreferredTimesForm_template</receiver>
+        <slot>modifyConstraint()</slot>
+    </connection>
 </connections>
 <slots>
     <slot>addConstraint()</slot>

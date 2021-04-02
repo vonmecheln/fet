@@ -343,14 +343,6 @@
     <string>View (teachers)</string>
    </property>
   </action>
-  <action name="timetableExportXmlHtmlAction" >
-   <property name="text" >
-    <string>Export to &amp;xml and html</string>
-   </property>
-   <property name="iconText" >
-    <string>Export to xml and html</string>
-   </property>
-  </action>
   <action name="timetableShowConflictsAction" >
    <property name="text" >
     <string>Show conflicts</string>
@@ -386,17 +378,6 @@
     <string>Rooms</string>
    </property>
   </action>
-  <action name="timetableAllocateRoomsAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>Allocate &amp;rooms</string>
-   </property>
-   <property name="iconText" >
-    <string>Allocate rooms</string>
-   </property>
-  </action>
   <action name="timetableViewRoomsAction" >
    <property name="enabled" >
     <bool>true</bool>
@@ -406,17 +387,6 @@
    </property>
    <property name="iconText" >
     <string>View (rooms)</string>
-   </property>
-  </action>
-  <action name="timetableShowConflictsSpaceAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>Show conflicts (s&amp;pace)</string>
-   </property>
-   <property name="iconText" >
-    <string>Show conflicts (space)</string>
    </property>
   </action>
   <action name="languageEnglishAction" >
@@ -441,55 +411,12 @@
     <string>ro (Romanian)</string>
    </property>
   </action>
-  <action name="parametersPopulationNumberAction" >
-   <property name="text" >
-    <string>Population &amp;number</string>
-   </property>
-   <property name="iconText" >
-    <string>Population number</string>
-   </property>
-  </action>
-  <action name="parametersProbabilitiesAction" >
-   <property name="text" >
-    <string>Probabilities - TODO</string>
-   </property>
-   <property name="iconText" >
-    <string>Probabilities - TODO</string>
-   </property>
-  </action>
-  <action name="dataEquipmentsAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>&amp;Equipments</string>
-   </property>
-   <property name="iconText" >
-    <string>Equipments</string>
-   </property>
-  </action>
   <action name="dataTimeConstraintsAction" >
    <property name="text" >
     <string>T&amp;ime constraints</string>
    </property>
    <property name="iconText" >
     <string>Time constraints</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraints2ActivitiesConsecutiveAction" >
-   <property name="text" >
-    <string>2 activities consecutive - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>2 activities consecutive</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraints2ActivitiesGroupedAction" >
-   <property name="text" >
-    <string>2 activities grouped - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>2 activities grouped</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivitiesPreferredTimesAction" >
@@ -517,17 +444,6 @@
    </property>
    <property name="iconText" >
     <string>Activities same starting time</string>
-   </property>
-  </action>
-  <action name="timetableViewTeachersWithRoomsAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>View (t&amp;eachers-with rooms)</string>
-   </property>
-   <property name="iconText" >
-    <string>View (teachers-with rooms)</string>
    </property>
   </action>
   <action name="timetableViewStudentsWithRoomsAction" >
@@ -606,28 +522,12 @@
     <string>Time constraints (misc)</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" >
-   <property name="text" >
-    <string>Teachers max hours continuously - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Teachers max hours continuously</string>
-   </property>
-  </action>
   <action name="dataTimeConstraintsTeachersMaxHoursDailyAction" >
    <property name="text" >
     <string>Teachers max hours daily</string>
    </property>
    <property name="iconText" >
     <string>Teachers max hours daily</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsTeachersSubgroupsMaxHoursDailyAction" >
-   <property name="text" >
-    <string>Teachers-subgroups max hours daily - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Teachers-subgroups max hours daily</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivityPreferredTimeAction" >
@@ -648,38 +548,6 @@
   <action name="dataTimeConstraintsStudentsEarlyAction" >
    <property name="iconText" >
     <string>Students early</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" >
-   <property name="text" >
-    <string>Students set interval max days per week - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Students set interval max days per week</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsStudentsSetNHoursDailyAction" >
-   <property name="text" >
-    <string>Students set n hours daily - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Students set n hours daily</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsStudentsNHoursDailyAction" >
-   <property name="text" >
-    <string>Students n hours daily - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Students n hours daily</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsActivityEndsDayAction" >
-   <property name="text" >
-    <string>Activity ends day - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Activity ends day</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivitiesNotOverlappingAction" >
@@ -732,11 +600,6 @@
     <string>Basic compulsory space</string>
    </property>
   </action>
-  <action name="dataSpaceConstraintsTeacherRequiresRoomAction" >
-   <property name="iconText" >
-    <string>Teacher requires room</string>
-   </property>
-  </action>
   <action name="dataSpaceConstraintsRoomNotAvailableAction" >
    <property name="iconText" >
     <string>Room not available</string>
@@ -755,76 +618,6 @@
     <string>Activity preferred room</string>
    </property>
   </action>
-  <action name="dataSpaceConstraintsMinimizeNumberOfRoomsForStudentsAction" >
-   <property name="iconText" >
-    <string>Minimize number of rooms for students</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsRoomTypeNotAllowedSubjectsAction" >
-   <property name="iconText" >
-    <string>Room type not allowed subjects</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsSubjectRequiresEquipmentsAction" >
-   <property name="iconText" >
-    <string>Subject requires equipments</string>
-   </property>
-  </action>
-  <action name="timetableAllocateHoursRoomsAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>Allocate hours and rooms</string>
-   </property>
-   <property name="iconText" >
-    <string>Allocate hours and rooms simultaneously</string>
-   </property>
-  </action>
-  <action name="timetableViewStudentsWithRooms2Action" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>View (students-with rooms)</string>
-   </property>
-   <property name="iconText" >
-    <string>View (students-with rooms)</string>
-   </property>
-  </action>
-  <action name="timetableViewTeachersWithRooms2Action" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>View (teachers-with rooms)</string>
-   </property>
-   <property name="iconText" >
-    <string>View (teachers-with rooms)</string>
-   </property>
-  </action>
-  <action name="timetableViewRooms2Action" >
-   <property name="enabled" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>View (rooms)</string>
-   </property>
-   <property name="iconText" >
-    <string>View (rooms)</string>
-   </property>
-  </action>
-  <action name="timetableShowConflictsTimeSpaceAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>Show conflicts (time and space)</string>
-   </property>
-   <property name="iconText" >
-    <string>Show conflicts (time and space)</string>
-   </property>
-  </action>
   <action name="dataTimeConstraintsActivitiesSameStartingHourAction" >
    <property name="text" >
     <string>Activities same starting hour</string>
@@ -841,11 +634,6 @@
     <string>Subject tags</string>
    </property>
   </action>
-  <action name="dataSpaceConstraintsSubjectSubjectTagRequireEquipmentsAction" >
-   <property name="iconText" >
-    <string>Subject subject tag require equipments</string>
-   </property>
-  </action>
   <action name="dataInstitutionNameAction" >
    <property name="text" >
     <string>I&amp;nstitution name</string>
@@ -860,11 +648,6 @@
    </property>
    <property name="iconText" >
     <string>Comments</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsActivitiesSameRoomAction" >
-   <property name="iconText" >
-    <string>Activities same room</string>
    </property>
   </action>
   <action name="dataSpaceConstraintsActivityPreferredRoomsAction" >
@@ -899,35 +682,9 @@
     <string>Subject preferred room</string>
    </property>
   </action>
-  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomAction" >
-   <property name="iconText" >
-    <string>Subject subject tag preferred room</string>
-   </property>
-  </action>
   <action name="dataSpaceConstraintsSubjectPreferredRoomsAction" >
    <property name="iconText" >
     <string>Subject preferred rooms</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" >
-   <property name="iconText" >
-    <string>Subject subject tag preferred rooms</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsTeachersSubjectTagsMaxHoursContinuouslyAction" >
-   <property name="text" >
-    <string>Teachers-subject tags max hours continuously - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Teachers-subject tags max hours continuously</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsTeachersSubjectTagMaxHoursContinuouslyAction" >
-   <property name="text" >
-    <string>Teachers-subject tag max hours continuously - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>Teachers-subject tag max hours continuously</string>
    </property>
   </action>
   <action name="languagePolishAction" >
@@ -939,71 +696,6 @@
    </property>
    <property name="iconText" >
     <string>pl (Polish)</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsTeacherSubjectRequireRoomAction" >
-   <property name="iconText" >
-    <string>Teacher subject require room</string>
-   </property>
-  </action>
-  <action name="helpTimeConstraintsAction" >
-   <property name="text" >
-    <string>Time constraints - OLD, DEPRECATED</string>
-   </property>
-   <property name="iconText" >
-    <string>Time constraints</string>
-   </property>
-  </action>
-  <action name="helpTimeConstraintsSubtagsAction" >
-   <property name="text" >
-    <string>Time constraints subtags - OLD, DEPRECATED</string>
-   </property>
-   <property name="iconText" >
-    <string>Time constraints subtags</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraints2ActivitiesOrderedAction" >
-   <property name="text" >
-    <string>2 activities ordered - NOT WORKING</string>
-   </property>
-   <property name="iconText" >
-    <string>2 activities ordered</string>
-   </property>
-  </action>
-  <action name="dataBuildingsAction" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="text" >
-    <string>Buildings</string>
-   </property>
-   <property name="iconText" >
-    <string>Buildings</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsMaxBuildingChangesPerDayForTeachersAction" >
-   <property name="iconText" >
-    <string>Max building changes per day for teachers</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsMaxBuildingChangesPerDayForStudentsAction" >
-   <property name="iconText" >
-    <string>Max building changes per day for students</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsMinimizeNumberOfRoomsForTeachersAction" >
-   <property name="iconText" >
-    <string>Minimize number of rooms for teachers</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsMaxRoomChangesPerDayForTeachersAction" >
-   <property name="iconText" >
-    <string>Max room changes per day for teachers</string>
-   </property>
-  </action>
-  <action name="dataSpaceConstraintsMaxRoomChangesPerDayForStudentsAction" >
-   <property name="iconText" >
-    <string>Max room changes per day for students</string>
    </property>
   </action>
   <action name="languageTurkishAction" >
@@ -1026,44 +718,6 @@
    </property>
    <property name="iconText" >
     <string>nl (Dutch)</string>
-   </property>
-  </action>
-  <action name="timetableExportiCalAction" >
-   <property name="text" >
-    <string>Export to i&amp;Calendar</string>
-   </property>
-   <property name="iconText" >
-    <string>Export to iCalendar</string>
-   </property>
-  </action>
-  <action name="timetableExportiCalStudentsAction" >
-   <property name="iconText" >
-    <string>Students</string>
-   </property>
-  </action>
-  <action name="timetableExportiCalTeachersAction" >
-   <property name="iconText" >
-    <string>Teachers</string>
-   </property>
-  </action>
-  <action name="timetableExportiCalTeachersWithRooms1Action" >
-   <property name="iconText" >
-    <string>Teachers with rooms (1)</string>
-   </property>
-  </action>
-  <action name="timetableExportiCalStudentsWithRooms1Action" >
-   <property name="iconText" >
-    <string>Students with rooms (1)</string>
-   </property>
-  </action>
-  <action name="timetableExportiCalTeachersWithRooms2Action" >
-   <property name="iconText" >
-    <string>Teachers with rooms (2)</string>
-   </property>
-  </action>
-  <action name="timetableExportiCalStudentsWithRooms2Action" >
-   <property name="iconText" >
-    <string>Students with rooms (2)</string>
    </property>
   </action>
   <action name="languageGermanAction" >
@@ -1093,16 +747,6 @@
   <action name="dataSubjectsStatisticsAction" >
    <property name="text" >
     <string>Subjects statistics</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" >
-   <property name="text" >
-    <string>Teacher interval max days per week - NOT WORKING</string>
-   </property>
-  </action>
-  <action name="dataTimeConstraintsTeachersMinHoursDailyAction" >
-   <property name="text" >
-    <string>Teachers min hours daily - NOT WORKING</string>
    </property>
   </action>
   <action name="languageHungarianAction" >

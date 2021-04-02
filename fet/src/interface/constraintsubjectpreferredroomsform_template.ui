@@ -148,6 +148,12 @@
         <receiver>ConstraintSubjectPreferredRoomsForm_template</receiver>
         <slot>filterChanged()</slot>
     </connection>
+    <connection>
+        <sender>constraintsListBox</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>ConstraintSubjectPreferredRoomsForm_template</receiver>
+        <slot>modifyConstraint()</slot>
+    </connection>
 </connections>
 <slots>
     <slot>addConstraint()</slot>

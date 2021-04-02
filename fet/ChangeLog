@@ -927,3 +927,10 @@ Versions 5.1.0 -
 	- Allow only one category for splitting a year.
 - Version 5.1.3
 	- Improvements in dividing year (suggested by Volker Dirr and Constantin Romulus).
+- Version 5.1.4
+	- Improvements in dividing year (suggested by Constantin Romulus and Volker Dirr).
+	- Improvements in Romanian translation.
+	- Improvements in German translation by Volker Dirr.
+	- Small improvements in interface.
+	- The user can now double click in any constraints dialog.
+	

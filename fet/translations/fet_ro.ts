@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ro">
-<defaultcodec></defaultcodec>
 <context>
     <name>ActivitiesForm_template</name>
     <message>
@@ -552,12 +551,12 @@ cate una pentru fiecare grup corespunzator)</translation>
         <translation>Sterge</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="171"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="165"/>
         <source>New Item</source>
         <translation>Nou</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="190"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="184"/>
         <source>Activity</source>
         <translation>Activitate</translation>
     </message>
@@ -567,7 +566,7 @@ cate una pentru fiecare grup corespunzator)</translation>
         <translation>Toate salile (dbl. click adauga)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="162"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="159"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation>Salile selectate (dbl. click sterge)</translation>
     </message>
@@ -1049,37 +1048,37 @@ pentru aceasta constrangere (sau nici o constrangere).</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint students min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET-Dialogul de adaugare constrangere min ore zilnic studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Adauga constrangerea curenta</translation>
+        <translation>Adauga constrangerea curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="57"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta - procent (trebuie: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="93"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Nr min ore</translation>
     </message>
 </context>
 <context>
@@ -1243,42 +1242,42 @@ pentru aceasta constrangere (sau nici o constrangere).</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Dialogul de adaugare constrangere set de studenti min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="72"/>
         <source>Students set</source>
-        <translation type="unfinished">Set de studenti</translation>
+        <translation>Set de studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="80"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Adauga constrangerea curenta</translation>
+        <translation>Adauga constrangerea curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="88"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="110"/>
         <source>Weight - percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta - procent (trebuie: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="124"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Nr min ore</translation>
     </message>
 </context>
 <context>
@@ -2667,42 +2666,42 @@ daca puteti obtine orare.</translation>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Constrangeri de timp studenti min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nou</translation>
+        <translation>Nou</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Constrangeri</translation>
+        <translation>Constrangeri</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Adauga</translation>
+        <translation>Adauga</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Sterge</translation>
+        <translation>Sterge</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
 </context>
 <context>
@@ -2849,47 +2848,47 @@ daca puteti obtine orare.</translation>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students set min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - constrangeri de timp set de studenti min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Nou</translation>
+        <translation>Nou</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Constrangeri</translation>
+        <translation>Constrangeri</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished">Inchide</translation>
+        <translation>Inchide</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Adauga</translation>
+        <translation>Adauga</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Sterge</translation>
+        <translation>Sterge</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filtru</translation>
+        <translation>Filtru</translation>
     </message>
 </context>
 <context>
@@ -3553,7 +3552,7 @@ daca puteti obtine orare.</translation>
         <translation>&amp;Despre...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1046"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="279"/>
         <source>Teachers</source>
         <translation>Profesori</translation>
     </message>
@@ -3583,7 +3582,7 @@ daca puteti obtine orare.</translation>
         <translation>&amp;Activitati</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="473"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="416"/>
         <source>T&amp;ime constraints</source>
         <translation>Constrangeri de t&amp;imp</translation>
     </message>
@@ -3598,44 +3597,24 @@ daca puteti obtine orare.</translation>
         <translation>Vizualizare (&amp;profesori)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Zile pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="372"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
         <source>&amp;Hours per day</source>
         <translation>&amp;Ore pe zi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="383"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Sali</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="394"/>
-        <source>Allocate &amp;rooms</source>
-        <translation>Alocare &amp;sali</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="254"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;Intrebari frecvente</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="446"/>
-        <source>Population &amp;number</source>
-        <translation>Marimea &amp;populatiei</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="457"/>
-        <source>Probabilities - TODO</source>
-        <translation>Probabilitati - in lucru</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="468"/>
-        <source>Equipments</source>
-        <translation>Echipamente</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="257"/>
@@ -3668,7 +3647,7 @@ daca puteti obtine orare.</translation>
         <translation>Activitati</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="954"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="419"/>
         <source>Time constraints</source>
         <translation>Constrangeri de timp</translation>
     </message>
@@ -3683,558 +3662,332 @@ daca puteti obtine orare.</translation>
         <translation>Vizualizare (profesori)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="351"/>
         <source>Show conflicts (time)</source>
         <translation>Vizualizare conflicte (temporale)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
         <source>Days per week</source>
         <translation>Zile pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
         <source>Hours per day</source>
         <translation>Ore pe zi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="386"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="378"/>
         <source>Rooms</source>
         <translation>Sali</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="727"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="595"/>
         <source>Space constraints</source>
         <translation>Constrangeri de spatiu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="397"/>
-        <source>Allocate rooms</source>
-        <translation>Alocare sali</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="405"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="386"/>
         <source>View (r&amp;ooms)</source>
         <translation>Vizualizare (sa&amp;li)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="419"/>
-        <source>Show conflicts (space)</source>
-        <translation>Vizualizare conflicte (de spatiu)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="416"/>
-        <source>Show conflicts (s&amp;pace)</source>
-        <translation>Vizualizare conflicte (de sp&amp;atiu)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="449"/>
-        <source>Population number</source>
-        <translation>Marimea populatiei</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="465"/>
-        <source>&amp;Equipments</source>
-        <translation>&amp;Echipamente</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="484"/>
-        <source>2 activities consecutive</source>
-        <translation>2 activitati consecutive</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="492"/>
-        <source>2 activities grouped</source>
-        <translation>2 activitati grupate</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="500"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="427"/>
         <source>Activities preferred times</source>
         <translation>Timpii preferati ai activitatilor</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="519"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="446"/>
         <source>Activities same starting time</source>
         <translation>Activitile trebuie sa inceapa simultan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="803"/>
-        <source>View (teachers-with rooms)</source>
-        <translation>Vizualizare (profesori-cu sali)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="527"/>
-        <source>View (t&amp;eachers-with rooms)</source>
-        <translation>Vizualizare (p&amp;rofesori-cu sali)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="792"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="457"/>
         <source>View (students-with rooms)</source>
         <translation>Vizualizare (studenti-cu sali)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="538"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="454"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation>Vizualizare (st&amp;udenti-cu sali)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="549"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="465"/>
         <source>All time constraints</source>
         <translation>Toate constrangerile de timp</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="606"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="522"/>
         <source>Time constraints (misc)</source>
         <translation>Constrangeri de timp (diverse)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="582"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="498"/>
         <source>Time constraints (teachers)</source>
         <translation>Constrangeri de timp (profesori)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="590"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="506"/>
         <source>Time constraints (students)</source>
         <translation>Constrangeri de timp (studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="598"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="514"/>
         <source>Time constraints (activities)</source>
         <translation>Constrangeri de timp (activitati)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="554"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
         <source>Teacher not available</source>
         <translation>Profesor indisponibil</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="559"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
         <source>Basic compulsory time constraints</source>
         <translation>Constrangeri temporale de baza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="564"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
         <source>Students set not available</source>
         <translation>Set de studenti indisponibil</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="485"/>
         <source>Break</source>
         <translation>Pauza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="574"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="490"/>
         <source>Teacher max days per week</source>
         <translation>Profesor max zile pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="635"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="535"/>
         <source>Activity preferred time</source>
         <translation>Timp preferat al activitatii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="540"/>
         <source>Students set no gaps</source>
         <translation>Set de studenti fara ferestre</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="645"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="545"/>
         <source>Students no gaps</source>
         <translation>Studenti fara ferestre</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="650"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
         <source>Students early</source>
         <translation>Studenti devreme</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="658"/>
-        <source>Students set interval max days per week</source>
-        <translation>Set de studenti - interval - max zile pe saptamana</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="666"/>
-        <source>Students set n hours daily</source>
-        <translation>Set de studenti n ore zilnic</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="674"/>
-        <source>Students n hours daily</source>
-        <translation>
-Studenti - n ore zilnic</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="682"/>
-        <source>Activity ends day</source>
-        <translation>Activitatea incheie ziua</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="690"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
         <source>Activities not overlapping</source>
         <translation>Activitatile nu trebuie sa se suprapuna</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="695"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="563"/>
         <source>Min n days between activities</source>
         <translation>Min n zile intre activitati</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="700"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="568"/>
         <source>Activity preferred times</source>
         <translation>Timpii preferati ai activitatii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="719"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="587"/>
         <source>Space constraints (misc)</source>
         <translation>Constrangeri de spatiu (diverse)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="750"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="613"/>
         <source>Space constraints (rooms)</source>
         <translation>Constrangerile de spatiu (sali)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="546"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
         <source>All t&amp;ime constraints</source>
         <translation>Toate constrangerile de t&amp;imp</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="711"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="579"/>
         <source>All space constraints</source>
         <translation>Toate constrangerile de spatiu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="708"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="576"/>
         <source>All s&amp;pace constraints</source>
         <translation>Toate constrangerile de s&amp;patiu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="732"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="600"/>
         <source>Basic compulsory space</source>
         <translation>De baza obligatorii (spatiu)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="737"/>
-        <source>Teacher requires room</source>
-        <translation>Profesor are nevoie de sala</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="742"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="605"/>
         <source>Room not available</source>
         <translation>Sala indisponibila</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="755"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="618"/>
         <source>Activity preferred room</source>
         <translation>Sala preferata a activitatii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="760"/>
-        <source>Minimize number of rooms for students</source>
-        <translation>Minimizeaza numarul de sali pentru studenti</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="765"/>
-        <source>Room type not allowed subjects</source>
-        <translation>Sala - lista de discipline neacceptate</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="770"/>
-        <source>Subject requires equipments</source>
-        <translation>disciplina necesita echipament</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="781"/>
-        <source>Allocate hours and rooms simultaneously</source>
-        <translation>Aloca orele si salile simultan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="814"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="389"/>
         <source>View (rooms)</source>
         <translation>Vizualizare (sali)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="825"/>
-        <source>Show conflicts (time and space)</source>
-        <translation>Vizualizare conflicte (timp si spatiu)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="833"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="626"/>
         <source>Activities same starting hour</source>
         <translation>Activitati aceeasi ora de incepere</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="841"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="634"/>
         <source>Subject tags</source>
         <translation>Etichete disciplina</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="838"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="631"/>
         <source>Su&amp;bject tags</source>
         <translation>Etichete su&amp;biect</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="846"/>
-        <source>Subject subject tag require equipments</source>
-        <translation>disciplina eticheta disciplina necesita echipamente</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="854"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="642"/>
         <source>Institution name</source>
         <translation>Numele institutiei</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="851"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="639"/>
         <source>I&amp;nstitution name</source>
         <translation>N&amp;umele institutiei</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="862"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="650"/>
         <source>Comments</source>
         <translation>Comentarii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="859"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="647"/>
         <source>&amp;Comments</source>
         <translation>&amp;Comentarii</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="867"/>
-        <source>Activities same room</source>
-        <translation>Activitati aceeasi sala</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="872"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="655"/>
         <source>Activity preferred rooms</source>
         <translation>Activitate sali preferate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="899"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="682"/>
         <source>Subject preferred room</source>
         <translation>Disciplina sala preferata</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
-        <source>Subject subject tag preferred room</source>
-        <translation>Disciplina eticheta disciplina sala preferata</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="909"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="687"/>
         <source>Subject preferred rooms</source>
         <translation>Disciplina sali preferate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="914"/>
-        <source>Subject subject tag preferred rooms</source>
-        <translation>Disciplina eticheta disciplina sali preferate</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="922"/>
-        <source>Teachers-subject tags max hours continuously</source>
-        <translation>Profesori etichete disciplina max ore continuu</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="930"/>
-        <source>Teachers-subject tag max hours continuously</source>
-        <translation>Profesori-eticheta disciplina max ore continuu</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="614"/>
-        <source>Teachers max hours continuously</source>
-        <translation>Profesori max ore continuu</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="622"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="530"/>
         <source>Teachers max hours daily</source>
         <translation>Profesori max ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="630"/>
-        <source>Teachers-subgroups max hours daily</source>
-        <translation>Profesori-subgrupuri max ore zilnic</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="946"/>
-        <source>Teacher subject require room</source>
-        <translation>Profesor disciplina necesita sala</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="970"/>
-        <source>2 activities ordered</source>
-        <translation>2 activitati ordonate</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="962"/>
-        <source>Time constraints subtags</source>
-        <translation>Sub-etichetele constrangerilor de timp</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="981"/>
-        <source>Buildings</source>
-        <translation>Cladiri</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="986"/>
-        <source>Max building changes per day for teachers</source>
-        <translation>Max schimbari de cladire pe zi pentru profesori</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="991"/>
-        <source>Max building changes per day for students</source>
-        <translation>Max schimbari de cladire pe zi pentru studenti</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="996"/>
-        <source>Minimize number of rooms for teachers</source>
-        <translation>Minimizeaza numarul de sali pentru profesori</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1001"/>
-        <source>Max room changes per day for teachers</source>
-        <translation>Max schimbari de sala pe zi pentru profesori</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1006"/>
-        <source>Max room changes per day for students</source>
-        <translation>Max schimbari de sala pe zi pentru studenti</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="351"/>
-        <source>Export to xml and html</source>
-        <translation>Exporta in xml si html</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
-        <source>Export to &amp;xml and html</source>
-        <translation>Exporta in &amp;xml si html</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1041"/>
-        <source>Students</source>
-        <translation>Studenti</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1051"/>
-        <source>Teachers with rooms (1)</source>
-        <translation>Profesori cu sali (1)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1056"/>
-        <source>Students with rooms (1)</source>
-        <translation>Studenti cu sali (1)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1061"/>
-        <source>Teachers with rooms (2)</source>
-        <translation>Profesori cu sali (2)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1066"/>
-        <source>Students with rooms (2)</source>
-        <translation>Studenti cu sali (2)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1033"/>
-        <source>Export to i&amp;Calendar</source>
-        <translation>Exporta in i&amp;Calendar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1036"/>
-        <source>Export to iCalendar</source>
-        <translation>Exporta in iCalendar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="430"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="400"/>
         <source>en_GB (British English)</source>
         <translation>en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="427"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="397"/>
         <source>&amp;en_GB (British English)</source>
         <translation>&amp;en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="441"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="411"/>
         <source>ro (Romanian)</source>
         <translation>ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="438"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="408"/>
         <source>&amp;ro (Romanian)</source>
         <translation>&amp;ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="511"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="438"/>
         <source>fr (French)</source>
         <translation>fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="508"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="435"/>
         <source>&amp;fr (French)</source>
         <translation>&amp;fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="883"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="666"/>
         <source>ca (Catalan)</source>
         <translation>ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="880"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="663"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="677"/>
         <source>ms (Malay)</source>
         <translation>ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="891"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="674"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="941"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="698"/>
         <source>pl (Polish)</source>
         <translation>pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="938"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="695"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1017"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="709"/>
         <source>tr (Turkish)</source>
         <translation>tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1014"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="706"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1028"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="720"/>
         <source>nl (Dutch)</source>
         <translation>nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1025"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="717"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1074"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="728"/>
         <source>&amp;de (German)</source>
         <translation>&amp;de (German)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1079"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="733"/>
         <source>Teachers statistics</source>
         <translation>Statistici pentru profesori</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1090"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="744"/>
         <source>Students statistics</source>
         <translation>Statistici pentru studenti</translation>
     </message>
@@ -4244,137 +3997,62 @@ Studenti - n ore zilnic</translation>
         <translation>Statistici</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1095"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="749"/>
         <source>Subjects statistics</source>
         <translation>Statistici pentru discipline</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1113"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="757"/>
         <source>&amp;hu (Hungarian)</source>
         <translation>&amp;hu (Hungarian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="481"/>
-        <source>2 activities consecutive - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="489"/>
-        <source>2 activities grouped - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="611"/>
-        <source>Teachers max hours continuously - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="627"/>
-        <source>Teachers-subgroups max hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="655"/>
-        <source>Students set interval max days per week - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="663"/>
-        <source>Students set n hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="671"/>
-        <source>Students n hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="679"/>
-        <source>Activity ends day - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="919"/>
-        <source>Teachers-subject tags max hours continuously - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="927"/>
-        <source>Teachers-subject tag max hours continuously - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="967"/>
-        <source>2 activities ordered - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1100"/>
-        <source>Teacher interval max days per week - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1105"/>
-        <source>Teachers min hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1121"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="765"/>
         <source>&amp;mk (Macedonian)</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;mk (Macedonian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1132"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
         <source>Teachers max gaps per week</source>
         <translation>Profesori max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1137"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="781"/>
         <source>Teacher max gaps per week</source>
         <translation>Profesor max ferestre pe saptamana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="951"/>
-        <source>Time constraints - OLD, DEPRECATED</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="959"/>
-        <source>Time constraints subtags - OLD, DEPRECATED</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
         <source>Students set early</source>
         <translation>Set de studenti devreme</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1147"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="791"/>
         <source>Teacher max hours daily</source>
         <translation>Profesor max ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1152"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="796"/>
         <source>Students set max hours daily</source>
         <translation>Set de studenti max ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1157"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="801"/>
         <source>Students max hours daily</source>
         <translation>Studenti max ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="168"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Setari</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="172"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Limba</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1173"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="817"/>
         <source>Search for updates on startup</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4394,29 +4072,24 @@ Studenti - n ore zilnic</translation>
         <translation>Genereaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
         <source>Show conflicts</source>
         <translation>Vizualizare conflicte</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="778"/>
-        <source>Allocate hours and rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1162"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="806"/>
         <source>Instructions</source>
         <translation>Instructiuni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1178"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="822"/>
         <source>Students min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Studenti min ore zilnic</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1183"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="827"/>
         <source>Students set min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Set de studenti min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="292"/>
@@ -4863,30 +4536,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or faculty.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.1 (August 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -5017,6 +4666,30 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or faculty.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.4 (August 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HelpFaqForm_template</name>
@@ -5033,6 +4706,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
+
+this documentation by Liviu Lalescu, reviewed and modified - 11 August 2007
 
 --------
 
@@ -5194,8 +4869,19 @@ Q: After finding the timetable of our school, suppose that a single teacher need
 A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPreferredTime-s, one for each activity that you would like to be fixed (the preferred time will be the one from the previous allocation).
 
 
+-------------------------------------------------------------------------------
 
-this documentation by Liviu Lalescu, reviewed and modified - 10 August 2007</source>
+
+Q: From Yush Yuen: Anyway, what i meant was, our teachers may have lunch at EITHER 5th or 6th period. so, i can&apos;t just use a break.
+
+A: From Volker Dirr: Just add a subject &quot;lunch&quot;. Then add activities new activities. this activities must contain the teacher, subject lunch, split activity into number of working days of the teacher, set min n day = 100% and add NO studentsset. Then add constraint activities preferd time for this subject 5th and 6th hour weight = 100%.
+
+
+-------------------------------------------------------------------------------
+
+Q: How can you allow one gap (or more) for students?
+
+A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5827,12 +5513,12 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="181"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="175"/>
         <source>New Item</source>
         <translation>Nou</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="200"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="194"/>
         <source>Activity</source>
         <translation>Activitate</translation>
     </message>
@@ -5847,7 +5533,7 @@ poate incercati intai sa alocati fara aceste constrangeri</translation>
         <translation>Toate salile (dbl. click adauga)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="172"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="169"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation>Salile selectate (dbl. click sterge)</translation>
     </message>
@@ -6325,37 +6011,37 @@ pentru aceasta constrangere (sau nici o constrangere).</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Dialogul de modificare constrangere nr min ore zilnic pentru studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta - procent (trebuie: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="77"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Nr min ore</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="90"/>
         <source>Cancel</source>
-        <translation type="unfinished">Anuleaza</translation>
+        <translation>Anuleaza</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="98"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -6512,42 +6198,42 @@ respectiva nu va avea ferestre.</translation>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Dialogul de modificare constrangere  set studenti nr min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere curenta</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta - procent (trebuie: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="94"/>
         <source>Students</source>
-        <translation type="unfinished">Studenti</translation>
+        <translation>Studenti</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="108"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Nr min ore</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="121"/>
         <source>Cancel</source>
-        <translation type="unfinished">Anuleaza</translation>
+        <translation>Anuleaza</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="129"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -8398,7 +8084,7 @@ vor fi manipulate corect)</translation>
         <translation>subgrupul %1 are mai mult de o activitate alocata in ziua %2, ora %3</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="155"/>
+        <location filename="../src/interface/splityearform.cpp" line="370"/>
         <source>FET question</source>
         <translation>FET intrebare</translation>
     </message>
@@ -9325,7 +9011,7 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3024"/>
         <source>Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp studenti fara ferestre nerespectata pentru subgrupul: %1, in ziua %2, inainte de ora: %3, lungime=%4, conflictele cresc cu=%5</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="66"/>
@@ -9335,52 +9021,52 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3265"/>
         <source>Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp set de studenti fara ferestre nerespectata pentru subgrupul: %1, in ziua %2, inainte de ora: %3, lungime=%4, conflictele cresc cu=%5</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3373"/>
         <source>Students must begin their courses at the first hour of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Studentii trebuie sa inceapa cursurile la prima ora a fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3387"/>
         <source>Students must begin their courses at the beginning of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Studentii trebuie sa inceapa cursurile la inceputul fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3677"/>
         <source>Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere studenti devreme nerespectata pentru subgrupul %1, in ziua %2, mareste conflictele cu %3</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3595"/>
         <source>Students set must begin their courses at the first hour of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Set de studenti trebuie sa inceapa cursurile la prima ora a fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3610"/>
         <source>Students set must begin their courses at the beginning of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Set de studenti trebuie sa inceapa cursurile la inceputul fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4807"/>
         <source>Time constraint activity preferred time broken for activity with id=%1, increases conflicts total by %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp activitate timp preferat nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4985"/>
         <source>WP:%1</source>
-        <translation type="unfinished"></translation>
+        <translation>IP:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5092"/>
         <source>Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp activitate timpi preferati nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5422"/>
         <source>Time constraint activities preferred times broken for activity with id=%1,  increases conflicts total by %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp activitati timpi preferati nerespectata pentru activitatea cu id=%1, mareste conflictele cu %2</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="357"/>
@@ -9400,28 +9086,29 @@ ai activitatii, care se refera la aceasta activitate, inainte de a continua</tra
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform.cpp" line="63"/>
         <source>Students must begin classes at the first hour of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Studentii trebuie sa inceapa cursurile la prima ora a fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform.cpp" line="78"/>
         <source>Invalid weight(percentage)</source>
-        <translation type="unfinished"></translation>
+        <translation>Importanta invalida (procent)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="70"/>
         <source>Max gaps=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Max ferestre=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform.cpp" line="66"/>
         <source>Students must begin courses at the first hour of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Studentii trebuie sa inceapa cursurile la prima ora a fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="223"/>
         <source>Added the following constraint:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Am adaugat urmatoarea constrangere:
+</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="503"/>
@@ -9464,72 +9151,72 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1956"/>
         <source>TN:%1</source>
-        <translation type="unfinished"></translation>
+        <translation>NP:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1968"/>
         <source>Teacher %1 must not have more than %2 hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Profesorul %1 nu trebuie sa aiba mai mult de %2 ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="70"/>
         <source>Students max hours daily</source>
-        <translation type="unfinished">Studenti max ore zilnic</translation>
+        <translation>Studenti max ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3803"/>
         <source>All students sets must have the maximum number of hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Toate seturile de studenti trebuie sa aiba numarul maxim de ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3877"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp studenti max ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="104"/>
         <source>Students set max hours daily</source>
-        <translation type="unfinished">Set de studenti max ore zilnic</translation>
+        <translation>Set de studenti max ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4001"/>
         <source>Students set must respect the maximum number of hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Toate seturile de studenti trebuie sa respecte numarul maxim de ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4128"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp set de studenti max ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform.cpp" line="80"/>
         <source>Students set must begin classes at the first hour of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Set de studenti trebuie sa inceapa cursurile la prima ora a fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="77"/>
         <source>Teacher max hours daily</source>
-        <translation type="unfinished">Profesor max ore zilnic</translation>
+        <translation>Profesor max ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform.cpp" line="69"/>
         <source>Teachers max hours daily</source>
-        <translation type="unfinished">Profesori max ore zilnic</translation>
+        <translation>Profesori max ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform.cpp" line="96"/>
         <source>Students set must begin courses at the first hour of each day</source>
-        <translation type="unfinished"></translation>
+        <translation>Set de studenti trebuie sa inceapa cursurile la prima ora a fiecarei zile</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="92"/>
         <source>Teacher max hours daily </source>
-        <translation type="unfinished"></translation>
+        <translation>Profesor max ore zilnic </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="75"/>
         <source>Teachers max hours daily </source>
-        <translation type="unfinished"></translation>
+        <translation>Profesori max ore zilnic </translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="212"/>
@@ -9548,12 +9235,12 @@ Daca aveti nevoie neaparat, vorbiti cu autorul
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="658"/>
         <source>FET - help on adding activity(ies)</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - ajutor la adaugare activitate(activitati)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1491"/>
         <source>CSD:%1</source>
-        <translation type="unfinished"></translation>
+        <translation>CDAZ:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1509"/>
@@ -9662,24 +9349,26 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
     <message>
         <location filename="../src/engine/activity.cpp" line="317"/>
         <source> no teachers, </source>
-        <translation type="unfinished"></translation>
+        <translation> fara profesori, </translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="326"/>
         <source> no students, </source>
-        <translation type="unfinished"></translation>
+        <translation> fara studenti, </translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="278"/>
         <source>No teachers for this activity
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Fara profesori pentru aceasta activitate
+</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="369"/>
         <source>No students sets for this activity
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Fara studenti pentru aceasta activitate
+</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1572"/>
@@ -9810,24 +9499,26 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="116"/>
         <source>Basic compulsory constraints (space), WP:%1%</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangeri de baza de spatiu, IP:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="127"/>
         <source>These are the basic compulsory constraints 
 (referring to rooms allocation) for any timetable
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Acestea sunt constrangerile de baza obligatorii 
+(care se refera la alocare sali) pentru orice orar
+</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="273"/>
         <source>This increases conflicts total by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aceasta mareste conflictele cu %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5540"/>
         <source>FET error in data</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - eroare in date</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5541"/>
@@ -9865,17 +9556,17 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
         <location filename="../src/interface/modifyactivityform.cpp" line="292"/>
         <source>No students for this activity
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Fara studenti pentru aceasta activitate</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="420"/>
         <source>Do you really want to add activity with no teacher(s)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiar doriti sa adaugati o activitate fara profesori?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="462"/>
         <source>Do you really want to add activity with no student set(s)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiar doriti sa adaugati o activitate fara studenti?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="653"/>
@@ -9924,32 +9615,32 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="967"/>
         <source>Please input at least two active activities before generating</source>
-        <translation type="unfinished"></translation>
+        <translation>Va rog introduceti cel putin 2 activitati active inainte de generare</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1010"/>
         <source>Please generate, firstly</source>
-        <translation type="unfinished"></translation>
+        <translation>Va rog generati, intai</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="365"/>
         <source>Do you really want to have the activity with no teacher(s)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiar doriti sa aveti activitate fara profesori?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="407"/>
         <source>Do you really want to have the activity with no student set(s)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiar doriti sa aveti activitate fara studenti?</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="126"/>
         <source>R:</source>
-        <translation type="unfinished"></translation>
+        <translation>S:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="173"/>
         <source>Room: </source>
-        <translation type="unfinished"></translation>
+        <translation>Sala: </translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1206"/>
@@ -10004,47 +9695,47 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="70"/>
         <source>Students min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Studenti min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4410"/>
         <source>mH:%1</source>
-        <translation type="unfinished"></translation>
+        <translation>mO:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4256"/>
         <source>All students sets must have the minimum number of hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Toate seturile de studenti trebuie sa aiba nr. minim de ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4431"/>
         <source>Minimum recommended hours daily=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimul de ore recomandate zilnic=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4304"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp studenti min ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="104"/>
         <source>Students set min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Set de studenti min ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4427"/>
         <source>Students set must respect the minimum number of hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Setul de studenti trebuie sa respecte numarul maxim de ore zilnic</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4528"/>
         <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
-        <translation type="unfinished"></translation>
+        <translation>Constrangere de timp set de studenti min ore zilnic nerespectata pentru subgrupul: %1, ziua: %2, lungime=%3, conflictele cres cu=%4</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="93"/>
         <source>Min. hours:%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Min ore:%1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="229"/>
@@ -10058,41 +9749,66 @@ You can choose to disable automatic search for updates in the Settings menu</sou
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="111"/>
         <source>Min hours:%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Min ore:%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="36"/>
+        <location filename="../src/interface/splityearform.cpp" line="66"/>
         <source>Splitting year: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impart anul: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="139"/>
+        <location filename="../src/interface/splityearform.cpp" line="353"/>
         <source>Empty names not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>Numele vide nu sunt posibile</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="156"/>
+        <location filename="../src/interface/splityearform.cpp" line="371"/>
         <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. Do you agree?</source>
-        <translation type="unfinished"></translation>
+        <translation>Anul %1 nu este vid si va fi golit inainte de a adauga diviziunile pe care le-ati selectat. De acord?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="190"/>
+        <location filename="../src/interface/splityearform.cpp" line="405"/>
         <source>Duplicate names not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>Numele duplicat nu sunt admise</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="302"/>
+        <location filename="../src/interface/splityearform.cpp" line="575"/>
         <source>Cannot add group %1, because a set with same name exists. Please choose another name or remove old group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="308"/>
+        <location filename="../src/interface/splityearform.cpp" line="523"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="355"/>
+        <location filename="../src/interface/splityearform.cpp" line="591"/>
         <source>Split of year complete, please check the groups and subgroups of year to make sure everything is OK</source>
+        <translation>Diviziunea anului s-a incheiat cu succes. Va rog verificati grupurile si subgrupurile acestui an pentru a va asigura ca totul este bine</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="633"/>
+        <source>
+Please choose a number of categories and in each category the number of divisions. You can choose for instance 2 categories, 2 divisions for the first category: boys and girls, and 3 divisions for the second: English, German and French. You can select 1, 2 or 3 categories, each with 2 to 6 divisions. For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="636"/>
+        <source>
+
+Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="638"/>
+        <source>
+
+Separator character(s) is of your choice (default is space)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="640"/>
+        <source>FET help on dividing years</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10149,39 +9865,54 @@ salile &quot;acasa&quot; ale studentilor sau profesorilor nu sunt necesare</tran
         <translation>FET - Imparte an</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="43"/>
+        <location filename="../src/interface/splityearform_template.ui" line="35"/>
         <source>Number of categories</source>
         <translation>Numar de categorii</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="128"/>
+        <location filename="../src/interface/splityearform_template.ui" line="419"/>
         <source>OK</source>
         <translation>Bine</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="136"/>
+        <location filename="../src/interface/splityearform_template.ui" line="427"/>
         <source>Cancel</source>
         <translation>Anuleaza</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="163"/>
+        <location filename="../src/interface/splityearform_template.ui" line="365"/>
         <source>Splitting year:</source>
         <translation>Impart anul:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="179"/>
+        <location filename="../src/interface/splityearform_template.ui" line="115"/>
         <source>Category 1</source>
         <translation>Categoria 1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="218"/>
+        <location filename="../src/interface/splityearform_template.ui" line="187"/>
         <source>Category 2</source>
         <translation>Categoria 2</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="257"/>
+        <location filename="../src/interface/splityearform_template.ui" line="259"/>
         <source>Category 3</source>
         <translation>Categoria 3</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="373"/>
+        <source>Separator character(s)</source>
+        <translation>Caracter(e) separator</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="435"/>
+        <source>Help</source>
+        <translation>Ajutor</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="443"/>
+        <source>Reset</source>
+        <translation>Reseteaza</translation>
     </message>
 </context>
 <context>
@@ -10651,7 +10382,7 @@ Rezultatele simularii sunt scrise. Puteti sa verificati Orar/Vizualizare. Rezult
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="598"/>
         <source>Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %1 in html and xml mode and the conflicts in txt mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultatele simularii ar trebuie sa fie scrise. Puteti sa verificati Orar/Vizualizare. Rezultatele sunt de asemenea salvate in directorul %1 in format html si xml si conflictele in mod txt</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="903"/>
@@ -10671,7 +10402,7 @@ Rezultatele simularii sunt scrise. Puteti sa verificati Orar/Vizualizare. Rezult
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="2134"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Atentie! Doar %1 din %2 activitati sunt plasate!</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="1929"/>
@@ -10711,12 +10442,12 @@ Rezultatele simularii sunt scrise. Puteti sa verificati Orar/Vizualizare. Rezult
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="741"/>
         <source>Generated with FET %1 on %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Generat cu FET %1 in %2</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="747"/>
         <source>End of file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sfarsit fisier.</translation>
     </message>
 </context>
 <context>
@@ -10958,11 +10689,6 @@ selectate (doar timpul)</translation>
         <translation>Dezactiveaza toate activitatile pentru anul selectat</translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform_template.ui" line="93"/>
-        <source>NEW: DIVIDE YEAR AUTOMATICALLY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/yearsform_template.ui" line="16"/>
         <source>Years (forms, classes) of students</source>
         <translation>Ani (forme, clase) de studenti</translation>
@@ -10971,6 +10697,11 @@ selectate (doar timpul)</translation>
         <location filename="../src/interface/yearsform_template.ui" line="61"/>
         <source>Add year (form, class)</source>
         <translation>Adauga an (forma, clasa)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform_template.ui" line="93"/>
+        <source>NEW: Divide year automatically by selecting categories</source>
+        <translation>NOU: Imparte anul automat selectand categoriile</translation>
     </message>
 </context>
 </TS>

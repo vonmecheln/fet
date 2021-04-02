@@ -323,40 +323,6 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="10" column="0" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>layout5</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>okPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>OK</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>cancelPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Cancel</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>pushButton3</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Help</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
         <spacer row="7" column="2">
             <property name="name">
                 <cstring>spacer3</cstring>
@@ -415,7 +381,7 @@
                         <cstring>separatorLineEdit</cstring>
                     </property>
                     <property name="text">
-                        <string> </string>
+                        <string></string>
                     </property>
                 </widget>
             </grid>
@@ -437,6 +403,48 @@
                 </size>
             </property>
         </spacer>
+        <widget class="QLayoutWidget" row="10" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>layout3</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>OK</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton3</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Help</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton4</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Reset</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
     </grid>
 </widget>
 <connections>
@@ -482,6 +490,12 @@
         <receiver>SplitYearForm_template</receiver>
         <slot>category3Changed()</slot>
     </connection>
+    <connection>
+        <sender>pushButton4</sender>
+        <signal>clicked()</signal>
+        <receiver>SplitYearForm_template</receiver>
+        <slot>reset()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>categoriesSpinBox</tabstop>
@@ -489,8 +503,28 @@
     <tabstop>category1Division1LineEdit</tabstop>
     <tabstop>category1Division2LineEdit</tabstop>
     <tabstop>category1Division3LineEdit</tabstop>
+    <tabstop>category1Division4LineEdit</tabstop>
+    <tabstop>category1Division5LineEdit</tabstop>
+    <tabstop>category1Division6LineEdit</tabstop>
+    <tabstop>category2SpinBox</tabstop>
+    <tabstop>category2Division1LineEdit</tabstop>
+    <tabstop>category2Division2LineEdit</tabstop>
+    <tabstop>category2Division3LineEdit</tabstop>
+    <tabstop>category2Division4LineEdit</tabstop>
+    <tabstop>category2Division5LineEdit</tabstop>
+    <tabstop>category2Division6LineEdit</tabstop>
+    <tabstop>category3SpinBox</tabstop>
+    <tabstop>category3Division1LineEdit</tabstop>
+    <tabstop>category3Division2LineEdit</tabstop>
+    <tabstop>category3Division3LineEdit</tabstop>
+    <tabstop>category3Division4LineEdit</tabstop>
+    <tabstop>category3Division5LineEdit</tabstop>
+    <tabstop>category3Division6LineEdit</tabstop>
+    <tabstop>separatorLineEdit</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>
+    <tabstop>pushButton3</tabstop>
+    <tabstop>pushButton4</tabstop>
 </tabstops>
 <slots>
     <slot>ok()</slot>
@@ -499,6 +533,7 @@
     <slot>category2Changed()</slot>
     <slot>category3Changed()</slot>
     <slot>help()</slot>
+    <slot>reset()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

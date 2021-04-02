@@ -1,10 +1,8 @@
 Program's description:
-	FET meant "Free Evolutionary Timetabling (software)".
+	FET is free timetabling software.
 	This program aims to automatically generate the timetable of a school, high-school
-	or possibly university,	by an intelligent algorithm. Evolutionary is an old term,
-	which described versions up to 4.2.8 (these old versions used a poor
-	genetic algorithm)
-	FET can now mean "Free Enhanced Timetabling", as suggested by Volker Dirr.
+	or possibly university,	by an intelligent algorithm. 
+	FET can mean "Free Educational Timetabling".
 	
 Requirements:
 	FET is created in the following environment: Kubuntu 7.0.4 GNU/Linux distribution,
@@ -80,8 +78,6 @@ Compiling FET:
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	
 	Microsoft Windows: you will have to download and install Qt from trolltech.com (see above).
-	Please modify the file src/engine/genetictimetable_defs.h -> line 21 becomes
-	"#define WIN32" (this might be not necessary). The rest is automatic.
 	You need to run "qmake" and then "make" in a command line in the FET directory. 
 	You will need to move the file fet.exe from the directory "fet-x.x.x\src\" to the "fet-x.x.x\"
 	directory (this is a small Qt bug). Then, you can remove directories "src" and "tmp",
@@ -106,12 +102,8 @@ Running FET:
 	GNU/Linux and similar OS's:
 	Run the executable named "/.../fet-x.x.x/fet" (x.x.x is the version).
 	
-	You can change various parameters in the file "~/.fet/fet.ini" (home 
-	directory, in .fet/fet.ini)
-	(yes, please play with them, try greater population size, etc.)
-	
 	Microsoft Windows:
-	Run the executable fet.exe. You can modify the file fet.ini.
+	Run the executable fet.exe.
 	
 Documentation:
 	Very primitive: some hints in the directory "/.../fet-x.x.x/doc/".
@@ -122,8 +114,7 @@ Input files:
 	You can open a few sample input files in "/.../fet-x.x.x/sample_inputs/" directory.
 	
 	You can create/modify a file from FET's user interface or you can modify it by
-	hand, if you like (there should be no problems, but please make as many backups
-	as you can).
+	hand, if you like
 
 Feed-back / help:
 	- I would like to hear your oppinions/results about this program; any

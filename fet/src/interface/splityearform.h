@@ -47,6 +47,7 @@ public:
 	void category3Changed();
 	
 	void help();
+	void reset();
 };
 
 #endif

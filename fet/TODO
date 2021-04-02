@@ -1,8 +1,49 @@
-For new version 5:
-- to schedule firstly the activities which have fixed time?
+- To schedule firstly the activities which have fixed time?
 
+----------------------------------------------------------------------------------
 
+Let FET automatically generate x timetables (suggested by Volker Dirr):
 
+> Yes, I thought of this also. But here is what I think: run x times and
+> choose
+> the best, considering the conflicts factor. Only print this timetable. Or
+> save them on the hard disk, internal structure, small file, and let user
+> browse them in the interface.
+
+no, please save x timetables and let manualy choose.
+sometimes itÂ´s very difficult to say what is better.
+
+----------------------------------------------------------------------------------
+
+From Volker Dirr, regarding translation:
+
+1. maybe itÂ´s better to be more exact. example: phrases "min hour" better "min hour per day"
+
+2. sometimes it is "Weight percentage (necessary: 100%)" sometimes it is "Weight percentage (needed: 100%)"
+
+3. sometimes the english version isnÂ´t always the same.
+
+sometimes you wrote "add current activity"
+sometimes you wrote "add activity"
+sometimes you wrote "add current"
+sometimes you wrote "add"
+i think it should always be the same.
+
+also sentence like: "You have to know that a this constaint ..."
+should only be: "This contraint ..."
+
+4. also in the QObject are some "strange" transations.
+
+example:
+". This [...]" mabye better "This [...]"
+", S:" i think ", " and ":" should not be enterd into the QObject::tr
+
+we have also change phrases like ",
+S:%1".
+
+5. maybe "start" should be "generate" in the generateform.
+
+----------------------------------------------------------------------------------
 
 
 long time goals:
@@ -89,14 +130,6 @@ repository (using client-server model) in a database that can be input/view
 by several users simultaneously.
 
 5---------------------------------------------------------
-From Yush Yuen:
-
-Anyway, what i meant was, our teachers may have lunch at EITHER 5th or
-6th period. so, i can't just use a break.
-
-Do timetable of just selected teachers.
-
-6---------------------------------------------------------
 From Scott Sweeting:
 I have come up with another idea for FET.  You currently have a timetable - both 
 individual and compiled - for rooms, students and teachers.  How about have another 
@@ -106,36 +139,13 @@ you to see when a subject is being taught, which is handy for school and univers
 environments.  This would allow you to cover all four areas - rooms, students, 
 teachers and subjects.
 
-7---------------------------------------------------------
-From Daniel S.:
-I think it might be a good idea to make the rate of mutation a runtime 
-variable rather than a compile-time variable.  According to your thesis, it 
-seems like the mutation rate is 80%, though I could not find any reference 
-to that in your code.  However, near the end of a simulation, once the 
-fitness curve has become flat and the number of conflicts is only rarely 
-decreasing, it seems like the gene pool is too uniform and only some major 
-change will allow any improvement.  If the rate of mutation is changed to 
-something like 99%, then the likelihood of a better schedule should 
-increase, because the schedules become more diverse.  While this is a bad 
-way to function at the beginning because there will not be enough simple 
-propagation, at the end, when all the chromosomes are similar, mutation 
-becomes more valuable.  At least this might be a solution to a situation 
-where a simulation has stalled with over 60 conflicts.
-(Liviu: the mutation rate is stored in the fet.ini file).
-
-8----------------------------------------------------------
-From Paulo Carrasco:
-Also it will be interesting to have some graphical output of the
-simulation of the GA (ex. Constraint violation per evolution step, mean of
-population fitness, etc.)
-
-9----------------------------------------------------------
+6----------------------------------------------------------
 From Patrick Fox:
 I was wondering if a discreet Fet graphic in the background of the
 window program, would be better than having nothing when you start the
 software ?
 
-10---------------------------------------------------------
+7---------------------------------------------------------
 From Volker Dirr:
 If you think that other people don´t like this default constaint how about
 making a menu "default settings". there you can add "langurage" and my
@@ -154,14 +164,7 @@ because it isn´t not to bad if it happen (having a lesson twice a day" only a fe
 or do something like "time constraints (activities) - max n activities with same subject per day"
 or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. is´t nonsens to subactivities, it has just sense with activities.)
 
-11---------------------------------------------------------
-From Jehanzeb Qayyum:
-Your answer to my first question worked but there is a problem, in the 
-time table view (html file) i get the name of the subject repeated 'n' 
-times if the subject takes 'n' slots for a period. Is there anyway i 
-make the subject name appear once for all consecutive slots.
-
-12---------------------------------------------------------
+8---------------------------------------------------------
 From Joseph M Fontana:
 
 Yesterday I was doing some testing and I was able to create some
@@ -174,7 +177,7 @@ created the previous day and I went to view teachers-with rooms. To my
 surprise FET asked me to allocate the rooms again (message saying:
 "please allocate the rooms, firstly").
 
-13---------------------------------------------------------
+9---------------------------------------------------------
 From Volker Dirr:
 > > so the current "problem" is:
 > > if you allocate a timetable and stop or interrupt allocatation, 
@@ -202,7 +205,7 @@ an other timetable have 5 teachers with 1 gap-time per teacher.
 so this timetabels are as good as the other, but of course we prefer 
 the second one.
 
-14---------------------------------------------------------
+10---------------------------------------------------------
 From Joshua N. Pritikin
 Can we have an option on the "add new activity dialog" to make the 
 preferred day & hour compulsory? Compulsory constraints are MUCH faster 
@@ -220,14 +223,14 @@ When viewing the timetable, you can only lock the activities you can
 select on the screen. I'd like the option to lock all activities in the 
 current timetable.
 
-15---------------------------------------------------------
+11---------------------------------------------------------
 From fsh_felix
 I hope you can enhance the software with an IMPORT utility to read 
 text files for (in the order of:)
 (a)  Subjects
 (b)  Teachers
 (c)  Class groups and subgroups
-(d)  Equipment, Buildings and Rooms
+(d)  Rooms
 (e)  Activities in the form of
      Subject1
      Teacher1, Class groups1 or subgroups1, hours of lesson

@@ -40,6 +40,8 @@
             <property name="text">
                 <string>FET FAQ:
 
+this documentation by Liviu Lalescu, reviewed and modified - 11 August 2007
+
 --------
 
 
@@ -200,8 +202,19 @@ Q: After finding the timetable of our school, suppose that a single teacher need
 A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPreferredTime-s, one for each activity that you would like to be fixed (the preferred time will be the one from the previous allocation).
 
 
+-------------------------------------------------------------------------------
 
-this documentation by Liviu Lalescu, reviewed and modified - 10 August 2007</string>
+
+Q: From Yush Yuen: Anyway, what i meant was, our teachers may have lunch at EITHER 5th or 6th period. so, i can't just use a break.
+
+A: From Volker Dirr: Just add a subject "lunch". Then add activities new activities. this activities must contain the teacher, subject lunch, split activity into number of working days of the teacher, set min n day = 100% and add NO studentsset. Then add constraint activities preferd time for this subject 5th and 6th hour weight = 100%.
+
+
+-------------------------------------------------------------------------------
+
+Q: How can you allow one gap (or more) for students?
+
+A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.</string>
             </property>
         </widget>
     </grid>

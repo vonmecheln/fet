@@ -639,3 +639,66 @@ void SplitYearForm::help()
 	 
 	QMessageBox::information(this, QObject::tr("FET help on dividing years"), s);
 }
+
+void SplitYearForm::reset() //reset to defaults
+{
+	separatorLineEdit->setText(" ");
+	
+	categoriesSpinBox->setValue(1);
+	
+	category1SpinBox->setValue(2);
+	category2SpinBox->setValue(2);
+	category3SpinBox->setValue(2);
+	
+	category1Division1LineEdit->setText("");
+	category1Division2LineEdit->setText("");
+	category1Division3LineEdit->setText("");
+	category1Division4LineEdit->setText("");
+	category1Division5LineEdit->setText("");
+	category1Division6LineEdit->setText("");
+
+	category2Division1LineEdit->setText("");
+	category2Division2LineEdit->setText("");
+	category2Division3LineEdit->setText("");
+	category2Division4LineEdit->setText("");
+	category2Division5LineEdit->setText("");
+	category2Division6LineEdit->setText("");
+
+	category3Division1LineEdit->setText("");
+	category3Division2LineEdit->setText("");
+	category3Division3LineEdit->setText("");
+	category3Division4LineEdit->setText("");
+	category3Division5LineEdit->setText("");
+	category3Division6LineEdit->setText("");
+	
+	
+	
+	_sep=separatorLineEdit->text();
+	
+	_nCategories=categoriesSpinBox->value();
+	
+	_nDiv1=category1SpinBox->value();
+	_nDiv2=category2SpinBox->value();
+	_nDiv3=category3SpinBox->value();
+	
+	_cat1div1=category1Division1LineEdit->text();
+	_cat1div2=category1Division2LineEdit->text();
+	_cat1div3=category1Division3LineEdit->text();
+	_cat1div4=category1Division4LineEdit->text();
+	_cat1div5=category1Division5LineEdit->text();
+	_cat1div6=category1Division6LineEdit->text();
+	
+	_cat2div1=category2Division1LineEdit->text();
+	_cat2div2=category2Division2LineEdit->text();
+	_cat2div3=category2Division3LineEdit->text();
+	_cat2div4=category2Division4LineEdit->text();
+	_cat2div5=category2Division5LineEdit->text();
+	_cat2div6=category2Division6LineEdit->text();
+	
+	_cat3div1=category3Division1LineEdit->text();
+	_cat3div2=category3Division2LineEdit->text();
+	_cat3div3=category3Division3LineEdit->text();
+	_cat3div4=category3Division4LineEdit->text();
+	_cat3div5=category3Division5LineEdit->text();
+	_cat3div6=category3Division6LineEdit->text();	
+}

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="de">
 <context>
     <name>ActivitiesForm_template</name>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="16"/>
         <source>FET - the activities (lectures, courses, seminars, etc.)</source>
-        <translation>Die Aktivitäten (Vorträge, Kurse, Seminare, ...)</translation>
+        <translation>FET - Die Aktivitäten (Vorträge, Kurse, Seminare, ...)</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="87"/>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="51"/>
         <source>Activities (dbl. click edits)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitäten (Bearbeiten mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -73,7 +73,7 @@
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="16"/>
         <source>FET - add new activity dialog</source>
-        <translation>Hinzufügen einer neuen Aktivität</translation>
+        <translation>FET - Hinzufügen einer neuen Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="281"/>
@@ -183,44 +183,46 @@
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="359"/>
         <source>Number of students (-1 for automatic computing)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl an Schülern (-1 für automatische Berechnung)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1000"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="437"/>
         <source>The minimum required 
 distance in days between 
 each pair of subactivities</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimaler Abstand
+in Tagen zwischen
+zwei Teilaktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="51"/>
         <source>All teachers (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Lehrer (Hinzufügen mit Doppel.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="233"/>
         <source>Selected (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="205"/>
         <source>All students (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Schüler (Hinzufügen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="856"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="905"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="968"/>
@@ -235,19 +237,21 @@ Recommended:
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1066"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1010"/>
         <source>If activities on 
 same day, force
 consecutive?</source>
-        <translation type="unfinished"></translation>
+        <translation>Erzwinge zusammenhängende
+Stunden, wenn sie nicht am
+gleichen Tag stattfinden können?</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="989"/>
         <source>95.0</source>
-        <translation type="unfinished">95.0</translation>
+        <translation>95.0</translation>
     </message>
 </context>
 <context>
@@ -279,27 +283,30 @@ common timeslots. You don&apos;t need to add this constraint for
 activities sharing a teacher or students set. Only add this constraint
 if you really want the activities to be non-simultaneous. If FET fails to find
 a timetable, maybe you can try optimizing first without these constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Einschränkung sorgt dafür, dass Aktivitäten nicht zur selben
+Zeit stattfinden. Diese Einschränkung bracht nicht für Aktivitäten,
+die einen Lehrer oder eine Schülergruppe gemeinsam haben, gesetzt
+werden</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="67"/>
         <source>Selected (dbl. click or Enter to remove)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="113"/>
         <source>All activities (dbl. click or Enter to add)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Hinzufügen mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -342,12 +349,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="57"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -375,22 +382,22 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="127"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="135"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="57"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Hinzufügen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="91"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -451,17 +458,17 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="229"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="237"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="81"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Hinzufügen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="177"/>
@@ -499,12 +506,12 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="27"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%)</translation>
     </message>
 </context>
 <context>
@@ -535,34 +542,34 @@ tuple)</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="171"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="165"/>
         <source>New Item</source>
         <translation>Neues Element</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="190"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="184"/>
         <source>Activity</source>
         <translation>Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="125"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Räume (Hinzufügen mit Doppel.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="162"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="159"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -610,37 +617,37 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="228"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="244"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="257"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="270"/>
         <source>Subject</source>
-        <translation type="unfinished">Fach</translation>
+        <translation>Fach</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="278"/>
         <source>Subject tag</source>
-        <translation type="unfinished">Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="182"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeform_template.ui" line="190"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -668,37 +675,37 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="139"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="155"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="168"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="186"/>
         <source>Subject tag</source>
-        <translation type="unfinished">Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="194"/>
         <source>Subject</source>
-        <translation type="unfinished">Fach</translation>
+        <translation>Fach</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="121"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimesform_template.ui" line="129"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -726,12 +733,12 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="79"/>
         <source>Weight percentage (needs to be: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -759,12 +766,12 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="79"/>
         <source>Weight percentage (needs to be: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
 </context>
 <context>
@@ -812,18 +819,19 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="140"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreakform_template.ui" line="148"/>
         <source>The important thing to notice is that a break does
 not induce gaps for teachers or students</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eine Pause ist keine Freistunde für Lehrer
+oder Schüler</translation>
     </message>
 </context>
 <context>
@@ -856,28 +864,29 @@ not induce gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="155"/>
         <source>95</source>
-        <translation type="unfinished">95</translation>
+        <translation>95</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="41"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Hinzufügen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="75"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="95"/>
         <source>If activities on same day,
 force activities consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Erzwinge zusammenhängende Stunden, wenn
+sie nicht am gleichen Tag stattfinden können</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%)</translation>
     </message>
 </context>
 <context>
@@ -925,12 +934,12 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="49"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailableform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -958,12 +967,12 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlyform_template.ui" line="93"/>
@@ -984,37 +993,37 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint students max hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="49"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="57"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="93"/>
         <source>Max hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Stunden pro Tag</translation>
     </message>
 </context>
 <context>
@@ -1022,37 +1031,37 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint students min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die minimale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="57"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="93"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
 </context>
 <context>
@@ -1080,12 +1089,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="79"/>
         <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsnogapsform_template.ui" line="93"/>
@@ -1106,32 +1115,32 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set early dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen der Einschränkung frühstmöglicher Unterrichtsbeginn</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="93"/>
@@ -1149,7 +1158,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlyform_template.ui" line="132"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppe</translation>
     </message>
 </context>
 <context>
@@ -1157,42 +1166,42 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set max hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="72"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="80"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="88"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="110"/>
         <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="124"/>
         <source>Max hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Stunden pro Tag</translation>
     </message>
 </context>
 <context>
@@ -1200,42 +1209,42 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Hinzufügen von Einschränkungen für die minimale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="41"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="72"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="80"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="88"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="124"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="110"/>
         <source>Weight - percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
 </context>
 <context>
@@ -1268,12 +1277,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="102"/>
         <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="110"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnogapsform_template.ui" line="124"/>
@@ -1339,12 +1348,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailableform_template.ui" line="140"/>
         <source>Weight - percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
 </context>
 <context>
@@ -1377,12 +1386,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="27"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%)</translation>
     </message>
 </context>
 <context>
@@ -1425,22 +1434,22 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="125"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Räume (Hinzufügen mit Doppel.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="159"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -1478,12 +1487,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="110"/>
         <source>Weight - percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -1491,37 +1500,37 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="71"/>
         <source>Weight (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="79"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="92"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Freistunden pro Woche</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="106"/>
@@ -1534,7 +1543,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="123"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
 </context>
 <context>
@@ -1542,42 +1551,42 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="27"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="41"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="71"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="90"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximale Anzahl an Stunden pro Tag</translation>
+        <translation>Maximale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="104"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="129"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -1630,12 +1639,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailableform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
 </context>
 <context>
@@ -1643,32 +1652,32 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="27"/>
         <source>Add current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung hinzufügen</translation>
+        <translation>Aktuelle Einschränkung hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="71"/>
         <source>Weight (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="79"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="93"/>
@@ -1683,7 +1692,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="111"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Freistunden pro Woche</translation>
     </message>
 </context>
 <context>
@@ -1716,12 +1725,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -1754,7 +1763,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="90"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilfe</translation>
     </message>
 </context>
 <context>
@@ -1891,7 +1900,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="27"/>
         <source>Constraints (dbl. click modifies)</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkungen (Bearbeiten mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -1929,7 +1938,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="43"/>
         <source>Constraints (dbl. click modifies)</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkungen (Bearbeiten mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -2127,7 +2136,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="16"/>
         <source>FET - Space constraints activity preferred room</source>
-        <translation type="unfinished">Einschränkungen von Räumen für bevorzugte Aktivitäten (???)</translation>
+        <translation>Einschränkungen von Räumen für bevorzugte Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="25"/>
@@ -2567,42 +2576,42 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die maximale Anzahl an Stunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
 </context>
 <context>
@@ -2610,42 +2619,42 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die minimale Anzahl an Stunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
 </context>
 <context>
@@ -2696,47 +2705,47 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="16"/>
         <source>FET - Time constraints students set early</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkung frühstmöglicher Unterrichtsbeginn für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetearlyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
 </context>
 <context>
@@ -2744,47 +2753,47 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students set max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die maximale Anzahl an Stunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
 </context>
 <context>
@@ -2792,47 +2801,47 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students set min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die minimale Anzahl an Stunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
 </context>
 <context>
@@ -3080,47 +3089,47 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Time constraints teacher max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
 </context>
 <context>
@@ -3128,47 +3137,47 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints teacher max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="37"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="45"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="53"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="61"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="83"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="99"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
 </context>
 <context>
@@ -3224,42 +3233,42 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Time constraints teachers max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="25"/>
         <source>New Item</source>
-        <translation type="unfinished">Neues Element</translation>
+        <translation>Neues Element</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="43"/>
         <source>Constraints</source>
-        <translation type="unfinished">Einschränkung</translation>
+        <translation>Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="51"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="59"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="67"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="75"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="83"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
 </context>
 <context>
@@ -3411,32 +3420,32 @@ lower it as you find new timetables.</source>
         <translation>&amp;Daten</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="606"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="522"/>
         <source>Time constraints (misc)</source>
         <translation>Zeiteinschränkungen (verschiedenes)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="582"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="498"/>
         <source>Time constraints (teachers)</source>
         <translation>Zeiteinschränkungen (Lehrer)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="590"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="506"/>
         <source>Time constraints (students)</source>
         <translation>Zeiteinschränkungen (Schüler)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="598"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="514"/>
         <source>Time constraints (activities)</source>
         <translation>Zeiteinschränkungen (Aktivität)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="719"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="587"/>
         <source>Space constraints (misc)</source>
         <translation>Raumbeschränkungen (verschiedenes)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="750"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="613"/>
         <source>Space constraints (rooms)</source>
         <translation>Raumbeschränkungen (Räume)</translation>
     </message>
@@ -3449,11 +3458,6 @@ lower it as you find new timetables.</source>
         <location filename="../src/interface/fetmainform_template.ui" line="50"/>
         <source>&amp;Timetable</source>
         <translation>&amp;Stundenplan</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1033"/>
-        <source>Export to i&amp;Calendar</source>
-        <translation>&amp;Exportiere zum iCalendar</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="199"/>
@@ -3523,7 +3527,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="254"/>
         <source>&amp;Frequently asked questions</source>
-        <translation type="unfinished">&amp;Häufig gestellte Fragen (FAQ)</translation>
+        <translation>&amp;Häufig gestellte Fragen (FAQ)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="257"/>
@@ -3546,7 +3550,7 @@ lower it as you find new timetables.</source>
         <translation>&amp;Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1046"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="279"/>
         <source>Teachers</source>
         <translation>Lehrer</translation>
     </message>
@@ -3616,754 +3620,434 @@ lower it as you find new timetables.</source>
         <translation>Ansicht (Lehrer)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
-        <source>Export to &amp;xml and html</source>
-        <translation>Exportiere zu &amp;xml und html</translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="351"/>
-        <source>Export to xml and html</source>
-        <translation>Exportiere zu xml und html</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
         <source>Show conflicts (time)</source>
         <translation>Zeige Konflikte (Zeit)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Tage pro Woche</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="359"/>
         <source>Days per week</source>
         <translation>Tage pro Woche</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="372"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
         <source>&amp;Hours per day</source>
         <translation>&amp;Stunden pro Tag</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="367"/>
         <source>Hours per day</source>
         <translation>Stunden pro Tag</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="383"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="375"/>
         <source>&amp;Rooms</source>
-        <translation type="unfinished">&amp;Räume</translation>
+        <translation>&amp;Räume</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="386"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="378"/>
         <source>Rooms</source>
         <translation>Räume</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="394"/>
-        <source>Allocate &amp;rooms</source>
-        <translation type="unfinished">Berechne &amp;Räume</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="397"/>
-        <source>Allocate rooms</source>
-        <translation>Berechne Räume</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="405"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="386"/>
         <source>View (r&amp;ooms)</source>
-        <translation type="unfinished">Zeige (&amp;Räume)</translation>
+        <translation>Zeige (&amp;Räume)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="814"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="389"/>
         <source>View (rooms)</source>
         <translation>Zeige (Räume)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="416"/>
-        <source>Show conflicts (s&amp;pace)</source>
-        <translation type="unfinished">Zeige Konflikte (&amp;Räume)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="419"/>
-        <source>Show conflicts (space)</source>
-        <translation>Zeige Konflikte (Räume)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="427"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="397"/>
         <source>&amp;en_GB (British English)</source>
         <translation>&amp;en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="430"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="400"/>
         <source>en_GB (British English)</source>
         <translation>en_GB (British English)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="438"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="408"/>
         <source>&amp;ro (Romanian)</source>
         <translation>&amp;ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="441"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="411"/>
         <source>ro (Romanian)</source>
         <translation>ro (Romanian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="446"/>
-        <source>Population &amp;number</source>
-        <translation>&amp;Größe einer Gerneration</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="449"/>
-        <source>Population number</source>
-        <translation>Größe einer Gerneration</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="457"/>
-        <source>Probabilities - TODO</source>
-        <translation>Wahrscheinlichkeiten (noch nicht implementiert)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="465"/>
-        <source>&amp;Equipments</source>
-        <translation type="unfinished">&amp;Einrichtungen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="468"/>
-        <source>Equipments</source>
-        <translation>Einrichtungen</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="473"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="416"/>
         <source>T&amp;ime constraints</source>
         <translation>&amp;Zeiteinschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="954"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="419"/>
         <source>Time constraints</source>
         <translation>Zeiteinschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="484"/>
-        <source>2 activities consecutive</source>
-        <translation>2 Aktivitäten hintereinander</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="492"/>
-        <source>2 activities grouped</source>
-        <translation>2 Aktivitäten gruppieren</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="500"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="427"/>
         <source>Activities preferred times</source>
         <translation>Bevorzugte Zeiten der Aktivitäten</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="508"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="435"/>
         <source>&amp;fr (French)</source>
         <translation>&amp;fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="511"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="438"/>
         <source>fr (French)</source>
         <translation>fr (French)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="519"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="446"/>
         <source>Activities same starting time</source>
         <translation>ktivitäten mit gleicher Startzeit</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="527"/>
-        <source>View (t&amp;eachers-with rooms)</source>
-        <translation type="unfinished">Ansicht (&amp;Lehrer mit Räumen)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="803"/>
-        <source>View (teachers-with rooms)</source>
-        <translation>Ansicht (Lehrer mit Räumen)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="538"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="454"/>
         <source>View (st&amp;udents-with rooms)</source>
-        <translation type="unfinished">Ansicht (&amp;Schüler mit Räumen)</translation>
+        <translation>Ansicht (&amp;Schüler mit Räumen)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="792"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="457"/>
         <source>View (students-with rooms)</source>
         <translation>Ansicht (Schüler mit Räumen)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="546"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
         <source>All t&amp;ime constraints</source>
         <translation>&amp;Alle Zeiteinschrängungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="549"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="465"/>
         <source>All time constraints</source>
         <translation>Alle Zeiteinschrängungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="554"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
         <source>Teacher not available</source>
         <translation>Lehrer, die nicht verfügbar sind</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="559"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
         <source>Basic compulsory time constraints</source>
         <translation>Grundlegende verflichtende Einschränkungen der Zeit</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="564"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
         <source>Students set not available</source>
         <translation>Schülergruppe nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="485"/>
         <source>Break</source>
         <translation>Pause</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="574"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="490"/>
         <source>Teacher max days per week</source>
         <translation>Lehrer - Maximale Anzahl an Tagen pro Woche</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="614"/>
-        <source>Teachers max hours continuously</source>
-        <translation>Lehrer - Maximale Anzahl an ununterbrochenen Stunden</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="622"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="530"/>
         <source>Teachers max hours daily</source>
         <translation>Lehrer - maximale tägliche Stundenanzahl</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="630"/>
-        <source>Teachers-subgroups max hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="635"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="535"/>
         <source>Activity preferred time</source>
         <translation>Bevorzugte Zeit der Aktivität</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="540"/>
         <source>Students set no gaps</source>
         <translation>Schülergruppe ohne Freistunde</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="645"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="545"/>
         <source>Students no gaps</source>
         <translation>Schüler ohne Freistunden</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="650"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
         <source>Students early</source>
         <translation>Schüler so früh wie möglich</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="658"/>
-        <source>Students set interval max days per week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="666"/>
-        <source>Students set n hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="674"/>
-        <source>Students n hours daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="682"/>
-        <source>Activity ends day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="690"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
         <source>Activities not overlapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitäten nicht gleichzeitig</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="695"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="563"/>
         <source>Min n days between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindestens n Tage zwischen den Aktivitäten</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="700"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="568"/>
         <source>Activity preferred times</source>
         <translation>Bevorzugte Zeiten der Aktivität</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="711"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="579"/>
         <source>All space constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Raumeinschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="727"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="595"/>
         <source>Space constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Raumeinschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="732"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="600"/>
         <source>Basic compulsory space</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grundlegende Einschränkungen von Räumen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="737"/>
-        <source>Teacher requires room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="742"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="605"/>
         <source>Room not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht verfügbare Räume</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="755"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="618"/>
         <source>Activity preferred room</source>
         <translation>Bevorzugter Raum der Aktivität</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="760"/>
-        <source>Minimize number of rooms for students</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="765"/>
-        <source>Room type not allowed subjects</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="770"/>
-        <source>Subject requires equipments</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="781"/>
-        <source>Allocate hours and rooms simultaneously</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="825"/>
-        <source>Show conflicts (time and space)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="833"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="626"/>
         <source>Activities same starting hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitäten mit gleicher Startzeit</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="838"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="631"/>
         <source>Su&amp;bject tags</source>
         <translation>&amp;Unterrichtsart</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="841"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="634"/>
         <source>Subject tags</source>
         <translation>Unterrichtsart</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="846"/>
-        <source>Subject subject tag require equipments</source>
-        <translation>Benötigte Einrichtungen einer Unterrichtsart</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="851"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="639"/>
         <source>I&amp;nstitution name</source>
         <translation>&amp;Name der Institution</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="854"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="642"/>
         <source>Institution name</source>
         <translation>Name der Institution</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="859"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="647"/>
         <source>&amp;Comments</source>
         <translation>&amp;Kommentare</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="862"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="650"/>
         <source>Comments</source>
         <translation>Kommentare</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="867"/>
-        <source>Activities same room</source>
-        <translation>Aktivitäten im selben Raum</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="872"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="655"/>
         <source>Activity preferred rooms</source>
         <translation>Bevorzugter Räume der Aktivität</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="880"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="663"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="883"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="666"/>
         <source>ca (Catalan)</source>
         <translation>ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="891"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="674"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="677"/>
         <source>ms (Malay)</source>
         <translation>ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="899"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="682"/>
         <source>Subject preferred room</source>
         <translation>Bevorzugter Raum eines Faches</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
-        <source>Subject subject tag preferred room</source>
-        <translation>Bevorzugter Raum eines Unterrichtsart</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="909"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="687"/>
         <source>Subject preferred rooms</source>
         <translation>Bevorzugter Räume eines Faches</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="914"/>
-        <source>Subject subject tag preferred rooms</source>
-        <translation>Bevorzugter Räume eines Unterrichtsart</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="922"/>
-        <source>Teachers-subject tags max hours continuously</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="930"/>
-        <source>Teachers-subject tag max hours continuously</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="938"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="695"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="941"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="698"/>
         <source>pl (Polish)</source>
         <translation>pl (Polish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="946"/>
-        <source>Teacher subject require room</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="962"/>
-        <source>Time constraints subtags</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="970"/>
-        <source>2 activities ordered</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="981"/>
-        <source>Buildings</source>
-        <translation>Gebäude</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="986"/>
-        <source>Max building changes per day for teachers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="991"/>
-        <source>Max building changes per day for students</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="996"/>
-        <source>Minimize number of rooms for teachers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1001"/>
-        <source>Max room changes per day for teachers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1006"/>
-        <source>Max room changes per day for students</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1014"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="706"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1017"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="709"/>
         <source>tr (Turkish)</source>
         <translation>tr (Turkish)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1025"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="717"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1028"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="720"/>
         <source>nl (Dutch)</source>
         <translation>nl (Dutch)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1036"/>
-        <source>Export to iCalendar</source>
-        <translation>Exportiere zum iCalendar</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1041"/>
-        <source>Students</source>
-        <translation>Schüler</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1051"/>
-        <source>Teachers with rooms (1)</source>
-        <translation>Lehrer mit Räumen (1)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1056"/>
-        <source>Students with rooms (1)</source>
-        <translation>Schüler mit Räumen (1)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1061"/>
-        <source>Teachers with rooms (2)</source>
-        <translation>Lehrer mit Räumen (2)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1066"/>
-        <source>Students with rooms (2)</source>
-        <translation>Schüler mit Räumen (2)</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1074"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="728"/>
         <source>&amp;de (German)</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;de (German)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1079"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="733"/>
         <source>Teachers statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Lehrerstatistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1090"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="744"/>
         <source>Students statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Schülerstatistik</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="61"/>
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1095"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="749"/>
         <source>Subjects statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Fächerstatistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1113"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="757"/>
         <source>&amp;hu (Hungarian)</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;hu (Hungarian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="481"/>
-        <source>2 activities consecutive - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="489"/>
-        <source>2 activities grouped - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="611"/>
-        <source>Teachers max hours continuously - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="627"/>
-        <source>Teachers-subgroups max hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="655"/>
-        <source>Students set interval max days per week - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="663"/>
-        <source>Students set n hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="671"/>
-        <source>Students n hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="679"/>
-        <source>Activity ends day - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="919"/>
-        <source>Teachers-subject tags max hours continuously - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="927"/>
-        <source>Teachers-subject tag max hours continuously - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="967"/>
-        <source>2 activities ordered - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1100"/>
-        <source>Teacher interval max days per week - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1105"/>
-        <source>Teachers min hours daily - NOT WORKING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1121"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="765"/>
         <source>&amp;mk (Macedonian)</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;mk (Macedonian)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1132"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
         <source>Teachers max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Freistunden pro Woche für Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1137"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="781"/>
         <source>Teacher max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="951"/>
-        <source>Time constraints - OLD, DEPRECATED</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="959"/>
-        <source>Time constraints subtags - OLD, DEPRECATED</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
         <source>Students set early</source>
-        <translation type="unfinished"></translation>
+        <translation>Schülergruppe so früh wie möglich</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1147"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="791"/>
         <source>Teacher max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale tägliche Stundenanzahl für Lehrer</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1152"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="796"/>
         <source>Students set max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale tägliche Stundenzahl für Schülergruppen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1157"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="801"/>
         <source>Students max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale tägliche Stundenzahl für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="168"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="172"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1173"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="817"/>
         <source>Search for updates on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche neuere Programmversionen beim Starten</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="13"/>
         <source>FET - a free timetabling program</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ein freies Stundenplanungsprogramm</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="324"/>
         <source>&amp;Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Generiere</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="327"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiere</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="348"/>
         <source>Show conflicts</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeig Konflikte</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="708"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="576"/>
         <source>All s&amp;pace constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle &amp;Raumeinschränkungen</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="778"/>
-        <source>Allocate hours and rooms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1162"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="806"/>
         <source>Instructions</source>
-        <translation type="unfinished"></translation>
+        <translation>Anleitung</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1178"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="822"/>
         <source>Students min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale tägliche Stundenzahl für Schüler</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1183"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="827"/>
         <source>Students set min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale tägliche Stundenzahl für Schülergruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="292"/>
         <source>&amp;Years (forms, classes)</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Jahrgang</translation>
     </message>
 </context>
 <context>
@@ -4459,7 +4143,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="674"/>
         <source>Sponsors</source>
-        <translation type="unfinished">Sponsoren</translation>
+        <translation>Sponsoren</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="388"/>
@@ -4469,7 +4153,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="92"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitwirkende</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="116"/>
@@ -4903,30 +4587,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or faculty.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.1 (August 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -4959,6 +4619,30 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or faculty.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.1.4 (August 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HelpFaqForm_template</name>
@@ -4975,6 +4659,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
+
+this documentation by Liviu Lalescu, reviewed and modified - 11 August 2007
 
 --------
 
@@ -5136,8 +4822,19 @@ Q: After finding the timetable of our school, suppose that a single teacher need
 A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPreferredTime-s, one for each activity that you would like to be fixed (the preferred time will be the one from the previous allocation).
 
 
+-------------------------------------------------------------------------------
 
-this documentation by Liviu Lalescu, reviewed and modified - 10 August 2007</source>
+
+Q: From Yush Yuen: Anyway, what i meant was, our teachers may have lunch at EITHER 5th or 6th period. so, i can&apos;t just use a break.
+
+A: From Volker Dirr: Just add a subject &quot;lunch&quot;. Then add activities new activities. this activities must contain the teacher, subject lunch, split activity into number of working days of the teacher, set min n day = 100% and add NO studentsset. Then add constraint activities preferd time for this subject 5th and 6th hour weight = 100%.
+
+
+-------------------------------------------------------------------------------
+
+Q: How can you allow one gap (or more) for students?
+
+A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5151,7 +4848,7 @@ this documentation by Liviu Lalescu, reviewed and modified - 10 August 2007</sou
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="33"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
@@ -5354,7 +5051,9 @@ If FET cannot find a good timetable for your school, make sure to write to the a
         <source>Number of start hours (periods) per day
 (please specify also the name of the last hour of the day)
 Please be careful, you will have to input n+1 names</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl an Stunden (Zeiträumen) pro Tag
+(Bitte auch einen Namen für den letzten Zeitraum angeben)
+Es muss ein Name mehr angegeben werden</translation>
     </message>
 </context>
 <context>
@@ -5477,37 +5176,39 @@ Please be careful, you will have to input n+1 names</source>
         <source>This value cannot be changed. If you need to 
 modify it, please remove the corresponding 
 (sub-)activities and add a new split activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Wert kann nicht geändert werden.
+Zum Ändern bitte die (Teil-)Aktivitäten löschen
+und mit dem gewünschtem Wert neu einfügen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="57"/>
         <source>Number of students (-1 for automatic computing)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl an Schülern (-1 für automatische Berechnung)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="520"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="569"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="671"/>
         <source>All teachers (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Lehrer (Hinzufügen mit Doppel.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="853"/>
         <source>Selected (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="825"/>
         <source>All students (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Schüler (Hinzufügen mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -5539,27 +5240,30 @@ common timeslots. You don&apos;t need to add this constraint for
 activities sharing a teacher or students set. Only add this constraint
 if you really want the activities to be non-simultaneous. If FET fails to find
 a timetable, maybe you can try optimizing first without these constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Einschränkung sorgt dafür, dass Aktivitäten nicht zur selben
+Zeit stattfinden. Diese Einschränkung bracht nicht für Aktivitäten,
+die einen Lehrer oder eine Schülergruppe gemeinsam haben, gesetzt
+werden</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="147"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="155"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="67"/>
         <source>All activities (dbl. click or Enter to add)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Hinzufügen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="101"/>
         <source>Selected (dbl. click or Enter to remove)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -5602,12 +5306,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="57"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform_template.ui" line="71"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -5635,22 +5339,22 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="119"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="127"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="49"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Hinzufügen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="83"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -5678,22 +5382,22 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="73"/>
         <source>All activities (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="107"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
 </context>
 <context>
@@ -5726,12 +5430,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="27"/>
         <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="101"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%) </translation>
     </message>
 </context>
 <context>
@@ -5762,34 +5466,34 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="181"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="175"/>
         <source>New Item</source>
         <translation>Neues Element</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="200"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="194"/>
         <source>Activity</source>
         <translation>Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="49"/>
         <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="135"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Räume (Hinzufügen mit Doppel.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="172"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="169"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%) </translation>
     </message>
 </context>
 <context>
@@ -5837,38 +5541,39 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="27"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="43"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="56"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="69"/>
         <source>Subject</source>
-        <translation type="unfinished">Fach</translation>
+        <translation>Fach</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="77"/>
         <source>Subject tag</source>
-        <translation type="unfinished">Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="265"/>
         <source>Weight percentage
 (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung
+(empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeform_template.ui" line="274"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -5896,37 +5601,37 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="139"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="155"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="168"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="181"/>
         <source>Subject</source>
-        <translation type="unfinished">Fach</translation>
+        <translation>Fach</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="189"/>
         <source>Subject tag</source>
-        <translation type="unfinished">Unterrichtsart</translation>
+        <translation>Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="121"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimesform_template.ui" line="129"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -5954,12 +5659,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="65"/>
         <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform_template.ui" line="79"/>
         <source>Weight (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
 </context>
 <context>
@@ -5987,12 +5692,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform_template.ui" line="79"/>
         <source>Weight (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
 </context>
 <context>
@@ -6020,7 +5725,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="79"/>
         <source>Period</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="90"/>
@@ -6040,12 +5745,12 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="140"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="71"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreakform_template.ui" line="148"/>
@@ -6084,28 +5789,29 @@ not induce gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="146"/>
         <source>95</source>
-        <translation type="unfinished">95</translation>
+        <translation>95</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="41"/>
         <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten (Hinzufügen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="75"/>
         <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="156"/>
         <source>If activities on same day,
 force activities consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Erzwinge zusammenhängende Stunden, wenn
+sie nicht am gleichen Tag stattfinden können</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="138"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%) </translation>
     </message>
 </context>
 <context>
@@ -6133,7 +5839,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="87"/>
         <source>Period</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="98"/>
@@ -6153,12 +5859,12 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="49"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailableform_template.ui" line="57"/>
         <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1</translation>
     </message>
 </context>
 <context>
@@ -6186,12 +5892,12 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlyform_template.ui" line="93"/>
@@ -6212,37 +5918,37 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students max hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ändern von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="77"/>
         <source>Max hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="90"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="98"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -6250,37 +5956,37 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ändern von Einschränkungen für die minimale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="77"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="90"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="98"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
 </context>
 <context>
@@ -6308,7 +6014,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="93"/>
@@ -6326,7 +6032,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsnogapsform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
 </context>
 <context>
@@ -6334,27 +6040,27 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set early dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der Einschränkung frühstmöglicher Unterrichtsbeginn üfr Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="79"/>
@@ -6372,12 +6078,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="101"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlyform_template.ui" line="115"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppe</translation>
     </message>
 </context>
 <context>
@@ -6385,42 +6091,42 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set max hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ändern von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="94"/>
         <source>Students</source>
-        <translation type="unfinished">Schüler</translation>
+        <translation>Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="108"/>
         <source>Max hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="121"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="129"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -6428,42 +6134,42 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ändern von Einschränkungen für die minimale Anzahl an Stunden pro Tag für einen Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="94"/>
         <source>Students</source>
-        <translation type="unfinished">Schüler</translation>
+        <translation>Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="108"/>
         <source>Min hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="121"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="129"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="63"/>
         <source>Weight percentage (needed: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
 </context>
 <context>
@@ -6496,7 +6202,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="110"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="124"/>
@@ -6514,7 +6220,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnogapsform_template.ui" line="102"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
 </context>
 <context>
@@ -6542,7 +6248,7 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="65"/>
         <source>Period</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="76"/>
@@ -6567,12 +6273,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailableform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
 </context>
 <context>
@@ -6605,12 +6311,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="101"/>
         <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="93"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%) </translation>
     </message>
 </context>
 <context>
@@ -6653,22 +6359,22 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="49"/>
         <source>-1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="135"/>
         <source>All rooms (dbl. click adds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Räume (Hinzufügen mit Doppel.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="169"/>
         <source>Selected rooms (dbl. click removes)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte (Entfernen mit Doppelk.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
         <source>Weight percentage (recommended: 90%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 90%-100%)</translation>
     </message>
 </context>
 <context>
@@ -6706,12 +6412,12 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="110"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -6719,37 +6425,37 @@ constraint).</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ändern von Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="87"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Freistunden pro Woche</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="106"/>
@@ -6762,7 +6468,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="123"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
 </context>
 <context>
@@ -6770,42 +6476,42 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher max hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ändern von Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="98"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximale Anzahl an Stunden pro Tag</translation>
+        <translation>Maximale Anzahl an Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="129"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
 </context>
 <context>
@@ -6833,7 +6539,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="65"/>
         <source>Period</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="76"/>
@@ -6858,12 +6564,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="126"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailableform_template.ui" line="140"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
 </context>
 <context>
@@ -6871,32 +6577,32 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max gaps per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Ändern von Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="27"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="49"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="93"/>
@@ -6911,7 +6617,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="106"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Freistunden pro Woche</translation>
     </message>
 </context>
 <context>
@@ -6944,12 +6650,12 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="65"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="79"/>
         <source>Weight percentage (recommended: 0%-100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (empfohlen: 0%-100%)</translation>
     </message>
 </context>
 <context>
@@ -7084,7 +6790,7 @@ lower it as you find new timetables.</source>
     <message>
         <location filename="../src/interface/yearsform.cpp" line="156"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET Information</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform.cpp" line="109"/>
@@ -7110,7 +6816,7 @@ sub-activities from the same split activity</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="204"/>
         <source>FET warning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform.cpp" line="112"/>
@@ -7184,7 +6890,7 @@ If you really need more teachers per activity, please talk to the author</source
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="155"/>
+        <location filename="../src/interface/splityearform.cpp" line="370"/>
         <source>FET question</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8191,7 +7897,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1166"/>
         <source>Activities not overlapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitäten nicht gleichzeitig</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1182"/>
@@ -8460,7 +8166,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5591"/>
         <source>Activities same starting hour</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivitäten mit gleicher Startzeit</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5609"/>
@@ -8508,7 +8214,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="420"/>
         <source>Room not available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nicht verfügbare Räume</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1216"/>
@@ -9093,7 +8799,7 @@ referring to this activity before proceeding</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="73"/>
         <source>Teachers max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maximale Anzahl an Freistunden pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2542"/>
@@ -9113,7 +8819,7 @@ referring to this activity before proceeding</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform.cpp" line="89"/>
         <source>Teacher max gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2555"/>
@@ -9292,7 +8998,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="70"/>
         <source>Students max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maximale tägliche Stundenzahl für Schüler</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3803"/>
@@ -9307,7 +9013,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="104"/>
         <source>Students set max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maximale tägliche Stundenzahl für Schülergruppen</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4001"/>
@@ -9327,7 +9033,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="77"/>
         <source>Teacher max hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maximale tägliche Stundenanzahl für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform.cpp" line="69"/>
@@ -9805,7 +9511,7 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="70"/>
         <source>Students min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Minimale tägliche Stundenzahl für Schüler</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4410"/>
@@ -9830,7 +9536,7 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="104"/>
         <source>Students set min hours daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Minimale tägliche Stundenzahl für Schülergruppen</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4427"/>
@@ -9877,38 +9583,63 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="36"/>
+        <location filename="../src/interface/splityearform.cpp" line="66"/>
         <source>Splitting year: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="139"/>
+        <location filename="../src/interface/splityearform.cpp" line="353"/>
         <source>Empty names not allowed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="156"/>
+        <location filename="../src/interface/splityearform.cpp" line="371"/>
         <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. Do you agree?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="190"/>
+        <location filename="../src/interface/splityearform.cpp" line="405"/>
         <source>Duplicate names not allowed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="302"/>
+        <location filename="../src/interface/splityearform.cpp" line="575"/>
         <source>Cannot add group %1, because a set with same name exists. Please choose another name or remove old group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="308"/>
+        <location filename="../src/interface/splityearform.cpp" line="523"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="355"/>
+        <location filename="../src/interface/splityearform.cpp" line="591"/>
         <source>Split of year complete, please check the groups and subgroups of year to make sure everything is OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="633"/>
+        <source>
+Please choose a number of categories and in each category the number of divisions. You can choose for instance 2 categories, 2 divisions for the first category: boys and girls, and 3 divisions for the second: English, German and French. You can select 1, 2 or 3 categories, each with 2 to 6 divisions. For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="636"/>
+        <source>
+
+Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="638"/>
+        <source>
+
+Separator character(s) is of your choice (default is space)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="640"/>
+        <source>FET help on dividing years</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9964,38 +9695,53 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="43"/>
+        <location filename="../src/interface/splityearform_template.ui" line="35"/>
         <source>Number of categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="128"/>
+        <location filename="../src/interface/splityearform_template.ui" line="419"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="136"/>
+        <location filename="../src/interface/splityearform_template.ui" line="427"/>
         <source>Cancel</source>
         <translation type="unfinished">Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="163"/>
+        <location filename="../src/interface/splityearform_template.ui" line="365"/>
         <source>Splitting year:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="179"/>
+        <location filename="../src/interface/splityearform_template.ui" line="115"/>
         <source>Category 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="218"/>
+        <location filename="../src/interface/splityearform_template.ui" line="187"/>
         <source>Category 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform_template.ui" line="257"/>
+        <location filename="../src/interface/splityearform_template.ui" line="259"/>
         <source>Category 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="373"/>
+        <source>Separator character(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="435"/>
+        <source>Help</source>
+        <translation type="unfinished">Hilfe</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform_template.ui" line="443"/>
+        <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10004,12 +9750,12 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="16"/>
         <source>FET - Students statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Schülerstatistik</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="117"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="36"/>
@@ -10019,17 +9765,17 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="48"/>
         <source>Show subgroups</source>
-        <translation type="unfinished">Zeige Untergruppen</translation>
+        <translation>Zeige Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="58"/>
         <source>Show groups</source>
-        <translation type="unfinished">Zeige Klassen</translation>
+        <translation>Zeige Gruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="68"/>
         <source>Show Years</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Jahrgang</translation>
     </message>
 </context>
 <context>
@@ -10201,12 +9947,12 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="16"/>
         <source>FET - Subjects statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Fächerstatistik</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="52"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -10262,12 +10008,12 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/teachersstatisticsform_template.ui" line="16"/>
         <source>FET - Teachers statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Lehrerstatistik</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersstatisticsform_template.ui" line="52"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -10275,7 +10021,7 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="129"/>
         <source>FET warning</source>
-        <translation type="unfinished"></translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="129"/>
@@ -10285,7 +10031,7 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="595"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>FET Information</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="137"/>
@@ -10529,7 +10275,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="16"/>
         <source>Automatically generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisches Generieren</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="36"/>
@@ -10543,22 +10289,22 @@ obwohl die Berechnung noch weiterläuft</translation>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="46"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="62"/>
         <source>Current stage:</source>
-        <translation type="unfinished">Aktuelle Stand:</translation>
+        <translation>Aktuelle Stand:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="73"/>
         <source>Stop and see impossible activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Anhalten und die problematischen Aktivitäten betrachten</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="81"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Starten</translation>
     </message>
 </context>
 <context>
@@ -10762,11 +10508,6 @@ obwohl die Berechnung noch weiterläuft</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/yearsform_template.ui" line="93"/>
-        <source>NEW: DIVIDE YEAR AUTOMATICALLY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/yearsform_template.ui" line="16"/>
         <source>Years (forms, classes) of students</source>
         <translation type="unfinished"></translation>
@@ -10774,6 +10515,11 @@ obwohl die Berechnung noch weiterläuft</translation>
     <message>
         <location filename="../src/interface/yearsform_template.ui" line="61"/>
         <source>Add year (form, class)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/yearsform_template.ui" line="93"/>
+        <source>NEW: Divide year automatically by selecting categories</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
