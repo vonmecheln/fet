@@ -21,9 +21,6 @@
 
 extern Timetable gt;
 
-#include <iostream>
-using namespace std;
-
 StudentsSet::StudentsSet()
 {
 	this->type=STUDENTS_SET;

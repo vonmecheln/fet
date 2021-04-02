@@ -53,6 +53,8 @@ public:
 	
 	static void writeTimetableDataFile(QWidget* parent, const QString& filename);
 	
+	static void writeReportForMultiple(QWidget* parent, const QString& description, bool begin);
+	
 	//the following functions return a single html table (needed for html file export and printing)
 	static QString singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags);
 	static QString singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags);

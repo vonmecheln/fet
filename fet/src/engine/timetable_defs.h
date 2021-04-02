@@ -54,6 +54,8 @@ Timetable html css javaScript Level, added by Volker Dirr
 */
 extern int TIMETABLE_HTML_LEVEL;
 
+extern bool TIMETABLE_HTML_PRINT_ACTIVITY_TAGS;
+
 extern bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
 
 extern bool PRINT_BREAK_TIME_SLOTS;
@@ -78,6 +80,8 @@ extern bool CONFIRM_ACTIVITY_PLANNING;
 extern bool CONFIRM_SPREAD_ACTIVITIES;
 extern bool CONFIRM_REMOVE_REDUNDANT;
 extern bool CONFIRM_SAVE_TIMETABLE;
+
+extern bool VERBOSE;
 
 /**
 The maximum total number of different subgroups of students

@@ -30,9 +30,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include "matrix.h"
 
-#include <fstream>
-using namespace std;
-
 #include <QTextStream>
 
 #ifndef FET_COMMAND_LINE
@@ -49,11 +46,6 @@ class FetTranslate: public QObject{
 The one and only instantiation of the main class.
 */
 extern Timetable gt;
-
-/**
-Log file
-*/
-extern ofstream logg;
 
 /**
 The name of the file from where the rules are read.

@@ -289,8 +289,13 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=NULL);
 				
-				QString ats=act->activityTagsNames.join(", ");
-				s += act->subjectName+" "+ats;
+				if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+					QString ats=act->activityTagsNames.join(", ");
+					s += act->subjectName+" "+ats;
+				}
+				else{
+					s += act->subjectName;
+				}
 				
 				//students
 				if(act->studentsNames.count()>0){

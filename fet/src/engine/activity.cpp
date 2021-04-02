@@ -62,6 +62,7 @@ Activity::Activity(
 		this->nTotalStudents=0;
 		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
 			StudentsSet* ss=r.searchStudentsSet(*it);
+			assert(ss!=NULL);
 			this->nTotalStudents += ss->numberOfStudents;
 		}
 	}

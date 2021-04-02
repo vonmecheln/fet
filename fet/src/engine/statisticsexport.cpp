@@ -91,6 +91,17 @@ const char INDEX_STATISTICS[]="index.html";
 QString DIRECTORY_STATISTICS;
 QString PREFIX_STATISTICS;
 
+class StringListPair{
+public:
+	QStringList list1;
+	QStringList list2;
+};
+
+bool operator <(const StringListPair& pair1, const StringListPair& pair2)
+{
+	return (pair1.list1.join("")+pair1.list2.join("")) < (pair2.list1.join("")+pair2.list2.join(""));
+}
+
 StatisticsExport::StatisticsExport()
 {
 }
@@ -185,8 +196,6 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 	subjectsActivities.clear();
 	teachersActivities.clear();
 
-	Activity* act;
-	
 	//QProgressDialog progress(parent);
 	//progress.setLabelText(tr("Processing activities...please wait"));
 	//progress.setRange(0,gt.rules.activitiesList.count());
@@ -196,7 +205,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 		//progress.setValue(ai);
 		//pqapplication->processEvents();
 		
-		act=gt.rules.activitiesList[ai];
+		Activity* act=gt.rules.activitiesList[ai];
 		if(act->active){
 				subjectsActivities.insert(act->subjectName, ai);
 				int tmp=subjectsTotalNumberOfHours.value(act->subjectName)+act->duration;
@@ -264,7 +273,6 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 
-	ok=true;
 	ok=exportStatisticsStylesheetCss(parent, sTime);
 	if(ok)
 		ok=exportStatisticsIndex(parent, sTime);
@@ -310,7 +318,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 }
 
 void StatisticsExport::computeHashForIDsStatistics(){		// by Volker Dirr
-	//TODO if an use a relational data base this is unneded, because we can use the primary key id of the database 
+	//TODO if we use a relational data base this is unneded, because we can use the primary key id of the database 
 	//This is very similar to timetable compute hash. so always check it if you change something here!
 
 	hashStudentIDsStatistics.clear();
@@ -381,7 +389,6 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -432,8 +439,10 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 		for(int i=0; i<gt.rules.subjectsList.size(); i++){
 			tos << "span.s_"<<hashSubjectIDsStatistics.value(gt.rules.subjectsList[i]->name)<<" { /* subject "<<gt.rules.subjectsList[i]->name<<" */\n\n}\n\n";
 		}
-		for(int i=0; i<gt.rules.activityTagsList.size(); i++){
-			tos << "span.at_"<<hashActivityTagIDsStatistics.value(gt.rules.activityTagsList[i]->name)<<" { /* activity tag "<<gt.rules.activityTagsList[i]->name<<" */\n\n}\n\n";
+		if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+			for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+				tos << "span.at_"<<hashActivityTagIDsStatistics.value(gt.rules.activityTagsList[i]->name)<<" { /* activity tag "<<gt.rules.activityTagsList[i]->name<<" */\n\n}\n\n";
+			}
 		}
 		for(int i=0; i<gt.rules.yearsList.size(); i++){
 			StudentsYear* sty=gt.rules.yearsList[i];
@@ -459,7 +468,9 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 	}
 	if(TIMETABLE_HTML_LEVEL>=3){
 		tos<<"span.subject {\n\n}\n\n";
-		tos<<"span.activitytag {\n\n}\n\n";
+		if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+			tos<<"span.activitytag {\n\n}\n\n";
+		}
 		tos<<"span.empty {\n  color: gray;\n}\n\n";
 		tos<<"td.empty {\n  border-color:silver;\n  border-right-style:none;\n  border-bottom-style:none;\n  border-left-style:dotted;\n  border-top-style:dotted;\n}\n\n";
 		//tos<<"span.notAvailable {\n  color: gray;\n}\n\n";
@@ -506,7 +517,6 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -620,7 +630,6 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -731,27 +740,18 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
-				QMap<QString, int> tmpStudentDuration;	//not QHash, because i need the correct order of the activities
+				//optimized by Liviu Lalescu - 1
+				QMap<StringListPair, int> durationMap;
 				foreach(int tmpAct, tmpActivities){
-					Activity* act=gt.rules.activitiesList[tmpAct];
-					int tmpD=act->duration;
-					QString tmpSt;
-					if(act->studentsNames.size()>0){
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
-								case 5 : ;
-								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
-								default: tmpSt+=protect2(*st); break;
-								}
-							if(st!=act->studentsNames.end()-1)
-								tmpSt+=", ";
-						}
-					} else
-						tmpSt=" ";
-					tmpD+=tmpStudentDuration.value(tmpSt);
-					tmpStudentDuration.insert(tmpSt, tmpD);
+					Activity* act=gt.rules.activitiesList.at(tmpAct);
+					StringListPair slp;
+					slp.list1=act->studentsNames;
+					slp.list2=act->activityTagsNames;
+					int dur=durationMap.value(slp, 0);
+					dur+=act->duration;
+					durationMap.insert(slp, dur);
 				}
+				
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -759,27 +759,61 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it(tmpStudentDuration);
+				QMapIterator<StringListPair, int> it(durationMap);
 				while(it.hasNext()){
 					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it.value()<<"</td>";	
+					tos<<it.value()<<"</td>";
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"studentsset line2\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it2(tmpStudentDuration);	//do it with the same iterator
+				QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
 				while(it2.hasNext()){
 					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it2.key()<<"</td>";	
+					
+					StringListPair slp=it2.key();
+					QStringList studentsNames=slp.list1;
+					QStringList activityTagsNames=slp.list2;
+					QString tmpSt=QString("");
+					if(studentsNames.size()>0||activityTagsNames.size()>0){
+						for(QStringList::Iterator st=studentsNames.begin(); st!=studentsNames.end(); st++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
+								case 5 : ;
+								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
+								default: tmpSt+=protect2(*st); break;
+								}
+							if(st!=studentsNames.end()-1)
+								tmpSt+=", ";
+						}
+						if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+							for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tmpSt+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+									case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+									case 5 : ;
+									case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+									default: tmpSt+=" "+protect2(*atn); break;
+								}
+								if(atn!=activityTagsNames.end()-1)
+									tmpSt+=", ";
+							}
+						}
+						
+					} else
+						tmpSt=" ";
+
+					tos<<tmpSt;
+					tos<<"</td>";
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -846,7 +880,6 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -955,27 +988,18 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
-				QMap<QString, int> tmpStudentDuration;	//not QHash, because i need the correct order of the activities
+				//optimized by Liviu Lalescu - 2
+				QMap<StringListPair, int> durationMap;
 				foreach(int tmpAct, tmpActivities){
-					Activity* act=gt.rules.activitiesList[tmpAct];
-					int tmpD=act->duration;
-					QString tmpSt;
-					if(act->studentsNames.size()>0){
-						for(QStringList::Iterator st=act->studentsNames.begin(); st!=act->studentsNames.end(); st++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
-								case 5 : ;
-								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
-								default: tmpSt+=protect2(*st); break;
-								}
-							if(st!=act->studentsNames.end()-1)
-								tmpSt+=", ";
-						}
-					} else
-						tmpSt=" ";
-					tmpD+=tmpStudentDuration.value(tmpSt);
-					tmpStudentDuration.insert(tmpSt, tmpD);
+					Activity* act=gt.rules.activitiesList.at(tmpAct);
+					StringListPair slp;
+					slp.list1=act->studentsNames;
+					slp.list2=act->activityTagsNames;
+					int dur=durationMap.value(slp, 0);
+					dur+=act->duration;
+					durationMap.insert(slp, dur);
 				}
+
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -983,27 +1007,60 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it(tmpStudentDuration);
+				QMapIterator<StringListPair, int> it(durationMap);
 				while(it.hasNext()){
 					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it.value()<<"</td>";	
+					tos<<it.value()<<"</td>";
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"studentsset line2\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it2(tmpStudentDuration);	//do it with the same iterator
+				QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
 				while(it2.hasNext()){
 					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it2.key()<<"</td>";	
+					
+					StringListPair slp=it2.key();
+					QStringList studentsNames=slp.list1;
+					QStringList activityTagsNames=slp.list2;
+					QString tmpSt=QString("");
+					if(studentsNames.size()>0||activityTagsNames.size()>0){
+						for(QStringList::Iterator st=studentsNames.begin(); st!=studentsNames.end(); st++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
+								case 5 : ;
+								case 6 : tmpSt+="<span class=\"ss_"+hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
+								default: tmpSt+=protect2(*st); break;
+								}
+							if(st!=studentsNames.end()-1)
+								tmpSt+=", ";
+						}
+						if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+							for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tmpSt+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+									case 4 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+									case 5 : ;
+									case 6 : tmpSt+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+									default: tmpSt+=" "+protect2(*atn); break;
+								}
+								if(atn!=activityTagsNames.end()-1)
+									tmpSt+=", ";
+							}
+						}
+					} else
+						tmpSt=" ";
+					tos<<tmpSt;
+					
+					tos<<"</td>";
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -1070,7 +1127,6 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1181,36 +1237,18 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
-				QMap<QString, int> tmpSubjectDuration;	//not QHash, because i need the correct order of the activities
+				//optimized by Liviu Lalescu - 3
+				QMap<StringListPair, int> durationMap;
 				foreach(int tmpAct, tmpActivities){
-					Activity* act=gt.rules.activitiesList[tmpAct];
-					int tmpD=act->duration;
-					QString tmpS;
-					if(act->subjectName.size()>0||act->activityTagsNames.size()>0){
-						if(act->subjectName.size()>0)
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tmpS+="<span class=\"subject\">"+protect2(act->subjectName)+"</span>"; break;
-								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
-								case 5 : ;
-								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsStatistics.value(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
-								default: tmpS+=protect2(act->subjectName); break;
-							}
-						for(QStringList::Iterator atn=act->activityTagsNames.begin(); atn!=act->activityTagsNames.end(); atn++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-								case 5 : ;
-								case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-								default: tmpS+=" "+protect2(*atn); break;
-							}
-							if(atn!=act->activityTagsNames.end()-1)
-								tmpS+=", ";
-						}
-					} else
-						tmpS=" ";
-					tmpD+=tmpSubjectDuration.value(tmpS);
-					tmpSubjectDuration.insert(tmpS, tmpD);
+					Activity* act=gt.rules.activitiesList.at(tmpAct);
+					StringListPair slp;
+					slp.list1=QStringList(act->subjectName);
+					slp.list2=act->activityTagsNames;
+					int dur=durationMap.value(slp, 0);
+					dur+=act->duration;
+					durationMap.insert(slp, dur);
 				}
+
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -1218,27 +1256,59 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it(tmpSubjectDuration);
+				QMapIterator<StringListPair, int> it(durationMap);
 				while(it.hasNext()){
 					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it.value()<<"</td>";	
+					tos<<it.value()<<"</td>";
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"subject line2\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it2(tmpSubjectDuration);	//do it with the same iterator
+				QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
 				while(it2.hasNext()){
 					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it2.key()<<"</td>";	
+
+					StringListPair slp=it2.key();
+					assert(slp.list1.count()==1);
+					QString subjectName=slp.list1.at(0);
+					QStringList activityTagsNames=slp.list2;
+					QString tmpS=QString("");
+					if(!subjectName.isEmpty()||activityTagsNames.size()>0){
+						if(!subjectName.isEmpty())
+							switch(TIMETABLE_HTML_LEVEL){
+								case 3 : tmpS+="<span class=\"subject\">"+protect2(subjectName)+"</span>"; break;
+								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(subjectName)+"\">"+protect2(subjectName)+"</span></span>"; break;
+								case 5 : ;
+								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsStatistics.value(subjectName)+"')\">"+protect2(subjectName)+"</span></span>"; break;
+								default: tmpS+=protect2(subjectName); break;
+							}
+						if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+							for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+									case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+									case 5 : ;
+									case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+									default: tmpS+=" "+protect2(*atn); break;
+								}
+								if(atn!=activityTagsNames.end()-1)
+									tmpS+=", ";
+							}
+						}
+					} else
+						tmpS=" ";
+
+					tos<<tmpS;
+					tos<<"</td>";
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -1305,7 +1375,6 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1416,36 +1485,18 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
-				QMap<QString, int> tmpSubjectDuration;	//not QHash, because i need the correct order of the activities
+				//optimized by Liviu Lalescu - 4
+				QMap<StringListPair, int> durationMap;
 				foreach(int tmpAct, tmpActivities){
-					Activity* act=gt.rules.activitiesList[tmpAct];
-					int tmpD=act->duration;
-					QString tmpS;
-					if(act->subjectName.size()>0||act->activityTagsNames.size()>0){
-						if(act->subjectName.size()>0)
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tmpS+="<span class=\"subject\">"+protect2(act->subjectName)+"</span>"; break;
-								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
-								case 5 : ;
-								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsStatistics.value(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
-								default: tmpS+=protect2(act->subjectName); break;
-							}
-						for(QStringList::Iterator atn=act->activityTagsNames.begin(); atn!=act->activityTagsNames.end(); atn++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
-								case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
-								case 5 : ;
-								case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
-								default: tmpS+=" "+protect2(*atn); break;
-							}
-							if(atn!=act->activityTagsNames.end()-1)
-								tmpS+=", ";
-						}
-					} else
-						tmpS=" ";
-					tmpD+=tmpSubjectDuration.value(tmpS);
-					tmpSubjectDuration.insert(tmpS, tmpD);
+					Activity* act=gt.rules.activitiesList.at(tmpAct);
+					StringListPair slp;
+					slp.list1=QStringList(act->subjectName);
+					slp.list2=act->activityTagsNames;
+					int dur=durationMap.value(slp, 0);
+					dur+=act->duration;
+					durationMap.insert(slp, dur);
 				}
+
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -1453,27 +1504,59 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it(tmpSubjectDuration);
+				QMapIterator<StringListPair, int> it(durationMap);
 				while(it.hasNext()){
 					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it.value()<<"</td>";	
+					tos<<it.value()<<"</td>";
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"subject line2\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it2(tmpSubjectDuration);	//do it with the same iterator
+				QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
 				while(it2.hasNext()){
 					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it2.key()<<"</td>";	
+						
+					StringListPair slp=it2.key();
+					assert(slp.list1.count()==1);
+					QString subjectName=slp.list1.at(0);
+					QStringList activityTagsNames=slp.list2;
+					QString tmpS=QString("");
+					if(!subjectName.isEmpty()||activityTagsNames.size()>0){
+						if(!subjectName.isEmpty())
+							switch(TIMETABLE_HTML_LEVEL){
+								case 3 : tmpS+="<span class=\"subject\">"+protect2(subjectName)+"</span>"; break;
+								case 4 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(subjectName)+"\">"+protect2(subjectName)+"</span></span>"; break;
+								case 5 : ;
+								case 6 : tmpS+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsStatistics.value(subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsStatistics.value(subjectName)+"')\">"+protect2(subjectName)+"</span></span>"; break;
+								default: tmpS+=protect2(subjectName); break;
+							}
+						if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+							for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tmpS+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+									case 4 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+									case 5 : ;
+									case 6 : tmpS+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+									default: tmpS+=" "+protect2(*atn); break;
+								}
+								if(atn!=activityTagsNames.end()-1)
+									tmpS+=", ";
+							}
+						}
+					} else
+						tmpS=" ";
+					tos<<tmpS;
+					
+					tos<<"</td>";
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -1540,7 +1623,6 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1649,27 +1731,18 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
-				QMap<QString, int> tmpTeacherDuration;	//not QHash, because i need the correct order of the activities
+				//optimized by Liviu Lalescu - 5
+				QMap<StringListPair, int> durationMap;
 				foreach(int tmpAct, tmpActivities){
-					Activity* act=gt.rules.activitiesList[tmpAct];
-					int tmpD=act->duration;
-					QString tmpT;
-					if(act->teachersNames.size()>0){
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
-								case 5 : ;
-								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
-								default: tmpT+=protect2(*it); break;
-							}
-							if(it!=act->teachersNames.end()-1)
-								tmpT+=", ";
-						}
-					} else
-						tmpT=" ";
-					tmpD+=tmpTeacherDuration.value(tmpT);
-					tmpTeacherDuration.insert(tmpT, tmpD);
+					Activity* act=gt.rules.activitiesList.at(tmpAct);
+					StringListPair slp;
+					slp.list1=act->teachersNames;
+					slp.list2=act->activityTagsNames;
+					int dur=durationMap.value(slp, 0);
+					dur+=act->duration;
+					durationMap.insert(slp, dur);
 				}
+
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -1677,27 +1750,61 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it(tmpTeacherDuration);
+				QMapIterator<StringListPair, int> it(durationMap);
 				while(it.hasNext()){
 					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it.value()<<"</td>";	
+					tos<<it.value()<<"</td>";
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"teacher line2\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it2(tmpTeacherDuration);	//do it with the same iterator
+				QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
 				while(it2.hasNext()){
 					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it2.key()<<"</td>";	
+
+					StringListPair slp=it2.key();
+					QStringList teachersNames=slp.list1;
+					QStringList activityTagsNames=slp.list2;
+					QString tmpT=QString("");
+
+					if(teachersNames.size()>0||activityTagsNames.size()>0){
+						for(QStringList::Iterator it=teachersNames.begin(); it!=teachersNames.end(); it++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
+								case 5 : ;
+								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
+								default: tmpT+=protect2(*it); break;
+							}
+							if(it!=teachersNames.end()-1)
+								tmpT+=", ";
+						}
+						if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+							for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tmpT+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+									case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+									case 5 : ;
+									case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+									default: tmpT+=" "+protect2(*atn); break;
+								}
+								if(atn!=activityTagsNames.end()-1)
+									tmpT+=", ";
+							}
+						}
+					} else
+						tmpT=" ";
+					tos<<tmpT;
+					
+					tos<<"</td>";
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";
@@ -1764,7 +1871,6 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1875,27 +1981,18 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 					default: tos<<"          <td>"<<protect2(STRING_EMPTY_SLOT_STATISTICS)<<"</td>\n";
 				}
 			} else {
-				QMap<QString, int> tmpTeacherDuration;	//not QHash, because i need the correct order of the activities
+				//optimized by Liviu Lalescu - 6
+				QMap<StringListPair, int> durationMap;
 				foreach(int tmpAct, tmpActivities){
-					Activity* act=gt.rules.activitiesList[tmpAct];
-					int tmpD=act->duration;
-					QString tmpT;
-					if(act->teachersNames.size()>0){
-						for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
-							switch(TIMETABLE_HTML_LEVEL){
-								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
-								case 5 : ;
-								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
-								default: tmpT+=protect2(*it); break;
-							}
-							if(it!=act->teachersNames.end()-1)
-								tmpT+=", ";
-						}
-					} else
-						tmpT=" ";
-					tmpD+=tmpTeacherDuration.value(tmpT);
-					tmpTeacherDuration.insert(tmpT, tmpD);
+					Activity* act=gt.rules.activitiesList.at(tmpAct);
+					StringListPair slp;
+					slp.list1=act->teachersNames;
+					slp.list2=act->activityTagsNames;
+					int dur=durationMap.value(slp, 0);
+					dur+=act->duration;
+					durationMap.insert(slp, dur);
 				}
+
 				if(TIMETABLE_HTML_LEVEL>=1)
 					tos<<"          <td><table class=\"detailed\">";
 				else
@@ -1903,27 +2000,61 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"duration line1\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it(tmpTeacherDuration);
+				QMapIterator<StringListPair, int> it(durationMap);
 				while(it.hasNext()){
 					it.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it.value()<<"</td>";	
+					tos<<it.value()<<"</td>";
 				}
 				tos<<"</tr>";
 				if(TIMETABLE_HTML_LEVEL>=3)
 					tos<<"<tr class=\"teacher line2\">";
 				else	tos<<"<tr>";
-				QMapIterator<QString, int> it2(tmpTeacherDuration);	//do it with the same iterator
+				QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
 				while(it2.hasNext()){
 					it2.next();
 					if(TIMETABLE_HTML_LEVEL>=1)
 						tos<<"<td class=\"detailed\">";
 					else
 						tos<<"<td>";
-					tos<<it2.key()<<"</td>";	
+
+					StringListPair slp=it2.key();
+					QStringList teachersNames=slp.list1;
+					QStringList activityTagsNames=slp.list2;
+					QString tmpT=QString("");
+
+					if(teachersNames.size()>0||activityTagsNames.size()>0){
+						for(QStringList::Iterator it=teachersNames.begin(); it!=teachersNames.end(); it++){
+							switch(TIMETABLE_HTML_LEVEL){
+								case 4 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
+								case 5 : ;
+								case 6 : tmpT+="<span class=\"t_"+hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
+								default: tmpT+=protect2(*it); break;
+							}
+							if(it!=teachersNames.end()-1)
+								tmpT+=", ";
+						}
+						if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+							for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								switch(TIMETABLE_HTML_LEVEL){
+									case 3 : tmpT+=" <span class=\"activitytag\">"+protect2(*atn)+"</span>"; break;
+									case 4 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\">"+protect2(*atn)+"</span></span>"; break;
+									case 5 : ;
+									case 6 : tmpT+=" <span class=\"activitytag\"><span class=\"at_"+hashActivityTagIDsStatistics.value(*atn)+"\" onmouseover=\"highlight('at_"+hashActivityTagIDsStatistics.value(*atn)+"')\">"+protect2(*atn)+"</span></span>"; break;
+									default: tmpT+=" "+protect2(*atn); break;
+								}
+								if(atn!=activityTagsNames.end()-1)
+									tmpT+=", ";
+							}
+						}
+					} else
+						tmpT=" ";
+					tos<<tmpT;
+					
+					tos<<"</td>";
 				}
 				tos<<"</tr>";
 				tos<<"</table></td>\n";

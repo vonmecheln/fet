@@ -30,10 +30,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "matrix.h"
 
 #include <iostream>
-#include <fstream>
-using namespace std;
 #include <algorithm>
 #include <cmath>
+using namespace std;
 
 #include "messageboxes.h"
 
@@ -7982,32 +7981,34 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 		assert(nIncompatible[permutation[i-1]]>=nIncompatible[permutation[i]]);
 	}
 	
-	cout<<"The order of activities (id-s):"<<endl;
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		cout<<"No: "<<i+1<<", nIncompatible[permutation[i]]=="<<nIncompatible[permutation[i]]<<", ";
-		if(nMinDaysConstraintsBroken[permutation[i]]>0.0)
-			cout<<"nMinDaysConstraintsBroken[permutation[i]]=="<<nMinDaysConstraintsBroken[permutation[i]]<<", ";
-	
-		Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
-		cout<<"id=="<<act->id;
-		cout<<", teachers: ";
-		QString tj=act->teachersNames.join(" ");
-		//foreach(QString s, act->teachersNames)
-		//	cout<<qPrintable(s)<<" ";
-		cout<<qPrintable(tj);
-		cout<<", subject: "<<qPrintable(act->subjectName);
-		if(act->activityTagsNames.count()>0){
-			QString atj=act->activityTagsNames.join(" ");
-			cout<<", activity tags: "<<qPrintable(atj);
+	if(VERBOSE){
+		cout<<"The order of activities (id-s):"<<endl;
+		for(int i=0; i<gt.rules.nInternalActivities; i++){
+			cout<<"No: "<<i+1<<", nIncompatible[permutation[i]]=="<<nIncompatible[permutation[i]]<<", ";
+			if(nMinDaysConstraintsBroken[permutation[i]]>0.0)
+				cout<<"nMinDaysConstraintsBroken[permutation[i]]=="<<nMinDaysConstraintsBroken[permutation[i]]<<", ";
+		
+			Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
+			cout<<"id=="<<act->id;
+			cout<<", teachers: ";
+			QString tj=act->teachersNames.join(" ");
+			//foreach(QString s, act->teachersNames)
+			//	cout<<qPrintable(s)<<" ";
+			cout<<qPrintable(tj);
+			cout<<", subject: "<<qPrintable(act->subjectName);
+			if(act->activityTagsNames.count()>0){
+				QString atj=act->activityTagsNames.join(" ");
+				cout<<", activity tags: "<<qPrintable(atj);
+			}
+			cout<<", students: ";
+			QString sj=act->studentsNames.join(" ");
+			//foreach(QString s, act->studentsNames)
+			//	cout<<qPrintable(s)<<" ";
+			cout<<qPrintable(sj);
+			cout<<endl;
 		}
-		cout<<", students: ";
-		QString sj=act->studentsNames.join(" ");
-		//foreach(QString s, act->studentsNames)
-		//	cout<<qPrintable(s)<<" ";
-		cout<<qPrintable(sj);
-		cout<<endl;
+		cout<<"End - the order of activities (id-s):"<<endl;
 	}
-	cout<<"End - the order of activities (id-s):"<<endl;
 
 	QString s="";
 	s+=GeneratePreTranslate::tr("This is the initial evaluation order of activities computed by FET."

@@ -19,12 +19,12 @@
 #include "timetable.h"
 #include "solution.h"
 
+#include <iostream>
+using namespace std;
+
 #ifndef FET_COMMAND_LINE
 
 #include "fetmainform.h"
-
-#include <iostream>
-using namespace std;
 
 #include "centerwidgetonscreen.h"
 
@@ -530,11 +530,16 @@ FetMainForm::FetMainForm()
 		networkManager=new QNetworkAccessManager(this);
 		connect(networkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
 		QUrl url("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
-		cout<<"New version checking host: "<<qPrintable(url.host())<<endl;
-		cout<<"New version checking path: "<<qPrintable(url.path())<<endl;
+		if(VERBOSE){
+			cout<<"New version checking host: "<<qPrintable(url.host())<<endl;
+			cout<<"New version checking path: "<<qPrintable(url.path())<<endl;
+		}
 		networkManager->get(QNetworkRequest(url));
 	}
 	
+	settingsPrintActivityTagsAction->setCheckable(true);
+	settingsPrintActivityTagsAction->setChecked(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
+
 	settingsPrintNotAvailableSlotsAction->setCheckable(true);
 	settingsPrintNotAvailableSlotsAction->setChecked(PRINT_NOT_AVAILABLE_TIME_SLOTS);
 
@@ -682,12 +687,13 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 		else{
 			internetVersion=regExp.cap(1);
 			additionalComments=regExp.cap(2).trimmed();
-	
-			cout<<"Your current version: '";
-			cout<<qPrintable(FET_VERSION)<<"'"<<endl;
-			cout<<"Latest version: '";
-			cout<<qPrintable(internetVersion)<<"'"<<endl;
-	
+
+			if(VERBOSE){
+				cout<<"Your current version: '";
+				cout<<qPrintable(FET_VERSION)<<"'"<<endl;
+				cout<<"Latest version: '";
+				cout<<qPrintable(internetVersion)<<"'"<<endl;
+			}
 			if(internetVersion!=FET_VERSION){
 				QString s=tr("Another version: %1, is available on the FET homepage: %2", "%1 is new version, %2 is FET homepage").arg(internetVersion).arg("http://lalescu.ro/liviu/fet/");
 				s+=QString("\n\n");
@@ -3539,30 +3545,33 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=QString("15. ")+tr("Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("16. ")+tr("Enable activity tag max hours daily will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("16. ")+tr("Print activities tags will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=QString("17. ")+tr("Enable students max gaps per day will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("17. ")+tr("Enable activity tag max hours daily will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("18. ")+tr("Warn if using not perfect constraints will be %1", "%1 is true or false. This is a warning if user uses not perfect constraints").arg(tr("true"));
+	s+=QString("18. ")+tr("Enable students max gaps per day will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("19. ")+tr("Enable constraints students min hours daily with empty days will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("19. ")+tr("Warn if using not perfect constraints will be %1", "%1 is true or false. This is a warning if user uses not perfect constraints").arg(tr("true"));
 	s+="\n";
 
-	s+=QString("20. ")+tr("Warn if using constraints students min hours daily with empty days will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
+	s+=QString("20. ")+tr("Enable constraints students min hours daily with empty days will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
+	s+=QString("21. ")+tr("Warn if using constraints students min hours daily with empty days will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
 		" students min hours daily with allowed empty days").arg(tr("true"));
 	s+="\n";
 
 	///////////////confirmations
-	s+=QString("21. ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("22. ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("22. ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("23. ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("23. ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("24. ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("24. ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("25. ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
 	//s+="\n";
 	///////////////
 
@@ -3651,6 +3660,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	
 	TIMETABLE_HTML_LEVEL=2;
 	
+	settingsPrintActivityTagsAction->setChecked(true);
+	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=true;
+
 	settingsPrintNotAvailableSlotsAction->setChecked(true);
 	PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
 
@@ -3675,6 +3687,11 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_triggered()
 	SettingsTimetableHtmlLevelForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
+}
+
+void FetMainForm::on_settingsPrintActivityTagsAction_toggled()
+{
+	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=settingsPrintActivityTagsAction->isChecked();
 }
 
 void FetMainForm::on_settingsPrintNotAvailableSlotsAction_toggled()

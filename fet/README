@@ -1,4 +1,4 @@
-This is FET version 5.20.1
+This is FET version 5.20.2
 
 
 Program description:
@@ -197,22 +197,24 @@ Running FET:
 	Windows:
 	Run the executable fet.exe (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
 
-	COMMAND LINE: no GUI, just run "fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b]
-	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]
-	 [--warnifusingstudentsminhoursdailywithallowemptydays=p]",
+	COMMAND LINE: no GUI, just run "fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t]
+	 [--printactivitytags=a] [--printnotavailable=u] [--printbreak=b] [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w]
+	 [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]
+	 [--warnifusingstudentsminhoursdailywithallowemptydays=p] [--verbose=r]",
 	where	x is the input file, for instance "data.fet"
 			d is the path to results directory, without trailing slash or backslash (default is current working path).
 				Make sure you have write permissions there.
 			y is integer (seconds) (default 2000000000, which is practically infinite).
-			z is integer from 0 to 6 and represents the detail level for the generated html timetables
+			z is integer from 0 to 6 and represents the detail level for the generated HTML timetables
 				(default 2, larger values have more details/facilities and larger file sizes).
 			t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, uz, vi (default en_US).
+			a is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true).
 			b is either "true" or "false" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the
 				break slots (default true).
-			v is either true or false, represents if you want html timetables with time-axis divided by days (default false).
-			w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).
+			v is either true or false, represents if you want HTML timetables with time-axis divided by days (default false).
+			w is either true or false, represents if you want HTML timetables to show related activities which have constraints with same starting time (default false).
 				(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot
 				as A1).
 			rx is the random seed X component, minimum 1 to maximum 2147483646, ry is the random seed Y component, minimum 1 to maximum 2147483398
@@ -221,6 +223,7 @@ Running FET:
 				(activity tag max hours daily or students max gaps per day) (default true).
 			p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints
 				students min hours daily with allow empty days (default true).
+			r is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).
 
 	Alternatively, you can run "fet-cl --version [--outputdir=d]" to get the current FET version.
 	where d is the path to results directory, without trailing slash or backslash (default is current working path).
@@ -236,7 +239,7 @@ Running FET:
 	at maximum n placed activities, look at the n+1-st activity in the initial order, for it or its students/teachers may be the problem.
 
 	For the command line version, probably the most useful output to use internally in an application might be the activities_timetable.xml.
-	You have of course also the xml timetables for students and teachers and the nicely formatted html timetables to present directly.
+	You have of course also the xml timetables for students and teachers and the nicely formatted HTML timetables to present directly.
 
 	You'll get a console output to help you with data, along with the files in the directory outputdir/logs/.
 	

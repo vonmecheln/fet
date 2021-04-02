@@ -235,22 +235,30 @@ QProgressDialog::QProgressDialog(QWidget* parent)
 }
 
 void QProgressDialog::setWindowTitle(const QString& title){
-	cout<<qPrintable(FetCommandLine::tr("Progress title: %1").arg(title))<<endl;
+	if(VERBOSE){
+		cout<<qPrintable(FetCommandLine::tr("Progress title: %1").arg(title))<<endl;
+	}
 }
 
 void QProgressDialog::setLabelText(const QString& label){
-	cout<<qPrintable(FetCommandLine::tr("Progress label: %1").arg(label))<<endl;
+	if(VERBOSE){
+		cout<<qPrintable(FetCommandLine::tr("Progress label: %1").arg(label))<<endl;
+	}
 }
 
 void QProgressDialog::setRange(int a, int b){
-	cout<<qPrintable(FetCommandLine::tr("Progress range: %1..%2").arg(a).arg(b))<<endl;
+	if(VERBOSE){
+		cout<<qPrintable(FetCommandLine::tr("Progress range: %1..%2").arg(a).arg(b))<<endl;
+	}
 }
 
 void QProgressDialog::setModal(bool m){
-	if(m)
-		cout<<qPrintable(FetCommandLine::tr("Progress setModal(true)"))<<endl;
-	else
-		cout<<qPrintable(FetCommandLine::tr("Progress setModal(false)"))<<endl;
+	if(VERBOSE){
+		if(m)
+			cout<<qPrintable(FetCommandLine::tr("Progress setModal(true)"))<<endl;
+		else
+			cout<<qPrintable(FetCommandLine::tr("Progress setModal(false)"))<<endl;
+	}
 }
 
 void QProgressDialog::setValue(int v){

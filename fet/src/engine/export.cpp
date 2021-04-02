@@ -457,7 +457,6 @@ bool Export::exportCSVActivityTags(QWidget* parent, QString& lastWarnings, const
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
@@ -503,7 +502,6 @@ bool Export::exportCSVRoomsAndBuildings(QWidget* parent, QString& lastWarnings, 
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
@@ -558,7 +556,6 @@ bool Export::exportCSVSubjects(QWidget* parent, QString& lastWarnings, const QSt
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
@@ -602,7 +599,6 @@ bool Export::exportCSVTeachers(QWidget* parent, QString& lastWarnings, const QSt
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
@@ -648,7 +644,6 @@ bool Export::exportCSVStudents(QWidget* parent, QString& lastWarnings, const QSt
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
@@ -724,7 +719,6 @@ bool Export::exportCSVActivities(QWidget* parent, QString& lastWarnings, const Q
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
@@ -999,7 +993,6 @@ bool Export::exportCSVActivitiesStatistic(QWidget* parent, QString& lastWarnings
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");
@@ -1080,7 +1073,6 @@ bool Export::exportCSVTimetable(QWidget* parent, QString& lastWarnings, const QS
 	if(!fileExport.open(QIODevice::WriteOnly)){
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
-		assert(0);
 	}
 	QTextStream tosExport(&fileExport);
 	tosExport.setCodec("UTF-8");

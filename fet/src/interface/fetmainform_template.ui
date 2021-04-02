@@ -1175,6 +1175,8 @@
      </property>
      <addaction name="settingsTimetableHtmlLevelAction"/>
      <addaction name="separator"/>
+     <addaction name="settingsPrintActivityTagsAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsPrintNotAvailableSlotsAction"/>
      <addaction name="settingsPrintBreakSlotsAction"/>
      <addaction name="separator"/>
@@ -2259,6 +2261,11 @@
   <action name="dataTimeConstraintsStudentsMaxDaysPerWeekAction">
    <property name="text">
     <string>Max days per week for all students</string>
+   </property>
+  </action>
+  <action name="settingsPrintActivityTagsAction">
+   <property name="text">
+    <string>Print activity tags in timetables</string>
    </property>
   </action>
  </widget>

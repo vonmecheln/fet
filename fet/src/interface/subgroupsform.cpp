@@ -291,7 +291,9 @@ void SubgroupsForm::modifySubgroup()
 	int subgroupIndex=gt.rules.searchSubgroup(yearName, groupName, subgroupName);
 	assert(subgroupIndex>=0);
 	
-	int numberOfStudents=gt.rules.searchStudentsSet(subgroupName)->numberOfStudents;
+	StudentsSet* sset=gt.rules.searchStudentsSet(subgroupName);
+	assert(sset!=NULL);
+	int numberOfStudents=sset->numberOfStudents;
 	
 	ModifyStudentsSubgroupForm form(this, yearName, groupName, subgroupName, numberOfStudents);
 	setParentAndOtherThings(&form, this);

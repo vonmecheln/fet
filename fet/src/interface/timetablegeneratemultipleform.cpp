@@ -326,6 +326,13 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 	QString s=QString("");
 	s+=tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description").arg(timetable).arg(description);
 	currentResultsTextEdit->appendPlainText(s);
+	
+	bool begin;
+	if(timetable==1)
+		begin=true;
+	else
+		begin=false;
+	TimetableExport::writeReportForMultiple(this, s, begin);
 
 	if(ok){
 		//needed to get the conflicts string
@@ -388,6 +395,8 @@ void TimetableGenerateMultipleForm::stop()
 	s+="\n\n";
 	s+=tr("Total searching time: %1h %2m %3s").arg(h).arg(m).arg(sec);
 	
+	TimetableExport::writeReportForMultiple(this, QString("\n")+s, false);
+
 	QMessageBox::information(this, tr("FET information"), s);
 
 	startPushButton->setEnabled(true);
@@ -431,6 +440,9 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	ms+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1").arg(QDir::toNativeSeparators(destDir));
 	ms+=QString("\n\n");
 	ms+=TimetableGenerateMultipleForm::tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s);
+	
+	TimetableExport::writeReportForMultiple(this, QString("\n")+ms, false);
+	
 	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
 	
 	startPushButton->setEnabled(true);

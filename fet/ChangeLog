@@ -1667,4 +1667,10 @@ Versions 5.20.0 - 5.20.v
 	- Added a new sample file, by rapsy.
 - Version 5.20.1
 	- Minor improvements and bug fixes.
-	
+- Version 5.20.2
+	- Added an option to disable printing of the activity tags in the HTML generated timetables (suggested by drew and other users).
+	- Memory consumption improvement when writing advanced statistics to the hard disk.
+	- Dropped the debug console messages (potential bug reported by MarioMic, because under some GNU/Linux distributions
+	these might fill the hard disk). However, the command line version can be made verbose by the option --verbose=true.
+	- The multiple generation outputs an overall report (suggested by MarioMic).
+	- Minor improvements and source cleanup.

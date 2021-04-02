@@ -227,7 +227,9 @@ void GroupsForm::modifyGroup()
 	int groupIndex=gt.rules.searchGroup(yearsListWidget->currentItem()->text(), groupName);
 	assert(groupIndex>=0);
 
-	int numberOfStudents=gt.rules.searchStudentsSet(groupName)->numberOfStudents;
+	StudentsSet* sset=gt.rules.searchStudentsSet(groupName);
+	assert(sset!=NULL);
+	int numberOfStudents=sset->numberOfStudents;
 	
 	ModifyStudentsGroupForm form(this, yearName, groupName, numberOfStudents);
 	setParentAndOtherThings(&form, this);

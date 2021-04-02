@@ -171,7 +171,10 @@ void YearsForm::modifyYear()
 		return;
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
-	int numberOfStudents=gt.rules.searchStudentsSet(yearName)->numberOfStudents;
+	
+	StudentsSet* sset=gt.rules.searchStudentsSet(yearName);
+	assert(sset!=NULL);
+	int numberOfStudents=sset->numberOfStudents;
 
 	ModifyStudentsYearForm form(this, yearName, numberOfStudents);
 	setParentAndOtherThings(&form, this);

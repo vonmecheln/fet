@@ -317,8 +317,18 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	fontSizeTable->setPrefix(left);
 	fontSizeTable->setSuffix(right);*/
 	
-	fontSizeTable->setPrefix(tr("Font size:")+QString(" "));
-	fontSizeTable->setSuffix(QString(" ")+tr("pt", "Means points for font size, when printing the timetable"));
+	QString s=tr("Font size: %1 pt", "pt means points for font size, when printing the timetable");
+	QStringList sl=s.split("%1");
+	QString prefix=sl.at(0);
+	QString suffix;
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	fontSizeTable->setPrefix(prefix);
+	fontSizeTable->setSuffix(suffix);
+	//fontSizeTable->setPrefix(tr("Font size:")+QString(" "));
+	//fontSizeTable->setSuffix(QString(" ")+tr("pt", "Means points for font size, when printing the timetable"));
 
 	fontSizeTable->setSizePolicy(QSizePolicy::Expanding, fontSizeTable->sizePolicy().verticalPolicy());
 	
@@ -331,8 +341,17 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	activitiesPadding->setPrefix(left);
 	activitiesPadding->setSuffix(right);*/
 
-	activitiesPadding->setPrefix(tr("Activities padding:")+QString(" "));
-	activitiesPadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the timetable"));
+	s=tr("Activities padding: %1 px", "px means pixels, when printing the timetable");
+	sl=s.split("%1");
+	prefix=sl.at(0);
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	activitiesPadding->setPrefix(prefix);
+	activitiesPadding->setSuffix(suffix);
+	//activitiesPadding->setPrefix(tr("Activities padding:")+QString(" "));
+	//activitiesPadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the timetable"));
 
 	activitiesPadding->setSizePolicy(QSizePolicy::Expanding, activitiesPadding->sizePolicy().verticalPolicy());
 	
@@ -345,8 +364,17 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	tablePadding->setPrefix(left);
 	tablePadding->setSuffix(right);*/
 
-	tablePadding->setPrefix(tr("Space after table:")+QString(" +"));
-	tablePadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the timetable"));
+	s=tr("Space after table: +%1 px", "px means pixels, when printing the timetable");
+	sl=s.split("%1");
+	prefix=sl.at(0);
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	tablePadding->setPrefix(prefix);
+	tablePadding->setSuffix(suffix);
+	//tablePadding->setPrefix(tr("Space after table:")+QString(" +"));
+	//tablePadding->setSuffix(QString(" ")+tr("px", "Means pixels, when printing the timetable"));
 
 	tablePadding->setSizePolicy(QSizePolicy::Expanding, tablePadding->sizePolicy().verticalPolicy());
 	
@@ -359,8 +387,17 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	maxNames->setPrefix(left);
 	maxNames->setSuffix(right);*/
 
-	maxNames->setPrefix(tr("Split after:", "When printing, the whole phrase is 'Split after ... names'")+QString(" "));
-	maxNames->setSuffix(QString(" ")+tr("names", "When printing, the whole phrase is 'Split after ... names'"));
+	s=tr("Split after: %1 names");
+	sl=s.split("%1");
+	prefix=sl.at(0);
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	maxNames->setPrefix(prefix);
+	maxNames->setSuffix(suffix);
+	//maxNames->setPrefix(tr("Split after:", "When printing, the whole phrase is 'Split after ... names'")+QString(" "));
+	//maxNames->setSuffix(QString(" ")+tr("names", "When printing, the whole phrase is 'Split after ... names'"));
 	
 	maxNames->setSizePolicy(QSizePolicy::Expanding, maxNames->sizePolicy().verticalPolicy());
 
@@ -373,8 +410,17 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	leftPageMargin->setPrefix(left);
 	leftPageMargin->setSuffix(right);*/
 
-	leftPageMargin->setPrefix(tr("Left margin:")+QString(" "));
-	leftPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
+	s=tr("Left margin: %1 mm", "mm means millimeters");
+	sl=s.split("%1");
+	prefix=sl.at(0);
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	leftPageMargin->setPrefix(prefix);
+	leftPageMargin->setSuffix(suffix);
+	//leftPageMargin->setPrefix(tr("Left margin:")+QString(" "));
+	//leftPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
 
 	leftPageMargin->setSizePolicy(QSizePolicy::Expanding, leftPageMargin->sizePolicy().verticalPolicy());
 	
@@ -387,8 +433,17 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	topPageMargin->setPrefix(left);
 	topPageMargin->setSuffix(right);*/
 
-	topPageMargin->setPrefix(tr("Top margin:")+QString(" "));
-	topPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
+	s=tr("Top margin: %1 mm", "mm means millimeters");
+	sl=s.split("%1");
+	prefix=sl.at(0);
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	topPageMargin->setPrefix(prefix);
+	topPageMargin->setSuffix(suffix);
+	//topPageMargin->setPrefix(tr("Top margin:")+QString(" "));
+	//topPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
 
 	topPageMargin->setSizePolicy(QSizePolicy::Expanding, topPageMargin->sizePolicy().verticalPolicy());
 	
@@ -401,8 +456,17 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	rightPageMargin->setPrefix(left);
 	rightPageMargin->setSuffix(right);*/
 
-	rightPageMargin->setPrefix(tr("Right margin:")+QString(" "));
-	rightPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
+	s=tr("Right margin: %1 mm", "mm means millimeters");
+	sl=s.split("%1");
+	prefix=sl.at(0);
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	rightPageMargin->setPrefix(prefix);
+	rightPageMargin->setSuffix(suffix);
+	//rightPageMargin->setPrefix(tr("Right margin:")+QString(" "));
+	//rightPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
 
 	rightPageMargin->setSizePolicy(QSizePolicy::Expanding, rightPageMargin->sizePolicy().verticalPolicy());
 	
@@ -415,8 +479,17 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	bottomPageMargin->setPrefix(left);
 	bottomPageMargin->setSuffix(right);*/
 
-	bottomPageMargin->setPrefix(tr("Bottom margin:")+QString(" "));
-	bottomPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
+	s=tr("Bottom margin: %1 mm", "mm means millimeters");
+	sl=s.split("%1");
+	prefix=sl.at(0);
+	if(sl.count()<2)
+		suffix=QString("");
+	else
+		suffix=sl.at(1);
+	bottomPageMargin->setPrefix(prefix);
+	bottomPageMargin->setSuffix(suffix);
+	//bottomPageMargin->setPrefix(tr("Bottom margin:")+QString(" "));
+	//bottomPageMargin->setSuffix(QString(" ")+tr("mm", "Means milimeter, when setting page margin"));
 
 	bottomPageMargin->setSizePolicy(QSizePolicy::Expanding, bottomPageMargin->sizePolicy().verticalPolicy());
 	

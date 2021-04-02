@@ -279,6 +279,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			//acts[1]=cl.at(1);
 			acts.append(cl.at(1));
 			
+			assert(c2==NULL);
 			c2=new ConstraintMinDaysBetweenActivities(weight2, consecutiveIfSameDay, n_acts, acts, 2);
 		}
 	

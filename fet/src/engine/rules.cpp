@@ -610,8 +610,10 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	progress.setValue(timeConstraintsList.size());
 
 	this->nInternalTimeConstraints=tctri;
-	cout<<_c<<" time constraints after first pass (after removing inactive ones)"<<endl;
-	cout<<"  "<<this->nInternalTimeConstraints<<" time constraints after second pass (after removing wrong ones)"<<endl;
+	if(VERBOSE){
+		cout<<_c<<" time constraints after first pass (after removing inactive ones)"<<endl;
+		cout<<"  "<<this->nInternalTimeConstraints<<" time constraints after second pass (after removing wrong ones)"<<endl;
+	}
 	assert(_c>=this->nInternalTimeConstraints); //because some constraints may have toSkipTime false, but computeInternalStructure also false
 	//assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
 	
@@ -689,8 +691,10 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	progress.setValue(spaceConstraintsList.size());
 
 	this->nInternalSpaceConstraints=sctri;
-	cout<<_c<<" space constraints after first pass (after removing inactive ones)"<<endl;
-	cout<<"  "<<this->nInternalSpaceConstraints<<" space constraints after second pass (after removing wrong ones)"<<endl;
+	if(VERBOSE){
+		cout<<_c<<" space constraints after first pass (after removing inactive ones)"<<endl;
+		cout<<"  "<<this->nInternalSpaceConstraints<<" space constraints after second pass (after removing wrong ones)"<<endl;
+	}
 	assert(_c>=this->nInternalSpaceConstraints); //because some constraints may have toSkipSpace false, but computeInternalStructure also false
 	//assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
 
@@ -2850,6 +2854,8 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 			break;
 		}
 	}
+	
+	assert(stg);
 
 	if(this->searchStudentsSet(stg->name)!=NULL){
 		//group still exists
@@ -5477,7 +5483,9 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			" is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced"
 			" to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it")+"\n\n"+
 			tr("If you are opening a file older than FET format version 5, it will be converted to latest FET data format"));
-			cout<<"Opened file version not matched by regexp"<<endl;
+			if(VERBOSE){
+				cout<<"Opened file version not matched by regexp"<<endl;
+			}
 		}
 		else{
 			bool ok;
@@ -5487,8 +5495,10 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			assert(ok);
 			filev[2]=fileVerReCap.cap(3).toInt(&ok);
 			assert(ok);
-			cout<<"Opened file version matched by regexp: major="<<filev[0]<<", minor="<<filev[1]<<", revision="<<filev[2];
-			cout<<", additional text="<<qPrintable(fileVerReCap.cap(4))<<"."<<endl;
+			if(VERBOSE){
+				cout<<"Opened file version matched by regexp: major="<<filev[0]<<", minor="<<filev[1]<<", revision="<<filev[2];
+				cout<<", additional text="<<qPrintable(fileVerReCap.cap(4))<<"."<<endl;
+			}
 		}
 		
 		QRegExp fetVerReCap("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)$");
@@ -5498,7 +5508,9 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		if(tfet!=0){
 			RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("FET version does not respect the format v.v.va"
 			" (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it"));
-			cout<<"FET version not matched by regexp"<<endl;
+			if(VERBOSE){
+				cout<<"FET version not matched by regexp"<<endl;
+			}
 		}
 		else{
 			bool ok;
@@ -5508,8 +5520,10 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			assert(ok);
 			fetv[2]=fetVerReCap.cap(3).toInt(&ok);
 			assert(ok);
-			cout<<"FET version matched by regexp: major="<<fetv[0]<<", minor="<<fetv[1]<<", revision="<<fetv[2];
-			cout<<", additional text="<<qPrintable(fetVerReCap.cap(4))<<"."<<endl;
+			if(VERBOSE){
+				cout<<"FET version matched by regexp: major="<<fetv[0]<<", minor="<<fetv[1]<<", revision="<<fetv[2];
+				cout<<", additional text="<<qPrintable(fetVerReCap.cap(4))<<"."<<endl;
+			}
 		}
 		
 		if(filev[0]>=0 && fetv[0]>=0 && filev[1]>=0 && fetv[1]>=0 && filev[2]>=0 && fetv[2]>=0){
@@ -5523,7 +5537,9 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			version5AndAbove=true;
 	}
 	if(!okAbove3_12_17){
-		cout<<"Invalid fet 3.12.17 or above"<<endl;
+		if(VERBOSE){
+			cout<<"Invalid fet 3.12.17 or above"<<endl;
+		}
 		file2.close();
 		RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect..."
 			"it cannot be opened").arg("fet").arg("FET"));
@@ -7440,6 +7456,7 @@ int Rules::activateStudents(const QString& studentsName)
 	QSet<QString> allSets;
 	
 	StudentsSet* set=this->searchStudentsSet(studentsName);
+	assert(set!=NULL);
 	if(set->type==STUDENTS_SUBGROUP)
 		allSets.insert(studentsName);
 	else if(set->type==STUDENTS_GROUP){
@@ -7537,6 +7554,7 @@ int Rules::deactivateStudents(const QString& studentsName)
 	QSet<QString> allSets;
 	
 	StudentsSet* set=this->searchStudentsSet(studentsName);
+	assert(set!=NULL);
 	if(set->type==STUDENTS_SUBGROUP)
 		allSets.insert(studentsName);
 	else if(set->type==STUDENTS_GROUP){

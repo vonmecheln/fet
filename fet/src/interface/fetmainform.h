@@ -332,6 +332,7 @@ public slots:
 	void on_settingsRestoreDefaultsAction_triggered();
 
 	void on_settingsTimetableHtmlLevelAction_triggered();
+	void on_settingsPrintActivityTagsAction_toggled();
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
 	void on_settingsPrintBreakSlotsAction_toggled();
 

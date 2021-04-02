@@ -2733,3 +2733,13 @@ Topic: teachers for hour
 
 What do you think about a function that shows for each hour of the day how many teachers can be assigned at every hour (under the constraints set).
 In this way it's possible to see what are the most problematic hours
+
+177---------------------------------------------------------
+From MarioMic (on forum):
+
+When I create multiple timetables with fet, to eliminate the bad results (with a high number of conflicts), I have to manually select and
+remove the folders of the bad timetables in the output path. This is especially annoying if I have many timetables since the names of the
+folders do not show the level of conflict (it also would be useful to have this, too), and moreover occupy disk space unnecessarily.
+
+It would be useful (for the gui and the command line version) to have an option to save only timetables below a configurable threshold of
+maximum level of conflict.

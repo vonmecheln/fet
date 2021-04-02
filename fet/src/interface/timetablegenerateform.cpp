@@ -30,10 +30,6 @@
 #include <QDateTime>
 #include <QLocale>
 
-#include <iostream>
-#include <fstream>
-using namespace std;
-
 #include <QMessageBox>
 
 #include <QMutex>

@@ -478,6 +478,7 @@ void ModifyActivityForm::ok()
 	int total_number_of_students=0;
 	for(QStringList::Iterator it=students_names.begin(); it!=students_names.end(); it++){
 		StudentsSet* ss=gt.rules.searchStudentsSet(*it);
+		assert(ss!=NULL);
 		total_number_of_students+=ss->numberOfStudents;
 	}
 

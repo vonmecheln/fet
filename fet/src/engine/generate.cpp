@@ -22,17 +22,15 @@ along with FET; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#include <iomanip>
-#include <iostream>
-using namespace std;
-
 #include <ctime>
 
 #include <QtAlgorithms>
 
+#include <iostream>
 #include <cmath>
 #include <algorithm>
 #include <cstdlib>
+using namespace std;
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -1607,7 +1605,7 @@ inline bool skipRandom(double weightPercentage)
 		
 	t*=double(MM);
 	int tt=int(floor(t+0.5));
-	assert(tt>=0 && tt<=MM);
+	assert(tt>=0 /* && tt<=MM */); //the second condition is always true, because MM >= any int value
 						
 	int r=randomKnuth1MM1();
 	assert(r>0 && r<MM); //r cannot be 0
@@ -2292,8 +2290,6 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				if(!ok)
 					continue;
 					
-				tmp_n_confl_acts=0;
-				
 				tmp_minWrong=INF;
 				tmp_nWrong=0;
 				
@@ -2449,7 +2445,7 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 
 inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int h, int& roomSlot, int& selectedSlot, QList<int>& conflActivities, int& nConflActivities)
 {
-	bool okp, okh;
+	bool okh;
 	
 	QList<int> localConflActivities;
 	
@@ -2475,6 +2471,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 		}
 	}
 	else{
+		bool okp;
 		bool canBeUnspecifiedPreferredRoom;
 	
 		okp=getPreferredRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, canBeUnspecifiedPreferredRoom);
@@ -2696,10 +2693,11 @@ if(threaded){
 		for(int i=added_act+1; i<gt.rules.nInternalActivities; i++)
 			assert(!swappedActivities[permutation[i]]);
 
-		cout<<endl<<"Trying to place activity number added_act=="<<added_act<<
-		 "\nwith id=="<<gt.rules.internalActivitiesList[permutation[added_act]].id<<
-		 ", from nInternalActivities=="<<gt.rules.nInternalActivities<<endl;
-	 
+		if(VERBOSE){
+			cout<<endl<<"Trying to place activity number added_act=="<<added_act<<
+			 "\nwith id=="<<gt.rules.internalActivitiesList[permutation[added_act]].id<<
+			 ", from nInternalActivities=="<<gt.rules.nInternalActivities<<endl;
+		}
 	 	//verifyUnallocated(permutation[added_act]]);
 		//assert(c.times[permutation[added_act]]==UNALLOCATED_TIME);
 		//assert(c.rooms[permutation[added_act]]==UNALLOCATED_SPACE);
@@ -2961,37 +2959,43 @@ if(threaded){
 		
 			//update difficult activities (activities which are placed correctly so far, together with added_act
 			nDifficultActivities=added_act+1;
-			cout<<"nDifficultActivities=="<<nDifficultActivities<<endl;
+			if(VERBOSE){
+				cout<<"nDifficultActivities=="<<nDifficultActivities<<endl;
+			}
 			for(int j=0; j<=added_act; j++)
 				difficultActivities[j]=permutation[j];
 			
-//////////////////////	
+//////////////////////
 			assert(conflActivitiesTimeSlot.count()>0);
 			
-			cout<<"conflActivitiesTimeSlot.count()=="<<conflActivitiesTimeSlot.count()<<endl;
-			foreach(int i, conflActivitiesTimeSlot){
-				cout<<"Confl activity id:"<<gt.rules.internalActivitiesList[i].id;
-				cout<<" time of this activity:"<<c.times[i];
-				if(c.rooms[i]!=UNSPECIFIED_ROOM)
-					cout<<" room of this activity:"<<qPrintable(gt.rules.internalRoomsList[c.rooms[i]]->name)<<endl;
+			if(VERBOSE){
+				cout<<"conflActivitiesTimeSlot.count()=="<<conflActivitiesTimeSlot.count()<<endl;
+				foreach(int i, conflActivitiesTimeSlot){
+					cout<<"Confl activity id:"<<gt.rules.internalActivitiesList[i].id;
+					cout<<" time of this activity:"<<c.times[i];
+					if(c.rooms[i]!=UNSPECIFIED_ROOM)
+						cout<<" room of this activity:"<<qPrintable(gt.rules.internalRoomsList[c.rooms[i]]->name)<<endl;
+					else
+						cout<<" room of this activity: UNSPECIFIED_ROOM"<<endl;
+				}
+				//cout<<endl;
+				cout<<"timeSlot=="<<timeSlot<<endl;
+				if(roomSlot!=UNSPECIFIED_ROOM)
+					cout<<"roomSlot=="<<qPrintable(gt.rules.internalRoomsList[roomSlot]->name)<<endl;
 				else
-					cout<<" room of this activity: UNSPECIFIED_ROOM"<<endl;
+					cout<<"roomSlot==UNSPECIFIED_ROOM"<<endl;
 			}
-			//cout<<endl;
-			cout<<"timeSlot=="<<timeSlot<<endl;
-			if(roomSlot!=UNSPECIFIED_ROOM)
-				cout<<"roomSlot=="<<qPrintable(gt.rules.internalRoomsList[roomSlot]->name)<<endl;
-			else
-				cout<<"roomSlot==UNSPECIFIED_ROOM"<<endl;
 
 			QList<int> ok;
 			QList<int> confl;
 			for(int j=0; j<added_act; j++){
 				if(conflActivitiesTimeSlot.indexOf(permutation[j])!=-1){
-					if(triedRemovals(permutation[j],c.times[permutation[j]])>0){
-						cout<<"Warning - explored removal: id=="<<
-						 gt.rules.internalActivitiesList[permutation[j]].id<<", time=="<<c.times[permutation[j]]
-						 <<", times=="<<triedRemovals(permutation[j],c.times[permutation[j]])<<endl;
+					if(VERBOSE){
+						if(triedRemovals(permutation[j],c.times[permutation[j]])>0){
+							cout<<"Warning - explored removal: id=="<<
+							 gt.rules.internalActivitiesList[permutation[j]].id<<", time=="<<c.times[permutation[j]]
+							 <<", times=="<<triedRemovals(permutation[j],c.times[permutation[j]])<<endl;
+						}
 					}
 					triedRemovals(permutation[j],c.times[permutation[j]])++;
 					
@@ -3029,13 +3033,17 @@ if(threaded){
 			permutation[j]=tmp;
 			invPermutation[tmp]=j;
 			j++;
-			cout<<"id of permutation[j=="<<j-1<<"]=="<<gt.rules.internalActivitiesList[permutation[j-1]].id<<endl;
-			cout<<"conflicting:"<<endl;
+			if(VERBOSE){
+				cout<<"id of permutation[j=="<<j-1<<"]=="<<gt.rules.internalActivitiesList[permutation[j-1]].id<<endl;
+				cout<<"conflicting:"<<endl;
+			}
 			foreach(int k, confl){
 				permutation[j]=k;
 				invPermutation[k]=j;
 				j++;
-				cout<<"id of permutation[j=="<<j-1<<"]=="<<gt.rules.internalActivitiesList[permutation[j-1]].id<<endl;
+				if(VERBOSE){
+					cout<<"id of permutation[j=="<<j-1<<"]=="<<gt.rules.internalActivitiesList[permutation[j-1]].id<<endl;
+				}
 			}
 			assert(j==added_act+1);
 			
@@ -3049,9 +3057,11 @@ if(threaded){
 				assert(pv[i]==1);*/
 			//
 
-			cout<<"tmp represents activity with id=="<<gt.rules.internalActivitiesList[tmp].id;
-			cout<<" initial time: "<<c.times[tmp];
-			cout<<" final time: "<<timeSlot<<endl;
+			if(VERBOSE){
+				cout<<"tmp represents activity with id=="<<gt.rules.internalActivitiesList[tmp].id;
+				cout<<" initial time: "<<c.times[tmp];
+				cout<<" final time: "<<timeSlot<<endl;
+			}
 			c.times[tmp]=timeSlot;
 			c.rooms[tmp]=roomSlot;
 			
@@ -3147,8 +3157,14 @@ if(threaded){
 	time_t end_time;
 	time(&end_time);
 	searchTime=int(end_time-starting_time);
+#if FET_COMMAND_LINE
 	cout<<"Total searching time (seconds): "<<int(end_time-starting_time)<<endl;
-	
+#else
+	if(VERBOSE){
+		cout<<"Total searching time (seconds): "<<int(end_time-starting_time)<<endl;
+	}
+#endif
+
 	emit(simulationFinished());
 	
 	finishedSemaphore.release();
@@ -9103,8 +9119,10 @@ if(this->isThreaded){
 			goto again_if_impossible_activity;
 		}
 		else{
-			cout<<__FILE__<<" line "<<__LINE__<<" - WARNING - after retrying for "<<activity_count_impossible_tries
-			<<" times - no possible time slot for activity with id=="<<gt.rules.internalActivitiesList[ai].id<<endl;
+			if(VERBOSE){
+				cout<<__FILE__<<" line "<<__LINE__<<" - WARNING - after retrying for "<<activity_count_impossible_tries
+				<<" times - no possible time slot for activity with id=="<<gt.rules.internalActivitiesList[ai].id<<endl;
+			}
 		}
 	}
 		

@@ -34,7 +34,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.20.1";
+const QString FET_VERSION="5.20.2";
 
 /**
 FET language
@@ -58,6 +58,8 @@ Timetable html css javaScript Level, by Volker Dirr
 */
 int TIMETABLE_HTML_LEVEL;
 
+bool TIMETABLE_HTML_PRINT_ACTIVITY_TAGS;
+
 bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
 
 bool PRINT_BREAK_TIME_SLOTS;
@@ -65,6 +67,8 @@ bool PRINT_BREAK_TIME_SLOTS;
 bool PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME;
 
 bool DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS;
+
+bool VERBOSE;
 
 //this hashs are needed to get the IDs for html and css in timetableexport and statistics
 QHash<QString, QString> hashSubjectIDs;

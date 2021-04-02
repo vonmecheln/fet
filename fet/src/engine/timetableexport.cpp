@@ -38,7 +38,6 @@ File timetableexport.cpp
 
 //TODO: all must be internal here. so maybe also do daysOfTheWeek and hoursPerDay also internal
 //maybe TODO: use back_odd and back_even (or back0 and back1, because easier to code!) like in printing. so don't use the table_odd and table_even anymore
-//maybe TODO: make printActivityTags as a global setting in FET for html export? (TIMETABLE_HTML_PRINT_ACTIVITY_TAGS?)
 //maybe TODO: make TIMETABLE_HTML_SPLIT? (similar to TIMETABLE_HTML_LEVEL)
 //maybe TODO: rename augmentedYearsList into internalYearsList to have it similar to others?
 //maybe TODO: some "stg" stuff can be replaced by gt.rules.internalGroupsList. I don't want to do that now, because id-s will change. That is not critical, but I want to diff tables with old release.
@@ -51,7 +50,6 @@ File timetableexport.cpp
 #include "matrix.h"
 
 #include <iostream>
-#include <fstream>
 using namespace std;
 
 #include <QString>
@@ -304,7 +302,9 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
-		cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		if(VERBOSE){
+			cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		}
 		writeTimetableDataFile(parent, s);
 	}
 	
@@ -447,7 +447,9 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	hashRoomIDsTimetable.clear();
 	hashDayIDsTimetable.clear();
 
-	cout<<"Writing simulation results to disk completed successfully"<<endl;
+	if(VERBOSE){
+		cout<<"Writing simulation results to disk completed successfully"<<endl;
+	}
 }
 
 void TimetableExport::writeHighestStageResults(QWidget* parent){
@@ -517,7 +519,9 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
-		cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		if(VERBOSE){
+			cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		}
 		writeTimetableDataFile(parent, s);
 	}
 	
@@ -660,7 +664,9 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	hashRoomIDsTimetable.clear();
 	hashDayIDsTimetable.clear();
 
-	cout<<"Writing highest stage results to disk completed successfully"<<endl;
+	if(VERBOSE){
+		cout<<"Writing highest stage results to disk completed successfully"<<endl;
+	}
 }
 
 void TimetableExport::writeRandomSeed(QWidget* parent, bool before)
@@ -715,7 +721,6 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const QString& filena
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(s));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -810,7 +815,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	SpaceConstraintsList lockSpaceConstraintsList;
 
 
-	bool report=false;
+	//bool report=false;
 	
 	int addedTime=0, duplicatesTime=0;
 	int addedSpace=0, duplicatesSpace=0;
@@ -842,7 +847,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 				delete ctr;
 			}
 						
-			if(report){
+			/*if(report){
 				int k;
 				if(t)
 					k=TimetableExportMessage::information(parent, tr("FET information"), s,
@@ -852,7 +857,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 		 		if(k==0)
 					report=false;
-			}
+			}*/
 		}
 					
 		int ri=tc->rooms[ai];
@@ -876,7 +881,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 				delete ctr;
 			}
 						
-			if(report){
+			/*if(report){
 				int k;
 				if(t)
 					k=TimetableExportMessage::information(parent, tr("FET information"), s,
@@ -886,7 +891,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 					 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 				if(k==0)
 					report=false;
-			}
+			}*/
 		}
 	}
 
@@ -1141,7 +1146,9 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n){
 	hashRoomIDsTimetable.clear();
 	hashDayIDsTimetable.clear();
 
-	cout<<"Writing multiple simulation results to disk completed successfully"<<endl;
+	if(VERBOSE){
+		cout<<"Writing multiple simulation results to disk completed successfully"<<endl;
+	}
 }
 
 void TimetableExport::writeRandomSeed(QWidget* parent, int n, bool before){
@@ -1192,6 +1199,51 @@ void TimetableExport::writeRandomSeed(QWidget* parent, int n, bool before){
 	writeRandomSeedFile(parent, s, before);
 }
 
+void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& description, bool begin)
+{
+	QDir dir;
+	
+	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
+
+	//make sure that the output directory exists
+	if(!dir.exists(OUTPUT_DIR_TIMETABLES))
+		dir.mkpath(OUTPUT_DIR_TIMETABLES);
+
+	QString s;
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
+	if(s2.right(4)==".fet")
+		s2=s2.left(s2.length()-4);
+	//else if(INPUT_FILENAME_XML!="")
+	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
+	
+	QString destDir=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+"-multi";
+	
+	if(!dir.exists(destDir))
+		dir.mkpath(destDir);
+		
+	QString filename=destDir+FILE_SEP+QString("report.txt");
+
+	QFile file(filename);
+	if(!file.open(QIODevice::Append)){
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
+		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
+		return;
+	}
+	QTextStream tos(&file);
+	tos.setCodec("UTF-8");
+	if(begin){
+		tos.setGenerateByteOrderMark(true);
+	}
+	
+	tos<<description<<endl;
+	
+	if(file.error()>0){
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
+		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(filename).arg(file.error()));
+	}
+	file.close();
+}
+
 void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const QString& outputDirectory){ //outputDirectory contains trailing FILE_SEP
 	QString add=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	if(add.right(4)==".fet")
@@ -1231,7 +1283,9 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	
 	if(na==gt.rules.nInternalActivities && na==na2){
 		QString s=outputDirectory+add+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
-		cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		if(VERBOSE){
+			cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+		}
 		writeTimetableDataFile(parent, s);
 	}
 
@@ -1452,7 +1506,6 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1505,7 +1558,6 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1565,7 +1617,6 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1623,7 +1674,6 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1680,7 +1730,6 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1821,7 +1870,6 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -1982,7 +2030,6 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2009,7 +2056,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-		tos<<singleSubgroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, true);
+		tos<<singleSubgroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -2032,7 +2079,6 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2059,7 +2105,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-		tos<<singleSubgroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, true);
+		tos<<singleSubgroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -2083,7 +2129,6 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2092,7 +2137,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 	tos<<writeHead(true, placedActivities, false);
 	
 	QSet<int> tmp;
-	tos << singleSubgroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, true);
+	tos << singleSubgroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 	tos << "  </body>\n</html>\n";
 
@@ -2114,7 +2159,6 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2123,7 +2167,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 	tos<<writeHead(true, placedActivities, false);
 	
 	QSet<int> tmp;
-	tos << singleSubgroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, true);
+	tos << singleSubgroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 	tos << "  </body>\n</html>\n";
 
@@ -2145,7 +2189,6 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2156,7 +2199,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleSubgroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, true);
+		tos<<singleSubgroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -2180,7 +2223,6 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2191,7 +2233,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleSubgroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, true);
+		tos<<singleSubgroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -2215,7 +2257,6 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2242,7 +2283,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 	bool PRINT_DETAILED=true;
 	do{
 		for(int group=0; group<gt.rules.internalGroupsList.size(); group++){
-			tos << singleGroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, group, saveTime, true, PRINT_DETAILED);
+			tos << singleGroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, group, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
@@ -2268,7 +2309,6 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2295,7 +2335,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 	bool PRINT_DETAILED=true;
 	do{
 		for(int group=0; group<gt.rules.internalGroupsList.size(); group++){
-			tos<<singleGroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, group, saveTime, true, PRINT_DETAILED);
+			tos<<singleGroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, group, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
@@ -2321,7 +2361,6 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2332,7 +2371,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 	bool PRINT_DETAILED=true;
 	do{
 		QSet<int> tmp;
-		tos<<singleGroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+		tos<<singleGroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.internalGroupsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
@@ -2358,7 +2397,6 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2369,7 +2407,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 	bool PRINT_DETAILED=true;
 	do{
 		QSet<int> tmp;
-		tos<<singleGroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+		tos<<singleGroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.internalGroupsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
@@ -2394,7 +2432,6 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2407,7 +2444,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QSet<int> tmp;
-			tos<<singleGroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+			tos<<singleGroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.internalGroupsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
@@ -2434,7 +2471,6 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2447,7 +2483,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QSet<int> tmp;
-			tos<<singleGroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+			tos<<singleGroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.internalGroupsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
@@ -2476,7 +2512,6 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2498,7 +2533,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 	bool PRINT_DETAILED=true;
 	do{
 		for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-			tos << singleYearsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, year, saveTime, true, PRINT_DETAILED);
+			tos << singleYearsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, year, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
@@ -2524,7 +2559,6 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2546,7 +2580,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 	bool PRINT_DETAILED=true;
 	do{
 		for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-			tos << singleYearsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, year, saveTime, true, PRINT_DETAILED);
+			tos << singleYearsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, year, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
@@ -2572,7 +2606,6 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2583,7 +2616,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 	bool PRINT_DETAILED=true;
 	do{
 		QSet<int> tmp;
-		tos<<singleYearsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+		tos<<singleYearsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.augmentedYearsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
@@ -2609,7 +2642,6 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2620,7 +2652,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 	bool PRINT_DETAILED=true;
 	do{
 		QSet<int> tmp;
-		tos<<singleYearsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+		tos<<singleYearsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.augmentedYearsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		if(PRINT_DETAILED) PRINT_DETAILED=false;
@@ -2646,7 +2678,6 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2659,7 +2690,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QSet<int> tmp;
-			tos<<singleYearsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+			tos<<singleYearsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.augmentedYearsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
@@ -2686,7 +2717,6 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2699,7 +2729,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QSet<int> tmp;
-			tos<<singleYearsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+			tos<<singleYearsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.augmentedYearsList.size(), tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, PRINT_DETAILED);
 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
@@ -2728,14 +2758,13 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-	tos<<singleAllActivitiesTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
+	tos<<singleAllActivitiesTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2756,14 +2785,13 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-	tos<<singleAllActivitiesTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
+	tos<<singleAllActivitiesTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2784,7 +2812,6 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2792,7 +2819,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 
 	tos<<writeHead(true, placedActivities, false);
 
-tos<<singleAllActivitiesTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
+tos<<singleAllActivitiesTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 	tos<<"  </body>\n</html>\n";
 
@@ -2814,7 +2841,6 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2822,7 +2848,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 
 	tos<<writeHead(true, placedActivities, false);
 
-	tos<<singleAllActivitiesTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
+	tos<<singleAllActivitiesTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 	tos<<"  </body>\n</html>\n";
 
@@ -2844,7 +2870,6 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2854,7 +2879,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<singleAllActivitiesTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, saveTime, true);
+		tos<<singleAllActivitiesTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -2877,7 +2902,6 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2887,7 +2911,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<singleAllActivitiesTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, saveTime, true);
+		tos<<singleAllActivitiesTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
@@ -2914,7 +2938,6 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2931,7 +2954,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-		tos<<singleTeachersTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, teacher, saveTime, true);
+		tos<<singleTeachersTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, teacher, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
@@ -2955,7 +2978,6 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -2972,7 +2994,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-		tos<<singleTeachersTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, teacher, saveTime, true);
+		tos<<singleTeachersTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, teacher, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -2995,7 +3017,6 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3003,7 +3024,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 
 	tos<<writeHead(true, placedActivities, false);
 	QSet<int> tmp;
-	tos<<singleTeachersTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime, true);
+	tos<<singleTeachersTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3024,7 +3045,6 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3032,7 +3052,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 
 	tos<<writeHead(true, placedActivities, false);
 	QSet<int> tmp;
-	tos<<singleTeachersTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime, true);
+	tos<<singleTeachersTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3053,7 +3073,6 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3064,7 +3083,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleTeachersTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalTeachers, tmp, saveTime, true);
+		tos<<singleTeachersTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalTeachers, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -3087,7 +3106,6 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3098,7 +3116,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleTeachersTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalTeachers, tmp, saveTime, true);
+		tos<<singleTeachersTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalTeachers, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -3122,7 +3140,6 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3142,7 +3159,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			tos<<singleRoomsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, room, saveTime, true);
+			tos<<singleRoomsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, room, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 	}
@@ -3187,7 +3204,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			tos<<singleRoomsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, room, saveTime, true);
+			tos<<singleRoomsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, room, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 	}
@@ -3211,7 +3228,6 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3223,7 +3239,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
 		QSet<int> tmp;
-		tos<<singleRoomsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalRooms, tmp, saveTime, true);
+		tos<<singleRoomsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalRooms, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	}
 	tos << "  </body>\n</html>\n";
 
@@ -3245,7 +3261,6 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3257,7 +3272,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
 		QSet<int> tmp;
-		tos<<singleRoomsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalRooms, tmp, saveTime, true);
+		tos<<singleRoomsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalRooms, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 	}
 	tos << "  </body>\n</html>\n";
@@ -3280,7 +3295,6 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3294,7 +3308,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	else {
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QSet<int> tmp;
-			tos<<singleRoomsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalRooms, tmp, saveTime, true);
+			tos<<singleRoomsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalRooms, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
@@ -3319,7 +3333,6 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3333,7 +3346,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	else {
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QSet<int> tmp;
-			tos<<singleRoomsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalRooms, tmp, saveTime, true);
+			tos<<singleRoomsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalRooms, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
@@ -3361,7 +3374,6 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3380,7 +3392,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 
 
 	for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-		tos<<singleSubjectsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subject, saveTime, true);
+		tos<<singleSubjectsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subject, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -3403,7 +3415,6 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3421,7 +3432,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-		tos<<singleSubjectsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subject, saveTime, true);
+		tos<<singleSubjectsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subject, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -3444,7 +3455,6 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3453,7 +3463,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 	tos<<writeHead(true, placedActivities, false);
 
 	QSet<int> tmp;
-	tos<<singleSubjectsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime, true);
+	tos<<singleSubjectsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3474,7 +3484,6 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3483,7 +3492,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 	tos<<writeHead(true, placedActivities, false);
 
 	QSet<int> tmp;
-	tos<<singleSubjectsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime, true);
+	tos<<singleSubjectsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 	tos << "  </body>\n</html>\n";
 
@@ -3505,7 +3514,6 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3516,7 +3524,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleSubjectsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubjects, tmp, saveTime, true);
+		tos<<singleSubjectsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubjects, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
@@ -3541,7 +3549,6 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3552,7 +3559,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleSubjectsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubjects, tmp, saveTime, true);
+		tos<<singleSubjectsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubjects, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
 
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
@@ -3576,7 +3583,6 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
@@ -3628,7 +3634,6 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
-		assert(0);
 	}
 	QTextStream tos(&file);
 	tos.setCodec("UTF-8");
