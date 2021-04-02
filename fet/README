@@ -184,14 +184,15 @@ Running FET:
 	variables (these are not used in normal cases). FET seems to need a good amount of virtual memory on Windows
 	(maybe it is best to let Windows manage the virtual memory).
 	
-	COMMAND LINE: no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u]",
+	COMMAND LINE: no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--dividetimeaxisbydays=v]",
 	where	x is the input file, for instance "inputfile.fet"
 			y is integer (seconds) (default 2000000000, which is practically infinite)
-			z is integer from 0 to 5 and represents the detail level for the generated html timetables
+			z is integer from 0 to 6 and represents the detail level for the generated html timetables
 				(default 2, larger values have more details/facilities and larger file sizes)
 			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, lt, mk, ms, nl, pl, ro, tr (default en_GB)
 			u is either "true" or "false" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
 				not available slots (default true)
+			v is either true or false, represents if you want html timetables with time-axis divided by days (default false).
 	For the command line version, probably the most useful output to use internally in an application might be the activities_timetable.xml.
 	You have of course also the xml timetables for students and teachers and the nicely formatted html timetables to present directly.
 			

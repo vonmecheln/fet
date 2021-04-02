@@ -6,20 +6,20 @@
     <x>0</x>
     <y>0</y>
     <width>823</width>
-    <height>530</height>
+    <height>588</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Settings - timetable html level</string>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QGridLayout" name="gridLayout_2" >
    <item row="0" column="0" >
     <widget class="QGroupBox" name="groupBox" >
      <property name="title" >
       <string>The html level for generated timetables</string>
      </property>
-     <layout class="QVBoxLayout" >
-      <item>
+     <layout class="QGridLayout" name="gridLayout" >
+      <item row="0" column="0" >
        <widget class="QRadioButton" name="level0RadioButton" >
         <property name="text" >
          <string>Level 0 - no css
@@ -28,7 +28,7 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="1" column="0" >
        <widget class="QRadioButton" name="level1RadioButton" >
         <property name="text" >
          <string>Level 1 - basic css
@@ -38,26 +38,26 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="2" column="0" >
        <widget class="QRadioButton" name="level2RadioButton" >
         <property name="text" >
          <string>Level 2 - normal css (default)
-- all features of level 1 with around 5% larger filesize then level 1
+- all features of level 1 with around 5% larger filesize than level 1
 - style x-axis and y-axis of tablehead (useful to style width and height of the activity cells)</string>
         </property>
        </widget>
       </item>
-      <item>
+      <item row="3" column="0" >
        <widget class="QRadioButton" name="level3RadioButton" >
         <property name="text" >
          <string>Level 3 - advanced css
-- all features of level 2 with around 2 times larger filesize then level 2
+- all features of level 2 with around 2 times larger filesize than level 2
 - style (or hide) all subjects, activity tags, teachers, students sets and rooms
 - style (or hide) line 1, line 2 and line 3 of the activity cells</string>
         </property>
        </widget>
       </item>
-      <item>
+      <item row="4" column="0" >
        <widget class="QRadioButton" name="level4RadioButton" >
         <property name="sizePolicy" >
          <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
@@ -67,12 +67,12 @@
         </property>
         <property name="text" >
          <string>Level 4 - full css
-- all features of level 3 with around 3 times larger filesize then level 2
+- all features of level 3 with around 2.5 times larger filesize than level 2
 - style every single subject, activity tag, teacher, students set and room</string>
         </property>
        </widget>
       </item>
-      <item>
+      <item row="5" column="0" >
        <widget class="QRadioButton" name="level5RadioButton" >
         <property name="sizePolicy" >
          <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
@@ -82,9 +82,25 @@
         </property>
         <property name="text" >
          <string>Level 5 - JavaScript
-- all features of level 4 with around 4 times larger filesize then level 2
+- all features of level 4 with around 3.5 times larger filesize than level 2
 - highlighting of same subjects, activity tags, teachers, students sets and rooms
   (needs JavaScript - just move mouse over a word and wait a little bit)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" >
+       <widget class="QRadioButton" name="level6RadioButton" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>Level 6 - overloaded css
+- all features of level 5 with around 4 times larger filesize than level 2
+- style the cell of every single subject, activity tag, teacher or student
+(also useful to hide activities with special activity tags)</string>
         </property>
        </widget>
       </item>
@@ -98,7 +114,7 @@
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>40</width>
          <height>20</height>

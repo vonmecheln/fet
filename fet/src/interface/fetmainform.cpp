@@ -319,7 +319,10 @@ FetMainForm::FetMainForm()
 	
 	checkForUpdatesAction->setCheckable(true);
 	checkForUpdatesAction->setChecked(checkForUpdates);
-
+	
+	timetablesDivideByDaysAction->setCheckable(true);
+	timetablesDivideByDaysAction->setChecked(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
+	
 	QObject::connect(&getter, SIGNAL(done(bool)), this, SLOT(httpDone(bool)));
 	
 	useGetter=false;
@@ -350,6 +353,11 @@ FetMainForm::FetMainForm()
 void FetMainForm::on_checkForUpdatesAction_toggled()
 {
 	checkForUpdates=checkForUpdatesAction->isChecked();
+}
+
+void FetMainForm::on_timetablesDivideByDaysAction_toggled()
+{
+	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=timetablesDivideByDaysAction->isChecked();
 }
 
 void FetMainForm::httpDone(bool error)
@@ -1088,6 +1096,22 @@ void FetMainForm::on_dataStudentsStatisticsAction_activated()
 {
 	StudentsStatisticsForm* form=new StudentsStatisticsForm();
 	form->exec();
+}
+
+void FetMainForm::on_helpSettingsAction_activated()
+{
+	QString s;
+	
+	s+=tr("Probably a difficult to understand setting is this one:");
+	s+="\n\n";
+	s+=tr("Divide html timetables with time-axis by days");
+	s+="\n\n";
+	s+=tr("This means simply that the html timetables of type 'time horizontal' or 'time vertical' (see the generated html timetables)"
+	" should be or not divided according to the days.");
+	s+=" ";
+	s+=tr("If the 'time horizontal' or 'time vertical' html timetables are too large for you, then you might need this option");
+	
+	QMessageBox::information(this, tr("FET information"), s);
 }
 
 void FetMainForm::on_dataHelpOnStatisticsAction_activated()
@@ -2790,6 +2814,8 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+="\n";
 	s+=tr("7. Mark not available slots with -x- in timetables will be true");
 	s+="\n";
+	s+=tr("8. Divide html timetables with time-axis by days will be false");
+	s+="\n";
 	
 	switch( QMessageBox::information( this, tr("FET application"), s,
 	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
@@ -2812,6 +2838,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	
 	checkForUpdatesAction->setChecked(false);
 	checkForUpdates=0;
+	
+	timetablesDivideByDaysAction->setChecked(false);
+	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=false;
 	
 	WORKING_DIRECTORY="sample_inputs";
 	

@@ -23,7 +23,7 @@
      <x>0</x>
      <y>0</y>
      <width>557</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="helpMenu" >
@@ -347,8 +347,11 @@
     <addaction name="separator" />
     <addaction name="settingsPrintNotAvailableSlotsAction" />
     <addaction name="settingsTimetableHtmlLevelAction" />
+    <addaction name="timetablesDivideByDaysAction" />
     <addaction name="separator" />
     <addaction name="settingsRestoreDefaultsAction" />
+    <addaction name="separator" />
+    <addaction name="helpSettingsAction" />
    </widget>
    <widget class="QMenu" name="menuWizards" >
     <property name="title" >
@@ -1474,6 +1477,22 @@
   <action name="languageAction" >
    <property name="text" >
     <string>Language</string>
+   </property>
+  </action>
+  <action name="timetablesDivideByDaysAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Divide html timetables with time-axis by days</string>
+   </property>
+  </action>
+  <action name="helpSettingsAction" >
+   <property name="text" >
+    <string>Help on settings</string>
    </property>
   </action>
  </widget>

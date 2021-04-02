@@ -64,6 +64,8 @@ extern int TIMETABLE_HTML_LEVEL;
 
 extern bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
 
+extern bool DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS;
+
 /**
 The maximum number of different years of students
 */

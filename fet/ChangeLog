@@ -1339,4 +1339,11 @@ Versions 5.9.0 - 5.9.x
 	- Minor html timetables corrections (cosmetic).
 	- Updates in Spanish, Arabic, Romanian and Italian translations.
 	- Minor improvements.
+- Version 5.9.1
+	- Improved a situation for fixed timetables which were impossible sometimes (reported by Horatiu Halmajan). This bug is
+	not entirely fixed.
+	- Improved the html timetables by Volker Dirr.
+	- Crash bug fix for constraint min gaps between activities with weight below 100%.
+	- Bug fix in students early constraint - not critical bug.
+	- Updates in Arabic translation.
 	

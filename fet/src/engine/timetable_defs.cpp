@@ -19,6 +19,7 @@
 #include "timetable_defs.h"
 
 #include <QByteArray>
+#include <QHash>
 
 int checkForUpdates;
 
@@ -27,7 +28,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.9.0";
+const QString FET_VERSION="5.9.1";
 
 /**
 FET language
@@ -57,6 +58,17 @@ Timetable html css javaScript Level, by Volker Dirr
 int TIMETABLE_HTML_LEVEL;
 
 bool PRINT_NOT_AVAILABLE_TIME_SLOTS;
+
+bool DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS;
+
+//this hashs are needed to get the IDs for html and css in timetableexport and statistics
+QHash<QString, QString> hashSubjectIDs;
+QHash<QString, QString> hashActivityTagIDs;
+QHash<QString, QString> hashStudentIDs;
+QHash<QString, QString> hashTeacherIDs;
+QHash<QString, QString> hashRoomIDs;
+QHash<QString, QString> hashDayIDs;
+
 
 QString protect(const QString& str) //used for xml
 {
@@ -102,37 +114,6 @@ QString protect2vert(const QString& str) //used for html
 	return returnstring;
 }
 
-//protect2id is very similar to protect2
-//protect2id code contributed by Volker Dirr
-
-QString protect2id(const QString& str) //used for html
-{
-	QString p=str;
-	p.replace("&", "&amp;");
-	p.replace("\"", "&quot;");
-	p.replace(">", "&gt;");
-	p.replace("<", "&lt;");
-	//p.replace("'", "&apos;");
-	p.replace(" ", "_");		// id must be a single token
-	p.replace(",", "_");		// looks like this makes trouble
-	return p;
-}
-
-//protect2java is very similar to protect2
-//protect2java code contributed by Volker Dirr
-
-QString protect2java(const QString& str) //used for java-script function call (NOT the class id!)
-{
-	QString p=str;
-	p.replace("&", "&amp;");
-	p.replace("\"", "&quot;");
-	p.replace(">", "&gt;");
-	p.replace("<", "&lt;");
-	p.replace("'", "\\'");
-	p.replace(" ", "_");		// id must be a single token
-	p.replace(",", "_");		// looks like this makes trouble
-	return p;
-}
 
 QString protect3(const QString& str) //used for iCal
 {

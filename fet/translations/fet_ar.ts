@@ -221,7 +221,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="643"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation>انتبه ! إنك تحاول الآن أن تضيف مهمة مقسمة إلى عدد من الحصص أكبر من عدد أيام الدراسة في الأسبوع كماأنك تحاول أن تضع تقييدا زمنيا هو &quot;الحد الأدنى من الأيام الفاصلة بينحصتين/مهمتين&quot;. وهذا من شأنه أن يبطء البرنامج ويمنعه من إيجاد الحل.</translation>
+        <translation>انتبه ! إنك تحاول الآن أن تضيف مهمة مقسمة إلى عدد من الحصص أكبر من عدد أيام الدراسة في الأسبوع كماأنك تحاول أن تضع تقييدا زمنيا هو &quot;العدد الأدنى من الأيام الفاصلة بينحصتين/مهمتين&quot;. وهذا من شأنه أن يبطء البرنامج ويمنعه من إيجاد الحل.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="645"/>
@@ -231,12 +231,12 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="649"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation>- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية الحد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
+        <translation>- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية العدد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="655"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation>2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية الحد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
+        <translation>2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية العدد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="621"/>
@@ -338,7 +338,7 @@ Addition 14 June 2008: if you select a number of min days above 1, you will get 
         <source>The minimum required 
 distance in days between 
 each pair of activities</source>
-        <translation>العدد الادنى من
+        <translation>العدد الأدنى من
 الايام الفاصلة بين 
 حصتين متتاليتين</translation>
     </message>
@@ -454,12 +454,12 @@ consecutive?</source>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1007"/>
         <source>Activity tags</source>
-        <translation type="unfinished">مادة مكملة</translation>
+        <translation>مادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="1043"/>
         <source>Number of students (-1 for automatic)</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الطلاب (-1 للتوزيع الآلي)</translation>
     </message>
 </context>
 <context>
@@ -1909,12 +1909,12 @@ gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="206"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished">- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية الحد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
+        <translation type="unfinished">- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية العدد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="214"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished">2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية الحد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
+        <translation type="unfinished">2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية العدد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="216"/>
@@ -2059,7 +2059,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint students activity tag max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد للطلاب بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - اضافة قيد للطلاب بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="41"/>
@@ -2313,7 +2313,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="148"/>
         <source>Max days per week</source>
-        <translation>الحد الاقصى لايام العمل الاسبوعي</translation>
+        <translation>العدد الأقصى لايام العمل الاسبوعي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="194"/>
@@ -2331,7 +2331,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="16"/>
         <source>FET - Add new constraint students max building changes per day dialog</source>
-        <translation>فيت - اضافة قيد بعدد البنايات الاقصى للطلاب في اليوم</translation>
+        <translation>فيت - اضافة قيد بعدد البنايات الأقصى للطلاب في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -2361,7 +2361,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="125"/>
         <source>Max building changes per day</source>
-        <translation>عدد البنايات الاقصى في اليوم</translation>
+        <translation>عدد البنايات الأقصى في اليوم</translation>
     </message>
 </context>
 <context>
@@ -2369,7 +2369,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint students max building changes per week dialog</source>
-        <translation>FET - اضافة العدد الاقصى من البنايات في الاسبوع</translation>
+        <translation>FET - اضافة العدد الأقصى من البنايات في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -2399,7 +2399,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="125"/>
         <source>Max building changes per week</source>
-        <translation>العدد الاقصى من البنايات في الاسبوع</translation>
+        <translation>العدد الأقصى من البنايات في الاسبوع</translation>
     </message>
 </context>
 <context>
@@ -2407,7 +2407,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint students max gaps per week dialog</source>
-        <translation>فيت - اضافة قيد للطلاب بالعدد الاقصى للفراغات في الاسبوع</translation>
+        <translation>فيت - اضافة قيد للطلاب بالعدد الأقصى للفراغات في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="41"/>
@@ -2455,7 +2455,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint students max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد للطلاب بالحد الاقصى من الحصص المتصلة</translation>
+        <translation>فيت - اضافة قيد للطلاب بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="33"/>
@@ -2531,7 +2531,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="16"/>
         <source>FET - Add new constraint students min gaps between building changes dialog</source>
-        <translation type="unfinished">فيت -اضافة قيد للطلاب بعدد الفرغات الادنى بين تغيير المباني</translation>
+        <translation type="unfinished">فيت -اضافة قيد للطلاب بعدد الفرغات الأدنى بين تغيير المباني</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="35"/>
@@ -2614,7 +2614,7 @@ students)</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set activity tag max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد لطلاب معينين بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - اضافة قيد لطلاب معينين بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="41"/>
@@ -2999,7 +2999,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="189"/>
         <source>Max days per week</source>
-        <translation>الحد الاقصى لايام العمل الاسبوعي</translation>
+        <translation>العدد الأقصى لايام العمل الاسبوعي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="235"/>
@@ -3017,7 +3017,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="16"/>
         <source>FET - Add new constraint students set max building changes per day dialog</source>
-        <translation>FET - اضافة قيد لطلاب معينين بعدد البيانات الاقصى في اليوم</translation>
+        <translation>FET - اضافة قيد لطلاب معينين بعدد البيانات الأقصى في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -3060,7 +3060,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint students set max building changes per week dialog</source>
-        <translation>FET - اضافة قيد لطلاب معينين بالعدد الاقصى للبنايات في الاسبوع</translation>
+        <translation>FET - اضافة قيد لطلاب معينين بالعدد الأقصى للبنايات في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -3156,7 +3156,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد لطلاب معينين بالحد الاقصى من الحصص المتصلة</translation>
+        <translation>فيت - اضافة قيد لطلاب معينين بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="33"/>
@@ -3285,7 +3285,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint students set min hours daily dialog</source>
-        <translation>فيت - اضافة قيد جديد للحد الادنى من الحصص اليومية لطلاب معينين</translation>
+        <translation>فيت - اضافة قيد جديد للحد الأدنى من الحصص اليومية لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="121"/>
@@ -3871,7 +3871,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher activity tag max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد لمدرس بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - اضافة قيد لمدرس بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="41"/>
@@ -4138,7 +4138,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="189"/>
         <source>Max days per week</source>
-        <translation>الحد الاقصى لايام العمل الاسبوعي</translation>
+        <translation>العدد الأقصى لايام العمل الاسبوعي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="235"/>
@@ -4156,7 +4156,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max building changes per day dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد لمدرس بالعدد الاقصى لتغيير البنايات في اليوم</translation>
+        <translation type="unfinished">فيت - اضافة قيد لمدرس بالعدد الأقصى لتغيير البنايات في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -4191,7 +4191,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="166"/>
         <source>Max building changes per day</source>
-        <translation>العدد الاقصى للبنايات في اليوم</translation>
+        <translation>العدد الأقصى للبنايات في اليوم</translation>
     </message>
 </context>
 <context>
@@ -4199,7 +4199,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max building changes per week dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد لمدرس بالعدد الاقصى للبنايات في الاسبوع</translation>
+        <translation type="unfinished">فيت - اضافة قيد لمدرس بالعدد الأقصى للبنايات في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -4242,7 +4242,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max days per week dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد جديد للحد الاقصى من الحصص الاسبوعية للمدرس</translation>
+        <translation type="unfinished">فيت - اضافة قيد جديد للحد الأقصى من الحصص الاسبوعية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="27"/>
@@ -4277,7 +4277,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="129"/>
         <source>Max days per week</source>
-        <translation>الحد الأقصى لأيام لدوام الاسبوعي</translation>
+        <translation>العدد الأقصى لأيام لدوام الاسبوعي</translation>
     </message>
 </context>
 <context>
@@ -4285,7 +4285,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max gaps per day dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد لمدرس بالحد الأقصى للفراغات في اليوم</translation>
+        <translation type="unfinished">فيت - اضافة قيد لمدرس بالعدد الأقصى للفراغات في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="35"/>
@@ -4331,7 +4331,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="188"/>
         <source>Max gaps per day</source>
-        <translation>الحد الأقصى للفراغات في اليوم</translation>
+        <translation>العدد الأقصى للفراغات في اليوم</translation>
     </message>
 </context>
 <context>
@@ -4339,7 +4339,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max gaps per week dialog</source>
-        <translation>فيت - اضافة قيد الحد الاقصى من الفراغات الاسبوعية للمدرسين</translation>
+        <translation>فيت - اضافة قيد العدد الأقصى من الفراغات الاسبوعية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="35"/>
@@ -4393,7 +4393,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد لمدرس بالحد الاقصى من الحصص المتصلة</translation>
+        <translation>فيت - اضافة قيد لمدرس بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="27"/>
@@ -4436,7 +4436,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher max hours daily dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد للحد الاقصى للحصص اليومية للمدرسين</translation>
+        <translation type="unfinished">فيت - اضافة قيد للحد الأقصى للحصص اليومية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="27"/>
@@ -4522,7 +4522,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="16"/>
         <source>FET - Add new constraint teacher min hours daily dialog</source>
-        <translation type="unfinished">فيت -الحد الادنى من الحصص اليومية لمدرس</translation>
+        <translation type="unfinished">فيت -العدد الأدنى من الحصص اليومية لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="33"/>
@@ -4547,7 +4547,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="102"/>
         <source>Min hours daily</source>
-        <translation>الحد الادنى من الحصص اليومية</translation>
+        <translation>العدد الأدنى من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="110"/>
@@ -4671,7 +4671,7 @@ period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers activity tag max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد للمدرسين بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - اضافة قيد للمدرسين بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="41"/>
@@ -4822,7 +4822,7 @@ period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="148"/>
         <source>Max days per week</source>
-        <translation>الحد الاقصى لايام العمل الاسبوعي</translation>
+        <translation>العدد الأقصى لايام العمل الاسبوعي</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="194"/>
@@ -4840,7 +4840,7 @@ period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max building changes per day dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد للمدرسين بالعدد الاقصى للبنايات في اليوم</translation>
+        <translation type="unfinished">فيت - اضافة قيد للمدرسين بالعدد الأقصى للبنايات في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="35"/>
@@ -4870,7 +4870,7 @@ period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="125"/>
         <source>Max building changes per day</source>
-        <translation>العدد الاقصى للبنايات في اليوم</translation>
+        <translation>العدد الأقصى للبنايات في اليوم</translation>
     </message>
 </context>
 <context>
@@ -4878,7 +4878,7 @@ period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max building changes per week dialog</source>
-        <translation type="unfinished">فيت - الحد الاقصى من التنقلات بين المباني للمدرسين في الاسبوع</translation>
+        <translation type="unfinished">فيت - العدد الأقصى من التنقلات بين المباني للمدرسين في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="35"/>
@@ -4916,7 +4916,7 @@ period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max gaps per day dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد بالحد الأقصى للفراغات اليومية للمدرسين</translation>
+        <translation type="unfinished">فيت - اضافة قيد بالعدد الأقصى للفراغات اليومية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="35"/>
@@ -4958,7 +4958,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="153"/>
         <source>Max gaps per day</source>
-        <translation>الحد الأقصى للفراغات في اليوم</translation>
+        <translation>العدد الأقصى للفراغات في اليوم</translation>
     </message>
 </context>
 <context>
@@ -4966,7 +4966,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max gaps per week dialog</source>
-        <translation type="unfinished">فيت - اضافة قيد بالحد الأقصى للفراغات الاسبوعية للمدرسين</translation>
+        <translation type="unfinished">فيت - اضافة قيد بالعدد الأقصى للفراغات الاسبوعية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="35"/>
@@ -5016,7 +5016,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Add new constraint teachers max hours continuously dialog</source>
-        <translation>فيت - اضافة قيد للمدرسين بالحد الاقصى من الحصص المتصلة</translation>
+        <translation>فيت - اضافة قيد للمدرسين بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="27"/>
@@ -5140,7 +5140,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="49"/>
         <source>Min hours daily</source>
-        <translation>الحد الادنى من الحصص اليومية</translation>
+        <translation>العدد الأدنى من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="63"/>
@@ -5541,7 +5541,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/changeminndaysselectivelyform_template.ui" line="13"/>
         <source>Change more constraints min n days</source>
-        <translation>تغيير أكثر من تقييد بالحد الادني من الايام بين حصتين</translation>
+        <translation>تغيير أكثر من تقييد بالعدد الادني من الايام بين حصتين</translation>
     </message>
 </context>
 <context>
@@ -5567,7 +5567,7 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="16"/>
         <source>FET - Time constraints 2 activies consecutive</source>
-        <translation>FET - القيد الزمني لمهمتين متتاليتين</translation>
+        <translation type="unfinished">فيت - القيد الزمني لمهمتين متتاليتين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="57"/>
@@ -5666,7 +5666,7 @@ following the other, in any order, possibly separated by breaks</source>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="16"/>
         <source>FET - Time constraints 2 activies ordered</source>
-        <translation>FET - القيد الزمني لمهمتين متعاقبتين</translation>
+        <translation type="unfinished">فيت - القيد الزمني لمهمتين متعاقبتين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="27"/>
@@ -6063,7 +6063,7 @@ constraints if adding constraints same starting time</source>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="16"/>
         <source>FET - Time constraints activity ends students day</source>
-        <translation>FET - القيد الزمني لمهمة أخيرة للطلاب</translation>
+        <translation type="unfinished">فيت - القيد الزمني لمهمة أخيرة للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="25"/>
@@ -6609,7 +6609,7 @@ times for activities with duration greater than 1)</source>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="16"/>
         <source>FET - Time constraints break times</source>
-        <translation>FET - القيد الزمني لأوقات التوقف</translation>
+        <translation type="unfinished">فيت - القيد الزمني لأوقات التوقف</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="25"/>
@@ -6762,7 +6762,7 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="16"/>
         <source>FET - Time constraints min n days between activities</source>
-        <translation>FET - القيد الزمني للعدد الأدنى للأيام الفاصلة بين حصتين</translation>
+        <translation type="unfinished">فيت - القيد الزمني للعدد الأدنى للأيام الفاصلة بين حصتين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintminndaysbetweenactivitiesform_template.ui" line="160"/>
@@ -6883,7 +6883,7 @@ in the same day, they must be separated by at least min gaps (hours).</source>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints students activity tag max hours continuously</source>
-        <translation>فيت - اضافة قيد للطلاب بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - اضافة قيد للطلاب بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="75"/>
@@ -7189,7 +7189,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Time constraints students max gaps per week</source>
-        <translation>FET - القيد الزمني للطلاب بالحد الاقصى من الفراغات الاسبوعية</translation>
+        <translation type="unfinished">فيت - القيد الزمني للطلاب بالعدد الأقصى من الفراغات الاسبوعية</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperweekform_template.ui" line="25"/>
@@ -7232,7 +7232,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints students max hours continuously</source>
-        <translation>FET - قيد زمني للطلاب بالحد الاقصى من الحصص المتصلة</translation>
+        <translation>FET - قيد زمني للطلاب بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="25"/>
@@ -7361,7 +7361,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students min hours daily</source>
-        <translation>FET - الحد الادنى من الحصص اليومية للطلاب</translation>
+        <translation>FET - العدد الأدنى من الحصص اليومية للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="25"/>
@@ -7404,7 +7404,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints students set activity tag max hours continuously</source>
-        <translation>فيت - قيد زمني لطلاب معينين بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - قيد زمني لطلاب معينين بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
@@ -7892,7 +7892,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints students set max hours continuously</source>
-        <translation>فيت - قيد زمني لطلاب معينين بالحد الاقصى من الحصص المتصلة</translation>
+        <translation>فيت - قيد زمني لطلاب معينين بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="25"/>
@@ -8036,7 +8036,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints students set min hours daily</source>
-        <translation>FET - الحد الادنى من الحصص اليومية لطلاب معينين</translation>
+        <translation>FET - العدد الأدنى من الحصص اليومية لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="25"/>
@@ -8530,7 +8530,7 @@ for activities. Please click Help button for details.</source>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teacher activity tag max hours continuously</source>
-        <translation>فيت - اضافة قيد لمدرس بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - اضافة قيد لمدرس بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="25"/>
@@ -9022,7 +9022,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teacher max hours continuously</source>
-        <translation>فيت - قيد زمني لمدرس بالحد الاقصى من الحصص المتصلة</translation>
+        <translation>فيت - قيد زمني لمدرس بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="25"/>
@@ -9070,7 +9070,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints teacher max hours daily</source>
-        <translation>FET - القيود الزمنية للحد الاقصى للحصص اليومية</translation>
+        <translation>FET - القيود الزمنية للحد الأقصى للحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="25"/>
@@ -9166,7 +9166,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="16"/>
         <source>FET - Time constraints teacher min hours daily</source>
-        <translation>الحد الادنى من الحصص اليومية لمدرس</translation>
+        <translation>العدد الأدنى من الحصص اليومية لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="25"/>
@@ -9302,7 +9302,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teachers activity tag max hours continuously</source>
-        <translation>فيت - اضافة قيد للمدرسين بالحد الاقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - اضافة قيد للمدرسين بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="75"/>
@@ -9611,7 +9611,7 @@ Are you sure?</source>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Time constraints teachers max hours continuously</source>
-        <translation type="unfinished">فيت - قيد زمني للمدرسين بالحد الاقصى من الحصص المتصلة</translation>
+        <translation type="unfinished">فيت - قيد زمني للمدرسين بالعدد الأقصى من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="25"/>
@@ -10163,7 +10163,7 @@ Import of data will be easier with these settings.</source>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1120"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1144"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -10174,39 +10174,39 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1127"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1151"/>
         <source>FET - information about statistics</source>
         <translation>FET - معلومات عن الاحصاءات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2451"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2475"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2248"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2272"/>
         <source>FET - help in other languages</source>
         <translation>FET - مساعدة بلغات أخرى</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2583"/>
         <source>FET warning</source>
         <translation>تحذير فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="366"/>
+        <location filename="../src/interface/fetmainform.cpp" line="374"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2956"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2985"/>
         <source>FET information</source>
         <translation>معلومات فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="383"/>
+        <location filename="../src/interface/fetmainform.cpp" line="391"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -10215,536 +10215,561 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="398"/>
+        <location filename="../src/interface/fetmainform.cpp" line="406"/>
         <source>FET - exiting</source>
         <translation>فيت - خروج</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="399"/>
+        <location filename="../src/interface/fetmainform.cpp" line="407"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation>هل ترغب بحفظ التغييرات على الملف؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2821"/>
         <source>&amp;Yes</source>
         <translation>&amp;نعم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2795"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2821"/>
         <source>&amp;No</source>
         <translation>&amp;لا</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2908"/>
         <source>&amp;Cancel</source>
         <translation>&amp;الغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2957"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2986"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2794"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2820"/>
         <source>FET application</source>
         <translation>برنامج فت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="443"/>
+        <location filename="../src/interface/fetmainform.cpp" line="451"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>هل ترغب بتحميل بيانات جديد (قوانين) ؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="489"/>
+        <location filename="../src/interface/fetmainform.cpp" line="497"/>
         <source>Choose a file</source>
         <translation>اختيار ملف</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="764"/>
+        <location filename="../src/interface/fetmainform.cpp" line="772"/>
         <source>FET info</source>
         <translation>معلومات فت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="506"/>
+        <location filename="../src/interface/fetmainform.cpp" line="514"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="512"/>
+        <location filename="../src/interface/fetmainform.cpp" line="520"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="518"/>
+        <location filename="../src/interface/fetmainform.cpp" line="526"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="539"/>
+        <location filename="../src/interface/fetmainform.cpp" line="547"/>
         <source>Invalid file</source>
         <translation>لم يتم اختيار ملف</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="539"/>
+        <location filename="../src/interface/fetmainform.cpp" line="547"/>
         <source>&amp;OK</source>
         <translation>&amp;موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="598"/>
+        <location filename="../src/interface/fetmainform.cpp" line="606"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="741"/>
+        <location filename="../src/interface/fetmainform.cpp" line="749"/>
         <source>Choose a filename to save under</source>
         <translation>اختر اسم ملف</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="756"/>
+        <location filename="../src/interface/fetmainform.cpp" line="764"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="760"/>
+        <location filename="../src/interface/fetmainform.cpp" line="768"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="764"/>
+        <location filename="../src/interface/fetmainform.cpp" line="772"/>
         <source>Please do not use # in filename, the html css code does not work</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً لا تستخدم شارب  #  في اسم الملف, لأن اكواد التنسيق  html css لا تتقبل هذا الرمز</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="591"/>
+        <location filename="../src/interface/fetmainform.cpp" line="599"/>
         <source>FET</source>
         <translation>فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="592"/>
+        <location filename="../src/interface/fetmainform.cpp" line="600"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>ملف موجود - هل ترغب باستبدال ملف موجود ؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2312"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2336"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف البيانات الحالي بدون اسم. فضلاً قم بتسميته قبل بدء المعالجة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2436"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2460"/>
         <source>Please generate, firstly</source>
         <translation>فضلاً أنتج الجدول, اولاً</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2564"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2588"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>فضلاً اعد تشغيل البرنامج لتفعيل اللغة الجديدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1097"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1121"/>
         <source>This help by Liviu Lalescu, modified 7 November 2007</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2292"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2316"/>
         <source>Please input at least one active activity before generating</source>
         <translation>فضلاً ادخل تفعيل مهمة واحدة على الاقل قبل انتاج الجدول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2349"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="456"/>
+        <location filename="../src/interface/fetmainform.cpp" line="464"/>
         <source>FET - a free timetabling program</source>
         <translation>FET - برنامج الجداول المجاني</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="697"/>
+        <location filename="../src/interface/fetmainform.cpp" line="705"/>
         <source>FET - Warning</source>
         <translation>FET - تحذير</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="679"/>
+        <location filename="../src/interface/fetmainform.cpp" line="687"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
         <translation>لم تقم بانتاج الجدول - فضلاً أنتج الجدول اولاً</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="706"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="704"/>
+        <location filename="../src/interface/fetmainform.cpp" line="712"/>
         <source>Please read this important information before proceeding:</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً اقرأ هذه المعلومات المهمة قبل بدء المعالجة:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="725"/>
+        <location filename="../src/interface/fetmainform.cpp" line="733"/>
         <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="730"/>
+        <location filename="../src/interface/fetmainform.cpp" line="738"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="734"/>
+        <location filename="../src/interface/fetmainform.cpp" line="742"/>
         <source>If you need more information, contact author or mailing list</source>
-        <translation type="unfinished"></translation>
+        <translation>اذا احتجت لمعلومات اضافية, اتصل بالمؤلف أو بالقائمة البريدية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="736"/>
+        <location filename="../src/interface/fetmainform.cpp" line="744"/>
         <source>FET - information about saving a timetable as</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="787"/>
         <source>File exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="782"/>
+        <location filename="../src/interface/fetmainform.cpp" line="790"/>
         <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="784"/>
+        <location filename="../src/interface/fetmainform.cpp" line="792"/>
         <source>Please choose a non-existing name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="895"/>
+        <location filename="../src/interface/fetmainform.cpp" line="903"/>
         <source>Added the following constraint to saved file:</source>
-        <translation type="unfinished"></translation>
+        <translation>حفظ التقييد التالي في الملف:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="897"/>
+        <location filename="../src/interface/fetmainform.cpp" line="905"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="916"/>
         <source>Skip information</source>
         <translation type="unfinished">القفز للمعلومات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="908"/>
+        <location filename="../src/interface/fetmainform.cpp" line="916"/>
         <source>See next</source>
         <translation>انظر التالي</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="917"/>
+        <location filename="../src/interface/fetmainform.cpp" line="925"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="933"/>
+        <location filename="../src/interface/fetmainform.cpp" line="941"/>
         <source>File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints), so you can save it also, or generate different timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="714"/>
+        <location filename="../src/interface/fetmainform.cpp" line="722"/>
         <source>This option is only useful if you need to lock current timetable into a file. Locking means that there will be added constraints activity preferred starting time and activity preferred room with 100% importance for each activity to fix it at current place in current timetable. You can save this timetable as an ordinary .fet file; when you&apos;ll open it, you&apos;ll see all old inputted data (activities, teachers, etc.) and the locking constraints as the last time/space constraints. You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again and the remaining locking constraints will be respected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2774"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2798"/>
         <source>Are you sure you want to reset all settings to defaults?</source>
         <translation>هل ترغب بحذف جميع الاعدادات والعودة للوضع الافتراضي؟</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2777"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2801"/>
         <source>That means</source>
         <translation>هذا يعني</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2779"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2803"/>
         <source>1. Mainform geometry will be reset to default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2781"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2805"/>
         <source>2. Check for updates at startup will be disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>2. البحث عن التحديث في قائمة البدء معطل</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2783"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2807"/>
         <source>3. Language will be en_GB (restart needed to activate language change)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2785"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2809"/>
         <source>4. Working directory will be sample_inputs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2787"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2811"/>
         <source>5. Html level of the timetables will be 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2789"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2813"/>
         <source>6. Import directory will be %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2259"/>
         <source>Currently (17 July 2008), there are:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2237"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2261"/>
         <source>1. ar - Arabic - Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2239"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2263"/>
         <source>2. es - Spanish - Instructions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2241"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2265"/>
         <source>3. it - Italian - Instructions, FAQ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2243"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2267"/>
         <source>4. ro - Romanian - Import/Export Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2133"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2157"/>
         <source>FET has a forum where you can ask questions or talk about FET</source>
-        <translation type="unfinished"></translation>
+        <translation>يملك فيت منتدى تستطيع من خلاله طرح اسئلتك والتحدث عن فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2135"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2159"/>
         <source>The current address is: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>الرابط الحالي:  %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2137"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2161"/>
         <source>Please open this address in a web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً افتح هذا الرابط بمتصفح انترنت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2139"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2163"/>
         <source>If it does not work, please search the FET web page, maybe the address was changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">في حالة كونه لا يعمل, فضلاً ابحث في موقع فيت, فربما تغير الرابط</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2145"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2169"/>
         <source>FET forum</source>
-        <translation type="unfinished"></translation>
+        <translation>منتدى فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2791"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2815"/>
         <source>7. Mark not available slots with -x- in timetables will be true</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="482"/>
         <source>New file generated</source>
-        <translation type="unfinished">انتج الملف الجديد</translation>
+        <translation>انتج الملف الجديد</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="536"/>
+        <location filename="../src/interface/fetmainform.cpp" line="544"/>
         <source>File opened</source>
-        <translation type="unfinished">فتح الملف</translation>
+        <translation>فتح الملف</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="963"/>
+        <location filename="../src/interface/fetmainform.cpp" line="971"/>
         <source>File saved</source>
-        <translation type="unfinished">حفظ الملف</translation>
+        <translation>حفظ الملف</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2853"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2882"/>
         <source>You have more than 6 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2877"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2906"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2879"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2908"/>
         <source>&amp;Continue</source>
-        <translation type="unfinished">استمرار&amp;</translation>
+        <translation>استمرار&amp;</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2874"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2903"/>
         <source>You have less than 5 days per week, so probably you won&apos;t need this feature. Do you still want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="333"/>
+        <location filename="../src/interface/fetmainform.cpp" line="336"/>
         <source>Critical error - cannot check for updates because of a bug in application. FET will now continue operation, but you should visit the FET page to report this bug or to get the fixed version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2194"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2218"/>
         <source>This manual is contributed by Volker Dirr (timetabling.de).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2197"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2221"/>
         <source>You can read this manual using a web browser. Please open the main html file from the specified directory in a web browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2199"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2223"/>
         <source>See the website timetabling.de for possible updated version of this manual.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2204"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2228"/>
         <source>FET - contributed user&apos;s manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="726"/>
         <source>NEW, 25 December 2008:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="721"/>
+        <location filename="../src/interface/fetmainform.cpp" line="729"/>
         <source>The added constraints will have the &apos;permanently locked&apos; tag set to false, so you can also unlock the activities from the &apos;Timetable&apos; menu, without interfering with the initial constraints which are made by you &apos;permanently locked&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2192"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2216"/>
         <source>You can read a contributed user&apos;s manual in the %1 directory of FET.</source>
-        <translation type="unfinished"></translation>
+        <translation>يمكن قراءة دليل المستخدم في مجلد فيت  %1 .</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2233"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2257"/>
         <source>You can see help translated into other languages in the directory %1 of FET</source>
-        <translation type="unfinished"></translation>
+        <translation>يمكن قراءة ملفات المساعدة باللغات الاخرى في مجلد فيت  %1 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="751"/>
         <source>FET XML files</source>
         <comment>Instructions for translators: FET XML is a type of file format (using text mode). So this field means files in the FET XML format</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="743"/>
+        <location filename="../src/interface/fetmainform.cpp" line="751"/>
         <source>All files</source>
-        <translation type="unfinished"></translation>
+        <translation>كل الملفات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2513"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2537"/>
         <source>Please select FET language</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً اختر لغة فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2450"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2474"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2472"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2496"/>
         <source>British English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2473"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2497"/>
         <source>Arabic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2474"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2498"/>
         <source>Catalan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2475"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2499"/>
         <source>German</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2476"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2500"/>
         <source>Greek</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2477"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2501"/>
         <source>Spanish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2478"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2502"/>
         <source>French</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2479"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2503"/>
         <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2480"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2504"/>
         <source>Indonesian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2505"/>
         <source>Italian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2506"/>
         <source>Lithuanian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2483"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2507"/>
         <source>Macedonian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2484"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2508"/>
         <source>Malay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2485"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2509"/>
         <source>Dutch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2486"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2510"/>
         <source>Polish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2487"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2511"/>
         <source>Romanian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2488"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2512"/>
         <source>Turkish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2507"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2531"/>
         <source>Invalid current language - making it en_GB (British English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2559"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2583"/>
         <source>Invalid language selected - making it en_GB (British English)</source>
+        <translation type="unfinished">اللغة المحددة غير متاحة - اختر en_GB (British English</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2587"/>
+        <source>Language %1 selected</source>
+        <translation type="unfinished">تم اختيار اللغة  %1 </translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="2817"/>
+        <source>8. Divide html timetables with time-axis by days will be false</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2563"/>
-        <source>Language %1 selected</source>
+        <location filename="../src/interface/fetmainform.cpp" line="1105"/>
+        <source>Probably a difficult to understand setting is this one:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1107"/>
+        <source>Divide html timetables with time-axis by days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1110"/>
+        <source>This means simply that the html timetables of type &apos;time horizontal&apos; or &apos;time vertical&apos; (see the generated html timetables) should be or not divided according to the days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="1112"/>
+        <source>If the &apos;time horizontal&apos; or &apos;time vertical&apos; html timetables are too large for you, then you might need this option</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10781,32 +10806,32 @@ Please stop simulation before this.</source>
         <translation>&amp;بيانات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="784"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="787"/>
         <source>Space constraints (misc)</source>
         <translation>القيود المكانية العامة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="816"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="819"/>
         <source>Space constraints (rooms)</source>
         <translation>القيود المكانية للقاعات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="709"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="712"/>
         <source>Time constraints (misc)</source>
         <translation>القيود الزمنية العامة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="693"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="696"/>
         <source>Time constraints (students)</source>
         <translation>القيود الزمنية للطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="701"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="704"/>
         <source>Time constraints (activities)</source>
         <translation>القيود الزمنية للمهام</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="685"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="688"/>
         <source>Time constraints (teachers)</source>
         <translation>القيود الزمنية للمدرسين</translation>
     </message>
@@ -10816,639 +10841,639 @@ Please stop simulation before this.</source>
         <translation>اعدادات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1476"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1479"/>
         <source>Language</source>
         <translation>للغة/Language</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="371"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
         <source>&amp;New</source>
         <translation>&amp;جديد</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
         <source>New</source>
         <translation>جديد</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="380"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="382"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
         <source>&amp;Open...</source>
         <translation>&amp;فتح...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
         <source>Open</source>
         <translation>فتح</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="391"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="393"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
         <source>&amp;Save</source>
         <translation>&amp;حفظ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="399"/>
         <source>Save</source>
         <translation>حفظ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="399"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="402"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="404"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="407"/>
         <source>Save &amp;As...</source>
         <translation>&amp;حفظ باسم...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="407"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="410"/>
         <source>Save As</source>
         <translation>حفظ باسم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="415"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
         <source>E&amp;xit</source>
         <translation>&amp;خروج</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="421"/>
         <source>Exit</source>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="426"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;الاسئلة المكررة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="432"/>
         <source>Frequently asked questions</source>
         <translation>الاسئلة المتكررة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="437"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="440"/>
         <source>&amp;About...</source>
         <translation>&amp;حول...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="440"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="443"/>
         <source>About</source>
         <translation>حول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="448"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
         <source>&amp;Teachers</source>
         <translation>&amp;المدرسون</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="451"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="454"/>
         <source>Teachers</source>
         <translation>المدرسون</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="456"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="459"/>
         <source>&amp;Subjects</source>
         <translation>&amp;المواد الدراسية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="459"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="462"/>
         <source>Subjects</source>
         <translation>المواد</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="464"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="467"/>
         <source>&amp;Years (forms, classes)</source>
         <translation>&amp;الدفعة العام</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="467"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="470"/>
         <source>Years</source>
         <translation>الاعوام</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="472"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
         <source>&amp;Groups</source>
         <translation>&amp;المجموعة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="478"/>
         <source>Groups</source>
         <translation>المجموعات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
         <source>S&amp;ubgroups</source>
         <translation>&amp;المجموعة الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="486"/>
         <source>Subgroups</source>
         <translation>المجموعات الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="488"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="491"/>
         <source>&amp;Activities</source>
         <translation>&amp;المهام</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="491"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="494"/>
         <source>Activities</source>
         <translation>المهام</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="496"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="499"/>
         <source>&amp;Generate new</source>
         <translation>&amp;انتاج جدول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="499"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="502"/>
         <source>Generate new</source>
         <translation>انتاج جدول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="504"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="507"/>
         <source>View (&amp;students)</source>
         <translation>عرض (&amp;الطلاب)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="507"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="510"/>
         <source>View (students)</source>
         <translation>عرض (الطلاب)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="512"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="515"/>
         <source>View (&amp;teachers)</source>
         <translation>عرض (&amp;المدرسين)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="515"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="518"/>
         <source>View (teachers)</source>
         <translation>عرض (المدرسين)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="523"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="526"/>
         <source>Show soft conflicts</source>
         <translation>عرض التعارضات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="528"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="531"/>
         <source>&amp;Days per week</source>
         <translation>&amp;الايام في الاسبوع</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="531"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="534"/>
         <source>Days per week</source>
         <translation>ايام العمل الأسبوعي</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="536"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
         <source>&amp;Hours (periods) per day</source>
         <translation>&amp;الساعات أو الحصص اليومية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="542"/>
         <source>Hours per day</source>
         <translation>الحصص في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
         <source>&amp;Rooms</source>
         <translation>&amp;القاعات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="553"/>
         <source>Rooms</source>
         <translation>القاعات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
         <source>View (r&amp;ooms)</source>
         <translation>عرض (&amp;القاعات)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="561"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="564"/>
         <source>View (rooms)</source>
         <translation>عرض (القاعات)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="569"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="572"/>
         <source>&amp;en_GB (British English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="572"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="575"/>
         <source>en_GB (British English)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="580"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="583"/>
         <source>&amp;ro (Romanian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="583"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="586"/>
         <source>ro (Romanian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="588"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="591"/>
         <source>T&amp;ime constraints</source>
         <translation>&amp;القيود الزمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="591"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="594"/>
         <source>Time constraints</source>
         <translation>القيود الزمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="607"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="610"/>
         <source>&amp;fr (French)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="610"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="613"/>
         <source>fr (French)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="618"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="621"/>
         <source>A set of activities has same starting time (day+hour)</source>
-        <translation type="unfinished">مهام لها نفس الوقت واليوم</translation>
+        <translation>مهام لها نفس الوقت واليوم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="626"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="629"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation>عرض (&amp;الطلاب-مع القاعات)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="629"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="632"/>
         <source>View (students-with rooms)</source>
         <translation>عرض (الطلاب-مع القاعات)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="634"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="637"/>
         <source>All t&amp;ime constraints</source>
         <translation>&amp;جميع القيود الزمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="637"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
         <source>All time constraints</source>
         <translation>جميع القيود الزمنية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="645"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="648"/>
         <source>A teacher is not available</source>
         <translation>تفريغ مدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="653"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="656"/>
         <source>Basic compulsory time constraints</source>
         <translation>قيد زمني إجباري اساسي</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="661"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="664"/>
         <source>A students set is not available</source>
         <translation>تفريغ طلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="669"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="672"/>
         <source>Break (all teachers+all students not available)</source>
         <translation>ايقاف تام للمدرسين والطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="677"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="680"/>
         <source>Max days per week for a teacher</source>
-        <translation>الحد الأقصى لأيام العمل  الأسبوعي للمدرس</translation>
+        <translation>العدد الأقصى لأيام العمل  الأسبوعي للمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="717"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="720"/>
         <source>Max hours daily for all teachers</source>
-        <translation>الحد الأقصى للحصص اليومية للمدرسين</translation>
+        <translation>العدد الأقصى للحصص اليومية للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="757"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="760"/>
         <source>A set of activities are not overlapping</source>
         <translation>مهام ليست في نفس التوقيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="765"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="768"/>
         <source>Min n days between a set of activities</source>
-        <translation>الحد الادنى من الايام بين المهام المحددة</translation>
+        <translation>العدد الأدنى من الايام بين المهام المحددة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="773"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
         <source>All s&amp;pace constraints</source>
         <translation>&amp;جميع القيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="776"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="779"/>
         <source>All space constraints</source>
         <translation>جميع القيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="792"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="795"/>
         <source>Space constraints</source>
         <translation>القيود المكانية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="800"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="803"/>
         <source>Basic compulsory space constraints</source>
         <translation>قيد مكاني إجباري اساسي</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="808"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="811"/>
         <source>A room is not available</source>
         <translation>اخلاء قاعة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="824"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="827"/>
         <source>An activity has a preferred room</source>
         <translation>التفضيل المكاني للبعض لقاعة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="832"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="835"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>مهام لها نفس الوقت والايام قد تتغير</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="845"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="848"/>
         <source>I&amp;nstitution name</source>
         <translation>&amp;اسم المنشأة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="848"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="851"/>
         <source>Institution name</source>
         <translation>اسم المنشأة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="853"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="856"/>
         <source>&amp;Comments</source>
         <translation>&amp;شرح</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="856"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="859"/>
         <source>Comments</source>
         <translation>شرح</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="864"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="867"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>التفضيل المكاني للبعض لعدة قاعات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="872"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="875"/>
         <source>&amp;ca (Catalan)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="875"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="878"/>
         <source>ca (Catalan)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="883"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="886"/>
         <source>&amp;ms (Malay)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="886"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="889"/>
         <source>ms (Malay)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1144"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1147"/>
         <source>A subject has a preferred room</source>
         <translation>ربط مادة بقاعة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1149"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1152"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>ربط مادة بعدة قاعات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="907"/>
         <source>&amp;pl (Polish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="907"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="910"/>
         <source>pl (Polish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="915"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="918"/>
         <source>&amp;tr (Turkish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="918"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="921"/>
         <source>tr (Turkish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="926"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="929"/>
         <source>&amp;nl (Dutch)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="929"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="932"/>
         <source>nl (Dutch)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="937"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="940"/>
         <source>&amp;de (German)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="942"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="945"/>
         <source>Teachers statistics</source>
         <translation>احصاءات المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="953"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="956"/>
         <source>Students statistics</source>
         <translation>احصاءات الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="958"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="961"/>
         <source>Subjects statistics</source>
         <translation>احصاءات المواد</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="966"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="969"/>
         <source>&amp;hu (Hungarian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="974"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="977"/>
         <source>m&amp;k (Macedonian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="985"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="988"/>
         <source>Max gaps per week for all teachers</source>
-        <translation>الحد الأقصى للفراغات في الأسبوع للمدرسين</translation>
+        <translation>العدد الأقصى للفراغات في الأسبوع للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="990"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="993"/>
         <source>Max gaps per week for a teacher</source>
-        <translation>الحد الأقصى للفراغات في الأسبوع للمدرس</translation>
+        <translation>العدد الأقصى للفراغات في الأسبوع للمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1000"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1003"/>
         <source>Max hours daily for a teacher</source>
-        <translation>الحد الأقصى للحصص اليومية لمدرس</translation>
+        <translation>العدد الأقصى للحصص اليومية لمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1005"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1008"/>
         <source>Max hours daily for a students set</source>
-        <translation>الحد الأقصى للحصص اليومية لطلاب معينين</translation>
+        <translation>العدد الأقصى للحصص اليومية لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1010"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1013"/>
         <source>Max hours daily for all students</source>
-        <translation>الحد الأقصى للحصص اليومية لجميع الطلاب</translation>
+        <translation>العدد الأقصى للحصص اليومية لجميع الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1015"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1018"/>
         <source>Instructions</source>
         <translation>التعليمات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1026"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1029"/>
         <source>Search for updates on startup</source>
         <translation>تحديث عند بدء التشغيل</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1031"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1034"/>
         <source>Min hours daily for all students</source>
-        <translation>الحد الادنى من الحصص اليومية لجميع الطلاب</translation>
+        <translation>العدد الأدنى من الحصص اليومية لجميع الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1036"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1039"/>
         <source>Min hours daily for a students set</source>
-        <translation>الحد الادنى من الحصص اليومية لطلاب معينين</translation>
+        <translation>العدد الأدنى من الحصص اليومية لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1041"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1044"/>
         <source>Generate &amp;multiple variants</source>
         <translation>&amp;انتاج عدة جداول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1044"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1047"/>
         <source>Generate multiple variants</source>
         <translation>انتاج عدة جداول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1049"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1052"/>
         <source>2 activities are consecutive</source>
         <translation>مهمتين متتاليتين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1054"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1057"/>
         <source>An activity ends students day</source>
         <translation>تعيين المهمة الأخيرة لطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1062"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1065"/>
         <source>e&amp;s (Spanish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1067"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1070"/>
         <source>Restore default settings</source>
         <translation>اعادة الاعدادات الافترضية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1077"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1080"/>
         <source>Min hours daily for all teachers</source>
-        <translation>الحد الأدنى للحصص اليومية للمدرسين</translation>
+        <translation>العدد الأدنى للحصص اليومية للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1082"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1085"/>
         <source>Min hours daily for a teacher</source>
-        <translation>الحد الأدنى للحصص اليومية للمدرس</translation>
+        <translation>العدد الأدنى للحصص اليومية للمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1087"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1090"/>
         <source>Help on statistics</source>
         <translation>مساعد الاحصاءات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1092"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1095"/>
         <source>Help in other languages than English</source>
         <translation>المساعدة بلغات غير الانجليزية</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1100"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1103"/>
         <source>e&amp;l (Greek)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1108"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1111"/>
         <source>&amp;ar (Arabic)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1116"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1119"/>
         <source>&amp;id (Indonesian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1124"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1127"/>
         <source>it (Italian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1072"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1075"/>
         <source>Html level for generated timetables</source>
         <translation>مستوى جودة تنسيق الجداول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="733"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="736"/>
         <source>Max gaps per week for a students set</source>
-        <translation>الحد الأقصى للفراغات الأسبوعية لطلاب معينين</translation>
+        <translation>العدد الأقصى للفراغات الأسبوعية لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="741"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="744"/>
         <source>Max gaps per week for all students</source>
-        <translation>الحد الأقصى للفراغات الأسبوعية لكل الطلاب</translation>
+        <translation>العدد الأقصى للفراغات الأسبوعية لكل الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="749"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="752"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>جميع الطلاب يبدأون باكراً (أقصى بداية الحصة الثانية)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="840"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="843"/>
         <source>Activity tags</source>
         <translation>مادة مكملة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="995"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="998"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>طلاب معينين يبدأون باكراً (أقصى بداية الحصة الثانية)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1129"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1132"/>
         <source>Max gaps per day for all teachers</source>
-        <translation>الحد الأقصى للفراغات اليومية لكل المدرسين</translation>
+        <translation>العدد الأقصى للفراغات اليومية لكل المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1134"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1137"/>
         <source>Max gaps per day for a teacher</source>
-        <translation>الحد الأقصى للفراغات اليومية لمدرس</translation>
+        <translation>العدد الأقصى للفراغات اليومية لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="133"/>
@@ -11506,192 +11531,192 @@ Please stop simulation before this.</source>
         <translation>القيد المكاني للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="642"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="645"/>
         <source>A teacher&apos;s not available times</source>
         <translation>تفريغ مدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="658"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="661"/>
         <source>A students set&apos;s not available times</source>
         <translation>تفريغ طلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="666"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="669"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>اوقات التوقف (كل المدرسين+كل الطلاب غير متاحين)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="805"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="808"/>
         <source>A room&apos;s not available times</source>
         <translation>تفريغ قاعات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="891"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="894"/>
         <source>A set of students has a home room</source>
         <translation>قاعة خاصة لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="896"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="899"/>
         <source>A set of students has a set of home rooms</source>
         <translation>عدة قاعات معينة لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1139"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1142"/>
         <source>Buildings</source>
         <translation>البنايات</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1154"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1157"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>مادة+مادة مكملة في قاعة معينة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1159"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1162"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>مادة+مادة مكملة في قاعات معينة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1169"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1172"/>
         <source>A teacher has a home room</source>
         <translation>مدرس له قاعة خاصة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1174"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1177"/>
         <source>A teacher has a set of home rooms</source>
         <translation>مدرس له قاعات معينة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1179"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1182"/>
         <source>Max building changes per day for a students set</source>
-        <translation>الحد الأقصى لتغيير البنايات في اليوم لطلاب معينين</translation>
+        <translation>العدد الأقصى لتغيير البنايات في اليوم لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1184"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1187"/>
         <source>Max building changes per day for all students</source>
-        <translation>الحد الأقصى لتغيير البنايات في اليوم لكل الطلاب</translation>
+        <translation>العدد الأقصى لتغيير البنايات في اليوم لكل الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1189"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1192"/>
         <source>Max building changes per week for a students set</source>
-        <translation>الحد الأقصى لتغيير البنايات في الاسبوع لطلاب معينين</translation>
+        <translation>العدد الأقصى لتغيير البنايات في الاسبوع لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1194"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1197"/>
         <source>Max building changes per week for all students</source>
-        <translation>الحد الأقصى لتغيير البنيات في الاسبوع لكل الطلاب</translation>
+        <translation>العدد الأقصى لتغيير البنيات في الاسبوع لكل الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1199"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1202"/>
         <source>Min gaps between building changes for a students set</source>
-        <translation>الحد الادنى للفرغات بين تغيير البنايات لطلاب معينين</translation>
+        <translation>العدد الأدنى للفرغات بين تغيير البنايات لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1204"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1207"/>
         <source>Min gaps between building changes for all students</source>
-        <translation>الحد الادنى للفراغات بين تغيير المباني لكل الطلاب</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير المباني لكل الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1209"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1212"/>
         <source>Max building changes per day for a teacher</source>
-        <translation>الحد الأقصى للمباني للمدرس في اليوم</translation>
+        <translation>العدد الأقصى للمباني للمدرس في اليوم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1214"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1217"/>
         <source>Max building changes per day for all teachers</source>
-        <translation>الحد الأقصى لتغيير البنايات في اليوم لكل المدرسين</translation>
+        <translation>العدد الأقصى لتغيير البنايات في اليوم لكل المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1219"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1222"/>
         <source>Max building changes per week for a teacher</source>
-        <translation>الحد الأقصى لتغيير البنايات في الاسبوع للمدرس</translation>
+        <translation>العدد الأقصى لتغيير البنايات في الاسبوع للمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1224"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1227"/>
         <source>Max building changes per week for all teachers</source>
-        <translation>الحد الأقصى لتغيير البنايات في الاسبوع لكل المدرسين</translation>
+        <translation>العدد الأقصى لتغيير البنايات في الاسبوع لكل المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1229"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1232"/>
         <source>Min gaps between building changes for a teacher</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1234"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1237"/>
         <source>Min gaps between building changes for all teachers</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات لكل المدرسين</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات لكل المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1239"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1242"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>مهام تبدأ في نفس اليوم (اي حصة)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1164"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1167"/>
         <source>Space constraints (activities)</source>
         <translation>القيود المكانية (المهام)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1244"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1247"/>
         <source>Save data+timetable as...</source>
         <translation>حفظ البيانات والجدول بإسم...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1249"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1252"/>
         <source>2 activities are ordered</source>
         <translation>مهمتين متعاقبتين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1254"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1257"/>
         <source>Max hours continuously for all teachers</source>
-        <translation>الحد الاقصى من الحصص المتصلة لجميع المدرسين</translation>
+        <translation>العدد الأقصى من الحصص المتصلة لجميع المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1259"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1262"/>
         <source>Max hours continuously for a teacher</source>
-        <translation>الحد الاقصى من الحصص المتصلة لمدرس</translation>
+        <translation>العدد الأقصى من الحصص المتصلة لمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1264"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1267"/>
         <source>Max hours continuously for a students set</source>
-        <translation>الحد الاقصى من الحصص المتصلة لطلاب معينين</translation>
+        <translation>العدد الأقصى من الحصص المتصلة لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1269"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1272"/>
         <source>Max hours continuously for all students</source>
-        <translation>الحد الأقصى من الحصص المتصلة لجميع الطلاب</translation>
+        <translation>العدد الأقصى من الحصص المتصلة لجميع الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1274"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1277"/>
         <source>Important tips</source>
         <translation>أفكار مفيدة ومهمة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="725"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="728"/>
         <source>An activity has a preferred starting time</source>
         <translation>وقت بدء مفضل لمهمة معينة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1279"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1282"/>
         <source>A set of activities has a set of preferred starting times</source>
         <translation>اوقات مفضلة لبداية مهام مكونة من فترتين أو اكثر</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1292"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1295"/>
         <source>An activity has a set of preferred starting times</source>
         <translation>اوقات مفضلة لبدء مهمة مكونة من فترتين أو اكثر</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="599"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="602"/>
         <source>A set of activities has a set of preferred time slots</source>
         <translation>اوقات مفضلة لمهام مكونة من فترتين أو اكثر</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1287"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1290"/>
         <source>An activity has a set of preferred time slots</source>
         <translation>اوقات مفضلة لمهمة مكونة من فترتين أو اكثر</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1297"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1300"/>
         <source>Min gaps (hours) between a set of activities</source>
         <translation>أقل فراغات (حصص) بين مهام معينة</translation>
     </message>
@@ -11711,117 +11736,117 @@ Please stop simulation before this.</source>
         <translation>استيراد ملفات (نصية) تفصل بين قيمها الفاصلة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1302"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1305"/>
         <source>Export comma separated values (text)</source>
         <translation>تصدير ملفات (نصية) تفصل بين قيمها الفاصلة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1307"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1310"/>
         <source>Import activities from CSV file</source>
         <translation>استيراد مهام من ملف csv</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1312"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1315"/>
         <source>Import activity tags from CSV file</source>
         <translation>استيراد مهمة من ملف csv</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1317"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1320"/>
         <source>Import rooms and buildings from CSV file</source>
         <translation>استيراد القاعات والبنايات من ملف csv</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1322"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1325"/>
         <source>Import subjects from CSV file</source>
         <translation>استيراد المواد من ملف csv</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1327"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1330"/>
         <source>Import teachers from CSV file</source>
         <translation>استيراد المدرسين من ملف csv</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1332"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1335"/>
         <source>Import years, groups and subgroups from CSV file</source>
         <translation>استيراد الاعوام والمجموعات والمجموعات الفرعية من ملف csv</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1337"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1340"/>
         <source>A set of subactivities has a set of preferred time slots</source>
         <translation>أوقات مفضلة لحصص ذات ترتيب معين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1342"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1345"/>
         <source>A set of subactivities has a set of preferred starting times</source>
         <translation>أوقات مفضلة لبدء حصص ذات ترتيب معين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1347"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1350"/>
         <source>A teacher works in an hourly interval max days per week</source>
         <translation>تكرار حصص معينة عدد من المرات في الاسبوع لمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1352"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1355"/>
         <source>All teachers work in an hourly interval max days per week</source>
         <translation>تكرار حصص معينة عدد من المرات في الاسبوع للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1357"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1360"/>
         <source>A students set works in an hourly interval max days per week</source>
         <translation>تكرار حصص معينة عدد من المرات في الاسبوع لطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1362"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1365"/>
         <source>All students work in an hourly interval max days per week</source>
         <translation>تكرار حصص معينة عدد من المرات في الاسبوع للطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1367"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1370"/>
         <source>A set of activities end students day</source>
         <translation>تعيين الحصة الأخيرة لمهام</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1375"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1378"/>
         <source>lt (Lithuanian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1380"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1383"/>
         <source>Forum webpage</source>
         <translation>منتدى البرنامج</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1391"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1394"/>
         <source>Mark not available slots with -x- in timetables</source>
         <translation>توضع علامة -x- في الخانة غير المتاحة في الجدول</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="355"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="358"/>
         <source>Advanced</source>
         <translation>متقدم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1396"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1399"/>
         <source>Spread the activities evenly over the week</source>
         <translation>انتشار المهام بالتساوي خلال الاسبوع</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1401"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1404"/>
         <source>Export advanced statistics to disk</source>
         <translation>تصدير الإحصاءات المتقدمة إلى القرص</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1406"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1409"/>
         <source>Remove redundant constraints</source>
         <translation>إزالة القيود الزائدة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1411"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1414"/>
         <source>A user&apos;s manual</source>
         <translation>دليل المستخدم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1416"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1419"/>
         <source>2 activities are grouped</source>
         <translation>مهمتين متجاورتين</translation>
     </message>
@@ -11831,74 +11856,84 @@ Please stop simulation before this.</source>
         <translation>اغلاق/فتح متقدم</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1421"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1424"/>
         <source>Lock all activities of a specified day</source>
         <translation>اغلاق كل المهام في يوم معين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1426"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1429"/>
         <source>Unlock all activities of a specified day</source>
         <translation>فتح كل المهام في يوم معين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1431"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1434"/>
         <source>Lock all activities which end students day</source>
         <translation>اغلاق كل المهام في الحصة الأخيرة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1436"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1439"/>
         <source>Unlock all activities which end students day</source>
         <translation>فتح كل المهام في الحصة الأخيرة</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1441"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1444"/>
         <source>Lock all activities of the current timetable</source>
         <translation>اغلاق كل المهام في الجدول الحالي</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1446"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1449"/>
         <source>Unlock all activities of the current timetable</source>
         <translation>فتح كل المهام في الجدول الحالي</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1451"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1454"/>
         <source>Max hours continuously with an activity tag for a students set</source>
         <translation>أقصى حصص متصلة لمادة مكملة خاصة بطلاب معينين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1456"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1459"/>
         <source>Max hours continuously with an activity tag for all students</source>
         <translation>أقصى حصص متصلة لمادة مكملة خاصة بكل الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1461"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1464"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
         <translation>أقصى حصص متصلة لمادة مكملة خاصة بمدرس</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1466"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1469"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
         <translation>أقصى حصص متصلة لمادة مكملة خاصة بكل المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1471"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1474"/>
         <source>Modify subactivities</source>
-        <translation type="unfinished"></translation>
+        <translation>تعديل حصة</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="300"/>
         <source>Institution information</source>
-        <translation type="unfinished"></translation>
+        <translation>معلومات المنشأة</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="307"/>
         <source>Days and hours</source>
-        <translation type="unfinished"></translation>
+        <translation>الأيام والساعات</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="314"/>
         <source>Students</source>
-        <translation type="unfinished">الطلاب</translation>
+        <translation>الطلاب</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1490"/>
+        <source>Divide html timetables with time-axis by days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1495"/>
+        <source>Help on settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12020,7 +12055,7 @@ Please stop simulation before this.</source>
         <translation>سجل الزوار</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="992"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1004"/>
         <source>Sponsors</source>
         <translation>الرعاة</translation>
     </message>
@@ -12282,7 +12317,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="998"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="1010"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -12292,6 +12327,8 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Volker Dirr - 100 euros + two Qt books (years 2006, 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;kentuckyclassroom.com &lt;span style=&quot; font-family:&apos;Charter&apos;;&quot;&gt;- 100 euros (21 April 2008) &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;Yew Chung International School, Hong Kong - 74 euros (19 February 2009)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Charter&apos;; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Tom Hosty - 40 English pounds (2005)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -12309,38 +12346,25 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.9.0 (February 2009)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message encoding="UTF-8">
         <location filename="../src/interface/helpaboutform_template.ui" line="398"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Kalai&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Sebastian Carcamo&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Chile&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Posted: 25.02.2009 15:45&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Very good program :)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;note : please add hotkeys to a fast works.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;---------------------------------------------------------------------&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Kalai&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Location&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;India&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -12923,6 +12947,31 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Eraldo Paulesu (eraldo.paulesu@unimib.it)   (2004-11-15 03:19:34+02)&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;<byte value="x9"/>&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;It looks an excellent software for schools of all grades but not for universities&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="41"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;(c) Liviu Lalescu 2002-2009&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Version: 5.9.1 (March 2009)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14225,27 +14274,27 @@ It is IMPORTANT to remove redundant min n days constraints after you inputted da
     <message>
         <location filename="../src/engine/import.cpp" line="130"/>
         <source>Import this field from CSV:</source>
-        <translation type="unfinished"></translation>
+        <translation>استورد هذا الحقل من  CSV:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="131"/>
         <source>Set always the same name:</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدم نفس الاسم دائماً:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="132"/>
         <source>Set always the same value:</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدم نفس القيمة دائماً:</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="147"/>
         <source>Please modify this text.</source>
-        <translation type="unfinished"></translation>
+        <translation>فضلاً عدل هذا النص.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="396"/>
         <source>activity tags</source>
-        <translation type="unfinished"></translation>
+        <translation>المهام المكملة</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="398"/>
@@ -14275,7 +14324,7 @@ It is IMPORTANT to remove redundant min n days constraints after you inputted da
     <message>
         <location filename="../src/engine/import.cpp" line="506"/>
         <source>FET - Import %1 from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - استورد %1  من ملف CSV</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="408"/>
@@ -14315,12 +14364,12 @@ It is IMPORTANT to remove redundant min n days constraints after you inputted da
     <message>
         <location filename="../src/engine/import.cpp" line="548"/>
         <source>The first line is the heading. Don&apos;t import that line.</source>
-        <translation type="unfinished"></translation>
+        <translation>السطر الأول هو الرأس. لا تستورد ذلك السطر.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="549"/>
         <source>The first line contains data. Import that line.</source>
-        <translation type="unfinished"></translation>
+        <translation>السطر الأول يحتوي بيانات. استورد ذلك السطر.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="555"/>
@@ -15081,12 +15130,12 @@ activities and add a new split activity</source>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="824"/>
         <source>Activity tags</source>
-        <translation type="unfinished">مادة مكملة</translation>
+        <translation>مادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="860"/>
         <source>Number of students (-1 for automatic)</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الطلاب (-1 للتوزيع الآلي)</translation>
     </message>
 </context>
 <context>
@@ -16328,12 +16377,12 @@ gaps for teachers or students</source>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="214"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation>- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية الحد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
+        <translation>- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية العدد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="222"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation>2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية الحد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
+        <translation>2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية العدد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="223"/>
@@ -16483,7 +16532,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint students activity tag max hours continuously dialog</source>
-        <translation>فيت - تعديل قيد للطلاب بالحد الأقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - تعديل قيد للطلاب بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="35"/>
@@ -16727,7 +16776,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="247"/>
         <source>Max days per week</source>
-        <translation>الحد الاقصى لايام العمل الاسبوعي</translation>
+        <translation>العدد الأقصى لايام العمل الاسبوعي</translation>
     </message>
 </context>
 <context>
@@ -16763,7 +16812,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="16"/>
         <source>FET - Modify constraint students max building changes per day dialog</source>
-        <translation>FET - تعديل قيد بعدد البنايات الاقصى للطلاب في اليوم</translation>
+        <translation>FET - تعديل قيد بعدد البنايات الأقصى للطلاب في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="58"/>
@@ -16811,7 +16860,7 @@ gaps (early gaps).</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform.cpp" line="67"/>
         <source>Max building changes per week=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">أقصى بنايات في الاسبوع=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform.cpp" line="79"/>
@@ -16915,7 +16964,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint students max hours continuously dialog</source>
-        <translation>فيت - تعديل الحد الأقصى من الحصص المتصلة للطلاب</translation>
+        <translation>فيت - تعديل العدد الأقصى من الحصص المتصلة للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="33"/>
@@ -16996,7 +17045,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform.cpp" line="64"/>
         <source>Students min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات للطلاب</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform.cpp" line="67"/>
@@ -17019,7 +17068,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="16"/>
         <source>FET - Modify constraint students min gaps between building changes dialog</source>
-        <translation>فيت - تعديل الحد الادني للفراغات بين تغيير المباني للطلاب</translation>
+        <translation>فيت - تعديل العدد الادني للفراغات بين تغيير المباني للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="58"/>
@@ -17102,7 +17151,7 @@ students)</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set activity tag max hours continuously dialog</source>
-        <translation>فيت - تعديل قيد لطلاب معينين بالحد الأقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - تعديل قيد لطلاب معينين بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="35"/>
@@ -17581,7 +17630,7 @@ lower it as you find new timetables</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="101"/>
         <source>Max building changes per week=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">أقصى بنايات في الاسبوع=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="121"/>
@@ -17700,7 +17749,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set max hours continuously dialog</source>
-        <translation>فيت - تعديل الحد الأقصى للحصص اليومية المتصلة لطلاب معينين</translation>
+        <translation>فيت - تعديل العدد الأقصى للحصص اليومية المتصلة لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="33"/>
@@ -17791,7 +17840,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="96"/>
         <source>Students set min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات لطلاب معينين</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="98"/>
@@ -17824,7 +17873,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="16"/>
         <source>FET - Modify constraint students set min gaps between building changes dialog</source>
-        <translation>فيت - تعديل الحد الادني للفراغات بين تغيير المباني للطلاب</translation>
+        <translation>فيت - تعديل العدد الادني للفراغات بين تغيير المباني للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="41"/>
@@ -17867,7 +17916,7 @@ gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint students set min hours daily dialog</source>
-        <translation>FET - تعديل الحد الادنى من المهام اليومية لطلاب معينين</translation>
+        <translation>FET - تعديل العدد الأدنى من المهام اليومية لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="107"/>
@@ -18403,7 +18452,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher activity tag max hours continuously dialog</source>
-        <translation>فيت - تعديل قيد لمدرس بالحد الأقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - تعديل قيد لمدرس بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="35"/>
@@ -18774,7 +18823,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="87"/>
         <source>Max building changes per week=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">أقصى بنايات في الاسبوع=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="107"/>
@@ -18875,7 +18924,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="129"/>
         <source>Max days per week</source>
-        <translation>الحد الاقصى لايام العمل الاسبوعي</translation>
+        <translation>العدد الأقصى لايام العمل الاسبوعي</translation>
     </message>
 </context>
 <context>
@@ -18883,7 +18932,7 @@ not available period, there will be no gaps counted</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher max gaps per day dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فيت - تعديل العدد الأقصى من الحصص اليومية لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="35"/>
@@ -18922,7 +18971,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="154"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished">الحد الأقصى للفراغات في اليوم</translation>
+        <translation type="unfinished">العدد الأقصى للفراغات في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="178"/>
@@ -18935,7 +18984,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher max gaps per week dialog</source>
-        <translation type="unfinished">فيت - تعديل الحد الاقصى للفراغات الاسبوعية لمدرس</translation>
+        <translation type="unfinished">فيت - تعديل العدد الأقصى للفراغات الاسبوعية لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="35"/>
@@ -18987,7 +19036,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher max hours continuously dialog</source>
-        <translation>فيت - تعديل الحد الاقصى للحصص اليومية لمدرس</translation>
+        <translation>فيت - تعديل العدد الأقصى للحصص اليومية لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="27"/>
@@ -19078,7 +19127,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="82"/>
         <source>Teacher min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="84"/>
@@ -19111,7 +19160,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="16"/>
         <source>FET - Modify constraint teacher min gaps between building changes dialog</source>
-        <translation>فيت - تعديل الحد الادني للفراغات بين تغيير المباني لمدرس</translation>
+        <translation>فيت - تعديل العدد الادني للفراغات بين تغيير المباني لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="41"/>
@@ -19272,7 +19321,7 @@ before and after this not available period, there will be no gaps counted</sourc
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers activity tag max hours continuously dialog</source>
-        <translation>فيت - تعديل قيد للمدرسين بالحد الأقصى من الحصص المتصلة لمادة مكملة</translation>
+        <translation>فيت - تعديل قيد للمدرسين بالعدد الأقصى من الحصص المتصلة لمادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="35"/>
@@ -19459,37 +19508,37 @@ before and after this not available period, there will be no gaps counted</sourc
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max building changes per day dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - تعديل العدد الأقصى لتغيير المباني للمدرسين في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="58"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="90"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+        <translation>الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="98"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="116"/>
         <source>Ok</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="124"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="142"/>
         <source>Max building changes per day</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد البنايات الأقصى في اليوم</translation>
     </message>
 </context>
 <context>
@@ -19497,27 +19546,27 @@ before and after this not available period, there will be no gaps counted</sourc
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="55"/>
         <source>Current constraint:</source>
-        <translation type="unfinished">القيد الحالي:</translation>
+        <translation>القيد الحالي:</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="64"/>
         <source>Teachers max building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد البنايات الأقصى للمدرسين في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="67"/>
         <source>Max building changes per week=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>أقصى بنايات في الاسبوع=%1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="79"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="80"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
+        <translation>لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
 </context>
 <context>
@@ -19525,37 +19574,37 @@ before and after this not available period, there will be no gaps counted</sourc
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max building changes per week dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - تعديل العدد الأقصى لتغيير المباني للمدرسين في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="58"/>
         <source>Current constraint</source>
-        <translation type="unfinished">القيد الحالي</translation>
+        <translation>القيد الحالي</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="90"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">الوزن النسبي (ضروري: 100%)</translation>
+        <translation>الوزن النسبي (ضروري: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="98"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="116"/>
         <source>Ok</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="124"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="142"/>
         <source>Max building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation>العدد الأقصى من البنايات في الاسبوع</translation>
     </message>
 </context>
 <context>
@@ -19598,7 +19647,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="102"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished">الحد الأقصى للفراغات في اليوم</translation>
+        <translation type="unfinished">العدد الأقصى للفراغات في اليوم</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="148"/>
@@ -19659,7 +19708,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max hours continuously dialog</source>
-        <translation type="unfinished">فيت - تعديل الحد الاقصى للحصص اليومية للمدرسين</translation>
+        <translation type="unfinished">فيت - تعديل العدد الأقصى للحصص اليومية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="27"/>
@@ -19697,7 +19746,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers max hours daily dialog</source>
-        <translation type="unfinished">فيت - تعديل الحد الأقصى من الحصص اليومية للمدرسين</translation>
+        <translation type="unfinished">فيت - تعديل العدد الأقصى من الحصص اليومية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="27"/>
@@ -19740,7 +19789,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform.cpp" line="64"/>
         <source>Teachers min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات للمدرسين</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform.cpp" line="67"/>
@@ -19763,7 +19812,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers min gaps between building changes dialog</source>
-        <translation>فيت - تعديل الحد الادني للفراغات بين تغيير المباني للمدرسين</translation>
+        <translation>فيت - تعديل العدد الادني للفراغات بين تغيير المباني للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="58"/>
@@ -19801,7 +19850,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="16"/>
         <source>FET - Modify constraint teachers min hours daily dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - تعديل العدد الأدنى من الحصص اليومية للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="35"/>
@@ -19811,7 +19860,7 @@ available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="49"/>
         <source>Min hours daily</source>
-        <translation>الحد الادنى من الحصص اليومية</translation>
+        <translation>العدد الأدنى من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="68"/>
@@ -19980,37 +20029,37 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="404"/>
         <source>FET question</source>
-        <translation type="unfinished">سؤال فيت</translation>
+        <translation>سؤال فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="358"/>
         <source>Do you really want to have the activity with no teacher(s)?</source>
-        <translation type="unfinished">هل ترغب جعل المهمة بدون مدرس ؟</translation>
+        <translation>هل ترغب جعل المهمة بدون مدرس ؟</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="382"/>
         <source>FET information</source>
-        <translation type="unfinished">معلومات فيت</translation>
+        <translation>معلومات فيت</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="383"/>
         <source>Invalid subject</source>
-        <translation type="unfinished"></translation>
+        <translation>مادة غير صالحة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="405"/>
         <source>Do you really want to have the activity with no student set(s)?</source>
-        <translation type="unfinished">هل ترغب جعل المهمة بدون طلاب ؟</translation>
+        <translation>هل ترغب جعل المهمة بدون طلاب ؟</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="61"/>
         <source>Current subactivity has split index %1 out of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>الحصة الحالية ترتيبها %1 من %2</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="62"/>
         <source>The current data applies only to this subactivity</source>
-        <translation type="unfinished"></translation>
+        <translation>التعديلات الحالية تطبق على هذه الحصة فقط</translation>
     </message>
 </context>
 <context>
@@ -20018,67 +20067,67 @@ but they might be too large and you might get a impossible timetable.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="16"/>
         <source>FET - modify subactivity dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - تعديل حصة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="51"/>
         <source>Teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="306"/>
         <source>New Item</source>
-        <translation type="unfinished">مشروع جديد</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="274"/>
         <source>Selected</source>
-        <translation type="unfinished">الاختيار</translation>
+        <translation>الاختيار</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="300"/>
         <source>Clear</source>
-        <translation type="unfinished">مسح</translation>
+        <translation>مسح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="127"/>
         <source>Subject</source>
-        <translation type="unfinished">المادة</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="170"/>
         <source>Students</source>
-        <translation type="unfinished">الطلاب</translation>
+        <translation>الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="248"/>
         <source>Ok</source>
-        <translation type="unfinished">موافق</translation>
+        <translation>موافق</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="256"/>
         <source>Cancel</source>
-        <translation type="unfinished">الغاء</translation>
+        <translation>الغاء</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="292"/>
         <source>Activity tags</source>
-        <translation type="unfinished">مادة مكملة</translation>
+        <translation>مادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="328"/>
         <source>Number of students (-1 for automatic)</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الطلاب (-1 للتوزيع الآلي)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="401"/>
         <source>Active</source>
-        <translation type="unfinished">مفعل</translation>
+        <translation>مفعل</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="377"/>
         <source>Duration</source>
-        <translation type="unfinished">الفترة</translation>
+        <translation>الفترة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="414"/>
@@ -20102,7 +20151,7 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/engine/activity.cpp" line="659"/>
         <source>Time constraints directly related to this activity:</source>
-        <translation>القيد الزمني لهذه المهمة:</translation>
+        <translation type="unfinished">القيود الزمني لهذه المهمة:</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="670"/>
@@ -20374,7 +20423,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="277"/>
+        <location filename="../src/interface/fet.cpp" line="290"/>
         <source>FET critical</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20711,7 +20760,8 @@ not added - must be a duplicate</source>
         <location filename="../src/engine/spaceconstraint.cpp" line="2982"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>التقييد التالي خاطئ:
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="1075"/>
@@ -21208,7 +21258,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="74"/>
         <source>Teachers max gaps per week</source>
-        <translation>الحد الأقصى للفراغات في الأسبوع للمدرسين</translation>
+        <translation>العدد الأقصى للفراغات في الأسبوع للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5370"/>
@@ -21228,7 +21278,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform.cpp" line="82"/>
         <source>Teacher max gaps per week</source>
-        <translation>الحد الأقصى للفراغات في الأسبوع للمدرس</translation>
+        <translation>العدد الأقصى للفراغات في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4711"/>
@@ -21517,7 +21567,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="133"/>
         <source>First activity id=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>معرف المهمة الأولى=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12353"/>
@@ -21562,7 +21612,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12881"/>
         <source>Teachers must not have less than %1 hours daily</source>
-        <translation>الحد الادنى من الحصص اليومية للمدرسين %1 </translation>
+        <translation>العدد الأدنى من الحصص اليومية للمدرسين %1 </translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12883"/>
@@ -21813,7 +21863,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsoryspaceform.cpp" line="54"/>
         <source>Basic compulsory space</source>
-        <translation type="unfinished">قيد اجباري اساسي مكاني</translation>
+        <translation>قيد اجباري اساسي مكاني</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform.cpp" line="84"/>
@@ -21823,12 +21873,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too man
     <message>
         <location filename="../src/interface/modifyconstraintbasiccompulsorytimeform.cpp" line="54"/>
         <source>Basic compulsory time</source>
-        <translation type="unfinished">قيد اجباري اساسي زمني</translation>
+        <translation>قيد اجباري اساسي زمني</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="115"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
+        <translation>لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="198"/>
@@ -21859,7 +21909,7 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too man
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="117"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
+        <translation>لم يتم اختيار الوزن (النسبي) - يجب أن يكون 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform.cpp" line="78"/>
@@ -21919,7 +21969,7 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too man
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="76"/>
         <source>Teacher max hours daily</source>
-        <translation>الحد الاقصى من الحصص اليومية للمدرس</translation>
+        <translation>العدد الأقصى من الحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="77"/>
@@ -21929,7 +21979,7 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too man
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform.cpp" line="76"/>
         <source>Teacher min hours daily</source>
-        <translation>الحد الادنى من الحصص اليومية للمدرس</translation>
+        <translation>العدد الأدنى من الحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="72"/>
@@ -21944,7 +21994,7 @@ MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES must be increased (you have too man
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="66"/>
         <source>Teachers min hours daily</source>
-        <translation>الحد الادنى من الحصص اليومية للمدرس</translation>
+        <translation>العدد الأدنى من الحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="60"/>
@@ -22111,7 +22161,7 @@ of old constraints using erased days
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="277"/>
+        <location filename="../src/interface/fet.cpp" line="290"/>
         <source>Cannot create or use %1 directory - FET will now abort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22192,22 +22242,22 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="91"/>
         <source>Teacher max hours daily </source>
-        <translation>الحد الاقصى من الحصص اليومية للمدرس</translation>
+        <translation>العدد الأقصى من الحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="87"/>
         <source>Teacher min hours daily </source>
-        <translation>الحد الادنى من الحصص اليومية للمدرس</translation>
+        <translation>العدد الأدنى من الحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="74"/>
         <source>Teachers max hours daily </source>
-        <translation>الحد الاقصى من الحصص اليومية للمدرس</translation>
+        <translation>العدد الأقصى من الحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="69"/>
         <source>Teachers min hours daily </source>
-        <translation>الحد الادنى من الحصص اليومية للمدرس</translation>
+        <translation>العدد الأدنى من الحصص اليومية للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="64"/>
@@ -22336,7 +22386,7 @@ because the teacher is invalid</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="194"/>
+        <location filename="../src/interface/fet.cpp" line="207"/>
         <source>Specified language is incorrect - making it en_GB (English)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22356,7 +22406,7 @@ because the teacher is invalid</source>
         <translation>المجموعة اضيفت</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="206"/>
+        <location filename="../src/interface/fet.cpp" line="219"/>
         <source>Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22695,7 +22745,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform.cpp" line="82"/>
         <source>Teacher max gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الفراغات اليومية الأقصى لمدرس</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4765"/>
@@ -22761,13 +22811,15 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/engine/timeconstraint.cpp" line="14335"/>
         <source>Activity tag=%1
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">المادة المكملة=%1
+</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14337"/>
         <source>All activity tags
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">كل المواد المكملة
+</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="63"/>
@@ -22782,7 +22834,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="127"/>
         <source>Invalid selected activity tag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار مادة مكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="99"/>
@@ -22877,38 +22929,38 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5908"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5918"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5920"/>
         <source>The initial order of activities (id-s):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5915"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5925"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>ت: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5919"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5929"/>
         <source>id=%1</source>
         <translation>مع=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5922"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5932"/>
         <source>teachers:</source>
         <translation>المدرسون:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5927"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5937"/>
         <source>subject:</source>
         <translation>المادة:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5931"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5941"/>
         <source>students:</source>
         <translation>الطلاب:</translation>
     </message>
@@ -23193,7 +23245,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform.cpp" line="61"/>
         <source>Max building changes per week=%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">أقصى بنايات في الاسبوع=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3830"/>
@@ -23225,7 +23277,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="79"/>
         <source>Students set min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات لطلاب معينين</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform.cpp" line="64"/>
@@ -23240,7 +23292,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform.cpp" line="60"/>
         <source>Students min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات للطلاب</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات للطلاب</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="4494"/>
@@ -23292,7 +23344,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform.cpp" line="58"/>
         <source>Teachers max building changes per week</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عدد البنايات الأقصى للمدرسين في الاسبوع</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5332"/>
@@ -23308,7 +23360,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5469"/>
         <source>Teacher min gaps between building change</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5687"/>
@@ -23323,7 +23375,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5683"/>
         <source>Teachers min gaps between building change</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات للمدرسين</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5762"/>
@@ -23502,7 +23554,7 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="28"/>
         <source>Allowed</source>
         <comment>Please keep translation short</comment>
-        <translation>دائماً</translation>
+        <translation>متاح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="29"/>
@@ -23519,22 +23571,22 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform.cpp" line="69"/>
         <source>Teacher min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform.cpp" line="61"/>
         <source>Teachers min gaps between building changes</source>
-        <translation>الحد الأدنى للفراغات بين تغيير البنايات للمدرسين</translation>
+        <translation>العدد الأدنى للفراغات بين تغيير البنايات للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform.cpp" line="108"/>
         <source>Incorrect building</source>
-        <translation type="unfinished"></translation>
+        <translation>مبنى غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform.cpp" line="135"/>
         <source>Invalid selected building</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يتم اختيار مبنى</translation>
     </message>
     <message>
         <location filename="../src/interface/buildingsform.cpp" line="95"/>
@@ -23700,12 +23752,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/engine/rules.cpp" line="6241"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished">- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية الحد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
+        <translation type="unfinished">- إذا كنت ستضيف تقييد&quot;إذا كانت الحصص في نفس اليوم فالتتابع إجباري&quot;،إذنعليك أن تقوم بتجميع بعض الحصص إلى بعضها لتحصل على عدد حصص مساو لعددايام الدراسة. مثال: علينا أن نبرمج 7 حصص طولها 1ساعة في خمس أيام. إذنقم بتحويلها إلى مهمة واحدة حاوية لخمس حصص هكذا: 2,2,1,1,1 (يمكنك ان ترفع نسبة أهمية العدد الأدنى من الأيام الفاصلة بين حصتين/مهمتين إلى100% )</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6248"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished">2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية الحد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
+        <translation type="unfinished">2- إذا لم ترغب بتطبيق تقييد &quot;إذا كانت الحصص في نفس اليوم فالتتابعإجباري&quot;، إذن يفضل أن تدخل مهمة/حاوية كبيرة مقسمة إلى عدد من الحصص مساولعدد أيام الدراسة الأسبوعية. ثم مهمة/حاوية أخرى تضم ماتبقى من حصص.مثال: علينا أن نبرمج 7 حصص طولها 1 في خمس أيام. نضيف مهمة/حاوية كبيرةمجزأة إلأى 5 حصص طول كل منها ساعة. ثم مهمة/حاوية ثانية مجزأة إلى 2 حصصبطول ساعة لكل واحدة (يمكنك ان  ترفع نسبة أهمية العدد الأدنى من الأيامالفاصلة بين حصتين/مهمتين إلى 100% )</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2262"/>
@@ -24236,7 +24288,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2358"/>
         <source>Minimum number of gaps=%1</source>
-        <translation>العدد الادنى من الفراغات=%1</translation>
+        <translation>العدد الأدنى من الفراغات=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2409"/>
@@ -24284,7 +24336,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="208"/>
+        <location filename="../src/interface/fet.cpp" line="221"/>
         <source>FET searched for translation file %1 in directories %2 (on UNIX like systems), %3 and %4 and could not find it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24703,12 +24755,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="86"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="97"/>
         <source>FET Question</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="249"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="260"/>
         <source>FET Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24914,22 +24966,22 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY must be increased (you have too many
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="83"/>
         <source>Students activity tag max hours continuously</source>
-        <translation>الحد الاقصى من الحصص المتصلة للطلاب</translation>
+        <translation>العدد الأقصى من الحصص المتصلة للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="114"/>
         <source>Students set activity tag max hours continuously</source>
-        <translation>الحد الاقصى من الحصص المتصلة لطلاب معينين</translation>
+        <translation>العدد الأقصى من الحصص المتصلة لطلاب معينين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="99"/>
         <source>Teacher activity tag max hours continuously</source>
-        <translation>الحد الاقصى من الحصص المتصلة لمدرس</translation>
+        <translation>العدد الأقصى من الحصص المتصلة لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="85"/>
         <source>Teachers activity tag max hours continuously</source>
-        <translation>الحد الاقصى من الحصص المتصلة للمدرسين</translation>
+        <translation>العدد الأقصى من الحصص المتصلة للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3427"/>
@@ -25029,7 +25081,7 @@ Activity: Teacher, Subject, Activity Tags, Students, Id, Duration, Active (yes/n
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="148"/>
         <source>Invalid selected subactivity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم اختيار حصة</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="257"/>
@@ -25303,24 +25355,24 @@ If you really need that, please talk to the author
 <context>
     <name>SettingsTimetableHtmlLevelForm</name>
     <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="69"/>
+        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="73"/>
         <source>FET warning</source>
         <translation type="unfinished">تحذير فيت</translation>
     </message>
     <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="69"/>
+        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="73"/>
         <source>No level selected</source>
         <translation>لم يتم اختيار مستوى</translation>
     </message>
     <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="78"/>
-        <source>This level might generate very large timetables, maybe 1 MB per file and 10 MB for all files of a timetable or even more. Are you sure you have enough disk space?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="76"/>
+        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="80"/>
         <source>FET information</source>
         <translation type="unfinished">معلومات فيت</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="82"/>
+        <source>This level might generate very large timetables, maybe 1 MB per file and 20 MB for all files of a timetable or even more. Are you sure you have enough disk space?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -25343,19 +25395,12 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="44"/>
-        <source>Level 2 - normal css (default)
-- all features of level 1 with around 5% larger filesize then level 1
-- style x-axis and y-axis of tablehead (useful to style width and height of the activity cells)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="112"/>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="128"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="119"/>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="135"/>
         <source>Cancel</source>
         <translation>الغاء</translation>
     </message>
@@ -25368,9 +25413,16 @@ If you really need that, please talk to the author
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="44"/>
+        <source>Level 2 - normal css (default)
+- all features of level 1 with around 5% larger filesize than level 1
+- style x-axis and y-axis of tablehead (useful to style width and height of the activity cells)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="53"/>
         <source>Level 3 - advanced css
-- all features of level 2 with around 2 times larger filesize then level 2
+- all features of level 2 with around 2 times larger filesize than level 2
 - style (or hide) all subjects, activity tags, teachers, students sets and rooms
 - style (or hide) line 1, line 2 and line 3 of the activity cells</source>
         <translation type="unfinished"></translation>
@@ -25378,16 +25430,24 @@ If you really need that, please talk to the author
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="69"/>
         <source>Level 4 - full css
-- all features of level 3 with around 3 times larger filesize then level 2
+- all features of level 3 with around 2.5 times larger filesize than level 2
 - style every single subject, activity tag, teacher, students set and room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="84"/>
         <source>Level 5 - JavaScript
-- all features of level 4 with around 4 times larger filesize then level 2
+- all features of level 4 with around 3.5 times larger filesize than level 2
 - highlighting of same subjects, activity tags, teachers, students sets and rooms
   (needs JavaScript - just move mouse over a word and wait a little bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="100"/>
+        <source>Level 6 - overloaded css
+- all features of level 5 with around 4 times larger filesize than level 2
+- style the cell of every single subject, activity tag, teacher or student
+(also useful to hide activities with special activity tags)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -25572,7 +25632,7 @@ If you really need that, please talk to the author
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="45"/>
         <source>This improvement - optimization of spreading activities in a week - is a process of replacing current constraints of type min n days between activities with others, which should provide you with a better timetable. Note: only min n days constraints referring to components from the same split activity will be replaced. If you have constraints min n days referring to activities in different components, these will be left untouched - this is a useful feature.</source>
-        <translation>هذا التحسين -- يحسن من نشر مهام خلال الأسبوع -- فهو عملية استبدال للقيود الحالية من نوع الحد الادنى من الايام بين المهام، ونأمل أن توفر لكم نتيجة أفضل في الجدول. ملاحظة : هذه العملية ستحل محل قيد الحد الادنى من الايام للمهام المحددة فقط. وإذا كان لديك قيود للحد الادنى من الايام خاص بمهام أخرى، فلن تمسها هذه العملية -- وهذه هي الميزة المفيدة.</translation>
+        <translation>هذا التحسين -- يحسن من نشر مهام خلال الأسبوع -- فهو عملية استبدال للقيود الحالية من نوع العدد الأدنى من الايام بين المهام، ونأمل أن توفر لكم نتيجة أفضل في الجدول. ملاحظة : هذه العملية ستحل محل قيد العدد الأدنى من الايام للمهام المحددة فقط. وإذا كان لديك قيود للحد الأدنى من الايام خاص بمهام أخرى، فلن تمسها هذه العملية -- وهذه هي الميزة المفيدة.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="98"/>
@@ -25766,7 +25826,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="214"/>
         <source>Select this if you want activities split into 3 per week not to be in 3 consecutive days. There will be added 2 additional constraints to accomplish this, min 2 days between isolated component and each of the other 2 components. Note: usually, any isolated component: 1, 2 or 3 should work</source>
-        <translation>اختر هذا إذا كنت تريد تقسيم المهام إلى 3 في الأسبوع ولا تكون في 3 أيام متتالية. وهذا سيضيف قيدين اضافيين لإنجاز ذلك ، فالحد الادنى من الايام بين المهام سيكون 2 تفصل بين كل عنصرين . ملاحظة : عادة ، يفصل بين العناصر بـ : 1 أو 2 ويفترض أن تنجح مع 3</translation>
+        <translation>اختر هذا إذا كنت تريد تقسيم المهام إلى 3 في الأسبوع ولا تكون في 3 أيام متتالية. وهذا سيضيف قيدين اضافيين لإنجاز ذلك ، فالعدد الأدنى من الايام بين المهام سيكون 2 تفصل بين كل عنصرين . ملاحظة : عادة ، يفصل بين العناصر بـ : 1 أو 2 ويفترض أن تنجح مع 3</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadminndaysconstraints5daysform_template.ui" line="250"/>
@@ -25797,162 +25857,162 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>StatisticsExport</name>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="87"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="98"/>
         <source>Do you want to export detailed statistic files into directory %1 as html files?</source>
         <translation type="unfinished">هل ترغب بتصدير ملفات الاحصاءات على هيئة صفحة ويب إلى المجلد  %1  ؟</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="250"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="261"/>
         <source>Statistic files were exported to directory %1 as html files.</source>
         <translation type="unfinished">تم تصدير ملف الاحصاءات على شكل صفحة ويب إلى المجلد  %1 .</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="253"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="264"/>
         <source>Statistic export incomplete</source>
         <translation type="unfinished">لم يكتمل تصدير الاحصاءات</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1515"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1554"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="288"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="308"/>
         <source>CSS Stylesheet of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="289"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="309"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="290"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="310"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="348"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="375"/>
         <source>End of file.</source>
         <translation type="unfinished">نهاية الملف.</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1707"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1748"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="409"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="436"/>
         <source>Institution name</source>
         <translation type="unfinished">اسم المنشأة</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="410"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="437"/>
         <source>Comments</source>
         <translation type="unfinished">شرح</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="414"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="441"/>
         <source>Statistics</source>
         <translation type="unfinished">احصاءات</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="421"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="448"/>
         <source>Teachers</source>
         <translation type="unfinished">المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="427"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="454"/>
         <source>Students</source>
         <translation type="unfinished">الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="433"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="460"/>
         <source>Subjects</source>
         <translation type="unfinished">المواد</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="435"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="462"/>
         <source>view</source>
         <translation type="unfinished">عرض</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1699"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1740"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation type="unfinished">الجدول انتج بـ FET %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="505"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="532"/>
         <source>Teachers - Subjects Matrix</source>
         <translation type="unfinished">مصفوفة المدرسين - المواد</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1690"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1731"/>
         <source>Sum</source>
         <translation type="unfinished">المجموع</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="713"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="742"/>
         <source>Subjects - Teachers Matrix</source>
         <translation type="unfinished">مصفوفة المواد - المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="919"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="950"/>
         <source>Teachers - Students Matrix</source>
         <translation type="unfinished">مصفوفة المدرسين - الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1135"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1169"/>
         <source>Students -Teachers Matrix</source>
         <translation type="unfinished">مصفوفة الطلاب المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1351"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1388"/>
         <source>Subjects - Students Matrix</source>
         <translation type="unfinished">مصفوفة المواد - الطلاب</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1556"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1595"/>
         <source>Students -Subjects Matrix</source>
         <translation type="unfinished">مصفوفة الطلاب - المواد</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="526"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="553"/>
         <source>Processing teachers with subjects...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1588"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1627"/>
         <source>FET warning</source>
         <translation type="unfinished">تحذير فيت</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1588"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1627"/>
         <source>Canceled</source>
         <translation type="unfinished">الغي</translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="734"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="763"/>
         <source>Processing subject with teachers...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="940"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="971"/>
         <source>Processing teachers with students...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1156"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1190"/>
         <source>Processing students with teachers...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1372"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1409"/>
         <source>Processing subjects with students...please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/statisticsexport.cpp" line="1578"/>
+        <location filename="../src/engine/statisticsexport.cpp" line="1617"/>
         <source>Processing students with subjects...please wait</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26033,57 +26093,57 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="16"/>
         <source>FET - the individual subactivities</source>
-        <translation type="unfinished"></translation>
+        <translation>فيت - تعديل حصة مفردة</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="51"/>
         <source>Subactivities (dbl. click edits)</source>
-        <translation type="unfinished"></translation>
+        <translation>الحصص (نقرتين للتحرير)</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="57"/>
         <source>New Item</source>
-        <translation type="unfinished">مشروع جديد</translation>
+        <translation>مشروع جديد</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="87"/>
         <source>Current subactivity&apos;s description</source>
-        <translation type="unfinished"></translation>
+        <translation>وصف الحصة الحالية</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="105"/>
         <source>Filter</source>
-        <translation type="unfinished">المرشح</translation>
+        <translation>المرشح</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="116"/>
         <source>Teacher</source>
-        <translation type="unfinished">المدرس</translation>
+        <translation>المدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="129"/>
         <source>Students set</source>
-        <translation type="unfinished">الطلاب المعينين</translation>
+        <translation>الطلاب المعينين</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="142"/>
         <source>Subject</source>
-        <translation type="unfinished">المادة</translation>
+        <translation>المادة</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="155"/>
         <source>Activity tag</source>
-        <translation type="unfinished">المادة المكملة</translation>
+        <translation>المادة المكملة</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="182"/>
         <source>Modify</source>
-        <translation type="unfinished">تعديل</translation>
+        <translation>تعديل</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="190"/>
         <source>Close</source>
-        <translation type="unfinished">اغلاق</translation>
+        <translation>اغلاق</translation>
     </message>
 </context>
 <context>
@@ -26091,7 +26151,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="16"/>
         <source>FET - subgroups of students</source>
-        <translation>FET - مجموعات الطلاب الفرعية</translation>
+        <translation>فيت - مجموعات الطلاب الفرعية</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="83"/>
@@ -26325,390 +26385,395 @@ Please report error. FET will now abort current operation</source>
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="739"/>
+        <location filename="../src/engine/timetableexport.cpp" line="897"/>
         <source>Soft conflicts of %1</source>
         <translation>التعارضات %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="751"/>
+        <location filename="../src/engine/timetableexport.cpp" line="909"/>
         <source>Generated with FET %1 on %2</source>
         <translation>انتج بـ %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1187"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1381"/>
         <source>End of file.</source>
         <translation>نهاية الملف.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="749"/>
+        <location filename="../src/engine/timetableexport.cpp" line="907"/>
         <source>Conflicts of %1</source>
         <translation>تعارضات %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5864"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7672"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation type="unfinished">تحذير! المهام المنجزة %1 من %2 فقط!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1108"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1264"/>
         <source>CSS Stylesheet of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1111"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1267"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1113"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1269"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1270"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5866"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7674"/>
         <source>Institution name</source>
         <translation>اسم المنشأة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5867"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7675"/>
         <source>Comments</source>
         <translation>شرح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4993"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7682"/>
         <source>Table of content</source>
         <translation>محتوى الجدول</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5807"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7559"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>الجدول انتج بـ FET %1 في %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5810"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7562"/>
         <source>back to the top</source>
         <translation>العودة للأعلى</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5719"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7688"/>
         <source>Detailed</source>
         <translation>مفصل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5720"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7690"/>
         <source>Less detailed</source>
         <translation>غير مفصل</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4697"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6197"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>لم تسجل غرف لـ %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="2715"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3348"/>
         <source>Year</source>
         <translation>العام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1882"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2211"/>
         <source>Group</source>
         <translation>المجموعة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5819"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7571"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5682"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7433"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="4996"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6476"/>
         <source>Subject</source>
         <translation>المادة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1172"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1366"/>
         <source>Style the teachers free periods</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5697"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7448"/>
         <source>Teacher has a single gap</source>
         <translation>مدرس يملك حصة فارغة</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5698"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7449"/>
         <source>Teacher has a border gap</source>
         <translation>مدرس يملك حصتين فارغتين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5699"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7450"/>
         <source>Teacher has a big gap</source>
         <translation>مدرس يملك فراغ كبير</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5700"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7451"/>
         <source>Teacher must come earlier</source>
         <translation>مدرس يضطر للحضور مبكراً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5701"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7452"/>
         <source>Teacher must come much earlier</source>
         <translation>مدرس يضطر للحضور مبكراً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5702"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7453"/>
         <source>Teacher must stay longer</source>
         <translation>مدرس يضطر للإنتظار طويلاً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5703"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7454"/>
         <source>Teacher must stay much longer</source>
         <translation>مدرس يضطر للإنتظار طويلاً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5704"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7455"/>
         <source>Teacher has a free day</source>
         <translation>مدرس مفرغ اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5705"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7456"/>
         <source>Teacher is not available</source>
         <translation>مدرس غير متاح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5758"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7509"/>
         <source>Single gap</source>
         <translation>فراغ واحد</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5759"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7510"/>
         <source>Border gap</source>
         <translation>حصتين فارغتين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5760"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7511"/>
         <source>Big gap</source>
         <translation>فراغ كبير</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5761"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7512"/>
         <source>Must come earlier</source>
         <translation>يجب الحضور مبكراً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5762"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7513"/>
         <source>Must stay longer</source>
         <translation>ينتظر طويلاً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5763"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7514"/>
         <source>Must come much earlier</source>
         <translation>يجب الحضور مبكراً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5764"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7515"/>
         <source>Must stay much longer</source>
         <translation>ينتظر طويلاً جداً</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5765"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7516"/>
         <source>Free day</source>
         <translation>مفرغ اليوم</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5766"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7517"/>
         <source>Not available</source>
         <translation>غير متاح</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5720"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7471"/>
         <source>Teachers&apos; Free Periods</source>
         <translation>الحصص الفارغة للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="742"/>
+        <location filename="../src/engine/timetableexport.cpp" line="900"/>
         <source>Total soft conflicts: </source>
         <translation type="unfinished">مجموعة التعارضات البرمجية: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="743"/>
+        <location filename="../src/engine/timetableexport.cpp" line="901"/>
         <source>Soft conflicts list (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="753"/>
+        <location filename="../src/engine/timetableexport.cpp" line="911"/>
         <source>Total conflicts: </source>
         <translation type="unfinished">التعارضات: </translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="754"/>
+        <location filename="../src/engine/timetableexport.cpp" line="912"/>
         <source>Conflicts list (in decreasing order):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="299"/>
+        <location filename="../src/engine/timetableexport.cpp" line="359"/>
         <source>FET - Critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="283"/>
+        <location filename="../src/engine/timetableexport.cpp" line="343"/>
         <source>Timetable not generated - cannot save it - this should not happen (please report bug)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="299"/>
+        <location filename="../src/engine/timetableexport.cpp" line="359"/>
         <source>Incomplete timetable - this should not happen - please report bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="402"/>
+        <location filename="../src/engine/timetableexport.cpp" line="462"/>
         <source>Added the following constraint to saved file:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">حفظ التقييد التالي في الملف:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="404"/>
+        <location filename="../src/engine/timetableexport.cpp" line="464"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="411"/>
+        <location filename="../src/engine/timetableexport.cpp" line="471"/>
         <source>FET information</source>
         <translation>معلومات فيت</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="415"/>
+        <location filename="../src/engine/timetableexport.cpp" line="475"/>
         <source>Skip information</source>
         <translation type="unfinished">القفز للمعلومات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="415"/>
+        <location filename="../src/engine/timetableexport.cpp" line="475"/>
         <source>See next</source>
         <translation>انظر التالي</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="414"/>
+        <location filename="../src/engine/timetableexport.cpp" line="474"/>
         <source>FET warning</source>
         <translation type="unfinished">تحذير فيت</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="459"/>
+        <location filename="../src/engine/timetableexport.cpp" line="519"/>
         <source>FET critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="459"/>
+        <location filename="../src/engine/timetableexport.cpp" line="519"/>
         <source>Could not save the data + timetable file on the hard disk - maybe hard disk is full</source>
         <translation>لم يتم حفظ البيانات والجدول على القرص الصلب - ربما كان القرص الصلب ممتلئ</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1008"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1159"/>
         <source>Timetables</source>
         <translation>الجداول</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1161"/>
         <source>Days Horizontal</source>
         <translation>اليوم أفقي</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1161"/>
         <source>Days Vertical</source>
         <translation>اليوم رأسي</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1161"/>
         <source>Time Horizontal</source>
         <translation>الزمن أفقي</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1010"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1161"/>
         <source>Time Vertical</source>
         <translation>الزمن رأسي</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1016"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1167"/>
         <source>Subgroups</source>
         <translation>المجموعات الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1069"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1220"/>
         <source>view</source>
         <translation>عرض</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1023"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1174"/>
         <source>Groups</source>
         <translation>المجموعات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1030"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1181"/>
         <source>Years</source>
         <translation>الاعوام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1037"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1188"/>
         <source>Teachers</source>
         <translation>المدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1044"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1195"/>
         <source>Teachers Free Periods</source>
         <translation>الحصص الفارغة للمدرسين</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1051"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1202"/>
         <source>Rooms</source>
         <translation>القاعات</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1058"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1209"/>
         <source>Subjects</source>
         <translation>المواد</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="992"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1143"/>
         <source>View the soft conflicts list.</source>
         <translation>عرض قائمة التعارضات.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1065"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1216"/>
         <source>Activities</source>
         <translation>المهام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3825"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5003"/>
         <source>All Activities</source>
         <translation>كل المهام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="996"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1147"/>
         <source>activities</source>
         <translation type="unfinished">المهام</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="997"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1148"/>
         <source>teachers</source>
         <translation>المدرسون</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="998"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1149"/>
         <source>subgroups</source>
         <translation type="unfinished">المجموعات الفرعية</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="999"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1150"/>
         <source>View XML: %1, %2, %3.</source>
         <translation>عرض XML: %1, %2, %3.</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="1335"/>
+        <source>Be careful. You might get mutual and ambigous styles. CSS mean the last definition will be used.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -27150,7 +27215,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="27"/>
         <source>Time limit for each timetable (minutes)</source>
-        <translation>الحد الزمني لكل جدول (بالدقائق)</translation>
+        <translation>العدد الزمني لكل جدول (بالدقائق)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="54"/>

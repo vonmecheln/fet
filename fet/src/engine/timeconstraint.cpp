@@ -2390,12 +2390,12 @@ double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 					if(dist==0){ //same day
 						assert(day1==day2);
 						if(hour2>=hour1){
-							assert(hour1+duration1<=hour2);
+							//assert(hour1+duration1<=hour2); not true for activities which are not incompatible
 							if(hour1+duration1+minGaps > hour2)
 								tt = (hour1+duration1+minGaps) - hour2;
 						}
 						else{
-							assert(hour2+duration2<=hour1);
+							//assert(hour2+duration2<=hour1); not true for activities which are not incompatible
 							if(hour2+duration2+minGaps > hour1)
 								tt = (hour2+duration2+minGaps) - hour1;
 						}

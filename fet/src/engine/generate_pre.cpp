@@ -5764,8 +5764,10 @@ bool homeRoomsAreOk()
 
 void sortActivities()
 {
-	const int INF  = 2000000000;
-	const int INF2 = 2000000001;
+//	const int INF  = 2000000000;
+	const int INF  = 1500000000; //INF and INF2 values of variables may be increased, so they should be INF2>>INF and INF2<<MAXINT(2147.........)
+//	const int INF2 = 2000000001;
+	const int INF2 = 2000000000;
 	
 	//I should take care of home rooms, but I don't want to change the routine below which works well
 
@@ -5858,11 +5860,19 @@ void sortActivities()
 
 		nIncompatible[i]*=gt.rules.internalActivitiesList[i].duration;
 		
+		assert(nIncompatible[i]<INF);
+		
 		if(fixedTimeActivity[i]){
 			nIncompatible[i]=INF;
 			
 			if(fixedSpaceActivity[i])
 				nIncompatible[i]=INF2;
+				
+			//this is to avoid an "impossible to generate" bug in fixed timetables - does not eliminate completely the bug, unfortunately
+			nIncompatible[i]+=gt.rules.internalActivitiesList[i].iSubgroupsList.count()+
+			 gt.rules.internalActivitiesList[i].iTeachersList.count();
+			 
+			assert(nIncompatible[i]>=INF);
 		}
 	}
 

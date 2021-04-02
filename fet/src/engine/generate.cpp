@@ -3010,6 +3010,8 @@ impossiblebasictime:
 				int h2=ai2time/gt.rules.nDaysPerWeek;
 				if(md>abs(d-d2)){
 					bool okrand=skipRandom(minNDaysListOfWeightPercentages[ai].at(i));
+					//if(fixedTimeActivity[ai] && minNDaysListOfWeightPercentages[ai].at(i)<100.0)
+					//	okrand=true;
 				
 					//broken min n days - there is a minNDaysBrokenAllowancePercentage% chance to place them adjacent
 					
@@ -3103,6 +3105,9 @@ impossiblemindays:
 				if(!oktmp){
 					bool okrand=skipRandom(minGapsBetweenActivitiesListOfWeightPercentages[ai].at(i));
 					
+					//if(fixedTimeActivity[ai] && minGapsBetweenActivitiesListOfWeightPercentages[ai].at(i)<100.0)
+					//	okrand=true;
+					
 					if(!okrand){
 						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
 							okmingapsbetweenactivities=false;
@@ -3140,7 +3145,12 @@ impossiblemingapsbetweenactivities:
 			int ai2=activitiesSameStartingTimeActivities[ai].at(i);
 			double perc=activitiesSameStartingTimePercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
-				if(newtime!=c.times[ai2] && !skipRandom(perc)){
+				bool sR=skipRandom(perc);
+				
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
+			
+				if(newtime!=c.times[ai2] && !sR){
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3182,7 +3192,12 @@ impossiblesamestartingtime:
 			int ai2=activitiesSameStartingHourActivities[ai].at(i);
 			double perc=activitiesSameStartingHourPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
-				if((newtime/gt.rules.nDaysPerWeek)!=(c.times[ai2]/gt.rules.nDaysPerWeek) && !skipRandom(perc)){
+				bool sR=skipRandom(perc);
+				
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
+			
+				if((newtime/gt.rules.nDaysPerWeek)!=(c.times[ai2]/gt.rules.nDaysPerWeek) && !sR){
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
 						oksamestartinghour=false;
 						goto impossiblesamestartinghour;
@@ -3221,7 +3236,12 @@ impossiblesamestartinghour:
 			int ai2=activitiesSameStartingDayActivities[ai].at(i);
 			double perc=activitiesSameStartingDayPercentages[ai].at(i);
 			if(c.times[ai2]!=UNALLOCATED_TIME){
-				if((newtime%gt.rules.nDaysPerWeek)!=(c.times[ai2]%gt.rules.nDaysPerWeek) && !skipRandom(perc)){
+				bool sR=skipRandom(perc);
+				
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
+			
+				if((newtime%gt.rules.nDaysPerWeek)!=(c.times[ai2]%gt.rules.nDaysPerWeek) && !sR){
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
 						oksamestartingday=false;
 						goto impossiblesamestartingday;
@@ -3267,7 +3287,12 @@ impossiblesamestartingday:
 					int en=st+gt.rules.nDaysPerWeek*act->duration;
 					int st2=c.times[ai2];
 					int en2=st2+gt.rules.nDaysPerWeek*gt.rules.internalActivitiesList[ai2].duration;
-					if(!(en<=st2 || en2<=st) && !skipRandom(perc)){
+					
+					bool sR=skipRandom(perc);
+					//if(fixedTimeActivity[ai] && perc<100.0)
+					//	sR=true;
+					
+					if(!(en<=st2 || en2<=st) && !sR){
 						assert(ai2!=ai);
 						
 						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3329,7 +3354,11 @@ impossiblenotoverlapping:
 						ok=false;
 				}
 				
-				if(!ok && !skipRandom(perc)){
+				bool sR=skipRandom(perc);
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
+				
+				if(!ok && !sR){
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3372,8 +3401,12 @@ impossiblenotoverlapping:
 					if(kk!=h)
 						ok=false;
 				}
+				
+				bool sR=skipRandom(perc);
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
 			
-				if(!ok && !skipRandom(perc)){
+				if(!ok && !sR){
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3443,8 +3476,12 @@ impossible2activitiesconsecutive:
 				}
 				else
 					ok=false;
+					
+				bool sR=skipRandom(perc);
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
 				
-				if(!ok && !skipRandom(perc)){
+				if(!ok && !sR){
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3494,8 +3531,12 @@ impossible2activitiesgrouped:
 				
 				if(!(d<d2 || (d==d2 && h+act->duration-1<h2)))
 					ok=false;
+					
+				bool sR=skipRandom(perc);
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
 
-				if(!ok && !skipRandom(perc)){
+				if(!ok && !sR){
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3528,8 +3569,12 @@ impossible2activitiesgrouped:
 				
 				if(!(d2<d || (d2==d && h2+dur2-1<h)))
 					ok=false;
+					
+				bool sR=skipRandom(perc);
+				//if(fixedTimeActivity[ai] && perc<100.0)
+				//	sR=true;
 				
-				if(!ok && !skipRandom(perc)){
+				if(!ok && !sR){
 					assert(ai2!=ai);
 					
 					if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
@@ -3896,6 +3941,9 @@ impossiblestudentsintervalmaxdaysperweek:
 						if(newSubgroupsDayNFirstGaps[sbg][d2]>=2){
 							_nIllegalGaps++;
 							_nGaps+=newSubgroupsDayNFirstGaps[sbg][d2]-2;
+							
+							_nGaps++; //added in FET 5.9.1, bug fix
+							_nFirstGaps--;
 						}
 					}
 					_nGaps+=newSubgroupsDayNGaps[sbg][d2];
@@ -3931,6 +3979,9 @@ impossiblestudentsintervalmaxdaysperweek:
 								if(sbgDayNFirstGaps[d2]>=2){
 									nIllegalGaps++;
 									nGaps+=sbgDayNFirstGaps[d2]-2;
+									
+									nGaps++; //added in FET 5.9.1, bug fix
+									nFirstGaps--;
 								}
 							}
 							nGaps+=sbgDayNGaps[d2];
@@ -4098,6 +4149,9 @@ impossiblestudentsmaxgapsperweek:
 					limitHoursDaily=subgroupsMaxHoursDailyMaxHours2[sbg];
 					percentage=subgroupsMaxHoursDailyPercentages2[sbg];
 				}
+				
+				//if(fixedTimeActivity[ai] && percentage<100.0) //added on 21 Feb. 2009 in FET 5.9.1, to solve a bug of impossible timetables for fixed timetables
+				//	continue;
 				
 				bool increased;
 				if(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0){
@@ -4539,6 +4593,9 @@ impossiblestudentsmaxhoursdaily:
 				if(limitHoursCont<0) //no constraint
 					continue;
 				
+				//if(fixedTimeActivity[ai] && percentage<100.0) //added on 21 Feb. 2009 in FET 5.9.1, to solve a bug of impossible timetables for fixed timetables
+				//	continue;
+				
 				bool increased;
 				int h2;
 				for(h2=h; h2<h+act->duration; h2++){
@@ -4721,6 +4778,9 @@ impossiblestudentsmaxhourscontinuously:
 					assert(percentage>=0);
 					assert(activityTag>=0 /*&& activityTag<gt.rules.nInternalActivityTags*/);
 
+					//if(fixedTimeActivity[ai] && percentage<100.0) //added on 21 Feb. 2009 in FET 5.9.1, to solve a bug of impossible timetables for fixed timetables
+					//	continue;
+				
 					bool increased;
 					int h2;
 					for(h2=h; h2<h+act->duration; h2++){
@@ -5756,6 +5816,9 @@ impossibleteachersmaxgapsperday:
 					percentage=teachersMaxHoursDailyPercentages2[tch];
 				}
 				
+				//if(fixedTimeActivity[ai] && percentage<100.0) //added on 21 Feb. 2009 in FET 5.9.1, to solve a bug of impossible timetables for fixed timetables
+				//	continue;
+				
 				bool increased;
 				if(teachersMaxGapsPerWeekPercentage[tch]>=0 || teachersMaxGapsPerDayPercentage[tch]>=0){
 					if(newTeachersDayNHours[tch][d] > oldTeachersDayNHours[tch][d] 
@@ -5971,6 +6034,9 @@ impossibleteachersmaxhoursdaily:
 				if(limitHoursCont<0) //no constraint
 					continue;
 				
+				//if(fixedTimeActivity[ai] && percentage<100.0) //added on 21 Feb. 2009 in FET 5.9.1, to solve a bug of impossible timetables for fixed timetables
+				//	continue;
+				
 				bool increased;
 				int h2;
 				for(h2=h; h2<h+act->duration; h2++){
@@ -6157,6 +6223,9 @@ impossibleteachersmaxhourscontinuously:
 					assert(percentage>=0);
 					assert(activityTag>=0/* && activityTag<gt.rules.nInternalActivityTags*/);
 					
+					//if(fixedTimeActivity[ai] && percentage<100.0) //added on 21 Feb. 2009 in FET 5.9.1, to solve a bug of impossible timetables for fixed timetables
+					//	continue;
+				
 					bool increased;
 					int h2;
 					for(h2=h; h2<h+act->duration; h2++){
