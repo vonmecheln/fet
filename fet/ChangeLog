@@ -1004,4 +1004,6 @@ Versions 5.2.0 - 5.2.
 	- Small potential bug fixes - when reducing the number of hours or days, the old constraints
 	referring to old variables now are reported as wrong
 	- Small bug fix - crashed if user removed directory "results" while program was running
+- Version 5.2.12
+	- Very small interface improvements
 	

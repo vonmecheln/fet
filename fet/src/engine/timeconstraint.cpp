@@ -4695,7 +4695,14 @@ bool ConstraintActivityPreferredTime::computeInternalStructure(Rules& r)
 		 
 		return false;
 	}
-	if(this->hour >= r.nHoursPerDay){
+	if(this->hour == r.nHoursPerDay){
+		QMessageBox::information(NULL, QObject::tr("FET information"),
+		 QObject::tr("Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+		return false;
+	}
+	if(this->hour > r.nHoursPerDay){
 		QMessageBox::information(NULL, QObject::tr("FET information"),
 		 QObject::tr("Constraint activity preferred time is wrong because it refers to removed hour. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -4977,8 +4984,15 @@ bool ConstraintActivityPreferredTimes::computeInternalStructure(Rules& r)
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
+		}		
+		if(this->hours[k] == r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
 		}
-		if(this->hours[k] >= r.nHoursPerDay){
+		if(this->hours[k] > r.nHoursPerDay){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
 			 QObject::tr("Constraint activity preferred times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -5314,7 +5328,14 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 		 
 			return false;
 		}
-		if(this->hours[k] >= r.nHoursPerDay){
+		if(this->hours[k] == r.nHoursPerDay){
+			QMessageBox::information(NULL, QObject::tr("FET information"),
+			 QObject::tr("Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
+			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		 
+			return false;
+		}
+		if(this->hours[k] > r.nHoursPerDay){
 			QMessageBox::information(NULL, QObject::tr("FET information"),
 			 QObject::tr("Constraint activities preferred times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));

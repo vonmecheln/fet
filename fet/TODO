@@ -2,19 +2,6 @@
 
 ----------------------------------------------------------------------------------
 
-Let FET automatically generate x timetables (suggested by Volker Dirr):
-
-> Yes, I thought of this also. But here is what I think: run x times and
-> choose
-> the best, considering the conflicts factor. Only print this timetable. Or
-> save them on the hard disk, internal structure, small file, and let user
-> browse them in the interface.
-
-no, please save x timetables and let manualy choose.
-sometimes it´s very difficult to say what is better.
-
-----------------------------------------------------------------------------------
-
 From Volker Dirr, regarding translation:
 
 1. maybe it´s better to be more exact. example: phrases "min hour" better "min hour per day"

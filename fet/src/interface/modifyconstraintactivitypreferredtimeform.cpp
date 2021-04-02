@@ -161,7 +161,7 @@ void ModifyConstraintActivityPreferredTimeForm::updateActivitiesComboBox(){
 void ModifyConstraintActivityPreferredTimeForm::updatePeriodGroupBox(){
 	startHourComboBox->clear();
 	startHourComboBox->insertItem(QObject::tr("Any"));
-	for(int i=0; i<=gt.rules.nHoursPerDay; i++)
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		startHourComboBox->insertItem(gt.rules.hoursOfTheDay[i]);
 
 	dayComboBox->clear();
