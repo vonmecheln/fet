@@ -97,6 +97,35 @@ also help translaters.
 11. and it looks like we shouldn´t use the word "lesson".
 in the most phases it´s better to replace "lessons" by "subactivities"
 
+12. maybe:
+"invalid activity" is better "no activity selected"
+
+13. very low priority maybe:
+in mainform->data is this order:
+1) instutionname and comment
+2) days and hours
+3) a) teachers
+   b) subjects and subject tag
+   c) years/groups/subgroups
+4) ...
+
+maybe change order 3 a) with 3 b)
+so first subject and sunject tag.
+then teachers.
+resason: every activity have a subject. so subject is more importent,
+because not every activity has a techer or subgroup.
+
+14. that is also why i already asked you to change english translations,
+because some phrases can be shorten.
+for example all sentences with "you", "current" or "that mean" can be
+shorten (in english and german).
+example:
+"If you insert current group to current year, that means that some years
+share the same group (overlap)"
+
+shorten version:
+"Some years share this group if it´s inserted."
+
 ----------------------------------------------------------------------------------
 
 From Volker Dirr:
@@ -115,6 +144,8 @@ defaultsetting in the data->activities->add screen should have be the
 filters of data->activities.
 
 ----------------------------------------------------------------------------------
+
+
 
 long time goals:
 

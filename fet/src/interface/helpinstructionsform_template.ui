@@ -38,7 +38,7 @@
                 <cstring>textBrowser3_2</cstring>
             </property>
             <property name="text">
-                <string>Updated: 12 August 2007
+                <string>Updated: 14 August 2007
 
 Instructions by Liviu Lalescu
 
@@ -58,7 +58,7 @@ If FET cannot find a good timetable for your school, make sure to write to the a
 
 6) Please only input the special rooms with constraints. Home rooms are not necessary (teachers' or students' rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.
 
-7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available and not to use students early for students sets which begin later).</string>
+7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).</string>
             </property>
         </widget>
     </grid>

@@ -60,6 +60,12 @@ static int subgroups_conflicts=-1;
 extern bool breakTime[MAX_HOURS_PER_WEEK];
 extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
+extern bool teacherNotAvailableTime[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
+extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+extern bool subgroupNotAvailableTime[MAX_TOTAL_SUBGROUPS][MAX_HOURS_PER_WEEK];
+extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2378,69 +2384,38 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 	int i, j, k;
 	int totalGaps;
 
-	//without logging
-	if(conflictsString==NULL){
-		totalGaps=0;
-		for(i=0; i<r.nInternalTeachers; i++){
-			tg=0;
-			for(j=0; j<r.nDaysPerWeek; j++){
-				for(k=0; k<r.nHoursPerDay; k++)
-					if(teachersMatrix[i][j][k]>0){
-						assert(!breakDayHour[j][k]);
-						break;
-					}
-
-				int cnt=0;
-				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-					if(teachersMatrix[i][j][k]>0){
-						tg+=cnt;
-						cnt=0;
-					}
-					else
-						cnt++;
+	totalGaps=0;
+	for(i=0; i<r.nInternalTeachers; i++){
+		tg=0;
+		for(j=0; j<r.nDaysPerWeek; j++){
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(teachersMatrix[i][j][k]>0){
+					assert(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]);
+					break;
 				}
-			}
-			if(tg>this->maxGaps){
-				totalGaps+=tg-maxGaps;
-				//assert(this->weightPercentage<100); partial solutions might break this rule
+
+			int cnt=0;
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]){
+				if(teachersMatrix[i][j][k]>0){
+					tg+=cnt;
+					cnt=0;
+				}
+				else
+					cnt++;
 			}
 		}
-	}
-	//with logging
-	else{
-		totalGaps=0;
-		for(i=0; i<r.nInternalTeachers; i++){
-			tg=0;
-			for(j=0; j<r.nDaysPerWeek; j++){
-				for(k=0; k<r.nHoursPerDay; k++)
-					if(teachersMatrix[i][j][k]>0){
-						assert(!breakDayHour[j][k]);
-						break;
-					}
-
-				int cnt=0;
-				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-					if(teachersMatrix[i][j][k]>0){
-						tg+=cnt;
-						cnt=0;
-					}
-					else
-						cnt++;
-				}
-			}
-			if(tg>this->maxGaps){
-				totalGaps+=tg-maxGaps;
-				//assert(this->weightPercentage<100); partial solutions might break this rule
-				if(conflictsString!=NULL){
-					QString s=QObject::tr("Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2")
-						.arg(r.internalTeachersList[i]->name)
-						.arg((tg-maxGaps)*weightPercentage/100);
+		if(tg>this->maxGaps){
+			totalGaps+=tg-maxGaps;
+			//assert(this->weightPercentage<100); partial solutions might break this rule
+			if(conflictsString!=NULL){
+				QString s=QObject::tr("Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2")
+					.arg(r.internalTeachersList[i]->name)
+					.arg((tg-maxGaps)*weightPercentage/100);
+					
+				*conflictsString+= s+"\n";
 						
-					*conflictsString+= s+"\n";
-							
-					dl.append(s);
-					cl.append((tg-maxGaps)*weightPercentage/100);
-				}
+				dl.append(s);
+				cl.append((tg-maxGaps)*weightPercentage/100);
 			}
 		}
 	}
@@ -2581,72 +2556,40 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<dou
 	int i, j, k;
 	int totalGaps;
 
-	//without logging
-	if(conflictsString==NULL){
-		totalGaps=0;
+	totalGaps=0;
 		
-		i=this->teacherIndex;
-		
-		tg=0;
-		for(j=0; j<r.nDaysPerWeek; j++){
-			for(k=0; k<r.nHoursPerDay; k++)
-				if(teachersMatrix[i][j][k]>0){
-					assert(!breakDayHour[j][k]);
-					break;
-				}
-
-			int cnt=0;
-			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-				if(teachersMatrix[i][j][k]>0){
-					tg+=cnt;
-					cnt=0;
-				}
-				else
-					cnt++;
+	i=this->teacherIndex;
+	
+	tg=0;
+	for(j=0; j<r.nDaysPerWeek; j++){
+		for(k=0; k<r.nHoursPerDay; k++)
+			if(teachersMatrix[i][j][k]>0){
+				assert(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]);
+				break;
 			}
-		}
-		if(tg>this->maxGaps){
-			totalGaps+=tg-maxGaps;
-			//assert(this->weightPercentage<100); partial solutions might break this rule
+
+		int cnt=0;
+		for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]){
+			if(teachersMatrix[i][j][k]>0){
+				tg+=cnt;
+				cnt=0;
+			}
+			else
+				cnt++;
 		}
 	}
-	//with logging
-	else{
-		totalGaps=0;
-		
-		i=this->teacherIndex;
-		
-		tg=0;
-		for(j=0; j<r.nDaysPerWeek; j++){
-			for(k=0; k<r.nHoursPerDay; k++)
-				if(teachersMatrix[i][j][k]>0){
-					assert(!breakDayHour[j][k]);
-					break;
-				}
-
-			int cnt=0;
-			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-				if(teachersMatrix[i][j][k]>0){
-					tg+=cnt;
-					cnt=0;
-				}
-				else
-					cnt++;
-			}
-		}
-		if(tg>this->maxGaps){
-			totalGaps+=tg-maxGaps;
-			//assert(this->weightPercentage<100); partial solutions might break this rule
-			if(conflictsString!=NULL){
-				QString s=QObject::tr("Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2")
-					.arg(r.internalTeachersList[i]->name)
-					.arg((tg-maxGaps)*weightPercentage/100);
+	if(tg>this->maxGaps){
+		totalGaps+=tg-maxGaps;
+		//assert(this->weightPercentage<100); partial solutions might break this rule
+		if(conflictsString!=NULL){
+			QString s=QObject::tr("Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2")
+				.arg(r.internalTeachersList[i]->name)
+				.arg((tg-maxGaps)*weightPercentage/100);
+					
+			*conflictsString+= s+"\n";
 						
-				*conflictsString+= s+"\n";
-							
-				dl.append(s);
-				cl.append((tg-maxGaps)*weightPercentage/100);
-			}
+			dl.append(s);
+			cl.append((tg-maxGaps)*weightPercentage/100);
 		}
 	}
 
@@ -2980,68 +2923,41 @@ double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& c
 	int tmp;
 	int i;
 
-	//without logging
-	if(conflictsString==NULL){
-		windows=0;
-		for(i=0; i<r.nInternalSubgroups; i++)
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				tmp=0;
-				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0){
-						assert(!breakDayHour[j][k]);
-						break;
-					}
-				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-					if(subgroupsMatrix[i][j][k]>0){
-						windows+=tmp;
-						tmp=0;
-					}
-					else
-						tmp++;
-						//tmp=1;
+	windows=0;
+	for(i=0; i<r.nInternalSubgroups; i++)
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			int k;
+			tmp=0;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(subgroupsMatrix[i][j][k]>0){
+					assert(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]);
+					break;
 				}
-			}
-	}
-	//with logging
-	else{
-		windows=0;
-		for(i=0; i<r.nInternalSubgroups; i++)
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				tmp=0;
-				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0){
-						assert(!breakDayHour[j][k]);
-						break;
-					}
-				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-					if(subgroupsMatrix[i][j][k]>0){
-						windows+=tmp;
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+				if(subgroupsMatrix[i][j][k]>0){
+					windows+=tmp;
 
-						if(tmp>0 && conflictsString!=NULL){
-							QString s=QObject::tr("Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5")
-							 .arg(r.internalSubgroupsList[i]->name)
-							 .arg(r.daysOfTheWeek[j])
-							 .arg(r.hoursOfTheDay[k])
-							 .arg(tmp)
-							 .arg(tmp*weightPercentage/100);
-							 
-							dl.append(s);
-							cl.append(tmp*weightPercentage/100);
-						
-							*conflictsString+= s+"\n";
-						}
-						tmp=0;
+					if(tmp>0 && conflictsString!=NULL){
+						QString s=QObject::tr("Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5")
+						 .arg(r.internalSubgroupsList[i]->name)
+						 .arg(r.daysOfTheWeek[j])
+						 .arg(r.hoursOfTheDay[k])
+						 .arg(tmp)
+						 .arg(tmp*weightPercentage/100);
+						 
+						dl.append(s);
+						cl.append(tmp*weightPercentage/100);
+					
+						*conflictsString+= s+"\n";
 					}
-					else
-						tmp++;
-						//tmp=1;
+					tmp=0;
 				}
+				else
+					tmp++;
 			}
-	}
+		}
 
-	//if(weightPercentage==100)
+	//if(weightPercentage==100)    for partial solutions it might be broken
 	//	assert(windows==0);		
 	return weightPercentage/100 * windows;
 }
@@ -3218,72 +3134,43 @@ double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>
 	int windows;
 	int tmp;
 	
-	//without logging
-	if(conflictsString==NULL){
-		windows=0;
-		for(int sg=0; sg<this->nSubgroups; sg++){
-			int i=this->subgroups[sg];
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				tmp=0;
-				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0){
-						assert(!breakDayHour[j][k]);
-						break;
-					}
-				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-					if(subgroupsMatrix[i][j][k]>0){
-						windows+=tmp;
-						tmp=0;
-					}
-					else
-						tmp++;
-						//tmp=1;
+	windows=0;
+	for(int sg=0; sg<this->nSubgroups; sg++){
+		int i=this->subgroups[sg];
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			int k;
+			tmp=0;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(subgroupsMatrix[i][j][k]>0){
+					assert(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]);
+					break;
 				}
-			}
-		}
-	}
-	//with logging
-	else{
-		windows=0;
-		for(int sg=0; sg<this->nSubgroups; sg++){
-			int i=this->subgroups[sg];
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				tmp=0;
-				for(k=0; k<r.nHoursPerDay; k++)
-					if(subgroupsMatrix[i][j][k]>0){
-						assert(!breakDayHour[j][k]);
-						break;
-					}
-				for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k]){
-					if(subgroupsMatrix[i][j][k]>0){
-						windows+=tmp;
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+				if(subgroupsMatrix[i][j][k]>0){
+					windows+=tmp;
 
-						if(tmp>0 && conflictsString!=NULL){
-							QString s=QObject::tr("Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5")
-							 .arg(r.internalSubgroupsList[i]->name)
-							 .arg(r.daysOfTheWeek[j])
-							 .arg(r.hoursOfTheDay[k])
-							 .arg(tmp)
-							 .arg(weightPercentage/100*tmp);
-							 
-							dl.append(s);
-							cl.append(weightPercentage/100*tmp);
-						
-							*conflictsString+= s+"\n";
-						}
-						tmp=0;
+					if(tmp>0 && conflictsString!=NULL){
+						QString s=QObject::tr("Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5")
+						 .arg(r.internalSubgroupsList[i]->name)
+						 .arg(r.daysOfTheWeek[j])
+						 .arg(r.hoursOfTheDay[k])
+						 .arg(tmp)
+						 .arg(weightPercentage/100*tmp);
+						 
+						dl.append(s);
+						cl.append(weightPercentage/100*tmp);
+					
+						*conflictsString+= s+"\n";
 					}
-					else
-						tmp++;
-						//tmp=1;
+					tmp=0;
 				}
+				else
+					tmp++;
 			}
 		}
 	}
 
-	//if(weightPercentage==100)
+	//if(weightPercentage==100)     for partial solutions it might be broken
 	//	assert(windows==0);
 	return weightPercentage/100 * windows;
 }
@@ -3370,7 +3257,7 @@ QString ConstraintStudentsEarly::getDescription(Rules& r)
 		;
 
 	QString s;
-	s+=QObject::tr("Students must begin their courses at the first hour of each day");s+=", ";
+	s+=QObject::tr("Students must begin their courses as early as possible (permitted by breaks and students not available)");s+=", ";
 	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));//s+=", ";
 	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
 
@@ -3384,7 +3271,7 @@ QString ConstraintStudentsEarly::getDetailedDescription(Rules& r)
 		;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Students must begin their courses at the beginning of each day");s+="\n";
+	s+=QObject::tr("Students must begin their courses as early as possible (permitted by breaks and students not available)");s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
@@ -3414,36 +3301,18 @@ double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl
 	int free;
 	int i;
 	
-	//treating fortnightly activities as weekly ones
-
-	if(conflictsString==NULL){ //without logging
-		free=0; //number of free hours before starting the courses
-		for(i=0; i<r.nInternalSubgroups; i++)
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				int weekly=0;
-				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					if(!breakDayHour[j][k])
-						weekly++;
-				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
-					free+=weekly;
-				}
-				//else
-					//empty day or early assignment
-			}
-	}
-	else{ //with logging
-		free=0; //number of free hours before starting the courses
-		for(i=0; i<r.nInternalSubgroups; i++)
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				int weekly=0;
-				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					if(!breakDayHour[j][k])
-						weekly++;
-				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
-					free+=weekly;
-					
+	free=0; //number of free hours before starting the courses
+	for(i=0; i<r.nInternalSubgroups; i++)
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			int k;
+			int weekly=0;
+			for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
+				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
+					weekly++;
+			if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
+				free+=weekly;
+				
+				if(conflictsString!=NULL){
 					QString s=QObject::tr("Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
@@ -3451,15 +3320,15 @@ double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl
 					 
 					dl.append(s);
 					cl.append(weekly*weightPercentage/100);
-					
+						
 					*conflictsString+= s+"\n";
 				}
-				//else
-					//empty day or early assignment
 			}
-	}
+			//else
+				//empty day or early assignment
+		}
 
-	//if(weightPercentage==100)
+	//if(weightPercentage==100)    might be broken for partial solutions
 	//	assert(free==0);
 	return weightPercentage/100 * free;
 }
@@ -3592,7 +3461,7 @@ QString ConstraintStudentsSetEarly::getDescription(Rules& r)
 		;
 
 	QString s;
-	s+=QObject::tr("Students set must begin their courses at the first hour of each day");s+=", ";
+	s+=QObject::tr("Students set must begin their courses as early as possible (permitted by breaks and students not available)");s+=", ";
 	s+=QObject::tr("S:%1").arg(this->students); s+=", ";
 	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);//s+=", ";
 	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
@@ -3607,7 +3476,7 @@ QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
 		;
 
 	QString s=QObject::tr("Time constraint");s+="\n";
-	s+=QObject::tr("Students set must begin their courses at the beginning of each day");s+="\n";
+	s+=QObject::tr("Students set must begin their courses as early as possible (permitted by breaks and students not available)");s+="\n";
 	s+=QObject::tr("Students set=%1").arg(this->students); s+="\n";
 	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
 	s+=QObject::tr("Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage");
@@ -3638,58 +3507,37 @@ double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>&
 	int free;
 	int i;
 	
-	//treating fortnightly activities as weekly ones
-
-	if(conflictsString==NULL){ //without logging
-		free=0; //number of free hours before starting the courses
-		for(int q=0; q<this->nSubgroups; q++){
-		//for(i=0; i<r.nInternalSubgroups; i++)
-			i=this->subgroups[q];
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				int weekly=0;
-				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					if(!breakDayHour[j][k])
-						weekly++;
-				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
-					free+=weekly;
-				}
-				//else
-					//empty day or early assignment
-			}
-		}
-	}
-	else{ //with logging
-		free=0; //number of free hours before starting the courses
-		for(int q=0; q<this->nSubgroups; q++){
-		//for(i=0; i<r.nInternalSubgroups; i++)
-			i=this->subgroups[q];
-			for(int j=0; j<r.nDaysPerWeek; j++){
-				int k;
-				int weekly=0;
-				for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
-					if(!breakDayHour[j][k])
-						weekly++;
-				if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
-					free+=weekly;
-					
+	free=0; //number of free hours before starting the courses
+	for(int q=0; q<this->nSubgroups; q++){
+	//for(i=0; i<r.nInternalSubgroups; i++)
+		i=this->subgroups[q];
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			int k;
+			int weekly=0;
+			for(k=0; k<r.nHoursPerDay && subgroupsMatrix[i][j][k]==0; k++)
+				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
+					weekly++;
+			if(k<r.nHoursPerDay && weekly>0){ //this day is not empty
+				free+=weekly;
+				
+				if(conflictsString!=NULL){
 					QString s=QObject::tr("Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
 					 .arg(weekly*weightPercentage/100);
-					 
+				 
 					dl.append(s);
 					cl.append(weekly*weightPercentage/100);
 					
 					*conflictsString+= s+"\n";
 				}
-				//else
-					//empty day or early assignment
 			}
+			//else
+				//empty day or early assignment
 		}
 	}
 
-	//if(weightPercentage==100)
+	//if(weightPercentage==100)      might be broken for partial solutions
 	//	assert(free==0);
 	return weightPercentage/100 * free;
 }

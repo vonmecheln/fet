@@ -124,9 +124,9 @@ void ModifyConstraintBreakForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0 || weight>100.0){
+	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight (percentage)"));
+			QObject::tr("Invalid weight (percentage). It has to be 100"));
 		return;
 	}
 

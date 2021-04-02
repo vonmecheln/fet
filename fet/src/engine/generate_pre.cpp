@@ -64,6 +64,12 @@ double allowedTimesPercentages[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
 bool breakTime[MAX_HOURS_PER_WEEK];
 bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
+bool subgroupNotAvailableTime[MAX_TOTAL_SUBGROUPS][MAX_HOURS_PER_WEEK];
+bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+bool teacherNotAvailableTime[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
+bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 //STUDENTS NO GAPS & EARLY
 int nHoursPerSubgroup[MAX_TOTAL_SUBGROUPS];
 double subgroupsEarlyPercentage[MAX_TOTAL_SUBGROUPS];
@@ -957,12 +963,31 @@ bool computeAllowedTimesPercentages()
 
 	assert(gt.rules.internalStructureComputed);
 
+	//BREAK
 	for(int j=0; j<gt.rules.nHoursPerWeek; j++)
 		breakTime[j]=false;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(int k=0; k<gt.rules.nHoursPerDay; k++)
 			breakDayHour[j][k]=false;
 
+	//STUDENTS SET NOT AVAILABLE
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
+		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+			subgroupNotAvailableTime[i][j]=false;
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			for(int k=0; k<gt.rules.nHoursPerDay; k++)
+				subgroupNotAvailableDayHour[i][j][k]=false;	
+	
+	//TEACHER NOT AVAILABLE
+	for(int i=0; i<gt.rules.nInternalTeachers; i++)
+		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+			teacherNotAvailableTime[i][j]=false;
+	for(int i=0; i<gt.rules.nInternalTeachers; i++)
+		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+			for(int k=0; k<gt.rules.nHoursPerDay; k++)
+				teacherNotAvailableDayHour[i][j][k]=false;	
+	
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
 			allowedTimesPercentages[i][j]=-1;
@@ -981,6 +1006,25 @@ bool computeAllowedTimesPercentages()
 							}
 							break; //search no more for teacher
 						}
+				}
+
+				if(tn->weightPercentage!=100){
+					ok=false;
+
+					QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize, because you have constraints of type "
+					 "teacher not available with weight percentage less than 100\% for teacher %1. Currently, FET can only optimize with "
+					 "constraints teacher not available with 100\% weight (or no constraint). Please "
+					 "modify your data accordingly and try again.").arg(tn->teacherName));
+			
+					return ok;
+				}
+				else{				
+					assert(tn->weightPercentage==100);
+					for(int h=tn->h1; h<tn->h2; h++){
+						teacherNotAvailableTime[tn->teacher_ID][tn->d+h*gt.rules.nDaysPerWeek]=true;
+						teacherNotAvailableDayHour[tn->teacher_ID][tn->d][h]=true;
+					}
 				}
 			}
 
@@ -1001,6 +1045,28 @@ bool computeAllowedTimesPercentages()
 							}
 						}
 				}
+
+				if(sn->weightPercentage!=100){
+					ok=false;
+
+					QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize, because you have constraints of type "
+					 "students set not available with weight percentage less than 100\% for students set %1. Currently, FET can only optimize with "
+					 "constraints students set not available with 100\% weight (or no constraint). Please "
+					 "modify your data accordingly and try again.").arg(sn->students));
+			
+					return ok;
+				}
+				else{				
+					assert(sn->weightPercentage==100);
+					for(int q=0; q<sn->nSubgroups; q++){
+						int ss=sn->subgroups[q];
+						for(int h=sn->h1; h<sn->h2; h++){
+							subgroupNotAvailableTime[ss][sn->d+h*gt.rules.nDaysPerWeek]=true;
+							subgroupNotAvailableDayHour[ss][sn->d][h]=true;
+						}
+					}
+				}
 			}
 			
 			//BREAK
@@ -1019,8 +1085,8 @@ bool computeAllowedTimesPercentages()
 
 					QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("Cannot optimize, because you have constraints of type "
-					 "break with weight percentage less than 100%. Currently, FET can only optimize with "
-					 "constraints break with 100% weight (or no constraint). Please "
+					 "break with weight percentage less than 100\%. Currently, FET can only optimize with "
+					 "constraints break with 100\% weight (or no constraint). Please "
 					 "modify your data accordingly and try again."));
 			
 					return ok;

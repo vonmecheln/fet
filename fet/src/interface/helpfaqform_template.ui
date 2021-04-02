@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 12 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 14 August 2007
 
 --------
 
@@ -214,7 +214,7 @@ A: From Volker Dirr: Just add a subject "lunch". Then add activities new activit
 
 Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest form in the morning and the highest forms in the afternoon)?
 
-A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraint students early does not work in this case for the highest forms, because early cannot be respected for them, so you must not enter constraint students sets early for these students sets or a general students early (If you really need early constraints for students who begin in the afternoon, I'll think about that - please email me).
+A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). The constraints no gaps and early work correctly with these not available: if not available, a students set will not have gaps or early broken for the period of non-availability.
 
 -------------------------------------------------------------------------------
 

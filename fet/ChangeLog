@@ -936,3 +936,8 @@ Versions 5.1.0 -
 - Version 5.1.5
 	- Improvements in interface (double click in Teachers, Subjects, etc. now modifies).
 	- German translation update by Volker Dirr.
+- Version 5.1.6
+	- Students not available does not induce gaps or early unrespected
+	- Teachers not available does not induce gaps
+	- Improvement in automatic generation (cycles avoided better)
+	

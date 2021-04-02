@@ -14,4 +14,9 @@ The maximum depth (level) of recursion is 14.
 
 The maximum number of recursive calls is 1000.
 
-The recursion chooses only one variant from depth 7.
+The recursion chooses only one variant from depth 7 above, then it returns.
+
+How to respect the students gaps (possible in combination with early)? Compute the number of
+total hours per week for each subgroup, then when generating, the total span of lessons
+should not exceed the total number of hours per week for the subgroup. The span is
+computed differently if you have no gaps or if you have no gaps+early

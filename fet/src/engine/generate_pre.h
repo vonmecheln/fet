@@ -71,6 +71,16 @@ extern double allowedTimesPercentages[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
 extern bool breakTime[MAX_HOURS_PER_WEEK];
 extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
+//students set not available, which is not considered gap, false means available, true means 100% not available
+//students set not available can only be 100% or none
+extern bool subgroupNotAvailableTime[MAX_TOTAL_SUBGROUPS][MAX_HOURS_PER_WEEK];
+extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
+//teacher not available, which is not considered gap, false means available, true means 100% not available
+//teacher not available can only be 100% or none
+extern bool teacherNotAvailableTime[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
+extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+
 bool computeAllowedTimesPercentages();
 ////////END   st. not available, tch not avail., break, activity preferred time,
 ////////activity preferred time, activities preferred times
