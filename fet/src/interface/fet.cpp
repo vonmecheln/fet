@@ -546,7 +546,7 @@ int main(int argc, char **argv){
 	
 	writeSimulationParameters();
 	
-	cout<<"Setting saved"<<endl;
+	cout<<"Settings saved"<<endl;
 	
 	return tmp2;
 }

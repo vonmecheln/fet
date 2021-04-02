@@ -65,8 +65,8 @@ void HttpGet::httpDone(bool error)
 		QMessageBox::warning(NULL, QObject::tr("FET warning"), s);*/
 	}
 	else{
-		if(buffer.size()>64){
-			//error
+		if(buffer.size()>256){
+			//error - the server returned file not found (????)
 			emit(done(true));
 			return;
 		}
@@ -75,22 +75,32 @@ void HttpGet::httpDone(bool error)
 	
 		internetVersion="";
 		
-		int cnt=0;
+		char c;
 		for(;;){
-			cnt++;
-			char c;
+			bool t=buffer.getChar(&c);
+			if(c!='\n' && c!='\t' && c!=' ' && c!=13)
+				break;
+			if(!t){
+				c=' ';
+				break;
+			}
+		}
+		
+		if(c==' '){ //only whitespaces in file - impossible
+			emit(done(true));
+			return;
+		}
+		
+		for(;;){
+			internetVersion+=c;
 			bool t=buffer.getChar(&c);
 			if(!t)
 				break;
-			if(c!='\n')
-				internetVersion+=c;
-			else
+			if(c=='\n' || c=='\t' || c==' ' || c==13)
 				break;
 		}
-		cout<<"character count: cnt=="<<cnt<<endl;
-
-		cout<<"Internet version loaded as: ";
-		cout<<qPrintable(internetVersion)<<endl;
+		cout<<"Internet version read as: '";
+		cout<<qPrintable(internetVersion)<<"'"<<endl;
 
 		buffer.close();
 	}

@@ -257,21 +257,22 @@ void FetMainForm::httpDone(bool error)
 	if(error){
 		QMessageBox::warning(this, QObject::tr("FET warning"), QObject::tr(
 		 "Could not search for possible updates on internet - error message is: %1. "
-		 "I am searching for the file http://lalescu.ro/liviu/fet/crtversion/crtversion.txt . "
+		 "I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . "
 		 "Maybe the current structure on web page was changed. Please visit FET web page"
 		 " http://www.lalescu.ro/liviu/fet/ and get latest version or,"
-		 " if the web page does not work, try to search for the new timetabling page on the internet."
-		 " Maybe you can try to contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later"
+		 " if the web page does not work, try to search for the new FET page on the internet."
+		 " You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later"
 		 "\n\nIf you want, you can turn off automatic search for updates in Settings menu"
 		 ).arg(getter.http.errorString()));
 	}
 	else{
 		if(internetVersion!=FET_VERSION){
 			QMessageBox::information(this, QObject::tr("FET information"),
-			 QObject::tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/ . "
-			 "Update cannot be done automatically for the moment, you have to manually download and install. "
-			 "Please read the information on web page regarding the newer version and choose whether to keep old version or upgrade."
-			 "\n\nYou can choose to disable automatic search for updates in Setting menu")
+			 QObject::tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/ .\n\n"
+			 "You have to manually download and install (open the FET webpage in an internet browser). "
+			 "Please read the information on web page regarding the newer version and choose whether to keep you current version or upgrade."
+			 " You might need to hit Refresh in your web broser if links do not work"
+			 "\n\nYou can choose to disable automatic search for updates in the Settings menu")
 			 .arg(internetVersion));
 		}
 	}
