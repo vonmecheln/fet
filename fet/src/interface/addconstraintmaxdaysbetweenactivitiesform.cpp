@@ -15,17 +15,16 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QList>
+
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintmaxdaysbetweenactivitiesform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 AddConstraintMaxDaysBetweenActivitiesForm::AddConstraintMaxDaysBetweenActivitiesForm()
 {
@@ -208,17 +207,18 @@ void AddConstraintMaxDaysBetweenActivitiesForm::addConstraint()
 			tr("Only one selected activity"));
 		return;
 	}
-	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+	/*if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Please report error to the author\nMAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)"));
 		return;
-	}
+	}*/
 
-	int ids[MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> ids;
+	//int ids[MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES];
 	int i;
 	QList<int>::iterator it;
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
-		ids[i]=*it;
+		ids.append(*it);
 	
 	ctr=new ConstraintMaxDaysBetweenActivities(weight, this->selectedActivitiesList.count(), ids, maxDaysSpinBox->value());
 

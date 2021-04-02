@@ -15,12 +15,10 @@
 
 #include "timetable.h"
 
-#include <q3textedit.h>
-#include <qstring.h>
-
-#include <QDesktopWidget>
+#include <QString>
 
 extern Timetable gt;
+extern QString conflictsStringTitle;
 extern QString conflictsString;
 
 TimetableShowConflictsForm::TimetableShowConflictsForm()
@@ -39,6 +37,7 @@ TimetableShowConflictsForm::TimetableShowConflictsForm()
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	setWindowTitle(conflictsStringTitle);
 	conflictsTextEdit->setText(conflictsString);
 }
 

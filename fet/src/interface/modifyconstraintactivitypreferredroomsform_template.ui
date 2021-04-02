@@ -45,7 +45,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>All rooms (dbl. click adds)</string>
+        <string>Rooms</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -74,7 +74,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>Selected rooms (dbl. click removes)</string>
+        <string comment="It refers to a list of selected rooms">Selected</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

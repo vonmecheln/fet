@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintteachersmaxgapsperweekform.h"
 #include "addconstraintteachersmaxgapsperweekform.h"
 #include "modifyconstraintteachersmaxgapsperweekform.h"
-
-#include <QDesktopWidget>
 
 ConstraintTeachersMaxGapsPerWeekForm::ConstraintTeachersMaxGapsPerWeekForm()
 {

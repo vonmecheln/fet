@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <cstdio>
+
 #include "changemindaysselectivelyform.h"
 
 #include "fet.h"

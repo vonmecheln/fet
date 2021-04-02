@@ -29,26 +29,9 @@
 
 #include "lockunlock.h"
 
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <qapplication.h>
-#include <q3textedit.h>
-#include <qstring.h>
-#include <q3listbox.h>
-#include <qlabel.h>
-
-#include <QDesktopWidget>
+#include "matrix.h"
 
 #include <QMessageBox>
-
-/*#include <iostream>
-#include <fstream>
-using namespace std;*/
 
 #include <QTableWidget>
 #include <QTableWidgetItem>
@@ -60,6 +43,7 @@ using namespace std;*/
 #include <QSplitter>
 
 #include <QCoreApplication>
+#include <QApplication>
 
 #include <QString>
 #include <QStringList>
@@ -73,8 +57,10 @@ extern bool simulation_running;
 extern Solution best_solution;
 extern SpaceChromosome best_space_chromosome;
 
-extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK];
-extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK];
+extern Matrix2D<double> notAllowedRoomTimePercentages;
+//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix2D<bool> breakDayHour;
 
 extern QSet <int> idsOfLockedTime;		//care about locked activities in view forms
 extern QSet <int> idsOfLockedSpace;		//care about locked activities in view forms
@@ -82,21 +68,6 @@ extern QSet <int> idsOfPermanentlyLockedTime;	//care about locked activities in 
 extern QSet <int> idsOfPermanentlyLockedSpace;	//care about locked activities in view forms
 
 extern CommunicationSpinBox communicationSpinBox;	//small hint to sync the forms
-
-/////////////TODO
-/*
-#include <sys/time.h>
-
-#include <iostream>
-using namespace std;
-
-double get_time(){
-   struct timeval t;
-   gettimeofday(&t, NULL);
-   double d = t.tv_sec + (double) t.tv_usec/1000000;
-   return d;
-}*/
-/////////////
 
 TimetableViewRoomsForm::TimetableViewRoomsForm()
 {
@@ -116,7 +87,7 @@ TimetableViewRoomsForm::TimetableViewRoomsForm()
 
     connect(closePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(close()));
     connect(roomsListBox, SIGNAL(highlighted(QString)), this /*TimetableViewRoomsForm_template*/, SLOT(roomChanged(QString)));
-    connect(roomsTimetableTable, SIGNAL(itemClicked(QTableWidgetItem*)), this /*TimetableViewRoomsForm_template*/, SLOT(detailActivity(QTableWidgetItem*)));
+    connect(roomsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
     connect(lockTimeSpacePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(lock()));
     connect(lockTimePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(lockTime()));
     connect(lockSpacePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(lockSpace()));
@@ -373,6 +344,13 @@ void TimetableViewRoomsForm::resizeEvent(QResizeEvent* event){
 	QDialog::resizeEvent(event);
 
 	roomsTimetableTable->resizeRowsToContents();
+}
+
+void TimetableViewRoomsForm::currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous)
+{
+	Q_UNUSED(previous);
+	
+	detailActivity(current);
 }
 
 void TimetableViewRoomsForm::detailActivity(QTableWidgetItem* item){

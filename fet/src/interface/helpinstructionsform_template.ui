@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>557</width>
-    <height>531</height>
+    <width>560</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Instructions to input data such that FET can find a good timetable</string>
+   <string extracomment="This is the title of the dialog with help - instructions">Instructions</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">

@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintstudentsearlymaxbeginningsatsecondhourform.h"
 #include "addconstraintstudentsearlymaxbeginningsatsecondhourform.h"
 #include "modifyconstraintstudentsearlymaxbeginningsatsecondhourform.h"
-
-#include <QDesktopWidget>
 
 ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm()
 {

@@ -15,18 +15,16 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
 
 #include "addconstraintbreaktimesform.h"
 #include "timeconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 #include <QHeaderView>
 #include <QTableWidget>

@@ -15,17 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <cstdio>
+
 #include "modifyconstraintteachersmindaysperweekform.h"
 #include "timeconstraint.h"
 
-#include <qradiobutton.h>
-#include <qlabel.h>
-
-#include <qlineedit.h>
-
 #include <QMessageBox>
-
-#include <QDesktopWidget>
 
 ModifyConstraintTeachersMinDaysPerWeekForm::ModifyConstraintTeachersMinDaysPerWeekForm(ConstraintTeachersMinDaysPerWeek* ctr)
 {

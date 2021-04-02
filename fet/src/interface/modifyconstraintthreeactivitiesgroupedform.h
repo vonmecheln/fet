@@ -23,13 +23,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
 class ModifyConstraintThreeActivitiesGroupedForm : public QDialog, Ui::ModifyConstraintThreeActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:

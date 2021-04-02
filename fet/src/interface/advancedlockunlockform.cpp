@@ -23,6 +23,8 @@ using namespace std;*/
 
 #include <QtGui>
 
+#include <QMessageBox>
+
 //extern CommunicationSpinBox communicationSpinBox;
 
 #include "lockunlock.h"

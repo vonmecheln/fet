@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintteacherhomeroomform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 AddConstraintTeacherHomeRoomForm::AddConstraintTeacherHomeRoomForm()
 {

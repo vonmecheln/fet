@@ -99,7 +99,7 @@ class QSpinBox;
 class QHBoxLayout;
 
 class ChooseFieldsDialog: public QDialog{
-        Q_OBJECT
+	Q_OBJECT
 public:							//can i do that privat too?
 	ChooseFieldsDialog(QWidget *parent = 0);
 private:
@@ -126,7 +126,7 @@ private slots:
 
 
 class LastWarningsDialog: public QDialog{
-        Q_OBJECT
+	Q_OBJECT
 public:							//can i do that privat too?
 	LastWarningsDialog(QWidget *parent = 0);
 };

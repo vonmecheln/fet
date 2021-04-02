@@ -27,17 +27,24 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <QDir>
 
-//#include <string.h>
-
 #include <iostream>
-//Added by qt3to4:
-#include <QTextStream>
 using namespace std;
 
-#include <qdom.h>
-#include <qstring.h>
-#include <qtranslator.h>
-#include <qmessagebox.h>
+#include <QTextStream>
+#include <QFile>
+#include <QFileInfo>
+
+#include <QDate>
+#include <QTime>
+#include <QLocale>
+
+#include <QString>
+
+#include <QtXml>
+
+#include <QString>
+#include <QTranslator>
+#include <QMessageBox>
 
 #include <QtAlgorithms>
 
@@ -52,7 +59,36 @@ using namespace std;
 
 #include "lockunlock.h"
 
+static bool toSkipTime[MAX_TIME_CONSTRAINTS];
+static bool toSkipSpace[MAX_SPACE_CONSTRAINTS];
+
 extern QApplication* pqapplication;
+
+
+FakeString::FakeString()
+{
+}
+
+void FakeString::operator=(const QString& other)
+{
+	Q_UNUSED(other);
+}
+
+void FakeString::operator=(const char* str)
+{
+	Q_UNUSED(str);
+}
+
+void FakeString::operator+=(const QString& other)
+{
+	Q_UNUSED(other);
+}
+
+void FakeString::operator+=(const char* str)
+{
+	Q_UNUSED(str);
+}
+
 
 void Rules::init() //initializes the rules (empty, but with default hours and days)
 {
@@ -160,37 +196,58 @@ bool Rules::computeInternalStructure()
 		}
 	}
 
-	int tmpNSubgroups=0;
-	/*if(this->augmentedYearsList.size()>MAX_YEARS){
-		QMessageBox::warning(NULL, tr("FET information"),
-		 tr("You have too many years.\nPlease talk to the author or increase variable MAX_YEARS"));
-		return false;
-	}*/
+	/////////
+	for(int i=0; i<this->augmentedYearsList.size(); i++){
+		StudentsYear* sty=this->augmentedYearsList[i];
+
+		//if this year has no groups, insert something to simulate the whole year
+		if(sty->groupsList.count()==0){
+			StudentsGroup* tmpGroup = new StudentsGroup();
+			tmpGroup->name = sty->name+" "+tr("Automatic Group", "Please keep the translation short. It is used when a year contains no groups and an automatic group "
+			 "is added in the year, in the timetable (when viewing the students timetable from FET and also in the html timetables for students groups or subgroups)"
+			 ". In the empty year there will be added a group with name = yearName+a space character+your translation of 'Automatic Group'.");
+			tmpGroup->numberOfStudents = sty->numberOfStudents;
+			sty->groupsList << tmpGroup;
+		}
+		
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+
+			//if this group has no subgroups, insert something to simulate the whole group
+			if(stg->subgroupsList.size()==0){
+				StudentsSubgroup* tmpSubgroup = new StudentsSubgroup();
+				tmpSubgroup->name = stg->name+" "+tr("Automatic Subgroup", "Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup "
+				 "is added in the group, in the timetable (when viewing the students timetable from FET and also in the html timetables for students subgroups)"
+				 ". In the empty group there will be added a subgroup with name = groupName+a space character+your translation of 'Automatic Subgroup'.");
+				tmpSubgroup->numberOfStudents=stg->numberOfStudents;
+				stg->subgroupsList << tmpSubgroup;
+			}
+		}
+	}
+	//////////
+	
+	QSet<QString> allSubgroups;
+	
+	int tmpNSubgroups;
 	for(int i=0; i<this->augmentedYearsList.size(); i++){
 		StudentsYear* sty=this->augmentedYearsList.at(i);
 
-		/*if(sty->groupsList.size()>MAX_GROUPS_PER_YEAR){
-			QMessageBox::warning(NULL, tr("FET information"),
-			 tr("You have too many groups per year.\nPlease talk to the author or increase variable MAX_GROUPS_PER_YEAR"));
-			return false;
-		}*/
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList.at(j);
-
-			/*if(stg->subgroupsList.size()>MAX_SUBGROUPS_PER_GROUP){
-				QMessageBox::warning(NULL, tr("FET information"),
-				 tr("You have too many subgroups per group.\nPlease talk to the author or increase variable MAX_SUBGROUPS_PER_GROUP"));
-				return false;
-			}*/
-			tmpNSubgroups+=stg->subgroupsList.size();
+			
+			for(int k=0; k<stg->subgroupsList.size(); k++)
+				allSubgroups.insert(stg->subgroupsList.at(k)->name);
+			//tmpNSubgroups+=stg->subgroupsList.size();
 		}
 	}
+	tmpNSubgroups=allSubgroups.count();
 	if(tmpNSubgroups>MAX_TOTAL_SUBGROUPS){
 		QMessageBox::warning(NULL, tr("FET information"),
 		 tr("You have too many total subgroups.\nPlease talk to the author or increase variable MAX_TOTAL_SUBGROUPS. Currently"
 		  " MAX_TOTAL_SUBGROUPS=%1").arg(MAX_TOTAL_SUBGROUPS));
 		return false;
 	}
+	this->internalSubgroupsList.resize(tmpNSubgroups);
 
 	int counter=0;
 	for(int i=0; i<this->activitiesList.size(); i++){
@@ -240,6 +297,7 @@ bool Rules::computeInternalStructure()
 	Teacher* tch;
 	this->nInternalTeachers=this->teachersList.size();
 	assert(this->nInternalTeachers<=MAX_TEACHERS);
+	this->internalTeachersList.resize(this->nInternalTeachers);
 	for(i=0; i<this->teachersList.size(); i++){
 		tch=teachersList[i];
 		this->internalTeachersList[i]=tch;
@@ -250,6 +308,7 @@ bool Rules::computeInternalStructure()
 	Subject* sbj;
 	this->nInternalSubjects=this->subjectsList.size();
 	assert(this->nInternalSubjects<=MAX_SUBJECTS);	
+	this->internalSubjectsList.resize(this->nInternalSubjects);
 	for(i=0; i<this->subjectsList.size(); i++){
 		sbj=this->subjectsList[i];
 		this->internalSubjectsList[i]=sbj;
@@ -258,33 +317,16 @@ bool Rules::computeInternalStructure()
 
 	//students
 	this->nInternalSubgroups=0;
-	//assert(this->augmentedYearsList.size()<=MAX_YEARS);
 	for(int i=0; i<this->augmentedYearsList.size(); i++){
 		StudentsYear* sty=this->augmentedYearsList[i];
+		
+		assert(sty->groupsList.count()>0);
 
-		//if this year has no groups, insert something to simulate the whole year
-		if(sty->groupsList.count()==0){
-			StudentsGroup* tmpGroup = new StudentsGroup();
-			tmpGroup->name = sty->name+" "+tr("Automatic Group", "Please keep this translation short. It is when year contains no groups and an automatic group is added in the year, in the timetable");
-			tmpGroup->numberOfStudents = sty->numberOfStudents;
-			sty->groupsList << tmpGroup;
-		}
-		
-		//assert(sty->groupsList.size()<=MAX_GROUPS_PER_YEAR);
-		
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
+			
+			assert(stg->subgroupsList.count()>0);
 
-			//if this group has no subgroups, insert something to simulate the whole group
-			if(stg->subgroupsList.size()==0){
-				StudentsSubgroup* tmpSubgroup = new StudentsSubgroup();
-				tmpSubgroup->name = stg->name+" "+tr("Automatic Subgroup", "Please keep this translation short. It is when group contains no subgroups and an automatic subgroup is added in the group, in the timetable");
-				tmpSubgroup->numberOfStudents=stg->numberOfStudents;
-				stg->subgroupsList << tmpSubgroup;
-			}
-			
-			//assert(stg->subgroupsList.size()<=MAX_SUBGROUPS_PER_GROUP);
-			
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 
@@ -297,14 +339,17 @@ bool Rules::computeInternalStructure()
 					}
 				if(!existing){
 					assert(this->nInternalSubgroups<MAX_TOTAL_SUBGROUPS);
+					assert(this->nInternalSubgroups<tmpNSubgroups);
 					sts->indexInInternalSubgroupsList=this->nInternalSubgroups;
 					this->internalSubgroupsList[this->nInternalSubgroups++]=sts;
 				}
 			}
 		}
 	}
+	assert(this->nInternalSubgroups==tmpNSubgroups);
 
 	//buildings
+	internalBuildingsList.resize(buildingsList.size());
 	this->nInternalBuildings=0;
 	assert(this->buildingsList.size()<=MAX_BUILDINGS);
 	for(int i=0; i<this->buildingsList.size(); i++){
@@ -319,6 +364,7 @@ bool Rules::computeInternalStructure()
 	assert(this->nInternalBuildings==this->buildingsList.size());
 
 	//rooms
+	internalRoomsList.resize(roomsList.size());
 	this->nInternalRooms=0;
 	assert(this->roomsList.size()<=MAX_ROOMS);
 	for(int i=0; i<this->roomsList.size(); i++){
@@ -376,6 +422,7 @@ bool Rules::computeInternalStructure()
 
 	assert(counter<=MAX_ACTIVITIES);
 	this->nInternalActivities=counter;
+	this->internalActivitiesList.resize(this->nInternalActivities);
 	int activei=0;
 	for(int ai=0; ai<this->activitiesList.size(); ai++){
 		act=this->activitiesList[ai];
@@ -399,6 +446,7 @@ bool Rules::computeInternalStructure()
 	}
 
 	//activities list for each subject - used for subjects timetable - in order for students and teachers
+	activitiesForSubject.resize(nInternalSubjects);
 	for(int sb=0; sb<nInternalSubjects; sb++)
 		activitiesForSubject[sb].clear();
 
@@ -433,9 +481,11 @@ bool Rules::computeInternalStructure()
 	
 	bool skipInactiveTimeConstraints=false;
 	
-	bool toSkipTime[MAX_TIME_CONSTRAINTS];
+	//bool toSkipTime[MAX_TIME_CONSTRAINTS];
 
 	TimeConstraint* tctr;
+	
+	int _c=0;
 	
 	for(int tctrindex=0; tctrindex<this->timeConstraintsList.size(); tctrindex++){
 		tctr=this->timeConstraintsList[tctrindex];
@@ -448,7 +498,7 @@ bool Rules::computeInternalStructure()
 				s+="\n";
 				s+=tctr->getDetailedDescription(*this);
 				
-				int t=LongTextMessageBox::confirmation(NULL, tr("FET information"), s,
+				int t=LongTextMessageBox::mediumConfirmation(NULL, tr("FET information"), s,
 				 tr("Skip rest"), tr("See next"), QString(),
  				 1, 0 );
 
@@ -456,9 +506,13 @@ bool Rules::computeInternalStructure()
 					skipInactiveTimeConstraints=true;
 			}
 		}
-		else
+		else{
 			toSkipTime[tctrindex]=false;
+			_c++;
+		}
 	}
+	
+	internalTimeConstraintsList.resize(_c);
 	
 	progress.setLabelText(tr("Processing internally the time constraints ... please wait"));
 	progress.setRange(0, timeConstraintsList.size());
@@ -493,6 +547,7 @@ bool Rules::computeInternalStructure()
 	progress.setValue(timeConstraintsList.size());
 
 	this->nInternalTimeConstraints=tctri;
+	assert(_c==nInternalTimeConstraints);
 	assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
 	
 	//space constraints
@@ -500,9 +555,11 @@ bool Rules::computeInternalStructure()
 	
 	bool skipInactiveSpaceConstraints=false;
 	
-	bool toSkipSpace[MAX_SPACE_CONSTRAINTS];
+	//bool toSkipSpace[MAX_SPACE_CONSTRAINTS];
 		
 	SpaceConstraint* sctr;
+	
+	_c=0;
 
 	for(int sctrindex=0; sctrindex<this->spaceConstraintsList.size(); sctrindex++){
 		sctr=this->spaceConstraintsList[sctrindex];
@@ -515,7 +572,7 @@ bool Rules::computeInternalStructure()
 				s+="\n";
 				s+=sctr->getDetailedDescription(*this);
 				
-				int t=LongTextMessageBox::confirmation(NULL, tr("FET information"), s,
+				int t=LongTextMessageBox::mediumConfirmation(NULL, tr("FET information"), s,
 				 tr("Skip rest"), tr("See next"), QString(),
  				 1, 0 );
 
@@ -523,9 +580,13 @@ bool Rules::computeInternalStructure()
 					skipInactiveSpaceConstraints=true;
 			}
 		}
-		else
+		else{
+			_c++;
 			toSkipSpace[sctrindex]=false;
+		}
 	}
+	
+	internalSpaceConstraintsList.resize(_c);
 	
 	progress.setLabelText(tr("Processing internally the space constraints ... please wait"));
 	progress.setRange(0, spaceConstraintsList.size());
@@ -559,6 +620,7 @@ bool Rules::computeInternalStructure()
 	progress.setValue(spaceConstraintsList.size());
 
 	this->nInternalSpaceConstraints=sctri;
+	assert(_c==this->nInternalSpaceConstraints);
 	assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
 
 	//done.
@@ -3402,12 +3464,14 @@ bool Rules::addSplitActivity(
 {
 	assert(_firstActivityId==_activityGroupId);
 
-	int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
-	assert(_nSplits<=MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
+	QList<int> acts;
+	//int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+	//assert(_nSplits<=MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
 
 	//for(int i=0; i<_nSplits; i++)
 	//	assert(_parities[i]==PARITY_WEEKLY || _parities[i]==PARITY_FORTNIGHTLY); //weekly or fortnightly
 
+	acts.clear();
 	for(int i=0; i<_nSplits; i++){
 		Activity *act;
 		if(i==0)
@@ -3421,7 +3485,8 @@ bool Rules::addSplitActivity(
 
 		this->activitiesList << act; //append
 
-		acts[i]=_firstActivityId+i;
+		acts.append(_firstActivityId+i);
+		//acts[i]=_firstActivityId+i;
 
 		/*if(_preferredDays[i]>=0 || _preferredHours[i]>=0){
 			TimeConstraint *constr=new ConstraintActivityPreferredTime(0.0, act->id, _preferredDays[i], _preferredHours[i]); //non-compulsory constraint
@@ -4720,7 +4785,7 @@ bool Rules::removeSpaceConstraint(SpaceConstraint *ctr)
 
 bool Rules::read(const QString& filename, bool commandLine, QString commandLineDirectory) //commandLineDirectory has trailing FILE_SEP
 {
-	bool reportWhole=true;
+	//bool reportWhole=true;
 
 	QFile file(filename);
 	if(!file.open(QIODevice::ReadOnly)){
@@ -4772,7 +4837,31 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 		assert(t);
 	}
 	
-	QString xmlReadingLog="";
+	FakeString xmlReadingLog;
+	xmlReadingLog="";
+
+	QDate dat=QDate::currentDate();
+	QTime tim=QTime::currentTime();
+	QLocale loc(FET_LANGUAGE);
+	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
+
+	QString reducedXmlLog="";
+	reducedXmlLog+="Log generated by FET "+FET_VERSION+" on "+sTime+"\n\n";
+	QString shortFilename=filename.right(filename.length()-filename.findRev(FILE_SEP)-1);
+	reducedXmlLog+="Reading file "+shortFilename+"\n";
+	QFileInfo fileinfo(filename);
+	reducedXmlLog+="Complete file name, including path: "+QDir::toNativeSeparators(fileinfo.absoluteFilePath())+"\n";
+	/*QStringList tl=filename.split(FILE_SEP);
+	int tk=0;
+	foreach(QString ts, tl){
+		tk++;
+		QString tts;
+		tts.fill(' ', 2*tk);
+		reducedXmlLog+=tts;
+		reducedXmlLog+=ts+"\n";
+	}*/
+	reducedXmlLog+="\n";
+
 	QString tmp;
 	if(commandLine)
 		tmp=commandLineDirectory+"logs"+FILE_SEP+XML_PARSING_LOG_FILENAME;
@@ -4947,10 +5036,12 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 		if(elem2.tagName()=="Institution_Name"){
 			this->institutionName=elem2.text();
 			xmlReadingLog+="  Found institution name="+this->institutionName+"\n";
+			reducedXmlLog+="Read institution name="+this->institutionName+"\n";
 		}
 		else if(elem2.tagName()=="Comments"){
 			this->comments=elem2.text();
 			xmlReadingLog+="  Found comments="+this->comments+"\n";
+			reducedXmlLog+="Read comments="+this->comments+"\n";
 		}
 		else if(elem2.tagName()=="Hours_List"){
 			int tmp=0;
@@ -4965,6 +5056,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					this->nHoursPerDay=elem3.text().toInt();
 					xmlReadingLog+="   Found the number of hours per day = "+
 					 QString::number(this->nHoursPerDay)+"\n";
+					reducedXmlLog+="Added "+
+					 QString::number(this->nHoursPerDay)+" hours per day\n";
 					assert(this->nHoursPerDay>0);
 				}
 				else if(elem3.tagName()=="Name"){
@@ -4987,6 +5080,8 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					this->nDaysPerWeek=elem3.text().toInt();
 					xmlReadingLog+="   Found the number of days per week = "+
 					 QString::number(this->nDaysPerWeek)+"\n";
+					reducedXmlLog+="Added "+
+					 QString::number(this->nDaysPerWeek)+" days per week\n";
 					assert(this->nDaysPerWeek>0);
 				}
 				else if(elem3.tagName()=="Name"){
@@ -5035,6 +5130,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			}
 			assert(tmp==this->teachersList.size());
 			xmlReadingLog+="  Added "+QString::number(tmp)+" teachers\n";
+			reducedXmlLog+="Added "+QString::number(tmp)+" teachers\n";
 		}
 		else if(elem2.tagName()=="Subjects_List"){
 			int tmp=0;
@@ -5074,6 +5170,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			}
 			assert(tmp==this->subjectsList.size());
 			xmlReadingLog+="  Added "+QString::number(tmp)+" subjects\n";
+			reducedXmlLog+="Added "+QString::number(tmp)+" subjects\n";
 		}
 		else if(elem2.tagName()=="Subject_Tags_List"){
 			QMessageBox::information(NULL, tr("FET information"), tr("Your file contains subject tags list"
@@ -5116,6 +5213,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			}
 			assert(tmp==this->activityTagsList.size());
 			xmlReadingLog+="  Added "+QString::number(tmp)+" activity tags\n";
+			reducedXmlLog+="Added "+QString::number(tmp)+" activity tags\n";
 		}
 		else if(elem2.tagName()=="Activity_Tags_List"){
 			int tmp=0;
@@ -5155,8 +5253,12 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			}
 			assert(tmp==this->activityTagsList.size());
 			xmlReadingLog+="  Added "+QString::number(tmp)+" activity tags\n";
+			reducedXmlLog+="Added "+QString::number(tmp)+" activity tags\n";
 		}
 		else if(elem2.tagName()=="Students_List"){
+			int tsgr=0;
+			int tgr=0;
+		
 			int ny=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -5258,7 +5360,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 
 									stg->name=elem5.text();
 									xmlReadingLog+="     Read group name: "+stg->name+"\n";
-									if(stg->name.right(11)==" WHOLE YEAR"){
+									/*if(stg->name.right(11)==" WHOLE YEAR"){
 										if(reportWhole){
 											QString s="";
 											s+=tr("Your file contains group %1 which might be unneeded."
@@ -5280,7 +5382,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 											if(t==0)
 												reportWhole=false;
 										}
-									}
+									}*/
 								}
 								else if(elem5.tagName()=="Number_of_Students"){
 									stg->numberOfStudents=elem5.text().toInt();
@@ -5334,7 +5436,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 											sts->name=elem6.text();
 											xmlReadingLog+="     Read subgroup name: "+sts->name+"\n";
 
-											if(sts->name.right(12)==" WHOLE GROUP"){
+											/*if(sts->name.right(12)==" WHOLE GROUP"){
 												if(reportWhole){
 													QString s="";
 													s+=tr("Your file contains subgroup %1 which might be unneeded."
@@ -5356,24 +5458,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													if(t==0)
 														reportWhole=false;
 												}
-												/*if(reportWhole){
-													int t=QMessageBox::information(NULL, tr("FET information"),
-													 tr("Your file contains subgroup %1 which might be unneeded."
-													 " Starting with FET 5.4.17, it is corrected a potentially bad situation."
-													 " It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.\n\n"
-													 "You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE GROUP,"
-													 " so you can avoid this warning.\n\n"
-													 "From now on, if you have an empty group, there will be added an automatic subgroup only"
-													 " in the generated timetables, not in the data file.\n\n"
-													 "For more details, join the mailing list or email the author.")
-													 .arg(sts->name),
-													 tr("Skip rest of such warnings"), tr("See next such warning"), QString(),
-													 1, 0 );
-					 		
-													if(t==0)
-														reportWhole=false;
-												}*/
-											}
+											}*/
 										}
 										else if(elem6.tagName()=="Number_of_Students"){
 											sts->numberOfStudents=elem6.text().toInt();
@@ -5384,13 +5469,20 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 							}
 							assert(ns == stg->subgroupsList.size());
 							xmlReadingLog+="    Added "+QString::number(ns)+" subgroups\n";
+							tsgr+=ns;
+							//reducedXmlLog+="		Added "+QString::number(ns)+" subgroups\n";
 						}
 					}
 					assert(ng == sty->groupsList.size());
 					xmlReadingLog+="   Added "+QString::number(ng)+" groups\n";
+					tgr+=ng;
+					//reducedXmlLog+="	Added "+QString::number(ng)+" groups\n";
 				}
 			}
 			xmlReadingLog+="  Added "+QString::number(ny)+" years\n";
+			reducedXmlLog+="Added "+QString::number(ny)+" students years\n";
+			reducedXmlLog+="Added "+QString::number(tgr)+" students groups (see note below)\n";
+			reducedXmlLog+="Added "+QString::number(tsgr)+" students subgroups (see note below)\n";
 			assert(this->yearsList.size()==ny);
 		}
 		else if(elem2.tagName()=="Activities_List"){
@@ -5556,48 +5648,13 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				}
 			}
 			xmlReadingLog+="  Added "+QString::number(na)+" activities\n";
+			reducedXmlLog+="Added "+QString::number(na)+" activities\n";
 		}
 		else if(elem2.tagName()=="Equipments_List"){
 		 	QMessageBox::warning(NULL, tr("FET warning"),
 			 tr("File contains deprecated equipments list - will be ignored\n"));
-		
-			/*int tmp=0;
-			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
-				QDomElement elem3=node3.toElement();
-				if(elem3.isNull()){
-					xmlReadingLog+="   Null node here\n";
-					continue;
-				}
-				xmlReadingLog+="   Found "+elem3.tagName()+" tag\n";
-				if(elem3.tagName()=="Equipment"){
-					Equipment* eq=new Equipment();
-					eq->name="";
-					
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Name"){
-							eq->name=elem4.text();
-							xmlReadingLog+="    Read equipment name: "+eq->name+"\n";
-						}
-					}
-					bool tmp2=this->addEquipment(eq);
-					assert(tmp2==true);
-					tmp++;
-					xmlReadingLog+="   Equipment added\n";
-				}
-			}
-			assert(tmp==this->equipmentsList.size());
-			xmlReadingLog+="  Added "+QString::number(tmp)+" equipments\n";*/
 		}
 		else if(elem2.tagName()=="Buildings_List"){
-		 	//QMessageBox::warning(NULL, tr("FET warning"),
-			// tr("File contains deprecated buildings list - will be ignored\n"));
-			
 			int tmp=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
 				QDomElement elem3=node3.toElement();
@@ -5630,6 +5687,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			}
 			assert(tmp==this->buildingsList.size());
 			xmlReadingLog+="  Added "+QString::number(tmp)+" buildings\n";
+			reducedXmlLog+="Added "+QString::number(tmp)+" buildings\n";
 		}
 		else if(elem2.tagName()=="Rooms_List"){
 			int tmp=0;
@@ -5643,7 +5701,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				if(elem3.tagName()=="Room"){
 					Room* rm=new Room();
 					rm->name="";
-					//rm->type="";
 					rm->capacity=MAX_ROOM_CAPACITY; //infinite, if not specified
 					rm->building="";
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -5687,6 +5744,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 			}
 			assert(tmp==this->roomsList.size());
 			xmlReadingLog+="  Added "+QString::number(tmp)+" rooms\n";
+			reducedXmlLog+="Added "+QString::number(tmp)+" rooms\n";
 		}
 		else if(elem2.tagName()=="Time_Constraints_List"){
 			bool reportMaxBeginningsAtSecondHourChange=true;
@@ -5843,43 +5901,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					/*
-					ConstraintTeachersSubgroupsMaxHoursDaily* cn=new ConstraintTeachersSubgroupsMaxHoursDaily();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Daily"){
-							cn->maxHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
-						}
-					}
-					crt_constraint=cn;
-					*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintStudentsNHoursDaily" && !skipDeprecatedConstraints){
@@ -5890,46 +5911,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					/*ConstraintStudentsNHoursDaily* cn=new ConstraintStudentsNHoursDaily();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="MaxHoursDaily"){
-							cn->maxHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
-						}
-						else if(elem4.tagName()=="MinHoursDaily"){
-							cn->minHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
-						}
-					}
-					assert(cn->maxHoursDaily>=0 || cn->minHoursDaily>=0);
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNHoursDaily" && !skipDeprecatedConstraints){
@@ -5940,50 +5921,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					/*ConstraintStudentsSetNHoursDaily* cn=new ConstraintStudentsSetNHoursDaily();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="MaxHoursDaily"){
-							cn->maxHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
-						}
-						else if(elem4.tagName()=="MinHoursDaily"){
-							cn->minHoursDaily=elem4.text().toInt();
-							xmlReadingLog+="    Read minHoursDaily="+QString::number(cn->minHoursDaily)+"\n";
-						}
-						else if(elem4.tagName()=="Students"){
-							cn->students=elem4.text();
-							xmlReadingLog+="    Read students name="+cn->students+"\n";
-						}
-					}
-					assert(cn->maxHoursDaily>=0 || cn->minHoursDaily>=0);
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintStudentsMaxHoursDaily"){
@@ -6077,42 +6014,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					/*
-					ConstraintActivityEndsDay* cn=new ConstraintActivityEndsDay();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activityId=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activityId)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredTimes"){
@@ -6151,90 +6052,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				else if(elem3.tagName()=="ConstraintBreakTimes"){
 					crt_constraint=readBreakTimes(elem3, xmlReadingLog);
 				}
-				/*else if(elem3.tagName()=="ConstraintBreak"){
-					ConstraintBreak* cn=new ConstraintBreak();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Day"){
-							for(cn->d=0; cn->d<this->nDaysPerWeek; cn->d++)
-								if(this->daysOfTheWeek[cn->d]==elem4.text())
-									break;
-									
-							if(cn->d>=this->nDaysPerWeek){
-								QMessageBox::information(NULL, tr("FET information"), 
-								 tr("Constraint Break day corrupt,  day %1 is inexistent ... ignoring constraint")
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-									
-							assert(cn->d<this->nDaysPerWeek);
-							xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[cn->d]+"\n";
-						}
-						else if(elem4.tagName()=="Start_Hour"){
-							for(cn->h1=0; cn->h1 < this->nHoursPerDay; cn->h1++)
-								if(this->hoursOfTheDay[cn->h1]==elem4.text())
-									break;
-									
-							if(cn->h1>=this->nHoursPerDay){
-								QMessageBox::information(NULL, tr("FET information"), 
-								 tr("Constraint Break start hour corrupt, hour %! is inexistent ... ignoring constraint")
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-									
-							assert(cn->h1>=0 && cn->h1 < this->nHoursPerDay);
-							xmlReadingLog+="    Start hour="+this->hoursOfTheDay[cn->h1]+"\n";
-						}
-						else if(elem4.tagName()=="End_Hour"){
-							for(cn->h2=0; cn->h2 < this->nHoursPerDay; cn->h2++)
-								if(this->hoursOfTheDay[cn->h2]==elem4.text())
-									break;
-									
-							if(cn->h2<=0 || cn->h2>this->nHoursPerDay){
-								QMessageBox::information(NULL, tr("FET information"), 
-								 tr("Constraint Break end hour corrupt, hour %1 is inexistent ... ignoring constraint")
-								 .arg(elem4.text()));
-								delete cn;
-								cn=NULL;
-								goto corruptConstraintTime;
-							}
-
-							assert(cn->h2>0 && cn->h2 <= this->nHoursPerDay);
-							xmlReadingLog+="    End hour="+this->hoursOfTheDay[cn->h2]+"\n";
-						}
-					}
-					crt_constraint=cn;
-				}*/
 				else if(elem3.tagName()=="ConstraintTeachersNoGaps"){
 					crt_constraint=readTeachersNoGaps(elem3, xmlReadingLog);
 				}
@@ -6364,43 +6181,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					/*
-					ConstraintTeachersSubjectTagsMaxHoursContinuously* cn=new ConstraintTeachersSubjectTagsMaxHoursContinuously();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-					}
-					crt_constraint=cn;
-					*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintTeachersSubjectTagMaxHoursContinuously" && !skipDeprecatedConstraints){
@@ -6411,47 +6191,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 													 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					/*
-					ConstraintTeachersSubjectTagMaxHoursContinuously* cn=new ConstraintTeachersSubjectTagMaxHoursContinuously();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag"){
-							cn->subjectTagName=elem4.text();
-							xmlReadingLog+="    Read subject tag name="+cn->subjectTagName+"\n";
-						}
-					}
-					crt_constraint=cn;
-					*/
 					crt_constraint=NULL;
 				}
 
@@ -6471,6 +6210,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				}
 			}
 			xmlReadingLog+="  Added "+QString::number(nc)+" time constraints\n";
+			reducedXmlLog+="Added "+QString::number(nc)+" time constraints\n";
 		}
 		else if(elem2.tagName()=="Space_Constraints_List"){
 			bool reportRoomNotAvailableChange=true;
@@ -6515,39 +6255,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintRoomTypeNotAllowedSubjects* cn=new ConstraintRoomTypeNotAllowedSubjects();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Room_Type"){
-							cn->roomType=elem4.text();
-							xmlReadingLog+="    Read room type="+cn->roomType+"\n";
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->addNotAllowedSubject(elem4.text());
-							xmlReadingLog+="    Read not allowed subject="+elem4.text()+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintSubjectRequiresEquipments" && !skipDeprecatedConstraints){
@@ -6560,38 +6267,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					if(t==0)
 						skipDeprecatedConstraints=true;
 				
-					/*ConstraintSubjectRequiresEquipments* cn=new ConstraintSubjectRequiresEquipments();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Equipment"){
-							cn->addRequiredEquipment(elem4.text());
-							xmlReadingLog+="    Read required equipment="+elem4.text()+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintSubjectSubjectTagRequireEquipments" && !skipDeprecatedConstraints){
@@ -6603,43 +6278,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintSubjectSubjectTagRequireEquipments* cn=new ConstraintSubjectSubjectTagRequireEquipments();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Subject_Tag"){
-							cn->subjectTagName=elem4.text();
-							xmlReadingLog+="    Read subject tag="+cn->subjectTagName+"\n";
-						}
-						else if(elem4.tagName()=="Equipment"){
-							cn->addRequiredEquipment(elem4.text());
-							xmlReadingLog+="    Read required equipment="+elem4.text()+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintTeacherRequiresRoom" && !skipDeprecatedConstraints){
@@ -6651,40 +6289,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintTeacherRequiresRoom* cn=new ConstraintTeacherRequiresRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					crt_constraint=cn;
-					*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintTeacherSubjectRequireRoom" && !skipDeprecatedConstraints){
@@ -6696,43 +6300,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintTeacherSubjectRequireRoom* cn=new ConstraintTeacherSubjectRequireRoom();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Teacher"){
-							cn->teacherName=elem4.text();
-							xmlReadingLog+="    Read teacher="+cn->teacherName+"\n";
-						}
-						else if(elem4.tagName()=="Subject"){
-							cn->subjectName=elem4.text();
-							xmlReadingLog+="    Read subject="+cn->subjectName+"\n";
-						}
-						else if(elem4.tagName()=="Room"){
-							cn->roomName=elem4.text();
-							xmlReadingLog+="    Read room="+elem4.text()+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForStudents" && !skipDeprecatedConstraints){
@@ -6744,31 +6311,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintMinimizeNumberOfRoomsForStudents* cn=new ConstraintMinimizeNumberOfRoomsForStudents();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForTeachers" && !skipDeprecatedConstraints){
@@ -6780,31 +6322,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintMinimizeNumberOfRoomsForTeachers* cn=new ConstraintMinimizeNumberOfRoomsForTeachers();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredRoom"){
@@ -6822,42 +6339,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintActivitiesSameRoom* cn=new ConstraintActivitiesSameRoom();
-					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-					}
-					assert(cn->n_activities==n_act);
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintSubjectPreferredRoom"){
@@ -6906,35 +6387,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintMaxBuildingChangesPerDayForTeachers* cn=new ConstraintMaxBuildingChangesPerDayForTeachers();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Max_Building_Changes"){
-							cn->maxBuildingChanges=elem4.text().toInt();
-							xmlReadingLog+="    Adding max building changes="+QString::number(cn->maxBuildingChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForStudents" && !skipDeprecatedConstraints){
@@ -6946,35 +6398,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintMaxBuildingChangesPerDayForStudents* cn=new ConstraintMaxBuildingChangesPerDayForStudents();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Max_Building_Changes"){
-							cn->maxBuildingChanges=elem4.text().toInt();
-							xmlReadingLog+="    Adding max building changes="+QString::number(cn->maxBuildingChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForTeachers" && !skipDeprecatedConstraints){
@@ -6986,35 +6409,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintMaxRoomChangesPerDayForTeachers* cn=new ConstraintMaxRoomChangesPerDayForTeachers();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Max_Room_Changes"){
-							cn->maxRoomChanges=elem4.text().toInt();
-							xmlReadingLog+="    Adding max room changes="+QString::number(cn->maxRoomChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForStudents" && !skipDeprecatedConstraints){
@@ -7026,35 +6420,7 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
-				
-					/*ConstraintMaxRoomChangesPerDayForStudents* cn=new ConstraintMaxRoomChangesPerDayForStudents();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								cn->compulsory=true;
-								xmlReadingLog+="    Current constraint is compulsory\n";
-							}
-							else{
-								cn->compulsory=false;
-								xmlReadingLog+="    Current constraint is not compulsory\n";
-							}
-						}
-						else if(elem4.tagName()=="Max_Room_Changes"){
-							cn->maxRoomChanges=elem4.text().toInt();
-							xmlReadingLog+="    Adding max room changes="+QString::number(cn->maxRoomChanges)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
+
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintTeacherMaxBuildingChangesPerDay"){
@@ -7099,9 +6465,6 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				if(crt_constraint!=NULL){
 					assert(crt_constraint!=NULL);
 					
-					//cout<<"crt_constraint->type=="<<crt_constraint->type<<endl;
-					//cout<<"crt_constraint detailed description=="<<qPrintable(crt_constraint->getDetailedDescription(*this))<<endl;
-					
 					bool tmp=this->addSpaceConstraint(crt_constraint);
 					if(!tmp){
 						QMessageBox::warning(NULL, tr("FET information"),
@@ -7114,13 +6477,19 @@ bool Rules::read(const QString& filename, bool commandLine, QString commandLineD
 				}
 			}
 			xmlReadingLog+="  Added "+QString::number(nc)+" space constraints\n";
+			reducedXmlLog+="Added "+QString::number(nc)+" space constraints\n";
 		}
 	}
 
 	this->internalStructureComputed=false;
+	
+	reducedXmlLog+="\n";
+	reducedXmlLog+="Note: if you have overlapping students sets (years or groups), a group or a subgroup may be counted more than once. "
+		"A unique group name is counted once for each year it belongs to and a unique subgroup name is counted once for each year+group it belongs to.\n";
 
 	if(canWriteLogFile){
-		logStream<<xmlReadingLog;
+		//logStream<<xmlReadingLog;
+		logStream<<reducedXmlLog;
 	}
 
 	if(file2.error()>0){
@@ -7457,7 +6826,7 @@ int Rules::deactivateActivityTag(const QString& activityTagName)
 }
 
 
-TimeConstraint* Rules::readBasicCompulsoryTime(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readBasicCompulsoryTime(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintBasicCompulsoryTime");
 					ConstraintBasicCompulsoryTime* cn=new ConstraintBasicCompulsoryTime();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -7492,7 +6861,7 @@ TimeConstraint* Rules::readBasicCompulsoryTime(const QDomElement& elem3, QString
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherNotAvailable(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherNotAvailable(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherNotAvailable");
 
 					QList<int> days;
@@ -7609,7 +6978,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(const QDomElement& elem3, QString
 						return NULL;
 }
 				
-TimeConstraint* Rules::readTeacherNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherNotAvailableTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherNotAvailableTimes");
 					
 					ConstraintTeacherNotAvailableTimes* cn=new ConstraintTeacherNotAvailableTimes();
@@ -7699,7 +7068,7 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMaxDaysPerWeek");
 					
 					ConstraintTeacherMaxDaysPerWeek* cn=new ConstraintTeacherMaxDaysPerWeek();
@@ -7753,7 +7122,7 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMaxDaysPerWeek");
 					
 					ConstraintTeachersMaxDaysPerWeek* cn=new ConstraintTeachersMaxDaysPerWeek();
@@ -7786,7 +7155,7 @@ TimeConstraint* Rules::readTeachersMaxDaysPerWeek(const QDomElement& elem3, QStr
 }
 
 
-TimeConstraint* Rules::readTeacherMinDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherMinDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMinDaysPerWeek");
 					
 					ConstraintTeacherMinDaysPerWeek* cn=new ConstraintTeacherMinDaysPerWeek();
@@ -7823,7 +7192,7 @@ TimeConstraint* Rules::readTeacherMinDaysPerWeek(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersMinDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersMinDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMinDaysPerWeek");
 					
 					ConstraintTeachersMinDaysPerWeek* cn=new ConstraintTeachersMinDaysPerWeek();
@@ -7855,7 +7224,7 @@ TimeConstraint* Rules::readTeachersMinDaysPerWeek(const QDomElement& elem3, QStr
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherIntervalMaxDaysPerWeek");
 					ConstraintTeacherIntervalMaxDaysPerWeek* cn=new ConstraintTeacherIntervalMaxDaysPerWeek();
 					cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -7954,7 +7323,7 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(const QDomElement& elem
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersIntervalMaxDaysPerWeek");
 					ConstraintTeachersIntervalMaxDaysPerWeek* cn=new ConstraintTeachersIntervalMaxDaysPerWeek();
 					cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -8053,7 +7422,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(const QDomElement& ele
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetIntervalMaxDaysPerWeek");
 					ConstraintStudentsSetIntervalMaxDaysPerWeek* cn=new ConstraintStudentsSetIntervalMaxDaysPerWeek();
 					cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -8152,7 +7521,7 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(const QDomElement& 
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsIntervalMaxDaysPerWeek");
 					ConstraintStudentsIntervalMaxDaysPerWeek* cn=new ConstraintStudentsIntervalMaxDaysPerWeek();
 					cn->maxDaysPerWeek=this->nDaysPerWeek;
@@ -8250,7 +7619,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(const QDomElement& ele
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetNotAvailable(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetNotAvailable(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetNotAvailable");
 
 					//ConstraintStudentsSetNotAvailableTimes* cn=new ConstraintStudentsSetNotAvailableTimes();
@@ -8366,7 +7735,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(const QDomElement& elem3, QSt
 						return NULL;
 }
 
-TimeConstraint* Rules::readStudentsSetNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetNotAvailableTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetNotAvailableTimes");
 					
 					ConstraintStudentsSetNotAvailableTimes* cn=new ConstraintStudentsSetNotAvailableTimes();
@@ -8456,12 +7825,13 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(const QDomElement& elem3
 					return cn;
 }
 
-TimeConstraint* Rules::readMinNDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readMinNDaysBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintMinNDaysBetweenActivities");
 					
 					ConstraintMinDaysBetweenActivities* cn=new ConstraintMinDaysBetweenActivities();
 					bool foundCISD=false;
 					int n_act=0;
+					cn->activitiesId.clear();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -8519,7 +7889,9 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(const QDomElement& elem3, Q
 							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
 						}
 						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
+							//cn->activitiesId[n_act]=elem4.text().toInt();
+							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
 							n_act++;
 						}
@@ -8569,12 +7941,13 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(const QDomElement& elem3, Q
 */
 }
 
-TimeConstraint* Rules::readMinDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readMinDaysBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintMinDaysBetweenActivities");
 					
 					ConstraintMinDaysBetweenActivities* cn=new ConstraintMinDaysBetweenActivities();
 					bool foundCISD=false;
 					int n_act=0;
+					cn->activitiesId.clear();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -8632,7 +8005,9 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(const QDomElement& elem3, QS
 							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
 						}
 						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
+							//cn->activitiesId[n_act]=elem4.text().toInt();
+							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
 							n_act++;
 						}
@@ -8682,44 +8057,12 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(const QDomElement& elem3, QS
 */
 }
 
-TimeConstraint* Rules::readMaxDaysBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readMaxDaysBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintMaxDaysBetweenActivities");
 					
 					ConstraintMaxDaysBetweenActivities* cn=new ConstraintMaxDaysBetweenActivities();
 					int n_act=0;
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Number_of_Activities"){
-							cn->n_activities=elem4.text().toInt();
-							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
-						}
-						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
-							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
-							n_act++;
-						}
-						else if(elem4.tagName()=="MaxDays"){
-							cn->maxDays=elem4.text().toInt();
-							xmlReadingLog+="    Read MaxDays="+QString::number(cn->maxDays)+"\n";
-						}
-					}
-					assert(n_act==cn->n_activities);
-					return cn;
-}
-
-TimeConstraint* Rules::readMinGapsBetweenActivities(const QDomElement& elem3, QString& xmlReadingLog){
-					assert(elem3.tagName()=="ConstraintMinGapsBetweenActivities");
-					ConstraintMinGapsBetweenActivities* cn=new ConstraintMinGapsBetweenActivities();
-					int n_act=0;
+					cn->activitiesId.clear();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -8737,6 +8080,43 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(const QDomElement& elem3, QS
 						}
 						else if(elem4.tagName()=="Activity_Id"){
 							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
+							//cn->activitiesId[n_act]=elem4.text().toInt();
+							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
+							n_act++;
+						}
+						else if(elem4.tagName()=="MaxDays"){
+							cn->maxDays=elem4.text().toInt();
+							xmlReadingLog+="    Read MaxDays="+QString::number(cn->maxDays)+"\n";
+						}
+					}
+					assert(n_act==cn->n_activities);
+					return cn;
+}
+
+TimeConstraint* Rules::readMinGapsBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog){
+					assert(elem3.tagName()=="ConstraintMinGapsBetweenActivities");
+					ConstraintMinGapsBetweenActivities* cn=new ConstraintMinGapsBetweenActivities();
+					int n_act=0;
+					cn->activitiesId.clear();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weightPercentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Number_of_Activities"){
+							cn->n_activities=elem4.text().toInt();
+							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
+						}
+						else if(elem4.tagName()=="Activity_Id"){
+							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
 							n_act++;
 						}
@@ -8750,10 +8130,11 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesNotOverlapping(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesNotOverlapping(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesNotOverlapping");
 					ConstraintActivitiesNotOverlapping* cn=new ConstraintActivitiesNotOverlapping();
 					int n_act=0;
+					cn->activitiesId.clear();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -8787,7 +8168,9 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(const QDomElement& elem3, QS
 							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
 						}
 						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
+							//cn->activitiesId[n_act]=elem4.text().toInt();
+							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
 							n_act++;
 						}
@@ -8796,10 +8179,11 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesSameStartingTime(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesSameStartingTime(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesSameStartingTime");
 					ConstraintActivitiesSameStartingTime* cn=new ConstraintActivitiesSameStartingTime();
 					int n_act=0;
+					cn->activitiesId.clear();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -8833,7 +8217,9 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(const QDomElement& elem3, 
 							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
 						}
 						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
+							//cn->activitiesId[n_act]=elem4.text().toInt();
+							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
 							n_act++;
 						}
@@ -8842,10 +8228,11 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(const QDomElement& elem3, 
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesSameStartingHour(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesSameStartingHour(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesSameStartingHour");
 					ConstraintActivitiesSameStartingHour* cn=new ConstraintActivitiesSameStartingHour();
 					int n_act=0;
+					cn->activitiesId.clear();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -8879,7 +8266,9 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(const QDomElement& elem3, 
 							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
 						}
 						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
+							//cn->activitiesId[n_act]=elem4.text().toInt();
+							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
 							n_act++;
 						}
@@ -8888,10 +8277,11 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(const QDomElement& elem3, 
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesSameStartingDay(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesSameStartingDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesSameStartingDay");
 					ConstraintActivitiesSameStartingDay* cn=new ConstraintActivitiesSameStartingDay();
 					int n_act=0;
+					cn->activitiesId.clear();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -8908,7 +8298,9 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(const QDomElement& elem3, Q
 							xmlReadingLog+="    Read n_activities="+QString::number(cn->n_activities)+"\n";
 						}
 						else if(elem4.tagName()=="Activity_Id"){
-							cn->activitiesId[n_act]=elem4.text().toInt();
+							//cn->activitiesId[n_act]=elem4.text().toInt();
+							cn->activitiesId.append(elem4.text().toInt());
+							assert(n_act==cn->activitiesId.count()-1);
 							xmlReadingLog+="    Read activity id="+QString::number(cn->activitiesId[n_act])+"\n";
 							n_act++;
 						}
@@ -8917,7 +8309,7 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(const QDomElement& elem3, Q
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMaxHoursDaily");
 					ConstraintTeachersMaxHoursDaily* cn=new ConstraintTeachersMaxHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -8956,7 +8348,7 @@ TimeConstraint* Rules::readTeachersMaxHoursDaily(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMaxHoursDaily");
 					ConstraintTeacherMaxHoursDaily* cn=new ConstraintTeacherMaxHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -8999,7 +8391,7 @@ TimeConstraint* Rules::readTeacherMaxHoursDaily(const QDomElement& elem3, QStrin
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMaxHoursContinuously");
 					ConstraintTeachersMaxHoursContinuously* cn=new ConstraintTeachersMaxHoursContinuously();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9038,7 +8430,7 @@ TimeConstraint* Rules::readTeachersMaxHoursContinuously(const QDomElement& elem3
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMaxHoursContinuously");
 					ConstraintTeacherMaxHoursContinuously* cn=new ConstraintTeacherMaxHoursContinuously();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9081,7 +8473,7 @@ TimeConstraint* Rules::readTeacherMaxHoursContinuously(const QDomElement& elem3,
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherActivityTagMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherActivityTagMaxHoursContinuously");
 					ConstraintTeacherActivityTagMaxHoursContinuously* cn=new ConstraintTeacherActivityTagMaxHoursContinuously();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9111,7 +8503,7 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursContinuously(const QDomElem
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersActivityTagMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersActivityTagMaxHoursContinuously");
 					ConstraintTeachersActivityTagMaxHoursContinuously* cn=new ConstraintTeachersActivityTagMaxHoursContinuously();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9137,7 +8529,7 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursContinuously(const QDomEle
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherActivityTagMaxHoursDaily");
 					ConstraintTeacherActivityTagMaxHoursDaily* cn=new ConstraintTeacherActivityTagMaxHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9167,7 +8559,7 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursDaily(const QDomElement& el
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersActivityTagMaxHoursDaily");
 					ConstraintTeachersActivityTagMaxHoursDaily* cn=new ConstraintTeachersActivityTagMaxHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9193,7 +8585,7 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursDaily(const QDomElement& e
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMinHoursDaily");
 					ConstraintTeachersMinHoursDaily* cn=new ConstraintTeachersMinHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9232,7 +8624,7 @@ TimeConstraint* Rules::readTeachersMinHoursDaily(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMinHoursDaily");
 					ConstraintTeacherMinHoursDaily* cn=new ConstraintTeacherMinHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9275,7 +8667,7 @@ TimeConstraint* Rules::readTeacherMinHoursDaily(const QDomElement& elem3, QStrin
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMaxHoursDaily");
 					ConstraintStudentsMaxHoursDaily* cn=new ConstraintStudentsMaxHoursDaily();
 					cn->maxHoursDaily=-1;
@@ -9316,7 +8708,7 @@ TimeConstraint* Rules::readStudentsMaxHoursDaily(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMaxHoursDaily");
 					ConstraintStudentsSetMaxHoursDaily* cn=new ConstraintStudentsSetMaxHoursDaily();
 					cn->maxHoursDaily=-1;
@@ -9361,7 +8753,7 @@ TimeConstraint* Rules::readStudentsSetMaxHoursDaily(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMaxHoursContinuously");
 					ConstraintStudentsMaxHoursContinuously* cn=new ConstraintStudentsMaxHoursContinuously();
 					cn->maxHoursContinuously=-1;
@@ -9402,7 +8794,7 @@ TimeConstraint* Rules::readStudentsMaxHoursContinuously(const QDomElement& elem3
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMaxHoursContinuously");
 					ConstraintStudentsSetMaxHoursContinuously* cn=new ConstraintStudentsSetMaxHoursContinuously();
 					cn->maxHoursContinuously=-1;
@@ -9447,7 +8839,7 @@ TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(const QDomElement& el
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetActivityTagMaxHoursContinuously");
 					ConstraintStudentsSetActivityTagMaxHoursContinuously* cn=new ConstraintStudentsSetActivityTagMaxHoursContinuously();
 					cn->maxHoursContinuously=-1;
@@ -9479,7 +8871,7 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(const QDom
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsActivityTagMaxHoursContinuously");
 					ConstraintStudentsActivityTagMaxHoursContinuously* cn=new ConstraintStudentsActivityTagMaxHoursContinuously();
 					cn->maxHoursContinuously=-1;
@@ -9507,7 +8899,7 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(const QDomEle
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetActivityTagMaxHoursDaily");
 					ConstraintStudentsSetActivityTagMaxHoursDaily* cn=new ConstraintStudentsSetActivityTagMaxHoursDaily();
 					cn->maxHoursDaily=-1;
@@ -9539,7 +8931,7 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursDaily(const QDomElement
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsActivityTagMaxHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsActivityTagMaxHoursDaily");
 					ConstraintStudentsActivityTagMaxHoursDaily* cn=new ConstraintStudentsActivityTagMaxHoursDaily();
 					cn->maxHoursDaily=-1;
@@ -9567,7 +8959,7 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursDaily(const QDomElement& e
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMinHoursDaily");
 					ConstraintStudentsMinHoursDaily* cn=new ConstraintStudentsMinHoursDaily();
 					cn->minHoursDaily=-1;
@@ -9608,7 +9000,7 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetMinHoursDaily(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMinHoursDaily");
 					ConstraintStudentsSetMinHoursDaily* cn=new ConstraintStudentsSetMinHoursDaily();
 					cn->minHoursDaily=-1;
@@ -9653,7 +9045,7 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::readActivityPreferredTime(const QDomElement& elem3, QString& xmlReadingLog,
+TimeConstraint* Rules::readActivityPreferredTime(const QDomElement& elem3, FakeString& xmlReadingLog,
 	bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime){
 					assert(elem3.tagName()=="ConstraintActivityPreferredTime");
 				
@@ -9810,7 +9202,7 @@ TimeConstraint* Rules::readActivityPreferredTime(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readActivityPreferredStartingTime(const QDomElement& elem3, QString& xmlReadingLog,
+TimeConstraint* Rules::readActivityPreferredStartingTime(const QDomElement& elem3, FakeString& xmlReadingLog,
 	bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime){
 					assert(elem3.tagName()=="ConstraintActivityPreferredStartingTime");
 					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
@@ -9966,7 +9358,7 @@ TimeConstraint* Rules::readActivityPreferredStartingTime(const QDomElement& elem
 					return cn;
 }
 
-TimeConstraint* Rules::readActivityEndsStudentsDay(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivityEndsStudentsDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityEndsStudentsDay");
 					ConstraintActivityEndsStudentsDay* cn=new ConstraintActivityEndsStudentsDay();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -9988,7 +9380,7 @@ TimeConstraint* Rules::readActivityEndsStudentsDay(const QDomElement& elem3, QSt
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesEndStudentsDay(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesEndStudentsDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesEndStudentsDay");
 					ConstraintActivitiesEndStudentsDay* cn=new ConstraintActivitiesEndStudentsDay();
 					cn->teacherName="";
@@ -10032,7 +9424,7 @@ TimeConstraint* Rules::readActivitiesEndStudentsDay(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::read2ActivitiesConsecutive(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::read2ActivitiesConsecutive(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="Constraint2ActivitiesConsecutive");
 					ConstraintTwoActivitiesConsecutive* cn=new ConstraintTwoActivitiesConsecutive();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10075,7 +9467,7 @@ TimeConstraint* Rules::read2ActivitiesConsecutive(const QDomElement& elem3, QStr
 					return cn;
 }
 
-TimeConstraint* Rules::read2ActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::read2ActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="Constraint2ActivitiesGrouped");
 					ConstraintTwoActivitiesGrouped* cn=new ConstraintTwoActivitiesGrouped();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10118,7 +9510,7 @@ TimeConstraint* Rules::read2ActivitiesGrouped(const QDomElement& elem3, QString&
 					return cn;
 }
 
-TimeConstraint* Rules::read3ActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::read3ActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="Constraint3ActivitiesGrouped");
 					ConstraintThreeActivitiesGrouped* cn=new ConstraintThreeActivitiesGrouped();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10148,7 +9540,7 @@ TimeConstraint* Rules::read3ActivitiesGrouped(const QDomElement& elem3, QString&
 					return cn;
 }
 
-TimeConstraint* Rules::read2ActivitiesOrdered(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::read2ActivitiesOrdered(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="Constraint2ActivitiesOrdered");
 					ConstraintTwoActivitiesOrdered* cn=new ConstraintTwoActivitiesOrdered();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10191,7 +9583,7 @@ TimeConstraint* Rules::read2ActivitiesOrdered(const QDomElement& elem3, QString&
 					return cn;
 }
 
-TimeConstraint* Rules::readTwoActivitiesConsecutive(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTwoActivitiesConsecutive(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTwoActivitiesConsecutive");
 					ConstraintTwoActivitiesConsecutive* cn=new ConstraintTwoActivitiesConsecutive();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10234,7 +9626,7 @@ TimeConstraint* Rules::readTwoActivitiesConsecutive(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::readTwoActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTwoActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTwoActivitiesGrouped");
 					ConstraintTwoActivitiesGrouped* cn=new ConstraintTwoActivitiesGrouped();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10277,7 +9669,7 @@ TimeConstraint* Rules::readTwoActivitiesGrouped(const QDomElement& elem3, QStrin
 					return cn;
 }
 
-TimeConstraint* Rules::readThreeActivitiesGrouped(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readThreeActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintThreeActivitiesGrouped");
 					ConstraintThreeActivitiesGrouped* cn=new ConstraintThreeActivitiesGrouped();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10307,7 +9699,7 @@ TimeConstraint* Rules::readThreeActivitiesGrouped(const QDomElement& elem3, QStr
 					return cn;
 }
 
-TimeConstraint* Rules::readTwoActivitiesOrdered(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTwoActivitiesOrdered(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTwoActivitiesOrdered");
 					ConstraintTwoActivitiesOrdered* cn=new ConstraintTwoActivitiesOrdered();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10350,7 +9742,7 @@ TimeConstraint* Rules::readTwoActivitiesOrdered(const QDomElement& elem3, QStrin
 					return cn;
 }
 
-TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityPreferredTimes");
 				
 					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
@@ -10453,7 +9845,7 @@ TimeConstraint* Rules::readActivityPreferredTimes(const QDomElement& elem3, QStr
 					return cn;
 }
 
-TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityPreferredTimeSlots");
 					ConstraintActivityPreferredTimeSlots* cn=new ConstraintActivityPreferredTimeSlots();
 					cn->p_nPreferredTimeSlots=0;
@@ -10555,7 +9947,7 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(const QDomElement& elem3, 
 					return cn;
 }
 
-TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityPreferredStartingTimes");
 					ConstraintActivityPreferredStartingTimes* cn=new ConstraintActivityPreferredStartingTimes();
 					cn->nPreferredStartingTimes=0;
@@ -10657,7 +10049,7 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(const QDomElement& ele
 					return cn;
 }
 
-TimeConstraint* Rules::readBreak(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readBreak(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintBreak");
 
 					QList<int> days;
@@ -10763,7 +10155,7 @@ TimeConstraint* Rules::readBreak(const QDomElement& elem3, QString& xmlReadingLo
 						return NULL;
 }
 
-TimeConstraint* Rules::readBreakTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readBreakTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintBreakTimes");
 					ConstraintBreakTimes* cn=new ConstraintBreakTimes();
 					int nNotAvailableSlots=-1;
@@ -10846,7 +10238,7 @@ TimeConstraint* Rules::readBreakTimes(const QDomElement& elem3, QString& xmlRead
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersNoGaps(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersNoGaps(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersNoGaps");
 					ConstraintTeachersMaxGapsPerWeek* cn=new ConstraintTeachersMaxGapsPerWeek();
 					cn->maxGaps=0;
@@ -10883,7 +10275,7 @@ TimeConstraint* Rules::readTeachersNoGaps(const QDomElement& elem3, QString& xml
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersMaxGapsPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMaxGapsPerWeek");
 					ConstraintTeachersMaxGapsPerWeek* cn=new ConstraintTeachersMaxGapsPerWeek();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10922,7 +10314,7 @@ TimeConstraint* Rules::readTeachersMaxGapsPerWeek(const QDomElement& elem3, QStr
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherMaxGapsPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMaxGapsPerWeek");
 					ConstraintTeacherMaxGapsPerWeek* cn=new ConstraintTeacherMaxGapsPerWeek();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -10965,7 +10357,7 @@ TimeConstraint* Rules::readTeacherMaxGapsPerWeek(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readTeachersMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeachersMaxGapsPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMaxGapsPerDay");
 					ConstraintTeachersMaxGapsPerDay* cn=new ConstraintTeachersMaxGapsPerDay();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -11004,7 +10396,7 @@ TimeConstraint* Rules::readTeachersMaxGapsPerDay(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readTeacherMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readTeacherMaxGapsPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMaxGapsPerDay");
 					ConstraintTeacherMaxGapsPerDay* cn=new ConstraintTeacherMaxGapsPerDay();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -11047,7 +10439,7 @@ TimeConstraint* Rules::readTeacherMaxGapsPerDay(const QDomElement& elem3, QStrin
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsNoGaps(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsNoGaps(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsNoGaps");
 
 					ConstraintStudentsMaxGapsPerWeek* cn=new ConstraintStudentsMaxGapsPerWeek();
@@ -11088,7 +10480,7 @@ TimeConstraint* Rules::readStudentsNoGaps(const QDomElement& elem3, QString& xml
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetNoGaps(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetNoGaps(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetNoGaps");
 
 					ConstraintStudentsSetMaxGapsPerWeek* cn=new ConstraintStudentsSetMaxGapsPerWeek();
@@ -11133,7 +10525,7 @@ TimeConstraint* Rules::readStudentsSetNoGaps(const QDomElement& elem3, QString& 
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsMaxGapsPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMaxGapsPerWeek");
 					ConstraintStudentsMaxGapsPerWeek* cn=new ConstraintStudentsMaxGapsPerWeek();
 
@@ -11175,7 +10567,7 @@ TimeConstraint* Rules::readStudentsMaxGapsPerWeek(const QDomElement& elem3, QStr
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetMaxGapsPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetMaxGapsPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMaxGapsPerWeek");
 					ConstraintStudentsSetMaxGapsPerWeek* cn=new ConstraintStudentsSetMaxGapsPerWeek();
 					
@@ -11221,7 +10613,7 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerWeek(const QDomElement& elem3, Q
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsMaxGapsPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMaxGapsPerDay");
 					ConstraintStudentsMaxGapsPerDay* cn=new ConstraintStudentsMaxGapsPerDay();
 
@@ -11263,7 +10655,7 @@ TimeConstraint* Rules::readStudentsMaxGapsPerDay(const QDomElement& elem3, QStri
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetMaxGapsPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetMaxGapsPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMaxGapsPerDay");
 					ConstraintStudentsSetMaxGapsPerDay* cn=new ConstraintStudentsSetMaxGapsPerDay();
 					
@@ -11310,7 +10702,7 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerDay(const QDomElement& elem3, QS
 }
 
 
-TimeConstraint* Rules::readStudentsEarly(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsEarly(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsEarly");
 					ConstraintStudentsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour();
 					
@@ -11348,7 +10740,7 @@ TimeConstraint* Rules::readStudentsEarly(const QDomElement& elem3, QString& xmlR
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsEarlyMaxBeginningsAtSecondHour");
 					ConstraintStudentsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour();
 					cn->maxBeginningsAtSecondHour=-1;
@@ -11389,7 +10781,7 @@ TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(const QDomElem
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetEarly(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetEarly(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetEarly");
 					ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour();
 					
@@ -11431,7 +10823,7 @@ TimeConstraint* Rules::readStudentsSetEarly(const QDomElement& elem3, QString& x
 					return cn;
 }
 
-TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour");
 					ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour();
 					cn->maxBeginningsAtSecondHour=-1;					
@@ -11476,7 +10868,7 @@ TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(const QDomE
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesPreferredTimes");
 				
 					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
@@ -11606,7 +10998,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(const QDomElement& elem3, QS
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesPreferredTimeSlots");
 					ConstraintActivitiesPreferredTimeSlots* cn=new ConstraintActivitiesPreferredTimeSlots();
 					cn->p_nPreferredTimeSlots=0;
@@ -11735,7 +11127,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(const QDomElement& elem3
 					return cn;
 }
 
-TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivitiesPreferredStartingTimes");
 					ConstraintActivitiesPreferredStartingTimes* cn=new ConstraintActivitiesPreferredStartingTimes();
 					cn->nPreferredStartingTimes=0;
@@ -11865,7 +11257,7 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(const QDomElement& e
 }
 
 ////////////////
-TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubactivitiesPreferredTimeSlots");
 					ConstraintSubactivitiesPreferredTimeSlots* cn=new ConstraintSubactivitiesPreferredTimeSlots();
 					cn->p_nPreferredTimeSlots=0;
@@ -11999,7 +11391,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(const QDomElement& el
 					return cn;
 }
 
-TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement& elem3, QString& xmlReadingLog){
+TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubactivitiesPreferredStartingTimes");
 					ConstraintSubactivitiesPreferredStartingTimes* cn=new ConstraintSubactivitiesPreferredStartingTimes();
 					cn->nPreferredStartingTimes=0;
@@ -12136,7 +11528,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(const QDomElement
 
 
 ///space constraints reading routines
-SpaceConstraint* Rules::readBasicCompulsorySpace(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readBasicCompulsorySpace(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintBasicCompulsorySpace");
 					ConstraintBasicCompulsorySpace* cn=new ConstraintBasicCompulsorySpace();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -12187,7 +11579,7 @@ SpaceConstraint* Rules::readBasicCompulsorySpace(const QDomElement& elem3, QStri
 					return cn;
 }
 
-SpaceConstraint* Rules::readRoomNotAvailable(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readRoomNotAvailable(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintRoomNotAvailable");
 
 					QList<int> days;
@@ -12301,7 +11693,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(const QDomElement& elem3, QString& 
 						return NULL;
 }
 
-SpaceConstraint* Rules::readRoomNotAvailableTimes(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readRoomNotAvailableTimes(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintRoomNotAvailableTimes");
 					ConstraintRoomNotAvailableTimes* cn=new ConstraintRoomNotAvailableTimes();
 					int nNotAvailableSlots=-1;
@@ -12390,7 +11782,7 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(const QDomElement& elem3, QStr
 					return cn;
 }
 
-SpaceConstraint* Rules::readActivityPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog,
+SpaceConstraint* Rules::readActivityPreferredRoom(const QDomElement& elem3, FakeString& xmlReadingLog,
 	bool& reportUnspecifiedPermanentlyLockedSpace){
 					assert(elem3.tagName()=="ConstraintActivityPreferredRoom");
 					ConstraintActivityPreferredRoom* cn=new ConstraintActivityPreferredRoom();
@@ -12491,7 +11883,7 @@ SpaceConstraint* Rules::readActivityPreferredRoom(const QDomElement& elem3, QStr
 					return cn;
 }
 
-SpaceConstraint* Rules::readActivityPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readActivityPreferredRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityPreferredRooms");
 					int _n_preferred_rooms=0;
 					ConstraintActivityPreferredRooms* cn=new ConstraintActivityPreferredRooms();
@@ -12555,7 +11947,7 @@ SpaceConstraint* Rules::readActivityPreferredRooms(const QDomElement& elem3, QSt
 					return cn;
 }
 
-SpaceConstraint* Rules::readSubjectPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readSubjectPreferredRoom(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubjectPreferredRoom");
 					ConstraintSubjectPreferredRoom* cn=new ConstraintSubjectPreferredRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -12598,7 +11990,7 @@ SpaceConstraint* Rules::readSubjectPreferredRoom(const QDomElement& elem3, QStri
 					return cn;
 }
 
-SpaceConstraint* Rules::readSubjectPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readSubjectPreferredRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubjectPreferredRooms");
 					int _n_preferred_rooms=0;
 					ConstraintSubjectPreferredRooms* cn=new ConstraintSubjectPreferredRooms();
@@ -12648,7 +12040,7 @@ SpaceConstraint* Rules::readSubjectPreferredRooms(const QDomElement& elem3, QStr
 					return cn;
 }
 
-SpaceConstraint* Rules::readSubjectSubjectTagPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readSubjectSubjectTagPreferredRoom(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRoom");
 					ConstraintSubjectActivityTagPreferredRoom* cn=new ConstraintSubjectActivityTagPreferredRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -12695,7 +12087,7 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRoom(const QDomElement& el
 					return cn;
 }
 
-SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubjectSubjectTagPreferredRooms");
 					int _n_preferred_rooms=0;
 					ConstraintSubjectActivityTagPreferredRooms* cn=new ConstraintSubjectActivityTagPreferredRooms();
@@ -12749,7 +12141,7 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(const QDomElement& e
 					return cn;
 }
 
-SpaceConstraint* Rules::readSubjectActivityTagPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readSubjectActivityTagPreferredRoom(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubjectActivityTagPreferredRoom");
 					ConstraintSubjectActivityTagPreferredRoom* cn=new ConstraintSubjectActivityTagPreferredRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -12796,7 +12188,7 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRoom(const QDomElement& e
 					return cn;
 }
 
-SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintSubjectActivityTagPreferredRooms");
 					int _n_preferred_rooms=0;
 					ConstraintSubjectActivityTagPreferredRooms* cn=new ConstraintSubjectActivityTagPreferredRooms();
@@ -12850,7 +12242,7 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(const QDomElement& 
 					return cn;
 }
 
-SpaceConstraint* Rules::readActivityTagPreferredRoom(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readActivityTagPreferredRoom(const QDomElement& elem3, FakeString& xmlReadingLog){
 					//added 6 apr 2009
 					assert(elem3.tagName()=="ConstraintActivityTagPreferredRoom");
 					ConstraintActivityTagPreferredRoom* cn=new ConstraintActivityTagPreferredRoom();
@@ -12877,7 +12269,7 @@ SpaceConstraint* Rules::readActivityTagPreferredRoom(const QDomElement& elem3, Q
 					return cn;
 }
 
-SpaceConstraint* Rules::readActivityTagPreferredRooms(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readActivityTagPreferredRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintActivityTagPreferredRooms");
 					int _n_preferred_rooms=0;
 					ConstraintActivityTagPreferredRooms* cn=new ConstraintActivityTagPreferredRooms();
@@ -12910,7 +12302,7 @@ SpaceConstraint* Rules::readActivityTagPreferredRooms(const QDomElement& elem3, 
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsSetHomeRoom(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsSetHomeRoom(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetHomeRoom");
 					ConstraintStudentsSetHomeRoom* cn=new ConstraintStudentsSetHomeRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -12936,7 +12328,7 @@ SpaceConstraint* Rules::readStudentsSetHomeRoom(const QDomElement& elem3, QStrin
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsSetHomeRooms(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsSetHomeRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetHomeRooms");
 					int _n_preferred_rooms=0;
 					ConstraintStudentsSetHomeRooms* cn=new ConstraintStudentsSetHomeRooms();
@@ -12969,7 +12361,7 @@ SpaceConstraint* Rules::readStudentsSetHomeRooms(const QDomElement& elem3, QStri
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeacherHomeRoom(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeacherHomeRoom(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherHomeRoom");
 					ConstraintTeacherHomeRoom* cn=new ConstraintTeacherHomeRoom();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -12995,7 +12387,7 @@ SpaceConstraint* Rules::readTeacherHomeRoom(const QDomElement& elem3, QString& x
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeacherHomeRooms(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeacherHomeRooms(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherHomeRooms");
 					int _n_preferred_rooms=0;
 					ConstraintTeacherHomeRooms* cn=new ConstraintTeacherHomeRooms();
@@ -13028,7 +12420,7 @@ SpaceConstraint* Rules::readTeacherHomeRooms(const QDomElement& elem3, QString& 
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMaxBuildingChangesPerDay");
 					ConstraintTeacherMaxBuildingChangesPerDay* cn=new ConstraintTeacherMaxBuildingChangesPerDay();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13054,7 +12446,7 @@ SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerDay(const QDomElement& e
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMaxBuildingChangesPerDay");
 					ConstraintTeachersMaxBuildingChangesPerDay* cn=new ConstraintTeachersMaxBuildingChangesPerDay();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13076,7 +12468,7 @@ SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerDay(const QDomElement& 
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMaxBuildingChangesPerWeek");
 					ConstraintTeacherMaxBuildingChangesPerWeek* cn=new ConstraintTeacherMaxBuildingChangesPerWeek();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13102,7 +12494,7 @@ SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerWeek(const QDomElement& 
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMaxBuildingChangesPerWeek");
 					ConstraintTeachersMaxBuildingChangesPerWeek* cn=new ConstraintTeachersMaxBuildingChangesPerWeek();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13124,7 +12516,7 @@ SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerWeek(const QDomElement&
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeacherMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeacherMinGapsBetweenBuildingChanges(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeacherMinGapsBetweenBuildingChanges");
 					ConstraintTeacherMinGapsBetweenBuildingChanges* cn=new ConstraintTeacherMinGapsBetweenBuildingChanges();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13150,7 +12542,7 @@ SpaceConstraint* Rules::readTeacherMinGapsBetweenBuildingChanges(const QDomEleme
 					return cn;
 }
 
-SpaceConstraint* Rules::readTeachersMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readTeachersMinGapsBetweenBuildingChanges(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintTeachersMinGapsBetweenBuildingChanges");
 					ConstraintTeachersMinGapsBetweenBuildingChanges* cn=new ConstraintTeachersMinGapsBetweenBuildingChanges();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13172,7 +12564,7 @@ SpaceConstraint* Rules::readTeachersMinGapsBetweenBuildingChanges(const QDomElem
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMaxBuildingChangesPerDay");
 					ConstraintStudentsSetMaxBuildingChangesPerDay* cn=new ConstraintStudentsSetMaxBuildingChangesPerDay();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13198,7 +12590,7 @@ SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerDay(const QDomElemen
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerDay(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerDay(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMaxBuildingChangesPerDay");
 					ConstraintStudentsMaxBuildingChangesPerDay* cn=new ConstraintStudentsMaxBuildingChangesPerDay();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13220,7 +12612,7 @@ SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerDay(const QDomElement& 
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMaxBuildingChangesPerWeek");
 					ConstraintStudentsSetMaxBuildingChangesPerWeek* cn=new ConstraintStudentsSetMaxBuildingChangesPerWeek();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13246,7 +12638,7 @@ SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerWeek(const QDomEleme
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerWeek(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMaxBuildingChangesPerWeek");
 					ConstraintStudentsMaxBuildingChangesPerWeek* cn=new ConstraintStudentsMaxBuildingChangesPerWeek();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13268,7 +12660,7 @@ SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerWeek(const QDomElement&
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsSetMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsSetMinGapsBetweenBuildingChanges(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsSetMinGapsBetweenBuildingChanges");
 					ConstraintStudentsSetMinGapsBetweenBuildingChanges* cn=new ConstraintStudentsSetMinGapsBetweenBuildingChanges();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -13294,7 +12686,7 @@ SpaceConstraint* Rules::readStudentsSetMinGapsBetweenBuildingChanges(const QDomE
 					return cn;
 }
 
-SpaceConstraint* Rules::readStudentsMinGapsBetweenBuildingChanges(const QDomElement& elem3, QString& xmlReadingLog){
+SpaceConstraint* Rules::readStudentsMinGapsBetweenBuildingChanges(const QDomElement& elem3, FakeString& xmlReadingLog){
 					assert(elem3.tagName()=="ConstraintStudentsMinGapsBetweenBuildingChanges");
 					ConstraintStudentsMinGapsBetweenBuildingChanges* cn=new ConstraintStudentsMinGapsBetweenBuildingChanges();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){

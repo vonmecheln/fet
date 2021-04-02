@@ -24,10 +24,17 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include "fet.h"
 
+#include "matrix.h"
+
+#include <QMessageBox>
+
 #include <QLocale>
 #include <QTime>
 #include <QDate>
 #include <QDateTime>
+
+//#include <QtGlobal>
+//(for qVersion())
 
 #include <ctime>
 
@@ -38,19 +45,25 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetable.h"
 #include "fetmainform.h"
 
-#include <qapplication.h>
-#include <qmutex.h>
-#include <qstring.h>
-#include <qtranslator.h>
+#include <QApplication>
+#include <QMutex>
+#include <QString>
+#include <QTranslator>
 
 #include <QDir>
 #include <QTranslator>
 
 #include <QSettings>
 
+#include <QRect>
+extern QRect mainFormSettingsRect;
+extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
+
 #include <fstream>
 #include <iostream>
 using namespace std;
+
+#include <ctime>
 
 extern Solution best_solution;
 
@@ -89,10 +102,14 @@ The import directory
 QString IMPORT_DIRECTORY;
 
 
-qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+/*qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
+Matrix3D<qint16> teachers_timetable_weekly;
+Matrix3D<qint16> students_timetable_weekly;
+Matrix3D<qint16> rooms_timetable_weekly;
+//QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+Matrix3D<QList<qint16> > teachers_free_periods_timetable_weekly;
 
 QApplication* pqapplication=NULL;
 
@@ -179,6 +196,12 @@ void readSimulationParameters(){
 	else
 		USE_GUI_COLORS=true;
 
+	tt=newSettings.value("show-shortcuts-on-main-window", "1").toInt();
+	if(tt==0)
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=false;
+	else
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
+
 	tt=newSettings.value("enable-activity-tag-max-hours-daily", "0").toInt();
 	if(tt==0)
 		ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=false;
@@ -197,6 +220,13 @@ void readSimulationParameters(){
 	else
 		SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 	
+	
+	//main form
+	QRect rect=newSettings.value("main-form-geometry", QRect(0,0,0,0)).toRect();
+	if(!rect.isValid())
+		rect=newSettings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
+	mainFormSettingsRect=rect;
+	MAIN_FORM_SHORTCUTS_TAB_POSITION=newSettings.value("main-form-shortcuts-tab-position", "0").toInt();
 	
 	cout<<"Settings read"<<endl;
 }
@@ -238,6 +268,12 @@ void writeSimulationParameters(){
 	else
 		tt=1;
 	settings.setValue("use-gui-colors", tt);
+	
+	if(!SHOW_SHORTCUTS_ON_MAIN_WINDOW)
+		tt=0;
+	else
+		tt=1;
+	settings.setValue("show-shortcuts-on-main-window", tt);
 
 	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY)
 		tt=0;
@@ -256,6 +292,10 @@ void writeSimulationParameters(){
 	else
 		tt=1;
 	settings.setValue("warn-if-using-not-perfect-constraints", tt);
+
+	//main form
+	settings.setValue("main-form-geometry", mainFormSettingsRect);
+	settings.setValue("main-form-shortcuts-tab-position", MAIN_FORM_SHORTCUTS_TAB_POSITION);
 }
 
 void setLanguage(QApplication& qapplication)
@@ -442,6 +482,8 @@ int main(int argc, char **argv)
 		QStringList unrecognizedOptions;
 		
 		SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
+		
+		bool showVersion=false;
 
 		for(int i=1; i<argc; i++){
 			QString s=argv[i];
@@ -485,6 +527,9 @@ int main(int argc, char **argv)
 				if(s.right(5)=="false")
 					SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=false;
 			}
+			else if(s=="--version"){
+				showVersion=true;
+			}
 			else
 				unrecognizedOptions.append(s);
 		}
@@ -511,13 +556,6 @@ int main(int argc, char **argv)
 		//////////
 		
 		QDir dir;
-		if(outputDirectory!="")
-			if(!dir.exists(outputDirectory))
-				dir.mkpath(outputDirectory);
-		
-		if(outputDirectory!="")
-			outputDirectory.append(FILE_SEP);
-			
 		QString logsDir=initialDir+"logs";
 		if(!dir.exists(logsDir))
 			dir.mkpath(logsDir);
@@ -527,7 +565,7 @@ int main(int argc, char **argv)
 		QFile logFile(logsDir+"result.txt");
 		bool tttt=logFile.open(QIODevice::WriteOnly);
 		if(!tttt){
-			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file test_write_permissions_2.tmp) (or in the current directory, if you did not specify output directory)"
+			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"result.txt)."
 			 " If this is a bug - please report it."<<endl;
 			return 1;
 		}
@@ -535,13 +573,47 @@ int main(int argc, char **argv)
 		//ofstream out(logsDir+"result.txt");
 		///////
 		
+		setLanguage(qapplication);
+		
+		if(showVersion){
+			out<<"This file contains the result (log) of last operation"<<endl<<endl;
+		
+			QDate dat=QDate::currentDate();
+			QTime tim=QTime::currentTime();
+			QLocale loc(FET_LANGUAGE);
+			QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
+			out<<"FET command line request for version started on "<<qPrintable(sTime)<<endl<<endl;
+	
+			//QString qv=qVersion();
+			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
+			out<<"Free timetabling software, licensed under GNU/GPL v2 or later"<<endl;
+			out<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
+			//out<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
+			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
+			cout<<"Free timetabling software, licensed under GNU/GPL v2 or later"<<endl;
+			cout<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
+			//cout<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
+
+			if(unrecognizedOptions.count()>0){
+				out<<endl;
+				cout<<endl;
+				foreach(QString s, unrecognizedOptions){
+					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
+					out<<"Unrecognized option: "<<qPrintable(s)<<endl;
+				}
+			}
+
+			logFile.close();
+			return 0;
+		}
+		
 		QFile maxPlacedActivityFile(logsDir+"max_placed_activities.txt");
 		maxPlacedActivityFile.open(QIODevice::WriteOnly);
 		QTextStream maxPlacedActivityStream(&maxPlacedActivityFile);
 		maxPlacedActivityStream.setCodec("UTF-8");
 		maxPlacedActivityStream.setGenerateByteOrderMark(true);
-		maxPlacedActivityStream<<"This is a list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
-			<<" in the initial order of the activities"<<endl<<endl;
+		maxPlacedActivityStream<<FetTranslate::tr("This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
+			" in the initial order of the activities")<<endl<<endl;
 				
 		QFile initialOrderFile(logsDir+"initial_order.txt");
 		initialOrderFile.open(QIODevice::WriteOnly);
@@ -549,15 +621,13 @@ int main(int argc, char **argv)
 		initialOrderStream.setCodec("UTF-8");
 		initialOrderStream.setGenerateByteOrderMark(true);
 						
-		setLanguage(qapplication);
-		
 		out<<"This file contains the result (log) of last operation"<<endl<<endl;
 		
 		QDate dat=QDate::currentDate();
 		QTime tim=QTime::currentTime();
 		QLocale loc(FET_LANGUAGE);
 		QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
-		out<<"FET command line simulation started at "<<qPrintable(sTime)<<endl<<endl;
+		out<<"FET command line simulation started on "<<qPrintable(sTime)<<endl<<endl;
 		
 		if(unrecognizedOptions.count()>0){
 			foreach(QString s, unrecognizedOptions){
@@ -568,13 +638,20 @@ int main(int argc, char **argv)
 			out<<endl;
 		}
 		
+		if(outputDirectory!="")
+			if(!dir.exists(outputDirectory))
+				dir.mkpath(outputDirectory);
+		
+		if(outputDirectory!="")
+			outputDirectory.append(FILE_SEP);
+			
 		QFile test(outputDirectory+"test_write_permissions_2.tmp");
 		bool existedBefore=test.exists();
 		bool t_t=test.open(QIODevice::ReadWrite);
 		if(!t_t){
-			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file test_write_permissions_2.tmp) (or in the current directory, if you did not specify output directory)"
+			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
-			out<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file test_write_permissions_2.tmp)(or in the current directory, if you did not specify output directory)"
+			out<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
 			//test.close();
 			return 1;
@@ -584,7 +661,7 @@ int main(int argc, char **argv)
 			if(!existedBefore)
 				test.remove();
 		}
-		
+
 		if(filename==""){
 			cout<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
 			 "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=true|false] [--dividetimeaxisbydays=true|false]"
@@ -708,7 +785,7 @@ int main(int argc, char **argv)
 			TimetableExport::getTeachersTimetable(c);
 			TimetableExport::getRoomsTimetable(c);
 
-			TimetableExport::writeSimulationResultsCommandLine(outputDirectory);			
+			TimetableExport::writeSimulationResultsCommandLine(outputDirectory);
 		}
 	
 		logFile.close();

@@ -15,14 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintteachersmaxhourscontinuouslyform.h"
 #include "timeconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 ModifyConstraintTeachersMaxHoursContinuouslyForm::ModifyConstraintTeachersMaxHoursContinuouslyForm(ConstraintTeachersMaxHoursContinuously* ctr)
 {

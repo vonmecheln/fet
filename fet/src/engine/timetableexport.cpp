@@ -40,11 +40,15 @@
 #include "timetableexport.h"
 #include "solution.h"
 
-#include <qstring.h>
-#include <qtextstream.h>
-#include <qfile.h>
+#include "matrix.h"
+
+#include <QString>
+#include <QTextStream>
+#include <QFile>
 
 #include <QList>
+
+#include <QHash>
 
 #include <QDesktopWidget>
 
@@ -72,16 +76,24 @@ extern bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 extern QString LANGUAGE_FOR_HTML;
 
 extern Timetable gt;
-extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+/*extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
+extern Matrix3D<qint16> teachers_timetable_weekly;
+extern Matrix3D<qint16> students_timetable_weekly;
+extern Matrix3D<qint16> rooms_timetable_weekly;
 
-extern QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix3D<QList<qint16> > teachers_free_periods_timetable_weekly;
 
-extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix2D<bool> breakDayHour;
+/*extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK];
-extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
+extern Matrix3D<bool> teacherNotAvailableDayHour;
+extern Matrix2D<double> notAllowedRoomTimePercentages;
+extern Matrix3D<bool> subgroupNotAvailableDayHour;
 
 QList<qint16> activitiesForCurrentSubject[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
@@ -6854,8 +6866,8 @@ QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivit
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
 		}
 	}
@@ -6865,8 +6877,8 @@ QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivit
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
 		}
 	}
@@ -6876,8 +6888,8 @@ QString TimetableExport::writeActivitiesStudents(const QList<qint16>& allActivit
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
 		}
 	}
@@ -6934,8 +6946,8 @@ QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivit
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
 		}
 	}
@@ -6945,8 +6957,8 @@ QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivit
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
 		}
 	}
@@ -6956,8 +6968,8 @@ QString TimetableExport::writeActivitiesTeachers(const QList<qint16>& allActivit
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
 		}
 	}
@@ -7032,8 +7044,8 @@ QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
 		}
 	}
@@ -7043,8 +7055,8 @@ QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
 		}
 	}
@@ -7054,8 +7066,8 @@ QString TimetableExport::writeActivitiesRooms(const QList<qint16>& allActivities
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
-		Activity* act=&gt.rules.internalActivitiesList[ai];
 		if(ai!=UNALLOCATED_ACTIVITY){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
 			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
 		}
 	}

@@ -35,12 +35,17 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "activitytag.h"
 #include "studentsset.h"
 
-#include <qstring.h>
+#include "matrix.h"
+
+#include <QString>
 
 #include <QMessageBox>
 
 #include <iostream>
 using namespace std;
+
+//for min max functions
+#include <algorithm>
 
 //#define yesNo(x)				((x)==0?"no":"yes")
 
@@ -61,20 +66,22 @@ static QString yesNoTranslated(bool x){
 }
 
 ///#define minimu(x,y)	((x)<(y)?(x):(y))
-static int minimu(int x, int y){
+/*static int minimu(int x, int y){
 	if(x<y)
 		return x;
 	else
 		return y;
 }
+*/
 
 ///#define maximu(x,y)	((x)>(y)?(x):(y))
-static int maximu(int x, int y){
+/*static int maximu(int x, int y){
 	if(x>y)
 		return x;
 	else
 		return y;
 }
+*/
 
 //static Solution* crt_chrom=NULL;
 //static Rules* crt_rules=NULL;
@@ -82,25 +89,29 @@ static int maximu(int x, int y){
 //The following 2 matrices are kept to make the computation faster
 //They are calculated only at the beginning of the computation of the fitness
 //of the solution.
-static qint8 subgroupsMatrix[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-static qint8 teachersMatrix[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+/*static qint8 subgroupsMatrix[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+static qint8 teachersMatrix[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
+static Matrix3D<qint8> subgroupsMatrix;
+static Matrix3D<qint8> teachersMatrix;
 
 static int teachers_conflicts=-1;
 static int subgroups_conflicts=-1;
 
-//extern bool breakTime[MAX_HOURS_PER_WEEK];
-extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix2D<bool> breakDayHour;
 
-//extern bool teacherNotAvailableTime[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
-extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+/*extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
-//extern bool subgroupNotAvailableTime[MAX_TOTAL_SUBGROUPS][MAX_HOURS_PER_WEEK];
-extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
+extern Matrix3D<bool> teacherNotAvailableDayHour;
+
+extern Matrix3D<bool> subgroupNotAvailableDayHour;
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-QString getActivityDetailedDescription(const Rules& r, int id){
+QString getActivityDetailedDescription(Rules& r, int id){
 	QString s;
 
 	int ai;
@@ -1018,13 +1029,15 @@ ConstraintActivitiesSameStartingTime::ConstraintActivitiesSameStartingTime()
 	type=CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME;
 }
 
-ConstraintActivitiesSameStartingTime::ConstraintActivitiesSameStartingTime(double wp, int nact, const int act[])
+ConstraintActivitiesSameStartingTime::ConstraintActivitiesSameStartingTime(double wp, int nact, const QList<int>& act)
  : TimeConstraint(wp)
  {
-	assert(nact>=2 && nact<=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME);
+	assert(nact>=2);
+	assert(act.count()==nact);
 	this->n_activities=nact;
+	this->activitiesId.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId[i]=act[i];
+		this->activitiesId.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME;
 }
@@ -1034,21 +1047,21 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(Rules &r)
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	for(int j=0; j<n_activities; j++)
-		this->_activities[j]=-1;
+	assert(this->n_activities==this->activitiesId.count());
 
-	this->_n_activities=0;
+	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
 		int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
-				this->_activities[this->_n_activities++]=j;
+				this->_activities.append(j);
 				break;
 			}
 		}
 	}
+	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, tr("FET error in data"), 
@@ -1063,24 +1076,23 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(Rules &r)
 void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 {
 	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
 
-	for(int j=0; j<this->n_activities; j++)
-		this->_activities[j]=-1;
+	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
 		for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i])
-				this->_activities[i]=act->id;
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
 		}
 	}
-
-	int i, j;
-	i=0;
-	for(j=0; j<this->n_activities; j++)
-		if(this->_activities[j]>=0) //valid activity
-			this->activitiesId[i++]=this->_activities[j];
-	this->n_activities=i;
+	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
 
 	r.internalStructureComputed=false;
 }
@@ -1305,13 +1317,15 @@ ConstraintActivitiesNotOverlapping::ConstraintActivitiesNotOverlapping()
 	type=CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING;
 }
 
-ConstraintActivitiesNotOverlapping::ConstraintActivitiesNotOverlapping(double wp, int nact, const int act[])
+ConstraintActivitiesNotOverlapping::ConstraintActivitiesNotOverlapping(double wp, int nact, const QList<int>& act)
  : TimeConstraint(wp)
  {
-  	assert(nact>=2 && nact<=MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING);
+  	assert(nact>=2);
+  	assert(act.count()==nact);
 	this->n_activities=nact;
+	this->activitiesId.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId[i]=act[i];
+		this->activitiesId.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING;
 }
@@ -1321,24 +1335,24 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(Rules &r)
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	for(int j=0; j<n_activities; j++)
-		this->_activities[j]=-1;
+	assert(this->n_activities==this->activitiesId.count());
 
-	this->_n_activities=0;
+	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
 		int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
-				this->_activities[this->_n_activities++]=j;
+				this->_activities.append(j);
 				break;
 			}
 		}
 	}
+	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(NULL, tr("FET error in data"),
+		QMessageBox::warning(NULL, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -1350,24 +1364,23 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(Rules &r)
 void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 {
 	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
 
-	for(int j=0; j<this->n_activities; j++)
-		this->_activities[j]=-1;
+	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
 		for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i])
-				this->_activities[i]=act->id;
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
 		}
 	}
-
-	int i, j;
-	i=0;
-	for(j=0; j<this->n_activities; j++)
-		if(this->_activities[j]>=0) //valid activity
-			this->activitiesId[i++]=this->_activities[j];
-	this->n_activities=i;
+	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
 
 	r.internalStructureComputed=false;
 }
@@ -1457,8 +1470,8 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 						//the number of overlapping hours
 						int tt=0;
 						if(day1==day2){
-							int start=maximu(hour1, hour2);
-							int stop=minimu(hour1+duration1, hour2+duration2);
+							int start=max(hour1, hour2);
+							int stop=min(hour1+duration1, hour2+duration2);
 							if(stop>start)
 								tt+=stop-start;
 						}
@@ -1489,8 +1502,8 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 						//the number of overlapping hours
 						int tt=0;
 						if(day1==day2){
-							int start=maximu(hour1, hour2);
-							int stop=minimu(hour1+duration1, hour2+duration2);
+							int start=max(hour1, hour2);
+							int stop=min(hour1+duration1, hour2+duration2);
 							if(stop>start)
 								tt+=stop-start;
 						}
@@ -1586,15 +1599,18 @@ ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities()
 	type=CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp, bool cisd, int nact, const int act[], int n)
+ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp, bool cisd, int nact, const QList<int>& act, int n)
  : TimeConstraint(wp)
  {
  	this->consecutiveIfSameDay=cisd;
  
-  	assert(nact>=2 && nact<=MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
+  	//assert(nact>=2 && nact<=MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
+  	assert(nact>=2);
+  	assert(act.count()==nact);
 	this->n_activities=nact;
+	this->activitiesId.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId[i]=act[i];
+		this->activitiesId.append(act.at(i));
 
 	assert(n>0);
 	this->minDays=n;
@@ -1603,6 +1619,9 @@ ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp
 }
 
 bool ConstraintMinDaysBetweenActivities::operator==(ConstraintMinDaysBetweenActivities& c){
+	assert(this->n_activities==this->activitiesId.count());
+	assert(c.n_activities==c.activitiesId.count());
+
 	if(this->n_activities!=c.n_activities)
 		return false;
 	for(int i=0; i<this->n_activities; i++)
@@ -1622,21 +1641,21 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(Rules &r)
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	for(int j=0; j<n_activities; j++)
-		this->_activities[j]=-1;
+	assert(this->n_activities==this->activitiesId.count());
 
-	this->_n_activities=0;
+	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
 		int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
-				this->_activities[this->_n_activities++]=j;
+				this->_activities.append(j);
 				break;
 			}
 		}
 	}
+	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, tr("FET error in data"), 
@@ -1651,25 +1670,24 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(Rules &r)
 void ConstraintMinDaysBetweenActivities::removeUseless(Rules& r)
 {
 	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
 
-	for(int j=0; j<this->n_activities; j++)
-		this->_activities[j]=-1;
+	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
 		for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i])
-				this->_activities[i]=act->id;
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
 		}
 	}
-
-	int i, j;
-	i=0;
-	for(j=0; j<this->n_activities; j++)
-		if(this->_activities[j]>=0) //valid activity
-			this->activitiesId[i++]=this->_activities[j];
-	this->n_activities=i;
 	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
+
 	r.internalStructureComputed=false;
 }
 
@@ -1898,13 +1916,15 @@ ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities()
 	type=CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities(double wp, int nact, const int act[], int n)
+ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities(double wp, int nact, const QList<int>& act, int n)
  : TimeConstraint(wp)
  {
-  	assert(nact>=2 && nact<=MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES);
+  	assert(nact>=2);
+  	assert(act.count()==nact);
 	this->n_activities=nact;
+	this->activitiesId.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId[i]=act[i];
+		this->activitiesId.append(act.at(i));
 
 	assert(n>=0);
 	this->maxDays=n;
@@ -1917,21 +1937,21 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(Rules &r)
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	for(int j=0; j<n_activities; j++)
-		this->_activities[j]=-1;
+	assert(this->n_activities==this->activitiesId.count());
 
-	this->_n_activities=0;
+	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
 		int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
-				this->_activities[this->_n_activities++]=j;
+				this->_activities.append(j);
 				break;
 			}
 		}
 	}
+	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, tr("FET error in data"), 
@@ -1946,25 +1966,24 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(Rules &r)
 void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
 {
 	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
 
-	for(int j=0; j<this->n_activities; j++)
-		this->_activities[j]=-1;
+	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
 		for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i])
-				this->_activities[i]=act->id;
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
 		}
 	}
-
-	int i, j;
-	i=0;
-	for(j=0; j<this->n_activities; j++)
-		if(this->_activities[j]>=0) //valid activity
-			this->activitiesId[i++]=this->_activities[j];
-	this->n_activities=i;
 	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
+
 	r.internalStructureComputed=false;
 }
 
@@ -2187,14 +2206,16 @@ ConstraintMinGapsBetweenActivities::ConstraintMinGapsBetweenActivities()
 	type=CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES;
 }
 
-ConstraintMinGapsBetweenActivities::ConstraintMinGapsBetweenActivities(double wp, int nact, const int act[], int ngaps)
+//ConstraintMinGapsBetweenActivities::ConstraintMinGapsBetweenActivities(double wp, int nact, const int act[], int ngaps)
+ConstraintMinGapsBetweenActivities::ConstraintMinGapsBetweenActivities(double wp, int nact, const QList<int>& actList, int ngaps)
  : TimeConstraint(wp)
  {
  	//assert(nact>=2 && nact<=MAX_CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES);
 	this->n_activities=nact;
+	assert(nact==actList.count());
 	this->activitiesId.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act[i]);
+		this->activitiesId.append(actList.at(i));
 
 	assert(ngaps>0);
 	this->minGaps=ngaps;
@@ -2207,12 +2228,9 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(Rules &r)
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	//for(int j=0; j<n_activities; j++)
-	//	this->_activities[j]=-1;
-
-	this->_n_activities=0;
-	this->_activities.clear();
 	assert(this->n_activities==this->activitiesId.count());
+
+	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
 		int j;
 		Activity* act;
@@ -2220,12 +2238,11 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(Rules &r)
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
 				this->_activities.append(j);
-				this->_n_activities++;
 				break;
 			}
 		}
 	}
-	assert(this->_n_activities==this->_activities.count());
+	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, tr("FET error in data"), 
@@ -2240,30 +2257,23 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(Rules &r)
 void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 {
 	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
 
-	this->_activities.clear();
-	this->_n_activities=0;
-	//for(int j=0; j<this->n_activities; j++)
-	//	this->_activities[j]=-1;
+	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
 		for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
 			if(act->id==this->activitiesId[i]){
-				this->_activities.append(act->id);
-				this->_n_activities++;
+				tmpList.append(act->id);
+				break;
 			}
 		}
 	}
-	assert(this->_n_activities==this->_activities.count());
-
-	int i, j;
-	i=0;
-	for(j=0; j<this->_n_activities; j++){
-		//assert(j<this->_activities.count());
-		this->activitiesId[i++]=this->_activities[j];
-	}
-	this->n_activities=i;
+	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
 
 	r.internalStructureComputed=false;
 }
@@ -2690,7 +2700,7 @@ QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r){
 	QString s;
 	s+=tr("Teacher max hours daily");s+=", ";
 	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
-	s+=tr("TN:%1", "Teacher name").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily); //s+=", ";
 
 	return s;
@@ -3077,7 +3087,7 @@ QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r){
 	QString s;
 	s+=tr("Teacher max hours continuously");s+=", ";
 	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
-	s+=tr("TN:%1", "Teacher name").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("MH:%1", "Maximum hours continuously").arg(this->maxHoursContinuously); //s+=", ";
 
 	return s;
@@ -8524,6 +8534,7 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(Rules& r)
 	//assert(this->teacherName!="" || this->studentsName!="" || this->subjectName!="" || this->subjectTagName!="");
 
 	this->p_nActivities=0;
+	this->p_activitiesIndices.clear();
 
 	QStringList::iterator it;
 	Activity* act;
@@ -8562,9 +8573,13 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(Rules& r)
 				continue;
 		}
 	
-		assert(this->p_nActivities < MAX_ACTIVITIES);	
-		this->p_activitiesIndices[this->p_nActivities++]=i;
+		assert(this->p_nActivities < MAX_ACTIVITIES);
+		this->p_nActivities++;
+		//this->p_activitiesIndices[this->p_nActivities++]=i;
+		this->p_activitiesIndices.append(i);
 	}
+	
+	assert(this->p_nActivities==this->p_activitiesIndices.count());
 
 	//////////////////////	
 	for(int k=0; k<p_nPreferredTimeSlots; k++){
@@ -8965,6 +8980,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(Rules& 
 	//assert(this->teacherName!="" || this->studentsName!="" || this->subjectName!="" || this->subjectTagName!="");
 
 	this->p_nActivities=0;
+	this->p_activitiesIndices.clear();
 
 	QStringList::iterator it;
 	Activity* act;
@@ -9006,12 +9022,16 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(Rules& 
 		}
 	
 		assert(this->p_nActivities < MAX_ACTIVITIES);	
-		this->p_activitiesIndices[this->p_nActivities++]=i;
+		//this->p_activitiesIndices[this->p_nActivities++]=i;
+		this->p_nActivities++;
+		this->p_activitiesIndices.append(i);
 		
 		//cout<<endl;
 		//cout<<"Activity with id == "<<act->id<<" corresponds to constraint subactivities preferred time slots:"<<endl;
 		//cout<<qPrintable(this->getDescription(r))<<endl;
 	}
+
+	assert(this->p_nActivities==this->p_activitiesIndices.count());
 
 	//////////////////////	
 	for(int k=0; k<p_nPreferredTimeSlots; k++){
@@ -9695,6 +9715,7 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(Rules&
 	//assert(this->teacherName!="" || this->studentsName!="" || this->subjectName!="" || this->subjectTagName!="");
 
 	this->nActivities=0;
+	this->activitiesIndices.clear();
 
 	QStringList::iterator it;
 	Activity* act;
@@ -9733,8 +9754,12 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(Rules&
 		}
 	
 		assert(this->nActivities < MAX_ACTIVITIES);	
-		this->activitiesIndices[this->nActivities++]=i;
+		//this->activitiesIndices[this->nActivities++]=i;
+		this->activitiesIndices.append(i);
+		this->nActivities++;
 	}
+	
+	assert(this->activitiesIndices.count()==this->nActivities);
 
 	//////////////////////	
 	for(int k=0; k<nPreferredStartingTimes; k++){
@@ -10162,6 +10187,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(Rul
 	//assert(this->teacherName!="" || this->studentsName!="" || this->subjectName!="" || this->subjectTagName!="");
 
 	this->nActivities=0;
+	this->activitiesIndices.clear();
 
 	QStringList::iterator it;
 	Activity* act;
@@ -10203,12 +10229,16 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(Rul
 		}
 	
 		assert(this->nActivities < MAX_ACTIVITIES);	
-		this->activitiesIndices[this->nActivities++]=i;
+		//this->activitiesIndices[this->nActivities++]=i;
+		this->nActivities++;
+		this->activitiesIndices.append(i);
 		
 		//cout<<endl;
 		//cout<<"activity with id == "<<act->id<<" corresponds to constraint subactivities preferred starting times"<<endl;
 		//cout<<qPrintable(this->getDescription(r))<<endl;
 	}
+	
+	assert(this->activitiesIndices.count()==this->nActivities);
 
 	//////////////////////	
 	for(int k=0; k<nPreferredStartingTimes; k++){
@@ -10621,13 +10651,15 @@ ConstraintActivitiesSameStartingHour::ConstraintActivitiesSameStartingHour()
 	type=CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR;
 }
 
-ConstraintActivitiesSameStartingHour::ConstraintActivitiesSameStartingHour(double wp, int nact, const int act[])
+ConstraintActivitiesSameStartingHour::ConstraintActivitiesSameStartingHour(double wp, int nact, const QList<int>& act)
  : TimeConstraint(wp)
  {
-	assert(nact>=2 && nact<=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR);
+	assert(nact>=2);
+	assert(act.count()==nact);
 	this->n_activities=nact;
+	this->activitiesId.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId[i]=act[i];
+		this->activitiesId.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR;
 }
@@ -10637,21 +10669,21 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(Rules &r)
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	for(int j=0; j<n_activities; j++)
-		this->_activities[j]=-1;
+	assert(this->n_activities==this->activitiesId.count());
 
-	this->_n_activities=0;
+	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
 		int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
-				this->_activities[this->_n_activities++]=j;
+				this->_activities.append(j);
 				break;
 			}
 		}
 	}
+	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, tr("FET error in data"), 
@@ -10666,24 +10698,23 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(Rules &r)
 void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 {
 	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
 
-	for(int j=0; j<this->n_activities; j++)
-		this->_activities[j]=-1;
+	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
 		for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i])
-				this->_activities[i]=act->id;
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
 		}
 	}
-
-	int i, j;
-	i=0;
-	for(j=0; j<this->n_activities; j++)
-		if(this->_activities[j]>=0) //valid activity
-			this->activitiesId[i++]=this->_activities[j];
-	this->n_activities=i;
+	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
 
 	r.internalStructureComputed=false;
 }
@@ -10906,13 +10937,15 @@ ConstraintActivitiesSameStartingDay::ConstraintActivitiesSameStartingDay()
 	type=CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY;
 }
 
-ConstraintActivitiesSameStartingDay::ConstraintActivitiesSameStartingDay(double wp, int nact, const int act[])
+ConstraintActivitiesSameStartingDay::ConstraintActivitiesSameStartingDay(double wp, int nact, const QList<int>& act)
  : TimeConstraint(wp)
  {
-	assert(nact>=2 && nact<=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
+	assert(nact>=2);
+	assert(act.count()==nact);
 	this->n_activities=nact;
+	this->activitiesId.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId[i]=act[i];
+		this->activitiesId.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY;
 }
@@ -10922,21 +10955,21 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(Rules &r)
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	for(int j=0; j<n_activities; j++)
-		this->_activities[j]=-1;
+	assert(this->n_activities==this->activitiesId.count());
 
-	this->_n_activities=0;
+	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
 		int j;
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
 			if(act->id==this->activitiesId[i]){
-				this->_activities[this->_n_activities++]=j;
+				this->_activities.append(j);
 				break;
 			}
 		}
 	}
+	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, tr("FET error in data"), 
@@ -10951,24 +10984,23 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(Rules &r)
 void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 {
 	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
 
-	for(int j=0; j<this->n_activities; j++)
-		this->_activities[j]=-1;
+	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
 		for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i])
-				this->_activities[i]=act->id;
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
 		}
 	}
-
-	int i, j;
-	i=0;
-	for(j=0; j<this->n_activities; j++)
-		if(this->_activities[j]>=0) //valid activity
-			this->activitiesId[i++]=this->_activities[j];
-	this->n_activities=i;
+	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
 
 	r.internalStructureComputed=false;
 }
@@ -12678,7 +12710,7 @@ QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r){
 	QString s;
 	s+=tr("Teacher min hours daily");s+=", ";
 	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
-	s+=tr("TN:%1", "Teacher name").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("mH:%1", "Minimum hours (daily)").arg(this->minHoursDaily);//s+=", ";
 
 	return s;
@@ -12873,7 +12905,7 @@ QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r){
 	QString s;
 	s+=tr("Teacher min days per week");s+=", ";
 	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
-	s+=tr("TN:%1", "Teacher name").arg(this->teacherName);s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("mD:%1", "Minimum days per week").arg(this->minDaysPerWeek);//s+=", ";
 
 	return s;
@@ -14095,6 +14127,7 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(Rules& r)
 	//assert(this->teacherName!="" || this->studentsName!="" || this->subjectName!="" || this->subjectTagName!="");
 
 	this->nActivities=0;
+	this->activitiesIndices.clear();
 
 	QStringList::iterator it;
 	Activity* act;
@@ -14133,8 +14166,12 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(Rules& r)
 		}
 	
 		assert(this->nActivities < MAX_ACTIVITIES);	
-		this->activitiesIndices[this->nActivities++]=i;
+		//this->activitiesIndices[this->nActivities++]=i;
+		this->nActivities++;
+		this->activitiesIndices.append(i);
 	}
+	
+	assert(this->activitiesIndices.count()==this->nActivities);
 
 	if(this->nActivities>0)
 		return true;

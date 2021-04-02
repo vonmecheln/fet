@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "helponimperfectconstraints.h"
 
 #include "longtextmessagebox.h"
@@ -22,8 +24,6 @@
 #include "constraintstudentssetmaxgapsperdayform.h"
 #include "addconstraintstudentssetmaxgapsperdayform.h"
 #include "modifyconstraintstudentssetmaxgapsperdayform.h"
-
-#include <QDesktopWidget>
 
 ConstraintStudentsSetMaxGapsPerDayForm::ConstraintStudentsSetMaxGapsPerDayForm()
 {

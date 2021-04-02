@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintactivitypreferredroomform.h"
 #include "addconstraintactivitypreferredroomform.h"
 #include "modifyconstraintactivitypreferredroomform.h"
-
-#include <QDesktopWidget>
 
 #include "lockunlock.h"
 

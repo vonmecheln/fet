@@ -15,6 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "constraintmindaysbetweenactivitiesform.h"
@@ -22,8 +26,6 @@
 #include "modifyconstraintmindaysbetweenactivitiesform.h"
 
 #include "changemindaysselectivelyform.h"
-
-#include <QDesktopWidget>
 
 #include <QInputDialog>
 

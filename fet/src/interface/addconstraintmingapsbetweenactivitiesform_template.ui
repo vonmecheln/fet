@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>614</width>
-    <height>561</height>
+    <width>600</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -73,7 +73,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>Min gaps</string>
+        <string comment="(Min gaps between a set of activities)">Min gaps</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -160,7 +160,7 @@
           <enum>QFrame::Plain</enum>
          </property>
          <property name="text">
-          <string>All activities (dbl. click)</string>
+          <string>Activities</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>
@@ -189,7 +189,7 @@
           <enum>QFrame::Plain</enum>
          </property>
          <property name="text">
-          <string>Selected (dbl. click)</string>
+          <string comment="It refers to a list of selected activities">Selected</string>
          </property>
          <property name="wordWrap">
           <bool>false</bool>

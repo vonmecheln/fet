@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintteacheractivitytagmaxhourscontinuouslyform.h"
 #include "addconstraintteacheractivitytagmaxhourscontinuouslyform.h"
 #include "modifyconstraintteacheractivitytagmaxhourscontinuouslyform.h"
-
-#include <QDesktopWidget>
 
 ConstraintTeacherActivityTagMaxHoursContinuouslyForm::ConstraintTeacherActivityTagMaxHoursContinuouslyForm()
 {

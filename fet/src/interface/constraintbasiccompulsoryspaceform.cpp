@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintbasiccompulsoryspaceform.h"
 #include "addconstraintbasiccompulsoryspaceform.h"
 #include "modifyconstraintbasiccompulsoryspaceform.h"
-
-#include <QDesktopWidget>
 
 ConstraintBasicCompulsorySpaceForm::ConstraintBasicCompulsorySpaceForm()
 {

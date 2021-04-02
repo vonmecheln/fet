@@ -28,9 +28,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include "timetable_defs.h"
 
-#include <qstring.h>
-#include <qtextstream.h>
-#include <q3valuevector.h>
+#include "matrix.h"
+
+#include <QString>
+#include <QList>
+#include <QTextStream>
 
 class Rules;
 
@@ -144,7 +146,9 @@ public:
 	matrix keeps the activity scheduled for the second week.
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
-	void getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//void getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//void getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QList<qint16> >& b);
 	//return value is the number of conflicts, must be 0
 
 	/**
@@ -161,7 +165,8 @@ public:
 	matrix keeps the activity scheduled for the second week.
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
-	void getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//void getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a);
 	//return value is the number of conflicts, must be 0
 
 	/**
@@ -180,7 +185,8 @@ public:
 	Return value: the number of subgroups exhaustions (sum of values which are
 	over 2).
 	*/
-	int getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//int getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	int getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a);
 
 	/**
 	OLD COMMENT BELOW, now FET has no fortnightly activities, 
@@ -198,11 +204,14 @@ public:
 	Return value: the number of teachers exhaustions (sum of values which are
 	over 2).
 	*/
-	int getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//int getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	int getTeachersMatrix(Rules& r, Matrix3D<qint8>& a);
 
-	int getRoomsMatrix(Rules& r, qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//int getRoomsMatrix(Rules& r, qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	int getRoomsMatrix(Rules& r, Matrix3D<qint8>& a);
 
-	void getRoomsTimetable(Rules& r, qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	//void getRoomsTimetable(Rules& r, qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getRoomsTimetable(Rules& r, Matrix3D<qint16>& a);
 	//return value is the number of conflicts, must be 0
 	
 	//void getTeachersBuildingsTimetable(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);

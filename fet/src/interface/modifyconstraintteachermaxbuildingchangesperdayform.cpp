@@ -15,14 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintteachermaxbuildingchangesperdayform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 ModifyConstraintTeacherMaxBuildingChangesPerDayForm::ModifyConstraintTeacherMaxBuildingChangesPerDayForm(ConstraintTeacherMaxBuildingChangesPerDay* ctr)
 {

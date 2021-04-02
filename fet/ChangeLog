@@ -1415,7 +1415,7 @@ Versions 5.10.0 - 5.10.3
 	- Code cleanup.
 	- Added a new Italian sample file, by Marco.
 ---------------------------------------------------------------------------------
-Versions 5.11.0 - 5.11.x
+Version 5.11.0
 - Version 5.11.0
 	- Updated to Qt 4.5.2
 	- Converted all dialogs to Qt 4 Designer files - suggested by George Miliotis.
@@ -1437,10 +1437,26 @@ Versions 5.11.0 - 5.11.x
 	- Rewritten the Catalan translation by Silvia. It is very complete, check it out.
 	- Added a new Greek sample file, by George Miliotis.
 	- Updated and improved Persian translation by sally sat.
-	- Dropped <!DOCTYPE FET> tag in the .fet files - following general recommendations, and changed FET tag to fet tag. Of course you can open older files.
+	- Dropped !DOCTYPE FET tag in the .fet files - following general recommendations, and changed FET tag to fet tag. Of course you can open older files.
 	- Improved activities simple description (suggested by Massimo Mancini and alfaromeo).
 	- Added possibility to save the highest stage timetable (suggested by alfaromeo, pinco and Massimo Mancini).
 	- Added a new Romanian sample file, by Horatiu Halmajan.
 	- Updated translations: Russian, German, Romanian, Italian, Spanish.
 	- The timetable view dialogs now have resizeable widgets (you can drag the sections with the mouse) - suggested by Ben Bauer.
-	
+---------------------------------------------------------------------------------
+Versions 5.12.0 - 5.12.x
+- Version 5.12.0
+	- Added shortcut buttons on the main form (suggested by more users, especially: daviodan, Massimo Mancini, Paolo Cataldi). They can be deactivated from Settings - Interface menu.
+	- Increased max activities to 15,000, max days per 'week' to 35, and other limits, and improved memory management. Now you don't need to have much virtual memory and memory usage is lower.
+	This better memory management may bring a small slowdown of the generation, although in rare cases the new version may be faster. Speed variation depends also on the platform.
+	More details about the possible slowdown: I compared times by starting parallel generations with the same random seed, which produces the same timetables in identical steps.
+	I noticed usually less than 10% increased generating time, but in rare cases for some unusual files a bit more, maximum 17%.
+	From the official examples, the worst situation is for the file Hungary/Bethlen/2007-2008-difficult/Bethlen_2007_2008.fet, with about 17% slowdown from FET version 5.11.0 to FET 5.12.0.
+	I apologise for this "downgrade" of speed, but it is necessary.
+	- Updated to Qt 4.6.0
+	- Improved add activity dialog, by Volker Dirr: if in activities dialog, you select a filter and then try to add an activity, the values in this filter
+	will be selected in the add activity dialog (this was also suggested by daviodan).
+	- Minor interface improvements.
+	- Changed help management (added links to online help).
+	- Corrected/updated translations.
+	- Code cleanup.

@@ -12,8 +12,8 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE 11.1 GNU/Linux distribution,
-	Midnight Commander 4.6.2-pre1, Qt 4.5.2, gcc 4.4.1, Linux 2.6.27, KDiff3 0.9.92, other great free tools.
+	FET is created in the following environment: openSUSE 11.2 GNU/Linux distribution,
+	Midnight Commander 4.6.2, Qt 4.6.0, gcc 4.4.1, Linux 2.6.31, KDiff3 0.9.95, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X and similar OS's:
@@ -21,33 +21,16 @@ Requirements:
 		make (GNU make command)
 		gcc 4.4.1 or similar
 		gcc-c++ (or g++, the name may vary)
-		Qt 4.5.2 or compatible
+		Qt 4.6.0 or compatible
 		
-	Note about Qt: FET should work OK with Qt 4.5.3 and any other Qt version, but: The Qt toolkit version 4.5.3 has a minor bug: the first row of
-	a table is not updated correctly (for instance, in view timetable for students if you change the current students set 
-	or in add constraint teacher not available table of not allowed times, if you click a cell in first row).
-	I made a hack in FET: if the Qt version is 4.5.3, it applies an unnecessary operation to avoid this bug.
-	I did not add this hack for other Qt versions. Qt team should solve this bug for future
-	Qt versions, like 4.6.0 (in fact, I saw Qt snapshots for 4.6.0-2009-10-20 and they solved it). But, in the unlikely event that
-	the bug is not solved for some future Qt versions, please don't blame me. Try with a not buggy Qt, like 4.5.2 or future versions.
-	
 	Microsoft Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
-	For compiling, you need Qt and a compatible C++ compiler (MinGW probably an easy option)
-	
-	Important note about virtual memory: on Windows you might get the error message
-	"The paging file is too small for this operation to complete" when trying to run fet.exe .
-	Maybe on other systems you can get a similar problem.
-	It seems that FET won't run without a decent amount of virtual memory.
-	This is because FET allocates a large amount of static data (600MB), of which only about 50 MB are normally used.
-	So the operating system must have virtual memory reserved (which will not be used normally,
-	but that does not matter). So, if you disabled virtual memory, please enable it and/or increse maximum size
-	if FET does not run.
+	For compiling, you need Qt and a compatible C++ compiler (MinGW probably an easy option).
 
 
 Download:
 
-	You can download the latest version from http://www.lalescu.ro/liviu/fet/
+	You can download the latest version from http://lalescu.ro/liviu/fet/
 	Older versions: you will have to contact the author if you are interested.
 
 
@@ -65,7 +48,7 @@ Getting - compiling - installing GNU tools: make, gcc and gcc-c++ (or g++):
 
 Getting - compiling - installing Qt by Nokia (formerly by Trolltech):
 
-	You will need Qt 4.5.2 or compatible to compile FET.
+	You will need Qt 4.6.0 or compatible to compile FET.
 	You can get the corresponding version of Qt with your package manager or
 	from http://qt.nokia.com/ (you can get the opensource version of Qt
 	or other variants if you want). Note: newer Qt (4.5) has available LGPL and GPL
@@ -86,7 +69,10 @@ Getting - compiling - installing Qt by Nokia (formerly by Trolltech):
 	but you can try also other variants) from http://qt.nokia.com/
 	For MinGW version: Install and let Qt install also MinGW.
 	Please make sure, after installing Qt and MinGW, that you have in the PATH environmental variable
-	the path to qmake.exe (for 4.5.2 it is: C:\Qt\2009.03\qt\bin) and for mingw (C:\Qt\2009.03\mingw\bin).
+	the path to qmake.exe (for 4.6.0 it is: C:\Qt\2009.05\qt\bin) and for mingw (C:\Qt\2009.05\mingw\bin).
+	You may need also to set an environment variable QMAKESPEC = win32-g++
+	You may use the Qt command prompt, in which case you don't need to care about the details above
+	(PATH and QMAKESPEC), but this command prompt may be more difficult to use.
 	
 	Mac OS X: 
 	Maybe you can get pre-compiled packages for Mac. If not, get Qt from http://qt.nokia.com/ (maybe open source
@@ -104,11 +90,11 @@ Compiling FET:
 	Under Fedora GNU/Linux for the same problem, a user told me that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
 	and /usr/lib/qt4/mkspecs/linux-g++/qmake.conf (remove the -g flag from QMAKE_CFLAGS_RELEASE section).
 	
-	Currently FET can be compiled using Qt 4.5.2 or compatible.
+	Currently FET can be compiled with a C++ compiler, using Qt version 4.6.0 or compatible.
 
 
 	GNU/Linux and similar OS's:
-	- You will need Qt 4.5.2 or compatible to compile this program.
+	- You will need Qt 4.6.0 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4 (this command is executed very fast,
 	so don't worry if you get immediate return from it)
@@ -120,7 +106,7 @@ Compiling FET:
 	2 Variants:
 	
 	1. First variant, if you use gcc compiler:
-	- You will need Qt 4.5.2 or compatible to compile this program.
+	- You will need Qt 4.6.0 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 4 series, which on some systems
 	might be named qmake-qt4. So, "qmake-qt4 fet.pro" might sometimes be needed.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
@@ -137,19 +123,21 @@ Compiling FET:
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
 
 	
-	Microsoft Windows: MinGW C++ compiler: you need Qt 4.5.2 (2009.03) or compatible.
+	Microsoft Windows: MinGW C++ compiler: you need Qt 4.6.0 (2009.05) or compatible.
 	You will have to download and install Qt with MinGW from http://qt.nokia.com/ .
 	You might use other compilers if you want, please see the Qt web page http://qt.nokia.com/
 	for other variants. Any C++ compiler that supports Qt is OK, as long as you can use it.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
 	immediate return from it) and then "mingw32-make" (this takes a long time, maybe even 1 hour) 
 	in a command line in the FET directory.
+	(You can use the command line prompt of Windows or use the Qt command line prompt
+	shortcut in the Qt shortcuts menu.)
 	Then, you can remove directories "src" and "tmp", to save up space.
 	For MinGW:
 	If you want to obtain a version which can be run on other computers, 
-	you have to copy these 7 files into the FET directory (in the same place as fet.exe):
-	(QTDIR is an abbreviation for C:\Qt\2009.03\qt if you use Qt 2009.03, which is in fact Qt version 4.5.2)
-	QTDIR\bin\mingwm10.dll,
+	you have to copy these 8 files into the FET directory (in the same place as fet.exe):
+	(QTDIR is an abbreviation for C:\Qt\2009.05\qt if you use Qt 2009.05, which is in fact Qt version 4.6.0)
+	QTDIR\bin\mingwm10.dll, QTDIR\bin\libgcc_s_dw2-1.dll,
 	QTDIR\bin\Qt3Support4.dll, QTDIR\bin\QtCore4.dll, QTDIR\bin\QtGui4.dll,
 	QTDIR\bin\QtNetwork4.dll, QTDIR\bin\QtSQl4.dll, QTDIR\bin\QtXml4.dll.
 	
@@ -165,12 +153,13 @@ Installing FET:
 
 
 Running FET:
-	Note: The FET main form is empty, it just contains a menu with the items: File, Data, Statistics, Advanced,
-	Timetable, Settings, Help. Everything is all right if you have that.
+	Note: The FET main window contains a menu with the items: File, Data, Statistics, Advanced,
+	Timetable, Settings, Help. Everything is all right if you have that. Optionally, on the main window there may be a toolbox
+	containing shortcuts (if selected by the user in the settings. By default it is selected).
 	
-	Note: to run FET in interface more, you just need to run the executable named fet or fet.exe.
+	Note: to run FET in interface mode, you just need to run the executable named fet or fet.exe.
 	No additional parameters are needed/allowed. If you give additional parameters, FET will
-	consider that you want to run the command line version (see below instructions for command line version)
+	consider that you want to run the command line version (see below instructions for command line version).
 
 	GNU/Linux and similar OS's:
 	Please chdir to the directory where fet executable is (for instance,
@@ -180,15 +169,8 @@ Running FET:
 	Microsoft Windows:
 	Run the executable fet.exe
 	
-	NOTE for MS Windows users: if you get the message "The paging file is too small for this operation to complete":
-	If you disable virtual memory or have it low, it seems that the program won't start.
-	The memory consumption of FET is maybe around 50 MB, but FET has defined approximately 600 MB of memory in internal
-	variables (these are not used in normal cases). FET seems to need a good amount of virtual memory on Windows
-	(maybe it is best to let Windows manage the virtual memory).
-	
 	COMMAND LINE: no GUI, just run "fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u]
 	 [--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseed=r] [--warnifusingnotperfectconstraints=s]",
-	(under Windows, use fet.exe instead of fet)
 	where	x is the input file, for instance "data.fet"
 			d is the path to results directory, without trailing slash or backslash (default is current working path).
 				Make sure you have write permissions there.
@@ -205,6 +187,11 @@ Running FET:
 			r is the random seed, minimum 1 to maximum 2147483646 (you can get the same timetable if the random seed is the same).
 			s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints
 				(activity tag max hours daily or students max gaps per day) (default true).
+				
+	Alternatively, you can run "fet --version [--outputdir=d]" to get the current FET version.
+	where	d is the path to results directory, without trailing slash or backslash (default is current working path).
+				Make sure you have write permissions there.
+	(If you specify the "--version" argument, FET just prints version number on the command line prompt and in the output directory and exits.)
 	
 	The result of the operation is logged into file outputdir/logs/result.txt.
 	

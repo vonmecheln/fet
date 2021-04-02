@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "allspaceconstraintsform.h"
@@ -51,8 +53,6 @@
 
 #include "modifyconstraintactivitytagpreferredroomform.h"
 #include "modifyconstraintactivitytagpreferredroomsform.h"
-
-#include <QDesktopWidget>
 
 #include "lockunlock.h"
 

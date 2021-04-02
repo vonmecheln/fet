@@ -20,10 +20,7 @@
 #include "subject.h"
 #include "studentsset.h"
 
-#include <qlabel.h>
-#include <qtabwidget.h>
-
-#include <QDesktopWidget>
+#include <QMessageBox>
 
 ModifySubactivityForm::ModifySubactivityForm(int id, int activityGroupId)
 {

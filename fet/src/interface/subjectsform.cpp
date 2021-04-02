@@ -19,11 +19,7 @@
 #include "teacher.h"
 #include "subject.h"
 
-#include <q3listbox.h>
-#include <qinputdialog.h>
-#include <q3textedit.h>
-
-#include <QDesktopWidget>
+#include <QInputDialog>
 
 #include <QMessageBox>
 
@@ -170,7 +166,8 @@ void SubjectsForm::sortSubjects()
 void SubjectsForm::subjectChanged(int index)
 {
 	if(index<0){
-		currentSubjectTextEdit->setText(tr("Invalid subject"));
+		//currentSubjectTextEdit->setText(tr("Invalid subject"));
+		currentSubjectTextEdit->setText("");
 		return;
 	}
 	

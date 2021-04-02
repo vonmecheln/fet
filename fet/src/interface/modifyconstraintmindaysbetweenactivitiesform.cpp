@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintmindaysbetweenactivitiesform.h"
 #include "spaceconstraint.h"
 
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
 #include <QList>
-
-#include <QDesktopWidget>
 
 ModifyConstraintMinDaysBetweenActivitiesForm::ModifyConstraintMinDaysBetweenActivitiesForm(ConstraintMinDaysBetweenActivities* ctr)
 {
@@ -215,11 +212,11 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 			tr("Only one selected activity"));
 		return;
 	}
-	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+	/*if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Please report error to the author\nMAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)"));
 		return;
-	}
+	}*/
 
 #if 0&0&0
 	if(0 && this->selectedActivitiesList.size()>gt.rules.nDaysPerWeek){
@@ -256,8 +253,11 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 
 		int i;
 		QList<int>::iterator it;
-		for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
-			adc.activitiesId[i]=*it;
+		adc.activitiesId.clear();
+		for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
+			//adc.activitiesId[i]=*it;
+			adc.activitiesId.append(*it);
+		}
 		adc.n_activities=i;
 		
 		adc.weightPercentage=weight;
@@ -281,8 +281,11 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 	
 	int i;
 	QList<int>::iterator it;
-	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
-		this->_ctr->activitiesId[i]=*it;
+	this->_ctr->activitiesId.clear();
+	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
+		//this->_ctr->activitiesId[i]=*it;
+		this->_ctr->activitiesId.append(*it);
+	}
 	this->_ctr->n_activities=i;
 		
 	this->_ctr->weightPercentage=weight;

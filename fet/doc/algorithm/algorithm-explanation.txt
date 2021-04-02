@@ -1,4 +1,4 @@
-Adding 19 January 2009: the implementation of the algorithm is good now, I changed it in 2008.
+Added on 19 January 2009: the implementation of the algorithm is good now, I changed it in 2008.
 
 Some words about the algorithm:
 
@@ -27,7 +27,7 @@ computed differently if you have no gaps or if you have no gaps+early
 
 
 
-Adding - 16 Aug 2007, modified 22 Aug 2007:
+Added on 16 Aug 2007, modified 22 Aug 2007:
 
 The structure of the solution is an array of times[MAX_ACTIVITIES] and 
 rooms[MAX_ACTIVITIES], I hope you understand why. I begin with unallocated. I 

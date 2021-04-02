@@ -21,13 +21,7 @@
 #include "addconstraintthreeactivitiesgroupedform.h"
 #include "modifyconstraintthreeactivitiesgroupedform.h"
 
-#include <QDesktopWidget>
-
 #include <QMessageBox>
-
-#include <q3listbox.h>
-#include <q3combobox.h>
-#include <q3groupbox.h>
 
 ConstraintThreeActivitiesGroupedForm::ConstraintThreeActivitiesGroupedForm()
 {

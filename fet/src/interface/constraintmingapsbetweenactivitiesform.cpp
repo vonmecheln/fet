@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintmingapsbetweenactivitiesform.h"
 #include "addconstraintmingapsbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
-
-#include <QDesktopWidget>
 
 #include <QInputDialog>
 

@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>464</height>
+    <width>560</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>FET - important tips dialog</string>
+   <string extracomment="This is the title of the dialog for tips">Important tips</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">

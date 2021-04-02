@@ -15,13 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintstudentssethomeroomsform.h"
 #include "addconstraintstudentssethomeroomsform.h"
 #include "modifyconstraintstudentssethomeroomsform.h"
 
-#include <QDesktopWidget>
 
 ConstraintStudentsSetHomeRoomsForm::ConstraintStudentsSetHomeRoomsForm()
 {

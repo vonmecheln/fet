@@ -24,13 +24,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-//#include "fetmainform.h"
-
-#include <qspinbox.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
-
 class ModifyRoomForm : public QDialog, Ui::ModifyRoomForm_template {
 	Q_OBJECT
 	

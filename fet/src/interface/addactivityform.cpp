@@ -15,6 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include <QDialog>
 
 #include "longtextmessagebox.h"
@@ -24,15 +28,12 @@
 #include "subject.h"
 #include "studentsset.h"
 
-#include <qlabel.h>
-#include <qtabwidget.h>
-#include <q3listbox.h>
-
-#include <QDesktopWidget>
-
 #include <QtGui>
 
 #include <QLineEdit>
+
+#include <QAbstractItemView>
+#include <QModelIndex>
 
 #define subTab(i)	subactivitiesTabWidget->page(i)
 #define dur(i)		(i==0?duration1SpinBox:					\
@@ -56,7 +57,7 @@
 			(i==8?active9CheckBox:					\
 			(active10CheckBox))))))))))
 
-AddActivityForm::AddActivityForm()
+AddActivityForm::AddActivityForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName)
 {
     setupUi(this);
 
@@ -148,6 +149,37 @@ AddActivityForm::AddActivityForm()
 	
 	addActivityPushButton->setDefault(true);
 	addActivityPushButton->setFocus();
+	
+	//selectedTeachersListBox->clear();
+	if(teacherName!="")
+		selectedTeachersListBox->insertItem(teacherName);
+	//selectedStudentsListBox->clear();
+	if(studentsSetName!="")
+		selectedStudentsListBox->insertItem(studentsSetName);
+	if(subjectName!=""){
+		int pos=-1;
+		for(int i=0; i<subjectsComboBox->count(); i++){
+			if(subjectsComboBox->itemText(i)==subjectName){
+				pos=i;
+				break;
+			}
+		}
+		assert(pos>=0);
+		subjectsComboBox->setCurrentItem(pos);
+	}
+	else{
+		//begin trick to pass a Qt 4.6.0 bug: the first entry is not highlighted with mouse until you move to second entry and then back up
+		if(subjectsComboBox->view()){
+			/*QModelIndex mi=subjectsComboBox->view()->currentIndex();
+			subjectsComboBox->view()->setCurrentIndex(mi);*/
+			subjectsComboBox->view()->setCurrentIndex(QModelIndex());
+		}
+		//end trick
+		subjectsComboBox->setCurrentItem(-1);
+	}
+	//selectedActivityTagsListBox->clear();
+	if(activityTagName!="")
+		selectedActivityTagsListBox->insertItem(activityTagName);	
 }
 
 AddActivityForm::~AddActivityForm()
@@ -806,9 +838,12 @@ void AddActivityForm::addActivity()
 
 				if(code==QDialog::Accepted){
 					assert(second.weight>=0 && second.weight<=100.0);
-					int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
-					for(int i=0; i<nsplit; i++)
-						acts[i]=firstactivityid+i;
+					//int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+					QList<int> acts;
+					for(int i=0; i<nsplit; i++){
+						//acts[i]=firstactivityid+i;
+						acts.append(firstactivityid+i);
+					}
 					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(second.weight, forceAdjacentCheckBox->isChecked(), nsplit, acts, minD-1);
 					bool tmp=gt.rules.addTimeConstraint(c);
 					assert(tmp);

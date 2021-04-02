@@ -124,7 +124,7 @@ const int CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY			=60;
 const int CONSTRAINT_STUDENTS_MAX_GAPS_PER_DAY							=61;
 const int CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY						=62;
 
-QString getActivityDetailedDescription(const Rules& r, int id);
+QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
 This class represents a time constraint
@@ -373,7 +373,8 @@ public:
 	/**
 	The activities involved in this constraint (id)
 	*/
-	int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
+	QList<int> activitiesId;
+	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -383,7 +384,8 @@ public:
 	/**
 	The activities involved in this constraint (indexes in the rules) - internal structure
 	*/
-	int _activities[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
+	//int _activities[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
+	QList<int> _activities;
 
 	ConstraintActivitiesSameStartingTime();
 
@@ -391,7 +393,8 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities' id-s.
 	*/
-	ConstraintActivitiesSameStartingTime(double wp, int n_act, const int act[]);
+	//ConstraintActivitiesSameStartingTime(double wp, int n_act, const int act[]);
+	ConstraintActivitiesSameStartingTime(double wp, int n_act, const QList<int>& act);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -439,7 +442,8 @@ public:
 	/**
 	The activities involved in this constraint (id)
 	*/
-	int activitiesId[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
+	QList<int> activitiesId;
+	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -449,7 +453,8 @@ public:
 	/**
 	The activities involved in this constraint (index in the rules) - internal structure
 	*/
-	int _activities[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
+	//int _activities[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
+	QList<int> _activities;
 
 	ConstraintActivitiesNotOverlapping();
 
@@ -457,7 +462,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities.
 	*/
-	ConstraintActivitiesNotOverlapping(double wp, int n_act, const int act[]);
+	ConstraintActivitiesNotOverlapping(double wp, int n_act, const QList<int>& act);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -506,7 +511,8 @@ public:
 	/**
 	The activities involved in this constraint (id)
 	*/
-	int activitiesId[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> activitiesId;
+	//int activitiesId[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 
 	/**
 	The number of minimum days between each 2 activities
@@ -523,7 +529,8 @@ public:
 	/**
 	The activities involved in this constraint (index in the rules) - internal structure
 	*/
-	int _activities[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> _activities;
+	//int _activities[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 
 	ConstraintMinDaysBetweenActivities();
 
@@ -531,7 +538,8 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities.
 	*/
-	ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const int act[], int n);
+	//ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const int act[], int n);
+	ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const QList<int>& act, int n);
 
 	/**
 	Comparison operator - to be sure that we do not introduce duplicates
@@ -578,7 +586,7 @@ public:
 	/**
 	The activities involved in this constraint (id)
 	*/
-	int activitiesId[MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> activitiesId;
 
 	/**
 	The number of maximum days between each 2 activities
@@ -595,7 +603,7 @@ public:
 	/**
 	The activities involved in this constraint (index in the rules) - internal structure
 	*/
-	int _activities[MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> _activities;
 
 	ConstraintMaxDaysBetweenActivities();
 
@@ -603,7 +611,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities.
 	*/
-	ConstraintMaxDaysBetweenActivities(double wp, int n_act, const int act[], int n);
+	ConstraintMaxDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -670,7 +678,8 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities.
 	*/
-	ConstraintMinGapsBetweenActivities(double wp, int n_act, const int act[], int ngaps);
+	//ConstraintMinGapsBetweenActivities(double wp, int n_act, const int act[], int ngaps);
+	ConstraintMinGapsBetweenActivities(double wp, int n_act, const QList<int>& actList, int ngaps);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2066,7 +2075,8 @@ public:
 	The indices of the activities in the rules (from 0 to rules.nActivities-1)
 	These are indices in the internal list -> Rules::internalActivitiesList
 	*/
-	int p_activitiesIndices[MAX_ACTIVITIES];
+	//int p_activitiesIndices[MAX_ACTIVITIES];
+	QList<int> p_activitiesIndices;
 
 	ConstraintActivitiesPreferredTimeSlots();
 
@@ -2148,7 +2158,8 @@ public:
 	The indices of the activities in the rules (from 0 to rules.nActivities-1)
 	These are indices in the internal list -> Rules::internalActivitiesList
 	*/
-	int p_activitiesIndices[MAX_ACTIVITIES];
+	//int p_activitiesIndices[MAX_ACTIVITIES];
+	QList<int> p_activitiesIndices;
 
 	ConstraintSubactivitiesPreferredTimeSlots();
 
@@ -2228,7 +2239,8 @@ public:
 	The indices of the activities in the rules (from 0 to rules.nActivities-1)
 	These are indices in the internal list -> Rules::internalActivitiesList
 	*/
-	int activitiesIndices[MAX_ACTIVITIES];
+	//int activitiesIndices[MAX_ACTIVITIES];
+	QList<int> activitiesIndices;
 
 	ConstraintActivitiesPreferredStartingTimes();
 
@@ -2310,7 +2322,8 @@ public:
 	The indices of the activities in the rules (from 0 to rules.nActivities-1)
 	These are indices in the internal list -> Rules::internalActivitiesList
 	*/
-	int activitiesIndices[MAX_ACTIVITIES];
+	//int activitiesIndices[MAX_ACTIVITIES];
+	QList<int> activitiesIndices;
 
 	ConstraintSubactivitiesPreferredStartingTimes();
 
@@ -2365,7 +2378,8 @@ public:
 	/**
 	The activities involved in this constraint (id)
 	*/
-	int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
+	QList<int> activitiesId;
+	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -2375,7 +2389,8 @@ public:
 	/**
 	The activities involved in this constraint (index in the rules) - internal structure
 	*/
-	int _activities[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
+	QList<int> _activities;
+	//int _activities[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
 
 	ConstraintActivitiesSameStartingHour();
 
@@ -2383,7 +2398,8 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities' id-s.
 	*/
-	ConstraintActivitiesSameStartingHour(double wp, int n_act, const int act[]);
+	//ConstraintActivitiesSameStartingHour(double wp, int n_act, const int act[]);
+	ConstraintActivitiesSameStartingHour(double wp, int n_act, const QList<int>& act);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -2425,7 +2441,8 @@ public:
 	/**
 	The activities involved in this constraint (id)
 	*/
-	int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+	QList<int> activitiesId;
+	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -2435,7 +2452,8 @@ public:
 	/**
 	The activities involved in this constraint (index in the rules) - internal structure
 	*/
-	int _activities[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+	//int _activities[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+	QList<int> _activities;
 
 	ConstraintActivitiesSameStartingDay();
 
@@ -2443,7 +2461,8 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities' id-s.
 	*/
-	ConstraintActivitiesSameStartingDay(double wp, int n_act, const int act[]);
+	//ConstraintActivitiesSameStartingDay(double wp, int n_act, const int act[]);
+	ConstraintActivitiesSameStartingDay(double wp, int n_act, const QList<int>& act);
 
 	bool computeInternalStructure(Rules& r);
 
@@ -3029,7 +3048,8 @@ public:
 	The indices of the activities in the rules (from 0 to rules.nActivities-1)
 	These are indices in the internal list -> Rules::internalActivitiesList
 	*/
-	int activitiesIndices[MAX_ACTIVITIES];
+	//int activitiesIndices[MAX_ACTIVITIES];
+	QList<int> activitiesIndices;
 
 	ConstraintActivitiesEndStudentsDay();
 

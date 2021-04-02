@@ -1,14 +1,15 @@
 FET - How to add new translations (languages)
 ---------------------------------------------
 
-PLEASE E-MAIL THE AUTHOR OR THE MAILING LIST IF YOU WANT TO
-TRANSLATE FET INTO YOUR LANGUAGE. ANOTHER PERSON MIGHT WORK
-ON THE SAME TRANSLATION AS YOU AND TIME MIGHT BE WASTED.
+VERY IMPORTANT: Please e-mail the author, mailing list or write on the forum
+if you want to translate FET into your language. Another person might work on
+the same translation as you and time might be wasted.
 
-PLEASE READ INSTRUCTIONS BELOW VERY CAREFULLY AND FOLLOW THEM
+VERY IMPORTANT: Please follow the English words and do not translate incompletely
+a field. Either translate it or not, but not partially.
 
-PLEASE FOLLOW THE ENGLISH WORDS AND DO NOT TRANSLATE A SINGLE
-TERM INCOMPLETELY. EITHER TRANSLATE IT OR NOT, BUT NOT PARTIALLY.
+
+Please read the instructions below very carefully and follow them:
 
 
 STEP 1: You can use the fet_untranslated.ts file, just rename it
@@ -123,5 +124,5 @@ Text added on 2 November 2009: Please test your translation on the file named te
 all time constraints and all space constraints dialogs, the constraints should look good (description and detailed description for each one).
 Also, the constraints should be different, like for instance starting times from time slots or same starting time from same starting hour.
 
-Text added on 27 September 2009: there are some variables, like: MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES.
+Text added on 27 September 2009: there are some variables written with uppercase letters, like: MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES.
 These names must remain unchanged.

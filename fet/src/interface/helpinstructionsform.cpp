@@ -19,8 +19,6 @@
 
 #include "timetable_defs.h"
 
-#include <QDesktopWidget>
-
 HelpInstructionsForm::HelpInstructionsForm()
 {
     setupUi(this);

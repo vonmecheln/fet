@@ -23,25 +23,6 @@ Room::~Room()
 {
 }
 
-/*void Room::addEquipment(const QString& equipmentName)
-{
-	this->equipments.append(equipmentName);	
-}
-
-void Room::removeEquipment(const QString& equipmentName)
-{
-	this->equipments.remove(equipmentName);
-}
-
-bool Room::searchEquipment(const QString& equipmentName)
-{
-	int tmp=this->equipments.findIndex(equipmentName);
-	if(tmp>=0)
-		return true;
-	else
-		return false;
-}*/
-
 void Room::computeInternalStructure(Rules& r)
 {
 	if(building=="")
@@ -55,11 +36,11 @@ void Room::computeInternalStructure(Rules& r)
 QString Room::getDescription()
 {
 	QString s=tr("N:%1", "Name of room").arg(this->name);
-	s+=",";
+	s+=", ";
 	
 	if(this->building!=""){
 		s+=tr("B:%1", "Building").arg(this->building);
-		s+=",";
+		s+=", ";
 	}
 	/*s+=tr("T:");
 	s+=this->type;
@@ -75,7 +56,9 @@ QString Room::getDescription()
 
 QString Room::getDetailedDescription()
 {
-	QString s=tr("Name=%1", "The name of the room").arg(this->name);
+	QString s=tr("Room");
+	s+="\n";
+	s+=tr("Name=%1", "The name of the room").arg(this->name);
 	s+="\n";
 
 	if(this->building!=""){

@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintactivitiesnotoverlappingform.h"
 #include "addconstraintactivitiesnotoverlappingform.h"
 #include "modifyconstraintactivitiesnotoverlappingform.h"
-
-#include <QDesktopWidget>
 
 ConstraintActivitiesNotOverlappingForm::ConstraintActivitiesNotOverlappingForm()
 {

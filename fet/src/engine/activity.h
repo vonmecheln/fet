@@ -29,8 +29,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include "timetable_defs.h"
 
-#include <qfile.h>
-
 #include <QString>
 #include <QList>
 #include <QSet>
@@ -41,20 +39,6 @@ class Activity;
 
 typedef QList<Activity*> ActivitiesList;
 
-/**
-Used for an activity's parity, if it was not yet initialized.
-*/
-//const int PARITY_NOT_INITIALIZED=-1;
-
-/**
-Used for an activity, if it is weekly.
-*/
-//const int PARITY_WEEKLY=0;
-
-/**
-Used for an activity, if it is occuring once at two weeks.
-*/
-//const int PARITY_FORTNIGHTLY=1;
 
 /**
 This class represents an activity.

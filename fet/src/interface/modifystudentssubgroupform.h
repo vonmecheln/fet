@@ -24,12 +24,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-//#include "fetmainform.h"
-
-#include <qspinbox.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
 
 class ModifyStudentsSubgroupForm : public QDialog, Ui::ModifyStudentsSubgroupForm_template {
 	Q_OBJECT

@@ -20,11 +20,7 @@
 #include "subject.h"
 #include "activitytag.h"
 
-#include <q3listbox.h>
-#include <qinputdialog.h>
-#include <q3textedit.h>
-
-#include <QDesktopWidget>
+#include <QInputDialog>
 
 #include <QMessageBox>
 
@@ -171,7 +167,8 @@ void ActivityTagsForm::sortActivityTags()
 void ActivityTagsForm::activityTagChanged(int index)
 {
 	if(index<0){
-		currentActivityTagTextEdit->setText(tr("Invalid activity tag"));
+		//currentActivityTagTextEdit->setText(tr("Invalid activity tag"));
+		currentActivityTagTextEdit->setText("");
 		return;
 	}
 	

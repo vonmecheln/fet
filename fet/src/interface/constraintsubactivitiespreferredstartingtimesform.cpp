@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintsubactivitiespreferredstartingtimesform.h"
 #include "addconstraintsubactivitiespreferredstartingtimesform.h"
 #include "modifyconstraintsubactivitiespreferredstartingtimesform.h"
-
-#include <QDesktopWidget>
 
 ConstraintSubactivitiesPreferredStartingTimesForm::ConstraintSubactivitiesPreferredStartingTimesForm()
 {

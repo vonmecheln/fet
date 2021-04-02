@@ -90,7 +90,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>All activities (dbl. click)</string>
+        <string>Activities</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -119,7 +119,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>Selected (dbl. click)</string>
+        <string comment="It refers to a list of selected activities">Selected</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

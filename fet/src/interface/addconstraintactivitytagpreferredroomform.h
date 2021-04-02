@@ -23,16 +23,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-#include <q3combobox.h>
-#include <q3listbox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
 class AddConstraintActivityTagPreferredRoomForm : public QDialog, Ui::AddConstraintActivityTagPreferredRoomForm_template  {
 	Q_OBJECT
 public:

@@ -25,10 +25,7 @@
 #include "fet.h"
 #include "timetableexport.h"
 
-#include <qpushbutton.h>
-#include <qstring.h>
-
-#include <QDesktopWidget>
+#include <QString>
 
 #include <QTextEdit>
 
@@ -68,6 +65,7 @@ extern Solution best_solution;
 
 extern Solution highestStageSolution;
 
+extern QString conflictsStringTitle;
 extern QString conflictsString;
 
 
@@ -82,7 +80,7 @@ extern int maxActivitiesPlaced;
 extern QDateTime generationStartDateTime;
 extern QDateTime generationHighestStageDateTime;
 
-QString getActivityDetailedDescription(const Rules& r, int id);
+QString getActivityDetailedDescription(Rules& r, int id);
 
 void GenerateThread::run()
 {
@@ -226,6 +224,7 @@ void TimetableGenerateForm::stop()
 	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
+	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
 	conflictsString = "";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
@@ -384,6 +383,7 @@ void TimetableGenerateForm::stopHighest()
 	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
+	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
 	conflictsString = "";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
@@ -523,6 +523,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
+	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
 	conflictsString = "";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
@@ -647,6 +648,7 @@ void TimetableGenerateForm::simulationFinished()
 	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
+	conflictsStringTitle=TimetableGenerateForm::tr("Soft conflicts", "Title of dialog");
 	conflictsString = "";
 	conflictsString+=tr("Total soft conflicts:");
 	conflictsString+=" ";
@@ -796,6 +798,7 @@ void TimetableGenerateForm::write(){
 	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
+	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
 	conflictsString = "";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
@@ -843,6 +846,7 @@ void TimetableGenerateForm::writeHighestStage(){
 	TimetableExport::getRoomsTimetable(c);
 
 	//update the string representing the conflicts
+	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
 	conflictsString = "";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";

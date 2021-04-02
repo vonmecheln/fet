@@ -17,11 +17,6 @@
 
 #include "modifybuildingform.h"
 
-#include <qlineedit.h>
-#include <q3combobox.h>
-
-#include <QDesktopWidget>
-
 #include <QMessageBox>
 
 ModifyBuildingForm::ModifyBuildingForm(const QString& initialBuildingName)

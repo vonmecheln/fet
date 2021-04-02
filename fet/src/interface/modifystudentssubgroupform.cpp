@@ -17,10 +17,6 @@
 
 #include "modifystudentssubgroupform.h"
 
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
-
 #include <QMessageBox>
 
 ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents)

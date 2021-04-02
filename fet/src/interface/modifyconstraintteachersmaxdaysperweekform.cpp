@@ -15,17 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <cstdio>
+
 #include "modifyconstraintteachersmaxdaysperweekform.h"
 #include "timeconstraint.h"
 
-#include <qradiobutton.h>
-#include <qlabel.h>
-
-#include <qlineedit.h>
-
 #include <QMessageBox>
-
-#include <QDesktopWidget>
 
 ModifyConstraintTeachersMaxDaysPerWeekForm::ModifyConstraintTeachersMaxDaysPerWeekForm(ConstraintTeachersMaxDaysPerWeek* ctr)
 {

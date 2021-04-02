@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "helponimperfectconstraints.h"
 
 #include "longtextmessagebox.h"
@@ -22,8 +24,6 @@
 #include "constraintteacheractivitytagmaxhoursdailyform.h"
 #include "addconstraintteacheractivitytagmaxhoursdailyform.h"
 #include "modifyconstraintteacheractivitytagmaxhoursdailyform.h"
-
-#include <QDesktopWidget>
 
 ConstraintTeacherActivityTagMaxHoursDailyForm::ConstraintTeacherActivityTagMaxHoursDailyForm()
 {

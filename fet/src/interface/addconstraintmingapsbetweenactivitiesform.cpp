@@ -15,17 +15,16 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
+#include <QList>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintmingapsbetweenactivitiesform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 AddConstraintMinGapsBetweenActivitiesForm::AddConstraintMinGapsBetweenActivitiesForm()
 {
@@ -215,13 +214,16 @@ void AddConstraintMinGapsBetweenActivitiesForm::addConstraint()
 		return;
 	}*/
 
-	int ids[MAX_ACTIVITIES];
+	//int ids[MAX_ACTIVITIES];
+	QList<int> idsList;
 	int i;
 	QList<int>::iterator it;
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
-		ids[i]=*it;
+		//ids[i]=*it;
+		idsList.append(*it);
 	
-	ctr=new ConstraintMinGapsBetweenActivities(weight, this->selectedActivitiesList.count(), ids, minGapsSpinBox->value());
+	//ctr=new ConstraintMinGapsBetweenActivities(weight, this->selectedActivitiesList.count(), ids, minGapsSpinBox->value());
+	ctr=new ConstraintMinGapsBetweenActivities(weight, this->selectedActivitiesList.count(), idsList, minGapsSpinBox->value());
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	

@@ -175,16 +175,14 @@ using namespace std;
 #include "lockunlock.h"
 #include "advancedlockunlockform.h"
 
-#include <qmessagebox.h>
+#include <QMessageBox>
 
 #include "longtextmessagebox.h"
 
-//#include <q3filedialog.h>
 #include <QFileDialog>
-#include <qstring.h>
-#include <qdir.h>
-#include <q3popupmenu.h>
-//Added by qt3to4:
+#include <QString>
+#include <QDir>
+
 #include <QTranslator>
 
 #include <QCloseEvent>
@@ -194,6 +192,18 @@ using namespace std;
 #include <QMap>
 
 #include <QWidget>
+
+#include <QList>
+
+#include <QDesktopServices>
+#include <QUrl>
+
+#include <QMenu>
+#include <QCursor>
+
+#include <QRect>
+QRect mainFormSettingsRect;
+int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 
 #include "httpget.h"
 
@@ -212,10 +222,9 @@ bool rooms_schedule_ready;
 Solution best_solution;
 
 QString conflictsString; //the string that contains a log of the broken constraints
+QString conflictsStringTitle;
 
 extern QApplication* pqapplication;
-
-#include <QDesktopWidget>
 
 #include <QSettings>
 
@@ -232,6 +241,8 @@ const QString COMPANY="fet";
 const QString PROGRAM="fettimetabling";
 
 bool USE_GUI_COLORS=false;
+
+bool SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
 
 bool ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=false;
 bool ENABLE_STUDENTS_MAX_GAPS_PER_DAY=false;
@@ -332,10 +343,21 @@ FetMainForm::FetMainForm()
 	
 	//statusBar()->showMessage(tr("FET started", "This is a message written in the status bar, saying that FET was started"), STATUS_BAR_MILLISECONDS);
 	statusBar()->showMessage("", STATUS_BAR_MILLISECONDS); //to get the correct centralWidget for the logo, so we need status bar existing.
+
+	setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg("untitled"));
+	
+	//toolBox->setCurrentIndex(0);
+	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	tabWidget->setCurrentIndex(MAIN_FORM_SHORTCUTS_TAB_POSITION);
+	
+	shortcutBasicMenu=new QMenu();
+	shortcutBasicMenu->addMenu(menuInstitution_information);
+	shortcutBasicMenu->addMenu(menuDays_and_hours);
 	
 	ORIGINAL_WIDTH=width();
 	ORIGINAL_HEIGHT=height();
 	
+	/*
 	QSettings newSettings(COMPANY, PROGRAM);
 	QRect rect=newSettings.value("main-form-geometry", QRect(0,0,0,0)).toRect();
 	if(!rect.isValid())
@@ -350,6 +372,16 @@ FetMainForm::FetMainForm()
 		resize(rect.size());
 		move(rect.topLeft());
 		cout<<"read rect.x()=="<<rect.x()<<", rect.y()=="<<rect.y()<<endl;
+	}*/
+	QRect rect=mainFormSettingsRect;
+	if(!rect.isValid()){
+		centerWidgetOnScreen(this);
+	}
+	else{
+		this->setWindowFlags(this->windowFlags() | Qt::WindowMinMaxButtonsHint);
+		
+		resize(rect.size());
+		move(rect.topLeft());
 	}
 
 	//new data
@@ -368,6 +400,9 @@ FetMainForm::FetMainForm()
 	
 	//languageMenu->setCheckable(true);
 	
+	settingsShowShortcutsOnMainWindowAction->setCheckable(true);
+	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	
 	checkForUpdatesAction->setCheckable(true);
 	checkForUpdatesAction->setChecked(checkForUpdates);
 	
@@ -383,7 +418,7 @@ FetMainForm::FetMainForm()
 	
 	if(checkForUpdates){
 		useGetter=true;
-		bool t=getter.getFile(QUrl("http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
+		bool t=getter.getFile(QUrl("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
 		if(!t){
 			QMessageBox::critical(this, tr("FET information"), tr("Critical error - cannot check for updates"
 			 " because of a bug in application. FET will now continue operation, but you should"
@@ -506,6 +541,12 @@ void FetMainForm::on_settingsUseColorsAction_toggled()
 	USE_GUI_COLORS=settingsUseColorsAction->isChecked();
 }
 
+void FetMainForm::on_settingsShowShortcutsOnMainWindowAction_toggled()
+{
+	SHOW_SHORTCUTS_ON_MAIN_WINDOW=settingsShowShortcutsOnMainWindowAction->isChecked();
+	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+}
+
 void FetMainForm::on_timetablesDivideByDaysAction_toggled()
 {
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=timetablesDivideByDaysAction->isChecked();
@@ -516,13 +557,13 @@ void FetMainForm::httpDone(bool error)
 	if(error){
 		QMessageBox::warning(this, tr("FET warning"), tr(
 		 "Could not search for possible updates on internet - error message is: %1. "
-		 "I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . "
-		 "Maybe the current structure on web page was changed. Please visit FET web page"
-		 " http://www.lalescu.ro/liviu/fet/ and get latest version or,"
+		 "Searching for file %2. "
+		 "Maybe the current structure on web page was changed. Please visit FET homepage: %3"
+		 " and get latest version or,"
 		 " if the web page does not work, try to search for the new FET page on the internet."
-		 " You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later"
-		 "\n\nIf you want, you can turn off automatic search for updates in Settings menu"
-		 ).arg(getter.http.errorString()));
+		 " Maybe the page has some temporary problems, so try again later.")
+		  .arg(getter.http.errorString()).arg("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt").arg("http://lalescu.ro/liviu/fet/"));
+		 //+"\n\n"+tr("You can choose to disable automatic search for updates in the Settings menu."));
 	}
 	else{
 		QString s;
@@ -533,23 +574,47 @@ void FetMainForm::httpDone(bool error)
 		}
 	
 		if(internetVersion!=FET_VERSION){
-			QMessageBox::information(this, tr("FET information"),
-			 tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/\n\n"
-			 "You have to manually download and install (open the FET webpage in an internet browser). "
-			 "Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade "
-			 "(the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work"
-			 "\n\nYou can choose to disable automatic search for updates in the Settings menu")
-			 .arg(s));
+			QMessageBox::StandardButton button=QMessageBox::information(this, tr("FET information"),
+			 tr("Another version: %1, is available on the FET homepage: %2", "%1 is new version, %2 is FET homepage").arg(s).arg("http://lalescu.ro/liviu/fet/")
+			  +"\n\n"
+			 +tr("You have to manually download and install.")+" "+
+			 tr("You may need to hit Refresh in your web browser.")+"\n\n"+
+			 tr("Would you like to open the FET homepage now?"),
+			 QMessageBox::Yes|QMessageBox::No
+			 );
+			 //+"\n\n"+tr("You can choose to disable automatic search for updates from the Settings menu."));
+			 
+			if(button==QMessageBox::Yes){
+				bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/"));
+				if(!tds){
+					QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
+						" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/"));
+				}
+			}
 		}
 	}
 }
 
+void FetMainForm::closeOtherWindows()
+{
+	QList<QWidget*> tlwl=qApp->topLevelWidgets();
+	
+	foreach(QWidget* wi, tlwl)
+		if(wi->isVisible() && wi!=this)
+			wi->close();
+}
+
 void FetMainForm::closeEvent(QCloseEvent* event)
 {
-	QSettings settings(COMPANY, PROGRAM);
+	/*QSettings settings(COMPANY, PROGRAM);
 	QRect rect(x(), y(), width(), height());
 	settings.setValue("main-form-geometry", rect);
-	cout<<"wrote x()=="<<x()<<", y()=="<<y()<<endl;
+	cout<<"wrote x()=="<<x()<<", y()=="<<y()<<endl;*/
+	QRect rect(x(), y(), width(), height());
+	mainFormSettingsRect=rect;
+	
+	MAIN_FORM_SHORTCUTS_TAB_POSITION=tabWidget->currentIndex();
+
 	
 	//if(event!=NULL)
 	//	;
@@ -559,9 +624,11 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 	 tr("&Yes"), tr("&No"), tr("&Cancel"), 0 , 2 )){
 	 	case 0: 
 			this->on_fileSaveAction_activated();
+			closeOtherWindows();
 			event->accept();
 			break;
 	 	case 1: 
+			closeOtherWindows();
 			event->accept();
 			break;
 		case 2: 
@@ -576,6 +643,8 @@ FetMainForm::~FetMainForm()
 {
 	if(useGetter)
 		getter.http.abort();
+		
+	delete shortcutBasicMenu;
 }
 
 void FetMainForm::on_fileExitAction_activated()
@@ -612,7 +681,7 @@ void FetMainForm::on_fileNewAction_activated()
 	if(confirm){
 		INPUT_FILENAME_XML="";
 	
-		setWindowTitle(tr("FET - a free timetabling program"));
+		setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg("untitled"));
 
 		if(gt.rules.initialized)
 			gt.rules.kill();
@@ -645,7 +714,7 @@ void FetMainForm::on_fileOpenAction_activated()
 	int confirm=1;
 
 	if(confirm){
-		QString s = QFileDialog::getOpenFileName(this, tr("Choose a file"),
+		QString s = QFileDialog::getOpenFileName(this, tr("Choose a file to open"),
 			WORKING_DIRECTORY, 
 			tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
 			"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)");
@@ -703,7 +772,7 @@ void FetMainForm::on_fileOpenAction_activated()
 		WORKING_DIRECTORY=s.left(tmp);
 		
 		if(INPUT_FILENAME_XML!="")
-			setWindowTitle(tr("FET - %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev("/")-1)));
+			setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev("/")-1)));
 	}
 }
 
@@ -711,7 +780,7 @@ void FetMainForm::on_fileSaveAsAction_activated()
 {
 	QString predefFileName=INPUT_FILENAME_XML;
 	if(predefFileName=="")
-		predefFileName=WORKING_DIRECTORY;
+		predefFileName=WORKING_DIRECTORY+FILE_SEP+"untitled.fet";
 
 	QString s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under"),
 		predefFileName, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
@@ -758,7 +827,7 @@ void FetMainForm::on_fileSaveAsAction_activated()
 			
 	INPUT_FILENAME_XML = s;
 	
-	setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
+	setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg(s.right(s.length()-tmp-1)));
 	
 	gt.rules.write(INPUT_FILENAME_XML);
 	
@@ -2533,9 +2602,36 @@ void FetMainForm::on_helpAboutAction_activated()
 	form->show();
 }
 
+void FetMainForm::on_helpHomepageAction_activated()
+{
+	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/"));
+
+	if(!tds){
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
+		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/"));
+	}
+}
+
+void FetMainForm::on_helpContentsAction_activated()
+{
+	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/doc/"));
+
+	if(!tds){
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
+		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/doc/"));
+	}
+}
+
 void FetMainForm::on_helpForumAction_activated()
 {
-	QString s=tr("FET has a forum where you can ask questions or talk about FET");
+	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/forum/"));
+
+	if(!tds){
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
+		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/forum/"));
+	}
+
+/*	QString s=tr("FET has a forum where you can ask questions or talk about FET");
 	s+="\n\n";
 	s+=tr("The current address is: %1").arg("http://lalescu.ro/liviu/fet/forum/");
 	s+="\n";
@@ -2543,8 +2639,6 @@ void FetMainForm::on_helpForumAction_activated()
 	s+="\n\n";
 	s+=tr("If it does not work, please search the FET web page, maybe the address was changed");
 
-	//QMessageBox::information(this, tr("FET forum"), s);
-	
 	QDialog dialog;
 	
 	dialog.setWindowTitle(tr("FET forum"));
@@ -2563,16 +2657,44 @@ void FetMainForm::on_helpForumAction_activated()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 200;
-	int yy=rect.height()/2 - 125;
-	dialog.setGeometry(xx, yy, 400, 250);*/
 	dialog.setGeometry(0, 0, 400, 250);
 	centerWidgetOnScreen(&dialog);
 
-	dialog.exec();
+	dialog.exec();*/
+}
 
+/*
+void FetMainForm::on_helpMailingListAction_activated()
+{
+	QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/mailinglist.html"));
+}*/
+
+/*
+void FetMainForm::on_helpContactsAction_activated()
+{
+	QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/contacts.html"));
+}*/
+
+void FetMainForm::on_helpAddressesAction_activated()
+{
+	QString s="";
+	s+=tr("In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:");
+	s+="\n\n";
+	s+=tr("FET homepage: %1", "%1 is FET homepage, begins with http://...").arg("http://lalescu.ro/liviu/fet/");
+	s+="\n";
+	s+=tr("Documentation (online help contents): %1", "%1 is web page of FET Doc(umentation), which is the contents of the online help, it begins with http://...").arg("http://lalescu.ro/liviu/fet/doc/");
+	s+="\n";
+	s+=tr("Forum: %1", "%1 is web page of FET forum, begins with http://...").arg("http://lalescu.ro/liviu/fet/forum/");
+	s+="\n\n";
+	/*s+=tr("Mailing list: %1", "%1 is web page of FET mailing list, begins with http://...").arg("http://lalescu.ro/liviu/fet/mailinglist.html");
+	s+="\n";
+	s+=tr("Contacts: %1", "%1 is web page of FET contacts, begins with http://...").arg("http://lalescu.ro/liviu/fet/contacts.html");
+	s+="\n\n";*/
+	s+=tr("Additionally, you may find on the FET homepage a mailing list address and other contact information.");
+	s+="\n\n";
+	s+=tr("In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.");
+
+	LongTextMessageBox::largeInformation(this, tr("FET web addresses"), s);
 }
 
 void FetMainForm::on_helpFAQAction_activated()
@@ -2596,6 +2718,7 @@ void FetMainForm::on_helpInstructionsAction_activated()
 	form->show();
 }
 
+/*
 void FetMainForm::on_helpManualAction_activated()
 {
 	QString s=tr("You can read a contributed user's manual in the %1 directory of FET.").arg(QDir::toNativeSeparators("doc/manual/"));
@@ -2627,17 +2750,14 @@ void FetMainForm::on_helpManualAction_activated()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 300;
-	int yy=rect.height()/2 - 200;
-	dialog.setGeometry(xx, yy, 600, 400);*/
 	dialog.setGeometry(0,0,600,400);
 	centerWidgetOnScreen(&dialog);
 
 	dialog.exec();
 }
+*/
 
+/*
 void FetMainForm::on_helpInOtherLanguagesAction_activated()
 {
 	QString s=tr("You can see help translated into other languages in the directory %1 of FET").arg(QDir::toNativeSeparators("doc/international/"));
@@ -2676,16 +2796,11 @@ void FetMainForm::on_helpInOtherLanguagesAction_activated()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);*/
 	dialog.setGeometry(0,0,700,500);
 	centerWidgetOnScreen(&dialog);
 
 	dialog.exec();
-}
+}*/
 
 void FetMainForm::on_timetableGenerateAction_activated()
 {
@@ -3040,6 +3155,12 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+="\n";
 	s+=tr("14. Warn if using not perfect constraints will be %1", "%1 is true or false, this is a warning if user uses not perfect constraints").arg(tr("true"));
 
+	s+="\n";
+	s+=tr("15. Show shortcut buttons in main window will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+	s+=tr("16. In the shortcuts container from the main window, the first section will be selected/shown", "It refers to the main window tab widget for shortcuts, which currently contains 4 tabs: Data, "
+		"Time constraints, Space constraints, Timetable (so it will select/show Data tab).");
+
 	//s+="    ";
 	//s+=tr("Explanation: $HOME is usually '/home/username' under UNIX and Mac and 'Documents and Settings\\username' or 'Users\\username' under Windows");
 	//s+="\n";
@@ -3066,6 +3187,12 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	
 	checkForUpdatesAction->setChecked(false);
 	checkForUpdates=0;
+	
+	SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
+	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	
+	tabWidget->setCurrentIndex(0);
 	
 	USE_GUI_COLORS=false;
 	settingsUseColorsAction->setChecked(USE_GUI_COLORS);
@@ -3341,4 +3468,182 @@ void FetMainForm::showWarningForNotPerfectConstraintsToggled(bool checked)
 	}
 	
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=checked;
+}
+
+
+
+//time constraints
+void FetMainForm::on_shortcutAllTimeConstraintsPushButton_clicked()
+{
+	on_dataAllTimeConstraintsAction_activated();
+}
+
+/*void FetMainForm::on_shortcutMiscTimeConstraintsPushButton_clicked()
+{
+	menuMisc_time_constraints->popup(QCursor::pos());
+}*/
+
+void FetMainForm::on_shortcutBreakTimeConstraintsPushButton_clicked()
+{
+	on_dataTimeConstraintsBreakTimesAction_activated();
+}
+
+void FetMainForm::on_shortcutTeachersTimeConstraintsPushButton_clicked()
+{
+	menuTeachers_time_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutStudentsTimeConstraintsPushButton_clicked()
+{
+	menuStudents_time_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutActivitiesTimeConstraintsPushButton_clicked()
+{
+	menuActivities_time_constraints->popup(QCursor::pos());
+}
+
+
+//space constraints
+void FetMainForm::on_shortcutAllSpaceConstraintsPushButton_clicked()
+{
+	on_dataAllSpaceConstraintsAction_activated();
+}
+
+/*void FetMainForm::on_shortcutMiscSpaceConstraintsPushButton_clicked()
+{
+	menuMisc_space_constraints->popup(QCursor::pos());
+}*/
+
+void FetMainForm::on_shortcutRoomsSpaceConstraintsPushButton_clicked()
+{
+	menuRooms_space_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutTeachersSpaceConstraintsPushButton_clicked()
+{
+	menuTeachers_space_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutStudentsSpaceConstraintsPushButton_clicked()
+{
+	menuStudents_space_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutSubjectsSpaceConstraintsPushButton_clicked()
+{
+	menuSubjects_space_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutActivityTagsSpaceConstraintsPushButton_clicked()
+{
+	menuActivity_tags_space_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked()
+{
+	menuSubjects_and_activity_tags_space_constraints->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutActivitiesSpaceConstraintsPushButton_clicked()
+{
+	menuActivities_space_constraints->popup(QCursor::pos());
+}
+
+//timetable
+void FetMainForm::on_shortcutGeneratePushButton_clicked()
+{
+	on_timetableGenerateAction_activated();
+}
+
+void FetMainForm::on_shortcutGenerateMultiplePushButton_clicked()
+{
+	on_timetableGenerateMultipleAction_activated();
+}
+
+void FetMainForm::on_shortcutViewTeachersPushButton_clicked()
+{
+	on_timetableViewTeachersAction_activated();
+}
+
+void FetMainForm::on_shortcutViewStudentsPushButton_clicked()
+{
+	on_timetableViewStudentsAction_activated();
+}
+
+void FetMainForm::on_shortcutViewRoomsPushButton_clicked()
+{
+	on_timetableViewRoomsAction_activated();
+}
+
+void FetMainForm::on_shortcutShowSoftConflictsPushButton_clicked()
+{
+	on_timetableShowConflictsAction_activated();
+}
+
+//data shortcut
+void FetMainForm::on_shortcutBasicPushButton_clicked()
+{
+	shortcutBasicMenu->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutSubjectsPushButton_clicked()
+{
+	on_dataSubjectsAction_activated();
+}
+
+void FetMainForm::on_shortcutActivityTagsPushButton_clicked()
+{
+	on_dataActivityTagsAction_activated();
+}
+
+void FetMainForm::on_shortcutTeachersPushButton_clicked()
+{
+	on_dataTeachersAction_activated();
+}
+
+void FetMainForm::on_shortcutStudentsPushButton_clicked()
+{
+	menuStudents->popup(QCursor::pos());
+}
+
+void FetMainForm::on_shortcutActivitiesPushButton_clicked()
+{
+	on_dataActivitiesAction_activated();
+}
+
+void FetMainForm::on_shortcutSubactivitiesPushButton_clicked()
+{
+	on_dataSubactivitiesAction_activated();
+}
+
+void FetMainForm::on_shortcutBuildingsPushButton_clicked()
+{
+	on_dataBuildingsAction_activated();
+}
+
+void FetMainForm::on_shortcutRoomsPushButton_clicked()
+{
+	on_dataRoomsAction_activated();
+}
+
+//file shortcut
+void FetMainForm::on_shortcutNewPushButton_clicked()
+{
+	on_fileNewAction_activated();
+}
+
+void FetMainForm::on_shortcutOpenPushButton_clicked()
+{
+	on_fileOpenAction_activated();
+}
+
+void FetMainForm::on_shortcutSavePushButton_clicked()
+{
+	on_fileSaveAction_activated();
+}
+
+void FetMainForm::on_shortcutSaveAsPushButton_clicked()
+{
+	on_fileSaveAsAction_activated();
 }

@@ -30,7 +30,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.11.0";
+const QString FET_VERSION="5.12.0";
 
 /**
 FET language
@@ -79,7 +79,7 @@ QHash<QString, QString> hashDayIDs;
 /**
 A log file explaining how the xml input file was parsed
 */
-const QString XML_PARSING_LOG_FILENAME="xml_reading_log.txt";
+const QString XML_PARSING_LOG_FILENAME="file_open.log";
 
 
 

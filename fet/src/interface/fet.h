@@ -30,6 +30,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetable_defs.h"
 #include "timetable.h"
 
+#include "matrix.h"
+
 #include <fstream>
 using namespace std;
 
@@ -57,17 +59,20 @@ extern QString INPUT_FILENAME_XML;
 /**
 The timetable for the teachers
 */
-extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix3D<qint16> teachers_timetable_weekly;
 
 /**
 The timetable for the students
 */
-extern qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix3D<qint16> students_timetable_weekly;
 
 /**
 The timetable for the rooms
 */
-extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix3D<qint16> rooms_timetable_weekly;
 
 void readSimulationParameters();
 void writeSimulationParameters();

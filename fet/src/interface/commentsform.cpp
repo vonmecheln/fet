@@ -16,11 +16,7 @@
 
 #include "commentsform.h"
 
-#include <q3textedit.h>
-
 #include <QMessageBox>
-
-#include <QDesktopWidget>
 
 extern Timetable gt;
 

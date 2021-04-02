@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintactivityendsstudentsdayform.h"
 #include "addconstraintactivityendsstudentsdayform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
-
-#include <QDesktopWidget>
 
 ConstraintActivityEndsStudentsDayForm::ConstraintActivityEndsStudentsDayForm()
 {

@@ -414,6 +414,7 @@ HEADERS += \
 		   ../engine/timetableexport.h \
 		   ../engine/statisticsexport.h \
 		   ../engine/lockunlock.h \
+		   ../engine/matrix.h \
 			\
 			fet.h \
            helpaboutform.h \

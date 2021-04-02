@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintmaxdaysbetweenactivitiesform.h"
 #include "spaceconstraint.h"
 
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
 #include <QList>
-
-#include <QDesktopWidget>
 
 ModifyConstraintMaxDaysBetweenActivitiesForm::ModifyConstraintMaxDaysBetweenActivitiesForm(ConstraintMaxDaysBetweenActivities* ctr)
 {
@@ -215,16 +212,17 @@ void ModifyConstraintMaxDaysBetweenActivitiesForm::ok()
 			tr("Only one selected activity"));
 		return;
 	}
-	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+	/*if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Please report error to the author\nMAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)"));
 		return;
-	}
+	}*/
 
 	int i;
 	QList<int>::iterator it;
+	this->_ctr->activitiesId.clear();
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
-		this->_ctr->activitiesId[i]=*it;
+		this->_ctr->activitiesId.append(*it);
 	this->_ctr->n_activities=i;
 		
 	this->_ctr->weightPercentage=weight;

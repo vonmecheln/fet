@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintbreaktimesform.h"
 #include "addconstraintbreaktimesform.h"
 #include "modifyconstraintbreaktimesform.h"
-
-#include <QDesktopWidget>
 
 ConstraintBreakTimesForm::ConstraintBreakTimesForm()
 {

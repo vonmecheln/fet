@@ -25,16 +25,6 @@
 
 #include "advancedfilterform.h"
 
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-#include <q3listbox.h>
-
 /*
 typedef enum {ALL, ANY} ALLANY;
 typedef enum {DESCRIPTION=0, DETDESCRIPTION=1} DESCRDETDESCR;

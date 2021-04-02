@@ -17,10 +17,7 @@
 #include "addroomform.h"
 #include "modifyroomform.h"
 
-#include <q3listbox.h>
-#include <qinputdialog.h>
-
-#include <QDesktopWidget>
+#include <QInputDialog>
 
 #include <QMessageBox>
 
@@ -90,7 +87,13 @@ void RoomsForm::addRoom()
 	
 	filterChanged();
 	
-	roomsListBox->setCurrentItem(ind);
+	//roomsListBox->setCurrentItem(ind);
+	Q_UNUSED(ind);
+	int i=roomsListBox->count()-1;
+	if(i>=0){
+		roomsListBox->setCurrentItem(i);
+		roomChanged(i);
+	}
 }
 
 void RoomsForm::removeRoom()
@@ -122,7 +125,8 @@ void RoomsForm::removeRoom()
 void RoomsForm::roomChanged(int index)
 {
 	if(index<0){
-		currentRoomTextEdit->setText(tr("Invalid room"));
+		//currentRoomTextEdit->setText(tr("Invalid room"));
+		currentRoomTextEdit->setText("");
 		return;
 	}
 

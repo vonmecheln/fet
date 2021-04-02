@@ -2,6 +2,16 @@ In the initial order, in nIncompatible, put also teacher(students)intervalMaxDay
 
 ---------------------------------------------------------------
 
+From Volker Dirr:
+
+Disable menues and shortcuts (in FET main form) if they are currently not
+useable. For example: Disable teacher constraints, if there is no teacher
+in the dataset. Disable space constraints if there is no room in the
+dataset. ... (Disable mean: Just make them unavailable/gray. Don't hide
+them. Do it like openOfiice, Firefox, ...)
+
+---------------------------------------------------------------
+
 From Horatiu Halmajan:
 
 Students max gaps per day
@@ -141,9 +151,6 @@ currently solved.
 
 From Volker Dirr:
 
-missing constraint:
-CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK
-
 for code cleanup always use the same style:
 some constraint c have
 c->teacher_ID
@@ -272,25 +279,6 @@ Change remove redundant to deactivate redundant
 
 --------------------------------------------------------------------------------
 
-
-From alfaromeo:
-
-But, again I came across the same FET behaviour:
-
-After 4 munites, FET reaches : 321 out of 323 activities placed
-It is a good partial result !!
-unfortuanatlly, I didnot stop it, hopping FET can go further to  reach 323 out of 323 activities placed
-Sadly, after a while this number continualy decrease toward 319, 318, 316 , .... 301...
-Now if I  decide to stop this decreasing process, I will get a partial timetable with only 301 placed activities   Embarrassed  FET shows a list containing the most 301 difficult placed  activities
-Now:
-1-Is it possible for FET to save and update the ever best timetable in a simulation session ?
-For example, when it reached: 321 out of 323 activities placed, I can easily place those 2 remaining activties manualy by breaking some constraints
-2- Where I can find Ids of those 2 remaining activties !?
-
-Point 2 is available - see initial list of activities in timetable generate form.
-
---------------------------------------------------------------------------------
-
 From Volker Dirr
 
 i also get today a mail from a guy, that had trouble to find the correct
@@ -351,9 +339,6 @@ From Maciej Deorowicz:
 > I have idea for two features. First: possibility to disable contraint
 > without removing it. Such 'Active' checkbox like on activities dialog.
 
---------------------------------------------------------------------------------
-
-to save results in a format that can reload and modify later. - partially done
 
 --------------------------------------------------------------------------------
 
@@ -376,49 +361,6 @@ From Volker Dirr
 >> room hours" and maybe also "maximum special room hours" in the teacher
 >> statistics? because a timetable maker (maybe) need that for his
 >> planning.
-
-----------------------------------------------------------------------------------
-
-From Abdul Hadi Kamel Abdullah
-
-Why did you remove the "Teachers-subjecttags max hours continously"
-constraint in the new version of FET. It's very important to us.
-
-Without that , the results I got was not so conducive, where a teacher has
-to give theoretical lectures (the ones with subject_tag = 'S' for more than
-two hours.
-
-The existing two constraints that for teachers which are 'Teachers no more
-than X hours continously' and 'Teachers no more than X hours daily' cannot
-prevent a teacher to have more than certain number of hours for a
-particular subject_tag.
-
-For example:
-
-lets say,
-
-It's better to for a teacher have a timetable on monday as the following :
-CASE A
-
-Time : 8am -10 am subject: CSC134   subject_tag : S (means
-theoretical-lecture session)
-Time : 10am -12pm       subject: CSC203   subject_tag : M (means lab
-session)
-Time : 2 pm - 4 pm      subject: ITT300         subject_tag : S (means
-theoretical-lecture session)
-
-than the following:
-CASE B
-
-Time : 8am -10 am subject: CSC134   subject_tag : S (means
-theoretical-lecture session)
-Time : 10 am - 12 pm    subject: ITT300         subject_tag : S (means
-theoretical-lecture session)
-Time : 2pm -4pm   subject: CSC203   subject_tag : M (means lab session)
-
-where the teacher in CASE B has to a give theoretical-lectures (in other
-words give a continous speech) for 4 hours continously, which most of
-teachers don't like.
 
 ----------------------------------------------------------------------------------
 
@@ -636,20 +578,7 @@ in the most phases it´s better to replace "lessons" by "subactivities"
 12. maybe:
 "invalid activity" is better "no activity selected"
 
-13. very low priority maybe:
-in mainform->data is this order:
-1) instutionname and comment
-2) days and hours
-3) a) teachers
-   b) subjects and subject tag
-   c) years/groups/subgroups
-4) ...
-
-maybe change order 3 a) with 3 b)
-so first subject and sunject tag.
-then teachers.
-resason: every activity have a subject. so subject is more importent,
-because not every activity has a techer or subgroup.
+13. done
 
 14. that is also why i already asked you to change english translations,
 because some phrases can be shorten.
@@ -822,7 +751,7 @@ software ?
 
 7---------------------------------------------------------
 From Volker Dirr:
-If you think that other people don�t like this default constaint how about
+If you think that other people don't like this default constaint how about
 making a menu "default settings". there you can add "langurage" and my
 defalut wish. maybe there are other parameters, that can be set in this
 settings. i guess that there a people who want set duration to 2 or 4 by
@@ -834,10 +763,10 @@ it would be nice to have something like "time constraints (subjects) - max n hou
 so compulsory min n days between activities is nearly similar to compulsory max n hours per day the same subject (except subjects with duration 2 and more)
 but non-compulsory min n days between activities is somhing very diffrent then non-compulsory max n hours per day the same subject.
 i look forwad to a option like "non-compulsory max n hours per day the same subject".
-because it isn�t not to bad if it happen (having a lesson twice a day" only a few times.
+because it isn't not to bad if it happen (having a lesson twice a day" only a few times.
 
 or do something like "time constraints (activities) - max n activities with same subject per day"
-or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. is�t nonsens to subactivities, it has just sense with activities.)
+or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. is't nonsens to subactivities, it has just sense with activities.)
 
 10---------------------------------------------------------
 From kdsayang
@@ -1306,35 +1235,7 @@ So, the best of the best is:
 so we can re-assign new teachers to groups
 
 34---------------------------------------------------------
-From Volker Dirr:
-
-Volker:
-i thought one more about the "min n hours per day" problem again, because we had a similar discuss at my school.
-
-i think there is "just" a "min days per week for teacherS" constraint needed. doesn't solve that the problem in a good way?
-
-so if you want a min n hours == 1 constraint, then you just add a "min n days per week" constraint.
-
-if you want a min n hours ==2 constraint with allowed free days, then you add a "min n hours per day == 2" constraint.
-
-if you want a min n hours == 2 constraint without free days, then you add a "min n hours per day ==2" and a "min n days per week == daysPerWeek" constraint.
-
-hmm... i am currently just not sure how difficult to code that constraint.
-
-Liviu:
-It is easy to code. Just make the teacher(s) min hours daily non-intelligent. But I don't want to add alternative to min hours daily to have intelligent or non-intelligent, because people might obtain impossible timetables. I can tell you what to modify to make this. You'll have to compile your own FET.
-
-I refer to latest snapshot 5.11.0:
-
-In generate.cpp, lines: 7050, 7079, 7113, 7142. Make the tests already true (like add 1|| oldcondition).
-
-This way, you can add min 1 hours daily for necessary teachers. You also need to modify the dialog of min n days, to accept 1 hour (because it only accepts >=2 values). Also, you need to modify in generate_pre.cpp, because FET complains if below 2 min hours.
-
-Volker:
-no, i think you didn't understood my idea 100%, because with my variant it is also possible that a teacher still have a definied number of free days, while your solution mean a teacher will never have a free day.
-(the number of free days is just 0 if you do a "min n day == daysPerWeek" constraint. but of course it should be also possible to use lower values.
-so currently things like that are only possible by workarounds with min hours per day or min n days bewteen activities.
-with a min n days per week you don't need that workarounds anymore.
+From Volker Dirr: - done (teachers min days per week).
 
 35---------------------------------------------------------
 From Massimo Mancini:
@@ -1521,3 +1422,22 @@ complicated... you can use a tab widget, a tab for the current situation
 another for history... the right answer is: GREAT! I add it in TODO! ;-))). 
 In general an history file should be a great thing and the base for
 undo/rollup features.
+
+42---------------------------------------------------------
+From George Milliotis:
+
+For this, I propose the ability to sort constraints by:
+1. Type [so single ones - ones that you can't add twice - go to the top]
+2. ID of activity
+3. room / day
+and so on
+
+This could also be done for activities. If I add two activities for the 
+same subject, why do I need to have one at the bottom (id 200) and the 
+other at the top (id 5)?
+
+BTW, I haven't used the menu once since I got this new version. I like 
+the basic concept of the shortcuts. If the dialogs were not modal I'd be 
+opening all sorts of windows and working much faster. If I could HIDE 
+buttons selectively I'd even be able to get the secretaries to do the 
+schedule and save ALL my time.

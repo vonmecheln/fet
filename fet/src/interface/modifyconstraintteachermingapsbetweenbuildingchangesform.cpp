@@ -15,14 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintteachermingapsbetweenbuildingchangesform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm(ConstraintTeacherMinGapsBetweenBuildingChanges* ctr)
 {

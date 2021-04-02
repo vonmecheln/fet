@@ -35,6 +35,8 @@ public:
 	
 	void resizeRowsAfterShow();
 
+	void detailActivity(QTableWidgetItem* item);
+
 public slots:
 	void lockTime();
 	void lockSpace();
@@ -43,8 +45,8 @@ public slots:
 
 	void teacherChanged(const QString& teacherName);
 
-	void detailActivity(QTableWidgetItem* item);
-	
+	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
+
 	void help();
 
 protected:

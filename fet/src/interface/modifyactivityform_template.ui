@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>827</width>
-    <height>552</height>
+    <width>790</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Modify activity</string>
+   <string extracomment="This is the title of a dialog to modify an activity">Modify activity</string>
   </property>
-  <layout class="QGridLayout">
+  <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <layout class="QVBoxLayout">
      <item>
@@ -46,7 +46,7 @@
          <item>
           <widget class="QLabel" name="selectedTeachersTextLabel">
            <property name="text">
-            <string>Selected</string>
+            <string comment="It refers to a list of selected teachers">Selected</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -137,7 +137,7 @@
          <item>
           <widget class="QLabel" name="selectedStudentsTextLabel">
            <property name="text">
-            <string>Selected</string>
+            <string comment="It refers to a list of selected students (in fact, students sets, but translate selected as in 'selected students')">Selected</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -202,53 +202,65 @@
     </layout>
    </item>
    <item row="0" column="1">
-    <layout class="QVBoxLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <layout class="QGridLayout">
-       <item row="0" column="1">
-        <widget class="QLabel" name="selectedActivityTagsTextLabel">
-         <property name="text">
-          <string>Selected</string>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" rowspan="2">
-        <widget class="Q3ListBox" name="allActivityTagsListBox">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <property name="text">
-           <string>New Item</string>
-          </property>
+          <widget class="QLabel" name="allActivityTagsTextLabel">
+           <property name="text">
+            <string>Activity tags</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="allActivityTagsTextLabel">
-         <property name="text">
-          <string>Activity tags</string>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="clearActivityTagPushButton">
-         <property name="text">
-          <string>Clear</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="Q3ListBox" name="selectedActivityTagsListBox">
          <item>
-          <property name="text">
-           <string>New Item</string>
-          </property>
+          <widget class="Q3ListBox" name="allActivityTagsListBox">
+           <item>
+            <property name="text">
+             <string>New Item</string>
+            </property>
+           </item>
+          </widget>
          </item>
-        </widget>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="selectedActivityTagsTextLabel">
+             <property name="text">
+              <string comment="It refers to a list of selected activity tags">Selected</string>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Q3ListBox" name="selectedActivityTagsListBox">
+             <item>
+              <property name="text">
+               <string>New Item</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="clearActivityTagPushButton">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -319,7 +331,7 @@ activities and add a new split activity</string>
      <item>
       <widget class="QTabWidget" name="subactivitiesTabWidget">
        <property name="currentIndex">
-        <number>9</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="TabPage1">
         <attribute name="title">

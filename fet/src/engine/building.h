@@ -43,7 +43,7 @@ public:
 	void computeInternalStructure(Rules& r);
 	
 	QString getXmlDescription();
-	QString getDescription();
+	//QString getDescription();
 	QString getDetailedDescription();
 	QString getDetailedDescriptionWithConstraints(Rules& r);
 };

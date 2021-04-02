@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiesnotoverlappingform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 AddConstraintActivitiesNotOverlappingForm::AddConstraintActivitiesNotOverlappingForm()
 {
@@ -205,17 +202,21 @@ void AddConstraintActivitiesNotOverlappingForm::addConstraint()
 			tr("Only one selected activity"));
 		return;
 	}
-	if(this->notOverlappingActivitiesList.size()>MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
+	/*if(this->notOverlappingActivitiesList.size()>MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Please report error to the author\nMAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)"));
 		return;
-	}
+	}*/
 	
-	int ids[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
+	QList<int> ids;
+	//int ids[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
 	int i;
 	QList<int>::iterator it;
-	for(i=0, it=this->notOverlappingActivitiesList.begin(); it!=this->notOverlappingActivitiesList.end(); it++, i++)
-		ids[i]=*it;
+	ids.clear();
+	for(i=0, it=this->notOverlappingActivitiesList.begin(); it!=this->notOverlappingActivitiesList.end(); it++, i++){
+		//ids[i]=*it;
+		ids.append(*it);
+	}
 	
 	ctr=new ConstraintActivitiesNotOverlapping(weight, /*compulsory,*/ this->notOverlappingActivitiesList.count(), ids);
 	bool tmp2=gt.rules.addTimeConstraint(ctr);

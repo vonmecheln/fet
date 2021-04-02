@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="Title of dialog">Showing the timetable soft conflicts</string>
+   <string extracomment="Title of dialog">Soft conflicts</string>
   </property>
   <layout class="QGridLayout">
    <property name="margin">

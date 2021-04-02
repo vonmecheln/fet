@@ -20,10 +20,7 @@
 #include "subject.h"
 #include "studentsset.h"
 
-#include <qlabel.h>
-#include <qtabwidget.h>
-
-#include <QDesktopWidget>
+#include <QMessageBox>
 
 #define subTab(i)	subactivitiesTabWidget->page(i)
 #define dur(i)		(i==0?duration1SpinBox:			\

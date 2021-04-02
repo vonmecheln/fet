@@ -27,20 +27,25 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 #include <iostream>
-//Added by qt3to4:
-#include <QTextStream>
 using namespace std;
+
+#include <QFile>
+#include <QTextStream>
 
 #include "timetable_defs.h"
 #include "solution.h"
 #include "rules.h"
 #include "timeconstraint.h"
 
-extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+#include "matrix.h"
 
 #include <QMap>
+#include <QMultiMap>
 
+//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix2D<bool> breakDayHour;
+//extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix3D<bool> teacherNotAvailableDayHour;
 
 //critical function here - must be optimized for speed
 void Solution::copy(Rules& r, Solution& c){
@@ -343,11 +348,14 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 }
 
 //critical function here - must be optimized for speed
-int Solution::getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+//int Solution::getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+int Solution::getTeachersMatrix(Rules& r, Matrix3D<qint8>& a){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
 	int conflicts=0;
+	
+	a.resize(r.nInternalTeachers, r.nDaysPerWeek, r.nHoursPerDay);
 
 	int i;
 	for(i=0; i<r.nInternalTeachers; i++)
@@ -384,11 +392,14 @@ int Solution::getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEE
 }
 
 //critical function here - must be optimized for speed
-int Solution::getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+//int Solution::getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+int Solution::getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
 	int conflicts=0;
+	
+	a.resize(r.nInternalSubgroups, r.nDaysPerWeek, r.nHoursPerDay);
 
 	int i;
 	for(i=0; i<r.nInternalSubgroups; i++)
@@ -426,12 +437,16 @@ int Solution::getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS
 
 //The following 2 functions (GetTeachersTimetable & GetSubgroupsTimetable)
 //are very similar to the above 2 ones (GetTeachersMatrix & GetSubgroupsMatrix)
-//void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
-void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+//void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+//void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QList<qint16> >& b){
 	//assert(HFitness()==0); //This is only for perfect solutions, that do not have any non-satisfied hard constrains
 
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
+	
+	a.resize(r.nInternalTeachers, r.nDaysPerWeek, r.nHoursPerDay);
+	b.resize(TEACHERS_FREE_PERIODS_N_CATEGORIES, r.nDaysPerWeek, r.nHoursPerDay);
 	
 	int i, j, k;
 	for(i=0; i<r.nInternalTeachers; i++)
@@ -556,11 +571,14 @@ void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PE
 	}
 }
 
-void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+//void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+void Solution::getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a){
 	//assert(HFitness()==0);	//This is only for perfect solutions, that do not have any non-satisfied hard constrains
 
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
+	
+	a.resize(r.nInternalSubgroups, r.nDaysPerWeek, r.nHoursPerDay);
 	
 	int i, j, k;
 	for(i=0; i<r.nInternalSubgroups; i++)
@@ -593,12 +611,15 @@ void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX
 
 int Solution::getRoomsMatrix(
 	Rules& r, 
-	qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+//	qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+	Matrix3D<qint8>& a)
 {
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
 	int conflicts=0;
+	
+	a.resize(r.nInternalRooms, r.nDaysPerWeek, r.nHoursPerDay);
 
 	int i;
 	for(i=0; i<r.nInternalRooms; i++)
@@ -638,10 +659,13 @@ int Solution::getRoomsMatrix(
 
 void Solution::getRoomsTimetable(
 	Rules& r,
-	qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+//	qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+	Matrix3D<qint16>& a)
 {
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
+	
+	a.resize(r.nInternalRooms, r.nDaysPerWeek, r.nHoursPerDay);
 	
 	int i, j, k;
 	for(i=0; i<r.nInternalRooms; i++)
@@ -672,71 +696,3 @@ void Solution::getRoomsTimetable(
 		}
 	}
 }
-
-/*
-void Solution::getSubgroupsBuildingsTimetable(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
-{
-	assert(r.initialized);
-	assert(r.internalStructureComputed);
-	
-	int i, j, k;
-	for(i=0; i<r.nInternalSubgroups; i++)
-		for(j=0; j<r.nDaysPerWeek; j++)
-			for(k=0; k<r.nHoursPerDay; k++)
-				a[i][j][k]=-1;
-
-	Activity *act;
-	for(i=0; i<r.nInternalActivities; i++)
-		if(this->times[i]!=UNALLOCATED_TIME) {
-			act=&r.internalActivitiesList[i];
-			int hour=this->times[i]/r.nDaysPerWeek;
-			int day=this->times[i]%r.nDaysPerWeek;
-			for(int dd=0; dd < act->duration; dd++){
-				assert(hour+dd<r.nHoursPerDay);
-			
-				for(int isg=0; isg < act->iSubgroupsList.count(); isg++){ //isg -> index subgroup
-					int sg = act->iSubgroupsList.at(isg); //sg -> subgroup
-					assert(a[sg][day][hour+dd]==-1);
-
-					if(this->rooms[i]!=UNSPECIFIED_ROOM && this->rooms[i]!=UNALLOCATED_SPACE){
-						assert(this->rooms[i]>=0 && this->rooms[i]<r.nInternalRooms);
-						a[sg][day][hour+dd]=r.internalRoomsList[this->rooms[i]]->buildingIndex;
-					}
-				}
-			}
-		}
-}
-
-void Solution::getTeachersBuildingsTimetable(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
-{
-	assert(r.initialized);
-	assert(r.internalStructureComputed);
-	
-	int i, j, k;
-	for(i=0; i<r.nInternalTeachers; i++)
-		for(j=0; j<r.nDaysPerWeek; j++)
-			for(k=0; k<r.nHoursPerDay; k++)
-				a[i][j][k]=-1;
-
-	Activity *act;
-	for(i=0; i<r.nInternalActivities; i++) 
-		if(this->times[i]!=UNALLOCATED_TIME) {
-			act=&r.internalActivitiesList[i];
-			int hour=this->times[i]/r.nDaysPerWeek;
-			int day=this->times[i]%r.nDaysPerWeek;
-			for(int dd=0; dd < act->duration; dd++){
-				assert(hour+dd<r.nHoursPerDay);
-				for(int ti=0; ti<act->iTeachersList.count(); ti++){
-					int tch = act->iTeachersList.at(ti); //teacher index
-					assert(a[tch][day][hour+dd]==-1);
-
-					if(this->rooms[i]!=UNSPECIFIED_ROOM && this->rooms[i]!=UNALLOCATED_SPACE){
-						assert(this->rooms[i]>=0 && this->rooms[i]<r.nInternalRooms);
-						a[tch][day][hour+dd]=r.internalRoomsList[this->rooms[i]]->buildingIndex;
-					}
-
-				}
-			}
-		}
-}
-*/

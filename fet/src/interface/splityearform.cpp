@@ -17,8 +17,6 @@
 
 #include "splityearform.h"
 
-#include <QDesktopWidget>
-
 #include <QtGui>
 
 #include <QMessageBox>

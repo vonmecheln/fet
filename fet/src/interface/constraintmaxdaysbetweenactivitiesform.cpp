@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintmaxdaysbetweenactivitiesform.h"
 #include "addconstraintmaxdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxdaysbetweenactivitiesform.h"
-
-#include <QDesktopWidget>
 
 #include <QInputDialog>
 

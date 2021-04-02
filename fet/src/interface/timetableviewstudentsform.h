@@ -35,6 +35,8 @@ public:
 	
 	void resizeRowsAfterShow();
 
+	void detailActivity(QTableWidgetItem* item);
+
 public slots:
 	void lockTime();
 	void lockSpace();
@@ -45,8 +47,8 @@ public slots:
 	void groupChanged(const QString& groupName);
 	void subgroupChanged(const QString& subgroupName);
 
-	void detailActivity(QTableWidgetItem* item);
-	
+	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
+
 	void help();
 
 protected:

@@ -15,18 +15,16 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
 
 #include "addconstraintroomnotavailabletimesform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 #include <QHeaderView>
 #include <QTableWidget>
@@ -186,7 +184,8 @@ void AddConstraintRoomNotAvailableTimesForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* room=gt.rules.roomsList[i];
-		roomsComboBox->insertItem(room->getDescription());
+		//roomsComboBox->insertItem(room->getDescription());
+		roomsComboBox->insertItem(room->name);
 	}
 }
 

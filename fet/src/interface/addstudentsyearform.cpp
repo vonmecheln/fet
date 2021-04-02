@@ -17,10 +17,6 @@
 
 #include "addstudentsyearform.h"
 
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
-
 #include <QMessageBox>
 
 AddStudentsYearForm::AddStudentsYearForm()

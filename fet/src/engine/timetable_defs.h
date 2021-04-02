@@ -16,32 +16,19 @@
  ***************************************************************************/
 
 
-#ifndef TIMETABLE_DEFS
-#define TIMETABLE_DEFS
-//#define WIN32
+#ifndef TIMETABLE_DEFS_H
+#define TIMETABLE_DEFS_H
+
 #ifdef NDEBUG
 #undef NDEBUG
 #endif
-#include <assert.h>
+#include <cassert>
 
-/*#ifdef WIN32
-#define for		if(0);else for
-#endif*/
-
-//#include <stdio.h>
-//#include <string.h>
-//#include <stdlib.h>
-//#include <ctype.h>
-//#include <math.h>
-//#include <time.h>
-//#include <stdlib.h>
 
 #include <QString>
 
 class QWidget;
 
-//#include <qtranslator.h>
-//#include <qdir.h>
 
 /**
 The version number
@@ -73,6 +60,8 @@ extern bool PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME;
 
 extern bool USE_GUI_COLORS;
 
+extern bool SHOW_SHORTCUTS_ON_MAIN_WINDOW;
+
 extern bool ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY;
 extern bool ENABLE_STUDENTS_MAX_GAPS_PER_DAY;
 
@@ -101,35 +90,35 @@ The maximum total number of different groups of students
 /**
 The maximum total number of different subgroups of students
 */
-const int MAX_TOTAL_SUBGROUPS=15000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUPS_PER_GROUP;
+const int MAX_TOTAL_SUBGROUPS=30000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUPS_PER_GROUP;
 
-const int MAX_ROOM_CAPACITY=15000;
+const int MAX_ROOM_CAPACITY=30000;
 
 
 /**
 The maximum number of different teachers
 */
-const int MAX_TEACHERS=700;
+const int MAX_TEACHERS=3000;
 
 /**
 The maximum number of different subjects
 */
-const int MAX_SUBJECTS=1000;
+const int MAX_SUBJECTS=3000;
 
 /**
 The maximum number of activities
 */
-const int MAX_ACTIVITIES=5000;
+const int MAX_ACTIVITIES=15000;
 
 /**
 The maximum number of rooms
 */
-const int MAX_ROOMS=1000;
+const int MAX_ROOMS=3000;
 
 /**
 The maximum number of buildings
 */
-const int MAX_BUILDINGS=100;
+const int MAX_BUILDINGS=3000;
 
 /**
 This constant represents an unallocated activity
@@ -144,7 +133,7 @@ const int MAX_HOURS_PER_DAY=60;
 /**
 The maximum number of working days per week.
 */
-const int MAX_DAYS_PER_WEEK=28;
+const int MAX_DAYS_PER_WEEK=35;
 
 /**
 The predefined names of the days of the week
@@ -181,12 +170,12 @@ const qint16 UNSPECIFIED_ROOM = MAX_ROOMS+1;
 /**
 The maximum number of time constraints
 */
-const int MAX_TIME_CONSTRAINTS = 10000;
+const int MAX_TIME_CONSTRAINTS = 30000;
 
 /**
 The maximum number of space constraints
 */
-const int MAX_SPACE_CONSTRAINTS = 10000;
+const int MAX_SPACE_CONSTRAINTS = 30000;
 
 /**
 The maximum number of preferred times that can be considered
@@ -213,37 +202,37 @@ I guess this variable must disappear and the
 restriction modified to allocate dynamically the
 necessary memory.
 */
-const int MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES = 100;
+//const int MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES = 70;
 
-const int MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES = 400;
+//const int MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES = 400;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameStartingTime
 */
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME=200;
+//const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME=200;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameStartingHour
 */
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR=200;
+//const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR=200;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameStartingHour
 */
-const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY=200;
+//const int MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY=200;
 
 /**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesNotOverlapping
 */
-const int MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING=400;
+//const int MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING=400;
 
 
 /**

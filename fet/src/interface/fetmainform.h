@@ -15,9 +15,8 @@
 
 #include "ui_fetmainform_template.h"
 
-#include <qmutex.h>
-#include <qthread.h>
-#include <qmessagebox.h>
+#include <QMutex>
+#include <QThread>
 
 #include <QCloseEvent>
 
@@ -30,6 +29,8 @@
 #include <QtGui>
 
 #include <QResizeEvent>
+
+#include <QMenu>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -69,6 +70,8 @@ private:
 	
 	void setEnabledIcon(QAction* action, bool enabled);
 	
+	QMenu* shortcutBasicMenu;
+	
 /*protected:
 	void resizeEvent(QResizeEvent* event);*/
 
@@ -81,6 +84,8 @@ public:
 	~FetMainForm();
 	
 //	void updateLogo();
+
+	void closeOtherWindows();
 	
 public slots:
 	void enableNotPerfectMessage();
@@ -116,6 +121,7 @@ public slots:
 	
 	void on_helpSettingsAction_activated();
 	void on_settingsUseColorsAction_toggled();
+	void on_settingsShowShortcutsOnMainWindowAction_toggled();
 	
 	void enableActivityTagMaxHoursDailyToggled(bool checked);
 	void enableStudentsMaxGapsPerDayToggled(bool checked);
@@ -243,13 +249,19 @@ public slots:
 	void on_spreadActivitiesAction_activated();
 	void on_removeRedundantConstraintsAction_activated();
 
+	//about
 	void on_helpAboutAction_activated();
+	//offline
 	void on_helpFAQAction_activated();
 	void on_helpTipsAction_activated();
 	void on_helpInstructionsAction_activated();
-	void on_helpManualAction_activated();
-	void on_helpInOtherLanguagesAction_activated();
+	//online
+	void on_helpHomepageAction_activated();
+	void on_helpContentsAction_activated();
 	void on_helpForumAction_activated();
+	//void on_helpMailingListAction_activated();
+	//void on_helpContactsAction_activated();
+	void on_helpAddressesAction_activated();
 
 	void on_timetableGenerateAction_activated();
 	void on_timetableViewStudentsAction_activated();
@@ -287,6 +299,45 @@ public slots:
 	void httpDone(bool error);
 	
 	void on_statisticsExportToDiskAction_activated();
+	
+	void on_shortcutAllTimeConstraintsPushButton_clicked();
+	//void on_shortcutMiscTimeConstraintsPushButton_clicked();
+	void on_shortcutBreakTimeConstraintsPushButton_clicked();
+	void on_shortcutTeachersTimeConstraintsPushButton_clicked();
+	void on_shortcutStudentsTimeConstraintsPushButton_clicked();
+	void on_shortcutActivitiesTimeConstraintsPushButton_clicked();
+
+	void on_shortcutAllSpaceConstraintsPushButton_clicked();
+	//void on_shortcutMiscSpaceConstraintsPushButton_clicked();
+	void on_shortcutRoomsSpaceConstraintsPushButton_clicked();
+	void on_shortcutTeachersSpaceConstraintsPushButton_clicked();
+	void on_shortcutStudentsSpaceConstraintsPushButton_clicked();
+	void on_shortcutSubjectsSpaceConstraintsPushButton_clicked();
+	void on_shortcutActivityTagsSpaceConstraintsPushButton_clicked();
+	void on_shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton_clicked();
+	void on_shortcutActivitiesSpaceConstraintsPushButton_clicked();
+	
+	void on_shortcutGeneratePushButton_clicked();
+	void on_shortcutGenerateMultiplePushButton_clicked();
+	void on_shortcutViewTeachersPushButton_clicked();
+	void on_shortcutViewStudentsPushButton_clicked();
+	void on_shortcutViewRoomsPushButton_clicked();
+	void on_shortcutShowSoftConflictsPushButton_clicked();
+	
+	void on_shortcutBasicPushButton_clicked();
+	void on_shortcutSubjectsPushButton_clicked();
+	void on_shortcutActivityTagsPushButton_clicked();
+	void on_shortcutTeachersPushButton_clicked();
+	void on_shortcutStudentsPushButton_clicked();
+	void on_shortcutActivitiesPushButton_clicked();
+	void on_shortcutSubactivitiesPushButton_clicked();
+	void on_shortcutBuildingsPushButton_clicked();
+	void on_shortcutRoomsPushButton_clicked();
+
+	void on_shortcutOpenPushButton_clicked();
+	void on_shortcutNewPushButton_clicked();
+	void on_shortcutSavePushButton_clicked();
+	void on_shortcutSaveAsPushButton_clicked();
 	
 protected:
 	void closeEvent(QCloseEvent* event);

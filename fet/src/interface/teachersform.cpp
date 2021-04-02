@@ -14,14 +14,9 @@
 #include "timetable.h"
 #include "fet.h"
 #include "teachersform.h"
-//#include "fetmainform.h"
 #include "teacher.h"
 
-#include <q3listbox.h>
-#include <qinputdialog.h>
-#include <q3textedit.h>
-
-#include <QDesktopWidget>
+#include <QInputDialog>
 
 #include <QMessageBox>
 
@@ -167,7 +162,8 @@ void TeachersForm::sortTeachers()
 void TeachersForm::teacherChanged(int index)
 {
 	if(index<0){
-		currentTeacherTextEdit->setText(tr("Invalid teacher"));
+		//currentTeacherTextEdit->setText(tr("Invalid teacher"));
+		currentTeacherTextEdit->setText("");
 		return;
 	}
 	

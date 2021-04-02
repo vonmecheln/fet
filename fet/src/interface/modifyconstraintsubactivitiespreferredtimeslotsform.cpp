@@ -15,16 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "tablewidgetupdatebug.h"
 
 #include "modifyconstraintsubactivitiespreferredtimeslotsform.h"
 #include "timeconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 #include <QHeaderView>
 #include <QTableWidget>
@@ -37,6 +35,8 @@
 //#define NO	(ModifyConstraintSubactivitiesPreferredTimeSlotsForm::tr("Not allowed", "Please keep translation short"))
 #define YES		(QString(" "))
 #define NO		(QString("X"))
+
+static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 
 ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ModifyConstraintSubactivitiesPreferredTimeSlotsForm(ConstraintSubactivitiesPreferredTimeSlots* ctr)
 {
@@ -89,7 +89,7 @@ ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ModifyConstraintSubactiviti
 		preferredTimesTable->setVerticalHeaderItem(i, item);
 	}
 
-	bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;

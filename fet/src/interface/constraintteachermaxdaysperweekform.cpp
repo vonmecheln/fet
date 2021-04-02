@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintteachermaxdaysperweekform.h"
 #include "addconstraintteachermaxdaysperweekform.h"
 #include "modifyconstraintteachermaxdaysperweekform.h"
-
-#include <QDesktopWidget>
 
 ConstraintTeacherMaxDaysPerWeekForm::ConstraintTeacherMaxDaysPerWeekForm()
 {

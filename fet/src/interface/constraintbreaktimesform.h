@@ -23,16 +23,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-#include <q3listbox.h>
-
 class ConstraintBreakTimesForm : public QDialog, Ui::ConstraintBreakTimesForm_template  {
 	Q_OBJECT
 public:

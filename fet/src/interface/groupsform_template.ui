@@ -6,24 +6,41 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>566</width>
-    <height>494</height>
+    <width>600</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="The title of the form which lists the students groups">FET - groups of students</string>
   </property>
-  <layout class="QGridLayout">
-   <property name="margin">
-    <number>11</number>
-   </property>
-   <property name="spacing">
-    <number>6</number>
-   </property>
-   <item row="1" column="2">
-    <widget class="Q3TextEdit" name="groupTextEdit">
-     <property name="readOnly">
-      <bool>true</bool>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="yearTextLabel">
+     <property name="text">
+      <string>Year</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="groupsTextLabel">
+     <property name="text">
+      <string>Group</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLabel" name="groupTextLabel">
+     <property name="text">
+      <string>Details</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -45,84 +62,69 @@
      </item>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="yearTextLabel">
-     <property name="text">
-      <string>Year</string>
-     </property>
-     <property name="wordWrap">
-      <bool>false</bool>
+   <item row="1" column="2">
+    <widget class="Q3TextEdit" name="groupTextEdit">
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QLabel" name="groupsTextLabel">
-     <property name="text">
-      <string>Group</string>
-     </property>
-     <property name="wordWrap">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QPushButton" name="addGroupPushButton">
-     <property name="text">
-      <string>Add group</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QPushButton" name="removeGroupPushButton">
-     <property name="text">
-      <string>Remove</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="modifyGroupPushButton">
-     <property name="text">
-      <string>Modify</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" colspan="3">
-    <widget class="QPushButton" name="sortGroupsPushButton">
-     <property name="text">
-      <string>Sort current groups alphabetically</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0" colspan="3">
-    <widget class="QPushButton" name="closePushButton">
-     <property name="text">
-      <string>Close</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0" colspan="3">
-    <widget class="QPushButton" name="activateStudentsPushButton">
-     <property name="text">
-      <string>Activate all activities for selected students group</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0" colspan="3">
-    <widget class="QPushButton" name="deactivateStudentsPushButton">
-     <property name="text">
-      <string>De-activate all activities for selected students group</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <widget class="QLabel" name="groupTextLabel">
-     <property name="text">
-      <string>Details</string>
-     </property>
-     <property name="wordWrap">
-      <bool>false</bool>
-     </property>
-    </widget>
+   <item row="2" column="0" colspan="3">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="addGroupPushButton">
+         <property name="text">
+          <string>Add</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="removeGroupPushButton">
+         <property name="text">
+          <string>Remove</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="modifyGroupPushButton">
+         <property name="text">
+          <string>Modify</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sortGroupsPushButton">
+       <property name="text">
+        <string>Sort current groups alphabetically</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="activateStudentsPushButton">
+       <property name="text">
+        <string>Activate all activities for selected students group</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="deactivateStudentsPushButton">
+       <property name="text">
+        <string>De-activate all activities for selected students group</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closePushButton">
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

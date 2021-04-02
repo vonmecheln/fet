@@ -39,9 +39,13 @@ using namespace std;
 #include "room.h"
 #include "solution.h"
 
-#include <qstring.h>
+#include "matrix.h"
+
+#include <QString>
 
 #include <QMessageBox>
+
+#include "generate_pre.h"
 
 //static Solution* crt_chrom=NULL;
 //static Rules* crt_rules=NULL;
@@ -66,9 +70,8 @@ static QString yesNoTranslated(bool x)
 		return QCoreApplication::translate("SpaceConstraint", "yes", "yes - meaning affirmative");
 }
 
-#include "generate_pre.h"
-
-static qint8 roomsMatrix[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//static qint8 roomsMatrix[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+static Matrix3D<qint8> roomsMatrix;
 
 static int rooms_conflicts=-1;
 
@@ -77,7 +80,7 @@ static int rooms_conflicts=-1;
 //static qint8 subgroupsBuildingsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 //static qint8 teachersBuildingsTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
-QString getActivityDetailedDescription(const Rules& r, int id);
+QString getActivityDetailedDescription(Rules& r, int id);
 
 
 //////////////////////////////////////////////////////////////////////////////////////

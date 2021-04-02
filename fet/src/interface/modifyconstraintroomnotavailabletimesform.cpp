@@ -15,16 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "tablewidgetupdatebug.h"
 
 #include "modifyconstraintroomnotavailabletimesform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 #include <QHeaderView>
 #include <QTableWidget>
@@ -37,6 +35,8 @@
 //#define NO	(ModifyConstraintRoomNotAvailableTimesForm::tr("Available", "Please keep translation short"))
 #define YES		(QString("X"))
 #define NO		(QString(" "))
+
+static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 
 ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimesForm(ConstraintRoomNotAvailableTimes* ctr)
 {
@@ -78,7 +78,7 @@ ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimes
 		notAllowedTimesTable->setVerticalHeaderItem(i, item);
 	}
 
-	bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;			
@@ -209,7 +209,8 @@ void ModifyConstraintRoomNotAvailableTimesForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int k=0; k<gt.rules.roomsList.size(); k++){
 		Room* room=gt.rules.roomsList[k];
-		roomsComboBox->insertItem(room->getDescription());
+		//roomsComboBox->insertItem(room->getDescription());
+		roomsComboBox->insertItem(room->name);
 		if(room->name==this->_ctr->room)
 			j=i;
 		i++;

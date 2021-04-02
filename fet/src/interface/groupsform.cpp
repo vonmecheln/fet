@@ -19,11 +19,7 @@
 //#include "fetmainform.h"
 #include "studentsset.h"
 
-#include <q3listbox.h>
-#include <qinputdialog.h>
-#include <qstring.h>
-
-#include <QDesktopWidget>
+#include <QInputDialog>
 
 #include <QMessageBox>
 

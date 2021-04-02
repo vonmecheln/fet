@@ -15,14 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstrainttwoactivitiesgroupedform.h"
 #include "timeconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 ModifyConstraintTwoActivitiesGroupedForm::ModifyConstraintTwoActivitiesGroupedForm(ConstraintTwoActivitiesGrouped* ctr)
 {

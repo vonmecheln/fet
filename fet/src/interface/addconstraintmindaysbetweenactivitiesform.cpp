@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintmindaysbetweenactivitiesform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 AddConstraintMinDaysBetweenActivitiesForm::AddConstraintMinDaysBetweenActivitiesForm()
 {
@@ -208,11 +205,11 @@ void AddConstraintMinDaysBetweenActivitiesForm::addConstraint()
 			tr("Only one selected activity"));
 		return;
 	}
-	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+	/*if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Please report error to the author\nMAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)"));
 		return;
-	}
+	}*/
 
 #if 0&0&0
 	if(0 && this->selectedActivitiesList.size()>gt.rules.nDaysPerWeek){
@@ -245,11 +242,15 @@ void AddConstraintMinDaysBetweenActivitiesForm::addConstraint()
 	}
 #endif
 	
-	int ids[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> ids;
+	//int ids[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 	int i;
 	QList<int>::iterator it;
-	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
-		ids[i]=*it;
+	ids.clear();
+	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
+		ids.append(*it);
+		//ids[i]=*it;
+	}
 	
 	ctr=new ConstraintMinDaysBetweenActivities(weight, consecutiveIfSameDayCheckBox->isChecked(),/*compulsory,*/ this->selectedActivitiesList.count(), ids, minDaysSpinBox->value());
 

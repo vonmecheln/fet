@@ -19,8 +19,6 @@
 
 #include "timetable_defs.h"
 
-#include <QDesktopWidget>
-
 HelpFaqForm::HelpFaqForm()
 {
     setupUi(this);
@@ -39,7 +37,7 @@ HelpFaqForm::HelpFaqForm()
 	
 	s+=tr("FET FAQ:");
 	s+="\n\n";
-	s+=tr("this documentation by Liviu Lalescu, reviewed and modified - 12 October 2009 (new additions are written with date, most are at the end)");
+	s+=tr("This documentation by Liviu Lalescu, reviewed and modified - 20 November 2009 (new additions are written with date, most are at the end)");
 	s+="\n\n";
 	s+="--------";
 	s+="\n\n";
@@ -65,7 +63,58 @@ HelpFaqForm::HelpFaqForm()
 	s+="\n\n";
 	s+="-------------------------------------------------------------------------------";
 	s+="\n\n";
+
+	//s+=tr("Entry added on 20 Nov. 2009.");
+	//s+="\n\n";
+	s+=tr("Q: What are the maximum limits FET can handle?");
+	s+="\n\n";
+	s+=tr("A: There are indeed maximum limits for the generation algorithm (all these limits can be increased on demand, as a custom version, because this requires a bit more memory).");
+	s+="\n\n";
+	s+=tr("These limits are:");
 	
+	s+="\n- ";
+	s+=tr("Maximum total number of hours (periods) per day: %1").arg(MAX_HOURS_PER_DAY);
+	s+="\n- ";
+	s+=tr("Maximum number of working days per week: %1").arg(MAX_DAYS_PER_WEEK);
+	s+="\n- ";
+	s+=tr("Maximum total number of teachers: %1").arg(MAX_TEACHERS);
+	s+="\n- ";
+	s+=tr("Maximum total number of sets of students: %1").arg(MAX_TOTAL_SUBGROUPS);
+	s+="\n- ";
+	s+=tr("Maximum total number of subjects: %1").arg(MAX_SUBJECTS);
+	s+="\n- ";
+	s+=tr("Virtually unlimited number of activity tags");
+	s+="\n- ";
+	s+=tr("Maximum number of activities: %1").arg(MAX_ACTIVITIES);
+	s+="\n- ";
+	s+=tr("Maximum number of rooms: %1").arg(MAX_ROOMS);
+	s+="\n- ";
+	s+=tr("Maximum number of buildings: %1").arg(MAX_BUILDINGS);
+	s+="\n- ";
+	s+=tr("Virtually unlimited number of teachers and students sets for each activity");
+	s+="\n- ";
+	s+=tr("Maximum number of time constraints: %1").arg(MAX_TIME_CONSTRAINTS);
+	s+="\n- ";
+	s+=tr("Maximum number of space constraints: %1").arg(MAX_SPACE_CONSTRAINTS);
+	
+	/*s+="\n\n";
+	s+=tr("Other limits referring to constraints:");
+	s+="\n- ";
+	s+=tr("Maximum number of activities in a single constraint min days between activities: %1").arg(MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
+	s+="\n- ";
+	//s+=tr("Maximum number of activities in a single constraint max days between activities: %1").arg(MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES);
+	//s+="\n- ";
+	s+=tr("Maximum number of activities in a single constraint activities same starting time: %1").arg(MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME);
+	s+="\n- ";
+	s+=tr("Maximum number of activities in a single constraint activities same starting day: %1").arg(MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
+	s+="\n- ";
+	s+=tr("Maximum number of activities in a single constraint activities same starting hour: %1").arg(MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR);
+	s+="\n- ";
+	s+=tr("Maximum number of activities in a single constraint activities not overlapping: %1").arg(MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING);*/
+
+	s+="\n\n";
+	s+="-------------------------------------------------------------------------------";
+	s+="\n\n";
 
 	s+=tr("Q: Why some activities appear indented while others not?\n\n"
 		"A: The activities are indented for easier visualization. The non-indented ones are the representatives of a "
@@ -905,6 +954,17 @@ HelpFaqForm::HelpFaqForm()
 		" Students max gaps per day can be implemented perfectly, but it would change the algorithm for students a lot and I am afraid to change"
 		" something that is working well. Very much testing would be needed, and I have not enough sample files. While changing the algorithm, it would be"
 		" easy to make critical bugs and some files may not solve anymore.");
+
+	s+="\n\n";
+	s+="-------------------------------------------------------------------------------";
+	s+="\n\n";
+	
+	s+=tr("Entry added on 19 Nov. 2009.");
+	s+="\n\n";
+	s+=tr("Q: Help on shortcut buttons in the main form.");
+	s+="\n\n";
+	s+=tr("A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option"
+		" from the Settings->Interface menu (shortcuts are shown, by default).");
 	
 	textBrowser->setText(s);
 }

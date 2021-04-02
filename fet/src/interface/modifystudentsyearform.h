@@ -24,13 +24,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-//#include "fetmainform.h"
-
-#include <qspinbox.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
-
 class ModifyStudentsYearForm : public QDialog, Ui::ModifyStudentsYearForm_template {
 	Q_OBJECT
 public:

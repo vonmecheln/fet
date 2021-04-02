@@ -21,13 +21,7 @@
 #include "addconstrainttwoactivitiesorderedform.h"
 #include "modifyconstrainttwoactivitiesorderedform.h"
 
-#include <QDesktopWidget>
-
 #include <QMessageBox>
-
-#include <q3listbox.h>
-#include <q3combobox.h>
-#include <q3groupbox.h>
 
 ConstraintTwoActivitiesOrderedForm::ConstraintTwoActivitiesOrderedForm()
 {

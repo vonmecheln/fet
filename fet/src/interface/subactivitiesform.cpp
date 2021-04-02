@@ -27,18 +27,14 @@
 #include "subactivitiesform.h"
 #include "modifysubactivityform.h"
 
-#include <qstring.h>
-//#include <q3listbox.h>
-#include <qmessagebox.h>
-//#include <q3textedit.h>
+#include <QString>
+#include <QMessageBox>
 
 #include <QTextEdit>
 #include <QListWidget>
 #include <QScrollBar>
 
 #include <QAbstractItemView>
-
-#include <QDesktopWidget>
 
 #include "longtextmessagebox.h"
 

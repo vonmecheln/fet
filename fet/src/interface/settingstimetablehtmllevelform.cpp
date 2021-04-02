@@ -17,8 +17,6 @@
 
 extern QApplication* pqapplication;
 
-#include <QDesktopWidget>
-
 #include <QMessageBox>
 
 SettingsTimetableHtmlLevelForm::SettingsTimetableHtmlLevelForm()

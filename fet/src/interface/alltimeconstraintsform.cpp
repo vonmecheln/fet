@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "alltimeconstraintsform.h"
@@ -97,8 +99,6 @@
 
 #include "modifyconstraintstudentssetintervalmaxdaysperweekform.h"
 #include "modifyconstraintstudentsintervalmaxdaysperweekform.h"
-
-#include <QDesktopWidget>
 
 #include "lockunlock.h"
 

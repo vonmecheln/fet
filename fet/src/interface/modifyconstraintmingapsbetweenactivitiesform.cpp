@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
 #include "spaceconstraint.h"
 
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
 #include <QList>
-
-#include <QDesktopWidget>
 
 ModifyConstraintMinGapsBetweenActivitiesForm::ModifyConstraintMinGapsBetweenActivitiesForm(ConstraintMinGapsBetweenActivities* ctr)
 {

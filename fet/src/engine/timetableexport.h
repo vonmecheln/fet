@@ -21,6 +21,8 @@
 #include "timetable_defs.h"
 #include "timetable.h"
 
+#include <QString>
+
 class TimetableExport: public QObject{
 	Q_OBJECT
 

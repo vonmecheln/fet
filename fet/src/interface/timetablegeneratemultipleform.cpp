@@ -25,19 +25,19 @@
 #include "fet.h"
 #include "timetableexport.h"
 
-#include <qpushbutton.h>
-
-#include <QDesktopWidget>
-
 #include <QTextEdit>
 
 #include <iostream>
 #include <fstream>
 using namespace std;
 
+#include <ctime>
+
 #include <QMessageBox>
 
 #include <QMutex>
+
+#include <QScrollBar>
 
 #include <QDir>
 
@@ -63,6 +63,7 @@ static int timeLimit;
 
 extern Solution best_solution;
 
+extern QString conflictsStringTitle;
 extern QString conflictsString;
 
 static time_t start_time;
@@ -312,10 +313,12 @@ void TimetableGenerateMultipleForm::timetableStarted(int timetable)
 
 void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QString& description, bool ok)
 {
+	int pv=currentResultsTextEdit->verticalScrollBar()->value();
 	QString s=currentResultsTextEdit->text();
 	s+=tr("Timetable no: %1 => %2").arg(timetable).arg(description);
 	s+="\n";
 	currentResultsTextEdit->setText(s);
+	currentResultsTextEdit->verticalScrollBar()->setValue(pv);
 
 	if(ok){
 		//needed to get the conflicts string
@@ -331,6 +334,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 		TimetableExport::writeSimulationResults(timetable);
 
 		//update the string representing the conflicts
+		conflictsStringTitle=tr("Soft conflicts", "Title of dialog");
 		conflictsString = "";
 		conflictsString+=tr("Total soft conflicts:");
 		conflictsString+=" ";

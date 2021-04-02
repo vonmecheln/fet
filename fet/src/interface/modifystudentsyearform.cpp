@@ -17,10 +17,6 @@
 
 #include "modifystudentsyearform.h"
 
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
-
 #include <QMessageBox>
 
 ModifyStudentsYearForm::ModifyStudentsYearForm(const QString& initialYearName, int initialNumberOfStudents)

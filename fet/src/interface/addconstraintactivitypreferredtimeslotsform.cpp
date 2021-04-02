@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <cstdio>
+
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
@@ -22,15 +24,11 @@
 #include "addconstraintactivitypreferredtimeslotsform.h"
 #include "timeconstraint.h"
 
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
-
 #include <QHeaderView>
 #include <QTableWidget>
 #include <QTableWidgetItem>
+
+#include <QMessageBox>
 
 #include <QBrush>
 #include <QColor>

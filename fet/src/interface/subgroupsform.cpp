@@ -16,12 +16,8 @@
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
-//#include "fetmainform.h"
 
-#include <q3listbox.h>
-#include <qinputdialog.h>
-
-#include <QDesktopWidget>
+#include <QInputDialog>
 
 #include <QMessageBox>
 

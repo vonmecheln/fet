@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiessamestartingdayform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 AddConstraintActivitiesSameStartingDayForm::AddConstraintActivitiesSameStartingDayForm()
 {
@@ -193,18 +190,21 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 			tr("Only one selected activity - impossible"));
 		return;
 	}
-	if(this->simultaneousActivitiesList.size()>=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
+	/*if(this->simultaneousActivitiesList.size()>=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Too many activities - please report error\n(CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY too little)"));
 		return;
-	}
+	}*/
 	
-	int ids[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+	//int ids[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+	QList<int> ids;
 	QList<int>::iterator it;
 	int i;
+	ids.clear();
 	for(i=0, it=this->simultaneousActivitiesList.begin(); it!=this->simultaneousActivitiesList.end(); i++,it++){
-		assert(i<MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
-		ids[i]=*it;
+		//assert(i<MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
+		//ids[i]=*it;
+		ids.append(*it);
 	}
 	ctr=new ConstraintActivitiesSameStartingDay(weight, this->simultaneousActivitiesList.count(), ids);
 

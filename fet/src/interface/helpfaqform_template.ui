@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>561</width>
-    <height>537</height>
+    <width>560</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>FET - Frequently asked questions dialog</string>
+   <string extracomment="Thjs is the title of the dialog for FAQ help">Frequently asked questions</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">

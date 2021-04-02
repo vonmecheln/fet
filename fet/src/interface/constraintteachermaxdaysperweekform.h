@@ -22,17 +22,6 @@
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
-//#include "fetmainform.h"
-
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-#include <q3listbox.h>
 
 class ConstraintTeacherMaxDaysPerWeekForm : public QDialog, Ui::ConstraintTeacherMaxDaysPerWeekForm_template  {
 	Q_OBJECT

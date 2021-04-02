@@ -28,10 +28,8 @@
 #include "addactivityform.h"
 #include "modifyactivityform.h"
 
-#include <qstring.h>
-//#include <q3listbox.h>
-#include <qmessagebox.h>
-//#include <q3textedit.h>
+#include <QString>
+#include <QMessageBox>
 
 #include <QTextEdit>
 #include <QListWidget>
@@ -40,13 +38,10 @@
 
 #include <QAbstractItemView>
 
-#include <QDesktopWidget>
-
 #include "longtextmessagebox.h"
 
 #include <QBrush>
 #include <QPalette>
-//#include <QApplication>
 
 ActivitiesForm::ActivitiesForm()
 {
@@ -293,7 +288,12 @@ void ActivitiesForm::addActivity()
 {
 	int nInitialActs=gt.rules.activitiesList.count();
 
-	AddActivityForm addActivityForm;
+	QString tn=teachersComboBox->currentText();
+	QString stn=studentsComboBox->currentText();
+	QString sn=subjectsComboBox->currentText();
+	QString atn=activityTagsComboBox->currentText();
+	
+	AddActivityForm addActivityForm(tn, stn, sn, atn);
 	addActivityForm.exec();
 
 	if(gt.rules.activitiesList.count()!=nInitialActs){

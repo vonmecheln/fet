@@ -6,42 +6,803 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>557</width>
-    <height>282</height>
+    <width>560</width>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="The title of the main form">FET - a free timetabling program</string>
   </property>
-  <widget class="QWidget" name="widget"/>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QWidget" name="mainwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <spacer name="verticalSpacer_12">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>24</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer_11">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>105</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="currentIndex">
+       <number>4</number>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="fileTab">
+       <attribute name="title">
+        <string>File</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QFrame" name="frameFile">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_16">
+           <property name="margin">
+            <number>16</number>
+           </property>
+           <item row="0" column="0">
+            <layout class="QGridLayout" name="gridLayout_10">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="shortcutOpenPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Open</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="shortcutNewPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">New</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QPushButton" name="shortcutSavePushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Save</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" colspan="2">
+              <widget class="QPushButton" name="shortcutSaveAsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Save As</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Line" name="line_7">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="2">
+              <widget class="Line" name="line_8">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="dataTab">
+       <attribute name="title">
+        <string>Data</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QFrame" name="frameData">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_15">
+           <property name="margin">
+            <number>16</number>
+           </property>
+           <item row="0" column="0">
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="shortcutBasicPushButton">
+               <property name="text">
+                <string comment="It is a shortcut button on the main form, activates a menu with institution information (name and comments) and days per week and hours per day. It is on the shortcuts tab buttons, so keep translation short">Basic</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="shortcutTeachersPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Teachers</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QPushButton" name="shortcutStudentsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Students</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="shortcutSubjectsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Subjects</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="shortcutActivityTagsPushButton">
+               <property name="text">
+                <string comment="It means activity tags, but I want to keep it short. It is on the shortcuts tab buttons, so keep translation short">Tags</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QPushButton" name="shortcutBuildingsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Buildings</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QPushButton" name="shortcutActivitiesPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Activities</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QPushButton" name="shortcutSubactivitiesPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Subactivities</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QPushButton" name="shortcutRoomsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Rooms</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="3">
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="3">
+              <widget class="Line" name="line_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="timeConstraintsTab">
+       <attribute name="title">
+        <string comment="It is a tab for shortcut buttons to time constraints, so it refers to time constraints, but we need to keep it short, that is why I don't add also 'constraints'">Time</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_14">
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QFrame" name="frameTime">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <property name="margin">
+            <number>16</number>
+           </property>
+           <item row="0" column="0">
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="shortcutAllTimeConstraintsPushButton">
+               <property name="text">
+                <string comment="It refers to all time constraints (it is the text of a button for activating all time constraints dialog on the main form). It is on the shortcuts tab buttons, so keep translation short">All</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="shortcutBreakTimeConstraintsPushButton">
+               <property name="text">
+                <string comment="Refers to break constraints (it is a button in the shortcuts tab on main form)">Break</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="shortcutTeachersTimeConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Teachers</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="shortcutStudentsTimeConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Students</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" colspan="2">
+              <widget class="QPushButton" name="shortcutActivitiesTimeConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Activities</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Line" name="line_9">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="2">
+              <widget class="Line" name="line_10">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="spaceConstraintsTab">
+       <attribute name="title">
+        <string comment="It is a tab for shortcut buttons to space constraints, so it refers to time constraints, but we need to keep it short, that is why I don't add also 'constraints'">Space</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_12">
+        <item row="0" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QFrame" name="frameSpace">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <property name="margin">
+            <number>16</number>
+           </property>
+           <item row="0" column="0">
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="shortcutAllSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It refers to all space constraints (it is the text of a button for activating all space constraints dialog on the main form). It is on the shortcuts tab buttons, so keep translation short">All</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="shortcutTeachersSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Teachers</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QPushButton" name="shortcutStudentsSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Students</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="shortcutRoomsSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Rooms</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="shortcutSubjectsSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Subjects</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QPushButton" name="shortcutActivityTagsSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It means activity tags, but I want to keep it short. It is on the shortcuts tab buttons, so keep translation short">Tags</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QPushButton" name="shortcutActivitiesSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Activities</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1" colspan="2">
+              <widget class="QPushButton" name="shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton">
+               <property name="text">
+                <string comment="Tags means activity tags, but I want to keep it short. It is on the shortcuts tab buttons, so keep translation short">Subjects and tags</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="3">
+              <widget class="Line" name="line_3">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="3">
+              <widget class="Line" name="line_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="timetableTab">
+       <attribute name="title">
+        <string>Timetable</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QFrame" name="frameTimetable">
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_9">
+           <property name="margin">
+            <number>16</number>
+           </property>
+           <item row="0" column="0">
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="shortcutGeneratePushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Generate</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="shortcutGenerateMultiplePushButton">
+               <property name="text">
+                <string comment="It means generate multiple timetables, but I wanted to keep field short, that is why I only write 'Multiple'.It is on the shortcuts tab buttons, so keep translation short">Multiple</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="shortcutViewTeachersPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Teachers</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="shortcutViewStudentsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Students</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QPushButton" name="shortcutViewRoomsPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Rooms</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QPushButton" name="shortcutShowSoftConflictsPushButton">
+               <property name="text">
+                <string comment="It means show soft conflicts, but I want to keep field short. It is on the shortcuts tab buttons, so keep translation short">Conflicts</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="Line" name="line_5">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="2">
+              <widget class="Line" name="line_6">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer_12">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>104</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="1">
+     <spacer name="verticalSpacer_11">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>24</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="mainmenubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>557</width>
-     <height>23</height>
+     <width>560</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="helpMenu">
     <property name="title">
-     <string>&amp;Help</string>
+     <string extracomment="Accelerator key (letter after ampersand) for &amp;File, &amp;Data, &amp;Timetable, &amp;Help, must be different">&amp;Help</string>
     </property>
+    <widget class="QMenu" name="menu_help_On_line">
+     <property name="title">
+      <string extracomment="menu Help-&gt;Online (means on the internet)">Online</string>
+     </property>
+     <addaction name="helpHomepageAction"/>
+     <addaction name="helpContentsAction"/>
+     <addaction name="helpForumAction"/>
+     <addaction name="separator"/>
+     <addaction name="helpAddressesAction"/>
+    </widget>
+    <addaction name="menu_help_On_line"/>
+    <addaction name="separator"/>
     <addaction name="helpInstructionsAction"/>
     <addaction name="helpTipsAction"/>
     <addaction name="helpFAQAction"/>
-    <addaction name="separator"/>
-    <addaction name="helpManualAction"/>
-    <addaction name="separator"/>
-    <addaction name="helpInOtherLanguagesAction"/>
-    <addaction name="separator"/>
-    <addaction name="helpForumAction"/>
     <addaction name="separator"/>
     <addaction name="helpAboutAction"/>
    </widget>
    <widget class="QMenu" name="fileMenu">
     <property name="title">
-     <string>&amp;File</string>
+     <string extracomment="Accelerator key (letter after ampersand) for &amp;File, &amp;Data, &amp;Timetable, &amp;Help, must be different">&amp;File</string>
     </property>
     <widget class="QMenu" name="menuExport">
      <property name="title">
@@ -78,7 +839,7 @@
    </widget>
    <widget class="QMenu" name="timetableMenu">
     <property name="title">
-     <string>&amp;Timetable</string>
+     <string extracomment="Accelerator key (letter after ampersand) for &amp;File, &amp;Data, &amp;Timetable, &amp;Help, must be different">&amp;Timetable</string>
     </property>
     <widget class="QMenu" name="menuAdvancedLockUnlock">
      <property name="title">
@@ -119,7 +880,7 @@
    </widget>
    <widget class="QMenu" name="dataMenu">
     <property name="title">
-     <string>&amp;Data</string>
+     <string extracomment="Accelerator key (letter after ampersand) for &amp;File, &amp;Data, &amp;Timetable, &amp;Help, must be different">&amp;Data</string>
     </property>
     <widget class="QMenu" name="menuTime_constraints">
      <property name="title">
@@ -324,7 +1085,7 @@
     </widget>
     <widget class="QMenu" name="menuStudents">
      <property name="title">
-      <string>Students</string>
+      <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">Stu&amp;dents</string>
      </property>
      <addaction name="dataYearsAction"/>
      <addaction name="dataGroupsAction"/>
@@ -370,6 +1131,8 @@
       <string>Interface</string>
      </property>
      <addaction name="settingsUseColorsAction"/>
+     <addaction name="separator"/>
+     <addaction name="settingsShowShortcutsOnMainWindowAction"/>
     </widget>
     <widget class="QMenu" name="menuTimetables">
      <property name="title">
@@ -410,42 +1173,43 @@
    <addaction name="menuSettings"/>
    <addaction name="helpMenu"/>
   </widget>
+  <widget class="QStatusBar" name="defaultStatusBar"/>
   <action name="fileNewAction">
    <property name="text">
-    <string>&amp;New</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;New</string>
    </property>
    <property name="iconText">
     <string>New</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). Please use official English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work">Ctrl+N</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+N', the same as the English original, to keep things standard.">Ctrl+N</string>
    </property>
   </action>
   <action name="fileOpenAction">
    <property name="text">
-    <string>&amp;Open...</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;Open...</string>
    </property>
    <property name="iconText">
     <string>Open</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). Please use official English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work">Ctrl+O</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+O', the same as the English original, to keep things standard.">Ctrl+O</string>
    </property>
   </action>
   <action name="fileSaveAction">
    <property name="text">
-    <string>&amp;Save</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;Save</string>
    </property>
    <property name="iconText">
     <string>Save</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). Please use official English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work">Ctrl+S</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+S', the same as the English original, to keep things standard.">Ctrl+S</string>
    </property>
   </action>
   <action name="fileSaveAsAction">
    <property name="text">
-    <string>Save &amp;As...</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">Save &amp;As...</string>
    </property>
    <property name="iconText">
     <string>Save As</string>
@@ -456,18 +1220,18 @@
   </action>
   <action name="fileExitAction">
    <property name="text">
-    <string>E&amp;xit</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;Quit</string>
    </property>
    <property name="iconText">
-    <string>Exit</string>
+    <string>Quit</string>
    </property>
    <property name="shortcut">
-    <string/>
+    <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
    </property>
   </action>
   <action name="helpFAQAction">
    <property name="text">
-    <string>&amp;Frequently asked questions</string>
+    <string>Frequently asked questions</string>
    </property>
    <property name="iconText">
     <string>Frequently asked questions</string>
@@ -478,10 +1242,13 @@
   </action>
   <action name="helpAboutAction">
    <property name="text">
-    <string>&amp;About...</string>
+    <string>About...</string>
    </property>
    <property name="iconText">
-    <string>About</string>
+    <string>About...</string>
+   </property>
+   <property name="toolTip">
+    <string>About...</string>
    </property>
    <property name="shortcut">
     <string/>
@@ -489,7 +1256,7 @@
   </action>
   <action name="dataTeachersAction">
    <property name="text">
-    <string>&amp;Teachers</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Teachers</string>
    </property>
    <property name="iconText">
     <string>Teachers</string>
@@ -497,7 +1264,7 @@
   </action>
   <action name="dataSubjectsAction">
    <property name="text">
-    <string>&amp;Subjects</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Subjects</string>
    </property>
    <property name="iconText">
     <string>Subjects</string>
@@ -505,7 +1272,7 @@
   </action>
   <action name="dataYearsAction">
    <property name="text">
-    <string>&amp;Years (forms, classes)</string>
+    <string extracomment="Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups">&amp;Years (forms, classes)</string>
    </property>
    <property name="iconText">
     <string>Years</string>
@@ -513,7 +1280,7 @@
   </action>
   <action name="dataGroupsAction">
    <property name="text">
-    <string>&amp;Groups</string>
+    <string extracomment="Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups">&amp;Groups</string>
    </property>
    <property name="iconText">
     <string>Groups</string>
@@ -521,7 +1288,7 @@
   </action>
   <action name="dataSubgroupsAction">
    <property name="text">
-    <string>S&amp;ubgroups</string>
+    <string extracomment="Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups">&amp;Subgroups</string>
    </property>
    <property name="iconText">
     <string>Subgroups</string>
@@ -529,7 +1296,7 @@
   </action>
   <action name="dataActivitiesAction">
    <property name="text">
-    <string>&amp;Activities</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Activities</string>
    </property>
    <property name="iconText">
     <string>Activities</string>
@@ -537,18 +1304,18 @@
   </action>
   <action name="timetableGenerateAction">
    <property name="text">
-    <string>&amp;Generate new</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">&amp;Generate new</string>
    </property>
    <property name="iconText">
     <string>Generate new</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). Please use official English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work">Ctrl+G</string>
+    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+G', the same as the English original, to keep things standard.">Ctrl+G</string>
    </property>
   </action>
   <action name="timetableViewStudentsAction">
    <property name="text">
-    <string>View (&amp;students)</string>
+    <string extracomment="It refers to view timetable for students">View (&amp;students)</string>
    </property>
    <property name="iconText">
     <string>View (students)</string>
@@ -556,7 +1323,7 @@
   </action>
   <action name="timetableViewTeachersAction">
    <property name="text">
-    <string>View (&amp;teachers)</string>
+    <string extracomment="It refers to view timetable for students">View (&amp;teachers)</string>
    </property>
    <property name="iconText">
     <string>View (teachers)</string>
@@ -564,7 +1331,7 @@
   </action>
   <action name="timetableShowConflictsAction">
    <property name="text">
-    <string>Show soft conflicts</string>
+    <string>Show soft &amp;conflicts</string>
    </property>
    <property name="iconText">
     <string>Show soft conflicts</string>
@@ -591,7 +1358,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>&amp;Rooms</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Rooms</string>
    </property>
    <property name="iconText">
     <string>Rooms</string>
@@ -602,7 +1369,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>View (r&amp;ooms)</string>
+    <string extracomment="It refers to view timetable for rooms">View (&amp;rooms)</string>
    </property>
    <property name="iconText">
     <string>View (rooms)</string>
@@ -626,7 +1393,7 @@
   </action>
   <action name="dataAllTimeConstraintsAction">
    <property name="text">
-    <string>All t&amp;ime constraints</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">All t&amp;ime constraints</string>
    </property>
    <property name="iconText">
     <string>All time constraints</string>
@@ -733,7 +1500,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>All s&amp;pace constraints</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">All s&amp;pace constraints</string>
    </property>
    <property name="iconText">
     <string>All space constraints</string>
@@ -773,7 +1540,7 @@
   </action>
   <action name="dataActivityTagsAction">
    <property name="text">
-    <string>Activity tags</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">Activity ta&amp;gs</string>
    </property>
    <property name="iconText">
     <string>Activity tags</string>
@@ -898,7 +1665,7 @@
   </action>
   <action name="timetableGenerateMultipleAction">
    <property name="text">
-    <string>Generate &amp;multiple variants</string>
+    <string>Generate &amp;multiple</string>
    </property>
    <property name="iconText">
     <string>Generate multiple variants</string>
@@ -939,11 +1706,6 @@
     <string>Help on statistics</string>
    </property>
   </action>
-  <action name="helpInOtherLanguagesAction">
-   <property name="text">
-    <string>Help in other languages than English</string>
-   </property>
-  </action>
   <action name="dataTimeConstraintsTeachersMaxGapsPerDayAction">
    <property name="text">
     <string>Max gaps per day for all teachers</string>
@@ -956,7 +1718,7 @@
   </action>
   <action name="dataBuildingsAction">
    <property name="text">
-    <string>Buildings</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Buildings</string>
    </property>
   </action>
   <action name="dataSpaceConstraintsSubjectPreferredRoomAction">
@@ -1182,11 +1944,6 @@
     <string>A set of activities end students day</string>
    </property>
   </action>
-  <action name="helpForumAction">
-   <property name="text">
-    <string>Forum webpage</string>
-   </property>
-  </action>
   <action name="settingsPrintNotAvailableSlotsAction">
    <property name="checkable">
     <bool>true</bool>
@@ -1211,11 +1968,6 @@
   <action name="removeRedundantConstraintsAction">
    <property name="text">
     <string>Remove redundant constraints</string>
-   </property>
-  </action>
-  <action name="helpManualAction">
-   <property name="text">
-    <string>A user's manual</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTwoActivitiesGroupedAction">
@@ -1275,7 +2027,7 @@
   </action>
   <action name="dataSubactivitiesAction">
    <property name="text">
-    <string>Modify subactivities</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Modify subactivities</string>
    </property>
   </action>
   <action name="languageAction">
@@ -1441,8 +2193,74 @@
     <string/>
    </property>
   </action>
+  <action name="helpContentsAction">
+   <property name="text">
+    <string extracomment="menu Help-&gt;Online-&gt;Help contents, opens the webpage of FET documentation">Help contents</string>
+   </property>
+  </action>
+  <action name="helpForumAction">
+   <property name="text">
+    <string extracomment="menu Help-&gt;Forum, opens the webpage of FET forum">Forum</string>
+   </property>
+  </action>
+  <action name="helpAddressesAction">
+   <property name="text">
+    <string extracomment="menu Help-&gt;Online-&gt;Web addresses, shows the web addresses of FET homepage, documentation and forum">Web addresses</string>
+   </property>
+  </action>
+  <action name="helpHomepageAction">
+   <property name="text">
+    <string extracomment="menu Help-&gt;Online-&gt;Homepage, opens the homepage of FET">Homepage</string>
+   </property>
+  </action>
+  <action name="settingsShowShortcutsOnMainWindowAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show shortcut buttons in main window</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>shortcutOpenPushButton</tabstop>
+  <tabstop>shortcutNewPushButton</tabstop>
+  <tabstop>shortcutSavePushButton</tabstop>
+  <tabstop>shortcutSaveAsPushButton</tabstop>
+  <tabstop>shortcutBasicPushButton</tabstop>
+  <tabstop>shortcutTeachersPushButton</tabstop>
+  <tabstop>shortcutStudentsPushButton</tabstop>
+  <tabstop>shortcutSubjectsPushButton</tabstop>
+  <tabstop>shortcutActivityTagsPushButton</tabstop>
+  <tabstop>shortcutBuildingsPushButton</tabstop>
+  <tabstop>shortcutActivitiesPushButton</tabstop>
+  <tabstop>shortcutSubactivitiesPushButton</tabstop>
+  <tabstop>shortcutRoomsPushButton</tabstop>
+  <tabstop>shortcutAllTimeConstraintsPushButton</tabstop>
+  <tabstop>shortcutBreakTimeConstraintsPushButton</tabstop>
+  <tabstop>shortcutTeachersTimeConstraintsPushButton</tabstop>
+  <tabstop>shortcutStudentsTimeConstraintsPushButton</tabstop>
+  <tabstop>shortcutActivitiesTimeConstraintsPushButton</tabstop>
+  <tabstop>shortcutAllSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutTeachersSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutStudentsSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutRoomsSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutSubjectsSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutActivityTagsSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutActivitiesSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton</tabstop>
+  <tabstop>shortcutGeneratePushButton</tabstop>
+  <tabstop>shortcutGenerateMultiplePushButton</tabstop>
+  <tabstop>shortcutViewTeachersPushButton</tabstop>
+  <tabstop>shortcutViewStudentsPushButton</tabstop>
+  <tabstop>shortcutViewRoomsPushButton</tabstop>
+  <tabstop>shortcutShowSoftConflictsPushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

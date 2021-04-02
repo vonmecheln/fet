@@ -11,6 +11,8 @@
 //
 //
 
+#include <cstdio>
+
 #include "spreadmindaysconstraintsfivedaysform.h"
 
 #include "longtextmessagebox.h"
@@ -18,6 +20,8 @@
 #include "timetable.h"
 
 extern Timetable gt;
+
+#include <cstdio>
 
 #include <QHash>
 #include <QList>
@@ -30,6 +34,8 @@ extern Timetable gt;
 #include <QLineEdit>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+
+#include "matrix.h"
 
 SpreadMinDaysConstraintsFiveDaysForm::SpreadMinDaysConstraintsFiveDaysForm()
 {
@@ -92,7 +98,10 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	assert(spread4OrMore);
 	
 	QHash<int, int> activitiesRepresentantIds; //first integer is the id, second is the index in the lists
-	QList<int> activitiesForRepresentant[MAX_ACTIVITIES];
+
+	//QList<int> activitiesForRepresentant[MAX_ACTIVITIES];
+	Matrix1D<QList<int> > activitiesForRepresentant;
+	activitiesForRepresentant.resize(gt.rules.activitiesList.count());
 	
 	int nActs=0;
 	
@@ -191,11 +200,15 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		if(cl.count()>=2){
 			assert(spread4OrMore);
 
-			int n_acts=cl.count();
-			int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+			int n_acts;
+			QList<int> acts;
+			//int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 			
+			n_acts=cl.count();
+			acts.clear();
 			for(int k=0; k<cl.count(); k++){
-				acts[k]=cl.at(k);
+				//acts[k]=cl.at(k);
+				acts.append(cl.at(k));
 			}
 			c1=new ConstraintMinDaysBetweenActivities(weight4, consecutiveIfSameDay, n_acts, acts, 1);
 		}
@@ -226,31 +239,41 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			notAloneComp2--;
 		
 			int n_acts;
-			int acts[10];
+			//int acts[10];
+			QList<int> acts;
 			
-			n_acts=2;
-			
-			acts[0]=cl.at(aloneComponent);
-			acts[1]=cl.at(notAloneComp1);
+			n_acts=2;			
+			acts.clear();
+			//acts[0]=cl.at(aloneComponent);
+			acts.append(cl.at(aloneComponent));
+			//acts[1]=cl.at(notAloneComp1);
+			acts.append(cl.at(notAloneComp1));
 				
 			c2=new ConstraintMinDaysBetweenActivities(weight3, consecutiveIfSameDay, n_acts, acts, 2);
 
 			//////////
 
-			n_acts=2;
-			
-			acts[0]=cl.at(aloneComponent);
-			acts[1]=cl.at(notAloneComp2);
+			n_acts=2;			
+			acts.clear();
+			//acts[0]=cl.at(aloneComponent);
+			acts.append(cl.at(aloneComponent));
+			//acts[1]=cl.at(notAloneComp2);
+			acts.append(cl.at(notAloneComp2));
 				
 			c3=new ConstraintMinDaysBetweenActivities(weight3, consecutiveIfSameDay, n_acts, acts, 2);
 		}
 		if(cl.count()==2 && spread2){
-			int n_acts=2;
+			int n_acts;
 			
-			int acts[10];
+			QList<int> acts;
+			//int acts[10];
 			
-			acts[0]=cl.at(0);
-			acts[1]=cl.at(1);
+			n_acts=2;
+			acts.clear();
+			//acts[0]=cl.at(0);
+			acts.append(cl.at(0));
+			//acts[1]=cl.at(1);
+			acts.append(cl.at(1));
 			
 			c2=new ConstraintMinDaysBetweenActivities(weight2, consecutiveIfSameDay, n_acts, acts, 2);
 		}

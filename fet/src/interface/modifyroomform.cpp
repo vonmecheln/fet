@@ -17,11 +17,6 @@
 
 #include "modifyroomform.h"
 
-#include <qlineedit.h>
-#include <q3combobox.h>
-
-#include <QDesktopWidget>
-
 #include <QMessageBox>
 
 ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& initialRoomBuilding, int initialRoomCapacity)

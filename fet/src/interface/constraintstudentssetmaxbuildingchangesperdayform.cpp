@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintstudentssetmaxbuildingchangesperdayform.h"
 #include "addconstraintstudentssetmaxbuildingchangesperdayform.h"
 #include "modifyconstraintstudentssetmaxbuildingchangesperdayform.h"
-
-#include <QDesktopWidget>
 
 ConstraintStudentsSetMaxBuildingChangesPerDayForm::ConstraintStudentsSetMaxBuildingChangesPerDayForm()
 {

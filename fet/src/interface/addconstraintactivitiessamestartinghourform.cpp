@@ -15,17 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiessamestartinghourform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 AddConstraintActivitiesSameStartingHourForm::AddConstraintActivitiesSameStartingHourForm()
 {
@@ -199,17 +196,21 @@ void AddConstraintActivitiesSameStartingHourForm::addConstraint()
 			tr("Only one selected activity"));
 		return;
 	}
-	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
+	/*if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Please report error to the author\nMAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR must be increased (you have too many activities)"));
 		return;
-	}
+	}*/
 	
-	int ids[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
+	//int ids[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
+	QList<int> ids;
 	int i;
 	QList<int>::iterator it;
-	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
-		ids[i]=*it;
+	ids.clear();
+	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
+		//ids[i]=*it;
+		ids.append(*it);
+	}
 	
 	ctr=new ConstraintActivitiesSameStartingHour(weight, /*compulsory,*/ this->selectedActivitiesList.count(), ids);
 	bool tmp2=gt.rules.addTimeConstraint(ctr);

@@ -25,8 +25,6 @@
 #include <QString>
 #include <QStringList>
 
-#include <QDesktopWidget>
-
 #include <QTableWidget>
 #include <QHeaderView>
 

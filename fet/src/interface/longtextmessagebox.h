@@ -18,7 +18,6 @@
 #ifndef LONGTEXTMESSAGEBOX_H
 #define LONGTEXTMESSAGEBOX_H
 
-//#include <QDialog>
 #include <QObject>
 
 class QString;
@@ -40,10 +39,18 @@ public:
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
 	 int defaultButton, int escapeButton );
 
+	static int mediumConfirmation
+	 ( QWidget * parent, const QString & title, const QString & text,
+	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
+	 int defaultButton, int escapeButton );
+
 	static void information
 	 ( QWidget * parent, const QString & title, const QString & text);
 
 	static void largeInformation
+	 ( QWidget * parent, const QString & title, const QString & text);
+
+	static void mediumInformation
 	 ( QWidget * parent, const QString & title, const QString & text);
 
 	static int confirmationWithDimensions

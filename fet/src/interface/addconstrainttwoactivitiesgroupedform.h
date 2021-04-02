@@ -23,13 +23,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
 #include <QList>
 
 class AddConstraintTwoActivitiesGroupedForm : public QDialog, Ui::AddConstraintTwoActivitiesGroupedForm_template  {

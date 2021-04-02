@@ -26,6 +26,28 @@
 
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
 
+#include <QString>
+#include <QStringList>
+#include <QHash>
+#include <QMultiHash>
+#include <QMap>
+
+#include <QMessageBox>
+
+#include <QLocale>
+#include <QTime>
+#include <QDate>
+
+#include <QFile>
+#include <QTextStream>
+
+#include <QApplication>
+#include <QProgressDialog>
+extern QApplication* pqapplication;
+
+extern Timetable gt;
+
+
 QHash<QString, QString> hashSubjectIDsStatistics;
 QHash<QString, QString> hashActivityTagIDsStatistics;
 QHash<QString, QString> hashStudentIDsStatistics;
@@ -33,19 +55,6 @@ QHash<QString, QString> hashTeacherIDsStatistics;
 QHash<QString, QString> hashRoomIDsStatistics;
 QHash<QString, QString> hashDayIDsStatistics;
 
-#include <QMessageBox>
-
-#include <QLocale>
-#include <QTime>
-#include <QDate>
-#include <QHash>
-#include <QMap>
-
-#include <QApplication>
-#include <QProgressDialog>
-extern QApplication* pqapplication;
-
-extern Timetable gt;
 
 //extern bool simulation_running;	//needed?
 

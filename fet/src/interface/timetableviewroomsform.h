@@ -35,12 +35,14 @@ public:
 	
 	void resizeRowsAfterShow();
 
+	void detailActivity(QTableWidgetItem* item);
+
 public slots:
 	void updateRoomsTimetableTable();
 
 	void roomChanged(const QString& roomName);
 
-	void detailActivity(QTableWidgetItem* item);
+	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);
 	
 	void lock();
 	void lockTime();

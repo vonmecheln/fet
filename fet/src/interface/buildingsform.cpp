@@ -17,10 +17,7 @@
 #include "addbuildingform.h"
 #include "modifybuildingform.h"
 
-#include <q3listbox.h>
-#include <qinputdialog.h>
-
-#include <QDesktopWidget>
+#include <QInputDialog>
 
 #include <QMessageBox>
 
@@ -71,7 +68,8 @@ void BuildingsForm::filterChanged()
 	for(int i=0; i<gt.rules.buildingsList.size(); i++){
 		Building* bu=gt.rules.buildingsList[i];
 		if(this->filterOk(bu)){
-			s=bu->getDescription();
+			//s=bu->getDescription();
+			s=bu->name;
 			visibleBuildingsList.append(bu);
 			buildingsListBox->insertItem(s);
 		}
@@ -88,7 +86,13 @@ void BuildingsForm::addBuilding()
 	
 	filterChanged();
 	
-	buildingsListBox->setCurrentItem(ind);
+	//buildingsListBox->setCurrentItem(ind);
+	Q_UNUSED(ind);
+	int i=buildingsListBox->count()-1;
+	if(i>=0){
+		buildingsListBox->setCurrentItem(i);
+		buildingChanged(i);
+	}
 }
 
 void BuildingsForm::removeBuilding()
@@ -120,7 +124,8 @@ void BuildingsForm::removeBuilding()
 void BuildingsForm::buildingChanged(int index)
 {
 	if(index<0){
-		currentBuildingTextEdit->setText(tr("Invalid building"));
+		//currentBuildingTextEdit->setText(tr("Invalid building"));
+		currentBuildingTextEdit->setText("");
 		return;
 	}
 

@@ -21,13 +21,7 @@
 #include "addconstrainttwoactivitiesconsecutiveform.h"
 #include "modifyconstrainttwoactivitiesconsecutiveform.h"
 
-#include <QDesktopWidget>
-
 #include <QMessageBox>
-
-#include <q3listbox.h>
-#include <q3combobox.h>
-#include <q3groupbox.h>
 
 ConstraintTwoActivitiesConsecutiveForm::ConstraintTwoActivitiesConsecutiveForm()
 {

@@ -17,10 +17,6 @@
 
 #include "addstudentsgroupform.h"
 
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
-
 #include <QMessageBox>
 
 AddStudentsGroupForm::AddStudentsGroupForm(const QString& yearName)

@@ -15,14 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintstudentssetactivitytagmaxhoursdailyform.h"
 #include "timeconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 ModifyConstraintStudentsSetActivityTagMaxHoursDailyForm::ModifyConstraintStudentsSetActivityTagMaxHoursDailyForm(ConstraintStudentsSetActivityTagMaxHoursDaily* ctr)
 {

@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintactivitytagpreferredroomform.h"
 #include "addconstraintactivitytagpreferredroomform.h"
 #include "modifyconstraintactivitytagpreferredroomform.h"
-
-#include <QDesktopWidget>
 
 ConstraintActivityTagPreferredRoomForm::ConstraintActivityTagPreferredRoomForm()
 {

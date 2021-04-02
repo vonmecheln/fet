@@ -53,10 +53,6 @@ public:
 	Room();
 	~Room();
 	
-	/*void addEquipment(const QString& equipmentName);
-	void removeEquipment(const QString& equipmentName);
-	bool searchEquipment(const QString& equipmentName);*/
-	
 	void computeInternalStructure(Rules& r);
 
 	QString getXmlDescription();

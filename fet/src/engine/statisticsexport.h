@@ -21,6 +21,8 @@
 #ifndef STATISTICEXPORT_H
 #define STATISTICEXPORT_H
 
+#include <QString>
+
 #include "timetable.h"		//needed?
 #include "timetable_defs.h"	//needed?
 

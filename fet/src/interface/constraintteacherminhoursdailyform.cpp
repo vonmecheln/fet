@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintteacherminhoursdailyform.h"
 #include "addconstraintteacherminhoursdailyform.h"
 #include "modifyconstraintteacherminhoursdailyform.h"
-
-#include <QDesktopWidget>
 
 ConstraintTeacherMinHoursDailyForm::ConstraintTeacherMinHoursDailyForm()
 {

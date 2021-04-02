@@ -47,7 +47,7 @@
    <item row="0" column="1">
     <widget class="QLabel" name="activityDescriptionTextLabel">
      <property name="text">
-      <string>Current subactivity's description</string>
+      <string>Current subactivity</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>

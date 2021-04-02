@@ -11,17 +11,15 @@
 //
 //
 
+#include <QMessageBox>
+
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
 #include "hoursform.h"
 
-#include <qspinbox.h>
-#include <qmessagebox.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
+#include <QLineEdit>
 
 extern Timetable gt;
 

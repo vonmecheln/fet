@@ -15,16 +15,14 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "tablewidgetupdatebug.h"
 
 #include "modifyconstraintbreaktimesform.h"
 #include "timeconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-
-#include <QDesktopWidget>
 
 #include <QHeaderView>
 #include <QTableWidget>
@@ -37,6 +35,8 @@
 //#define NO	(ModifyConstraintBreakTimesForm::tr("Allowed", "Please keep translation short"))
 #define YES		(QString("X"))
 #define NO		(QString(" "))
+
+static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 
 ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(ConstraintBreakTimes* ctr)
 {
@@ -73,7 +73,7 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(ConstraintBreakTi
 		notAllowedTimesTable->setVerticalHeaderItem(i, item);
 	}
 
-	bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;			

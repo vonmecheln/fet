@@ -16,11 +16,7 @@
 
 #include "institutionnameform.h"
 
-#include <qlineedit.h>
-
 #include <QMessageBox>
-
-#include <QDesktopWidget>
 
 extern Timetable gt;
 

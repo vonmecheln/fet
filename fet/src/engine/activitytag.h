@@ -17,8 +17,8 @@
 
 #include "timetable_defs.h"
 
-#include <qstring.h>
-#include <q3ptrlist.h>
+#include <QString>
+#include <QList>
 
 class ActivityTag;
 class Rules;

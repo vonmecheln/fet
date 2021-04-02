@@ -23,7 +23,7 @@
 #include "timetable.h"
 #include "fet.h"
 
-#include <qthread.h>
+#include <QThread>
 
 class GenerateThread: public QThread{
 	Q_OBJECT

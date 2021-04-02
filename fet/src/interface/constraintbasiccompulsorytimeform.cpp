@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintbasiccompulsorytimeform.h"
 #include "addconstraintbasiccompulsorytimeform.h"
 #include "modifyconstraintbasiccompulsorytimeform.h"
-
-#include <QDesktopWidget>
 
 ConstraintBasicCompulsoryTimeForm::ConstraintBasicCompulsoryTimeForm()
 {

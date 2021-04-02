@@ -24,11 +24,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-#include <qspinbox.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-
-
 class AddBuildingForm : public QDialog, Ui::AddBuildingForm_template {
 	Q_OBJECT
 public: 

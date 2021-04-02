@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="Title of dialog">Automatically generate multiple timetables</string>
+   <string extracomment="Title of dialog">Generate multiple timetables</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0" colspan="2">

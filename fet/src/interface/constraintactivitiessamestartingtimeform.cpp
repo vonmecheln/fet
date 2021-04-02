@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintactivitiessamestartingtimeform.h"
 #include "addconstraintactivitiessamestartingtimeform.h"
 #include "modifyconstraintactivitiessamestartingtimeform.h"
-
-#include <QDesktopWidget>
 
 ConstraintActivitiesSameStartingTimeForm::ConstraintActivitiesSameStartingTimeForm()
 {

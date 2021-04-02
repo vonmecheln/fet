@@ -15,15 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "modifyconstraintsubjectactivitytagpreferredroomform.h"
 #include "spaceconstraint.h"
-
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
 
 ModifyConstraintSubjectActivityTagPreferredRoomForm::ModifyConstraintSubjectActivityTagPreferredRoomForm(ConstraintSubjectActivityTagPreferredRoom* ctr)
 {

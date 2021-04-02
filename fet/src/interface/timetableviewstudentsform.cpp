@@ -26,25 +26,12 @@
 #include "fet.h"
 #include "solution.h"
 
-#include "lockunlock.h"
+#include "matrix.h"
 
-#include <q3combobox.h>
-#include <qmessagebox.h>
-#include <q3groupbox.h>
-#include <qspinbox.h>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
-#include <qapplication.h>
-#include <q3listbox.h>
-#include <qlabel.h>
-#include <q3textedit.h>
-#include <qstring.h>
+#include "lockunlock.h"
 
 #include <QSplitter>
 #include <QList>
-
-#include <QDesktopWidget>
 
 #include <QMessageBox>
 
@@ -55,6 +42,7 @@
 #include <QAbstractItemView>
 
 #include <QCoreApplication>
+#include <QApplication>
 
 #include <QString>
 #include <QStringList>
@@ -71,8 +59,10 @@ extern bool simulation_running;
 
 extern Solution best_solution;
 
-extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+//extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix3D<bool> subgroupNotAvailableDayHour;
+//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern Matrix2D<bool> breakDayHour;
 
 extern QSet <int> idsOfLockedTime;		//care about locked activities in view forms
 extern QSet <int> idsOfLockedSpace;		//care about locked activities in view forms
@@ -104,7 +94,7 @@ TimetableViewStudentsForm::TimetableViewStudentsForm()
     connect(groupsListBox, SIGNAL(highlighted(QString)), this /*TimetableViewStudentsForm_template*/, SLOT(groupChanged(QString)));
     connect(subgroupsListBox, SIGNAL(highlighted(QString)), this /*TimetableViewStudentsForm_template*/, SLOT(subgroupChanged(QString)));
     connect(closePushButton, SIGNAL(clicked()), this /*TimetableViewStudentsForm_template*/, SLOT(close()));
-    connect(studentsTimetableTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(detailActivity(QTableWidgetItem*)));
+    connect(studentsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
     connect(lockTimePushButton, SIGNAL(clicked()), this /*TimetableViewStudentsForm_template*/, SLOT(lockTime()));
     connect(lockSpacePushButton, SIGNAL(clicked()), this /*TimetableViewStudentsForm_template*/, SLOT(lockSpace()));
     connect(lockTimeSpacePushButton, SIGNAL(clicked()), this /*TimetableViewStudentsForm_template*/, SLOT(lockTimeSpace()));
@@ -437,10 +427,18 @@ void TimetableViewStudentsForm::updateStudentsTimetableTable(){
 	detailActivity(studentsTimetableTable->currentItem());
 }
 
-void TimetableViewStudentsForm::resizeEvent(QResizeEvent* event){
+void TimetableViewStudentsForm::resizeEvent(QResizeEvent* event)
+{
 	QDialog::resizeEvent(event);
 
 	studentsTimetableTable->resizeRowsToContents();
+}
+
+void TimetableViewStudentsForm::currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous)
+{
+	Q_UNUSED(previous);
+	
+	detailActivity(current);
 }
 
 void TimetableViewStudentsForm::detailActivity(QTableWidgetItem* item)

@@ -22,11 +22,6 @@
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
-//#include "fetmainform.h"
-
-#include <qspinbox.h>
-#include <qpushbutton.h>
-#include <qlineedit.h>
 
 class ModifyConstraintTeachersMinDaysPerWeekForm : public QDialog, Ui::ModifyConstraintTeachersMinDaysPerWeekForm_template  {
 	Q_OBJECT

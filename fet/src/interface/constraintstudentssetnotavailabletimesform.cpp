@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintstudentssetnotavailabletimesform.h"
 #include "addconstraintstudentssetnotavailabletimesform.h"
 #include "modifyconstraintstudentssetnotavailabletimesform.h"
-
-#include <QDesktopWidget>
 
 ConstraintStudentsSetNotAvailableTimesForm::ConstraintStudentsSetNotAvailableTimesForm()
 {

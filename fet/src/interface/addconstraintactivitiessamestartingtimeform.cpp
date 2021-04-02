@@ -15,17 +15,16 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
+#include <cstdio>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiessamestartingtimeform.h"
 #include "spaceconstraint.h"
 
-#include <qradiobutton.h>
-#include <qlabel.h>
-#include <qlineedit.h>
-#include <q3table.h>
-
-#include <QDesktopWidget>
+#include "matrix.h"
 
 AddConstraintActivitiesSameStartingTimeForm::AddConstraintActivitiesSameStartingTimeForm()
 {
@@ -223,11 +222,11 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 			tr("Only one selected activity - impossible"));
 		return;
 	}
-	if(this->simultaneousActivitiesList.size()>=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
+	/*if(this->simultaneousActivitiesList.size()>=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Too many activities - please report error\n(CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME too little)"));
 		return;
-	}
+	}*/
 	
 if(blockCheckBox->isChecked()){ //block constraints
 	///////////phase 1 - how many constraints will be added?
@@ -261,11 +260,13 @@ if(blockCheckBox->isChecked()){ //block constraints
 		}
 		else{
 			if(tmp!=nConstraints){
-				QString s=tr("Sub-activities do not correspond. Mistake:\n");
-				s+=tr("1. First (sub)activity has id=%1 and represents %2 sub-activities\n")
+				QString s=tr("Sub-activities do not correspond. Mistake:");
+				s+="\n";
+				s+=tr("1. First (sub)activity has id=%1 and represents %2 sub-activities")
 					.arg(this->simultaneousActivitiesList.at(0))
 					.arg(nConstraints);
-				s+=tr("2. Current (sub)activity has id=%1 and represents %2 sub-activities\n")
+				s+="\n";
+				s+=tr("2. Current (sub)activity has id=%1 and represents %2 sub-activities")
 					.arg(_id)
 					.arg(tmp);
 				QMessageBox::warning(this, tr("FET information"), s);
@@ -278,8 +279,12 @@ if(blockCheckBox->isChecked()){ //block constraints
 //#ifdef WIN32
 //	int ids[10][MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
 //#else
-	int ids[nConstraints][this->simultaneousActivitiesList.count()];
+	Matrix1D<QList<int> > ids;
+	ids.resize(nConstraints);
+	//int ids[nConstraints][this->simultaneousActivitiesList.count()];
 //#endif
+	for(int i=0; i<nConstraints; i++)
+		ids[i].clear();
 	int k;
 	for(k=0, it=this->simultaneousActivitiesList.begin(); it!=this->simultaneousActivitiesList.end(); k++, it++){
 		int _id=(*it);
@@ -290,7 +295,9 @@ if(blockCheckBox->isChecked()){ //block constraints
 			if(act->activityGroupId==0){
 				if(act->id==_id){
 					assert(tmp==0);
-					ids[tmp][k]=_id;
+					//ids[tmp][k]=_id;
+					assert(ids[tmp].count()==k);
+					ids[tmp].append(_id);
 					tmp=1;
 				}
 			}
@@ -298,11 +305,15 @@ if(blockCheckBox->isChecked()){ //block constraints
 				if(act->id==_id){
 					assert(act->activityGroupId==act->id);
 					assert(tmp==0);
-					ids[tmp][k]=_id;
+					//ids[tmp][k]=_id;
+					assert(ids[tmp].count()==k);
+					ids[tmp].append(_id);
 					tmp=1;
 				}
 				else if(act->activityGroupId==_id){
-					ids[tmp][k]=act->id;
+					//ids[tmp][k]=act->id;
+					assert(ids[tmp].count()==k);
+					ids[tmp].append(act->id);
 					tmp++;
 				}
 			}
@@ -337,12 +348,15 @@ if(blockCheckBox->isChecked()){ //block constraints
 	}
 }
 else{
-	int ids[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
+	QList<int> ids;
+	//int ids[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
 	QList<int>::iterator it;
 	int i;
+	ids.clear();
 	for(i=0, it=this->simultaneousActivitiesList.begin(); it!=this->simultaneousActivitiesList.end(); i++,it++){
-		assert(i<MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME);
-		ids[i]=*it;
+		//assert(i<MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME);
+		//ids[i]=*it;
+		ids.append(*it);
 	}
 	ctr=new ConstraintActivitiesSameStartingTime(weight, /*compulsory,*/ this->simultaneousActivitiesList.count(), ids);
 

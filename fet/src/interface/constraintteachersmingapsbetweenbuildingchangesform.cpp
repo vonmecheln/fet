@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "longtextmessagebox.h"
 
 #include "constraintteachersmingapsbetweenbuildingchangesform.h"
 #include "addconstraintteachersmingapsbetweenbuildingchangesform.h"
 #include "modifyconstraintteachersmingapsbetweenbuildingchangesform.h"
-
-#include <QDesktopWidget>
 
 ConstraintTeachersMinGapsBetweenBuildingChangesForm::ConstraintTeachersMinGapsBetweenBuildingChangesForm()
 {
