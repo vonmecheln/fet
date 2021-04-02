@@ -276,7 +276,7 @@ void Solution::getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<i
 				a[i][j][k]=UNALLOCATED_ACTIVITY;
 
 	Activity *act;
-	for(i=0; i<r.nInternalActivities; i++) 
+	for(i=0; i<r.nInternalActivities; i++)
 		if(this->times[i]!=UNALLOCATED_TIME) {
 			act=&r.internalActivitiesList[i];
 			int hour=this->times[i]/r.nDaysPerWeek;

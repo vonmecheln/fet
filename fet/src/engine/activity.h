@@ -130,7 +130,7 @@ public:
 	int nTotalStudents;
 	
 	/**
-	If true, we will have to compute the number of total students from the 
+	If true, we will have to compute the number of total students from the
 	involved students sets. If false, it means that nTotalStudents is given
 	and must not be recalculated.
 	*/

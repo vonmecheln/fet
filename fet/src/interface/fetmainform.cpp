@@ -459,7 +459,7 @@ RandomSeedDialog::~RandomSeedDialog()
 
 void RandomSeedDialog::help()
 {
-	LongTextMessageBox::largeInformation(this, tr("FET information"), 
+	LongTextMessageBox::largeInformation(this, tr("FET information"),
 		tr("You can control the random behaviour of FET with this function")+".\n\n"+
 		tr("The random seed is the state of the random number generator.")+" "+
 		tr("It has two components, X and Y.")+" "+
@@ -1377,7 +1377,7 @@ void FetMainForm::openFile(const QString& fileName)
 		
 		if(s.isNull()){
 			s = QFileDialog::getOpenFileName(this, tr("Choose a file to open"),
-			 WORKING_DIRECTORY, 
+			 WORKING_DIRECTORY,
 			 tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
 			 "So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)");
 
@@ -1417,13 +1417,13 @@ void FetMainForm::openFile(const QString& fileName)
 			return;
 		}		
 		if(s2.indexOf(";") >= 0){
-			QMessageBox::warning(this, tr("FET information"), 
+			QMessageBox::warning(this, tr("FET information"),
 			 tr("Please do not use semicolon ; in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
 		if(s2.indexOf("#") >= 0){
-			QMessageBox::warning(this, tr("FET information"), 
+			QMessageBox::warning(this, tr("FET information"),
 			 tr("Please do not use # in filename, the html css code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
@@ -2190,7 +2190,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+=tr("Option 'Print activities with same starting time in timetables': selecting it means that the html timetables will contain for"
 	 " each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot."
 	 " If you don't use constraints activities same starting time, this option has no effect for you.");
-	 
+	
 	s+="\n\n";
 	s+=tr("Seed of random number generator: please read the help in the dialog of this option");
 	

@@ -549,7 +549,7 @@ bool ConstraintRoomNotAvailableTimes::computeInternalStructure(QWidget* parent, 
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint room not available times is wrong because it refers to inexistent room."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
 	}	
 
@@ -559,14 +559,14 @@ bool ConstraintRoomNotAvailableTimes::computeInternalStructure(QWidget* parent, 
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET information"),
 			 tr("Constraint room not available times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}		
 		if(this->hours.at(k) >= r.nHoursPerDay){
 			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET information"),
 			 tr("Constraint room not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -621,7 +621,7 @@ double ConstraintRoomNotAvailableTimes::fitness(
 				s += ". ";
 				s += tr("This increases the conflicts total by %1")
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(roomsMatrix[rm][d][h]*weightPercentage/100));
-				 
+				
 				dl.append(s);
 				cl.append(roomsMatrix[rm][d][h]*weightPercentage/100);
 			
@@ -773,7 +773,7 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, 
 			break;
 		}
 	if(ac==r.nInternalActivities){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -784,7 +784,7 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, 
 	//assert(_room>=0);
 
 	if(this->_room<0){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because preferred room %1 does not exist):\n%2").arg(roomName).arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -796,7 +796,7 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, 
 		int rr=r.roomsHash.value(rrn, -1);
 
 		if(rr<0){
-			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 				tr("Following constraint is wrong (because preferred real room %1 does not exist):\n%2").arg(rrn).arg(this->getDetailedDescription(r)));
 			return false;
 		}
@@ -1098,7 +1098,7 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(QWidget* parent,
 		}*/
 		
 	if(ac==r.nInternalActivities){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -1110,7 +1110,7 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(QWidget* parent,
 		int t=r.roomsHash.value(rm, -1);
 
 		if(t<0){
-			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -1366,7 +1366,7 @@ bool ConstraintStudentsSetHomeRoom::computeInternalStructure(QWidget* parent, Ru
 	//this->_room = r.searchRoom(this->roomName);
 	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -1630,7 +1630,7 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(QWidget* parent, R
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
-			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -1903,7 +1903,7 @@ bool ConstraintTeacherHomeRoom::computeInternalStructure(QWidget* parent, Rules&
 	//this->_room = r.searchRoom(this->roomName);
 	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -2165,7 +2165,7 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(QWidget* parent, Rules
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
-			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -2421,7 +2421,7 @@ bool ConstraintSubjectPreferredRoom::computeInternalStructure(QWidget* parent, R
 	//this->_room = r.searchRoom(this->roomName);
 	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -2651,7 +2651,7 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(QWidget* parent, 
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
-			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -2894,7 +2894,7 @@ bool ConstraintSubjectActivityTagPreferredRoom::computeInternalStructure(QWidget
 	//this->_room = r.searchRoom(this->roomName);
 	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -3130,7 +3130,7 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(QWidge
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
-			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -3375,7 +3375,7 @@ bool ConstraintActivityTagPreferredRoom::computeInternalStructure(QWidget* paren
 	//this->_room = r.searchRoom(this->roomName);
 	_room=r.roomsHash.value(roomName, -1);
 	if(this->_room<0){
-		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -3606,7 +3606,7 @@ bool ConstraintActivityTagPreferredRooms::computeInternalStructure(QWidget* pare
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
-			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -3837,14 +3837,14 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWi
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
-			
+	
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max building changes per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-									 		 
+		
 		return false;
-	}												
+	}
 	
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 	/*this->iSubgroupsList.clear();
@@ -4361,14 +4361,14 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QW
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
-			
+	
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max building changes per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-									 		 
+		
 		return false;
-	}												
+	}
 	
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 	/*this->iSubgroupsList.clear();
@@ -4884,14 +4884,14 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructur
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
-			
+	
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min gaps between building changes is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-									 		 
+		
 		return false;
-	}												
+	}
 	
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 	/*this->iSubgroupsList.clear();
@@ -5437,9 +5437,9 @@ bool ConstraintTeacherMaxBuildingChangesPerDay::computeInternalStructure(QWidget
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher max building changes per day is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-							 		 
+		
 		return false;
-	}	
+	}
 
 	return true;
 }
@@ -5925,9 +5925,9 @@ bool ConstraintTeacherMaxBuildingChangesPerWeek::computeInternalStructure(QWidge
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher max building changes per week is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-							 		 
+		
 		return false;
-	}	
+	}
 
 	return true;
 }
@@ -6413,9 +6413,9 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(QW
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-							 		 
+		
 		return false;
-	}	
+	}
 
 	return true;
 }
@@ -6921,14 +6921,14 @@ bool ConstraintStudentsSetMaxRoomChangesPerDay::computeInternalStructure(QWidget
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
-			
+	
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max room changes per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-									 		 
+		
 		return false;
-	}												
+	}
 	
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 	/*this->iSubgroupsList.clear();
@@ -7445,14 +7445,14 @@ bool ConstraintStudentsSetMaxRoomChangesPerWeek::computeInternalStructure(QWidge
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
-			
+	
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max room changes per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-									 		 
+		
 		return false;
-	}												
+	}
 	
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 	/*this->iSubgroupsList.clear();
@@ -7968,14 +7968,14 @@ bool ConstraintStudentsSetMinGapsBetweenRoomChanges::computeInternalStructure(QW
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
-			
+	
 	if(ss==NULL){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min gaps between room changes is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-									 		 
+		
 		return false;
-	}												
+	}
 	
 	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
 	/*this->iSubgroupsList.clear();
@@ -8521,9 +8521,9 @@ bool ConstraintTeacherMaxRoomChangesPerDay::computeInternalStructure(QWidget* pa
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher max room changes per day is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-							 		 
+		
 		return false;
-	}	
+	}
 
 	return true;
 }
@@ -9009,9 +9009,9 @@ bool ConstraintTeacherMaxRoomChangesPerWeek::computeInternalStructure(QWidget* p
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher max room changes per week is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-							 		 
+		
 		return false;
-	}	
+	}
 
 	return true;
 }
@@ -9497,9 +9497,9 @@ bool ConstraintTeacherMinGapsBetweenRoomChanges::computeInternalStructure(QWidge
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher min gaps between room changes is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-							 		 
+		
 		return false;
-	}	
+	}
 
 	return true;
 }

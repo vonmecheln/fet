@@ -298,7 +298,7 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 		  " this possible gap might be counted in teachers' and students' timetable)")
 		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
-						 
+		
 		if(t==QMessageBox::Cancel)
 				return;
 	}
@@ -315,7 +315,7 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 		  " gap might be counted in teacher's timetable)")
 		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
-						 
+		
 		if(t==QMessageBox::Cancel)
 				return;
 	}
@@ -332,7 +332,7 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 		  " gap might be counted in students' timetable)")
 		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
-						 
+		
 		if(t==QMessageBox::Cancel)
 				return;
 	}
@@ -352,7 +352,7 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 		int t=QMessageBox::question(this, tr("FET question"),
 		 tr("Warning: 0 slots selected. Are you sure?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
-						 
+		
 		if(t==QMessageBox::Cancel)
 				return;
 	}

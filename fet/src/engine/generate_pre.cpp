@@ -5094,7 +5094,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 			ConstraintTeachersMaxGapsPerWeek* tg=(ConstraintTeachersMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
 			
 			for(int j=0; j<gt.rules.nInternalTeachers; j++){
-				if(teachersMaxGapsPerWeekMaxGaps[j]==-1 
+				if(teachersMaxGapsPerWeekMaxGaps[j]==-1
 				 ||(teachersMaxGapsPerWeekMaxGaps[j]>=0 && teachersMaxGapsPerWeekMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerWeekPercentage[j]<=tg->weightPercentage)){
 					teachersMaxGapsPerWeekMaxGaps[j]=tg->maxGaps;
 					teachersMaxGapsPerWeekPercentage[j]=tg->weightPercentage;
@@ -5124,7 +5124,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 			ConstraintTeacherMaxGapsPerWeek* tg=(ConstraintTeacherMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
 		
 			int j=tg->teacherIndex;
-			if(teachersMaxGapsPerWeekMaxGaps[j]==-1 
+			if(teachersMaxGapsPerWeekMaxGaps[j]==-1
 			 ||(teachersMaxGapsPerWeekMaxGaps[j]>=0 && teachersMaxGapsPerWeekMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerWeekPercentage[j]<=tg->weightPercentage)){
 				teachersMaxGapsPerWeekMaxGaps[j]=tg->maxGaps;
 				teachersMaxGapsPerWeekPercentage[j]=tg->weightPercentage;
@@ -5205,7 +5205,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 			ConstraintTeachersMaxGapsPerDay* tg=(ConstraintTeachersMaxGapsPerDay*)gt.rules.internalTimeConstraintsList[i];
 			
 			for(int j=0; j<gt.rules.nInternalTeachers; j++){
-				if(teachersMaxGapsPerDayMaxGaps[j]==-1 
+				if(teachersMaxGapsPerDayMaxGaps[j]==-1
 				 ||(teachersMaxGapsPerDayMaxGaps[j]>=0 && teachersMaxGapsPerDayMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerDayPercentage[j]<=tg->weightPercentage)){
 					teachersMaxGapsPerDayMaxGaps[j]=tg->maxGaps;
 					teachersMaxGapsPerDayPercentage[j]=tg->weightPercentage;
@@ -5235,7 +5235,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 			ConstraintTeacherMaxGapsPerDay* tg=(ConstraintTeacherMaxGapsPerDay*)gt.rules.internalTimeConstraintsList[i];
 		
 			int j=tg->teacherIndex;
-			if(teachersMaxGapsPerDayMaxGaps[j]==-1 
+			if(teachersMaxGapsPerDayMaxGaps[j]==-1
 			 ||(teachersMaxGapsPerDayMaxGaps[j]>=0 && teachersMaxGapsPerDayMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerDayPercentage[j]<=tg->weightPercentage)){
 				teachersMaxGapsPerDayMaxGaps[j]=tg->maxGaps;
 				teachersMaxGapsPerDayPercentage[j]=tg->weightPercentage;
@@ -5452,7 +5452,7 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent)
 				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 
+			
 				if(t==0)
 					break;
 			}*/
@@ -5490,7 +5490,7 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent)
 				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 
+			
 				if(t==0)
 					break;
 			}*/
@@ -5688,7 +5688,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-			 
+			
 			if(t==0)
 				break;
 		}
@@ -5704,7 +5704,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-			 
+			
 			if(t==0)
 				break;
 		}
@@ -5721,11 +5721,11 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
 			 GeneratePreTranslate::tr("Skip rest of early - max gaps problems"), GeneratePreTranslate::tr("See next incompatibility max gaps - early"), QString(),
 			 1, 0 );
-			 
+			
 			if(t==0)
 				break;
 		}
-		if(subgroupsNoGapsPercentage[i]>=0 && subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0 
+		if(subgroupsNoGapsPercentage[i]>=0 && subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0
 		 && subgroupsNoGapsPercentage[i]!=subgroupsEarlyMaxBeginningsAtSecondHourPercentage[i]){
 		 	oksubgroup=false;
 			ok=false;
@@ -5742,12 +5742,12 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 			 arg(subgroupsNoGapsPercentage[i]),
 			 GeneratePreTranslate::tr("Skip rest of early - max gaps problems"), GeneratePreTranslate::tr("See next incompatibility max gaps - early"), QString(),
 			 1, 0 );
-			 
+			
 			if(t==0)
 				break;
 		}*/
 
-		if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0 
+		if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
 		 && subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>gt.rules.nDaysPerWeek){
 		 	oksubgroup=false;
 			ok=false;
@@ -5762,7 +5762,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 			 arg(gt.rules.nDaysPerWeek),
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-			 
+			
 			if(t==0)
 				break;
 		}
@@ -5832,7 +5832,7 @@ bool computeSubgroupsMaxGapsPerDayPercentages(QWidget* parent)
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-			 
+			
 			if(t==0)
 				break;
 		}
@@ -6273,7 +6273,7 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 					}
 				}
 			}
-			//subactivities preferred time slots 
+			//subactivities preferred time slots
 			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
 				ConstraintSubactivitiesPreferredTimeSlots* ap=(ConstraintSubactivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 				
@@ -6468,7 +6468,7 @@ bool computeMinGapsBetweenActivities(QWidget* parent)
 		 /*&&gt.rules.internalTimeConstraintsList[i]->compulsory==true*/){
 			ConstraintMinGapsBetweenActivities* mg=
 			 (ConstraintMinGapsBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
-			 
+			
 			assert(mg->_n_activities==mg->_activities.count());
 			
 			for(int j=0; j<mg->_n_activities; j++){
@@ -6476,7 +6476,7 @@ bool computeMinGapsBetweenActivities(QWidget* parent)
 				for(int k=0; k<mg->_n_activities; k++)
 					if(j!=k){
 						int ai2=mg->_activities[k];
-						if(ai1==ai2){						
+						if(ai1==ai2){
 							ok=false;
 							
 							if(!mgset.contains(mg)){
@@ -6703,7 +6703,7 @@ void computeConstrTwoActivitiesConsecutive()
 			int sai=c2->secondActivityIndex;
 			
 			//direct
-			int j=constrTwoActivitiesConsecutiveActivities[fai].indexOf(sai); 
+			int j=constrTwoActivitiesConsecutiveActivities[fai].indexOf(sai);
 			if(j==-1){
 				constrTwoActivitiesConsecutiveActivities[fai].append(sai);
 				constrTwoActivitiesConsecutivePercentages[fai].append(c2->weightPercentage);
@@ -6713,7 +6713,7 @@ void computeConstrTwoActivitiesConsecutive()
 			}
 
 			//inverse
-			j=inverseConstrTwoActivitiesConsecutiveActivities[sai].indexOf(fai); 
+			j=inverseConstrTwoActivitiesConsecutiveActivities[sai].indexOf(fai);
 			if(j==-1){
 				inverseConstrTwoActivitiesConsecutiveActivities[sai].append(fai);
 				inverseConstrTwoActivitiesConsecutivePercentages[sai].append(c2->weightPercentage);
@@ -6739,7 +6739,7 @@ void computeConstrTwoActivitiesGrouped()
 			int sai=c2->secondActivityIndex;
 			
 			//direct
-			int j=constrTwoActivitiesGroupedActivities[fai].indexOf(sai); 
+			int j=constrTwoActivitiesGroupedActivities[fai].indexOf(sai);
 			if(j==-1){
 				constrTwoActivitiesGroupedActivities[fai].append(sai);
 				constrTwoActivitiesGroupedPercentages[fai].append(c2->weightPercentage);
@@ -6749,7 +6749,7 @@ void computeConstrTwoActivitiesGrouped()
 			}
 
 			//inverse
-			j=constrTwoActivitiesGroupedActivities[sai].indexOf(fai); 
+			j=constrTwoActivitiesGroupedActivities[sai].indexOf(fai);
 			if(j==-1){
 				constrTwoActivitiesGroupedActivities[sai].append(fai);
 				constrTwoActivitiesGroupedPercentages[sai].append(c2->weightPercentage);
@@ -7023,7 +7023,7 @@ bool checkMinDays100Percent(QWidget* parent)
 					 .arg(gt.rules.nDaysPerWeek)
 					 ;
 
-					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
 					
@@ -7067,7 +7067,7 @@ bool checkMinDays100Percent(QWidget* parent)
 						 .arg(gt.rules.internalTeachersList[tc]->name)
 						 .arg(daysTeacherIsAvailable[tc]);
 
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 					
@@ -7090,7 +7090,7 @@ bool checkMinDays100Percent(QWidget* parent)
 						 .arg(gt.rules.internalSubgroupsList[sb]->name)
 						 .arg(daysSubgroupIsAvailable[sb]);
 
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 					
@@ -7185,7 +7185,7 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 						 .arg(gt.rules.internalTeachersList[tc]->name)
 						 .arg(daysTeacherIsAvailable[tc]);
 	
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 						
@@ -7221,7 +7221,7 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 						 .arg(gt.rules.internalSubgroupsList[sb]->name)
 						 .arg(daysSubgroupIsAvailable[sb]);
 
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 					
@@ -7303,7 +7303,7 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 
+			
 				if(t==0)
 					return false;
 			}
@@ -7354,7 +7354,7 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 					 .arg(gt.rules.internalTeachersList[tch]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
-				 
+				
 					if(t==0)
 						return false;
 				}
@@ -7434,7 +7434,7 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
-				 
+				
 					if(t==0)
 						return false;
 				}
@@ -7488,7 +7488,7 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
-				 
+				
 					if(t==0)
 						return false;
 				}
@@ -9975,29 +9975,29 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsMaxHoursContinuouslyPercentages1[sbg]>=0 ||
 			  subgroupsMaxHoursContinuouslyPercentages2[sbg]>=0 ||
 			  subgroupsMinHoursDailyPercentages[sbg]>=0 ||
-			  
+			
 			  subgroupsMaxSpanPerDayPercentages[sbg]>=0 ||
 			  subgroupsMinRestingHoursCircularPercentages[sbg]>=0 ||
 			  subgroupsMinRestingHoursNotCircularPercentages[sbg]>=0 ||
-			  
+			
 			  subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]>=0 ||
 			  subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]>=0 ||
 			  subgroupsIntervalMaxDaysPerWeekPercentages3[sbg]>=0 ||
-			  
+			
 			  maxBuildingChangesPerDayForStudentsPercentages[sbg]>=0 ||
 			  maxBuildingChangesPerWeekForStudentsPercentages[sbg]>=0 ||
 			  minGapsBetweenBuildingChangesForStudentsPercentages[sbg]>=0 ||
-			  
+			
 			  maxRoomChangesPerDayForStudentsPercentages[sbg]>=0 ||
 			  maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0 ||
 			  minGapsBetweenRoomChangesForStudentsPercentages[sbg]>=0 ||
-			  
+			
 			  subgroupsActivityTagMaxHoursContinuouslyPercentage[sbg].count()>0 ||
 			  subgroupsActivityTagMaxHoursDailyPercentage[sbg].count()>0 ||
 			  satmhdListForSubgroup[sbg].count()>0
 			  //no need to consider constraints students (set) min gaps between ordered pair of activity tags
 			  ){
-			  
+			
 				mustComputeTimetableSubgroups[ai].append(sbg);
 				mustComputeTimetableSubgroup[sbg]=true;
 			}
@@ -10022,9 +10022,9 @@ void computeMustComputeTimetableTeachers()
 			  teachersMaxHoursContinuouslyPercentages1[tch]>=0 ||
 			  teachersMaxHoursContinuouslyPercentages2[tch]>=0 ||
 			  teachersMinHoursDailyPercentages[tch]>=0 ||
-			  
+			
 			  teachersMinDaysPerWeekPercentages[tch]>=0 ||
-			  
+			
 			  teachersMaxSpanPerDayPercentages[tch]>=0 ||
 			  teachersMinRestingHoursCircularPercentages[tch]>=0 ||
 			  teachersMinRestingHoursNotCircularPercentages[tch]>=0 ||
@@ -10032,21 +10032,21 @@ void computeMustComputeTimetableTeachers()
 			  teachersIntervalMaxDaysPerWeekPercentages1[tch]>=0 ||
 			  teachersIntervalMaxDaysPerWeekPercentages2[tch]>=0 ||
 			  teachersIntervalMaxDaysPerWeekPercentages3[tch]>=0 ||
-			  
+			
 			  maxBuildingChangesPerDayForTeachersPercentages[tch]>=0 ||
 			  maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0 ||
 			  minGapsBetweenBuildingChangesForTeachersPercentages[tch]>=0 ||
-			  
+			
 			  maxRoomChangesPerDayForTeachersPercentages[tch]>=0 ||
 			  maxRoomChangesPerWeekForTeachersPercentages[tch]>=0 ||
 			  minGapsBetweenRoomChangesForTeachersPercentages[tch]>=0 ||
-			  
+			
 			  teachersActivityTagMaxHoursContinuouslyPercentage[tch].count()>0 ||
 			  teachersActivityTagMaxHoursDailyPercentage[tch].count()>0 ||
 			  tatmhdListForTeacher[tch].count()>0
 			  //no need to consider constraints teacher(s) min gaps between ordered pair of activity tags
 			  ){
-			  
+			
 				mustComputeTimetableTeachers[ai].append(tch);
 				mustComputeTimetableTeacher[tch]=true;
 			}
@@ -10152,7 +10152,7 @@ bool homeRoomsAreOk(QWidget* parent)
 		nHoursRequiredForRoom[r]=0;
 		
 	for(int a=0; a<gt.rules.nInternalActivities; a++)
-		if(unspecifiedPreferredRoom[a] && !unspecifiedHomeRoom[a] 
+		if(unspecifiedPreferredRoom[a] && !unspecifiedHomeRoom[a]
 		  && activitiesHomeRoomsHomeRooms[a].count()==1 && activitiesHomeRoomsPercentage[a]==100.0){
 		  	int r=activitiesHomeRoomsHomeRooms[a].at(0);
 		  	nHoursRequiredForRoom[r]+=gt.rules.internalActivitiesList[a].duration;
@@ -10684,7 +10684,7 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 		
 				nIncompatible[i]+=gt.rules.internalActivitiesList[i].iSubgroupsList.count()+
 				 gt.rules.internalActivitiesList[i].iTeachersList.count();
-			 
+			
 				assert(nIncompatible[i]>=INF);
 			}
 			else{

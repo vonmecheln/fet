@@ -719,7 +719,7 @@ void AddActivityForm::addActivity()
 		}
 
 		if(already_existing){
-			int t=QMessageBox::question(this, tr("FET question"), 
+			int t=QMessageBox::question(this, tr("FET question"),
 				//tr("This activity already exists. Insert it again?"),
 				tr("A similar activity already exists. Do you want to insert current activity?"),
 				tr("Yes"),tr("No"));
@@ -891,7 +891,7 @@ void AddActivityForm::help()
 	 " to Wednesday for instance is 2 days), etc.");
 
 	s+="\n\n";
-	 
+	
 	 s+=tr("If you have for instance an activity with 2 lessons per week and you want to spread them to at "
 	 "least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% "
 	 "(or higher). If you want also to ensure that activities will "
@@ -904,13 +904,13 @@ void AddActivityForm::help()
 	 "the resultant is 99.75% weight");
 
 	s+="\n\n";
-	 
+	
 	s+=tr("Please note that the min days distance is a time constraint and you can only see/modify it in the "
 	 "time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints "
 	 "for each activity in the details text box of each activity");
 
 	s+="\n\n";
-	 
+	
 	 s+=tr("If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically "
 	 "(you can see this constraint in the time constraints list or you can see this constraint in the "
 	 "detailed description of the activity). You can select a weight percentage for this constraint. "

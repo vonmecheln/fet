@@ -44,7 +44,7 @@ SaveTimetableConfirmationForm::SaveTimetableConfirmationForm(QWidget* parent): Q
 	s+=tr("This option is only useful if you need to lock current timetable into a file."
 	 " Locking means that there will be added constraints activity preferred starting time and"
 	 " activity preferred room with 100% importance for each activity to fix it at current place in current timetable."
-	 " You can save this timetable as an ordinary .fet file; when you'll open it, you'll see all old inputted data (activities, teachers, etc.)" 
+	 " You can save this timetable as an ordinary .fet file; when you'll open it, you'll see all old inputted data (activities, teachers, etc.)"
 	 " and the locking constraints as the last time/space constraints."
 	 " You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again"
 	 " and the remaining locking constraints will be respected.");

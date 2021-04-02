@@ -28,7 +28,7 @@ class ModifyBuildingForm : public QDialog, Ui::ModifyBuildingForm_template {
 	Q_OBJECT
 	
 	QString _initialBuildingName;
-public: 
+public:
 	ModifyBuildingForm(QWidget* parent, const QString& initialBuildingName);
 	~ModifyBuildingForm();
 

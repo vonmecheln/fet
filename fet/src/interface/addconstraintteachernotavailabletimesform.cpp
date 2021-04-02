@@ -247,9 +247,9 @@ void AddConstraintTeacherNotAvailableTimesForm::help()
 	
 	s=tr("This constraint does not induce gaps for teachers. If a teacher has lessons"
 	 " before and after a not available period, gaps will not be counted.");
-	 
+	
 	s+="\n\n";
-	 
+	
 	s+=tr("If you really need to use weight under 100%, you can use activities preferred times with"
 	 " only the teacher specified, but this might generate problems, as possible gaps will be"
 	 " counted and you may obtain an impossible timetable.");

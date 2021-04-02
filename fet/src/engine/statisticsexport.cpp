@@ -171,7 +171,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 }
 
 void StatisticsExport::computeHashForIDsStatistics(FetStatistics *statisticValues){		// by Volker Dirr
-	//TODO if we use a relational data base this is unneded, because we can use the primary key id of the database 
+	//TODO if we use a relational data base this is unneded, because we can use the primary key id of the database
 	//This is very similar to timetable compute hash. so always check it if you change something here!
 
 	assert((*statisticValues).hashStudentIDsStatistics.isEmpty());

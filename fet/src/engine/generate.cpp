@@ -4730,7 +4730,7 @@ again_if_impossible_activity:
 			}
 		}
 		///////////////////////////////////
-				
+		
 impossiblebasictime:
 		if(!okbasictime){
 			//if(updateSubgroups || updateTeachers)
@@ -4740,8 +4740,7 @@ impossiblebasictime:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
-		
-		
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//care about min days between activities
@@ -4762,7 +4761,7 @@ impossiblebasictime:
 					//broken min days - there is a minDaysBrokenAllowancePercentage% chance to place them adjacent
 					
 					if(minDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them adjacent if on same day
-						if(okrand && 
+						if(okrand &&
 						 ( (d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d!=d2 ) ){
 						 	//nMinDaysBroken[newtime]++;
 						 	nMinDaysBroken[newtime]+=minDaysListOfWeightPercentages[ai].at(i)/100.0;
@@ -7183,7 +7182,7 @@ impossiblestudentsmaxgapsperweek:
 						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 						if(!k){
 							bool kk;
-							if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]==0 && 
+							if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]==0 &&
 							 (subgroupsMaxGapsPerWeekMaxGaps[sbg]==0 || subgroupsMaxGapsPerDayMaxGaps[sbg]==0))
 								kk=false;
 							else
@@ -8021,7 +8020,7 @@ impossiblestudentsactivitytagmaxhoursdaily:
 						assert(ai2!=ai);
 						if(ai2<0)
 							break;
-						if(ai2>=0 && !conflActivities[newtime].contains(ai2) && 
+						if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
 						 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
 						 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
 							nc++;
@@ -8038,7 +8037,7 @@ impossiblestudentsactivitytagmaxhoursdaily:
 						assert(ai2!=ai);
 						if(ai2<0)
 							break;
-						if(ai2>=0 && !conflActivities[newtime].contains(ai2) && 
+						if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
 						 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
 						 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
 							nc++;
@@ -8127,7 +8126,7 @@ impossiblestudentsactivitytagmaxhoursdaily:
 								assert(ai2!=ai);
 								if(ai2<0)
 									break;
-								if(ai2>=0 && !conflActivities[newtime].contains(ai2) && 
+								if(ai2>=0 && !conflActivities[newtime].contains(ai2) &&
 								 //gt.rules.internalActivitiesList[ai2].activityTagIndex==activityTag){
 								 gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(activityTag)){
 									nc++;
@@ -9792,7 +9791,7 @@ impossibleteachersmaxgapsperday:
 				
 				bool increased;
 				if(teachersMaxGapsPerWeekPercentage[tch]>=0 || teachersMaxGapsPerDayPercentage[tch]>=0){
-					if(newTeachersDayNHours(tch,d) > oldTeachersDayNHours(tch,d) 
+					if(newTeachersDayNHours(tch,d) > oldTeachersDayNHours(tch,d)
 					  || newTeachersDayNHours(tch,d)+newTeachersDayNGaps(tch,d) > oldTeachersDayNHours(tch,d)+oldTeachersDayNGaps(tch,d))
 					  	increased=true;
 					else

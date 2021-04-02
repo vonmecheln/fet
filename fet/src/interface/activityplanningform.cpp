@@ -2421,7 +2421,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				}
 
 				for(int i=0; i<_idsToBeRemoved.count(); i++){
-					if( ((_affectOtherStudentsToBeRemoved.at(i)==false) || (retst==QMessageBox::Yes)) && 
+					if( ((_affectOtherStudentsToBeRemoved.at(i)==false) || (retst==QMessageBox::Yes)) &&
 						((_affectOtherSubjectsToBeRemoved.at(i)==false) || (retsubj==QMessageBox::Yes)) ){
 						gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 					}
@@ -2557,7 +2557,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				//}
 
 				for(int i=0; i<_idsToBeModified.count(); i++){
-					if( ((_affectOtherStudentsToBeModified.at(i)==false) || (retst==QMessageBox::Yes)) && 
+					if( ((_affectOtherStudentsToBeModified.at(i)==false) || (retst==QMessageBox::Yes)) &&
 						((_affectOtherSubjectsToBeModified.at(i)==false) || (retsubj==QMessageBox::Yes)) ){
 
 						Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);

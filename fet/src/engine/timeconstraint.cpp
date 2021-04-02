@@ -473,7 +473,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 							s+=". ";
 							s+=tr("This increases the conflicts total by %1")
 							 .arg(CustomFETString::numberPlusTwoDigitsPrecision((subgroupsMatrix[i][j][k]-1)*weightPercentage/100));
-							 
+							
 							dl.append(s);
 							cl.append((subgroupsMatrix[i][j][k]-1)*weightPercentage/100);
 						
@@ -684,14 +684,14 @@ bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(QWidget* paren
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint teacher not available times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}		
 		if(this->hours.at(k) >= r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint teacher not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -750,7 +750,7 @@ double ConstraintTeacherNotAvailableTimes::fitness(Solution& c, Rules& r, QList<
 				s += ". ";
 				s += tr("This increases the conflicts total by %1")
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(teachersMatrix[tch][d][h]*weightPercentage/100));
-				 
+				
 				dl.append(s);
 				cl.append(teachersMatrix[tch][d][h]*weightPercentage/100);
 			
@@ -871,9 +871,9 @@ bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* p
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set not available is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 	
 	assert(days.count()==hours.count());
 	for(int k=0; k<days.count(); k++){
@@ -881,14 +881,14 @@ bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* p
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint students set not available times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
-		}		
+		}
 		if(this->hours.at(k) >= r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint students set not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -1068,7 +1068,7 @@ double ConstraintStudentsSetNotAvailableTimes::fitness(Solution& c, Rules& r, QL
 					s += ". ";
 					s += tr("This increases the conflicts total by %1")
 					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(subgroupsMatrix[sbg][d][h]*weightPercentage/100));
-					 
+					
 					dl.append(s);
 					cl.append(subgroupsMatrix[sbg][d][h]*weightPercentage/100);
 				
@@ -1209,7 +1209,7 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -1514,7 +1514,7 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -1857,7 +1857,7 @@ QString ConstraintActivityTagsNotOverlapping::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activity_Tags>"+CustomFETString::number(this->activityTagsNames.count())+"</Number_of_Activity_Tags>\n";
 	for(const QString& atn : qAsConst(activityTagsNames))
-		s+="	<Activity_Tag>"+atn+"</Activity_Tag>\n";
+		s+="	<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivityTagsNotOverlapping>\n";
@@ -2131,7 +2131,7 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -2476,7 +2476,7 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -2675,7 +2675,7 @@ double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 							 .arg(tt)
 							 .arg(r.daysOfTheWeek[day1])
 							 .arg(r.daysOfTheWeek[day2]);
-							 
+							
 							s+=", ";
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							s+=".";
@@ -2810,7 +2810,7 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -4649,7 +4649,7 @@ double ConstraintTeacherMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<dou
 			 .arg(r.internalTeachersList[t]->name);
 			s += tr("This increases the conflicts total by %1")
 			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
-			 
+			
 			dl.append(s);
 			cl.append(nbroken*weightPercentage/100);
 		
@@ -5051,7 +5051,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 }
 
 double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
-{ 
+{
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
 		c.teachersMatrixReady=true;
@@ -5261,7 +5261,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
 }
 
 double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
-{ 
+{
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
 		c.teachersMatrixReady=true;
@@ -5464,7 +5464,7 @@ QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r){
 }
 
 double ConstraintTeachersMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
-{ 
+{
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
 		c.teachersMatrixReady=true;
@@ -5673,7 +5673,7 @@ QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r){
 }
 
 double ConstraintTeacherMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
-{ 
+{
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
 	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
 		c.teachersMatrixReady=true;
@@ -5911,14 +5911,14 @@ bool ConstraintBreakTimes::computeInternalStructure(QWidget* parent, Rules& r)
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint break times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
-		}		
+		}
 		if(this->hours.at(k) >= r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint break times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -6203,10 +6203,10 @@ double ConstraintStudentsMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalGaps)
 			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(illegalGaps*weightPercentage/100));
-						 
+			
 			dl.append(s);
 			cl.append(illegalGaps*weightPercentage/100);
-					
+			
 			*conflictsString+= s+"\n";
 		}
 		
@@ -6306,9 +6306,9 @@ bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(QWidget* pare
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max gaps per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -6466,10 +6466,10 @@ double ConstraintStudentsSetMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalGaps)
 			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*illegalGaps));
-						 
+			
 			dl.append(s);
 			cl.append(weightPercentage/100*illegalGaps);
-				
+			
 			*conflictsString+= s+"\n";
 		}
 		
@@ -6676,10 +6676,10 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
 					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
-					 
+					
 					dl.append(s);
 					cl.append(1*weightPercentage/100);
-						
+					
 					*conflictsString+= s+"\n";
 					
 					conflTotal+=1;
@@ -6701,10 +6701,10 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
-				 
+				
 				dl.append(s);
 				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
-					
+				
 				*conflictsString+= s+"\n";
 				
 				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
@@ -6715,7 +6715,7 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 			}
 		}
 	}
-					
+	
 	if(c.nPlacedActivities==r.nInternalActivities)
 		if(weightPercentage==100)    //might be broken for partial solutions
 			assert(conflTotal==0);
@@ -6810,9 +6810,9 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructu
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set early is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -6973,10 +6973,10 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
 					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
-					 
+					
 					dl.append(s);
 					cl.append(1*weightPercentage/100);
-						
+					
 					*conflictsString+= s+"\n";
 					
 					conflTotal+=1;
@@ -6997,10 +6997,10 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 				 .arg(this->maxBeginningsAtSecondHour)
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
-				 
+				
 				dl.append(s);
 				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
-					
+				
 				*conflictsString+= s+"\n";
 				
 				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
@@ -7010,7 +7010,7 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 				assert(0);
 		}
 	}
-					
+	
 	if(c.nPlacedActivities==r.nInternalActivities)
 		if(weightPercentage==100)    //might be broken for partial solutions
 			assert(conflTotal==0);
@@ -7202,7 +7202,7 @@ double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
 						 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*1));
-						 
+						
 						dl.append(s);
 						cl.append(weightPercentage/100*1);
 					
@@ -7370,9 +7370,9 @@ bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(QWidget* paren
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -7457,7 +7457,7 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
 						 .arg(CustomFETString::numberPlusTwoDigitsPrecision( 1 *weightPercentage/100));
-						 
+						
 						dl.append(s);
 						cl.append( 1 *weightPercentage/100);
 					
@@ -7852,9 +7852,9 @@ bool ConstraintStudentsSetMaxHoursContinuously::computeInternalStructure(QWidget
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours continuously is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -8410,9 +8410,9 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStruct
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours continuously is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -8782,7 +8782,7 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					 .arg(r.daysOfTheWeek[j])
 					 .arg(CustomFETString::number(tmp))
 					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(-tmp+this->minHoursDaily)));
-						 
+					
 					dl.append(s);
 					cl.append(weightPercentage/100*(-tmp+this->minHoursDaily));
 					
@@ -8971,9 +8971,9 @@ bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(QWidget* paren
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -9062,7 +9062,7 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 					 .arg(r.daysOfTheWeek[j])
 					 .arg(CustomFETString::number(tmp))
 					 .arg(CustomFETString::numberPlusTwoDigitsPrecision((-tmp+this->minHoursDaily)*weightPercentage/100));
-						 
+					
 					dl.append(s);
 					cl.append((-tmp+this->minHoursDaily)*weightPercentage/100);
 					
@@ -9188,7 +9188,7 @@ bool ConstraintActivityPreferredStartingTime::computeInternalStructure(QWidget* 
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -9197,21 +9197,21 @@ bool ConstraintActivityPreferredStartingTime::computeInternalStructure(QWidget* 
 		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 		 tr("Constraint activity preferred starting time is wrong because it refers to removed day. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
 	}
 	if(this->hour == r.nHoursPerDay){
 		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 		 tr("Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
 	}
 	if(this->hour > r.nHoursPerDay){
 		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 		 tr("Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
 	}
 
@@ -9449,7 +9449,7 @@ bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* par
 	int i=r.activitiesHash.value(p_activityId, r.nInternalActivities);
 
 	if(i==r.nInternalActivities){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -9460,21 +9460,21 @@ bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* par
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
-		}		
+		}
 		if(this->p_hours_L[k] == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->p_hours_L[k] > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 
@@ -9482,7 +9482,7 @@ bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* par
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because it has hour or day not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -9636,7 +9636,7 @@ double ConstraintActivityPreferredTimeSlots::fitness(Solution& c, Rules& r, QLis
 		 .arg(getActivityDetailedDescription(r, this->p_activityId))
 		 .arg(nbroken)
 		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
-		 
+		
 		dl.append(s);
 		cl.append(weightPercentage/100*nbroken);
 	
@@ -9818,28 +9818,28 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(QWidget* p
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->p_hours_L[k] == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->p_hours_L[k] > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->p_hours_L[k]<0 || this->p_days_L[k]<0){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -9848,7 +9848,7 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(QWidget* p
 	if(this->p_nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -10111,7 +10111,7 @@ double ConstraintActivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r, QL
 			 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
 			 .arg(tmp)
 			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
-				 
+			
 			dl.append(s);
 			cl.append(weightPercentage/100*tmp);
 		
@@ -10324,28 +10324,28 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(QWidget
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->p_hours_L[k] == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->p_hours_L[k] > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->p_hours_L[k]<0 || this->p_days_L[k]<0){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -10354,7 +10354,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(QWidget
 	if(this->p_nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -10793,7 +10793,7 @@ bool ConstraintActivityPreferredStartingTimes::computeInternalStructure(QWidget*
 	int i=r.activitiesHash.value(activityId, r.nInternalActivities);
 
 	if(i==r.nInternalActivities){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -10803,26 +10803,26 @@ bool ConstraintActivityPreferredStartingTimes::computeInternalStructure(QWidget*
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred starting times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
-		}		
+		}
 		if(this->hours_L[k] == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->hours_L[k] > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred starting times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
 
-	this->activityIndex=i;	
+	this->activityIndex=i;
 	return true;
 }
 
@@ -11148,21 +11148,21 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(QWidge
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred starting times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->hours_L[k] == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->hours_L[k] > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred starting times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -11171,7 +11171,7 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(QWidge
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -11427,7 +11427,7 @@ double ConstraintActivitiesPreferredStartingTimes::fitness(Solution& c, Rules& r
 			 .arg(r.internalActivitiesList[ai].id)
 			 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
 			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
-			 
+			
 			dl.append(s);
 			cl.append(weightPercentage/100*tmp);
 		
@@ -11641,21 +11641,21 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(QWi
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred starting times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->hours_L[k] == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->hours_L[k] > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred starting times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -11664,7 +11664,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(QWi
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12104,7 +12104,7 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(QWidget* par
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -12409,7 +12409,7 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -12695,7 +12695,7 @@ bool ConstraintTwoActivitiesConsecutive::computeInternalStructure(QWidget* paren
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12714,16 +12714,16 @@ bool ConstraintTwoActivitiesConsecutive::computeInternalStructure(QWidget* paren
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	this->secondActivityIndex=i;
 	
-	if(firstActivityIndex==secondActivityIndex){	
+	if(firstActivityIndex==secondActivityIndex){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12969,12 +12969,12 @@ bool ConstraintTwoActivitiesGrouped::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
-	this->firstActivityIndex=i;	
+	this->firstActivityIndex=i;
 
 	////////
 	
@@ -12988,16 +12988,16 @@ bool ConstraintTwoActivitiesGrouped::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	this->secondActivityIndex=i;
 	
-	if(firstActivityIndex==secondActivityIndex){	
+	if(firstActivityIndex==secondActivityIndex){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13256,7 +13256,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13275,7 +13275,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13294,7 +13294,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13303,7 +13303,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(firstActivityIndex==secondActivityIndex || firstActivityIndex==thirdActivityIndex || secondActivityIndex==thirdActivityIndex){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13624,12 +13624,12 @@ bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
-	this->firstActivityIndex=i;	
+	this->firstActivityIndex=i;
 
 	////////
 	
@@ -13643,7 +13643,7 @@ bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13652,7 +13652,7 @@ bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, R
 	
 	if(firstActivityIndex==secondActivityIndex){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13883,7 +13883,7 @@ bool ConstraintTwoActivitiesOrderedIfSameDay::computeInternalStructure(QWidget* 
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -14143,12 +14143,12 @@ bool ConstraintActivityEndsStudentsDay::computeInternalStructure(QWidget* parent
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
-	this->activityIndex=i;	
+	this->activityIndex=i;
 	return true;
 }
 
@@ -14183,7 +14183,7 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s;
-	s+=tr("Act. id: %1 (%2) must end students' day", 
+	s+=tr("Act. id: %1 (%2) must end students' day",
 		"%1 is the id, %2 is the detailed description of the activity.")
 		.arg(this->activityId)
 		.arg(getActivityDetailedDescription(r, this->activityId));
@@ -15384,7 +15384,7 @@ double ConstraintTeacherIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, Q
 			s+=" ";
 			s += tr("This increases the conflicts total by %1")
 			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
-			 
+			
 			dl.append(s);
 			cl.append(nbroken*weightPercentage/100);
 		
@@ -15633,7 +15633,7 @@ double ConstraintTeachersIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, 
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
-				 
+				
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
 			
@@ -15771,9 +15771,9 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidg
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set interval max days per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -15944,7 +15944,7 @@ double ConstraintStudentsSetIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& 
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
-			 
+			
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
 		
@@ -16193,7 +16193,7 @@ double ConstraintStudentsIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& r, 
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
-			 
+			
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
 		
@@ -16344,7 +16344,7 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(QWidget* paren
 	if(this->nActivities>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -17421,9 +17421,9 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWi
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -18472,9 +18472,9 @@ bool ConstraintStudentsSetActivityTagMinHoursDaily::computeInternalStructure(QWi
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -18807,10 +18807,10 @@ double ConstraintStudentsMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<dou
 				 .arg(illegalGaps)
 				 .arg(r.daysOfTheWeek[j])
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(illegalGaps*weightPercentage/100));
-							 
+				
 				dl.append(s);
 				cl.append(illegalGaps*weightPercentage/100);
-					
+				
 				*conflictsString+= s+"\n";
 			}
 		
@@ -18911,9 +18911,9 @@ bool ConstraintStudentsSetMaxGapsPerDay::computeInternalStructure(QWidget* paren
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max gaps per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -19074,10 +19074,10 @@ double ConstraintStudentsSetMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<
 				 .arg(illegalGaps)
 				 .arg(r.daysOfTheWeek[j])
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*illegalGaps));
-							 
+				
 				dl.append(s);
 				cl.append(weightPercentage/100*illegalGaps);
-					
+				
 				*conflictsString+= s+"\n";
 			}
 		
@@ -19202,28 +19202,28 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::computeInternalStructu
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -19232,7 +19232,7 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::computeInternalStructu
 	if(this->_activitiesIndices.count()>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -19565,28 +19565,28 @@ bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::computeInternalStructu
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy min time slots from selection is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy min time slots from selection is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy min time slots from selection is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy min time slots from selection is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -19595,7 +19595,7 @@ bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::computeInternalStructu
 	if(this->_activitiesIndices.count()>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -19937,28 +19937,28 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::computeInternalStru
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -19967,7 +19967,7 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::computeInternalStru
 	if(this->_activitiesIndices.count()>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -20297,28 +20297,28 @@ bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::computeInternalStru
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities min simultaneous in selected time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) == r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities min simultaneous in selected time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedHours.at(k) > r.nHoursPerDay){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities min simultaneous in selected time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
 			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities min simultaneous in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 			return false;
 		}
 	}
@@ -20327,7 +20327,7 @@ bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::computeInternalStru
 	if(this->_activitiesIndices.count()>0)
 		return true;
 	else{
-		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -20645,9 +20645,9 @@ bool ConstraintStudentsSetMaxDaysPerWeek::computeInternalStructure(QWidget* pare
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max days per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -20796,7 +20796,7 @@ double ConstraintStudentsSetMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
-			 
+			
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
 		
@@ -20990,7 +20990,7 @@ double ConstraintStudentsMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<do
 				s+=" ";
 				s += tr("This increases the conflicts total by %1")
 				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nOcDays-this->maxDaysPerWeek)*weightPercentage/100));
-			 
+			
 				dl.append(s);
 				cl.append((nOcDays-this->maxDaysPerWeek)*weightPercentage/100);
 		
@@ -21576,9 +21576,9 @@ bool ConstraintStudentsSetMaxSpanPerDay::computeInternalStructure(QWidget* paren
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max span per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -22416,9 +22416,9 @@ bool ConstraintStudentsSetMinRestingHours::computeInternalStructure(QWidget* par
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min resting hours is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 
@@ -22876,9 +22876,9 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::computeIntern
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min gaps between ordered pair of activity tags is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
-		 
+		
 		return false;
-	}	
+	}
 
 	assert(ss);
 	

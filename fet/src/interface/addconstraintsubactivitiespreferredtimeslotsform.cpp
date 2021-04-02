@@ -288,7 +288,7 @@ void AddConstraintSubactivitiesPreferredTimeSlotsForm::addConstraint()
 		int t=QMessageBox::question(this, tr("FET question"),
 		 tr("Warning: 0 slots selected. Are you sure?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
-						 
+		
 		if(t==QMessageBox::Cancel)
 				return;
 	}

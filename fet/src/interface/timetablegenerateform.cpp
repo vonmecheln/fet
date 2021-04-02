@@ -260,7 +260,7 @@ void TimetableGenerateForm::stop()
 	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
 	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
 	 .arg(maxActivitiesPlaced);
-	 
+	
 	s+="\n\n";
 	
 	s+=tr("Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
@@ -268,7 +268,7 @@ void TimetableGenerateForm::stop()
 	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
 	s+="\n";
 	
-	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities 
+	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities
 	 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
 		int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
 
@@ -415,7 +415,7 @@ void TimetableGenerateForm::stopHighest()
 	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
 	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
 	 .arg(maxActivitiesPlaced);
-	 
+	
 	s+="\n\n";
 	
 	s+=tr("Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
@@ -423,7 +423,7 @@ void TimetableGenerateForm::stopHighest()
 	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
 	s+="\n";
 	
-	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities 
+	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities
 	 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
 		int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
 
@@ -680,7 +680,8 @@ void TimetableGenerateForm::simulationFinished()
 //It would be better to test at runtime, not at compile time, but it is easier/safer this way.
 //(The alternative would be to develop a parser for the function qVersion(), but I am not sure it will always respect the exact format "vM.vm.vp".)
 //We test the macro Q_OS_WIN32 because on the old Qt 4 it is the only available macro from these three below,
-//Q_OS_WIN, Q_OS_WIN32, and Q_OS_WIN64 (which are available on Qt 5.14.1).
+//Q_OS_WIN, Q_OS_WIN32, and Q_OS_WIN64 (which are available on Qt 5.14.1). Yes, the test is redundant (because if QT_VERSION < 5.14.1
+//the condition is true and if QT_VERSION >= 5.14.1 then all these three macros are available), but this doesn't hurt.
 #if (!defined(Q_OS_WIN) && !defined(Q_OS_WIN32) && !defined(Q_OS_WIN64)) || (QT_VERSION < QT_VERSION_CHECK(5,14,1))
 	QApplication::beep();
 #endif

@@ -504,7 +504,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		settingsName=QString("ImportActivitiesSelectSeparatorsDialog");
 	}
 
-	fileName=QFileDialog::getOpenFileName(parent, Import::tr("FET - Import %1 from CSV file").arg(importThing), IMPORT_DIRECTORY, 
+	fileName=QFileDialog::getOpenFileName(parent, Import::tr("FET - Import %1 from CSV file").arg(importThing), IMPORT_DIRECTORY,
 		Import::tr("Text Files")+" (*.csv *.dat *.txt)" + ";;" + Import::tr("All Files") + " (*)");
 
 	const QString NO_SEPARATOR_TRANSLATED=Import::tr("no separator");
@@ -1036,14 +1036,14 @@ int Import::readFields(QWidget* parent){
 								if(itemOfField[FIELD_MIN_DAYS].isEmpty()){
 									ok=false;
 									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[FIELD_MIN_DAYS])+"\n";
-								} else 
+								} else
 									itemOfField[i]="95";
 							}
 							if(i==FIELD_MIN_DAYS_CONSECUTIVE){
 								if(itemOfField[FIELD_MIN_DAYS].isEmpty()){
 									ok=false;
 									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[FIELD_MIN_DAYS])+"\n";
-								} else 
+								} else
 									itemOfField[i]="N";
 							}
 						}
@@ -1184,7 +1184,7 @@ int Import::readFields(QWidget* parent){
 					if(fieldNumber[i]!=DO_NOT_IMPORT)
 						fieldList[i]<<itemOfField[i];
 				}
-			} else 
+			} else
 				warnText+="   "+Import::tr("Line %1 is: %2").arg(lineNumber).arg(line)+"\n";
 		}
 	}

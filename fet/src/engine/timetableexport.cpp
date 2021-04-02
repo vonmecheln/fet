@@ -381,7 +381,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
 		if(VERBOSE){
-			cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+			cout<<"Since the simulation is complete, FET will write also the timetable data file"<<endl;
 		}
 		writeTimetableDataFile(parent, s);
 	}
@@ -540,7 +540,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	writeStudentsStatisticsHtml(parent, s, sTime, na);
 
 /*
-	//needed for printing from the interface, so don't clear them! 
+	//needed for printing from the interface, so don't clear them!
 	hashSubjectIDsTimetable.clear();
 	hashActivityTagIDsTimetable.clear();
 	hashStudentIDsTimetable.clear();
@@ -625,7 +625,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
 		if(VERBOSE){
-			cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+			cout<<"Since the simulation is complete, FET will write also the timetable data file"<<endl;
 		}
 		writeTimetableDataFile(parent, s);
 	}
@@ -783,7 +783,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+STUDENTS_STATISTICS_FILENAME_HTML;
 	writeStudentsStatisticsHtml(parent, s, sTime, na);
 
-	//needed for printing from the interface, so don't clear them! 
+	//needed for printing from the interface, so don't clear them!
 /*	hashSubjectIDsTimetable.clear();
 	hashActivityTagIDsTimetable.clear();
 	hashStudentIDsTimetable.clear();
@@ -1348,7 +1348,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n){
 	s=finalDestDir+STUDENTS_STATISTICS_FILENAME_HTML;
 	writeStudentsStatisticsHtml(parent, s, sTime, na);
 
-	//needed for printing from the interface, so don't clear them! 	
+	//needed for printing from the interface, so don't clear them!
 /*	hashSubjectIDsTimetable.clear();
 	hashActivityTagIDsTimetable.clear();
 	hashStudentIDsTimetable.clear();
@@ -1502,7 +1502,7 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	if(na==gt.rules.nInternalActivities && na==na2){
 		QString s=outputDirectory+add+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
 		if(VERBOSE){
-			cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
+			cout<<"Since the simulation is complete, FET will write also the timetable data file"<<endl;
 		}
 		writeTimetableDataFile(parent, s);
 	}
@@ -2679,7 +2679,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 		tos<<"      <li>\n        "<<TimetableExport::tr("Year")<<" "<<protect2(sty->name)<<"\n        <ul>\n";
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			tos<<"          <li>\n            "<<TimetableExport::tr("Group")<<" "<<protect2(stg->name)<<": \n";
+			tos<<"          <li>\n            "<<TimetableExport::tr("Group")<<" "<<protect2(stg->name)<<":\n";
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 				tos<<"              <a href=\""<<"#table_"<<hashStudentIDsTimetable.value(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
@@ -2735,7 +2735,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 		tos<<"      <li>\n        "<<TimetableExport::tr("Year")<<" "<<protect2(sty->name)<<"\n        <ul>\n";
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			tos<<"          <li>\n            "<<TimetableExport::tr("Group")<<" "<<protect2(stg->name)<<": \n";
+			tos<<"          <li>\n            "<<TimetableExport::tr("Group")<<" "<<protect2(stg->name)<<":\n";
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 				tos<<"              <a href=\""<<"#table_"<<hashStudentIDsTimetable.value(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
@@ -3737,7 +3737,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 	tos.setCodec("UTF-8");
 	tos.setGenerateByteOrderMark(true);
 
-	tos<<writeHead(true, placedActivities, true); 
+	tos<<writeHead(true, placedActivities, true);
 		
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
@@ -10259,7 +10259,7 @@ QString TimetableExport::singleTeachersStatisticsHtml(int htmlLevel, const QStri
 	//workaround begin.
 	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(5)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
 	//workaround end.
-        tmpString+="    </table>\n";
+	tmpString+="    </table>\n";
 	
 	if(detailed){
 		tmpString+="    <p class=\"back0\"><br /></p>\n\n";
@@ -10472,7 +10472,7 @@ QString TimetableExport::singleStudentsStatisticsHtml(int htmlLevel, const QStri
 	//workaround begin.
 	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(5)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
 	//workaround end.
-        tmpString+="    </table>\n";
+	tmpString+="    </table>\n";
 	
 	tmpString+="    <p class=\"back0\"><br /></p>\n\n";
 	

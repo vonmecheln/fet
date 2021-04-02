@@ -26,7 +26,7 @@
 
 class AddRoomForm : public QDialog, Ui::AddRoomForm_template {
 	Q_OBJECT
-public: 
+public:
 	AddRoomForm(QWidget* parent);
 	~AddRoomForm();
 

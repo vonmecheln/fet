@@ -62749,9 +62749,9 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="151"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="167"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="694"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="848"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="899"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="695"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="849"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="900"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
@@ -62774,8 +62774,8 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="220"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="375"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="505"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="820"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="871"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="821"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="872"/>
         <source>Total conflicts:</source>
         <translation>Jumlah konflik:</translation>
     </message>
@@ -62783,8 +62783,8 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="224"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="379"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="511"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="824"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="875"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="825"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="876"/>
         <source>Conflicts listing (in decreasing order):</source>
         <translation>Daftar konflik (dalam urutan menurun):</translation>
     </message>
@@ -62800,24 +62800,24 @@ Bottom: %4</source>
         <translation>Jumlah konflik lunak:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="916"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="917"/>
         <source>Information relating difficult to schedule activities:</source>
         <translation>Informasi berkaitan kesulitan penjadwalan kegiatan:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="918"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="919"/>
         <source>Please check the constraints related to the last activities in the list below, which might be difficult to schedule:</source>
         <translation>Silakan periksa kendala terkait dengan kegiatan terakhir dalam daftar di bawah ini, yang mungkin sulit untuk jadwal:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="921"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="922"/>
         <source>Here are the placed activities which lead to a difficulty, in order from the first one to the last (the last one FET failed to schedule and the last ones are difficult):</source>
         <translation>Berikut adalah kegiatan ditempatkan yang menyebabkan kesulitan, dalam urutan dari yang pertama ke (terakhir FET yang terakhir gagal jadwal dan yang terakhir adalah sulit):</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="297"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="550"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="928"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="929"/>
         <source>No: %1</source>
         <translation>No: %1</translation>
     </message>
@@ -62825,8 +62825,8 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="218"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="373"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="506"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="818"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="869"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="819"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="870"/>
         <source>Number of broken constraints: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62834,8 +62834,8 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="319"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="451"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="572"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="950"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="982"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="951"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="983"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
@@ -62856,82 +62856,82 @@ Bottom: %4</source>
         <translation type="unfinished">Hasilnya disimpan dalam direktori%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="716"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="717"/>
         <source>%1 out of %2 activities placed</source>
         <translation>%1 dari %2 kegiatan ditempatkan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="718"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="719"/>
         <source>Elapsed time:</source>
         <translation>Lama waktu:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="771"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="772"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
         <translation>Silahkan tunggu. Perlu 5 hingga 20 menit atau lebih untuk jadwal yang sangt rumit</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="773"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="774"/>
         <source>Activities are placed in order, most difficult ones first</source>
         <translation>Kegiatan ditempatkan sesuai aturan, paling rumit duluan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="775"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="776"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation>Proses pencaria semi acak, artinya anda akan mendapatkan jadwal yang berbeda setiap kali dijalankan. Anda dapat menentukan jadwal yang terbaik dari beberapa pencarian</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="782"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="783"/>
         <source>It is recommended to strengthen the constraints step by step (for instance min days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation>Dianjurkan untuk memperkuat langkah demi langkah kendala (misalnya hari menit antara aktivitas berat atau guru (s) max kesenjangan), saat Anda memperoleh jadwal layak.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="785"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="786"/>
         <source>If your timetable gets stuck on a certain activity number k (and then begins going back), please check the initial evaluation order and see activity number k+1 in this list. You may find errors this way.</source>
         <translation>Jika jadwal Anda terjebak pada jumlah k aktivitas tertentu (dan kemudian mulai kembali), silakan cek urutan evaluasi awal dan melihat nomor kegiatan k +1 dalam daftar ini. Anda mungkin menemukan kesalahan dengan cara ini.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="789"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="790"/>
         <source>If the generation is successful, you cannot have hard conflicts. You can have only soft conflicts, corresponding to constraints with weight lower than 100.0%, which are reported in detail.</source>
         <translation>Jika generasi berhasil, Anda tidak dapat memiliki konflik keras. Anda hanya dapat memiliki konflik yang lembut, sesuai dengan kendala dengan bobot lebih rendah dari 100,0%, yang dilaporkan secara rinci.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="792"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="793"/>
         <source>After the generation (successful or interrupted), you can view the current (complete or incomplete) timetable in the corresponding view timetable dialogs, and the list of conflicts in the view conflicts dialog.</source>
         <translation>Setelah generasi (sukses atau terputus), Anda dapat melihat jadwal saat ini (lengkap atau tidak lengkap) dalam dialog tampilan yang sesuai jadwal, dan daftar konflik dalam dialog tampilan konflik.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="795"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="796"/>
         <source>The results are saved in your selected results directory in HTML and XML mode and the soft conflicts in text mode, along with the current data and timetable, saved as a .fet data file (with activities locked by constraints), so that you can open, modify and regenerate the current timetable later</source>
         <translation>Hasilnya disimpan dalam direktori yang dipilih hasil Anda dalam HTML dan mode XML dan konflik lunak dalam mode teks, bersama dengan data saat ini dan jadwal, disimpan sebagai file data FET (dengan kegiatan dikunci oleh kendala)., Sehingga Anda dapat membuka , memodifikasi dan menumbuhkan jadwal saat kemudian</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="799"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="800"/>
         <source>FET help</source>
         <translation>Bantuan FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="849"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="850"/>
         <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation>Hasil simulasi akan dikeluarkan di direktori %1 dalam bentuk html dan xml dan konflik dalam bentuk txt</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="900"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="901"/>
         <source>Highest stage results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation>Hasil tahap tertinggi sekarang harus ditulis dalam direktori %1 dalam mode html dan xml dan konflik dalam mode txt</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="944"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="945"/>
         <source>FET - information about difficult activities</source>
         <translation>FET - informasi tentang kegiatan sulit</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="976"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="977"/>
         <source>FET - information about initial order of evaluation of activities</source>
         <translation>FET - informasi tentang urutan awal evaluasi kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="778"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="779"/>
         <source>Usually, there is no need to stop and restart the search. But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever, and restarting might produce a very fast solution.</source>
         <translation>Biasanya, tidak perlu berhenti dan memulai lagi pencarian. Tetapi untuk jadwal yang sangat sulit mungkin membantu. Kadang pada kasus demikian FET dapat menyangkut dan berputar selamanya, dan memulai lagi akan menghasilkan solusi yang sangat cepat.</translation>
     </message>
@@ -62944,8 +62944,8 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="216"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="371"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="503"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="816"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="867"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="817"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="868"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation>Konflik</translation>
@@ -62974,7 +62974,7 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegenerateform.cpp" line="301"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="430"/>
         <location filename="../src/interface/timetablegenerateform.cpp" line="554"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="932"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="933"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id:%1(%2)</translation>
@@ -63051,28 +63051,28 @@ Bottom: %4</source>
         <translation>Bobot konflik lunak: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="722"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="748"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="723"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="749"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation>%1 j</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="728"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="752"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="729"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="753"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation>%1 m</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="733"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="756"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="734"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="757"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation>%1 d</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="760"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="761"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>Maks kegiatan terpasang: %1(pada %2)</translation>
@@ -63156,7 +63156,7 @@ Bottom: %4</source>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="292"/>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="306"/>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="434"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="504"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="505"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
@@ -63228,31 +63228,31 @@ Bottom: %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="541"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="542"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation>%1 j</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="545"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="546"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation>%1 m</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="549"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="550"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation>%1 d</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="553"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="554"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>Maks kegiatan terpasang: %1(pada %2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="556"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="557"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation>Jadwal ini: %1 dari %2 kegiatan ditempatkan, %3 jam %4 menit %5 detik</translation>
     </message>

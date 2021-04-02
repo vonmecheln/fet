@@ -30,7 +30,7 @@ class ModifyRoomForm : public QDialog, Ui::ModifyRoomForm_template {
 	QString _initialRoomName;
 	QString _initialRoomBuilding;
 	int _initialRoomCapacity;
-public: 
+public:
 	ModifyRoomForm(QWidget* parent, const QString& initialRoomName, const QString& initialRoomBuilding, int initialRoomCapacity);
 	~ModifyRoomForm();
 

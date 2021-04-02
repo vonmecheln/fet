@@ -96,7 +96,7 @@ void HelpTipsForm::setText()
 	 " with weight 100.0% is also 100.0%. So, if your data contains only min days between activities constraints with 100.0% weight, there "
 	 "is no imperative need to remove redundant constraints."
 	 " But, again, better to remove redundant constraints as a precaution.");
-	 
+	
 	s+="\n\n";
 	s+=tr("3) About constraints two activities grouped, two activities consecutive and three activities grouped:"
 	 " It is a bad practice to add such constraints if the involved activities are also constrained not to be in the same day"

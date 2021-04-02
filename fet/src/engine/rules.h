@@ -358,7 +358,7 @@ public:
 	int searchActivityTag(const QString& activityTagName);
 
 	/**
-	Removes this activity tag. In the list of activities, the activity tag will 
+	Removes this activity tag. In the list of activities, the activity tag will
 	be removed from all activities which posess it.
 	It returns false on failure.
 	If successful, returns true.

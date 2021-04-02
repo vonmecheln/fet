@@ -78,7 +78,7 @@ bool ConstraintStudentsSetActivityTagMinHoursDailyForm::filterOk(TimeConstraint*
 {
 	if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY){
 		ConstraintStudentsSetActivityTagMinHoursDaily* c=(ConstraintStudentsSetActivityTagMinHoursDaily*) ctr;
-		return (c->students==studentsComboBox->currentText() || studentsComboBox->currentText()=="") 
+		return (c->students==studentsComboBox->currentText() || studentsComboBox->currentText()=="")
 		 &&
 		 (c->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
 	}

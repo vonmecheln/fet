@@ -2252,3 +2252,8 @@ Versions 5.44.0 - 5.44.v
 	- Updated to Qt 5.14.2.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 	- Minor fixes.
+- Version 5.44.2
+	- Bug fix: when using constraints activity tags not overlapping with the activity tags names containing the special characters &, >, or < (and possibly " or '),
+	the saved file would be corrupted and could not be reopened without firstly correcting it manually. Reported by Darren McDonald.
+- Version 5.44.3
+	- Minor fixes and code cleanup.
