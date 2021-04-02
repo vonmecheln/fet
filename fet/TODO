@@ -55,8 +55,6 @@ Multiple processor - split multiple timetable generation on multiple processors
 
 From Hatim Ali:
 
-ConstraintTeachersMaxHoursContinuously
-
 > Dear all
 > please can you add "A set teachers has same timetabe (day+hour)" to make 2
 > teachers or more work in the same time (not same subject) and off in the
@@ -619,3 +617,36 @@ and write their requirements in text files or excel files (which can
 be exported to text files) in a standard format before the scheduler 
 (normally one person) who keys in the requirements in the timetabling 
 software for the different courses to maximize the use of resources.
+
+10---------------------------------------------------------
+From kdsayang
+
+I would like to see FET generate the time table in 
+
+1. certain amount of time for each time table
+2. with some setting about the remaining weight soft conflicts
+3. generate multiple variants
+
+For example
+(A) rules are
+(i) the user select to generate 10 minutes time limit for each time table
+(ii) user set 0 for remaining weight soft conflicts
+(iii) the user select 10 variants
+
+the outcome
+(B)
+(i) the time table finished and it has generate 10 time table that concur with 0 remaining soft conflicts for each time table
+(ii) the time table finish and it only manage to get 5 variants from 0 remaining weight soft conflicts
+(iii) the time table finish BUT it don't manage to generate any variants with 0 remaining weight soft conflicts
+
+refer to (B)(iii)
+
+the user can change
+(i) longer run time to generate time table (with crossing finger) hehe... Others setting is not change
+(ii) longer run time to generate time table with increasing value for remaining soft conflicts (0.5, 1.0, 1.5 etc)
+
+As u can see in timetable --> generate multiple variants, features in (A)(i) and (A)(iii) are already there. I hope that u 
+
+can figure it out on how to implement the feature in (A)(ii). It would be marvelous.
+
+--------------------------------------------------------------------------------

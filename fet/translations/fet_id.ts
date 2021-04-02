@@ -3,35 +3,35 @@
 <context>
     <name></name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>no</source>
         <translation type="obsolete">tidak</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>yes</source>
         <translation type="obsolete">ya</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Break</source>
         <comment>Please keep translation short</comment>
         <translation type="obsolete">Istirahat</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Allowed</source>
         <comment>Please keep translation short</comment>
         <translation type="obsolete">Dibolehkan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Not available</source>
         <comment>Please keep translation short</comment>
         <translation type="obsolete">Tidak ada</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Available</source>
         <comment>Please keep translation short</comment>
         <translation type="obsolete">Tersedia</translation>
@@ -80,7 +80,7 @@
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -188,13 +188,13 @@
         <translation>Aktivitas ini</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>No teachers for this activity
 </source>
         <translation type="obsolete">Tidak ada guru pada kegiatan ini</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>No teachers for these activities
 </source>
         <translation type="obsolete">Tidak ada guru pada kegiatan ini</translation>
@@ -210,18 +210,18 @@
         <translation>Mata Pelajaran=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag=%1</source>
         <translation type="obsolete">Tag Mata Pelajaran=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>No students for this activity
 </source>
         <translation type="obsolete">Tidak ada siswa untuk kegiatan ini</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>No students for these activities
 </source>
         <translation type="obsolete">Tidak ada siswa pada kegiatan ini
@@ -278,7 +278,7 @@
         <translation>Jika kegiatan pada hari yang sama, lalu tempatkan kegiatan berurutan, pada durasi pelajaran yang lebih lama</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Componenent %1:</source>
         <translation type="obsolete">Komponen %1:</translation>
     </message>
@@ -303,7 +303,7 @@
         <translation>Apakah anda ingin menambah kegiatan dengan tanpa guru?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Too many teachers for an activity. The current maximum is %1.
 If you really need more teachers per activity, please talk to the author</source>
         <translation type="obsolete">Terlalu banyak guru untuk kegiatan ini. Maksimal %1.
@@ -315,7 +315,7 @@ JIka anda ingin menambah lebih banyak guru per kegiatan, silahkan hubungi pembua
         <translation>Mata Pelajaran salah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Invalid subject tag</source>
         <translation type="obsolete">Tag mata pelajaran salah</translation>
     </message>
@@ -445,11 +445,6 @@ Mulai veri 5.0.0, dimungkinkan menambah kegiatan tanpa ada siswa atau guru</tran
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="545"/>
-        <source>Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addactivityform.cpp" line="531"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min n days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translation type="unfinished"></translation>
@@ -467,6 +462,11 @@ Mulai veri 5.0.0, dimungkinkan menambah kegiatan tanpa ada siswa atau guru</tran
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="543"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="545"/>
+        <source>Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -503,7 +503,7 @@ Mulai veri 5.0.0, dimungkinkan menambah kegiatan tanpa ada siswa atau guru</tran
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -754,7 +754,7 @@ paksakan berurutan?</translation>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Tag mata pelajaran</translation>
     </message>
@@ -762,6 +762,76 @@ paksakan berurutan?</translation>
         <location filename="../src/interface/addconstraint2activitiesconsecutiveform_template.ui" line="269"/>
         <source>Activity tag</source>
         <translation>Tag kegiatan</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraint2ActivitiesOrderedForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="16"/>
+        <source>FET - Add new constraint 2 activities ordered dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="35"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished">Tambah batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="43"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="67"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished">Persentase bobot
+(rekomendasi 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="76"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="117"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Kegiatan Pertama</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Kegiatan kedua</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="219"/>
+        <source>Filter</source>
+        <translation type="unfinished">Saring</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="235"/>
+        <source>Students set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="248"/>
+        <source>Teacher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="261"/>
+        <source>Subject</source>
+        <translation type="unfinished">Mata Pelajaran</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraint2activitiesorderedform_template.ui" line="269"/>
+        <source>Activity tag</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -823,17 +893,17 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
 <context>
     <name>AddConstraintActivitiesPreferredRoomForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room</source>
         <translation type="obsolete">Ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add constraint</source>
         <translation type="obsolete">Tambah batasan</translation>
     </message>
@@ -841,32 +911,32 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
 <context>
     <name>AddConstraintActivitiesPreferredRoomsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add constraint</source>
         <translation type="obsolete">Tambah batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>All rooms (dbl. click adds)</source>
         <translation type="obsolete">Semua Ruang (klik ganda untuk tambah)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation type="obsolete">Ruang Dipilih (klik ganda  untuk hapus)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
@@ -880,7 +950,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Are you sure you want to add this constraint for all activities? (no teacher, students, subject or subject tag specified)</source>
         <translation type="obsolete">Apakah anda yakin ingin menambah batasan ini ke semua kegiatan? (tidak ada guru, siswa, mata pelajaran atau tag mata pelajaran dipilih)</translation>
     </message>
@@ -890,17 +960,17 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Peringatan: 0 slot dipilih. Anda Past?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Note: if you use this constraint for all activities, there will be counted gaps for not allowed slots. You might get impossible timetables. If you use weight 100%, a more correct approach is to use constraint break. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add this constraint for all activities? (no teacher, students, subject or activity tag specified)</source>
         <translation type="obsolete">Catatan: Jika anda menggunakan batasan ini untuk semua kegiatan, akan ada jam kosong untuk slot yang tidak diperbolehkan. Anda akan mendapatkan jadwal yang tidak bagus. Jika anda menggunakan bobot 100%, pendekatan yang lebih tepat adalah menggunakan batasan istirahat. Hanya jika anda perlu bobot kurang dari 100 anda dipaksa menggunakan bobot ini, tetapi harus hati-hati. Apakah anda ingin menambahkan batasan ini untuk semua kegiatan? (tidak ada guru, siswa, mata pelajaran atau tag kegiatan ditentukan)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>It is not good to add such a constraint for only a teacher. There will be counted gaps and you might get impossible data. It is highly recommended to use teacher not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
         <translation type="obsolete">Tidak bagus menambah suatu batasan hanya untuk satu guru. Ini akan dianggap jam kosong dan akan mendapatkan data yang rusak. Direkomendasikan menggunakan guru tidak tersedia atau istirahat. Jika benar-benar perlu gunakan bobot kurang dari 100%, mungkin anda dapat memaksa menggunakan batasan ini, tetapi hati-hati. Apakah anda pasti ingin menggunakan batasan ini?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>It is not good to add such a constraint for only a students set. There will be counted gaps and you might get impossible data. It is highly recommended to use students set not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
         <translation type="obsolete">Tidak bagus menambah suatu batasan hanya untuk satu kelas paralel. Ini akan dianggap jam kosong dan akan mendapatkan data yang rusak. Direkomendasikan menggunakan kelas paralel tidak tersedia atau istirahat. Jika benar-benar perlu gunakan bobot kurang dari 100%, mungkin anda dapat memaksa menggunakan batasan ini, tetapi hati-hati. Apakah anda pasti ingin menggunakan batasan ini?</translation>
     </message>
@@ -911,12 +981,16 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda menentukan semua kegiatan. Ini mungkin masalah kecil: jika anda menentukan sebuah slot tidak diperbolehkan antara dua buah yang boleh, yang slot tidak boleh akan dihitung sebagai jam kosong dalam jadwal
+
+ guru dan murid. Cara yang teraik antara menggunakan batasan jam istirahat.
+
+Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan ini tetapi berhati-hati untuk tidak mendapat jadwal yang tidak mungkin( jika guru/siswa anda dibatasi pada jam kosong/jam kosong awal dan jika anda membiarkan slot tidak boleh diantara 2 slot yang boleh atau sebuah slot awal tidak boleh pada hari dan slot boleh yang seterusnya, jam kosong ini akan dihitung dalam jadwal guru dan sisw)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="206"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>Apakah anda ingin menambah batasan ini?</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="189"/>
@@ -925,7 +999,11 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda menentukan hanya guru. Ini mungkin masalah kecil: jika anda menentukan sebuah slot tidak diperbolehkan antara dua buah yang boleh, yang slot tidak boleh akan dihitung sebagai jam kosong dalam jadwal
+
+ guru. Cara yang teraik antara menggunakan batasan guru tidak ada.
+
+Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan ini tetapi berhati-hati untuk tidak mendapat jadwal yang tidak mungkin( jika guru anda dibatasi pada jam kosong/jam kosong awal dan jika anda membiarkan slot tidak boleh diantara 2 slot yang boleh atau sebuah slot awal tidak boleh pada hari dan slot boleh yang seterusnya, jam kosong ini akan dihitung dalam jadwal guru)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimesform.cpp" line="206"/>
@@ -934,7 +1012,11 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda menentukan kelas paralel. Ini mungkin masalah kecil: jika anda menentukan sebuah slot tidak diperbolehkan antara dua buah yang boleh, yang slot tidak boleh akan dihitung sebagai jam kosong dalam jadwal
+
+ guru. Cara yang terbaik antara menggunakan batasan siswa tidak ada.
+
+Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan ini tetapi berhati-hati untuk tidak mendapat jadwal yang tidak mungkin( jika guru/siswa anda dibatasi pada jam kosong/jam kosong awal dan jika anda membiarkan slot tidak boleh diantara 2 slot yang boleh atau sebuah slot awal tidak boleh pada hari dan slot boleh yang seterusnya, jam kosong ini akan dihitung dalam jadwal siswa)</translation>
     </message>
 </context>
 <context>
@@ -966,7 +1048,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Tambah batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Tag mata pelajaran</translation>
     </message>
@@ -986,7 +1068,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Instructions: you can choose a set of activities with a certain teacher (or
 blank for all teachers), students set, subject and subject tag.</source>
         <translation type="obsolete">Instruksi: anda dapat memilihi kumpulan kegiatan dengan guru tertentu ( atau
@@ -1188,7 +1270,7 @@ berhati-hati pada urutan, akan berbeda dari yang diperlukan)
         <translation>Saring</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -1272,7 +1354,7 @@ berhati-hati pada urutan, akan berbeda dari yang diperlukan)
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -1340,7 +1422,7 @@ berhati-hati pada urutan, akan berbeda dari yang diperlukan)
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -1428,7 +1510,7 @@ berhati-hati pada urutan, akan berbeda dari yang diperlukan)
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -1511,7 +1593,7 @@ berhati-hati pada urutan, akan berbeda dari yang diperlukan)
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -1582,7 +1664,7 @@ berhati-hati pada urutan, akan berbeda dari yang diperlukan)
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -1667,57 +1749,57 @@ berhati-hati pada urutan, akan berbeda dari yang diperlukan)
 <context>
     <name>AddConstraintBreakForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint break dialog</source>
         <translation type="obsolete">FET - Tambah batasan baru: batasan pecah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add current constraint</source>
         <translation type="obsolete">Tambah batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>The important thing to notice is that a break does
 not induce gaps for teachers or students</source>
         <translation type="obsolete">Hal penting diperhatikakan adalah istirahat tidak
@@ -1838,7 +1920,7 @@ paksakan berurutan</translation>
         <translation>Saring</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -1886,52 +1968,52 @@ paksakan berurutan</translation>
 <context>
     <name>AddConstraintRoomNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Adding a new constraint room not available</source>
         <translation type="obsolete">FET - Tambah batasan baru: Ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add constraint</source>
         <translation type="obsolete">Tambah batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="obsolete">Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room</source>
         <translation type="obsolete">Ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
@@ -1972,22 +2054,22 @@ paksakan berurutan</translation>
 <context>
     <name>AddConstraintStudentsEarlyForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint students early dialog</source>
         <translation type="obsolete">FET - Tambah batasan baru: Siswa Awal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -2011,22 +2093,22 @@ jam kosong (jam kosong awal).
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add current constraint</source>
         <translation type="obsolete">Tambah batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint is restrictive. It means that the students must begin their
 activities at the first available slot (allowed from breaks and students set
 not available). If students X are available on all the time, they must begin
@@ -2288,6 +2370,44 @@ jam kosong (jam mulai awal).
     </message>
 </context>
 <context>
+    <name>AddConstraintStudentsMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Add new constraint students max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="33"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="41"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="49"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished">Tambah batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="57"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="79"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="93"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddConstraintStudentsMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="16"/>
@@ -2322,7 +2442,12 @@ jam kosong (jam mulai awal).
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="93"/>
         <source>Max hours</source>
-        <translation>Jam maks</translation>
+        <translation type="obsolete">Jam maks</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="93"/>
+        <source>Max hours daily</source>
+        <translation type="unfinished">Jam maks harian</translation>
     </message>
 </context>
 <context>
@@ -2413,32 +2538,32 @@ siswa)</translation>
 <context>
     <name>AddConstraintStudentsNoGapsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint students no gaps dialog</source>
         <translation type="obsolete">FET - Tambah batasan baru: Siswa dengan tidak ada jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add current constraint</source>
         <translation type="obsolete">Tambah batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -2462,7 +2587,7 @@ gap (gap awal).
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
@@ -2470,17 +2595,17 @@ gap (gap awal).
 <context>
     <name>AddConstraintStudentsSetEarlyForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint students set early dialog</source>
         <translation type="obsolete">FET - Tambah batasan baru Siswa diatur awal </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -2504,32 +2629,32 @@ gap (gap awal).
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set</source>
         <translation type="obsolete">Kelas Paralel</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add current constraint</source>
         <translation type="obsolete">Tambah batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint is restrictive. It means that the students must begin their
 activities at the first available slot (allowed from breaks and students set
 not available). If students X are available on all the time, they must begin
@@ -2912,6 +3037,49 @@ ada dan pecahan tidak dihitung sebagai gap.</translation>
     </message>
 </context>
 <context>
+    <name>AddConstraintStudentsSetMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Add new constraint students set max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="33"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="41"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="72"/>
+        <source>Students set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="80"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished">Tambah batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="88"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="110"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="124"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddConstraintStudentsSetMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="16"/>
@@ -2951,7 +3119,12 @@ ada dan pecahan tidak dihitung sebagai gap.</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="124"/>
         <source>Max hours</source>
-        <translation>Jam maks</translation>
+        <translation type="obsolete">Jam maks</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="124"/>
+        <source>Max hours daily</source>
+        <translation type="unfinished">Jam maks harian</translation>
     </message>
 </context>
 <context>
@@ -3052,42 +3225,42 @@ siswa)</translation>
 <context>
     <name>AddConstraintStudentsSetNoGapsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint students set no gaps dialog</source>
         <translation type="obsolete">FET - Tambah batasan baru: Siswa diatur tidak ada jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add current constraint</source>
         <translation type="obsolete">Tambah batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set</source>
         <translation type="obsolete">Kumpulan siswa</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -3113,62 +3286,62 @@ gap (gap awal).</translation>
 <context>
     <name>AddConstraintStudentsSetNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint students set not available dialog</source>
         <translation type="obsolete">FET - Tambah batasan baru siswa diatur tidak ada</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set</source>
         <translation type="obsolete">Kumpulan siswa</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add current constraint</source>
         <translation type="obsolete">Tambah batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after this
 not available period, there will be no gaps counted</source>
@@ -3207,17 +3380,17 @@ periode tidak ada ini, tidak akan dianggap gap</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="141"/>
         <source>This constraint does not induce gaps (or early gaps) for students. If a student set has lessons before and after a not available period, gaps will not be counted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan ini tidak menimbulkan jam kosong (atau jam kosong awal) untuk siswa. Jika kelas mempunyai jam sebelum dan sesudah periode kosong tidak akan dihitung.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>JIka anda benar-benar menggunakan bobot dibawah 100%, anda dapat menggunakan kegiatan dengan jam tertentu dengan kelas tertentu, tetapi ini mungkin menyebabkan masalah, jam kosong mungkin terjadi dan anda mungkin mendapatkan jadwal tidak mungkin</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="149"/>
         <source>FET help</source>
-        <translation type="unfinished">Bantuan FET</translation>
+        <translation>Bantuan FET</translation>
     </message>
 </context>
 <context>
@@ -3228,7 +3401,7 @@ periode tidak ada ini, tidak akan dianggap gap</translation>
         <translation>FET - Menambah batasan siswa diatur tidak ada</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after this
 not available period, there will be no gaps counted</source>
@@ -3264,14 +3437,16 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="135"/>
         <source>Help</source>
-        <translation type="unfinished">Bantuan</translation>
+        <translation>Bantuan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="201"/>
         <source>Note: this constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after a
 not available period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan ini tidak menyebabkan jam kosong (atau awal tidak diperhatikan)
+untuk siswa. Jika siswa mempunyai jam pelajaran sebelum dan sesudah
+periode tidak ada ini, tidak akan dianggap jam kosong</translation>
     </message>
 </context>
 <context>
@@ -3479,42 +3654,42 @@ not available period, there will be no gaps counted</source>
 <context>
     <name>AddConstraintSubjectSubjectTagPreferredRoomForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint subject subject tag preferred room</source>
         <translation type="obsolete">FET - Tambah batasan baru: Mata Pelajaran-Tag Mata Pelajaran dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room</source>
         <translation type="obsolete">Ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="obsolete">Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add constraint</source>
         <translation type="obsolete">Tambah batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -3522,62 +3697,62 @@ not available period, there will be no gaps counted</source>
 <context>
     <name>AddConstraintSubjectSubjectTagPreferredRoomsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint subject subject tag preferred rooms</source>
         <translation type="obsolete">FET - Tambah batasan baru: Mata Pelajaran-Tag Mata Pelajaran dengan ruang-ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="obsolete">Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add constraint</source>
         <translation type="obsolete">Tambah batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>All rooms (dbl. click adds)</source>
         <translation type="obsolete">Semua Ruang (klik ganda untuk tambah)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation type="obsolete">Ruang Dipilih (klik ganda  untuk hapus)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -3928,6 +4103,49 @@ ada dan istirahat tidak dihitung sebagai gap.</translation>
     </message>
 </context>
 <context>
+    <name>AddConstraintTeacherMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Add new constraint teacher max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="41"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="57"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="71"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="90"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="104"/>
+        <source>Teacher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="129"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished">Tambah batasan sekarang</translation>
+    </message>
+</context>
+<context>
     <name>AddConstraintTeacherMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="16"/>
@@ -4070,62 +4288,62 @@ mulai dengan jam min 2 dan tinggikan hingga dapat jadwal baru</translation>
 <context>
     <name>AddConstraintTeacherNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Add new constraint teacher not available dialog</source>
         <translation type="obsolete">FET - Tambah batasan baru: Guru tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add current constraint</source>
         <translation type="obsolete">Tambah batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Teacher</source>
         <translation type="obsolete">Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint does not induce gaps for teachers.
 If a teacher has lessons before and after this
 not available period, there will be no gaps counted</source>
@@ -4164,17 +4382,17 @@ periode tidak ada ini, tidak ada jam kosong yang dihitung</translation>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="132"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has lessons before and after a not available period, gaps will not be counted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan ini tidak menimbulkan jam kosong untuk guru. Jika seorang guru mengajar sebelum dan sesudah periode tidak ada ini, tidak ada jam kosong terhitung.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="138"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
-        <translation type="unfinished"></translation>
+        <translation>JIka anda benar-benar menggunakan bobot dibawah 100%, anda dapat menggunakan kegiatan dengan jam tertentu dengan guru tertentu, tetapi ini mungkin menyebabkan masalah, jam kosong mungkin terjadi dan anda mungkin mendapatkan jadwal tidak mungkin.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="140"/>
         <source>FET help</source>
-        <translation type="unfinished">Bantuan FET</translation>
+        <translation>Bantuan FET</translation>
     </message>
 </context>
 <context>
@@ -4210,7 +4428,7 @@ periode tidak ada ini, tidak ada jam kosong yang dihitung</translation>
         <translation>Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has lessons
 before and after this not available period, there will be no gaps counted</source>
         <translation type="obsolete">Batasan ini tidak menimbulkan jam kosong untuk guru. Jika seorang guru mengajar
@@ -4219,14 +4437,16 @@ sebelum dan sesudah periode tidak ada ini, tidak ada jam kosong terhitung</trans
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="43"/>
         <source>Help</source>
-        <translation type="unfinished">Bantuan</translation>
+        <translation>Bantuan</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="175"/>
         <source>Note: this constraint does not induce gaps for teachers.
 If a teacher has lessons before and after a not available
 period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan ini tidak menimbulkan jam kosong untuk guru. 
+Jika seorang guru mengajarsebelum dan sesudah 
+periode tidak ada ini, tidak ada jam kosong terhitung</translation>
     </message>
 </context>
 <context>
@@ -4417,6 +4637,44 @@ dan pecah tidakdianggap gap.</translation>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="153"/>
         <source>Max gaps per week</source>
         <translation>Jam kosong maksimal per minggu</translation>
+    </message>
+</context>
+<context>
+    <name>AddConstraintTeachersMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Add new constraint teachers max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="27"/>
+        <source>Add current constraint</source>
+        <translation type="unfinished">Tambah batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="35"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="49"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="65"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="79"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="98"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4823,39 +5081,94 @@ tetapi mungkin akan terlalu besar dan anda akan mendapatkan jadwal yang tidak mu
         <translation>FET- Batasan waktu: 1 kegiatan berurutan</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="25"/>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="57"/>
         <source>New Item</source>
         <translation>Baru</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="43"/>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="91"/>
         <source>Constraints</source>
         <translation>Batasan</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="51"/>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="27"/>
         <source>Close</source>
         <translation>Tutup</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="59"/>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="35"/>
         <source>Add</source>
         <translation>Tambah</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="67"/>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="77"/>
         <source>Current constraint</source>
         <translation>Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="75"/>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="43"/>
         <source>Remove</source>
         <translation>Hapus</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="83"/>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="51"/>
         <source>Modify</source>
         <translation>Ubah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesconsecutiveform_template.ui" line="99"/>
+        <source>This constraint forces 2 activities A1 and A2: A2 to be immediately
+after A1, same day, possibly separated by breaks</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Constraint2ActivitiesOrderedForm_template</name>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="16"/>
+        <source>FET - Time constraints 2 activies ordered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="27"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="35"/>
+        <source>Add</source>
+        <translation type="unfinished">Tambah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="43"/>
+        <source>Remove</source>
+        <translation type="unfinished">Hapus</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="51"/>
+        <source>Modify</source>
+        <translation type="unfinished">Ubah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="57"/>
+        <source>New Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="77"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="91"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Batasan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraint2activitiesorderedform_template.ui" line="99"/>
+        <source>This constraint forces 2 activities A1 and A2: A2 to be after
+A1, separated by any time interval</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4904,27 +5217,27 @@ tetapi mungkin akan terlalu besar dan anda akan mendapatkan jadwal yang tidak mu
 <context>
     <name>ConstraintActivitiesPreferredRoomForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
@@ -4932,27 +5245,27 @@ tetapi mungkin akan terlalu besar dan anda akan mendapatkan jadwal yang tidak mu
 <context>
     <name>ConstraintActivitiesPreferredRoomsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
@@ -5000,7 +5313,7 @@ tetapi mungkin akan terlalu besar dan anda akan mendapatkan jadwal yang tidak mu
         <translation>Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Note: if you use this constraint with only a teacher or only a students
 set or for all activities, the not allowed periods will be counted as gaps
 and might cause impossible timetables. Please try to use breaks or not
@@ -5236,7 +5549,7 @@ gunakan batasan ini dengan bobot kurang dari 100%, tetapi hati-hati.</translatio
         <translation>Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -5257,7 +5570,7 @@ gunakan batasan ini dengan bobot kurang dari 100%, tetapi hati-hati.</translatio
 Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">tag mata pelajaran</translation>
     </message>
@@ -5338,7 +5651,7 @@ Guru</translation>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Tag mata pelajaran</translation>
     </message>
@@ -5419,7 +5732,7 @@ Guru</translation>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Tag mata pelajaran</translation>
     </message>
@@ -5500,7 +5813,7 @@ Guru</translation>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Tag mata pelajaran</translation>
     </message>
@@ -5609,42 +5922,42 @@ Guru</translation>
 <context>
     <name>ConstraintBreakForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Time constraints break</source>
         <translation type="obsolete">FET - Batasan waktu Pecah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
@@ -5758,7 +6071,7 @@ Guru</translation>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Tag mata pelajaran</translation>
     </message>
@@ -5781,47 +6094,47 @@ Guru</translation>
 <context>
     <name>ConstraintRoomNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Space constraints room not available</source>
         <translation type="obsolete">FET - Batasan tempat: Ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -5877,42 +6190,42 @@ Guru</translation>
 <context>
     <name>ConstraintStudentsEarlyForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Time constraints students early</source>
         <translation type="obsolete">FET - Batasan waktu Siswa Awal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
@@ -6131,6 +6444,49 @@ Are you sure?</source>
     </message>
 </context>
 <context>
+    <name>ConstraintStudentsMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Time constraints students max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="25"/>
+        <source>New Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="43"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Batasan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="51"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="59"/>
+        <source>Add</source>
+        <translation type="unfinished">Tambah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation type="unfinished">Hapus</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentsmaxhourscontinuouslyform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation type="unfinished">Ubah</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintStudentsMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/constraintstudentsmaxhoursdailyform_template.ui" line="16"/>
@@ -6262,42 +6618,42 @@ Are you sure?</source>
 <context>
     <name>ConstraintStudentsNoGapsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Time constraints students no gaps</source>
         <translation type="obsolete">FET - Batasan waktu: Siswa dengan tanpa jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
@@ -6305,47 +6661,47 @@ Are you sure?</source>
 <context>
     <name>ConstraintStudentsSetEarlyForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Time constraints students set early</source>
         <translation type="obsolete">FET - Batasan waktu: Siswa diatur awal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -6708,6 +7064,54 @@ khusus.</translation>
     </message>
 </context>
 <context>
+    <name>ConstraintStudentsSetMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Time constraints students set max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="25"/>
+        <source>New Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="43"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Batasan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="51"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="59"/>
+        <source>Add</source>
+        <translation type="unfinished">Tambah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="75"/>
+        <source>Remove</source>
+        <translation type="unfinished">Hapus</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="83"/>
+        <source>Modify</source>
+        <translation type="unfinished">Ubah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintstudentssetmaxhourscontinuouslyform_template.ui" line="99"/>
+        <source>Filter</source>
+        <translation type="unfinished">Saring</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintStudentsSetMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxhoursdailyform_template.ui" line="16"/>
@@ -6854,47 +7258,47 @@ khusus.</translation>
 <context>
     <name>ConstraintStudentsSetNoGapsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Time constraints students set no gaps</source>
         <translation type="obsolete">FET - Batasan waktu: Siswa diatur tidak ada jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -6902,47 +7306,47 @@ khusus.</translation>
 <context>
     <name>ConstraintStudentsSetNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Time constraints students set not available</source>
         <translation type="obsolete">FET - Batasan waktu: Siswa diatur tidak ada</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Item Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -7231,47 +7635,47 @@ Are you sure?</source>
 <context>
     <name>ConstraintSubjectSubjectTagPreferredRoomForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Space constraints subject subject tag preferred room</source>
         <translation type="obsolete">FET - Batasan Tempat: Mata Pelajaran Tag mata pelajaran dengan  ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -7279,47 +7683,47 @@ Are you sure?</source>
 <context>
     <name>ConstraintSubjectSubjectTagPreferredRoomsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - ConstraintSubjectSubjectTagPreferredRooms</source>
         <translation type="obsolete">FET - BatasanTagMataPelajaranRuangRuangTertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -7679,6 +8083,54 @@ Ruang dipilih akan menghapus ruang khusus.</translation>
     </message>
 </context>
 <context>
+    <name>ConstraintTeacherMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Time constraints teacher max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="25"/>
+        <source>New Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="37"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="45"/>
+        <source>Add</source>
+        <translation type="unfinished">Tambah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="53"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="61"/>
+        <source>Remove</source>
+        <translation type="unfinished">Hapus</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="69"/>
+        <source>Modify</source>
+        <translation type="unfinished">Ubah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="83"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Batasan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachermaxhourscontinuouslyform_template.ui" line="99"/>
+        <source>Filter</source>
+        <translation type="unfinished">Saring</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintTeacherMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="16"/>
@@ -7825,47 +8277,47 @@ Ruang dipilih akan menghapus ruang khusus.</translation>
 <context>
     <name>ConstraintTeacherNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Time constraints teacher not available</source>
         <translation type="obsolete">FET - Batasan waktu: Guru tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraints</source>
         <translation type="obsolete">Batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Modify</source>
         <translation type="obsolete">Ubah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Filter</source>
         <translation type="obsolete">Saring</translation>
     </message>
@@ -8132,6 +8584,49 @@ Are you sure?</source>
     </message>
 </context>
 <context>
+    <name>ConstraintTeachersMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Time constraints teachers max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="25"/>
+        <source>New Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="37"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="45"/>
+        <source>Add</source>
+        <translation type="unfinished">Tambah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="53"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="61"/>
+        <source>Remove</source>
+        <translation type="unfinished">Hapus</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="69"/>
+        <source>Modify</source>
+        <translation type="unfinished">Ubah</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="91"/>
+        <source>Constraints</source>
+        <translation type="unfinished">Batasan</translation>
+    </message>
+</context>
+<context>
     <name>ConstraintTeachersMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="16"/>
@@ -8268,100 +8763,170 @@ Are you sure?</source>
         <translation>FET - data jadwal - hari kerja</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="27"/>
+        <location filename="../src/interface/daysform_template.ui" line="220"/>
         <source>Day 10</source>
         <translation>Hari ke-10</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="35"/>
+        <location filename="../src/interface/daysform_template.ui" line="119"/>
         <source>Day 3</source>
         <translation>Hari ke-3</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="63"/>
+        <location filename="../src/interface/daysform_template.ui" line="158"/>
         <source>Day 6</source>
         <translation>Hari ke-6</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="71"/>
+        <location filename="../src/interface/daysform_template.ui" line="272"/>
         <source>Day 14</source>
         <translation>Hari ke-14</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="89"/>
+        <location filename="../src/interface/daysform_template.ui" line="171"/>
         <source>Day 7</source>
         <translation>Hari ke-7</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="97"/>
+        <location filename="../src/interface/daysform_template.ui" line="106"/>
         <source>Day 2</source>
         <translation>Hari ke-2</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="105"/>
+        <location filename="../src/interface/daysform_template.ui" line="207"/>
         <source>Day 9</source>
         <translation>Hari ke-9</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="118"/>
+        <location filename="../src/interface/daysform_template.ui" line="145"/>
         <source>Day 5</source>
         <translation>Hari ke-5</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="146"/>
+        <location filename="../src/interface/daysform_template.ui" line="259"/>
         <source>Day 13</source>
         <translation>Hari ke-13</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="154"/>
+        <location filename="../src/interface/daysform_template.ui" line="233"/>
         <source>Day 11</source>
         <translation>Hari ke-11</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="167"/>
+        <location filename="../src/interface/daysform_template.ui" line="194"/>
         <source>Day 8</source>
         <translation>Hari ke-8</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="180"/>
+        <location filename="../src/interface/daysform_template.ui" line="132"/>
         <source>Day 4</source>
         <translation>Hari ke-4</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="193"/>
+        <location filename="../src/interface/daysform_template.ui" line="93"/>
         <source>Day 1</source>
         <translation>Hari ke-1</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="201"/>
+        <location filename="../src/interface/daysform_template.ui" line="246"/>
         <source>Day 12</source>
         <translation>Hari ke-12</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="209"/>
+        <location filename="../src/interface/daysform_template.ui" line="35"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="217"/>
+        <location filename="../src/interface/daysform_template.ui" line="43"/>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform_template.ui" line="225"/>
+        <location filename="../src/interface/daysform_template.ui" line="53"/>
         <source>Number of working days per week</source>
         <translation>Jumlah hari belajar per minggu</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="295"/>
+        <source>Day 15</source>
+        <translation type="unfinished">Hari ke-15</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="308"/>
+        <source>Day 16</source>
+        <translation type="unfinished">Hari ke-16</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="321"/>
+        <source>Day 17</source>
+        <translation type="unfinished">Hari ke-17</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="334"/>
+        <source>Day 18</source>
+        <translation type="unfinished">Hari ke-18</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="347"/>
+        <source>Day 19</source>
+        <translation type="unfinished">Hari ke-19</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="360"/>
+        <source>Day 20</source>
+        <translation type="unfinished">Hari ke-20</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="373"/>
+        <source>Day 21</source>
+        <translation type="unfinished">Hari ke-21</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="396"/>
+        <source>Day 22</source>
+        <translation type="unfinished">Hari ke-22</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="409"/>
+        <source>Day 23</source>
+        <translation type="unfinished">Hari ke-23</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="422"/>
+        <source>Day 24</source>
+        <translation type="unfinished">Hari ke-24</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="435"/>
+        <source>Day 25</source>
+        <translation type="unfinished">Hari ke-25</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="448"/>
+        <source>Day 26</source>
+        <translation type="unfinished">Hari ke-26</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="461"/>
+        <source>Day 27</source>
+        <translation type="unfinished">Hari ke-27</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/daysform_template.ui" line="474"/>
+        <source>Day 28</source>
+        <translation type="unfinished">Hari ke-28</translation>
     </message>
 </context>
 <context>
     <name>FetMainForm</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This help by Liviu Lalescu, modified 1 October 2007</source>
         <translation type="obsolete">Bantuan oleh Liviu Lalescu, diubah 1 Oktober 2007</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="924"/>
+        <location filename="../src/interface/fetmainform.cpp" line="929"/>
         <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
 
 Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
@@ -8376,42 +8941,42 @@ Mempunyai kelas paralel dengan jam belajr terlalu kecil per minggu artinya anda 
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="931"/>
+        <location filename="../src/interface/fetmainform.cpp" line="936"/>
         <source>FET - information about statistics</source>
         <translation>FET - informasi tentang statistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1718"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1783"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1696"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1761"/>
         <source>You can see help translated into other languages in the directory doc/ of FET</source>
         <translation>Anda dapat melihat bantuan diterjemahkan ke bahasa lain di direktori /doc dari FET</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Currently (4 Oct. 2007), there are:</source>
         <translation type="obsolete">Saat ini (4 Okt. 2007), terdapat:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1700"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1765"/>
         <source>1. es - Spanish - Instructions</source>
         <translation>1. es -Spanyol - Instruksi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1711"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1776"/>
         <source>FET - help in other languages</source>
         <translation>FET -bantuan dalam bahasa lain</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="713"/>
+        <location filename="../src/interface/fetmainform.cpp" line="718"/>
         <source>FET warning</source>
         <translation>Peringatan FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="276"/>
+        <location filename="../src/interface/fetmainform.cpp" line="281"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
@@ -8419,12 +8984,12 @@ If you want, you can turn off automatic search for updates in Settings menu</sou
 Jika anda ingin, anda dapat mematikan pencarian otomatis update pada menu Pengaturan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2077"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2142"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="293"/>
+        <location filename="../src/interface/fetmainform.cpp" line="298"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -8435,188 +9000,188 @@ Anda dapat secara manual mengunduhnya dan install (buka halaman web FET di brows
 Anda dapat memilih untuk mematikan pencarian otomatis update pada menu Pengaturan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="308"/>
+        <location filename="../src/interface/fetmainform.cpp" line="313"/>
         <source>FET - exiting</source>
         <translation>FET - keluar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="309"/>
+        <location filename="../src/interface/fetmainform.cpp" line="314"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation>File telah berubah - apakah anda ingin menyimpannya?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2039"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2104"/>
         <source>&amp;Yes</source>
         <translation>&amp;Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2039"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2104"/>
         <source>&amp;No</source>
         <translation>&amp;Tidak</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="310"/>
+        <location filename="../src/interface/fetmainform.cpp" line="315"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Batal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2078"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2143"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Alokasi dalam jalur
 Silahkan hentikan simulasi sebeum ini.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2038"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2103"/>
         <source>FET application</source>
         <translation>Aplikasi FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="352"/>
+        <location filename="../src/interface/fetmainform.cpp" line="357"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>Apakah anda pasti ingin menload data(aturan) baru?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - a free evolutionary timetabling program</source>
         <translation type="obsolete">FET - sebuah program penjadwalan evolusioner gratis</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="396"/>
+        <location filename="../src/interface/fetmainform.cpp" line="401"/>
         <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
         <comment>Comment for translators (do not translate this comment): This field is for File/Open dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated</comment>
         <translation>film xml FET (*.fet);;file xml FET lama(*.xml);;Semua file(*)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>open file dialog</source>
         <translation type="obsolete">kotak dialog buka file</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="393"/>
+        <location filename="../src/interface/fetmainform.cpp" line="398"/>
         <source>Choose a file</source>
         <translation>Pilih sebuah file</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="575"/>
         <source>FET info</source>
         <translation>Info FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="411"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Tolong jangan gunakan &quot; dalam nama file, kode css html tidak dapat berjalan. File tidak dapat diload. Silahkan ubah, ganti karakter yang dilarang dan buka kembali dengan FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="412"/>
+        <location filename="../src/interface/fetmainform.cpp" line="417"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Tolong jangan gunakan titik koma ; dalam nama file, kode css html tidak dapat berjalan. File tidak dapat diload. Silahkan ubah, ganti karakter yang dilarang dan buka kembali dengan FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="418"/>
+        <location filename="../src/interface/fetmainform.cpp" line="423"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation>Tolong jangan gunakan # dalam nama file, kode css html tidak dapat berjalan. File tidak dapat diload. Silahkan ubah, ganti karakter yang dilarang dan buka kembali dengan FET.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="439"/>
         <source>Invalid file</source>
         <translation>File salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="434"/>
+        <location filename="../src/interface/fetmainform.cpp" line="439"/>
         <source>&amp;OK</source>
         <translation>&amp;Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="488"/>
+        <location filename="../src/interface/fetmainform.cpp" line="493"/>
         <source>FET - %1</source>
         <translation>FET -%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="553"/>
+        <location filename="../src/interface/fetmainform.cpp" line="558"/>
         <source>FET xml files (*.fet);;All files (*)</source>
         <comment>Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated</comment>
         <translation>file xml FET (*.fet);;Semua file(*)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Save file dialog</source>
         <translation type="obsolete">Kotak dialog simpan file</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="552"/>
+        <location filename="../src/interface/fetmainform.cpp" line="557"/>
         <source>Choose a filename to save under</source>
         <translation>Pilih nama file untuk disimpan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="562"/>
+        <location filename="../src/interface/fetmainform.cpp" line="567"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation>Jangan menggunakan tanda kutip &quot; dalam nama file, kode css html tidak berjalan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="566"/>
+        <location filename="../src/interface/fetmainform.cpp" line="571"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation>Jangan menggunakan titik koma ; dalam nama file, kode css html tidak berjalan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="570"/>
+        <location filename="../src/interface/fetmainform.cpp" line="575"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation>Jangan menggunakan # dalam nama file, kode css html tidak berjalan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="481"/>
+        <location filename="../src/interface/fetmainform.cpp" line="486"/>
         <source>FET</source>
         <translation>FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="482"/>
+        <location filename="../src/interface/fetmainform.cpp" line="487"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>File telah ada - apakah anda ingin menimpa file yang telah ada?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>If you started simulation before inputting all the necessary students structure, FET might have added special groups/subgroups, ending in WHOLE_YEAR or WHOLE_GROUP. These special groups/subgroups are needed if the year/group contains only them and otherwise would be empty, but not needed when year/group contains other groups/subgroups. It is highly recommended to remove them if your year/group contain other groups/subgroups. If a special subgroup named for instance 5_WHOLE_YEAR_WHOLE_GROUP has only 2 hours per day, you might get an impossible timetable, because early and no gaps must be respected for this subgroup also,, which might be impossible</source>
         <translation type="obsolete">JIka anda memulai simulasi sebelum input semua struktur siswa yang dibutuhkan, FET akan menambah kelas/kelas paralel spesial, berakhir di WHOLE_YEAR atau WHOLE_GROUP. Kelas/kelas paralel spesial dibutuhkan jika tahun pelajaran/kelas mengandung itu saja dan kalau tidak akan kosong tetapi tidak dibutuhkan jika tahun pelajaran/kelas mengandung kelas/kelas paralel lain. Direkomendasikan menghapusnya jika tahun pelajaran/kelas mempunyai kelas/kelas paralel lain. Jika sebuah kelas paralel spesial dinamankan contoh 5_WHOLE_YEAR_WHOLE_GROUP hanya mempuyai 2 jam per hari, anda mungkin mendapatkan jadwal yang tidak mungkin karena awal dan tidak ada gap harus dipatuhi untuk kelas paralel ini, yang akan menyebabkan ketidakmungkinan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>The idea is that you have to delete unnecessary groups/subgroups containing WHOLE_YEAR or WHOLE_GROUP (unnecessary means that they are not the only one group/subgroup of higher year/group</source>
         <translation type="obsolete">Idenya adalah anda harus menghapus kelas paralel/grup yang tidak penting yang mengandung WHOLE_YEAR atau WHOLE_GROUP (tidak penting artinya mereka buka kelas paralel/grup satu-satunya dari kelas/kelas paralel diatasnya</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please input at least two active activities before generating</source>
         <translation type="obsolete">Silahkan input setidaknya dua kegiatan aktif sebelum generate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1771"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1836"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation>File(data) sekarang tidak bernama. Silahkan menyimpan file dalam nama tertentu sebelum lanjut</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please input at least two active activities before generating multiple</source>
         <translation type="obsolete">Tolong input setidaknya dua kegiatan aktif sebeum generate beberapa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1827"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1892"/>
         <source>Please generate, firstly</source>
         <translation>Silahkan generate, pertama</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2018"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2083"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Silahkan keluar dan restart FET untuk aktifkan bahasa yang diubah</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2029"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2094"/>
         <source>Are you sure you want to reset all settings to defaults?
 
 </source>
         <translation>Apkah anda pasti ingin mereset semua pengaturan kembali ke baku?</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="2036"/>
+        <location filename="../src/interface/fetmainform.cpp" line="2101"/>
         <source>(these are:
 1. Mainform geometry will be reset to default
 2. Check for updates at startup will be disabled
@@ -8631,135 +9196,136 @@ Silahkan hentikan simulasi sebeum ini.</translation>
 5. Level html jadwal adalah 2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="901"/>
+        <location filename="../src/interface/fetmainform.cpp" line="906"/>
         <source>This help by Liviu Lalescu, modified 7 November 2007</source>
         <translation>Bantuan ini oleh Liviu Lalesu, diubah 7 November 2007</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1702"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1767"/>
         <source>2. it - Italian - Instructions</source>
         <translation>2. it- Bahasa Itali - Instruksi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1704"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1769"/>
         <source>3. it - Italian - FAQ</source>
         <translation>3. it- Bahasa Itali - FAQ</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1698"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1763"/>
         <source>Currently (11 Jan. 2008), there are:</source>
         <translation>Sekarang (11 Jan. 2008), ada:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1706"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1771"/>
         <source>4. ar - Arabic - Manual</source>
         <translation>4. ar - Arab - Manual</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1754"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1819"/>
         <source>Please input at least one active activity before generating</source>
         <translation>Silakan masukkan setidaknya satu kegiatan aktif sebelum menjadwal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1784"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1849"/>
         <source>Please input at least one active activity before generating multiple</source>
         <translation>Silakan masukkan setidaknya satu kegiatan aktif sebelum menjadwal multiple</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="365"/>
+        <location filename="../src/interface/fetmainform.cpp" line="370"/>
         <source>FET - a free timetabling program</source>
         <translation>FET - sebuah program penjadwalan gratis</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="514"/>
+        <location filename="../src/interface/fetmainform.cpp" line="519"/>
         <source>FET - Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Peringatan FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="496"/>
+        <location filename="../src/interface/fetmainform.cpp" line="501"/>
         <source>You have not yet generated a timetable - please generate firstly</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda belum membuat jadwal - silakan buat dulu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="515"/>
+        <location filename="../src/interface/fetmainform.cpp" line="520"/>
         <source>It seems that you have an incomplete timetable. Saving of timetable does not work for incomplete timetables. Please generate a complete timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Kelihatannya anda mendapatkan jadwal tidak lengkap. Menyimpan jadwal tidak bekerja untuk jadwal tidak lengkap. Silahkan hasilkan jadwal yang lengkap</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="521"/>
+        <location filename="../src/interface/fetmainform.cpp" line="526"/>
         <source>Please read this important information before proceeding:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="531"/>
-        <source>This option is only useful if you need to lock current timetable into a file. Locking means that there will be added constraints activity preferred time and activity preferred room with 100% importance for each activity to fix it at current place in current timetable. You can save this timetable as an ordinary .fet file; when you&apos;ll open it, you&apos;ll see all old inputted data (activities, teachers, etc.) and the locking constraints as the last time/space constraints. You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again and the remaining locking constraints will be respected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Silakan baca informasi penting sebelum melanjutkan:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="536"/>
-        <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
-        <translation type="unfinished"></translation>
+        <source>This option is only useful if you need to lock current timetable into a file. Locking means that there will be added constraints activity preferred time and activity preferred room with 100% importance for each activity to fix it at current place in current timetable. You can save this timetable as an ordinary .fet file; when you&apos;ll open it, you&apos;ll see all old inputted data (activities, teachers, etc.) and the locking constraints as the last time/space constraints. You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again and the remaining locking constraints will be respected.</source>
+        <translation>Opsi hanya berguna jika anda perlu mengunci jadwal ini ke file. Mengunci artinya akan ada batasan kegiatan dengan waktu tertentu dan kegiatan dengan ruang tertentu dengan kepentingan 100% untuk setiap kegiatan yang terkunci pada jadwal ini. Anda dapat menyimpan jadwal sebagai file .fet biasa; ketika anda membukanya, anda akan melihat semua input data (kegiatan, guru,dll) dan batasan terkunci pada batasan waktu/ruang. Anda dapat membuka kunci dari kegiatan (dengan menghapus batasan) jika perubahan kecil terlihat pada konfigurasi dan generate lagi dan kuncian batasan akan tetap berlaku.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="541"/>
+        <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
+        <translation>Opsi hanya berlaku untuk institusi dimana anda mendapat sebuah jadwal, lalu beberapa perubahan kecil dan anda perlu generate jadwal tetapi masih mengikuti aturan pada jadwal yang lama</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="546"/>
         <source>Current data file will not be affected by anything, locking constraints will only be added to the file you select to save (you can save current datafile and open saved timetable file after that to check it)</source>
-        <translation type="unfinished"></translation>
+        <translation>Data saat ini tidak akan terpengaruh, mengunci batasan hanya ditambah ke file yang dipilih untuk disimpan( anda dapat menyimpan file data sekarang dan membuka file jadwal tersimpan setelah memeriksanya)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="545"/>
+        <location filename="../src/interface/fetmainform.cpp" line="550"/>
         <source>If you need more information, contact author or mailing list</source>
-        <translation type="unfinished"></translation>
+        <translation>Jika anda memerlukan informasi, hubungi pembuat program atau milis</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="547"/>
+        <location filename="../src/interface/fetmainform.cpp" line="552"/>
         <source>FET - information about saving a timetable as</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="585"/>
-        <source>File exists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform.cpp" line="588"/>
-        <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - informasi tentang menyimpan jadwal sebagai</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="590"/>
+        <source>File exists</source>
+        <translation>File ada</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="593"/>
+        <source>For safety (so you don&apos;t lose work), it is not allowed to overwrite an existing file with locking and saving a current data+timetable</source>
+        <translation>Untuk keamanan (maka anda tidak kelihatan hasil pekerjaan) tidak diperbolehkan overwrite file yang ada dengan kuncin dan menyipan data+jadwal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="595"/>
         <source>Please choose a non-existing name</source>
-        <translation type="unfinished"></translation>
+        <translation>Silahkan pilih nama yang belum dipakai</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="701"/>
+        <location filename="../src/interface/fetmainform.cpp" line="706"/>
         <source>Added the following constraint to saved file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah batasan berikut ke file yang disimpan:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="703"/>
+        <location filename="../src/interface/fetmainform.cpp" line="708"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan
+%1 TIDAK ditambah ke file tersimpan - duplikat</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="714"/>
+        <location filename="../src/interface/fetmainform.cpp" line="719"/>
         <source>Skip information</source>
-        <translation type="unfinished"></translation>
+        <translation>Abaikan informasi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="714"/>
+        <location filename="../src/interface/fetmainform.cpp" line="719"/>
         <source>See next</source>
-        <translation type="unfinished"></translation>
+        <translation>Lihat selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="723"/>
+        <location filename="../src/interface/fetmainform.cpp" line="728"/>
         <source>Added %1 locking time constraints and %2 locking space constraints to saved file, ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah %1 batasan kunci waktu dan %2 batasan kunci ruang ke file tersimpan, abaikan %3 batasan yang telah dikunci pada waktu dan %4 kegiatan yang telah dikunci ke ruang</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="739"/>
+        <location filename="../src/interface/fetmainform.cpp" line="744"/>
         <source>File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints), so you can save it also, or generate different timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>File berhasil disave. Anda dapat melihatnya di hard disk. File data sekarang tidak disentuh (dari batasan kunci) jadi anda dapat menyimpanya atau hasilkan jadwal lain.</translation>
     </message>
 </context>
 <context>
@@ -8795,852 +9361,852 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <translation>&amp;Data</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="697"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="702"/>
         <source>Space constraints (misc)</source>
         <translation>Batasan Tempat (dll)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="729"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="734"/>
         <source>Space constraints (rooms)</source>
         <translation>Batasan tempat (ruang)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="614"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="619"/>
         <source>Time constraints (misc)</source>
         <translation>Batasan waktu (dll)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="598"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="603"/>
         <source>Time constraints (students)</source>
         <translation>Batasan waktu (siswa)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="606"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="611"/>
         <source>Time constraints (activities)</source>
         <translation>Batasan waktu (kegiatan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="590"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="595"/>
         <source>Time constraints (teachers)</source>
         <translation>Batasan waktu (guru)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="238"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="243"/>
         <source>Settings</source>
         <translation>Pengaturan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="242"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="247"/>
         <source>Language</source>
         <translation>Bahasa/Language</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="276"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="281"/>
         <source>&amp;New</source>
         <translation>Ba&amp;ru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="279"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="284"/>
         <source>New</source>
         <translation>Baru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="282"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="287"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="287"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="292"/>
         <source>&amp;Open...</source>
         <translation>Bu&amp;ka...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="290"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="295"/>
         <source>Open</source>
         <translation>Buka</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="293"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="298"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="298"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="303"/>
         <source>&amp;Save</source>
         <translation>&amp;Simpan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="301"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="306"/>
         <source>Save</source>
         <translation>Simpan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="304"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="309"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="309"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="314"/>
         <source>Save &amp;As...</source>
         <translation>Simpan Seb&amp;agai...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="312"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="317"/>
         <source>Save As</source>
         <translation>SimpanSebagai</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="320"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="325"/>
         <source>E&amp;xit</source>
         <translation>&amp;Keluar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="323"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="328"/>
         <source>Exit</source>
         <translation>Keluar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="331"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="336"/>
         <source>&amp;Frequently asked questions</source>
         <translation>&amp;Pertanyaan yang sering ditanyakan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="334"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="339"/>
         <source>Frequently asked questions</source>
         <translation>Pertanyaaan yang sering ditanyakan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="342"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="347"/>
         <source>&amp;About...</source>
         <translation>&amp;Tentang...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="345"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="350"/>
         <source>About</source>
         <translation>Tentang</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="353"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="358"/>
         <source>&amp;Teachers</source>
         <translation>&amp;Guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="356"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="361"/>
         <source>Teachers</source>
         <translation>Guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="361"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="366"/>
         <source>&amp;Subjects</source>
         <translation>&amp;Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="364"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="369"/>
         <source>Subjects</source>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="369"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
         <source>&amp;Years (forms, classes)</source>
         <translation>&amp;Kelas </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="372"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
         <source>Years</source>
         <translation>Kelas</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="382"/>
         <source>&amp;Groups</source>
         <translation>&amp;Kelas Paralel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="380"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
         <source>Groups</source>
         <translation>Kelas Paralel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="390"/>
         <source>S&amp;ubgroups</source>
         <translation>&amp;Grup</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="393"/>
         <source>Subgroups</source>
         <translation>Grup</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="393"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="398"/>
         <source>&amp;Activities</source>
         <translation>&amp;Kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="401"/>
         <source>Activities</source>
         <translation>Kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="401"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="406"/>
         <source>&amp;Generate new</source>
         <translation>&amp;Buat Jadwal Baru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="404"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="409"/>
         <source>Generate new</source>
         <translation>Buat Jadwal Baru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="409"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="414"/>
         <source>View (&amp;students)</source>
         <translation>Tampil (&amp;siswa)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="412"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="417"/>
         <source>View (students)</source>
         <translation>Tampil (siswa)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="417"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="422"/>
         <source>View (&amp;teachers)</source>
         <translation>Tampil (&amp;guru)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="420"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="425"/>
         <source>View (teachers)</source>
         <translation>Tampil (guru)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="425"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="430"/>
         <source>Show soft conflicts</source>
         <translation>Tampilkan konfilik lunak</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="428"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="433"/>
         <source>Show conflicts (time)</source>
         <translation>Tampil konflik (waktu)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="433"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="438"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Hari per minggu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="436"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="441"/>
         <source>Days per week</source>
         <translation>Hari per minggu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="441"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="446"/>
         <source>&amp;Hours (periods) per day</source>
         <translation>&amp;Jam (periode ) per hari</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="444"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="449"/>
         <source>Hours per day</source>
         <translation>Jam per hari</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="452"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="457"/>
         <source>&amp;Rooms</source>
         <translation>&amp;Ruang</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="455"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="460"/>
         <source>Rooms</source>
         <translation>Ruang</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="463"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="468"/>
         <source>View (r&amp;ooms)</source>
         <translation>Tampil (&amp;ruang)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="466"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="471"/>
         <source>View (rooms)</source>
         <translation>Tampil (ruang)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="474"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="479"/>
         <source>&amp;en_GB (British English)</source>
         <translation>&amp;en_GB (Inggris)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="477"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="482"/>
         <source>en_GB (British English)</source>
         <translation>en_GB (Inggris)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="485"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="490"/>
         <source>&amp;ro (Romanian)</source>
         <translation>&amp;ro (Rumania)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="488"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="493"/>
         <source>ro (Romanian)</source>
         <translation>ro (Rumania)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="493"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="498"/>
         <source>T&amp;ime constraints</source>
         <translation>Batasan wak&amp;tu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="496"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="501"/>
         <source>Time constraints</source>
         <translation>Batasan waktu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="504"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="509"/>
         <source>A set of activities has a set of preferred times</source>
         <translation>Kumpulan kegiatan dengan kumpulan waktu tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activities preferred times</source>
         <translation type="obsolete">Kegiatan-kegiatan dengan waktu-waktu tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="512"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="517"/>
         <source>&amp;fr (French)</source>
         <translation>&amp;fr (Prancis)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="515"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="520"/>
         <source>fr (French)</source>
         <translation>fr (Prancis)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="523"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="528"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation>Kumpulan kegiatan dengan jam mulai sama (hari+jam)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activities same starting time</source>
         <translation type="obsolete">Kegiatan-kegiatasan dengan waktu mulai sama</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="531"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="536"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation>Tampil (si&amp;swa dgn ruang-ruang)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="534"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
         <source>View (students-with rooms)</source>
         <translation>Tampil (siswa-siswa dengan ruang-ruang)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="539"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="544"/>
         <source>All t&amp;ime constraints</source>
         <translation>Semua Batasan Wak&amp;tu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="542"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
         <source>All time constraints</source>
         <translation>Semua batasan waktu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="550"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="555"/>
         <source>A teacher is not available</source>
         <translation>Guru tidak ada</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Teacher not available</source>
         <translation type="obsolete">Guru tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="558"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="563"/>
         <source>Basic compulsory time constraints</source>
         <translation>Batasan waktu wajib sederhana</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="566"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="571"/>
         <source>A students set is not available</source>
         <translation>Siswa tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set not available</source>
         <translation type="obsolete">Siswa tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="574"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="579"/>
         <source>Break (all teachers+all students not available)</source>
         <translation>Istirahat (semua guru+semua murid tidak tersedia)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Break</source>
         <translation type="obsolete">Pecahan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="582"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="587"/>
         <source>Max days per week for a teacher</source>
         <translation>Hari maks per minggu untuk seorang guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Teacher max days per week</source>
         <translation type="obsolete">Guru: hari maks per minggu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="622"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="627"/>
         <source>Max hours daily for all teachers</source>
         <translation>jam maks harian untuk semua guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Teachers max hours daily</source>
         <translation type="obsolete">Guru jam maks harian</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="630"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="635"/>
         <source>An activity has a preferred time</source>
         <translation>Satu kegiatan dengan waktu tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activity preferred time</source>
         <translation type="obsolete">Kegiatan dengan waktu tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="638"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="643"/>
         <source>No gaps for a students set</source>
         <translation>Tidak ada jam kosong untuk sebuah kumpulan murid</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set no gaps</source>
         <translation type="obsolete">Siswa diatur tidak ada gap</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="646"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="651"/>
         <source>No gaps for all students</source>
         <translation>Tidak ada gap untuk semua murid</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students no gaps</source>
         <translation type="obsolete">Murid tidak ada gap</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="654"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="659"/>
         <source>All students begin early</source>
         <translation>Semua murid mulai awal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students early</source>
         <translation type="obsolete">Murid awal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="662"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="667"/>
         <source>A set of activities are not overlapping</source>
         <translation>Kumpulan kegiatan tidak ada overlap</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activities not overlapping</source>
         <translation type="obsolete">Kegiatan-kegiatan tidak ada overlap</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="670"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="675"/>
         <source>Min n days between a set of activities</source>
         <translation>Min n hari antara kumpulan kegiatan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Min n days between activities</source>
         <translation type="obsolete">Min n hari antar kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="678"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="683"/>
         <source>An activity has a set of preferred times</source>
         <translation>Satu kegiatan mempunyai kumpulan waktu tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activity preferred times</source>
         <translation type="obsolete">Kegiatan dengan waktu tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="686"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="691"/>
         <source>All s&amp;pace constraints</source>
         <translation>Semua batasan tem&amp;pat</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="689"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="694"/>
         <source>All space constraints</source>
         <translation>Semua batasan tempat</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="705"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="710"/>
         <source>Space constraints</source>
         <translation>Batasan tempat</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="713"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="718"/>
         <source>Basic compulsory space constraints</source>
         <translation>Batasan tempat wajib sederhana</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Basic compulsory space</source>
         <translation type="obsolete">Ruang kompulsori biasa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="721"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="726"/>
         <source>A room is not available</source>
         <translation>Ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room not available</source>
         <translation type="obsolete">Ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="737"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="742"/>
         <source>An activity has a preferred room</source>
         <translation>Kegiatan dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activity preferred room</source>
         <translation type="obsolete">Kegiatan dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="745"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="750"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation>Kumpulan kegiatan dengan jam mulai yang sama ( hari apa saja)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activities same starting hour</source>
         <translation type="obsolete">Kegiatan dengan jam mulai yang sama</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Su&amp;bject tags</source>
         <translation type="obsolete">&amp;tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tags</source>
         <translation type="obsolete">tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="758"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="763"/>
         <source>I&amp;nstitution name</source>
         <translation>Nama &amp;Institusi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="761"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="766"/>
         <source>Institution name</source>
         <translation>Nama Insitutusi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="766"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="771"/>
         <source>&amp;Comments</source>
         <translation>&amp;Komentar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="769"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="774"/>
         <source>Comments</source>
         <translation>Komentar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="777"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="782"/>
         <source>An activity has a set of preferred rooms</source>
         <translation>Kegiatan dengan beberapa ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activity preferred rooms</source>
         <translation type="obsolete">Kegiatan dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="785"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="790"/>
         <source>&amp;ca (Catalan)</source>
         <translation>&amp;ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="788"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="793"/>
         <source>ca (Catalan)</source>
         <translation>ca (Catalan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="796"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="801"/>
         <source>&amp;ms (Malay)</source>
         <translation>&amp;ms (Malaysia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="799"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="804"/>
         <source>ms (Malay)</source>
         <translation>ms (Malaysia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1063"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1068"/>
         <source>A subject has a preferred room</source>
         <translation>Mata pelajaran dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject preferred room</source>
         <translation type="obsolete">Mata pelajaran dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1068"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1073"/>
         <source>A subject has a set of preferred rooms</source>
         <translation>Mata pelajaran dengan beberapa ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject preferred rooms</source>
         <translation type="obsolete">Mata pelajaran dengan beberapa ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="823"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="828"/>
         <source>&amp;pl (Polish)</source>
         <translation>&amp;pl (Polandia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="826"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="831"/>
         <source>pl (Polish)</source>
         <translation>pl (Polandia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="834"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="839"/>
         <source>&amp;tr (Turkish)</source>
         <translation>&amp;tr (Turki)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="837"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="842"/>
         <source>tr (Turkish)</source>
         <translation>tr (Turki)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="845"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="850"/>
         <source>&amp;nl (Dutch)</source>
         <translation>&amp;nl (Belanda)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="848"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="853"/>
         <source>nl (Dutch)</source>
         <translation>nl (Belanda)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="856"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="861"/>
         <source>&amp;de (German)</source>
         <translation>&amp;de (Jerman)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="861"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="866"/>
         <source>Teachers statistics</source>
         <translation>Statistik Guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="872"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="877"/>
         <source>Students statistics</source>
         <translation>Statistik Siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="877"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="882"/>
         <source>Subjects statistics</source>
         <translation>Statistik Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="885"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="890"/>
         <source>&amp;hu (Hungarian)</source>
         <translation>&amp;hu (Hungaria)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="893"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="898"/>
         <source>m&amp;k (Macedonian)</source>
         <translation>m&amp;k (Macedonia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="904"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="909"/>
         <source>Max gaps per week for all teachers</source>
         <translation>Jam kosong maks per minggu untuk semua guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Teachers max gaps per week</source>
         <translation type="obsolete">Guru gap maks per minggu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="909"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="914"/>
         <source>Max gaps per week for a teacher</source>
         <translation>Jam Kosong maks per minggu untuk seorang guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>A students set begins early</source>
         <translation type="obsolete">Seorang siswa diatur mulai awal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="919"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="924"/>
         <source>Max hours daily for a teacher</source>
         <translation>Jam maks harian untuk seorang guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="924"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="929"/>
         <source>Max hours daily for a students set</source>
         <translation>Jam maks harian untuk kelas paralel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="929"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="934"/>
         <source>Max hours daily for all students</source>
         <translation>Jam maks harian untuk semua siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="934"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="939"/>
         <source>Instructions</source>
         <translation>Instruksi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="945"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="950"/>
         <source>Search for updates on startup</source>
         <translation>Cari update pada saat permulaian</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="950"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="955"/>
         <source>Min hours daily for all students</source>
         <translation>Jam min harian untuk semua siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="955"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="960"/>
         <source>Min hours daily for a students set</source>
         <translation>Jam min harian untuk kelas paralel</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>A subject+subject tag have a preferred room</source>
         <translation type="obsolete">Mata pelajaran dan tag mata pelajaran dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>A subject+subject tag have a set of preferred rooms</source>
         <translation type="obsolete">Mata pelajaran dan tag mata pelajaran dengan beberapa ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="960"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="965"/>
         <source>Generate &amp;multiple variants</source>
         <translation>Hasilkan &amp;variasi jadwal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="963"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="968"/>
         <source>Generate multiple variants</source>
         <translation>Hasilkan variasi berganda</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="968"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="973"/>
         <source>2 activities are consecutive</source>
         <translation>2 kegiatan berurutan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="973"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="978"/>
         <source>An activity ends students day</source>
         <translation>Kegiatan berakhir hari siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="981"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="986"/>
         <source>e&amp;s (Spanish)</source>
         <translation>e&amp;s (Spanyol)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="986"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="991"/>
         <source>Restore default settings</source>
         <translation>Kembalikan aturan baku</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Timetable html level</source>
         <translation type="obsolete">level html jadwal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="996"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1001"/>
         <source>Min hours daily for all teachers</source>
         <translation>Jam min harian untuk semua guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1001"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1006"/>
         <source>Min hours daily for a teacher</source>
         <translation>Jam min harian untuk seorang guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1006"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1011"/>
         <source>Help on statistics</source>
         <translation>Bantuan pada statistik</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1011"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1016"/>
         <source>Help in other languages than English</source>
         <translation>Bantuan pada bahasa lain dari Inggris</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1019"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1024"/>
         <source>e&amp;l (Greek)</source>
         <translation>e&amp;l (Yunani)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1027"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1032"/>
         <source>&amp;ar (Arabic)</source>
         <translation>&amp;ar (Arab)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1035"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1040"/>
         <source>&amp;id (Indonesian)</source>
         <translation>&amp;id (Indonesian)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Level of html for generated timetables</source>
         <translation type="obsolete">Level html untuk jadwal dihasilkan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1043"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1048"/>
         <source>it (Italian)</source>
         <translation>it (Italia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="991"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="996"/>
         <source>Html level for generated timetables</source>
         <translation>Level html untuk jadwal yang digenerate</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="635"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
         <source>Max gaps per week for a students set</source>
         <translation>Jam kosong maks per minggu untuk semua kelas paralel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="643"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="648"/>
         <source>Max gaps per week for all students</source>
         <translation>Jam kosong maks per minggu untuk semua siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="651"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="656"/>
         <source>All students begin early (max beginnings at second hour)</source>
         <translation>Semua siswa harus datang awal (mulai paling lambat pada jam kedua)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="753"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="758"/>
         <source>Activity tags</source>
         <translation>Tag kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="914"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="919"/>
         <source>A students set begins early (max beginnings at second hour)</source>
         <translation>Seorang siswa harus datang awal (mulai paling lambat pada jam kedua)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1048"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1053"/>
         <source>Max gaps per day for all teachers</source>
         <translation>Jam Kosong maks per hari untuk semua guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1053"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1058"/>
         <source>Max gaps per day for a teacher</source>
         <translation>Jam Kosong maks per hari untuk seorang guru</translation>
     </message>
@@ -9655,195 +10221,220 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <translation>Batasan waktu guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="106"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="108"/>
         <source>Students time constraints</source>
         <translation>Batasan waktu siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="120"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="124"/>
         <source>Activities time constraints</source>
         <translation>Batasan waktu kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="144"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="149"/>
         <source>Misc space constraints</source>
         <translation>Batasan Tempat lainnya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="150"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="155"/>
         <source>Rooms space constraints</source>
         <translation>Batasan tempat ruang</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="156"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="161"/>
         <source>Activities space constraints</source>
         <translation>Batasan tempat kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="163"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="168"/>
         <source>Subjects space constraints</source>
         <translation>Batasan tempat Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="170"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="175"/>
         <source>Subjects and activity tags space constraints</source>
         <translation>Batasan tempat Mata pelajaran dan tag kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="177"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="182"/>
         <source>Students space constraints</source>
         <translation>Batasan tempat Siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="190"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="195"/>
         <source>Teachers space constraints</source>
         <translation>Batasan tempat Guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="547"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="552"/>
         <source>A teacher&apos;s not available times</source>
         <translation>Seorang guru tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="563"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="568"/>
         <source>A students set&apos;s not available times</source>
         <translation>Seorang siswa diatur tidak ada</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="571"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="576"/>
         <source>Break times (all teachers+all students not available)</source>
         <translation>Istirahat (semua guru+semua murid tidak tersedia)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="718"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="723"/>
         <source>A room&apos;s not available times</source>
         <translation>Ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="804"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="809"/>
         <source>A set of students has a home room</source>
         <translation>Kelas Paralel mempunyai ruang khusus</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="812"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="817"/>
         <source>A set of students has a set of home rooms</source>
         <translation>Kelas Paralel mempunyai beberapa ruang khusus</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1058"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1063"/>
         <source>Buildings</source>
         <translation>Gedung</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1073"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1078"/>
         <source>A subject+an activity tag have a preferred room</source>
         <translation>Mata Pelajaran+tag kegiatan dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1078"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1083"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
         <translation>Mata Pelajaran+tag kegiatan dengan beberapa ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1088"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1093"/>
         <source>A teacher has a home room</source>
         <translation>Guru dengan ruang khusus</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1093"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1098"/>
         <source>A teacher has a set of home rooms</source>
         <translation>Kelas Paralel mempunyai beberapa ruang khusus</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1098"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1103"/>
         <source>Max building changes per day for a students set</source>
         <translation>Perubahan gedung maks per hari untuk kelas paralel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1103"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1108"/>
         <source>Max building changes per day for all students</source>
         <translation>Perubahan gedung maks per hari untuk semua siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1108"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1113"/>
         <source>Max building changes per week for a students set</source>
         <translation>Perubahan gedung maks per minggu untuk kelas paralel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1113"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1118"/>
         <source>Max building changes per week for all students</source>
         <translation>Perubahan gedung maks per minggu untuk semua siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1118"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1123"/>
         <source>Min gaps between building changes for a students set</source>
         <translation>Jam kosong min antar perubahan gedung  untuk kelas paralel</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1123"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1128"/>
         <source>Min gaps between building changes for all students</source>
         <translation>Jam kosong min antar perubahan gedung  untuk semua siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1128"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1133"/>
         <source>Max building changes per day for a teacher</source>
         <translation>Perubahan gedung maks per hari untuk guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1133"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1138"/>
         <source>Max building changes per day for all teachers</source>
         <translation>Perubahan gedung maks per hari untuk semua guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1138"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1143"/>
         <source>Max building changes per week for a teacher</source>
         <translation>Perubahan gedung maks per minggu untuk guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1143"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1148"/>
         <source>Max building changes per week for all teachers</source>
         <translation>Perubahan gedung maks per minggu untuk semua guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1148"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1153"/>
         <source>Min gaps between building changes for a teacher</source>
         <translation>Jam kosong guru antar perubahan gedung untuk guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1153"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1158"/>
         <source>Min gaps between building changes for all teachers</source>
         <translation>Jam kosong guru antar perubahan gedung untuk semua guru</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1158"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1163"/>
         <source>A set of activities has same starting day (any hours)</source>
         <translation>Beberapa kegiatan mempunyai hari mulai yang sama (jam terserah)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1083"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1088"/>
         <source>Space constraints (activities)</source>
         <translation>Batasan temat (kegiatan)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="1163"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="1168"/>
         <source>Save data+timetable as...</source>
+        <translation>Simpan data+jadwal sebagai...</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1173"/>
+        <source>2 activities are ordered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1178"/>
+        <source>Max hours continuously for all teachers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1183"/>
+        <source>Max hours continuously for a teacher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1188"/>
+        <source>Max hours continuously for a students set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="1193"/>
+        <source>Max hours continuously for all students</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GenerateMultipleThread</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="97"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="99"/>
         <source>Timetable impossible to generate</source>
         <translation>Jadwal tidak mungkin dihasilkan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="100"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="103"/>
         <source>Time exceeded for current timetable</source>
         <translation>Waktu melebihi jadwal ini</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="115"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="121"/>
         <source>Timetable has %1 soft conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds</source>
         <translation>Jadwal mempunyai %1 faktor konflik lunak dan dihasilkan pada %2 jam, %3 menit dan %4 detik</translation>
     </message>
@@ -10647,7 +11238,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2008&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.3 (March 2008)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.5.4 (April 2008)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -10676,7 +11267,7 @@ p, li { white-space: pre-wrap; }
         <translation>Tutup</translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET FAQ:
 
 this documentation by Liviu Lalescu, reviewed and modified - 6 October 2007
@@ -11725,7 +12316,7 @@ Each constraint of type not available or preferred times which filters out impos
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Number of start hours (periods) per day
 (please specify also the name of the last hour of the day)
 Please be careful, you will have to input n+1 names
@@ -11813,7 +12404,7 @@ tidak interval (tidak seperti 08:00-09:00 atau seperti 13:45-14:55)</translation
         <translation>Jam ke-42</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Hour 61</source>
         <translation type="obsolete">Jam ke-61</translation>
     </message>
@@ -11947,7 +12538,7 @@ tidak interval (tidak seperti 08:00-09:00 atau seperti 13:45-14:55)</translation
         <translation>Mata Pelajaran = %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag=%1</source>
         <translation type="obsolete">tag mata pelajaran=%1</translation>
     </message>
@@ -11999,7 +12590,7 @@ tidak interval (tidak seperti 08:00-09:00 atau seperti 13:45-14:55)</translation
         <translation>Kegiatan sebesar ini akan dipecah menjadi %1 kegiatan lebih kecil per minggu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Componenent %1:</source>
         <translation type="obsolete">Komponen %1:</translation>
     </message>
@@ -12019,7 +12610,7 @@ tidak interval (tidak seperti 08:00-09:00 atau seperti 13:45-14:55)</translation
         <translation>FET informasi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Too many teachers for an activity. The current maximum is %1.
 If you really need more teachers per activity, please talk to the author</source>
         <translation type="obsolete">Terlalu banyak guru untuk kegiatan ini. Maksimal %1.
@@ -12031,7 +12622,7 @@ Jika anda ingin menambah lebih banyak guru per kegiatan, silahkan hubungi pembua
         <translation>Mata Pelajaran salah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Invalid subject tag</source>
         <translation type="obsolete">Tag mata pelajaran salah</translation>
     </message>
@@ -12183,7 +12774,7 @@ tersebut dan menambah sebuah pecahan kegiatan baru</translation>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -12267,6 +12858,51 @@ tersebut dan menambah sebuah pecahan kegiatan baru</translation>
     </message>
 </context>
 <context>
+    <name>ModifyConstraint2ActivitiesOrderedForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="16"/>
+        <source>FET - Modify constraint 2 activities ordered dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="35"/>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="43"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Batal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="67"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="89"/>
+        <source>Weight percentage
+(recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished">Persentase bobot
+(rekomendasi 0.0%-100.0%)</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="98"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="139"/>
+        <source>First activity</source>
+        <translation type="unfinished">Kegiatan Pertama</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform_template.ui" line="186"/>
+        <source>Second activity</source>
+        <translation type="unfinished">Kegiatan kedua</translation>
+    </message>
+</context>
+<context>
     <name>ModifyConstraintActivitiesNotOverlappingForm_template</name>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="16"/>
@@ -12325,27 +12961,27 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
 <context>
     <name>ModifyConstraintActivitiesPreferredRoomForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room</source>
         <translation type="obsolete">Ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>-1</source>
         <translation type="obsolete">-1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
@@ -12353,42 +12989,42 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
 <context>
     <name>ModifyConstraintActivitiesPreferredRoomsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>-1</source>
         <translation type="obsolete">-1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>All rooms (dbl. click adds)</source>
         <translation type="obsolete">Semua Ruang (klik ganda untuk tambah)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation type="obsolete">Ruang Dipilih (klik ganda  untuk hapus)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
@@ -12401,7 +13037,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Pertanyaan FET</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Are you sure you want to add this constraint for all activities? (no teacher, students, subject or subject tag specified)</source>
         <translation type="obsolete">Apakah anda yakin ingin menambah batasan ini ke semua kegiatan? (tidak ada guru, siswa, mata pelajaran atau tag mata pelajaran dipilih)</translation>
     </message>
@@ -12411,17 +13047,17 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Peringatan: 0 slot dipilih. Anda Past?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Note: if you use this constraint for all activities, there will be counted gaps for not allowed slots. You might get impossible timetables. If you use weight 100%, a correct approach is to use constraint break. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add this constraint for all activities? (no teacher, students, subject or activity tag specified)</source>
         <translation type="obsolete">Catatan: Jika anda menggunakan batasan ini untuk semua kegiatan, akan ada jam kosong untuk slot yang tidak diperbolehkan. Anda akan mendapatkan jadwal yang tidak bagus. Jika anda menggunakan bobot 100%, pendekatan yang lebih tepat adalah menggunakan batasan istirahat. Hanya jika anda perlu bobot kurang dari 100 anda dipaksa menggunakan bobot ini, tetapi harus hati-hati. Apakah anda ingin menambahkan batasan ini untuk semua kegiatan? (tidak ada guru, siswa, mata pelajaran atau tag kegiatan ditentukan)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>It is not good to add such a constraint for only a teacher. There will be counted gaps and you might get impossible data. It is highly recommended to use teacher not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
         <translation type="obsolete">Tidak bagus menambah suatu batasan hanya untuk satu guru. Ini akan dianggap jam kosong dan akan mendapatkan data yang rusak. Direkomendasikan menggunakan guru tidak tersedia atau istirahat. Jika benar-benar perlu gunakan bobot kurang dari 100%, mungkin anda dapat memaksa menggunakan batasan ini, tetapi hati-hati. Apakah anda pasti ingin menggunakan batasan ini?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>It is not good to add such a constraint for only a students set. There will be counted gaps and you might get impossible data. It is highly recommended to use students set not available or break constraints instead. Only if you need weight less than 100% you might be forced to use this constraint, but be careful. Are you sure you want to add current constraint?</source>
         <translation type="obsolete">Tidak bagus menambah suatu batasan hanya untuk satu kelas paralel. Ini akan dianggap jam kosong dan akan mendapatkan data yang rusak. Direkomendasikan menggunakan kelas paralel tidak tersedia atau istirahat. Jika benar-benar perlu gunakan bobot kurang dari 100%, mungkin anda dapat memaksa menggunakan batasan ini, tetapi hati-hati. Apakah anda pasti ingin menggunakan batasan ini?</translation>
     </message>
@@ -12432,12 +13068,16 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda menentukan semua kegiatan. Ini mungkin masalah kecil: jika anda menentukan sebuah slot tidak diperbolehkan antara dua buah yang boleh, yang slot tidak boleh akan dihitung sebagai jam kosong dalam jadwal
+
+ guru dan murid. Cara yang teraik antara menggunakan batasan jam istirahat.
+
+Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan ini tetapi berhati-hati untuk tidak mendapat jadwal yang tidak mungkin( jika guru/siswa anda dibatasi pada jam kosong/jam kosong awal dan jika anda membiarkan slot tidak boleh diantara 2 slot yang boleh atau sebuah slot awal tidak boleh pada hari dan slot boleh yang seterusnya, jam kosong ini akan dihitung dalam jadwal guru dan sisw)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="267"/>
         <source>Do you want to add current constraint?</source>
-        <translation type="unfinished"></translation>
+        <translation>Apakah anda ingin menambah batasan ini?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="250"/>
@@ -12446,7 +13086,11 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda menentukan hanya guru. Ini mungkin masalah kecil: jika anda menentukan sebuah slot tidak diperbolehkan antara dua buah yang boleh, yang slot tidak boleh akan dihitung sebagai jam kosong dalam jadwal
+
+ guru. Cara yang teraik antara menggunakan batasan guru tidak ada.
+
+Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan ini tetapi berhati-hati untuk tidak mendapat jadwal yang tidak mungkin( jika guru anda dibatasi pada jam kosong/jam kosong awal dan jika anda membiarkan slot tidak boleh diantara 2 slot yang boleh atau sebuah slot awal tidak boleh pada hari dan slot boleh yang seterusnya, jam kosong ini akan dihitung dalam jadwal guru)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimesform.cpp" line="267"/>
@@ -12455,7 +13099,11 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda menentukan kelas paralel. Ini mungkin masalah kecil: jika anda menentukan sebuah slot tidak diperbolehkan antara dua buah yang boleh, yang slot tidak boleh akan dihitung sebagai jam kosong dalam jadwal
+
+ guru. Cara yang terbaik antara menggunakan batasan siswa tidak ada.
+
+Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan ini tetapi berhati-hati untuk tidak mendapat jadwal yang tidak mungkin( jika guru/siswa anda dibatasi pada jam kosong/jam kosong awal dan jika anda membiarkan slot tidak boleh diantara 2 slot yang boleh atau sebuah slot awal tidak boleh pada hari dan slot boleh yang seterusnya, jam kosong ini akan dihitung dalam jadwal siswa)</translation>
     </message>
 </context>
 <context>
@@ -12486,7 +13134,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -12668,7 +13316,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -12834,7 +13482,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -12957,7 +13605,7 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -13036,57 +13684,57 @@ menghasilkan jadwal, mungkin anda perlu optimasi tanpa batasan ini</translation>
 <context>
     <name>ModifyConstraintBreakForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint break dialog</source>
         <translation type="obsolete">FET - Ubah batasan  pecah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>The important thing to notice is that a break does
 not induce gaps for teachers or students</source>
         <translation type="obsolete">Hal penting diperhatikakan adalah istirahat tidak
@@ -13160,6 +13808,16 @@ jam kosong bagi guru atau siswa</translation>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="167"/>
+        <source>FET information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform.cpp" line="167"/>
+        <source>Cannot proceed, current constraint is equal to another one (it is duplicated)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ModifyConstraintMinNDaysBetweenActivitiesForm_template</name>
@@ -13219,52 +13877,52 @@ paksakan berurutan</translation>
 <context>
     <name>ModifyConstraintRoomNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modifying constraint room not available</source>
         <translation type="obsolete">FET - Ubah batasan ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="obsolete">Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>-1</source>
         <translation type="obsolete">-1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room</source>
         <translation type="obsolete">Ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
@@ -13305,12 +13963,12 @@ paksakan berurutan</translation>
 <context>
     <name>ModifyConstraintStudentsEarlyForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint students early dialog</source>
         <translation type="obsolete">FET - Ubah batasan siswa datang cepat</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -13334,32 +13992,32 @@ jam kosong jam kosong awal).
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint is restrictive. It means that the students must begin their
 activities at the first available slot (allowed from breaks and students set
 not available). If students X are available on all the time, they must begin
@@ -13667,6 +14325,44 @@ jam kosong (jam mulai awal).
     </message>
 </context>
 <context>
+    <name>ModifyConstraintStudentsMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Modify constraint students max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="33"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="49"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="63"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="77"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="90"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Batal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="98"/>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+</context>
+<context>
     <name>ModifyConstraintStudentsMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="16"/>
@@ -13691,7 +14387,7 @@ jam kosong (jam mulai awal).
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="77"/>
         <source>Max hours</source>
-        <translation>Jam maks</translation>
+        <translation type="obsolete">Jam maks</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="90"/>
@@ -13702,6 +14398,11 @@ jam kosong (jam mulai awal).
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="98"/>
         <source>Ok</source>
         <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="77"/>
+        <source>Max hours daily</source>
+        <translation type="unfinished">Jam maks harian</translation>
     </message>
 </context>
 <context>
@@ -13820,37 +14521,37 @@ siswa)</translation>
 <context>
     <name>ModifyConstraintStudentsNoGapsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint students no gaps dialog</source>
         <translation type="obsolete">FET - Ubah batasan siswa tanpa jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -13876,27 +14577,27 @@ gap (gap awal).</translation>
 <context>
     <name>ModifyConstraintStudentsSetEarlyForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint students set early dialog</source>
         <translation type="obsolete">FET - Ubah batasan siswa diatur cepat</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -13919,22 +14620,22 @@ Catatan: siswa diatur tidak ada dan pecahan tidak dihitung sebagai
 gap (gap awal).</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set</source>
         <translation type="obsolete">Kelas Paralel</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint is restrictive. It means that the students must begin their
 activities at the first available slot (allowed from breaks and students set
 not available). If students X are available on all the time, they must begin
@@ -14388,6 +15089,49 @@ jam kosong (jam mulai awal).
     </message>
 </context>
 <context>
+    <name>ModifyConstraintStudentsSetMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Modify constraint students set max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="33"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="49"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="63"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="94"/>
+        <source>Students</source>
+        <translation type="unfinished">Siswa</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="108"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="121"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Batal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="129"/>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+</context>
+<context>
     <name>ModifyConstraintStudentsSetMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="16"/>
@@ -14417,7 +15161,7 @@ jam kosong (jam mulai awal).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="108"/>
         <source>Max hours</source>
-        <translation>Jam maks</translation>
+        <translation type="obsolete">Jam maks</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="121"/>
@@ -14428,6 +15172,11 @@ jam kosong (jam mulai awal).
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="129"/>
         <source>Ok</source>
         <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="108"/>
+        <source>Max hours daily</source>
+        <translation type="unfinished">Jam maks harian</translation>
     </message>
 </context>
 <context>
@@ -14566,32 +15315,32 @@ siswa)</translation>
 <context>
     <name>ModifyConstraintStudentsSetNoGapsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint students set no gaps dialog</source>
         <translation type="obsolete">FET - Ubah batasan siswa diatur tanpa jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 <byte value="x9"/>1. only no gaps or 
@@ -14614,12 +15363,12 @@ Catatan: siswa diatur tidak ada dan pecahan tidak dihitung sebagai
 gap (gap awal).</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students</source>
         <translation type="obsolete">Siswa</translation>
     </message>
@@ -14627,62 +15376,62 @@ gap (gap awal).</translation>
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint students set not available dialog</source>
         <translation type="obsolete">FET - Ubah batasan siswa diatur tidak ada</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students</source>
         <translation type="obsolete">Siswa</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint does not induce gaps (or early not respected) 
 for students. If a students set has lessons before and after this
 not available period, there will be no gaps counted</source>
@@ -14956,43 +15705,43 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
 <context>
     <name>ModifyConstraintSubjectSubjectTagPreferredRoomForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint subject subject tag preferred room</source>
         <translation type="obsolete">FET - Ubah batasan mata pelajaran tag mata pelajaran dgn ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room</source>
         <translation type="obsolete">Ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="obsolete">Persentase bobot
 (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>-1</source>
         <translation type="obsolete">-1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -15000,62 +15749,62 @@ periode tidak ada ini, tidak akan dianggap jam kosong</translation>
 <context>
     <name>ModifyConstraintSubjectSubjectTagPreferredRoomsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint subject subject tag preferred rooms</source>
         <translation type="obsolete">FET - Ubah batasan mata pelajaran tag mata pelajaran dgn ruang-ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
         <translation type="obsolete">Persentase bobot (rekomendasi 0.0%-100.0%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>-1</source>
         <translation type="obsolete">-1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add</source>
         <translation type="obsolete">Tambah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject</source>
         <translation type="obsolete">Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>All rooms (dbl. click adds)</source>
         <translation type="obsolete">Semua Ruang (klik ganda untuk tambah)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Item Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Selected rooms (dbl. click removes)</source>
         <translation type="obsolete">Ruang Dipilih (klik ganda  untuk hapus)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Singkatan Mata Pelajaran</translation>
     </message>
@@ -15478,6 +16227,49 @@ ada dan pecahan tidak dihitung sebagai gap.</translation>
     </message>
 </context>
 <context>
+    <name>ModifyConstraintTeacherMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Modify constraint teacher max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="27"/>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="35"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Batal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="49"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="65"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="79"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="98"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="129"/>
+        <source>Teacher</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ModifyConstraintTeacherMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="16"/>
@@ -15658,62 +16450,62 @@ mulai dengan jam min 2 dan tinggikan hingga dapat jadwal baru</translation>
 <context>
     <name>ModifyConstraintTeacherNotAvailableForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - Modify constraint teacher not available dialog</source>
         <translation type="obsolete">FET - Ubah batasan guru tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Current constraint</source>
         <translation type="obsolete">Batasan sekarang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage (necessary: 100%)</source>
         <translation type="obsolete">Persentase bobot (harus: 100%)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cancel</source>
         <translation type="obsolete">Batal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>100</source>
         <translation type="obsolete">100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Period</source>
         <translation type="obsolete">Periode</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day</source>
         <translation type="obsolete">Hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour</source>
         <translation type="obsolete">Jam mulai</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour</source>
         <translation type="obsolete">Jam akhir</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Ok</source>
         <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Teacher</source>
         <translation type="obsolete">Guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This constraint does not induce gaps for teachers.
 If a teacher has lessons before and after this
 not available period, there will be no gaps counted</source>
@@ -16019,6 +16811,44 @@ Catata: Guru tidak ada dan pecah tidakdihitung gap.</translation>
     </message>
 </context>
 <context>
+    <name>ModifyConstraintTeachersMaxHoursContinuouslyForm_template</name>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="16"/>
+        <source>FET - Modify constraint teachers max hours continuously dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="27"/>
+        <source>Ok</source>
+        <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="35"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Batal</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="49"/>
+        <source>Current constraint</source>
+        <translation type="unfinished">Batasan sekarang</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="65"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="79"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="98"/>
+        <source>Max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ModifyConstraintTeachersMaxHoursDailyForm_template</name>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="16"/>
@@ -16308,37 +17138,37 @@ tetapi mungkin akan terlalu besar dan anda akan mendapatkan jadwal yang tidak mu
 <context>
     <name>QObject</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activity: </source>
         <translation type="obsolete">Kegiatan:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7632"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8773"/>
         <source>T:</source>
         <translation>G:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source> no teachers, </source>
         <translation type="obsolete">tidak ada guru,</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>S:</source>
         <translation type="obsolete">S:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>ST:</source>
         <translation type="obsolete">ST:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>St:</source>
         <translation type="obsolete">St:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source> no students, </source>
         <translation type="obsolete">tidak ada siswa,</translation>
     </message>
@@ -16358,12 +17188,12 @@ tetapi mungkin akan terlalu besar dan anda akan mendapatkan jadwal yang tidak mu
         <translation>Batasan tempat berhubungan langsung dengan kegiatan ini:</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="151"/>
+        <location filename="../src/interface/fet.cpp" line="156"/>
         <source>FET warning</source>
         <translation>Peringatan FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="444"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -16374,17 +17204,17 @@ tetapi mungkin akan terlalu besar dan anda akan mendapatkan jadwal yang tidak mu
         <translation></translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of max hours problems</source>
         <translation type="obsolete">Abaikan sisa masalah jam maks</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility max hours</source>
         <translation type="obsolete">Lihat jam maks selanjutnya yang tidak cocok</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="459"/>
+        <location filename="../src/engine/generate_pre.cpp" line="496"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -16395,49 +17225,49 @@ Contoh: anda dibolehkan menggunakan 3 batasan: 6 jam 95%, 7 jam 100% dan 8 jam 1
 Silahka ubah sesuai dengan aturan dan dicoba lagi. Untuk lebih detil, gabung di milis atau email pembuat program</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="531"/>
+        <location filename="../src/engine/generate_pre.cpp" line="568"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Tidak dapat optimasi untuk grup %1, karena ada satu batasan dari tipe %2 jam maks harian dengan bobot 100% yang tidak dapat dilakukan karena jumlah hari per minggu, jumlah jam per hari, kumpulan siswa diatur tidak tersedia dan/atau istirahat. Jumlah dari total jam dari grup ini adalah %3 dan jumlah dari slot yang tersedia , menghitung jam maks harian dan semua batasan lain, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1782"/>
         <source>Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Silahkan ubah data dan dicoba lagi. Untuk lebih jelas, bergabunglah dengan milis atau author pembuat program</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="572"/>
+        <location filename="../src/engine/generate_pre.cpp" line="776"/>
         <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Tidak dapat optimasi untuk siswa, karena batasan dari jenis jam min harian yang berhubungan denga siswa mempunyai bobot 100%, Silakan ubah dan dicoba lagi. Untuk lebih detil, gabung dengan milis atau hubungi pembuat program
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of min hours problems</source>
         <translation type="obsolete">Abaikan sisa masalah jam min</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility min hours</source>
         <translation type="obsolete">Lihat jam min selanjutnya yang tidak cocok</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="591"/>
+        <location filename="../src/engine/generate_pre.cpp" line="795"/>
         <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Tidak dapat optimasi untuk siswa, karena batasan dari jenis jam min harian yang berhubungan dengan siswa TIDAK mempunyai bobot 100%, Silakan ubah dan dicoba lagi. Untuk lebih detil, gabung dengan milis atau hubungi pembuat program
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="867"/>
         <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Tidak dapat optimasi untuk grup %1, karena ada dua batasan dari jenis jam min harian dan persentase bobot lebih tinggi dari batasan dengan jam minimum yang lebih kecil. Anda diperbolehkan untuk setiap grup batasan paling penting dengan persentase bobot maksimum dan jam minimum harian terbesar yang dibolehkan. Silahkan ubah data anda dan dicoba lagi. Untuk lebih detil, gabung dengan milis atau email pembuat program</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they are generated if you start allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
         <translation type="obsolete">Untuk grup %1 anda tidak mempunyai cukup kegiatan untuk memenuhi batasan dari jenis jam min harian. Silakan ubah data dan dicoba lagi. Solusi yang mungkin adalah anda memiliki kelas paralel yang tidak diperlukan seperti &apos;kelas1 WHOLE YEAR&apos; dan grup dengan seperti &apos;kelas1 WHOLE YEAR WHOLE GRUP&apos;. Anda perlu menghapus kelas paralel dan grup dummi ini (dibuat ketika anda memulai alokasi dengan data siswa tidak lengkap). FET tidak dapat secara otomatis menghaus kelas paralel dan grup dummi ini. Untuk lebih detil, gabung milis atau email pembuat program</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="727"/>
+        <location filename="../src/engine/generate_pre.cpp" line="931"/>
         <source>For subgroup %1 cannot respect the constraint of type min hours daily on day %2, because of students set not available and/or break. Probably you have a day off for this subgroup. The workaround is described in the Help/Frequently Asked Questions menu (for short: keep constraint min hours daily for this students set, remove corresponding constraint students set not available (or break) for this students set, add a dummy activity for this students set with dummy subject and duration the number of hours per day and add a constraint activity preferred time for this dummy activity in the corresponding day, first hour)
 
 Please modify your data accordingly and try again</source>
@@ -16445,7 +17275,7 @@ Please modify your data accordingly and try again</source>
 Silahkan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1078"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -16456,194 +17286,194 @@ Contoh: anda diperbolekan menggunakan 3 batasa: 6 jam 95%, 7 jam 100%, dan 8 jam
 Silahkan diubah data dan dicoba lagi. Untuk lebih detil, gabung dengan milis atau email pembuat program</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="996"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1200"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Tidak dapat dioptimasi untuk guru %1, karena ada batasan dari jenis max %2 jam harian dengan bobot 100% yang tidak dapat dipenuhi karena jumlah hari per minggi, jumlah jam per hari, hari maks guru per minggu, guru tidak tersedia dan/atau istirahat. Jumlah dari total jam untuk guru ini adalah %3 dan jumlah dari slot tersedia adalah tergantung dari jam maks harian dan semua batasan lain, %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1039"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1400"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptiasi, karena anda mempunyai batasan jam min guru harian untuk guru %1 dengan bobot(persentase) dibawah 100. Sejak FET versi 5.4.0 hanya mungkin menggunakan bobot 100% untuk batasan ini. Silahakn ubah bobot menjadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1055"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1416"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation>Tidak dapat dioptimasi karena anda memiliki batasan jam min guru harian untuk guru %1 dengan %2 jam min harian dan jumlah jam kerja per hari hanya %3. Silahkan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1081"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1442"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam min guru harian  dengan bobot(persentase) dibawah 100. Sejak FET versi 5.4.0 hanya mungkin menggunakan bobot 100% untuk batasan ini. Silahakn ubah bobot menjadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1097"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1458"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>Tidak dapat dioptimasi karena anda memiliki batasan jam min guru harian  dengan %1 jam min harian dan jumlah jam kerja per hari hanya %2. Silahkan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1124"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1485"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation>Tidak dapat dioptimasi karena anda memiliki batasan %1 jam min guru harian untuk guru %2. Guru ini hanya mempunyai total %3 jam per minggi, jadi batasa ini tidak mungkin. Silahkan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1141"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1502"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation>TIdak dapat dioptimasi, karena anda mempunyai batasan guru %1 jam min harian untuk guru %2. Jumlah dari jam min harian harus paling kecil 2, untuk membuat batasan non-trivial. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
         <translation type="obsolete">Tidak dapat optimasi untuk guru %1, karena jumlah jam untuk guru ini adalah %2 dan anda hanya memiliki %3 dari x %4 jam dalam satu minggu. Mungkin anda perlu menaikkan 1 jumlah jam per hari (mungkin anda salah mengerti notasi jam FET)
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of teachers problems</source>
         <translation type="obsolete">Abaikan sisa masalah guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next teacher problem</source>
         <translation type="obsolete">Lihat masalah guru selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1337"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
         <translation type="obsolete">Tidak dapat optimasi untuk guru %1, karena jumlah jam untuk guru ini %2 dan anda hanya memiliki %3 slot kosong untuk batasan guru tidak tersedia dan/atau istirahat. Mungkin anda memasukkan batasan guru tidak tersedia atau isitrahat atau jumlah jam per hari yang salah, kurang dari 1, karena salah pergertian</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of teach. not avail. problems</source>
         <translation type="obsolete">Abaikan sisa masalah guru tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next teach. not avail. problem</source>
         <translation type="obsolete">Lihat masalah guru tidak ada selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1720"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Tidak dapat optimasi untuk guru %1, karena jumlah jam untuk guru ini adalah %2, dan anda hanya memiliki %3 hari yang diperbolehkan untuk batasan jam maks guru per minggu x %4 jam dalam satu hari. Mungkin ada kesalahan dalam data anda</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1777"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation>Tidak dapat optimasi untuk guru %1, karena batasa berlebih, guru maks hari per minggu, guru tidak tersedia dan/atau isitirahat. Jumlah dari jam totoal untuk guru ini adalalh %2 dan jumlah dari slot tersedia, tergantung maks hari per minggu dan semua batasan, %3.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize, because you have constraint teachers max gaps with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="obsolete">Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong mask guru dengan (persentase) bobot dibawah 100. Silahkan jadikan bobot 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of max gaps problems</source>
         <translation type="obsolete">Abaikan sisa masalah jam kosong maks</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility max gaps</source>
         <translation type="obsolete">Lihat jam kosong maks selanjutnya yang tidak cocok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize, because you have constraint teacher max gaps with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="obsolete">Tidak dapat optimasi, karena anda mempunyai batasan jam kosong guru maks dengan bobot (persentase) dibawah 100 untuk guru %1, Silakan ubah jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation type="obsolete">Tidak dapat optimasi untuk guru %1, karena ada dua batasan dari jenis jam kosong maks dan persentase bobot yang lebih tinggi pada batasan dari jam kosong lebih yang diperbolehkan. Anda diperbolehkan hanya mempunyai untuk setiap guru batasan paling penting dengan persentase bobot maksimum dan jam kosong min diperbolehkan. Silahkan diperbaiki dan dicoba lagi. untuk lebih detil, gabung dengan milis atau email pembuat program</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number of hours per day (probably you misunderstood FET hours notation)</source>
         <translation type="obsolete">Tidak dapat optimasi untuk grup %1, karena jumlah jam untuk grup ini %2 anda anda hanya memiliki %3 hari x %4 jam dalam satu minggu. Mungkin anda perlu meningkatkan jam per hari 1 ( mungkin anda salah mengerti notasi jam FET)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of students problems</source>
         <translation type="obsolete">Abaikan sisa masalah siswa</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next students problem</source>
         <translation type="obsolete">Lihat masalah siswa selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1709"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per day is less with 1, because of a misunderstanding</source>
         <translation type="obsolete">Tidak dapat optimasi untuk grup %1, karena jumlah jam untuk grup ini %2 dan anda hanya memiliki %3 slot kosong untuk batasan siswa tidak tersedia dan/atau istirahat. Mungkin anda memasukkan batasan guru tidak tersedia atau isitrahat atau jumlah jam per hari yang salah, kurang dari 1, karena salah pergertian</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of stud. not avail. problems</source>
         <translation type="obsolete">Abaikan sisa masalah siswa tidak tersedia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next stud. not avail. problem</source>
         <translation type="obsolete">Lihat masalah siswa tidak tersedia selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1743"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2104"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam maks guru per minggu dengan bobot(persentase) dibawah 100 untuk guru %1 . Sejak FET versi 5.2.17 hanya mungkin menggunakan bobot 100% untuk batasan ini. Silahakn ubah bobot menjadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of max days problems</source>
         <translation type="obsolete">Abaikan sisa masalah maks hari</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility max days</source>
         <translation type="obsolete">Lihat masalah hari maks selanjutnya yang tidak cocok</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1762"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2123"/>
         <source>Cannot optimize for teacher %1, because it has at least two constraints max days per week. Please modify your data correspondingly (leave maximum one constraint of type constraint teacher max days per week for each teacher) and try again</source>
         <translation>Tidak dapat dioptimasi karena anda mempunyai setidaknya dua batasan maks hari per minggu. Silakan ubah data (pertahankan batasan maks dari batasn guru maks hari per minggu untuk tiap guru) dan coba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of max days per week problems</source>
         <translation type="obsolete">Abaikan sisa masalah maks hari per minggu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility max days per week</source>
         <translation type="obsolete">Lihat maks hari per minggu yang tidak cocok selanjutnya
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for subgroup %1, because you have a no gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint no gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="obsolete">Tidak dapat optimasi untuk grup %1 karena anda mempunyai batasan tidak ada jam kosong dengan persentase bobot kurang dari 100%. Saat ini, algoritma hanya dapat optimasi  dengan batasan yang tidak ada atau ada dengan bobot 100%. Silahkan ubah data dan dicoba lag</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of early - no gaps problems</source>
         <translation type="obsolete">Abaikan sisa masalah awal - tidak ada jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility no gaps - early</source>
         <translation type="obsolete">Lihat tidak ada jam kosong- awal yang tidak cocok selanjutnya</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for subgroup %1, because you have an early constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="obsolete">Tidak dapat optimasi untuk grup %1 karena anda mempunyai batasan awal dengan persentase bobot kurang dari 100%. Saat ini, algoritma haya dapat optimasi  dengan batasan yang tidak ada atau ada dengan bobot 100%. Silahkan ubah data dan dicoba lag</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for subgroup %1, because a students early constraint exists for this subgroup, and you have not &apos;no gaps&apos; requirements for this subgroup. The algorithm can 1. optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or 2. only &apos;no gaps&apos; optimization without &apos;early&apos;. Please modify your data correspondingly and try again</source>
         <translation type="obsolete">Tidak dapat optimasi untuk grup %1, karena sebuah batasan siswa awal ada pada grup ini anda tidak punya permintaan &apos;tanpa jam kosong&apos; untuk grup ini. Algoritma dapat 1. optimasi dengan &apos;awal&apos; dan &apos;tanpa jam kosong&apos; dengan persentase bobot yang sama atau 2. hanya optimasi &apos;tanpa jam kosong&apos; tanpa &apos;awal&apos;. Silahkan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot optimize for subgroup %1, because early constraint has weight percentage %2, and &apos;no gaps&apos; constraint has weight percentage %3.. The algorithm can:
 1: Optimize with &apos;early&apos; and &apos;no gaps&apos; having the same weight percentage or
 2. Only &apos;no gaps&apos; optimization without &apos;early&apos;.
@@ -16654,42 +17484,42 @@ Please modify your data correspondingly and try again</source>
 Silahkan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2386"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Tidak dapat dioptimasi karena anda mempunyai batasan dari jenis guru tidak tersedia dengan persentase bobot kurang dari 100% untuk siswa  %1. Saat ini, FET hanya dapat optimasi dengan batasan siswa diatur tidak tersedia dengan bobot 100% (atau tanpa batasan). Silakan ubah data anda dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2071"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2432"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Tidak dapat dioptimasi karena anda mempunyai batasan dari jenis siswa diatur tidak tersedia dengan persentase bobot kurang dari 100% untuk siswa diatur %1. Saat ini, FET hanya dapat optimasi dengan batasan siswa diatur tidak tersedia dengan bobot 100% (atau tanpa batasan). Silakan ubah data anda dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2114"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2475"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Tidak dapat dioptimasi karena anda mempunyai batasan dari jenis istirahat dengan persentase bobot kurang dari 100% untuk siswa diatur %1. Saat ini, FET hanya dapat optimasi dengan batasan istirahat dengan bobot 100% (atau tanpa batasan). Silakan ubah data anda dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2163"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2524"/>
         <source>Cannot optimize, because you have constraints of type activity preferred time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Tidak dapat dioptimasi karena anda mempunyai batasan dari jenis kegiatan dengan waktu tertentu dengan tanpa hari atau jam dipilih (untuk kegiatan dengan id=%1) Silakan ubah data anda (hapus atau sunting batasan) dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of constraints problems</source>
         <translation type="obsolete">Abaikan sisa masalah batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incorrect constraint</source>
         <translation type="obsolete">LIhat batasan yang salah selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2737"/>
         <source>Cannot optimize, because you have no basic time constraints or its weight is lower than 100.0%. Please add a basic time constraint (100% weight)</source>
         <translation>Tidak dapat optimasi, karena anda tidak mempunyai batasan waktu biasa atau bobotnya lebih kecil dari 100.0%. Silahkan tambahkan sebuah batasan waktu biasa (bobot 100%)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2388"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2749"/>
         <source>Precomputing ... please wait</source>
         <translation>Prakomputasi... silahkan tunggu</translation>
     </message>
@@ -16699,72 +17529,72 @@ Silahkan ubah data anda dan dicoba lagi</translation>
         <translation>Informasi FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/studentsstatisticsform.cpp" line="137"/>
+        <location filename="../src/engine/rules.cpp" line="4071"/>
         <source>Canceled</source>
         <translation>Dibatalkan</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2904"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Tidak dapat optimasi, karena anda mempunyai batasan jenis kegiatan akhiri hari siswa untuk kegiatan dengan id=%1 dengan persentase bobot dibawah 100%. Batasan kegiatan akhiri hari siswa hanya boleh mempunyai persentase bobot 100%. Silahkan ubah data anda( hapus atau sunting batasan) dan dicoba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2600"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3000"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation>Batasan %1 tidak dapat dipenuhi karena guru %2 mempunyai paling banya %3 hari dari guru tidak tersedia, istirahat dan maks hari guru per minggu. Silahkan kecilkan bobot dari batasan ini ke atas dibawah 100% (tergantung pada situasi anda, jika 0% terlalu rendah, jadikan 90%, 95% atau bahkan 99,75%. Setiap bobot besar akan memperlambat program.Situasi dimana anda perlu lebih besar dari 0%, contohnya jia anda memiliki 5 kegiatan dengan kemungkinan hari 4 buah. Anda mungkin membaginya 1,1,1, dan 2, bukan 2,2, dan 1)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of min n days problems</source>
         <translation type="obsolete">Abaikan sisa masalah min n hari</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2623"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3023"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <translation>Batasan %1 tidak dapat dipenuhi karena grup %2 mempunyai paling banya %3 hari dari siswa tidak tersedia dan istirahat. Silahkan kecilkan bobot dari batasan ini ke atas dibawah 100% (tergantung pada situasi anda, jika 0% terlalu rendah, jadikan 90%, 95% atau bahkan 99,75%. Setiap bobot besar akan memperlambat program.Situasi dimana anda perlu lebih besar dari 0%, contohnya jia anda memiliki 5 kegiatan dengan kemungkinan hari 4 buah. Anda mungkin membaginya 1,1,1, dan 2, bukan 2,2, dan 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2949"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3349"/>
         <source>Cannot optimize, because you have no basic space constraints or its weight percentage is lower than 100.0%. Please add a basic space constraint with 100% weight</source>
         <translation>Tidak dapat dioptimasi, karena anda tidak mempunyai batasan tempat biasa atau persentase bobot kurang dair 100%. Silakan tambahkan batasan tempat biasa hingga bobot 100%</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from constraints subject (subject tag) preferred room(s) and activity preferred room(s) )</source>
         <translation type="obsolete">Tidak dapat hasilkan jadwal, karena untuk kegiatan dengan id=%1, anda tidak diberi ruang (dari batasan mata pelajaran (tag mata pelajaran) denga ruang tertentu dan kegiatan dengan ruang tertentu)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of activities without rooms</source>
         <translation type="obsolete">Abaikan sisa masalah kegiatan tanpa ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next problem</source>
         <translation type="obsolete">Lihat masalah selanjutnya</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from the allowed number of students)</source>
         <translation type="obsolete">Tidak dapat hasilkan jadwal, karena untuk kegiatan dengan id=%1 anda tidak diberi ruang (dari jumlah siswa diperbolehkan)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>N:</source>
         <translation type="obsolete">N:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>C:</source>
         <translation type="obsolete">C:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Name=</source>
         <translation type="obsolete">Nama=</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Capacity=</source>
         <translation type="obsolete">Kapasitas=</translation>
     </message>
@@ -16774,37 +17604,37 @@ Silahkan ubah data anda dan dicoba lagi</translation>
         <translation>Batasan tempat langsung berhubungan dengan ruang ini:</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3519"/>
+        <location filename="../src/engine/rules.cpp" line="3616"/>
         <source>Monday</source>
         <translation>Senin</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3520"/>
+        <location filename="../src/engine/rules.cpp" line="3617"/>
         <source>Tuesday</source>
         <translation>Selasa</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3521"/>
+        <location filename="../src/engine/rules.cpp" line="3618"/>
         <source>Wednesday</source>
         <translation>Rabu</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3522"/>
+        <location filename="../src/engine/rules.cpp" line="3619"/>
         <source>Thursday</source>
         <translation>Kamis</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3523"/>
+        <location filename="../src/engine/rules.cpp" line="3620"/>
         <source>Friday</source>
         <translation>Jumat</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3525"/>
+        <location filename="../src/engine/rules.cpp" line="3622"/>
         <source>Default institution</source>
         <translation>Institusi baku</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3526"/>
+        <location filename="../src/engine/rules.cpp" line="3623"/>
         <source>Default comments</source>
         <translation>Komentar baku</translation>
     </message>
@@ -16823,28 +17653,28 @@ Please talk to the author or increase variable MAX_SUBJECTS</source>
 Silahkan hubungi pembuat program atau menaikkan variabel MAX_SUBJECTS</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>You have too many years.
 Please talk to the author or increase variable MAX_YEARS</source>
         <translation type="obsolete">Anda mempunyai terlalu banyak kelas
 Silahkan hubungi pembuat program atau menaikkan variabel MAX_YEARS</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>You have too many groups per year.
 Please talk to the author or increase variable MAX_GROUPS_PER_YEAR</source>
         <translation type="obsolete">Anda mempunyai terlalu banyak kelas paralel per tahun.
 Silahkan hubungi pembuat program atau menaikkan variabel MAX_GROUPS_PER_YEAR</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>You have too many subgroups per group.
 Please talk to the author or increase variable MAX_SUBGROUPS_PER_GROUP</source>
         <translation type="obsolete">Anda mempunyai terlalu banyak grup per kelas paralel.
 Silahkan hubungi pembuat program atau menaikkan variabel MAX_SUBGROUPS_PER_YEAR</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>You have too many total subgroups.
 Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS</source>
         <translation type="obsolete">Anda mempunyai terlalu banyak total grup .
@@ -16879,7 +17709,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
 Silahkan hubungi pembuat program atau menaikkan variabel MAX_SPACE_CONSTRAINTS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3004"/>
+        <location filename="../src/engine/rules.cpp" line="3101"/>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
@@ -16888,22 +17718,22 @@ Silahkan hubungi pembuat program atau menaikkan variabel MAX_SPACE_CONSTRAINTS</
 %2 karena hanya ada satu ruang sisa pada batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3421"/>
+        <location filename="../src/engine/rules.cpp" line="3518"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
         <translation>Tidak dapat membuat atau menggunakan direktori %1 - tidak dapat lanjut</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="215"/>
+        <location filename="../src/interface/fet.cpp" line="222"/>
         <source>FET critical</source>
         <translation>Kritis FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3436"/>
+        <location filename="../src/engine/rules.cpp" line="3533"/>
         <source>Cannot open log file for writing ... please check your disk free space. Opening of file aborted</source>
         <translation>Tidak dapat buka file log untuk menulis... silahkan periksa ruang kosong disk. Pembukaan file dibatalkan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3495"/>
+        <location filename="../src/engine/rules.cpp" line="3592"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min n days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity)If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
@@ -16912,71 +17742,71 @@ Please note that the default weight percentage of constraints min n days between
 Silakan dicatat persentase bobot dari batasan min n hari antar kegiatan biasanya 95% (biasanya memuaskan) dan &apos;paksakan berurutan jika hari yang sama&apos; akan diatur menjadi true (artinya jika kegiatan pada hari yang sama, akan ditempatkan berurutan, jika sebuah kegiatan dengan durasi lebih lama). Jika anda mau, anda dapat mengubahnya menjadi 100%, secara manual di file input fet atau dari antarmuka</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3500"/>
+        <location filename="../src/engine/rules.cpp" line="3597"/>
         <source>Opening a newer FET version file ... file will be opened but it is recommended to update your FET software to the latest version</source>
         <translation>Membuka sebuah file FET versi lebih baru... file akan terbuka tetapi direkomendasikan untuk perbaharui FET anda ke versi terbaru</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4104"/>
+        <location filename="../src/engine/rules.cpp" line="4201"/>
         <source>Activity with id=%1 contains invalid data - skipping</source>
         <translation>Kegiatan dengan ie=%1 mengandungd data salah - diabaikan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4112"/>
+        <location filename="../src/engine/rules.cpp" line="4209"/>
         <source>File contains deprecated equipments list - will be ignored
 </source>
         <translation>File mengandung daftar alat deprecated - akan diabaikan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>File contains deprecated buildings list - will be ignored
 </source>
         <translation type="obsolete">File mengandung daftar bangunan deprecated - akan diabaikan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4328"/>
+        <location filename="../src/engine/rules.cpp" line="4425"/>
         <source>Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan hari GuruTidakTersedia corrupt untuk guru %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4343"/>
+        <location filename="../src/engine/rules.cpp" line="4440"/>
         <source>Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam mulai GuruTidakTersedia corrupt untuk guru %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4358"/>
+        <location filename="../src/engine/rules.cpp" line="4455"/>
         <source>Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam akhir GuruTidakTersedia corrupt untuk guru %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4534"/>
+        <location filename="../src/engine/rules.cpp" line="4631"/>
         <source>Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 &lt;= 0 or &gt;nDaysPerWeek, ignoring constraint</source>
         <translation>Batasan hari mulai GuruMaksHariPerMinggu corrupt untuk guru %1, hari maks%2&lt;=0 atau &gt;nHariPerMinggu...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4580"/>
+        <location filename="../src/engine/rules.cpp" line="4677"/>
         <source>Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan hari SiswaDiaturTidakTersedia corrupt untuk siswa %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4595"/>
+        <location filename="../src/engine/rules.cpp" line="4692"/>
         <source>Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam mulai SiswaDiaturTidakTersedia corrupt untuk siswa %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4610"/>
+        <location filename="../src/engine/rules.cpp" line="4707"/>
         <source>Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam akhir SiswaDiaturTidakTersedia corrupt untuk siswa %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5011"/>
+        <location filename="../src/engine/rules.cpp" line="5073"/>
         <source>File contains deprecated constraint teachers max hours continuously - will be ignored
 </source>
-        <translation>File mengandung batasan jam maks guru deprecated berkesinambungan - akan diabaikan
+        <translation type="obsolete">File mengandung batasan jam maks guru deprecated berkesinambungan - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5216"/>
+        <location filename="../src/engine/rules.cpp" line="5341"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
         <translation>File mengandung batasan guru grup jam maks harian deprecated berkesinambungan - akan diabaikan
@@ -16984,63 +17814,63 @@ Silakan dicatat persentase bobot dari batasan min n hari antar kegiatan biasanya
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5263"/>
+        <location filename="../src/engine/rules.cpp" line="5388"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
         <translation>File mengandung batasan siswa n jam harian deprecated berkesinambungan - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5313"/>
+        <location filename="../src/engine/rules.cpp" line="5438"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
         <translation>File mengandung batasan siswa diatur n jam harian deprecated berkesinambungan - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5571"/>
+        <location filename="../src/engine/rules.cpp" line="5778"/>
         <source>Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan hari  KegiatanDenganWaktuTertentu corrupt untuk kegiatan denga id %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5587"/>
+        <location filename="../src/engine/rules.cpp" line="5794"/>
         <source>Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam KegiatanDenganWaktuTertentu corrupt untuk kegiatan denga id %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5662"/>
+        <location filename="../src/engine/rules.cpp" line="5910"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
         <translation>File mengandung batasan kegiatan akhiri hari deprecated berkesinambungan - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5768"/>
+        <location filename="../src/engine/rules.cpp" line="6016"/>
         <source>Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan hari  KegiatanDenganWaktuTertentu corrupt untuk kegiatan denga id %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5786"/>
+        <location filename="../src/engine/rules.cpp" line="6034"/>
         <source>Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam KegiatanDenganWaktuTertentu corrupt untuk kegiatan denga id %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint Break day corrupt,  day %1 is inexistent ... ignoring constraint</source>
         <translation type="obsolete">Batasan hari  Istirahat corrup, hari %1 tidak ada.. abaikan batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint Break start hour corrupt, hour %! is inexistent ... ignoring constraint</source>
         <translation type="obsolete">Batasan jam awal Istirahat corrup, jam %1 tidak ada.. abaikan batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint Break end hour corrupt, hour %1 is inexistent ... ignoring constraint</source>
         <translation type="obsolete">Batasan jam akhir Istirahat corrup, jam %1 tidak ada.. abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6633"/>
+        <location filename="../src/engine/rules.cpp" line="6881"/>
         <source>File contains deprecated constraint students set interval max days per week - will be ignored
 </source>
         <translation>File mengandung batasan siswa interval hari maks per minggu deprecated berkesinambungan - akan diabaikan
@@ -17048,7 +17878,7 @@ Silakan dicatat persentase bobot dari batasan min n hari antar kegiatan biasanya
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6699"/>
+        <location filename="../src/engine/rules.cpp" line="6947"/>
         <source>File contains deprecated constraint teacher interval max days per week - will be ignored
 </source>
         <translation>File mengandung batasan guru interval hari maks per minggu deprecated - akan diabaikan
@@ -17056,45 +17886,45 @@ Silakan dicatat persentase bobot dari batasan min n hari antar kegiatan biasanya
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6764"/>
+        <location filename="../src/engine/rules.cpp" line="6947"/>
         <source>File contains deprecated constraint 2 activities ordered - will be ignored
 </source>
-        <translation>File mengandung batasan 2 kegiatan berurut  deprecated - akan diabaikan
+        <translation type="obsolete">File mengandung batasan 2 kegiatan berurut  deprecated - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6814"/>
+        <location filename="../src/engine/rules.cpp" line="7012"/>
         <source>File contains deprecated constraint 2 activities grouped - will be ignored
 </source>
         <translation>File mengandung batasan 2 kegiatan berkelompok deprecated - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation type="obsolete">Batasan hari KegiatanDenganWaktuTertentu corrupt untuk guru nama=%1, siswa nama=%2, mata pelajaran nama=%3, tag mata pelajaran=%4, jam %5 adalah tidak ada... Abaikan batasan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, subject tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation type="obsolete">Batasan jam KegiatanDenganWaktuTertentu corrupt untuk guru nama=%1, siswa nama=%2, mata pelajaran nama=%3, tag mata pelajaran=%4, jam %5 adalah tidak ada... Abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6990"/>
+        <location filename="../src/engine/rules.cpp" line="7188"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
         <translation>File mengandung batasan guru tag mata pelaaran jam maks berurutan  deprecated  - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7037"/>
+        <location filename="../src/engine/rules.cpp" line="7235"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
         <translation>File mengandung batasan guru tag mata pelaaran jam maks berurutan  deprecated  - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8766"/>
+        <location filename="../src/engine/rules.cpp" line="8964"/>
         <source>Constraint
 %1
 not added - must be a duplicate</source>
@@ -17103,67 +17933,67 @@ not added - must be a duplicate</source>
 tidak ditambah - duplikasi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7198"/>
+        <location filename="../src/engine/rules.cpp" line="7396"/>
         <source>Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan RuangTidakTersedia corrupt untuk ruang %1, hari %2 tidak ada ... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7213"/>
+        <location filename="../src/engine/rules.cpp" line="7411"/>
         <source>Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam mulai RuangTidakTersedia corrupt untuk ruang %1, hari %2 tidak ada ... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7228"/>
+        <location filename="../src/engine/rules.cpp" line="7426"/>
         <source>Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam akhir RuangTidakTersedia corrupt untuk ruang %1, hari %2 tidak ada ... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7474"/>
+        <location filename="../src/engine/rules.cpp" line="7672"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
         <translation>File mengandung batasan jenis ruang dengan mata pelajaran terlarang deprecated - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of deprecated constraints</source>
         <translation type="obsolete">Abaikan sisa masalah batasan deprecated</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next deprecated constraint</source>
         <translation type="obsolete">LIhat batasan deprecated selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7518"/>
+        <location filename="../src/engine/rules.cpp" line="7716"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
         <translation>File mengandung batasan mata pelajaran perlu peralatan deprecated - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7562"/>
+        <location filename="../src/engine/rules.cpp" line="7760"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
         <translation>File mengandung batasan tag mata pelajaran perlu peralatan deprecated - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7610"/>
+        <location filename="../src/engine/rules.cpp" line="7808"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
         <translation>File mengandung batasan guru perlu ruang deprecated - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7655"/>
+        <location filename="../src/engine/rules.cpp" line="7853"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
         <translation>File mengandung batasan guru mata pelajran perlu ruang deprecated - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7703"/>
+        <location filename="../src/engine/rules.cpp" line="7901"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
         <translation>File mengandung batasan jumlah ruang untuk siswa diperkecil deprecated berkesinambungan - akan diabaikan
@@ -17171,7 +18001,7 @@ tidak ditambah - duplikasi</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7739"/>
+        <location filename="../src/engine/rules.cpp" line="7937"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
         <translation>File mengandung batasan jumlah ruang untuk guru diperkecil deprecated berkesinambungan - akan diabaikan
@@ -17179,27 +18009,27 @@ tidak ditambah - duplikasi</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7892"/>
+        <location filename="../src/engine/rules.cpp" line="8090"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
         <translation>File mengandung batasan kegiatan dengan ruang sama deprecated - akan diabaikan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8332"/>
+        <location filename="../src/engine/rules.cpp" line="8530"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
         <translation>File mengandung batasan perubahan gedung maks per hari per guru deprecated  - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8372"/>
+        <location filename="../src/engine/rules.cpp" line="8570"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
         <translation>File mengandung batasan perubahan gedung maks per hari untuk siswa deprecated  - akan diabaikan
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8412"/>
+        <location filename="../src/engine/rules.cpp" line="8610"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
         <translation>File mengandung batasan perubahan ruang maks per hari untuk guru deprecated berkesinambungan - akan diabaikan
@@ -17207,7 +18037,7 @@ tidak ditambah - duplikasi</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8452"/>
+        <location filename="../src/engine/rules.cpp" line="8650"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
         <translation>File mengandung batasan perubahan ruang maks per hari untuk siswa deprecated berkesinambungan - akan diabaikan
@@ -17215,17 +18045,17 @@ tidak ditambah - duplikasi</translation>
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Saved of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
         <translation type="obsolete">Penyimpana file log memberikan kode kesalahan %1, yang artinya anda tidak dapat melihat file log dari pembacaan file. Silahakn periksa ruang kosong disk anda</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8802"/>
+        <location filename="../src/engine/rules.cpp" line="9000"/>
         <source>Cannot open filename for writing ... please check your disk free space. Saving of file aborted</source>
         <translation>Tidak dapat membuka nama file untuk penulisan.. silahkan periksa ruang kosong disk anda. Penyimpanan dibatalkan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8914"/>
+        <location filename="../src/engine/rules.cpp" line="9112"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
         <translation>Penyimpanan file memberi kode kesalahan %1, yang artinya penyimpanan gagal. Silahkan periksa ruang ksong disk anda</translation>
     </message>
@@ -17303,17 +18133,17 @@ tidak ditambah - duplikasi</translation>
         <translation>Batasan tempat biasa mandatori: ruang dengan nama %1 mempunyai lebih dari satu alokasi kegiatan pada hari %2, jam %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8084"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9225"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Ini meningkatkan konflik sebesar %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Room not available</source>
         <translation type="obsolete">Ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8009"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9150"/>
         <source>WP:%1%</source>
         <translation>WP:%1%</translation>
     </message>
@@ -17323,18 +18153,18 @@ tidak ditambah - duplikasi</translation>
         <translation>R:%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>D:%1</source>
         <translation type="obsolete">D:%1
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>SH:%1</source>
         <translation type="obsolete">SH:%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>EH:%1</source>
         <translation type="obsolete">EH:%1</translation>
     </message>
@@ -17349,62 +18179,62 @@ tidak ditambah - duplikasi</translation>
         <translation>Ruang:%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Day=%1</source>
         <translation type="obsolete">Hari=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Start hour=%1</source>
         <translation type="obsolete">Jam mulai=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour=%1</source>
         <translation type="obsolete">Jam akhir=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint room not available is wrong because it refers to inexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan ruang tidak tersedia salah karena ruang yang diatur, tidak ada. Silahkan diperbaiki (menghapus adalah solusi), Silahkan laporkan bug potensial. Batasan adalah:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint room not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing it and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena hari terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint room not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena berhubungn jam awal terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint room not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena berhubungn jam akhir terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint room not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing it and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena jam awal&gt;= jam akhir. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Space constraint room not available broken for room %1 on day %2, hour %3</source>
         <translation type="obsolete">Batasan tempat ruang tidak tersedia tidak terpenuhi untuk ruang %1 pada hari %2 , jam %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7533"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8674"/>
         <source>FET error in data</source>
         <translation>Kesalahan FET pada data</translation>
     </message>
@@ -17426,17 +18256,17 @@ tidak ditambah - duplikasi</translation>
         <translation>id kegiatan salah utuk batasan kegiatan dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7641"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8782"/>
         <source>,S:</source>
         <translation>,S:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>,ST:</source>
         <translation type="obsolete">,ST:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7647"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8788"/>
         <source>,St:</source>
         <translation>,St:</translation>
     </message>
@@ -17471,7 +18301,7 @@ tidak ditambah - duplikasi</translation>
         <translation>Batasan tempat kegiatan dengan ruang tertentu tidak terpenuhi untuk kegiatan dengan id=%1 (mata pelajaran=%2), ruang =%3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4394"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4788"/>
         <source>S:%1</source>
         <translation>S:%1</translation>
     </message>
@@ -17506,32 +18336,32 @@ tidak ditambah - duplikasi</translation>
         <translation>Batasan tempat mata pelajaran dengan ruang tertentu tidak terpenuhi untuk kegiatan dengan id=%1 (mata pelajaran=%2)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>ST:%1</source>
         <translation type="obsolete">ST:%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject subject tag preferred room</source>
         <translation type="obsolete">Tag mata pelajaran dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag=%1</source>
         <translation type="obsolete">Tag Mata Pelajaran=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Space constraint subject subject tag preferred room broken for activity with id %1 (subject=%2, subject tag=%3)</source>
         <translation type="obsolete">Konflik tempat: mata pelajaran tag mata pelajaran dengan ruang tertentu tidak terpenuhi untuk kegiatan dengan id%1(mata pelajaran=%2, tag mata pelajaran=%3)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject subject tag preferred rooms</source>
         <translation type="obsolete">mata pelajaran tag mata pelajaran dengan ruang tertentu</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Space constraint subject subject tag preferred rooms broken for activity with id %1 (subject=%2, subject tag=%3)</source>
         <translation type="obsolete">Batasan tempat: mata pelajaran tag mata pelajaran dengan ruang tertentu tidak terpenuhi untuk kegiatan dengan id%1(mata pelajaran=%2, tag mata pelajaran=%3)</translation>
     </message>
@@ -17621,7 +18451,7 @@ tidak ditambah - duplikasi</translation>
         <translation>Batasan tempat berhubungan langsung dengan grup siswa ini:</translation>
     </message>
     <message>
-        <location filename="../src/interface/subjectsstatisticsform.cpp" line="45"/>
+        <location filename="../src/engine/subject.cpp" line="35"/>
         <source>Subject</source>
         <translation>Mata Pelajaran</translation>
     </message>
@@ -17641,22 +18471,22 @@ tidak ditambah - duplikasi</translation>
         <translation>Batasan tempat berhubungan langsung dengan mata pelajaran ini:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag</source>
         <translation type="obsolete">Tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Time constraints directly related to this subject tag:</source>
         <translation type="obsolete">Batasan waktu berhubungan langsung dengan tag mata pelajaran ini:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Space constraints directly related to this subject tag:</source>
         <translation type="obsolete">Batasan tempat berhubungan langsung dengan tag mata pelajaran ini:</translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersstatisticsform.cpp" line="45"/>
+        <location filename="../src/engine/teacher.cpp" line="35"/>
         <source>Teacher</source>
         <translation>Guru</translation>
     </message>
@@ -17732,12 +18562,12 @@ tidak ditambah - duplikasi</translation>
         <translation>Guru tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3278"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3672"/>
         <source>T:%1</source>
         <translation>T:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8019"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9160"/>
         <source>Time constraint</source>
         <translation>Batasan waktu</translation>
     </message>
@@ -17747,42 +18577,42 @@ tidak ditambah - duplikasi</translation>
         <translation>Guru = %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint teacher not available is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena ketidakadaaan guru. Silahkan perbaiki (menghapusnya adalah salah satu solusi). Silahkan laporkan bug potensial. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint teacher not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena hari terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint teacher not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena jam mulai terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint teacher not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena jam akhir terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint teacher not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan guru tidak tersedia salah karena jam awal &gt;= jam akhir. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Time constraint teacher not available broken for teacher %1 on day %2, hour %3</source>
         <translation type="obsolete">Batasan waktu guru tidak tersedia terpecah untuk guru %1 pada hari %2, jam %3</translation>
     </message>
@@ -17794,45 +18624,45 @@ tidak ditambah - duplikasi</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint students set not available is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan siswa diatur tidak tersedia salah karena hari dihapus . Silahkan diperbaiki dan dicoba lagi. Perbaiki artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint students set not available is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan siswa diatur tidak tersedia salah karena jam awal terhapus. Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint students set not available is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan siswa diatur tidak tersedia salah karena jam akhir terhapus. Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint students set not available is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan  siswa diatur tidak tersedia salah karena jam awal &gt;= jam akhir. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set not available</source>
         <translation type="obsolete">Siswa diatur tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3944"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4338"/>
         <source>Students=%1</source>
         <translation>Sisw=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Time constraint students not available</source>
         <translation type="obsolete">Batasan wkatu siswa tidak tersedia</translation>
     </message>
@@ -17842,7 +18672,7 @@ tidak ditambah - duplikasi</translation>
         <translation>pecah untuk grup: %1 pada hari %2, jam %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6945"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7789"/>
         <source>Following constraint is wrong (because you need 2 or more activities. Please correct it):
 %1</source>
         <translation>Batasan berikut salah (karena anda memerlukan 2 atau lebih kegiatan. Silahkan diperbaiki):
@@ -17854,12 +18684,12 @@ tidak ditambah - duplikasi</translation>
         <translation>Kegiatan-kegiatasan dengan waktu mulai sama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6689"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7533"/>
         <source>NA:%1</source>
         <translation>NA:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7002"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7846"/>
         <source>ID:%1</source>
         <translation>ID:%1</translation>
     </message>
@@ -17869,12 +18699,12 @@ tidak ditambah - duplikasi</translation>
         <translation>Kegiatan harus mempunyai jam mulai sama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7019"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7863"/>
         <source>Number of activities=%1</source>
         <translation>Jumlah kegiatan: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7021"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7865"/>
         <source>Activity with id=%1</source>
         <translation>Kegiatan dengan id=%1</translation>
     </message>
@@ -17884,22 +18714,22 @@ tidak ditambah - duplikasi</translation>
         <translation>ID salah (tidak ada) untuk kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6725"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7569"/>
         <source>T: </source>
         <translation>T:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6734"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7578"/>
         <source> , S: </source>
         <translation>,S:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source> , ST: </source>
         <translation type="obsolete">,ST:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6740"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7584"/>
         <source> , St: </source>
         <translation>,St:</translation>
     </message>
@@ -17909,7 +18739,7 @@ tidak ditambah - duplikasi</translation>
         <translation>Batasan waktu: kegiatan dengan waktu mulai sama tidak terpenuhi, karena kegiatan denga id=%1 tidak pada jam mulai yang sama dengan kegiatan dengan id=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7128"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7972"/>
         <source>conflicts factor increase=%1</source>
         <translation>faktor konflik meningkat=%1</translation>
     </message>
@@ -17989,7 +18819,7 @@ tidak ditambah - duplikasi</translation>
         <translation>guru1 %1, kumpulan siswa1 %2, mata pelajaran1 %3</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>, subject tag %4</source>
         <translation type="obsolete">, tag mata pelajran %4</translation>
     </message>
@@ -18024,7 +18854,7 @@ tidak ditambah - duplikasi</translation>
         <translation>Guru maks %1 jam harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8008"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9149"/>
         <source>TN:%1</source>
         <translation>TN:%1</translation>
     </message>
@@ -18044,27 +18874,27 @@ tidak ditambah - duplikasi</translation>
         <translation>Guru:  maks hari per minggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2498"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2892"/>
         <source>MD:%1</source>
         <translation>MD:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2509"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2903"/>
         <source>Teacher max. days per week</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2513"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2907"/>
         <source>Max. days per week=%1</source>
         <translation>Maks hari per minggu=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2595"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2989"/>
         <source>Time constraint teacher max days per week broken for</source>
         <translation>Batasan waktu guru maks hari per minggu pecah untuk</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2598"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="2992"/>
         <source>teacher: %1.</source>
         <translation>guru:%1.</translation>
     </message>
@@ -18074,17 +18904,17 @@ tidak ditambah - duplikasi</translation>
         <translation>Guru jam kosong maks per minggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3929"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4323"/>
         <source>MG:%1</source>
         <translation>MG:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2724"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3118"/>
         <source>Max gaps per week:%1</source>
         <translation>Jam kosong maks per minggu: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2776"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3170"/>
         <source>Time constraint teachers max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
         <translation>Batasan waktu  jam kosong guru maks per minggu tidak terpenuhi: guru %1, faktor konflik meningkat=%2</translation>
     </message>
@@ -18094,95 +18924,95 @@ tidak ditambah - duplikasi</translation>
         <translation>Guru maks jam kosong per minggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3294"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3688"/>
         <source>Teacher: %1</source>
         <translation>Guru = %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3295"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3689"/>
         <source>Max gaps per week: %1</source>
         <translation>Maks jam kosong per minggu: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="2981"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3375"/>
         <source>Time constraint teacher max gaps per week broken: teacher: %1, conflicts factor increase=%2</source>
         <translation>Batasan waktu guru maks jam kosong per minggu pecah: Guru: %1, faktor konflik meningkat=%2</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Break</source>
         <translation type="obsolete">Istirahat </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint break is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan Istirahat tidak terpenuhi karena hari yang dihapus. Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint break is wrong because it refers to removed start hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan istiralhat salah  karena jam awal yang dihapus. Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint break is wrong because it refers to removed end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan istirahat salah  karena jam akhir  yang dihapus. Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint break is wrong because start hour &gt;= end hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="obsolete">Batasan istirahat salah karena jam mulai &gt;= jam akhir . Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Time constraint break not respected for activity with id %1, on day %2</source>
         <translation type="obsolete">Batasan waktu istirahat tidak dipenuhi untuk kegiatan dengan id %1, pada hari %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3599"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3993"/>
         <source>This increases the conflicts total by</source>
         <translation>Ini akan meningkatkan total konflik sebesar</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students no gaps</source>
         <translation type="obsolete">Siswa tidak ada jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students must not have gaps</source>
         <translation type="obsolete">Siswa harus tanpa jam kosong</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please note that for each subgroup, you must have: 1. only no gaps or 2. no gaps and early, with the same weight percentage</source>
         <translation type="obsolete">Catatan untuk setiap grup, anda harus: 1. tidak ada jam kosong atau 2. tidak ada jam kosong atau awal, dengan persentase bobot sama</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Time constraint students no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
         <translation type="obsolete">Batasan waktu siswa tanpa jam kosong untuk grup %1, pada hari %2, sebelum jam:%3, lama=%4, meningkatkan konflik =%5</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set no gaps</source>
         <translation type="obsolete">Siswa diatur tidak ada jam kosong</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5304"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6148"/>
         <source>St:%1</source>
         <translation>St:%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set must not have gaps</source>
         <translation type="obsolete">Siswa diatur tanpa jam kosong</translation>
     </message>
@@ -18192,27 +19022,27 @@ tidak ditambah - duplikasi</translation>
         <translation>Bobot(persentase)=%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Time constraint students set no gaps broken for subgroup: %1, on day: %2, before hour: %3, lenght=%4, conflicts increase=%5</source>
         <translation type="obsolete">Batasan waktu siswa diatur tanpa jam kosong tidak terpenuhi untuk grup: %1, pada hari %2, sebelum jam: %3, lama: %4, konflik meningkat=%5</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students must begin their courses as early as possible (permitted by breaks and students not available)</source>
         <translation type="obsolete">Siswa harus mulai pelajaran seawal mungkin (diperbolehkan oleh istirahat dan siswa tidak ada)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>This is a strong constraint (for instance, if students X are available all the time, they must begin their activities at first hour, not a bit later)</source>
         <translation type="obsolete">Ini batasan kuat( contohya jika siswa x ada sepanjang waktu, siswa x harus memulai kegiatan pada jam pertama, tidak sesudahnya)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint students early broken for subgroup %1, on day %2, increases conflicts total by %3</source>
         <translation type="obsolete">Batasan siswa istirahat cepat tidak terpenuhi untuk grup %1, pada hari %2, menaikkan konflik sebesar %3</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set must begin their courses as early as possible (permitted by breaks and students not available)</source>
         <translation type="obsolete">Siswa harus mulai pelajaran seawal mungkin (diperbolehkan oleh istirahat dan siswa tidak ada)</translation>
     </message>
@@ -18222,42 +19052,42 @@ tidak ditambah - duplikasi</translation>
         <translation>Kelas paralel=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="70"/>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform.cpp" line="68"/>
         <source>Students max hours daily</source>
         <translation>Siswa maks jam harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4822"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5196"/>
         <source>MH:%1</source>
         <translation>MH:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4634"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5028"/>
         <source>All students sets must have the maximum number of hours daily</source>
         <translation>Semua siswa diatur harus mempunyai jumlah jam maks harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4845"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5219"/>
         <source>Maximum recommended hours daily=%1</source>
         <translation>Maks jam harian rekomendasi=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4707"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5081"/>
         <source>Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation>Batasan waktu siswa jam maks harian  untuk grup %1, pada hari %2,  lama=%3, meningkatkan konflik =%4</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="104"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="102"/>
         <source>Students set max hours daily</source>
         <translation>Siswa diatur jam maks harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4841"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5215"/>
         <source>Students set must respect the maximum number of hours daily</source>
         <translation>Siswa diatur harus mengikuti jumlah jam maks harian </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4986"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5339"/>
         <source>Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation>Batasan waktu siswa  diatur jam maks harian tidak terpenuhi  untuk grup %1, pada hari %2,  lama=%3, meningkatkan konflik =%4</translation>
     </message>
@@ -18267,22 +19097,22 @@ tidak ditambah - duplikasi</translation>
         <translation>Siswa jam min harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5298"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6142"/>
         <source>mH:%1</source>
         <translation>mH:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5122"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5966"/>
         <source>All students sets must have the minimum number of hours daily</source>
         <translation>Semua siswa diatur harus memiliki jam min harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5321"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6165"/>
         <source>Minimum recommended hours daily=%1</source>
         <translation>Jam min harian rekomendasi=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5174"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6018"/>
         <source>Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4</source>
         <translation>Batasan waktu siswa jam min harian tidak terpenuhi untuk grup %1, pada hari %2,  lama=%3, meningkatkan konflik =%4</translation>
     </message>
@@ -18292,385 +19122,385 @@ tidak ditambah - duplikasi</translation>
         <translation>Siswa diatur jam min harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5317"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6161"/>
         <source>Students set must respect the minimum number of hours daily</source>
         <translation>Siswa diatur harus mengikuti jam min harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5437"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6281"/>
         <source>Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4</source>
         <translation>Batasan waktu siswa diatur jam min harian tidak terpenuhi untuk grup %1, pada hari %2,  lama=%3, meningkatkan konflik =%4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7534"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8675"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):
 %1</source>
         <translation>Batasan berikut salah (karena berhubugan dengan kegiatan salah. Silahkan diperbaiki (mungkin menghapusnya adalah solusi):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5558"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6402"/>
         <source>Constraint activity preferred time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan dengan waktu tertentu karena hari terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5565"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6409"/>
         <source>Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan denga waktu tertentu salah karena jam yang dipilih terlalu lama (setelah slot terakhir yang diterima) Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5572"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6416"/>
         <source>Constraint activity preferred time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan dengan waktu tertentu karena jam  terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5924"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6768"/>
         <source>Act. id:%1</source>
         <translation>Id Kegiatan:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5679"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6523"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred time</source>
         <translation>id kegiatan salah untuk batasan kegiatan dengan waktu tertentu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6344"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7188"/>
         <source>must be scheduled at: </source>
         <translation>harus dijadwalkan pada:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5765"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6609"/>
         <source>Time constraint activity preferred time broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Batasan waktu kegiatan denga waktu tertentu tidak terpenuhi  untuk kegiatan %1, menaikkan konflik sebesar %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5859"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6703"/>
         <source>Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):
 %1</source>
         <translation>Batasan berikut salah (karena berhubugan dengan id kegiatan salah. Silahkan diperbaiki (mungkin menghapusnya adalah solusi):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5868"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6712"/>
         <source>Constraint activity preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan dengan waktu tertentu salah karena hari terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5875"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6719"/>
         <source>Constraint activity preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan dengan waktu tertentu salah karena jam yang dipilih terlalu lama (setelah slot terakhir yang diterima) Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6726"/>
         <source>Constraint activity preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan dengan waktu tertentu salah karena jam  terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5999"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6843"/>
         <source> Invalid (inexistent) activity id for constraint activity preferred times</source>
         <translation>id kegiatan salah untuk batasan kegiatan dengan waktu tertentu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5981"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6825"/>
         <source>WP:%1</source>
         <translation>WP:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6386"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7230"/>
         <source>must be scheduled at:
 </source>
         <translation>harus dijadwal pada:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6096"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6940"/>
         <source>Time constraint activity preferred times broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Batasan waktu kegiatan dengan waktu tertentu tidak terpenuhi  untuk kegiatan %1, menaikkan konflik sebesar %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6502"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7346"/>
         <source>teachers %1, students sets %2, subject %3</source>
         <translation>guru %1, kumpulan siswa %2, mata pelajaran %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6258"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7102"/>
         <source>Constraint activities preferred times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan-kegiatan dengan waktu tertentu salah karena hari terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6265"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7109"/>
         <source>Constraint activities preferred times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan-kegiatan dengan waktu tertentu salah karena jam yang dipilih terlalu lama (setelah slot terakhir yang diterima) Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6272"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7116"/>
         <source>Constraint activities preferred times is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan kegiatan-kegiatan  dengan waktu tertentu salah karena jam  terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6283"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7127"/>
         <source>Following constraint is wrong (refers to no activities. Please correct it):
 %1</source>
         <translation>Batasan berikut salah (tidak ada kegiatan. Silahkan diperbaiki):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6327"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7171"/>
         <source>Activities with </source>
         <translation>Kegiatan dengan</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6329"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7173"/>
         <source>teacher=%1, </source>
         <translation>guru=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6331"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7175"/>
         <source>all teachers, </source>
         <translation>semua guru,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6333"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7177"/>
         <source>students=%1, </source>
         <translation>siswa=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6335"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7179"/>
         <source>all students, </source>
         <translation>semua siswa,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6337"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7181"/>
         <source>subject=%1, </source>
         <translation>mata pelajaran=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6339"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7183"/>
         <source>all subjects, </source>
         <translation>semua mata pelajaran,</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>subject tag=%1, </source>
         <translation type="obsolete">tag mata pelajaran=%1,</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>all subject tags, </source>
         <translation type="obsolete">semua tag mata pelajaran,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6367"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7211"/>
         <source>Activities with:</source>
         <translation>Kegiatan dengan:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6370"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7214"/>
         <source>Teacher=%1
 </source>
         <translation>Guru=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6372"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7216"/>
         <source>All teachers
 </source>
         <translation>Semua guru
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6374"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7218"/>
         <source>Students=%1
 </source>
         <translation>Siswa=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6376"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7220"/>
         <source>All students
 </source>
         <translation>Semua siswa
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6378"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7222"/>
         <source>Subject=%1
 </source>
         <translation>Mata pelajaran=%1
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6380"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7224"/>
         <source>All subjects
 </source>
         <translation>Semua mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag=%1
 </source>
         <translation type="obsolete">Tag mata pelajaran=%1
 </translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>All subject tags
 </source>
         <translation type="obsolete">Semua tag mata pelajaran,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6484"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7328"/>
         <source>Time constraint activities preferred times broken for activity with id=%1,  increases conflicts total by %2</source>
         <translation>Batasan waktu kegiatan denga waktu tertentu pecah untuk kegiatan %1, menaikkan konflik sebesar %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6686"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7530"/>
         <source>Activities same starting hour</source>
         <translation>Kegiatan dengan jam mulai yang sama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6705"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7549"/>
         <source>Activities must have the same starting hour</source>
         <translation>Kegiatan harus mempunyai jam mulai yang sama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7626"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8767"/>
         <source> Invalid (inexistent) activity id</source>
         <translation>id kegiatan salah (tidak ada)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6834"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7678"/>
         <source>Time constraint activities same starting hour broken, because activity with id=%1 is not at the same hour with activity with id=%2</source>
         <translation>Batasan waktu: kegiatan-kegiatan dengan waktu mulai sama tidak terpenuhi, karena kegiatan dengan id=%1 tidak pada jam mulai yang sama dengan kegiatan dengan id=%2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7240"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8396"/>
         <source>Following constraint is wrong (refers to inexistent activity ids):
 %1</source>
         <translation>Batasan berikut salah (tidak ada kegiatan. Silahkan diperbaiki):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7249"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8405"/>
         <source>Following constraint is wrong (refers to same activities):
 %1</source>
         <translation>Batasan berikut salah (kegiatan yang sama. Silahkan diperbaiki):
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7282"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8126"/>
         <source>Constraint 2 activities consecutive: </source>
         <translation>Batasan 2 kegiatan berurutan:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7284"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8441"/>
         <source>first act. id:%1</source>
         <translation>act pertama. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7286"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8443"/>
         <source>second act. id:%1</source>
         <translation>act kedua. id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7297"/>
+        <location filename="" line="1"/>
         <source>Constraint 2 activities consecutive (second activity must be placed after the first activity, possibly separated by breaks)</source>
-        <translation>Batasan 2 kegiatan yang berurutan (kegiatan kedua harus ditempatkan setelah kegiatan pertama, mungkin dipisah dengan istirahat)</translation>
+        <translation type="obsolete">Batasan 2 kegiatan yang berurutan (kegiatan kedua harus ditempatkan setelah kegiatan pertama, mungkin dipisah dengan istirahat)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="130"/>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="132"/>
         <source>First activity id=%1</source>
         <translation>Kegiatan pertama id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7308"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8465"/>
         <source> Invalid (inexistent) activity id for first activity</source>
         <translation>IDkegiatan salah (tidak ada) untuk kegiatan pertama</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="144"/>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="146"/>
         <source>Second activity id=%1</source>
         <translation>Kegiatan kedua id=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7350"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8507"/>
         <source> Invalid (inexistent) activity id for second activity</source>
         <translation>IDkegiatan salah (tidak ada) untuk kegiatan kedua</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7442"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8286"/>
         <source>Time constraint 2 activities consecutive broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
         <translation>Batasan waktu: 2 kegiatan berurutan tidak terpenuhi untuk kegiatan pertama dengan id=%1 dan kegiatan kedua dengan id=%2, meningkatkan konflik sebesar %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7565"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8706"/>
         <source>Act. id:%1 must end students&apos; day</source>
         <translation>Aksi id:%1 harus akhiri hari siswa</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7617"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8758"/>
         <source>Activity with id=%1 must end students&apos; day</source>
         <translation>Kegiatan dengan ie=%1 harus akhiri hari siswa</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7707"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8848"/>
         <source>Time constraint activity ends students&apos; day broken for activity with id=%1, increases conflicts total by %2</source>
         <translation>Batasan waktu kegiatan mengakhiri hari siswa tidak terpenuhi untuk kegiatan dengan id=%1, meningkatkan konflik sebesar %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7812"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8953"/>
         <source>Teachers min %1 hours daily</source>
         <translation>Guru %1 jam min harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7824"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8965"/>
         <source>Teachers must not have less than %1 hours daily</source>
         <translation>Guru tidak boleh kurang dari %1 jam harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7826"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8967"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teachers</source>
         <translation>Catatan: FET cukup pintar untuk menggunakan batasan hanya pada hari kerja dari guru</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7882"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9023"/>
         <source>Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Batasan waktu guru %1 jam min harian tidak terpenuhi untuk guru %2, pada hari %3, lama=%4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8007"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9148"/>
         <source>Teacher min %1 hours daily</source>
         <translation>Guru %jam min harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8020"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9161"/>
         <source>Teacher %1 must not have less than %2 hours daily</source>
         <translation>Guru %1 harus tidak boleh kurang dari %2 jam harian</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8022"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9163"/>
         <source>Note: FET is smart enough to use this constraint only on working days of the teacher</source>
         <translation>Catatan: FET cukup pintar untuk menggunakan batasan hanya pada hari kerja dari guru</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="8077"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="9218"/>
         <source>Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.</source>
         <translation>Batasan waktu guru %1 jam min harian tidak terpenuhi untuk guru %2, pada hari %3, durasi=%4.</translation>
     </message>
@@ -18722,12 +19552,12 @@ If you really need that, please talk to the author
         <translation>2 kegiatan berurutan</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="167"/>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="169"/>
         <source>Invalid first activity</source>
         <translation>Kegiatan pertama salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="177"/>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="179"/>
         <source>Invalid second activity</source>
         <translation>Kegiatan kedua salah</translation>
     </message>
@@ -18737,7 +19567,7 @@ If you really need that, please talk to the author
         <translation>Bobot(persetase) salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="184"/>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="186"/>
         <source>Same activities - impossible</source>
         <translation>Kegiatan sama - tidak mungkin</translation>
     </message>
@@ -18747,7 +19577,7 @@ If you really need that, please talk to the author
         <translation>Batasan ditambah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraint2activitiesconsecutiveform.cpp" line="244"/>
+        <location filename="../src/interface/addconstraint2activitiesorderedform.cpp" line="246"/>
         <source>Constraint NOT added - error?</source>
         <translation>Batasan TIDAK ditambah - salah?</translation>
     </message>
@@ -18891,7 +19721,7 @@ MAX_CONTRAINT_ACTIVITIES_SAME_STARTING_HOUR harus dibesarkan (anda mempunyai ter
         <translation>Hanya satu ruang dipilih - silahkan gunakan batasan kegiatan dengan ruang terplih jika anda ingin ruang tunggal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
         <translation type="obsolete">Silahkan laporakan kesalahan kepada pembuat program
@@ -18965,12 +19795,12 @@ referring to this activity before proceeding</source>
         <translation>Waktu kumpolsori biasa</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Invalid end hour</source>
         <translation type="obsolete">Jam akhir salah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour:%1</source>
         <translation type="obsolete">Jam akhir:%1</translation>
     </message>
@@ -18980,7 +19810,7 @@ referring to this activity before proceeding</source>
         <translation>Bobot (persentase) salah. harus 100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>End hour &lt;= start hour - impossible</source>
         <translation type="obsolete">Jam akhir &lt;= jam mulai - tidak mungkin</translation>
     </message>
@@ -18997,7 +19827,7 @@ MAX_CONTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES  harus dibesarkan (anda mempunyai te
         <translation>Batasan tidak ditambah - pasti duplikasi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Weight percentage=%1%</source>
         <translation type="obsolete">Bobot(persentase)=%1%</translation>
     </message>
@@ -19007,7 +19837,7 @@ MAX_CONTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES  harus dibesarkan (anda mempunyai te
         <translation>Bobot (persentase) salah. harus 100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint added.
 
 Note: this constraint is strong. It means that students must have hours beginning at the very first available slot for them. If such constraint is too strong and your school allows later beginning of courses, you might want to use a combination of students set not available/break in the last slots of each day or other constraints instead</source>
@@ -19015,7 +19845,7 @@ Note: this constraint is strong. It means that students must have hours beginnin
 Catatan: batasan ini kuat. Artinya siswa hars mempunyai jam awal pada awal slot. Jika batasan terlalu kuat dan sekolah anda membolehkan permulaan belajar lambat, anda mungkin dapat menggunakan kombinasi siswa tidak tersedia/istirahat pada slot terakhir dari tiap hari atau batasan lain</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform.cpp" line="93"/>
+        <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform.cpp" line="91"/>
         <source>Max. hours:%1</source>
         <translation>Jam maks: %1</translation>
     </message>
@@ -19040,7 +19870,7 @@ Catatan: batasan ini kuat. Artinya siswa hars mempunyai jam awal pada awal slot.
         <translation>Bobot (persentase) salah. harus 100</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Students set must begin activities as early as possible (permitted by not available and break)</source>
         <translation type="obsolete">Siswa harus mulai pelajaran seawal mungkin (diperbolehkan oleh istirahat dan siswa tidak ada)</translation>
     </message>
@@ -19065,7 +19895,7 @@ Catatan: batasan ini kuat. Artinya siswa hars mempunyai jam awal pada awal slot.
         <translation>Hanya satu ruang terpilih - silahkan gunakan batasan mata pelajaran dengan ruang tertentu jika anda hanya menginginkan ruang tunggal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS must be increased (you have too many selected rooms)</source>
         <translation type="obsolete">Silahkan laporkan kesalahan ke pembuat program
@@ -19077,12 +19907,12 @@ MAX_CONTRAINT_SUBJECT_PREFERRED_ROOMS harus ditambah (anda mempunyai terlalu ban
         <translation>Mata pelajaran dipilih salah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Invalid subject tag</source>
         <translation type="obsolete">Tag mata pelajaran salah</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Invalid selected subject tag</source>
         <translation type="obsolete">Tag mata pelajaran dipilih salah</translation>
     </message>
@@ -19102,12 +19932,12 @@ MAX_CONTRAINT_SUBJECT_PREFERRED_ROOMS harus ditambah (anda mempunyai terlalu ban
         <translation>Jam kosong maks=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="77"/>
+        <location filename="../src/interface/addconstraintteachermaxhoursdailyform.cpp" line="75"/>
         <source>Teacher max hours daily</source>
         <translation>Guru jam maks harian</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="78"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="76"/>
         <source>Max hours daily=%1</source>
         <translation>Jam maks harian=%1</translation>
     </message>
@@ -19122,7 +19952,7 @@ MAX_CONTRAINT_SUBJECT_PREFERRED_ROOMS harus ditambah (anda mempunyai terlalu ban
         <translation>Jam min harian=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform.cpp" line="71"/>
+        <location filename="../src/interface/addconstraintteachersmaxhoursdailyform.cpp" line="69"/>
         <source>Teachers max hours daily</source>
         <translation>Guru jam maks harian</translation>
     </message>
@@ -19321,7 +20151,7 @@ dari jenis min n hari antar kegiatan (bulat/cacah antara
         <translation>Duplikasi tidak diperbolehkan</translation>
     </message>
     <message>
-        <location filename="../src/interface/daysform.cpp" line="104"/>
+        <location filename="../src/interface/daysform.cpp" line="120"/>
         <source>Please note that FET will NOT take care
 of old constraints using erased days
 (only renamed days will be handled correctly)
@@ -19331,7 +20161,7 @@ memakai batasan lama menggunakan hari terhapus
 (hanya hari yang berganti yang akan dipakai dengan benar)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="215"/>
+        <location filename="../src/interface/fet.cpp" line="222"/>
         <source>Cannot create or use %1 directory - FET will now abort</source>
         <translation>Tidak dapat buat atau gunakan direktori %1 - FET akan ditutup</translation>
     </message>
@@ -19387,12 +20217,12 @@ mengatur batasan lama menggunakan jam terhapus
 (hanya jam yang berganti yang akan dipakai dengan benar)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET question</source>
         <translation type="obsolete">Pertanyaan FET</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)</source>
         <translation type="obsolete">Apakah anda yakin jumlah dari periode kerja per hari adalah %1? (ada banyak kesimpangsiuran disini)</translation>
     </message>
@@ -19411,7 +20241,7 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
 MAX_CONTRAINT_ACTIVITIES_SAME_STARTING_TIME harus dibesarkan (anda mempunyai terlalu banyak kegiatan)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_ACTIVITY_PREFERRED_ROOM must be increased (you have too many selected rooms)</source>
         <translation type="obsolete">Silahkan laporkan kesalahan kepada pembuat program
@@ -19433,7 +20263,7 @@ yang berhubungan denga kegiatan ini sebelum lanjut</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="111"/>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="109"/>
         <source>Max hours:%1</source>
         <translation>Jam maks:%1</translation>
     </message>
@@ -19443,14 +20273,14 @@ yang berhubungan denga kegiatan ini sebelum lanjut</translation>
         <translation>Jam min:%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please report error to the author
 MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOM must be increased (you have too many selected rooms)</source>
         <translation type="obsolete">Silahkan laporkan kesalahan ke pembuat program
 MAX_CONTRAINT_SUBJECT_PREFERRED_ROOM harus ditambah (anda mempunyai terlalu banyak ruang)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="92"/>
+        <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="90"/>
         <source>Teacher max hours daily </source>
         <translation>Guru jam maks harian</translation>
     </message>
@@ -19460,7 +20290,7 @@ MAX_CONTRAINT_SUBJECT_PREFERRED_ROOM harus ditambah (anda mempunyai terlalu bany
         <translation>Guru jam min harian</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="75"/>
+        <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="73"/>
         <source>Teachers max hours daily </source>
         <translation>Guru jam maks harian</translation>
     </message>
@@ -19497,19 +20327,19 @@ MAX_CONTRAINT_SUBJECT_PREFERRED_ROOM harus ditambah (anda mempunyai terlalu bany
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/studentsstatisticsform.cpp" line="273"/>
+        <location filename="" line="1"/>
         <source>Students set</source>
-        <translation>Kumpulan siswa</translation>
+        <translation type="obsolete">Kumpulan siswa</translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersstatisticsform.cpp" line="46"/>
+        <location filename="" line="1"/>
         <source>No. of activities</source>
-        <translation>Jmlh pertemuan</translation>
+        <translation type="obsolete">Jmlh pertemuan</translation>
     </message>
     <message>
-        <location filename="../src/interface/teachersstatisticsform.cpp" line="47"/>
+        <location filename="" line="1"/>
         <source>No. of hours</source>
-        <translation>Jmlh Jam</translation>
+        <translation type="obsolete">Jmlh Jam</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="287"/>
@@ -19556,33 +20386,33 @@ MAX_CONTRAINT_SUBJECT_PREFERRED_ROOM harus ditambah (anda mempunyai terlalu bany
         <translation>Tidak dapat mengubah item. Nama baru telah berganda</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please enter subject tag&apos;s name</source>
         <translation type="obsolete">Silahakan masukkan nama tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag insertion dialog</source>
         <translation type="obsolete">Kotak dialog pemasukan tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Are you sure you want to delete this subject tag?
 </source>
         <translation type="obsolete">Apakah anda pasti ingin menload tag mata pelajaran ini?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please enter new subject tag&apos;s name</source>
         <translation type="obsolete">Silahakan masukkan nama tag mata pelajaran baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET help on subject tags</source>
         <translation type="obsolete">Bantuan FET pada tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Subject tag is a field which can be used or not, depending on your wish (optional field). It is designed to help you with some constraints. Each activity has a possible empty subject tag (if you don&apos;t use subject tags, it will be empty)</source>
         <translation type="obsolete">Tag mata pelajaran adalah field yang dapat digunakan atau tidak, tergantung kehendakmu (opsional). Didesain untuk membantu untuk beberapa batasan. Setiap kegiatan boleh memilihi tag mata pelajaran kosong (jika anda tidak menggunakan, akan kosong)</translation>
     </message>
@@ -19614,20 +20444,20 @@ MAX_CONTRAINT_SUBJECT_PREFERRED_ROOM harus ditambah (anda mempunyai terlalu bany
         <translation>Silahkan masukkan guru baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Added the following constraint:
 </source>
         <translation type="obsolete">Tambahkan batasan berikut ini:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Constraint
 %1 NOT added - duplicate</source>
         <translation type="obsolete">Batasan
 %1 tidak ditambah - berganda</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Added the following constraint:
 %1</source>
         <translation type="obsolete">Tambahkan batasan berikut:
@@ -19678,7 +20508,7 @@ karena salah guru</translation>
         <translation>tidak ada sisw</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Act: T:%1, S:%2, ST:%3, St:%4, Id:%5, AGId:%6, D:%7, TD:%8, A:%9, NSt:%10</source>
         <comment>Comment for translators (do not translate this comment):
 This is one of the 8 variants for description of an activity, depending on activity (if it has subject tag, etc.)Please be careful and respect arrangement.
@@ -19731,242 +20561,242 @@ Activity: Teacher, Subject, Subject Tag, Students, Id, Activity Group Id, Durati
         <translation>Aktif:tidak</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write soft conflicts txt. Please check your disk&apos;s free space. Saving of soft conflicts aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis txt konflik lunak. Silahkan periksa ruang kosong disk anda. Penyimpanan konflik lunak dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing soft conflicts txt gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan txt konflik lunak memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write students timetable xml. Please check your disk&apos;s free space. Saving of xml students timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis xml jadwal siswa. Silahkan periksa ruang kosong disk anda. Penyimpanan xml jadwal siswa dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing students timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan xml jadwal siswam memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write teachers timetable xml. Please check your disk&apos;s free space. Saving of xml teachers timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis xml jadwal guru. Silahkan periksa ruang kosong disk anda. Penyimpanan xml jadwal guru dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing teachers timetable xml gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete"> Pembuatan xml jadwal guru memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write css style file. Please check your disk&apos;s free space. Saving of css style file aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis file style css. Silahkan periksa ruang kosong disk anda. Penyimpanan file style css dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing css style file gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan file style css memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write subgroups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup hari horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing subgroups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup hari horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write subgroups timetable html days vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup hari vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing subgroups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup hari vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write subgroups timetable html time vertical. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup waktu  vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing subgroups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup waktu vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write subgroups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html subgroups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup waktu horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing students timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup waktu horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write groups timetable html days horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup hari horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing groups timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup hari horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write groups timetable html days vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup hari vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing groups timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup hari vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write groups timetable html time vertical. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup waktu vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing groups timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup waktu vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write groups timetable html time horizontal. Please check your disk&apos;s free space. Saving of html groups timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal grup waktu horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal grup dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing groups timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal grup waktu horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write years timetable html days horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal kelas hari horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal kelas dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing years timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal kelas hari horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write years timetable html days vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal kelas hari vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal kelas  dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing years timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal kelas hari vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write years timetable html time vertical. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal kelas waktu vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal kelas  dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing years timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal kelas waktu vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write years timetable html time horizontal. Please check your disk&apos;s free space. Saving of html years timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal kelas waktu horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal kelas dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing years timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal kelas waktu horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write teachers timetable html days horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal guru hari horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal guru dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing teachers timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal guru hari horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write teachers timetable html days vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal guru hari vertikal Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal guru dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing teachers timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal guru hari vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write teachers timetable html time vertical. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal guru waktu vertikal Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal guru dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing teachers timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal guru waktu vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write teachers timetable html time horizontal. Please check your disk&apos;s free space. Saving of html teachers timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal guru waktu horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal guru dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing teachers timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal guru waktu horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write rooms timetable html days horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal ruang hari horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal ruang dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing rooms timetable html days horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal ruang hari horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write rooms timetable html days vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal ruang hari vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal ruang dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing rooms timetable html days vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal ruang hari vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write rooms timetable html time vertical. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal ruang waktu vertikal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal ruang dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing rooms timetable html time vertical gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal ruang waktu vertikal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot open file to write rooms timetable html time horizontal. Please check your disk&apos;s free space. Saving of html rooms timetable aborted.</source>
         <translation type="obsolete">Tidak dapat membuka file untuk menulis html jadwal ruang waktu horizontal. Silahkan periksa ruang kosong disk anda. Penyimpanan html jadwal ruang dibatalkan.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Writing rooms timetable html time horizontal gave error code %1, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation type="obsolete">Pembuatan html jadwal ruang waktu horizontal memberikan kode salah %1, yang artinya tidak bisa disave. Silahkan periksa ruang kosong disk anda.</translation>
     </message>
@@ -19976,22 +20806,22 @@ Activity: Teacher, Subject, Subject Tag, Students, Id, Activity Group Id, Durati
         <translation>Batasan tidak ditambah - pasti duplikasi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="141"/>
+        <location filename="../src/interface/fet.cpp" line="146"/>
         <source>Specified language is incorrect - making it en_GB (English)</source>
         <translation>Bahasa dipilih salah - kembalikan ke en_GB(Inggris)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="152"/>
+        <location filename="../src/interface/fet.cpp" line="157"/>
         <source>Translation for specified language not loaded - this is an error, maybe translation file is missing - making language en_GB (English)</source>
         <translation>Terjemahan untuk bahasa ini tidak diload - ini adalah kesalahan, mungkin file terjemahan hilang - atur bahasan ke en_GB(Inggris)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2713"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3113"/>
         <source>Constraint %1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation>Batasan %1 tidak dapat dipenuhi karena guru %2 mempunyai paling banyak %3 hari. Anda menentukan batasan berurutan jika hari sama= true. Saat ini FET tidak dapat menempatkan 2 kegiatan pada hari yang sama jika berurutan jika hari yang sama true. Anda dapat 2* hari yang ada &lt;jumlah kegiatan pada batasan ini. Ini situasi yang tidak mungkin, karena itu saya tidakpeduli. Jika anda menemukannya, silahakn ubah file anda (lepaskan centang berurutan pada hari yang sama atau tambahkan kegiatan dengan durasi besar) atau hubungi pembuat program/milis.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2749"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3149"/>
         <source>Constraint %1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <translation>Batasan %1 tidak dapat dipenuhi karena grup %2 mempunyai paling banyak %3 hari. Anda menentukan batasan berurutan jika hari sama= true. Saat ini FET tidak dapat menempatkan 2 kegiatan pada hari yang sama jika berurutan jika hari yang sama true. Anda dapat 2* hari yang ada &lt;jumlah kegiatan pada batasan ini. Ini situasi yang tidak mungkin, karena itu saya tidakpeduli. Jika anda menemukannya, silahakn ubah file anda (lepaskan centang berurutan pada hari yang sama atau tambahkan kegiatan dengan durasi besar) atau hubungi pembuat program/milis.</translation>
     </message>
@@ -20036,71 +20866,71 @@ Silahkan bicarakan dengan pembuat program atau naikkan variabel MAX_TOTAL_SUBGRO
         <translation>Memroses batasan tempat secara internal.. Silahkan tunggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3386"/>
+        <location filename="../src/engine/rules.cpp" line="3483"/>
         <source>Could not open file - not existing or in use</source>
         <translation>Tidak dapat membuka file - tidak ada atau sedang digunakan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3398"/>
+        <location filename="../src/engine/rules.cpp" line="3495"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <translation>Tidak dapat membaca file - Kesalahan parse XML pada baris %1, kolom %2:
 %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3829"/>
+        <location filename="../src/engine/rules.cpp" line="3926"/>
         <source>Your file contains group %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.</source>
         <translation>File anda terdapat kelas paralel %1 yang tidak diperlukan. Mulai FET 5.4.17, telah dikoreksi potensi situasi buruk ini. Sangat direkomendasikan menghapus kelas paralel yang berakhiran WHOLE YEAR, untuk alasan kinerja.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3832"/>
+        <location filename="../src/engine/rules.cpp" line="3929"/>
         <source>You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR, so you can avoid this warning.</source>
         <translation>Anda mungkin ingin menambah kelas paralel pada kelas kosong - pada kasus ini silahkan pilih nama yang tidak berakhiran WHOLE YEAR, jadi anda dapat menghindari peringatan ini.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3835"/>
+        <location filename="../src/engine/rules.cpp" line="3932"/>
         <source>From now on, if you have an empty year, there will be added an automatic group only in the generated timetables, not in the data file.</source>
         <translation>Mulai saat ini, jika anda mendapat kelas kosong, akan ditambahkan secara otomatis kelas paralel hanya saat pembuatan jawal, tidak di file data.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3913"/>
+        <location filename="../src/engine/rules.cpp" line="4010"/>
         <source>For more details, join the mailing list or email the author.</source>
         <translation>Untuk detil, gabung dengan milis atau email pembuat program.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of such warnings</source>
         <translation type="obsolete">Abaikan sisa peringatan ini</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next such warning</source>
         <translation type="obsolete">Lihat peringatan selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3905"/>
+        <location filename="../src/engine/rules.cpp" line="4002"/>
         <source>Your file contains subgroup %1 which might be unneeded. Starting with FET 5.4.17, it is corrected a potentially bad situation. It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.</source>
         <translation>File anda terdapat grup %1 yang tidak diperlukan. Mulai FET 5.4.17, telah dikoreksi potensi situasi buruk ini. Sangat direkomendasikan menghapus grup yang berakhiran WHOLE YEAR, untuk alasan kinerja.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3908"/>
+        <location filename="../src/engine/rules.cpp" line="4005"/>
         <source>You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP, so you can avoid this warning.</source>
         <translation>Anda mungkin ingin menambah grup pada kelas paralel kosong - pada kasus ini silahkan pilih nama yang tidak berakhiran WHOLE YEAR, jadi anda dapat menghindari peringatan ini.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3911"/>
+        <location filename="../src/engine/rules.cpp" line="4008"/>
         <source>From now on, if you have an empty group, there will be added an automatic subgroup only in the generated timetables, not in the data file.</source>
         <translation>Mulai saat ini, jika anda mendapat kelas paralel kosong, akan ditambahkan secara otomatis grup hanya saat pembuatan jawal, tidak di file data.</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3962"/>
+        <location filename="../src/engine/rules.cpp" line="4059"/>
         <source>Loading activities ... please wait</source>
         <translation>Load kegiatan.. Silahkan tunggu</translation>
     </message>
     <message>
-        <location filename="../src/interface/studentsstatisticsform.cpp" line="127"/>
+        <location filename="" line="1"/>
         <source>Computing ... please wait</source>
-        <translation>Menghitung.. Silahkan tunggu</translation>
+        <translation type="obsolete">Menghitung.. Silahkan tunggu</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="402"/>
@@ -20187,101 +21017,101 @@ Activity: Teacher, Subject, Students, Id, Duration, Active (yes/no)</comment>
         <translation>Batasan tempat berhubungan langsung dengan kegiatan ini:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1814"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru dengan bobot(persentase) dibawah 100. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1471"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1832"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru dengan bobot(persentase) dibawah 100 untuk guru %1. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1535"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1896"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Tidak dapat dioptimasi untuk guru %1, karena dua batasan dari jenis jam kosong maks per minggu berhubungan dan bobot persentase lebih tinggi pada batasan dengan jam kosong lebih dibolehkan. Anda diperbolehkan hanya memiliki untuk setiap guru batasan paling penting dengan bobot persentase maksimal dan jam kosong minimal diperbolehkan. Silahkan ubah data anda dan dicoba lagi. Untuk lebih detil, gabung dengan milis atau hubungi pembuat program</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1927"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru dengan bobot(persentase) dibawah 100. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1945"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru per hari dengan bobot(persentase) dibawah 100 untuk guru %1. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2009"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
         <translation>Tidak dapat dioptimasi untuk guru %1, karena dua batasan dari jenis jam kosong maks per minggu berhubungan dan bobot persentase lebih tinggi pada batasan dengan jam kosong lebih dibolehkan. Anda diperbolehkan hanya memiliki untuk setiap guru batasan paling penting dengan bobot persentase maksimal dan jam kosong minimal diperbolehkan. Silahkan ubah data anda dan dicoba lagi. Untuk lebih detil, gabung dengan milis atau hubungi pembuat program</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2242"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Tidak dapat dioptimasi untuk grup %1, karena anda mempunyai jam kosong maksimal dengan bobot persentase kurang dari 100%. Saat ini, algorima hanya optimasi dengan tanpa batasan jam kosong maks atau ada dengan 100%. Silakan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2258"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Tidak dapat optimasi untuk grup %1, karena anda memiliki batasan mulai awal pada jam kedua maksimal dengan bobot persentase kurang dair 100%. Saat ini, algoritma hanya optimasi dengan tanpa atau 100%. Silahkan ubah data dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1953"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2314"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation>Tidak dapat dioptimasi untuk grup %1, karena mulai awal pada jam kedua maks mempunyai %2, dan jumlah hari per minggu adalah %3, kurang. Seharusnya jumlah hari per minggu lebih besar atau sama dengan awal pada jam kedua maks
 Silakan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3656"/>
+        <location filename="../src/engine/rules.cpp" line="3753"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
         <translation>File anda menggandung daftar tag mata pelajaran, yang telah diubah namanya&gt;=5.5.0 daftar tag kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6271"/>
+        <location filename="../src/engine/rules.cpp" line="6519"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>File mengandung batasan siswa tanpa jam kosong, udah lama (telah diperbaiki di FET 5.5.0) dan telah dikonversi ke batasan yang sama, batasan siswa jam kosong maks per minggu, dengan jam kosong maks=0. Jika anda ingin, anda dapat mengubahnya untuk memberikan jam kosong lebh per minggu (biasanya tidak dibolehkan di sekolah)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of such information</source>
         <translation type="obsolete">Abaikan sisa informasi sejenis</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next improved constraint</source>
         <translation type="obsolete">Lihat batasan yang diperbaiki selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6320"/>
+        <location filename="../src/engine/rules.cpp" line="6568"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
         <translation>File mengandung batasan siswa tanpa jam kosong, udah lama (telah diperbaiki di FET 5.5.0) dan telah dikonversi ke batasan yang sama, batasan siswa jam kosong maks per minggu, dengan jam kosong maks=0. Jika anda ingin, anda dapat mengubahnya untuk memberikan jam kosong lebh per minggu (biasanya tidak dibolehkan di sekolah)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6461"/>
+        <location filename="../src/engine/rules.cpp" line="6709"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>File mengandung batasan siswa diatur awal, yang tua (telah diperbaiki di FET 5.5.0) dan akan dikonversi ke batasan yang sama, batasan siswa diatur awal mulai jam kedua dengan awal maks=0.
 Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua yang lebih (diatas 0- akan memberikan jadwal yang lebih mudah)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6547"/>
+        <location filename="../src/engine/rules.cpp" line="6795"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
         <translation>File mengandung batasan siswa diatur awal, yang tua (telah diperbaiki di FET 5.5.0) dan akan dikonversi ke batasan yang sama, batasan siswa diatur awal mulai jam kedua dengan awal maks=0.
 Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua yang lebih (diatas 0- akan memberikan jadwal yang lebih mudah)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6946"/>
+        <location filename="../src/engine/rules.cpp" line="7144"/>
         <source>Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint</source>
         <translation>Batasan KegiatanWaktuTerterntu hari tidak terpenuhi untuk guru nama=%1, siswa nama=%2, mata pelajaran nama=%3, tag kegiatan nama=%4, hari %5 tidak ada.. abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="6967"/>
+        <location filename="../src/engine/rules.cpp" line="7165"/>
         <source>Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint</source>
         <translation>Batasan KegiatanWaktuTerterntu jam tidak terpenuhi untuk guru nama=%1, siswa nama=%2, mata pelajaran nama=%3, tag kegiatan nama=%4, hari %5 tidak ada.. abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7645"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8786"/>
         <source>,AT:</source>
         <comment>Activity tag</comment>
         <translation>TK:</translation>
@@ -20305,18 +21135,18 @@ Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua
         <translation>R:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7049"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7893"/>
         <source> , AT: </source>
         <comment>Activity tag</comment>
         <translation>, TK:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6506"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7350"/>
         <source>, activity tag %4</source>
         <translation>, tag kegiatan %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3293"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3687"/>
         <source>(breaks and teacher not available not counted)</source>
         <translation>(istirahat dan guru tidak ada tidak dihitung)</translation>
     </message>
@@ -20326,12 +21156,12 @@ Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua
         <translation>jam kosong guru maks per hari</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3112"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3506"/>
         <source>Max gaps per day:%1</source>
         <translation>Jam kosong maks per hari:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3163"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3557"/>
         <source>Time constraint teachers max gaps per day broken: teacher: %1, day: %2, conflicts factor increase=%3</source>
         <translation>Batasan waktu jam kosong maks guru per hari tidak terpenuhi: guru: %1, hari: %2, menaikkan faktor konflik=%3</translation>
     </message>
@@ -20341,7 +21171,7 @@ Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua
         <translation>Jam kosong guru maks per hari</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3348"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3742"/>
         <source>Time constraint teacher max gaps per day broken: teacher: %1, day: %2, conflicts factor increase=%3</source>
         <translation>Batasan waktu jam kosong maks guru per hari tidak terpenuhi: guru: %1, hari: %2, menaikkan faktor konflik=%3</translation>
     </message>
@@ -20351,12 +21181,12 @@ Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua
         <translation>Jam kosong maks siswa per minggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4412"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4806"/>
         <source>(breaks and students set not available not counted)</source>
         <translation>(istirahat dan siswa tidak ada tidak dihitung)</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3770"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4164"/>
         <source>Time constraint students max gaps broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3</source>
         <translation>Batasan waktu jam kosong maks siswa harian  untuk grup %1, memiliki %2 jam kosong ektra, meningkatkan konflik =%3</translation>
     </message>
@@ -20366,74 +21196,74 @@ Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua
         <translation>Jam kosong maks siswa per minggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4000"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4394"/>
         <source>Time constraint students set max gaps broken for subgroup: %1, extra gaps=%2, conflicts increase=%3</source>
         <translation>Batasan waktu jam kosong maks siswa harian  untuk grup %1, memiliki %2 jam kosong ektra, meningkatkan konflik =%3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4094"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4488"/>
         <source>Students must arrive early, respecting %1 maximum arrivals at second hour</source>
         <translation>Siswa harus datang awal, mengikuti %1 tiba maks pada jam kedua</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4108"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4502"/>
         <source>Students must begin their courses early, respecting %1 maximum later arrivals, at second hour</source>
         <translation>Siswa harus mulai belajar awal, mengikuti %1 tiba lambat  maks pada jam kedua</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4168"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4562"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation>Batasan siswa awal maks %1 mulai pada jam kedua tidak terpenuhi untuk grup %2, pada hari %3 karena siswa mempunyai jam kosong ilegal, meningkatkan konflik sebesar %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4202"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4596"/>
         <source>Constraint students early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation>Batasan siswa awal maks %1 mulai pada jam kedua tidak terpenuhi untuk grup %2, karena siswa mempunyai tiba pada jam kedua terlalu banyak , meningkatkan konflik sebesar %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4391"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4785"/>
         <source>Students set must arrive early, respecting %1 maximum arrivals at second hour</source>
         <translation>Siswa harus datang awal, mengikuti %1 tiba maks pada jam kedua</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4411"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4805"/>
         <source>Students set must begin their courses early, respecting %1 maximum later arrivals, at second hour</source>
         <translation>Siswa diatur harus mulai pelajaran awal, mengikuti %1 tiba lambat, pada jam kedua</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4472"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4866"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
         <translation>Batasan siswa awal maks %1 mulai pada jam kedua tidak terpenuhi untuk grup %2, pada hari %3 karena siswa mempunyai jam kosong ilegal, meningkatkan konflik sebesar %4</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4497"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4891"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, because students have too many arrivals at second hour, increases conflicts total by %3</source>
         <translation>Batasan siswa awal maks %1 mulai pada jam kedua tidak terpenuhi untuk grup %2, karena siswa mempunyai tiba pada jam kedua terlalu banyak , meningkatkan konflik sebesar %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7185"/>
         <source>activity tag=%1, </source>
         <translation>tag kegiatan=%1,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6343"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7187"/>
         <source>all activity tags, </source>
         <translation>semua tag kegiatan,</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6382"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7226"/>
         <source>Activity tag=%1
 </source>
         <translation>Tag kegiatan=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6384"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7228"/>
         <source>All activity tags
 </source>
         <translation>Semua tag kegiatan</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7369"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8526"/>
         <source>,AT:</source>
         <translation>TK:</translation>
     </message>
@@ -20485,143 +21315,143 @@ Jika anda suka, anda dapat mengubah batasan untuk memberikan awal pada jam kedua
         <translation>N:%1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed room (from constraints activity preferred room(s) and subject (activity tag) preferred room(s) )</source>
         <translation type="obsolete">Tidak dapat hasilkan jadwal, karena untuk kegiatan dengan id==%1 anda tidak memiliki ruang dibolehkan (dari batasan kegiatan dengan ruang tertentu dan mata pelajaran (tag kegiatan) ruang tertentu)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation type="obsolete">Tidak dapat menghasilkan jadwal, karena untuk kegiatan dengan id==%1 anda tidak memiliki ruang khusus (dari batasan siswa diatur ruang khusus dan guru ruang khusus)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no home room (from the allowed number of students)</source>
         <translation type="obsolete">Tidak dapat hasilkan jadwal, karena untuk kegiatan dengan id=%1 anda tidak diberi ruang khusus (dari jumlah siswa diperbolehkan)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3625"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4025"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of max changes per day problems</source>
         <translation type="obsolete">Abaikan sisa masalah perubahan maks per hari lainnya</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility changes</source>
         <translation type="obsolete">Lihat perubahan tak kompatibel lainnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3649"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4049"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4088"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of max changes per week problems</source>
         <translation type="obsolete">Abaikan siswa masalah perubahan maks per minggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3712"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4112"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4151"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of min gaps</source>
         <translation type="obsolete">Abaikan siswa jam kosong min</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility min gaps</source>
         <translation type="obsolete">Lihat jam kosong yang tidak cocok selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4175"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4215"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur jam kosong maks diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3837"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4237"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4276"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3898"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4298"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4337"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of min gaps problems</source>
         <translation type="obsolete">Abaikan sisa masalah jam kosong min</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4359"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4764"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation>Ini adalah urutan awal evaluasi dari kegiatan yang dihitung oleh FET. Jika pembuatan jadwal tersangkut pada kegiatan tertentu, silahkan diperiksa kegiatan yang berhubungan degan angka+1. Anda akan menemukan kesalahan pada input anda.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4319"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4766"/>
         <source>The initial order of activities (id-s):</source>
         <translation>Urutan awal kegiatan(id-s):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4322"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4769"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4326"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4773"/>
         <source>id=%1</source>
         <translation>ID=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4776"/>
         <source>teachers:</source>
         <translation>guru:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4334"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4781"/>
         <source>subject:</source>
         <translation>mata pelajaran:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4338"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4785"/>
         <source>students:</source>
         <translation>siswa:</translation>
     </message>
@@ -20655,77 +21485,77 @@ Please talk to the author or increase variable MAX_BUILDINGS</source>
 Silahkan hubungi pembuat program atau menaikkan variabel MAX_BUILDINGS</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4299"/>
+        <location filename="../src/engine/rules.cpp" line="4396"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
         <translation>File mengandung batasan guru tidak tersedia, yang telah tua (telah diganti di FET 5.5.0), dan akan dikonversi ke batasan yang sama dari jenis  ini , batasan guru tidak tersedia (sebuah matriks).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4452"/>
+        <location filename="../src/engine/rules.cpp" line="4549"/>
         <source>Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan GuruTidakTersedia hari tidak terpenuhi untuk guru %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4470"/>
+        <location filename="../src/engine/rules.cpp" line="4567"/>
         <source>Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam GuruTidakTersedia  corrupt untuk guru %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4550"/>
+        <location filename="../src/engine/rules.cpp" line="4647"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
         <translation>File mengandung batasan siswa tidak tersedia, yang telah tua (telah diganti di FET 5.5.0), dan akan dikonversi ke batasan yang sama dari jenis  ini , batasan siswa tidak tersedia (sebuah matriks).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4704"/>
+        <location filename="../src/engine/rules.cpp" line="4801"/>
         <source>Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam SiswaDiaturTidakTersedia tidak terpenuhi untuk siswa %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="4722"/>
+        <location filename="../src/engine/rules.cpp" line="4819"/>
         <source>Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam SiswaDiaturTidakTersedia tidak terpenuhi  untuk siswa %1, hari %2 tidak ada...abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5808"/>
+        <location filename="../src/engine/rules.cpp" line="6056"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
         <translation>File mengandung batasan istirahat, yang telah tua (telah diperbaiki di FET 5.5.0), akan dikonversi ke batasan lain dari jenis yang sama, batasan istirahat (sebuah matriks).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5836"/>
+        <location filename="../src/engine/rules.cpp" line="6084"/>
         <source>Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation>Batasan hari Istirahat tidak terpenuhi untuk hari %1 tidak ada ... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5850"/>
+        <location filename="../src/engine/rules.cpp" line="6098"/>
         <source>Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam mulai Istirahat tidak terpenuhi untuk jam %1 tidak ada... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5864"/>
+        <location filename="../src/engine/rules.cpp" line="6112"/>
         <source>Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam akhir Istirahat tidak terpenuhi untuk jam %1 tidak ada... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5953"/>
+        <location filename="../src/engine/rules.cpp" line="6201"/>
         <source>Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint</source>
         <translation>Batasan hari Istirahat tidak terpenuhi untuk jam %1 tidak ada... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="5970"/>
+        <location filename="../src/engine/rules.cpp" line="6218"/>
         <source>Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam Istirahat tidak terpenuhi untuk jam %1 tidak ada... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7169"/>
+        <location filename="../src/engine/rules.cpp" line="7367"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
         <translation>File mengandung batasan ruang tidak tersedia, yang telah tua (telah diganti di FET 5.5.0), dan akan dikonversi ke batasan yang sama dari jenis  ini , batasan ruang tidak tersedia (sebuah matriks).</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7428"/>
+        <location filename="../src/engine/rules.cpp" line="7626"/>
         <source>Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan hari RuangTidakTersedia tidak terpenuhi untuk ruang %1, hari %2 tidak ada ... abaikan batasan</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="7446"/>
+        <location filename="../src/engine/rules.cpp" line="7644"/>
         <source>Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint</source>
         <translation>Batasan jam RuangTidakTersedia tidak terpenuhi untuk ruang %1, hari %2 tidak ada ... abaikan batasan</translation>
     </message>
@@ -20735,7 +21565,7 @@ Silahkan hubungi pembuat program atau menaikkan variabel MAX_BUILDINGS</translat
         <translation>Ruang tidak tersedia</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6998"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="8445"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>BP:%1%</translation>
@@ -21103,104 +21933,104 @@ Silahkan hubungi pembuat program atau menaikkan variabel MAX_BUILDINGS</translat
         <translation>Batasan waktu siswa tidak ada</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3473"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3867"/>
         <source>Break times</source>
         <translation>Waktu istirahat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3453"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3847"/>
         <source>B at:</source>
         <comment>Break at</comment>
         <translation>I pada:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3476"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3870"/>
         <source>Break at:</source>
         <translation>Istirahat pada:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3503"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3897"/>
         <source>Constraint break times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan istirahat salah karena hari terhapus. Silahkan perbaiki dan dicoba kembali. Koreksi artinya sunting batasan dan update informasi. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3510"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3904"/>
         <source>Constraint break times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation>Batasan istirahat salah karena terlambat satu jam (setelah slot terakhir yang diterima) Silahkan diperbaiki dan coba lagi. Perbaiki artinya sunting batasan dan update informasi Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3595"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="3989"/>
         <source>Time constraint break not respected for activity with id %1, on day %2, hours %3</source>
         <translation>Batasan waktu istirahat tidak terpenuhi untuk kegiatan dengan id %1, pada hari %2, jam %3</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="3848"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4242"/>
         <source>Constraint students set max gaps per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Batasan siswa diatur jam kosong maks per minggu salah karena mengacu pada kelas paralel yang tidak ada. Silahkan diperbaiki(menghapus mungkin solusinya) Silahkan laporkan bug potensial. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4305"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="4699"/>
         <source>Constraint students set early is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Batasan siswa diatur awal salah karena mengacu pada kelas paralel yang tidak ada. Silakan diperbaiki (menghapusnya mungkin solusinya) Silakan laporakan potensi bug. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="4863"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="5237"/>
         <source>Constraint students set max hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Batasan siswa diatur jam maks salah karena mengacu pada kelas paralel yang tidak ada. Silahkan diperbaiki(menghapus mungkin solusinya) Silahkan laporkan bug potensial. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5341"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="6185"/>
         <source>Constraint students set min hours daily is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation>Batasan siswa diatur jam min salah karena mengacu pada kelas paralel yang tidak ada. Silahkan diperbaiki(menghapus mungkin solusinya) Silahkan laporkan bug potensial. Batasan:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="6997"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7841"/>
         <source>Activities same starting day</source>
         <translation>Kegiatan mulai jam yang sama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7000"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7844"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
         <translation>JK:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7016"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7860"/>
         <source>Activities must have the same starting day</source>
         <translation>Kegiatan harus mempunyai hari mulai yang sama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7036"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7880"/>
         <source>T: </source>
         <comment>Teacher</comment>
         <translation>G:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7045"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7889"/>
         <source> , S: </source>
         <comment>Subject</comment>
         <translation>MP,:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7051"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7895"/>
         <source> , St: </source>
         <comment>Students</comment>
         <translation>,Si:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="7125"/>
+        <location filename="../src/engine/timeconstraint.cpp" line="7969"/>
         <source>Time constraint activities same starting day broken, because activity with id=%1 is not in the same day with activity with id=%2</source>
         <translation>Batasan waktu kegiatan dimulai pada hari yang sama tidak terpenuhi, karena kegiatan dengan id=%1 tidak pada hari yang sama dengan kegiatan dengan id=%2</translation>
     </message>
@@ -21292,201 +22122,378 @@ MAX_CONTRAINT_ACTIVITIES_SAME_STARTING_DAY harus dibesarkan (anda mempunyai terl
         <translation>Ruang Khusus Kelas Paralel</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4044"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4448"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation>Kegiatan dengan id=%1 tidak memiliki slot - silahkan dikoreksi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Skip rest of such problems</source>
         <translation type="obsolete">Abaikan sisa masalah ini</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>See next incompatibility</source>
         <translation type="obsolete">Lihat masalah tidak cocok selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8453"/>
+        <location filename="../src/engine/rules.cpp" line="8651"/>
         <source>Skip rest</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8453"/>
+        <location filename="../src/engine/rules.cpp" line="8651"/>
         <source>See next</source>
-        <translation type="unfinished"></translation>
+        <translation>Lihat selanjutnya</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="907"/>
         <source>For subgroup %1 you have too little activities to respect the constraint of type min hours daily. Please modify your data accordingly and try again. A possible situation is that you have unneeded groups like &apos;year1 WHOLE YEAR&apos; and subgroups with name like &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. You might need to remove such dummy groups and subgroups (they were generated with old versions if you started allocation with incomplete students data). FET cannot automatically remove such dummy groups and subgroups. For more details, join the mailing list or email the author</source>
-        <translation type="unfinished"></translation>
+        <translation>Untuk grup %1, anda kekurangan kegiatan yang sesuai dengan jenis batasan dari jenis jam min harian. Silahkan diubah dan dicoba lagi. Situasi yang mungkin adalah anda memiliki kelas paralel yang tidak perlu seperti &apos;year1 WHOLEYEAR&apos; dan grup dengan nama seperti &apos;year1 WHOLE YEAR WHOLE GROUP&apos;. Anda mungkin perlu menghapus kelas paralel dan grup dummi ini (mereka dihasilkan dari versi sebelumnya jika anda memulai alokasi data siswa yang tidak lengkap). FET tidak dapat secara otomatis menghapus kelas paralel dan grup dummi ini. Untuk lebih detil, gabung dengan milis atau email pembuat program</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1313"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1674"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 days x %4 hours in a week.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat optimasi untuk guru %1, karena jumlah jam untuk guru %2 dan anda hanya memiliki %3 hari x %4 jam dalam seminggu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2046"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 days x %4 hours in a week.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat optimasi untuk grup %1, karena jumlah jam untuk grup adalah  %2 dan anda hanya memiliki %3 hari x %4 jam dalam seminggu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3448"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat keluarkan jadwal karena anda mungkin memiliki lebih dari satu batasan jenis kelas ruang khusus untuk kelas paralel %1. Silakan hanya pilih satu</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3131"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3531"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat keluarkan jadwal karena anda mungkin memiliki lebih dari satu batasan jenis batasan guru ruang khusus untuk guru %1. Silakan hanya pilih satu</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3497"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3897"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id==%1 anda hanya tidak diperbolehkan ruang khusus (dari batasan kelas paralel ruang khusu dan guru ruang khusu))</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3522"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3922"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from subject or subject activity tag or activity preferred room(s)). This means that a constraint preferred room(s) hos 0 rooms in it. This should not happen. Please report possible bug.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat keluarkan jadwal, karena untuk kegiatan dengan id==%1 anda hanya dibolehkan ruang tertentu (dari mata pelajran dan mata pelajaran tag kegiatan atau kegiatan dengan ruang tertentu)). Artinya sebuah batasan ruang tertentu memiliki 0 ruang di dalamnya. Ini tidak boleh terjadi. Silahkan laporan bug.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3543"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3943"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id==%1 anda tidak mempunyai ruang tertentu (dari jumlah siswa yang diperbolehkan)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3993"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id==%1 anda tidak mempunyai ruang khusus (dari jumlah siswa yang diperbolehkan)</translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="8783"/>
+        <location filename="../src/engine/rules.cpp" line="8981"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>Simpan log memberikan kode kesalahan %1, yang artinya anda tidak dapat melihat log dari pembacaan file. Silakan periksa ruang kosong harddisk</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="27"/>
         <source>Break</source>
         <comment>Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Istirahat</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="27"/>
         <source>Not available</source>
         <comment>Please keep translation short</comment>
-        <translation type="unfinished">Tidak ada</translation>
+        <translation>Tidak ada</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="28"/>
         <source>Available</source>
         <comment>Please keep translation short</comment>
-        <translation type="unfinished">Tersedia</translation>
+        <translation>Tersedia</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="141"/>
         <source>A constraint of this type exists for the same room - cannot proceed</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan jenis ini ada untuk ruang yang sama - tidak dilanjutkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="147"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan jenis ini ada untuk kelas paralel yang sama - tidak dilanjutkan</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="132"/>
         <source>A constraint of this type exists for the same teacher - cannot proceed</source>
-        <translation type="unfinished"></translation>
+        <translation>Batasan jenis ini ada untuk guru yang sama - tidak dilanjutkan</translation>
     </message>
     <message>
-        <location filename="../src/engine/timeconstraint.cpp" line="5328"/>
-        <source>Note: FET considers that each day of the week must have the minimum number of working hours, so you cannot have empty days for affected students (constraint is not flexible)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4817"/>
-        <source>You have a constraint min n days between activities with more activities than the number of days per week.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4819"/>
-        <source>Constraint is:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4823"/>
-        <source>This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4825"/>
-        <source>To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4829"/>
-        <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="4836"/>
-        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1337"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1698"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2  and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1709"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2070"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2  and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3753"/>
+        <location filename="../src/engine/rules.cpp" line="3850"/>
         <source>Trying to add year %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3755"/>
+        <location filename="../src/engine/rules.cpp" line="3852"/>
         <source>Trying to add year %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3757"/>
+        <location filename="../src/engine/rules.cpp" line="3854"/>
         <source>Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3798"/>
+        <location filename="../src/engine/rules.cpp" line="3895"/>
         <source>Trying to add group %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3801"/>
+        <location filename="../src/engine/rules.cpp" line="3898"/>
         <source>Trying to add group %1 in year %2 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3807"/>
+        <location filename="../src/engine/rules.cpp" line="3904"/>
         <source>Trying to add group %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3873"/>
+        <location filename="../src/engine/rules.cpp" line="3970"/>
         <source>Trying to add subgroup %1, which is already added as another year - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3875"/>
+        <location filename="../src/engine/rules.cpp" line="3972"/>
         <source>Trying to add subgroup %1, which is already added as another group - your file will be loaded but probably contains errors, please correct them after loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/rules.cpp" line="3878"/>
+        <location filename="../src/engine/rules.cpp" line="3975"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added - your file will be loaded but probably contains errors, please correct them after loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4914"/>
+        <source>You have a constraint min n days between activities with more activities than the number of days per week.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4916"/>
+        <source>Constraint is:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4920"/>
+        <source>This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4922"/>
+        <source>To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4926"/>
+        <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min n days between activities up to 100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="4933"/>
+        <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min n days between activities for each of the 2 containers up to 100%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="6172"/>
+        <source>Note: FET considers that each day of the week must have the minimum number of working hours, so you cannot have empty days for affected students (constraint is not flexible)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8141"/>
+        <source>Constraint 2 activities consecutive (second activity must be placed immediately after the first activity, in the same day, possibly separated by breaks)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8438"/>
+        <source>Constraint 2 activities ordered:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8454"/>
+        <source>Constraint 2 activities ordered (second activity must be placed at any time after the first activity)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="8583"/>
+        <source>Time constraint 2 activities ordered broken for first activity with id=%1 and second activity with id=%2, increases conflicts total by %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesconsecutiveform.cpp" line="119"/>
+        <source>(activity 2 must be immediately after activity 1, in the same day, possibly separated by breaks)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="117"/>
+        <source>2 activities ordered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraint2activitiesorderedform.cpp" line="119"/>
+        <source>(activity 2 must be after activity 1, separated by any number of days or hours)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1320"/>
+        <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours continuously.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1357"/>
+        <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2496"/>
+        <source>Teachers max %1 hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2509"/>
+        <source>Teachers must not have more than %1 hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2575"/>
+        <source>Time constraint teachers max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2693"/>
+        <source>Teacher max %1 hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2694"/>
+        <source>TN:%1</source>
+        <comment>Teacher name</comment>
+        <translation type="unfinished">TN:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2707"/>
+        <source>Teacher %1 must not have more than %2 hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="2774"/>
+        <source>Time constraint teacher max %1 hours continuously broken for teacher %2, on day %3, length=%4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform.cpp" line="90"/>
+        <source>Teacher max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform.cpp" line="76"/>
+        <source>Max hours continuously=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform.cpp" line="73"/>
+        <source>Teachers max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="642"/>
+        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.
+
+ For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="694"/>
+        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again. For more details, join the mailing list or email the author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="735"/>
+        <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="4613"/>
+        <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform.cpp" line="68"/>
+        <source>Students max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5666"/>
+        <source>MH:%1</source>
+        <comment>Max hours</comment>
+        <translation type="unfinished">MH:%1</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5475"/>
+        <source>All students sets must have the maximum number of hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5689"/>
+        <source>Maximum recommended hours continuously=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5547"/>
+        <source>Time constraint students max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform.cpp" line="102"/>
+        <source>Students set max hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5685"/>
+        <source>Students set must respect the maximum number of hours continuously</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5707"/>
+        <source>Constraint students set max hours continuously is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timeconstraint.cpp" line="5828"/>
+        <source>Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -21528,7 +22535,7 @@ MAX_CONTRAINT_ACTIVITIES_SAME_STARTING_DAY harus dibesarkan (anda mempunyai terl
         <translation>Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>It is advisable to only add special constrained rooms,
 home rooms are not needed (teachers&apos; or students&apos; rooms)
 Note: each room can hold a single activity at the same time
@@ -21539,7 +22546,7 @@ Catatan: setiap ruang dapat menampung satu kegiatan pada satu waktu
 (anda dapat menambah ruang lebih mewakili ruang yang sangat besar)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>NOTE: each room can hold a single activity at the same time
 (you can add more rooms representing a very large room)
 NOTE 2: it is advisable to use only constrained rooms and
@@ -21555,7 +22562,9 @@ Ini dapat membingungkan.</translation>
         <location filename="../src/interface/roomsform_template.ui" line="85"/>
         <source>NOTE: each room can hold a single activity at the same time
 (you can add more rooms representing a very large room)</source>
-        <translation type="unfinished"></translation>
+        <translation>Catatan: setiap ruang hanya dapat menampung satu kegiatan
+pada waktu yang sama (anda dapat menambah ruang 
+untuk mewakili ruang yang sangat besar)</translation>
     </message>
 </context>
 <context>
@@ -21598,7 +22607,7 @@ Ini dapat membingungkan.</translation>
 - tidak ada file css</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Level 1 - basic css
 - less then 1 kb larger filesize than level 0
 - css file created to style elements table, caption, thead, tfoot, tbody,th and td
@@ -21618,7 +22627,7 @@ Ini dapat membingungkan.</translation>
  - style x-axis dan y-axis dari tablehead (berguna untuk mengatur lebar dan tinggi dari sel kegiatan)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Level 3 - advanced css
 - all features of level 2 with around 2 times larger filesize then level 2
 - style (or hide) all subjects, subjectstags, teachers, students and rooms
@@ -21629,7 +22638,7 @@ Ini dapat membingungkan.</translation>
  - style (atau sembunyikan) line1, line2 dan line3 dari sel kegiatan</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Level 4 - full css
 - all features of level 3 with around 3 times larger filesize then level 2
 - style every single subject, subjectstag, teacher, student and room</source>
@@ -21638,7 +22647,7 @@ Ini dapat membingungkan.</translation>
  - stle setiap mata pelajaran, tag mata pelajaran, guru, siswa dan ruang</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Level 5 - JavaScript
 - all features of level 4 with around 4 times larger filesize then level 2
 - highlighting of same subjects, subjectstags, teachers, students and rooms
@@ -21664,7 +22673,10 @@ Ini dapat membingungkan.</translation>
 - less then 1 kb larger filesize than level 0
 - css file created to style elements table, caption, thead, tfoot, tbody, th and td
 - page-break after every or every second timetable (useful if you print timetables)</source>
-        <translation type="unfinished"></translation>
+        <translation>Level 1 - CSS sederhana
+- lebih besar kurang dari 1kb dari level 0
+- file css dibuat untuk style elemen tabel
+- pemisahan halaman setiap tabel kedua( berguna untuk print jadwal)</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="53"/>
@@ -21672,14 +22684,19 @@ Ini dapat membingungkan.</translation>
 - all features of level 2 with around 2 times larger filesize then level 2
 - style (or hide) all subjects, activity tags, teachers, students sets and rooms
 - style (or hide) line 1, line 2 and line 3 of the activity cells</source>
-        <translation type="unfinished"></translation>
+        <translation>Level 3 - CSS lanjutan
+- semua fitur dari level2 dengan peningkatan ukuran file 2 kali lipat dari level 2
+- style (atau sembunyikan) semua mata pelajaran, tag kegiatan, guru, kelas paralel dan ruang
+- style (atau sembunyikan) baris 1, baris2, dan baris 3 dari sel kegiatan</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="69"/>
         <source>Level 4 - full css
 - all features of level 3 with around 3 times larger filesize then level 2
 - style every single subject, activity tag, teacher, students set and room</source>
-        <translation type="unfinished"></translation>
+        <translation>Level 4 - CSS penuh
+- semua fitur level 3 dengan peningkatan ukuran file 3 kali lipat dari level 2
+- style tiap mata pelajaran, tag kegiatan , guru, kelas paralel dan ruang</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="84"/>
@@ -21687,7 +22704,10 @@ Ini dapat membingungkan.</translation>
 - all features of level 4 with around 4 times larger filesize then level 2
 - highlighting of same subjects, activity tags, teachers, students sets and rooms
   (needs JavaScript - just move mouse over a word and wait a little bit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Level 5 - JavaScript
+- semua fitur dari level 4 dengan peningkatan ukuran file 4 kali lipat dari level 2
+- highlight mata pelajaran, tag kegiatan , guru , kelas paralel dan ruang yang sama 
+  (perlu JavaScript - hanya pindahkan mouse pada sebuah kata dan tunggu sebentar)</translation>
     </message>
 </context>
 <context>
@@ -21738,7 +22758,7 @@ Ini dapat membingungkan.</translation>
         <translation>Tidak dapat menambah kelas paralel %1, karena nama itu telah digunakan. Silahkan pilih nama lain atau hapus kelas lama</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old group</source>
         <translation type="obsolete">Tidak dapat menambah grup %1, karena nama itu telah digunakan. Silahkan pilih nama lain atau hapus kelas paralel lama</translation>
     </message>
@@ -21758,7 +22778,7 @@ Ini dapat membingungkan.</translation>
         <translation>Anda mungkin pertama kali konsider membagi kelas jika diperlukan dan pilihan yang ada. Tolong diingat FET dapat mengatur kegiatan dengan guru/kumpulan siswa berganda. Jika anda mengatur siswa 9a, dibagi dua bagian: Inggris (guru TE) dan Perancis (guru TF) dan kegiata bahasa harus simultan, lalu anda mungkin tidak ingin membagi menurut kategori ini, tetapi menambah kegiatan yang lebih besar dengan siswa diset 91 dan guru TE+TF. Kekurangannya adalah setiap kegiatan hanya dapat satu ruang di FET, jadi mungkin anda dapat menemukan cara untuk mengatasi hal itu.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions If you need 4 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 3 categories (more details below). For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
         <translation type="obsolete">Silahkan pilih angka kategori dan setiap kategori angka pembagi. Anda dapat memilih contohnya 3 kategori, 3 pembagi untuk kategori pertama: a,b,c,d dan e, 2 pembagi untuk kategori kedua: laki-laki dan perempuan dan 3 pemabagi untuk yang ketiga: Inggris, Jerman dan Perancis. Anda dapat memilih 1,2 atau 3 kategori, pertama dengan 2 hingga 12 bagian dan kedua dan ketiga 2 hingga 6 bagian. Jika anda perllu 4 kategori, anda dapat melakukan trik ini. tentukan 9a sebagai kelas, 9b kelas lain ,...., dan bagi menjadi 3 bagian (detil dibawah). Untuk nilai lain (kasus sulit) anda dapat secara manual menambah kelas paralel dan grup</translation>
     </message>
@@ -21800,12 +22820,12 @@ Ini dapat membingungkan.</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="639"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat menambah grup %1, karena grup dengan nama yang sama telah ada. Silahkan pilih nama lain atau hapus grup lama</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="771"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions. If you need 4 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 3 categories (more details below). For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation>Silahkan pilih jumlah kategori dan setiap kategori jumlah pembagi. Anda dapat memilih sebagai contoh 3 kategori, 5 pembagi untuk kategori pertama: a, b,c,d dan e, 2 pembagi untuk kategori kedua: laki-laki dan perempuan, dan 3 pembagi untuk kategori ketiga: Inggris, Jerman dan Prancis. Anda dapat memilih kategori 1,2 atau 3, pertama dengan 2 hingga 12 pembagi dan kategori kedua dan ketiga dengan 2-6 pembagi. Jika anda perlu 4 kategori, anda dapat melakukan trik berikut: 9a sebagai kelas, 9b dll. lalu bagi menjadi 3 kategori (untuklebih detil dibawah). Untuk nilai yang lebih (sangat jarang) anda dapat secara manual membagi kelas paralel dan grup</translation>
     </message>
 </context>
 <context>
@@ -21864,6 +22884,44 @@ Ini dapat membingungkan.</translation>
         <location filename="../src/interface/splityearform_template.ui" line="381"/>
         <source>Category 1 (you can select 2-12 divisions)</source>
         <translation>Kategori 1 (Anda dapat memilh 2-12 pembagi)</translation>
+    </message>
+</context>
+<context>
+    <name>StudentsStatisticsForm</name>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="127"/>
+        <source>Computing ... please wait</source>
+        <translation type="unfinished">Menghitung.. Silahkan tunggu</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="137"/>
+        <source>FET information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="137"/>
+        <source>Canceled</source>
+        <translation type="unfinished">Dibatalkan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="273"/>
+        <source>Students set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="274"/>
+        <source>No. of activities</source>
+        <translation type="unfinished">Jmlh pertemuan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="275"/>
+        <source>No. of hours</source>
+        <translation type="unfinished">Jmlh Jam</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform.cpp" line="275"/>
+        <source>periods</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -21970,52 +23028,52 @@ Ini dapat membingungkan.</translation>
 <context>
     <name>SubjectTagsForm_template</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>FET - subject tags</source>
         <translation type="obsolete">FET - tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Close</source>
         <translation type="obsolete">Tutup</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>New Item</source>
         <translation type="obsolete">Item Baru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Remove current</source>
         <translation type="obsolete">Hapus</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Add subject tag</source>
         <translation type="obsolete">Tambah tag mata pelajaran</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Sort alphabetically</source>
         <translation type="obsolete">Sortir secara alphabet</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Rename current</source>
         <translation type="obsolete">Ubah nama</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Activate all activities for selected subject tag</source>
         <translation type="obsolete">Aktivasi semua kegiatan untuk tag mata pelajaran ini</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>De-activate all activities for selected subject tag</source>
         <translation type="obsolete">Hapus semua kegiatan untuk tag mata pelajaran ini</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Help</source>
         <translation type="obsolete">Bantuan</translation>
     </message>
@@ -22066,6 +23124,29 @@ Ini dapat membingungkan.</translation>
         <location filename="../src/interface/subjectsform_template.ui" line="99"/>
         <source>De-activate all activities for selected subject</source>
         <translation>Hapus semua kegiatan untuk mata pelajaran ini</translation>
+    </message>
+</context>
+<context>
+    <name>SubjectsStatisticsForm</name>
+    <message>
+        <location filename="../src/interface/subjectsstatisticsform.cpp" line="45"/>
+        <source>Subject</source>
+        <translation type="unfinished">Mata Pelajaran</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsstatisticsform.cpp" line="46"/>
+        <source>No. of activities</source>
+        <translation type="unfinished">Jmlh pertemuan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsstatisticsform.cpp" line="47"/>
+        <source>No. of hours</source>
+        <translation type="unfinished">Jmlh Jam</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/subjectsstatisticsform.cpp" line="47"/>
+        <source>periods</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -22130,6 +23211,29 @@ Ini dapat membingungkan.</translation>
     </message>
 </context>
 <context>
+    <name>TeachersStatisticsForm</name>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="45"/>
+        <source>Teacher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="46"/>
+        <source>No. of activities</source>
+        <translation type="unfinished">Jmlh pertemuan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="47"/>
+        <source>No. of hours</source>
+        <translation type="unfinished">Jmlh Jam</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/teachersstatisticsform.cpp" line="47"/>
+        <source>periods</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TeachersStatisticsForm_template</name>
     <message>
         <location filename="../src/interface/teachersstatisticsform_template.ui" line="16"/>
@@ -22145,239 +23249,296 @@ Ini dapat membingungkan.</translation>
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="485"/>
+        <location filename="../src/engine/timetableexport.cpp" line="677"/>
         <source>Soft conflicts of %1</source>
         <translation>Konflik lunak dari %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="497"/>
+        <location filename="../src/engine/timetableexport.cpp" line="689"/>
         <source>Generated with FET %1 on %2</source>
         <translation>Dihasilkan dari FET %1 pada %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="763"/>
+        <location filename="../src/engine/timetableexport.cpp" line="955"/>
         <source>End of file.</source>
         <translation>Akhir file.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="495"/>
+        <location filename="../src/engine/timetableexport.cpp" line="687"/>
         <source>Conflicts of %1</source>
         <translation>Konflik dari %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6968"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7160"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation>Peringatan! Hanya %1 dari %s kegiatan ditempatkan!</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="688"/>
+        <location filename="../src/engine/timetableexport.cpp" line="880"/>
         <source>CSS Stylesheet of %1</source>
         <translation>Stylesheet CSS dari %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="691"/>
+        <location filename="../src/engine/timetableexport.cpp" line="883"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation>Stylesheet dihasilkan dengan FET %1 pada %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="693"/>
+        <location filename="../src/engine/timetableexport.cpp" line="885"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation>Untuk memberi spasi antar halaman setiap dua jadwal, cut/potong bari %1 dan paste/sambung ke baris %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="694"/>
+        <location filename="../src/engine/timetableexport.cpp" line="886"/>
         <source>To hide an element just write the following phrase into the element</source>
         <translation>Untuk sembunyikan elemen cukup tulis kalimat ini pada elemen tersebut</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6970"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7162"/>
         <source>Institution name</source>
         <translation>Nama Institusi</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6971"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7163"/>
         <source>Comments</source>
         <translation>Komentar</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6016"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6208"/>
         <source>Table of content</source>
         <translation>Daftar Isi</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="3284"/>
+        <location filename="../src/engine/timetableexport.cpp" line="3476"/>
         <source>Year</source>
         <translation>Kelas</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1939"/>
+        <location filename="../src/engine/timetableexport.cpp" line="2131"/>
         <source>Group</source>
         <translation>Kelas Paralel</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7077"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7269"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation>Jadwal dihasilkan dengan FET %1 pada %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7080"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7272"/>
         <source>back to the top</source>
         <translation>Kembali ke atas</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5565"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5757"/>
         <source>No rooms recorded in fet for %1.</source>
         <translation>Tidak ada ruangan direcord di FET untuk %1.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7000"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7192"/>
         <source>Detailed</source>
         <translation>Detail</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7001"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7193"/>
         <source>Less detailed</source>
         <translation>Kurang Detil</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6926"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7118"/>
         <source>Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>Tidak dapat membuka file %1 untuk ditulis. Silahkan periksa ruang kosong disk anda. Penyimpanan %1 dibatalkan.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7091"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7283"/>
         <source>Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>Penulisan %1 memberi kode kesalahan %2, yang artinya penyimpanan gagal. Silahkan periksa ruang kosong pada disk anda.</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6019"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6211"/>
         <source>Subject</source>
         <translation>Mata Pelajaran</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="748"/>
+        <location filename="../src/engine/timetableexport.cpp" line="940"/>
         <source>Style the teachers free periods</source>
         <translation>Style waktu kosong guru</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Free Periods</source>
         <translation type="obsolete">Waktu Kosong</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6978"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7170"/>
         <source>Teacher has a single gap</source>
         <translation>Guru ada sebuah jam kosong</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6979"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7171"/>
         <source>Teacher has a border gap</source>
         <translation>Guru memiliki jam kosong batas</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6980"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7172"/>
         <source>Teacher has a big gap</source>
         <translation>Guru memiliki jam kosong besar</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6981"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7173"/>
         <source>Teacher must come earlier</source>
         <translation>Guru harus datang lebih cepat</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6982"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7174"/>
         <source>Teacher must come much earlier</source>
         <translation>Guru harus datang lebih awal</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6983"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7175"/>
         <source>Teacher must stay longer</source>
         <translation>Guru harus tinggal lebih lama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6984"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7176"/>
         <source>Teacher must stay much longer</source>
         <translation>Guru harus tinggal lebih lama lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6985"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7177"/>
         <source>Teacher has a free day</source>
         <translation>Guru memiliki sebuah hari bebas</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="6986"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7178"/>
         <source>Teacher is not available</source>
         <translation>Guru tidak ada</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7031"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7223"/>
         <source>Single gap</source>
         <translation>Jam kosong tunggal</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7032"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7224"/>
         <source>Border gap</source>
         <translation>Jam kosong batas</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7033"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7225"/>
         <source>Big gap</source>
         <translation>Jam kosong besar
 </translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7034"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7226"/>
         <source>Must come earlier</source>
         <translation>Harus datang awal</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7035"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7227"/>
         <source>Must stay longer</source>
         <translation>Harus tinggal lebih lama</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7036"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7228"/>
         <source>Must come much earlier</source>
         <translation>Harus datang lebih awal lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7037"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7229"/>
         <source>Must stay much longer</source>
         <translation>Harus tinggal lebih lama lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7038"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7230"/>
         <source>Free day</source>
         <translation>Hari kosong</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7039"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7231"/>
         <source>Not available</source>
         <translation>Tidak ada</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7001"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7193"/>
         <source>Teachers&apos; Free Periods</source>
         <translation>Periode Kosong Guru</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="488"/>
+        <location filename="../src/engine/timetableexport.cpp" line="680"/>
         <source>Total soft conflicts: </source>
-        <translation type="unfinished"></translation>
+        <translation>Jumlah konflik lunak:</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="489"/>
+        <location filename="../src/engine/timetableexport.cpp" line="681"/>
         <source>Soft conflicts list (in decreasing order):</source>
-        <translation type="unfinished"></translation>
+        <translation>Daftar konflik lunak (dalam urutan naik):</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="499"/>
+        <location filename="../src/engine/timetableexport.cpp" line="691"/>
         <source>Total conflicts: </source>
+        <translation>Jumlah konflik:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="692"/>
+        <source>Conflicts list (in decreasing order):</source>
+        <translation>Daftar konflik (dalam urutan menaik):</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="260"/>
+        <source>FET - Critical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="500"/>
-        <source>Conflicts list (in decreasing order):</source>
+        <location filename="../src/engine/timetableexport.cpp" line="244"/>
+        <source>Timetable not generated - cannot save it - this should not happen (please report bug)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="260"/>
+        <source>Incomplete timetable - this should not happen - please report bug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="364"/>
+        <source>Added the following constraint to saved file:</source>
+        <translation type="unfinished">Menambah batasan berikut ke file yang disimpan:</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="366"/>
+        <source>Constraint
+%1 NOT added to saved file - duplicate</source>
+        <translation type="unfinished">Batasan
+%1 TIDAK ditambah ke file tersimpan - duplikat</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="373"/>
+        <source>FET information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="377"/>
+        <source>Skip information</source>
+        <translation type="unfinished">Abaikan informasi</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="377"/>
+        <source>See next</source>
+        <translation type="unfinished">Lihat selanjutnya</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="376"/>
+        <source>FET warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="422"/>
+        <source>FET critical</source>
+        <translation type="unfinished">Kritis FET</translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="422"/>
+        <source>Could not save the data + timetable file on the hard disk - maybe hard disk is full</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -22480,7 +23641,7 @@ Untuk info lebih lanjut anda dapat bergabung ke milis atau tulis ke pembuat</tra
         <translation>SN: %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>ST: %1</source>
         <translation type="obsolete">ST: %1</translation>
     </message>
@@ -22562,12 +23723,12 @@ Hasil simulasi telah disimpan. Anda dapat mengecek Jadwal/Lihat. Hasil akan disi
         <translation>Proses pencaria semi acak, artinya anda akan mendapatkan jadwal yang berbeda setiap kali dijalankan. Anda dapat menentukan jadwal yang terbaik dari beberapa pencarian</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>Usually, there is no need to stop and restart the search, even if the algorithm seems stucked. Please report to author contrary cases</source>
         <translation type="obsolete">Biasanya, tidak perlu berhenti dan mengulang pencarian, bahkan jika algorima kelihatan nyangkut. Silahkan laporkan jika ada</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="" line="1"/>
         <source>It is recommended to strengthen the constraints step by step (for intance min n days or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation type="obsolete">Direkomendasikan menaikkan batasan satu per satu (contohnya hari n min atau gap maks guru), untuk dapatkan jadwal yang layak.</translation>
     </message>
@@ -22656,7 +23817,7 @@ tag kegiatan</translation>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="434"/>
         <source>Total soft conflicts: </source>
-        <translation type="unfinished"></translation>
+        <translation>Jumlah konflik lunak:</translation>
     </message>
 </context>
 <context>
@@ -22716,12 +23877,12 @@ jadwal parsial pada hard disk, dalam xml dan html.</translation>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="347"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="359"/>
         <source>FET information</source>
         <translation>FET Informasi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="175"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="181"/>
         <source>Notice: you can only see generated timetables on the hard disk, in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding.
 
 Please note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
@@ -22729,81 +23890,91 @@ Please note that, for large data, each timetable might occupy more megabytes of 
 Silakan dicatat, untuk data besar, setiap jadwal akan menempati megabyte lebih dari ruang hard disk, jadi pastikan anda mempunyai ruang yang cukup (anda dapat mengecek ukuran dari jadwal tunggal sebagai pencegahan).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="193"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="202"/>
         <source>Directory %1 exists and might not be empty, (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it) and then you can generate multiple timetables</source>
         <translation>Direktori %1 ada dan tidak kosong ( file-file lama). Anda perlu secara manual menghapus isi dari direktori ini DAN direktorinya (atau mengubah namanya) dan lalu anda me-generate jadwl ganda</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="200"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="209"/>
         <source>FET warning</source>
         <translation>FET Peringatan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="200"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="209"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation>Data salah. Silahkan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="207"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="216"/>
         <source>You have entered simulation with uninitialized rules or 0 activities...aborting</source>
         <translation>Anda telah memasuki simulasi dengan aturan tanpa inisialisasi atau 0 kegiatan...dibatalakan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="218"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="227"/>
         <source>Cannot optimize - please modify your data</source>
         <translation>Tidak dapat dioptimasi - silahkan ubah data anda</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="223"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="232"/>
         <source>Your data cannot be processed - please modify it as instructed
 For more information you can join the mailing list or write to author</source>
         <translation>Data tidak dapat diproses - silahkan ubah sesuai perintah
 Untuk info lebih lanjut anda dapat bergabung ke milis atau tulis ke pembuat</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="245"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="254"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <translation>Jadwal no: %1 =&gt; %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="266"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="276"/>
         <source>Soft conflicts listing (in decreasing order):
 </source>
         <translation>Daftar konlik lunak (dalam urutan menurun):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="291"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="301"/>
         <source>Simulation interrupted.</source>
         <translation>Simulasi berhenti.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="306"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="316"/>
         <source>The results for the generated timetables are saved in the directory %1 in html and xml mode and the soft conflicts in txt mode</source>
         <translation>Hasil Jadwal yang dihasilkan disimpan pada direktori %1 pada html dan xml dan konflik lunak pada txt</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="349"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="361"/>
         <source>Simulation terminated successfully. The results are saved in directory %1 in html and xml mode and the soft conflicts in txt mode.</source>
         <translation>Simulasi berhasil dihentikan. Hasil disimpan di direktori %1 dalam bentuk html dan xml dan konflik lunak dalam bentuk txt.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="369"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="383"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation>Jadwal ini: %1 dari %2 kegiatan ditempatkan, %3 jam %4 menit %5 detik</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="177"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="186"/>
         <source>If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities, this might help.</source>
         <translation>Jika anda mendapatkan jadwal yang susah, silakan masuk ke menu Hasilkan(tunggal) dan lihat urutan awal dari evaluasi kegiatan, mungkin membantu.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="349"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="363"/>
         <source>Total searching time was %1h %2m %3s</source>
         <translation>Total waktu pencarian adalah %1h %2m %3s</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="263"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="273"/>
         <source>Total soft conflicts: </source>
+        <translation>Jumlah konflik lunak:</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="184"/>
+        <source>NEW: There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="363"/>
+        <source>The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -22868,39 +24039,39 @@ Untuk info lebih lanjut anda dapat bergabung ke milis atau tulis ke pembuat</tra
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="253"/>
         <source>Added the following constraint:</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah batasan berikut:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="255"/>
         <source>Constraint
 %1 NOT added - duplicate</source>
-        <translation type="unfinished">Batasan
+        <translation>Batasan
 %1 tidak ditambah - berganda</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="276"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasi FET</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="265"/>
         <source>Skip information</source>
-        <translation type="unfinished"></translation>
+        <translation>Abaikan informasi</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="265"/>
         <source>See next</source>
-        <translation type="unfinished"></translation>
+        <translation>Lihat selanjutnya</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="264"/>
         <source>FET warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Peringatan FET</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="276"/>
         <source>Added %1 locking constraints, ignored %2 duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah %1 batasan kunci, abaikan %2 duplikat</translation>
     </message>
 </context>
 <context>
@@ -22961,39 +24132,39 @@ Untuk info lebih lanjut anda dapat bergabung ke milis atau tulis ke pembuat</tra
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="363"/>
         <source>Added the following constraint:</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah batasan berikut:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="365"/>
         <source>Constraint
 %1 NOT added - duplicate</source>
-        <translation type="unfinished">Batasan
+        <translation>Batasan
 %1 tidak ditambah - berganda</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="387"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasi FET</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="376"/>
         <source>Skip information</source>
-        <translation type="unfinished"></translation>
+        <translation>Abaikan informasi</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="376"/>
         <source>See next</source>
-        <translation type="unfinished"></translation>
+        <translation>Lihat selanjutnya</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="375"/>
         <source>FET warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Peringatan FET</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="387"/>
         <source>Added %1 locking constraints, ignored %2 duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah %1 batasan kunci, abaikan %2 duplikat</translation>
     </message>
 </context>
 <context>
@@ -23070,39 +24241,40 @@ Untuk info lebih lanjut anda dapat bergabung ke milis atau tulis ke pembuat</tra
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="278"/>
         <source>Added the following constraint:</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah batasan berikut:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="280"/>
         <source>Constraint
 %1 NOT added - duplicate</source>
-        <translation type="unfinished">Batasan
+        <translation>Batasan
+%1 tidak ditambah - bergandaBatasan
 %1 tidak ditambah - berganda</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="302"/>
         <source>FET information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasi FET</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="291"/>
         <source>Skip information</source>
-        <translation type="unfinished"></translation>
+        <translation>Abaikan informasi</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="291"/>
         <source>See next</source>
-        <translation type="unfinished"></translation>
+        <translation>Lihat selanjutnya</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="290"/>
         <source>FET warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Peringatan FET</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="302"/>
         <source>Added %1 locking constraints, ignored %2 duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambah %1 batasan kunci, abaikan %2 duplikat</translation>
     </message>
 </context>
 <context>

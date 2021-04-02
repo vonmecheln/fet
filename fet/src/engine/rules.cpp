@@ -700,6 +700,19 @@ bool Rules::removeTeacher(const QString& teacherName)
 
 	for(int i=0; i<this->timeConstraintsList.size(); ){
 		TimeConstraint* ctr=this->timeConstraintsList[i];
+		if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherMaxHoursContinuously* crt_constraint=(ConstraintTeacherMaxHoursContinuously*)ctr;
+			if(teacherName==crt_constraint->teacherName)
+				this->removeTimeConstraint(ctr); //single constraint removal
+			else
+				i++;
+		}
+		else
+			i++;
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); ){
+		TimeConstraint* ctr=this->timeConstraintsList[i];
 		if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY){
 			ConstraintTeacherMinHoursDaily* crt_constraint=(ConstraintTeacherMinHoursDaily*)ctr;
 			if(teacherName==crt_constraint->teacherName)
@@ -860,6 +873,16 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 
 		if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
 			ConstraintTeacherMaxHoursDaily* crt_constraint=(ConstraintTeacherMaxHoursDaily*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+	}
+
+	for(int i=0; i<this->timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=this->timeConstraintsList[i];	
+
+		if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherMaxHoursContinuously* crt_constraint=(ConstraintTeacherMaxHoursContinuously*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
@@ -1531,6 +1554,13 @@ bool Rules::removeYear(const QString& yearName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
+			if(yearName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(yearName == crt_constraint->students){
@@ -1660,6 +1690,11 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialYearName == crt_constraint->students)
+				crt_constraint->students=finalYearName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
 			if(_initialYearName == crt_constraint->students)
 				crt_constraint->students=finalYearName;
 		}
@@ -1839,6 +1874,13 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 				erased=true;
 			}
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
+			if(groupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(groupName == crt_constraint->students){
@@ -1988,6 +2030,11 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 			if(_initialGroupName == crt_constraint->students)
 				crt_constraint->students=finalGroupName;
 		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
+			if(_initialGroupName == crt_constraint->students)
+				crt_constraint->students=finalGroupName;
+		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 			ConstraintStudentsSetMinHoursDaily* crt_constraint=(ConstraintStudentsSetMinHoursDaily*)ctr;
 			if(_initialGroupName == crt_constraint->students)
@@ -2129,6 +2176,13 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(subgroupName == crt_constraint->students){
+				this->removeTimeConstraint(ctr);
+				erased=true;
+			}
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
 			if(subgroupName == crt_constraint->students){
 				this->removeTimeConstraint(ctr);
 				erased=true;
@@ -2280,6 +2334,11 @@ bool Rules::modifySubgroup(const QString& yearName, const QString& groupName, co
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 			ConstraintStudentsSetMaxHoursDaily* crt_constraint=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			if(_initialSubgroupName == crt_constraint->students)
+				crt_constraint->students=finalSubgroupName;
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* crt_constraint=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
 			if(_initialSubgroupName == crt_constraint->students)
 				crt_constraint->students=finalSubgroupName;
 		}
@@ -2487,6 +2546,25 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
+			//removing Constraint2ActivitiesOrdered-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
+					Constraint2ActivitiesOrdered *apt=(Constraint2ActivitiesOrdered*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
 			//removing ConstraintActivityPreferredTimes-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
@@ -2645,6 +2723,25 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				TimeConstraint* ctr=this->timeConstraintsList[j];
 				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
 					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing Constraint2ActivitiesOrdered-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
+					Constraint2ActivitiesOrdered *apt=(Constraint2ActivitiesOrdered*)ctr;
 					if(apt->firstActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
@@ -5003,56 +5100,6 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					assert(cn->n_activities==n_act);
 					crt_constraint=cn;
 				}
-				if((elem3.tagName()=="ConstraintTeachersMaxHoursContinuously"
-				 //TODO: erase the line below. It is only kept for compatibility with older versions
-				 || elem3.tagName()=="ConstraintTeachersNoMoreThanXHoursContinuously") && !skipDeprecatedConstraints){
-				 
-				 	int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("File contains deprecated constraint teachers max hours continuously - will be ignored\n"),
-					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
-					 1, 0 );
-													 
-					if(t==0)
-						skipDeprecatedConstraints=true;
-
-				 /*
-					ConstraintTeachersMaxHoursContinuously* cn=new ConstraintTeachersMaxHoursContinuously();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
-							cn->maxHoursContinuously=elem4.text().toInt();
-							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
-					crt_constraint=NULL;
-				}
 				else if(elem3.tagName()=="ConstraintTeachersMaxHoursDaily"){
 					ConstraintTeachersMaxHoursDaily* cn=new ConstraintTeachersMaxHoursDaily();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -5123,6 +5170,84 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						else if(elem4.tagName()=="Maximum_Hours_Daily"){
 							cn->maxHoursDaily=elem4.text().toInt();
 							xmlReadingLog+="    Read maxHoursDaily="+QString::number(cn->maxHoursDaily)+"\n";
+						}
+						else if(elem4.tagName()=="Teacher_Name"){
+							cn->teacherName=elem4.text();
+							xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintTeachersMaxHoursContinuously"){
+					ConstraintTeachersMaxHoursContinuously* cn=new ConstraintTeachersMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintTeacherMaxHoursContinuously"){
+					ConstraintTeacherMaxHoursContinuously* cn=new ConstraintTeacherMaxHoursContinuously();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
 						}
 						else if(elem4.tagName()=="Teacher_Name"){
 							cn->teacherName=elem4.text();
@@ -5444,6 +5569,88 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 					assert(cn->maxHoursDaily>=0);
 					crt_constraint=cn;
 				}
+				else if(elem3.tagName()=="ConstraintStudentsMaxHoursContinuously"){
+					ConstraintStudentsMaxHoursContinuously* cn=new ConstraintStudentsMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="ConstraintStudentsSetMaxHoursContinuously"){
+					ConstraintStudentsSetMaxHoursContinuously* cn=new ConstraintStudentsSetMaxHoursContinuously();
+					cn->maxHoursContinuously=-1;
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="Maximum_Hours_Continuously"){
+							cn->maxHoursContinuously=elem4.text().toInt();
+							xmlReadingLog+="    Read maxHoursContinuously="+QString::number(cn->maxHoursContinuously)+"\n";
+						}
+						else if(elem4.tagName()=="Students"){
+							cn->students=elem4.text();
+							xmlReadingLog+="    Read students name="+cn->students+"\n";
+						}
+					}
+					assert(cn->maxHoursContinuously>=0);
+					crt_constraint=cn;
+				}
 				else if(elem3.tagName()=="ConstraintStudentsMinHoursDaily"){
 					ConstraintStudentsMinHoursDaily* cn=new ConstraintStudentsMinHoursDaily();
 					cn->minHoursDaily=-1;
@@ -5618,6 +5825,47 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				}
 				else if(elem3.tagName()=="Constraint2ActivitiesConsecutive"){
 					Constraint2ActivitiesConsecutive* cn=new Constraint2ActivitiesConsecutive();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
+				else if(elem3.tagName()=="Constraint2ActivitiesOrdered"){
+					Constraint2ActivitiesOrdered* cn=new Constraint2ActivitiesOrdered();
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6754,56 +7002,6 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						if(elem4.tagName()=="Max_Intervals"){
 							cn->n=elem4.text().toInt();
 							xmlReadingLog+="    Adding max intervals="+QString::number(cn->n)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
-					crt_constraint=NULL;
-				}
-				else if(elem3.tagName()=="Constraint2ActivitiesOrdered" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("File contains deprecated constraint 2 activities ordered - will be ignored\n"),
-					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
-					 1, 0 );
-													 
-					if(t==0)
-						skipDeprecatedConstraints=true;
-					/*
-					Constraint2ActivitiesOrdered* cn=new Constraint2ActivitiesOrdered();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="First_Activity_Id"){
-							cn->firstActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
-						}
-						else if(elem4.tagName()=="Second_Activity_Id"){
-							cn->secondActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
 						}
 					}
 					crt_constraint=cn;*/

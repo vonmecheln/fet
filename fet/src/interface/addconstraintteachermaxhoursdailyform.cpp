@@ -24,8 +24,6 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 AddConstraintTeacherMaxHoursDailyForm::AddConstraintTeacherMaxHoursDailyForm()
 {
 	//setWindowFlags(Qt::Window);

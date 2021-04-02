@@ -23,6 +23,8 @@
 #include <QDialog>
 
 class TeachersStatisticsForm : public QDialog, Ui::TeachersStatisticsForm_template  {
+	Q_OBJECT
+
 public:
 	TeachersStatisticsForm();
 	~TeachersStatisticsForm();

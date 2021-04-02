@@ -140,6 +140,34 @@ void ModifyConstraintMinNDaysBetweenActivitiesForm::ok()
 			return;
 	}
 #endif
+
+	if(1){
+		ConstraintMinNDaysBetweenActivities adc;
+
+		int i;
+		QList<int>::iterator it;
+		for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
+			adc.activitiesId[i]=*it;
+		adc.n_activities=i;
+		
+		adc.weightPercentage=weight;
+		adc.consecutiveIfSameDay=consecutiveIfSameDayCheckBox->isChecked();
+		adc.minDays=minDaysSpinBox->value();
+		
+		bool duplicate=false;
+		
+		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList)
+			if(tc!=this->_ctr && tc->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES)
+				if( ( *((ConstraintMinNDaysBetweenActivities*)tc) ) == adc){
+					duplicate=true;
+					break;
+				}
+				
+		if(duplicate){
+			QMessageBox::warning(this, tr("FET information"), tr("Cannot proceed, current constraint is equal to another one (it is duplicated)"));
+			return;
+		}
+	}
 	
 	int i;
 	QList<int>::iterator it;

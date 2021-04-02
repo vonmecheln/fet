@@ -161,12 +161,21 @@ SOURCES += fet.cpp \
 		   constraintteachermaxdaysperweekform.cpp \
 		   addconstraintteachermaxdaysperweekform.cpp \
 		   modifyconstraintteachermaxdaysperweekform.cpp \
+\
 		   constraintteachersmaxhoursdailyform.cpp \
 		   addconstraintteachersmaxhoursdailyform.cpp \
 		   modifyconstraintteachersmaxhoursdailyform.cpp \
 		   constraintteachermaxhoursdailyform.cpp \
 		   addconstraintteachermaxhoursdailyform.cpp \
 		   modifyconstraintteachermaxhoursdailyform.cpp \
+\
+		   constraintteachersmaxhourscontinuouslyform.cpp \
+		   addconstraintteachersmaxhourscontinuouslyform.cpp \
+		   modifyconstraintteachersmaxhourscontinuouslyform.cpp \
+		   constraintteachermaxhourscontinuouslyform.cpp \
+		   addconstraintteachermaxhourscontinuouslyform.cpp \
+		   modifyconstraintteachermaxhourscontinuouslyform.cpp \
+\
 		   constraintteachersminhoursdailyform.cpp \
 		   addconstraintteachersminhoursdailyform.cpp \
 		   modifyconstraintteachersminhoursdailyform.cpp \
@@ -203,12 +212,21 @@ SOURCES += fet.cpp \
 		   constraintstudentssetearlymaxbeginningsatsecondhourform.cpp \
 		   addconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp \
 		   modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp \
+\
 		   constraintstudentssetmaxhoursdailyform.cpp \
 		   addconstraintstudentssetmaxhoursdailyform.cpp \
 		   modifyconstraintstudentssetmaxhoursdailyform.cpp \
 		   constraintstudentsmaxhoursdailyform.cpp \
 		   addconstraintstudentsmaxhoursdailyform.cpp \
 		   modifyconstraintstudentsmaxhoursdailyform.cpp \
+\
+		   constraintstudentssetmaxhourscontinuouslyform.cpp \
+		   addconstraintstudentssetmaxhourscontinuouslyform.cpp \
+		   modifyconstraintstudentssetmaxhourscontinuouslyform.cpp \
+		   constraintstudentsmaxhourscontinuouslyform.cpp \
+		   addconstraintstudentsmaxhourscontinuouslyform.cpp \
+		   modifyconstraintstudentsmaxhourscontinuouslyform.cpp \
+\
 		   constraintstudentssetminhoursdailyform.cpp \
 		   addconstraintstudentssetminhoursdailyform.cpp \
 		   modifyconstraintstudentssetminhoursdailyform.cpp \
@@ -221,6 +239,11 @@ SOURCES += fet.cpp \
 		   constraint2activitiesconsecutiveform.cpp \
 		   addconstraint2activitiesconsecutiveform.cpp \
 		   modifyconstraint2activitiesconsecutiveform.cpp \
+\
+		   constraint2activitiesorderedform.cpp \
+		   addconstraint2activitiesorderedform.cpp \
+		   modifyconstraint2activitiesorderedform.cpp \
+\
 		   constraintminndaysbetweenactivitiesform.cpp \
 		   addconstraintminndaysbetweenactivitiesform.cpp \
 		   modifyconstraintminndaysbetweenactivitiesform.cpp \
@@ -391,12 +414,21 @@ HEADERS += fet.h \
 		   constraintteachermaxdaysperweekform.h \
 		   addconstraintteachermaxdaysperweekform.h \
 		   modifyconstraintteachermaxdaysperweekform.h \
+\
 		   constraintteachersmaxhoursdailyform.h \
 		   addconstraintteachersmaxhoursdailyform.h \
 		   modifyconstraintteachersmaxhoursdailyform.h \
 		   constraintteachermaxhoursdailyform.h \
 		   addconstraintteachermaxhoursdailyform.h \
 		   modifyconstraintteachermaxhoursdailyform.h \
+\
+		   constraintteachersmaxhourscontinuouslyform.h \
+		   addconstraintteachersmaxhourscontinuouslyform.h \
+		   modifyconstraintteachersmaxhourscontinuouslyform.h \
+		   constraintteachermaxhourscontinuouslyform.h \
+		   addconstraintteachermaxhourscontinuouslyform.h \
+		   modifyconstraintteachermaxhourscontinuouslyform.h \
+\
 		   constraintteachersminhoursdailyform.h \
 		   addconstraintteachersminhoursdailyform.h \
 		   modifyconstraintteachersminhoursdailyform.h \
@@ -433,12 +465,21 @@ HEADERS += fet.h \
 		   constraintstudentssetearlymaxbeginningsatsecondhourform.h \
 		   addconstraintstudentssetearlymaxbeginningsatsecondhourform.h \
 		   modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.h \
+\
 		   constraintstudentssetmaxhoursdailyform.h \
 		   addconstraintstudentssetmaxhoursdailyform.h \
 		   modifyconstraintstudentssetmaxhoursdailyform.h \
 		   constraintstudentsmaxhoursdailyform.h \
 		   addconstraintstudentsmaxhoursdailyform.h \
 		   modifyconstraintstudentsmaxhoursdailyform.h \
+\
+		   constraintstudentssetmaxhourscontinuouslyform.h \
+		   addconstraintstudentssetmaxhourscontinuouslyform.h \
+		   modifyconstraintstudentssetmaxhourscontinuouslyform.h \
+		   constraintstudentsmaxhourscontinuouslyform.h \
+		   addconstraintstudentsmaxhourscontinuouslyform.h \
+		   modifyconstraintstudentsmaxhourscontinuouslyform.h \
+\
 		   constraintstudentssetminhoursdailyform.h \
 		   addconstraintstudentssetminhoursdailyform.h \
 		   modifyconstraintstudentssetminhoursdailyform.h \
@@ -448,9 +489,15 @@ HEADERS += fet.h \
 		   constraintactivitiesnotoverlappingform.h \
 		   addconstraintactivitiesnotoverlappingform.h \
 		   modifyconstraintactivitiesnotoverlappingform.h \
+\
 		   constraint2activitiesconsecutiveform.h \
 		   addconstraint2activitiesconsecutiveform.h \
 		   modifyconstraint2activitiesconsecutiveform.h \
+\
+		   constraint2activitiesorderedform.h \
+		   addconstraint2activitiesorderedform.h \
+		   modifyconstraint2activitiesorderedform.h \
+\
 		   constraintminndaysbetweenactivitiesform.h \
 		   addconstraintminndaysbetweenactivitiesform.h \
 		   modifyconstraintminndaysbetweenactivitiesform.h \
@@ -625,12 +672,21 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintteachermaxdaysperweekform_template.ui \
 		   addconstraintteachermaxdaysperweekform_template.ui \
 		   modifyconstraintteachermaxdaysperweekform_template.ui \
+\
 		   constraintteachersmaxhoursdailyform_template.ui \
 		   addconstraintteachersmaxhoursdailyform_template.ui \
 		   modifyconstraintteachersmaxhoursdailyform_template.ui \
 		   constraintteachermaxhoursdailyform_template.ui \
 		   addconstraintteachermaxhoursdailyform_template.ui \
 		   modifyconstraintteachermaxhoursdailyform_template.ui \
+\
+		   constraintteachersmaxhourscontinuouslyform_template.ui \
+		   addconstraintteachersmaxhourscontinuouslyform_template.ui \
+		   modifyconstraintteachersmaxhourscontinuouslyform_template.ui \
+		   constraintteachermaxhourscontinuouslyform_template.ui \
+		   addconstraintteachermaxhourscontinuouslyform_template.ui \
+		   modifyconstraintteachermaxhourscontinuouslyform_template.ui \
+\
 		   constraintteachersminhoursdailyform_template.ui \
 		   addconstraintteachersminhoursdailyform_template.ui \
 		   modifyconstraintteachersminhoursdailyform_template.ui \
@@ -667,12 +723,21 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintstudentssetearlymaxbeginningsatsecondhourform_template.ui \
 		   addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui \
 		   modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui \
+\
 		   constraintstudentssetmaxhoursdailyform_template.ui \
 		   addconstraintstudentssetmaxhoursdailyform_template.ui \
 		   modifyconstraintstudentssetmaxhoursdailyform_template.ui \
 		   constraintstudentsmaxhoursdailyform_template.ui \
 		   addconstraintstudentsmaxhoursdailyform_template.ui \
 		   modifyconstraintstudentsmaxhoursdailyform_template.ui \
+\
+		   constraintstudentssetmaxhourscontinuouslyform_template.ui \
+		   addconstraintstudentssetmaxhourscontinuouslyform_template.ui \
+		   modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui \
+		   constraintstudentsmaxhourscontinuouslyform_template.ui \
+		   addconstraintstudentsmaxhourscontinuouslyform_template.ui \
+		   modifyconstraintstudentsmaxhourscontinuouslyform_template.ui \
+\
 		   constraintstudentssetminhoursdailyform_template.ui \
 		   addconstraintstudentssetminhoursdailyform_template.ui \
 		   modifyconstraintstudentssetminhoursdailyform_template.ui \
@@ -682,9 +747,15 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintactivitiesnotoverlappingform_template.ui \
 		   addconstraintactivitiesnotoverlappingform_template.ui \
 		   modifyconstraintactivitiesnotoverlappingform_template.ui \
+\
 		   constraint2activitiesconsecutiveform_template.ui \
 		   addconstraint2activitiesconsecutiveform_template.ui \
 		   modifyconstraint2activitiesconsecutiveform_template.ui \
+\
+		   constraint2activitiesorderedform_template.ui \
+		   addconstraint2activitiesorderedform_template.ui \
+		   modifyconstraint2activitiesorderedform_template.ui \
+\
 		   constraintminndaysbetweenactivitiesform_template.ui \
 		   addconstraintminndaysbetweenactivitiesform_template.ui \
 		   modifyconstraintminndaysbetweenactivitiesform_template.ui \

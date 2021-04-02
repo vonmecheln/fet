@@ -90,7 +90,7 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Max hours</string>
+                <string>Max hours daily</string>
             </property>
         </widget>
         <widget class="QSpinBox" row="4" column="1">

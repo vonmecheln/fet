@@ -53,6 +53,7 @@ using namespace std;
 
 #include "constraintactivityendsstudentsdayform.h"
 #include "constraint2activitiesconsecutiveform.h"
+#include "constraint2activitiesorderedform.h"
 #include "constraintactivitiespreferredtimesform.h"
 #include "constraintactivitiessamestartingtimeform.h"
 #include "constraintactivitiessamestartinghourform.h"
@@ -67,6 +68,8 @@ using namespace std;
 #include "constraintteachermaxdaysperweekform.h"
 #include "constraintteachermaxhoursdailyform.h"
 #include "constraintteachersmaxhoursdailyform.h"
+#include "constraintteachermaxhourscontinuouslyform.h"
+#include "constraintteachersmaxhourscontinuouslyform.h"
 #include "constraintteacherminhoursdailyform.h"
 #include "constraintteachersminhoursdailyform.h"
 #include "constraintactivitypreferredtimeform.h"
@@ -80,6 +83,8 @@ using namespace std;
 #include "constraintstudentssetearlymaxbeginningsatsecondhourform.h"
 #include "constraintstudentssetmaxhoursdailyform.h"
 #include "constraintstudentsmaxhoursdailyform.h"
+#include "constraintstudentssetmaxhourscontinuouslyform.h"
+#include "constraintstudentsmaxhourscontinuouslyform.h"
 #include "constraintstudentssetminhoursdailyform.h"
 #include "constraintstudentsminhoursdailyform.h"
 #include "constraintactivitiesnotoverlappingform.h"
@@ -1025,6 +1030,18 @@ void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
 	form->exec();
 }
 
+void FetMainForm::on_dataTimeConstraints2ActivitiesOrderedAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	Constraint2ActivitiesOrderedForm* form=new Constraint2ActivitiesOrderedForm();
+	form->exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimesAction_activated()
 {
 	if(simulation_running){
@@ -1457,6 +1474,30 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated()
 	form->exec();
 }
 
+void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxHoursContinuouslyForm* form=new ConstraintTeachersMaxHoursContinuouslyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxHoursContinuouslyForm* form=new ConstraintTeacherMaxHoursContinuouslyForm();
+	form->exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
 {
 	if(simulation_running){
@@ -1610,6 +1651,30 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated()
 	}
 
 	ConstraintStudentsMaxHoursDailyForm* form=new ConstraintStudentsMaxHoursDailyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxHoursContinuouslyForm* form=new ConstraintStudentsSetMaxHoursContinuouslyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxHoursContinuouslyForm* form=new ConstraintStudentsMaxHoursContinuouslyForm();
 	form->exec();
 }
 

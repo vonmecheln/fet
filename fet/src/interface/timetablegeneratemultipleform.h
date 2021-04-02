@@ -32,7 +32,7 @@ public:
 	void run();
 
 signals:
-	void timetableGenerated(int timetable, const QString& description);
+	void timetableGenerated(int timetable, const QString& description, bool ok);
 	
 	void finished();
 };
@@ -55,9 +55,11 @@ public:
 	void simulationFinished();
 
 	void closePressed();
+	
+	void writeTimetableDataFile();
 
 private slots:
-	void timetableGenerated(int timetable, const QString& description);
+	void timetableGenerated(int timetable, const QString& description, bool ok);
 	
 	void finished();
 	

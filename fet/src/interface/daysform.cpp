@@ -24,7 +24,7 @@
 
 extern Timetable gt;
 
-QLineEdit* daysNames[14];
+QLineEdit* daysNames[28];
 int nDays;
 
 DaysForm::DaysForm()
@@ -38,6 +38,7 @@ DaysForm::DaysForm()
 	move(xx, yy);
 
 	nDays=gt.rules.nDaysPerWeek;
+	
 	daysNames[0]=day1LineEdit;
 	daysNames[1]=day2LineEdit;
 	daysNames[2]=day3LineEdit;
@@ -53,11 +54,26 @@ DaysForm::DaysForm()
 	daysNames[12]=day13LineEdit;
 	daysNames[13]=day14LineEdit;
 
+	daysNames[14]=day15LineEdit;
+	daysNames[15]=day16LineEdit;
+	daysNames[16]=day17LineEdit;
+	daysNames[17]=day18LineEdit;
+	daysNames[18]=day19LineEdit;
+	daysNames[19]=day20LineEdit;
+	daysNames[20]=day21LineEdit;
+	daysNames[21]=day22LineEdit;
+	daysNames[22]=day23LineEdit;
+	daysNames[23]=day24LineEdit;
+	daysNames[24]=day25LineEdit;
+	daysNames[25]=day26LineEdit;
+	daysNames[26]=day27LineEdit;
+	daysNames[27]=day28LineEdit;
+
 	daysSpinBox->setMinValue(1);
-	daysSpinBox->setMaxValue(14/*MAX_DAYS_PER_WEEK*/);
+	daysSpinBox->setMaxValue(28/*MAX_DAYS_PER_WEEK*/);
 	daysSpinBox->setValue(gt.rules.nDaysPerWeek);
 
-	for(int i=0; i<14; i++)
+	for(int i=0; i<28; i++)
 		if(i<nDays){
 			daysNames[i]->setEnabled(true);
 			daysNames[i]->setText(gt.rules.daysOfTheWeek[i]);
@@ -75,7 +91,7 @@ void DaysForm::daysChanged()
 {
 	nDays=daysSpinBox->value();
 	assert(nDays <= MAX_DAYS_PER_WEEK);
-	for(int i=0; i<14; i++)
+	for(int i=0; i<28; i++)
 		if(i<nDays)
 			daysNames[i]->setEnabled(true);
 		else

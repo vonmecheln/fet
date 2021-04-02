@@ -22,8 +22,6 @@
 #include <qlabel.h>
 #include <qlineedit.h>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 #include <QDesktopWidget>
 
 ModifyConstraintStudentsSetMaxHoursDailyForm::ModifyConstraintStudentsSetMaxHoursDailyForm(ConstraintStudentsSetMaxHoursDaily* ctr)
@@ -42,7 +40,7 @@ ModifyConstraintStudentsSetMaxHoursDailyForm::ModifyConstraintStudentsSetMaxHour
 	
 	updateStudentsComboBox();
 
-	maxHoursSpinBox->setMinValue(0);
+	maxHoursSpinBox->setMinValue(1);
 	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(ctr->maxHoursDaily);
 

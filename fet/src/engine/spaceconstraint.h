@@ -47,8 +47,10 @@ class Solution;
 typedef QList<SpaceConstraint*> SpaceConstraintsList;
 
 const int CONSTRAINT_GENERIC_SPACE										=1000; //time constraints are beginning from 1
+
 const int CONSTRAINT_BASIC_COMPULSORY_SPACE								=1001; //space constraints from 1001
 const int CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES							=1002;
+
 const int CONSTRAINT_ACTIVITY_PREFERRED_ROOM							=1003;
 const int CONSTRAINT_ACTIVITY_PREFERRED_ROOMS							=1004;
 

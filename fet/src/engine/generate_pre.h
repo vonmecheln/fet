@@ -169,6 +169,17 @@ bool computeTeachersMaxHoursDaily();
 ////////END   teacher(s) max hours daily
 
 
+////////BEGIN teacher(s) max hours continuously
+extern double teachersMaxHoursContinuouslyPercentages1[MAX_TEACHERS];
+extern int teachersMaxHoursContinuouslyMaxHours1[MAX_TEACHERS];
+
+extern double teachersMaxHoursContinuouslyPercentages2[MAX_TEACHERS];
+extern int teachersMaxHoursContinuouslyMaxHours2[MAX_TEACHERS];
+
+bool computeTeachersMaxHoursContinuously();
+////////END   teacher(s) max hours continuously
+
+
 ////////BEGIN teacher(s) min hours daily
 extern double teachersMinHoursDailyPercentages[MAX_TEACHERS];
 extern int teachersMinHoursDailyMinHours[MAX_TEACHERS];
@@ -188,6 +199,17 @@ bool computeSubgroupsMaxHoursDaily();
 ////////END   students (set) max hours daily
 
 
+////////BEGIN students (set) max hours continuously
+extern double subgroupsMaxHoursContinuouslyPercentages1[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsMaxHoursContinuouslyMaxHours1[MAX_TOTAL_SUBGROUPS];
+
+extern double subgroupsMaxHoursContinuouslyPercentages2[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsMaxHoursContinuouslyMaxHours2[MAX_TOTAL_SUBGROUPS];
+
+bool computeStudentsMaxHoursContinuously();
+////////END   students (set) max hours continuously
+
+
 ////////BEGIN students (set) min hours daily
 extern double subgroupsMinHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMinHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
@@ -205,6 +227,18 @@ void computeConstr2ActivitiesConsecutive();
 extern QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
 extern QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 //////////////END   2 activities consecutive
+
+
+//////////////BEGIN 2 activities ordered
+//index represents the first activity, value in array represents the second activity
+extern QList<double> constr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
+extern QList<int> constr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
+void computeConstr2ActivitiesOrdered();
+
+//index represents the second activity, value in array represents the first activity
+extern QList<double> inverseConstr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
+extern QList<int> inverseConstr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
+//////////////END   2 activities ordered
 
 
 ////////////BEGIN activity ends students day
@@ -272,6 +306,9 @@ extern QList<int> mustComputeTimetableSubgroups[MAX_ACTIVITIES];
 extern QList<int> mustComputeTimetableTeachers[MAX_ACTIVITIES];
 extern bool mustComputeTimetableSubgroup[MAX_TOTAL_SUBGROUPS];
 extern bool mustComputeTimetableTeacher[MAX_TEACHERS];
+
+
+bool homeRoomsAreOk();
 
 
 extern bool fixedActivity[MAX_ACTIVITIES];

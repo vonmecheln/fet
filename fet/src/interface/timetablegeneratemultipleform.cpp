@@ -87,6 +87,8 @@ void GenerateMultipleThread::run()
 		genMulti.generate(timeLimit, impossible, timeExceeded, true); //true means threaded
 
 		QString s;
+		
+		bool ok;
 
 		mutex.lock();
 		if(genMulti.abortOptimization){
@@ -95,11 +97,15 @@ void GenerateMultipleThread::run()
 		}
 		else if(impossible){
 			s=tr("Timetable impossible to generate");
+			ok=false;
 		}
 		else if(timeExceeded){
 			s=tr("Time exceeded for current timetable");
+			ok=false;
 		}
 		else{
+			ok=true;
+			
 			time_t finish_time;
 			time(&finish_time);
 			int seconds=finish_time-start_time;
@@ -119,7 +125,7 @@ void GenerateMultipleThread::run()
 		}
 		mutex.unlock();
 		
-		emit(timetableGenerated(i+1, s));
+		emit(timetableGenerated(i+1, s, ok));
 		semaphoreTimetableFinished.acquire();
 	}
 	
@@ -143,8 +149,8 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm()
 	minutesGroupBox->setEnabled(TRUE);
 	timetablesGroupBox->setEnabled(TRUE);
 
-	connect(&generateMultipleThread, SIGNAL(timetableGenerated(int, const QString&)),
-		this, SLOT(timetableGenerated(int, const QString&)));
+	connect(&generateMultipleThread, SIGNAL(timetableGenerated(int, const QString&, bool)),
+		this, SLOT(timetableGenerated(int, const QString&, bool)));
 
 	connect(&generateMultipleThread, SIGNAL(finished()),
 		this, SLOT(finished()));
@@ -173,7 +179,10 @@ void TimetableGenerateMultipleForm::help()
 	 " megabytes of hard disk space,"
 	 " so make sure you have enough space (you can check the dimension of a single timetable as a precaution).")
 	 .arg(destDir)
-	 +"\n\n"+tr("If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities,"
+	 +"\n\n"
+	 +tr("NEW: There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later")
+	 +"\n\n"
+	 +tr("If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities,"
 	 " this might help."));
 }
 
@@ -239,35 +248,36 @@ void TimetableGenerateMultipleForm::start(){
 	generateMultipleThread.start();
 }
 
-void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QString& description)
+void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QString& description, bool ok)
 {
 	QString s=currentResultsTextEdit->text();
 	s+=tr("Timetable no: %1 => %2").arg(timetable).arg(description);
 	s+="\n";
 	currentResultsTextEdit->setText(s);
 
-	//needed to get the conflicts string
-	QString tmp;
-	//cout<<"tmp=="<<qPrintable(tmp)<<endl;
-	//cout<<"&tmp=="<<&tmp<<endl;
-	genMulti.c.fitness(gt.rules, &tmp);
+	if(ok){
+		//needed to get the conflicts string
+		QString tmp;
+		//cout<<"tmp=="<<qPrintable(tmp)<<endl;
+		//cout<<"&tmp=="<<&tmp<<endl;
+		genMulti.c.fitness(gt.rules, &tmp);
 	
-	TimetableExport::getStudentsTimetable(genMulti.c);
-	TimetableExport::getTeachersTimetable(genMulti.c);
-	TimetableExport::getRoomsTimetable(genMulti.c);
+		TimetableExport::getStudentsTimetable(genMulti.c);
+		TimetableExport::getTeachersTimetable(genMulti.c);
+		TimetableExport::getRoomsTimetable(genMulti.c);
 
-	TimetableExport::writeSimulationResults(timetable);
+		TimetableExport::writeSimulationResults(timetable);
 
-	//update the string representing the conflicts
-	conflictsString = "";
-	conflictsString+=tr("Total soft conflicts: ");
-	conflictsString+=QString::number(best_solution.conflictsTotal);
-	conflictsString+="\n";
-	conflictsString += tr("Soft conflicts listing (in decreasing order):\n");
+		//update the string representing the conflicts
+		conflictsString = "";
+		conflictsString+=tr("Total soft conflicts: ");
+		conflictsString+=QString::number(best_solution.conflictsTotal);
+		conflictsString+="\n";
+		conflictsString += tr("Soft conflicts listing (in decreasing order):\n");
 
-	foreach(QString t, best_solution.conflictsDescriptionList)
-		conflictsString+=t+"\n";
-
+		foreach(QString t, best_solution.conflictsDescriptionList)
+			conflictsString+=t+"\n";
+	}
 
 	semaphoreTimetableFinished.release();
 }
@@ -304,6 +314,8 @@ void TimetableGenerateMultipleForm::stop()
 
 	s+=TimetableGenerateMultipleForm::tr("The results for the generated timetables are saved in the directory %1 in html and xml mode"
 	 " and the soft conflicts in txt mode").arg(destDir);
+	 
+	s+="\n\n"+tr("The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that");
 	 
 	s+="\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(sec);
 	 
@@ -346,7 +358,9 @@ void TimetableGenerateMultipleForm::simulationFinished()
 
 	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
 		TimetableGenerateMultipleForm::tr("Simulation terminated successfully. The results are saved in directory %1 in html"
-		" and xml mode and the soft conflicts in txt mode.").arg(destDir)+"\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s));
+		" and xml mode and the soft conflicts in txt mode.").arg(destDir)+"\n\n"
+		+tr("The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that")
+		+"\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s));
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);

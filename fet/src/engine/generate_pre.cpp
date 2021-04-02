@@ -127,9 +127,23 @@ double teachersMaxHoursDailyPercentages2[MAX_TEACHERS];
 int teachersMaxHoursDailyMaxHours2[MAX_TEACHERS];
 int teachersRealGapsPerDay2[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 
+//teacher(s) max hours continuously
+double teachersMaxHoursContinuouslyPercentages1[MAX_TEACHERS];
+int teachersMaxHoursContinuouslyMaxHours1[MAX_TEACHERS];
+
+double teachersMaxHoursContinuouslyPercentages2[MAX_TEACHERS];
+int teachersMaxHoursContinuouslyMaxHours2[MAX_TEACHERS];
+
 //teacher(s) min hours daily
 double teachersMinHoursDailyPercentages[MAX_TEACHERS];
 int teachersMinHoursDailyMinHours[MAX_TEACHERS];
+
+//students (set) max hours continuously
+double subgroupsMaxHoursContinuouslyPercentages1[MAX_TOTAL_SUBGROUPS];
+int subgroupsMaxHoursContinuouslyMaxHours1[MAX_TOTAL_SUBGROUPS];
+
+double subgroupsMaxHoursContinuouslyPercentages2[MAX_TOTAL_SUBGROUPS];
+int subgroupsMaxHoursContinuouslyMaxHours2[MAX_TOTAL_SUBGROUPS];
 
 //students (set) max hours daily
 double subgroupsMaxHoursDailyPercentages1[MAX_TOTAL_SUBGROUPS];
@@ -150,6 +164,16 @@ QList<int> constr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
 //index represents the second activity, value in array represents the first activity
 QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
 QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+// 2 activities consecutive
+
+// 2 activities ordered
+//index represents the first activity, value in array represents the second activity
+QList<double> constr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
+QList<int> constr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
+
+//index represents the second activity, value in array represents the first activity
+QList<double> inverseConstr2ActivitiesOrderedPercentages[MAX_ACTIVITIES];
+QList<int> inverseConstr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
 // 2 activities consecutive
 
 double activityEndsStudentsDayPercentages[MAX_ACTIVITIES];
@@ -219,7 +243,6 @@ bool processTimeConstraints()
 	bool t=computeActivitiesConflictingPercentage();
 	if(!t)
 		return false;
-	//sortActivities(); - done last time, because taking care of other constraints
 	//////////////////////////////
 	
 	/////2. min n days between activities
@@ -274,6 +297,10 @@ bool processTimeConstraints()
 	if(!t)
 		return false;
 
+	t=computeTeachersMaxHoursContinuously();
+	if(!t)
+		return false;
+
 	//must be after n hours per teacher
 	t=computeTeachersMinHoursDaily();
 	if(!t)
@@ -284,11 +311,17 @@ bool processTimeConstraints()
 	if(!t)
 		return false;
 	
+	t=computeStudentsMaxHoursContinuously();
+	if(!t)
+		return false;
+
 	t=computeSubgroupsMinHoursDaily();
 	if(!t)
 		return false;
 		
 	computeConstr2ActivitiesConsecutive();
+	
+	computeConstr2ActivitiesOrdered();
 	
 	t=computeActivityEndsStudentsDayPercentages();
 	if(!t)
@@ -335,6 +368,10 @@ bool processTimeConstraints()
 	if(!t)
 		return false;
 	//////////////////
+	
+	t=homeRoomsAreOk();
+	if(!t)
+		return false;	
 	
 	computeMustComputeTimetableSubgroups();
 	computeMustComputeTimetableTeachers();
@@ -549,6 +586,173 @@ bool computeSubgroupsMaxHoursDaily()
 	return ok;
 }
 	
+bool computeStudentsMaxHoursContinuously()
+{
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsMaxHoursContinuouslyMaxHours1[i]=-1;
+		subgroupsMaxHoursContinuouslyPercentages1[i]=-1;
+
+		subgroupsMaxHoursContinuouslyMaxHours2[i]=-1;
+		subgroupsMaxHoursContinuouslyPercentages2[i]=-1;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsMaxHoursContinuously* smd=(ConstraintStudentsMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
+
+			for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+				if(subgroupsMaxHoursContinuouslyMaxHours1[sb]==-1 ||
+				 subgroupsMaxHoursContinuouslyMaxHours1[sb] >= smd->maxHoursContinuously &&
+				 subgroupsMaxHoursContinuouslyPercentages1[sb] <= smd->weightPercentage){
+				 	subgroupsMaxHoursContinuouslyMaxHours1[sb] = smd->maxHoursContinuously;
+					subgroupsMaxHoursContinuouslyPercentages1[sb] = smd->weightPercentage;
+					}
+				else if(subgroupsMaxHoursContinuouslyMaxHours1[sb] <= smd->maxHoursContinuously &&
+				 subgroupsMaxHoursContinuouslyPercentages1[sb] >= smd->weightPercentage){
+				 	//nothing
+				}
+				else{
+					if(subgroupsMaxHoursContinuouslyMaxHours2[sb]==-1 ||
+					 subgroupsMaxHoursContinuouslyMaxHours2[sb] >= smd->maxHoursContinuously &&
+					 subgroupsMaxHoursContinuouslyPercentages2[sb] <= smd->weightPercentage){
+					 	subgroupsMaxHoursContinuouslyMaxHours2[sb] = smd->maxHoursContinuously;
+						subgroupsMaxHoursContinuouslyPercentages2[sb] = smd->weightPercentage;
+						}
+					else if(subgroupsMaxHoursContinuouslyMaxHours2[sb] <= smd->maxHoursContinuously &&
+					 subgroupsMaxHoursContinuouslyPercentages2[sb] >= smd->weightPercentage){
+					 	//nothing
+					}
+					else{				
+						 //cannot proceed
+						ok=false;
+		
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Cannot optimize for subgroup %1, because there are too many constraints"
+						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+						 " in the first one and the weight percentage is higher on the first one."
+						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+						 " be maximum 2 constraints of type max hours continuously.\n\n"
+						 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+						 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+						 " Please modify your data accordingly and try again.\n\n"
+						 " For more details, join the mailing list or email the author")
+						 .arg(gt.rules.internalSubgroupsList[sb]->name),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+				 	
+						if(t==0)
+							return false;
+					}
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* smd=(ConstraintStudentsSetMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
+
+			for(int q=0; q<smd->iSubgroupsList.count(); q++){
+				int sb=smd->iSubgroupsList.at(q);
+			//for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+				if(subgroupsMaxHoursContinuouslyMaxHours1[sb]==-1 ||
+				 subgroupsMaxHoursContinuouslyMaxHours1[sb] >= smd->maxHoursContinuously &&
+				 subgroupsMaxHoursContinuouslyPercentages1[sb] <= smd->weightPercentage){
+				 	subgroupsMaxHoursContinuouslyMaxHours1[sb] = smd->maxHoursContinuously;
+					subgroupsMaxHoursContinuouslyPercentages1[sb] = smd->weightPercentage;
+					}
+				else if(subgroupsMaxHoursContinuouslyMaxHours1[sb] <= smd->maxHoursContinuously &&
+				 subgroupsMaxHoursContinuouslyPercentages1[sb] >= smd->weightPercentage){
+				 	//nothing
+				}
+				else{
+					if(subgroupsMaxHoursContinuouslyMaxHours2[sb]==-1 ||
+					 subgroupsMaxHoursContinuouslyMaxHours2[sb] >= smd->maxHoursContinuously &&
+					 subgroupsMaxHoursContinuouslyPercentages2[sb] <= smd->weightPercentage){
+					 	subgroupsMaxHoursContinuouslyMaxHours2[sb] = smd->maxHoursContinuously;
+						subgroupsMaxHoursContinuouslyPercentages2[sb] = smd->weightPercentage;
+						}
+					else if(subgroupsMaxHoursContinuouslyMaxHours2[sb] <= smd->maxHoursContinuously &&
+					 subgroupsMaxHoursContinuouslyPercentages2[sb] >= smd->weightPercentage){
+					 	//nothing
+					}
+					else{
+						//cannot proceed
+						ok=false;
+	
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Cannot optimize for subgroup %1, because there are too many constraints"
+						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+						 " in the first one and the weight percentage is higher on the first one."
+						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+						 " be maximum 2 constraints of type max hours continuously.\n\n"
+						 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+						 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+						 " Please modify your data accordingly and try again."
+						 " For more details, join the mailing list or email the author")
+						 .arg(gt.rules.internalSubgroupsList[sb]->name),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+
+						if(t==0)
+							return false;
+					}
+				}
+			}
+		}
+	}
+	
+
+
+
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		foreach(int sbg, gt.rules.internalActivitiesList[ai].iSubgroupsList){
+			if(subgroupsMaxHoursContinuouslyPercentages1[sbg]>=0 && gt.rules.internalActivitiesList[ai].duration > subgroupsMaxHoursContinuouslyMaxHours1[sbg]){
+				QString s;
+				s=QObject::tr("Cannot optimize for subgroup %1, because there is a constraint of type"
+				 " max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).")
+				 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+				 .arg(subgroupsMaxHoursContinuouslyMaxHours1[sbg])
+				 .arg(gt.rules.internalActivitiesList[ai].id)
+				 .arg(gt.rules.internalActivitiesList[ai].duration);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			if(subgroupsMaxHoursContinuouslyPercentages2[sbg]>=0 && gt.rules.internalActivitiesList[ai].duration > subgroupsMaxHoursContinuouslyMaxHours2[sbg]){
+				QString s;
+				s=QObject::tr("Cannot optimize for subgroup %1, because there is a constraint of type"
+				 " max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).")
+				 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+				 .arg(subgroupsMaxHoursContinuouslyMaxHours2[sbg])
+				 .arg(gt.rules.internalActivitiesList[ai].id)
+				 .arg(gt.rules.internalActivitiesList[ai].duration);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+	
+	return ok;
+}
+
 bool computeSubgroupsMinHoursDaily()
 {
 	bool ok=true;
@@ -1011,6 +1215,163 @@ bool computeTeachersMaxHoursDaily()
 		}
 	}
 
+	return ok;
+}
+
+bool computeTeachersMaxHoursContinuously()
+{
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersMaxHoursContinuouslyMaxHours1[i]=-1;
+		teachersMaxHoursContinuouslyPercentages1[i]=-1;
+
+		teachersMaxHoursContinuouslyMaxHours2[i]=-1;
+		teachersMaxHoursContinuouslyPercentages2[i]=-1;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherMaxHoursContinuously* tmd=(ConstraintTeacherMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
+
+			if(teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID]==-1 ||
+			 teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID] >= tmd->maxHoursContinuously &&
+			 teachersMaxHoursContinuouslyPercentages1[tmd->teacher_ID] <= tmd->weightPercentage){
+			 	teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID] = tmd->maxHoursContinuously;
+				teachersMaxHoursContinuouslyPercentages1[tmd->teacher_ID] = tmd->weightPercentage;
+			}
+			else if(teachersMaxHoursContinuouslyMaxHours1[tmd->teacher_ID] <= tmd->maxHoursContinuously &&
+			 teachersMaxHoursContinuouslyPercentages1[tmd->teacher_ID] >= tmd->weightPercentage){
+			 	//nothing
+			}
+			else{
+				if(teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID]==-1 ||
+				 teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID] >= tmd->maxHoursContinuously &&
+				 teachersMaxHoursContinuouslyPercentages2[tmd->teacher_ID] <= tmd->weightPercentage){
+				 	teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID] = tmd->maxHoursContinuously;
+					teachersMaxHoursContinuouslyPercentages2[tmd->teacher_ID] = tmd->weightPercentage;
+				}
+				else if(teachersMaxHoursContinuouslyMaxHours2[tmd->teacher_ID] <= tmd->maxHoursContinuously &&
+				 teachersMaxHoursContinuouslyPercentages2[tmd->teacher_ID] >= tmd->weightPercentage){
+				 	//nothing
+				}
+				else{ //cannot proceed
+					ok=false;
+
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize for teacher %1, because there are too many constraints"
+					 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+					 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+					 " in the first one and the weight percentage is higher on the first one."
+					 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+					 " be maximum 2 constraints of type max hours continuously.\n\n"
+					 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+					 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+					 " Please modify your data accordingly and try again."
+					 " For more details, join the mailing list or email the author")
+					 .arg(gt.rules.internalTeachersList[tmd->teacher_ID]->name),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+					 1, 0 );
+				 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeachersMaxHoursContinuously* tmd=(ConstraintTeachersMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
+
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				if(teachersMaxHoursContinuouslyMaxHours1[tch]==-1 ||
+				 teachersMaxHoursContinuouslyMaxHours1[tch] >= tmd->maxHoursContinuously &&
+				 teachersMaxHoursContinuouslyPercentages1[tch] <= tmd->weightPercentage){
+				 	teachersMaxHoursContinuouslyMaxHours1[tch] = tmd->maxHoursContinuously;
+					teachersMaxHoursContinuouslyPercentages1[tch] = tmd->weightPercentage;
+					}
+				else if(teachersMaxHoursContinuouslyMaxHours1[tch] <= tmd->maxHoursContinuously &&
+				 teachersMaxHoursContinuouslyPercentages1[tch] >= tmd->weightPercentage){
+				 	//nothing
+				}
+				else{
+					if(teachersMaxHoursContinuouslyMaxHours2[tch]==-1 ||
+					 teachersMaxHoursContinuouslyMaxHours2[tch] >= tmd->maxHoursContinuously &&
+					 teachersMaxHoursContinuouslyPercentages2[tch] <= tmd->weightPercentage){
+					 	teachersMaxHoursContinuouslyMaxHours2[tch] = tmd->maxHoursContinuously;
+						teachersMaxHoursContinuouslyPercentages2[tch] = tmd->weightPercentage;
+						}
+					else if(teachersMaxHoursContinuouslyMaxHours2[tch] <= tmd->maxHoursContinuously &&
+					 teachersMaxHoursContinuouslyPercentages2[tch] >= tmd->weightPercentage){
+				 	//nothing
+					}
+					else{ //cannot proceed
+						ok=false;
+
+						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+						 QObject::tr("Cannot optimize for teacher %1, because there are too many constraints"
+						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
+						 " in the first one and the weight percentage is higher on the first one."
+						 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+						 " be maximum 2 constraints of type max hours continuously.\n\n"
+						 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
+						 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
+						 " Please modify your data accordingly and try again."
+						 " For more details, join the mailing list or email the author")
+						 .arg(gt.rules.internalTeachersList[tch]->name),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+						 1, 0 );
+
+						if(t==0)
+							return false;
+					}
+				}
+			}
+		}
+	}
+	
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		foreach(int tch, gt.rules.internalActivitiesList[ai].iTeachersList){
+			if(teachersMaxHoursContinuouslyPercentages1[tch]>=0 && gt.rules.internalActivitiesList[ai].duration > teachersMaxHoursContinuouslyMaxHours1[tch]){
+				QString s;
+				s=QObject::tr("Cannot optimize for teacher %1, because there is a constraint of type"
+				 " max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).")
+				 .arg(gt.rules.internalTeachersList[tch]->name)
+				 .arg(teachersMaxHoursContinuouslyMaxHours1[tch])
+				 .arg(gt.rules.internalActivitiesList[ai].id)
+				 .arg(gt.rules.internalActivitiesList[ai].duration);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			if(teachersMaxHoursContinuouslyPercentages2[tch]>=0 && gt.rules.internalActivitiesList[ai].duration > teachersMaxHoursContinuouslyMaxHours2[tch]){
+				QString s;
+				s=QObject::tr("Cannot optimize for teacher %1, because there is a constraint of type"
+				 " max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).")
+				 .arg(gt.rules.internalTeachersList[tch]->name)
+				 .arg(teachersMaxHoursContinuouslyMaxHours2[tch])
+				 .arg(gt.rules.internalActivitiesList[ai].id)
+				 .arg(gt.rules.internalActivitiesList[ai].duration);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+	
 	return ok;
 }
 
@@ -2474,6 +2835,45 @@ void computeConstr2ActivitiesConsecutive()
 			}
 			else if(j>=0 && inverseConstr2ActivitiesConsecutivePercentages[sai].at(j)<c2->weightPercentage){
 				inverseConstr2ActivitiesConsecutivePercentages[sai][j]=c2->weightPercentage;
+			}
+		}
+}
+
+void computeConstr2ActivitiesOrdered()
+{
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		constr2ActivitiesOrderedPercentages[i].clear();
+		constr2ActivitiesOrderedActivities[i].clear();
+
+		inverseConstr2ActivitiesOrderedPercentages[i].clear();
+		inverseConstr2ActivitiesOrderedActivities[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
+			Constraint2ActivitiesOrdered* c2=(Constraint2ActivitiesOrdered*)gt.rules.internalTimeConstraintsList[i];
+			
+			int fai=c2->firstActivityIndex;
+			int sai=c2->secondActivityIndex;
+			
+			//direct
+			int j=constr2ActivitiesOrderedActivities[fai].indexOf(sai); 
+			if(j==-1){
+				constr2ActivitiesOrderedActivities[fai].append(sai);
+				constr2ActivitiesOrderedPercentages[fai].append(c2->weightPercentage);
+			}
+			else if(j>=0 && constr2ActivitiesOrderedPercentages[fai].at(j)<c2->weightPercentage){
+				constr2ActivitiesOrderedPercentages[fai][j]=c2->weightPercentage;
+			}
+
+			//inverse
+			j=inverseConstr2ActivitiesOrderedActivities[sai].indexOf(fai); 
+			if(j==-1){
+				inverseConstr2ActivitiesOrderedActivities[sai].append(fai);
+				inverseConstr2ActivitiesOrderedPercentages[sai].append(c2->weightPercentage);
+			}
+			else if(j>=0 && inverseConstr2ActivitiesOrderedPercentages[sai].at(j)<c2->weightPercentage){
+				inverseConstr2ActivitiesOrderedPercentages[sai][j]=c2->weightPercentage;
 			}
 		}
 }
@@ -3992,6 +4392,8 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
 			  subgroupsMaxHoursDailyPercentages1[sbg]>=0 ||
 			  subgroupsMaxHoursDailyPercentages2[sbg]>=0 ||
+			  subgroupsMaxHoursContinuouslyPercentages1[sbg]>=0 ||
+			  subgroupsMaxHoursContinuouslyPercentages2[sbg]>=0 ||
 			  subgroupsMinHoursDailyPercentages[sbg]>=0 ||
 			  
 			  maxBuildingChangesPerDayForStudentsPercentages[sbg]>=0 ||
@@ -4019,6 +4421,8 @@ void computeMustComputeTimetableTeachers()
 			  teachersMaxGapsPerDayPercentage[tch]>=0 ||
 			  teachersMaxHoursDailyPercentages1[tch]>=0 ||
 			  teachersMaxHoursDailyPercentages2[tch]>=0 ||
+			  teachersMaxHoursContinuouslyPercentages1[tch]>=0 ||
+			  teachersMaxHoursContinuouslyPercentages2[tch]>=0 ||
 			  teachersMinHoursDailyPercentages[tch]>=0 ||
 			  
 			  maxBuildingChangesPerDayForTeachersPercentages[tch]>=0 ||
@@ -4174,6 +4578,49 @@ void sortActivities()
 	cout<<"End - the order of activities (id-s):"<<endl;
 }
 */
+
+bool homeRoomsAreOk()
+{
+	int nHoursRequiredForRoom[MAX_ROOMS];
+
+	for(int r=0; r<gt.rules.nInternalRooms; r++)
+		nHoursRequiredForRoom[r]=0;
+		
+	for(int a=0; a<gt.rules.nInternalActivities; a++)
+		if(unspecifiedPreferredRoom[a] && !unspecifiedHomeRoom[a] 
+		  && activitiesHomeRoomsHomeRooms[a].count()==1 && activitiesHomeRoomsPercentage[a]==100.0){
+		  	int r=activitiesHomeRoomsHomeRooms[a].at(0);
+		  	nHoursRequiredForRoom[r]+=gt.rules.internalActivitiesList[a].duration;
+		}
+		
+	int nHoursAvailableForRoom[MAX_ROOMS];
+
+	for(int r=0; r<gt.rules.nInternalRooms; r++){
+		nHoursAvailableForRoom[r]=0;
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && notAllowedRoomTimePercentages[r][d+h*gt.rules.nDaysPerWeek]<100.0)
+					nHoursAvailableForRoom[r]++;
+	}
+	
+	bool ok=true;
+
+	for(int r=0; r<gt.rules.nInternalRooms; r++)
+		if(nHoursRequiredForRoom[r]>nHoursAvailableForRoom[r]){
+			ok=false;
+
+			QString s=QObject::tr("Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that")
+			  .arg(gt.rules.internalRoomsList[r]->name).arg(nHoursRequiredForRoom[r]).arg(nHoursAvailableForRoom[r]);
+			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+			 1, 0 );
+				 	
+			if(t==0)
+				return false;
+		}
+		
+	return ok;
+}
 
 
 void sortActivities()

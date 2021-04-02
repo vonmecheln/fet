@@ -124,7 +124,7 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 	allActivities.clear();	
 	
 	QProgressDialog progress(this);
-	progress.setLabelText(QObject::tr("Computing ... please wait"));
+	progress.setLabelText(tr("Computing ... please wait"));
 	progress.setRange(0, allStudentsSets.count());
 	progress.setModal(true);
 						
@@ -134,7 +134,7 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 		progress.setValue(ttt);
 		pqapplication->processEvents();
 		if(progress.wasCanceled()){
-			QMessageBox::information(NULL, QObject::tr("FET information"), QObject::tr("Canceled"));
+			QMessageBox::information(NULL, tr("FET information"), tr("Canceled"));
 			showYearsCheckBox->setDisabled(true);
 			showGroupsCheckBox->setDisabled(true);
 			showSubgroupsCheckBox->setDisabled(true);
@@ -270,9 +270,9 @@ void StudentsStatisticsForm::checkBoxesModified()
 	tableWidget->setRowCount(nStudentsSets);
 	
 	QStringList columns;
-	columns<<QObject::tr("Students set");
-	columns<<QObject::tr("No. of activities");
-	columns<<QObject::tr("No. of hours");
+	columns<<tr("Students set");
+	columns<<tr("No. of activities");
+	columns<<tr("No. of hours")+" ("+tr("periods")+")";
 	
 	tableWidget->setHorizontalHeaderLabels(columns);
 	

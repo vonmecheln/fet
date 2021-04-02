@@ -24,8 +24,6 @@
 
 #include <QDesktopWidget>
 
-#define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
-
 ModifyConstraintStudentsMaxHoursDailyForm::ModifyConstraintStudentsMaxHoursDailyForm(ConstraintStudentsMaxHoursDaily* ctr)
 {
 	//setWindowFlags(Qt::Window);
@@ -40,7 +38,7 @@ ModifyConstraintStudentsMaxHoursDailyForm::ModifyConstraintStudentsMaxHoursDaily
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
-	maxHoursSpinBox->setMinValue(0);
+	maxHoursSpinBox->setMinValue(1);
 	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(ctr->maxHoursDaily);
 }

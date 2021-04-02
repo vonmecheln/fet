@@ -53,34 +53,39 @@ const int CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK							=5;
 const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK							=6;
 const int CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK							=7;
 const int CONSTRAINT_TEACHER_MAX_HOURS_DAILY							=8;
+const int CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY					=9;
+const int CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY						=10;
 
-const int CONSTRAINT_TEACHERS_MIN_HOURS_DAILY							=9;
-const int CONSTRAINT_TEACHER_MIN_HOURS_DAILY							=10;
-const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY							=11;
-const int CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY							=12;
+const int CONSTRAINT_TEACHERS_MIN_HOURS_DAILY							=11;
+const int CONSTRAINT_TEACHER_MIN_HOURS_DAILY							=12;
+const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY							=13;
+const int CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY							=14;
 
-const int CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR		=13;
-const int CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR	=14;
-const int CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES					=15;
-const int CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK							=16;
-const int CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK						=17;
+const int CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR		=15;
+const int CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR	=16;
+const int CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES					=17;
+const int CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK							=18;
+const int CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK						=19;
 
-const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY							=18;
-const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY						=19;
-const int CONSTRAINT_STUDENTS_MIN_HOURS_DAILY							=20;
-const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY						=21;
+const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY							=20;
+const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY						=21;
+const int CONSTRAINT_STUDENTS_MAX_HOURS_CONTINUOUSLY					=22;
+const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY				=23;
 
-const int CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY							=22;
+const int CONSTRAINT_STUDENTS_MIN_HOURS_DAILY							=24;
+const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY						=25;
 
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIME							=23;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME						=24;
-const int CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING							=25;
-const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=26;
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=27;
-const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=28;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=29;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=30;
-const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=31;
+const int CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY							=26;
+const int CONSTRAINT_ACTIVITY_PREFERRED_TIME							=27;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME						=28;
+const int CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING							=29;
+const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=30;
+const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=31;
+const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=32;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=33;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY						=34;
+const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=35;
+const int CONSTRAINT_2_ACTIVITIES_ORDERED								=36;
 
 /**
 This class represents a time constraint
@@ -567,6 +572,78 @@ public:
 };
 
 /**
+This is a constraint, aimed at obtaining timetables
+which do not allow more than X hours in a row for any teacher
+*/
+class ConstraintTeachersMaxHoursContinuously: public TimeConstraint{
+public:
+	/**
+	The maximum hours continuously
+	*/
+	int maxHoursContinuously;
+
+	ConstraintTeachersMaxHoursContinuously();
+
+	ConstraintTeachersMaxHoursContinuously(double wp, int maxhours);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintTeacherMaxHoursContinuously: public TimeConstraint{
+public:
+	/**
+	The maximum hours continuously
+	*/
+	int maxHoursContinuously;
+	
+	QString teacherName;
+	
+	int teacher_ID;
+
+	ConstraintTeacherMaxHoursContinuously();
+
+	ConstraintTeacherMaxHoursContinuously(double wp, int maxhours, const QString& teacher);
+
+	QString getXmlDescription(Rules& r);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+/**
 This is a constraint.
 The resulting timetable must respect the requirement
 that this teacher must not have too much working
@@ -1018,6 +1095,82 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
 
+class ConstraintStudentsMaxHoursContinuously: public TimeConstraint{
+public:
+	int maxHoursContinuously;
+
+	ConstraintStudentsMaxHoursContinuously();
+
+	ConstraintStudentsMaxHoursContinuously(double wp, int maxnh);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsSetMaxHoursContinuously: public TimeConstraint{
+public:
+	int maxHoursContinuously;
+
+	/**
+	The students set name
+	*/
+	QString students;
+
+	//internal variables
+
+	/**
+	The number of subgroups
+	*/
+	int nSubgroups;
+
+	/**
+	The subgroups
+	*/
+	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	QList<int> iSubgroupsList;
+
+	ConstraintStudentsSetMaxHoursContinuously();
+
+	ConstraintStudentsSetMaxHoursContinuously(double wp, int maxnh, QString s);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
 class ConstraintStudentsMinHoursDaily: public TimeConstraint{
 public:
 	int minHoursDaily;
@@ -1445,6 +1598,54 @@ public:
 	Constraint2ActivitiesConsecutive();
 
 	Constraint2ActivitiesConsecutive(double wp, int firstActId, int secondActId);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class Constraint2ActivitiesOrdered: public TimeConstraint{
+public:
+	/**
+	First activity id
+	*/
+	int firstActivityId;
+
+	/**
+	Second activity id
+	*/
+	int secondActivityId;
+
+	//internal variables
+	/**
+	The index of the first activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int firstActivityIndex;
+
+	/**
+	The index of the second activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int secondActivityIndex;
+
+	Constraint2ActivitiesOrdered();
+
+	Constraint2ActivitiesOrdered(double wp, int firstActId, int secondActId);
 
 	bool computeInternalStructure(Rules& r);
 

@@ -77,6 +77,8 @@ QList<qint16> activitiesForCurrentSubject[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 QList<qint16> activitiesAtTime[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
+extern Rules rules2;
+
 TimetableExport::TimetableExport()
 {
 }
@@ -235,6 +237,193 @@ void TimetableExport::writeSimulationResults(){
 	cout<<"Writing simulation results to disk completed successfully"<<endl;
 }
 
+
+void TimetableExport::writeTimetableDataFile(const QString& filename)
+{
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+		QMessageBox::critical(NULL, tr("FET - Critical"), tr("Timetable not generated - cannot save it - this should not happen (please report bug)"));
+		return;	
+	}
+
+	Solution* tc=&best_solution;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		//Activity* act=&gt.rules.internalActivitiesList[ai];
+		int time=tc->times[ai];
+		if(time==UNALLOCATED_TIME){
+			QMessageBox::critical(NULL, tr("FET - Critical"), tr("Incomplete timetable - this should not happen - please report bug"));
+			return;	
+		}
+		
+		int ri=tc->rooms[ai];
+		if(ri==UNALLOCATED_SPACE){
+			QMessageBox::critical(NULL, tr("FET - Critical"), tr("Incomplete timetable - this should not happen - please report bug"));
+			return;	
+		}
+	}
+	
+	rules2.initialized=true;
+	
+	rules2.institutionName=gt.rules.institutionName;
+	rules2.comments=gt.rules.comments;
+	
+	rules2.nHoursPerDay=gt.rules.nHoursPerDay;
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
+
+	rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
+	for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+		rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
+		
+	rules2.yearsList=gt.rules.yearsList;
+	
+	rules2.teachersList=gt.rules.teachersList;
+	
+	rules2.subjectsList=gt.rules.subjectsList;
+	
+	rules2.activityTagsList=gt.rules.activityTagsList;
+
+	rules2.activitiesList=gt.rules.activitiesList;
+
+	rules2.buildingsList=gt.rules.buildingsList;
+
+	rules2.roomsList=gt.rules.roomsList;
+
+	rules2.timeConstraintsList=gt.rules.timeConstraintsList;
+	
+	rules2.spaceConstraintsList=gt.rules.spaceConstraintsList;
+
+
+	//add locking constraints
+	TimeConstraintsList lockTimeConstraintsList;
+	SpaceConstraintsList lockSpaceConstraintsList;
+
+
+
+	bool report=false;
+	
+	int addedTime=0, duplicatesTime=0;
+	int addedSpace=0, duplicatesSpace=0;
+
+	//lock selected activities
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		int time=tc->times[ai];
+		if(time>=0 && time<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay){
+			int hour=time/gt.rules.nDaysPerWeek;
+			int day=time%gt.rules.nDaysPerWeek;
+
+			ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
+			bool t=rules2.addTimeConstraint(ctr);
+						
+			if(t){
+				addedTime++;
+				lockTimeConstraintsList.append(ctr);
+			}
+			else
+				duplicatesTime++;
+
+			QString s;
+						
+			if(t)
+				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);
+			else{
+				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
+				delete ctr;
+			}
+						
+			if(report){
+				int k;
+				if(t)
+					k=QMessageBox::information(NULL, tr("FET information"), s,
+				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+				else
+					k=QMessageBox::warning(NULL, tr("FET warning"), s,
+				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+																			 				 	
+		 		if(k==0)
+					report=false;
+			}
+		}
+					
+		int ri=tc->rooms[ai];
+		if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
+			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name);
+			bool t=rules2.addSpaceConstraint(ctr);
+
+			QString s;
+						
+			if(t){
+				addedSpace++;
+				lockSpaceConstraintsList.append(ctr);
+			}
+			else
+				duplicatesSpace++;
+
+			if(t)
+				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);
+			else{
+				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
+				delete ctr;
+			}
+						
+			if(report){
+				int k;
+				if(t)
+					k=QMessageBox::information(NULL, tr("FET information"), s,
+				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+				else
+					k=QMessageBox::warning(NULL, tr("FET warning"), s,
+					 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+																			 				 	
+				if(k==0)
+					report=false;
+			}
+		}
+	}
+
+	//QMessageBox::information(NULL, tr("FET information"), tr("Added %1 locking time constraints and %2 locking space constraints to saved file,"
+	// " ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space").arg(addedTime).arg(addedSpace).arg(duplicatesTime).arg(duplicatesSpace));
+		
+	bool result=rules2.write(filename);
+	
+	while(!lockTimeConstraintsList.isEmpty())
+		delete lockTimeConstraintsList.takeFirst();
+	while(!lockSpaceConstraintsList.isEmpty())
+		delete lockSpaceConstraintsList.takeFirst();
+
+	//if(result)	
+	//	QMessageBox::information(NULL, tr("FET information"),
+	//		tr("File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints),"
+	//		" so you can save it also, or generate different timetables."));
+
+	rules2.nHoursPerDay=0;
+	rules2.nDaysPerWeek=0;
+
+	rules2.yearsList.clear();
+	
+	rules2.teachersList.clear();
+	
+	rules2.subjectsList.clear();
+	
+	rules2.activityTagsList.clear();
+
+	rules2.activitiesList.clear();
+
+	rules2.buildingsList.clear();
+
+	rules2.roomsList.clear();
+
+	rules2.timeConstraintsList.clear();
+	
+	rules2.spaceConstraintsList.clear();
+	
+	if(!result){
+		QMessageBox::critical(NULL, tr("FET critical"), tr("Could not save the data + timetable file on the hard disk - maybe hard disk is full"));
+	}
+}
+
+
 void TimetableExport::writeSimulationResults(int n){
 	QDir dir;
 
@@ -265,6 +454,9 @@ void TimetableExport::writeSimulationResults(int n){
 
 	QString s3=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 	finalDestDir+=s3+"_";
+	
+	//write data+timetable in .fet format
+	writeTimetableDataFile(finalDestDir+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE);
 
 	//now write the solution in xml files
 	//subgroups

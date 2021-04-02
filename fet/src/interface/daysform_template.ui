@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>535</width>
-            <height>586</height>
+            <height>518</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,203 +19,31 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLabel" row="5" column="1">
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>day10TextLabel</cstring>
+                <cstring>layout6</cstring>
             </property>
-            <property name="text">
-                <string>Day 10</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="5" column="0">
-            <property name="name">
-                <cstring>day3TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 3</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="10" column="0">
-            <property name="name">
-                <cstring>day5LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="4" column="0">
-            <property name="name">
-                <cstring>day2LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="8" column="1">
-            <property name="name">
-                <cstring>day11LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="14" column="0">
-            <property name="name">
-                <cstring>day7LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="11" column="0">
-            <property name="name">
-                <cstring>day6TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 6</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="13" column="1">
-            <property name="name">
-                <cstring>day14TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 14</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="6" column="1">
-            <property name="name">
-                <cstring>day10LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="2" column="1">
-            <property name="name">
-                <cstring>day8LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="13" column="0">
-            <property name="name">
-                <cstring>day7TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 7</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="3" column="0">
-            <property name="name">
-                <cstring>day2TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 2</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="3" column="1">
-            <property name="name">
-                <cstring>day9TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 9</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="14" column="1">
-            <property name="name">
-                <cstring>day14LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="9" column="0">
-            <property name="name">
-                <cstring>day5TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 5</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="2" column="0">
-            <property name="name">
-                <cstring>day1LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="10" column="1">
-            <property name="name">
-                <cstring>day12LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="6" column="0">
-            <property name="name">
-                <cstring>day3LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="4" column="1">
-            <property name="name">
-                <cstring>day9LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="11" column="1">
-            <property name="name">
-                <cstring>day13TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 13</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="7" column="1">
-            <property name="name">
-                <cstring>day11TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 11</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="12" column="0">
-            <property name="name">
-                <cstring>day6LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="1" column="1">
-            <property name="name">
-                <cstring>day8TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 8</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="12" column="1">
-            <property name="name">
-                <cstring>day13LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="7" column="0">
-            <property name="name">
-                <cstring>day4TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 4</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="8" column="0">
-            <property name="name">
-                <cstring>day4LineEdit</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="1" column="0">
-            <property name="name">
-                <cstring>day1TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 1</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="9" column="1">
-            <property name="name">
-                <cstring>day12TextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Day 12</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="15" column="0">
-            <property name="name">
-                <cstring>okPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Ok</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="15" column="1">
-            <property name="name">
-                <cstring>cancelPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Cancel</string>
-            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ok</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
         <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
@@ -241,6 +69,454 @@
                 </widget>
             </grid>
         </widget>
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout5</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout4</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day1TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 1</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day1LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day2TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 2</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day2LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day3TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 3</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day3LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day4TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 4</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day4LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day5TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 5</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day5LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day6TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 6</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day6LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day7TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 7</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day7LineEdit</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day8TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 8</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day8LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day9TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 9</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day9LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day10TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 10</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day10LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day11TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 11</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day11LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day12TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 12</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day12LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day13TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 13</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day13LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day14TextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 14</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day14LineEdit</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout1</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day1TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 15</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day15LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day2TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 16</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day16LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day3TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 17</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day17LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day4TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 18</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day18LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day5TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 19</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day19LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day6TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 20</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day20LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day7TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 21</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day21LineEdit</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout2</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day8TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 22</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day22LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day9TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 23</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day23LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day10TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 24</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day24LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day11TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 25</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day25LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day12TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 26</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day26LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day13TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 27</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day27LineEdit</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>day14TextLabel_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Day 28</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>day28LineEdit</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+            </hbox>
+        </widget>
+        <spacer row="1" column="1">
+            <property name="name">
+                <cstring>spacer4</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>31</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="3" column="0">
+            <property name="name">
+                <cstring>spacer5</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>41</height>
+                </size>
+            </property>
+        </spacer>
     </grid>
 </widget>
 <connections>
@@ -279,6 +555,20 @@
     <tabstop>day12LineEdit</tabstop>
     <tabstop>day13LineEdit</tabstop>
     <tabstop>day14LineEdit</tabstop>
+    <tabstop>day15LineEdit</tabstop>
+    <tabstop>day16LineEdit</tabstop>
+    <tabstop>day17LineEdit</tabstop>
+    <tabstop>day18LineEdit</tabstop>
+    <tabstop>day19LineEdit</tabstop>
+    <tabstop>day20LineEdit</tabstop>
+    <tabstop>day21LineEdit</tabstop>
+    <tabstop>day22LineEdit</tabstop>
+    <tabstop>day23LineEdit</tabstop>
+    <tabstop>day24LineEdit</tabstop>
+    <tabstop>day25LineEdit</tabstop>
+    <tabstop>day26LineEdit</tabstop>
+    <tabstop>day27LineEdit</tabstop>
+    <tabstop>day28LineEdit</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>
 </tabstops>

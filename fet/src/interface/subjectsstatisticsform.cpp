@@ -42,9 +42,9 @@ SubjectsStatisticsForm::SubjectsStatisticsForm()
 	tableWidget->setRowCount(gt.rules.subjectsList.size());
 	
 	QStringList columns;
-	columns<<QObject::tr("Subject");
-	columns<<QObject::tr("No. of activities");
-	columns<<QObject::tr("No. of hours");
+	columns<<tr("Subject");
+	columns<<tr("No. of activities");
+	columns<<tr("No. of hours")+" ("+tr("periods")+")";
 	
 	tableWidget->setHorizontalHeaderLabels(columns);
 	

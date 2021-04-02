@@ -159,6 +159,8 @@ void AddConstraint2ActivitiesConsecutiveForm::constraintChanged()
 	s+="\n";
 
 	s+=QObject::tr("2 activities consecutive");
+	s+=" ";
+	s+=QObject::tr("(activity 2 must be immediately after activity 1, in the same day, possibly separated by breaks)");
 	s+="\n";
 
 	int tmp2=firstActivitiesComboBox->currentItem();

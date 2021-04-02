@@ -94,6 +94,7 @@ public slots:
 	void on_dataTimeConstraintsBreakTimesAction_activated();
 
 	void on_dataTimeConstraints2ActivitiesConsecutiveAction_activated();
+	void on_dataTimeConstraints2ActivitiesOrderedAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimeAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimesAction_activated();
 	void on_dataTimeConstraintsActivitiesPreferredTimesAction_activated();
@@ -108,6 +109,8 @@ public slots:
 	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activated();
 	void on_dataTimeConstraintsTeachersMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeacherMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated();
@@ -122,6 +125,8 @@ public slots:
 	void on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_activated();
 	void on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_activated();
 	void on_dataTimeConstraintsStudentsMinHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
 

@@ -105,6 +105,11 @@ void readSimulationParameters(){
 	QSettings settings("FET free software", "FET");
 	FET_LANGUAGE=settings.value("language", "en_GB").toString();
 	WORKING_DIRECTORY=settings.value("working-directory", "sample_inputs").toString();
+	
+	QDir d(WORKING_DIRECTORY);
+	if(!d.exists())
+		WORKING_DIRECTORY="sample_inputs";
+	
 	checkForUpdates=settings.value("check-for-updates", "-1").toInt();
 	QString ver=settings.value("version", "-1").toString();
 	TIMETABLE_HTML_LEVEL=settings.value("timetable-html-level", "2").toInt();
@@ -171,7 +176,7 @@ void setLanguage(QApplication& qapplication)
 		if(FET_LANGUAGE=="en_GB")
 			LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
 		else
-			LANGUAGE_FOR_HTML=FET_LANGUAGE;
+			LANGUAGE_FOR_HTML=FET_LANGUAGE.replace(QString("_"), QString("-"));
 	}
 		
 	qapplication.installTranslator(&translator);	
@@ -186,9 +191,11 @@ void setLanguage(QApplication& qapplication)
 /**
 FET starts here
 */
-int main(int argc, char **argv){
+int main(int argc, char **argv)
+{
 
-	//srand(unsigned(time(NULL)));
+	srand(unsigned(time(NULL))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
+	
 	initRandomKnuth();
 
 	bool t=true;

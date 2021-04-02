@@ -41,6 +41,8 @@ public:
 	static void writeSimulationResults(int n); //write in a directory with number n (for multiple generation)
 	
 	static void writeSimulationResultsCommandLine();
+	
+	static void writeTimetableDataFile(const QString& filename);
 
 	/**
 	Function writing the subgroups' timetable xml format, to a file

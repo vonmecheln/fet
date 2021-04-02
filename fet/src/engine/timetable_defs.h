@@ -128,14 +128,17 @@ const int MAX_HOURS_PER_DAY=60;
 /**
 The maximum number of working days per week.
 */
-const int MAX_DAYS_PER_WEEK=14;
+const int MAX_DAYS_PER_WEEK=28;
 
 /**
 The predefined names of the days of the week
 */
 const QString PREDEFINED_DAYS_OF_THE_WEEK[]={"Monday", "Tuesday", "Wednesday",
 	"Thursday", "Friday", "Saturday", "Sunday", "Monday2",
-	"Tuesday2", "Wednesday2", "Thursday2", "Friday2", "Saturday2", "Sunday2"};
+	"Tuesday2", "Wednesday2", "Thursday2", "Friday2", "Saturday2", "Sunday2",
+	"Monday3", "Tuesday3", "Wednesday3",
+	"Thursday3", "Friday3", "Saturday3", "Sunday3", "Monday4",
+	"Tuesday4", "Wednesday4", "Thursday4", "Friday4", "Saturday4", "Sunday4"};
 
 /**
 The maximum number of working hours in a week.
@@ -519,6 +522,8 @@ An output file containing the timetable for free periods of teachers, arranged i
 Days vertical version.
 */
 const QString TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teachers_free_periods_timetable_days_vertical.html";
+
+const QString MULTIPLE_TIMETABLE_DATA_RESULTS_FILE="data_and_timetable.fet";
 
 
 //functions below are used in iCal exporting functions

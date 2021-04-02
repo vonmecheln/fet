@@ -1175,4 +1175,16 @@ Versions 5.5.0 - 5.5.x
 	- Crash bug fix - when adding a year with same name as a group or subgroup (reported by Volker Dirr)
 	- Small interface improvements
 	- Added checks to ensure that duplicate students sets are reported (suggested by Volker Dirr)
+- Version 5.5.4
+	- Greek, Romanian, Spanish translations updates
+	- Small interface improvements
+	- Added constraint 2 activities ordered, to allow to say: activity A2 must be after A1, separated
+	by any number of days or hours (suggested by kdsayang)
+	- Added constraint teacher(s) max hours continuously (suggested by kdsayang)
+	- Added constraint students (set) max hours continuously (suggested by kdsayang)
+	- When modifying a constraint min n days between activities, it checks for duplicates (suggested by kdsayang)
+	- Crash bug fix (rare, if using home rooms with weight under 100% and rooms are constrained)
+	- Added more tests to ensure home rooms inputted correctly
+	- Generating multiple now saves each timetable in .fet form (suggested by kdsayang)
+	- Increased number of days per week to 28, to allow exam scheduling (suggested by kdsayang)
 	

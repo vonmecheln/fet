@@ -42,9 +42,9 @@ TeachersStatisticsForm::TeachersStatisticsForm()
 	tableWidget->setRowCount(gt.rules.teachersList.size());
 	
 	QStringList columns;
-	columns<<QObject::tr("Teacher");
-	columns<<QObject::tr("No. of activities");
-	columns<<QObject::tr("No. of hours");
+	columns<<tr("Teacher");
+	columns<<tr("No. of activities");
+	columns<<tr("No. of hours")+" ("+tr("periods")+")";
 	
 	tableWidget->setHorizontalHeaderLabels(columns);
 	
