@@ -27,6 +27,39 @@
 
 #include <QDesktopWidget>
 
+#include <QHash>
+
+#include <QProgressDialog>
+
+#include <QMessageBox>
+#include <QApplication>
+
+extern QApplication* pqapplication;
+
+#include <iostream>
+using namespace std;
+
+//QHash<QString, int> onlyExactHours; //for each students set, only the hours from each activity which has exactly the same set
+//does not include related sets.
+
+//QHash<QString, int> onlyExactActivities;
+
+
+//QHash<QString, int> allStudentsSets; //int is type
+QSet<QString> allStudentsSets;
+
+
+QHash<QString, int> allHours; //for each students set, only the hours from each activity which has exactly the same set
+//does not include related sets.
+
+QHash<QString, int> allActivities;
+
+QSet<QString> related; //related to current set
+
+QSet<QString> relatedSubgroups;
+QSet<QString> relatedGroups;
+QSet<QString> relatedYears;
+
 StudentsStatisticsForm::StudentsStatisticsForm()
 {
 	setupUi(this);
@@ -41,6 +74,171 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 	connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 	connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 	connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
+
+	////////////	
+	/*onlyExactHours.clear();
+	onlyExactActivities.clear();
+	
+	foreach(Activity* act, gt.rules.activitiesList) if(act->active){
+		foreach(QString stud, act->studentsNames){
+			//hours
+			int crt=0;
+			if(onlyExactHours.contains(stud))
+				crt=onlyExactHours.value(stud);
+			onlyExactHours.insert(stud, crt+act->duration);
+
+			//n activities
+			crt=0;
+			if(onlyExactActivities.contains(stud))
+				crt=onlyExactActivities.value(stud);
+			onlyExactActivities.insert(stud, crt+1);
+		}
+	}*/
+	////////////
+
+	////////////
+	/*allStudentsSets.clear();
+	foreach(StudentsYear* year, gt.rules.yearsList){
+		allStudentsSets.insert(year->name, STUDENTS_YEAR);
+		foreach(StudentsGroup* group, year->groupsList){
+			allStudentsSets.insert(group->name, STUDENTS_GROUP);
+			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+				allStudentsSets.insert(subgroup->name, STUDENTS_SUBGROUP);
+			}
+		}
+	}*/
+	allStudentsSets.clear();
+	foreach(StudentsYear* year, gt.rules.yearsList){
+		allStudentsSets.insert(year->name);
+		foreach(StudentsGroup* group, year->groupsList){
+			allStudentsSets.insert(group->name);
+			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+				allStudentsSets.insert(subgroup->name);
+			}
+		}
+	}
+	///////////
+	
+	///////////
+	allHours.clear();
+	allActivities.clear();	
+	
+	QProgressDialog progress(this);
+	progress.setLabelText(QObject::tr("Computing ... please wait"));
+	progress.setRange(0, allStudentsSets.count());
+	progress.setModal(true);
+						
+	int ttt=0;
+							
+	foreach(QString set, allStudentsSets){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::information(NULL, QObject::tr("FET information"), QObject::tr("Canceled"));
+			showYearsCheckBox->setDisabled(true);
+			showGroupsCheckBox->setDisabled(true);
+			showSubgroupsCheckBox->setDisabled(true);
+			return;
+		}
+		ttt++;
+	
+		relatedSubgroups.clear();
+		
+		relatedGroups.clear();
+		
+		relatedYears.clear();
+		
+		related.clear();
+		
+		foreach(StudentsYear* year, gt.rules.yearsList){
+			bool y=false;
+			if(year->name==set)
+				y=true;
+			if(y)
+				relatedYears.insert(year->name);
+			foreach(StudentsGroup* group, year->groupsList){
+				bool g=false;
+				if(group->name==set)
+					g=true;
+				if(y || g)
+					relatedGroups.insert(group->name);
+				foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+					if(y || g || subgroup->name==set)
+						relatedSubgroups.insert(subgroup->name);
+				}
+			}
+		}
+		
+		foreach(StudentsYear* year, gt.rules.yearsList){
+			if(relatedYears.contains(year->name))
+				related.insert(year->name);
+			foreach(StudentsGroup* group, year->groupsList){
+				if(relatedGroups.contains(group->name)){
+					related.insert(year->name);
+					related.insert(group->name);
+				}
+				foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+					if(relatedSubgroups.contains(subgroup->name)){
+						related.insert(year->name);
+						related.insert(group->name);
+						related.insert(subgroup->name);
+					}
+				}
+			}
+		}
+		
+		/*foreach(StudentsYear* year, gt.rules.yearsList){
+			if(year->name==set)
+				related.insert(year->name);
+			foreach(StudentsGroup* group, year->groupsList){
+				if(group->name==set){
+					related.insert(group->name);
+					related.insert(year->name);
+				}
+				if(year->name==set)
+					related.insert(group->name);
+				foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+					if(subgroup->name==set){
+						related.insert(subgroup->name);
+						related.insert(group->name);
+						related.insert(year->name);
+					}
+					if(group->name==set)
+						related.insert(subgroup->name);
+					if(year->name==set)
+						related.insert(subgroup->name);
+				}
+			}
+		}*/
+		
+		int nh=0;
+		int na=0;
+		
+		/*foreach(QString rel, related){
+			//int nh=allHours.value(set);
+			nh+=onlyExactHours.value(rel);
+			//allHours.insert(set, nh);
+			
+			//int na=allActivities.value(set);
+			na+=onlyExactActivities.value(rel);
+			//allActivities.insert(set, na);
+		}*/
+		
+		foreach(Activity* act, gt.rules.activitiesList) if(act->active){
+			foreach(QString stud, act->studentsNames){
+				if(related.contains(stud)){
+					nh += act->duration;
+					na ++;
+					
+					break;
+				}
+			}
+		}
+		
+		allHours.insert(set, nh);
+		allActivities.insert(set, na);
+	}
+	////////////
 	
 	checkBoxesModified();	
 }
@@ -112,15 +310,27 @@ void StudentsStatisticsForm::insertStudentsSet(StudentsSet* set, int row)
 
 	int	nSubActivities=0;
 	int nHours=0;
+	
+	if(allHours.contains(set->name))
+		nHours=allHours.value(set->name);
+	else{
+		cout<<qPrintable(set->name)<<endl;
+		assert(0);
+	}
 		
-	foreach(Activity* act, gt.rules.activitiesList)
+	if(allActivities.contains(set->name))
+		nSubActivities=allActivities.value(set->name);
+	else
+		assert(0);
+		
+	/*foreach(Activity* act, gt.rules.activitiesList)
 		if(act->active)
 			foreach(QString asn, act->studentsNames)
 				if(gt.rules.studentsSetsRelated(asn, set->name)){
 					nSubActivities++;
 					nHours+=act->duration;
 					break;
-				}
+				}*/
 
 	newItem=new QTableWidgetItem(QString::number(nSubActivities));
 	newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);

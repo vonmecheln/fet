@@ -300,8 +300,8 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded/*, 
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
 			int day=c.times[i]%gt.rules.nDaysPerWeek;
-			for(int j=0; j<act->nSubgroups; j++){
-				int sb=act->subgroups[j];
+			for(int j=0; j<act->iSubgroupsList.count(); j++){
+				int sb=act->iSubgroupsList.at(j);
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(subgroupsTimetable[sb][day][hour+dd]==-1);
 					subgroupsTimetable[sb][day][hour+dd]=i;
@@ -365,8 +365,8 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded/*, 
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
 			int day=c.times[i]%gt.rules.nDaysPerWeek;
-			for(int j=0; j<act->nTeachers; j++){
-				int tc=act->teachers[j];
+			for(int j=0; j<act->iTeachersList.count(); j++){
+				int tc=act->iTeachersList.at(j);
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(teachersTimetable[tc][day][hour+dd]==-1);
 					teachersTimetable[tc][day][hour+dd]=i;
@@ -420,8 +420,8 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded/*, 
 			}
 			for(int i=0; i<added_act; i++){
 				Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
-				for(int j=0; j<act->nTeachers; j++){
-					int tc=act->teachers[j];
+				for(int j=0; j<act->iTeachersList.count(); j++){
+					int tc=act->iTeachersList.at(j);
 			
 					for(int t=c.times[permutation[i]]; t<c.times[permutation[i]]+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 						assert(activitiesForTeacher[tc][t].indexOf(permutation[i])==-1);
@@ -460,8 +460,8 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded/*, 
 		}
 		for(int i=0; i<added_act; i++){
 			Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
-			for(int j=0; j<act->nSubgroups; j++){
-				int isg=act->subgroups[j];
+			for(int j=0; j<act->iSubgroupsList.count(); j++){
+				int isg=act->iSubgroupsList.at(j);
 			
 				for(int t=c.times[permutation[i]]; t<c.times[permutation[i]]+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 					assert(activitiesForSubgroup[isg][t].indexOf(permutation[i])==-1);
@@ -779,8 +779,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 		//update for students (set) max hours daily
 		//careful: timetable is also used for other purposes
-		for(int q=0; q<act->nSubgroups; q++){
-			int sb=act->subgroups[q];	
+		for(int q=0; q<act->iSubgroupsList.count(); q++){
+			int sb=act->iSubgroupsList.at(q);	
 			if(1){
 			//the timetable must be computed also for other purposes
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
@@ -792,8 +792,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		}
 
 		//update for students (set) min hours daily
-		for(int q=0; q<act->nSubgroups; q++){
-			int sg=act->subgroups[q];
+		for(int q=0; q<act->iSubgroupsList.count(); q++){
+			int sg=act->iSubgroupsList.at(q);
 			if(subgroupsMinHoursDailyMinHours[sg]>=0){
 				int d2=d;
 
@@ -838,8 +838,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		}
 
 		//update for teacher(s) max hours daily
-		for(int q=0; q<act->nTeachers; q++){
-			int tch=act->teachers[q];	
+		for(int q=0; q<act->iTeachersList.count(); q++){
+			int tch=act->iTeachersList.at(q);	
 			//the timetable must be computed also for other purposes
 			//if(1 || teachersMaxHoursDailyMaxHours[tch]>=0){
 			if(1){
@@ -897,8 +897,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		//update teachers' count of occupied activities
 		/////////////////
 		if(true /*teachersMaxGapsMaxGaps>=0*/){
-			for(int i=0; i<act->nTeachers; i++){
-				int tc=act->teachers[i];
+			for(int i=0; i<act->iTeachersList.count(); i++){
+				int tc=act->iTeachersList.at(i);
 	
 				int t;
 				int cntfinal=0;
@@ -953,8 +953,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		/////////////////
 		//int d=fromslot%gt.rules.nDaysPerWeek;
 		//int h=fromslot/gt.rules.nDaysPerWeek;
-		for(int i=0; i<act->nSubgroups; i++){
-			int isg=act->subgroups[i];
+		for(int i=0; i<act->iSubgroupsList.count(); i++){
+			int isg=act->iSubgroupsList.at(i);
 			
 			if(subgroupsEarlyPercentage[isg]>=0 && subgroupsNoGapsPercentage[isg]>=0){
 			//students early+no gaps
@@ -1066,8 +1066,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		}*/
 
 		//update for students (set) max hours daily
-		for(int q=0; q<act->nSubgroups; q++){
-			int sb=act->subgroups[q];
+		for(int q=0; q<act->iSubgroupsList.count(); q++){
+			int sb=act->iSubgroupsList.at(q);
 			//the timetable must be computed also for other purposes
 			if(1){
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
@@ -1079,8 +1079,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		}
 
 		//update for students (set) min hours daily
-		for(int q=0; q<act->nSubgroups; q++){
-			int sg=act->subgroups[q];
+		for(int q=0; q<act->iSubgroupsList.count(); q++){
+			int sg=act->iSubgroupsList.at(q);
 			if(subgroupsMinHoursDailyMinHours[sg]>=0){
 				int d2=d;
 
@@ -1125,8 +1125,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		}
 
 		//update for teacher(s) max hours daily
-		for(int q=0; q<act->nTeachers; q++){
-			int tch=act->teachers[q];
+		for(int q=0; q<act->iTeachersList.count(); q++){
+			int tch=act->iTeachersList.at(q);
 			//the timetable must be computed also for other purposes
 			//if(1 || teachersMaxHoursDailyMaxHours[tch]>=0){
 			if(1){
@@ -1184,8 +1184,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		//update teachers' count of occupied activities
 		/////////////////
 		if(true /*teachersMaxGapsMaxGaps>=0*/){
-			for(int i=0; i<act->nTeachers; i++){
-				int tc=act->teachers[i];
+			for(int i=0; i<act->iTeachersList.count(); i++){
+				int tc=act->iTeachersList.at(i);
 	
 				int t;
 				int cntfinal=0;
@@ -1265,8 +1265,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		/////////////////
 		//int d=toslot%gt.rules.nDaysPerWeek;
 		//int h=toslot/gt.rules.nDaysPerWeek;
-		for(int i=0; i<act->nSubgroups; i++){
-			int isg=act->subgroups[i];
+		for(int i=0; i<act->iSubgroupsList.count(); i++){
+			int isg=act->iSubgroupsList.at(i);
 
 			if(subgroupsEarlyPercentage[isg]>=0 && subgroupsNoGapsPercentage[isg]>=0){
 			//students early+no gaps
@@ -1513,8 +1513,8 @@ again_if_impossible_activity:
 		//same teacher?
 		for(int dur=0; dur<act->duration; dur++){
 			assert(h+dur<gt.rules.nHoursPerDay);
-			for(int q=0; q<act->nTeachers; q++){
-				int tch=act->teachers[q];
+			for(int q=0; q<act->iTeachersList.count(); q++){
+				int tch=act->iTeachersList.at(q);
 				if(teachersTimetable[tch][d][h+dur]>=0){
 					int ai2=teachersTimetable[tch][d][h+dur];
 					assert(ai2!=ai);
@@ -1537,8 +1537,8 @@ again_if_impossible_activity:
 		//same subgroup?
 		for(int dur=0; dur<act->duration; dur++){
 			assert(h+dur<gt.rules.nHoursPerDay);
-			for(int q=0; q<act->nSubgroups; q++){
-				int sbg=act->subgroups[q];
+			for(int q=0; q<act->iSubgroupsList.count(); q++){
+				int sbg=act->iSubgroupsList.at(q);
 				if(subgroupsTimetable[sbg][d][h+dur]>=0){
 					int ai2=subgroupsTimetable[sbg][d][h+dur];
 					assert(ai2!=ai);
@@ -1852,8 +1852,8 @@ impossible2activitiesconsecutive:
 
 		//allowed from students (set) max hours daily
 		bool okstudentsmaxhoursdaily=true;
-		for(int q=0; q<act->nSubgroups; q++){
-			int sb=act->subgroups[q];
+		for(int q=0; q<act->iSubgroupsList.count(); q++){
+			int sb=act->iSubgroupsList.at(q);
 			if(subgroupsMaxHoursDailyMaxHours1[sb]>=0){
 				int initialGaps=0;
 				int initialNHours=0;
@@ -2272,8 +2272,8 @@ impossiblestudentsmaxhoursdaily:
 
 		//allowed from students (set) min hours daily
 		bool okstudentsminhoursdaily=true;
-		for(int q=0; q<act->nSubgroups; q++){
-			int sb=act->subgroups[q];
+		for(int q=0; q<act->iSubgroupsList.count(); q++){
+			int sb=act->iSubgroupsList.at(q);
 			if(subgroupsMinHoursDailyMinHours[sb]>=0){
 				/*int nhinit=0;
 				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
@@ -2775,8 +2775,8 @@ impossiblestudentsminhoursdaily:
 
 		//allowed from teachers max hours daily
 		bool okteachersmaxhoursdaily=true;
-		for(int q=0; q<act->nTeachers; q++){
-			int i=act->teachers[q];
+		for(int q=0; q<act->iTeachersList.count(); q++){
+			int i=act->iTeachersList.at(q);
 			if(teachersMaxHoursDailyMaxHours1[i]>=0){
 				int initialGaps=0;
 				int initialNHours=0;
@@ -3302,8 +3302,8 @@ impossibleteachersmaxhoursdaily:
 		/////////////////
 		if(true /*teachersMaxGapsMaxGaps>=0*/){
 			int k;
-			for(k=0; k<act->nTeachers; k++) if(teachersMaxGapsPercentage[act->teachers[k]]>=0){
-				int tc=act->teachers[k];
+			for(k=0; k<act->iTeachersList.count(); k++) if(teachersMaxGapsPercentage[act->iTeachersList.at(k)]>=0){
+				int tc=act->iTeachersList.at(k);
 	
 				int t;
 				int cntfinal=0;
@@ -3791,7 +3791,7 @@ impossibleteachersmaxhoursdaily:
 					}*/
 				}
 			}
-			if(k<act->nTeachers){
+			if(k<act->iTeachersList.count()){
 				//assert(0);
 				nConflActivities[newtime]=MAX_ACTIVITIES;
 				continue;
@@ -3807,8 +3807,8 @@ impossibleteachersmaxhoursdaily:
 		//not causing students' gaps (final gaps)
 		//////////////////
 		int k;
-		for(k=0; k<act->nSubgroups; k++){
-			int isg=act->subgroups[k];
+		for(k=0; k<act->iSubgroupsList.count(); k++){
+			int isg=act->iSubgroupsList.at(k);
 
 			if(subgroupsEarlyPercentage[isg]>=0 && subgroupsNoGapsPercentage[isg]>=0){
 			//students early+no gaps
@@ -4545,7 +4545,7 @@ impossibleteachersmaxhoursdaily:
 			else
 				assert(subgroupsEarlyPercentage[isg]==-1 && subgroupsNoGapsPercentage[isg]==-1);
 		}
-		if(k<act->nSubgroups){
+		if(k<act->iSubgroupsList.count()){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
@@ -4714,8 +4714,8 @@ impossibleteachermaxdaysperweek:
 		if(activityEndsStudentsDayPercentages[ai]>=0){
 			bool skip=skipRandom(activityEndsStudentsDayPercentages[ai]);
 			if(!skip){
-				for(int j=0; j<gt.rules.internalActivitiesList[ai].nSubgroups; j++){
-					int sb=gt.rules.internalActivitiesList[ai].subgroups[j];
+				for(int j=0; j<gt.rules.internalActivitiesList[ai].iSubgroupsList.count(); j++){
+					int sb=gt.rules.internalActivitiesList[ai].iSubgroupsList.at(j);
 					for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
 						int ai2=subgroupsTimetable[sb][d][hh];
 						if(ai2>=0){
@@ -4736,8 +4736,8 @@ impossibleteachermaxdaysperweek:
 		}
 
 		//2. Check activities which have to be at the end, in the same day with current activity
-		for(int j=0; j<gt.rules.internalActivitiesList[ai].nSubgroups; j++){
-			int sb=gt.rules.internalActivitiesList[ai].subgroups[j];
+		for(int j=0; j<gt.rules.internalActivitiesList[ai].iSubgroupsList.count(); j++){
+			int sb=gt.rules.internalActivitiesList[ai].iSubgroupsList.at(j);
 			for(int hh=h-1; hh>=0; hh--){
 				int ai2=subgroupsTimetable[sb][d][hh];
 				if(ai2>=0)
@@ -4776,8 +4776,8 @@ impossibleactivityendsstudentsday:
 		//more efficient
 		
 		bool okteachersminhoursdaily=true;
-		for(int q=0; q<act->nTeachers; q++){
-			int tch=act->teachers[q];
+		for(int q=0; q<act->iTeachersList.count(); q++){
+			int tch=act->iTeachersList.at(q);
 			
 			if(teachersMinHoursDailyMinHours[tch]>=0){
 				assert(teachersMinHoursDailyPercentages[tch]==100);

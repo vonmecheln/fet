@@ -65,41 +65,41 @@ extern int TIMETABLE_HTML_LEVEL;
 /**
 The maximum number of different years of students
 */
-const int MAX_YEARS=500;
+//const int MAX_YEARS=15000;
 
 /**
 Maximum number of allowed groups per year of students
 */
-const int MAX_GROUPS_PER_YEAR=500;
+//const int MAX_GROUPS_PER_YEAR=15000;
 
 /**
 Maximum number of allowed subgroups per group of students
 */
-const int MAX_SUBGROUPS_PER_GROUP=500;
+//const int MAX_SUBGROUPS_PER_GROUP=15000;
 
 /**
 The maximum total number of different groups of students
 */
-const int MAX_TOTAL_GROUPS=MAX_YEARS*MAX_GROUPS_PER_YEAR;
+//const int MAX_TOTAL_GROUPS=15000;
 
 /**
 The maximum total number of different subgroups of students
 */
-const int MAX_TOTAL_SUBGROUPS=5000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUPS_PER_GROUP;
+const int MAX_TOTAL_SUBGROUPS=15000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUPS_PER_GROUP;
 
 /**
 This constant represents the maximum number of total allowed subgroups
 for any activity.
 */
-const int MAX_SUBGROUPS_PER_ACTIVITY=400;//MAX_SUBGROUPS_PER_GROUP * MAX_GROUPS_PER_YEAR;
+//const int MAX_SUBGROUPS_PER_ACTIVITY=400;//MAX_SUBGROUPS_PER_GROUP * MAX_GROUPS_PER_YEAR;
 
 /**
 This constant represents the maximum number of teachers
 for any activity.
 */
-const int MAX_TEACHERS_PER_ACTIVITY = 100;
+//const int MAX_TEACHERS_PER_ACTIVITY = 100;
 
-const int MAX_SUBGROUPS_PER_CONSTRAINT=400;//MAX_SUBGROUPS_PER_GROUP * MAX_GROUPS_PER_YEAR;
+//const int MAX_SUBGROUPS_PER_CONSTRAINT=400;//MAX_SUBGROUPS_PER_GROUP * MAX_GROUPS_PER_YEAR;
 
 /**
 The maximum number of different teachers
@@ -443,32 +443,52 @@ Time vertical version.
 const QString TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="teachers_timetable_time_vertical.html";
 
 /**
-An output file containing the timetable for each room,
-arranged in html format.
+An output file containing the timetable for each room, arranged in html format.
 Days horizontal version.
 */
 const QString ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="rooms_timetable_days_horizontal.html";
 
 /**
-An output file containing the timetable for each room,
-arranged in html format.
+An output file containing the timetable for each room, arranged in html format.
 Days vertical version.
 */
 const QString ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="rooms_timetable_days_vertical.html";
 
 /**
-An output file containing the timetable for each room,
-arranged in html format.
+An output file containing the timetable for each room, arranged in html format.
 Time horizontal version.
 */
 const QString ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="rooms_timetable_time_horizontal.html";
 
 /**
-An output file containing the timetable for each room,
-arranged in html format.
+An output file containing the timetable for each room, arranged in html format.
 Time vertical version.
 */
 const QString ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="rooms_timetable_time_vertical.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Days horizontal version.
+*/
+const QString SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="subjects_timetable_days_horizontal.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Days vertical version.
+*/
+const QString SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="subjects_timetable_days_vertical.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Time horizontal version.
+*/
+const QString SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="subjects_timetable_time_horizontal.html";
+
+/**
+An output file containing the timetable for each subject, arranged in html format.
+Time vertical version.
+*/
+const QString SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="subjects_timetable_time_vertical.html";
 
 /**
 A log file explaining how the xml input file was parsed

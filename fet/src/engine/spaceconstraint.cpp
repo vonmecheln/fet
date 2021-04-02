@@ -49,7 +49,7 @@ using namespace std;
 #define yesNo(x)				((x)==0?"no":"yes")
 #define yesNoTranslated(x)		((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
-static qint16 roomsMatrix[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+static qint8 roomsMatrix[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 static int rooms_conflicts=-1;
 

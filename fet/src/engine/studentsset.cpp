@@ -237,6 +237,8 @@ StudentsSubgroup::StudentsSubgroup()
 	: StudentsSet()
 {
 	this->type=STUDENTS_SUBGROUP;
+	
+	indexInInternalSubgroupsList=-1;
 }
 
 StudentsSubgroup::~StudentsSubgroup()

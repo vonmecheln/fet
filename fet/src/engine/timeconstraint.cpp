@@ -51,8 +51,8 @@ using namespace std;
 //The following 2 matrices are kept to make the computation faster
 //They are calculated only at the beginning of the computation of the fitness
 //of the solution.
-static qint16 subgroupsMatrix[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-static qint16 teachersMatrix[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+static qint8 subgroupsMatrix[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+static qint8 teachersMatrix[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 static int teachers_conflicts=-1;
 static int subgroups_conflicts=-1;
@@ -214,7 +214,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 						assert(r.internalActivitiesList[i].parity==PARITY_FORTNIGHTLY);*/
 						tmp=1;
 					//}
-					late += (h+dd-r.nHoursPerDay) * tmp * r.internalActivitiesList[i].nSubgroups;
+					late += (h+dd-r.nHoursPerDay) * tmp * r.internalActivitiesList[i].iSubgroupsList.count();
 					//multiplied with 2 for weekly activities and with the number
 					//of subgroups implied, for seeing the importance of the
 					//activity
@@ -295,7 +295,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 						assert(r.internalActivitiesList[i].parity==PARITY_FORTNIGHTLY);*/
 						tmp=1;
 					//}
-					late += (h+dd-r.nHoursPerDay) * tmp * r.internalActivitiesList[i].nSubgroups;
+					late += (h+dd-r.nHoursPerDay) * tmp * r.internalActivitiesList[i].iSubgroupsList.count();
 					//multiplied with 2 for weekly activities and with the number
 					//of subgroups implied, for seeing the importance of the
 					//activity
@@ -307,11 +307,11 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 						 .arg(r.internalActivitiesList[i].id);
 						s+=" ";
 						s+=QObject::tr("This increases the conflicts total by %1")
-						 .arg((h+dd-r.nHoursPerDay)*tmp*r.internalActivitiesList[i].nSubgroups*weightPercentage/100);
+						 .arg((h+dd-r.nHoursPerDay)*tmp*r.internalActivitiesList[i].iSubgroupsList.count()*weightPercentage/100);
 						s+="\n";
 						
 						dl.append(s);
-						cl.append((h+dd-r.nHoursPerDay)*tmp*r.internalActivitiesList[i].nSubgroups*weightPercentage/100);
+						cl.append((h+dd-r.nHoursPerDay)*tmp*r.internalActivitiesList[i].iSubgroupsList.count()*weightPercentage/100);
 
 						(*conflictsString) += s+"\n";
 					}
@@ -677,7 +677,7 @@ ConstraintStudentsSetNotAvailable::ConstraintStudentsSetNotAvailable(double wp, 
 }
 
 bool ConstraintStudentsSetNotAvailable::computeInternalStructure(Rules& r){
-	StudentsSet* ss=r.searchStudentsSet(this->students);
+	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(!ss<0){
 		QMessageBox::warning(NULL, QObject::tr("FET warning"),
@@ -717,27 +717,34 @@ bool ConstraintStudentsSetNotAvailable::computeInternalStructure(Rules& r){
 	
 	assert(ss);
 
-	this->nSubgroups=0;
+	//this->nSubgroups=0;
+	this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
-		for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 			if(r.internalSubgroupsList[tmp]->name == ss->name)
-				break;
+				break;*/
+		assert(tmp>=0);
 		assert(tmp<r.nInternalSubgroups);
-		assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-		this->subgroups[this->nSubgroups++]=tmp;
+		//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+		//this->subgroups[this->nSubgroups++]=tmp;
+		this->iSubgroupsList.append(tmp);
 	}
 	else if(ss->type==STUDENTS_GROUP){
 		StudentsGroup* stg=(StudentsGroup*)ss;
 		for(int i=0; i<stg->subgroupsList.size(); i++){
 			StudentsSubgroup* sts=stg->subgroupsList[i];
 			int tmp;
-			for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+			/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 				if(r.internalSubgroupsList[tmp]->name == sts->name)
-					break;
+					break;*/
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
 			assert(tmp<r.nInternalSubgroups);
-			assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-			this->subgroups[this->nSubgroups++]=tmp;
+			//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+			//this->subgroups[this->nSubgroups++]=tmp;
+			this->iSubgroupsList.append(tmp);
 		}
 	}
 	else if(ss->type==STUDENTS_YEAR){
@@ -747,12 +754,15 @@ bool ConstraintStudentsSetNotAvailable::computeInternalStructure(Rules& r){
 			for(int j=0; j<stg->subgroupsList.size(); j++){
 				StudentsSubgroup* sts=stg->subgroupsList[j];
 				int tmp;
-				for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+				/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 					if(r.internalSubgroupsList[tmp]->name == sts->name)
-						break;
+						break;*/
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
 				assert(tmp<r.nInternalSubgroups);
-				assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-				this->subgroups[this->nSubgroups++]=tmp;
+				//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+				//this->subgroups[this->nSubgroups++]=tmp;
+				this->iSubgroupsList.append(tmp);
 			}
 		}
 	}
@@ -828,8 +838,8 @@ double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<d
 	//without logging
 	if(conflictsString==NULL){
 		nbroken=0;
-		for(int m=0; m<this->nSubgroups; m++){
-			int i=this->subgroups[m];
+		for(int m=0; m<this->iSubgroupsList.count(); m++){
+			int i=this->iSubgroupsList.at(m);
 			int j=d;
 			for(int k=h1; k<h2; k++)
 				//subgroupsMatrix[i][j][k]>=0 at anytime. Can I improve this if I get rid of the "if"?
@@ -840,8 +850,8 @@ double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<d
 	//with logging
 	else{
 		nbroken=0;
-		for(int m=0; m<this->nSubgroups; m++){
-			int i=this->subgroups[m], j=d;
+		for(int m=0; m<this->iSubgroupsList.count(); m++){
+			int i=this->iSubgroupsList.at(m), j=d;
 			for(int k=h1; k<h2; k++)
 				if(subgroupsMatrix[i][j][k]>0){
 					if(conflictsString!=NULL){
@@ -2704,9 +2714,14 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 			}
 		}
 	}
-
-	//if(weightPercentage==100)
-	//	assert(totalGaps==0); for partial solutions this rule might be broken
+	
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(totalGaps==0); //for partial solutions this rule might be broken
 	return weightPercentage/100 * totalGaps;
 }
 
@@ -2886,8 +2901,13 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<dou
 		}
 	}
 
-	//if(weightPercentage==100)
-	//	assert(totalGaps==0); for partial solutions this rule might be broken
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(totalGaps==0); //for partial solutions this rule might be broken
 	return weightPercentage/100 * totalGaps;
 }
 
@@ -3294,8 +3314,13 @@ double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& c
 			}
 		}
 
-	//if(weightPercentage==100)    for partial solutions it might be broken
-	//	assert(windows==0);		
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100)    //for partial solutions it might be broken
+			assert(windows==0);		
 	return weightPercentage/100 * windows;
 }
 
@@ -3364,30 +3389,37 @@ ConstraintStudentsSetNoGaps::ConstraintStudentsSetNoGaps(double wp, const QStrin
 }
 
 bool ConstraintStudentsSetNoGaps::computeInternalStructure(Rules& r){
-	StudentsSet* ss=r.searchStudentsSet(this->students);
+	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	assert(ss);
 
-	this->nSubgroups=0;
+	//this->nSubgroups=0;
+	this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
-		for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+		/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 			if(r.internalSubgroupsList[tmp]->name == ss->name)
-				break;
+				break;*/
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
 		assert(tmp<r.nInternalSubgroups);
-		assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-		this->subgroups[this->nSubgroups++]=tmp;
+		//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+		//this->subgroups[this->nSubgroups++]=tmp;
+		this->iSubgroupsList.append(tmp);
 	}
 	else if(ss->type==STUDENTS_GROUP){
 		StudentsGroup* stg=(StudentsGroup*)ss;
 		for(int i=0; i<stg->subgroupsList.size(); i++){
 			StudentsSubgroup* sts=stg->subgroupsList[i];
 			int tmp;
-			for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+			/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 				if(r.internalSubgroupsList[tmp]->name == sts->name)
-					break;
+					break;*/
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
 			assert(tmp<r.nInternalSubgroups);
-			assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-			this->subgroups[this->nSubgroups++]=tmp;
+			//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+			//this->subgroups[this->nSubgroups++]=tmp;
+			this->iSubgroupsList.append(tmp);
 		}
 	}
 	else if(ss->type==STUDENTS_YEAR){
@@ -3397,12 +3429,15 @@ bool ConstraintStudentsSetNoGaps::computeInternalStructure(Rules& r){
 			for(int j=0; j<stg->subgroupsList.size(); j++){
 				StudentsSubgroup* sts=stg->subgroupsList[j];
 				int tmp;
-				for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+				/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 					if(r.internalSubgroupsList[tmp]->name == sts->name)
-						break;
+						break;*/
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
 				assert(tmp<r.nInternalSubgroups);
-				assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-				this->subgroups[this->nSubgroups++]=tmp;
+				//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+				//this->subgroups[this->nSubgroups++]=tmp;
+				this->iSubgroupsList.append(tmp);
 			}
 		}
 	}
@@ -3481,8 +3516,8 @@ double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>
 	int tmp;
 	
 	windows=0;
-	for(int sg=0; sg<this->nSubgroups; sg++){
-		int i=this->subgroups[sg];
+	for(int sg=0; sg<this->iSubgroupsList.count(); sg++){
+		int i=this->iSubgroupsList.at(sg);
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			int k;
 			tmp=0;
@@ -3516,8 +3551,13 @@ double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>
 		}
 	}
 
-	//if(weightPercentage==100)     for partial solutions it might be broken
-	//	assert(windows==0);
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100)     //for partial solutions it might be broken
+			assert(windows==0);
 	return weightPercentage/100 * windows;
 }
 
@@ -3685,8 +3725,13 @@ double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl
 				//empty day or early assignment
 		}
 
-	//if(weightPercentage==100)    might be broken for partial solutions
-	//	assert(free==0);
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100)    //might be broken for partial solutions
+			assert(free==0);
 	return weightPercentage/100 * free;
 }
 
@@ -3756,30 +3801,37 @@ ConstraintStudentsSetEarly::ConstraintStudentsSetEarly(double wp, const QString&
 
 bool ConstraintStudentsSetEarly::computeInternalStructure(Rules& r)
 {
-	StudentsSet* ss=r.searchStudentsSet(this->students);
+	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	assert(ss);
 
-	this->nSubgroups=0;
+	//this->nSubgroups=0;
+	this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
-		for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+		/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 			if(r.internalSubgroupsList[tmp]->name == ss->name)
-				break;
+				break;*/
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
 		assert(tmp<r.nInternalSubgroups);
-		assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-		this->subgroups[this->nSubgroups++]=tmp;
+		//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+		//this->subgroups[this->nSubgroups++]=tmp;
+		this->iSubgroupsList.append(tmp);
 	}
 	else if(ss->type==STUDENTS_GROUP){
 		StudentsGroup* stg=(StudentsGroup*)ss;
 		for(int i=0; i<stg->subgroupsList.size(); i++){
 			StudentsSubgroup* sts=stg->subgroupsList[i];
 			int tmp;
-			for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+			/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 				if(r.internalSubgroupsList[tmp]->name == sts->name)
-					break;
+					break;*/
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
 			assert(tmp<r.nInternalSubgroups);
-			assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-			this->subgroups[this->nSubgroups++]=tmp;
+			//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+			//this->subgroups[this->nSubgroups++]=tmp;
+			this->iSubgroupsList.append(tmp);
 		}
 	}
 	else if(ss->type==STUDENTS_YEAR){
@@ -3789,12 +3841,15 @@ bool ConstraintStudentsSetEarly::computeInternalStructure(Rules& r)
 			for(int j=0; j<stg->subgroupsList.size(); j++){
 				StudentsSubgroup* sts=stg->subgroupsList[j];
 				int tmp;
-				for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+				/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 					if(r.internalSubgroupsList[tmp]->name == sts->name)
-						break;
+						break;*/
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
 				assert(tmp<r.nInternalSubgroups);
-				assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-				this->subgroups[this->nSubgroups++]=tmp;
+				//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+				//this->subgroups[this->nSubgroups++]=tmp;
+				this->iSubgroupsList.append(tmp);
 			}
 		}
 	}
@@ -3877,9 +3932,9 @@ double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>&
 	int i;
 	
 	free=0; //number of free hours before starting the courses
-	for(int q=0; q<this->nSubgroups; q++){
+	for(int q=0; q<this->iSubgroupsList.count(); q++){
 	//for(i=0; i<r.nInternalSubgroups; i++)
-		i=this->subgroups[q];
+		i=this->iSubgroupsList.at(q);
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			int k;
 			int weekly=0;
@@ -3906,8 +3961,13 @@ double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>&
 		}
 	}
 
-	//if(weightPercentage==100)      might be broken for partial solutions
-	//	assert(free==0);
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100)      //might be broken for partial solutions
+			assert(free==0);
 	return weightPercentage/100 * free;
 }
 
@@ -4249,30 +4309,37 @@ QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 
 bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(Rules &r)
 {
-	StudentsSet* ss=r.searchStudentsSet(this->students);
+	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	assert(ss);
 
-	this->nSubgroups=0;
+	//this->nSubgroups=0;
+	this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
-		for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+		/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 			if(r.internalSubgroupsList[tmp]->name == ss->name)
-				break;
+				break;*/
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
 		assert(tmp<r.nInternalSubgroups);
-		assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-		this->subgroups[this->nSubgroups++]=tmp;
+		//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+		//this->subgroups[this->nSubgroups++]=tmp;
+		this->iSubgroupsList.append(tmp);
 	}
 	else if(ss->type==STUDENTS_GROUP){
 		StudentsGroup* stg=(StudentsGroup*)ss;
 		for(int i=0; i<stg->subgroupsList.size(); i++){
 			StudentsSubgroup* sts=stg->subgroupsList[i];
 			int tmp;
-			for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+			/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 				if(r.internalSubgroupsList[tmp]->name == sts->name)
-					break;
+					break;*/
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
 			assert(tmp<r.nInternalSubgroups);
-			assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-			this->subgroups[this->nSubgroups++]=tmp;
+			//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+			//this->subgroups[this->nSubgroups++]=tmp;
+			this->iSubgroupsList.append(tmp);
 		}
 	}
 	else if(ss->type==STUDENTS_YEAR){
@@ -4282,12 +4349,15 @@ bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(Rules &r)
 			for(int j=0; j<stg->subgroupsList.size(); j++){
 				StudentsSubgroup* sts=stg->subgroupsList[j];
 				int tmp;
-				for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+				/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 					if(r.internalSubgroupsList[tmp]->name == sts->name)
-						break;
+						break;*/
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
 				assert(tmp<r.nInternalSubgroups);
-				assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-				this->subgroups[this->nSubgroups++]=tmp;
+				//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+				//this->subgroups[this->nSubgroups++]=tmp;
+				this->iSubgroupsList.append(tmp);
 			}
 		}
 	}
@@ -4323,8 +4393,8 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 	if(conflictsString==NULL){
 		too_much=0;
 		//too_little=0;
-		for(int sg=0; sg<this->nSubgroups; sg++){
-			int i=subgroups[sg];
+		for(int sg=0; sg<this->iSubgroupsList.count(); sg++){
+			int i=iSubgroupsList.at(sg);
 			for(int j=0; j<r.nDaysPerWeek; j++){
 				tmp=0;
 				for(int k=0; k<r.nHoursPerDay; k++){
@@ -4343,8 +4413,8 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 	else{
 		too_much=0;
 		//too_little=0;
-		for(int sg=0; sg<this->nSubgroups; sg++){
-			int i=subgroups[sg];
+		for(int sg=0; sg<this->iSubgroupsList.count(); sg++){
+			int i=iSubgroupsList.at(sg);
 			for(int j=0; j<r.nDaysPerWeek; j++){
 				tmp=0;
 				for(int k=0; k<r.nHoursPerDay; k++){
@@ -4560,8 +4630,15 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 	//for empty days should not consider
 			
 	assert(too_little>=0);
-	//if(weightPercentage==100) does not work for partial solutions
-	//	assert(too_little==0);
+
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100) //does not work for partial solutions
+			assert(too_little==0);
+
 	return too_little * weightPercentage/100;
 }
 
@@ -4696,30 +4773,36 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 
 bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(Rules &r)
 {
-	StudentsSet* ss=r.searchStudentsSet(this->students);
+	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	assert(ss);
 
-	this->nSubgroups=0;
+	this->iSubgroupsList.clear();
 	if(ss->type==STUDENTS_SUBGROUP){
 		int tmp;
-		for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+		/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 			if(r.internalSubgroupsList[tmp]->name == ss->name)
-				break;
+				break;*/
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
 		assert(tmp<r.nInternalSubgroups);
-		assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-		this->subgroups[this->nSubgroups++]=tmp;
+		//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+		//this->subgroups[this->nSubgroups++]=tmp;
+		this->iSubgroupsList.append(tmp);
 	}
 	else if(ss->type==STUDENTS_GROUP){
 		StudentsGroup* stg=(StudentsGroup*)ss;
 		for(int i=0; i<stg->subgroupsList.size(); i++){
 			StudentsSubgroup* sts=stg->subgroupsList[i];
 			int tmp;
-			for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+			/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 				if(r.internalSubgroupsList[tmp]->name == sts->name)
-					break;
+					break;*/
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
 			assert(tmp<r.nInternalSubgroups);
-			assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-			this->subgroups[this->nSubgroups++]=tmp;
+			//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+			//this->subgroups[this->nSubgroups++]=tmp;
+			this->iSubgroupsList.append(tmp);
 		}
 	}
 	else if(ss->type==STUDENTS_YEAR){
@@ -4729,12 +4812,15 @@ bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(Rules &r)
 			for(int j=0; j<stg->subgroupsList.size(); j++){
 				StudentsSubgroup* sts=stg->subgroupsList[j];
 				int tmp;
-				for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+				/*for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
 					if(r.internalSubgroupsList[tmp]->name == sts->name)
-						break;
+						break;*/
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
 				assert(tmp<r.nInternalSubgroups);
-				assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
-				this->subgroups[this->nSubgroups++]=tmp;
+				//assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+				//this->subgroups[this->nSubgroups++]=tmp;
+				this->iSubgroupsList.append(tmp);
 			}
 		}
 	}
@@ -4766,8 +4852,8 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 	assert(this->minHoursDaily>=0);
 
 	too_little=0;
-	for(int sg=0; sg<this->nSubgroups; sg++){
-		int i=subgroups[sg];
+	for(int sg=0; sg<this->iSubgroupsList.count(); sg++){
+		int i=iSubgroupsList.at(sg);
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			tmp=0;
 			for(int k=0; k<r.nHoursPerDay; k++){
@@ -4794,8 +4880,15 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 	}
 	
 	assert(too_little>=0);
-	//if(weightPercentage==100) does not work for partial solutions
-	//	assert(too_much==0);
+
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		if(weightPercentage==100) //does not work for partial solutions
+			assert(too_little==0);
+
 	return too_little * weightPercentage;
 }
 
@@ -6736,8 +6829,8 @@ double ConstraintActivityEndsStudentsDay::fitness(Solution& c, Rules& r, QList<d
 		int h=c.times[this->activityIndex]/r.nDaysPerWeek; //the hour
 		
 		int i=this->activityIndex;
-		for(int j=0; j<r.internalActivitiesList[i].nSubgroups; j++){
-			int sb=r.internalActivitiesList[i].subgroups[j];
+		for(int j=0; j<r.internalActivitiesList[i].iSubgroupsList.count(); j++){
+			int sb=r.internalActivitiesList[i].iSubgroupsList.at(j);
 			for(int hh=h+r.internalActivitiesList[i].duration; hh<r.nHoursPerDay; hh++)
 				if(subgroupsMatrix[sb][d][hh]>0){
 					nbroken=1;
@@ -6945,9 +7038,14 @@ double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 		}
 	}
 
-	//does not work for partial solutions
-	/*if(weightPercentage==100)	
-		assert(nbroken==0);*/
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		//does not work for partial solutions
+		if(weightPercentage==100)	
+			assert(nbroken==0);
 	return weightPercentage/100 * nbroken;
 }
 
@@ -7132,9 +7230,15 @@ double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 		}
 	}
 
-	//does not work for partial solutions
-	/*if(weightPercentage==100)
-		assert(nbroken==0);*/
+	int na=0;
+	for(int i=0; i<r.nInternalActivities; i++)
+		if(c.times[i]!=UNALLOCATED_TIME)
+			na++;
+	if(na==r.nInternalActivities)
+		//does not work for partial solutions
+		if(weightPercentage==100)
+			assert(nbroken==0);
+			
 	return weightPercentage/100 * nbroken;
 }
 

@@ -10,6 +10,7 @@ PLEASE READ INSTRUCTIONS BELOW VERY CAREFULLY AND FOLLOW THEM
 PLEASE FOLLOW THE ENGLISH WORDS AND DO NOT TRANSLATE A SINGLE
 TERM INCOMPLETELY. EITHER TRANSLATE IT OR NOT, BUT NOT PARTIALLY.
 
+
 STEP 1.
 
 Modify the file "fet-x.x.x/src/interface/interface.pro", by adding a line
@@ -20,6 +21,9 @@ STEP 2.
 
 Enter the directory "fet-x.x.x/src/interface/" and type "lupdate interface.pro".
 This will create the needed file, named "fet-x.x.x/translations/fet_**.ts".
+
+ALTERNATIVE STEPS 1&2: You can use the fet_untranslated.ts file, just rename it
+fet_**.ts (** means your language).
 
 STEP 3.
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE FET><FET version="5.2.10">
+﻿<!DOCTYPE FET><FET version="5.4.17">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -378,10 +378,6 @@
 	<Group>
 	<Name>Master I</Name>
 	<Number_of_Students>19</Number_of_Students>
-		<Subgroup>
-		<Name>Master I WHOLE GROUP</Name>
-		<Number_of_Students>19</Number_of_Students>
-		</Subgroup>
 	</Group>
 </Year>
 <Year>
@@ -390,10 +386,6 @@
 	<Group>
 	<Name>Master II</Name>
 	<Number_of_Students>17</Number_of_Students>
-		<Subgroup>
-		<Name>Master II WHOLE GROUP</Name>
-		<Number_of_Students>17</Number_of_Students>
-		</Subgroup>
 	</Group>
 </Year>
 </Students_List>

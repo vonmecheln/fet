@@ -84,7 +84,7 @@ public:
 	*/
 	static void writeSubgroupsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
-		/**
+	/**
 	Function writing the groups' timetable html format, to a file
 	Days horizontal version.
 	*/
@@ -114,19 +114,19 @@ public:
 	static void writeYearsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
-	Function writing the year' timetable html format, to a file
+	Function writing the years' timetable html format, to a file
 	Days vertical version.
 	*/
 	static void writeYearsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
-	Function writing the year' timetable html format, to a file
+	Function writing the years' timetable html format, to a file
 	Time horizontal version.
 	*/
 	static void writeYearsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
-	Function writing the year' timetable html format, to a file
+	Function writing the years' timetable html format, to a file
 	Time vertical version.
 	*/
 	static void writeYearsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
@@ -177,7 +177,31 @@ public:
 	Function writing the rooms' timetable in html format
 	Time vertical version
 	*/
-	static void writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);	
+	static void writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the subjects' timetable in html format
+	Days horizontal version
+	*/
+	static void writeSubjectsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the subjects' timetable in html format
+	Days vertical version
+	*/
+	static void writeSubjectsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	
+	/**
+	Function writing the subjects' timetable in html format
+	Time horizontal version
+	*/
+	static void writeSubjectsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the subjects' timetable in html format
+	Time vertical version
+	*/
+	static void writeSubjectsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 };
 
 #endif

@@ -167,7 +167,8 @@ void Activity::computeInternalStructure(Rules& r)
 	//the internal subgroups list must be computed before entering here.
 
 	//teachers
-	this->nTeachers=0;
+	//this->nTeachers=0;
+	this->iTeachersList.clear();
 	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++){
 		int tmp;
 		for(tmp=0; tmp<r.nInternalTeachers; tmp++){
@@ -175,8 +176,9 @@ void Activity::computeInternalStructure(Rules& r)
 				break;
 		}
 		assert(tmp < r.nInternalTeachers);
-		assert(this->nTeachers<MAX_TEACHERS_PER_ACTIVITY);
-		this->teachers[this->nTeachers++]=tmp;
+		//assert(this->nTeachers<MAX_TEACHERS_PER_ACTIVITY);
+		//this->teachers[this->nTeachers++]=tmp;
+		this->iTeachersList.append(tmp);
 	}
 
 	//subjects
@@ -187,21 +189,25 @@ void Activity::computeInternalStructure(Rules& r)
 	this->subjectTagIndex = r.searchSubjectTag(this->subjectTagName);
 
 	//students	
-	this->nSubgroups=0;
+	//this->nSubgroups=0;
+	this->iSubgroupsList.clear();
 	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
-		StudentsSet* ss=r.searchStudentsSet(*it);
+		StudentsSet* ss=r.searchAugmentedStudentsSet(*it);
 		assert(ss);
 		if(ss->type==STUDENTS_SUBGROUP){
 			int tmp;
-			for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+			/*for(tmp=0; tmp<r.nInternalSubgroups; tmp++)
 				if(r.internalSubgroupsList[tmp]->name == ss->name)
-					break;
+					break;*/
+			tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+			assert(tmp>=0);
 			assert(tmp<r.nInternalSubgroups);
-			assert(this->nSubgroups<MAX_SUBGROUPS_PER_ACTIVITY);
+			//assert(this->nSubgroups<MAX_SUBGROUPS_PER_ACTIVITY);
 			
 			bool duplicate=false;
-			for(int j=0; j<this->nSubgroups; j++)
-				if(this->subgroups[j]==tmp)
+			if(this->iSubgroupsList.contains(tmp))
+			//for(int j=0; j<this->nSubgroups; j++)
+			//	if(this->subgroups[j]==tmp)
 					duplicate=true;
 			if(duplicate){
 				QString s;
@@ -211,22 +217,26 @@ void Activity::computeInternalStructure(Rules& r)
 				cout<<qPrintable(s)<<endl;
 			}
 			else
-				this->subgroups[this->nSubgroups++]=tmp;
+				this->iSubgroupsList.append(tmp);
+				//this->subgroups[this->nSubgroups++]=tmp;
 		}
 		else if(ss->type==STUDENTS_GROUP){
 			StudentsGroup* stg=(StudentsGroup*)ss;
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 				int tmp;
-				for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+				/*for(tmp=0; tmp<r.nInternalSubgroups; tmp++)
 					if(r.internalSubgroupsList[tmp]->name == sts->name)
-						break;
+						break;*/
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
 				assert(tmp<r.nInternalSubgroups);
-				assert(this->nSubgroups<MAX_SUBGROUPS_PER_ACTIVITY);
+				//assert(this->nSubgroups<MAX_SUBGROUPS_PER_ACTIVITY);
 
 				bool duplicate=false;
-				for(int j=0; j<this->nSubgroups; j++)
-					if(this->subgroups[j]==tmp)
+				if(this->iSubgroupsList.contains(tmp))
+				//for(int j=0; j<this->nSubgroups; j++)
+				//	if(this->subgroups[j]==tmp)
 						duplicate=true;
 				if(duplicate){
 					QString s;
@@ -236,7 +246,8 @@ void Activity::computeInternalStructure(Rules& r)
 					cout<<qPrintable(s)<<endl;
 				}
 				else
-					this->subgroups[this->nSubgroups++]=tmp;
+					//this->subgroups[this->nSubgroups++]=tmp;
+					this->iSubgroupsList.append(tmp);
 			}
 		}
 		else if(ss->type==STUDENTS_YEAR){
@@ -246,15 +257,18 @@ void Activity::computeInternalStructure(Rules& r)
 				for(int l=0; l<stg->subgroupsList.size(); l++){
 					StudentsSubgroup* sts=stg->subgroupsList[l];
 					int tmp;
-					for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+					/*for(tmp=0; tmp<r.nInternalSubgroups; tmp++)
 						if(r.internalSubgroupsList[tmp]->name == sts->name)
-							break;
+							break;*/
+					tmp=sts->indexInInternalSubgroupsList;
+					assert(tmp>=0);
 					assert(tmp<r.nInternalSubgroups);
-					assert(this->nSubgroups<MAX_SUBGROUPS_PER_ACTIVITY);
+					//assert(this->nSubgroups<MAX_SUBGROUPS_PER_ACTIVITY);
 
 					bool duplicate=false;
-					for(int j=0; j<this->nSubgroups; j++)
-						if(this->subgroups[j]==tmp)
+					if(this->iSubgroupsList.contains(tmp))
+					//for(int j=0; j<this->nSubgroups; j++)
+					//	if(this->subgroups[j]==tmp)
 							duplicate=true;
 					if(duplicate){
 						QString s;
@@ -264,7 +278,8 @@ void Activity::computeInternalStructure(Rules& r)
 						cout<<qPrintable(s)<<endl;
 					}
 					else{
-						this->subgroups[this->nSubgroups++]=tmp;
+						//this->subgroups[this->nSubgroups++]=tmp;
+						this->iSubgroupsList.append(tmp);
 					}
 				}
 			}

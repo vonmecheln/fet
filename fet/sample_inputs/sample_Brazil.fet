@@ -1,4 +1,4 @@
-<!DOCTYPE FET><FET version="5.1.1">
+﻿<!DOCTYPE FET><FET version="5.4.17">
 
 <Institution_Name>Institutie implicita</Institution_Name>
 
@@ -27,194 +27,66 @@
 <Year>
 <Name>101</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>101 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>101 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>102</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>102 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>102 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>103</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>103 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>103 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>104</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>104 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>104 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>111</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>111 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>111 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>201</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>201 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>201 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>202</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>202 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>202 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>203</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>203 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>203 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>204</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>204 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>204 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>205</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>205 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>205 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>206</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>206 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>206 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>301</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>301 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>301 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>302</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>302 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>302 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>303</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>303 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>303 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>304</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>304 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>304 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 <Year>
 <Name>305</Name>
 <Number_of_Students>0</Number_of_Students>
-	<Group>
-	<Name>305 WHOLE YEAR</Name>
-	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>305 WHOLE YEAR WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
-	</Group>
 </Year>
 </Students_List>
 

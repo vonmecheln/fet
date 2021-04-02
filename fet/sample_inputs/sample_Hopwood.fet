@@ -1,4 +1,4 @@
-<!DOCTYPE FET><FET version="5.0.0">
+﻿<!DOCTYPE FET><FET version="5.4.17">
 
 <Institution_Name>Hopwood ESOL</Institution_Name>
 
@@ -31,58 +31,30 @@
 	<Group>
 	<Name>Basic ??</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic ?? WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic Eve A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic Eve A WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic Eve B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic Eve B WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic F/T A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic F/T A WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic F/T B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic F/T B WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic P/T A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic P/T A WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic P/T B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic P/T B WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic Skills</Name>
@@ -111,314 +83,158 @@
 		<Name>Basic Sk. Assess</Name>
 		<Number_of_Students>10</Number_of_Students>
 		</Subgroup>
-		<Subgroup>
-		<Name>Basic Skills WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Basic plus</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Basic plus WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Begin</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Begin WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Begin Eve A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Begin Eve A WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Begin Eve B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Begin Eve B WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Begin F/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Begin F/T WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Begin P/T A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Begin P/T A WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Begin P/T B</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>Begin P/T B WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>CAE</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>CAE WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>CAE Eve</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>CAE Eve WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>EAL group</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>EAL group WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>EFL</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>EFL WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>ESOL</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>ESOL WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>ESOL Craft (FACE)</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>ESOL Craft (FACE) WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>ESOL IT</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>ESOL IT WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>ESOL new</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>ESOL new WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Elem Eve A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Elem Eve A WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Elem Eve B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Elem Eve B WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Elem F/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Elem F/T WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Elem P/T A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Elem P/T A WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Elem P/T B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Elem P/T B WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>FCE</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>FCE WHOLE GROUP</Name>
-		<Number_of_Students>10</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>FCE Eve</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>FCE Eve WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>IELTS</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>IELTS WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>IELTS Found F/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>IELTS Found F/T WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>IELTS Inter P/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>IELTS Inter P/T WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>IELTS Up Int P/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>IELTS Up Int P/T WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Inter Eve A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Inter Eve A WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Inter Eve B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Inter Eve B WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Inter F/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Inter F/T WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Inter P/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Inter P/T WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Pre-Int Eve A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Pre-Int Eve A WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Pre-Int Eve B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Pre-Int Eve B WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Pre-Int F/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Pre-Int F/T WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Pre-Int P/T A</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Pre-Int P/T A WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Pre-Int P/T B</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Pre-Int P/T B WHOLE GROUP</Name>
-		<Number_of_Students>20</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Staff</Name>
 	<Number_of_Students>1</Number_of_Students>
-		<Subgroup>
-		<Name>Staff WHOLE GROUP</Name>
-		<Number_of_Students>1</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Upper Int P/T</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Upper Int P/T WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>Women Group</Name>
 	<Number_of_Students>15</Number_of_Students>
-		<Subgroup>
-		<Name>Women Group WHOLE GROUP</Name>
-		<Number_of_Students>15</Number_of_Students>
-		</Subgroup>
 	</Group>
 </Year>
 </Students_List>

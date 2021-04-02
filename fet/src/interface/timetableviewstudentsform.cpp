@@ -57,8 +57,8 @@ TimetableViewStudentsForm::TimetableViewStudentsForm()
 	move(xx, yy);
 
 	yearsListBox->clear();
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
+	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
+		StudentsYear* sty=gt.rules.augmentedYearsList[i];
 		yearsListBox->insertItem(sty->name);
 	}
 	yearChanged(yearsListBox->currentText());
@@ -70,16 +70,16 @@ TimetableViewStudentsForm::~TimetableViewStudentsForm()
 
 void TimetableViewStudentsForm::yearChanged(const QString &yearName)
 {
-	int yearIndex=gt.rules.searchYear(yearName);
+	int yearIndex=gt.rules.searchAugmentedYear(yearName);
 	if(yearIndex<0){
-		if(gt.rules.yearsList.size()>0)
+		if(gt.rules.augmentedYearsList.size()>0)
 			yearIndex=0;
 		else
 			return;
 	}
 
 	groupsListBox->clear();
-	StudentsYear* sty=gt.rules.yearsList.at(yearIndex);
+	StudentsYear* sty=gt.rules.augmentedYearsList.at(yearIndex);
 	for(int i=0; i<sty->groupsList.size(); i++){
 		StudentsGroup* stg=sty->groupsList[i];
 		groupsListBox->insertItem(stg->name);
@@ -91,18 +91,18 @@ void TimetableViewStudentsForm::yearChanged(const QString &yearName)
 void TimetableViewStudentsForm::groupChanged(const QString &groupName)
 {
 	QString yearName=yearsListBox->currentText();
-	int yearIndex=gt.rules.searchYear(yearName);
+	int yearIndex=gt.rules.searchAugmentedYear(yearName);
 	if(yearIndex<0){
-		if(gt.rules.yearsList.size()>0){
+		if(gt.rules.augmentedYearsList.size()>0){
 			yearIndex=0;
-			yearName=gt.rules.yearsList.at(0)->name;
+			yearName=gt.rules.augmentedYearsList.at(0)->name;
 		}
 		else
 			return;
 	}
 
-	StudentsYear* sty=gt.rules.yearsList.at(yearIndex);
-	int groupIndex=gt.rules.searchGroup(yearName, groupName);
+	StudentsYear* sty=gt.rules.augmentedYearsList.at(yearIndex);
+	int groupIndex=gt.rules.searchAugmentedGroup(yearName, groupName);
 	if(groupIndex<0){
 		if(sty->groupsList.size()>0)
 			groupIndex=0;
@@ -149,10 +149,10 @@ void TimetableViewStudentsForm::updateStudentsTimetableTable(){
 
 	s = QObject::tr("Students");
 	s += ": ";
-	s += yearname;
-	s += ", ";
-	s += groupname;
-	s += ", ";
+	//s += yearname;
+	//s += ", ";
+	//s += groupname;
+	//s += ", ";
 	s += subgroupname;
 
 	classNameTextLabel->setText(s);
@@ -167,7 +167,7 @@ void TimetableViewStudentsForm::updateStudentsTimetableTable(){
 		studentsTimetableTable->verticalHeader()->setLabel(i, gt.rules.hoursOfTheDay[i]);
 		//studentsTimetableTable->setText(i+1, 0, gt.rules.hoursOfTheDay[i]);
 
-	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchStudentsSet(subgroupname);
+	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchAugmentedStudentsSet(subgroupname);
 	assert(sts);
 	int i;
 	for(i=0; i<gt.rules.nInternalSubgroups; i++)
@@ -217,7 +217,7 @@ void TimetableViewStudentsForm::detailActivity(int row, int col)
 	groupname = groupsListBox->currentText();
 	subgroupname = subgroupsListBox->currentText();
 
-	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchStudentsSet(subgroupname);
+	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchAugmentedStudentsSet(subgroupname);
 	assert(sts);
 	int i;
 	for(i=0; i<gt.rules.nInternalSubgroups; i++)
@@ -276,7 +276,7 @@ void TimetableViewStudentsForm::lock()
 
 	Solution* tc=&best_solution;
 
-	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchStudentsSet(subgroupname);
+	StudentsSubgroup* sts=(StudentsSubgroup*)gt.rules.searchAugmentedStudentsSet(subgroupname);
 	assert(sts);
 	int i;
 	for(i=0; i<gt.rules.nInternalSubgroups; i++)

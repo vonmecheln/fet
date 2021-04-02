@@ -29,6 +29,8 @@ typedef QList<Teacher*> TeachersList;
 class Teacher
 {
 public:
+	QList<qint16> activitiesForTeacher;
+
 	QString name;
 
 	Teacher();

@@ -203,6 +203,8 @@ public:
 
 	int nInternalSubgroups;
 	StudentsSubgroup* internalSubgroupsList[MAX_TOTAL_SUBGROUPS];
+	
+	StudentsYearsList augmentedYearsList;
 
 	/**
 	Here will be only the active activities.
@@ -211,6 +213,8 @@ public:
 	*/
 	int nInternalActivities;
 	Activity internalActivitiesList[MAX_ACTIVITIES];
+	
+	QList<int> activitiesForSubject[MAX_SUBJECTS];
 
 	int nInternalRooms;
 	Room* internalRoomsList[MAX_ROOMS];
@@ -358,6 +362,8 @@ public:
 	*/
 	StudentsSet* searchStudentsSet(const QString& setName);
 	
+	StudentsSet* searchAugmentedStudentsSet(const QString& setName);
+	
 	/**
 	True if the students sets contain one common subgroup.
 	This function is used in constraints isRelatedToStudentsSet
@@ -375,6 +381,8 @@ public:
 	Returns -1 if not found or the index of this year in the years list
 	*/
 	int searchYear(const QString& yearName);
+
+	int searchAugmentedYear(const QString& yearName);
 
 	/**
 	Modifies this students year (name, number of students) and takes care of all related 
@@ -400,6 +408,8 @@ public:
 	*/
 	int searchGroup(const QString& yearName, const QString& groupName);
 
+	int searchAugmentedGroup(const QString& yearName, const QString& groupName);
+
 	/**
 	Modifies this students group (name, number of students) and takes care of all related 
 	activities and constraints.	Returns true on success, false on failure (if not found)
@@ -423,6 +433,8 @@ public:
 	Returns -1 if not found or the index of the subgroup in the list of subgroups of this group
 	*/
 	int searchSubgroup(const QString& yearName, const QString& groupName, const QString& subgroupName);
+
+	int searchAugmentedSubgroup(const QString& yearName, const QString& groupName, const QString& subgroupName);
 
 	/**
 	Modifies this students subgroup (name, number of students) and takes care of all related 

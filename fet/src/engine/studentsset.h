@@ -81,6 +81,10 @@ public:
 class StudentsSubgroup: public StudentsSet
 {
 public:
+	int indexInInternalSubgroupsList;
+	
+	QList<qint16> activitiesForSubgroup;
+
 	StudentsSubgroup();
 	~StudentsSubgroup();
 

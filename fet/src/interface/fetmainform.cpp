@@ -598,7 +598,7 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 {
 	QString s;
 	
-	s+=tr("This help by Liviu Lalescu, modified 1 October 2007");
+	s+=tr("This help by Liviu Lalescu, modified 7 November 2007");
 	
 	s+="\n\n";
 	
@@ -623,20 +623,6 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 	 " be placed in the first hours, which is too hard and wrong)."
 	 );
 	 
-	 s+="\n\n";
-	 s+=tr("If you started simulation before inputting all the necessary students structure,"
-	  " FET might have added special groups/subgroups, ending in WHOLE_YEAR or WHOLE_GROUP."
-	  " These special groups/subgroups are needed if the year/group contains only them and otherwise would be empty,"
-	  " but not needed when year/group contains other groups/subgroups."
-	  " It is highly recommended to remove them if your year/group contain other groups/subgroups."
-	  " If a special subgroup named for instance 5_WHOLE_YEAR_WHOLE_GROUP has only 2 hours per day,"
-	  " you might get an impossible timetable, because early and no gaps must be respected for this subgroup also,"
-	  ", which might be impossible"
-	  );
-	 s+="\n\n";
-	 s+=tr("The idea is that you have to delete unnecessary groups/subgroups containing WHOLE_YEAR or WHOLE_GROUP"
-	  " (unnecessary means that they are not the only one group/subgroup of higher year/group");
-
 	//QMessageBox::information(this, tr("FET information about statistics"), s);
 
 	//show the message in a dialog

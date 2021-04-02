@@ -291,7 +291,7 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 }
 
 //critical function here - must be optimized for speed
-int Solution::getTeachersMatrix(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+int Solution::getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
@@ -309,8 +309,8 @@ int Solution::getTeachersMatrix(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WE
 			int day = this->times[i] % r.nDaysPerWeek;
 			Activity* act=&r.internalActivitiesList[i];
 			for(int dd=0; dd<act->duration && hour+dd<r.nHoursPerDay; dd++)
-				for(int it=0; it<act->nTeachers; it++){
-					int tch=act->teachers[it];
+				for(int it=0; it<act->iTeachersList.count(); it++){
+					int tch=act->iTeachersList.at(it);
 					int tmp=a[tch][day][hour+dd];
 					/*if(act->parity==PARITY_WEEKLY){
 						conflicts += tmp<2 ? tmp : 2;
@@ -332,7 +332,7 @@ int Solution::getTeachersMatrix(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WE
 }
 
 //critical function here - must be optimized for speed
-int Solution::getSubgroupsMatrix(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+int Solution::getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
@@ -350,8 +350,8 @@ int Solution::getSubgroupsMatrix(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAY
 			int day=this->times[i]%r.nDaysPerWeek;
 			Activity* act = &r.internalActivitiesList[i];
 			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++)
-				for(int isg=0; isg < act->nSubgroups; isg++){ //isg => index subgroup
-					int sg = act->subgroups[isg]; //sg => subgroup
+				for(int isg=0; isg < act->iSubgroupsList.count(); isg++){ //isg => index subgroup
+					int sg = act->iSubgroupsList.at(isg); //sg => subgroup
 					int tmp=a[sg][day][hour+dd];
 					/*if(act->parity == PARITY_WEEKLY){
 						conflicts += tmp<2 ? tmp : 2;
@@ -394,8 +394,8 @@ void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PE
 			int hour=this->times[i]/r.nDaysPerWeek;
 			int day=this->times[i]%r.nDaysPerWeek;
 			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++)
-				for(int ti=0; ti<act->nTeachers; ti++){
-					int tch = act->teachers[ti]; //teacher index
+				for(int ti=0; ti<act->iTeachersList.count(); ti++){
+					int tch = act->iTeachersList.at(ti); //teacher index
 					/*if(a1[tch][day][hour+dd]==UNALLOCATED_ACTIVITY)
 						a1[tch][day][hour+dd]=i;
 					else
@@ -426,8 +426,8 @@ void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX
 			int hour=this->times[i]/r.nDaysPerWeek;
 			int day=this->times[i]%r.nDaysPerWeek;
 			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++){
-				for(int isg=0; isg < act->nSubgroups; isg++){ //isg -> index subgroup
-					int sg = act->subgroups[isg]; //sg -> subgroup
+				for(int isg=0; isg < act->iSubgroupsList.count(); isg++){ //isg -> index subgroup
+					int sg = act->iSubgroupsList.at(isg); //sg -> subgroup
 					/*if(a1[sg][day][hour+dd]==UNALLOCATED_ACTIVITY)
 						a1[sg][day][hour+dd]=i;
 					else
@@ -441,7 +441,7 @@ void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX
 
 int Solution::getRoomsMatrix(
 	Rules& r, 
-	qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+	qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
 {
 	assert(r.initialized);
 	assert(r.internalStructureComputed);

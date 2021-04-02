@@ -39,6 +39,11 @@ using namespace std;
 
 #include <QtAlgorithms>
 
+#include <QApplication>
+#include <QProgressDialog>
+
+extern QApplication* pqapplication;
+
 void Rules::init() //initializes the rules (empty, but with default hours and days)
 {
 	//defaults
@@ -88,35 +93,91 @@ bool Rules::computeInternalStructure()
 		 QObject::tr("You have too many subjects.\nPlease talk to the author or increase variable MAX_SUBJECTS"));
 		return false;
 	}
+	
+	//kill augmented students sets
+	QList<StudentsYear*> ayears;
+	QList<StudentsGroup*> agroups;
+	QList<StudentsSubgroup*> asubgroups;
+	foreach(StudentsYear* year, augmentedYearsList){
+		if(!ayears.contains(year))
+			ayears.append(year);
+		foreach(StudentsGroup* group, year->groupsList){
+			if(!agroups.contains(group))
+				agroups.append(group);
+			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+				if(!asubgroups.contains(subgroup))
+					asubgroups.append(subgroup);
+			}
+		}
+	}
+	foreach(StudentsYear* year, ayears){
+		assert(year!=NULL);
+		delete year;
+	}
+	foreach(StudentsGroup* group, agroups){
+		assert(group!=NULL);
+		delete group;
+	}
+	foreach(StudentsSubgroup* subgroup, asubgroups){
+		assert(subgroup!=NULL);
+		delete subgroup;
+	}	
+	augmentedYearsList.clear();
+	//////////////////	
+	
+	//copy list of students sets into augmented list
+	foreach(StudentsYear* y, yearsList){
+		StudentsYear* ay=new StudentsYear();
+		ay->name=y->name;
+		ay->numberOfStudents=y->numberOfStudents;
+		ay->groupsList.clear();
+		augmentedYearsList << ay;
+		
+		foreach(StudentsGroup* g, y->groupsList){
+			StudentsGroup* ag=new StudentsGroup();
+			ag->name=g->name;
+			ag->numberOfStudents=g->numberOfStudents;
+			ag->subgroupsList.clear();
+			ay->groupsList << ag;
+			
+			foreach(StudentsSubgroup* s, g->subgroupsList){
+				StudentsSubgroup* as=new StudentsSubgroup();
+				as->name=s->name;
+				as->numberOfStudents=s->numberOfStudents;
+				ag->subgroupsList << as;
+			}
+		}
+	}
 
 	int tmpNSubgroups=0;
-	if(this->yearsList.size()>MAX_YEARS){
+	/*if(this->augmentedYearsList.size()>MAX_YEARS){
 		QMessageBox::warning(NULL, QObject::tr("FET information"),
 		 QObject::tr("You have too many years.\nPlease talk to the author or increase variable MAX_YEARS"));
 		return false;
-	}
-	for(int i=0; i<this->yearsList.size(); i++){
-		StudentsYear* sty=this->yearsList.at(i);
+	}*/
+	for(int i=0; i<this->augmentedYearsList.size(); i++){
+		StudentsYear* sty=this->augmentedYearsList.at(i);
 
-		if(sty->groupsList.size()>MAX_GROUPS_PER_YEAR){
+		/*if(sty->groupsList.size()>MAX_GROUPS_PER_YEAR){
 			QMessageBox::warning(NULL, QObject::tr("FET information"),
 			 QObject::tr("You have too many groups per year.\nPlease talk to the author or increase variable MAX_GROUPS_PER_YEAR"));
 			return false;
-		}
+		}*/
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList.at(j);
 
-			if(stg->subgroupsList.size()>MAX_SUBGROUPS_PER_GROUP){
+			/*if(stg->subgroupsList.size()>MAX_SUBGROUPS_PER_GROUP){
 				QMessageBox::warning(NULL, QObject::tr("FET information"),
 				 QObject::tr("You have too many subgroups per group.\nPlease talk to the author or increase variable MAX_SUBGROUPS_PER_GROUP"));
 				return false;
-			}
+			}*/
 			tmpNSubgroups+=stg->subgroupsList.size();
 		}
 	}
 	if(tmpNSubgroups>MAX_TOTAL_SUBGROUPS){
 		QMessageBox::warning(NULL, QObject::tr("FET information"),
-		 QObject::tr("You have too many total subgroups.\nPlease talk to the author or increase variable MAX_TOTAL_SUBGROUPS"));
+		 QObject::tr("You have too many total subgroups.\nPlease talk to the author or increase variable MAX_TOTAL_SUBGROUPS. Currently"
+		  " MAX_TOTAL_SUBGROUPS=%1").arg(MAX_TOTAL_SUBGROUPS));
 		return false;
 	}
 
@@ -180,19 +241,19 @@ bool Rules::computeInternalStructure()
 
 	//students
 	this->nInternalSubgroups=0;
-	assert(this->yearsList.size()<=MAX_YEARS);
-	for(int i=0; i<this->yearsList.size(); i++){
-		StudentsYear* sty=this->yearsList[i];
+	//assert(this->augmentedYearsList.size()<=MAX_YEARS);
+	for(int i=0; i<this->augmentedYearsList.size(); i++){
+		StudentsYear* sty=this->augmentedYearsList[i];
 
 		//if this year has no groups, insert something to simulate the whole year
 		if(sty->groupsList.count()==0){
 			StudentsGroup* tmpGroup = new StudentsGroup();
-			tmpGroup->name = sty->name+" WHOLE YEAR";
+			tmpGroup->name = sty->name+" "+QObject::tr("Automatic Group", "Please keep this translation short. It is when year contains no groups and an automatic group is added in the year, in the timetable");
 			tmpGroup->numberOfStudents = sty->numberOfStudents;
 			sty->groupsList << tmpGroup;
 		}
 		
-		assert(sty->groupsList.size()<=MAX_GROUPS_PER_YEAR);
+		//assert(sty->groupsList.size()<=MAX_GROUPS_PER_YEAR);
 		
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
@@ -200,12 +261,12 @@ bool Rules::computeInternalStructure()
 			//if this group has no subgroups, insert something to simulate the whole group
 			if(stg->subgroupsList.size()==0){
 				StudentsSubgroup* tmpSubgroup = new StudentsSubgroup();
-				tmpSubgroup->name = stg->name+" WHOLE GROUP";
+				tmpSubgroup->name = stg->name+" "+QObject::tr("Automatic Subgroup", "Please keep this translation short. It is when group contains no subgroups and an automatic subgroup is added in the group, in the timetable");
 				tmpSubgroup->numberOfStudents=stg->numberOfStudents;
 				stg->subgroupsList << tmpSubgroup;
 			}
 			
-			assert(stg->subgroupsList.size()<=MAX_SUBGROUPS_PER_GROUP);
+			//assert(stg->subgroupsList.size()<=MAX_SUBGROUPS_PER_GROUP);
 			
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
@@ -214,10 +275,12 @@ bool Rules::computeInternalStructure()
 				for(int i=0; i<this->nInternalSubgroups; i++)
 					if(this->internalSubgroupsList[i]->name==sts->name){
 						existing=true;
+						sts->indexInInternalSubgroupsList=i;
 						break;
 					}
 				if(!existing){
 					assert(this->nInternalSubgroups<MAX_TOTAL_SUBGROUPS);
+					sts->indexInInternalSubgroupsList=this->nInternalSubgroups;
 					this->internalSubgroupsList[this->nInternalSubgroups++]=sts;
 				}
 			}
@@ -238,34 +301,113 @@ bool Rules::computeInternalStructure()
 	}
 	assert(this->nInternalRooms==this->roomsList.size());
 
+
 	//activities
+	int range=0;
+	foreach(Activity* act, this->activitiesList)
+		if(act->active)
+			range++;
+	QProgressDialog progress(NULL);
+	progress.setLabelText(QObject::tr("Processing internally the activities ... please wait"));
+	progress.setRange(0, range);
+	progress.setModal(true);							
+	int ttt=0;
+		
 	Activity* act;
 	counter=0;
 	for(int i=0; i<this->activitiesList.size(); i++){
 		act=this->activitiesList[i];
 		if(act->active){
+			progress.setValue(ttt);
+			pqapplication->processEvents();
+			if(progress.wasCanceled()){
+				QMessageBox::information(NULL, QObject::tr("FET information"), QObject::tr("Canceled"));
+				return false;
+			}
+			ttt++;
+
 			counter++;
 			act->computeInternalStructure(*this);
 		}
 	}
+
+	for(int i=0; i<nInternalSubgroups; i++)
+		internalSubgroupsList[i]->activitiesForSubgroup.clear();
+	for(int i=0; i<nInternalTeachers; i++)
+		internalTeachersList[i]->activitiesForTeacher.clear();
 
 	assert(counter<=MAX_ACTIVITIES);
 	this->nInternalActivities=counter;
 	int activei=0;
 	for(int ai=0; ai<this->activitiesList.size(); ai++){
 		act=this->activitiesList[ai];
-		if(act->active)
-			this->internalActivitiesList[activei++]=*act;
+		if(act->active){
+			this->internalActivitiesList[activei]=*act;
+			
+			for(int j=0; j<act->iSubgroupsList.count(); j++){
+				int k=act->iSubgroupsList.at(j);
+				assert(!internalSubgroupsList[k]->activitiesForSubgroup.contains(activei));
+				internalSubgroupsList[k]->activitiesForSubgroup.append(activei);
+			}
+			
+			for(int j=0; j<act->iTeachersList.count(); j++){
+				int k=act->iTeachersList.at(j);
+				assert(!internalTeachersList[k]->activitiesForTeacher.contains(activei));
+				internalTeachersList[k]->activitiesForTeacher.append(activei);
+			}
+			
+			activei++;
+		}
 	}
+
+	//activities list for each subject - used for subjects timetable - in order for students and teachers
+	for(int sb=0; sb<nInternalSubjects; sb++)
+		activitiesForSubject[sb].clear();
+
+	for(int i=0; i<this->augmentedYearsList.size(); i++){
+		StudentsYear* sty=this->augmentedYearsList[i];
+
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+				
+				foreach(int ai, internalSubgroupsList[sts->indexInInternalSubgroupsList]->activitiesForSubgroup)
+					if(!activitiesForSubject[internalActivitiesList[ai].subjectIndex].contains(ai))
+						activitiesForSubject[internalActivitiesList[ai].subjectIndex].append(ai);
+			}
+		}
+	}
+	
+	for(int i=0; i<nInternalTeachers; i++){
+		foreach(int ai, internalTeachersList[i]->activitiesForTeacher)
+			if(!activitiesForSubject[internalActivitiesList[ai].subjectIndex].contains(ai))
+				activitiesForSubject[internalActivitiesList[ai].subjectIndex].append(ai);
+	}
+	/////////////////////////////////////////////////////////////////
+
 
 	bool ok=true;
 
 	//time constraints
+	progress.setLabelText(QObject::tr("Processing internally the time constraints ... please wait"));
+	progress.setRange(0, timeConstraintsList.size());
+	ttt=0;
+		
 	assert(this->timeConstraintsList.size()<=MAX_TIME_CONSTRAINTS);
 	TimeConstraint* tctr;
 	
 	int tctri=0;
 	for(int tctrindex=0; tctrindex<this->timeConstraintsList.size(); tctrindex++){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::information(NULL, QObject::tr("FET information"), QObject::tr("Canceled"));
+			return false;
+		}
+		ttt++;
+
 		tctr=this->timeConstraintsList[tctrindex];
 		//if the activities which refer to this constraints are not active
 		if(!tctr->computeInternalStructure(*this)){
@@ -280,11 +422,23 @@ bool Rules::computeInternalStructure()
 	assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
 	
 	//space constraints
+	progress.setLabelText(QObject::tr("Processing internally the space constraints ... please wait"));
+	progress.setRange(0, spaceConstraintsList.size());
+	ttt=0;
+		
 	SpaceConstraint* sctr;
 	assert(this->spaceConstraintsList.size()<=MAX_SPACE_CONSTRAINTS);
 
 	int sctri=0;
 	for(int sctrindex=0; sctrindex<this->spaceConstraintsList.size(); sctrindex++){
+		progress.setValue(ttt);
+		pqapplication->processEvents();
+		if(progress.wasCanceled()){
+			QMessageBox::information(NULL, QObject::tr("FET information"), QObject::tr("Canceled"));
+			return false;
+		}
+		ttt++;
+
 		sctr=this->spaceConstraintsList[sctrindex];
 	
 		if(!sctr->computeInternalStructure(*this)){
@@ -324,36 +478,66 @@ void Rules::kill() //clears memory for the rules, destroyes them
 		delete yearsList.takeFirst();*/
 		
 	//students sets
-	QList<StudentsYear*> years;
-	QList<StudentsGroup*> groups;
-	QList<StudentsSubgroup*> subgroups;
+	QList<StudentsYear*> iyears;
+	QList<StudentsGroup*> igroups;
+	QList<StudentsSubgroup*> isubgroups;
 	foreach(StudentsYear* year, yearsList){
-		if(!years.contains(year))
-			years.append(year);
+		if(!iyears.contains(year))
+			iyears.append(year);
 		foreach(StudentsGroup* group, year->groupsList){
-			if(!groups.contains(group))
-				groups.append(group);
+			if(!igroups.contains(group))
+				igroups.append(group);
 			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
-				if(!subgroups.contains(subgroup))
-					subgroups.append(subgroup);
+				if(!isubgroups.contains(subgroup))
+					isubgroups.append(subgroup);
 			}
 		}
 	}
-	foreach(StudentsYear* year, years){
+	foreach(StudentsYear* year, iyears){
 		assert(year!=NULL);
 		delete year;
 	}
-	foreach(StudentsGroup* group, groups){
+	foreach(StudentsGroup* group, igroups){
 		assert(group!=NULL);
 		delete group;
 	}
-	foreach(StudentsSubgroup* subgroup, subgroups){
+	foreach(StudentsSubgroup* subgroup, isubgroups){
 		assert(subgroup!=NULL);
 		delete subgroup;
-	}
-	
+	}	
 	yearsList.clear();
-		
+	//////////////////	
+
+	//kill augmented students sets
+	QList<StudentsYear*> ayears;
+	QList<StudentsGroup*> agroups;
+	QList<StudentsSubgroup*> asubgroups;
+	foreach(StudentsYear* year, augmentedYearsList){
+		if(!ayears.contains(year))
+			ayears.append(year);
+		foreach(StudentsGroup* group, year->groupsList){
+			if(!agroups.contains(group))
+				agroups.append(group);
+			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
+				if(!asubgroups.contains(subgroup))
+					asubgroups.append(subgroup);
+			}
+		}
+	}
+	foreach(StudentsYear* year, ayears){
+		assert(year!=NULL);
+		delete year;
+	}
+	foreach(StudentsGroup* group, agroups){
+		assert(group!=NULL);
+		delete group;
+	}
+	foreach(StudentsSubgroup* subgroup, asubgroups){
+		assert(subgroup!=NULL);
+		delete subgroup;
+	}	
+	augmentedYearsList.clear();
+	//////////////////	
 		
 		
 
@@ -1111,6 +1295,26 @@ StudentsSet* Rules::searchStudentsSet(const QString& setName)
 	return NULL;
 }
 
+StudentsSet* Rules::searchAugmentedStudentsSet(const QString& setName)
+{
+	for(int i=0; i<this->augmentedYearsList.size(); i++){
+		StudentsYear* sty=this->augmentedYearsList[i];
+		if(sty->name==setName)
+			return sty;
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+			if(stg->name==setName)
+				return stg;
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+				if(sts->name==setName)
+					return sts;
+			}
+		}
+	}
+	return NULL;
+}
+
 bool Rules::addYear(StudentsYear* year)
 {
 	//already existing?
@@ -1216,6 +1420,15 @@ int Rules::searchYear(const QString& yearName)
 	return -1;
 }
 
+int Rules::searchAugmentedYear(const QString& yearName)
+{
+	for(int i=0; i<this->augmentedYearsList.size(); i++)
+		if(this->augmentedYearsList[i]->name==yearName)
+			return i;
+
+	return -1;
+}
+
 bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearName, int finalNumberOfStudents)
 {
 	QString _initialYearName=initialYearName;
@@ -1273,12 +1486,12 @@ bool Rules::modifyYear(const QString& initialYearName, const QString& finalYearN
 			sty->numberOfStudents=finalNumberOfStudents;
 			t++;
 			
-			for(int j=0; j<sty->groupsList.size(); j++){
+			/*for(int j=0; j<sty->groupsList.size(); j++){
 				StudentsGroup* stg=sty->groupsList[j];
 
 				if(stg->name.right(11)==" WHOLE YEAR" && stg->name.left(stg->name.length()-11)==_initialYearName)
 					this->modifyGroup(sty->name, stg->name, sty->name+" WHOLE YEAR", stg->numberOfStudents);
-			}
+			}*/
 		}
 	}
 		
@@ -1435,6 +1648,18 @@ int Rules::searchGroup(const QString& yearName, const QString& groupName)
 	return -1;
 }
 
+int Rules::searchAugmentedGroup(const QString& yearName, const QString& groupName)
+{
+	StudentsYear* sty=this->augmentedYearsList[this->searchAugmentedYear(yearName)];
+	assert(sty);
+	
+	for(int i=0; i<sty->groupsList.size(); i++)
+		if(sty->groupsList[i]->name==groupName)
+			return i;
+	
+	return -1;
+}
+
 bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName, const QString& finalGroupName, int finalNumberOfStudents)
 {
 	//cout<<"Begin: initialGroupName=='"<<(const char*)initialGroupName<<"'"<<endl;
@@ -1459,7 +1684,7 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 			stg->name=finalGroupName;
 			stg->numberOfStudents=finalNumberOfStudents;
 
-			for(int j=0; j<stg->subgroupsList.size(); j++){
+			/*for(int j=0; j<stg->subgroupsList.size(); j++){
 				StudentsSubgroup* sts=stg->subgroupsList[j];
 				//cout<<"sts->name=='"<<(const char*)sts->name<<"'"<<endl;
 				//cout<<"initialGroupName=='"<<(const char*)initialGroupName<<"'"<<endl;
@@ -1467,7 +1692,7 @@ bool Rules::modifyGroup(const QString& yearName, const QString& initialGroupName
 					//cout<<"here: sts->name=='"<<(const char*)sts->name<<"'"<<endl;
 					this->modifySubgroup(sty->name, stg->name, sts->name, stg->name+" WHOLE GROUP", sts->numberOfStudents);
 				}
-			}
+			}*/
 
 			break;
 		}
@@ -1647,6 +1872,20 @@ int Rules::searchSubgroup(const QString& yearName, const QString& groupName, con
 	StudentsYear* sty=this->yearsList.at(this->searchYear(yearName));
 	assert(sty);
 	StudentsGroup* stg=sty->groupsList.at(this->searchGroup(yearName, groupName));
+	assert(stg);
+	
+	for(int i=0; i<stg->subgroupsList.size(); i++)
+		if(stg->subgroupsList[i]->name==subgroupName)
+			return i;
+	
+	return -1;
+}
+
+int Rules::searchAugmentedSubgroup(const QString& yearName, const QString& groupName, const QString& subgroupName)
+{
+	StudentsYear* sty=this->augmentedYearsList.at(this->searchAugmentedYear(yearName));
+	assert(sty);
+	StudentsGroup* stg=sty->groupsList.at(this->searchAugmentedGroup(yearName, groupName));
 	assert(stg);
 	
 	for(int i=0; i<stg->subgroupsList.size(); i++)
@@ -2519,6 +2758,8 @@ bool Rules::removeSpaceConstraint(SpaceConstraint *ctr)
 
 bool Rules::read(const QString& filename)
 {
+	bool reportWhole=true;
+
 	QFile file(filename);
 	if(!file.open(QIODevice::ReadOnly)){
 		return false;
@@ -2852,6 +3093,29 @@ bool Rules::read(const QString& filename)
 								if(elem5.tagName()=="Name"){
 									stg->name=elem5.text();
 									xmlReadingLog+="     Read group name: "+stg->name+"\n";
+									if(stg->name.right(11)==" WHOLE YEAR"){
+										if(reportWhole){
+											QString s="";
+											s+=QObject::tr("Your file contains group %1 which might be unneeded."
+											 " Starting with FET 5.4.17, it is corrected a potentially bad situation."
+											 " It is highly recommended to remove this group ending in WHOLE YEAR, for performance reasons.")
+											 .arg(stg->name);
+											s+="\n\n";
+											s+=QObject::tr("You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE YEAR,"
+											 " so you can avoid this warning.");
+											s+="\n\n";
+											s+=QObject::tr("From now on, if you have an empty year, there will be added an automatic group only"
+											 " in the generated timetables, not in the data file.");
+											s+="\n\n";
+											s+=QObject::tr("For more details, join the mailing list or email the author.");
+											int t=QMessageBox::information(NULL, QObject::tr("FET information"), s,
+											 QObject::tr("Skip rest of such warnings"), QObject::tr("See next such warning"), QString(),
+											 1, 0 );
+				 	
+											if(t==0)
+												reportWhole=false;
+										}
+									}
 								}
 								else if(elem5.tagName()=="Number_of_Students"){
 									stg->numberOfStudents=elem5.text().toInt();
@@ -2874,6 +3138,47 @@ bool Rules::read(const QString& filename)
 										if(elem6.tagName()=="Name"){
 											sts->name=elem6.text();
 											xmlReadingLog+="     Read subgroup name: "+sts->name+"\n";
+
+											if(sts->name.right(12)==" WHOLE GROUP"){
+												if(reportWhole){
+													QString s="";
+													s+=QObject::tr("Your file contains subgroup %1 which might be unneeded."
+													 " Starting with FET 5.4.17, it is corrected a potentially bad situation."
+													 " It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.")
+													 .arg(sts->name);
+													s+="\n\n";
+													s+=QObject::tr("You may want to add a subgroup in an empty group - in this case please choose a name not ending in WHOLE GROUP,"
+													 " so you can avoid this warning.");
+													s+="\n\n";
+													s+=QObject::tr("From now on, if you have an empty group, there will be added an automatic subgroup only"
+													 " in the generated timetables, not in the data file.");
+													s+="\n\n";
+													s+=QObject::tr("For more details, join the mailing list or email the author.");
+													int t=QMessageBox::information(NULL, QObject::tr("FET information"), s,
+													 QObject::tr("Skip rest of such warnings"), QObject::tr("See next such warning"), QString(),
+													 1, 0 );
+				 	
+													if(t==0)
+														reportWhole=false;
+												}
+												/*if(reportWhole){
+													int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+													 QObject::tr("Your file contains subgroup %1 which might be unneeded."
+													 " Starting with FET 5.4.17, it is corrected a potentially bad situation."
+													 " It is highly recommended to remove this subgroup ending in WHOLE GROUP, for performance reasons.\n\n"
+													 "You may want to add a group in an empty year - in this case please choose a name not ending in WHOLE GROUP,"
+													 " so you can avoid this warning.\n\n"
+													 "From now on, if you have an empty group, there will be added an automatic subgroup only"
+													 " in the generated timetables, not in the data file.\n\n"
+													 "For more details, join the mailing list or email the author.")
+													 .arg(sts->name),
+													 QObject::tr("Skip rest of such warnings"), QObject::tr("See next such warning"), QString(),
+													 1, 0 );
+					 		
+													if(t==0)
+														reportWhole=false;
+												}*/
+											}
 										}
 										else if(elem6.tagName()=="Number_of_Students"){
 											sts->numberOfStudents=elem6.text().toInt();
@@ -2894,8 +3199,27 @@ bool Rules::read(const QString& filename)
 			assert(this->yearsList.size()==ny);
 		}
 		else if(elem2.tagName()=="Activities_List"){
+			int nchildrennodes=elem2.childNodes().length();
+			
+			QProgressDialog progress(NULL);
+			progress.setLabelText(QObject::tr("Loading activities ... please wait"));
+			progress.setRange(0, nchildrennodes);
+			progress.setModal(true);							
+			
+			int ttt=0;
+		
 			int na=0;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
+			
+				progress.setValue(ttt);
+				pqapplication->processEvents();
+				if(progress.wasCanceled()){
+					QMessageBox::information(NULL, QObject::tr("FET information"), QObject::tr("Canceled"));
+					return false;
+				}
+																				
+				ttt++;
+			
 				QDomElement elem3=node3.toElement();
 				if(elem3.isNull()){
 					xmlReadingLog+="   Null node here\n";

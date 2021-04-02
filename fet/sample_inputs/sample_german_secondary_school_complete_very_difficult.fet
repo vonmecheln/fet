@@ -1,4 +1,4 @@
-﻿<!DOCTYPE FET><FET version="5.4.16">
+﻿<!DOCTYPE FET><FET version="5.4.17">
 
 <Institution_Name>german secondary school</Institution_Name>
 
@@ -234,34 +234,18 @@ The teachersnames are replaced by other random names.
 	<Group>
 	<Name>6a</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>6a WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>6b</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>6b WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>6c</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>6c WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>6d</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>6d WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 </Year>
 <Year>
@@ -270,34 +254,18 @@ The teachersnames are replaced by other random names.
 	<Group>
 	<Name>7a</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>7a WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>7b</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>7b WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>7c</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>7c WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 	<Group>
 	<Name>7d</Name>
 	<Number_of_Students>0</Number_of_Students>
-		<Subgroup>
-		<Name>7d WHOLE GROUP</Name>
-		<Number_of_Students>0</Number_of_Students>
-		</Subgroup>
 	</Group>
 </Year>
 <Year>

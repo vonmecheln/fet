@@ -1127,4 +1127,13 @@ Versions 5.4.0 - 5.4.
 	- Groups and years timetables contain dashed lines in cells which contain more activities 
 	(suggested by Hatim Ali, done by Volker Dirr)
 	- Arabic translation update by Hatim Ali
+- Version 5.4.17
+	- Faster precomputation
+	- Significant speed improvement in saving html timetables by Liviu Lalescu
+	- Subjects timetables - by Volker Dirr
+	- Increased max students sets to 15000.
+	- Faster statistics for students.
+	- More allowed subgroups and teachers per activity.
+	- Added more redundant tests to check final solution to respect no gaps, early, max gaps, min hours daily
+	- Faster precalculation
 	

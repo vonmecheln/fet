@@ -176,7 +176,7 @@ public:
 	Return value: the number of subgroups exhaustions (sum of values which are
 	over 2).
 	*/
-	int getSubgroupsMatrix(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	int getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	/**
 	OLD COMMENT BELOW, now FET has no fortnightly activities, 
@@ -194,9 +194,9 @@ public:
 	Return value: the number of teachers exhaustions (sum of values which are
 	over 2).
 	*/
-	int getTeachersMatrix(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	int getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
-	int getRoomsMatrix(Rules& r, qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	int getRoomsMatrix(Rules& r, qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	void getRoomsTimetable(Rules& r, qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 

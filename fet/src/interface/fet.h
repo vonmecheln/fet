@@ -50,35 +50,6 @@ The name of the file from where the rules are read.
 extern QString INPUT_FILENAME_XML;
      
 
-/***The simulation parameters***/
-
-/**
-Simulation parameter, read from the timetable.ini file
-*/
-extern time_t timelimit;
-
-/**
-Simulation parameter, read from the fet.ini file
-*/
-extern int population_number;
-
-/**
-Simulation parameter, read from the fet.ini file
-*/
-extern int evolution_method;
-
-/**
-Simulation parameter, read from the fet.ini file
-*/
-extern int init_method;
-
-/**
-Simulation parameter, read from the file "fet.ini"
-It represents the maximum allowed number of generations to generate
-*/
-extern int max_generations;
-
-
 /**
 The timetable for the teachers
 */

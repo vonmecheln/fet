@@ -302,7 +302,8 @@ public:
 	/**
 	The subgroups involved in this restriction
 	*/
-	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	QList<int> iSubgroupsList;
 
 	ConstraintStudentsSetNotAvailable();
 
@@ -758,7 +759,8 @@ public:
 	/**
 	The subgroups
 	*/
-	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	QList<int> iSubgroupsList;
 
 	ConstraintStudentsSetNoGaps();
 
@@ -898,7 +900,8 @@ public:
 	/**
 	The subgroups involved in this restriction
 	*/
-	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	QList<int> iSubgroupsList;
 
 	ConstraintStudentsSetEarly();
 
@@ -973,7 +976,8 @@ public:
 	/**
 	The subgroups
 	*/
-	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	QList<int> iSubgroupsList;
 
 	ConstraintStudentsSetMaxHoursDaily();
 
@@ -1048,7 +1052,8 @@ public:
 	/**
 	The subgroups
 	*/
-	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+	QList<int> iSubgroupsList;
 
 	ConstraintStudentsSetMinHoursDaily();
 

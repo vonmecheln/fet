@@ -335,7 +335,7 @@ void ModifyActivityForm::activityChanged()
 		s+="\n";
 
 		for(int i=0; i<splitSpinBox->value(); i++){
-			s+=tr("Componenent %1:").arg(i+1);
+			s+=tr("Component %1:").arg(i+1);
 			s+="\n";
 			s+=tr("Duration=%1").arg(dur(i)->value());
 			s+="\n";
@@ -375,13 +375,13 @@ void ModifyActivityForm::ok()
 		if(t==QMessageBox::Cancel)
 			return;
 	}
-	else if(selectedTeachersListBox->count()>(uint)(MAX_TEACHERS_PER_ACTIVITY)){
+	/*else if(selectedTeachersListBox->count()>(uint)(MAX_TEACHERS_PER_ACTIVITY)){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Too many teachers for an activity. The current maximum is %1.\n"
 			"If you really need more teachers per activity, please talk to the author").
 			arg(MAX_TEACHERS_PER_ACTIVITY));
 		return;
-	}
+	}*/
 	else{
 		for(uint i=0; i<selectedTeachersListBox->count(); i++){
 			assert(gt.rules.searchTeacher(selectedTeachersListBox->text(i))>=0);

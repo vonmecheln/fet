@@ -116,7 +116,7 @@ If each year (for instance 9) is divided by at most 3 categories, you can add ye
 
 Important: you must consider that each year contains groups which contain independent subgroups. Subgroups should have all the activities of the year and group plus additional optional activities. Please check menu statistics/students for subgroups, each subgroup should have a reasonable number of working hours per week, close to the average of hours per week for all subgroups.
 
-An impossible timetable might be the cause of incorrect years division. Please check statistics/students for all subgroups, each subgroup should have the necessary hours, not less. If you have for instance some subgroups with less than say 20 hours per week you might get an impossible timetable, probably because of incorrect division of years and incorrectly added activities. All the subgroups are independent. If you have a subgroup with only 2 hours per week and constraint early, then these 2 activities must be placed in the first hours of the day, which is probablymuch too hard (wrong).
+An impossible timetable might be caused by incorrect years division. Please check statistics/students for all subgroups, each subgroup should have the necessary hours, not less. If you have for instance some subgroups with less than say 20 hours per week you might get an impossible timetable, probably because of incorrect division of years and incorrectly added activities. All the subgroups are independent. If you have a subgroup with only 2 hours per week and constraint early, then these 2 activities must be placed in the first hours of the day, which is probablymuch too hard (wrong).
 
 Important note: please do the correct division of a year from the beginning. Each time you divide a year, the corresponding activities and constraints referring to year's groups and subgroups will be removed, along with groups and subgroups. This is not elegant, I know, I will try to find a better solution in the future. If you already inputted a lot of constraints and activities referring to a year's groups/subgroups, you might want to manually change the division of a year by the groups/subgroups menus.
 
@@ -289,7 +289,7 @@ A: There is a small workaround: add for each SUBGROUP (careful, for each subgrou
 
 Q: What are groups of type "year1 WHOLE YEAR" and subgroups of type "group1 WHOLE GROUP"?
 
-A: These are groups and subgroups inserted automatically by FET if year or group is empty. They are added only when generating timetable. You don't need to use them, just ignore them. It is recommended to remove them if for instance you generate the timetable, they are added and you insert other groups or subgroups after that. They cannot be removed automatically. I know that this is not elegant, but I have no solution for the moment.
+A: FET old versions (prior to 5.4.17) inserted automatically them. Please remove them now.
 
 -------------------------------------------------------------------------------
 

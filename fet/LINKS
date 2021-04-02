@@ -1,7 +1,7 @@
-LINKS (Free software for school administration/timetabling):
+LINKS (Open source free software for school administration/timetabling):
 
 
-Tools for FET:
+Open source free software tools for FET:
 --------------
 
 FET:
@@ -21,7 +21,7 @@ A link to the translation of FET into French.
 	http://fetfr.free.fr/
 	
 	
-Other free software for school administration/timetabling:
+Other open source free software for school administration/timetabling:
 ----------------------------------------------------------
 
 TABLIX - a free software kernel for solving general timetabling problems
@@ -45,3 +45,7 @@ G-stpl - The Swing Timetable PLatform
 
 Open Course Timetabler - a free and open source application for university and school course timetabling
 	http://www.openctt.org/
+
+University Course Timetabling & Student Sectioning Application - open source (GNU/GPL)
+	http://www.unitime.org/
+	

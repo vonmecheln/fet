@@ -142,12 +142,13 @@ public:
 	/**
 	The number of teachers who are teaching this activity
 	*/
-	int nTeachers;
+	//int nTeachers;
 	
 	/**
 	The indices of the teachers who are teaching this activity.
 	*/
-	int teachers[MAX_TEACHERS_PER_ACTIVITY];
+	//int teachers[MAX_TEACHERS_PER_ACTIVITY];
+	QList<int> iTeachersList;
 
 	/**
 	The index of the subject.
@@ -162,12 +163,13 @@ public:
 	/**
 	The number of subgroups implied in this activity.
 	*/
-	int nSubgroups;
+	//int nSubgroups;
 
 	/**
 	The indices of the subgroups implied in this activity.
 	*/
-	int subgroups[MAX_SUBGROUPS_PER_ACTIVITY];
+	//int subgroups[MAX_SUBGROUPS_PER_ACTIVITY];
+	QList<int> iSubgroupsList;
 	
 	/**
 	Simple constructor, used only indirectly by the static variable
