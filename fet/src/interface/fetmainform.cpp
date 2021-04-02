@@ -294,7 +294,7 @@ using namespace std;
 #include <QRegExp>
 #endif
 
-//for the icons of not perfect constraints
+//for the icons of not perfect constraints and for the application window icon
 #include <QIcon>
 
 #include <QRect>

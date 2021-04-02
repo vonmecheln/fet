@@ -2226,5 +2226,10 @@ Versions 5.43.0 - 5.43.v
 	These changes are not visible to the user.
 	- Many code improvements/cleanup in the interface part.
 	- Exporting of the advanced statistics to the disk now centers the text contents of the table cells.
-	- Improved the command-line usage instructions (suggested by Zsolt Udvari). They are now easier to read. Also, running the command-line executable
+	- Improved the command-line usage instructions (suggested by Zsolt Udvari). They are now easier to read. Also, running the command-line
 	version will create log/results files/directories only if an input file is given.
+- Version 5.43.1
+	- Minor bug fix: the constraint students (set) max days per week allowed a minimum value of 0 max days per week. Now the minimum value is correctly 1.
+	Reported by bachiri401.
+	- Slightly improved the dialogs for the constraints of type activity/subject/activity tag/subject+activity tag preferred room(s) (suggested by bachiri401).
+	- Code update/cleanup.

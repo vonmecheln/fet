@@ -60,11 +60,14 @@
       <string>Filter</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QComboBox" name="subjectsComboBox"/>
+      <item row="2" column="0">
+       <widget class="QComboBox" name="activityTagsComboBox"/>
       </item>
       <item row="1" column="0">
-       <widget class="QComboBox" name="activityTagsComboBox"/>
+       <widget class="QComboBox" name="subjectsComboBox"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QComboBox" name="roomsComboBox"/>
       </item>
      </layout>
     </widget>

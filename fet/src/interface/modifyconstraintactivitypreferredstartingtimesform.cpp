@@ -167,11 +167,19 @@ ModifyConstraintActivityPreferredStartingTimesForm::~ModifyConstraintActivityPre
 void ModifyConstraintActivityPreferredStartingTimesForm::colorItem(QTableWidgetItem* item)
 {
 	if(USE_GUI_COLORS){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		if(item->text()==YES)
+			item->setBackground(QBrush(QColorConstants::DarkGreen));
+		else
+			item->setBackground(QBrush(QColorConstants::DarkRed));
+		item->setForeground(QBrush(QColorConstants::LightGray));
+#else
 		if(item->text()==YES)
 			item->setBackground(QBrush(Qt::darkGreen));
 		else
 			item->setBackground(QBrush(Qt::darkRed));
 		item->setForeground(QBrush(Qt::lightGray));
+#endif
 	}
 }
 
@@ -238,7 +246,7 @@ bool ModifyConstraintActivityPreferredStartingTimesForm::filterOk(Activity* act)
 	QString tn=teachersComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=activityTagsComboBox->currentText();
+	QString atn=activityTagsComboBox->currentText();
 	int ok=true;
 
 	//teacher
@@ -258,7 +266,7 @@ bool ModifyConstraintActivityPreferredStartingTimesForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
+	if(atn!="" && !act->activityTagsNames.contains(atn))
 		ok=false;
 		
 	//students

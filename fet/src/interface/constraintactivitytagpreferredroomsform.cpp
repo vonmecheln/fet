@@ -50,6 +50,15 @@ ConstraintActivityTagPreferredRoomsForm::ConstraintActivityTagPreferredRoomsForm
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 	
+	QSize tmp5=roomsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+	
+	roomsComboBox->addItem("");
+	for(int i=0; i<gt.rules.roomsList.size(); i++){
+		Room* rm=gt.rules.roomsList[i];
+		roomsComboBox->addItem(rm->name);
+	}
+
 	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* sb=gt.rules.activityTagsList[i];
@@ -59,8 +68,10 @@ ConstraintActivityTagPreferredRoomsForm::ConstraintActivityTagPreferredRoomsForm
 	this->filterChanged();
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 #else
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 #endif
 }
@@ -94,7 +105,8 @@ bool ConstraintActivityTagPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
 {
 	if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
 		ConstraintActivityTagPreferredRooms* c=(ConstraintActivityTagPreferredRooms*)ctr;
-		return (c->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
+		return (c->roomsNames.contains(roomsComboBox->currentText()) || roomsComboBox->currentText()=="")
+		 && (c->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
 	}
 	else
 		return false;

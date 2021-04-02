@@ -727,7 +727,7 @@ public:
 };
 
 /**
-This is a constraint. Its purpose: a subject+subject tag must be taught in
+This is a constraint. Its purpose: a subject + an activity tag must be taught in
 a certain room.
 */
 class ConstraintSubjectActivityTagPreferredRoom: public SpaceConstraint{
@@ -783,7 +783,7 @@ public:
 };
 
 /**
-This is a constraint. Its purpose: a subject+subject tag must be taught in
+This is a constraint. Its purpose: a subject + an activity tag must be taught in
 certain rooms.
 */
 class ConstraintSubjectActivityTagPreferredRooms: public SpaceConstraint{

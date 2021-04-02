@@ -70,6 +70,8 @@ File centerwidgetonscreen.cpp
 
 #include <QComboBox>
 
+#include <QIcon>
+
 #include <QSet>
 
 extern const QString COMPANY;

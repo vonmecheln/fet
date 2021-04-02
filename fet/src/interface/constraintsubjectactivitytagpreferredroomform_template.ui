@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
+    <width>538</width>
     <height>488</height>
    </rect>
   </property>
@@ -14,28 +14,23 @@
    <string extracomment="This is the title of the dialog to see the list of all constraints of this type">Constraints subject activity tag preferred room</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0" rowspan="2">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="constraintsTextLabel">
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="text">
-        <string>Constraints</string>
-       </property>
-       <property name="wordWrap">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QListWidget" name="constraintsListWidget"/>
-     </item>
-    </layout>
+   <item row="1" column="1">
+    <widget class="QGroupBox" name="filterGroupBox">
+     <property name="title">
+      <string>Filter</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0">
+       <widget class="QComboBox" name="activityTagsComboBox"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QComboBox" name="subjectsComboBox"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QComboBox" name="roomsComboBox"/>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item row="0" column="1">
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -53,24 +48,6 @@
       <widget class="QPlainTextEdit" name="currentConstraintTextEdit"/>
      </item>
     </layout>
-   </item>
-   <item row="1" column="1">
-    <widget class="QGroupBox" name="filterGroupBox">
-     <property name="title">
-      <string>Filter</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QComboBox" name="roomsComboBox"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QComboBox" name="subjectsComboBox"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QComboBox" name="activityTagsComboBox"/>
-      </item>
-     </layout>
-    </widget>
    </item>
    <item row="2" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -101,6 +78,29 @@
         <string>Close</string>
        </property>
       </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0" rowspan="2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="constraintsTextLabel">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="text">
+        <string>Constraints</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="constraintsListWidget"/>
      </item>
     </layout>
    </item>

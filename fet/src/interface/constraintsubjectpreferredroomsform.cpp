@@ -51,6 +51,15 @@ ConstraintSubjectPreferredRoomsForm::ConstraintSubjectPreferredRoomsForm(QWidget
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
 	
+	QSize tmp5=roomsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+	
+	roomsComboBox->addItem("");
+	for(int i=0; i<gt.rules.roomsList.size(); i++){
+		Room* rm=gt.rules.roomsList[i];
+		roomsComboBox->addItem(rm->name);
+	}
+
 	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
@@ -60,8 +69,10 @@ ConstraintSubjectPreferredRoomsForm::ConstraintSubjectPreferredRoomsForm(QWidget
 	this->filterChanged();
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 #else
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 #endif
 }
@@ -95,7 +106,8 @@ bool ConstraintSubjectPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
 {
 	if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
 		ConstraintSubjectPreferredRooms* c=(ConstraintSubjectPreferredRooms*)ctr;
-		return c->subjectName==subjectsComboBox->currentText() || subjectsComboBox->currentText()=="";
+		return (c->roomsNames.contains(roomsComboBox->currentText()) || roomsComboBox->currentText()=="") &&
+		 (c->subjectName==subjectsComboBox->currentText() || subjectsComboBox->currentText()=="");
 	}
 	else
 		return false;

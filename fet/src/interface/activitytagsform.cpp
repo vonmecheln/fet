@@ -82,8 +82,8 @@ ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 		
 	activityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
-		ActivityTag* sbt=gt.rules.activityTagsList[i];
-		activityTagsListWidget->addItem(sbt->name);
+		ActivityTag* at=gt.rules.activityTagsList[i];
+		activityTagsListWidget->addItem(at->name);
 	}
 		
 	if(activityTagsListWidget->count()>0)
@@ -102,19 +102,19 @@ ActivityTagsForm::~ActivityTagsForm()
 void ActivityTagsForm::addActivityTag()
 {
 	bool ok = false;
-	ActivityTag* sbt=new ActivityTag();
-	sbt->name = QInputDialog::getText( this, tr("Add activity tag"), tr("Please enter activity tag's name") ,
+	ActivityTag* at=new ActivityTag();
+	at->name = QInputDialog::getText( this, tr("Add activity tag"), tr("Please enter activity tag's name") ,
 	 QLineEdit::Normal, QString(), &ok );
 
-	if ( ok && !((sbt->name).isEmpty()) ){
+	if ( ok && !((at->name).isEmpty()) ){
 		// user entered something and pressed OK
-		if(!gt.rules.addActivityTag(sbt)){
+		if(!gt.rules.addActivityTag(at)){
 			QMessageBox::information( this, tr("Activity tag insertion dialog"),
 				tr("Could not insert item. Must be a duplicate"));
-			delete sbt;
+			delete at;
 		}
 		else{
-			activityTagsListWidget->addItem(sbt->name);
+			activityTagsListWidget->addItem(at->name);
 			activityTagsListWidget->setCurrentRow(activityTagsListWidget->count()-1);
 		}
 	}
@@ -122,7 +122,7 @@ void ActivityTagsForm::addActivityTag()
 		if(ok){ //the user entered nothing
 			QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		}
-		delete sbt;// user entered nothing or pressed Cancel
+		delete at;// user entered nothing or pressed Cancel
 	}
 }
 
@@ -269,8 +269,8 @@ void ActivityTagsForm::sortActivityTags()
 
 	activityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
-		ActivityTag* sbt=gt.rules.activityTagsList[i];
-		activityTagsListWidget->addItem(sbt->name);
+		ActivityTag* at=gt.rules.activityTagsList[i];
+		activityTagsListWidget->addItem(at->name);
 	}
 
 	if(activityTagsListWidget->count()>0)

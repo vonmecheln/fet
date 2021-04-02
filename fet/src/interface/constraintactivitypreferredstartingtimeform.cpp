@@ -113,7 +113,7 @@ bool ConstraintActivityPreferredStartingTimeForm::filterOk(TimeConstraint* ctr)
 	
 	QString tn=teachersComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=activityTagsComboBox->currentText();
+	QString atn=activityTagsComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 		
 	bool found=true;
@@ -145,7 +145,7 @@ bool ConstraintActivityPreferredStartingTimeForm::filterOk(TimeConstraint* ctr)
 			found=false;
 	
 		//activity tag
-		if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
+		if(atn!="" && !act->activityTagsNames.contains(atn))
 			found=false;
 	
 		//students

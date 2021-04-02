@@ -1,4 +1,4 @@
-This is FET version 5.43.0
+This is FET version 5.43.1
 
 
 Program description:
@@ -14,7 +14,7 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.5.2, Xfce 4.14,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.5.4, Xfce 4.14,
 	Midnight Commander 4.8.23, Kate 19.12.1, KDiff3 0.9.98, sed 4.8, Qt 5.14.1, gcc 9.2.1, g++ 9.2.1, make 4.2.1,
 	gdb 8.3.1, Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.90, tar 1.32, gzip 1.10, bzip2 1.0.8, other great software
 	(most of them are free software, in the sense defined by The Free Software Foundation).
@@ -78,6 +78,7 @@ Getting - compiling - installing Qt:
 	available SSL dll-s from Windows. For a faster Qt configuration, the authors download/compile/install only the qtbase component,
 	with a configure command which might look like:
 	"configure.bat -opensource -confirm-license -platform win32-g++ -schannel -opengl desktop -release -nomake examples -nomake tests".
+	(When we tried to use the recommended option "-opengl dynamic" we got a compiler error.)
 	Note that to be able to open ui files with Qt Designer or ts files with Qt Linguist you need to install the Qt component qttools
 	(or the whole Qt package).
 

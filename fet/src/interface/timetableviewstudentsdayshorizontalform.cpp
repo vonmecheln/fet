@@ -723,10 +723,17 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 					QBrush bg(stringToColor(act->subjectName));
 					studentsTimetableTable->item(j, k)->setBackground(bg);
 					double brightness = bg.color().redF()*0.299 + bg.color().greenF()*0.587 + bg.color().blueF()*0.114;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+					if (brightness<0.5)
+						studentsTimetableTable->item(j, k)->setForeground(QBrush(QColorConstants::White));
+					else
+						studentsTimetableTable->item(j, k)->setForeground(QBrush(QColorConstants::Black));
+#else
 					if (brightness<0.5)
 						studentsTimetableTable->item(j, k)->setForeground(QBrush(Qt::white));
 					else
 						studentsTimetableTable->item(j, k)->setForeground(QBrush(Qt::black));
+#endif
 				}
 				// add colors (end)
 				//end by Marco Vassura
@@ -754,7 +761,7 @@ QColor TimetableViewStudentsDaysHorizontalForm::stringToColor(QString s)
 	// CRC-24 Based on RFC 2440 Section 6.1
 	unsigned long crc = 0xB704CEL;
 	int i;
-	QChar *data = s.data();
+	QChar* data = s.data();
 	while (!data->isNull()) {
 		crc ^= (data->unicode() & 0xFF) << 16;
 		for (i = 0; i < 8; i++) {

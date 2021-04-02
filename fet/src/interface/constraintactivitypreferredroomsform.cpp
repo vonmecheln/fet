@@ -56,7 +56,16 @@ ConstraintActivityPreferredRoomsForm::ConstraintActivityPreferredRoomsForm(QWidg
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 	
-/////////////
+	QSize tmp5=roomsComboBox->minimumSizeHint();
+	Q_UNUSED(tmp5);
+
+	roomsComboBox->addItem("");
+	for(int i=0; i<gt.rules.roomsList.size(); i++){
+		Room* rm=gt.rules.roomsList[i];
+		roomsComboBox->addItem(rm->name);
+	}
+	
+	/////////////
 	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
@@ -85,11 +94,13 @@ ConstraintActivityPreferredRoomsForm::ConstraintActivityPreferredRoomsForm(QWidg
 	this->filterChanged();
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
 #else
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
 	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
@@ -129,7 +140,7 @@ bool ConstraintActivityPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
 	
 	QString tn=teachersComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=activityTagsComboBox->currentText();
+	QString atn=activityTagsComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 		
 	bool found=true;
@@ -161,7 +172,7 @@ bool ConstraintActivityPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
 			found=false;
 	
 		//activity tag
-		if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
+		if(atn!="" && !act->activityTagsNames.contains(atn))
 			found=false;
 	
 		//students
@@ -179,8 +190,9 @@ bool ConstraintActivityPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
 	
 	if(!found)
 		return false;
-	else
-		return true;
+
+	return roomsComboBox->currentText()==""
+	 || c->roomsNames.contains(roomsComboBox->currentText());
 }
 
 void ConstraintActivityPreferredRoomsForm::constraintChanged(int index)

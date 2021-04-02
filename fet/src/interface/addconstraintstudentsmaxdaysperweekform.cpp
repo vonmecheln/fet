@@ -43,7 +43,7 @@ AddConstraintStudentsMaxDaysPerWeekForm::~AddConstraintStudentsMaxDaysPerWeekFor
 }
 
 void AddConstraintStudentsMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
-	maxDaysSpinBox->setMinimum(0);
+	maxDaysSpinBox->setMinimum(1);
 	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 	maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek);
 }

@@ -1623,7 +1623,7 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 				act->activityTagsNames[kk]=finalActivityTagName;
 	}
 	
-	//modify the constraints related to this activity tag
+	//modify the time constraints related to this activity tag
 	for(TimeConstraint* ctr : qAsConst(timeConstraintsList)){
 		if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
 			ConstraintTeacherActivityTagMaxHoursContinuously* crt_constraint=(ConstraintTeacherActivityTagMaxHoursContinuously*)ctr;
@@ -1751,7 +1751,7 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 		}
 	}
 
-	//modify the space constraints related to this subject tag
+	//modify the space constraints related to this activity tag
 	for(SpaceConstraint* ctr : qAsConst(spaceConstraintsList)){
 		if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
 			ConstraintSubjectActivityTagPreferredRoom* c=(ConstraintSubjectActivityTagPreferredRoom*)ctr;
@@ -6802,7 +6802,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				 //TODO: erase the line below. It is only kept for compatibility with older versions
 				 || xmlReader.name()=="ConstraintTeachersSubgroupsNoMoreThanXHoursDaily") && !skipDeprecatedConstraints){
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint teachers subgroups max hours daily - will be ignored\n"),
+					 tr("File contains deprecated constraint teachers subgroups max hours daily - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
 					
@@ -6813,7 +6813,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()=="ConstraintStudentsNHoursDaily" && !skipDeprecatedConstraints){
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint students n hours daily - will be ignored\n"),
+					 tr("File contains deprecated constraint students n hours daily - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
 					
@@ -6824,7 +6824,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()=="ConstraintStudentsSetNHoursDaily" && !skipDeprecatedConstraints){
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint students set n hours daily - will be ignored\n"),
+					 tr("File contains deprecated constraint students set n hours daily - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
 					
@@ -6940,7 +6940,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()=="ConstraintActivityEndsDay" && !skipDeprecatedConstraints ){
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint activity ends day - will be ignored\n"),
+					 tr("File contains deprecated constraint activity ends day - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
 					
@@ -7127,10 +7127,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 
 				else if(xmlReader.name()=="ConstraintTeachersSubjectTagsMaxHoursContinuously" && !skipDeprecatedConstraints){
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint teachers subject tags max hours continuously - will be ignored\n"),
+					 tr("File contains deprecated constraint teachers subject tags max hours continuously - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
-													 
+					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
 					crt_constraint=NULL;
@@ -7138,10 +7138,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()=="ConstraintTeachersSubjectTagMaxHoursContinuously" && !skipDeprecatedConstraints){
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint teachers subject tag max hours continuously - will be ignored\n"),
+					 tr("File contains deprecated constraint teachers subject tag max hours continuously - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
-													 
+					 
 					if(t==0)
 						skipDeprecatedConstraints=true;
 					crt_constraint=NULL;
@@ -7239,7 +7239,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintRoomTypeNotAllowedSubjects" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint room type not allowed subjects - will be ignored\n"),
+					 tr("File contains deprecated constraint room type not allowed subjects - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7251,7 +7251,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintSubjectRequiresEquipments" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint subject requires equipments - will be ignored\n"),
+					 tr("File contains deprecated constraint subject requires equipments - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7264,7 +7264,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintSubjectSubjectTagRequireEquipments" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint subject tag requires equipments - will be ignored\n"),
+					 tr("File contains deprecated constraint subject tag requires equipments - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7276,7 +7276,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintTeacherRequiresRoom" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint teacher requires room - will be ignored\n"),
+					 tr("File contains deprecated constraint teacher requires room - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7288,7 +7288,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintTeacherSubjectRequireRoom" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint teacher subject require room - will be ignored\n"),
+					 tr("File contains deprecated constraint teacher subject require room - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7300,7 +7300,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintMinimizeNumberOfRoomsForStudents" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint minimize number of rooms for students - will be ignored\n"),
+					 tr("File contains deprecated constraint minimize number of rooms for students - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7312,7 +7312,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintMinimizeNumberOfRoomsForTeachers" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint minimize number of rooms for teachers - will be ignored\n"),
+					 tr("File contains deprecated constraint minimize number of rooms for teachers - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7330,7 +7330,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintActivitiesSameRoom" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint activities same room - will be ignored\n"),
+					 tr("File contains deprecated constraint activities same room - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7379,7 +7379,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintMaxBuildingChangesPerDayForTeachers" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint max building changes per day for teachers - will be ignored\n"),
+					 tr("File contains deprecated constraint max building changes per day for teachers - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7391,7 +7391,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintMaxBuildingChangesPerDayForStudents" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint max building changes per day for students - will be ignored\n"),
+					 tr("File contains deprecated constraint max building changes per day for students - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7403,7 +7403,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintMaxRoomChangesPerDayForTeachers" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint max room changes per day for teachers - will be ignored\n"),
+					 tr("File contains deprecated constraint max room changes per day for teachers - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 
@@ -7415,7 +7415,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()=="ConstraintMaxRoomChangesPerDayForStudents" && !skipDeprecatedConstraints){
 				
 					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
-					 tr("File contains deprecated constraint max room changes per day for students - will be ignored\n"),
+					 tr("File contains deprecated constraint max room changes per day for students - will be ignored"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
 					 

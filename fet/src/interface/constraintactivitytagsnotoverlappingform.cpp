@@ -79,12 +79,12 @@ bool ConstraintActivityTagsNotOverlappingForm::filterOk(TimeConstraint* ctr)
 
 	ConstraintActivityTagsNotOverlapping* c=(ConstraintActivityTagsNotOverlapping*) ctr;
 	
-	QString sbtn=activityTagsComboBox->currentText();
+	QString atn=activityTagsComboBox->currentText();
 	
-	if(sbtn=="")
+	if(atn=="")
 		return true;
 	
-	if(c->activityTagsNames.contains(sbtn))
+	if(c->activityTagsNames.contains(atn))
 		return true;
 	else
 		return false;

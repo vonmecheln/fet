@@ -113,10 +113,10 @@ bool ConstraintMinGapsBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 	
 	QString tn=teachersComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=activityTagsComboBox->currentText();
+	QString atn=activityTagsComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	
-	if(tn=="" && sbn=="" && sbtn=="" && stn=="")
+	if(tn=="" && sbn=="" && atn=="" && stn=="")
 		return true;
 	
 	bool foundTeacher=false, foundStudents=false, foundSubject=false, foundActivityTag=false;
@@ -152,7 +152,7 @@ bool ConstraintMinGapsBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 				foundSubject=true;
 		
 			//activity tag
-			if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
+			if(atn!="" && !act->activityTagsNames.contains(atn))
 				;
 			else
 				foundActivityTag=true;

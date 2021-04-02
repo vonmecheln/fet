@@ -211,12 +211,12 @@ QString generationLocalizedTime=QString(""); //to be used in timetableprintform.
 
 //similar to code from Marco Vassura, modified by Volker Dirr to get rid of QColor and QBrush, since they need QtGui.
 //The command-line version does not have access to QtGui.
-void TimetableExport::stringToColor(QString s, int *r, int *g, int *b)
+void TimetableExport::stringToColor(QString s, int* r, int* g, int* b)
 {
 	// CRC-24 Based on RFC 2440 Section 6.1
 	unsigned long crc = 0xB704CEL;
 	int i;
-	QChar *data = s.data();
+	QChar* data = s.data();
 	while (!data->isNull()) {
 		crc ^= (data->unicode() & 0xFF) << 16;
 		for (i = 0; i < 8; i++) {

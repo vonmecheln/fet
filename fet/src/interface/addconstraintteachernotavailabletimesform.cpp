@@ -98,11 +98,19 @@ AddConstraintTeacherNotAvailableTimesForm::~AddConstraintTeacherNotAvailableTime
 void AddConstraintTeacherNotAvailableTimesForm::colorItem(QTableWidgetItem* item)
 {
 	if(USE_GUI_COLORS){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		if(item->text()==NO)
+			item->setBackground(QBrush(QColorConstants::DarkGreen));
+		else
+			item->setBackground(QBrush(QColorConstants::DarkRed));
+		item->setForeground(QBrush(QColorConstants::LightGray));
+#else
 		if(item->text()==NO)
 			item->setBackground(QBrush(Qt::darkGreen));
 		else
 			item->setBackground(QBrush(Qt::darkRed));
 		item->setForeground(QBrush(Qt::lightGray));
+#endif
 	}
 }
 

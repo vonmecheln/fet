@@ -163,11 +163,19 @@ AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::~AddConstraintAct
 void AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::colorItem(QTableWidgetItem* item)
 {
 	if(USE_GUI_COLORS){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		if(item->text()==NO)
+			item->setBackground(QBrush(QColorConstants::DarkGreen));
+		else
+			item->setBackground(QBrush(QColorConstants::DarkRed));
+		item->setForeground(QBrush(QColorConstants::LightGray));
+#else
 		if(item->text()==NO)
 			item->setBackground(QBrush(Qt::darkGreen));
 		else
 			item->setBackground(QBrush(Qt::darkRed));
 		item->setForeground(QBrush(Qt::lightGray));
+#endif
 	}
 }
 
@@ -305,7 +313,7 @@ bool AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::filterOk(Act
 	QString tn=teachersComboBox->currentText();
 	QString stn=studentsComboBox->currentText();
 	QString sbn=subjectsComboBox->currentText();
-	QString sbtn=activityTagsComboBox->currentText();
+	QString atn=activityTagsComboBox->currentText();
 	int ok=true;
 
 	//teacher
@@ -325,7 +333,7 @@ bool AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::filterOk(Act
 		ok=false;
 		
 	//activity tag
-	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
+	if(atn!="" && !act->activityTagsNames.contains(atn))
 		ok=false;
 		
 	//students
