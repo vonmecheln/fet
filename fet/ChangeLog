@@ -915,7 +915,7 @@ Versions 5.0.0 - 5.0.2
 	- Small interface changes.
 	- Improvements in translation by Volker Dirr.
 ---------------------------------------------------------------------------------
-Versions 5.1.0 -
+Versions 5.1.0 - 5.1.12
 - Version 5.1.0
 	- Minor cosmetic changes in code by Volker Dirr.
 	- Constraint students (set) min hours daily (suggested by Zsolt Udvari).
@@ -966,4 +966,10 @@ Versions 5.1.0 -
 - Version 5.1.12
 	- Changes in automatic generation (I hope improvements)
 	- Constraint subject subject tag preferred room(s) (suggested by Volker Dirr)
+---------------------------------------------------------------------------------
+Versions 5.2.0 - 5.2.
+- Version 5.2.0
+	- Various small improvements
+	- Multiple timetables generation (suggested by Volker Dirr)
+	- Constraint 2 activities consecutive (suggested by Felix FSH)
 	

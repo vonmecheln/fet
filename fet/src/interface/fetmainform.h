@@ -71,6 +71,7 @@ public slots:
 	void on_dataTimeConstraintsBasicCompulsoryTimeAction_activated();
 	void on_dataTimeConstraintsBreakAction_activated();
 
+	void on_dataTimeConstraints2ActivitiesConsecutiveAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimeAction_activated();
 	void on_dataTimeConstraintsActivityPreferredTimesAction_activated();
 	void on_dataTimeConstraintsActivitiesPreferredTimesAction_activated();
@@ -106,6 +107,7 @@ public slots:
 	void on_timetableViewTeachersAction_activated();
 	void on_timetableShowConflictsAction_activated();
 	void on_timetableViewRoomsAction_activated();
+	void on_timetableGenerateMultipleAction_activated();
 	
 	void on_languageEnglishAction_activated();
 	void on_languageFrenchAction_activated();

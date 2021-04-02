@@ -160,6 +160,15 @@ so the function should have four parameters (the four filters),
 defaultsetting in the data->activities->add screen should have be the
 filters of data->activities.
 
+
+
+For multiple generation:
+
+> and maybe add a checkbox "shutdown after job is done". some software also
+> has this feature, like "noro burning rom".
+> so you "just" need to do a "shutdown -h now" (i think that was the linux
+> command, but i will check tomorrow)
+
 ----------------------------------------------------------------------------------
 
 

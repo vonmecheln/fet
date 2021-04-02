@@ -50,6 +50,15 @@ void Solution::copy(Rules& r, Solution& c){
 	//memcpy(times, c.times, r.nActivities * sizeof(times[0]));
 	
 	this->changedForMatrixCalculation=c.changedForMatrixCalculation;
+
+	//added in version 5.2.0
+	conflictsWeightList=c.conflictsWeightList;
+	conflictsDescriptionList=c.conflictsDescriptionList;
+	conflictsTotal=c.conflictsTotal;
+	
+	teachersMatrixReady=c.teachersMatrixReady;
+	subgroupsMatrixReady=c.subgroupsMatrixReady;
+	roomsMatrixReady=c.roomsMatrixReady;
 }
 
 void Solution::init(Rules& r){

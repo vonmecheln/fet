@@ -5746,6 +5746,292 @@ bool ConstraintActivitiesSameStartingHour::isRelatedToStudentsSet(Rules& r, Stud
 	return false;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+Constraint2ActivitiesConsecutive::Constraint2ActivitiesConsecutive()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_2_ACTIVITIES_CONSECUTIVE;
+}
+
+Constraint2ActivitiesConsecutive::Constraint2ActivitiesConsecutive(double wp, int firstActId, int secondActId)
+	: TimeConstraint(wp)
+{
+	this->firstActivityId = firstActId;
+	this->secondActivityId=secondActId;
+	this->type = CONSTRAINT_2_ACTIVITIES_CONSECUTIVE;
+}
+
+bool Constraint2ActivitiesConsecutive::computeInternalStructure(Rules& r)
+{
+	Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->firstActivityId)
+			break;
+	}
+	
+	if(i==r.nInternalActivities){	
+		//assert(0);
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	this->firstActivityIndex=i;	
+
+	////////
+	
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->secondActivityId)
+			break;
+	}
+	
+	if(i==r.nInternalActivities){	
+		//assert(0);
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	this->secondActivityIndex=i;
+	
+	assert(firstActivityIndex!=secondActivityIndex);
+	
+	return true;
+}
+
+QString Constraint2ActivitiesConsecutive::getXmlDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s="<Constraint2ActivitiesConsecutive>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="	<First_Activity_Id>"+QString::number(this->firstActivityId)+"</First_Activity_Id>\n";
+	s+="	<Second_Activity_Id>"+QString::number(this->secondActivityId)+"</Second_Activity_Id>\n";
+	s+="</Constraint2ActivitiesConsecutive>\n";
+	return s;
+}
+
+QString Constraint2ActivitiesConsecutive::getDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s;
+	
+	s=QObject::tr("Constraint 2 activities consecutive: ");
+	
+	s+=QObject::tr("first act. id:%1").arg(this->firstActivityId);
+	s+=", ";
+	s+=QObject::tr("second act. id:%1").arg(this->secondActivityId);
+	s+=", ";	
+	s+=QObject::tr("WP:%1\%").arg(this->weightPercentage);
+
+	return s;
+}
+
+QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
+{
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Constraint 2 activities consecutive (second activity must be placed after the first"
+	 " activity, possibly separated by breaks)"); s+="\n";
+	
+	s+=QObject::tr("First activity id=%1").arg(this->firstActivityId);
+
+	//////////////////
+	//* write the teachers, subject and students sets
+	int ai;
+	for(ai=0; ai<r.activitiesList.size(); ai++)
+		if(r.activitiesList[ai]->id==this->firstActivityId)
+			break;
+	assert(ai<r.activitiesList.size());
+	s+=" (";
+	
+	s+=QObject::tr("T:");
+	int k=0;
+	foreach(QString ss, r.activitiesList[ai]->teachersNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=QObject::tr(",S:");
+	s+=r.activitiesList[ai]->subjectName;
+	
+	s+=QObject::tr(",St:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->studentsNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=")";
+	s+="\n";
+	/////////////////////
+
+	s+=QObject::tr("Second activity id=%1").arg(this->secondActivityId);
+	
+	//////////////////
+	//* write the teachers, subject and students sets
+	for(ai=0; ai<r.activitiesList.size(); ai++)
+		if(r.activitiesList[ai]->id==this->secondActivityId)
+			break;
+	assert(ai<r.activitiesList.size());
+	s+=" (";
+	
+	s+=QObject::tr("T:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->teachersNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=QObject::tr(",S:");
+	s+=r.activitiesList[ai]->subjectName;
+	
+	s+=QObject::tr(",St:");
+	k=0;
+	foreach(QString ss, r.activitiesList[ai]->studentsNames){
+		if(k>0)
+			s+=",";
+		s+=ss;
+		k++;
+	}
+	
+	s+=")";
+	s+="\n";
+	/////////////////////
+
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+
+	return s;
+}
+
+//critical function here - must be optimized for speed
+double Constraint2ActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+	nbroken=0;
+	if(c.times[this->firstActivityIndex]!=UNALLOCATED_TIME && c.times[this->secondActivityIndex]!=UNALLOCATED_TIME){
+		int fd=c.times[this->firstActivityIndex]%r.nDaysPerWeek; //the day when first activity was scheduled
+		int fh=c.times[this->firstActivityIndex]/r.nDaysPerWeek; //the hour
+		int sd=c.times[this->secondActivityIndex]%r.nDaysPerWeek; //the day when second activity was scheduled
+		int sh=c.times[this->secondActivityIndex]/r.nDaysPerWeek; //the hour
+		
+		cout<<"fd=="<<fd<<", fh=="<<fh<<", sd=="<<sd<<", sh=="<<sh<<endl;
+		
+		if(fd!=sd)
+			nbroken=1;
+		else if(fh+r.internalActivitiesList[this->firstActivityIndex].duration>sh)
+			nbroken=1;
+		else if(fd==sd){
+			int h;
+			int d=fd;
+			assert(d==sd);
+			for(h=fh+r.internalActivitiesList[this->firstActivityIndex].duration; h<r.nHoursPerDay; h++)
+				if(!breakDayHour[d][h])
+					break;
+					
+			assert(h<=sh);	
+				
+			if(h!=sh)
+				nbroken=1;
+		}
+	}
+	
+	assert(nbroken==0 || nbroken==1);
+
+	if(conflictsString!=NULL && nbroken>0){
+		QString s=QObject::tr("Time constraint 2 activities consecutive broken for first activity with id=%1 and "
+		 "second activity with id=%2, increases conflicts total by %3")
+		 .arg(this->firstActivityId)
+		 .arg(this->secondActivityId)
+		 .arg(weightPercentage/100*nbroken);
+
+		dl.append(s);
+		cl.append(weightPercentage/100*nbroken);
+	
+		*conflictsString+= s+"\n";
+	}
+	
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool Constraint2ActivitiesConsecutive::isRelatedToActivity(Activity* a)
+{
+	if(this->firstActivityId==a->id)
+		return true;
+	if(this->secondActivityId==a->id)
+		return true;
+	return false;
+}
+
+bool Constraint2ActivitiesConsecutive::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return false;
+}
+
+bool Constraint2ActivitiesConsecutive::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool Constraint2ActivitiesConsecutive::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool Constraint2ActivitiesConsecutive::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+		
+	return false;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 

@@ -55,6 +55,7 @@
     <addaction name="timetableViewRoomsAction" />
     <addaction name="timetableShowConflictsAction" />
     <addaction name="separator" />
+    <addaction name="timetableGenerateMultipleAction" />
    </widget>
    <widget class="QMenu" name="menuStatistics" >
     <property name="title" >
@@ -117,6 +118,7 @@
      <property name="title" >
       <string>Time constraints (activities)</string>
      </property>
+     <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
      <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
      <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
      <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
@@ -837,6 +839,16 @@
   <action name="dataSpaceConstraintsSubjectSubjectTagPreferredRoomsAction" >
    <property name="text" >
     <string>Subject subject tag preferred rooms</string>
+   </property>
+  </action>
+  <action name="timetableGenerateMultipleAction" >
+   <property name="text" >
+    <string>Generate &amp;multiple (on hard disk)</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraints2ActivitiesConsecutiveAction" >
+   <property name="text" >
+    <string>2 activities consecutive</string>
    </property>
   </action>
  </widget>

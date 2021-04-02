@@ -164,6 +164,18 @@ bool computeSubgroupsMinHoursDaily();
 ////////END   students (set) min hours daily
 
 
+//////////////BEGIN 2 activities consecutive
+//index represents the first activity, value in array represents the second activity
+extern QList<double> constr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+extern QList<int> constr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+void computeConstr2ActivitiesConsecutive();
+
+//index represents the second activity, value in array represents the first activity
+extern QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+extern QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+//////////////END   2 activities consecutive
+
+
 ////////BEGIN rooms
 bool computeBasicSpace();
 

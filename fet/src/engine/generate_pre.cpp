@@ -113,6 +113,16 @@ int subgroupsMaxHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
 double subgroupsMinHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
 int subgroupsMinHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
 
+// 2 activities consecutive
+//index represents the first activity, value in array represents the second activity
+QList<double> constr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+QList<int> constr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+
+//index represents the second activity, value in array represents the first activity
+QList<double> inverseConstr2ActivitiesConsecutivePercentages[MAX_ACTIVITIES];
+QList<int> inverseConstr2ActivitiesConsecutiveActivities[MAX_ACTIVITIES];
+// 2 activities consecutive
+
 ////////rooms
 double allowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 
@@ -189,7 +199,9 @@ bool processTimeConstraints()
 	t=computeSubgroupsMinHoursDaily();
 	if(!t)
 		return false;
-	
+		
+	computeConstr2ActivitiesConsecutive();
+		
 	/////////////rooms	
 	t=computeBasicSpace();
 	if(!t)
@@ -422,6 +434,9 @@ bool computeSubgroupsMinHoursDaily()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("For subgroup %1 you have too little activities to respect the constraint"
 				 " of type min hours daily. Please modify your data accordingly and try again"
+				 ". A possible situation is that you have unneeded groups like 'year1 WHOLE YEAR' and subgroups with name like 'year1 WHOLE YEAR WHOLE GROUP'"
+				 ". You might need to remove such dummy groups and subgroups (they are generated if you start allocation"
+				 " with incomplete students data). FET cannot automatically remove such dummy groups and subgroups"
 				 ". For more details, join the mailing list or email the author")
 				 .arg(gt.rules.internalSubgroupsList[i]->name),
 				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
@@ -1291,6 +1306,45 @@ bool computeActivitiesConflictingPercentage()
 		}
 		
 	return true;
+}
+
+void computeConstr2ActivitiesConsecutive()
+{
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		constr2ActivitiesConsecutivePercentages[i].clear();
+		constr2ActivitiesConsecutiveActivities[i].clear();
+
+		inverseConstr2ActivitiesConsecutivePercentages[i].clear();
+		inverseConstr2ActivitiesConsecutiveActivities[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
+			Constraint2ActivitiesConsecutive* c2=(Constraint2ActivitiesConsecutive*)gt.rules.internalTimeConstraintsList[i];
+			
+			int fai=c2->firstActivityIndex;
+			int sai=c2->secondActivityIndex;
+			
+			//direct
+			int j=constr2ActivitiesConsecutiveActivities[fai].indexOf(sai); 
+			if(j==-1){
+				constr2ActivitiesConsecutiveActivities[fai].append(sai);
+				constr2ActivitiesConsecutivePercentages[fai].append(c2->weightPercentage);
+			}
+			else if(j>=0 && constr2ActivitiesConsecutivePercentages[fai].at(j)<c2->weightPercentage){
+				constr2ActivitiesConsecutivePercentages[fai][j]=c2->weightPercentage;
+			}
+
+			//inverse
+			j=inverseConstr2ActivitiesConsecutiveActivities[sai].indexOf(fai); 
+			if(j==-1){
+				inverseConstr2ActivitiesConsecutiveActivities[sai].append(fai);
+				inverseConstr2ActivitiesConsecutivePercentages[sai].append(c2->weightPercentage);
+			}
+			else if(j>=0 && inverseConstr2ActivitiesConsecutivePercentages[sai].at(j)<c2->weightPercentage){
+				inverseConstr2ActivitiesConsecutivePercentages[sai][j]=c2->weightPercentage;
+			}
+		}
 }
 	
 /*void Rules::computeActivitiesSimilar()

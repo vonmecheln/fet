@@ -161,12 +161,12 @@ const qint16 UNSPECIFIED_ROOM = MAX_ROOMS+1;
 /**
 The maximum number of time constraints
 */
-const int MAX_TIME_CONSTRAINTS = 3000;
+const int MAX_TIME_CONSTRAINTS = 10000;
 
 /**
 The maximum number of space constraints
 */
-const int MAX_SPACE_CONSTRAINTS = 3000;
+const int MAX_SPACE_CONSTRAINTS = 10000;
 
 /**
 The maximum number of preferred times that can be considered
@@ -482,7 +482,9 @@ extern int checkForUpdates;
 extern QString internetVersion;
 
 
-//for random Knuth
+//for random Knuth - from Knuth TAOCP Vol. 2 Seminumerical Algorithms section 3.6
+//these numbers are really important - please do not change them, NEVER!!!
+//if you want, write a new random number generator routine, with other name
 extern int X;
 const int MM=2147483647;
 const int AA=48271;

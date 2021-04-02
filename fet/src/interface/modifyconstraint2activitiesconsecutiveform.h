@@ -1,8 +1,8 @@
 /***************************************************************************
-                          timetablegenerateform.h  -  description
+                          modifyconstraint2activitiesconsecutiveform.h  -  description
                              -------------------
-    begin                : Tue Apr 22 2003
-    copyright            : (C) 2003 by Lalescu Liviu
+    begin                : Aug 21, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,51 +15,41 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TIMETABLEGENERATEFORM_H
-#define TIMETABLEGENERATEFORM_H
+#ifndef MODIFYCONSTRAINT2ACTIVITIESCONSECUTIVEFORM_H
+#define MODIFYCONSTRAINT2ACTIVITIESCONSECUTIVEFORM_H
 
-#include "timetablegenerateform_template.h"
+#include "modifyconstraint2activitiesconsecutiveform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
-#include <qthread.h>
+#include <q3combobox.h>
+#include <qmessagebox.h>
+#include <q3groupbox.h>
+#include <qpushbutton.h>
+#include <qlineedit.h>
+#include <q3textedit.h>
 
-class GenerateThread: public QThread{
-	Q_OBJECT
-
+class ModifyConstraint2ActivitiesConsecutiveForm : public ModifyConstraint2ActivitiesConsecutiveForm_template  {
 public:
-	void run();
+	Constraint2ActivitiesConsecutive* _ctr;
 
-signals:
-	void generationComputed(int generation);
-};
+	ModifyConstraint2ActivitiesConsecutiveForm(Constraint2ActivitiesConsecutive* ctr);
+	~ModifyConstraint2ActivitiesConsecutiveForm();
 
-class TimetableGenerateForm : public TimetableGenerateForm_template  {
-	Q_OBJECT
+	void updateActivitiesComboBox();
 
-public:
+	void constraintChanged();
+	void ok();
+	void cancel();
 
-	TimetableGenerateForm();
-
-	~TimetableGenerateForm();
-
-	void start();
-
-	void stop();
-
-	void write();
-
-	void closePressed();
-
-	void generationLogging(int generation);
-
-private slots:
-	void activityPlaced(int na);
-
-	void simulationFinished();
-
-	void impossibleToSolve();
+	bool filterOk(Activity* a);
+	void filterChanged();
+	
+private:
+	//the id's of the activities listed in the activities combo
+	QList<int> firstActivitiesList;
+	QList<int> secondActivitiesList;
 };
 
 #endif

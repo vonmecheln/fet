@@ -1,8 +1,8 @@
 /***************************************************************************
-                          timetablegenerateform.h  -  description
+                          timetablegeneratemultipleform.h  -  description
                              -------------------
-    begin                : Tue Apr 22 2003
-    copyright            : (C) 2003 by Lalescu Liviu
+    begin                : Aug 20 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,51 +15,53 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TIMETABLEGENERATEFORM_H
-#define TIMETABLEGENERATEFORM_H
+#ifndef TIMETABLEGENERATEMULTIPLEFORM_H
+#define TIMETABLEGENERATEMULTIPLEFORM_H
 
-#include "timetablegenerateform_template.h"
+#include "timetablegeneratemultipleform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
 #include <qthread.h>
 
-class GenerateThread: public QThread{
+class GenerateMultipleThread: public QThread{
 	Q_OBJECT
 
 public:
 	void run();
 
 signals:
-	void generationComputed(int generation);
+	void timetableGenerated(int timetable, const QString& description);
+	
+	void finished();
 };
 
-class TimetableGenerateForm : public TimetableGenerateForm_template  {
+class TimetableGenerateMultipleForm : public TimetableGenerateMultipleForm_template  {
 	Q_OBJECT
 
 public:
 
-	TimetableGenerateForm();
+	TimetableGenerateMultipleForm();
 
-	~TimetableGenerateForm();
+	~TimetableGenerateMultipleForm();
+	
+	void help();
 
 	void start();
 
 	void stop();
-
-	void write();
+	
+	void simulationFinished();
 
 	void closePressed();
 
-	void generationLogging(int generation);
-
 private slots:
+	void timetableGenerated(int timetable, const QString& description);
+	
+	void finished();
+	
 	void activityPlaced(int na);
-
-	void simulationFinished();
-
-	void impossibleToSolve();
 };
 
 #endif

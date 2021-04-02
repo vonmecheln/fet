@@ -42,7 +42,7 @@ extern QMutex mutex; //timetablegenerateform.cpp
 
 #include <QSemaphore>
 
-extern QSemaphore semaphoreTime;
+extern QSemaphore semaphorePlacedActivity;
 extern QSemaphore finishedSemaphore;
 
 extern Timetable gt;
@@ -159,8 +159,11 @@ bool Generate::precompute()
 	return processTimeConstraints();
 }
 
-void Generate::optimize()
+void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded/*, const bool semaphorePlacedActivity*/)
 {
+	impossible=false;
+	timeExceeded=false;
+
 	maxncallsrandomswap=-1;
 
 	impossibleActivity=false;
@@ -177,14 +180,9 @@ void Generate::optimize()
 		tabu_activities[i]=tabu_times[i]=-1;
 	/////////////////
 
-	abortOptimization=false;
+	//abortOptimization=false; you have to take care of this before calling this function
 
 	c.makeUnallocated(gt.rules);
-
-	/*for(int i=0; i<gt.rules.nInternalActivities; i++)
-		for(int j=0; j<gt.rules.nInternalActivities; j++)
-			if(gt.rules.activitiesSimilar[i][j])
-				assert(gt.rules.activityContained[i][j] && gt.rules.activityContained[j][i]);*/
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		invPermutation[permutation[i]]=i;
@@ -213,7 +211,7 @@ void Generate::optimize()
 	
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 		prevvalue:
-		
+	
 		mutex.lock();
 		//cout<<"mutex locked - optimizetime 151"<<endl;
 		if(abortOptimization){
@@ -227,6 +225,14 @@ void Generate::optimize()
 		time_t crt_time;
 		time(&crt_time);		
 		searchTime=crt_time-start_time;
+		
+		if(searchTime>=maxSeconds){
+			mutex.unlock();
+			
+			timeExceeded=true;
+			
+			return;
+		}
 
 		for(int i=0; i<=added_act; i++)
 			swappedActivities[permutation[i]]=false;
@@ -540,6 +546,9 @@ void Generate::optimize()
 				mutex.unlock();
 				nDifficultActivities=1;
 				difficultActivities[0]=permutation[added_act];
+				
+				impossible=true;
+				
 				emit(impossibleToSolve());
 				
 				return;
@@ -650,8 +659,10 @@ void Generate::optimize()
 			added_act=q+1;
 			mutex.unlock();
 	
-			emit(activityPlaced(q+1));
-			semaphoreTime.acquire();
+			//if(semaphorePlacedActivity){
+				emit(activityPlaced(q+1));
+				semaphorePlacedActivity.acquire();
+			//}
 
 			goto prevvalue;
 //////////////////////
@@ -669,8 +680,10 @@ void Generate::optimize()
 
 			mutex.unlock();
 			//cout<<"mutex unlocked - optimizetime 382"<<endl;
-			emit(activityPlaced(added_act+1));
-			semaphoreTime.acquire();
+			//if(semaphorePlacedActivity){
+				emit(activityPlaced(added_act+1));
+				semaphorePlacedActivity.acquire();
+			//}
 			mutex.lock();
 			//cout<<"mutex locked - optimizetime 386"<<endl;
 			
@@ -682,7 +695,6 @@ void Generate::optimize()
 			/*if(ftn==0 || added_act==gt.rules.nInternalActivities && foundGoodSwap){*/
 			if(added_act==gt.rules.nInternalActivities && foundGoodSwap){
 				mutex.unlock();
-				//cout<<"mutex unlocked - optimizetime 397"<<endl;
 				break;
 			}
 			
@@ -701,7 +713,6 @@ void Generate::optimize()
 		}
 
 		mutex.unlock();	
-		//cout<<"mutex unlocked - optimizetime 403"<<endl;
 	}
 
 	mutex.lock();
@@ -1296,6 +1307,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 	}
 }
 
+//faster: (to avoid allocating memory at each call
 #if 1
 
 static int nMinDaysBrokenL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
@@ -1678,6 +1690,98 @@ impossiblesamestartinghour:
 		}
 impossiblenotoverlapping:
 		if(!oknotoverlapping){
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+		/*foreach(int ai2, conflActivities[newtime])
+			assert(!swappedActivities[ai2]);*/
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from 2 activities consecutive
+		bool ok2activitiesconsecutive=true;
+		for(int i=0; i<constr2ActivitiesConsecutiveActivities[ai].count(); i++){
+			int ai2=constr2ActivitiesConsecutiveActivities[ai].at(i);
+			double perc=constr2ActivitiesConsecutivePercentages[ai].at(i);
+			if(c.times[ai2]!=UNALLOCATED_TIME){
+				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
+				bool ok=true;
+				
+				if(d2!=d)
+					ok=false;
+				else if(h+act->duration > h2)
+					ok=false;
+				else if(d==d2){
+					int kk;
+					for(kk=h+act->duration; kk<gt.rules.nHoursPerDay; kk++)
+						if(!breakDayHour[d][kk])
+							break;
+					assert(kk<=h2);
+					if(kk!=h2)
+						ok=false;
+				}
+				
+				if(!ok && !skipRandom(perc)){
+					assert(ai2!=ai);
+					
+					if(swappedActivities[ai2]){
+						ok2activitiesconsecutive=false;
+						goto impossible2activitiesconsecutive;
+					}
+					
+					if(conflActivities[newtime].indexOf(ai2)==-1){
+						conflActivities[newtime].append(ai2);
+						nConflActivities[newtime]++;
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+					}
+				}
+			}
+		}
+
+		for(int i=0; i<inverseConstr2ActivitiesConsecutiveActivities[ai].count(); i++){
+			//inverse
+			int ai2=inverseConstr2ActivitiesConsecutiveActivities[ai].at(i);
+			double perc=inverseConstr2ActivitiesConsecutivePercentages[ai].at(i);
+			if(c.times[ai2]!=UNALLOCATED_TIME){
+				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+				int h2=c.times[ai2]/gt.rules.nDaysPerWeek;				
+				bool ok=true;
+				
+				if(d2!=d)
+					ok=false;
+				//else if(h+act->duration > h2)
+				else if(h2+gt.rules.internalActivitiesList[ai2].duration > h)
+					ok=false;
+				else if(d==d2){
+					int kk;
+					for(kk=h2+gt.rules.internalActivitiesList[ai2].duration; kk<gt.rules.nHoursPerDay; kk++)
+						if(!breakDayHour[d][kk])
+							break;
+					assert(kk<=h);
+					if(kk!=h)
+						ok=false;
+				}
+			
+				if(!ok && !skipRandom(perc)){
+					assert(ai2!=ai);
+					
+					if(swappedActivities[ai2]){
+						ok2activitiesconsecutive=false;
+						goto impossible2activitiesconsecutive;
+					}
+					
+					if(conflActivities[newtime].indexOf(ai2)==-1){
+						conflActivities[newtime].append(ai2);
+						nConflActivities[newtime]++;
+						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+					}
+				}
+			}
+		}
+impossible2activitiesconsecutive:
+		if(!ok2activitiesconsecutive){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}

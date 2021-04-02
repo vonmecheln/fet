@@ -1,13 +1,15 @@
-Program's description:
+FET (c) 2002-2007 Liviu Lalescu
+
+Program description:
 	FET is free timetabling software.
 	This program aims to automatically generate the timetable of a school, high-school
-	or possibly university,	by an intelligent algorithm. 
+	or possibly university,	by a heuristic algorithm. 
 	FET can mean "Free Educational Timetabling".
 	
 Requirements:
 	FET is created in the following environment: Kubuntu 7.0.4 GNU/Linux distribution,
-	Midnight Commander 4.6.1, Qt 4.3.0, gcc 4.1.2, Linux 2.6.20, 
-	other great free tools.
+	Midnight Commander 4.6.1, Qt 4.3.0, gcc 4.1.2, Linux 2.6.20, other great free tools.
+	FET can be run on any platform supported by the free software Qt.
 	
 	GNU/Linux and similar OS's:
 	Software: gcc 4.1.2 or similar, Qt 4.3.0 or compatible.
@@ -22,7 +24,7 @@ Requirements:
 	the MinGW and Qt dlls).
 
 Download:
-	You can download the latest version from http://lalescu.ro/liviu/fet/ (for now).
+	You can download the latest version from http://www.lalescu.ro/liviu/fet/ (for now).
 	Older versions: you will have to contact the author if you are interested.
 
 Getting - compiling - installing Qt:

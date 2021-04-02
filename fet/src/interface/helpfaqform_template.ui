@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 14 August 2007
+this documentation by Liviu Lalescu, reviewed and modified - 21 August 2007
 
 --------
 
@@ -65,7 +65,7 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 
 Q: How does FET work?
 
-A: A nice algorithm, based on swapping activities recursively to make space for new activities. Email the author or mailing list for details.
+A: A heuristic algorithm, based on swapping activities recursively to make space for new activities. Email the author or mailing list for details.
 
 
 -------------------------------------------------------------------------------
@@ -220,7 +220,13 @@ A: Yes, you have to add more constraint students set not available accordingly (
 
 Q: How can you allow one gap (or more) for students?
 
-A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.</string>
+A: There is a small workaround: add for each SUBGROUP (careful, for each subgroup, not group or year) an activity with duration 1 (or more activities with duration 1), with no teachers. These are dummy activities which are to be considered gaps.
+
+-------------------------------------------------------------------------------
+
+Q: What are groups of type "year1 WHOLE YEAR" and subgroups of type "group1 WHOLE GROUP"?
+
+A: These are groups and subgroups inserted automatically by FET if year or group is empty. They are added only when generating timetable. You don't need to use them, just ignore them. It is recommended to remove them if for instance you generate the timetable, they are added and you insert other groups or subgroups after that. They cannot be removed automatically. I know that this is not elegant, but I have no solution for the moment.</string>
             </property>
         </widget>
     </grid>

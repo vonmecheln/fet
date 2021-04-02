@@ -55,7 +55,7 @@ public:
 	
 	bool precompute();
 	
-	void optimize();
+	void generate(int maxSeconds, bool& impossible, bool& timeExceeded/*, const bool semaphorePlacedActivity*/);
 	
 	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom);
 	

@@ -71,6 +71,7 @@ const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=21;
 const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=22;
 const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=23;
 const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=24;
+const int CONSTRAINT_2_ACTIVITIES_CONSECUTIVE							=25;
 
 
 /**
@@ -1327,6 +1328,54 @@ public:
 	Removes useless activities from the _activities array
 	*/
 	void removeUseless(Rules& r);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class Constraint2ActivitiesConsecutive: public TimeConstraint{
+public:
+	/**
+	First activity id
+	*/
+	int firstActivityId;
+
+	/**
+	Second activity id
+	*/
+	int secondActivityId;
+
+	//internal variables
+	/**
+	The index of the first activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int firstActivityIndex;
+
+	/**
+	The index of the second activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int secondActivityIndex;
+
+	Constraint2ActivitiesConsecutive();
+
+	Constraint2ActivitiesConsecutive(double wp, int firstActId, int secondActId);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
 
 	bool isRelatedToActivity(Activity* a);
 	

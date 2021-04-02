@@ -21,6 +21,7 @@
 #include "modifyconstraintbasiccompulsorytimeform.h"
 
 #include "modifyconstraintactivitypreferredtimesform.h"
+#include "modifyconstraint2activitiesconsecutiveform.h"
 #include "modifyconstraintactivitiespreferredtimesform.h"
 #include "modifyconstraintactivitiessamestartingtimeform.h"
 #include "modifyconstraintactivitiessamestartinghourform.h"
@@ -126,6 +127,11 @@ void AllTimeConstraintsForm::modifyConstraint()
 	if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
 		ModifyConstraintBasicCompulsoryTimeForm* form=
 		 new ModifyConstraintBasicCompulsoryTimeForm((ConstraintBasicCompulsoryTime*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
+		ModifyConstraint2ActivitiesConsecutiveForm* form=
+		 new ModifyConstraint2ActivitiesConsecutiveForm((Constraint2ActivitiesConsecutive*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIMES){

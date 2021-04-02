@@ -49,6 +49,7 @@ SOURCES += fet.cpp \
            subjecttagsform.cpp \
            teachersform.cpp \
            timetablegenerateform.cpp \
+           timetablegeneratemultipleform.cpp \
            fetmainform.cpp \
            timetableviewstudentsform.cpp \
            timetableviewroomsform.cpp \
@@ -71,6 +72,7 @@ SOURCES += fet.cpp \
            ../engine/room.cpp \
            ../engine/timetable_defs.cpp \
 		   ../engine/generate.cpp \
+		   ../engine/timetableexport.cpp \
            roomsform.cpp \
            constraintactivitiespreferredtimesform.cpp \
            addconstraintactivitiespreferredtimesform.cpp \
@@ -139,6 +141,9 @@ SOURCES += fet.cpp \
 		   constraintactivitiesnotoverlappingform.cpp \
 		   addconstraintactivitiesnotoverlappingform.cpp \
 		   modifyconstraintactivitiesnotoverlappingform.cpp \
+		   constraint2activitiesconsecutiveform.cpp \
+		   addconstraint2activitiesconsecutiveform.cpp \
+		   modifyconstraint2activitiesconsecutiveform.cpp \
 		   constraintminndaysbetweenactivitiesform.cpp \
 		   addconstraintminndaysbetweenactivitiesform.cpp \
 		   modifyconstraintminndaysbetweenactivitiesform.cpp \
@@ -198,6 +203,7 @@ HEADERS += fet.h \
            subjecttagsform.h \
            teachersform.h \
            timetablegenerateform.h \
+           timetablegeneratemultipleform.h \
            fetmainform.h \
            timetableviewstudentsform.h \
            timetableviewroomsform.h \
@@ -220,6 +226,7 @@ HEADERS += fet.h \
            ../engine/subjecttag.h \
            ../engine/room.h \
 		   ../engine/generate.h \
+		   ../engine/timetableexport.h \
            roomsform.h \
            constraintactivitiespreferredtimesform.h \
            addconstraintactivitiespreferredtimesform.h \
@@ -287,6 +294,9 @@ HEADERS += fet.h \
 		   constraintactivitiesnotoverlappingform.h \
 		   addconstraintactivitiesnotoverlappingform.h \
 		   modifyconstraintactivitiesnotoverlappingform.h \
+		   constraint2activitiesconsecutiveform.h \
+		   addconstraint2activitiesconsecutiveform.h \
+		   modifyconstraint2activitiesconsecutiveform.h \
 		   constraintminndaysbetweenactivitiesform.h \
 		   addconstraintminndaysbetweenactivitiesform.h \
 		   modifyconstraintminndaysbetweenactivitiesform.h \
@@ -361,6 +371,7 @@ FORMS3 += helpfaqform_template.ui \
          subjecttagsform_template.ui \
          teachersform_template.ui \
          timetablegenerateform_template.ui \
+         timetablegeneratemultipleform_template.ui \
          timetableviewstudentsform_template.ui \
          timetableviewroomsform_template.ui \
          yearsform_template.ui \
@@ -435,6 +446,9 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintactivitiesnotoverlappingform_template.ui \
 		   addconstraintactivitiesnotoverlappingform_template.ui \
 		   modifyconstraintactivitiesnotoverlappingform_template.ui \
+		   constraint2activitiesconsecutiveform_template.ui \
+		   addconstraint2activitiesconsecutiveform_template.ui \
+		   modifyconstraint2activitiesconsecutiveform_template.ui \
 		   constraintminndaysbetweenactivitiesform_template.ui \
 		   addconstraintminndaysbetweenactivitiesform_template.ui \
 		   modifyconstraintminndaysbetweenactivitiesform_template.ui \

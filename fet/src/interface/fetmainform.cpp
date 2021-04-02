@@ -20,6 +20,7 @@ using namespace std;
 #include "fetmainform.h"
 
 #include "timetablegenerateform.h"
+#include "timetablegeneratemultipleform.h"
 
 #include "timetableviewstudentsform.h"
 #include "timetableviewteachersform.h"
@@ -49,6 +50,7 @@ using namespace std;
 
 #include "fet.h"
 
+#include "constraint2activitiesconsecutiveform.h"
 #include "constraintactivitiespreferredtimesform.h"
 #include "constraintactivitiessamestartingtimeform.h"
 #include "constraintactivitiessamestartinghourform.h"
@@ -95,6 +97,8 @@ using namespace std;
 #include "httpget.h"
 
 bool simulation_running; //true if the user started an allocation of the timetable
+
+bool simulation_running_multi;
 
 bool students_schedule_ready;
 bool teachers_schedule_ready;
@@ -571,6 +575,18 @@ void FetMainForm::on_dataAllSpaceConstraintsAction_activated()
 	form->exec();
 }
 
+void FetMainForm::on_dataTimeConstraints2ActivitiesConsecutiveAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	Constraint2ActivitiesConsecutiveForm* form=new Constraint2ActivitiesConsecutiveForm();
+	form->exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimesAction_activated()
 {
 	if(simulation_running){
@@ -994,7 +1010,31 @@ void FetMainForm::on_timetableGenerateAction_activated()
 		return;
 	}
 	TimetableGenerateForm *form=new TimetableGenerateForm();
-	form->show();
+	form->exec();
+}
+
+void FetMainForm::on_timetableGenerateMultipleAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	int count=0;
+	for(int i=0; i<gt.rules.activitiesList.size(); i++){
+		Activity* act=gt.rules.activitiesList[i];
+		if(act->active){
+			//cout<<"here: i=="<<i<<endl;
+			count++;
+		}
+	}
+	if(count<2){
+		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Please input at least two active activities before generating multiple"));
+		return;
+	}
+	TimetableGenerateMultipleForm *form=new TimetableGenerateMultipleForm();
+	form->exec();
 }
 
 void FetMainForm::on_timetableViewStudentsAction_activated()

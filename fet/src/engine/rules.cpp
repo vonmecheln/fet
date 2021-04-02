@@ -137,6 +137,18 @@ bool Rules::computeInternalStructure()
 		 QObject::tr("You have too many rooms.\nPlease talk to the author or increase variable MAX_ROOMS"));
 		return false;
 	}
+	
+	if(this->timeConstraintsList.size()>MAX_TIME_CONSTRAINTS){
+		QMessageBox::warning(NULL, QObject::tr("FET information"),
+		 QObject::tr("You have too many time constraints.\nPlease talk to the author or increase variable MAX_TIME_CONSTRAINTS"));
+		return false;
+	}
+
+	if(this->spaceConstraintsList.size()>MAX_SPACE_CONSTRAINTS){
+		QMessageBox::warning(NULL, QObject::tr("FET information"),
+		 QObject::tr("You have too many space constraints.\nPlease talk to the author or increase variable MAX_SPACE_CONSTRAINTS"));
+		return false;
+	}
 
 	assert(this->initialized);
 
@@ -1817,6 +1829,25 @@ void Rules::removeActivity(int _id)
 				else
 					j++;
 			}
+			//removing Constraint2ActivitiesConsecutive-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
+					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
 			//removing ConstraintActivityPreferredTimes-s referring to this activity
 			for(int j=0; j<this->timeConstraintsList.size(); ){
 				TimeConstraint* ctr=this->timeConstraintsList[j];
@@ -1933,6 +1964,25 @@ void Rules::removeActivity(int _id, int _activityGroupId)
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME){
 					ConstraintActivityPreferredTime *apt=(ConstraintActivityPreferredTime*)ctr;
 					if(apt->activityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else
+						j++;
+				}
+				else
+					j++;
+			}
+			//removing Constraint2ActivitiesConsecutive-s referring to this activity
+			for(int j=0; j<this->timeConstraintsList.size(); ){
+				TimeConstraint* ctr=this->timeConstraintsList[j];
+				if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
+					Constraint2ActivitiesConsecutive *apt=(Constraint2ActivitiesConsecutive*)ctr;
+					if(apt->firstActivityId==act->id){
+						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
+						this->removeTimeConstraint(ctr);
+					}
+					else if(apt->secondActivityId==act->id){
 						cout<<"Removing constraint "<<(const char*)(apt->getDescription(*this))<<endl;
 						this->removeTimeConstraint(ctr);
 					}
@@ -3929,6 +3979,47 @@ bool Rules::read(const QString& filename)
 					}
 					crt_constraint=cn;
 				}
+				if(elem3.tagName()=="Constraint2ActivitiesConsecutive"){
+					Constraint2ActivitiesConsecutive* cn=new Constraint2ActivitiesConsecutive();
+					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
+						QDomElement elem4=node4.toElement();
+						if(elem4.isNull()){
+							xmlReadingLog+="    Null node here\n";
+							continue;
+						}
+						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
+						if(elem4.tagName()=="Weight"){
+							//cn->weight=elem4.text().toDouble();
+							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+							cn->weightPercentage=100;
+						}
+						else if(elem4.tagName()=="Weight_Percentage"){
+							cn->weightPercentage=elem4.text().toDouble();
+							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
+						}
+						else if(elem4.tagName()=="Compulsory"){
+							if(elem4.text()=="yes"){
+								//cn->compulsory=true;
+								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+								cn->weightPercentage=100;
+							}
+							else{
+								//cn->compulsory=false;
+								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+								cn->weightPercentage=0;
+							}
+						}
+						else if(elem4.tagName()=="First_Activity_Id"){
+							cn->firstActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
+						}
+						else if(elem4.tagName()=="Second_Activity_Id"){
+							cn->secondActivityId=elem4.text().toInt();
+							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
+						}
+					}
+					crt_constraint=cn;
+				}
 				if(elem3.tagName()=="ConstraintActivityEndsDay" && !skipDeprecatedConstraints ){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint activity ends day - will be ignored\n"),
@@ -4488,56 +4579,6 @@ bool Rules::read(const QString& filename)
 						if(elem4.tagName()=="Max_Intervals"){
 							cn->n=elem4.text().toInt();
 							xmlReadingLog+="    Adding max intervals="+QString::number(cn->n)+"\n";
-						}
-					}
-					crt_constraint=cn;*/
-					crt_constraint=NULL;
-				}
-				if(elem3.tagName()=="Constraint2ActivitiesConsecutive" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("File contains deprecated constraint 2 activities consecutive - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
-					 1, 0 );
-													 
-					if(t==0)
-						skipDeprecatedConstraints=true;
-					/*
-					Constraint2ActivitiesConsecutive* cn=new Constraint2ActivitiesConsecutive();
-					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
-						QDomElement elem4=node4.toElement();
-						if(elem4.isNull()){
-							xmlReadingLog+="    Null node here\n";
-							continue;
-						}
-						xmlReadingLog+="    Found "+elem4.tagName()+" tag\n";
-						if(elem4.tagName()=="Weight"){
-							//cn->weight=elem4.text().toDouble();
-							xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
-							cn->weightPercentage=100;
-						}
-						else if(elem4.tagName()=="Weight_Percentage"){
-							cn->weightPercentage=elem4.text().toDouble();
-							xmlReadingLog+="    Adding weight percentage="+QString::number(cn->weightPercentage)+"\n";
-						}
-						else if(elem4.tagName()=="Compulsory"){
-							if(elem4.text()=="yes"){
-								//cn->compulsory=true;
-								xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
-								cn->weightPercentage=100;
-							}
-							else{
-								//cn->compulsory=false;
-								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
-								cn->weightPercentage=0;
-							}
-						}
-						else if(elem4.tagName()=="First_Activity_Id"){
-							cn->firstActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read first activity id="+QString::number(cn->firstActivityId)+"\n";
-						}
-						else if(elem4.tagName()=="Second_Activity_Id"){
-							cn->secondActivityId=elem4.text().toInt();
-							xmlReadingLog+="    Read second activity id="+QString::number(cn->secondActivityId)+"\n";
 						}
 					}
 					crt_constraint=cn;*/
@@ -6008,7 +6049,9 @@ void Rules::write(const QString& filename)
 
 	QTextStream tos(&file);
 	
-	tos.setEncoding(QTextStream::UnicodeUTF8);
+	tos.setCodec("UTF-8");
+	tos.setGenerateByteOrderMark(true);
+	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
 	s+="<!DOCTYPE FET><FET version=\""+FET_VERSION+"\">\n\n";
 	

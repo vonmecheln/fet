@@ -1,8 +1,8 @@
 /***************************************************************************
-                          timetablegenerateform.h  -  description
+                          constraint2activitiesconsecutiveform.h  -  description
                              -------------------
-    begin                : Tue Apr 22 2003
-    copyright            : (C) 2003 by Lalescu Liviu
+    begin                : Aug 21, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,51 +15,29 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef TIMETABLEGENERATEFORM_H
-#define TIMETABLEGENERATEFORM_H
+#ifndef CONSTRAINT2ACTIVITIESCONSECUTIVEFORM_H
+#define CONSTRAINT2ACTIVITIESCONSECUTIVEFORM_H
 
-#include "timetablegenerateform_template.h"
+#include "constraint2activitiesconsecutiveform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 
-#include <qthread.h>
-
-class GenerateThread: public QThread{
-	Q_OBJECT
-
+class Constraint2ActivitiesConsecutiveForm : public Constraint2ActivitiesConsecutiveForm_template  {
 public:
-	void run();
+	TimeConstraintsList visibleConstraintsList;
 
-signals:
-	void generationComputed(int generation);
-};
+	Constraint2ActivitiesConsecutiveForm();
+	~Constraint2ActivitiesConsecutiveForm();
 
-class TimetableGenerateForm : public TimetableGenerateForm_template  {
-	Q_OBJECT
+	void constraintChanged(int index);
+	void addConstraint();
+	void modifyConstraint();
+	void removeConstraint();
 
-public:
+	void filterChanged();
 
-	TimetableGenerateForm();
-
-	~TimetableGenerateForm();
-
-	void start();
-
-	void stop();
-
-	void write();
-
-	void closePressed();
-
-	void generationLogging(int generation);
-
-private slots:
-	void activityPlaced(int na);
-
-	void simulationFinished();
-
-	void impossibleToSolve();
+	bool filterOk(TimeConstraint* ctr);
 };
 
 #endif

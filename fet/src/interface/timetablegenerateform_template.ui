@@ -33,9 +33,9 @@
                 <bool>false</bool>
             </property>
             <property name="text">
-                <string>Write (save, update) the results, without stopping the 
-simulation. You can use timetable/view  in the same 
-time with the automatic generation</string>
+                <string>Write (save, update) the results on hard disk, without 
+stopping the simulation. You can see the partial 
+timetable on the hard disk, in xml and html formats.</string>
             </property>
         </widget>
         <widget class="QPushButton" row="4" column="1" rowspan="1" colspan="2">
@@ -109,6 +109,13 @@ time with the automatic generation</string>
         <slot>closePressed()</slot>
     </connection>
 </connections>
+<tabstops>
+    <tabstop>currentResultsTextEdit</tabstop>
+    <tabstop>startPushButton</tabstop>
+    <tabstop>stopPushButton</tabstop>
+    <tabstop>writeResultsPushButton</tabstop>
+    <tabstop>closePushButton</tabstop>
+</tabstops>
 <slots>
     <slot>loadPosition()</slot>
     <slot>pause()</slot>
