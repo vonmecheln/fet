@@ -740,11 +740,9 @@ void TimetableGenerateForm::help()
 	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
 	 " instance min days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.");
 	s+="\n\n";
-	s+="\n\n";
 	s+=TimetableGenerateForm::tr("If your timetable gets stuck on a certain activity number k (and then"
 	 " begins going back), please check the initial evaluation order and see activity number k+1 in this list. You may find"
 	 " errors this way.");
-	 
 	s+="\n\n";
 	s+=TimetableGenerateForm::tr("If the generation is successful, you cannot have hard conflicts. You can have only soft conflicts,"
 	 " corresponding to constraints with weight lower than 100.0%, which are reported in detail.");

@@ -50,7 +50,7 @@ ModifyConstraintTeachersMaxDaysPerWeekForm::~ModifyConstraintTeachersMaxDaysPerW
 
 void ModifyConstraintTeachersMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
 	maxDaysSpinBox->setMinimum(1);
-	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);	
+	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 }
 
 void ModifyConstraintTeachersMaxDaysPerWeekForm::constraintChanged()

@@ -1,5 +1,5 @@
 /*
-File fet.cpp - program using the main engine "timetable"
+File fet.cpp - this is where the program FET starts
 */
 
 /*
@@ -586,7 +586,7 @@ int main(int argc, char **argv)
 			QString s=_args[i];
 			
 			if(s.left(12)=="--inputfile=")
-				filename=s.right(s.length()-12);
+				filename=QDir::fromNativeSeparators(s.right(s.length()-12));
 			else if(s.left(19)=="--timelimitseconds=")
 				secondsLimit=s.right(s.length()-19).toInt();
 			else if(s.left(21)=="--timetablehtmllevel=")
@@ -614,7 +614,7 @@ int main(int argc, char **argv)
 					DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=true;
 			}
 			else if(s.left(12)=="--outputdir="){
-				outputDirectory=s.right(s.length()-12);
+				outputDirectory=QDir::fromNativeSeparators(s.right(s.length()-12));
 			}
 			else if(s.left(30)=="--printsimultaneousactivities="){
 				if(s.right(5)=="false")
@@ -695,12 +695,12 @@ int main(int argc, char **argv)
 			//QString qv=qVersion();
 			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			out<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
-			out<<"Copyright (C) 2002-2011 Liviu Lalescu"<<endl;
+			out<<"Copyright (C) 2002-2012 Liviu Lalescu"<<endl;
 			out<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//out<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			cout<<"Free timetabling software, licensed under GNU GPL v2 or later"<<endl;
-			cout<<"Copyright (C) 2002-2011 Liviu Lalescu"<<endl;
+			cout<<"Copyright (C) 2002-2012 Liviu Lalescu"<<endl;
 			cout<<"Homepage: http://lalescu.ro/liviu/fet/"<<endl;
 			//cout<<" (Using Qt version "<<qPrintable(qv)<<")"<<endl;
 
@@ -872,13 +872,19 @@ int main(int argc, char **argv)
 			cout<<"Impossible"<<endl;
 			out<<"Impossible"<<endl;
 		}
-		else if(timeExceeded){
-			cout<<"Time exceeded"<<endl;
-			out<<"Time exceeded"<<endl;
-		}
-		else if(gen.abortOptimization){
-			cout<<"Simulation stopped"<<endl;
-			out<<"Simulation stopped"<<endl;
+		//2012-01-24 - suggestion and code by Ian Holden (ian@ianholden.com), to write best and current timetable on time exceeded
+		//previously, FET saved best and current timetable only on receiving SIGTERM
+		//by Ian Holden (begin)
+		else if(timeExceeded || gen.abortOptimization){
+			if(timeExceeded){
+				cout<<"Time exceeded"<<endl;
+				out<<"Time exceeded"<<endl;
+			}
+			else if(gen.abortOptimization){
+				cout<<"Simulation stopped"<<endl;
+				out<<"Simulation stopped"<<endl;
+			}
+			//by Ian Holden (end)
 			
 			//2011-11-11 (1)
 			//write current stage timetable

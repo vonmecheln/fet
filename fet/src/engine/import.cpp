@@ -35,8 +35,8 @@ File import.cpp
 
 extern Timetable gt;
 
-// maybe i can add some of them again as parameter into function name?
-// it is not possible with fieldNumber and fieldName, because that conflict with the using of command connect with chooseFieldsDialogUpdate (there are no parameters possible)
+// maybe I can add some of them again as parameter into function name?
+// it is not possible with fieldNumber and fieldName, because that conflicts with the using of command connect with chooseFieldsDialogUpdate (there are no parameters possible)
 static QString fileName;				// file name of the csv file
 
 static QString fieldSeparator=",";
@@ -48,7 +48,7 @@ static QString importThing;
 static int numberOfFields;				// number of fields per line of the csv file
 static QStringList fields;				// list of the fields of the first line of the csv file
 static bool head;					// true = first line of csv file contain heading, so skip this line
-static QString fieldName[NUMBER_OF_FIELDS];		// field name (normaly similar to the head)
+static QString fieldName[NUMBER_OF_FIELDS];		// field name (normally similar to the head)
 static int fieldNumber[NUMBER_OF_FIELDS];		// field number in the csv file
 							// fieldNumber >= 0 is the number of the field
 							// fieldNumber can also be IMPORT_DEFAULT_ITEM (==IMPORT_DEFAULT_ITEM). That mean that items of fieldList get the name of fieldDefaultItem (not of field[fieldNumber] from csv
@@ -512,6 +512,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	QTextStream in(&file);
 	in.setCodec("UTF-8");
 	QString line = in.readLine();
+	file.close();
 	
 	if(line.size()<=0){
 		QMessageBox::warning(parent, tr("FET warning"), tr("The first line of the file is empty. Please fix this."));
@@ -851,6 +852,7 @@ int Import::readFields(QWidget* parent){
         crt+=line.length();
 		if(progress.wasCanceled()){
 			QMessageBox::warning(parent, "FET", Import::tr("Loading canceled by user."));
+			file.close();
 			return false;
 		}
 		bool ok=true;
@@ -873,7 +875,7 @@ int Import::readFields(QWidget* parent){
 							} else if(tmpLine.mid(1,1)==textquote){
 								tmp+=textquote;
 								tmpLine.remove(0,1);
-							} else 
+							} else
 								warnText+=Import::tr("Warning: FET expected field separator or text separator in line %1. Import might be incorrect.").arg(lineNumber)+"\n";
 						}
 						tmpLine.remove(0,1);
@@ -1099,6 +1101,7 @@ int Import::readFields(QWidget* parent){
 		else
 			assert(fieldList[i].isEmpty());
 	}
+	file.close();
 	return true;
 }
 

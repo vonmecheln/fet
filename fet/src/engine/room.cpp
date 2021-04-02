@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
   ***************************************************************************/
-//
-//
 
 #include "room.h"
 #include "rules.h"

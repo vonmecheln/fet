@@ -1816,7 +1816,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 	
 	//workaround begin.
 	tos<<"/* "<<TimetableExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
-		"Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<" */\n\n";
+	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<" */\n\n";
 	//tos<<"tfoot {\n\n}\n\n";
 	tos<<"tr.foot {\n\n}\n\n";
 	//workaround end
@@ -6357,7 +6357,7 @@ QString TimetableExport::writeHead(bool java, int placedActivities, bool printIn
 		tmp+="    <link rel=\"stylesheet\" media=\"all\" href=\""+cssfilename+"\" type=\"text/css\" />\n";
 	}
 	if(java){
-		if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+		if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 			tmp+="    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 			tmp+="    <script type=\"text/javascript\">\n";
 			tmp+="      function highlight(classval) {\n";
@@ -6470,8 +6470,10 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 			}
 		}
 		if(act->activityTagsNames.size()>0){
-			if(TIMETABLE_HTML_LEVEL>=3){
-				tmp+="<span class=\"activitytag\">";
+			if(!activityTagsOnly){
+				if(TIMETABLE_HTML_LEVEL>=3){
+					tmp+="<span class=\"activitytag\">";
+				}
 			}
 			foreach(QString atn, act->activityTagsNames){
 				switch(TIMETABLE_HTML_LEVEL){
@@ -6484,8 +6486,10 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 				tmp+=", ";
 			}
 			tmp.remove(tmp.size()-2, 2);
-			if(TIMETABLE_HTML_LEVEL>=3){
-				tmp+="</span>";
+			if(!activityTagsOnly){
+				if(TIMETABLE_HTML_LEVEL>=3){
+					tmp+="</span>";
+				}
 			}
 		}
 		if(startTag=="div"){

@@ -415,8 +415,8 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 
 	//workaround begin.
 	tos<<"/* "<<StatisticsExport::tr("Some programs import \"tfoot\" incorrectly. So we use \"tr.foot\" instead of \"tfoot\".",
-	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<"\n";
-	tos<<"tfoot {\n\n} */\n\n";
+	 "Please keep tfoot and tr.foot untranslated, as they are in the original English phrase")<<" */\n\n";
+	//tos<<"tfoot {\n\n}\n\n";
 	tos<<"tr.foot {\n\n}\n\n";
 	//workaround end
 	
@@ -532,7 +532,7 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
-	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";
@@ -645,7 +645,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
-	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";
@@ -871,7 +871,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
-	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";
@@ -1095,7 +1095,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
-	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";
@@ -1330,7 +1330,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
-	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";
@@ -1565,7 +1565,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
-	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";
@@ -1788,7 +1788,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 		QString cssfilename=s2+bar+STYLESHEET_STATISTICS;
 		tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	}
-	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson ( http://richtech.ca/openadmin/index.html )
+	if(TIMETABLE_HTML_LEVEL>=5){  // the following JavaScript code is pretty similar to an example of Les Richardson
 		tos<<"    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />\n";
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";

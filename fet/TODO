@@ -1761,3 +1761,56 @@ It would be nice to have a fourth dimension.
 
 Explanation from Liviu Lalescu: He considers students (1), teachers (2) and rooms (3) as three dimensions. He would like to allocate activities
 to teachers (4) (and these teachers should be the fourth dimension, different in concept from the second dimension, but similar to the third dimension).
+
+114---------------------------------------------------------
+From Liviu Lalescu:
+
+Possibility (check box, default checked) of safe saving for File/Save and Save as. Maybe even for Timetable/Save data and timetable as.
+
+Safe saving means: create a temporary file (make sure it is truncated), write the data to it, remove the original file and rename the temporary file to the original file.
+
+115---------------------------------------------------------
+From kdrosos (bug report on forum):
+
+When working with dual screen, i.e. one extra screen is connected to the main computer, and when choosing the "A teacher's not available time" in the "Teachers" tab under the "Time" tab I had moved the pop up window in the second display.
+
+I chose the teacher that I wanted to work with, and the new window that I specify the free time of the teacher was kept in the main display.
+
+I finished my work, without re-moving all windows to the main display.
+
+After a while, and when I had only one display, I tried to chose again the "A teacher's not available time" but the pop up window did not appeared. 
+
+I connected the second display, chose again the  "A teacher's not available time" and the window appeared in the second display. 
+
+The window in which the free time for a teacher is specified, which I had it in the main display, could be opened from choosing "ALL" (under the "Time" tab) and selecting the desired teacher. 
+
+Thus, I imagine that there might be a bug in the handling of multiple screens. Maybe some preferences of the FET do not refresh when changing from dual screen to single screen display.
+
+Liviu: Maybe a solution would be in restoring geometry, to test if the geometry would be on an invalid screen, and correct this (add a better test than "if(rect.isValid())" in function "restoreFETDialogGeometry(...)" in file centerwidgetonscreen.cpp).
+
+116---------------------------------------------------------
+From murad:
+
+Create please, in QComboBox, auto-complete. With a large number of students and teachers it is very difficult to find the necessary students or teachers.
+
+117---------------------------------------------------------
+From kdrosos:
+
+In FET there is "School's name", where the school' s name appears in the final .html files.
+
+Maybe the text "School's name" can be parametric and thus to allow changing to "Department's name" or "Institution's name" etc.
+
+This can also allow a "School's name field" as:
+
+"Faculty of FET: Department of FET"
+
+Liviu's note: I think that kdrosos refers to the Greek FET. In the English FET, the string is "Institution name".
+
+118---------------------------------------------------------
+From Volker Dirr:
+
+1. Implement constraint "Activities need the same room". (This constraint should be added optionally with an activity, similar to the min days constraint.)
+
+2. Implement constraint "Activity needs several rooms". (I am not 100% sure if it is enough to have a constraint that adds all selected rooms to a
+single activity or if it is also needed to get only some rooms from (a larger) selection. So maybe all current "roomS" constraints "just" need an
+option "number of used rooms from the selection". Currently it is always 1. It is needed to increase this number.)

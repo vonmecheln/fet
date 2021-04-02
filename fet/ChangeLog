@@ -1595,3 +1595,11 @@ Versions 5.16.0 - 5.16.x
 	- Added a Vietnamese translation, by Nguyen Truong Thang.
 	- Minor interface bug fixes.
 	- Updated the Saudi Arabia examination timetable file, by Silver.
+- Version 5.16.1
+	- Updated to Qt 4.8.0.
+	- Bug fix: command line interface now accepts backslash native characters under Windows (reported by Sarwan Bangar).
+	- When using command line with a time limit, and the time limit is exceeded, FET will save the highest stage and the current timetable.
+	Suggestion and code by Ian Holden.
+	- Exporting of the timetable as a CSV file now saves also the activities comments (suggested by m, implemented by Volker Dirr).
+	- Minor bug fix in HTML timetables, by Volker Dirr.
+	- Minor interface bug fixes.

@@ -24,11 +24,9 @@ File export.cpp
 
 // Code contributed by Volker Dirr ( http://www.timetabling.de/ )
 
-//TODO: convert all export funtions like this: tosExport<<qPrintable(CustomFETString::number(actiNext->duration))
 //TODO: protect export strings. textquote must be dubbled
 //TODO: count skipped min day constraints?
 //TODO: add cancel button
-//TODO: REMOVE OR COMMENT OUT qPrintable, just output CustomFETString::number
 
 #include <QtGui>
 #include <QHash>
@@ -512,7 +510,7 @@ bool Export::exportCSVRoomsAndBuildings(QWidget* parent, QString& lastWarnings, 
 	QStringList checkBuildings;
 	foreach(Room* r, gt.rules.roomsList){
 		tosExport	<<textquote<<protectCSV(r->name)<<textquote<<fieldSeparator
-				<</*qPrintable(*/CustomFETString::number(r->capacity)/*)*/<<fieldSeparator
+				<<CustomFETString::number(r->capacity)<<fieldSeparator
 				<<textquote<<protectCSV(r->building)<<textquote<<endl;
 		if(!checkBuildings.contains(r->building)&&!r->building.isEmpty())
 			checkBuildings<<r->building;
@@ -661,25 +659,25 @@ bool Export::exportCSVStudents(QWidget* parent, QString& lastWarnings, const QSt
 	int is=0;
 	foreach(StudentsYear* sty, gt.rules.yearsList){
 		tosExport<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
-					<</*qPrintable(*/CustomFETString::number(sty->numberOfStudents)/*)*/<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<endl;
+					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<endl;
 		if(!checkSetSeparator(sty->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 include set separator +.").arg(sty->name)+"\n";
 		foreach(StudentsGroup* stg, sty->groupsList){
 			ig++;
 			tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
-					<</*qPrintable(*/CustomFETString::number(sty->numberOfStudents)/*)*/<<fieldSeparator
+					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator
 					<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
-					<</*qPrintable(*/CustomFETString::number(stg->numberOfStudents)/*)*/<<fieldSeparator<<fieldSeparator<<endl;
+					<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator<<fieldSeparator<<endl;
 			if(!checkSetSeparator(stg->name, setSeparator))
 				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 include set separator +.").arg(stg->name)+"\n";
 			foreach(StudentsSubgroup* sts, stg->subgroupsList){
 				is++;
 				tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
-						<</*qPrintable(*/CustomFETString::number(sty->numberOfStudents)/*)*/<<fieldSeparator
+						<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator
 						<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
-						<</*qPrintable(*/CustomFETString::number(stg->numberOfStudents)/*)*/<<fieldSeparator
+						<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator
 						<<textquote<<protectCSV(sts->name)<<textquote<<fieldSeparator
-						<</*qPrintable(*/CustomFETString::number(sts->numberOfStudents)/*)*/<<endl;
+						<<CustomFETString::number(sts->numberOfStudents)<<endl;
 				if(!checkSetSeparator(sts->name, setSeparator))
 					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 include set separator +.").arg(sts->name)+"\n";
 			}
@@ -903,7 +901,7 @@ bool Export::exportCSVActivities(QWidget* parent, QString& lastWarnings, const Q
 				}
 				tosExport<<textquote<<fieldSeparator;
 				//total duration
-				tosExport<</*qPrintable(*/CustomFETString::number(acti->totalDuration)/*)*/;
+				tosExport<<CustomFETString::number(acti->totalDuration);
 				tosExport<<fieldSeparator<<textquote;
 				//split duration
 				for(int aiNext=ai; aiNext<gt.rules.activitiesList.size(); aiNext++){
@@ -924,7 +922,7 @@ bool Export::exportCSVActivities(QWidget* parent, QString& lastWarnings, const Q
 				}
 				tosExport<<textquote<<fieldSeparator;
 				//min days
-				//start new code, because of Livius detection
+				//start new code, because of Liviu's detection
 				bool careAboutMinDay=false;
 				ConstraintMinDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, NULL);
 				if(acti->id==acti->activityGroupId){
@@ -935,12 +933,12 @@ bool Export::exportCSVActivities(QWidget* parent, QString& lastWarnings, const Q
 				//end new code
 				if(careAboutMinDay){
 					assert(tcmd->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
-					tosExport<</*qPrintable(*/CustomFETString::number(tcmd->minDays)/*)*/;
+					tosExport<<CustomFETString::number(tcmd->minDays);
 				}
 				tosExport<<fieldSeparator;
 				//min days weight
 				if(careAboutMinDay)
-					tosExport<</*qPrintable(*/CustomFETString::number(tcmd->weightPercentage)/*)*/;
+					tosExport<<CustomFETString::number(tcmd->weightPercentage);
 				tosExport<<fieldSeparator;
 				//min days consecutive
 				if(careAboutMinDay)
@@ -1091,7 +1089,8 @@ bool Export::exportCSVTimetable(QWidget* parent, QString& lastWarnings, const QS
 				<<textquote<<"Subject"<<textquote<<fieldSeparator
 				<<textquote<<"Teachers"<<textquote<<fieldSeparator
 				<<textquote<<"Activity Tags"<<textquote<<fieldSeparator
-				<<textquote<<"Room"<<textquote<<endl;
+				<<textquote<<"Room"<<textquote<<fieldSeparator
+				<<textquote<<"Comments"<<textquote<<endl;
 
 	if(gt.rules.initialized && gt.rules.internalStructureComputed
 	 && students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready){
@@ -1137,16 +1136,17 @@ bool Export::exportCSVTimetable(QWidget* parent, QString& lastWarnings, const QS
 							tosExport<<"+";
 						tosExport<<protectCSV(act->activityTagsNames[s]);
 					}
-					tosExport<<textquote<<fieldSeparator;
+					tosExport<<textquote<<fieldSeparator<<textquote;
 					//Room
 					if(best_solution.rooms[i] != UNSPECIFIED_ROOM && best_solution.rooms[i] != UNALLOCATED_SPACE){
 						assert(best_solution.rooms[i]>=0 && best_solution.rooms[i]<gt.rules.nInternalRooms);
-						tosExport<<textquote<<protectCSV(gt.rules.internalRoomsList[r]->name)<<textquote;
+						tosExport<<protectCSV(gt.rules.internalRoomsList[r]->name);
 					}
-					else{ //added by Liviu on 2010-01-26
-						tosExport<<textquote<<textquote;
-					}
-					tosExport<<endl;
+					tosExport<<textquote<<fieldSeparator<<textquote;
+					//Comments
+					QString tmpString=protectCSV(act->comments);
+					tmpString.replace("\n", " ");
+					tosExport<<tmpString<<textquote<<endl;
 				}
 			}
 		}	

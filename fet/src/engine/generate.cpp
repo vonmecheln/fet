@@ -2404,7 +2404,7 @@ if(threaded){
 			return;
 		}
 		time_t crt_time;
-		time(&crt_time);		
+		time(&crt_time);
 		searchTime=int(crt_time-starting_time);
 		
 		if(searchTime>=maxSeconds){

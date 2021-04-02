@@ -5252,8 +5252,8 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 	int errorLine;
 	int errorColumn;
 	
-	if(!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)){	
-		QMessageBox::warning(parent, tr("FET warning"), 
+	if(!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)){
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Could not read file - XML parse error at line %1, column %2:\n%3", "The error description is %3")
 		 .arg(errorLine)
 		 .arg(errorColumn)
@@ -6077,7 +6077,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					QMessageBox::information(parent, tr("FET information"), tr("Interrupted - only partial file was loaded"));
 					return true;
 				}
-																				
+				
 				ttt++;*/
 			
 				QDomElement elem3=node3.toElement();
@@ -7139,11 +7139,8 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	if(!file.open(QIODevice::WriteOnly)){
 		QMessageBox::critical(parent, tr("FET critical"),
 		 tr("Cannot open filename for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted"));
-		 
+		
 		return false;
-	
-		assert(0);
-		exit(1);
 	}
 
 	QTextStream tos(&file);
@@ -7253,10 +7250,12 @@ bool Rules::write(QWidget* parent, const QString& filename)
 		QMessageBox::critical(parent, tr("FET critical"),
 		 tr("Saved file gave error code %1, which means saving is compromised. Please check your disk free space")
 		 .arg(file.error()));
-		 
+		
+		file.close();
 		return false;
 	}
 	
+	file.close();
 	return true;
 }
 

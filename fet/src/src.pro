@@ -577,7 +577,6 @@ HEADERS += \
 	interface/addconstraintsubactivitiespreferredstartingtimesform.h \
 	interface/modifyconstraintsubactivitiespreferredstartingtimesform.h \
 	\
-	\
 	interface/constraintactivitiessamestartinghourform.h \
 	interface/addconstraintactivitiessamestartinghourform.h \
 	\
