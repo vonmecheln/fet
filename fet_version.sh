@@ -65,7 +65,7 @@ git commit -m "fet-${FET_VERSION}"
 git tag -a "fet-${FET_VERSION}" -m "fet-${FET_VERSION}"
 
 #enviar para o git
-git push "fet-${FET_VERSION}"
+git push origin "fet-${FET_VERSION}"
 
 
 
