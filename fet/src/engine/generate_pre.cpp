@@ -9144,15 +9144,8 @@ jumpOverPrefRoomsNStudents:
 /*			QList<int> tmp=activitiesHomeRoomsHomeRooms[i];
 			for(int r : qAsConst(tmp)){
 				if(gt.rules.internalRoomsList[r]->capacity < gt.rules.internalActivitiesList[i].nTotalStudents){
-#if QT_VERSION >= QT_VERSION_CHECK(5,4,0)
 					int t=activitiesHomeRoomsHomeRooms[i].removeAll(r);
 					assert(t==1);
-#else
-					int _t=activitiesHomeRoomsHomeRooms[i].indexOf(r);
-					int _t2=activitiesHomeRoomsHomeRooms[i].lastIndexOf(r);
-					assert(_t>=0 && _t2>=0 && _t==_t2);
-					activitiesHomeRoomsHomeRooms[i].remove(_t);
-#endif
 				}
 			}*/
 			//Better:

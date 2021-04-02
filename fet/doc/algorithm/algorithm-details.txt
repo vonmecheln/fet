@@ -1,7 +1,7 @@
-This document was written by Liviu Lalescu. Fair use of this document is expected.
+This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2007.
-Last modified on: 22 December 2019.
+Last modified on: 26 December 2019.
 
 
 Added on 19 January 2009: the implementation of the algorithm is good now, I changed it in 2008.

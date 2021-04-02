@@ -1,7 +1,7 @@
-This document was written by Liviu Lalescu. Fair use of this document is expected.
+This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2003.
-Last modified on: 22 December 2019.
+Last modified on: 27 December 2019.
 
 
 FET - How to add new translations (languages):
@@ -126,7 +126,7 @@ modifications, so that the FET authors can check it if it works, so your work
 is not wasted. If that goes well, you can continue working on it.
 
 If you do not want your email address to be listed in the TRANSLATORS section, please specify that,
-and maybe provide another method of contacting you.
+and provide another method of contacting you.
 
 In order to test your translation you need to release it as fet_**.qm
 and put it into the directory "translations/". Then, rename the file as

@@ -1195,12 +1195,14 @@ int main(int argc, char **argv)
 		QTextStream out(&logFile);
 		///////
 		
-		//Cleanup the previous unsuccessful generation, if any. No need to remove the other previous files, they are overwritten.
+		//Cleanup the previous unsuccessful generation, if any. No need to remove the other files, they are overwritten.
 		QFile oldDifficultActivitiesFile(logsDir+"difficult_activities.txt");
 		if(oldDifficultActivitiesFile.exists()){
 			bool t=oldDifficultActivitiesFile.remove();
-			if(!t)
+			if(!t){
+				out<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<endl;
 				cout<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<endl;
+			}
 		}
 		
 		setLanguage(qCoreApplication, NULL);
@@ -1216,7 +1218,7 @@ int main(int argc, char **argv)
 	
 			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			out<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
-			out<<"Copyright (C) 2002-2019 Liviu Lalescu, Volker Dirr"<<endl;
+			out<<"Copyright (C) 2002-2020 Liviu Lalescu, Volker Dirr"<<endl;
 			out<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
 			out<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
 			out<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
@@ -1225,7 +1227,7 @@ int main(int argc, char **argv)
 
 			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 			cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
-			cout<<"Copyright (C) 2002-2019 Liviu Lalescu, Volker Dirr"<<endl;
+			cout<<"Copyright (C) 2002-2020 Liviu Lalescu, Volker Dirr"<<endl;
 			cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
 			cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
 			cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;

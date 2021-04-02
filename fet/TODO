@@ -6855,3 +6855,68 @@ The file examples/Romania/Faculty-Econ-Timisoara-difficult/2009-2010-sem-1/Econ-
 		it takes 13 minutes 17 seconds with QVector
 
 So at least for now FET will use QList.
+
+399---------------------------------------------------------
+From math (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4370.0
+
+Meaning of colors:
+
+When enabling "Settings -> Interface -> Use colors", activities in time table dialogs (e.g. Timetable -> Students -> Days horizontal) are colored.
+Do these colors have any meaning or are they selected randomly?
+
+Liviu Lalescu:
+
+The coloring code for the timetables was contributed by Marco Vassura, and I think he said it was a classical routine. The colors for the students'
+timetables compute the color from the subject, while for the teachers'/rooms' timetable compute the color from the subject+students' names. The color
+is random, but the same for the same string (same subject or same subject+students names).
+
+The HTML timetables with level 7 are similar, I think.
+
+math:
+
+Ah, ok, that's what I guessed.
+
+The reason I was asking was because I would wish for a different coloring scheme. We have multiple activities for one course. Beside a lecture and
+an exercise, we also have tutorials, lab hours or central exercises. Hence there are multiple subjects for one course with very similar names, e.g.
+"Programming 1 VL" (lecture), "Programming 1 UE" (exercise), "Programming 1 LAB", etc. I would like to see that activities with similar subject names
+would get similar colors, so that it is clear on the first sight how the different activities of the courses are distributed over the schedule.
+For instance, one could use the Levenshtein distance for determining the level of similarity between two subjects.
+
+Volker Dirr:
+
+Sadly "Programming 1 VL" and "Programming 1 UE" are different names, so the colours will be different. You might set "VL" and "UE" as a tag name,
+so the names will be the same.
+You might also check TiTiTo. Just import the dataset and export the table again, since you can select different colours with that tool.
+
+A second variant is that you colour yourself by the css file with html level 6.
+
+Liviu Lalescu:
+
+Yes, unfortunately the colors are based on a 24-bit hash, so they are (or should be) very different for even small changes. Unfortunately I cannot
+do like you suggest. Maybe you can follow what Volker said.
+
+400---------------------------------------------------------
+From Cyrus (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4373.0
+
+Avoiding 4 sessions consecutive for teachers even when there is a break:
+
+How can one configure get to ensure teachers can never have 4 sessions consecutive with a break between (2-2) such that whenever a teacher teaches
+2 sessions followed by a break, one can only have one more and not two.
+
+Liviu Lalescu:
+
+I think of this: for each teacher, add n_days constraints activities occupy max time slots from selection, selected the 4 slots, max occupied = 3.
+A lot of constraints to add, unfortunately.
+
+Cyrus:
+
+It's quite tedious to give the constraint to all teachers on daily basis. Wish there was a way of having like max time slots from selection for
+all teachers. That would be better.
+
+Also suggested by Vangelis Karafillidis:
+
+For the max hours continuously constraints, add the possibility to except the breaks.

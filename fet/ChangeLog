@@ -2209,3 +2209,5 @@ Versions 5.42.0 - 5.42.v
 	by a previous unsuccessful generation.
 	- Minor code improvements and cleanup.
 	- Added more proper acknowledgments and references for the used libraries.
+- Version 5.42.2
+	- Minor improvements.

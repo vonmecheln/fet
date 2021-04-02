@@ -37169,27 +37169,27 @@ Import of data will be easier with these settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="270"/>
+        <location filename="../src/engine/messageboxes.cpp" line="271"/>
         <source>Progress title: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="276"/>
+        <location filename="../src/engine/messageboxes.cpp" line="278"/>
         <source>Progress label: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="282"/>
+        <location filename="../src/engine/messageboxes.cpp" line="285"/>
         <source>Progress range: %1..%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="289"/>
+        <location filename="../src/engine/messageboxes.cpp" line="293"/>
         <source>Progress setModal(true)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/messageboxes.cpp" line="291"/>
+        <location filename="../src/engine/messageboxes.cpp" line="295"/>
         <source>Progress setModal(false)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40769,34 +40769,34 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1253"/>
+        <location filename="../src/interface/fet.cpp" line="1255"/>
         <source>This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity in the initial order of the activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1561"/>
+        <location filename="../src/interface/fet.cpp" line="1563"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1568"/>
-        <location filename="../src/interface/fet.cpp" line="1588"/>
+        <location filename="../src/interface/fet.cpp" line="1570"/>
+        <location filename="../src/interface/fet.cpp" line="1590"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1573"/>
+        <location filename="../src/interface/fet.cpp" line="1575"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1577"/>
+        <location filename="../src/interface/fet.cpp" line="1579"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1584"/>
+        <location filename="../src/interface/fet.cpp" line="1586"/>
         <source>No: %1</source>
         <translation>EZ: %1</translation>
     </message>
@@ -41038,35 +41038,35 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="9081"/>
         <location filename="../src/engine/generate_pre.cpp" line="9103"/>
         <location filename="../src/engine/generate_pre.cpp" line="9124"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9168"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9202"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9237"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9261"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9300"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9324"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9363"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9387"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9426"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9448"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9487"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9509"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9548"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9609"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9633"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9672"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9696"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9735"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9759"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9798"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9820"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9859"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9881"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9920"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9942"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10078"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9161"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9195"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9230"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9254"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9293"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9356"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9380"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9419"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9441"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9480"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9502"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9541"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9563"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9602"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9728"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9752"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9813"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9852"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9913"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9935"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10071"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10178"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10621"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
@@ -41241,35 +41241,35 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="9085"/>
         <location filename="../src/engine/generate_pre.cpp" line="9107"/>
         <location filename="../src/engine/generate_pre.cpp" line="9128"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9172"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9207"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9240"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9264"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9303"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9327"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9366"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9390"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9429"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9490"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9512"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9551"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9573"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9612"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9738"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9801"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9823"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9862"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9923"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9945"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10186"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9200"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9233"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9257"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9296"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9320"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9422"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9483"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9505"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9544"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9605"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9668"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9692"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9731"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9755"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9794"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9855"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9877"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10179"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10622"/>
         <source>Skip rest</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41434,35 +41434,35 @@ Having a subgroup with too little working hours per week means that you inputted
         <location filename="../src/engine/generate_pre.cpp" line="9085"/>
         <location filename="../src/engine/generate_pre.cpp" line="9107"/>
         <location filename="../src/engine/generate_pre.cpp" line="9128"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9172"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9207"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9240"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9264"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9303"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9327"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9366"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9390"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9429"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9490"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9512"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9551"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9573"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9612"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9738"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9801"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9823"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9862"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9923"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9945"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10186"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9200"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9233"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9257"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9296"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9320"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9422"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9483"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9505"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9544"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9605"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9629"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9668"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9692"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9731"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9755"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9794"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9855"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9877"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10179"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10622"/>
         <source>See next</source>
         <translation>Ikusi urrengoa</translation>
     </message>
@@ -42437,209 +42437,209 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9169"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9162"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9203"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9196"/>
         <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9238"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9231"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9262"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9255"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9301"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9294"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9325"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9318"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9364"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9357"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9388"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9381"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9427"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9420"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9449"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9442"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9481"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9503"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9549"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9542"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9564"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9603"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9634"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9627"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9673"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9666"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9690"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9736"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9729"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9760"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9753"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9799"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9792"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9814"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9860"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9853"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9882"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9875"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9921"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9914"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9943"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9936"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10077"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10070"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10183"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10176"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10625"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10618"/>
         <source>Group activities in initial order item number %1 is ignored, because it contains less than two active activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10874"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10885"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10878"/>
         <source>The initial order of activities (id-s):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10890"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10883"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>EZ: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10894"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10887"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10890"/>
         <source>Teachers: %1</source>
         <translation>Irakasleak: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10892"/>
         <source>Subject: %1</source>
         <translation>Ikasgaia: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10902"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10895"/>
         <source>Activity tags: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10904"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10897"/>
         <source>Students: %1</source>
         <translation>Ikasleak: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10908"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10901"/>
         <source>nIncompatible: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10911"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10904"/>
         <source>nMinDaysConstraintsBroken: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10916"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10909"/>
         <source>(grouped with id %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10922"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10915"/>
         <source>End - the order of activities (id-s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55849,6 +55849,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <name>MonthsNames</name>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="49"/>
+        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>January</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55904,7 +55905,6 @@ Note: teacher not available and break are not counted as gaps.</source>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform.cpp" line="71"/>
-        <location filename="../src/interface/helpaboutform.cpp" line="81"/>
         <source>December</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62150,17 +62150,17 @@ Bottom: %4</source>
         <translation>izengabea</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1454"/>
+        <location filename="../src/interface/fet.cpp" line="1456"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1460"/>
+        <location filename="../src/interface/fet.cpp" line="1462"/>
         <source>No: %1</source>
         <translation type="unfinished">EZ: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/fet.cpp" line="1464"/>
+        <location filename="../src/interface/fet.cpp" line="1466"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation type="unfinished">Id: %1 (%2)</translation>

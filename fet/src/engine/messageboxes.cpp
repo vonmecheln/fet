@@ -265,25 +265,29 @@ QProgressDialog::QProgressDialog(QWidget* parent)
 	Q_UNUSED(parent);
 }
 
-void QProgressDialog::setWindowTitle(const QString& title){
+void QProgressDialog::setWindowTitle(const QString& title)
+{
 	if(VERBOSE){
 		cout<<qPrintable(FetCommandLine::tr("Progress title: %1").arg(title))<<endl;
 	}
 }
 
-void QProgressDialog::setLabelText(const QString& label){
+void QProgressDialog::setLabelText(const QString& label)
+{
 	if(VERBOSE){
 		cout<<qPrintable(FetCommandLine::tr("Progress label: %1").arg(label))<<endl;
 	}
 }
 
-void QProgressDialog::setRange(int a, int b){
+void QProgressDialog::setRange(int a, int b)
+{
 	if(VERBOSE){
 		cout<<qPrintable(FetCommandLine::tr("Progress range: %1..%2").arg(a).arg(b))<<endl;
 	}
 }
 
-void QProgressDialog::setModal(bool m){
+void QProgressDialog::setModal(bool m)
+{
 	if(VERBOSE){
 		if(m)
 			cout<<qPrintable(FetCommandLine::tr("Progress setModal(true)"))<<endl;
@@ -292,12 +296,14 @@ void QProgressDialog::setModal(bool m){
 	}
 }
 
-void QProgressDialog::setValue(int v){
+void QProgressDialog::setValue(int v)
+{
 	Q_UNUSED(v);
 	//cout<<qPrintable(FetCommandLine::tr("Progress value: %1").arg(v))<<endl;
 }
 
-bool QProgressDialog::wasCanceled(){
+bool QProgressDialog::wasCanceled()
+{
 	return false;
 }
 
