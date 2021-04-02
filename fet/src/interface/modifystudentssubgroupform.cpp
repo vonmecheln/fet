@@ -65,7 +65,12 @@ void ModifyStudentsSubgroupForm::ok()
 	QString groupName=groupNameLineEdit->text();
 	
 	if(this->_initialSubgroupName!=subgroupName && gt.rules.searchStudentsSet(subgroupName)!=NULL){
-		QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Name existing - please choose another"));
+		QMessageBox::information(this, QObject::tr("FET information"), 
+		 QObject::tr("Name exists. If you would like to make more groups to contain a subgroup (overlapping groups),"
+ 		 " please remove current subgroup (FET will unfortunately remove all related activities and constraints)"
+		 " and add a new subgroup with desired name in current group."
+ 		 " I know this is a not an elegant procedure, I'll try to fix that in the future."));
+		
 		return;
 	}
 

@@ -54,7 +54,7 @@
                                         <enum>Plain</enum>
                                     </property>
                                     <property name="text">
-                                        <string>All activities (dbl. click or Enter adds)</string>
+                                        <string>All activities (dbl. click adds)</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">
@@ -88,7 +88,7 @@
                                         <enum>Plain</enum>
                                     </property>
                                     <property name="text">
-                                        <string>Selected (dbl. click or Enter removes)</string>
+                                        <string>Selected (dbl. click removes)</string>
                                     </property>
                                 </widget>
                                 <widget class="QListBox">

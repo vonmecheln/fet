@@ -382,7 +382,7 @@ const QString TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teacherstimetabled
 An output file containing the timetable for each teacher, arranged in html format.
 Time horizontal version.
 */
-const QString TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="teacherstimetabletimehorzontal.html";
+const QString TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="teacherstimetabletimehorizontal.html";
 
 /**
 An output file containing the timetable for each teacher, arranged in html format.

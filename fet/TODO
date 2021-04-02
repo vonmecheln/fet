@@ -1,5 +1,18 @@
 
-From Maciej Deorowicz
+From Peter Ambroz:
+
+ It would be fine to have a new space constraint(s): A student set has a  
+ preferred room / set of rooms
+ In our school, we create timetables for every room in the building, not  
+ only for those constrained by number of students or time. Therefore it  
+ would be nice if I could create every room and set it as a default room  
+ for some class (set of students) with some weight, so that the generated  
+ timetable will contain room name for every activity. And then I could  
+ print timetable for each particular room.
+
+----------------------------------------------------------------------------------
+
+From Maciej Deorowicz:
 
 Buildings for rooms and constraint students max building changes per day
 and constraint students min gaps between building changes.
@@ -8,7 +21,7 @@ ConstraintActivitiesPreferredRoom(s) (like acts. pref. times)
 
 ----------------------------------------------------------------------------------
 
-From my80s
+From my80s:
 
 > i checked and i read again my emails,
 > so i saw that again,

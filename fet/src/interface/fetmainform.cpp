@@ -586,9 +586,15 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 {
 	QString s;
 	
+	s+=tr("This help by Liviu Lalescu, modified 1 October 2007");
+	
+	s+="\n\n";
+	
 	s+=tr("Statistics for students might be the most difficult to understand."
 	 " If you are using divisions of years: probably the most relevant statistics"
 	 " are the ones for each subgroup (so you may check only subgroups check box)."
+	 " You may see more hours for the years or groups, but these are not significant, please ignore them,"
+	 " because each year or group will count also activities of all contained subgroups."
 	 "\n\n"
 	 "Each subgroup should have a number of hours per week close to the average of"
 	 " all subgroups and close to the normal number of working hours of each students set."
@@ -605,7 +611,34 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 	 " be placed in the first hours, which is too hard and wrong)."
 	 );
 
-	QMessageBox::information(this, tr("FET information about statistics"), s);
+	//QMessageBox::information(this, tr("FET information about statistics"), s);
+
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(tr("FET - information about statistics"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
 }
 
 void FetMainForm::on_dataActivitiesAction_activated()

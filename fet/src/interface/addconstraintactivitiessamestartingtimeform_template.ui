@@ -79,7 +79,7 @@ careful at the order, it might be different from what you need)</string>
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>All activities (dbl. click or Enter adds)</string>
+                        <string>All activities (dbl. click adds)</string>
                     </property>
                 </widget>
                 <widget class="QListBox">
@@ -113,7 +113,7 @@ careful at the order, it might be different from what you need)</string>
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Simultaneous (dbl. click or Enter removes)</string>
+                        <string>Selected (dbl. click removes)</string>
                     </property>
                 </widget>
                 <widget class="QListBox">

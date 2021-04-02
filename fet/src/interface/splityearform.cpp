@@ -748,30 +748,88 @@ void SplitYearForm::ok()
 
 void SplitYearForm::help()
 {
-	QString s=SplitYearForm::tr("Please choose a number of categories and in each category the number of divisions. You can choose for instance"
+	QString s;
+
+	s+=tr("This help by Liviu Lalescu, last modified 1 Oct. 2007");
+	
+	s+="\n\n";
+	
+	s+=tr("You might first want to consider if dividing a year is necessary and on what options. Please remember"
+	 " that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split"
+	 " into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide"
+	 " according to this category, but add more larger activities, with students set 9a and teachers TE+TF."
+	 " The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.");
+	
+	s+="\n\n";
+	
+	s+=SplitYearForm::tr("Please choose a number of categories and in each category the number of divisions. You can choose for instance"
 	 " 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls,"
 	 " and 3 divisions for the third: English, German and French."
 	 " You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions"
+	 " If you need 4 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 3 categories (more details below)"
 	 ". For more values (very unlikely case) you will have to manually"
 	 " add the groups and subgroups");
 	 
-	s+=SplitYearForm::tr("\n\nPlease input from the beginning the correct divisions. After you inputted activities and constraints"
+	s+="\n\n";
+	
+	s+=tr("If you need to make a division of say year 9 in 4 categories (category1: a, b,c, d, category2: language,"
+	 " category3: religion, category4: boys/girls), you might want to use this trick: consider first category to"
+	 " define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 3 categories: language, religion and boys/girls."
+	 " For activities with year 9 - language 1 for instance, you need to add to these activities the groups 9a_language1+9b_language1+"
+	 "9c_language1+9d_language1. For activities with year 9a, just add year 9a to the corresponding activities.");
+	
+	s+="\n\n";
+	
+	s+=SplitYearForm::tr("Please input from the beginning the correct divisions. After you inputted activities and constraints"
 	 " for this year's groups and subgroups, dividing it again will remove the activities and constraints referring"
-	 " to these groups/subgroups. I know this is not elegant, I hope I'll solve that in the future. If you inputted"
-	 " already many activities and constraints, you might want to use the alternative of manually adding/editing/removing groups/subgroups"
-	 " in the groups/subgroups menu. This way you will preserve your old data");
+	 " to these groups/subgroups. I know this is not elegant, I hope I'll solve that in the future."
+	 " You might want to use the alternative of manually adding/editing/removing groups/subgroups"
+	 " in the groups/subgroups menu, though removing a group/subgroup will also remove the activities");
 	 
-	s+=SplitYearForm::tr("\n\nProbably you don't need to worry about empty subgroups (no significant speed changes), although I didn't test "
+	s+="\n\n";
+
+	s+=SplitYearForm::tr("Probably you don't need to worry about empty subgroups (no significant speed changes), although I didn't test "
 		"enough such situations."
 		" You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed"
 		", but nobody needed larger values)").arg(MAX_TOTAL_SUBGROUPS);
 	 
-	s+=SplitYearForm::tr("\n\nPlease note that the dialog here will keep the last configuration of the last "
+	s+="\n\n";
+
+	s+=SplitYearForm::tr("Please note that the dialog here will keep the last configuration of the last "
 		 "divided year, it will not remember the values for a specific year you need to modify.");
 		 
-	s+=SplitYearForm::tr("\n\nSeparator character(s) is of your choice (default is space)");
+	s+="\n\n";
+
+	s+=SplitYearForm::tr("Separator character(s) is of your choice (default is space)");
 	 
-	QMessageBox::information(this, SplitYearForm::tr("FET help on dividing years"), s);
+	//QMessageBox::information(this, SplitYearForm::tr("FET help on dividing years"), s);
+
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(tr("FET - help on dividing a year"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
 }
 
 void SplitYearForm::reset() //reset to defaults

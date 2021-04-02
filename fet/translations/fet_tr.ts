@@ -747,18 +747,18 @@ blank for all teachers), students set, subject and subject tag.</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="127"/>
+        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="57"/>
-        <source>All activities (dbl. click or Enter adds)</source>
+        <source>All activities (dbl. click adds)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="91"/>
-        <source>Selected (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="127"/>
-        <source>Weight percentage (recommended: 0.0%-100.0%)</source>
+        <source>Selected (dbl. click removes)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -816,16 +816,6 @@ blank for all teachers), students set, subject and subject tag.</source>
         <translation type="unfinished">100</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="82"/>
-        <source>All activities (dbl. click or Enter adds)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="116"/>
-        <source>Simultaneous (dbl. click or Enter removes)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="53"/>
         <source>Block (please select this if you want to input only the
 representatives of sub-activities. There will be added more
@@ -843,6 +833,16 @@ careful at the order, it might be different from what you need)</source>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="186"/>
         <source>Filter</source>
         <translation type="unfinished">Filtre Uygula</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="82"/>
+        <source>All activities (dbl. click adds)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="116"/>
+        <source>Selected (dbl. click removes)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1397,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="87"/>
         <source>95.0</source>
-        <translation type="unfinished">95.0</translation>
+        <translation type="obsolete">95.0</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="79"/>
@@ -1418,6 +1418,16 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="257"/>
         <source>Selected (dbl. click removes)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="87"/>
+        <source>95</source>
+        <translation type="unfinished">95</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="275"/>
+        <source>Clear</source>
+        <translation type="unfinished">Temizle</translation>
     </message>
 </context>
 <context>
@@ -4560,6 +4570,35 @@ but they might be too large and you might get a impossible timetable.</source>
     </message>
 </context>
 <context>
+    <name>FetMainForm</name>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="589"/>
+        <source>This help by Liviu Lalescu, modified 1 October 2007</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="612"/>
+        <source>Statistics for students might be the most difficult to understand. If you are using divisions of years: probably the most relevant statistics are the ones for each subgroup (so you may check only subgroups check box). You may see more hours for the years or groups, but these are not significant, please ignore them, because each year or group will count also activities of all contained subgroups.
+
+Each subgroup should have a number of hours per week close to the average of all subgroups and close to the normal number of working hours of each students set. If a subgroup has a much lower value, maybe you used incorrectly the years/groups/subgroups for activities.
+
+Please read FAQ for detailed description on how divisions work. The key is that the subgroups are independent and represent the smallest unit of students. Each subgroup receives the activities of the parent year and parent group and of itself.
+
+Having a subgroup with too little working hours per week means that you inputted activities in a wrong manner, and also that some constraints like no gaps, early or min hours daily for this subgroup are interpreted in a wrong manner (if subgroup has only 2 activities, then these must be placed in the first hours, which is too hard and wrong).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="619"/>
+        <source>FET - information about statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform.cpp" line="625"/>
+        <source>OK</source>
+        <translation type="unfinished">Tamam</translation>
+    </message>
+</context>
+<context>
     <name>FetMainForm_template</name>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="39"/>
@@ -4567,42 +4606,42 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>&amp;Dosya</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="70"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="72"/>
         <source>&amp;Data</source>
         <translation>&amp;Veri</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="544"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="546"/>
         <source>Time constraints (misc)</source>
         <translation>Zaman Kısıtları (Diğer)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="520"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="522"/>
         <source>Time constraints (teachers)</source>
         <translation>Zaman Kısıtları (Öğretmenler)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="528"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="530"/>
         <source>Time constraints (students)</source>
         <translation>Zaman Kısıtları (Öğrenciler)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="536"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="538"/>
         <source>Time constraints (activities)</source>
         <translation>Zaman Kısıtları (Dersler)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="627"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="629"/>
         <source>Space constraints (misc)</source>
         <translation>Yer Kısıtları (Diğer)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="659"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="661"/>
         <source>Space constraints (rooms)</source>
         <translation>Yer Kısıtları (Sınıflar)</translation>
     </message>
@@ -4617,519 +4656,519 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>&amp;Yardım</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="212"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="214"/>
         <source>New</source>
         <translation>Yeni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="209"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="211"/>
         <source>&amp;New</source>
         <translation>&amp;Yeni</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="215"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="217"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="223"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="225"/>
         <source>Open</source>
         <translation>Aç</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="220"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="222"/>
         <source>&amp;Open...</source>
         <translation>&amp;Aç...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="226"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="228"/>
         <source>Ctrl+O</source>
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="234"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="236"/>
         <source>Save</source>
         <translation>Kaydet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="231"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="233"/>
         <source>&amp;Save</source>
         <translation>&amp;Kaydet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="237"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="239"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="245"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="247"/>
         <source>Save As</source>
         <translation>Farklı Kaydet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="242"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="244"/>
         <source>Save &amp;As...</source>
         <translation>Farklı &amp;Kaydet...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="256"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="258"/>
         <source>Exit</source>
         <translation>Çıkış</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="253"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="255"/>
         <source>E&amp;xit</source>
         <translation>Çıkış</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="267"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="269"/>
         <source>Frequently asked questions</source>
         <translation>Sıkça Sorulan Sorular</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="264"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="266"/>
         <source>&amp;Frequently asked questions</source>
         <translation type="unfinished">&amp;Sıkça Sorulan Sorular</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="278"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="280"/>
         <source>About</source>
         <translation>Hakkında</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="275"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="277"/>
         <source>&amp;About...</source>
         <translation>&amp;Hakkında...</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="289"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="291"/>
         <source>Teachers</source>
         <translation>Öğretmenler</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="286"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="288"/>
         <source>&amp;Teachers</source>
         <translation>&amp;Öğretmenler</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="297"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="299"/>
         <source>Subjects</source>
         <translation>Konular</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="294"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="296"/>
         <source>&amp;Subjects</source>
         <translation>&amp;Konular</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="305"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="307"/>
         <source>Years</source>
         <translation>Ders Yılları</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="313"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="315"/>
         <source>Groups</source>
         <translation>Gruplar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="310"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="312"/>
         <source>&amp;Groups</source>
         <translation>&amp;Gruplar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="321"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="323"/>
         <source>Subgroups</source>
         <translation>Alt-Gruplar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="318"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="320"/>
         <source>S&amp;ubgroups</source>
         <translation>&amp;Alt-Gruplar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="329"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="331"/>
         <source>Activities</source>
         <translation>Dersler</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="326"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="328"/>
         <source>&amp;Activities</source>
         <translation>&amp;Dersler</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="345"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="347"/>
         <source>View (students)</source>
         <translation>Görünüm (Öğrenciler)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="342"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="344"/>
         <source>View (&amp;students)</source>
         <translation>Görünüm (&amp;Öğrenciler)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="353"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="355"/>
         <source>View (teachers)</source>
         <translation>Görünüm (Öğretmenler)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="350"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="352"/>
         <source>View (&amp;teachers)</source>
         <translation>Görünüm (&amp;Öğretmenler)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="361"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="363"/>
         <source>Show conflicts (time)</source>
         <translation>Çelişkileri Göster (Zaman)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="369"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="371"/>
         <source>Days per week</source>
         <translation>Haftalık Gün Sayısı</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="366"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="368"/>
         <source>&amp;Days per week</source>
         <translation>&amp;Haftalık Gün Sayısı</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="377"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="379"/>
         <source>Hours per day</source>
         <translation>Ders Saatleri
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="388"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="390"/>
         <source>Rooms</source>
         <translation>Sınıflar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="385"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="387"/>
         <source>&amp;Rooms</source>
         <translation type="unfinished">&amp;Sınıflar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="399"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="401"/>
         <source>View (rooms)</source>
         <translation>Görünüm (Sınıflar)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="396"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="398"/>
         <source>View (r&amp;ooms)</source>
         <translation type="unfinished">Görünüm (&amp;Sınıflar)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="429"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="431"/>
         <source>Time constraints</source>
         <translation>Zaman Kısıtları</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="426"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="428"/>
         <source>T&amp;ime constraints</source>
         <translation>&amp;Zaman Kısıtları</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="437"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="439"/>
         <source>Activities preferred times</source>
         <translation>Dersleri Tercih Edilen Gün Ve Saate Yerleştirme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="456"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="458"/>
         <source>Activities same starting time</source>
         <translation>Dersleri Aynı Gün Ve Saate Yerleştirme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="467"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="469"/>
         <source>View (students-with rooms)</source>
         <translation>Görünüm (Öğrencilere Göre Sınıflar)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="464"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="466"/>
         <source>View (st&amp;udents-with rooms)</source>
         <translation type="unfinished">Görünüm (&amp;Öğrencilere Göre Sınıflar)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="475"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="477"/>
         <source>All time constraints</source>
         <translation>Tüm Zaman Kısıtları
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="472"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="474"/>
         <source>All t&amp;ime constraints</source>
         <translation>&amp;Tüm Zaman Kısıtları
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="483"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="485"/>
         <source>Teacher not available</source>
         <translation>Öğretmen - Müsait Olmayan Öğretmen
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="488"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="490"/>
         <source>Basic compulsory time constraints</source>
         <translation>Zorunlu Zaman Kısıtları
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="496"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="498"/>
         <source>Students set not available</source>
         <translation>Öğrenciler - Müsait Olmayan Öğrenciler
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="504"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="506"/>
         <source>Break</source>
         <translation>Ders Arası
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="512"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="514"/>
         <source>Teacher max days per week</source>
         <translation>Öğretmen - Haftalık Maksimum Gün Sayısı
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="552"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="554"/>
         <source>Teachers max hours daily</source>
         <translation>Öğretmenler - Günlük Maksimum Ders Saati
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="560"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="562"/>
         <source>Activity preferred time</source>
         <translation>Dersi Tercih Edilen Gün Ve Saate Yerleştirme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="568"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="570"/>
         <source>Students set no gaps</source>
         <translation>Öğrenciler - Aralıksız Derse Girme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="576"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="578"/>
         <source>Students no gaps</source>
         <translation>Öğrenciler - Aralıksız Derse Girme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="584"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="586"/>
         <source>Students early</source>
         <translation>Derslerin Erkenden Başlaması
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="592"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="594"/>
         <source>Activities not overlapping</source>
         <translation>Dersleri Ardışıklamama
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="600"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="602"/>
         <source>Min n days between activities</source>
         <translation>Dersler Arası Minumum N Gün
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="608"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="610"/>
         <source>Activity preferred times</source>
         <translation>Dersi Tercih Edilen Günlere Ve Saatlere Yerleştirme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="619"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="621"/>
         <source>All space constraints</source>
         <translation>Tüm Yer Kısıtları
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="616"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="618"/>
         <source>All s&amp;pace constraints</source>
         <translation type="unfinished">&amp;Tüm Yer Kısıtları
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="635"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="637"/>
         <source>Space constraints</source>
         <translation>Yer Kısıtları</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="643"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="645"/>
         <source>Basic compulsory space</source>
         <translation>Zorunlu Yer
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="651"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="653"/>
         <source>Room not available</source>
         <translation>Sınıf - Müsait Olmayan Sınıf
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="667"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="669"/>
         <source>Activity preferred room</source>
         <translation>Ders Konusu - Tercih Edilen Sınıf
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="675"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="677"/>
         <source>Activities same starting hour</source>
         <translation>Dersleri Aynı Saate Yerleştirme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="683"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="685"/>
         <source>Subject tags</source>
         <translation>Ders Konu Başlığı</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="680"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="682"/>
         <source>Su&amp;bject tags</source>
         <translation>&amp;Ders Konu Başlığı</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="691"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="693"/>
         <source>Institution name</source>
         <translation>Kurum İsmi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="688"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="690"/>
         <source>I&amp;nstitution name</source>
         <translation>&amp;Kurum İsmi</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="699"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="701"/>
         <source>Comments</source>
         <translation>Açıklamalar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="696"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="698"/>
         <source>&amp;Comments</source>
         <translation>&amp;Açıklamalar</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="707"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="709"/>
         <source>Activity preferred rooms</source>
         <translation>Dersi Tercih Edilen Günlere Ve Saatlere Yerleştirme
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="737"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="739"/>
         <source>Subject preferred room</source>
         <translation>Ders Konusu - Tercih Edilen Sınıf
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="745"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="747"/>
         <source>Subject preferred rooms</source>
         <translation>Ders Konusu - Tercih Edilen Sınıflar
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="410"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="412"/>
         <source>en_GB (British English)</source>
         <translation>en_GB (İngilizce)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="407"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="409"/>
         <source>&amp;en_GB (British English)</source>
         <translation>en_GB (&amp;İngilizce)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="421"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="423"/>
         <source>ro (Romanian)</source>
         <translation>ro (Romence)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="418"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="420"/>
         <source>&amp;ro (Romanian)</source>
         <translation>ro (&amp;Romence)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="448"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="450"/>
         <source>fr (French)</source>
         <translation>fr (Fransızca)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="445"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="447"/>
         <source>&amp;fr (French)</source>
         <translation>fr (&amp;Fransızca)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="718"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="720"/>
         <source>ca (Catalan)</source>
         <translation>ca (Katalanca)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="715"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="717"/>
         <source>&amp;ca (Catalan)</source>
         <translation>ca (&amp;Katalanca)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="729"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="731"/>
         <source>ms (Malay)</source>
         <translation>ms (Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="726"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="728"/>
         <source>&amp;ms (Malay)</source>
         <translation>ms (&amp;Malay)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="756"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="758"/>
         <source>pl (Polish)</source>
         <translation>pl (Lehçe)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="753"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="755"/>
         <source>&amp;pl (Polish)</source>
         <translation>pl (&amp;Lehçe)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="767"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="769"/>
         <source>tr (Turkish)</source>
         <translation>tr (Türkçe)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="764"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="766"/>
         <source>&amp;tr (Turkish)</source>
         <translation>tr (&amp;Türkçe)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="778"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="780"/>
         <source>nl (Dutch)</source>
         <translation>nl (Flemenkçe)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="775"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="777"/>
         <source>&amp;nl (Dutch)</source>
         <translation>nl (&amp;Flemenkçe)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="786"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="788"/>
         <source>&amp;de (German)</source>
         <translation>de (&amp;Almanca)</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="791"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="793"/>
         <source>Teachers statistics</source>
         <translation>Öğretmen İstatistikleri</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="802"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="804"/>
         <source>Students statistics</source>
         <translation>Öğrenci İstatistikleri</translation>
     </message>
@@ -5139,32 +5178,32 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>İstatistikler</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="807"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="809"/>
         <source>Subjects statistics</source>
         <translation>Konu İstatistikleri</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="815"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="817"/>
         <source>&amp;hu (Hungarian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="834"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="836"/>
         <source>Teachers max gaps per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="175"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="177"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="179"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="181"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="875"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="877"/>
         <source>Search for updates on startup</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5174,238 +5213,243 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="864"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="866"/>
         <source>Instructions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="302"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="304"/>
         <source>&amp;Years (forms, classes)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="358"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="360"/>
         <source>Show soft conflicts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="334"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="336"/>
         <source>&amp;Generate new</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="337"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="339"/>
         <source>Generate new</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="900"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="902"/>
         <source>Generate &amp;multiple variants</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="903"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="905"/>
         <source>Generate multiple variants</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="823"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="825"/>
         <source>m&amp;k (Macedonian)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="921"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="923"/>
         <source>e&amp;s (Spanish)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="926"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="928"/>
         <source>Restore default settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="931"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="933"/>
         <source>Timetable html level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="480"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="482"/>
         <source>A teacher is not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="493"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="495"/>
         <source>A students set is not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="501"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="503"/>
         <source>Break (all teachers+all students not available)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="509"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="511"/>
         <source>Max days per week for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="549"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="551"/>
         <source>Max hours daily for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="565"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="567"/>
         <source>No gaps for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="573"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="575"/>
         <source>No gaps for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="581"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="583"/>
         <source>All students begin early</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="640"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="642"/>
         <source>Basic compulsory space constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="648"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="650"/>
         <source>A room is not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="828"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="830"/>
         <source>Max gaps per week for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="839"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="841"/>
         <source>Max gaps per week for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="844"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="846"/>
         <source>A students set begins early</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="849"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="851"/>
         <source>Max hours daily for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="854"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="856"/>
         <source>Max hours daily for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="859"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="861"/>
         <source>Max hours daily for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="880"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="882"/>
         <source>Min hours daily for all students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="885"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="887"/>
         <source>Min hours daily for a students set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="908"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="910"/>
         <source>2 activities are consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="913"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="915"/>
         <source>An activity ends students day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="936"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="938"/>
         <source>Min hours daily for all teachers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="941"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="943"/>
         <source>Min hours daily for a teacher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="589"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="591"/>
         <source>A set of activities are not overlapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="453"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="455"/>
         <source>A set of activities has same starting time (day+hour)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="672"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="674"/>
         <source>A set of activities has same starting hour (any days)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="374"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="376"/>
         <source>&amp;Hours (periods) per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="434"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="436"/>
         <source>A set of activities has a set of preferred times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="557"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="559"/>
         <source>An activity has a preferred time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="597"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="599"/>
         <source>Min n days between a set of activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="605"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="607"/>
         <source>An activity has a set of preferred times</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="664"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="666"/>
         <source>An activity has a preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="704"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="706"/>
         <source>An activity has a set of preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="734"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="736"/>
         <source>A subject has a preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="742"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="744"/>
         <source>A subject has a set of preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="890"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="892"/>
         <source>A subject+subject tag have a preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="895"/>
+        <location filename="../src/interface/fetmainform_template.ui" line="897"/>
         <source>A subject+subject tag have a set of preferred rooms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="948"/>
+        <source>Help on statistics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5517,12 +5561,12 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation>Teşekkürler</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="731"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="735"/>
         <source>Sponsors</source>
         <translation type="unfinished">Sponsorlar</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="415"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="419"/>
         <source>Guestbook</source>
         <translation>Ziyaretçi Defteri</translation>
     </message>
@@ -5538,7 +5582,7 @@ but they might be too large and you might get a impossible timetable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="737"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="741"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5632,7 +5676,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../src/interface/helpaboutform_template.ui" line="439"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="443"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5947,6 +5991,30 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
+        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.8 (October 2007)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="300"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -6055,31 +6123,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Daniel Chiriac - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dimitrios Ropokis - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Danail - suggestions.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Peter Ambroz - suggestions.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="65"/>
-        <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.4.6 (September 2007)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Liviu Lalescu, Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please see also Contributors and Translators tabs&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FET web page: http://lalescu.ro/liviu/fet/&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please support this project by making a donation. You can contact the author, a contributor or a translator for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6099,7 +6147,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/interface/helpfaqform_template.ui" line="41"/>
         <source>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 29 September 2007
+this documentation by Liviu Lalescu, reviewed and modified - 1 October 2007
 
 --------
 
@@ -6138,16 +6186,6 @@ A: Yes. Using values like 99.75% might be good sometimes.
 -------------------------------------------------------------------------------
 
 
-Q: How to define the students into sections?
-
-A: Add years and the option &quot;Divide ...&quot; in the years dialog is the easiest way. You can also add manually years, groups and subgroups.
-
-Important note: please do the correct division of a year from the beginning. Each time you divide a year, the corresponding activities and constraints referring to year&apos;s groups and subgroups will be removed, along with groups and subgroups. This is not elegant, I know, I will try to find a better solution in the future. If you already inputted a lot of constraints and activities referring to a year&apos;s groups/subgroups, you might want to manually change the division of a year by the groups/subgroups menus.
-
-
--------------------------------------------------------------------------------
-
-
 Q: Help on ConstraintStudentsEarly.
 
 A: Constraint students (set) early: this constraint is a very restrictive one, saying that the students must have hours beginning at the first free slot (possible from breaks and students set not available constraints). If your school accepts beginning lessons at later hours, and some &quot;early&quot; constraints are too strong, you might have to use constraints students set not available/break in the last slots of the days or other constraints instead. You might try with constraint early only on some students sets.
@@ -6164,6 +6202,32 @@ Q: How does FET work?
 
 A: A heuristic algorithm, based on swapping activities recursively to make space for new activities. Email the author or mailing list for details.
 
+
+-------------------------------------------------------------------------------
+
+Q: How about optional subjects or students sets which are divided according to options?
+
+A: One possible approach: in FET you can have each activity with more teachers and students sets. If you have for instance students set S which must attend subject Language1, English (with teacher TE) or French (teacher TF), you might choose not divide S and add an activity with Language1, S and TE and TF. The drawback: each activity can take place in a single room, you cannot tell FET that this activity should be in 2 or more rooms at the same time, and from here derive other problems: if some room is not available, if capacity of room is too low for the number of students in S FET cannot find timetable, and maybe others.
+
+Another possible approach: you may need to define students into sections (see question below).
+
+-------------------------------------------------------------------------------
+
+Q: How to define the students into sections?
+
+A: FET can automatically divide years by at most 3 categories of options. If you need to divide a year into 4 categories, you can use a small trick (see below).
+
+Add years and the option &quot;Divide ...&quot; in the years dialog is the easiest way. You can also add manually years, groups and subgroups.
+
+If each year (for instance 9) is divided by at most 3 categories, you can add year 9 and divide it in 3 categories. If a year is divided by 4 categories (for instance, year 9 is divided by: section (a, b, c, d), language (en, fr), religion and boys/girls, you might consider years: 9a, 9b, 9c, 9d, each divided into 3 categories, and divide each year in the dialog. For more than 4 categories, very unlikely case, you will need to manually adjust groups/subgroups.
+
+Important: you must consider that each year contains groups which contain independent subgroups. Subgroups should have all the activities of the year and group plus additional optional activities. Please check menu statistics/students for subgroups, each subgroup should have a reasonable number of working hours per week, close to the average of hours per week for all subgroups.
+
+An impossible timetable might be the cause of incorrect years division. Please check statistics/students for all subgroups, each subgroup should have the necessary hours, not less. If you have for instance some subgroups with less than say 20 hours per week you might get an impossible timetable, probably because of incorrect division of years and incorrectly added activities. All the subgroups are independent. If you have a subgroup with only 2 hours per week and constraint early, then these 2 activities must be placed in the first hours of the day, which is probablymuch too hard (wrong).
+
+Important note: please do the correct division of a year from the beginning. Each time you divide a year, the corresponding activities and constraints referring to year&apos;s groups and subgroups will be removed, along with groups and subgroups. This is not elegant, I know, I will try to find a better solution in the future. If you already inputted a lot of constraints and activities referring to a year&apos;s groups/subgroups, you might want to manually change the division of a year by the groups/subgroups menus.
+
+Another possibility: you can see that each activity has allowed more teachers/students sets. If you need to split year Y according to Language1 (with teachers T1 and T2), you might not split Y and add an activity with Y and teachers T1 and T2 and subject &quot;Language1&quot;. This is a small trick, which might be easier to use than to divide a year.
 
 -------------------------------------------------------------------------------
 
@@ -6197,7 +6261,7 @@ Activity2: teacher B, group boys, subject sport;
 
 Activity3: teacher C, group physics, subject optional physics.
 
-NEW: the thing can be also automated now. Select year-&gt;divide in the years dialog.
+NEW: the thing can be also automated now. Select year-&gt;divide in the years dialog. Please see above entries in the FAQ.
 
 
 
@@ -6421,6 +6485,14 @@ Q: Help on constraint activities preferred times (a set of activities has a set 
 
 A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set (if empty - all students), a subject (if empty - all subjects) and a subject tag (if empty, all subject tags) and a set of allowed days.
 
+-------------------------------------------------------------------------------
+
+Q: Help on statistics menu
+
+A: The statistics are important to check your data before generating.
+
+When seeing the students statistics, probably the most useful are for subgroups. Each subgroup should have a reasonable amount of hours, and if you are having subgroups with too little hours, like 2 per week, probably you misunderstood FET notation. Each subgroup is independent of the others and should have a number of hours per week close to the average of all subgroups. Do not input empty subgroups with only a few activities.
+
 -------------------------------------------------------------------------------</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6439,15 +6511,17 @@ A: You can specify a set of activities by selecting a teacher (if empty - all te
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform_template.ui" line="41"/>
-        <source>Updated: 27 September 2007
+        <source>Updated: 30 September 2007
 
 Instructions by Liviu Lalescu
 
 These are some small instructions which you have to follow in order to input a solvable data set.
 
-If you get an impossible timetable and your school allows beginning later for students, please reconsider your students (set) early constraints and/or replace some by not available/break in the last slots of days. Maybe your teachers&apos; min hours daily are too strong. Also, removing other constraints might help. If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
+If you get an impossible timetable and your school allows beginning later for students, please reconsider your students (set) early constraints and/or replace some by not available/break in the last slots of days. Also, removing or weakening other constraints might help. If FET cannot find a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.
 
-0) Please select correctly the days and hours (working periods). To ensure performance, it is best to keep the number hours (periods) per day to your required needs, not larger. It is a good practice to choose a value for the number of days and number of hours from the beginning (you can change their names anytime you want afterwards).
+An impossible timetable might also be the cause of incorrect years division. Please check statistics/students for all subgroups, each subgroup should have the necessary hours, not less. If you have for instance some subgroups with less than say 20 hours per week you might get an impossible timetable, probably because of incorrect division of years and incorrectly added activities. All the subgroups are independent and should have an amount of working hours per week close to the average for all subgroups. Please see FAQ for more information.
+
+0) Please select correctly the days and hours (working periods). To ensure best performance, it is best to keep the number hours (periods) per day to your required needs, not larger. It is a good practice to choose a value for the number of days and number of hours from the beginning (you can change their names anytime you want afterwards).
 
 1) You can use for the constraint min n days the weight you want. It can be 95%, 99.75% or even 100%. If you specify a value below 100% (even 99.75% or more) for an impossible constraint, FET will be able to detect that it is impossible and obtain a timetable in the end, so the weight is subjective. So, the best way would be to choose a 99.75% for all constraints, but the time of generation might be larger than with 95%.
 
@@ -9013,7 +9087,7 @@ Aynı Bölünmüş Dersten de kaldırılacak
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="227"/>
+        <location filename="../src/interface/fetmainform.cpp" line="229"/>
         <source>FET warning</source>
         <translation>FET Uyarı
 </translation>
@@ -9571,18 +9645,18 @@ The related subgroups, activities and constraints were not removed</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="267"/>
+        <location filename="../src/interface/fetmainform.cpp" line="269"/>
         <source>FET - exiting</source>
         <translation>FET - Çıkış
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1396"/>
         <source>&amp;Yes</source>
         <translation>&amp;Evet</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1335"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1396"/>
         <source>&amp;No</source>
         <translation>&amp;Hayır</translation>
     </message>
@@ -9593,71 +9667,71 @@ Please stop simulation before this.</source>
         <translation>Öncelikle, Simülasyonu Durdurun.</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1334"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1395"/>
         <source>FET application</source>
         <translation>FET Uygulama</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="311"/>
+        <location filename="../src/interface/fetmainform.cpp" line="313"/>
         <source>Are you sure you want to load new data (rules) ?</source>
         <translation>Yeni Veriyi Yüklemek İstediğinizden Eminmisiniz?
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="352"/>
+        <location filename="../src/interface/fetmainform.cpp" line="354"/>
         <source>FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)</source>
         <translation>FET Xml Dosyalar (*.FET);; Önceki FET Xml Dosyaları (*.Xml);;Tüm Dosyalar (*)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="355"/>
         <source>open file dialog</source>
         <translation>Dosya Açma 
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="353"/>
+        <location filename="../src/interface/fetmainform.cpp" line="355"/>
         <source>Choose a file</source>
         <translation>Bir Dosya Seçin
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="422"/>
+        <location filename="../src/interface/fetmainform.cpp" line="424"/>
         <source>FET info</source>
         <translation>FET Bilgi
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="393"/>
         <source>Invalid file</source>
         <translation>Dosya Geçersiz
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="391"/>
+        <location filename="../src/interface/fetmainform.cpp" line="393"/>
         <source>&amp;OK</source>
         <translation>&amp;Tamam</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="405"/>
+        <location filename="../src/interface/fetmainform.cpp" line="407"/>
         <source>FET xml files (*.fet);;All files (*)</source>
         <translation>FET Xml Dosyalar (*.FET);;Tüm Dosyalar (*)
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="408"/>
         <source>Save file dialog</source>
         <translation>Dosya Kaydet 
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="406"/>
+        <location filename="../src/interface/fetmainform.cpp" line="408"/>
         <source>Choose a filename to save under</source>
         <translation>Kaydetmek İçin Bir Dosya Seçiniz
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="438"/>
+        <location filename="../src/interface/fetmainform.cpp" line="440"/>
         <source>File exists - are you sure you want to overwrite existing file?</source>
         <translation>Mevcut Dosya Üzerine Kaydetmek İstiyor musunuz?
 </translation>
@@ -10995,12 +11069,12 @@ MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME must be increased (you have too man
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="269"/>
+        <location filename="../src/interface/fetmainform.cpp" line="271"/>
         <source>&amp;Cancel</source>
         <translation>&amp;İptal</translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1314"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1375"/>
         <source>Please exit and restart FET to activate language change</source>
         <translation>Dil Değişimini Etkinleştirmek İçin, Lütfen Programdan Çıkın ve FET&apos;i Yeniden Başlatın
 </translation>
@@ -11029,13 +11103,13 @@ Güncellenemez
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="324"/>
+        <location filename="../src/interface/fetmainform.cpp" line="326"/>
         <source>FET - a free evolutionary timetabling program</source>
         <translation>FET - Açık Geliştirilebilir Ders Programı Yazılımı
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="444"/>
+        <location filename="../src/interface/fetmainform.cpp" line="446"/>
         <source>FET - %1</source>
         <translation>FET - %1</translation>
     </message>
@@ -11506,7 +11580,7 @@ Please note that the default weight percentage of constraints min n days between
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="235"/>
+        <location filename="../src/interface/fetmainform.cpp" line="237"/>
         <source>Could not search for possible updates on internet - error message is: %1. I am searching for the file http://www.lalescu.ro/liviu/fet/crtversion/crtversion.txt . Maybe the current structure on web page was changed. Please visit FET web page http://www.lalescu.ro/liviu/fet/ and get latest version or, if the web page does not work, try to search for the new FET page on the internet. You can contact the author. Also, sometimes lalescu.ro might have temporary problems, try again later
 
 If you want, you can turn off automatic search for updates in Settings menu</source>
@@ -11714,12 +11788,12 @@ It is advisable to generate the timetable without the rooms, then, if a solution
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1098"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1159"/>
         <source>Please input at least two active activities before generating</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1171"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1232"/>
         <source>Please generate, firstly</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11896,7 +11970,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1128"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1189"/>
         <source>Please input at least two active activities before generating multiple</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11961,7 +12035,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1115"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1176"/>
         <source>Current file (data) has no name. Please save file under a certain name before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12454,7 +12528,7 @@ Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="252"/>
+        <location filename="../src/interface/fetmainform.cpp" line="254"/>
         <source>Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/
 
 You have to manually download and install (open the FET webpage in an internet browser). Please read the information on web page regarding the newer version and choose whether to keep your current version or upgrade (the recommended option is to upgrade). You might need to hit Refresh in your web browser if links do not work
@@ -12543,14 +12617,14 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1325"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1386"/>
         <source>Are you sure you want to reset all settings to defaults?
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="1332"/>
+        <location filename="../src/interface/fetmainform.cpp" line="1393"/>
         <source>(these are:
 1. Mainform geometry will be reset to default
 2. Check for updates at startup will be disabled
@@ -12638,7 +12712,7 @@ number between 0.0 and 100.0, recommended 95.0 at least)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="268"/>
+        <location filename="../src/interface/fetmainform.cpp" line="270"/>
         <source>File might have been changed - do you want to save it?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12970,32 +13044,32 @@ Note: this constraint is strong. It means that students must have hours beginnin
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="363"/>
+        <location filename="../src/interface/fetmainform.cpp" line="365"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="369"/>
+        <location filename="../src/interface/fetmainform.cpp" line="371"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="375"/>
+        <location filename="../src/interface/fetmainform.cpp" line="377"/>
         <source>Please do not use # in filename, the html css code does not work. File was not loaded. Please rename it, removing not allowed characters and open it after that with FET.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="414"/>
+        <location filename="../src/interface/fetmainform.cpp" line="416"/>
         <source>Please do not use quotation marks &quot; in filename, the html css code does not work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="418"/>
+        <location filename="../src/interface/fetmainform.cpp" line="420"/>
         <source>Please do not use semicolon ; in filename, the html css code does not work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform.cpp" line="422"/>
+        <location filename="../src/interface/fetmainform.cpp" line="424"/>
         <source>Please do not use # in filename, the html css code does not work</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13029,6 +13103,21 @@ If you really need that, please talk to the author
     <message>
         <location filename="../src/interface/teachersstatisticsform.cpp" line="46"/>
         <source>No. of activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform.cpp" line="212"/>
+        <source>Constraint NOT added - it must be a duplicate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentsgroupform.cpp" line="68"/>
+        <source>Name exists. If you would like to make more years to contain a group (overlapping years), please remove current group (FET will unfortunately remove all related activities and constraints) and add a new group with desired name in current year. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifystudentssubgroupform.cpp" line="72"/>
+        <source>Name exists. If you would like to make more groups to contain a subgroup (overlapping groups), please remove current subgroup (FET will unfortunately remove all related activities and constraints) and add a new subgroup with desired name in current group. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13216,37 +13305,6 @@ Note: each room can hold a single activity at the same time
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="756"/>
-        <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions. For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="767"/>
-        <source>
-
-Probably you don&apos;t need to worry about empty subgroups (no significant speed changes), although I didn&apos;t test enough such situations. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="770"/>
-        <source>
-
-Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="772"/>
-        <source>
-
-Separator character(s) is of your choice (default is space)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/splityearform.cpp" line="774"/>
-        <source>FET help on dividing years</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/splityearform.cpp" line="479"/>
         <source>Year %1 is not empty and it will be emptied before adding the divisions you selected. This means that all the activities and constraints for the groups and subgroups in this year will be removed. It is strongly recommended to save your file before continuing. You might also want, as an alternative, to modify manually the groups/subgroups from the corresponding menu, so that you will not lose constraints and activities referring to them. Do you really want to empty year?</source>
         <translation type="unfinished"></translation>
@@ -13257,10 +13315,53 @@ Separator character(s) is of your choice (default is space)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="762"/>
-        <source>
-
-Please input from the beginning the correct divisions. After you inputted activities and constraints for this year&apos;s groups and subgroups, dividing it again will remove the activities and constraints referring to these groups/subgroups. I know this is not elegant, I hope I&apos;ll solve that in the future. If you inputted already many activities and constraints, you might want to use the alternative of manually adding/editing/removing groups/subgroups in the groups/subgroups menu. This way you will preserve your old data</source>
+        <location filename="../src/interface/splityearform.cpp" line="753"/>
+        <source>This help by Liviu Lalescu, last modified 1 Oct. 2007</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="771"/>
+        <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French. You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions If you need 4 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 3 categories (more details below). For more values (very unlikely case) you will have to manually add the groups and subgroups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="787"/>
+        <source>Please input from the beginning the correct divisions. After you inputted activities and constraints for this year&apos;s groups and subgroups, dividing it again will remove the activities and constraints referring to these groups/subgroups. I know this is not elegant, I hope I&apos;ll solve that in the future. You might want to use the alternative of manually adding/editing/removing groups/subgroups in the groups/subgroups menu, though removing a group/subgroup will also remove the activities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="794"/>
+        <source>Probably you don&apos;t need to worry about empty subgroups (no significant speed changes), although I didn&apos;t test enough such situations. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="799"/>
+        <source>Please note that the dialog here will keep the last configuration of the last divided year, it will not remember the values for a specific year you need to modify.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="803"/>
+        <source>Separator character(s) is of your choice (default is space)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="810"/>
+        <source>FET - help on dividing a year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="816"/>
+        <source>OK</source>
+        <translation type="unfinished">Tamam</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="779"/>
+        <source>If you need to make a division of say year 9 in 4 categories (category1: a, b,c, d, category2: language, category3: religion, category4: boys/girls), you might want to use this trick: consider first category to define years: year 9a, year 9b, year 9c, year 9d, and divide each year by 3 categories: language, religion and boys/girls. For activities with year 9 - language 1 for instance, you need to add to these activities the groups 9a_language1+9b_language1+9c_language1+9d_language1. For activities with year 9a, just add year 9a to the corresponding activities.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/splityearform.cpp" line="761"/>
+        <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
