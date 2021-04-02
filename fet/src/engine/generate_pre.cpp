@@ -184,6 +184,37 @@ QList<int> inverseConstr2ActivitiesOrderedActivities[MAX_ACTIVITIES];
 double activityEndsStudentsDayPercentages[MAX_ACTIVITIES];
 bool haveActivityEndsStudentsDay;
 
+
+///////BEGIN teachers interval max days per week
+double teachersIntervalMaxDaysPerWeekPercentages1[MAX_TEACHERS];
+int teachersIntervalMaxDaysPerWeekMaxDays1[MAX_TEACHERS];
+int teachersIntervalMaxDaysPerWeekIntervalStart1[MAX_TEACHERS];
+int teachersIntervalMaxDaysPerWeekIntervalEnd1[MAX_TEACHERS];
+
+double teachersIntervalMaxDaysPerWeekPercentages2[MAX_TEACHERS];
+int teachersIntervalMaxDaysPerWeekMaxDays2[MAX_TEACHERS];
+int teachersIntervalMaxDaysPerWeekIntervalStart2[MAX_TEACHERS];
+int teachersIntervalMaxDaysPerWeekIntervalEnd2[MAX_TEACHERS];
+
+bool computeTeachersIntervalMaxDaysPerWeek();
+///////END   teachers interval max days per week
+
+
+///////BEGIN students interval max days per week
+double subgroupsIntervalMaxDaysPerWeekPercentages1[MAX_TOTAL_SUBGROUPS];
+int subgroupsIntervalMaxDaysPerWeekMaxDays1[MAX_TOTAL_SUBGROUPS];
+int subgroupsIntervalMaxDaysPerWeekIntervalStart1[MAX_TOTAL_SUBGROUPS];
+int subgroupsIntervalMaxDaysPerWeekIntervalEnd1[MAX_TOTAL_SUBGROUPS];
+
+double subgroupsIntervalMaxDaysPerWeekPercentages2[MAX_TOTAL_SUBGROUPS];
+int subgroupsIntervalMaxDaysPerWeekMaxDays2[MAX_TOTAL_SUBGROUPS];
+int subgroupsIntervalMaxDaysPerWeekIntervalStart2[MAX_TOTAL_SUBGROUPS];
+int subgroupsIntervalMaxDaysPerWeekIntervalEnd2[MAX_TOTAL_SUBGROUPS];
+
+bool computeSubgroupsIntervalMaxDaysPerWeek();
+///////END   subgroups interval max days per week
+
+
 ////////rooms
 double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 
@@ -350,7 +381,17 @@ bool processTimeConstraints()
 	t=checkMinNDaysConsecutiveIfSameDay();
 	if(!t)
 		return false;
-		
+	
+	//check teachers interval max days per week
+	t=computeTeachersIntervalMaxDaysPerWeek();
+	if(!t)
+		return false;
+	
+	//check subgroups interval max days per week
+	t=computeSubgroupsIntervalMaxDaysPerWeek();
+	if(!t)
+		return false;
+	
 	/////////////rooms	
 	t=computeBasicSpace();
 	if(!t)
@@ -3134,7 +3175,7 @@ bool computeActivityEndsStudentsDayPercentages()
 		
 	haveActivityEndsStudentsDay=false;
 		
-	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
 			haveActivityEndsStudentsDay=true;
 		
@@ -3160,6 +3201,33 @@ bool computeActivityEndsStudentsDayPercentages()
 			if(activityEndsStudentsDayPercentages[ai] < cae->weightPercentage)
 				activityEndsStudentsDayPercentages[ai] = cae->weightPercentage;
 		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY){
+			haveActivityEndsStudentsDay=true;
+		
+			ConstraintActivitiesEndStudentsDay* cae=(ConstraintActivitiesEndStudentsDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraints of type "
+				 "activity activities end students day with weight percentage under 100%. "
+				 "Constraint activities end students day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again."),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}
+			
+			for(int i=0; i<cae->nActivities; i++){
+				int ai=cae->activitiesIndices[i];
+				if(activityEndsStudentsDayPercentages[ai] < cae->weightPercentage)
+					activityEndsStudentsDayPercentages[ai] = cae->weightPercentage;
+			}
+		}
+	}
 		
 	return ok;
 }
@@ -3602,6 +3670,236 @@ bool checkMinNDaysConsecutiveIfSameDay()
 		cout<<endl;
 	}
 }*/
+
+bool computeTeachersIntervalMaxDaysPerWeek()
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersIntervalMaxDaysPerWeekPercentages1[i]=-1.0;
+		teachersIntervalMaxDaysPerWeekMaxDays1[i]=-1;
+		teachersIntervalMaxDaysPerWeekIntervalStart1[i]=-1;
+		teachersIntervalMaxDaysPerWeekIntervalEnd1[i]=-1;
+
+		teachersIntervalMaxDaysPerWeekPercentages2[i]=-1.0;
+		teachersIntervalMaxDaysPerWeekMaxDays2[i]=-1;
+		teachersIntervalMaxDaysPerWeekIntervalStart2[i]=-1;
+		teachersIntervalMaxDaysPerWeekIntervalEnd2[i]=-1;
+	}
+	
+	bool ok=true;
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherIntervalMaxDaysPerWeek* tn=(ConstraintTeacherIntervalMaxDaysPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teacher interval max days per week with"
+				 " weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 .arg(tn->teacherName),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			if(teachersIntervalMaxDaysPerWeekPercentages1[tn->teacher_ID]==-1){
+				teachersIntervalMaxDaysPerWeekPercentages1[tn->teacher_ID]=tn->weightPercentage;
+				teachersIntervalMaxDaysPerWeekMaxDays1[tn->teacher_ID]=tn->maxDaysPerWeek;
+				teachersIntervalMaxDaysPerWeekIntervalStart1[tn->teacher_ID]=tn->startHour;
+				teachersIntervalMaxDaysPerWeekIntervalEnd1[tn->teacher_ID]=tn->endHour;
+			}
+			else if(teachersIntervalMaxDaysPerWeekPercentages2[tn->teacher_ID]==-1){
+				teachersIntervalMaxDaysPerWeekPercentages2[tn->teacher_ID]=tn->weightPercentage;
+				teachersIntervalMaxDaysPerWeekMaxDays2[tn->teacher_ID]=tn->maxDaysPerWeek;
+				teachersIntervalMaxDaysPerWeekIntervalStart2[tn->teacher_ID]=tn->startHour;
+				teachersIntervalMaxDaysPerWeekIntervalEnd2[tn->teacher_ID]=tn->endHour;
+			}
+			else{
+				ok=false;
+				
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize for teacher %1, because it has more than two constraints interval max days per week"
+				 ". Please modify your data correspondingly (leave maximum two constraint of type"
+				 " constraint teacher(s) interval max days per week for each teacher) and try again")
+				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+			 
+				if(t==0)
+					break;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersIntervalMaxDaysPerWeek* tn=(ConstraintTeachersIntervalMaxDaysPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint teachers interval max days per week with"
+				 " weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				if(teachersIntervalMaxDaysPerWeekPercentages1[tch]==-1){
+					teachersIntervalMaxDaysPerWeekPercentages1[tch]=tn->weightPercentage;
+					teachersIntervalMaxDaysPerWeekMaxDays1[tch]=tn->maxDaysPerWeek;
+					teachersIntervalMaxDaysPerWeekIntervalStart1[tch]=tn->startHour;
+					teachersIntervalMaxDaysPerWeekIntervalEnd1[tch]=tn->endHour;
+				}
+				else if(teachersIntervalMaxDaysPerWeekPercentages2[tch]==-1){
+					teachersIntervalMaxDaysPerWeekPercentages2[tch]=tn->weightPercentage;
+					teachersIntervalMaxDaysPerWeekMaxDays2[tch]=tn->maxDaysPerWeek;
+					teachersIntervalMaxDaysPerWeekIntervalStart2[tch]=tn->startHour;
+					teachersIntervalMaxDaysPerWeekIntervalEnd2[tch]=tn->endHour;
+				}
+				else{
+					ok=false;
+					
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize for teacher %1, because it has more than two constraints interval max days per week"
+					 ". Please modify your data correspondingly (leave maximum two constraint of type"
+					 " constraint teacher(s) interval max days per week for each teacher) and try again")
+					 .arg(gt.rules.internalTeachersList[tch]->name),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+					 1, 0 );
+				 
+					if(t==0)
+						break;
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeSubgroupsIntervalMaxDaysPerWeek()
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsIntervalMaxDaysPerWeekPercentages1[i]=-1.0;
+		subgroupsIntervalMaxDaysPerWeekMaxDays1[i]=-1;
+		subgroupsIntervalMaxDaysPerWeekIntervalStart1[i]=-1;
+		subgroupsIntervalMaxDaysPerWeekIntervalEnd1[i]=-1;
+
+		subgroupsIntervalMaxDaysPerWeekPercentages2[i]=-1.0;
+		subgroupsIntervalMaxDaysPerWeekMaxDays2[i]=-1;
+		subgroupsIntervalMaxDaysPerWeekIntervalStart2[i]=-1;
+		subgroupsIntervalMaxDaysPerWeekIntervalEnd2[i]=-1;
+	}
+	
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetIntervalMaxDaysPerWeek* cn=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint students set interval max days per week with"
+				 " weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 .arg(cn->students),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			foreach(int sbg, cn->iSubgroupsList){
+				if(subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]==-1){
+					subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]=cn->weightPercentage;
+					subgroupsIntervalMaxDaysPerWeekMaxDays1[sbg]=cn->maxDaysPerWeek;
+					subgroupsIntervalMaxDaysPerWeekIntervalStart1[sbg]=cn->startHour;
+					subgroupsIntervalMaxDaysPerWeekIntervalEnd1[sbg]=cn->endHour;
+				}
+				else if(subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]==-1){
+					subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]=cn->weightPercentage;
+					subgroupsIntervalMaxDaysPerWeekMaxDays2[sbg]=cn->maxDaysPerWeek;
+					subgroupsIntervalMaxDaysPerWeekIntervalStart2[sbg]=cn->startHour;
+					subgroupsIntervalMaxDaysPerWeekIntervalEnd2[sbg]=cn->endHour;
+				}
+				else{
+					ok=false;
+					
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize for subgroup %1, because it has more than two constraints interval max days per week"
+					 ". Please modify your data correspondingly (leave maximum two constraint of type"
+					 " constraint students (set) interval max days per week for each subgroup) and try again")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+					 1, 0 );
+				 
+					if(t==0)
+						break;
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsIntervalMaxDaysPerWeek* cn=(ConstraintStudentsIntervalMaxDaysPerWeek*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100){
+				ok=false;
+
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+				 QObject::tr("Cannot optimize, because you have constraint students interval max days per week with"
+				 " weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 //.arg(cn->students),
+				 ,
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+			//foreach(int sbg, cn->iSubgroupsList){
+				if(subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]==-1){
+					subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]=cn->weightPercentage;
+					subgroupsIntervalMaxDaysPerWeekMaxDays1[sbg]=cn->maxDaysPerWeek;
+					subgroupsIntervalMaxDaysPerWeekIntervalStart1[sbg]=cn->startHour;
+					subgroupsIntervalMaxDaysPerWeekIntervalEnd1[sbg]=cn->endHour;
+				}
+				else if(subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]==-1){
+					subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]=cn->weightPercentage;
+					subgroupsIntervalMaxDaysPerWeekMaxDays2[sbg]=cn->maxDaysPerWeek;
+					subgroupsIntervalMaxDaysPerWeekIntervalStart2[sbg]=cn->startHour;
+					subgroupsIntervalMaxDaysPerWeekIntervalEnd2[sbg]=cn->endHour;
+				}
+				else{
+					ok=false;
+					
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("Cannot optimize for subgroup %1, because it has more than two constraints interval max days per week"
+					 ". Please modify your data correspondingly (leave maximum two constraint of type"
+					 " constraint students (set) interval max days per week for each subgroup) and try again")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
+					 1, 0 );
+				 
+					if(t==0)
+						break;
+				}
+			}
+		}
+	}
+
+	return ok;
+}
 
 bool computeBasicSpace()
 {
@@ -4670,6 +4968,9 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsMaxHoursContinuouslyPercentages2[sbg]>=0 ||
 			  subgroupsMinHoursDailyPercentages[sbg]>=0 ||
 			  
+			  subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]>=0 ||
+			  subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]>=0 ||
+			  
 			  maxBuildingChangesPerDayForStudentsPercentages[sbg]>=0 ||
 			  maxBuildingChangesPerWeekForStudentsPercentages[sbg]>=0 ||
 			  minGapsBetweenBuildingChangesForStudentsPercentages[sbg]>=0){
@@ -4698,6 +4999,9 @@ void computeMustComputeTimetableTeachers()
 			  teachersMaxHoursContinuouslyPercentages1[tch]>=0 ||
 			  teachersMaxHoursContinuouslyPercentages2[tch]>=0 ||
 			  teachersMinHoursDailyPercentages[tch]>=0 ||
+			  
+			  teachersIntervalMaxDaysPerWeekPercentages1[tch]>=0 ||
+			  teachersIntervalMaxDaysPerWeekPercentages2[tch]>=0 ||
 			  
 			  maxBuildingChangesPerDayForTeachersPercentages[tch]>=0 ||
 			  maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0 ||

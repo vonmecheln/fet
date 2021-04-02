@@ -92,6 +92,13 @@ const int CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES						=39;
 const int CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS					=40;
 const int CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES				=41;
 
+const int CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK					=42;
+const int CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK				=43;
+const int CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK			=44;
+const int CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK				=45;
+
+const int CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY						=46;
+
 /**
 This class represents a time constraint
 */
@@ -878,7 +885,7 @@ public:
 	/**
 	The number of subgroups
 	*/
-	int nSubgroups;
+	//int nSubgroups;
 
 	/**
 	The subgroups
@@ -1096,7 +1103,7 @@ public:
 	/**
 	The number of subgroups involved in this restriction
 	*/
-	int nSubgroups;
+	//int nSubgroups;
 
 	/**
 	The subgroups involved in this restriction
@@ -1176,7 +1183,7 @@ public:
 	/**
 	The number of subgroups
 	*/
-	int nSubgroups;
+	//int nSubgroups;
 
 	/**
 	The subgroups
@@ -1256,7 +1263,7 @@ public:
 	/**
 	The number of subgroups
 	*/
-	int nSubgroups;
+	//int nSubgroups;
 
 	/**
 	The subgroups
@@ -1336,7 +1343,7 @@ public:
 	/**
 	The number of subgroups
 	*/
-	int nSubgroups;
+	//int nSubgroups;
 
 	/**
 	The subgroups
@@ -2210,6 +2217,252 @@ public:
 	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 };
+
+class ConstraintTeacherIntervalMaxDaysPerWeek: public TimeConstraint{
+public:
+	/**
+	The number of maximum allowed working days per week
+	*/
+	int maxDaysPerWeek;
+	
+	int startHour;
+
+	int endHour; //might be = to gt.rules.nHoursPerDay
+
+	/**
+	The teacher's name
+	*/
+	QString teacherName;
+
+	/**
+	The teacher's id, or index in the rules
+	*/
+	int teacher_ID;
+
+	ConstraintTeacherIntervalMaxDaysPerWeek();
+
+	ConstraintTeacherIntervalMaxDaysPerWeek(double wp, int maxnd, QString tn, int sh, int eh);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintTeachersIntervalMaxDaysPerWeek: public TimeConstraint{
+public:
+	/**
+	The number of maximum allowed working days per week
+	*/
+	int maxDaysPerWeek;
+	
+	int startHour;
+
+	int endHour; //might be = to gt.rules.nHoursPerDay
+
+
+	ConstraintTeachersIntervalMaxDaysPerWeek();
+
+	ConstraintTeachersIntervalMaxDaysPerWeek(double wp, int maxnd, int sh, int eh);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+
+class ConstraintStudentsSetIntervalMaxDaysPerWeek: public TimeConstraint{
+public:
+	/**
+	The number of maximum allowed working days per week
+	*/
+	int maxDaysPerWeek;
+	
+	int startHour;
+
+	int endHour; //might be = to gt.rules.nHoursPerDay
+
+	/**
+	The name of the students set for this constraint
+	*/
+	QString students;
+
+	//internal redundant data
+
+	/**
+	The number of subgroups
+	*/
+	//int nSubgroups;
+
+	/**
+	The subgroups
+	*/
+	QList<int> iSubgroupsList;
+
+	ConstraintStudentsSetIntervalMaxDaysPerWeek();
+
+	ConstraintStudentsSetIntervalMaxDaysPerWeek(double wp, int maxnd, QString sn, int sh, int eh);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsIntervalMaxDaysPerWeek: public TimeConstraint{
+public:
+	/**
+	The number of maximum allowed working days per week
+	*/
+	int maxDaysPerWeek;
+	
+	int startHour;
+
+	int endHour; //might be = to gt.rules.nHoursPerDay
+
+
+	ConstraintStudentsIntervalMaxDaysPerWeek();
+
+	ConstraintStudentsIntervalMaxDaysPerWeek(double wp, int maxnd, int sh, int eh);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintActivitiesEndStudentsDay: public TimeConstraint{
+public:
+	/**
+	The teacher. If void, all teachers.
+	*/
+	QString teacherName;
+
+	/**
+	The students. If void, all students.
+	*/
+	QString studentsName;
+
+	/**
+	The subject. If void, all subjects.
+	*/
+	QString subjectName;
+
+	/**
+	The activity tag. If void, all activity tags.
+	*/
+	QString activityTagName;
+	
+	
+	//internal data
+
+	/**
+	The number of activities which are represented by the subject, teacher and students requirements.
+	*/
+	int nActivities;
+	
+	/**
+	The indices of the activities in the rules (from 0 to rules.nActivities-1)
+	These are indices in the internal list -> Rules::internalActivitiesList
+	*/
+	int activitiesIndices[MAX_ACTIVITIES];
+
+	ConstraintActivitiesEndStudentsDay();
+
+	ConstraintActivitiesEndStudentsDay(double wp, QString te, QString st, QString su, QString sut);
+
+	bool computeInternalStructure(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
 
 
 #endif

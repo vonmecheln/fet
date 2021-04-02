@@ -56,6 +56,7 @@ using namespace std;
 #include "fet.h"
 
 #include "constraintactivityendsstudentsdayform.h"
+#include "constraintactivitiesendstudentsdayform.h"
 #include "constraint2activitiesconsecutiveform.h"
 #include "constraint2activitiesorderedform.h"
 #include "constraintactivitiespreferredtimeslotsform.h"
@@ -75,6 +76,12 @@ using namespace std;
 #include "constraintstudentssetnotavailabletimesform.h"
 #include "constraintbreaktimesform.h"
 #include "constraintteachermaxdaysperweekform.h"
+
+#include "constraintteacherintervalmaxdaysperweekform.h"
+#include "constraintteachersintervalmaxdaysperweekform.h"
+#include "constraintstudentssetintervalmaxdaysperweekform.h"
+#include "constraintstudentsintervalmaxdaysperweekform.h"
+
 #include "constraintteachermaxhoursdailyform.h"
 #include "constraintteachersmaxhoursdailyform.h"
 #include "constraintteachermaxhourscontinuouslyform.h"
@@ -1180,6 +1187,18 @@ void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_activated(
 	form->exec();
 }
 
+void FetMainForm::on_dataTimeConstraintsActivitiesEndStudentsDayAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesEndStudentsDayForm* form=new ConstraintActivitiesEndStudentsDayForm();
+	form->exec();
+}
+
 void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_activated()
 {
 	if(simulation_running){
@@ -1561,6 +1580,54 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated()
 	}
 
 	ConstraintTeacherMaxDaysPerWeekForm* form=new ConstraintTeacherMaxDaysPerWeekForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherIntervalMaxDaysPerWeekForm* form=new ConstraintTeacherIntervalMaxDaysPerWeekForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersIntervalMaxDaysPerWeekForm* form=new ConstraintTeachersIntervalMaxDaysPerWeekForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetIntervalMaxDaysPerWeekForm* form=new ConstraintStudentsSetIntervalMaxDaysPerWeekForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsIntervalMaxDaysPerWeekForm* form=new ConstraintStudentsIntervalMaxDaysPerWeekForm();
 	form->exec();
 }
 

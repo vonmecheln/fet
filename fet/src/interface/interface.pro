@@ -180,6 +180,22 @@ SOURCES += fet.cpp \
 		   addconstraintteachermaxdaysperweekform.cpp \
 		   modifyconstraintteachermaxdaysperweekform.cpp \
 \
+		   constraintteacherintervalmaxdaysperweekform.cpp \
+		   addconstraintteacherintervalmaxdaysperweekform.cpp \
+		   modifyconstraintteacherintervalmaxdaysperweekform.cpp \
+\
+		   constraintstudentssetintervalmaxdaysperweekform.cpp \
+		   addconstraintstudentssetintervalmaxdaysperweekform.cpp \
+		   modifyconstraintstudentssetintervalmaxdaysperweekform.cpp \
+\
+		   constraintstudentsintervalmaxdaysperweekform.cpp \
+		   addconstraintstudentsintervalmaxdaysperweekform.cpp \
+		   modifyconstraintstudentsintervalmaxdaysperweekform.cpp \
+\
+		   constraintteachersintervalmaxdaysperweekform.cpp \
+		   addconstraintteachersintervalmaxdaysperweekform.cpp \
+		   modifyconstraintteachersintervalmaxdaysperweekform.cpp \
+\
 		   constraintteachersmaxhoursdailyform.cpp \
 		   addconstraintteachersmaxhoursdailyform.cpp \
 		   modifyconstraintteachersmaxhoursdailyform.cpp \
@@ -206,6 +222,11 @@ SOURCES += fet.cpp \
 		   constraintactivityendsstudentsdayform.cpp \
 		   addconstraintactivityendsstudentsdayform.cpp \
 		   modifyconstraintactivityendsstudentsdayform.cpp \
+\
+		   constraintactivitiesendstudentsdayform.cpp \
+		   addconstraintactivitiesendstudentsdayform.cpp \
+		   modifyconstraintactivitiesendstudentsdayform.cpp \
+\
 		   constraintstudentssetmaxgapsperweekform.cpp \
 		   addconstraintstudentssetmaxgapsperweekform.cpp \
 		   modifyconstraintstudentssetmaxgapsperweekform.cpp \
@@ -458,6 +479,22 @@ HEADERS += fet.h \
 		   addconstraintteachermaxdaysperweekform.h \
 		   modifyconstraintteachermaxdaysperweekform.h \
 \
+		   constraintteacherintervalmaxdaysperweekform.h \
+		   addconstraintteacherintervalmaxdaysperweekform.h \
+		   modifyconstraintteacherintervalmaxdaysperweekform.h \
+\
+		   constraintstudentssetintervalmaxdaysperweekform.h \
+		   addconstraintstudentssetintervalmaxdaysperweekform.h \
+		   modifyconstraintstudentssetintervalmaxdaysperweekform.h \
+\
+		   constraintstudentsintervalmaxdaysperweekform.h \
+		   addconstraintstudentsintervalmaxdaysperweekform.h \
+		   modifyconstraintstudentsintervalmaxdaysperweekform.h \
+\
+		   constraintteachersintervalmaxdaysperweekform.h \
+		   addconstraintteachersintervalmaxdaysperweekform.h \
+		   modifyconstraintteachersintervalmaxdaysperweekform.h \
+\
 		   constraintteachersmaxhoursdailyform.h \
 		   addconstraintteachersmaxhoursdailyform.h \
 		   modifyconstraintteachersmaxhoursdailyform.h \
@@ -484,6 +521,11 @@ HEADERS += fet.h \
 		   constraintactivityendsstudentsdayform.h \
 		   addconstraintactivityendsstudentsdayform.h \
 		   modifyconstraintactivityendsstudentsdayform.h \
+\
+		   constraintactivitiesendstudentsdayform.h \
+		   addconstraintactivitiesendstudentsdayform.h \
+		   modifyconstraintactivitiesendstudentsdayform.h \
+\
 		   constraintstudentssetmaxgapsperweekform.h \
 		   addconstraintstudentssetmaxgapsperweekform.h \
 		   modifyconstraintstudentssetmaxgapsperweekform.h \
@@ -741,6 +783,22 @@ FORMS3 += helpfaqform_template.ui \
 		   addconstraintteachermaxdaysperweekform_template.ui \
 		   modifyconstraintteachermaxdaysperweekform_template.ui \
 \
+		   constraintteacherintervalmaxdaysperweekform_template.ui \
+		   addconstraintteacherintervalmaxdaysperweekform_template.ui \
+		   modifyconstraintteacherintervalmaxdaysperweekform_template.ui \
+\
+		   constraintstudentssetintervalmaxdaysperweekform_template.ui \
+		   addconstraintstudentssetintervalmaxdaysperweekform_template.ui \
+		   modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui \
+\
+		   constraintstudentsintervalmaxdaysperweekform_template.ui \
+		   addconstraintstudentsintervalmaxdaysperweekform_template.ui \
+		   modifyconstraintstudentsintervalmaxdaysperweekform_template.ui \
+\
+		   constraintteachersintervalmaxdaysperweekform_template.ui \
+		   addconstraintteachersintervalmaxdaysperweekform_template.ui \
+		   modifyconstraintteachersintervalmaxdaysperweekform_template.ui \
+\
 		   constraintteachersmaxhoursdailyform_template.ui \
 		   addconstraintteachersmaxhoursdailyform_template.ui \
 		   modifyconstraintteachersmaxhoursdailyform_template.ui \
@@ -767,6 +825,11 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintactivityendsstudentsdayform_template.ui \
 		   addconstraintactivityendsstudentsdayform_template.ui \
 		   modifyconstraintactivityendsstudentsdayform_template.ui \
+\
+		   constraintactivitiesendstudentsdayform_template.ui \
+		   addconstraintactivitiesendstudentsdayform_template.ui \
+		   modifyconstraintactivitiesendstudentsdayform_template.ui \
+\
 		   constraintstudentssetmaxgapsperweekform_template.ui \
 		   addconstraintstudentssetmaxgapsperweekform_template.ui \
 		   modifyconstraintstudentssetmaxgapsperweekform_template.ui \

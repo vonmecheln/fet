@@ -678,17 +678,6 @@ Best regards
 Bobby
 
 18---------------------------------------------------------
-From Yush Yuen
-
-also, all activities of the same block are set with a same day+hour
-constraint
-
-it is pretty difficult to find them form the list of constraint. it would be
-nice if there are filters on the dialog as well.
-
-(He is referring to min n days between activities constraints)
-
-19---------------------------------------------------------
 From daviodan
 
 In preferred time slots, preferred starting times, break or not available, clicking
@@ -697,9 +686,15 @@ on a day or hour (column or row head) will set/reset/toggle all hours (or days) 
 Or: make a combo box: column and another combo box: row. Add button "Change", so we can change
 a specific row or column by this procedure. - comment Liviu: the dialog would become very complicated.
 
-20---------------------------------------------------------
+19---------------------------------------------------------
 From George Miliotis (Ionio, Greece)
 
 PS. Feedback: Fill the empty FET window with buttons for the most common
 tasks. You could also add a search editbox and a few checkboxes (e.g.
 find activity/rule live by typing in an editbox, matching all fields)
+
+20---------------------------------------------------------
+From Baker
+
+What about viewing the schedule by period?  I'd really like to see a list, or grid, 
+of all the courses scheduled into a particular period.  Is that possible?

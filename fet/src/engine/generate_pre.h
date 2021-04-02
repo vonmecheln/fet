@@ -261,6 +261,36 @@ bool checkMinNDays100Percent();
 bool checkMinNDaysConsecutiveIfSameDay();
 
 
+///////BEGIN teachers interval max days per week
+extern double teachersIntervalMaxDaysPerWeekPercentages1[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekMaxDays1[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekIntervalStart1[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekIntervalEnd1[MAX_TEACHERS];
+
+extern double teachersIntervalMaxDaysPerWeekPercentages2[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekMaxDays2[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekIntervalStart2[MAX_TEACHERS];
+extern int teachersIntervalMaxDaysPerWeekIntervalEnd2[MAX_TEACHERS];
+
+bool computeTeachersIntervalMaxDaysPerWeek();
+///////END   teachers interval max days per week
+
+
+///////BEGIN subgroups interval max days per week
+extern double subgroupsIntervalMaxDaysPerWeekPercentages1[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekMaxDays1[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekIntervalStart1[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd1[MAX_TOTAL_SUBGROUPS];
+
+extern double subgroupsIntervalMaxDaysPerWeekPercentages2[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekMaxDays2[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekIntervalStart2[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd2[MAX_TOTAL_SUBGROUPS];
+
+bool computeSubgroupsIntervalMaxDaysPerWeek();
+///////END   subgroups interval max days per week
+
+
 ////////BEGIN rooms
 bool computeBasicSpace();
 

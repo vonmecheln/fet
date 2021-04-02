@@ -321,6 +321,7 @@ void ModifyConstraintActivitiesPreferredStartingTimesForm::ok()
 	this->_ctr->teacherName=teacher;
 	this->_ctr->studentsName=students;
 	this->_ctr->subjectName=subject;
+	this->_ctr->activityTagName=activityTag;
 	this->_ctr->nPreferredStartingTimes=n;
 	for(int i=0; i<n; i++){
 		this->_ctr->days[i]=days[i];

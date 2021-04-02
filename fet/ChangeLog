@@ -1235,3 +1235,12 @@ Versions 5.6.0 - 5.6.x
 	say only the first or the last components of a split activity to be placed earlier.
 	- Switched to Qt 4.4.0 and gcc 4.3.1
 	- Indonesian, Romanian, Italian, German translations updates.
+- Version 5.6.2
+	- Added constraint teacher(s) and students (set) interval max days per week, to specify an hourly interval
+	and the maximum number of days per week for teachers (students) to work in this interval (suggested by Hatim Alahmadi).
+	This constraint is very useful, for instance specify that teachers and students must not work more than 2
+	times per week in the last hour of the day.
+	- Added constraint a set of activities end students day - to specify for a group of activities that they
+	should end the day for students (for instance for meetings with the class master) - suggested by Zsolt Udvari.
+	- Bug fix - when modifying a constraints (sub)activities preferred starting times or time slots, the activity tag
+	is now correctly updated.

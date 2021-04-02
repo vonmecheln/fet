@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 4 August 2008 (new additions are written with date, most are at the end)
+this documentation by Liviu Lalescu, reviewed and modified - 17 August 2008 (new additions are written with date, most are at the end)
 
 --------
 
@@ -638,7 +638,39 @@ This is useful if you need for instance, if Maths lessons are 4-5 per week, to c
 
 Another thing: if you have 1 or 2 lessons per week for a subject, say biology, and want to constrain one of the components if there are 2 per week, and none if there is only 1, you can add such a constraint for component number=2.
 
--------------------------------------------------------------------------------</string>
+-------------------------------------------------------------------------------
+
+New, added 15 August 2008:
+
+Q: Help on constraints teacher(s) or students (set) hourly interval max days per week
+
+A: This is a constraint suggested by users, to allow you to specify an hourly interval for students or teachers, and to say that in this interval they must work at most max days per week. This is useful if for instance you want teachers not to have more than 2 days per week activities in the last 2 hours of the day.
+
+-------------------------------------------------------------------------------
+
+New, added 16 August 2008:
+
+Q: Help on constraint activities end students day (or activity ends students day).
+
+A: If you have activities which you want to put in the last slots of a day (like say the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day). This constraint can have weight only 100%, because of the way the algorithm works.
+
+-------------------------------------------------------------------------------
+
+New, added 16 August 2008:
+
+Q: At our school there are a lot of teachers which work only a few hours a week. Of course it is really nasty to drive for one our to the school. So we  set the constraint, that every teacher should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a week. As a result of this FET doesn't start to create a timetable. Any suggestions how to fix the problem without defining a constraint for every singular teacher?
+
+A: I have a nice trick: add a dummy activity, 1 hour duration, with only this teacher (no students sets, any subject), additional to the real activity.
+
+This trick just passed through my mind as I was trying to write you that you have to do it the hard way (add constraints for each teacher)
+
+-------------------------------------------------------------------------------
+
+New, added 17 August 2008:
+
+Q: What about the automatic search for updates? Should I enable it?
+
+A: It is recommended to enable automatic search for updates. I didn't set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.</string>
             </property>
         </widget>
     </grid>

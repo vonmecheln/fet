@@ -117,6 +117,7 @@ public slots:
 	void on_dataTimeConstraintsMinNDaysBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsActivityEndsStudentsDayAction_activated();
+	void on_dataTimeConstraintsActivitiesEndStudentsDayAction_activated();
 
 	void on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated();
 	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated();
@@ -130,6 +131,11 @@ public slots:
 	void on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated();
 	void on_dataTimeConstraintsTeachersMaxGapsPerDayAction_activated();
 	void on_dataTimeConstraintsTeacherMaxGapsPerDayAction_activated();
+	
+	void on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_activated();
 
 	void on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_activated();
 	void on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_activated();

@@ -40,6 +40,8 @@
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
 
+#include "modifyconstraintactivitiesendstudentsdayform.h"
+
 #include "modifyconstraintteachernotavailabletimesform.h"
 #include "modifyconstraintteachersmaxgapsperweekform.h"
 #include "modifyconstraintteachermaxgapsperweekform.h"
@@ -64,6 +66,12 @@
 #include "modifyconstraintstudentsmaxhourscontinuouslyform.h"
 #include "modifyconstraintstudentssetminhoursdailyform.h"
 #include "modifyconstraintstudentsminhoursdailyform.h"
+
+#include "modifyconstraintteacherintervalmaxdaysperweekform.h"
+#include "modifyconstraintteachersintervalmaxdaysperweekform.h"
+
+#include "modifyconstraintstudentssetintervalmaxdaysperweekform.h"
+#include "modifyconstraintstudentsintervalmaxdaysperweekform.h"
 
 #include <QDesktopWidget>
 
@@ -144,211 +152,280 @@ void AllTimeConstraintsForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=gt.rules.timeConstraintsList[i];
 	
+	//1
 	if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
 		ModifyConstraintBasicCompulsoryTimeForm* form=
 		 new ModifyConstraintBasicCompulsoryTimeForm((ConstraintBasicCompulsoryTime*)ctr);
 		form->exec();
 	}
+	//2
 	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_CONSECUTIVE){
 		ModifyConstraint2ActivitiesConsecutiveForm* form=
 		 new ModifyConstraint2ActivitiesConsecutiveForm((Constraint2ActivitiesConsecutive*)ctr);
 		form->exec();
 	}
+	//3
 	else if(ctr->type==CONSTRAINT_2_ACTIVITIES_ORDERED){
 		ModifyConstraint2ActivitiesOrderedForm* form=
 		 new ModifyConstraint2ActivitiesOrderedForm((Constraint2ActivitiesOrdered*)ctr);
 		form->exec();
 	}
+	//4
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
 		ModifyConstraintActivityPreferredTimeSlotsForm* form=
 		 new ModifyConstraintActivityPreferredTimeSlotsForm((ConstraintActivityPreferredTimeSlots*)ctr);
 		form->exec();
 	}
+	//5
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
 		ModifyConstraintActivityPreferredStartingTimesForm* form=
 		 new ModifyConstraintActivityPreferredStartingTimesForm((ConstraintActivityPreferredStartingTimes*)ctr);
 		form->exec();
 	}
+	//6
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
 		ModifyConstraintActivitiesPreferredTimeSlotsForm* form=
 		 new ModifyConstraintActivitiesPreferredTimeSlotsForm((ConstraintActivitiesPreferredTimeSlots*)ctr);
 		form->exec();
 	}
+	//7
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
 		ModifyConstraintActivitiesPreferredStartingTimesForm* form=
 		 new ModifyConstraintActivitiesPreferredStartingTimesForm((ConstraintActivitiesPreferredStartingTimes*)ctr);
 		form->exec();
 	}
-
+	//8
 	else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
 		ModifyConstraintSubactivitiesPreferredTimeSlotsForm* form=
 		 new ModifyConstraintSubactivitiesPreferredTimeSlotsForm((ConstraintSubactivitiesPreferredTimeSlots*)ctr);
 		form->exec();
 	}
+	//9
 	else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
 		ModifyConstraintSubactivitiesPreferredStartingTimesForm* form=
 		 new ModifyConstraintSubactivitiesPreferredStartingTimesForm((ConstraintSubactivitiesPreferredStartingTimes*)ctr);
 		form->exec();
 	}
-
+	//10
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
 		ModifyConstraintActivitiesSameStartingTimeForm* form=
 		 new ModifyConstraintActivitiesSameStartingTimeForm((ConstraintActivitiesSameStartingTime*)ctr);
 		form->exec();
 	}
+	//11
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
 		ModifyConstraintActivitiesSameStartingHourForm* form=
 		 new ModifyConstraintActivitiesSameStartingHourForm((ConstraintActivitiesSameStartingHour*)ctr);
 		form->exec();
 	}
+	//12
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
 		ModifyConstraintActivitiesSameStartingDayForm* form=
 		 new ModifyConstraintActivitiesSameStartingDayForm((ConstraintActivitiesSameStartingDay*)ctr);
 		form->exec();
 	}
+	//13
 	else if(ctr->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
 		ModifyConstraintTeacherNotAvailableTimesForm* form=
 		 new ModifyConstraintTeacherNotAvailableTimesForm((ConstraintTeacherNotAvailableTimes*)ctr);
 		form->exec();
 	}
+	//14
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
 		ModifyConstraintStudentsSetNotAvailableTimesForm* form=
 		 new ModifyConstraintStudentsSetNotAvailableTimesForm((ConstraintStudentsSetNotAvailableTimes*)ctr);
 		form->exec();
 	}
+	//15
 	else if(ctr->type==CONSTRAINT_BREAK_TIMES){
 		ModifyConstraintBreakTimesForm* form=
 		 new ModifyConstraintBreakTimesForm((ConstraintBreakTimes*)ctr);
 		form->exec();
 	}
+	//16
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK){
 		ModifyConstraintTeacherMaxDaysPerWeekForm* form=
 		 new ModifyConstraintTeacherMaxDaysPerWeekForm((ConstraintTeacherMaxDaysPerWeek*)ctr);
 		form->exec();
 	}
+	//17
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY){
 		ModifyConstraintTeachersMaxHoursDailyForm* form=
 		 new ModifyConstraintTeachersMaxHoursDailyForm((ConstraintTeachersMaxHoursDaily*)ctr);
 		form->exec();
 	}
+	//18
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
 		ModifyConstraintTeacherMaxHoursDailyForm* form=
 		 new ModifyConstraintTeacherMaxHoursDailyForm((ConstraintTeacherMaxHoursDaily*)ctr);
 		form->exec();
 	}
+	//19
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY){
 		ModifyConstraintTeachersMaxHoursContinuouslyForm* form=
 		 new ModifyConstraintTeachersMaxHoursContinuouslyForm((ConstraintTeachersMaxHoursContinuously*)ctr);
 		form->exec();
 	}
+	//20
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY){
 		ModifyConstraintTeacherMaxHoursContinuouslyForm* form=
 		 new ModifyConstraintTeacherMaxHoursContinuouslyForm((ConstraintTeacherMaxHoursContinuously*)ctr);
 		form->exec();
 	}
+	//21
 	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY){
 		ModifyConstraintTeachersMinHoursDailyForm* form=
 		 new ModifyConstraintTeachersMinHoursDailyForm((ConstraintTeachersMinHoursDaily*)ctr);
 		form->exec();
 	}
+	//22
 	else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY){
 		ModifyConstraintTeacherMinHoursDailyForm* form=
 		 new ModifyConstraintTeacherMinHoursDailyForm((ConstraintTeacherMinHoursDaily*)ctr);
 		form->exec();
 	}
+	//23
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK){
 		ModifyConstraintTeachersMaxGapsPerWeekForm* form=
 		 new ModifyConstraintTeachersMaxGapsPerWeekForm((ConstraintTeachersMaxGapsPerWeek*)ctr);
 		form->exec();
 	}
+	//24
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
 		ModifyConstraintTeacherMaxGapsPerWeekForm* form=
 		 new ModifyConstraintTeacherMaxGapsPerWeekForm((ConstraintTeacherMaxGapsPerWeek*)ctr);
 		form->exec();
 	}
+	//25
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY){
 		ModifyConstraintTeachersMaxGapsPerDayForm* form=
 		 new ModifyConstraintTeachersMaxGapsPerDayForm((ConstraintTeachersMaxGapsPerDay*)ctr);
 		form->exec();
 	}
+	//26
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY){
 		ModifyConstraintTeacherMaxGapsPerDayForm* form=
 		 new ModifyConstraintTeacherMaxGapsPerDayForm((ConstraintTeacherMaxGapsPerDay*)ctr);
 		form->exec();
 	}
+	//27
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 		ModifyConstraintActivityPreferredStartingTimeForm* form=
 		 new ModifyConstraintActivityPreferredStartingTimeForm((ConstraintActivityPreferredStartingTime*)ctr);
 		form->exec();
 	}
+	//28
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK){
 		ModifyConstraintStudentsSetMaxGapsPerWeekForm* form=
 		 new ModifyConstraintStudentsSetMaxGapsPerWeekForm((ConstraintStudentsSetMaxGapsPerWeek*)ctr);
 		form->exec();
 	}
+	//29
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK){
 		ModifyConstraintStudentsMaxGapsPerWeekForm* form=
 		 new ModifyConstraintStudentsMaxGapsPerWeekForm((ConstraintStudentsMaxGapsPerWeek*)ctr);
 		form->exec();
 	}
+	//30
 	else if(ctr->type==CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 		ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm* form=
 		 new ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm((ConstraintStudentsEarlyMaxBeginningsAtSecondHour*)ctr);
 		form->exec();
 	}
+	//31
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 		ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm* form=
 		 new ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm((ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour*)ctr);
 		form->exec();
 	}
+	//32
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
 		ModifyConstraintStudentsSetMaxHoursDailyForm* form=
 		 new ModifyConstraintStudentsSetMaxHoursDailyForm((ConstraintStudentsSetMaxHoursDaily*)ctr);
 		form->exec();
 	}
+	//33
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY){
 		ModifyConstraintStudentsMaxHoursDailyForm* form=
 		 new ModifyConstraintStudentsMaxHoursDailyForm((ConstraintStudentsMaxHoursDaily*)ctr);
 		form->exec();
 	}
+	//34
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
 		ModifyConstraintStudentsSetMaxHoursContinuouslyForm* form=
 		 new ModifyConstraintStudentsSetMaxHoursContinuouslyForm((ConstraintStudentsSetMaxHoursContinuously*)ctr);
 		form->exec();
 	}
+	//35
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_CONTINUOUSLY){
 		ModifyConstraintStudentsMaxHoursContinuouslyForm* form=
 		 new ModifyConstraintStudentsMaxHoursContinuouslyForm((ConstraintStudentsMaxHoursContinuously*)ctr);
 		form->exec();
 	}
+	//36
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
 		ModifyConstraintStudentsSetMinHoursDailyForm* form=
 		 new ModifyConstraintStudentsSetMinHoursDailyForm((ConstraintStudentsSetMinHoursDaily*)ctr);
 		form->exec();
 	}
+	//37
 	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_DAILY){
 		ModifyConstraintStudentsMinHoursDailyForm* form=
 		 new ModifyConstraintStudentsMinHoursDailyForm((ConstraintStudentsMinHoursDaily*)ctr);
 		form->exec();
 	}
+	//38
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
 		ModifyConstraintActivitiesNotOverlappingForm* form=
 		 new ModifyConstraintActivitiesNotOverlappingForm((ConstraintActivitiesNotOverlapping*)ctr);
 		form->exec();
 	}
+	//39
 	else if(ctr->type==CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES){
 		ModifyConstraintMinNDaysBetweenActivitiesForm* form=
 		 new ModifyConstraintMinNDaysBetweenActivitiesForm((ConstraintMinNDaysBetweenActivities*)ctr);
 		form->exec();
 	}
+	//40
 	else if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
 		ModifyConstraintMinGapsBetweenActivitiesForm* form=
 		 new ModifyConstraintMinGapsBetweenActivitiesForm((ConstraintMinGapsBetweenActivities*)ctr);
 		form->exec();
 	}
+	//41
 	else if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
 		ModifyConstraintActivityEndsStudentsDayForm* form=
 		 new ModifyConstraintActivityEndsStudentsDayForm((ConstraintActivityEndsStudentsDay*)ctr);
+		form->exec();
+	}
+	//42
+	else if(ctr->type==CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintTeacherIntervalMaxDaysPerWeekForm* form=
+		 new ModifyConstraintTeacherIntervalMaxDaysPerWeekForm((ConstraintTeacherIntervalMaxDaysPerWeek*)ctr);
+		form->exec();
+	}
+	//43
+	else if(ctr->type==CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintTeachersIntervalMaxDaysPerWeekForm* form=
+		 new ModifyConstraintTeachersIntervalMaxDaysPerWeekForm((ConstraintTeachersIntervalMaxDaysPerWeek*)ctr);
+		form->exec();
+	}
+	//44
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsSetIntervalMaxDaysPerWeekForm* form=
+		 new ModifyConstraintStudentsSetIntervalMaxDaysPerWeekForm((ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr);
+		form->exec();
+	}
+	//45
+	else if(ctr->type==CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsIntervalMaxDaysPerWeekForm* form=
+		 new ModifyConstraintStudentsIntervalMaxDaysPerWeekForm((ConstraintStudentsIntervalMaxDaysPerWeek*)ctr);
+		form->exec();
+	}
+	//46
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY){
+		ModifyConstraintActivitiesEndStudentsDayForm* form=
+		 new ModifyConstraintActivitiesEndStudentsDayForm((ConstraintActivitiesEndStudentsDay*)ctr);
 		form->exec();
 	}
 	else{

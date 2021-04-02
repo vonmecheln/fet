@@ -38,7 +38,7 @@
                 <cstring>textBrowser3_2</cstring>
             </property>
             <property name="text">
-                <string>Updated: 4 August 2008
+                <string>Updated: 16 August 2008
 
 Instructions by Liviu Lalescu
 
@@ -50,8 +50,12 @@ An impossible timetable might also be caused by incorrect years division. Please
 
 0) Please select correctly the days and hours (working periods). To ensure best performance, it is best to keep the number hours (periods) per day to your required needs, not larger. It is a good practice to choose a value for the number of days and number of hours from the beginning (you can change their names anytime you want afterwards).
 
-1) You can use for the constraint min n days the weight you want. It can be 95%, 99.75% or even 100%. If you specify a value below 100% (even 99.75% or more) for an impossible constraint, FET will be able to detect that it is impossible and obtain a timetable in the end, so the weight is subjective. So, the best way would be to choose a 99.75% for all constraints, but the time of generation might be larger than with 95%.
-You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 99.75% or 100%. I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change the 95% for another value for all constraints of this type, the easiest way is in Data/Time constraints/Min n days between activities dialog, where starting with version 5.3.6 there is a simple command for that.
+1) To say that component activities of a larger split activity are not in the same day, FET automatically adds a constraint min n days between activities with default 95% weight. If you want to ensure no two activities of same type are in the same day, you will have to modify the weight from 95% to higher values (see these constraints in the time constraints-&gt;activities-&gt;min n days between a set of activities constraints. You have there a powerful filter to change many constraints with a few clicks).
+
+You can use for the constraint min n days the weight you want. It can be 95%, 99.75% or even 100%. If you specify a value below 100% (even 99.75% or more) for an impossible constraint, FET will be able to detect that it is impossible and obtain a timetable in the end, so the weight is subjective. So, the best way would be to choose a 99.75% for all constraints, but the time of generation might be larger than with 95%.
+You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 99.75% or 100%. I am not sure here, I have not enough sample files (please contribute with advice).
+
+If you would like to change the default 95% for another value for some constraints of type min n days, the easiest way is in Data/Time constraints/Min n days between activities dialog, where starting with version 5.6.1 there is a very powerful dialog, where you can specify a filter (old values) and new values for the selected constraints.
 
 You might want to choose different weights for different constraint min n days (for instance, higher on subjects with less activities per week)
 
@@ -83,7 +87,11 @@ Each constraint of type not available or preferred times which filters out impos
 
 13) Added 27 March 2008: If you have for instance 7 hours of Maths on a 5 days week (more lessons than days), please respect the correct way to add these as a split activity. See question Q-1-27-March-2008 from FAQ. It is important!
 
-14) Added 28 June 2008: Please try to remove redundant min n days constraints when adding constraints same starting day or time (read Help/Important tips).</string>
+14) Added 28 June 2008: Please try to remove redundant min n days constraints when adding constraints same starting day or time (read Help/Important tips).
+
+15) Added 15 August 2008: If you want for instance teachers (or students) not to have more than 2 times per week activities in the last hours, you have to use new constraint teacher(s) or students (set) hourly interval max days per week. Please read FAQ for more details.
+
+16) Added 16 August 2008: If you have activities which you want to put in the last slots of a day (like say the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day).</string>
             </property>
         </widget>
     </grid>

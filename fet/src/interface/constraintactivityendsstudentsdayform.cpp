@@ -31,6 +31,44 @@ ConstraintActivityEndsStudentsDayForm::ConstraintActivityEndsStudentsDayForm()
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+/////////////
+	teachersComboBox->insertItem("");
+	for(int i=0; i<gt.rules.teachersList.size(); i++){
+		Teacher* tch=gt.rules.teachersList[i];
+		teachersComboBox->insertItem(tch->name);
+	}
+	teachersComboBox->setCurrentItem(0);
+
+	subjectsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.subjectsList.size(); i++){
+		Subject* sb=gt.rules.subjectsList[i];
+		subjectsComboBox->insertItem(sb->name);
+	}
+	subjectsComboBox->setCurrentItem(0);
+
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* st=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(st->name);
+	}
+	activityTagsComboBox->setCurrentItem(0);
+
+	studentsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.yearsList.size(); i++){
+		StudentsYear* sty=gt.rules.yearsList[i];
+		studentsComboBox->insertItem(sty->name);
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+			studentsComboBox->insertItem(stg->name);
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+				studentsComboBox->insertItem(sts->name);
+			}
+		}
+	}
+	studentsComboBox->setCurrentItem(0);
+///////////////
+
 	this->filterChanged();
 }
 
@@ -40,10 +78,64 @@ ConstraintActivityEndsStudentsDayForm::~ConstraintActivityEndsStudentsDayForm()
 
 bool ConstraintActivityEndsStudentsDayForm::filterOk(TimeConstraint* ctr)
 {
-	if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY)
-		return true;
-	else
+	if(ctr->type!=CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY)
 		return false;
+		
+	ConstraintActivityEndsStudentsDay* c=(ConstraintActivityEndsStudentsDay*) ctr;
+	
+	QString tn=teachersComboBox->currentText();
+	QString sbn=subjectsComboBox->currentText();
+	QString sbtn=activityTagsComboBox->currentText();
+	QString stn=studentsComboBox->currentText();
+		
+	bool found=true;
+	
+	int id=c->activityId;
+	Activity* act=NULL;
+	foreach(Activity* a, gt.rules.activitiesList)
+		if(a->id==id)
+			act=a;
+
+	found=true;
+		
+	if(act!=NULL){
+		//teacher
+		if(tn!=""){
+			bool ok2=false;
+			for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
+				if(*it == tn){
+					ok2=true;
+					break;
+				}
+			if(!ok2)
+				found=false;
+		}
+
+		//subject
+		if(sbn!="" && sbn!=act->subjectName)
+			found=false;
+	
+		//activity tag
+		if(sbtn!="" && sbtn!=act->activityTagName)
+			found=false;
+	
+		//students
+		if(stn!=""){
+			bool ok2=false;
+			for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
+				if(*it == stn){
+					ok2=true;
+					break;
+			}
+			if(!ok2)
+				found=false;
+		}
+	}
+	
+	if(found)
+		return true;
+
+	return false;
 }
 
 void ConstraintActivityEndsStudentsDayForm::filterChanged()
@@ -57,6 +149,11 @@ void ConstraintActivityEndsStudentsDayForm::filterChanged()
 			constraintsListBox->insertItem(ctr->getDescription(gt.rules));
 		}
 	}
+
+	if(visibleConstraintsList.count()>0)
+		constraintChanged(0);
+	else
+		constraintChanged(-1);
 }
 
 void ConstraintActivityEndsStudentsDayForm::constraintChanged(int index)

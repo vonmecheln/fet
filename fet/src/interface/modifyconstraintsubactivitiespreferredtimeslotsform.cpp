@@ -328,6 +328,7 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ok()
 	this->_ctr->p_teacherName=teacher;
 	this->_ctr->p_studentsName=students;
 	this->_ctr->p_subjectName=subject;
+	this->_ctr->p_activityTagName=activityTag;
 	this->_ctr->p_nPreferredTimeSlots=n;
 	for(int i=0; i<n; i++){
 		this->_ctr->p_days[i]=days[i];

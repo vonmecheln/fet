@@ -143,6 +143,9 @@
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsTeacherMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" />
+      <addaction name="separator" />
+      <addaction name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" />
+      <addaction name="dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction" />
      </widget>
      <widget class="QMenu" name="menuStudents_time_constraints" >
       <property name="title" >
@@ -162,6 +165,9 @@
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction" />
       <addaction name="dataTimeConstraintsStudentsMaxHoursContinuouslyAction" />
+      <addaction name="separator" />
+      <addaction name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" />
+      <addaction name="dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction" />
      </widget>
      <widget class="QMenu" name="menuActivities_time_constraints" >
       <property name="title" >
@@ -180,6 +186,7 @@
       <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivityEndsStudentsDayAction" />
+      <addaction name="dataTimeConstraintsActivitiesEndStudentsDayAction" />
       <addaction name="separator" />
       <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
       <addaction name="dataTimeConstraintsActivitiesSameStartingDayAction" />
@@ -1316,6 +1323,31 @@
   <action name="dataTimeConstraintsSubactivitiesPreferredStartingTimesAction" >
    <property name="text" >
     <string>A set of subactivities has a set of preferred starting times</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" >
+   <property name="text" >
+    <string>A teacher works in an hourly interval max days per week</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction" >
+   <property name="text" >
+    <string>All teachers work in an hourly interval max days per week</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" >
+   <property name="text" >
+    <string>A students set works in an hourly interval max days per week</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction" >
+   <property name="text" >
+    <string>All students work in an hourly interval max days per week</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesEndStudentsDayAction" >
+   <property name="text" >
+    <string>A set of activities end students day</string>
    </property>
   </action>
  </widget>
