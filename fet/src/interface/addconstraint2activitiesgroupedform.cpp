@@ -49,14 +49,14 @@ void AddConstraint2ActivitiesGroupedForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight=%1").arg(weight);
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("The activities with id's: %1 must be scheduled grouped (order is not important)").arg(activitiesIdsLineEdit->text());
 	s+="\n";
@@ -71,15 +71,15 @@ void AddConstraint2ActivitiesGroupedForm::addCurrentConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int act_id[2];
 	int n_act=sscanf(activitiesIdsLineEdit->text(), "%d,%d", act_id, act_id+1);
@@ -90,7 +90,7 @@ void AddConstraint2ActivitiesGroupedForm::addCurrentConstraint()
 		return;
 	}
 
-	ctr=new Constraint2ActivitiesGrouped(weight, compulsory, act_id[0], act_id[1]);
+	ctr=new Constraint2ActivitiesGrouped(weight, /*compulsory,*/ act_id[0], act_id[1]);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

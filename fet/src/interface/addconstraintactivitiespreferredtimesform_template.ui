@@ -43,17 +43,6 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>compulsoryCheckBox</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Compulsory</string>
-                    </property>
-                    <property name="checked">
-                        <bool>true</bool>
-                    </property>
-                </widget>
                 <widget class="QLabel">
                     <property name="name">
                         <cstring>weightTextLabel</cstring>
@@ -65,7 +54,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight (recommended: 1.0)</string>
+                        <string>Weight percentage (recommended: 0%-100%)</string>
                     </property>
                 </widget>
                 <widget class="QLineEdit">
@@ -73,7 +62,7 @@
                         <cstring>weightLineEdit</cstring>
                     </property>
                     <property name="text">
-                        <string>1.0</string>
+                        <string>100</string>
                     </property>
                 </widget>
             </hbox>

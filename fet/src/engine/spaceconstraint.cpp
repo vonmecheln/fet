@@ -272,9 +272,9 @@ int ConstraintBasicCompulsorySpace::fitness(
 				//(the number of students must be less than the capacity)
 				int rm=c.rooms[i];
 				if(r.internalActivitiesList[i].nTotalStudents>r.internalRoomsList[rm]->capacity){
-					if(r.internalActivitiesList[i].parity==PARITY_WEEKLY)
-						nor+=2;
-					else
+					//if(r.internalActivitiesList[i].parity==PARITY_WEEKLY)
+					//	nor+=2;
+					//else
 						nor++;
 				}
 			}
@@ -333,9 +333,9 @@ int ConstraintBasicCompulsorySpace::fitness(
 				int rm=c.rooms[i];
 				if(r.internalActivitiesList[i].nTotalStudents>r.internalRoomsList[rm]->capacity){
 					int tmp;
-					if(r.internalActivitiesList[i].parity==PARITY_WEEKLY)
-						tmp=2;
-					else
+					//if(r.internalActivitiesList[i].parity==PARITY_WEEKLY)
+					//	tmp=2;
+					//else
 						tmp=1;
 	
 					nor+=tmp;
@@ -768,7 +768,7 @@ int ConstraintRoomTypeNotAllowedSubjects::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -776,7 +776,8 @@ int ConstraintRoomTypeNotAllowedSubjects::fitness(
 			//maybe this can be a little speeded up by keeping a list of the types
 			//and comparing integers instead of strings.
 			if(typ==this->roomType)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -784,7 +785,7 @@ int ConstraintRoomTypeNotAllowedSubjects::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -798,11 +799,12 @@ int ConstraintRoomTypeNotAllowedSubjects::fitness(
 						.arg(r.internalRoomsList[rm]->name)
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(parity*weight));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(/*parity**/weight));
 					*conflictsString += "\n";
 				}
 	
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -1014,7 +1016,7 @@ int ConstraintSubjectRequiresEquipments::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -1029,7 +1031,8 @@ int ConstraintSubjectRequiresEquipments::fitness(
 			}
 
 			if(!ok)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 		//with logging
@@ -1037,7 +1040,7 @@ int ConstraintSubjectRequiresEquipments::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -1058,11 +1061,12 @@ int ConstraintSubjectRequiresEquipments::fitness(
 						.arg(r.internalRoomsList[rm]->name)
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -1279,7 +1283,7 @@ int ConstraintSubjectSubjectTagRequireEquipments::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -1294,7 +1298,8 @@ int ConstraintSubjectSubjectTagRequireEquipments::fitness(
 			}
 
 			if(!ok)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -1302,7 +1307,7 @@ int ConstraintSubjectSubjectTagRequireEquipments::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -1323,11 +1328,12 @@ int ConstraintSubjectSubjectTagRequireEquipments::fitness(
 						.arg(r.internalRoomsList[rm]->name)
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -1506,13 +1512,14 @@ int ConstraintTeacherRequiresRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
 
 			if(rm!=this->_room)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -1520,7 +1527,7 @@ int ConstraintTeacherRequiresRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -1533,11 +1540,12 @@ int ConstraintTeacherRequiresRoom::fitness(
 						.arg(this->roomName)
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -1727,13 +1735,14 @@ int ConstraintTeacherSubjectRequireRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
 
 			if(rm!=this->_room)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -1741,7 +1750,7 @@ int ConstraintTeacherSubjectRequireRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -1755,11 +1764,12 @@ int ConstraintTeacherSubjectRequireRoom::fitness(
 						.arg(this->roomName)
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -2402,16 +2412,17 @@ int ConstraintActivityPreferredRoom::fitness(
 	//without logging
 	if(conflictsString==NULL){
 		nbroken=0;
-		int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
+		//int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
 
 		int rm=c.rooms[this->_activity];
 		if(rm!=UNALLOCATED_SPACE && rm!=this->_room)
-			nbroken+=parity;
+			//nbroken+=parity;
+			nbroken++;
 	}
 		//with logging
 	else{
 		nbroken=0;
-		int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
+		//int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
 
 		int rm=c.rooms[this->_activity];
 		if(rm!=UNALLOCATED_SPACE && rm!=this->_room){
@@ -2421,11 +2432,12 @@ int ConstraintActivityPreferredRoom::fitness(
 					.arg(this->activityId)
 					.arg(this->roomName));
 				*conflictsString += ". ";
-				*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+				*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/ ));
 				*conflictsString += "\n";
 			}
 
-			nbroken+=parity;
+			//nbroken+=parity;
+			nbroken++;
 		}
 	}
 
@@ -2617,7 +2629,7 @@ int ConstraintActivityPreferredRooms::fitness(
 	//without logging
 	if(conflictsString==NULL){
 		nbroken=0;
-		int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
+		//int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
 
 		int rm=c.rooms[this->_activity];
 		if(rm!=UNALLOCATED_SPACE){
@@ -2626,13 +2638,14 @@ int ConstraintActivityPreferredRooms::fitness(
 				if(this->_rooms[i]==rm)
 					break;
 			if(i==this->_n_preferred_rooms)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
 	else{
 		nbroken=0;
-		int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
+		//int parity=r.internalActivitiesList[this->_activity].parity==PARITY_WEEKLY?2:1;
 
 		int rm=c.rooms[this->_activity];
 		if(rm!=UNALLOCATED_SPACE){
@@ -2646,11 +2659,12 @@ int ConstraintActivityPreferredRooms::fitness(
 						(QObject::tr("Space constraint activity preferred rooms broken for activity with id=%1")
 						.arg(this->activityId));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -2875,13 +2889,13 @@ int ConstraintActivitiesSameRoom::fitness(
 						int tmp=0;
 
 						//activity weekly - counts as double
-						if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY &&
+						/*if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY &&
 						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
 							tmp = 4;
 						else if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY ||
 						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
 							tmp = 2;
-						else
+						else*/
 							tmp = 1;
 
 						nbroken+=tmp;
@@ -2902,13 +2916,13 @@ int ConstraintActivitiesSameRoom::fitness(
 						int tmp=0;
 
 						//activity weekly - counts as double
-						if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY &&
+						/*if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY &&
 						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
 							tmp = 4;
 						else if(r.internalActivitiesList[this->_activities[i]].parity==PARITY_WEEKLY ||
 						 r.internalActivitiesList[this->_activities[j]].parity==PARITY_WEEKLY)
 							tmp = 2;
-						else
+						else*/
 							tmp = 1;
 
 						nbroken+=tmp;
@@ -3111,7 +3125,7 @@ int ConstraintSubjectSubjectTagPreferredRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3121,7 +3135,8 @@ int ConstraintSubjectSubjectTagPreferredRoom::fitness(
 				ok=false;
 	
 			if(!ok)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -3129,7 +3144,7 @@ int ConstraintSubjectSubjectTagPreferredRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3144,11 +3159,12 @@ int ConstraintSubjectSubjectTagPreferredRoom::fitness(
 						(QObject::tr("Space constraint subject subject tag preferred room broken for activity with id %1")
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -3349,7 +3365,7 @@ int ConstraintSubjectSubjectTagPreferredRooms::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3363,7 +3379,8 @@ int ConstraintSubjectSubjectTagPreferredRooms::fitness(
 				ok=false;
 
 			if(!ok)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -3371,7 +3388,7 @@ int ConstraintSubjectSubjectTagPreferredRooms::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3390,11 +3407,12 @@ int ConstraintSubjectSubjectTagPreferredRooms::fitness(
 						(QObject::tr("Space constraint subject subject tag preferred room broken for activity with id %1")
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -3576,7 +3594,7 @@ int ConstraintSubjectPreferredRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3586,7 +3604,8 @@ int ConstraintSubjectPreferredRoom::fitness(
 				ok=false;
 	
 			if(!ok)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -3594,7 +3613,7 @@ int ConstraintSubjectPreferredRoom::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3609,11 +3628,12 @@ int ConstraintSubjectPreferredRoom::fitness(
 						(QObject::tr("Space constraint subject preferred room broken for activity with id %1")
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -3810,7 +3830,7 @@ int ConstraintSubjectPreferredRooms::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3824,7 +3844,8 @@ int ConstraintSubjectPreferredRooms::fitness(
 				ok=false;
 
 			if(!ok)
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 		}
 	}
 	//with logging
@@ -3832,7 +3853,7 @@ int ConstraintSubjectPreferredRooms::fitness(
 		nbroken=0;
 		for(int i=0; i<this->_nActivities; i++){	
 			int ac=this->_activities[i];
-			int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
+			//int parity=r.internalActivitiesList[ac].parity==PARITY_WEEKLY?2:1;
 			int rm=c.rooms[ac];
 			if(rm==UNALLOCATED_SPACE)
 				continue;
@@ -3851,11 +3872,12 @@ int ConstraintSubjectPreferredRooms::fitness(
 						(QObject::tr("Space constraint subject preferred room broken for activity with id %1")
 						.arg(r.internalActivitiesList[ac].id));
 					*conflictsString += ". ";
-					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight*parity));
+					*conflictsString += (QObject::tr("This increases the conflicts total by %1").arg(weight* 1/*parity*/));
 					*conflictsString += "\n";
 				}
 
-				nbroken+=parity;
+				//nbroken+=parity;
+				nbroken++;
 			}
 		}
 	}
@@ -4492,7 +4514,7 @@ int ConstraintMaxRoomChangesPerDayForTeachers::fitness(
 				for(h=0; h<r.nHoursPerDay; h++)
 					if(teachersRoomsWeek1[t][d][h]!=UNALLOCATED_SPACE)
 						break;
-				char last_room=UNALLOCATED_SPACE;
+				int16 last_room=UNALLOCATED_SPACE;
 				if(h<r.nHoursPerDay)
 					last_room=teachersRoomsWeek1[t][d][h];
 				for(h++; h<r.nHoursPerDay; h++)
@@ -4516,7 +4538,7 @@ int ConstraintMaxRoomChangesPerDayForTeachers::fitness(
 				for(h=0; h<r.nHoursPerDay; h++)
 					if(teachersRoomsWeek1[t][d][h]!=UNALLOCATED_SPACE)
 						break;
-				char last_room=UNALLOCATED_SPACE;
+				int16 last_room=UNALLOCATED_SPACE;
 				if(h<r.nHoursPerDay)
 					last_room=teachersRoomsWeek1[t][d][h];
 				for(h++; h<r.nHoursPerDay; h++)

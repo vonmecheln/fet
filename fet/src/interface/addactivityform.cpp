@@ -27,7 +27,7 @@
 #include <QDesktopWidget>
 
 #define subTab(i)	subactivitiesTabWidget->page(i)
-#define prefDay(i)	(i==0?preferredDay1ComboBox:				\
+/*#define prefDay(i)	(i==0?preferredDay1ComboBox:				\
 			(i==1?preferredDay2ComboBox:				\
 			(i==2?preferredDay3ComboBox:				\
 			(i==3?preferredDay4ComboBox:				\
@@ -42,7 +42,8 @@
 			(i==4?preferredHour5ComboBox:				\
 			(i==5?preferredHour6ComboBox:				\
 			(i==6?preferredHour7ComboBox:				\
-			(preferredHour8ComboBox))))))))
+			(preferredHour8ComboBox))))))))*/
+/*
 #define par(i)		(i==0?parity1CheckBox:					\
 			(i==1?parity2CheckBox:					\
 			(i==2?parity3CheckBox:					\
@@ -51,6 +52,7 @@
 			(i==5?parity6CheckBox:					\
 			(i==6?parity7CheckBox:					\
 			(parity8CheckBox))))))))
+			*/
 #define dur(i)		(i==0?duration1SpinBox:					\
 			(i==1?duration2SpinBox:					\
 			(i==2?duration3SpinBox:					\
@@ -76,8 +78,8 @@ AddActivityForm::AddActivityForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 					
-	updatePreferredDaysComboBox();
-	updatePreferredHoursComboBox();
+	//updatePreferredDaysComboBox();
+	//updatePreferredHoursComboBox();
 	updateStudentsListBox();
 	updateTeachersListBox();
 	updateSubjectsComboBox();
@@ -93,6 +95,13 @@ AddActivityForm::AddActivityForm()
 			subTab(i)->setEnabled(true);
 		else
 			subTab(i)->setDisabled(true);
+			
+	minDayDistanceTextLabel->setEnabled(nSplit>=2);
+	minDayDistanceSpinBox->setEnabled(nSplit>=2);
+	percentageTextLabel->setEnabled(nSplit>=2);
+	percentageSpinBox->setEnabled(nSplit>=2);
+	percentTextLabel->setEnabled(nSplit>=2);
+	forceAdjacentCheckBox->setEnabled(nSplit>=2);
 }
 
 AddActivityForm::~AddActivityForm()
@@ -230,7 +239,7 @@ void AddActivityForm::updateStudentsListBox()
 	activityChanged();
 }
 
-void AddActivityForm::updatePreferredDaysComboBox()
+/*void AddActivityForm::updatePreferredDaysComboBox()
 {
 	for(int j=0; j<8; j++){
 		prefDay(j)->clear();
@@ -248,7 +257,7 @@ void AddActivityForm::updatePreferredHoursComboBox()
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			prefHour(j)->insertItem(gt.rules.hoursOfTheDay[i]);
 	}
-}
+}*/
 
 void AddActivityForm::subjectChanged(const QString& dummy)
 {
@@ -272,6 +281,13 @@ void AddActivityForm::splitChanged()
 
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
+
+	minDayDistanceTextLabel->setEnabled(nSplit>=2);
+	minDayDistanceSpinBox->setEnabled(nSplit>=2);
+	percentageTextLabel->setEnabled(nSplit>=2);
+	percentageSpinBox->setEnabled(nSplit>=2);
+	percentTextLabel->setEnabled(nSplit>=2);
+	forceAdjacentCheckBox->setEnabled(nSplit>=2);
 
 	for(int i=0; i<8; i++)
 		if(i<nSplit)
@@ -315,18 +331,18 @@ void AddActivityForm::activityChanged()
 	if(splitSpinBox->value()==1){
 		s+=QObject::tr("Duration=%1").arg(dur(0)->value());
 		s+="\n";
-		if(par(0)->isChecked()){
+		/*if(par(0)->isChecked()){
 			s+=QObject::tr("Fortnightly activity");
 			s+="\n";
-		}
-		if(prefDay(0)->currentItem()>0){
+		}*/
+	/*	if(prefDay(0)->currentItem()>0){
 			s+=QObject::tr("Preferred day=%1").arg(prefDay(0)->currentText());
 			s+="\n";
 		}
 		if(prefHour(0)->currentItem()>0){
 			s+=QObject::tr("Preferred hour=%1").arg(prefHour(0)->currentText());
 			s+="\n";
-		}
+		}*/
 		if(activ(0)->isChecked()){
 			s+=QObject::tr("Active activity");
 			s+="\n";
@@ -342,6 +358,14 @@ void AddActivityForm::activityChanged()
 		if(minDayDistanceSpinBox->value()>0){
 			s+=QObject::tr("The distance between any pair of subactivities must be at least %1 days").arg(minDayDistanceSpinBox->value());
 			s+="\n";
+			
+			s+=QObject::tr("Weight percentage of added min n days constraint: %1\%").arg(percentageSpinBox->value());
+			s+="\n";
+			
+			if(forceAdjacentCheckBox->isChecked()){
+				s+=QObject::tr("If broken min n days, then place activities together, in a bigger duration lesson");
+				s+="\n";
+			}
 		}
 		s+="\n";
 
@@ -350,18 +374,18 @@ void AddActivityForm::activityChanged()
 			s+="\n";
 			s+=QObject::tr("Duration=%1").arg(dur(i)->value());
 			s+="\n";
-			if(par(i)->isChecked()){
+			/*if(par(i)->isChecked()){
 				s+=QObject::tr("Fortnightly activity");
 				s+="\n";
-			}
-			if(prefDay(i)->currentItem()>0){
+			}*/
+			/*if(prefDay(i)->currentItem()>0){
 				s+=QObject::tr("Preferred day=%1").arg(prefDay(i)->currentText());
 				s+="\n";
 			}
 			if(prefHour(i)->currentItem()>0){
 				s+=QObject::tr("Preferred hour=%1").arg(prefHour(i)->currentText());
 				s+="\n";
-			}
+			}*/
 			if(activ(i)->isChecked()){
 				s+=QObject::tr("Active activity");
 				s+="\n";
@@ -439,11 +463,11 @@ void AddActivityForm::addActivity()
 				QObject::tr("Invalid duration"));
 			return;
 		}
-		int parity=PARITY_WEEKLY;
+		/*int parity=PARITY_WEEKLY;
 		if(parity1CheckBox->isChecked())
-			parity=PARITY_FORTNIGHTLY;
+			parity=PARITY_FORTNIGHTLY;*/
 
-		int preferred_day=preferredDay1ComboBox->currentItem()-1;
+		/*int preferred_day=preferredDay1ComboBox->currentItem()-1;
 		if(preferred_day<-1 || preferred_day>=gt.rules.nDaysPerWeek){
 			QMessageBox::warning(this, QObject::tr("FET information"),
 				QObject::tr("Invalid preferred day"));
@@ -454,7 +478,7 @@ void AddActivityForm::addActivity()
 			QMessageBox::warning(this, QObject::tr("FET information"),
 				QObject::tr("Invalid preferred hour"));
 			return;
-		}
+		}*/
 
 		bool active=false;
 		if(active1CheckBox->isChecked())
@@ -468,7 +492,7 @@ void AddActivityForm::addActivity()
 		}
 		activityid++;
 		Activity a(gt.rules, activityid, 0, teachers_names, subject_name, subject_tag_name, students_names,
-			duration, duration, parity, active, (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
+			duration, duration, /*parity,*/ active, (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 
 		bool already_existing=false;
 		for(int i=0; i<gt.rules.activitiesList.size(); i++){
@@ -489,7 +513,7 @@ void AddActivityForm::addActivity()
 		}
 
 		bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, subject_tag_name,
-			students_names,	duration, duration, parity, active, preferred_day, preferred_hour,
+			students_names,	duration, duration, /*parity,*/ active, /*preferred_day, preferred_hour,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
 			QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Activity added"));
@@ -499,23 +523,23 @@ void AddActivityForm::addActivity()
 	else{ //split activity
 		int totalduration;
 		int durations[8];
-		int parities[8];
-		int preferred_days[8];
-		int preferred_hours[8];
+		//int parities[8];
+		//int preferred_days[8];
+		//int preferred_hours[8];
 		bool active[8];
 		int nsplit=splitSpinBox->value();
 
 		totalduration=0;
 		for(int i=0; i<nsplit; i++){
 			durations[i]=dur(i)->value();
-			parities[i]=PARITY_WEEKLY;
+			/*parities[i]=PARITY_WEEKLY;
 			if(par(i)->isChecked())
-				parities[i]=PARITY_FORTNIGHTLY;
+				parities[i]=PARITY_FORTNIGHTLY;*/
 			active[i]=false;
 			if(activ(i)->isChecked())
 				active[i]=true;
-			preferred_days[i]=prefDay(i)->currentItem()-1;
-			preferred_hours[i]=prefHour(i)->currentItem()-1;
+			//preferred_days[i]=prefDay(i)->currentItem()-1;
+			//preferred_hours[i]=prefHour(i)->currentItem()-1;
 
 			totalduration+=durations[i];
 		}
@@ -534,7 +558,7 @@ void AddActivityForm::addActivity()
 		bool tmp=gt.rules.addSplitActivity(firstactivityid, firstactivityid,
 			teachers_names, subject_name, subject_tag_name, students_names,
 			nsplit, totalduration, durations,
-			parities, active, minD, preferred_days, preferred_hours,
+			/*parities,*/ active, minD, percentageSpinBox->value(), forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
 			QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Split activity added"));
@@ -555,7 +579,7 @@ void AddActivityForm::clearStudents()
 	activityChanged();
 }
 
-#undef prefDay
-#undef prefHour
+//#undef prefDay
+//#undef prefHour
 #undef subTab
 #undef activ

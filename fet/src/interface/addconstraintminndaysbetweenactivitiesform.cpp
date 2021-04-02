@@ -66,15 +66,15 @@ void AddConstraintMinNDaysBetweenActivitiesForm::addConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 | weight>100){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -98,7 +98,7 @@ void AddConstraintMinNDaysBetweenActivitiesForm::addConstraint()
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++)
 		ids[i]=*it;
 	
-	ctr=new ConstraintMinNDaysBetweenActivities(weight, compulsory, this->selectedActivitiesList.count(), ids, minDaysSpinBox->value());
+	ctr=new ConstraintMinNDaysBetweenActivities(weight, adjIfBrokenCheckBox->isChecked(),/*compulsory,*/ this->selectedActivitiesList.count(), ids, minDaysSpinBox->value());
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	
 	if(tmp2){

@@ -57,14 +57,14 @@ void AddConstraintTeachersSubgroupsMaxHoursDailyForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight=%1").arg(weight);
+	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("Teachers-subgroups no more than max hours daily");
 	s+="\n";
@@ -84,17 +84,17 @@ void AddConstraintTeachersSubgroupsMaxHoursDailyForm::addCurrentConstraint()
 	sscanf(tmp, "%lf", &weight);
 	if(weight<0.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int max_hours=maxHoursSpinBox->value();
 
-	ctr=new ConstraintTeachersSubgroupsMaxHoursDaily(weight, compulsory, max_hours);
+	ctr=new ConstraintTeachersSubgroupsMaxHoursDaily(weight, /*compulsory,*/ max_hours);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

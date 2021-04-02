@@ -37,8 +37,8 @@ ModifyConstraintStudentsSetNotAvailableForm::ModifyConstraintStudentsSetNotAvail
 	
 	this->_ctr=ctr;
 	
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
 	updatePeriodGroupBox();
 	updateStudentsComboBox();
@@ -107,14 +107,14 @@ void ModifyConstraintStudentsSetNotAvailableForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr(QString("Weight=%1").arg(weight));
+	s+=QObject::tr(QString("Weight (percentage)=%1\%").arg(weight));
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("Students set not available");
 	s+="\n";
@@ -159,15 +159,15 @@ void ModifyConstraintStudentsSetNotAvailableForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int day=dayComboBox->currentItem();
 	if(day<0 || day>gt.rules.nDaysPerWeek){
@@ -202,8 +202,8 @@ void ModifyConstraintStudentsSetNotAvailableForm::ok()
 		return;
 	}
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
 	this->_ctr->students=students_name;
 	this->_ctr->d=day;
 	this->_ctr->h1=startHour;

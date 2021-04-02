@@ -62,14 +62,14 @@ void AddConstraintTeachersSubjectTagMaxHoursContinuouslyForm::constraintChanged(
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr(QString("Weight=%1").arg(weight));
+	s+=QObject::tr(QString("Weight (percentage)=%1").arg(weight));
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("Teachers subject tag max hours continuously");
 	s+="\n";
@@ -93,15 +93,15 @@ void AddConstraintTeachersSubjectTagMaxHoursContinuouslyForm::addCurrentConstrai
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int max_hours=maxHoursSpinBox->value();
 	
@@ -111,7 +111,7 @@ void AddConstraintTeachersSubjectTagMaxHoursContinuouslyForm::addCurrentConstrai
 		return;
 	}
 
-	ctr=new ConstraintTeachersSubjectTagMaxHoursContinuously(weight, compulsory, max_hours, subjectTagsComboBox->currentText());
+	ctr=new ConstraintTeachersSubjectTagMaxHoursContinuously(weight, /*compulsory,*/ max_hours, subjectTagsComboBox->currentText());
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

@@ -109,7 +109,7 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				s = "";
-				int ai=teachers_timetable_week1[teacher][k][j]; //activity index
+				int ai=teachers_timetable_weekly[teacher][k][j]; //activity index
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -118,7 +118,8 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 					for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
 						s += (*it) + " ";
 				}
-				ai=teachers_timetable_week2[teacher][k][j]; //activity index
+				//ai=teachers_timetable_week2[teacher][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				//act=gt.rules.activitiesList.at(ai);
 				//if(ai!=UNALLOCATED_ACTIVITY && !act->studentsNames.isEmpty())
 				//	s += "/ ";
@@ -164,14 +165,15 @@ void TimetableViewTeachersForm::detailActivity(int row, int col){
 		int k=col;
 		s = "";
 		if(j>=0 && k>=0){
-			int ai=teachers_timetable_week1[teacher][k][j]; //activity index
+			int ai=teachers_timetable_weekly[teacher][k][j]; //activity index
 			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=NULL);
 				s += act->getDetailedDescriptionWithConstraints(gt.rules);
 			}
-			ai=teachers_timetable_week2[teacher][k][j]; //activity index
+			//ai=teachers_timetable_week2[teacher][k][j]; //activity index
+			ai=UNALLOCATED_ACTIVITY;
 			//act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -207,14 +209,14 @@ void TimetableViewTeachersForm::lock()
 	for(int j=0; j<gt.rules.nHoursPerDay; j++){
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			if(teachersTimetableTable->isSelected(j, k)){
-				int ai=teachers_timetable_week1[i][k][j];
+				int ai=teachers_timetable_weekly[i][k][j];
 				if(ai!=UNALLOCATED_ACTIVITY){
 					int time=tc->times[ai];
 					int hour=time/gt.rules.nDaysPerWeek;
 					int day=time%gt.rules.nDaysPerWeek;
 					//Activity* act=gt.rules.activitiesList.at(ai);
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(1, true, act->id, day, hour);
+					ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
 					bool t=gt.rules.addTimeConstraint(ctr);
 					if(t)
 						QMessageBox::information(this, QObject::tr("FET information"), 
@@ -226,14 +228,15 @@ void TimetableViewTeachersForm::lock()
 					}
 				}
 				
-				ai=teachers_timetable_week2[i][k][j];
+				//ai=teachers_timetable_week2[i][k][j];
+				ai=UNALLOCATED_ACTIVITY;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					int time=tc->times[ai];
 					int hour=time/gt.rules.nDaysPerWeek;
 					int day=time%gt.rules.nDaysPerWeek;
 					//Activity* act=gt.rules.activitiesList.at(ai);
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(1, true, act->id, day, hour);
+					ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
 					bool t=gt.rules.addTimeConstraint(ctr);
 					if(t)
 						QMessageBox::information(this, QObject::tr("FET information"), 

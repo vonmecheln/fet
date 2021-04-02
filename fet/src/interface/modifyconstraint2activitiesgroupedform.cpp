@@ -38,8 +38,8 @@ ModifyConstraint2ActivitiesGroupedForm::ModifyConstraint2ActivitiesGroupedForm(C
 	this->_ctr=ctr;
 	
 	activitiesIdsLineEdit->setText(QString::number(ctr->firstActivityId)+","+QString::number(ctr->secondActivityId));
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 }
 
 ModifyConstraint2ActivitiesGroupedForm::~ModifyConstraint2ActivitiesGroupedForm()
@@ -55,14 +55,14 @@ void ModifyConstraint2ActivitiesGroupedForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight=%1").arg(weight);
+	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("The activities with id's: %1 must be scheduled grouped (order is not important)").arg(activitiesIdsLineEdit->text());
 	s+="\n";
@@ -80,15 +80,15 @@ void ModifyConstraint2ActivitiesGroupedForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int act_id[2];
 	int n_act=sscanf(activitiesIdsLineEdit->text(), "%d,%d", act_id, act_id+1);
@@ -99,8 +99,8 @@ void ModifyConstraint2ActivitiesGroupedForm::ok()
 		return;
 	}
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
 	this->_ctr->firstActivityId=act_id[0];
 	this->_ctr->secondActivityId=act_id[1];
 	

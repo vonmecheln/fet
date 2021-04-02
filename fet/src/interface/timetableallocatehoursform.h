@@ -61,14 +61,6 @@ public:
 
 	void write();
 
-	void savePosition();
-
-	void loadPosition();
-
-	void initializeUnallocated();
-
-	void initializeRandomly();
-
 	void closePressed();
 	
 	void generationLogging(int generation);
@@ -90,44 +82,57 @@ public:
 	(variant 1).
 	Days horizontal version.
 	*/
-	void writeStudentsTimetable1DaysHorizontalHtml(const QString& htmlfilename);
+	void writeStudentsTimetableDaysHorizontalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the students' timetable html format, to a file
 	(variant 1).
 	Days vertical version.
 	*/
-	void writeStudentsTimetable1DaysVerticalHtml(const QString& htmlfilename);
+	void writeStudentsTimetableDaysVerticalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the students' timetable html format, to a file
 	(variant 2)
 	*/
-	void writeStudentsTimetable2Html(const QString& htmlfilename);
+	void writeStudentsTimetableTimeHorizontalHtml(const QString& htmlfilename);
+
+	/**
+	Function writing the students' timetable html format, to a file
+	(variant 2)
+	*/
+	void writeStudentsTimetableTimeVerticalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the teachers' timetable in html format, version 1.
 	Days horizontal version
 	*/
-	void writeTeachersTimetable1DaysHorizontalHtml(const QString& htmlfilename);
+	void writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the teachers' timetable in html format, version 1.
 	Days vertical version
 	*/
-	void writeTeachersTimetable1DaysVerticalHtml(const QString& htmlfilename);
+	void writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename);
 
 	/**
 	Function writing the teachers' timetable in html format, version 2
 	*/
-	void writeTeachersTimetable2Html(const QString& htmlfilename);
+	void writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename);
+
+	/**
+	Function writing the teachers' timetable in html format, version 2
+	*/
+	void writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename);
 
 	void getStudentsTimetable(TimeChromosome& c);
 
 	void getTeachersTimetable(TimeChromosome& c);
 
 private slots:
-	void updateGeneration(int generation);
+	void activityPlaced(int na);
+	
+	void simulationFinished();
 };
 
 #endif

@@ -1,8 +1,8 @@
 /***************************************************************************
-                          modifyconstraintteachersnogapsform.h  -  description
+                          constraintteachersmaxgapsperweekform.h  -  description
                              -------------------
-    begin                : Feb 11, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    begin                : July 6, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef MODIFYCONSTRAINTTEACHERSNOGAPSFORM_H
-#define MODIFYCONSTRAINTTEACHERSNOGAPSFORM_H
+#ifndef CONSTRAINTTEACHERSMAXGAPSPERWEEKFORM_H
+#define CONSTRAINTTEACHERSMAXGAPSPERWEEKFORM_H
 
-#include "modifyconstraintteachersnogapsform_template.h"
+#include "constraintteachersmaxgapsperweekform_template.h"
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
 #include "fet.h"
@@ -32,17 +32,23 @@
 #include <qpushbutton.h>
 #include <qlineedit.h>
 #include <q3textedit.h>
+#include <q3listbox.h>
 
-class ModifyConstraintTeachersNoGapsForm : public ModifyConstraintTeachersNoGapsForm_template  {
+class ConstraintTeachersMaxGapsPerWeekForm : public ConstraintTeachersMaxGapsPerWeekForm_template  {
 public:
-	ConstraintTeachersNoGaps* _ctr;
+	TimeConstraintsList visibleConstraintsList;
 
-	ModifyConstraintTeachersNoGapsForm(ConstraintTeachersNoGaps* ctr);
-	~ModifyConstraintTeachersNoGapsForm();
+	ConstraintTeachersMaxGapsPerWeekForm();
+	~ConstraintTeachersMaxGapsPerWeekForm();
 
-	void constraintChanged();
-	void ok();
-	void cancel();
+	void constraintChanged(int index);
+	void addConstraint();
+	void modifyConstraint();
+	void removeConstraint();
+
+	void filterChanged();
+
+	bool filterOk(TimeConstraint* ctr);
 };
 
 #endif

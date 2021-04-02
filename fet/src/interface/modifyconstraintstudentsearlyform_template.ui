@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>okPushButton</cstring>
             </property>
@@ -27,23 +27,12 @@
                 <string>Ok</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="5" column="2">
+        <widget class="QPushButton" row="3" column="2">
             <property name="name">
                 <cstring>cancelPushButton</cstring>
             </property>
             <property name="text">
                 <string>Cancel</string>
-            </property>
-        </widget>
-        <widget class="QCheckBox" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>compulsoryCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>Compulsory constraint</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
             </property>
         </widget>
         <widget class="QLabel" row="0" column="2">
@@ -60,7 +49,7 @@
                 <string>Current constraint</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="4" colspan="1">
+        <widget class="QTextEdit" row="1" column="2" rowspan="2" colspan="1">
             <property name="name">
                 <cstring>currentConstraintTextEdit</cstring>
             </property>
@@ -73,7 +62,7 @@
                 <cstring>weightLineEdit</cstring>
             </property>
             <property name="text">
-                <string>1.0</string>
+                <string>100</string>
             </property>
         </widget>
         <widget class="QLabel" row="2" column="0">
@@ -87,7 +76,24 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Weight (recommended: 1.0)</string>
+                <string>Weight percentage (recommended: 0%-100%)</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="2">
+            <property name="name">
+                <cstring>weightTextLabel_2</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Please note that in order to run the optimization algorithm,
+for each subgroup, you must have:
+	1. only no gaps or 
+	2. no gaps and early, with the same weight percentage</string>
             </property>
         </widget>
     </grid>
@@ -110,12 +116,6 @@
         <signal>clicked()</signal>
         <receiver>ModifyConstraintStudentsEarlyForm_template</receiver>
         <slot>cancel()</slot>
-    </connection>
-    <connection>
-        <sender>compulsoryCheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyConstraintStudentsEarlyForm_template</receiver>
-        <slot>constraintChanged()</slot>
     </connection>
 </connections>
 <slots>

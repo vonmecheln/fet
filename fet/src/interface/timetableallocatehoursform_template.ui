@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>570</width>
-            <height>474</height>
+            <height>487</height>
         </rect>
     </property>
     <property name="caption">
@@ -25,7 +25,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="4">
+        <widget class="QPushButton" row="2" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>writeResultsPushButton</cstring>
             </property>
@@ -38,28 +38,7 @@ simulation. You can use timetable/view  in the same
 time with the automatic generation</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>savePositionPushButton</cstring>
-            </property>
-            <property name="enabled">
-                <bool>false</bool>
-            </property>
-            <property name="text">
-                <string>Save all current data to hard disk (later, you can 
-continue the automatic generation from this position)</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="4">
-            <property name="name">
-                <cstring>loadPositionPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Load saved data from hard disk (you can continue 
-the automatic generation from the saved position)</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="6" column="1" rowspan="1" colspan="3">
+        <widget class="QPushButton" row="3" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -67,7 +46,7 @@ the automatic generation from the saved position)</string>
                 <string>Close</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="0" column="1" rowspan="1" colspan="3">
+        <widget class="QTextEdit" row="0" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>currentResultsTextEdit</cstring>
             </property>
@@ -83,15 +62,7 @@ the automatic generation from the saved position)</string>
                 <string>Current stage:</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="0">
-            <property name="name">
-                <cstring>startPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Start/Continue</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="3">
+        <widget class="QPushButton" row="1" column="2">
             <property name="name">
                 <cstring>stopPushButton</cstring>
             </property>
@@ -99,23 +70,15 @@ the automatic generation from the saved position)</string>
                 <bool>false</bool>
             </property>
             <property name="text">
-                <string>Stop</string>
+                <string>Stop and see impossible activities</string>
             </property>
         </widget>
         <widget class="QPushButton" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>initializeUnallocatedPushButton</cstring>
+                <cstring>startPushButton</cstring>
             </property>
             <property name="text">
-                <string>Initialize (UNALLOCATED)</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>initializeRandomlyPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Initialize (randomly)</string>
+                <string>Start</string>
             </property>
         </widget>
     </grid>
@@ -140,34 +103,10 @@ the automatic generation from the saved position)</string>
         <slot>write()</slot>
     </connection>
     <connection>
-        <sender>savePositionPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TimetableAllocateHoursForm_template</receiver>
-        <slot>savePosition()</slot>
-    </connection>
-    <connection>
-        <sender>loadPositionPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TimetableAllocateHoursForm_template</receiver>
-        <slot>loadPosition()</slot>
-    </connection>
-    <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
         <receiver>TimetableAllocateHoursForm_template</receiver>
         <slot>closePressed()</slot>
-    </connection>
-    <connection>
-        <sender>initializeUnallocatedPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TimetableAllocateHoursForm_template</receiver>
-        <slot>initializeUnallocated()</slot>
-    </connection>
-    <connection>
-        <sender>initializeRandomlyPushButton</sender>
-        <signal>clicked()</signal>
-        <receiver>TimetableAllocateHoursForm_template</receiver>
-        <slot>initializeRandomly()</slot>
     </connection>
 </connections>
 <slots>

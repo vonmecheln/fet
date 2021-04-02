@@ -89,7 +89,7 @@ using namespace std;
 #include "constraintactivitypreferredtimeform.h"
 #include "constraintstudentssetnogapsform.h"
 #include "constraintstudentsnogapsform.h"
-#include "constraintteachersnogapsform.h"
+#include "constraintteachersmaxgapsperweekform.h"
 #include "constraintstudentsearlyform.h"
 #include "constraintstudentssetintervalmaxdaysperweekform.h"
 #include "constraintteacherintervalmaxdaysperweekform.h"
@@ -192,9 +192,9 @@ FetMainForm::FetMainForm()
 		gt.rules.kill();
 	gt.rules.init();
 
-	bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(1.0));
+	bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(100));
 	assert(tmp);
-	tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(1.0));
+	tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(100));
 	assert(tmp);
 
 	students_schedule_ready=false;
@@ -277,9 +277,9 @@ void FetMainForm::on_fileNewAction_activated()
 			gt.rules.kill();
 		gt.rules.init();
 
-		bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(1.0));
+		bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(100));
 		assert(tmp);
-		tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(1.0));
+		tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(100));
 		assert(tmp);
 
 		students_schedule_ready=false;
@@ -1020,7 +1020,7 @@ void FetMainForm::on_dataTimeConstraintsStudentsNoGapsAction_activated()
 	form->exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersNoGapsAction_activated()
+void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated()
 {
 	if(simulation_running){
 		QMessageBox::information(this, QObject::tr("FET information"),
@@ -1028,7 +1028,7 @@ void FetMainForm::on_dataTimeConstraintsTeachersNoGapsAction_activated()
 		return;
 	}
 
-	ConstraintTeachersNoGapsForm* form=new ConstraintTeachersNoGapsForm();
+	ConstraintTeachersMaxGapsPerWeekForm* form=new ConstraintTeachersMaxGapsPerWeekForm();
 	form->exec();
 }
 

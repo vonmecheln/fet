@@ -393,7 +393,7 @@ void TimetableAllocateRoomsForm::getRoomsTimetable(SpaceChromosome &c){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 
 	//assert(c.HFitness()==0); - for perfect solutions
-	c.getRoomsTimetable(gt.rules, gt.spacePopulation.days, gt.spacePopulation.hours, rooms_timetable_week1, rooms_timetable_week2);
+	c.getRoomsTimetable(gt.rules, gt.spacePopulation.days, gt.spacePopulation.hours, rooms_timetable_weekly);
 	best_space_chromosome.copy(gt.rules, c);
 	rooms_schedule_ready=true;
 }
@@ -424,25 +424,26 @@ void TimetableAllocateRoomsForm::writeRoomsTimetableXml(const QString& xmlfilena
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos << "    <Hour name=\"" << protect(gt.rules.hoursOfTheDay[j]) << "\">\n";
 
-				tos<<"     <Week1>";
-				int ai=rooms_timetable_week1[i][k][j]; //activity index
+				tos<<"     ";
+				int ai=rooms_timetable_weekly[i][k][j]; //activity index
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
 						tos << "<Students name=\"" << protect(*it) << "\"></Students>";
 				}
-				tos<<"</Week1>\n";
+				tos<<"\n";
 
-				tos<<"     <Week2>";
-				ai=rooms_timetable_week2[i][k][j]; //activity index
+				//tos<<"     <Week2>";
+				//ai=rooms_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				//act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
 						tos << "<Students name=\"" << protect(*it) << "\"></Students>";
 				}
-				tos<<"</Week2>\n";
+				//tos<<"</Week2>\n";
 
 				tos << "    </Hour>\n";
 			}
@@ -500,7 +501,7 @@ void TimetableAllocateRoomsForm::writeStudentsTimetableWithRoomsDaysHorizontalHt
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				tos<<"<td style=\"width:14em;\">\n";
 				
-				int ai=students_timetable_week1[subgroup][k][j]; //activity index
+				int ai=students_timetable_weekly[subgroup][k][j]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					//Activity* act=gt.rules.activitiesList.at(ai);
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -518,7 +519,8 @@ void TimetableAllocateRoomsForm::writeStudentsTimetableWithRoomsDaysHorizontalHt
 				}
 				else
 					tos<<"&nbsp;";
-				ai=students_timetable_week2[subgroup][k][j]; //activity index
+				//ai=students_timetable_week2[subgroup][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					tos<<"/<br/>";
 					//Activity* act=gt.rules.activitiesList.at(ai);
@@ -596,7 +598,7 @@ void TimetableAllocateRoomsForm::writeStudentsTimetableWithRoomsDaysVerticalHtml
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos<<"<td style=\"width:14em;\">\n";
 				
-				int ai=students_timetable_week1[subgroup][k][j]; //activity index
+				int ai=students_timetable_weekly[subgroup][k][j]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					//Activity* act=gt.rules.activitiesList.at(ai);
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -614,7 +616,8 @@ void TimetableAllocateRoomsForm::writeStudentsTimetableWithRoomsDaysVerticalHtml
 				}
 				else
 					tos<<"&nbsp;";
-				ai=students_timetable_week2[subgroup][k][j]; //activity index
+				//ai=students_timetable_week2[subgroup][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					tos<<"/<br/>";
 					//Activity* act=gt.rules.activitiesList.at(ai);
@@ -689,7 +692,7 @@ void TimetableAllocateRoomsForm::writeTeachersTimetableWithRooms1DaysHorizontalH
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				tos<<"<td style=\"width:14em;\">";
 
-				int ai=teachers_timetable_week1[i][k][j]; //activity index
+				int ai=teachers_timetable_weekly[i][k][j]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
@@ -708,7 +711,8 @@ void TimetableAllocateRoomsForm::writeTeachersTimetableWithRooms1DaysHorizontalH
 				else
 					tos<<"&nbsp;";
 
-				ai=teachers_timetable_week2[i][k][j]; //activity index
+				//ai=teachers_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					tos<<"/<br/>\n";
@@ -783,7 +787,7 @@ void TimetableAllocateRoomsForm::writeTeachersTimetableWithRooms1DaysVerticalHtm
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos<<"<td style=\"width:14em;\">";
 
-				int ai=teachers_timetable_week1[i][k][j]; //activity index
+				int ai=teachers_timetable_weekly[i][k][j]; //activity index
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -803,7 +807,8 @@ void TimetableAllocateRoomsForm::writeTeachersTimetableWithRooms1DaysVerticalHtm
 				else
 					tos<<"&nbsp;";
 
-				ai=teachers_timetable_week2[i][k][j]; //activity index
+				//ai=teachers_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				//act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -877,7 +882,7 @@ void TimetableAllocateRoomsForm::writeTeachersTimetableWithRooms2Html(const QStr
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos<<"<td>";
-				int ai=teachers_timetable_week1[i][k][j]; //activity index
+				int ai=teachers_timetable_weekly[i][k][j]; //activity index
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -895,7 +900,8 @@ void TimetableAllocateRoomsForm::writeTeachersTimetableWithRooms2Html(const QStr
 				else
 					tos<<"&nbsp;";
 
-				ai=teachers_timetable_week2[i][k][j]; //activity index
+				//ai=teachers_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				//act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -968,7 +974,7 @@ void TimetableAllocateRoomsForm::writeRoomsTimetableDaysHorizontalHtml(const QSt
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
 				tos << "<td>";
 
-				int ai=rooms_timetable_week1[i][k][j]; //activity index
+				int ai=rooms_timetable_weekly[i][k][j]; //activity index
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -978,7 +984,8 @@ void TimetableAllocateRoomsForm::writeRoomsTimetableDaysHorizontalHtml(const QSt
 				else
 					tos<<"&nbsp;";
 
-				ai=rooms_timetable_week2[i][k][j]; //activity index
+				//ai=rooms_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				//act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -1043,7 +1050,7 @@ void TimetableAllocateRoomsForm::writeRoomsTimetableDaysVerticalHtml(const QStri
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
 				tos << "<td>";
 
-				int ai=rooms_timetable_week1[i][k][j]; //activity index
+				int ai=rooms_timetable_weekly[i][k][j]; //activity index
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
@@ -1053,7 +1060,8 @@ void TimetableAllocateRoomsForm::writeRoomsTimetableDaysVerticalHtml(const QStri
 				else
 					tos<<"&nbsp;";
 
-				ai=rooms_timetable_week2[i][k][j]; //activity index
+				//ai=rooms_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				//act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];

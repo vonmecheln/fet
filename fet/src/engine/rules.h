@@ -179,7 +179,32 @@ public:
 	-1 means that the activity is independent of other activities.
 	*/
 	int sameRoom[MAX_ACTIVITIES];
+
+	/**
+	true if the corresponding activities share any teacher
+	or students set
+	*/
+	//bool activitiesConflicting[MAX_ACTIVITIES][MAX_ACTIVITIES];
+
+	//void computeActivitiesConflicting();
+
+	/**
+	True if the activities have same teachers (maybe in other order), same students sets,
+	and same duration. A similar activity shouldn't be swapped with another one in the backtracking
+	*/
+	//bool activitiesSimilar[MAX_ACTIVITIES][MAX_ACTIVITIES];
 	
+	//void computeActivitiesSimilar();
+
+	/**
+	True if the second activity contains at least same teachers (maybe in other order), at least the 
+	same students sets, and has at least duration as activity 1.
+	An activity which contains another shouldn't be swapped in the backtracking
+	*/
+	//bool activityContained[MAX_ACTIVITIES][MAX_ACTIVITIES];
+	
+	//void computeActivitiesContained();
+
 	//The following variables contain redundant data and are used internally
 	////////////////////////////////////////////////////////////////////////
 	int nInternalTeachers;
@@ -446,10 +471,10 @@ public:
 		const QStringList& _studentsNames,
 		int _duration, /*duration, in hours*/
 		int _totalDuration,
-		int _parity, /*parity: PARITY_WEEKLY or PARITY_FORTNIGHTLY*/
+		//int _parity, /*parity: PARITY_WEEKLY or PARITY_FORTNIGHTLY*/
 		bool _active,
-		int _preferredDay,
-		int _preferredHour,
+		//int _preferredDay,
+		//int _preferredHour,
 		bool _computeNTotalStudents,
 		int _nTotalStudents);
 
@@ -471,11 +496,13 @@ public:
 		int _nSplits,
 		int _totalDuration,
 		int _durations[],
-		int _parities[],
+		//int _parities[],
 		bool _active[],
 		int _minDayDistance,
-		int _preferredDays[],
-		int _preferredHours[],
+		int _weightPercentage,
+		bool _adjacentIfMinDaysBroken,
+		//int _preferredDays[],
+		//int _preferredHours[],
 		bool _computeNTotalStudents,
 		int _nTotalStudents);
 
@@ -508,7 +535,7 @@ public:
 	 	int _nSplits,
 		int _totalDuration,
 		int _durations[],
-		int _parities[],
+		//int _parities[],
 		bool _active[],
 		bool _computeNTotalStudents,
 		int nTotalStudents);

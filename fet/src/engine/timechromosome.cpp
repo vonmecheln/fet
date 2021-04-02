@@ -36,24 +36,26 @@ using namespace std;
 #include "rules.h"
 #include "timeconstraint.h"
 
-int better(Rules& r, TimeChromosome& c1, TimeChromosome& c2){ //returns true if c1 is better than c2
+bool better(Rules& r, TimeChromosome& c1, TimeChromosome& c2){ //returns true if c1 is better than c2
 	//Here the order is important, you have to compute firstly the hard fitness, then the soft fitness
-	int hf1=c1.hardFitness(r);
+	/*int hf1=c1.hardFitness(r);
 	int sf1=c1.softFitness(r);
 	int hf2=c2.hardFitness(r);
-	int sf2=c2.softFitness(r);
+	int sf2=c2.softFitness(r);*/
+	
+	double f1=c1.fitness(r);
+	double f2=c2.fitness(r);
 
-	return better(hf1, sf1, hf2, sf2);
+	return better(f1, f2);
 }
 
-int better(int hf1, int sf1, int hf2, int sf2){
-	return hf1<hf2 || hf1==hf2 && sf1<sf2;
+bool better(double f1, double f2){
+	return f1<f2;
 }
 
 //critical function here - must be optimized for speed
 void TimeChromosome::copy(Rules& r, TimeChromosome& c){
-	this->_hardFitness=c._hardFitness;
-	this->_softFitness=c._softFitness;
+	this->_fitness=c._fitness;
 
 	assert(r.internalStructureComputed);
 
@@ -70,7 +72,7 @@ void TimeChromosome::init(Rules& r){
 	for(int i=0; i<r.nInternalActivities; i++)
 			this->times[i]=UNALLOCATED_TIME;
 
-	this->_hardFitness=this->_softFitness=-1;
+	this->_fitness=-1;
 	
 	this->timeChangedForMatrixCalculation=true;
 }
@@ -105,7 +107,7 @@ bool TimeChromosome::read(Rules &r, QTextStream &tis){
 		}
 	}
 	
-	this->_hardFitness=this->_softFitness=-1;
+	this->_fitness=-1;
 	
 	this->timeChangedForMatrixCalculation=true;
 
@@ -139,7 +141,7 @@ void TimeChromosome::makeTimesUnallocated(Rules& r){
 	for(int i=0; i<r.nInternalActivities; i++)
 			this->times[i]=UNALLOCATED_TIME;
 
-	this->_hardFitness=this->_softFitness=-1;
+	this->_fitness=-1;
 
 	this->timeChangedForMatrixCalculation=true;
 }
@@ -151,13 +153,13 @@ void TimeChromosome::makeTimesRandom(Rules& r){
 	for(int i=0; i<r.nInternalActivities; i++)
 			this->times[i] = rand()%r.nHoursPerWeek;
 
-	this->_hardFitness = this->_softFitness = -1;
+	this->_fitness = -1;
 
 	this->timeChangedForMatrixCalculation=true;
 }
 
 
-int TimeChromosome::hardFitness(Rules& r, QString* conflictsString){
+double TimeChromosome::fitness(Rules& r, QString* conflictsString){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
@@ -166,13 +168,13 @@ int TimeChromosome::hardFitness(Rules& r, QString* conflictsString){
 		cout<<"this->timeChangedForMatrixCalculation=="<<this->timeChangedForMatrixCalculation<<endl;		
 	}*/
 	
-	if(this->_hardFitness>=0)
+	if(this->_fitness>=0)
 		assert(this->timeChangedForMatrixCalculation==false);
 		
-	if(this->_hardFitness>=0 && conflictsString==NULL)
+	if(this->_fitness>=0 && conflictsString==NULL)
 	//If you want to see the log, you have to recompute the fitness, even if it is
 	//already computed
-		return this->_hardFitness;
+		return this->_fitness;
 		
 	//Repair the chromosome - we enter here with the assumption that
 	//the time constraints of type ConstraintActivityPreferredTime,
@@ -185,6 +187,7 @@ int TimeChromosome::hardFitness(Rules& r, QString* conflictsString){
 	//I might be wrong :-)
 	
 	//1)preferred times
+	/*not repairing anymore - 27 June 2007
 	for(int i=0; i<r.nInternalActivities; i++){
 		if(r.fixedDay[i]>=0 && r.fixedHour[i]>=0){
 			this->times[i] = r.fixedDay[i] + r.fixedHour[i] * r.nDaysPerWeek;
@@ -222,27 +225,52 @@ int TimeChromosome::hardFitness(Rules& r, QString* conflictsString){
 			if(r.fixedHour[i]>=0)
 				assert(r.fixedHour[i]==h);
 		}
-	}
+	}*/
 	
 	this->timeChangedForMatrixCalculation=true;
 	
-	this->_hardFitness=0;
+	this->_fitness=0;
 	//here we must not have compulsory activity preferred time nor 
 	//compulsory activities same time and/or hour
 	//Also, here I compute soft fitness (for faster results,
 	//I do not want to pass again through the constraints)
-	this->_softFitness=0;
-	for(int i=0; i<r.nInternalTimeConstraints; i++)
-		if(r.internalTimeConstraintsList[i]->compulsory==true)
-			this->_hardFitness += r.internalTimeConstraintsList[i]->fitness(*this, r, conflictsString);
-		else
+	
+	this->conflictsDescriptionList.clear();
+	this->conflictsWeightList.clear();
+	
+	for(int i=0; i<r.nInternalTimeConstraints; i++){
+		//if(r.internalTimeConstraintsList[i]->compulsory==true)
+			QList<QString> sl;
+			QList<double> cl;
+			this->_fitness += r.internalTimeConstraintsList[i]->fitness(*this, r, cl, sl, conflictsString);
+			conflictsWeightList+=cl;
+			conflictsDescriptionList+=sl;
+	}
+		//else
 			//not logged here
-			this->_softFitness += r.internalTimeConstraintsList[i]->fitness(*this, r, NULL);
+		//	this->_softFitness += r.internalTimeConstraintsList[i]->fitness(*this, r, NULL);
+		
+	this->conflictsTotal=0;
+	foreach(double cn, conflictsWeightList)
+		conflictsTotal+=cn;
+		
+	//sort descending according to conflicts
+	for(int i=0; i<conflictsWeightList.size(); i++)
+		for(int j=0; j<i; j++)
+			if(conflictsWeightList[i]>conflictsWeightList[j]){
+				double t=conflictsWeightList[i];
+				conflictsWeightList[i]=conflictsWeightList[j];
+				conflictsWeightList[j]=t;
+				
+				QString s=conflictsDescriptionList[i];
+				conflictsDescriptionList[i]=conflictsDescriptionList[j];
+				conflictsDescriptionList[j]=s;
+			}
 			
-	return this->_hardFitness;
+	return this->_fitness;
 }
 
-int TimeChromosome::softFitness(Rules& r, QString* conflictsString){
+/*int TimeChromosome::softFitness(Rules& r, QString* conflictsString){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
@@ -261,7 +289,7 @@ int TimeChromosome::softFitness(Rules& r, QString* conflictsString){
 			this->_softFitness += r.internalTimeConstraintsList[i]->fitness(*this, r, conflictsString);
 
 	return this->_softFitness;
-}
+}*/
 
 //critical function here - must be optimized for speed
 void TimeChromosome::crossover(Rules& r, TimeChromosome& c1, TimeChromosome& c2)
@@ -283,7 +311,7 @@ void TimeChromosome::onePointCrossover(Rules& r, TimeChromosome& c1, TimeChromos
 		this->times[i]=c2.times[i];
 	//memcpy(times+q, c2.times+q, (r.nActivities-q)*sizeof(times[0]));
 
-	this->_hardFitness = this->_softFitness = -1;
+	this->_fitness = -1;
 
 	this->timeChangedForMatrixCalculation=true;
 }
@@ -326,7 +354,7 @@ void TimeChromosome::twoPointCrossover(Rules& r, TimeChromosome& c1, TimeChromos
 			this->times[i]=c2.times[i];
 	}
 	 
-	this->_hardFitness = this->_softFitness = -1;
+	this->_fitness = -1;
 	this->timeChangedForMatrixCalculation=true;
 }
 
@@ -350,7 +378,7 @@ void TimeChromosome::uniformCrossover(Rules& r, TimeChromosome& c1, TimeChromoso
 		}
 	}
 	
-	this->_hardFitness = this->_softFitness = -1;
+	this->_fitness = -1;
 	this->timeChangedForMatrixCalculation=true;
 }
 
@@ -373,7 +401,7 @@ void TimeChromosome::mutate1(Rules& r)
 	this->times[p]=this->times[q]; 
 	this->times[q]=k; //exchange the values
 
-	this->_hardFitness = this->_softFitness = -1;
+	this->_fitness = -1;
 
 	this->timeChangedForMatrixCalculation=true;
 }
@@ -387,7 +415,7 @@ void TimeChromosome::mutate2(Rules& r){
 	k=rand()%r.nHoursPerWeek;
 	this->times[p]=k;
 
-	this->_hardFitness = this->_softFitness = -1;
+	this->_fitness = -1;
 
 	this->timeChangedForMatrixCalculation=true;
 }
@@ -414,7 +442,7 @@ int TimeChromosome::getTeachersMatrix(Rules& r, int16 a[MAX_TEACHERS][MAX_DAYS_P
 				for(int it=0; it<act->nTeachers; it++){
 					int tch=act->teachers[it];
 					int tmp=a[tch][day][hour+dd];
-					if(act->parity==PARITY_WEEKLY){
+					/*if(act->parity==PARITY_WEEKLY){
 						conflicts += tmp<2 ? tmp : 2;
 						a[tch][day][hour+dd]+=2;
 					}
@@ -422,7 +450,9 @@ int TimeChromosome::getTeachersMatrix(Rules& r, int16 a[MAX_TEACHERS][MAX_DAYS_P
 						assert(act->parity==PARITY_FORTNIGHTLY);
 						conflicts += tmp<2 ? 0 : 1;
 						a[tch][day][hour+dd]++;
-					}
+					}*/
+					conflicts += tmp==0 ? 0 : 1;
+					a[tch][day][hour+dd]++;
 				}
 		}
 
@@ -453,7 +483,7 @@ int TimeChromosome::getSubgroupsMatrix(Rules& r, int16 a[MAX_TOTAL_SUBGROUPS][MA
 				for(int isg=0; isg < act->nSubgroups; isg++){ //isg => index subgroup
 					int sg = act->subgroups[isg]; //sg => subgroup
 					int tmp=a[sg][day][hour+dd];
-					if(act->parity == PARITY_WEEKLY){
+					/*if(act->parity == PARITY_WEEKLY){
 						conflicts += tmp<2 ? tmp : 2;
 						a[sg][day][hour+dd]+=2;
 					}
@@ -461,7 +491,9 @@ int TimeChromosome::getSubgroupsMatrix(Rules& r, int16 a[MAX_TOTAL_SUBGROUPS][MA
 						assert(act->parity == PARITY_FORTNIGHTLY);
 						conflicts += tmp<2 ? 0 : 1;
 						a[sg][day][hour+dd]++;
-					}
+					}*/
+					conflicts += tmp==0 ? 0 : 1;
+					a[sg][day][hour+dd]++;
 				}
 		}
 		
@@ -472,7 +504,7 @@ int TimeChromosome::getSubgroupsMatrix(Rules& r, int16 a[MAX_TOTAL_SUBGROUPS][MA
 
 //The following 2 functions (GetTeachersTimetable & GetSubgroupsTimetable)
 //are very similar to the above 2 ones (GetTeachersMatrix & GetSubgroupsMatrix)
-void TimeChromosome::getTeachersTimetable(Rules& r, int16 a1[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY],int16 a2[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+void TimeChromosome::getTeachersTimetable(Rules& r, int16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 	//assert(HFitness()==0); //This is only for perfect solutions, that do not have any non-satisfied hard constrains
 
 	assert(r.initialized);
@@ -482,7 +514,8 @@ void TimeChromosome::getTeachersTimetable(Rules& r, int16 a1[MAX_TEACHERS][MAX_D
 	for(i=0; i<r.nInternalTeachers; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
 			for(k=0; k<r.nHoursPerDay; k++)
-				a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
+				//a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
+				a[i][j][k]=UNALLOCATED_ACTIVITY;
 
 	Activity *act;
 	for(i=0; i<r.nInternalActivities; i++) 
@@ -493,15 +526,17 @@ void TimeChromosome::getTeachersTimetable(Rules& r, int16 a1[MAX_TEACHERS][MAX_D
 			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++)
 				for(int ti=0; ti<act->nTeachers; ti++){
 					int tch = act->teachers[ti]; //teacher index
-					if(a1[tch][day][hour+dd]==UNALLOCATED_ACTIVITY)
+					/*if(a1[tch][day][hour+dd]==UNALLOCATED_ACTIVITY)
 						a1[tch][day][hour+dd]=i;
 					else
-						a2[tch][day][hour+dd]=i;
+						a2[tch][day][hour+dd]=i;*/
+					assert(a[tch][day][hour+dd]==UNALLOCATED_ACTIVITY);
+					a[tch][day][hour+dd]=i;
 				}
 		}
 }
 
-void TimeChromosome::getSubgroupsTimetable(Rules& r, int16 a1[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY],int16 a2[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
+void TimeChromosome::getSubgroupsTimetable(Rules& r, int16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 	//assert(HFitness()==0);	//This is only for perfect solutions, that do not have any non-satisfied hard constrains
 
 	assert(r.initialized);
@@ -511,7 +546,8 @@ void TimeChromosome::getSubgroupsTimetable(Rules& r, int16 a1[MAX_TOTAL_SUBGROUP
 	for(i=0; i<r.nInternalSubgroups; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
 			for(k=0; k<r.nHoursPerDay; k++)
-				a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
+				//a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
+				a[i][j][k]=UNALLOCATED_ACTIVITY;
 
 	Activity *act;
 	for(i=0; i<r.nInternalActivities; i++)
@@ -522,10 +558,12 @@ void TimeChromosome::getSubgroupsTimetable(Rules& r, int16 a1[MAX_TOTAL_SUBGROUP
 			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++){
 				for(int isg=0; isg < act->nSubgroups; isg++){ //isg -> index subgroup
 					int sg = act->subgroups[isg]; //sg -> subgroup
-					if(a1[sg][day][hour+dd]==UNALLOCATED_ACTIVITY)
+					/*if(a1[sg][day][hour+dd]==UNALLOCATED_ACTIVITY)
 						a1[sg][day][hour+dd]=i;
 					else
-						a2[sg][day][hour+dd]=i;
+						a2[sg][day][hour+dd]=i;*/
+					assert(a[sg][day][hour+dd]==UNALLOCATED_ACTIVITY);
+					a[sg][day][hour+dd]=i;
 				}
 			}
 		}

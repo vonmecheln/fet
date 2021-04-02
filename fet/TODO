@@ -1,23 +1,18 @@
+For new version 5:
+- to schedule firstly the activities which have fixed time?
 
-test other selection algorithm:
- - stochastic universal sampling (work in progress by Volker Dirr)
 
-code better mutation algorithm:
- - chromosome need "don´t care" flag for "activity prefered time" (work in progress by Volker Dirr)
+
 
 
 long time goals:
 
 code cover planning (open)
 
-code lesson planning (open)  
+code lesson planning (open)
 
 
 GENERAL:
--The population size must somehow be great enough so that the screen will not freeze 
-when allocating (this happens to too little population size). I do not know for sure 
-what this number is. Also, the population size must be greater than 2, so that FET
-does not crash. Implement this minimum number, so that FET does not crash.
 - Change "Equipments" into "Equipment"
 - Check the memory leaks. In Valgrind it shows some leakage, I don't know where from
 - Add translation in other languages
@@ -35,8 +30,6 @@ TECHNICAL:
 - ConstraintActivitiesSameEndingTime
 - ConstraintActivitiesNotConsecutive
 - ConstraintActivityRejectedTime ?
-- ConstraintStudentsNoGaps: is it better to consider the importance of
-a gap as 1 or as its length? Currently, it is considered 1.
 - ConstraintStudentsMaxGapsDaily
 
 

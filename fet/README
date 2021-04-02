@@ -1,15 +1,18 @@
 Program's description:
 	FET means "Free Evolutionary Timetabling (software)".
-	This program aims to automatically generate the timetable of a university,
-	school or high-school, in an evolutionary manner.
+	This program aims to automatically generate the timetable of a school, high-school
+	or possibly university,	by an intelligent algorithm. Evolutionary is an old term,
+	which described versions up to 4.2.8 (these old versions used a poor
+	genetic algorithm)
+	FET can now mean "Free Enhanced Timetabling", as suggested by Volker Dirr.
 	
 Requirements:
-	FET is created in the following environment: Slackware 10.0 GNU/Linux distribution,
-	KDevelop 3.2.1, Midnight Commander 4.6.1-pre1, Qt 4.1.2, gcc 3.3.6, Linux 2.4.26, 
+	FET is created in the following environment: Kubuntu 7.0.4 GNU/Linux distribution,
+	Midnight Commander 4.6.1, Qt 4.1.2, gcc 4.1.2, Linux 2.6.20, 
 	other great free tools.
 	
 	GNU/Linux and similar OS's:
-	Software: gcc 3.3.4 or similar, Qt 4.1.2 or compatible.
+	Software: gcc 4.1.2 or similar, Qt 4.1.2 or compatible.
 	
 	Mac OS X:
 	Mac OS X 10.4.x or compatible.
@@ -51,12 +54,12 @@ Getting - compiling - installing Qt:
 	compile it on your operating system.
 		- Verified: You can download a binary installer of Qt 4.1.0 
 		(compatible with Qt 4.1.2) from: http://naranja.umh.es/~atg/software-qt4.html
-		Set the required environment variables for your shell. For tcsh,  
+		Set the required environment variables for your shell. For tcsh,
 		add the following lines to the end of your ~/.tcshrc file:
-		    setenv QTDIR /usr/local/Trolltech/Qt-4.1.0
-		    setenv PATH $QTDIR/bin:$PATH
-		    setenv MANPATH $QTDIR/doc/man
-		    setenv DYLD_LIBRARY_PATH $QTDIR/lib		
+			setenv QTDIR /usr/local/Trolltech/Qt-4.1.0
+			setenv PATH $QTDIR/bin:$PATH
+			setenv MANPATH $QTDIR/doc/man
+			setenv DYLD_LIBRARY_PATH $QTDIR/lib		
 
 Compiling FET:
 	

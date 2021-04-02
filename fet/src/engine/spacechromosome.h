@@ -202,7 +202,7 @@ public:
 	matrix keeps the activity scheduled for the second week.
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
-	void getRoomsTimetable(Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], int16 a1[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY],int16 a2[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getRoomsTimetable(Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], int16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 };
 
 /**

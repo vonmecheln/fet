@@ -181,15 +181,15 @@ void AddConstraintActivityPreferredTimesForm::addConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int i=activitiesComboBox->currentItem();
 	assert(i<activitiesList.size());
@@ -223,7 +223,7 @@ void AddConstraintActivityPreferredTimesForm::addConstraint()
 				n++;
 			}
 
-	ctr=new ConstraintActivityPreferredTimes(weight, compulsory, /*act->*/id, n, days, hours);
+	ctr=new ConstraintActivityPreferredTimes(weight, /*compulsory,*/ /*act->*/id, n, days, hours);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){

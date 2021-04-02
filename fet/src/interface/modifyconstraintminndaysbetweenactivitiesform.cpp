@@ -56,8 +56,9 @@ ModifyConstraintMinNDaysBetweenActivitiesForm::ModifyConstraintMinNDaysBetweenAc
 	minDaysSpinBox->setMaxValue(gt.rules.nDaysPerWeek-1);
 	minDaysSpinBox->setValue(ctr->minDays);
 
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	adjIfBrokenCheckBox->setChecked(ctr->adjacentIfBroken);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 }
 
 ModifyConstraintMinNDaysBetweenActivitiesForm::~ModifyConstraintMinNDaysBetweenActivitiesForm()
@@ -84,15 +85,15 @@ void ModifyConstraintMinNDaysBetweenActivitiesForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	if(this->selectedActivitiesList.size()==0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -116,8 +117,9 @@ void ModifyConstraintMinNDaysBetweenActivitiesForm::ok()
 		this->_ctr->activitiesId[i]=*it;
 	this->_ctr->n_activities=i;
 		
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
+	this->_ctr->adjacentIfBroken=adjIfBrokenCheckBox->isChecked();
 	this->_ctr->minDays=minDaysSpinBox->value();
 	
 	gt.rules.internalStructureComputed=false;

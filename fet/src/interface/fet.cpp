@@ -34,6 +34,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <QDir>
 #include <QTranslator>
 
+#include <QSettings>
+
 #include <fstream>
 #include <iostream>
 using namespace std;
@@ -45,6 +47,8 @@ extern QMutex mutex;
 void writeDefaultSimulationParameters();
 
 QTranslator translator;
+
+bool firstTimeRun;
 
 /**
 The one and only instantiation of the main class.
@@ -95,16 +99,19 @@ It represents the maximum allowed number of generations to iterate
 */
 int max_generations;
 
-int16 teachers_timetable_week1[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+/*int16 teachers_timetable_week1[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 int16 teachers_timetable_week2[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 int16 students_timetable_week1[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 int16 students_timetable_week2[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 int16 rooms_timetable_week1[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-int16 rooms_timetable_week2[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+int16 rooms_timetable_week2[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
+int16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+int16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+int16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 QApplication* pqapplication=NULL;
 
-static int fetch_line(ifstream& in, char *s){
+/*static int fetch_line(ifstream& in, char *s){
 	for(;;){
 		in.getline(s, 250);
 		if(in.eof())
@@ -118,26 +125,36 @@ static int fetch_line(ifstream& in, char *s){
 		if(isprint(s[i]))
 			return 1;
 	}
-}
+}*/
 
 void readSimulationParameters(){
-	if(!QFile::exists(INI_FILENAME)){
+	QSettings settings("FET free software", "FET");
+	FET_LANGUAGE=settings.value("language", "en_GB").toString();
+	WORKING_DIRECTORY=settings.value("working-directory", "sample_inputs").toString();
+	QString ver=settings.value("version", "-1").toString();
+	int major=ver.left(ver.indexOf(".")).toInt();
+	if(major<5)
+		firstTimeRun=true;
+	else
+		firstTimeRun=false;
+		
+	/*if(!QFile::exists(INI_FILENAME)){
 		cout<<"File "<<(const char*)(INI_FILENAME)<<" not found...making a new one\n";
 		writeDefaultSimulationParameters();
 	}
 
-	ifstream in(INI_FILENAME);
-	char s[256];
+	ifstream in(INI_FILENAME);*/
+	//char s[256];
 
-	cout<<"Initializing parameters...reading file "<<(const char*)(INI_FILENAME)<<endl;
+	//cout<<"Initializing parameters...reading file "<<(const char*)(INI_FILENAME)<<endl;
 
 	//read main parameters of the simulation
-	int tmp=fetch_line(in, s);
+	/*int tmp=fetch_line(in, s);
 	assert(tmp==1);
 	WORKING_DIRECTORY=s;
-	cout<<"Read: working directory="<<s<<endl;
+	//cout<<"Read: working directory="<<s<<endl;
 
-	tmp=fetch_line(in, s);
+	/*tmp=fetch_line(in, s);
 	assert(tmp==1);
 	int tmp2;
 	tmp=sscanf(s, "%d", &tmp2);
@@ -229,11 +246,16 @@ void readSimulationParameters(){
 			cout<<"Invalid language - making it english"<<endl;
 			FET_LANGUAGE="en_GB";
 		}
-	}
+	}*/
 }
 
 void writeSimulationParameters(){
-	ofstream out(INI_FILENAME);
+	QSettings settings("FET free software", "FET");
+	settings.setValue("language", FET_LANGUAGE);
+	settings.setValue("working-directory", WORKING_DIRECTORY);
+	settings.setValue("version", FET_VERSION);
+
+	/*ofstream out(INI_FILENAME);
 	if(!out){
 		assert(0);
 		exit(1);
@@ -295,8 +317,10 @@ void writeSimulationParameters(){
 	
 	out<<"#FET Language"<<endl;
 	out<<(const char*)(FET_LANGUAGE)<<endl;
+	*/
 }
 
+/*
 void writeDefaultSimulationParameters(){
 	ofstream out(INI_FILENAME);
 	if(!out){
@@ -357,7 +381,7 @@ void writeDefaultSimulationParameters(){
 
 	out<<"#FET Language"<<endl;
 	out<<(const char*)(FET_LANGUAGE)<<endl;
-}
+}*/
 
 /**
 FET starts here
@@ -467,6 +491,21 @@ int main(int argc, char **argv){
 		
 	qapplication.installTranslator(&translator);	
 	//end translator stuff
+	
+	if(firstTimeRun)
+		QMessageBox::information(NULL, QObject::tr("FET important information"),
+		 QObject::tr("Seems that you are running a FET 5 or above version for the first time\n"
+		 "Please take care that it will open older files, but the parity of all\n"
+		 "activities will be weekly and the weight of each time constraint\n"
+		 "will be made automatically a percent, from 0% to 100%, specifying its satisfaction\n"
+		 "requirement, based on the type of constraint and not on the specified old weight\n"
+		 "Of course, you can modify the weight percentage by hand afterwards."));
+
+	QMessageBox::information(NULL, QObject::tr("FET important information"),
+	 QObject::tr("Please take care that this is a preview version, which does not have\n"
+	 "space allocation implemented yet. I hope to implement that in the near future\n"
+	 "Also the space constraints are let in the old format.\n\n"
+	 "Please keep backups of your input files.\n"));
 	
 	pqapplication=&qapplication;
 	FetMainForm fetMainForm;

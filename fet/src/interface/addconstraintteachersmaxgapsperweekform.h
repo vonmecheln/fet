@@ -1,8 +1,8 @@
 /***************************************************************************
-                          constraintteachersnogapsform.h  -  description
+                          addconstraintteachersmaxgapsperweekform.h  -  description
                              -------------------
-    begin                : Feb 11, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    begin                : July 6, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef CONSTRAINTTEACHERSNOGAPSFORM_H
-#define CONSTRAINTTEACHERSNOGAPSFORM_H
+#ifndef ADDCONSTRAINTTEACHERSMAXGAPSPERWEEKFORM_H
+#define ADDCONSTRAINTTEACHERSMAXGAPSPERWEEKFORM_H
 
-#include "constraintteachersnogapsform_template.h"
+#include "addconstraintteachersmaxgapsperweekform_template.h"
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
 #include "fet.h"
@@ -32,23 +32,14 @@
 #include <qpushbutton.h>
 #include <qlineedit.h>
 #include <q3textedit.h>
-#include <q3listbox.h>
 
-class ConstraintTeachersNoGapsForm : public ConstraintTeachersNoGapsForm_template  {
+class AddConstraintTeachersMaxGapsPerWeekForm : public AddConstraintTeachersMaxGapsPerWeekForm_template  {
 public:
-	TimeConstraintsList visibleConstraintsList;
+	AddConstraintTeachersMaxGapsPerWeekForm();
+	~AddConstraintTeachersMaxGapsPerWeekForm();
 
-	ConstraintTeachersNoGapsForm();
-	~ConstraintTeachersNoGapsForm();
-
-	void constraintChanged(int index);
-	void addConstraint();
-	void modifyConstraint();
-	void removeConstraint();
-
-	void filterChanged();
-
-	bool filterOk(TimeConstraint* ctr);
+	void constraintChanged();
+	void addCurrentConstraint();
 };
 
 #endif

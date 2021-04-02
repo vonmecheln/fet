@@ -76,17 +76,6 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QCheckBox" row="4" column="0">
-                            <property name="name">
-                                <cstring>compulsoryCheckBox</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Compulsory constraint</string>
-                            </property>
-                            <property name="checked">
-                                <bool>true</bool>
-                            </property>
-                        </widget>
                         <spacer row="1" column="0">
                             <property name="name">
                                 <cstring>spacer2</cstring>
@@ -190,7 +179,7 @@
                                         <enum>Plain</enum>
                                     </property>
                                     <property name="text">
-                                        <string>Weight (recommended: 1.0)</string>
+                                        <string>Weight percentage (recommended: 0%-100%)</string>
                                     </property>
                                 </widget>
                                 <widget class="QLineEdit">
@@ -198,7 +187,7 @@
                                         <cstring>weightLineEdit</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>1.0</string>
+                                        <string>100</string>
                                     </property>
                                 </widget>
                             </hbox>
@@ -328,12 +317,6 @@
     <connection>
         <sender>dayComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
-        <receiver>AddConstraintActivityPreferredTimeForm_template</receiver>
-        <slot>constraintChanged()</slot>
-    </connection>
-    <connection>
-        <sender>compulsoryCheckBox</sender>
-        <signal>toggled(bool)</signal>
         <receiver>AddConstraintActivityPreferredTimeForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>

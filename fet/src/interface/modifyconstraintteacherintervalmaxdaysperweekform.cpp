@@ -37,8 +37,8 @@ ModifyConstraintTeacherIntervalMaxDaysPerWeekForm::ModifyConstraintTeacherInterv
 
 	this->_ctr=ctr;
 	
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
 	updatePeriodGroupBox();
 	updateTeachersComboBox();
@@ -92,14 +92,14 @@ void ModifyConstraintTeacherIntervalMaxDaysPerWeekForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr(QString("Weight=%1").arg(weight));
+	s+=QObject::tr(QString("Weight (percentage)=%1\%").arg(weight));
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("Teacher interval max days per week");
 	s+="\n";
@@ -137,15 +137,15 @@ void ModifyConstraintTeacherIntervalMaxDaysPerWeekForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int startHour=startHourComboBox->currentItem();
 	if(startHour<0 || startHour>gt.rules.nHoursPerDay){
@@ -174,8 +174,8 @@ void ModifyConstraintTeacherIntervalMaxDaysPerWeekForm::ok()
 		return;
 	}
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
 	this->_ctr->teacher=teacher_name;
 	this->_ctr->h1=startHour;
 	this->_ctr->h2=endHour;

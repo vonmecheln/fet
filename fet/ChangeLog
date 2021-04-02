@@ -775,6 +775,7 @@ Versions 4.2.0 - 4.2.x
 	- 2-point and uniform crossover implemented and tested by Volker Dirr
 	- Turkish language update by Mahir Nacar
 	- French translation update by Patrick Fox
+	- Macedonian translation by Zoran Zdravkovski
 - Version 4.2.0
 	- Implemented 2-point and uniform crossover, by Mr. Volker Dirr.
 	The default crossover method is 2-point, which should give better results
@@ -805,3 +806,24 @@ Versions 4.2.0 - 4.2.x
 	including local characters (reported by Zoran Zdravkovski).
 - Version 4.2.8
 	- Added Macedonian translation (by Zoran Zdravkovski).
+- Version 4.2.9
+	- Small bug fix (reported by Volker Dirr).
+	- Bug fix - students n hours daily (observed by Liviu Lalescu).
+---------------------------------------------------------------------------------
+Versions 5.0.0 - 
+	- Liviu Lalescu (http://lalescu.ro/liviu/);
+	- xhtml form of saving timetables by Volker Dirr
+- Version 5.0.0-preview1 
+	- new algorithm
+	- too many changes to mention
+- Version 5.0.0-preview2
+	- Added activities same starting time & hour constraints into time optimization
+- Version 5.0.0-preview3
+	- Added a warning that older files will be converted as follows: min n days
+	will have weight percentage 95% and adj if broken=true
+- Version 5.0.0-preview4
+	- The students gaps now are measured in hours (a 2 hour gap means 2 conflicts,
+	not just one as before).
+	- Improved saving xhtml timetables by Volker Dirr
+	- Removed the preferred time when adding an activity (useless)
+	- Removed not important time constraints which do not fit into new algorithm

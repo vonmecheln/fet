@@ -55,7 +55,7 @@ extern QString FET_LANGUAGE;
 /**
 The maximum dimension of the population
 */
-const int MAX_POPULATION_SIZE=8192;
+const int MAX_POPULATION_SIZE=1;
 
 /**
 The maximum number of different years of students
@@ -150,7 +150,7 @@ const int MAX_DAYS_PER_WEEK=14;
 The predefined names of the days of the week
 */
 const QString PREDEFINED_DAYS_OF_THE_WEEK[]={"Monday", "Tuesday", "Wednesday",
-	"Thursday", "Friday", "Saturday", "Sunday", "Monday2", 
+	"Thursday", "Friday", "Saturday", "Sunday", "Monday2",
 	"Tuesday2", "Wednesday2", "Thursday2", "Friday2", "Saturday2", "Sunday2"};
 
 /**
@@ -271,8 +271,8 @@ This constant is used (for now) in ConstraintTeacherRequiresRoom.
 const int MAX_ACTIVITIES_FOR_A_TEACHER=200;
 
 /**
-The maximum number of activities which share the same teacher name 
-and subject name. This constant is used (for now) in 
+The maximum number of activities which share the same teacher name
+and subject name. This constant is used (for now) in
 ConstraintTeacherSubjectRequireRoom.
 */
 const int MAX_ACTIVITIES_FOR_A_TEACHER_AND_SUBJECT=200;
@@ -320,11 +320,11 @@ extern QString WORKING_DIRECTORY;
 /**
 The initialization file for timetable program
 */
-#ifdef WIN32
+/*#ifdef WIN32
 const QString INI_FILENAME="fet.ini";
 #else
 const QString INI_FILENAME=QDir::homeDirPath()+"/.fet/fet.ini";
-#endif
+#endif*/
 
 //OUTPUT FILES
 
@@ -378,40 +378,52 @@ An output file containing the timetable for each subgroup,
 arranged in html format. Version 1 - flyers for each subgroup
 Days horizontal version.
 */
-const QString STUDENTS_TIMETABLE_1_DAYS_HORIZONTAL_FILENAME_HTML="studentstimetable1dayshorizontal.html";
+const QString STUDENTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="studentstimetabledayshorizontal.html";
 
 /**
 An output file containing the timetable for each subgroup,
 arranged in html format. Version 1 - flyers for each subgroup
 Days vertical version.
 */
-const QString STUDENTS_TIMETABLE_1_DAYS_VERTICAL_FILENAME_HTML="studentstimetable1daysvertical.html";
+const QString STUDENTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="studentstimetabledaysvertical.html";
 
 /**
 An output file containing the timetable for each subgroup,
 arranged in html format. Version 2 - overall
 */
-const QString STUDENTS_TIMETABLE_2_FILENAME_HTML="studentstimetable2.html";
+const QString STUDENTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="studentstimetabletimehorizontal.html";
+
+/**
+An output file containing the timetable for each subgroup,
+arranged in html format. Version 2 - overall
+*/
+const QString STUDENTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="studentstimetabletimevertical.html";
 
 /**
 An output file containing the timetable for each teacher,
 arranged in html format. Version 1 - flyers for each teacher
 Days horizontal version.
 */
-const QString TEACHERS_TIMETABLE_1_DAYS_HORIZONTAL_FILENAME_HTML="teacherstimetable1dayshorizontal.html";
+const QString TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML="teacherstimetabledayshorizontal.html";
 
 /**
 An output file containing the timetable for each teacher,
 arranged in html format. Version 1 - flyers for each teacher
 Days vertical version.
 */
-const QString TEACHERS_TIMETABLE_1_DAYS_VERTICAL_FILENAME_HTML="teacherstimetable1daysvertical.html";
+const QString TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML="teacherstimetabledaysvertical.html";
 
 /**
 An output file containing the timetable for each teacher,
 arranged in html format. Version 2 - overall
 */
-const QString TEACHERS_TIMETABLE_2_FILENAME_HTML="teacherstimetable2.html";
+const QString TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML="teacherstimetabletimehorzontal.html";
+
+/**
+An output file containing the timetable for each teacher,
+arranged in html format. Version 2 - overall
+*/
+const QString TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="teacherstimetabletimevertical.html";
 
 /**
 An output file containing the timetable for each room,
@@ -566,6 +578,16 @@ QString protect(const QString& str);
 A function used in html saving
 */
 QString protect2(const QString& str);
+
+/**
+A function used in html saving
+*/
+QString protect2vert(const QString& str);
+
+/**
+A function used in html saving
+*/
+QString protect2id(const QString& str);
 
 /**
 A function used in iCal saving

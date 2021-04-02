@@ -64,7 +64,7 @@ public:
 
 	void subjectChanged(const QString& dummy);
 	void subjectTagChanged(const QString& dummy);
-	void parityChanged();
+	//void parityChanged();
 	void durationChanged();
 	void activityChanged();
 	

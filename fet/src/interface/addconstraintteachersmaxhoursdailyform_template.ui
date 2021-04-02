@@ -62,7 +62,7 @@
                 <cstring>weightLineEdit</cstring>
             </property>
             <property name="text">
-                <string>1.0</string>
+                <string>100</string>
             </property>
         </widget>
         <widget class="QLabel" row="2" column="0">
@@ -76,7 +76,7 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Weight (recommended: 1.0)</string>
+                <string>Weight percentage (recommended: 0%-100%)</string>
             </property>
         </widget>
         <widget class="QSpinBox" row="3" column="1">
@@ -96,17 +96,6 @@
             </property>
             <property name="text">
                 <string>Max hours daily</string>
-            </property>
-        </widget>
-        <widget class="QCheckBox" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>compulsoryCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>Compulsory constraint</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
             </property>
         </widget>
     </grid>
@@ -129,12 +118,6 @@
         <signal>clicked()</signal>
         <receiver>AddConstraintTeachersMaxHoursDailyForm_template</receiver>
         <slot>close()</slot>
-    </connection>
-    <connection>
-        <sender>compulsoryCheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>AddConstraintTeachersMaxHoursDailyForm_template</receiver>
-        <slot>constraintChanged()</slot>
     </connection>
     <connection>
         <sender>maxHoursSpinBox</sender>

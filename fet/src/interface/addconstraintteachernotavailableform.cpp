@@ -76,14 +76,14 @@ void AddConstraintTeacherNotAvailableForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight=%1").arg(weight);
+	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("Teacher not available");
 	s+="\n";
@@ -130,15 +130,15 @@ void AddConstraintTeacherNotAvailableForm::addCurrentConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int day=dayComboBox->currentItem();
 	if(day<0 || day>gt.rules.nDaysPerWeek){
@@ -173,7 +173,7 @@ void AddConstraintTeacherNotAvailableForm::addCurrentConstraint()
 		return;
 	}
 
-	ctr=new ConstraintTeacherNotAvailable(weight, compulsory, teacher_name, day, startHour, endHour);
+	ctr=new ConstraintTeacherNotAvailable(weight, /*compulsory,*/ teacher_name, day, startHour, endHour);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

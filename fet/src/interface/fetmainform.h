@@ -97,7 +97,7 @@ public slots:
 	void on_dataTimeConstraintsActivityPreferredTimeAction_activated();
 	void on_dataTimeConstraintsStudentsSetNoGapsAction_activated();
 	void on_dataTimeConstraintsStudentsNoGapsAction_activated();
-	void on_dataTimeConstraintsTeachersNoGapsAction_activated();
+	void on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated();
 	void on_dataTimeConstraintsStudentsEarlyAction_activated();
 	void on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_activated();
 	void on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_activated();

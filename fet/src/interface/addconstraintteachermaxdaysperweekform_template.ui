@@ -62,7 +62,7 @@
                 <cstring>weightLineEdit</cstring>
             </property>
             <property name="text">
-                <string>1.0</string>
+                <string>100</string>
             </property>
         </widget>
         <widget class="QComboBox" row="1" column="0" rowspan="1" colspan="2">
@@ -107,7 +107,7 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Weight (recommended: 1.0)</string>
+                <string>Weight - percentage (recommended: 0%-100%)</string>
             </property>
         </widget>
         <widget class="QSpinBox" row="3" column="1">
@@ -127,17 +127,6 @@
             </property>
             <property name="text">
                 <string>Max days per week</string>
-            </property>
-        </widget>
-        <widget class="QCheckBox" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>compulsoryCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>Compulsory constraint</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
             </property>
         </widget>
     </grid>
@@ -164,12 +153,6 @@
     <connection>
         <sender>teachersComboBox</sender>
         <signal>activated(const QString&amp;)</signal>
-        <receiver>AddConstraintTeacherMaxDaysPerWeekForm_template</receiver>
-        <slot>constraintChanged()</slot>
-    </connection>
-    <connection>
-        <sender>compulsoryCheckBox</sender>
-        <signal>toggled(bool)</signal>
         <receiver>AddConstraintTeacherMaxDaysPerWeekForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>

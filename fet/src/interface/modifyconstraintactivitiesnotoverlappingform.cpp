@@ -50,8 +50,8 @@ ModifyConstraintActivitiesNotOverlappingForm::ModifyConstraintActivitiesNotOverl
 		this->notOverlappingActivitiesListBox->insertItem(act->getDescription(gt.rules));
 	}
 	
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));			
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 }
 
 ModifyConstraintActivitiesNotOverlappingForm::~ModifyConstraintActivitiesNotOverlappingForm()
@@ -78,15 +78,15 @@ void ModifyConstraintActivitiesNotOverlappingForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	if(this->notOverlappingActivitiesList.count()==0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -110,8 +110,8 @@ void ModifyConstraintActivitiesNotOverlappingForm::ok()
 		this->_ctr->activitiesId[i]=*it;
 	this->_ctr->n_activities=i;
 		
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
 	
 	gt.rules.internalStructureComputed=false;
 	

@@ -121,10 +121,11 @@
         </widget>
         <widget class="QCheckBox" row="2" column="0">
             <property name="name">
-                <cstring>compulsoryCheckBox</cstring>
+                <cstring>adjIfBrokenCheckBox</cstring>
             </property>
             <property name="text">
-                <string>Compulsory</string>
+                <string>If broken, force
+adjcency of activities</string>
             </property>
             <property name="checked">
                 <bool>true</bool>
@@ -175,7 +176,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight (recommended: 1.0)</string>
+                        <string>Weight percentage (recommended: 95%)</string>
                     </property>
                 </widget>
                 <widget class="QLineEdit">
@@ -183,7 +184,7 @@
                         <cstring>weightLineEdit</cstring>
                     </property>
                     <property name="text">
-                        <string>1.0</string>
+                        <string>95</string>
                     </property>
                 </widget>
             </vbox>

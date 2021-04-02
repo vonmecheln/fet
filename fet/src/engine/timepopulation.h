@@ -121,12 +121,12 @@ public:
 	/**
 	For statistical purposes...
 	*/
-	double totalHardFitness(Rules& r);
+	//double totalHardFitness(Rules& r);
 
 	/**
 	For statistical purposes...
 	*/
-	double totalSoftFitness(Rules& r);
+	//double totalSoftFitness(Rules& r);
 
 	/**
 	This function evolves from the current generation to the next generation

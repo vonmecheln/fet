@@ -25,26 +25,9 @@
      <x>0</x>
      <y>0</y>
      <width>497</width>
-     <height>28</height>
+     <height>29</height>
     </rect>
    </property>
-   <widget class="QMenu" name="helpMenu" >
-    <property name="title" >
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="helpFAQAction" />
-    <addaction name="helpTimeConstraintsAction" />
-    <addaction name="helpTimeConstraintsSubtagsAction" />
-    <addaction name="separator" />
-    <addaction name="helpAboutAction" />
-   </widget>
-   <widget class="QMenu" name="parametersMenu" >
-    <property name="title" >
-     <string>&amp;Parameters</string>
-    </property>
-    <addaction name="parametersPopulationNumberAction" />
-    <addaction name="parametersProbabilitiesAction" />
-   </widget>
    <widget class="QMenu" name="timetableMenu" >
     <property name="title" >
      <string>&amp;Timetable</string>
@@ -82,6 +65,32 @@
     <addaction name="timetableExportXmlHtmlAction" />
     <addaction name="PopupMenuEditor_105" />
    </widget>
+   <widget class="QMenu" name="languageMenu" >
+    <property name="title" >
+     <string>&amp;Language</string>
+    </property>
+    <addaction name="languageEnglishAction" />
+    <addaction name="languageFrenchAction" />
+    <addaction name="languageCatalanAction" />
+    <addaction name="languageRomanianAction" />
+    <addaction name="languageMalayAction" />
+    <addaction name="languagePolishAction" />
+    <addaction name="languageTurkishAction" />
+    <addaction name="languageDutchAction" />
+    <addaction name="languageGermanAction" />
+    <addaction name="languageHungarianAction" />
+    <addaction name="languageMacedonianAction" />
+   </widget>
+   <widget class="QMenu" name="helpMenu" >
+    <property name="title" >
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="helpFAQAction" />
+    <addaction name="helpTimeConstraintsAction" />
+    <addaction name="helpTimeConstraintsSubtagsAction" />
+    <addaction name="separator" />
+    <addaction name="helpAboutAction" />
+   </widget>
    <widget class="QMenu" name="menuStatistics" >
     <property name="title" >
      <string>Statistics</string>
@@ -105,44 +114,6 @@
     <property name="title" >
      <string>&amp;Data</string>
     </property>
-    <widget class="QMenu" name="PopupMenuEditor_29" >
-     <property name="title" >
-      <string>Time constraints (misc)</string>
-     </property>
-     <addaction name="dataTimeConstraintsBasicCompulsoryTimeAction" />
-     <addaction name="dataTimeConstraintsBreakAction" />
-     <addaction name="dataTimeConstraintsTeachersSubgroupsMaxHoursDailyAction" />
-     <addaction name="dataTimeConstraintsTeachersSubjectTagMaxHoursContinuouslyAction" />
-     <addaction name="dataTimeConstraintsTeachersSubjectTagsMaxHoursContinuouslyAction" />
-    </widget>
-    <widget class="QMenu" name="PopupMenuEditor_41" >
-     <property name="title" >
-      <string>Time constraints (students)</string>
-     </property>
-     <addaction name="dataTimeConstraintsStudentsEarlyAction" />
-     <addaction name="dataTimeConstraintsStudentsNHoursDailyAction" />
-     <addaction name="dataTimeConstraintsStudentsNoGapsAction" />
-     <addaction name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" />
-     <addaction name="dataTimeConstraintsStudentsSetNHoursDailyAction" />
-     <addaction name="dataTimeConstraintsStudentsSetNoGapsAction" />
-     <addaction name="dataTimeConstraintsStudentsSetNotAvailableAction" />
-    </widget>
-    <widget class="QMenu" name="PopupMenuEditor_49" >
-     <property name="title" >
-      <string>Time constraints (activities)</string>
-     </property>
-     <addaction name="dataTimeConstraints2ActivitiesConsecutiveAction" />
-     <addaction name="dataTimeConstraints2ActivitiesGroupedAction" />
-     <addaction name="dataTimeConstraints2ActivitiesOrderedAction" />
-     <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
-     <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
-     <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
-     <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
-     <addaction name="dataTimeConstraintsActivityEndsDayAction" />
-     <addaction name="dataTimeConstraintsActivityPreferredTimeAction" />
-     <addaction name="dataTimeConstraintsActivityPreferredTimesAction" />
-     <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
-    </widget>
     <widget class="QMenu" name="PopupMenuEditor_63" >
      <property name="title" >
       <string>Space constraints (misc)</string>
@@ -173,17 +144,40 @@
      </property>
      <addaction name="dataSpaceConstraintsRoomNotAvailableAction" />
     </widget>
+    <widget class="QMenu" name="PopupMenuEditor_29" >
+     <property name="title" >
+      <string>Time constraints (misc)</string>
+     </property>
+     <addaction name="dataTimeConstraintsBasicCompulsoryTimeAction" />
+     <addaction name="dataTimeConstraintsBreakAction" />
+    </widget>
     <widget class="QMenu" name="PopupMenuEditor_35" >
      <property name="title" >
       <string>Time constraints (teachers)</string>
      </property>
-     <addaction name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" />
      <addaction name="dataTimeConstraintsTeacherMaxDaysPerWeekAction" />
+     <addaction name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" />
      <addaction name="dataTimeConstraintsTeacherNotAvailableAction" />
-     <addaction name="dataTimeConstraintsTeachersNoGapsAction" />
-     <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" />
-     <addaction name="dataTimeConstraintsTeachersMaxHoursDailyAction" />
-     <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_41" >
+     <property name="title" >
+      <string>Time constraints (students)</string>
+     </property>
+     <addaction name="dataTimeConstraintsStudentsEarlyAction" />
+     <addaction name="dataTimeConstraintsStudentsNoGapsAction" />
+     <addaction name="dataTimeConstraintsStudentsSetNoGapsAction" />
+     <addaction name="dataTimeConstraintsStudentsSetNotAvailableAction" />
+    </widget>
+    <widget class="QMenu" name="PopupMenuEditor_49" >
+     <property name="title" >
+      <string>Time constraints (activities)</string>
+     </property>
+     <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
+     <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
+     <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
+     <addaction name="dataTimeConstraintsActivityPreferredTimeAction" />
+     <addaction name="dataTimeConstraintsActivityPreferredTimesAction" />
+     <addaction name="dataTimeConstraintsMinNDaysBetweenActivitiesAction" />
     </widget>
     <addaction name="dataInstitutionNameAction" />
     <addaction name="dataCommentsAction" />
@@ -216,26 +210,9 @@
     <addaction name="PopupMenuEditor_63" />
     <addaction name="PopupMenuEditor_83" />
    </widget>
-   <widget class="QMenu" name="languageMenu" >
-    <property name="title" >
-     <string>&amp;Language</string>
-    </property>
-    <addaction name="languageEnglishAction" />
-    <addaction name="languageFrenchAction" />
-    <addaction name="languageCatalanAction" />
-    <addaction name="languageRomanianAction" />
-    <addaction name="languageMalayAction" />
-    <addaction name="languagePolishAction" />
-    <addaction name="languageTurkishAction" />
-    <addaction name="languageDutchAction" />
-    <addaction name="languageGermanAction" />
-    <addaction name="languageHungarianAction" />
-    <addaction name="languageMacedonianAction" />
-   </widget>
    <addaction name="fileMenu" />
    <addaction name="dataMenu" />
    <addaction name="menuStatistics" />
-   <addaction name="parametersMenu" />
    <addaction name="timetableMenu" />
    <addaction name="languageMenu" />
    <addaction name="helpMenu" />
@@ -431,7 +408,7 @@
   </action>
   <action name="timetableAllocateRoomsAction" >
    <property name="text" >
-    <string>Allocate &amp;rooms</string>
+    <string>Allocate &amp;rooms - TODO</string>
    </property>
    <property name="iconText" >
     <string>Allocate rooms</string>
@@ -439,7 +416,7 @@
   </action>
   <action name="timetableViewRoomsAction" >
    <property name="text" >
-    <string>View (r&amp;ooms)</string>
+    <string>View (r&amp;ooms) - TODO</string>
    </property>
    <property name="iconText" >
     <string>View (rooms)</string>
@@ -447,7 +424,7 @@
   </action>
   <action name="timetableShowConflictsSpaceAction" >
    <property name="text" >
-    <string>Show conflicts (s&amp;pace)</string>
+    <string>Show conflicts (s&amp;pace) - TODO</string>
    </property>
    <property name="iconText" >
     <string>Show conflicts (space)</string>
@@ -503,7 +480,7 @@
   </action>
   <action name="dataTimeConstraints2ActivitiesConsecutiveAction" >
    <property name="text" >
-    <string>2 activities consecutive</string>
+    <string>2 activities consecutive - NOT WORKING</string>
    </property>
    <property name="iconText" >
     <string>2 activities consecutive</string>
@@ -511,7 +488,7 @@
   </action>
   <action name="dataTimeConstraints2ActivitiesGroupedAction" >
    <property name="text" >
-    <string>2 activities grouped</string>
+    <string>2 activities grouped - NOT WORKING</string>
    </property>
    <property name="iconText" >
     <string>2 activities grouped</string>
@@ -543,7 +520,7 @@
   </action>
   <action name="timetableViewTeachersWithRoomsAction" >
    <property name="text" >
-    <string>View (t&amp;eachers-with rooms)</string>
+    <string>View (t&amp;eachers-with rooms) - TODO</string>
    </property>
    <property name="iconText" >
     <string>View (teachers-with rooms)</string>
@@ -551,7 +528,7 @@
   </action>
   <action name="timetableViewStudentsWithRoomsAction" >
    <property name="text" >
-    <string>View (st&amp;udents-with rooms)</string>
+    <string>View (st&amp;udents-with rooms) - TODO</string>
    </property>
    <property name="iconText" >
     <string>View (students-with rooms)</string>
@@ -623,16 +600,25 @@
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction" >
+   <property name="text" >
+    <string>Teachers max hours continuously - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Teachers max hours continuously</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxHoursDailyAction" >
+   <property name="text" >
+    <string>Teachers max hours daily - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Teachers max hours daily</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersSubgroupsMaxHoursDailyAction" >
+   <property name="text" >
+    <string>Teachers-subgroups max hours daily - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Teachers-subgroups max hours daily</string>
    </property>
@@ -652,37 +638,47 @@
     <string>Students no gaps</string>
    </property>
   </action>
-  <action name="dataTimeConstraintsTeachersNoGapsAction" >
-   <property name="iconText" >
-    <string>Teachers no gaps</string>
-   </property>
-  </action>
   <action name="dataTimeConstraintsStudentsEarlyAction" >
    <property name="iconText" >
     <string>Students early</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction" >
+   <property name="text" >
+    <string>Students set interval max days per week - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Students set interval max days per week</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsSetNHoursDailyAction" >
+   <property name="text" >
+    <string>Students set n hours daily - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Students set n hours daily</string>
    </property>
   </action>
   <action name="dataTimeConstraintsStudentsNHoursDailyAction" >
+   <property name="text" >
+    <string>Students n hours daily - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Students n hours daily</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivityEndsDayAction" >
+   <property name="text" >
+    <string>Activity ends day - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Activity ends day</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivitiesNotOverlappingAction" >
+   <property name="text" >
+    <string>Activities not overlapping - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Activities not overlapping</string>
    </property>
@@ -765,31 +761,49 @@
    </property>
   </action>
   <action name="timetableAllocateHoursRoomsAction" >
+   <property name="text" >
+    <string>Allocate hours and rooms simultaneously - TODO</string>
+   </property>
    <property name="iconText" >
     <string>Allocate hours and rooms simultaneously</string>
    </property>
   </action>
   <action name="timetableViewStudentsWithRooms2Action" >
+   <property name="text" >
+    <string>View (students-with rooms) - TODO</string>
+   </property>
    <property name="iconText" >
     <string>View (students-with rooms)</string>
    </property>
   </action>
   <action name="timetableViewTeachersWithRooms2Action" >
+   <property name="text" >
+    <string>View (teachers-with rooms) - TODO</string>
+   </property>
    <property name="iconText" >
     <string>View (teachers-with rooms)</string>
    </property>
   </action>
   <action name="timetableViewRooms2Action" >
+   <property name="text" >
+    <string>View (rooms) - TODO</string>
+   </property>
    <property name="iconText" >
     <string>View (rooms)</string>
    </property>
   </action>
   <action name="timetableShowConflictsTimeSpaceAction" >
+   <property name="text" >
+    <string>Show conflicts (time and space) - TODO</string>
+   </property>
    <property name="iconText" >
     <string>Show conflicts (time and space)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsActivitiesSameStartingHourAction" >
+   <property name="text" >
+    <string>Activities same starting hour</string>
+   </property>
    <property name="iconText" >
     <string>Activities same starting hour</string>
    </property>
@@ -870,11 +884,17 @@
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersSubjectTagsMaxHoursContinuouslyAction" >
+   <property name="text" >
+    <string>Teachers-subject tags max hours continuously - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Teachers-subject tags max hours continuously</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersSubjectTagMaxHoursContinuouslyAction" >
+   <property name="text" >
+    <string>Teachers-subject tag max hours continuously - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>Teachers-subject tag max hours continuously</string>
    </property>
@@ -903,6 +923,9 @@
    </property>
   </action>
   <action name="dataTimeConstraints2ActivitiesOrderedAction" >
+   <property name="text" >
+    <string>2 activities ordered - NOT WORKING</string>
+   </property>
    <property name="iconText" >
     <string>2 activities ordered</string>
    </property>
@@ -1019,12 +1042,12 @@
   </action>
   <action name="dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction" >
    <property name="text" >
-    <string>Teacher interval max days per week</string>
+    <string>Teacher interval max days per week - NOT WORKING</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMinHoursDailyAction" >
    <property name="text" >
-    <string>Teachers min hours daily</string>
+    <string>Teachers min hours daily - NOT WORKING</string>
    </property>
   </action>
   <action name="languageHungarianAction" >
@@ -1035,6 +1058,17 @@
   <action name="languageMacedonianAction" >
    <property name="text" >
     <string>&amp;mk (Macedonian)</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" >
+   <property name="text" >
+    <string>Teachers max gaps per week</string>
+   </property>
+   <property name="iconText" >
+    <string>Teachers max gaps per week</string>
+   </property>
+   <property name="toolTip" >
+    <string>Teachers max gaps per week</string>
    </property>
   </action>
  </widget>

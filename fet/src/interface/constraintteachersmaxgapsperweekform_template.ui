@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>ConstraintTeachersNoGapsForm_template</class>
+<class>ConstraintTeachersMaxGapsPerWeekForm_template</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>ConstraintTeachersNoGapsForm_template</cstring>
+        <cstring>ConstraintTeachersMaxGapsPerWeekForm_template</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>FET - Time constraints teachers no gaps</string>
+        <string>FET - Time constraints teachers max gaps per week</string>
     </property>
     <grid>
         <property name="name">
@@ -97,31 +97,31 @@
     <connection>
         <sender>constraintsListBox</sender>
         <signal>highlighted(int)</signal>
-        <receiver>ConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>constraintChanged(int)</slot>
     </connection>
     <connection>
         <sender>addConstraintPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>ConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>addConstraint()</slot>
     </connection>
     <connection>
         <sender>closePushButton</sender>
         <signal>clicked()</signal>
-        <receiver>ConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>close()</slot>
     </connection>
     <connection>
         <sender>removeConstraintPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>ConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>removeConstraint()</slot>
     </connection>
     <connection>
         <sender>modifyConstraintPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>ConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>modifyConstraint()</slot>
     </connection>
 </connections>

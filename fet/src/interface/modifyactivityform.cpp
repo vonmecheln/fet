@@ -26,14 +26,14 @@
 #include <QDesktopWidget>
 
 #define subTab(i)	subactivitiesTabWidget->page(i)
-#define par(i)		(i==0?parity1CheckBox:			\
+/*#define par(i)		(i==0?parity1CheckBox:			\
 			(i==1?parity2CheckBox:					\
 			(i==2?parity3CheckBox:					\
 			(i==3?parity4CheckBox:					\
 			(i==4?parity5CheckBox:					\
 			(i==5?parity6CheckBox:					\
 			(i==6?parity7CheckBox:					\
-			(parity8CheckBox))))))))
+			(parity8CheckBox))))))))*/
 #define dur(i)		(i==0?duration1SpinBox:			\
 			(i==1?duration2SpinBox:					\
 			(i==2?duration3SpinBox:					\
@@ -86,7 +86,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 				else{
 					if(this->_id==act->id)
 						subactivitiesTabWidget->setCurrentPage(nSplit);
-					par(nSplit)->setChecked(act->parity==PARITY_FORTNIGHTLY);
+					//par(nSplit)->setChecked(act->parity==PARITY_FORTNIGHTLY);
 					dur(nSplit)->setValue(act->duration);
 					activ(nSplit)->setChecked(act->active);
 					nSplit++;
@@ -96,7 +96,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	}
 	else{
 		nSplit=1;
-		par(0)->setChecked(this->_activity->parity==PARITY_FORTNIGHTLY);
+		//par(0)->setChecked(this->_activity->parity==PARITY_FORTNIGHTLY);
 		dur(0)->setValue(this->_activity->duration);
 		activ(0)->setChecked(this->_activity->active);
 	}
@@ -298,10 +298,10 @@ void ModifyActivityForm::activityChanged()
 	if(splitSpinBox->value()==1){
 		s+=QObject::tr("Duration=%1").arg(dur(0)->value());
 		s+="\n";
-		if(par(0)->isChecked()){
+		/*if(par(0)->isChecked()){
 			s+=QObject::tr("Fortnightly activity");
 			s+="\n";
-		}
+		}*/
 		
 		if(activ(0)->isChecked()){
 			s+=QObject::tr("Active activity");
@@ -322,10 +322,10 @@ void ModifyActivityForm::activityChanged()
 			s+="\n";
 			s+=QObject::tr("Duration=%1").arg(dur(i)->value());
 			s+="\n";
-			if(par(i)->isChecked()){
+			/*if(par(i)->isChecked()){
 				s+=QObject::tr("Fortnightly activity");
 				s+="\n";
-			}
+			}*/
 			if(activ(i)->isChecked()){
 				s+=QObject::tr("Active activity");
 				s+="\n";
@@ -409,16 +409,16 @@ void ModifyActivityForm::ok()
 
 	int totalduration;
 	int durations[8];
-	int parities[8];
+	//int parities[8];
 	bool active[8];
 	int nsplit=splitSpinBox->value();
 
 	totalduration=0;
 	for(int i=0; i<nsplit; i++){
 		durations[i]=dur(i)->value();
-		parities[i]=PARITY_WEEKLY;
-		if(par(i)->isChecked())
-			parities[i]=PARITY_FORTNIGHTLY;
+		//parities[i]=PARITY_WEEKLY;
+		//if(par(i)->isChecked())
+		//	parities[i]=PARITY_FORTNIGHTLY;
 		active[i]=activ(i)->isChecked();
 
 		totalduration+=durations[i];
@@ -426,12 +426,12 @@ void ModifyActivityForm::ok()
 
 	if(nStudentsSpinBox->value()==-1){
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 subject_tag_name,students_names, nsplit, totalduration, durations, parities, active,
+		 subject_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
 		 (nStudentsSpinBox->value()==-1), total_number_of_students);
 	}
 	else{
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 subject_tag_name,students_names, nsplit, totalduration, durations, parities, active,
+		 subject_tag_name,students_names, nsplit, totalduration, durations, /*parities,*/ active,
 		 (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 	}
 	

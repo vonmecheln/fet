@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>ModifyConstraintTeachersNoGapsForm_template</class>
+<class>ModifyConstraintTeachersMaxGapsPerWeekForm_template</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>ModifyConstraintTeachersNoGapsForm_template</cstring>
+        <cstring>ModifyConstraintTeachersMaxGapsPerWeekForm_template</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -13,13 +13,13 @@
         </rect>
     </property>
     <property name="caption">
-        <string>FET - Modify constraint teachers no gaps dialog</string>
+        <string>FET - Modify constraint teachers max gaps per week dialog</string>
     </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="5" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>okPushButton</cstring>
             </property>
@@ -27,7 +27,7 @@
                 <string>Ok</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="5" column="2">
+        <widget class="QPushButton" row="4" column="3">
             <property name="name">
                 <cstring>cancelPushButton</cstring>
             </property>
@@ -35,18 +35,7 @@
                 <string>Cancel</string>
             </property>
         </widget>
-        <widget class="QCheckBox" row="4" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>compulsoryCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>Compulsory constraint</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="2">
+        <widget class="QLabel" row="0" column="3">
             <property name="name">
                 <cstring>currentConstraintTextLabel</cstring>
             </property>
@@ -60,7 +49,7 @@
                 <string>Current constraint</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="1" column="2" rowspan="4" colspan="1">
+        <widget class="QTextEdit" row="1" column="3" rowspan="3" colspan="1">
             <property name="name">
                 <cstring>currentConstraintTextEdit</cstring>
             </property>
@@ -68,15 +57,15 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLineEdit" row="2" column="1">
+        <widget class="QLineEdit" row="3" column="2">
             <property name="name">
                 <cstring>weightLineEdit</cstring>
             </property>
             <property name="text">
-                <string>1.0</string>
+                <string>100</string>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="0">
+        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>weightTextLabel</cstring>
             </property>
@@ -87,7 +76,35 @@
                 <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Weight (recommended: 1.0)</string>
+                <string>Weight percentage (recommended: 100%)</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="3">
+            <property name="name">
+                <cstring>weightTextLabel_2</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>It is necessary to use only one constraint
+of this type for the optimization to be possible</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>Max gaps per week</string>
+            </property>
+        </widget>
+        <widget class="QSpinBox" row="2" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>maxGapsSpinBox</cstring>
             </property>
         </widget>
     </grid>
@@ -96,25 +113,25 @@
     <connection>
         <sender>weightLineEdit</sender>
         <signal>textChanged(const QString&amp;)</signal>
-        <receiver>ModifyConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ModifyConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>
     <connection>
         <sender>okPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>ModifyConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ModifyConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>ok()</slot>
     </connection>
     <connection>
         <sender>cancelPushButton</sender>
         <signal>clicked()</signal>
-        <receiver>ModifyConstraintTeachersNoGapsForm_template</receiver>
+        <receiver>ModifyConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>cancel()</slot>
     </connection>
     <connection>
-        <sender>compulsoryCheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyConstraintTeachersNoGapsForm_template</receiver>
+        <sender>maxGapsSpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyConstraintTeachersMaxGapsPerWeekForm_template</receiver>
         <slot>constraintChanged()</slot>
     </connection>
 </connections>

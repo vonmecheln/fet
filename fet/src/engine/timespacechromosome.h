@@ -208,7 +208,7 @@ public:
 	matrix keeps the activity scheduled for the second week.
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
-	void getTeachersTimetable(Rules& r, int16 a1[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY],int16 a2[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getTeachersTimetable(Rules& r, int16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	/**
 	This is a function that retrieves the subgroups' timetable from
@@ -221,7 +221,7 @@ public:
 	matrix keeps the activity scheduled for the second week.
 	The arrays a1 and a2 will contain the index of the activity in the rules.
 	*/
-	void getSubgroupsTimetable(Rules& r, int16 a1[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY],int16 a2[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getSubgroupsTimetable(Rules& r, int16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	/**
 	The following function is very similar to GetsubgroupsTimetable,
@@ -252,7 +252,7 @@ public:
 	/**
 	This is a function that retrieves the rooms' timetable. Please see spacechromosome.h for more details
 	*/
-	void getRoomsTimetable(Rules& r, int16 a1[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], int16 a2[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
+	void getRoomsTimetable(Rules& r, int16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	/**
 	This is a function that retrieves the rooms' matrix. Please see spacechromosome.h for more details

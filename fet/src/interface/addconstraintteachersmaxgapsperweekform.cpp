@@ -1,8 +1,8 @@
 /***************************************************************************
-                          modifyconstraintteachersnogapsform.cpp  -  description
+                          addconstraintteachersmaxgapsperweekform.cpp  -  description
                              -------------------
-    begin                : Feb 11, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    begin                : July 6, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "modifyconstraintteachersnogapsform.h"
+#include "addconstraintteachersmaxgapsperweekform.h"
 #include "timeconstraint.h"
 
 #include <qradiobutton.h>
@@ -26,7 +26,7 @@
 
 #define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
-ModifyConstraintTeachersNoGapsForm::ModifyConstraintTeachersNoGapsForm(ConstraintTeachersNoGaps* ctr)
+AddConstraintTeachersMaxGapsPerWeekForm::AddConstraintTeachersMaxGapsPerWeekForm()
 {
 	//setWindowFlags(Qt::Window);
 	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -34,18 +34,18 @@ ModifyConstraintTeachersNoGapsForm::ModifyConstraintTeachersNoGapsForm(Constrain
 	int xx=desktop->width()/2 - frameGeometry().width()/2;
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
-
-	this->_ctr=ctr;
 	
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	maxGapsSpinBox->setMinValue(0);
+	//maxGapsSpinBox->setMaxValue(gt.rules.nHoursPerWeek);
+	maxGapsSpinBox->setMaxValue(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+	maxGapsSpinBox->setValue(3);
 }
 
-ModifyConstraintTeachersNoGapsForm::~ModifyConstraintTeachersNoGapsForm()
+AddConstraintTeachersMaxGapsPerWeekForm::~AddConstraintTeachersMaxGapsPerWeekForm()
 {
 }
 
-void ModifyConstraintTeachersNoGapsForm::constraintChanged()
+void AddConstraintTeachersMaxGapsPerWeekForm::constraintChanged()
 {
 	QString s;
 	s+=QObject::tr("Current constraint:");
@@ -54,45 +54,50 @@ void ModifyConstraintTeachersNoGapsForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight=%1").arg(weight);
+	s+=QObject::tr("Weight (percentage)=%1").arg(weight);
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
+	s+="\n";*/
+	
+	s+=QObject::tr("Max gaps=%1").arg(maxGapsSpinBox->value());
 	s+="\n";
 
-	s+=QObject::tr("Teachers no gaps");
+	s+=QObject::tr("Teachers max gaps per week");
 	s+="\n";
 
 	currentConstraintTextEdit->setText(s);
 }
 
-void ModifyConstraintTeachersNoGapsForm::ok()
+void AddConstraintTeachersMaxGapsPerWeekForm::addCurrentConstraint()
 {
+	TimeConstraint *ctr=NULL;
+
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	ctr=new ConstraintTeachersMaxGapsPerWeek(weight /*, compulsory*/, maxGapsSpinBox->value());
 
-	gt.rules.internalStructureComputed=false;
-	
-	this->close();
-}
-
-void ModifyConstraintTeachersNoGapsForm::cancel()
-{
-	this->close();
+	bool tmp2=gt.rules.addTimeConstraint(ctr);
+	if(tmp2)
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Constraint added"));
+	else{
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Constraint NOT added - please report error"));
+		delete ctr;
+	}
 }

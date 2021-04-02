@@ -142,7 +142,7 @@ void TimetableExportiCalStudentsWithRooms2Form::ok()
 				}
 				
 				s = "";
-				int ai=students_timetable_week1[i][k][j]; //activity index
+				int ai=students_timetable_weekly[i][k][j]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					assert(act!=NULL);
@@ -158,7 +158,8 @@ void TimetableExportiCalStudentsWithRooms2Form::ok()
 					s+=" ";				
 				}
 				
-				ai=students_timetable_week2[i][k][j]; //activity index
+				//ai=students_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					assert(act!=NULL);

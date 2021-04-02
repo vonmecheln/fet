@@ -1,8 +1,8 @@
 /***************************************************************************
-                          addconstraintteachersnogapsform.h  -  description
+                          modifyconstraintteachersmaxgapsperweekform.h  -  description
                              -------------------
-    begin                : Feb 11, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    begin                : July 6, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,10 +15,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef ADDCONSTRAINTTEACHERSNOGAPSFORM_H
-#define ADDCONSTRAINTTEACHERSNOGAPSFORM_H
+#ifndef MODIFYCONSTRAINTTEACHERSMAXGAPSPERWEEKFORM_H
+#define MODIFYCONSTRAINTTEACHERSMAXGAPSPERWEEKFORM_H
 
-#include "addconstraintteachersnogapsform_template.h"
+#include "modifyconstraintteachersmaxgapsperweekform_template.h"
 #include "genetictimetable_defs.h"
 #include "genetictimetable.h"
 #include "fet.h"
@@ -33,13 +33,16 @@
 #include <qlineedit.h>
 #include <q3textedit.h>
 
-class AddConstraintTeachersNoGapsForm : public AddConstraintTeachersNoGapsForm_template  {
+class ModifyConstraintTeachersMaxGapsPerWeekForm : public ModifyConstraintTeachersMaxGapsPerWeekForm_template  {
 public:
-	AddConstraintTeachersNoGapsForm();
-	~AddConstraintTeachersNoGapsForm();
+	ConstraintTeachersMaxGapsPerWeek* _ctr;
+
+	ModifyConstraintTeachersMaxGapsPerWeekForm(ConstraintTeachersMaxGapsPerWeek* ctr);
+	~ModifyConstraintTeachersMaxGapsPerWeekForm();
 
 	void constraintChanged();
-	void addCurrentConstraint();
+	void ok();
+	void cancel();
 };
 
 #endif

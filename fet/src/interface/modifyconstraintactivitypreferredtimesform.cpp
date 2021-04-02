@@ -39,8 +39,8 @@ ModifyConstraintActivityPreferredTimesForm::ModifyConstraintActivityPreferredTim
 
 	this->_ctr=ctr;
 	
-	weightLineEdit->setText(QString::number(ctr->weight));
-	compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
 
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -209,15 +209,15 @@ void ModifyConstraintActivityPreferredTimesForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int i=activitiesComboBox->currentItem();
 	assert(i<activitiesList.size());
@@ -262,8 +262,8 @@ void ModifyConstraintActivityPreferredTimesForm::ok()
 				n++;
 			}
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
 	this->_ctr->activityId=id;
 	this->_ctr->nPreferredTimes=n;
 	for(int i=0; i<n; i++){

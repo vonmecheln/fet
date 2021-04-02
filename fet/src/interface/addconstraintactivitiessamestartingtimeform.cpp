@@ -170,15 +170,15 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	if(this->simultaneousActivitiesList.count()==0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -278,7 +278,7 @@ if(blockCheckBox->isChecked()){ //block constraints
 	
 	////////////////phase 3 - add the constraints
 	for(k=0; k<nConstraints; k++){
-		ctr=new ConstraintActivitiesSameStartingTime(weight, compulsory, this->simultaneousActivitiesList.count(), ids[k]);
+		ctr=new ConstraintActivitiesSameStartingTime(weight, /*compulsory,*/ this->simultaneousActivitiesList.count(), ids[k]);
 		bool tmp2=gt.rules.addTimeConstraint(ctr);
 		
 		if(tmp2){
@@ -302,7 +302,7 @@ else{
 		assert(i<MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME);
 		ids[i]=*it;
 	}
-	ctr=new ConstraintActivitiesSameStartingTime(weight, compulsory, this->simultaneousActivitiesList.count(), ids);
+	ctr=new ConstraintActivitiesSameStartingTime(weight, /*compulsory,*/ this->simultaneousActivitiesList.count(), ids);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 		

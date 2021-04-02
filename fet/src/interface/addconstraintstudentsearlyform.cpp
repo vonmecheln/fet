@@ -49,16 +49,16 @@ void AddConstraintStudentsEarlyForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight=%1").arg(weight);
+	s+=QObject::tr("Weight percentage=%1\%").arg(weight);
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
-	s+=QObject::tr("Students early");
+	s+=QObject::tr("Students must begin classes at the first hour of each day");
 	s+="\n";
 
 	currentConstraintTextEdit->setText(s);
@@ -71,17 +71,17 @@ void AddConstraintStudentsEarlyForm::addCurrentConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
-	ctr=new ConstraintStudentsEarly(weight, compulsory);
+	ctr=new ConstraintStudentsEarly(weight/*, compulsory*/);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

@@ -108,6 +108,7 @@ SOURCES += fet.cpp \
            ../engine/spacepopulation.cpp \
            ../engine/timespacepopulation.cpp \
            ../engine/rules.cpp \
+           ../engine/optimizetime_data.cpp \
            ../engine/timeconstraint.cpp \
            ../engine/spaceconstraint.cpp \
            ../engine/studentsset.cpp \
@@ -118,6 +119,7 @@ SOURCES += fet.cpp \
            ../engine/equipment.cpp \
            ../engine/building.cpp \
            ../engine/genetictimetable_defs.cpp \
+		   ../engine/optimizetime.cpp \
            roomsform.cpp \
            roomsequipmentsform.cpp \
            equipmentsform.cpp \
@@ -197,9 +199,9 @@ SOURCES += fet.cpp \
 		   constraintstudentsnogapsform.cpp \
 		   addconstraintstudentsnogapsform.cpp \
 		   modifyconstraintstudentsnogapsform.cpp \
-		   constraintteachersnogapsform.cpp \
-		   addconstraintteachersnogapsform.cpp \
-		   modifyconstraintteachersnogapsform.cpp \
+		   constraintteachersmaxgapsperweekform.cpp \
+		   addconstraintteachersmaxgapsperweekform.cpp \
+		   modifyconstraintteachersmaxgapsperweekform.cpp \
 		   constraintstudentsearlyform.cpp \
 		   addconstraintstudentsearlyform.cpp \
 		   modifyconstraintstudentsearlyform.cpp \
@@ -338,6 +340,7 @@ HEADERS += fet.h \
            ../engine/spacepopulation.h \
            ../engine/timespacepopulation.h \
            ../engine/rules.h \
+           ../engine/optimizetime_data.h \
            ../engine/timeconstraint.h \
            ../engine/spaceconstraint.h \
            ../engine/genetictimetable_defs.h \
@@ -348,6 +351,7 @@ HEADERS += fet.h \
            ../engine/room.h \
            ../engine/equipment.h \
            ../engine/building.h \
+		   ../engine/optimizetime.h \
            roomsform.h \
            roomsequipmentsform.h \
            equipmentsform.h \
@@ -426,9 +430,9 @@ HEADERS += fet.h \
 		   constraintstudentsnogapsform.h \
 		   addconstraintstudentsnogapsform.h \
 		   modifyconstraintstudentsnogapsform.h \
-		   constraintteachersnogapsform.h \
-		   addconstraintteachersnogapsform.h \
-		   modifyconstraintteachersnogapsform.h \
+		   constraintteachersmaxgapsperweekform.h \
+		   addconstraintteachersmaxgapsperweekform.h \
+		   modifyconstraintteachersmaxgapsperweekform.h \
 		   constraintstudentsearlyform.h \
 		   addconstraintstudentsearlyform.h \
 		   modifyconstraintstudentsearlyform.h \
@@ -470,9 +474,7 @@ TRANSLATIONS += ../../translations/fet_ro.ts \
                 ../../translations/fet_pl.ts \
                 ../../translations/fet_tr.ts \
                 ../../translations/fet_nl.ts \
-                ../../translations/fet_de.ts \
-                ../../translations/fet_hu.ts \
-                ../../translations/fet_mk.ts
+                ../../translations/fet_de.ts
 FORMS+=  fetmainform_template.ui \
 	helpaboutform_template.ui \
 	teachersstatisticsform_template.ui \
@@ -650,9 +652,9 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintstudentsnogapsform_template.ui \
 		   addconstraintstudentsnogapsform_template.ui \
 		   modifyconstraintstudentsnogapsform_template.ui \
-		   constraintteachersnogapsform_template.ui \
-		   addconstraintteachersnogapsform_template.ui \
-		   modifyconstraintteachersnogapsform_template.ui \
+		   constraintteachersmaxgapsperweekform_template.ui \
+		   addconstraintteachersmaxgapsperweekform_template.ui \
+		   modifyconstraintteachersmaxgapsperweekform_template.ui \
 		   constraintstudentsearlyform_template.ui \
 		   addconstraintstudentsearlyform_template.ui \
 		   modifyconstraintstudentsearlyform_template.ui \

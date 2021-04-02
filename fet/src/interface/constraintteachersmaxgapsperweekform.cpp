@@ -1,8 +1,8 @@
 /***************************************************************************
-                          constraintteachersnogapsform.cpp  -  description
+                          constraintteachersmaxgapsperweekform.cpp  -  description
                              -------------------
-    begin                : Feb 11, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    begin                : July 6, 2007
+    copyright            : (C) 2007 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,13 +15,13 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "constraintteachersnogapsform.h"
-#include "addconstraintteachersnogapsform.h"
-#include "modifyconstraintteachersnogapsform.h"
+#include "constraintteachersmaxgapsperweekform.h"
+#include "addconstraintteachersmaxgapsperweekform.h"
+#include "modifyconstraintteachersmaxgapsperweekform.h"
 
 #include <QDesktopWidget>
 
-ConstraintTeachersNoGapsForm::ConstraintTeachersNoGapsForm()
+ConstraintTeachersMaxGapsPerWeekForm::ConstraintTeachersMaxGapsPerWeekForm()
 {
 	//setWindowFlags(Qt::Window);
 	setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -33,19 +33,19 @@ ConstraintTeachersNoGapsForm::ConstraintTeachersNoGapsForm()
 	this->filterChanged();
 }
 
-ConstraintTeachersNoGapsForm::~ConstraintTeachersNoGapsForm()
+ConstraintTeachersMaxGapsPerWeekForm::~ConstraintTeachersMaxGapsPerWeekForm()
 {
 }
 
-bool ConstraintTeachersNoGapsForm::filterOk(TimeConstraint* ctr)
+bool ConstraintTeachersMaxGapsPerWeekForm::filterOk(TimeConstraint* ctr)
 {
-	if(ctr->type==CONSTRAINT_TEACHERS_NO_GAPS)
+	if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK)
 		return true;
 	else
 		return false;
 }
 
-void ConstraintTeachersNoGapsForm::filterChanged()
+void ConstraintTeachersMaxGapsPerWeekForm::filterChanged()
 {
 	this->visibleConstraintsList.clear();
 	constraintsListBox->clear();
@@ -58,7 +58,7 @@ void ConstraintTeachersNoGapsForm::filterChanged()
 	}
 }
 
-void ConstraintTeachersNoGapsForm::constraintChanged(int index)
+void ConstraintTeachersMaxGapsPerWeekForm::constraintChanged(int index)
 {
 	if(index<0)
 		return;
@@ -68,9 +68,9 @@ void ConstraintTeachersNoGapsForm::constraintChanged(int index)
 	currentConstraintTextEdit->setText(ctr->getDetailedDescription(gt.rules));
 }
 
-void ConstraintTeachersNoGapsForm::addConstraint()
+void ConstraintTeachersMaxGapsPerWeekForm::addConstraint()
 {
-	AddConstraintTeachersNoGapsForm *form=new AddConstraintTeachersNoGapsForm();
+	AddConstraintTeachersMaxGapsPerWeekForm *form=new AddConstraintTeachersMaxGapsPerWeekForm();
 	form->exec();
 
 	filterChanged();
@@ -78,7 +78,7 @@ void ConstraintTeachersNoGapsForm::addConstraint()
 	constraintsListBox->setCurrentItem(constraintsListBox->count()-1);
 }
 
-void ConstraintTeachersNoGapsForm::modifyConstraint()
+void ConstraintTeachersMaxGapsPerWeekForm::modifyConstraint()
 {
 	int i=constraintsListBox->currentItem();
 	if(i<0){
@@ -87,14 +87,14 @@ void ConstraintTeachersNoGapsForm::modifyConstraint()
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintTeachersNoGapsForm *form = new ModifyConstraintTeachersNoGapsForm((ConstraintTeachersNoGaps*)ctr);
+	ModifyConstraintTeachersMaxGapsPerWeekForm *form = new ModifyConstraintTeachersMaxGapsPerWeekForm((ConstraintTeachersMaxGapsPerWeek*)ctr);
 	form->exec();
 
 	filterChanged();
 	constraintsListBox->setCurrentItem(i);
 }
 
-void ConstraintTeachersNoGapsForm::removeConstraint()
+void ConstraintTeachersMaxGapsPerWeekForm::removeConstraint()
 {
 	int i=constraintsListBox->currentItem();
 	if(i<0){

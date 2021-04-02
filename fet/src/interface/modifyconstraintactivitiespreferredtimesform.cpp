@@ -73,8 +73,8 @@ ModifyConstraintActivitiesPreferredTimesForm::ModifyConstraintActivitiesPreferre
 			else
 				preferredTimesTable->setText(i, j, YES);
 				
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 }
 
 ModifyConstraintActivitiesPreferredTimesForm::~ModifyConstraintActivitiesPreferredTimesForm()
@@ -190,15 +190,15 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	QString teacher=teachersComboBox->currentText();
 	if(teacher!="")
@@ -243,8 +243,8 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 				n++;
 			}
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
 	this->_ctr->teacherName=teacher;
 	this->_ctr->studentsName=students;
 	this->_ctr->subjectName=subject;

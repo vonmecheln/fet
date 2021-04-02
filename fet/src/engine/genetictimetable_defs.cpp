@@ -23,7 +23,7 @@
 /**
 FET version
 */
-const QString FET_VERSION="4.2.8";
+const QString FET_VERSION="5.0.0-preview4";
 
 /**
 FET language
@@ -87,6 +87,42 @@ QString protect2(const QString& str) //used for html
 	return p;
 }
 
+//protect2vert is very similar to protect2
+//protect2vert code contributed by Volker Dirr
+
+QString protect2vert(const QString& str) //used for html
+{
+	QString p=str;
+	p.replace("&", "&amp;");
+	p.replace("\"", "&quot;");
+	p.replace(">", "&gt;");
+	p.replace("<", "&lt;");
+	//p.replace("'", "&apos;");
+
+	QString returnstring;
+	for(int i=0; i<p.size();i++){
+		QString a=p.at(i);
+		QString b="<br />";
+		returnstring.append(a);
+		returnstring.append(b);
+	}
+	return returnstring;
+}
+
+//protect2id is very similar to protect2
+//protect2id code contributed by Volker Dirr
+
+QString protect2id(const QString& str) //used for html
+{
+	QString p=str;
+	p.replace("&", "&amp;");
+	p.replace("\"", "&quot;");
+	p.replace(">", "&gt;");
+	p.replace("<", "&lt;");
+	//p.replace("'", "&apos;");
+	p.replace(" ", "_");		// id must be a single token
+	return p;
+}
 
 QString protect3(const QString& str) //used for iCal
 {
@@ -113,7 +149,7 @@ bool isLeapYear(int year)
 				leap=true;
 		}
 	}
-		
+
 	return leap;
 }
 
@@ -136,7 +172,7 @@ bool isCorrectDay(const QString sday)
 	int d=(day[6]-'0')*10+(day[7]-'0');
 	if(d>nDays[m] || d<1)
 		return false;
-		
+
 	return true;
 }
 
@@ -152,7 +188,7 @@ bool isCorrectHour(const QString shour)
 	int m=(hour[2]-'0')*10+(hour[3]-'0');
 	if(m<0 || h>59)
 		return false;
-		
+
 	return true;
 }
 
@@ -181,10 +217,10 @@ QString nextDay(const QString sday)
 	}
 	else
 		d++;
-		
+
 	char tmp[9];
 	QString nday;
-	
+
 	tmp[0]=y/1000+'0';
 	y%=1000;
 	tmp[1]=y/100+'0';
@@ -192,19 +228,19 @@ QString nextDay(const QString sday)
 	tmp[2]=y/10+'0';
 	y%=10;
 	tmp[3]=y+'0';
-	
+
 	tmp[4]=m/10+'0';
 	m%=10;
 	tmp[5]=m+'0';
-	
+
 	tmp[6]=d/10+'0';
 	d%=10;
 	tmp[7]=d+'0';
-	
+
 	tmp[8]='\0';
-	
+
 	nday=tmp;
-	
+
 	return nday;
 }
 
@@ -217,39 +253,39 @@ bool sumHours(const QString shour1, const QString shour2, QString& result)
 	//Returns true if the result is the next day
 	assert(isCorrectHour(hour1));
 	assert(isCorrectHour(hour2));
-	
+
 	int h1=(hour1[0]-'0')*10+(hour1[1]-'0');
 	int m1=(hour1[2]-'0')*10+(hour1[3]-'0');
 
 	int h2=(hour2[0]-'0')*10+(hour2[1]-'0');
 	int m2=(hour2[2]-'0')*10+(hour2[3]-'0');
-	
+
 	int rh=h1+h2+(m1+m2)/60;
 	int rm=(m1+m2)%60;
-	
+
 	bool nextDay;
-	
+
 	if(rh>=24){
 		nextDay=true;
 		rh-=24;
 	}
 	else
 		nextDay=false;
-		
+
 	char res[5];
-		
+
 	res[0]=rh/10+'0';
 	rh%=10;
 	res[1]=rh+'0';
 	res[2]=rm/10+'0';
 	rm%=10;
-	res[3]=rm+'0';	
+	res[3]=rm+'0';
 	res[4]='\0';
-	
+
 	result=res;
-	
+
 	assert(isCorrectHour(result));
-		
+
 	return nextDay;
 }
 
@@ -268,6 +304,6 @@ QString iCalFolding(const QString s)
 		}
 		t.append(s.at(i));
 	}
-	
+
 	return t;
 }

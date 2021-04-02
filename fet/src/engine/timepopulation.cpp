@@ -113,6 +113,7 @@ TimeChromosome& TimePopulation::bestChromosome(Rules& r)
 	return this->chromosomes[0];*/
 }
 
+/*
 TimeChromosome& TimePopulation::worstChromosome(Rules& r)
 {
 	assert(this->initialized);
@@ -157,7 +158,7 @@ double TimePopulation::totalSoftFitness(Rules& r)
 		sf += this->chromosomes[i].softFitness(r);
 
 	return sf;
-}
+}*/
 
 void TimePopulation::evolve1(Rules& r)
 {
@@ -190,13 +191,14 @@ void TimePopulation::evolve1(Rules& r)
 	}
 
 	this->n*=2;
-	this->sort(r, 0, this->n-1);
+	assert(0);
+	//this->sort(r, 0, this->n-1);
 	this->sorted = true;
 	this->bestFirst = true;	
 	this->n/=2;
 }
 
-
+#if 0
 void TimePopulation::sort(Rules& ru, int left, int right)
 {
 	assert(this->initialized);
@@ -290,6 +292,7 @@ void TimePopulation::sort(Rules& ru, int left, int right)
 		}
 	}
 }
+#endif
 
 void TimePopulation::evolve2(Rules& r)
 {

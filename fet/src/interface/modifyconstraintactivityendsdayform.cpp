@@ -37,8 +37,8 @@ ModifyConstraintActivityEndsDayForm::ModifyConstraintActivityEndsDayForm(Constra
 
 	this->_ctr=ctr;
 	
-	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weight));
+	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
 	updateActivitiesComboBox();
 }
@@ -71,14 +71,14 @@ void ModifyConstraintActivityEndsDayForm::constraintChanged()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	s+=QObject::tr("Weight=%1").arg(weight);
+	s+=QObject::tr("Weight (percentage)=%1\%").arg(weight);
 	s+="\n";
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
 		compulsory=true;
 	s+=QObject::tr("Compulsory=%1").arg(yesNo(compulsory));
-	s+="\n";
+	s+="\n";*/
 
 	s+=QObject::tr("Activity ends day");
 	s+="\n";
@@ -103,15 +103,15 @@ void ModifyConstraintActivityEndsDayForm::ok()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	int tmp2=activitiesComboBox->currentItem();
 	if(tmp2<0 || tmp2>=gt.rules.activitiesList.size()){
@@ -121,8 +121,8 @@ void ModifyConstraintActivityEndsDayForm::ok()
 	}
 	int id=gt.rules.activitiesList.at(tmp2)->id;
 
-	this->_ctr->weight=weight;
-	this->_ctr->compulsory=compulsory;
+	this->_ctr->weightPercentage=weight;
+	//this->_ctr->compulsory=compulsory;
 	this->_ctr->activityId=id;
 	
 	gt.rules.internalStructureComputed=false;

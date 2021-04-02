@@ -1,6 +1,10 @@
 Code contributors:
 
-Volker Dirr (Volker at dirr-computer dot de) - implemented and
-	tested two-point and uniform crossover. Currently, FET
-	uses only two-point crossover. This is clearly an improvement
-	over the 1-point crossover, originally implemented in FET.
+Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemented and tested 
+	two-point and uniform crossover. Currently, FET uses only two-point crossover. This is clearly 
+	an improvement over the 1-point crossover, originally implemented in FET 
+	--------- 30 June 2007 - evolutionary algorithm is deprecated by Liviu Lalescu (so no crossover anymore)
+
+	Lots of helping with testing, bug reports, suggestions, comparisons
+	
+	Rewriting of the saving the timetable on hard disk. New features: xhtml 1.0 strict valide, using span.

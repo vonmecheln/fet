@@ -138,7 +138,7 @@ void TimetableExportiCalStudentsForm::ok()
 				}
 				
 				s = "";
-				int ai=students_timetable_week1[i][k][j]; //activity index
+				int ai=students_timetable_weekly[i][k][j]; //activity index
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					assert(act!=NULL);
@@ -146,7 +146,8 @@ void TimetableExportiCalStudentsForm::ok()
 					for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
 						s += (*it) + " ";
 				}
-				ai=students_timetable_week2[i][k][j]; //activity index
+				//ai=students_timetable_week2[i][k][j]; //activity index
+				ai=UNALLOCATED_ACTIVITY;
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					assert(act!=NULL);

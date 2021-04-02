@@ -433,28 +433,6 @@ modify it, please remove the corresponding
                                     <number>1</number>
                                 </property>
                             </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity1CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly (once at two weeks)</string>
-                                </property>
-                            </widget>
                             <widget class="QCheckBox" row="2" column="1">
                                 <property name="name">
                                     <cstring>active1CheckBox</cstring>
@@ -502,28 +480,6 @@ modify it, please remove the corresponding
                                 </property>
                                 <property name="minValue">
                                     <number>1</number>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel_2</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity2CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly</string>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="2" column="1">
@@ -575,28 +531,6 @@ modify it, please remove the corresponding
                                     <number>1</number>
                                 </property>
                             </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel_3</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity3CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly</string>
-                                </property>
-                            </widget>
                             <widget class="QCheckBox" row="2" column="1">
                                 <property name="name">
                                     <cstring>active3CheckBox</cstring>
@@ -644,28 +578,6 @@ modify it, please remove the corresponding
                                 </property>
                                 <property name="minValue">
                                     <number>1</number>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel_4</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity4CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly</string>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="2" column="1">
@@ -717,28 +629,6 @@ modify it, please remove the corresponding
                                     <number>1</number>
                                 </property>
                             </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel_5</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity5CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly</string>
-                                </property>
-                            </widget>
                             <widget class="QCheckBox" row="2" column="1">
                                 <property name="name">
                                     <cstring>active5CheckBox</cstring>
@@ -786,28 +676,6 @@ modify it, please remove the corresponding
                                 </property>
                                 <property name="text">
                                     <string>Duration</string>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel_6</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity6CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly</string>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="2" column="1">
@@ -859,28 +727,6 @@ modify it, please remove the corresponding
                                     <number>1</number>
                                 </property>
                             </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel_7</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity7CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly</string>
-                                </property>
-                            </widget>
                             <widget class="QCheckBox" row="2" column="1">
                                 <property name="name">
                                     <cstring>active7CheckBox</cstring>
@@ -928,28 +774,6 @@ modify it, please remove the corresponding
                                 </property>
                                 <property name="minValue">
                                     <number>1</number>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>parity1TextLabel_8</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Parity</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="1">
-                                <property name="name">
-                                    <cstring>parity8CheckBox</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Fortnightly</string>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="2" column="1">
@@ -1007,102 +831,6 @@ modify it, please remove the corresponding
         <slot>subjectChanged(const QString&amp;)</slot>
     </connection>
     <connection>
-        <sender>parity8CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration8SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>parity7CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration7SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>parity6CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration6SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>parity5CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration5SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>parity4CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration4SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>parity3CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration3SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>parity2CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration2SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>duration1SpinBox</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>parity1CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
         <sender>cancelPushButton</sender>
         <signal>clicked()</signal>
         <receiver>ModifyActivityForm_template</receiver>
@@ -1157,44 +885,8 @@ modify it, please remove the corresponding
         <slot>clearStudents()</slot>
     </connection>
     <connection>
-        <sender>active1CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active2CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active3CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active4CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active5CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active6CheckBox</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>ModifyActivityForm_template</receiver>
-        <slot>activityChanged()</slot>
-    </connection>
-    <connection>
-        <sender>active7CheckBox</sender>
-        <signal>toggled(bool)</signal>
+        <sender>nStudentsSpinBox</sender>
+        <signal>valueChanged(int)</signal>
         <receiver>ModifyActivityForm_template</receiver>
         <slot>activityChanged()</slot>
     </connection>
@@ -1205,7 +897,91 @@ modify it, please remove the corresponding
         <slot>activityChanged()</slot>
     </connection>
     <connection>
-        <sender>nStudentsSpinBox</sender>
+        <sender>duration8SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active7CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration7SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active6CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration6SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active5CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration5SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active4CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration4SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active3CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration3SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active2CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration2SpinBox</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>active1CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ModifyActivityForm_template</receiver>
+        <slot>activityChanged()</slot>
+    </connection>
+    <connection>
+        <sender>duration1SpinBox</sender>
         <signal>valueChanged(int)</signal>
         <receiver>ModifyActivityForm_template</receiver>
         <slot>activityChanged()</slot>
@@ -1217,23 +993,15 @@ modify it, please remove the corresponding
     <tabstop>splitSpinBox</tabstop>
     <tabstop>subactivitiesTabWidget</tabstop>
     <tabstop>duration1SpinBox</tabstop>
-    <tabstop>parity1CheckBox</tabstop>
     <tabstop>okPushButton</tabstop>
     <tabstop>cancelPushButton</tabstop>
     <tabstop>duration2SpinBox</tabstop>
-    <tabstop>parity2CheckBox</tabstop>
     <tabstop>duration3SpinBox</tabstop>
-    <tabstop>parity3CheckBox</tabstop>
     <tabstop>duration4SpinBox</tabstop>
-    <tabstop>parity4CheckBox</tabstop>
     <tabstop>duration5SpinBox</tabstop>
-    <tabstop>parity5CheckBox</tabstop>
     <tabstop>duration6SpinBox</tabstop>
-    <tabstop>parity6CheckBox</tabstop>
     <tabstop>duration7SpinBox</tabstop>
-    <tabstop>parity7CheckBox</tabstop>
     <tabstop>duration8SpinBox</tabstop>
-    <tabstop>parity8CheckBox</tabstop>
 </tabstops>
 <slots>
     <slot>activityChanged()</slot>

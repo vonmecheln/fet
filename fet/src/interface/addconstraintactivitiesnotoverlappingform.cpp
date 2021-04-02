@@ -63,15 +63,15 @@ void AddConstraintActivitiesNotOverlappingForm::addConstraint()
 	double weight;
 	QString tmp=weightLineEdit->text();
 	sscanf(tmp, "%lf", &weight);
-	if(weight<0.0){
+	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Invalid weight"));
+			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	bool compulsory=false;
+	/*bool compulsory=false;
 	if(compulsoryCheckBox->isChecked())
-		compulsory=true;
+		compulsory=true;*/
 
 	if(this->notOverlappingActivitiesList.count()==0){
 		QMessageBox::warning(this, QObject::tr("FET information"),
@@ -95,7 +95,7 @@ void AddConstraintActivitiesNotOverlappingForm::addConstraint()
 	for(i=0, it=this->notOverlappingActivitiesList.begin(); it!=this->notOverlappingActivitiesList.end(); it++, i++)
 		ids[i]=*it;
 	
-	ctr=new ConstraintActivitiesNotOverlapping(weight, compulsory, this->notOverlappingActivitiesList.count(), ids);
+	ctr=new ConstraintActivitiesNotOverlapping(weight, /*compulsory,*/ this->notOverlappingActivitiesList.count(), ids);
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	
 	if(tmp2){

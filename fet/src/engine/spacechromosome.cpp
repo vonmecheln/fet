@@ -46,10 +46,10 @@ int better(Rules& r, SpaceChromosome& c1, SpaceChromosome& c2, const int days[/*
 	return better(hf1, sf1, hf2, sf2);
 }
 
-//defined in timechromosome.cpp
-/*int better(int hf1, int sf1, int hf2, int sf2){
+//DEPRECATED COMMENT: defined in timechromosome.cpp
+int better(int hf1, int sf1, int hf2, int sf2){
 	return hf1<hf2 || hf1==hf2 && sf1<sf2;
-}*/
+}
 
 //critical function here - must be optimized for speed
 void SpaceChromosome::copy(Rules& r, SpaceChromosome& c){
@@ -366,7 +366,7 @@ int SpaceChromosome::getRoomsMatrix(
 			Activity* act=&r.internalActivitiesList[i];
 			for(int dd=0; dd<act->duration && hour+dd<r.nHoursPerDay; dd++){
 				int tmp=a[room][day][hour+dd];
-				if(act->parity==PARITY_WEEKLY){
+				/*if(act->parity==PARITY_WEEKLY){
 					conflicts += tmp<2 ? tmp : 2;
 					a[room][day][hour+dd]+=2;
 				}
@@ -374,7 +374,9 @@ int SpaceChromosome::getRoomsMatrix(
 					assert(act->parity==PARITY_FORTNIGHTLY);
 					conflicts += tmp<2 ? 0 : 1;
 					a[room][day][hour+dd]++;
-				}
+				}*/
+				conflicts += tmp==0 ? 0 : 1;
+				a[room][day][hour+dd]++;
 			}
 		}
 	}
@@ -388,8 +390,8 @@ void SpaceChromosome::getRoomsTimetable(
 	Rules& r,
 	const int days[/*MAX_ACTIVITIES*/],
 	const int hours[/*MAX_ACTIVITIES*/],
-	int16 a1[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY],
-	int16 a2[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+	int16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
+	//, int16 a2[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
 {
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
@@ -398,7 +400,8 @@ void SpaceChromosome::getRoomsTimetable(
 	for(i=0; i<r.nInternalRooms; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
 			for(k=0; k<r.nHoursPerDay; k++)
-				a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
+				//a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
+				a[i][j][k]=UNALLOCATED_ACTIVITY;
 
 	Activity *act;
 	for(i=0; i<r.nInternalActivities; i++){
@@ -408,10 +411,12 @@ void SpaceChromosome::getRoomsTimetable(
 		int hour=hours[i];
 		if(room!=UNALLOCATED_SPACE && day!=UNALLOCATED_TIME && hour!=UNALLOCATED_TIME){
 			for(int dd=0; dd < act->duration && hour+dd < r.nHoursPerDay; dd++){
-				if(a1[room][day][hour+dd]==UNALLOCATED_ACTIVITY)
+				/*if(a1[room][day][hour+dd]==UNALLOCATED_ACTIVITY)
 					a1[room][day][hour+dd]=i;
 				else
-					a2[room][day][hour+dd]=i;
+					a2[room][day][hour+dd]=i;*/
+				assert(a[room][day][hour+dd]==UNALLOCATED_ACTIVITY);
+				a[room][day][hour+dd]=i;
 			}
 		}
 	}
