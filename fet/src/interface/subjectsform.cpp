@@ -86,7 +86,7 @@ SubjectsForm::~SubjectsForm()
 
 void SubjectsForm::addSubject()
 {
-	bool ok = FALSE;
+	bool ok = false;
 	Subject* sbj=new Subject();
 	sbj->name = QInputDialog::getText( this, tr("Add subject"), tr("Please enter subject's name") ,
 	 QLineEdit::Normal, QString(), &ok );
@@ -163,7 +163,7 @@ void SubjectsForm::renameSubject()
 		return;
 	}
 
-	bool ok = FALSE;
+	bool ok = false;
 	QString finalSubjectName;
 	finalSubjectName = QInputDialog::getText( this, tr("Modify subject"), tr("Please enter new subject's name") ,
 	 QLineEdit::Normal, initialSubjectName, &ok);

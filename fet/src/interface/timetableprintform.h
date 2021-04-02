@@ -28,6 +28,10 @@
 #include <QSpinBox>
 #include <QDialog>
 
+#ifndef QT_NO_PRINTER
+#include <QPrinter>
+#endif
+
 class QTableWidget;
 class QRadioButton;
 class QCheckBox;

@@ -44,19 +44,20 @@ using namespace std;
 
 #include <QString>
 #include <QTranslator>
-#include <QMessageBox>
 
 #include <QtAlgorithms>
 
 #include <QSet>
 #include <QHash>
 
-#include <QApplication>
+//#include <QApplication>
+#ifndef FET_COMMAND_LINE
 #include <QProgressDialog>
+#endif
 
 #include <QRegExp>
 
-#include "longtextmessagebox.h"
+#include "messageboxes.h"
 
 #include "lockunlock.h"
 
@@ -65,7 +66,7 @@ using namespace std;
 //static bool toSkipTime[MAX_TIME_CONSTRAINTS];
 //static bool toSkipSpace[MAX_SPACE_CONSTRAINTS];
 
-extern QApplication* pqapplication;
+//extern QApplication* pqapplication;
 
 extern bool students_schedule_ready;
 extern bool rooms_schedule_ready;
@@ -147,7 +148,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	//After that, the space constraints.
 
 	if(this->teachersList.size()>MAX_TEACHERS){
-		QMessageBox::warning(parent, tr("FET information"),
+		RulesImpossible::warning(parent, tr("FET information"),
 		 tr("You have too many teachers. You need to increase the variable MAX_TEACHERS (which is currently %1).")
 		 .arg(MAX_TEACHERS));
 		return false;
@@ -290,7 +291,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	}
 	int tmpNSubgroups=allSubgroupsList.count();
 	if(tmpNSubgroups>MAX_TOTAL_SUBGROUPS){
-		QMessageBox::warning(parent, tr("FET information"),
+		RulesImpossible::warning(parent, tr("FET information"),
 		 tr("You have too many total subgroups. You need to increase the variable MAX_TOTAL_SUBGROUPS (which is currently %1).")
 		 .arg(MAX_TOTAL_SUBGROUPS));
 		return false;
@@ -304,21 +305,21 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			counter++;
 	}
 	if(counter>MAX_ACTIVITIES){
-		QMessageBox::warning(parent, tr("FET information"),
+		RulesImpossible::warning(parent, tr("FET information"),
 		 tr("You have too many active activities. You need to increase the variable MAX_ACTIVITIES (which is currently %1).")
 		 .arg(MAX_ACTIVITIES));
 		return false;
 	}
 
 	if(this->buildingsList.size()>MAX_BUILDINGS){
-		QMessageBox::warning(parent, tr("FET information"),
+		RulesImpossible::warning(parent, tr("FET information"),
 		 tr("You have too many buildings. You need to increase the variable MAX_BUILDINGS (which is currently %1).")
 		 .arg(MAX_BUILDINGS));
 		return false;
 	}
 	
 	if(this->roomsList.size()>MAX_ROOMS){
-		QMessageBox::warning(parent, tr("FET information"),
+		RulesImpossible::warning(parent, tr("FET information"),
 		 tr("You have too many rooms. You need to increase the variable MAX_ROOMS (which is currently %1).")
 		 .arg(MAX_ROOMS));
 		return false;
@@ -461,7 +462,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			progress.setValue(ttt);
 			//pqapplication->processEvents();
 			if(progress.wasCanceled()){
-				QMessageBox::information(parent, tr("FET information"), tr("Canceled"));
+				RulesImpossible::warning(parent, tr("FET information"), tr("Canceled"));
 				return false;
 			}
 			ttt++;
@@ -561,7 +562,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 				s+="\n";
 				s+=tctr->getDetailedDescription(*this);
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, tr("FET information"), s,
+				int t=RulesConstraintIgnored::mediumConfirmation(parent, tr("FET information"), s,
 				 tr("Skip rest"), tr("See next"), QString(),
  				 1, 0 );
 
@@ -588,7 +589,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		progress.setValue(ttt);
 		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
-			QMessageBox::information(parent, tr("FET information"), tr("Canceled"));
+			RulesImpossible::warning(parent, tr("FET information"), tr("Canceled"));
 			return false;
 		}
 		ttt++;
@@ -640,7 +641,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 				s+="\n";
 				s+=sctr->getDetailedDescription(*this);
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, tr("FET information"), s,
+				int t=RulesConstraintIgnored::mediumConfirmation(parent, tr("FET information"), s,
 				 tr("Skip rest"), tr("See next"), QString(),
  				 1, 0 );
 
@@ -667,7 +668,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		progress.setValue(ttt);
 		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
-			QMessageBox::information(parent, tr("FET information"), tr("Canceled"));
+			RulesImpossible::warning(parent, tr("FET information"), tr("Canceled"));
 			return false;
 		}
 		ttt++;
@@ -3716,17 +3717,17 @@ bool Rules::addSimpleActivity(
 	//check for duplicates - idea and code by Volker Dirr
 	int t=QStringList(_teachersNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate teachers - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate teachers - please correct that")
 		 .arg(_id).arg(t));
 
 	t=QStringList(_studentsNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate students sets - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate students sets - please correct that")
 		 .arg(_id).arg(t));
 
 	t=QStringList(_activityTagsNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate activity tags - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate activity tags - please correct that")
 		 .arg(_id).arg(t));
 
 	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagsNames,
@@ -3758,17 +3759,17 @@ bool Rules::addSimpleActivityRulesFast(
 	//check for duplicates - idea and code by Volker Dirr
 	int t=QStringList(_teachersNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate teachers - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate teachers - please correct that")
 		 .arg(_id).arg(t));
 
 	t=QStringList(_studentsNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate students sets - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate students sets - please correct that")
 		 .arg(_id).arg(t));
 
 	t=QStringList(_activityTagsNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate activity tags - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate activity tags - please correct that")
 		 .arg(_id).arg(t));
 
 	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagsNames,
@@ -3803,17 +3804,17 @@ bool Rules::addSplitActivity(
 	//check for duplicates - idea and code by Volker Dirr
 	int t=QStringList(_teachersNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate teachers - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate teachers - please correct that")
 		 .arg(_activityGroupId).arg(t));
 
 	t=QStringList(_studentsNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate students sets - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate students sets - please correct that")
 		 .arg(_activityGroupId).arg(t));
 
 	t=QStringList(_activityTagsNames).removeDuplicates();
 	if(t>0)
-		QMessageBox::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that")
+		RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that")
 		 .arg(_activityGroupId).arg(t));
 
 	assert(_firstActivityId==_activityGroupId);
@@ -4671,7 +4672,7 @@ bool Rules::removeRoom(QWidget* parent, const QString& roomName)
 				ConstraintActivityPreferredRoom* c2=new ConstraintActivityPreferredRoom
 				 (c->weightPercentage, c->activityId, c->roomsNames.at(0), true); //true means permanently locked
 
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesUsualInformation::information(parent, tr("FET information"), 
 				 tr("The constraint\n%1 will be modified into constraint\n%2 because"
 				 " there is only one room left in the constraint")
 				 .arg(c->getDetailedDescription(*this))
@@ -4702,7 +4703,7 @@ bool Rules::removeRoom(QWidget* parent, const QString& roomName)
 				ConstraintStudentsSetHomeRoom* c2=new ConstraintStudentsSetHomeRoom
 				 (c->weightPercentage, c->studentsName, c->roomsNames.at(0));
 
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesUsualInformation::information(parent, tr("FET information"), 
 				 tr("The constraint\n%1 will be modified into constraint\n%2 because"
 				 " there is only one room left in the constraint")
 				 .arg(c->getDetailedDescription(*this))
@@ -4731,7 +4732,7 @@ bool Rules::removeRoom(QWidget* parent, const QString& roomName)
 				ConstraintTeacherHomeRoom* c2=new ConstraintTeacherHomeRoom
 				 (c->weightPercentage, c->teacherName, c->roomsNames.at(0));
 
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesUsualInformation::information(parent, tr("FET information"), 
 				 tr("The constraint\n%1 will be modified into constraint\n%2 because"
 				 " there is only one room left in the constraint")
 				 .arg(c->getDetailedDescription(*this))
@@ -4760,7 +4761,7 @@ bool Rules::removeRoom(QWidget* parent, const QString& roomName)
 				ConstraintSubjectPreferredRoom* c2=new ConstraintSubjectPreferredRoom
 				 (c->weightPercentage, c->subjectName, c->roomsNames.at(0));
 
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesUsualInformation::information(parent, tr("FET information"), 
 				 tr("The constraint\n%1 will be modified into constraint\n%2 because"
 				 " there is only one room left in the constraint")
 				 .arg(c->getDetailedDescription(*this))
@@ -4789,7 +4790,7 @@ bool Rules::removeRoom(QWidget* parent, const QString& roomName)
 				ConstraintSubjectActivityTagPreferredRoom* c2=new ConstraintSubjectActivityTagPreferredRoom
 				 (c->weightPercentage, c->subjectName, c->activityTagName, c->roomsNames.at(0));
 
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesUsualInformation::information(parent, tr("FET information"), 
 				 tr("The constraint\n%1 will be modified into constraint\n%2 because"
 				 " there is only one room left in the constraint")
 				 .arg(c->getDetailedDescription(*this))
@@ -4819,7 +4820,7 @@ bool Rules::removeRoom(QWidget* parent, const QString& roomName)
 				ConstraintActivityTagPreferredRoom* c2=new ConstraintActivityTagPreferredRoom
 				 (c->weightPercentage, c->activityTagName, c->roomsNames.at(0));
 
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesUsualInformation::information(parent, tr("FET information"), 
 				 tr("The constraint\n%1 will be modified into constraint\n%2 because"
 				 " there is only one room left in the constraint")
 				 .arg(c->getDetailedDescription(*this))
@@ -5295,7 +5296,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 	QFile file(filename);
 	if(!file.open(QIODevice::ReadOnly)){
 		//cout<<"Could not open file - not existing or in use\n";
-		QMessageBox::warning(parent, tr("FET warning"), tr("Could not open file - not existing or in use"));
+		RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("Could not open file - not existing or in use"));
 		return false;
 	}
 	//QDomDocument doc("xml_rules");
@@ -5306,7 +5307,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 	int errorColumn;
 	
 	if(!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)){
-		QMessageBox::warning(parent, tr("FET warning"),
+		RulesIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Could not read file - XML parse error at line %1, column %2:\n%3", "The error description is %3")
 		 .arg(errorLine)
 		 .arg(errorColumn)
@@ -5326,7 +5327,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		if(!dir.exists(OUTPUT_DIR+FILE_SEP+"logs"))
 			t=dir.mkpath(OUTPUT_DIR+FILE_SEP+"logs");
 		if(!t){
-			QMessageBox::warning(parent, tr("FET warning"), tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"logs")));
+			RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"logs")));
 			return false;
 		}
 		assert(t);
@@ -5337,7 +5338,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		if(!dir.exists(commandLineDirectory+"logs"))
 			t=dir.mkpath(commandLineDirectory+"logs");
 		if(!t){
-			QMessageBox::warning(parent, tr("FET warning"), tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(commandLineDirectory+"logs")));
+			RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(commandLineDirectory+"logs")));
 			return false;
 		}
 		assert(t);
@@ -5372,7 +5373,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			" as html files").arg(QDir::toNativeSeparators(tmp))+
 			"\n\n"+tr("A solution is to remove that file (if it exists already) or set its permissions to allow writing")+
 			"\n\n"+tr("Please report possible bug");
-		QMessageBox::critical(parent, tr("FET critical"), s);
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"), s);
 		canWriteLogFile=false;
 	}
 	QTextStream logStream;
@@ -5416,7 +5417,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		int tfile=fileVerReCap.indexIn(file_version);
 		filev[0]=filev[1]=filev[2]=-1;
 		if(tfile!=0){
-			QMessageBox::warning(parent, tr("FET warning"), tr("File contains a version numbering scheme which"
+			RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("File contains a version numbering scheme which"
 			" is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced"
 			" to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it")+"\n\n"+
 			tr("If you are opening a file older than FET format version 5, it will be converted to latest FET data format"));
@@ -5439,7 +5440,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		int tfet=fetVerReCap.indexIn(FET_VERSION);
 		fetv[0]=fetv[1]=fetv[2]=-1;
 		if(tfet!=0){
-			QMessageBox::warning(parent, tr("FET warning"), tr("FET version does not respect the format v.v.va"
+			RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("FET version does not respect the format v.v.va"
 			" (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it"));
 			cout<<"FET version not matched by regexp"<<endl;
 		}
@@ -5468,13 +5469,13 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 	if(!okAbove3_12_17){
 		cout<<"Invalid fet 3.12.17 or above"<<endl;
 		file2.close();
-		QMessageBox::warning(parent, tr("FET warning"), tr("File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect..."
+		RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect..."
 			"it cannot be opened").arg("fet").arg("FET"));
 		return false;
 	}
 	
 	if(!version5AndAbove){
-		QMessageBox::warning(parent, tr("FET information"), 
+		RulesReconcilableMessage::warning(parent, tr("FET information"), 
 		 tr("Opening older file - it will be converted to latest format, automatically "
 		 "assigning weight percentages to constraints and dropping parity for activities. "
 		 "You are adviced to make a backup of your old file before saving in new format.\n\n"
@@ -5486,7 +5487,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 	}
 	
 	if(warning){
-		QMessageBox::warning(parent, tr("FET information"), 
+		RulesReconcilableMessage::warning(parent, tr("FET information"), 
 		 tr("Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version")
 		 +"\n\n"+tr("Your FET version: %1, file version: %2").arg(FET_VERSION).arg(file_version));
 	}
@@ -5619,7 +5620,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					}
 					bool tmp2=teachersRead.contains(teacher->name);
 					if(tmp2){
-						QMessageBox::warning(parent, tr("FET warning"),
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						 tr("Duplicate teacher %1 found - ignoring").arg(teacher->name));
 						xmlReadingLog+="   Teacher not added - duplicate\n";
 					}
@@ -5662,7 +5663,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					}
 					bool tmp2=subjectsRead.contains(subject->name);
 					if(tmp2){
-						QMessageBox::warning(parent, tr("FET warning"),
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						 tr("Duplicate subject %1 found - ignoring").arg(subject->name));
 						xmlReadingLog+="   Subject not added - duplicate\n";
 					}
@@ -5681,7 +5682,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		else if(elem2.tagName()=="Subject_Tags_List"){
 			QSet<QString> activityTagsRead;
 		
-			QMessageBox::information(parent, tr("FET information"), tr("Your file contains subject tags list"
+			RulesReconcilableMessage::information(parent, tr("FET information"), tr("Your file contains subject tags list"
 			  ", which is named in versions>=5.5.0 activity tags list"));
 		
 			int tmp=0;
@@ -5708,7 +5709,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					}
 					bool tmp2=activityTagsRead.contains(activityTag->name);
 					if(tmp2){
-						QMessageBox::warning(parent, tr("FET warning"),
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
 						xmlReadingLog+="   Activity tag not added - duplicate\n";
 					}
@@ -5751,7 +5752,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					}
 					bool tmp2=activityTagsRead.contains(activityTag->name);
 					if(tmp2){
-						QMessageBox::warning(parent, tr("FET warning"),
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						 tr("Duplicate activity tag %1 found - ignoring").arg(activityTag->name));
 						xmlReadingLog+="   Activity tag not added - duplicate\n";
 					}
@@ -5813,7 +5814,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 									else if(ss->type==STUDENTS_SUBGROUP)
 										str=tr("Trying to add year %1, which is already added as another subgroup - your file will be loaded but probably contains errors, please correct them after loading").arg(nn);
 								
-									int t=QMessageBox::warning(parent, tr("FET warning"), str,
+									int t=RulesReconcilableMessage::warning(parent, tr("FET warning"), str,
 									 tr("Skip rest"), tr("See next"), QString(),
 									 1, 0 );
 				 	
@@ -5869,7 +5870,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 								
 											int t=1;
 											if(str!=""){
-												t=QMessageBox::warning(parent, tr("FET warning"), str,
+												t=RulesReconcilableMessage::warning(parent, tr("FET warning"), str,
 												 tr("Skip rest"), tr("See next"), QString(),
 												 1, 0 );
 											}
@@ -5939,7 +5940,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 								
 													int t=1;
 													if(str!=""){
-														t=QMessageBox::warning(parent, tr("FET warning"), str,
+														t=RulesReconcilableMessage::warning(parent, tr("FET warning"), str,
 														 tr("Skip rest"), tr("See next"), QString(),
 														 1, 0 );
 													}
@@ -6014,7 +6015,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 							" FET will now correct this problem by setting the number of students for this year, in all places where it appears,"
 							" to the number that was found in the first appearance (%2). It is advisable to check the number of students for this year.")
 							.arg("5.12.1").arg(sy->numberOfStudents);
-						int t=QMessageBox::warning(parent, tr("FET warning"), str,
+						int t=RulesReconcilableMessage::warning(parent, tr("FET warning"), str,
 							 tr("Skip rest"), tr("See next"), QString(),
 							 1, 0 );
 	
@@ -6037,7 +6038,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 								" FET will now correct this problem by setting the number of students for this group, in all places where it appears,"
 								" to the number that was found in the first appearance (%2). It is advisable to check the number of students for this group.")
 								.arg("5.12.1").arg(sg->numberOfStudents);
-							int t=QMessageBox::warning(parent, tr("FET warning"), str,
+							int t=RulesReconcilableMessage::warning(parent, tr("FET warning"), str,
 								 tr("Skip rest"), tr("See next"), QString(),
 								 1, 0 );
 		
@@ -6060,7 +6061,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 									" FET will now correct this problem by setting the number of students for this subgroup, in all places where it appears,"
 									" to the number that was found in the first appearance (%2). It is advisable to check the number of students for this subgroup.")
 									.arg("5.12.1").arg(ss->numberOfStudents);
-								int t=QMessageBox::warning(parent, tr("FET warning"), str,
+								int t=RulesReconcilableMessage::warning(parent, tr("FET warning"), str,
 									 tr("Skip rest"), tr("See next"), QString(),
 									 1, 0 );
 			
@@ -6190,7 +6191,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 							}
 							else{
 								if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-									QMessageBox::warning(parent, tr("FET warning"),
+									RulesReconcilableMessage::warning(parent, tr("FET warning"),
 									 tr("Found activity active tag which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 									 " The activity will be considered not active",
 									 "Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
@@ -6295,7 +6296,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					}
 					else{
 						xmlReadingLog+="   Activity with id ="+CustomFETString::number(id)+" contains invalid data - skipping\n";
-						QMessageBox::warning(parent, tr("FET information"), 
+						RulesReconcilableMessage::warning(parent, tr("FET information"), 
 						 tr("Activity with id=%1 contains invalid data - skipping").arg(id));
 					}
 				}
@@ -6304,7 +6305,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 			reducedXmlLog+="Added "+CustomFETString::number(na)+" activities\n";
 		}
 		else if(elem2.tagName()=="Equipments_List"){
-		 	QMessageBox::warning(parent, tr("FET warning"),
+		 	RulesReconcilableMessage::warning(parent, tr("FET warning"),
 			 tr("File contains deprecated equipments list - will be ignored\n"));
 		}
 		else if(elem2.tagName()=="Buildings_List"){
@@ -6337,7 +6338,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 
 					bool tmp2=buildingsRead.contains(bu->name);
 					if(tmp2){
-						QMessageBox::warning(parent, tr("FET warning"),
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						 tr("Duplicate building %1 found - ignoring").arg(bu->name));
 						xmlReadingLog+="   Building not added - duplicate\n";
 					}
@@ -6399,7 +6400,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					}
 					bool tmp2=roomsRead.contains(rm->name);
 					if(tmp2){
-						QMessageBox::warning(parent, tr("FET warning"),
+						RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						 tr("Duplicate room %1 found - ignoring").arg(rm->name));
 						xmlReadingLog+="   Room not added - duplicate\n";
 					}
@@ -6450,7 +6451,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintTeacherNotAvailable"){
 					if(reportTeacherNotAvailableChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint teacher not available times (a matrix)."),
 						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
@@ -6491,7 +6492,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNotAvailable"){
 					if(reportStudentsSetNotAvailableChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students set not available times (a matrix)."),
 						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
@@ -6563,7 +6564,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				else if((elem3.tagName()=="ConstraintTeachersSubgroupsMaxHoursDaily"
 				 //TODO: erase the line below. It is only kept for compatibility with older versions
 				 || elem3.tagName()=="ConstraintTeachersSubgroupsNoMoreThanXHoursDaily") && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint teachers subgroups max hours daily - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
@@ -6573,7 +6574,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintStudentsNHoursDaily" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint students n hours daily - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
@@ -6583,7 +6584,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNHoursDaily" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint students set n hours daily - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
@@ -6626,7 +6627,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredTime"){
 					if(reportActivityPreferredTimeChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains old constraint type activity preferred time, which will be converted"
 						 " to the newer similar constraint of this type, constraint activity preferred STARTING time."
 						 " This improvement is done in versions 5.5.9 and above"),
@@ -6676,7 +6677,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					crt_constraint=readTwoActivitiesOrdered(elem3, xmlReadingLog);
 				}
 				else if(elem3.tagName()=="ConstraintActivityEndsDay" && !skipDeprecatedConstraints ){
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint activity ends day - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
@@ -6687,7 +6688,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredTimes"){
 					if(reportActivityPreferredTimesChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("Your file contains old constraint activity preferred times, which will be converted to"
 						 " new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible"
 						 " to specify: 1. the starting times of an activity (constraint activity preferred starting times)"
@@ -6708,7 +6709,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintBreak"){
 					if(reportBreakChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint break times (a matrix)."),
 						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
@@ -6738,7 +6739,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintStudentsNoGaps"){
 					if(reportMaxGapsChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students max gaps per week,"
 						 " with max gaps=0. If you like, you can modify this constraint to allow"
@@ -6752,7 +6753,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetNoGaps"){
 					if(reportMaxGapsChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students set max gaps per week,"
 						 " with max gaps=0. If you like, you can modify this constraint to allow"
@@ -6780,7 +6781,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 
 				else if(elem3.tagName()=="ConstraintStudentsEarly"){
 					if(reportMaxBeginningsAtSecondHourChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students early max beginnings at second hour,"
 						 " with max beginnings=0. If you like, you can modify this constraint to allow"
@@ -6797,7 +6798,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintStudentsSetEarly"){
 					if(reportMaxBeginningsAtSecondHourChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students set early max beginnings at second hour,"
 						 " with max beginnings=0. If you like, you can modify this constraint to allow"
@@ -6814,7 +6815,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesPreferredTimes"){
 					if(reportActivitiesPreferredTimesChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("Your file contains old constraint activities preferred times, which will be converted to"
 						 " new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible"
 						 " to specify: 1. the starting times of several activities (constraint activities preferred starting times)"
@@ -6852,7 +6853,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 ////////////////
 
 				else if(elem3.tagName()=="ConstraintTeachersSubjectTagsMaxHoursContinuously" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint teachers subject tags max hours continuously - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
@@ -6862,7 +6863,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					crt_constraint=NULL;
 				}
 				else if(elem3.tagName()=="ConstraintTeachersSubjectTagMaxHoursContinuously" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint teachers subject tag max hours continuously - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0 );
@@ -6878,7 +6879,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					assert(crt_constraint!=NULL);
 					bool tmp=this->addTimeConstraint(crt_constraint);
 					if(!tmp){
-						QMessageBox::warning(parent, tr("FET information"),
+						RulesReconcilableMessage::warning(parent, tr("FET information"),
 						 tr("Constraint\n%1\nnot added - must be a duplicate").
 						 arg(crt_constraint->getDetailedDescription(*this)));
 						delete crt_constraint;
@@ -6911,7 +6912,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintRoomNotAvailable"){
 					if(reportRoomNotAvailableChange){
-						int t=QMessageBox::information(parent, tr("FET information"),
+						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						 tr("File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint room not available times (a matrix)."),
 						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
@@ -6926,7 +6927,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintRoomTypeNotAllowedSubjects" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint room type not allowed subjects - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -6937,7 +6938,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintSubjectRequiresEquipments" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint subject requires equipments - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -6949,7 +6950,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintSubjectSubjectTagRequireEquipments" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint subject tag requires equipments - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -6960,7 +6961,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintTeacherRequiresRoom" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint teacher requires room - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -6971,7 +6972,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintTeacherSubjectRequireRoom" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint teacher subject require room - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -6982,7 +6983,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForStudents" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint minimize number of rooms for students - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -6993,7 +6994,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintMinimizeNumberOfRoomsForTeachers" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint minimize number of rooms for teachers - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -7010,7 +7011,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintActivitiesSameRoom" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint activities same room - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -7058,7 +7059,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForTeachers" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint max building changes per day for teachers - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -7069,7 +7070,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintMaxBuildingChangesPerDayForStudents" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint max building changes per day for students - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -7080,7 +7081,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForTeachers" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint max room changes per day for teachers - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -7091,7 +7092,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 				}
 				else if(elem3.tagName()=="ConstraintMaxRoomChangesPerDayForStudents" && !skipDeprecatedConstraints){
 				
-					int t=QMessageBox::warning(parent, tr("FET warning"),
+					int t=RulesReconcilableMessage::warning(parent, tr("FET warning"),
 					 tr("File contains deprecated constraint max room changes per day for students - will be ignored\n"),
 					 tr("Skip rest"), tr("See next"), QString(),
 					 1, 0);
@@ -7150,7 +7151,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 					
 					bool tmp=this->addSpaceConstraint(crt_constraint);
 					if(!tmp){
-						QMessageBox::warning(parent, tr("FET information"),
+						RulesReconcilableMessage::warning(parent, tr("FET information"),
 						 tr("Constraint\n%1\nnot added - must be a duplicate").
 						 arg(crt_constraint->getDetailedDescription(*this)));
 						delete crt_constraint;
@@ -7176,7 +7177,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 	}
 
 	if(file2.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 tr("Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space")
 		 .arg(file2.error()));
 	}
@@ -7219,7 +7220,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 
 	QFile file(filenameTmp);
 	if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 tr("Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted").arg(QFileInfo(filenameTmp).fileName()));
 		
 		return false;
@@ -7329,7 +7330,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	tos<<s;
 	
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 tr("Saved file gave error code %1, which means saving is compromised. Please check your disk free space")
 		 .arg(file.error()));
 		
@@ -7620,7 +7621,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(QWidget* parent, const QDomElemen
 				if(this->daysOfTheWeek[d]==elem4.text())
 					break;
 			if(d>=this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
 					.arg(teacher)
 					.arg(elem4.text()));
@@ -7637,7 +7638,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(QWidget* parent, const QDomElemen
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(teacher)
 					.arg(elem4.text()));
@@ -7654,7 +7655,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(QWidget* parent, const QDomElemen
 				if(this->hoursOfTheDay[h2]==elem4.text())
 					break;
 			if(h2<=0 || h2>this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeacherNotAvailable end hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(teacher)
 					.arg(elem4.text()));
@@ -7765,7 +7766,7 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QWidget* parent, const QDomE
 							break;
 
 					if(d>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint TeacherNotAvailableTimes day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
 							.arg(cn->teacher)
 							.arg(elem5.text()));
@@ -7784,7 +7785,7 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QWidget* parent, const QDomE
 							break;
 					
 					if(h>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint TeacherNotAvailableTimes hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
 							.arg(cn->teacher)
 							.arg(elem5.text()));
@@ -7860,7 +7861,7 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(QWidget* parent, const QDomElem
 		else if(elem4.tagName()=="Max_Days_Per_Week"){
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeacherMaxDaysPerWeek day corrupt for teacher %1, max days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(cn->teacherName)
 					.arg(elem4.text()));
@@ -7901,7 +7902,7 @@ TimeConstraint* Rules::readTeachersMaxDaysPerWeek(QWidget* parent, const QDomEle
 		else if(elem4.tagName()=="Max_Days_Per_Week"){
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek<=0 || cn->maxDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeachersMaxDaysPerWeek day corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(elem4.text()));
 				delete cn;
@@ -7946,7 +7947,7 @@ TimeConstraint* Rules::readTeacherMinDaysPerWeek(QWidget* parent, const QDomElem
 		else if(elem4.tagName()=="Minimum_Days_Per_Week"){
 			cn->minDaysPerWeek=elem4.text().toInt();
 			if(cn->minDaysPerWeek<=0 || cn->minDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeacherMinDaysPerWeek day corrupt for teacher %1, min days %2 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(cn->teacherName)
 					.arg(elem4.text()));
@@ -7987,7 +7988,7 @@ TimeConstraint* Rules::readTeachersMinDaysPerWeek(QWidget* parent, const QDomEle
 		else if(elem4.tagName()=="Minimum_Days_Per_Week"){
 			cn->minDaysPerWeek=elem4.text().toInt();
 			if(cn->minDaysPerWeek<=0 || cn->minDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeachersMinDaysPerWeek day corrupt, min days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(elem4.text()));
 				delete cn;
@@ -8051,7 +8052,7 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, const 
 		else if(elem4.tagName()=="Max_Days_Per_Week"){
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
 					.arg(cn->teacherName)
 					.arg(elem4.text()));
@@ -8067,7 +8068,7 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, const 
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint Teacher interval max days per week start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(cn->teacherName)
 					.arg(elem4.text()));
@@ -8090,7 +8091,7 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, const 
 					if(this->hoursOfTheDay[h2]==elem4.text())
 						break;
 				if(h2>=this->nHoursPerDay){
-					QMessageBox::information(parent, tr("FET information"), 
+					RulesReconcilableMessage::information(parent, tr("FET information"), 
 						tr("Constraint Teacher interval max days per week end hour corrupt for teacher %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
 						.arg(cn->teacherName)
 						.arg(elem4.text()));
@@ -8158,7 +8159,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 		else if(elem4.tagName()=="Max_Days_Per_Week"){
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
 					//.arg(cn->teacherName)
 					.arg(elem4.text()));
@@ -8174,7 +8175,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint Teachers interval max days per week start hour corrupt because hour %2 is inexistent ... ignoring constraint")
 					//.arg(cn->teacherName)
 					.arg(elem4.text()));
@@ -8197,7 +8198,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const
 					if(this->hoursOfTheDay[h2]==elem4.text())
 						break;
 				if(h2>=this->nHoursPerDay){
-					QMessageBox::information(parent, tr("FET information"), 
+					RulesReconcilableMessage::information(parent, tr("FET information"), 
 						tr("Constraint Teachers interval max days per week end hour corrupt because hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
 						//.arg(cn->teacherName)
 						.arg(elem4.text()));
@@ -8265,7 +8266,7 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, co
 		else if(elem4.tagName()=="Max_Days_Per_Week"){
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 >nDaysPerWeek, constraint added, please correct constraint")
 					.arg(cn->students)
 					.arg(elem4.text()));
@@ -8281,7 +8282,7 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, co
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint Students set interval max days per week start hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(cn->students)
 					.arg(elem4.text()));
@@ -8304,7 +8305,7 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, co
 					if(this->hoursOfTheDay[h2]==elem4.text())
 						break;
 				if(h2>=this->nHoursPerDay){
-					QMessageBox::information(parent, tr("FET information"), 
+					RulesReconcilableMessage::information(parent, tr("FET information"), 
 						tr("Constraint Students set interval max days per week end hour corrupt for students %1, hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
 						.arg(cn->students)
 						.arg(elem4.text()));
@@ -8372,7 +8373,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const
 		else if(elem4.tagName()=="Max_Days_Per_Week"){
 			cn->maxDaysPerWeek=elem4.text().toInt();
 			if(cn->maxDaysPerWeek>this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %2 >nDaysPerWeek, constraint added, please correct constraint")
 					.arg(elem4.text()));
 				/*delete cn;
@@ -8387,7 +8388,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint Students interval max days per week start hour corrupt: hour %2 is inexistent ... ignoring constraint")
 					//.arg(cn->students)
 					.arg(elem4.text()));
@@ -8410,7 +8411,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const
 					if(this->hoursOfTheDay[h2]==elem4.text())
 						break;
 				if(h2>=this->nHoursPerDay){
-					QMessageBox::information(parent, tr("FET information"), 
+					RulesReconcilableMessage::information(parent, tr("FET information"), 
 						tr("Constraint Students interval max days per week end hour corrupt: hour %2 is inexistent (it is also not void, to specify end of the day) ... ignoring constraint")
 						//.arg(cn->students)
 						.arg(elem4.text()));
@@ -8463,7 +8464,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QWidget* parent, const QDomEl
 				if(this->daysOfTheWeek[d]==elem4.text())
 					break;
 			if(d>=this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
 					.arg(students)
 					.arg(elem4.text()));
@@ -8479,7 +8480,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QWidget* parent, const QDomEl
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(students)
 					.arg(elem4.text()));
@@ -8495,7 +8496,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QWidget* parent, const QDomEl
 				if(this->hoursOfTheDay[h2]==elem4.text())
 					break;
 			if(h2<=0 || h2>this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint StudentsSetNotAvailable end hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(students)
 					.arg(elem4.text()));
@@ -8606,7 +8607,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QWidget* parent, const Q
 							break;
 
 					if(d>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint StudentsSetNotAvailableTimes day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
 							.arg(cn->students)
 							.arg(elem5.text()));
@@ -8625,7 +8626,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QWidget* parent, const Q
 							break;
 					
 					if(h>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint StudentsSetNotAvailableTimes hour corrupt for students %1, hour %2 is inexistent ... ignoring constraint")
 							.arg(cn->students)
 							.arg(elem5.text()));
@@ -8693,7 +8694,7 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, const QDom
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint min days between activities with tag consecutive if same day"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -8817,7 +8818,7 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, const QDomE
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint min days between activities with tag consecutive if same day"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -9593,7 +9594,7 @@ TimeConstraint* Rules::readTeachersMinHoursDaily(QWidget* parent, const QDomElem
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint teachers min hours daily with tag allow empty days"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -9663,7 +9664,7 @@ TimeConstraint* Rules::readTeacherMinHoursDaily(QWidget* parent, const QDomEleme
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint teacher min hours daily with tag allow empty days"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -10086,7 +10087,7 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(QWidget* parent, const QDomElem
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint students min hours daily with tag allow empty days"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -10158,7 +10159,7 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(QWidget* parent, const QDomE
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint students set min hours daily with tag allow empty days"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -10225,7 +10226,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint activity preferred starting time with tag permanently locked"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -10246,7 +10247,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				if(this->daysOfTheWeek[cn->day]==elem4.text())
 					break;
 			if(cn->day>=this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint ActivityPreferredTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 					.arg(cn->activityId)
 					.arg(elem4.text()));
@@ -10263,7 +10264,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				if(this->hoursOfTheDay[cn->hour]==elem4.text())
 					break;
 			if(cn->hour>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint ActivityPreferredTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(cn->activityId)
 					.arg(elem4.text()));
@@ -10279,7 +10280,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 	//crt_constraint=cn;
 
 	if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
-		int t=QMessageBox::information(parent, tr("FET information"),
+		int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 			tr("Found constraint activity preferred starting time, with unspecified tag"
 			" 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
 			" by editing the constraint in the 'Data' menu")+"\n\n"
@@ -10301,7 +10302,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 	
 	if(cn->hour==-1 || cn->day==-1){
 		if(reportUnspecifiedDayOrHourPreferredStartingTime){
-			int t=QMessageBox::information(parent, tr("FET information"),
+			int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 				tr("Found constraint activity preferred starting time, with unspecified day or hour."
 				" This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
 				" This change is done in FET versions 5.8.1 and higher."
@@ -10393,7 +10394,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint activity preferred starting time with tag permanently locked"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -10414,7 +10415,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				if(this->daysOfTheWeek[cn->day]==elem4.text())
 					break;
 			if(cn->day>=this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 					.arg(cn->activityId)
 					.arg(elem4.text()));
@@ -10431,7 +10432,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 				if(this->hoursOfTheDay[cn->hour]==elem4.text())
 					break;
 			if(cn->hour>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint ActivityPreferredStartingTime hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(cn->activityId)
 					.arg(elem4.text()));
@@ -10447,7 +10448,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 	//crt_constraint=cn;
 
 	if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
-		int t=QMessageBox::information(parent, tr("FET information"),
+		int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 			tr("Found constraint activity preferred starting time, with unspecified tag"
 			" 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
 			" by editing the constraint in the 'Data' menu")+"\n\n"
@@ -10469,7 +10470,7 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 
 	if(cn->hour==-1 || cn->day==-1){
 		if(reportUnspecifiedDayOrHourPreferredStartingTime){
-			int t=QMessageBox::information(parent, tr("FET information"),
+			int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 				tr("Found constraint activity preferred starting time, with unspecified day or hour."
 				" This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
 				" This change is done in FET versions 5.8.1 and higher."
@@ -11047,7 +11048,7 @@ TimeConstraint* Rules::readActivityPreferredTimes(QWidget* parent, const QDomEle
 							break;
 
 					if(cn->days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivityPreferredTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 							.arg(cn->activityId)
 							.arg(elem5.text()));
@@ -11068,7 +11069,7 @@ TimeConstraint* Rules::readActivityPreferredTimes(QWidget* parent, const QDomEle
 							break;
 					
 					if(cn->hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivityPreferredTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 							.arg(cn->activityId)
 							.arg(elem5.text()));
@@ -11161,7 +11162,7 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QWidget* parent, const QDo
 							break;
 
 					if(cn->p_days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivityPreferredTimeSlots day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 							.arg(cn->p_activityId)
 							.arg(elem5.text()));
@@ -11182,7 +11183,7 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QWidget* parent, const QDo
 							break;
 					
 					if(cn->p_hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivityPreferredTimeSlots hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 							.arg(cn->p_activityId)
 							.arg(elem5.text()));
@@ -11275,7 +11276,7 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QWidget* parent, const
 							break;
 
 					if(cn->days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivityPreferredStartingTimes day corrupt for activity with id %1, day %2 is inexistent ... ignoring constraint")
 							.arg(cn->activityId)
 							.arg(elem5.text()));
@@ -11296,7 +11297,7 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QWidget* parent, const
 							break;
 					
 					if(cn->hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivityPreferredStartingTimes hour corrupt for activity with id %1, hour %2 is inexistent ... ignoring constraint")
 							.arg(cn->activityId)
 							.arg(elem5.text()));
@@ -11351,7 +11352,7 @@ TimeConstraint* Rules::readBreak(QWidget* parent, const QDomElement& elem3, Fake
 				if(this->daysOfTheWeek[d]==elem4.text())
 					break;
 			if(d>=this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint")
 					.arg(elem4.text()));
 				//cn=NULL;
@@ -11366,7 +11367,7 @@ TimeConstraint* Rules::readBreak(QWidget* parent, const QDomElement& elem3, Fake
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint")
 					.arg(elem4.text()));
 				//cn=NULL;
@@ -11381,7 +11382,7 @@ TimeConstraint* Rules::readBreak(QWidget* parent, const QDomElement& elem3, Fake
 				if(this->hoursOfTheDay[h2]==elem4.text())
 					break;
 			if(h2<=0 || h2>this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint")
 					.arg(elem4.text()));
 				//goto corruptConstraintTime;
@@ -11485,7 +11486,7 @@ TimeConstraint* Rules::readBreakTimes(QWidget* parent, const QDomElement& elem3,
 							break;
 
 					if(d>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
@@ -11503,7 +11504,7 @@ TimeConstraint* Rules::readBreakTimes(QWidget* parent, const QDomElement& elem3,
 							break;
 					
 					if(h>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
@@ -12370,7 +12371,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QWidget* parent, const QDomE
 							break;
 							
 					if(cn->days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 							.arg(cn->teacherName)
 							.arg(cn->studentsName)
@@ -12394,7 +12395,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QWidget* parent, const QDomE
 							break;
 							
 					if(cn->hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 							.arg(cn->teacherName)
 							.arg(cn->studentsName)
@@ -12511,7 +12512,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QWidget* parent, const Q
 							break;
 							
 					if(cn->p_days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 							.arg(cn->p_teacherName)
 							.arg(cn->p_studentsName)
@@ -12535,7 +12536,7 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QWidget* parent, const Q
 							break;
 							
 					if(cn->p_hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 							.arg(cn->p_teacherName)
 							.arg(cn->p_studentsName)
@@ -12652,7 +12653,7 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QWidget* parent, con
 							break;
 							
 					if(cn->days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 							.arg(cn->teacherName)
 							.arg(cn->studentsName)
@@ -12676,7 +12677,7 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QWidget* parent, con
 							break;
 							
 					if(cn->hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 							.arg(cn->teacherName)
 							.arg(cn->studentsName)
@@ -12799,7 +12800,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QWidget* parent, cons
 							break;
 							
 					if(cn->p_days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredTimeSlots day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 							.arg(cn->p_teacherName)
 							.arg(cn->p_studentsName)
@@ -12823,7 +12824,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QWidget* parent, cons
 							break;
 							
 					if(cn->p_hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredTimeSlots hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 							.arg(cn->p_teacherName)
 							.arg(cn->p_studentsName)
@@ -12945,7 +12946,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QWidget* parent, 
 							break;
 							
 					if(cn->days_L[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredStartingTimes day corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, day %5 is inexistent ... ignoring constraint")
 							.arg(cn->teacherName)
 							.arg(cn->studentsName)
@@ -12969,7 +12970,7 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QWidget* parent, 
 							break;
 							
 					if(cn->hours_L[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesPreferredStartingTimes hour corrupt for teacher name=%1, students names=%2, subject name=%3, activity tag name=%4, hour %5 is inexistent ... ignoring constraint")
 							.arg(cn->teacherName)
 							.arg(cn->studentsName)
@@ -13053,7 +13054,7 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* pa
 							break;
 							
 					if(cn->selectedDays[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
@@ -13073,7 +13074,7 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* pa
 							break;
 							
 					if(cn->selectedHours[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
@@ -13163,7 +13164,7 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget*
 							break;
 							
 					if(cn->selectedDays[i]>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint ActivitiesMaxSimultaneousInSelectedTimeSlots day corrupt, day %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
@@ -13183,7 +13184,7 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget*
 							break;
 							
 					if(cn->selectedHours[i]>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr(" Constraint ActivitiesMaxSimultaneousInSelectedTimeSlots hour corrupt, hour %1 is inexistent ... ignoring constraint")
 							.arg(elem5.text()));
 						delete cn;
@@ -13308,7 +13309,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(QWidget* parent, const QDomElement&
 				if(this->daysOfTheWeek[d]==elem4.text())
 					break;
 			if(d>=this->nDaysPerWeek){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
 					.arg(room)
 					.arg(elem4.text()));
@@ -13324,7 +13325,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(QWidget* parent, const QDomElement&
 				if(this->hoursOfTheDay[h1]==elem4.text())
 					break;
 			if(h1>=this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(room)
 					.arg(elem4.text()));
@@ -13340,7 +13341,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(QWidget* parent, const QDomElement&
 				if(this->hoursOfTheDay[h2]==elem4.text())
 					break;
 			if(h2<=0 || h2>this->nHoursPerDay){
-				QMessageBox::information(parent, tr("FET information"), 
+				RulesReconcilableMessage::information(parent, tr("FET information"), 
 					tr("Constraint RoomNotAvailable end hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(room)
 					.arg(elem4.text()));
@@ -13449,7 +13450,7 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QWidget* parent, const QDomEle
 							break;
 
 					if(d>=this->nDaysPerWeek){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint RoomNotAvailableTimes day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
 							.arg(cn->room)
 							.arg(elem5.text()));
@@ -13468,7 +13469,7 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QWidget* parent, const QDomEle
 							break;
 					
 					if(h>=this->nHoursPerDay){
-						QMessageBox::information(parent, tr("FET information"), 
+						RulesReconcilableMessage::information(parent, tr("FET information"), 
 							tr("Constraint RoomNotAvailableTimes hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
 							.arg(cn->room)
 							.arg(elem5.text()));
@@ -13546,7 +13547,7 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 			}
 			else{
 				if(!(elem4.text()=="no" || elem4.text()=="false" || elem4.text()=="0")){
-					QMessageBox::warning(parent, tr("FET warning"),
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
 						tr("Found constraint activity preferred room with tag permanently locked"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
@@ -13583,7 +13584,7 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 		}
 	}
 	if(!foundLocked && reportUnspecifiedPermanentlyLockedSpace){
-		int t=QMessageBox::information(parent, tr("FET information"),
+		int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 			tr("Found constraint activity preferred room, with unspecified tag"
 			" 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
 			" by editing the constraint in the 'Data' menu")+"\n\n"

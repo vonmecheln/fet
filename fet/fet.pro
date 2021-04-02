@@ -1,2 +1,2 @@
 TEMPLATE = subdirs
-SUBDIRS += src
+SUBDIRS += src/src.pro src/src-cl.pro

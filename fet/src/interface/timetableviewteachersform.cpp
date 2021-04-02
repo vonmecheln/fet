@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QtGlobal>
+
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
@@ -170,7 +172,11 @@ TimetableViewTeachersForm::TimetableViewTeachersForm(QWidget* parent): QDialog(p
 	//if(!columnResizeModeInitialized){
 	teachersTimetableTable->horizontalHeader()->setMinimumSectionSize(teachersTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
+#if QT_VERSION >= 0x050000
+	teachersTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+#else
 	teachersTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+#endif
 	//}
 	////////////////
 	

@@ -28,7 +28,14 @@ File export.cpp
 //TODO: count skipped min day constraints?
 //TODO: add cancel button
 
+#include <QtGlobal>
+
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#else
 #include <QtGui>
+#endif
+
 #include <QHash>
 #include <QSet>
 

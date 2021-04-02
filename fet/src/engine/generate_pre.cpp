@@ -33,10 +33,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <fstream>
 using namespace std;
 #include <algorithm>
+#include <cmath>
 
-#include <QMessageBox>
-
-#include "longtextmessagebox.h"
+#include "messageboxes.h"
 
 #include <QtAlgorithms>
 
@@ -47,10 +46,13 @@ using namespace std;
 
 extern Timetable gt;
 
-#include <QApplication>
+//#include <QApplication>
+#ifndef FET_COMMAND_LINE
 #include <QProgressDialog>
+#include <QMessageBox>
+#endif
 
-extern QApplication* pqapplication;
+//extern QApplication* pqapplication;
 
 
 int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
@@ -356,7 +358,11 @@ Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
 //bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
 
 
+#ifndef FET_COMMAND_LINE
 extern QString initialOrderOfActivities;
+#else
+QString initialOrderOfActivities;
+#endif
 
 extern int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
 
@@ -741,9 +747,15 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 			s+="\n\n";
 			s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
 	
+#ifdef FET_COMMAND_LINE
+			int b=GeneratePreReconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, GeneratePreTranslate::tr("Yes"), GeneratePreTranslate::tr("No"), QString(), 0, 1);
+			if(b!=0)
+				return false;
+#else
 			QMessageBox::StandardButton b=QMessageBox::warning(parent, GeneratePreTranslate::tr("FET warning"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 			if(b!=QMessageBox::Yes)
 				return false;
+#endif
 		}
 	}
 	
@@ -757,10 +769,16 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 			s+=GeneratePreTranslate::tr("It is recommended to use such constraints with caution.");
 			s+="\n\n";
 			s+=GeneratePreTranslate::tr("Are you sure you want to continue?");
-	
+
+#ifdef FET_COMMAND_LINE
+			int b=GeneratePreReconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, GeneratePreTranslate::tr("Yes"), GeneratePreTranslate::tr("No"), QString(), 0, 1);
+			if(b!=0)
+				return false;
+#else
 			QMessageBox::StandardButton b=QMessageBox::warning(parent, GeneratePreTranslate::tr("FET warning"), s, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 			if(b!=QMessageBox::Yes)
 				return false;
+#endif
 		}
 	}
 	
@@ -812,7 +830,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 						 //cannot proceed
 						ok=false;
 		
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -863,7 +881,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 						//cannot proceed
 						ok=false;
 	
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -913,7 +931,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -951,7 +969,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -1006,7 +1024,7 @@ bool computeStudentsMaxHoursContinuously(QWidget* parent)
 						 //cannot proceed
 						ok=false;
 		
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1057,7 +1075,7 @@ bool computeStudentsMaxHoursContinuously(QWidget* parent)
 						//cannot proceed
 						ok=false;
 	
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1096,7 +1114,7 @@ bool computeStudentsMaxHoursContinuously(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -1114,7 +1132,7 @@ bool computeStudentsMaxHoursContinuously(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -1199,7 +1217,7 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1280,7 +1298,7 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1332,8 +1350,8 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent)
 				if(ava<totalAt){
 					ok=false;
 					
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100\%"
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100%"
 					 " which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
 					 ". Please correct and try again.", "%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint")
 					 .arg(gt.rules.internalSubgroupsList[i]->name).arg(gt.rules.activityTagsList.at(at)->name).arg(mh).arg(ava).arg(totalAt),
@@ -1422,7 +1440,7 @@ bool computeStudentsActivityTagMaxHoursContinuously(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1503,7 +1521,7 @@ bool computeStudentsActivityTagMaxHoursContinuously(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
 								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1547,7 +1565,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 			if(smd->weightPercentage!=100){
 				ok=false;
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize for students, because the constraint of type min hours daily relating to students"
 				 " has no 100% weight"
 				 ". Please modify your data accordingly and try again"),
@@ -1562,7 +1580,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 			if(smd->minHoursDaily>gt.rules.nHoursPerDay){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min hours daily with"
 				 " %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again")
 				 .arg(smd->minHoursDaily)
@@ -1581,7 +1599,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 			if(smd->weightPercentage!=100){
 				ok=false;
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize for students set %1, because the constraint of type min hours daily relating to him"
 				 " has no 100% weight"
 				 ". Please modify your data accordingly and try again")
@@ -1597,7 +1615,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 			if(smd->minHoursDaily>gt.rules.nHoursPerDay){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set min hours daily for students set %1 with"
 				 " %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again")
 				 .arg(smd->students)
@@ -1634,7 +1652,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 				else{ //cannot proceed
 					ok=false;
 	
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are two constraints"
 					 " of type min hours daily relating to him, and the weight percentage is higher on the constraint"
 					 " with less minimum hours. You are allowed only to have for each subgroup"
@@ -1670,7 +1688,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 				else{ //cannot proceed
 					ok=false;
 	
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are two constraints"
 					 " of type min hours daily relating to him, and the weight percentage is higher on the constraint"
 					 " with less minimum hours. You are allowed only to have for each subgroup"
@@ -1699,7 +1717,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 			if(gt.rules.nDaysPerWeek*subgroupsMinHoursDailyMinHours[i] > nHoursPerSubgroup[i]){
 				ok=false;
 			
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
 				 " of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.")
 				 .arg(gt.rules.internalSubgroupsList[i]->name),
@@ -1718,7 +1736,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 				if(subgroupsMinHoursDailyMinHours[i]>freeSlots){
 					ok=false;
 			
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("For subgroup %1 cannot respect the constraint(s)"
 					 " of type min hours daily (the constraint(s) do not allow empty days) on day %2, because of students set not available and/or break."
 					 " Please modify your data accordingly and try again")
@@ -1737,7 +1755,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 			if(nHoursPerSubgroup[i]>0 && subgroupsMinHoursDailyMinHours[i]>nHoursPerSubgroup[i]){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min %1 hours daily for subgroup"
 				 " %2 (the constraint allows empty days). This subgroup has in total only %3 hours per week, so impossible constraint."
 				 " Please correct and try again")
@@ -1755,7 +1773,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 			if(subgroupsMinHoursDailyMinHours[i]<2){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min %1 hours daily for subgroup"
 				 " %2 and the constraint allows empty days. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again")
 				 .arg(subgroupsMinHoursDailyMinHours[i])
@@ -1831,7 +1849,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 				else{ //cannot proceed
 					ok=false;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 					 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 					 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1894,7 +1912,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 					else{ //cannot proceed
 						ok=false;
 
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -1969,7 +1987,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -2032,7 +2050,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -2085,7 +2103,7 @@ bool computeTeachersMaxHoursContinuously(QWidget* parent)
 				else{ //cannot proceed
 					ok=false;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 					 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 					 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -2132,7 +2150,7 @@ bool computeTeachersMaxHoursContinuously(QWidget* parent)
 					else{ //cannot proceed
 						ok=false;
 
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -2167,7 +2185,7 @@ bool computeTeachersMaxHoursContinuously(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -2185,7 +2203,7 @@ bool computeTeachersMaxHoursContinuously(QWidget* parent)
 				s+="\n\n";
 				s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 				 	
@@ -2270,7 +2288,7 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -2351,7 +2369,7 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -2403,8 +2421,8 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 				if(ava<totalAt){
 					ok=false;
 					
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100\%"
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100%"
 					 " which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
 					 ". Please correct and try again.", "%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint")
 					 .arg(gt.rules.internalTeachersList[i]->name).arg(gt.rules.activityTagsList.at(at)->name).arg(mh).arg(ava).arg(totalAt),
@@ -2493,7 +2511,7 @@ bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -2574,7 +2592,7 @@ bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent)
 							else{
 								ok=false;
 	
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
 								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
@@ -2619,7 +2637,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 			if(tmd->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with"
 				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again")
@@ -2636,7 +2654,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 			if(tmd->minHoursDaily>gt.rules.nHoursPerDay){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with"
 				 " %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again")
 				 .arg(tmd->teacherName)
@@ -2662,7 +2680,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 			if(tmd->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours daily with"
 				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
@@ -2678,7 +2696,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 			if(tmd->minHoursDaily>gt.rules.nHoursPerDay){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours daily with"
 				 " %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again")
 				 .arg(tmd->minHoursDaily)
@@ -2704,7 +2722,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 			if(nHoursPerTeacher[tc]>0 && teachersMinHoursDailyMinHours[tc]>nHoursPerTeacher[tc]){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min %1 hours daily for teacher"
 				 " %2 (the constraint allows empty days). This teacher has in total only %3 hours per week, so impossible constraint."
 				 " Please correct and try again")
@@ -2722,7 +2740,7 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 			if(teachersMinHoursDailyMinHours[tc]<2){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min %1 hours daily for teacher"
 				 " %2 (the constraint allows empty days). The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again")
 				 .arg(teachersMinHoursDailyMinHours[tc])
@@ -2758,7 +2776,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 			if(tmd->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min days per week for teacher %1 with"
 				 " weight (percentage) below 100. Please make weight 100% and try again")
 				 .arg(tmd->teacherName),
@@ -2774,7 +2792,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 			if(tmd->minDaysPerWeek>gt.rules.nDaysPerWeek){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min days per week for teacher %1 with"
 				 " %2 min days per week, and the number of working days per week is only %3. Please correct and try again")
 				 .arg(tmd->teacherName)
@@ -2800,7 +2818,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 			if(tmd->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min days per week with weight"
 				 " (percentage) below 100. Please make weight 100% and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -2815,7 +2833,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 			if(tmd->minDaysPerWeek>gt.rules.nDaysPerWeek){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min days per week with"
 				 " %1 min days per week, and the number of working days per week is only %2. Please correct and try again")
 				 .arg(tmd->minDaysPerWeek)
@@ -2841,7 +2859,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 			if(md>gt.rules.internalTeachersList[tc]->activitiesForTeacher.count()){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min days per week %2 and he has only %3 activities - impossible."
 				 " Please correct and try again.")
 				 .arg(gt.rules.internalTeachersList[tc]->name)
@@ -2861,7 +2879,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 				if(md*mh>nHoursPerTeacher[tc]){
 					ok=false;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min days per week %2 and min hours daily %3"
 					 " and he has only %4 working hours - impossible. Please correct and try again.")
 					 .arg(gt.rules.internalTeachersList[tc]->name)
@@ -2886,7 +2904,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 				if(teachersMaxDaysPerWeekMaxDays[tc]<teachersMinDaysPerWeekMinDays[tc]){
 					ok=false;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min days per week %2 > max days per week %3"
 					 " - impossible (min days must be <= max days). Please correct and try again.")
 					 .arg(gt.rules.internalTeachersList[tc]->name)
@@ -2936,7 +2954,7 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 					 .arg(navdays);
 				}
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s ,
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s ,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
 		 	
@@ -3019,7 +3037,7 @@ bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSa
 						 .arg(gt.rules.internalActivitiesList[ai1].id)
 						 .arg(gt.rules.internalActivitiesList[ai2].id);
 					
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 s, GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 				 	
@@ -3037,7 +3055,7 @@ bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSa
 						 .arg(gt.rules.internalActivitiesList[ai1].id)
 						 .arg(gt.rules.internalActivitiesList[ai2].id);
 					
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 s, GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 				 	
@@ -3131,7 +3149,7 @@ bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSa
 						s+=GeneratePreTranslate::tr("The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping")
 						 .arg(gt.rules.internalActivitiesList[i].id).arg(gt.rules.internalActivitiesList[j].id);
 					
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 s, GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 				 	
@@ -3255,7 +3273,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 		if(nHoursPerTeacher[i]>gt.rules.nHoursPerWeek){
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2"
 			  " and you have only %3 days x %4 hours in a week.")
 			 .arg(gt.rules.internalTeachersList[i]->name)
@@ -3278,7 +3296,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 		if(nHoursPerTeacher[i]>freeSlots){
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2"
 			  " and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher"
 			  " not available or break or the number of hours per week is less because of a misunderstanding")
@@ -3300,7 +3318,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 			if(nHoursPerTeacher[i] > nd*gt.rules.nHoursPerDay){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2"
 				  " and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day."
 				  " Probably there is an error in your data")
@@ -3367,7 +3385,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 			s+="\n\n";
 			s+=GeneratePreTranslate::tr("Please modify your data accordingly and try again");
 	
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
 				 	
@@ -3395,7 +3413,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 			if(tg->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers max gaps per week with"
 				 " weight (percentage) below 100. Please make weight 100% and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -3412,7 +3430,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 			if(tg->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher max gaps per week with"
 				 " weight (percentage) below 100 for teacher %1. Please make weight 100% and try again")
 				 .arg(tg->teacherName),
@@ -3441,7 +3459,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 				else{
 					ok=false;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 					 " of type max gaps per week relating to him, and the weight percentage is higher on the constraint"
 					 " with more gaps allowed. You are allowed only to have for each teacher"
@@ -3471,7 +3489,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 			else{
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 				 " of type max gaps per week relating to him, and the weight percentage is higher on the constraint"
 				 " with more gaps allowed. You are allowed only to have for each teacher"
@@ -3506,7 +3524,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 			if(tg->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers max gaps per day with"
 				 " weight (percentage) below 100. Please make weight 100% and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -3523,7 +3541,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 			if(tg->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher max gaps per day with"
 				 " weight (percentage) below 100 for teacher %1. Please make weight 100% and try again")
 				 .arg(tg->teacherName),
@@ -3552,7 +3570,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 				else{
 					ok=false;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 					 " of type max gaps per day relating to him, and the weight percentage is higher on the constraint"
 					 " with more gaps allowed. You are allowed only to have for each teacher"
@@ -3582,7 +3600,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 			else{
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 				 " of type max gaps per day relating to him, and the weight percentage is higher on the constraint"
 				 " with more gaps allowed. You are allowed only to have for each teacher"
@@ -3622,7 +3640,7 @@ bool computeNHoursPerSubgroup(QWidget* parent)
 		if(nHoursPerSubgroup[i]>gt.rules.nHoursPerWeek){
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %2"
 			  " and you have only %3 days x %4 hours in a week.")
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
@@ -3645,7 +3663,7 @@ bool computeNHoursPerSubgroup(QWidget* parent)
 		if(nHoursPerSubgroup[i]>freeSlots){
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %2"
 			  " and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set"
 			  " not available or break or the number of hours per week is less because of a misunderstanding")
@@ -3679,7 +3697,7 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent)
 			if(tn->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher max days per week with"
 				 " weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again")
@@ -3717,7 +3735,7 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent)
 			if(tn->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers max days per week with"
 				 " weight (percentage) below 100. Please make weight 100% and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -3855,7 +3873,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st no gaps & 
 			oksubgroup=false;
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because you have a max gaps constraint"
 			 " with weight percentage less than 100%. Currently, the algorithm can only"
 			 " optimize with not existing constraint max gaps or existing with 100% weight for it"
@@ -3871,7 +3889,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st no gaps & 
 			oksubgroup=false;
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint"
 			 " with weight percentage less than 100%. Currently, the algorithm can only"
 			 " optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it"
@@ -3927,7 +3945,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st no gaps & 
 		 	oksubgroup=false;
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because early max beginnings at second hour constraint"
 			 " has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of"
 			 " days per week must be greater or equal with the max beginnings at second hour\n"
@@ -3999,7 +4017,7 @@ bool computeSubgroupsMaxGapsPerDayPercentages(QWidget* parent)
 			oksubgroup=false;
 			ok=false;
 
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because you have a max gaps constraint"
 			 " with weight percentage less than 100%. Currently, the algorithm can only"
 			 " optimize with not existing constraint max gaps or existing with 100% weight for it"
@@ -4096,10 +4114,10 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 				if(tn->weightPercentage!=100){
 					ok=false;
 
-					LongTextMessageBox::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "teacher not available with weight percentage less than 100\% for teacher %1. Currently, FET can only optimize with "
-					 "constraints teacher not available with 100\% weight (or no constraint). Please "
+					 "teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with "
+					 "constraints teacher not available with 100% weight (or no constraint). Please "
 					 "modify your data accordingly and try again.").arg(tn->teacher));
 			
 					return ok;
@@ -4142,10 +4160,10 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 				if(sn->weightPercentage!=100){
 					ok=false;
 
-					LongTextMessageBox::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "students set not available with weight percentage less than 100\% for students set %1. Currently, FET can only optimize with "
-					 "constraints students set not available with 100\% weight (or no constraint). Please "
+					 "students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with "
+					 "constraints students set not available with 100% weight (or no constraint). Please "
 					 "modify your data accordingly and try again.").arg(sn->students));
 			
 					return ok;
@@ -4185,10 +4203,10 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 				if(br->weightPercentage!=100){
 					ok=false;
 
-					LongTextMessageBox::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "break with weight percentage less than 100\%. Currently, FET can only optimize with "
-					 "constraints break with 100\% weight (or no constraint). Please "
+					 "break with weight percentage less than 100%. Currently, FET can only optimize with "
+					 "constraints break with 100% weight (or no constraint). Please "
 					 "modify your data accordingly and try again."));
 			
 					return ok;
@@ -4234,7 +4252,7 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 				else{
 					ok=false;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
 					 "activity preferred starting time with no day nor hour selected (for activity with id==%1). "
 					 "Please modify your data accordingly (remove or edit constraint) and try again.")
@@ -4504,7 +4522,7 @@ bool computeMinDays(QWidget* parent)
 							if(!mdset.contains(md)){
 								mdset.insert(md);
 						
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint min days with duplicate activities. The constraint "
 								 "is: %1. Please correct that.").arg(md->getDetailedDescription(gt.rules)),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -4567,7 +4585,7 @@ bool computeMaxDays(QWidget* parent)
 							if(!mdset.contains(md)){
 								mdset.insert(md);
 						
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint "
 								 "is: %1. Please correct that.").arg(md->getDetailedDescription(gt.rules)),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -4635,7 +4653,7 @@ bool computeMinGapsBetweenActivities(QWidget* parent)
 							if(!mgset.contains(mg)){
 								mgset.insert(mg);
 						
-								int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint "
 								 "is: %1. Please correct that.").arg(mg->getDetailedDescription(gt.rules)),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -4675,7 +4693,7 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 		ok=false;
 		
 	if(!ok || m<100){
-		LongTextMessageBox::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+		GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
 		 GeneratePreTranslate::tr("Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.")
 		 +" "+
 		 GeneratePreTranslate::tr("Please add a constraint of this type with weight 100%.")
@@ -4719,7 +4737,7 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 		progress.setValue(ttt);
 		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
-			QMessageBox::information(parent, GeneratePreTranslate::tr("FET information"), GeneratePreTranslate::tr("Canceled"));
+			GeneratePreIrreconcilableMessage::information(parent, GeneratePreTranslate::tr("FET information"), GeneratePreTranslate::tr("Canceled"));
 			return false;
 		}
 		
@@ -4734,7 +4752,7 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 		progress.setValue(ttt);
 		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
-			QMessageBox::information(parent, GeneratePreTranslate::tr("FET information"), GeneratePreTranslate::tr("Canceled"));
+			GeneratePreIrreconcilableMessage::information(parent, GeneratePreTranslate::tr("FET information"), GeneratePreTranslate::tr("Canceled"));
 			return false;
 		}
 		
@@ -5055,7 +5073,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 			if(cae->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
 				 "activity activity ends students day for activity with id==%1 with weight percentage under 100%. "
 				 "Constraint activity ends students day can only have weight percentage 100%. "
@@ -5080,7 +5098,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 			if(cae->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
 				 "activity activities end students day with weight percentage under 100%. "
 				 "Constraint activities end students day can only have weight percentage 100%. "
@@ -5170,7 +5188,7 @@ bool checkMinDays100Percent(QWidget* parent)
 					 .arg(gt.rules.nDaysPerWeek)
 					 ;
 
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
 					
@@ -5214,7 +5232,7 @@ bool checkMinDays100Percent(QWidget* parent)
 						 .arg(gt.rules.internalTeachersList[tc]->name)
 						 .arg(daysTeacherIsAvailable[tc]);
 
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 					
@@ -5237,7 +5255,7 @@ bool checkMinDays100Percent(QWidget* parent)
 						 .arg(gt.rules.internalSubgroupsList[sb]->name)
 						 .arg(daysSubgroupIsAvailable[sb]);
 
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 					
@@ -5327,7 +5345,7 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 						 .arg(gt.rules.internalTeachersList[tc]->name)
 						 .arg(daysTeacherIsAvailable[tc]);
 	
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 						
@@ -5336,7 +5354,7 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 					}	
 				}
 
-				//int nReqForSubgroup[MAX_TOTAL_SUBGROUPS];				
+				//int nReqForSubgroup[MAX_TOTAL_SUBGROUPS];
 				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
 					nReqForSubgroup[sb]=0;
 				for(int j=0; j<md->_n_activities; j++){
@@ -5363,7 +5381,7 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 						 .arg(gt.rules.internalSubgroupsList[sb]->name)
 						 .arg(daysSubgroupIsAvailable[sb]);
 
-						int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s, 
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 					
@@ -5405,7 +5423,7 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 			if(tn->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher interval max days per week with"
 				 " weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again")
@@ -5438,7 +5456,7 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 			else{
 				ok=false;
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because it has more than three constraints interval max days per week"
 				 ". Please modify your data correspondingly (leave maximum three constraints of type"
 				 " constraint teacher(s) interval max days per week for each teacher) and try again")
@@ -5456,7 +5474,7 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 			if(tn->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers interval max days per week with"
 				 " weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
@@ -5489,7 +5507,7 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 				else{
 					ok=false;
 					
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because it has more than three constraints interval max days per week"
 					 ". Please modify your data correspondingly (leave maximum three constraints of type"
 					 " constraint teacher(s) interval max days per week for each teacher) and try again")
@@ -5535,7 +5553,7 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 			if(cn->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set interval max days per week with"
 				 " weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again")
@@ -5569,7 +5587,7 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 				else{
 					ok=false;
 					
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week"
 					 ". Please modify your data correspondingly (leave maximum three constraints of type"
 					 " constraint students (set) interval max days per week for each subgroup) and try again")
@@ -5588,7 +5606,7 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 			if(cn->weightPercentage!=100){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students interval max days per week with"
 				 " weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again")
@@ -5624,7 +5642,7 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 				else{
 					ok=false;
 					
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week"
 					 ". Please modify your data correspondingly (leave maximum three constraints of type"
 					 " constraint students (set) interval max days per week for each subgroup) and try again")
@@ -5661,7 +5679,7 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 			if(cn->weightPercentage!=100.0){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities occupy max time slots from selection'"
 				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
 				 ,
@@ -5709,7 +5727,7 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 			if(cn->weightPercentage!=100.0){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities max simultaneous in selected time slots'"
 				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
 				 ,
@@ -5754,7 +5772,7 @@ bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent)
 			if(cn->weightPercentage!=100.0){
 				ok=false;
 
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities occupy max different rooms'"
 				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
 				 ,
@@ -5795,7 +5813,7 @@ bool computeBasicSpace(QWidget* parent)
 		ok=false;
 		
 	if(!ok || m<100){
-		LongTextMessageBox::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+		GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
 		 GeneratePreTranslate::tr("Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.")
 		 +" "+
 		 GeneratePreTranslate::tr("Please add a constraint of this type with weight 100%.")
@@ -5871,7 +5889,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 			if(studentsSetHomeRoom.contains(spr->studentsName)){
 				ok=false;
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "students set home room(s) for students set %1. Please leave only one of them")
 				 .arg(spr->studentsName),
@@ -5909,7 +5927,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 			if(studentsSetHomeRoom.contains(spr->studentsName)){
 				ok=false;
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "students set home room(s) for students set %1. Please leave only one of them")
 				 .arg(spr->studentsName),
@@ -5954,7 +5972,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 			if(teachersHomeRoom.contains(spr->teacherName)){
 				ok=false;
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "teacher home room(s) for teacher %1. Please leave only one of them")
 				 .arg(spr->teacherName),
@@ -5992,7 +6010,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 			if(teachersHomeRoom.contains(spr->teacherName)){
 				ok=false;
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "teacher home room(s) for teacher %1. Please leave only one of them")
 				 .arg(spr->teacherName),
@@ -6392,7 +6410,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 			if(activitiesHomeRoomsHomeRooms[i].count()==0){
 				ok=false;
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
 				 "you have no allowed home room (from constraints students set home room(s) and teacher home room(s))")
 				 .arg(gt.rules.internalActivitiesList[i].id),
@@ -6415,7 +6433,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 
 					ok=false;
 					
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
 					 "you have no allowed preferred room (from preferred room(s) constraints). "
 					 "This means that a constraint preferred room(s) has 0 rooms in it. "
@@ -6438,7 +6456,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 				if(okinitial && it.preferredRooms.count()==0){
 					ok=false;
 					
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
 					 "you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)")
 					 .arg(gt.rules.internalActivitiesList[i].id),
@@ -6488,7 +6506,7 @@ jumpOverPrefRoomsNStudents:
 			if(okinitial && activitiesHomeRoomsHomeRooms[i].count()==0){
 				ok=false;
 				
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot generate timetable, because for activity with id==%1 "
 				 "you have no allowed home room (from the allowed number of students)")
 				 .arg(gt.rules.internalActivitiesList[i].id),
@@ -6522,7 +6540,7 @@ jumpOverPrefRoomsNStudents:
 				if(!begin && allowedRooms.count()==0){
 					ok=false;
 				
-					int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot generate the timetable, because for activity with id==%1 "
 					 "you have no allowed preferred room (considering rooms' capacities and constraints preferred"
 					 " room(s) with 100.0% weight percentage)")
@@ -6558,7 +6576,7 @@ bool computeMaxBuildingChangesPerDayForStudents(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6582,7 +6600,7 @@ bool computeMaxBuildingChangesPerDayForStudents(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6621,7 +6639,7 @@ bool computeMaxBuildingChangesPerWeekForStudents(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6645,7 +6663,7 @@ bool computeMaxBuildingChangesPerWeekForStudents(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6684,7 +6702,7 @@ bool computeMinGapsBetweenBuildingChangesForStudents(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6708,7 +6726,7 @@ bool computeMinGapsBetweenBuildingChangesForStudents(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6748,7 +6766,7 @@ bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6770,7 +6788,7 @@ bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6809,7 +6827,7 @@ bool computeMaxBuildingChangesPerWeekForTeachers(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6831,7 +6849,7 @@ bool computeMaxBuildingChangesPerWeekForTeachers(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6870,7 +6888,7 @@ bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -6892,7 +6910,7 @@ bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent)
 			if(spr->weightPercentage!=100){
 				ok=false;
 		
-				int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -7007,7 +7025,7 @@ bool computeFixedActivities(QWidget* parent)
 			ok=false;
 		
 			QString s=GeneratePreTranslate::tr("Activity with id=%1 has no allowed slot - please correct that").arg(gt.rules.internalActivitiesList[ai].id);
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
 				 	
@@ -7180,7 +7198,7 @@ bool homeRoomsAreOk(QWidget* parent)
 
 			QString s=GeneratePreTranslate::tr("Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that")
 			  .arg(gt.rules.internalRoomsList[r]->name).arg(nHoursRequiredForRoom[r]).arg(nHoursAvailableForRoom[r]);
-			int t=LongTextMessageBox::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
 				 	
@@ -7348,7 +7366,14 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 			
 			assert(cnt>=0.0);
 			
-			nIncompatible[i] += int(cnt / double(it.preferredRooms.count())); //average for all the rooms
+			//2013-01-08 - So that generation is identical on all computers
+			double t = cnt / double(it.preferredRooms.count()); //average for all the rooms
+			
+			t*=100000.0;
+			t=floor(t+0.5);
+			t/=100000.0;
+
+			nIncompatible[i] += int(floor(t)); //average for all the rooms
 		}
 				
 		

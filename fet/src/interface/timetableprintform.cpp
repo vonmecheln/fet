@@ -22,6 +22,8 @@
 
 //maybe TODO: maybe use only HTML level 1 instead of 3? advantage: a bit speedup. disadvantage: no coloring
 
+#include <QtGlobal>
+
 #include "timetableprintform.h"
 
 #include "timetable.h"
@@ -30,14 +32,22 @@
 
 #include "longtextmessagebox.h"
 
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#else
 #include <QtGui>
+#endif
 
 #include <QString>
 #include <QStringList>
 #include <QSet>
 #include <QList>
 
+#ifndef QT_NO_PRINTER
 #include <QPrinter>
+#include <QPrintDialog>
+#include <QPrintPreviewDialog>
+#endif
 
 extern Timetable gt;
 extern bool students_schedule_ready;

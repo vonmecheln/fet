@@ -1611,7 +1611,7 @@ Version 5.17.0
 	- Minor interface improvements and bug fixes.
 	- Added a new Greek sample file, by Petros Nouvakis.
 ---------------------------------------------------------------------------------
-Versions 5.18.0 - 5.18.v
+Versions 5.18.0 - 5.18.2
 - Version 5.18.0
 	- Very serious old bug fix. This was found trying to implement the new constraint (see below) in such a way to solve a more complicated file
 	by Yush Yuen. Since nobody complained, it seems that until now the bug was not critical (but might have slowed down some timetables which have
@@ -1631,3 +1631,13 @@ Versions 5.18.0 - 5.18.v
 	- Minor interface improvements.
 	- Updated the French translation, by Regis Bouguin.
 	- Added a new sample file, by Daniel.
+---------------------------------------------------------------------------------
+Versions 5.19.0 - 5.19.v
+- Version 5.19.0
+	- Updated the sources to Qt 5.0.0 (but the precompiled Windows version still uses Qt 4.8.4, because of various problems).
+	- Made a separate command-line interface without using the X-screen (suggested by Danny Zitzman, Zsolt Udvari and maybe other users).
+	- Made generation identical on all computers, by modifying QSet handling in the parts where the generation depends on the order of
+	elements in a QSet (the elements are sorted and randomized, then). A minor bug was corrected with this occasion.
+	- Now you can split a year into 4 categories (suggested by Bobby Wise).
+	- When starting FET, the first shortcuts tab section (File) is selected (suggested by a user).
+	- Added three new sample files, by waleed and Bobby Wise.

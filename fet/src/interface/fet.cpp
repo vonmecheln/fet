@@ -26,9 +26,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include "matrix.h"
 
+#include "messageboxes.h"
+
+#ifndef FET_COMMAND_LINE
 #include <QMessageBox>
 
 #include <QWidget>
+#endif
 
 #include <QLocale>
 #include <QTime>
@@ -42,6 +46,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include "timetable_defs.h"
 #include "timetable.h"
+
+#ifndef FET_COMMAND_LINE
 #include "fetmainform.h"
 
 #include "helpaboutform.h"
@@ -53,19 +59,22 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetableviewstudentsform.h"
 #include "timetableviewteachersform.h"
 #include "timetableviewroomsform.h"
+#endif
 
+#include <QCoreApplication>
+
+#ifndef FET_COMMAND_LINE
 #include <QApplication>
+
+#include <QSettings>
+#include <QRect>
+#endif
+
 #include <QMutex>
 #include <QString>
 #include <QTranslator>
 
-#include <QCoreApplication>
-
 #include <QDir>
-
-#include <QSettings>
-
-#include <QRect>
 
 #include <QTextStream>
 #include <QFile>
@@ -76,18 +85,28 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <iostream>
 using namespace std;
 
+#ifndef FET_COMMAND_LINE
 extern QRect mainFormSettingsRect;
 extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
+#endif
 
 extern Solution highestStageSolution;
 
 extern int maxActivitiesPlaced;
 
+#ifndef FET_COMMAND_LINE
 extern int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
+#else
+int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
+#endif
 
 extern bool students_schedule_ready, teachers_schedule_ready, rooms_schedule_ready;
 
+#ifndef FET_COMMAND_LINE
 extern QMutex mutex;
+#else
+QMutex mutex;
+#endif
 
 void writeDefaultSimulationParameters();
 
@@ -127,9 +146,11 @@ Matrix3D<qint16> rooms_timetable_weekly;
 //QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 Matrix3D<QList<qint16> > teachers_free_periods_timetable_weekly;
 
+#ifndef FET_COMMAND_LINE
 QApplication* pqapplication=NULL;
 
 FetMainForm* pFetMainForm=NULL;
+#endif
 
 extern int XX;
 extern int YY;
@@ -146,16 +167,16 @@ void terminate(int param)
 	terminateGeneratePointer->abortOptimization=true;
 }
 
-void usage(QTextStream& out, const QString& error)
+void usage(QTextStream* out, const QString& error)
 {
 	QString s="";
 	
-	s+=QString("Incorrect command line parameters (%1).").arg(error);
+	s+=QString("Incorrect command-line parameters (%1).").arg(error);
 	
 	s+="\n\n";
 	
 	s+=QString(
-		"Command line usage: \"fet --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b] "
+		"Command line usage: \"fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] [--printnotavailable=u] [--printbreak=b] "
 		"[--dividetimeaxisbydays=v] [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]"
 		" [--warnifusingstudentsminhoursdailywithallowemptydays=p]\",\n"
 		"where:\nx is the input file, for instance \"data.fet\"\n"
@@ -165,9 +186,9 @@ void usage(QTextStream& out, const QString& error)
 		"z is integer from 0 to 6 and represents the detail level for the generated html timetables "
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
 		"t is one of en_US, ar, ca, da, de, el, es, fa, fr, gl, he, hu, id, it, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sr, tr, uk, uz, vi (default en_US).\n"
-		"u is either \"true\" or \"false\" and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
+		"u is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
 		"not available slots (default true).\n"
-		"b is either \"true\" or \"false\" and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
+		"b is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
 		"break slots (default true).\n"
 		"v is either true or false, represents if you want html timetables with time-axis divided by days (default false).\n"
 		"w is either true or false, represents if you want html timetables to show related activities which have constraints with same starting time (default false).\n"
@@ -180,19 +201,21 @@ void usage(QTextStream& out, const QString& error)
 		"p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints "
 		"students min hours daily with allow empty days (default true).\n"
 		"\n"
-		"Alternatively, you can run \"fet --version [--outputdir=d]\" to get the current FET version. "
+		"Alternatively, you can run \"fet-cl --version [--outputdir=d]\" to get the current FET version. "
 		"where:\nd is the path to results directory, without trailing slash or backslash (default is current working path). "
 		"Make sure you have write permissions there.\n"
-		"(If you specify the \"--version\" argument, FET just prints version number on the command line prompt and in the output directory and exits.)\n"
+		"(If you specify the --version argument, FET just prints version number on the command line prompt and in the output directory and exits.)\n"
 		"\n"
 		"You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM signal. "
 		"FET will then write the current timetable and the highest stage timetable and exit."
 	);
 	
 	cout<<qPrintable(s)<<endl;
-	out<<qPrintable(s)<<endl;
+	if(out!=NULL)
+		(*out)<<qPrintable(s)<<endl;
 }
 
+#ifndef FET_COMMAND_LINE
 void readSimulationParameters()
 {
 	const QString predefDir=QDir::homePath()+FILE_SEP+"fet-results";
@@ -264,7 +287,8 @@ void readSimulationParameters()
 	//main form
 	QRect rect=newSettings.value("FetMainForm/geometry", QRect(0,0,0,0)).toRect();
 	mainFormSettingsRect=rect;
-	MAIN_FORM_SHORTCUTS_TAB_POSITION=newSettings.value("FetMainForm/shortcuts-tab-position", "0").toInt();
+	//MAIN_FORM_SHORTCUTS_TAB_POSITION=newSettings.value("FetMainForm/shortcuts-tab-position", "0").toInt();
+	MAIN_FORM_SHORTCUTS_TAB_POSITION=0; //always restoring to the first page, as suggested by a user
 	SHOW_SHORTCUTS_ON_MAIN_WINDOW=newSettings.value("FetMainForm/show-shortcuts", "true").toBool();
 	
 	cout<<"Settings read"<<endl;
@@ -304,12 +328,20 @@ void writeSimulationParameters()
 
 	//main form
 	settings.setValue("FetMainForm/geometry", mainFormSettingsRect);
-	settings.setValue("FetMainForm/shortcuts-tab-position", MAIN_FORM_SHORTCUTS_TAB_POSITION);
+	//settings.setValue("FetMainForm/shortcuts-tab-position", MAIN_FORM_SHORTCUTS_TAB_POSITION);
+	settings.setValue("FetMainForm/shortcuts-tab-position", 0); //always starting on the first page, as suggested by a user
 	settings.setValue("FetMainForm/show-shortcuts", SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 }
+#endif
 
+#ifndef FET_COMMAND_LINE
 void setLanguage(QApplication& qapplication, QWidget* parent)
+#else
+void setLanguage(QCoreApplication& qapplication, QWidget* parent)
+#endif
 {
+	Q_UNUSED(qapplication); //silence MSVC wrong warning
+
 	static int cntTranslators=0;
 	
 	if(cntTranslators>0){
@@ -343,7 +375,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 	}
 	else{
 		if(FET_LANGUAGE!="en_US"){
-			QMessageBox::warning(parent, QString("FET warning"),
+			FetMessage::warning(parent, QString("FET warning"),
 			 QString("Specified language is incorrect - making it en_US (US English)"));
 			FET_LANGUAGE="en_US";
 		}
@@ -354,7 +386,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 	}
 	
 	if(!translation_loaded){
-		QMessageBox::warning(parent, QString("FET warning"),
+		FetMessage::warning(parent, QString("FET warning"),
 		 QString("Translation for specified language not loaded - maybe the translation file is missing - setting the language to en_US (US English)")
 		 +"\n\n"+
 		 QString("FET searched for the translation file %1 in the directory %2, then in the directory %3 and "
@@ -394,6 +426,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 		cntTranslators=1;
 	}
 	
+#ifndef FET_COMMAND_LINE
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
 		qapplication.setLayoutDirection(Qt::RightToLeft);
 	
@@ -465,6 +498,7 @@ void setLanguage(QApplication& qapplication, QWidget* parent)
 				continue;
 			}
 		}
+#endif
 }
 
 void SomeQtTranslations()
@@ -496,11 +530,21 @@ FET starts here
 */
 int main(int argc, char **argv)
 {
+#ifndef FET_COMMAND_LINE
+	QApplication qapplication(argc, argv);
+#else
+	QCoreApplication qCoreApplication(argc, argv);
+#endif
+
 	terminateGeneratePointer=NULL;
 	
-	QApplication qapplication(argc, argv);
-	
+	students_schedule_ready=0;
+	teachers_schedule_ready=0;
+	rooms_schedule_ready=0;
+
+#ifndef FET_COMMAND_LINE
 	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
+#endif
 
 	srand(unsigned(time(NULL))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
 
@@ -510,6 +554,7 @@ int main(int argc, char **argv)
 	
 	QStringList _args=QCoreApplication::arguments();
 
+#ifndef FET_COMMAND_LINE
 	if(_args.count()==1){
 		readSimulationParameters();
 	
@@ -540,12 +585,31 @@ int main(int argc, char **argv)
 			if(!existedBefore)
 				test.remove();
 		}
+
+		setLanguage(qapplication, NULL);
+
+		pqapplication=&qapplication;
+		FetMainForm fetMainForm;
+		pFetMainForm=&fetMainForm;
+		fetMainForm.show();
+
+		int tmp2=qapplication.exec();
+	
+		writeSimulationParameters();
+	
+		cout<<"Settings saved"<<endl;
+	
+		pFetMainForm=NULL;
+	
+		return tmp2;
 	}
-
-	students_schedule_ready=0;
-	teachers_schedule_ready=0;
-	rooms_schedule_ready=0;
-
+	else{
+		QMessageBox::warning(NULL, FetTranslate::tr("FET warning"), FetTranslate::tr("To start FET in interface mode, please do"
+		 " not give any command-line parameters to the FET executable"));
+		
+		return 1;
+	}
+#else
 	/////////////////////////////////////////////////
 	//begin command line
 	if(_args.count()>1){
@@ -681,7 +745,7 @@ int main(int argc, char **argv)
 		QTextStream out(&logFile);
 		///////
 		
-		setLanguage(qapplication, NULL);
+		setLanguage(qCoreApplication, NULL);
 		
 		if(showVersion){
 			out<<"This file contains the result (log) of last operation"<<endl<<endl;
@@ -772,27 +836,27 @@ int main(int argc, char **argv)
 		}
 
 		if(filename==""){
-			usage(out, QString("Input file not specified"));
+			usage(&out, QString("Input file not specified"));
 			logFile.close();
 			return 1;
 		}
 		if(secondsLimit==0){
-			usage(out, QString("Time limit is 0 seconds"));
+			usage(&out, QString("Time limit is 0 seconds"));
 			logFile.close();
 			return 1;
 		}
 		if(TIMETABLE_HTML_LEVEL>6 || TIMETABLE_HTML_LEVEL<0){
-			usage(out, QString("Html level must be 0, 1, 2, 3, 4, 5 or 6"));
+			usage(&out, QString("Html level must be 0, 1, 2, 3, 4, 5 or 6"));
 			logFile.close();
 			return 1;
 		}
 		if(randomSeedXSpecified != randomSeedYSpecified){
 			if(randomSeedXSpecified){
-				usage(out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
+				usage(&out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
 			}
 			else{
 				assert(randomSeedYSpecified);
-				usage(out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
+				usage(&out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
 			}
 			logFile.close();
 			return 1;
@@ -800,14 +864,14 @@ int main(int argc, char **argv)
 		assert(randomSeedXSpecified==randomSeedYSpecified);
 		if(randomSeedXSpecified){
 			if(randomSeedX<=0 || randomSeedX>=MM){
-				usage(out, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
+				usage(&out, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
 				logFile.close();
 				return 1;
 			}
 		}
 		if(randomSeedYSpecified){
 			if(randomSeedY<=0 || randomSeedY>=MMM){
-				usage(out, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
+				usage(&out, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
 				logFile.close();
 				return 1;
 			}
@@ -1013,23 +1077,11 @@ int main(int argc, char **argv)
 		logFile.close();
 		return 0;
 	}
+	else{
+		usage(NULL, QString("No arguments given"));
+		return 1;
+	}
 	//end command line
+#endif
 	/////////////////////////////////////////////////
-
-	setLanguage(qapplication, NULL);
-
-	pqapplication=&qapplication;
-	FetMainForm fetMainForm;
-	pFetMainForm=&fetMainForm;
-	fetMainForm.show();
-
-	int tmp2=qapplication.exec();
-	
-	writeSimulationParameters();
-	
-	cout<<"Settings saved"<<endl;
-	
-	pFetMainForm=NULL;
-	
-	return tmp2;
 }

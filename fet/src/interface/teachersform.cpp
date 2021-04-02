@@ -84,7 +84,7 @@ TeachersForm::~TeachersForm()
 
 void TeachersForm::addTeacher()
 {
-	bool ok = FALSE;
+	bool ok = false;
 	Teacher* tch=new Teacher();
 	tch->name = QInputDialog::getText( this, tr("Add teacher"), tr("Please enter teacher's name") ,
 	 QLineEdit::Normal, QString(), &ok );
@@ -160,7 +160,7 @@ void TeachersForm::renameTeacher()
 		return;
 	}
 
-	bool ok = FALSE;
+	bool ok = false;
 	QString finalTeacherName;
 	finalTeacherName = QInputDialog::getText( this, tr("Modify teacher"), tr("Please enter new teacher's name") ,
 	 QLineEdit::Normal, initialTeacherName, &ok);

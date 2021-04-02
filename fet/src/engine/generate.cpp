@@ -54,8 +54,13 @@ using namespace std;
 
 extern QMutex mutex; //timetablegenerateform.cpp
 
+#ifndef FET_COMMAND_LINE
 extern QSemaphore semaphorePlacedActivity;
 extern QSemaphore finishedSemaphore;
+#else
+QSemaphore semaphorePlacedActivity;
+QSemaphore finishedSemaphore;
+#endif
 
 extern Timetable gt;
 
@@ -2136,7 +2141,19 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		
 		int indexToRemove=candidates.at(randomKnuth(candidates.count()));
 		assert(canEmptyRoom.at(indexToRemove)==true);
-		foreach(int ai2, activitiesInRoom.at(indexToRemove)){
+		
+		//To keep generation identical on all computers - 2013-01-03
+		QList<int> tmpListFromSet=activitiesInRoom.at(indexToRemove).toList();
+		qSort(tmpListFromSet);
+		//Randomize list
+		for(int i=0; i<tmpListFromSet.count(); i++){
+			int t=tmpListFromSet.at(i);
+			int r=randomKnuth(tmpListFromSet.count()-i);
+			tmpListFromSet[i]=tmpListFromSet[i+r];
+			tmpListFromSet[i+r]=t;
+		}
+		
+		foreach(int ai2, tmpListFromSet){
 			assert(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2));
 			assert(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2]);
 			tmp_list.append(ai2);
@@ -2359,7 +2376,7 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 		if(!skip){
 			if(unspecifiedRoom){
 				unspecifiedRoom=false;
-				allowedRooms=it.preferredRooms;		
+				allowedRooms=it.preferredRooms;
 			}
 			else{
 				allowedRooms.intersect(it.preferredRooms);
@@ -2378,6 +2395,14 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 	QList<int> allowedRoomsList;
 	foreach(int rm, allowedRooms)
 		allowedRoomsList.append(rm);
+	qSort(allowedRoomsList); //To keep generation identical on all computers - 2013-01-03
+	//Randomize list
+	for(int i=0; i<allowedRoomsList.count(); i++){
+		int t=allowedRoomsList.at(i);
+		int r=randomKnuth(allowedRoomsList.count()-i);
+		allowedRoomsList[i]=allowedRoomsList[i+r];
+		allowedRoomsList[i+r]=t;
+	}
 		
 	canBeUnspecifiedPreferredRoom=unspecifiedRoom;
 
@@ -8457,7 +8482,12 @@ impossibleteachersmindaysperweek:
 						int tc=candidates.count();
 	
 						int q=randomKnuth(allCandidates.count());
-						int ai2=allCandidates.toList().at(q);
+						
+						//To keep generation identical on all computers - 2013-01-03
+						QList<int> tmpSortedList=allCandidates.toList();
+						qSort(tmpSortedList);
+						int ai2=tmpSortedList.at(q);
+						//int ai2=allCandidates.toList().at(q);
 						
 						////
 						assert(ai2!=ai);
@@ -8582,9 +8612,26 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 							goto impossibleactivitiesoccupymaxtimeslotsfromselection;
 						}
 						int q=randomKnuth(candidates.count());
-						int t=candidates.toList().at(q);
+						
+						//To keep generation identical on all computers - 2013-01-03
+						QList<int> tmpSortedList=candidates.toList();
+						qSort(tmpSortedList);
+						int t=tmpSortedList.at(q);
+						//int t=candidates.toList().at(q);
+						
 						QSet<int> tmpSet=slotSetOfActivities[t];
-						foreach(int ai2, tmpSet){
+						//To keep generation identical on all computers - 2013-01-03
+						QList<int> tmpListFromSet=tmpSet.toList();
+						qSort(tmpListFromSet);
+						//Randomize list
+						for(int i=0; i<tmpListFromSet.count(); i++){
+							int t=tmpListFromSet.at(i);
+							int r=randomKnuth(tmpListFromSet.count()-i);
+							tmpListFromSet[i]=tmpListFromSet[i+r];
+							tmpListFromSet[i+r]=t;
+						}
+						
+						foreach(int ai2, tmpListFromSet){
 							assert(ai2!=ai);
 							assert(c.times[ai2]!=UNALLOCATED_TIME);
 							assert(!fixedTimeActivity[ai2] && !swappedActivities[ai2]);

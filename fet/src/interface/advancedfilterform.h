@@ -18,7 +18,13 @@
 #ifndef ADVANCEDFILTERFORM_H
 #define ADVANCEDFILTERFORM_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#else
 #include <QtGui>
+#endif
 
 const int ADVANCED_FILTER_MAX_ROWS=8;
 const int ADVANCED_FILTER_MIN_ROWS=1;

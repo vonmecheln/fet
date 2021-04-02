@@ -19,12 +19,15 @@ File centerwidgetonscreen.cpp
  *                                                                         *
  ***************************************************************************/
 
-#include "centerwidgetonscreen.h"
+#include <QtGlobal>
 
-#include "fetmainform.h"
+#include "centerwidgetonscreen.h"
 
 #include "rules.h"
 #include "timetable.h"
+
+#ifndef FET_COMMAND_LINE
+#include "fetmainform.h"
 
 #include <QWidget>
 #include <QApplication>
@@ -34,12 +37,14 @@ File centerwidgetonscreen.cpp
 #include <QPoint>
 
 #include <QSettings>
+#endif
 
 #include <QObject>
 #include <QMetaObject>
 
 #include <QString>
 
+#ifndef FET_COMMAND_LINE
 #include <QHeaderView>
 #include <QTableWidget>
 #include <QTableWidgetItem>
@@ -143,11 +148,21 @@ void setParentAndOtherThings(QWidget* widget, QWidget* parent)
 
 void setStretchAvailabilityTableNicely(QTableWidget* notAllowedTimesTable)
 {
+#if QT_VERSION >= 0x050000
+	notAllowedTimesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+#else
 	notAllowedTimesTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+#endif
+
 	int q=notAllowedTimesTable->horizontalHeader()->defaultSectionSize();
 	notAllowedTimesTable->horizontalHeader()->setMinimumSectionSize(q);
 
+#if QT_VERSION >= 0x050000
+	notAllowedTimesTable->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+#else
 	notAllowedTimesTable->verticalHeader()->setResizeMode(QHeaderView::Stretch);
+#endif
+
 	q=-1;
 	for(int i=0; i<notAllowedTimesTable->verticalHeader()->count(); i++)
 		if(q<notAllowedTimesTable->verticalHeader()->sectionSizeHint(i))
@@ -186,3 +201,15 @@ void setRulesUnmodifiedAndOtherThings(Rules* rules)
 				pFetMainForm->setWindowModified(false);
 	}
 }
+
+#else
+void setRulesModifiedAndOtherThings(Rules* rules)
+{
+	Q_UNUSED(rules);
+}
+
+void setRulesUnmodifiedAndOtherThings(Rules* rules)
+{
+	Q_UNUSED(rules);
+}
+#endif

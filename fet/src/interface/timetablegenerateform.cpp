@@ -112,14 +112,14 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 
 	startPushButton->setDefault(true);
 
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	stopHighestPushButton->setDisabled(TRUE);
-	closePushButton->setEnabled(TRUE);
-	writeResultsPushButton->setDisabled(TRUE);
-	writeHighestStagePushButton->setDisabled(TRUE);
-	seeImpossiblePushButton->setDisabled(TRUE);
-	seeInitialOrderPushButton->setDisabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	stopHighestPushButton->setDisabled(true);
+	closePushButton->setEnabled(true);
+	writeResultsPushButton->setDisabled(true);
+	writeHighestStagePushButton->setDisabled(true);
+	seeImpossiblePushButton->setDisabled(true);
+	seeInitialOrderPushButton->setDisabled(true);
 
 	connect(&gen, SIGNAL(activityPlaced(int)),
 	 this, SLOT(activityPlaced(int)));
@@ -167,14 +167,14 @@ void TimetableGenerateForm::start(){
 		return;
 	}
 
-	startPushButton->setDisabled(TRUE);
-	stopPushButton->setEnabled(TRUE);
-	stopHighestPushButton->setEnabled(TRUE);
-	closePushButton->setDisabled(TRUE);
-	writeResultsPushButton->setEnabled(TRUE);
-	writeHighestStagePushButton->setEnabled(TRUE);
-	seeImpossiblePushButton->setEnabled(TRUE);
-	seeInitialOrderPushButton->setEnabled(TRUE);
+	startPushButton->setDisabled(true);
+	stopPushButton->setEnabled(true);
+	stopHighestPushButton->setEnabled(true);
+	closePushButton->setDisabled(true);
+	writeResultsPushButton->setEnabled(true);
+	writeHighestStagePushButton->setEnabled(true);
+	seeImpossiblePushButton->setEnabled(true);
+	seeInitialOrderPushButton->setEnabled(true);
 
 	simulation_running=true;
 	
@@ -327,13 +327,13 @@ void TimetableGenerateForm::stop()
 	dialog.exec();
 	saveFETDialogGeometry(&dialog, settingsName);
 
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	stopHighestPushButton->setDisabled(TRUE);
-	closePushButton->setEnabled(TRUE);
-	writeResultsPushButton->setDisabled(TRUE);
-	writeHighestStagePushButton->setDisabled(TRUE);
-	seeImpossiblePushButton->setDisabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	stopHighestPushButton->setDisabled(true);
+	closePushButton->setEnabled(true);
+	writeResultsPushButton->setDisabled(true);
+	writeHighestStagePushButton->setDisabled(true);
+	seeImpossiblePushButton->setDisabled(true);
 }
 
 void TimetableGenerateForm::stopHighest()
@@ -455,13 +455,13 @@ void TimetableGenerateForm::stopHighest()
 	dialog.exec();
 	saveFETDialogGeometry(&dialog, settingsName);
 
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	stopHighestPushButton->setDisabled(TRUE);
-	closePushButton->setEnabled(TRUE);
-	writeResultsPushButton->setDisabled(TRUE);
-	writeHighestStagePushButton->setDisabled(TRUE);
-	seeImpossiblePushButton->setDisabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	stopHighestPushButton->setDisabled(true);
+	closePushButton->setEnabled(true);
+	writeResultsPushButton->setDisabled(true);
+	writeHighestStagePushButton->setDisabled(true);
+	seeImpossiblePushButton->setDisabled(true);
 }
 
 void TimetableGenerateForm::impossibleToSolve()
@@ -575,13 +575,13 @@ void TimetableGenerateForm::impossibleToSolve()
 	dialog.exec();
 	saveFETDialogGeometry(&dialog, settingsName);
 
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	stopHighestPushButton->setDisabled(TRUE);
-	closePushButton->setEnabled(TRUE);
-	writeResultsPushButton->setDisabled(TRUE);
-	writeHighestStagePushButton->setDisabled(TRUE);
-	seeImpossiblePushButton->setDisabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	stopHighestPushButton->setDisabled(true);
+	closePushButton->setEnabled(true);
+	writeResultsPushButton->setDisabled(true);
+	writeHighestStagePushButton->setDisabled(true);
+	seeImpossiblePushButton->setDisabled(true);
 }
 
 void TimetableGenerateForm::simulationFinished()
@@ -653,13 +653,13 @@ void TimetableGenerateForm::simulationFinished()
 	s+=tr("Results were saved in the directory %1").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"), s);
 
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	stopHighestPushButton->setDisabled(TRUE);
-	closePushButton->setEnabled(TRUE);
-	writeResultsPushButton->setDisabled(TRUE);
-	writeHighestStagePushButton->setDisabled(TRUE);
-	seeImpossiblePushButton->setDisabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	stopHighestPushButton->setDisabled(true);
+	closePushButton->setEnabled(true);
+	writeResultsPushButton->setDisabled(true);
+	writeHighestStagePushButton->setDisabled(true);
+	seeImpossiblePushButton->setDisabled(true);
 }
 
 void TimetableGenerateForm::activityPlaced(int na){

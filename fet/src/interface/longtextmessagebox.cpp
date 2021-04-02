@@ -21,12 +21,20 @@ File longtextmessagebox.cpp
 
 #include "longtextmessagebox.h"
 
+#ifndef FET_COMMAND_LINE
+
 #include <QMessageBox>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPlainTextEdit>
 #include <QPushButton>
+
+#else
+
+#include "messageboxes.h"
+
+#endif
 
 #include "centerwidgetonscreen.h"
 
@@ -50,6 +58,7 @@ int LongTextMessageBox::confirmationWithDimensions
  const QString& button0Text, const QString& button1Text, const QString& button2Text,
  int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH )
 {
+#ifndef FET_COMMAND_LINE
 	if(button0Text==QString() || button1Text==QString() || button2Text!=QString()){
 		QMessageBox::critical(parent, tr("FET critical"), tr("You have met a FET bug. The problem is in file"
 		 " %1 line %2, the reason is that a confirmation dialog box does not get exactly 2 arguments. Please report bug. FET will now continue."
@@ -136,6 +145,15 @@ int LongTextMessageBox::confirmationWithDimensions
 		//cout<<"rejected"<<endl;
 		return escapeButton;
 	}
+#else
+	Q_UNUSED(MINW);
+	Q_UNUSED(MAXW);
+	Q_UNUSED(MINH);
+	Q_UNUSED(MAXH);
+	
+	commandLineMessage(parent, title, text, button0Text, button1Text, button2Text, defaultButton, escapeButton);
+	return defaultButton;
+#endif
 }
 
 int LongTextMessageBox::confirmation
@@ -174,6 +192,7 @@ int LongTextMessageBox::mediumConfirmation
 void LongTextMessageBox::informationWithDimensions
  ( QWidget * parent, const QString & title, const QString & text, int MINW, int MAXW, int MINH, int MAXH)
 {
+#ifndef FET_COMMAND_LINE
 	QDialog dialog(parent);
 	dialog.setWindowTitle(title);
 	
@@ -206,6 +225,14 @@ void LongTextMessageBox::informationWithDimensions
 		forceCenterWidgetOnScreen(&dialog);
 	
 	dialog.exec();
+#else
+	Q_UNUSED(MINW);
+	Q_UNUSED(MAXW);
+	Q_UNUSED(MINH);
+	Q_UNUSED(MAXH);
+	
+	commandLineMessage(parent, title, text);
+#endif
 }
 
 void LongTextMessageBox::information

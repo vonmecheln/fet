@@ -18,12 +18,19 @@
 #ifndef FETMAINFORM_H
 #define FETMAINFORM_H
 
+#include <QtGlobal>
+
 #include "ui_fetmainform_template.h"
 
 #include <QMutex>
 #include <QThread>
 
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#else
 #include <QtGui>
+#endif
+
 #include <QResizeEvent>
 #include <QCloseEvent>
 
@@ -106,39 +113,39 @@ public:
 public slots:
 	void enableNotPerfectMessage();
 
-	void on_fileNewAction_activated();
-	void on_fileSaveAction_activated();
-	void on_fileSaveAsAction_activated();
-	void on_fileExitAction_activated();
-	void on_fileOpenAction_activated();
-	void on_fileClearRecentFilesListAction_activated();
+	void on_fileNewAction_triggered();
+	void on_fileSaveAction_triggered();
+	void on_fileSaveAsAction_triggered();
+	void on_fileExitAction_triggered();
+	void on_fileOpenAction_triggered();
+	void on_fileClearRecentFilesListAction_triggered();
 	void openRecentFile();
 
-	void on_fileImportCSVActivityTagsAction_activated();
-	void on_fileImportCSVActivitiesAction_activated();
-	void on_fileImportCSVRoomsBuildingsAction_activated();
-	void on_fileImportCSVSubjectsAction_activated();
-	void on_fileImportCSVTeachersAction_activated();
-	void on_fileImportCSVYearsGroupsSubgroupsAction_activated();
-	void on_fileExportCSVAction_activated();
+	void on_fileImportCSVActivityTagsAction_triggered();
+	void on_fileImportCSVActivitiesAction_triggered();
+	void on_fileImportCSVRoomsBuildingsAction_triggered();
+	void on_fileImportCSVSubjectsAction_triggered();
+	void on_fileImportCSVTeachersAction_triggered();
+	void on_fileImportCSVYearsGroupsSubgroupsAction_triggered();
+	void on_fileExportCSVAction_triggered();
 	
-	void on_dataInstitutionNameAction_activated();
-	void on_dataCommentsAction_activated();
-	void on_dataDaysAction_activated();
-	void on_dataHoursAction_activated();
-	void on_dataTeachersAction_activated();
-	void on_dataTeachersStatisticsAction_activated();
-	void on_dataSubjectsAction_activated();
-	void on_dataSubjectsStatisticsAction_activated();
-	void on_dataActivityTagsAction_activated();
-	void on_dataYearsAction_activated();
-	void on_dataGroupsAction_activated();
-	void on_dataSubgroupsAction_activated();
-	void on_dataStudentsStatisticsAction_activated();
-	void on_dataActivitiesRoomsStatisticsAction_activated();
-	void on_dataHelpOnStatisticsAction_activated();
+	void on_dataInstitutionNameAction_triggered();
+	void on_dataCommentsAction_triggered();
+	void on_dataDaysAction_triggered();
+	void on_dataHoursAction_triggered();
+	void on_dataTeachersAction_triggered();
+	void on_dataTeachersStatisticsAction_triggered();
+	void on_dataSubjectsAction_triggered();
+	void on_dataSubjectsStatisticsAction_triggered();
+	void on_dataActivityTagsAction_triggered();
+	void on_dataYearsAction_triggered();
+	void on_dataGroupsAction_triggered();
+	void on_dataSubgroupsAction_triggered();
+	void on_dataStudentsStatisticsAction_triggered();
+	void on_dataActivitiesRoomsStatisticsAction_triggered();
+	void on_dataHelpOnStatisticsAction_triggered();
 	
-	void on_helpSettingsAction_activated();
+	void on_helpSettingsAction_triggered();
 	void on_settingsUseColorsAction_toggled();
 	void on_settingsShowShortcutsOnMainWindowAction_toggled();
 
@@ -156,179 +163,179 @@ public slots:
 	void enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
 	void showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked);
 	
-	void on_dataActivitiesAction_activated();
-	void on_dataSubactivitiesAction_activated();
-	void on_dataRoomsAction_activated();
-	void on_dataBuildingsAction_activated();
-	void on_dataAllTimeConstraintsAction_activated();
-	void on_dataAllSpaceConstraintsAction_activated();
+	void on_dataActivitiesAction_triggered();
+	void on_dataSubactivitiesAction_triggered();
+	void on_dataRoomsAction_triggered();
+	void on_dataBuildingsAction_triggered();
+	void on_dataAllTimeConstraintsAction_triggered();
+	void on_dataAllSpaceConstraintsAction_triggered();
 
-	void on_dataSpaceConstraintsRoomNotAvailableTimesAction_activated();
+	void on_dataSpaceConstraintsRoomNotAvailableTimesAction_triggered();
 
-	void on_dataSpaceConstraintsBasicCompulsorySpaceAction_activated();
-	void on_dataSpaceConstraintsActivityPreferredRoomAction_activated();
-	void on_dataSpaceConstraintsActivityPreferredRoomsAction_activated();
+	void on_dataSpaceConstraintsBasicCompulsorySpaceAction_triggered();
+	void on_dataSpaceConstraintsActivityPreferredRoomAction_triggered();
+	void on_dataSpaceConstraintsActivityPreferredRoomsAction_triggered();
 	
-	void on_dataSpaceConstraintsStudentsSetHomeRoomAction_activated();
-	void on_dataSpaceConstraintsStudentsSetHomeRoomsAction_activated();
-	void on_dataSpaceConstraintsTeacherHomeRoomAction_activated();
-	void on_dataSpaceConstraintsTeacherHomeRoomsAction_activated();
+	void on_dataSpaceConstraintsStudentsSetHomeRoomAction_triggered();
+	void on_dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered();
+	void on_dataSpaceConstraintsTeacherHomeRoomAction_triggered();
+	void on_dataSpaceConstraintsTeacherHomeRoomsAction_triggered();
 
-	void on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_activated();
-	void on_dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_activated();
-	void on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_activated();
-	void on_dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_activated();
-	void on_dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_activated();
-	void on_dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_activated();
+	void on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_triggered();
+	void on_dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_triggered();
 
-	void on_dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_activated();
-	void on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_activated();
-	void on_dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_activated();
-	void on_dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_activated();
-	void on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_activated();
-	void on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_activated();
+	void on_dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered();
+	void on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered();
 	
-	void on_dataSpaceConstraintsSubjectPreferredRoomAction_activated();
-	void on_dataSpaceConstraintsSubjectPreferredRoomsAction_activated();
-	void on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_activated();
-	void on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_activated();
+	void on_dataSpaceConstraintsSubjectPreferredRoomAction_triggered();
+	void on_dataSpaceConstraintsSubjectPreferredRoomsAction_triggered();
+	void on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered();
+	void on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_triggered();
 
-	void on_dataSpaceConstraintsActivityTagPreferredRoomAction_activated();
-	void on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activated();
+	void on_dataSpaceConstraintsActivityTagPreferredRoomAction_triggered();
+	void on_dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered();
 
-	void on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_activated();
+	void on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_triggered();
 
-	void on_dataTimeConstraintsBasicCompulsoryTimeAction_activated();
-	void on_dataTimeConstraintsBreakTimesAction_activated();
+	void on_dataTimeConstraintsBasicCompulsoryTimeAction_triggered();
+	void on_dataTimeConstraintsBreakTimesAction_triggered();
 
-	void on_dataTimeConstraintsTwoActivitiesConsecutiveAction_activated();
-	void on_dataTimeConstraintsTwoActivitiesGroupedAction_activated();
-	void on_dataTimeConstraintsThreeActivitiesGroupedAction_activated();
-	void on_dataTimeConstraintsTwoActivitiesOrderedAction_activated();
-	void on_dataTimeConstraintsActivityPreferredStartingTimeAction_activated();
-	void on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activated();
-	void on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activated();
-	void on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_activated();
-	void on_dataTimeConstraintsActivityPreferredStartingTimesAction_activated();
-	void on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_activated();
-	void on_dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_activated();
-	void on_dataTimeConstraintsActivitiesSameStartingTimeAction_activated();
-	void on_dataTimeConstraintsActivitiesSameStartingHourAction_activated();
-	void on_dataTimeConstraintsActivitiesSameStartingDayAction_activated();
-	void on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_activated();
-	void on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_activated();
-	void on_dataTimeConstraintsActivitiesNotOverlappingAction_activated();
-	void on_dataTimeConstraintsMinDaysBetweenActivitiesAction_activated();
-	void on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_activated();
-	void on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated();
-	void on_dataTimeConstraintsActivityEndsStudentsDayAction_activated();
-	void on_dataTimeConstraintsActivitiesEndStudentsDayAction_activated();
+	void on_dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered();
+	void on_dataTimeConstraintsTwoActivitiesGroupedAction_triggered();
+	void on_dataTimeConstraintsThreeActivitiesGroupedAction_triggered();
+	void on_dataTimeConstraintsTwoActivitiesOrderedAction_triggered();
+	void on_dataTimeConstraintsActivityPreferredStartingTimeAction_triggered();
+	void on_dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered();
+	void on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered();
+	void on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_triggered();
+	void on_dataTimeConstraintsActivityPreferredStartingTimesAction_triggered();
+	void on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_triggered();
+	void on_dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_triggered();
+	void on_dataTimeConstraintsActivitiesSameStartingTimeAction_triggered();
+	void on_dataTimeConstraintsActivitiesSameStartingHourAction_triggered();
+	void on_dataTimeConstraintsActivitiesSameStartingDayAction_triggered();
+	void on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered();
+	void on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered();
+	void on_dataTimeConstraintsActivitiesNotOverlappingAction_triggered();
+	void on_dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered();
+	void on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered();
+	void on_dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered();
+	void on_dataTimeConstraintsActivityEndsStudentsDayAction_triggered();
+	void on_dataTimeConstraintsActivitiesEndStudentsDayAction_triggered();
 
-	void on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated();
-	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated();
-	void on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsTeacherNotAvailableTimesAction_triggered();
+	void on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered();
+	void on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered();
 
-	void on_dataTimeConstraintsTeacherMinDaysPerWeekAction_activated();
-	void on_dataTimeConstraintsTeachersMinDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered();
+	void on_dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered();
 
-	void on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated();
-	void on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated();
-	void on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activated();
-	void on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsTeachersMaxHoursDailyAction_triggered();
+	void on_dataTimeConstraintsTeacherMaxHoursDailyAction_triggered();
+	void on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered();
+	void on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered();
 
-	void on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_activated();
-	void on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered();
+	void on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered();
 
-	void on_dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_activated();
-	void on_dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered();
+	void on_dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered();
 
-	void on_dataTimeConstraintsTeachersMinHoursDailyAction_activated();
-	void on_dataTimeConstraintsTeacherMinHoursDailyAction_activated();
-	void on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated();
-	void on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated();
-	void on_dataTimeConstraintsTeachersMaxGapsPerDayAction_activated();
-	void on_dataTimeConstraintsTeacherMaxGapsPerDayAction_activated();
+	void on_dataTimeConstraintsTeachersMinHoursDailyAction_triggered();
+	void on_dataTimeConstraintsTeacherMinHoursDailyAction_triggered();
+	void on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered();
+	void on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered();
+	void on_dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered();
+	void on_dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered();
 	
-	void on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_activated();
-	void on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_activated();
-	void on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_activated();
-	void on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_activated();
+	void on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered();
+	void on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered();
+	void on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered();
+	void on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered();
 
-	void on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_activated();
-	void on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_activated();
-	void on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_activated();
+	void on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered();
+	void on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered();
+	void on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered();
 
-	void on_dataTimeConstraintsStudentsSetMaxGapsPerDayAction_activated();
-	void on_dataTimeConstraintsStudentsMaxGapsPerDayAction_activated();
+	void on_dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered();
+	void on_dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered();
 
-	void on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_activated();
-	void on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_activated();
-	void on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated();
-	void on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated();
-	void on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activated();
-	void on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered();
+	void on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered();
+	void on_dataTimeConstraintsStudentsMaxHoursDailyAction_triggered();
+	void on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered();
+	void on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggered();
+	void on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_triggered();
 
-	void on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_activated();
-	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_activated();
+	void on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered();
+	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered();
 
-	void on_dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_activated();
-	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered();
+	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered();
 
-	void on_dataTimeConstraintsStudentsMinHoursDailyAction_activated();
-	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsMinHoursDailyAction_triggered();
+	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered();
 
-	void on_activityPlanningAction_activated();
-	void on_spreadActivitiesAction_activated();
-	void on_removeRedundantConstraintsAction_activated();
+	void on_activityPlanningAction_triggered();
+	void on_spreadActivitiesAction_triggered();
+	void on_removeRedundantConstraintsAction_triggered();
 
 	//about
-	void on_helpAboutAction_activated();
+	void on_helpAboutAction_triggered();
 	//offline
-	void on_helpFAQAction_activated();
-	void on_helpTipsAction_activated();
-	void on_helpInstructionsAction_activated();
+	void on_helpFAQAction_triggered();
+	void on_helpTipsAction_triggered();
+	void on_helpInstructionsAction_triggered();
 	//online
-	void on_helpHomepageAction_activated();
-	void on_helpContentsAction_activated();
-	void on_helpForumAction_activated();
-	void on_helpAddressesAction_activated();
+	void on_helpHomepageAction_triggered();
+	void on_helpContentsAction_triggered();
+	void on_helpForumAction_triggered();
+	void on_helpAddressesAction_triggered();
 
-	void on_timetableGenerateAction_activated();
-	void on_timetableViewStudentsAction_activated();
-	void on_timetableViewTeachersAction_activated();
-	void on_timetableViewRoomsAction_activated();
-	void on_timetableShowConflictsAction_activated();
-	void on_timetablePrintAction_activated();
-	void on_timetableGenerateMultipleAction_activated();
+	void on_timetableGenerateAction_triggered();
+	void on_timetableViewStudentsAction_triggered();
+	void on_timetableViewTeachersAction_triggered();
+	void on_timetableViewRoomsAction_triggered();
+	void on_timetableShowConflictsAction_triggered();
+	void on_timetablePrintAction_triggered();
+	void on_timetableGenerateMultipleAction_triggered();
 
-	void on_timetableLockAllActivitiesAction_activated();
-	void on_timetableUnlockAllActivitiesAction_activated();
-	void on_timetableLockActivitiesDayAction_activated();
-	void on_timetableUnlockActivitiesDayAction_activated();
-	void on_timetableLockActivitiesEndStudentsDayAction_activated();
-	void on_timetableUnlockActivitiesEndStudentsDayAction_activated();
+	void on_timetableLockAllActivitiesAction_triggered();
+	void on_timetableUnlockAllActivitiesAction_triggered();
+	void on_timetableLockActivitiesDayAction_triggered();
+	void on_timetableUnlockActivitiesDayAction_triggered();
+	void on_timetableLockActivitiesEndStudentsDayAction_triggered();
+	void on_timetableUnlockActivitiesEndStudentsDayAction_triggered();
 
-	void on_timetableSaveTimetableAsAction_activated();
+	void on_timetableSaveTimetableAsAction_triggered();
 
-	void on_randomSeedAction_activated();
+	void on_randomSeedAction_triggered();
 	
-	void on_languageAction_activated();
+	void on_languageAction_triggered();
 	
 	void on_checkForUpdatesAction_toggled();
 	
 	void on_timetablesDivideByDaysAction_toggled();
 
-	void on_settingsRestoreDefaultsAction_activated();
+	void on_settingsRestoreDefaultsAction_triggered();
 
-	void on_settingsTimetableHtmlLevelAction_activated();
+	void on_settingsTimetableHtmlLevelAction_triggered();
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
 	void on_settingsPrintBreakSlotsAction_toggled();
 
 	void on_settingsPrintActivitiesWithSameStartingTimeAction_toggled();
 
-	void on_selectOutputDirAction_activated();
+	void on_selectOutputDirAction_triggered();
 	
-	void on_statisticsExportToDiskAction_activated();
+	void on_statisticsExportToDiskAction_triggered();
 	
 	void on_shortcutAllTimeConstraintsPushButton_clicked();
 	void on_shortcutBreakTimeConstraintsPushButton_clicked();

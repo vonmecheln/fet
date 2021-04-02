@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QtGlobal>
+
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
@@ -184,7 +186,11 @@ TimetableViewRoomsForm::TimetableViewRoomsForm(QWidget* parent): QDialog(parent)
 	//if(!columnResizeModeInitialized){
 	roomsTimetableTable->horizontalHeader()->setMinimumSectionSize(roomsTimetableTable->horizontalHeader()->defaultSectionSize());
 	//	columnResizeModeInitialized=true;
+#if QT_VERSION >= 0x050000
+	roomsTimetableTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+#else
 	roomsTimetableTable->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+#endif
 	//}
 	///////////////
 

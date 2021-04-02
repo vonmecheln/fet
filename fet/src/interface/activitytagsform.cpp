@@ -88,7 +88,7 @@ ActivityTagsForm::~ActivityTagsForm()
 
 void ActivityTagsForm::addActivityTag()
 {
-	bool ok = FALSE;
+	bool ok = false;
 	ActivityTag* sbt=new ActivityTag();
 	sbt->name = QInputDialog::getText( this, tr("Add activity tag"), tr("Please enter activity tag's name") ,
 	 QLineEdit::Normal, QString(), &ok );
@@ -165,7 +165,7 @@ void ActivityTagsForm::renameActivityTag()
 		return;
 	}
 
-	bool ok = FALSE;
+	bool ok = false;
 	QString finalActivityTagName;
 	finalActivityTagName = QInputDialog::getText( this, tr("Rename activity tag"), tr("Please enter new activity tag's name") ,
 	 QLineEdit::Normal, initialActivityTagName, &ok );

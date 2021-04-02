@@ -35,7 +35,9 @@ using namespace std;
 
 #include <QTextStream>
 
+#ifndef FET_COMMAND_LINE
 #include <QApplication>
+#endif
 
 class QWidget;
 
@@ -80,9 +82,11 @@ void readSimulationParameters();
 void writeSimulationParameters();
 //void writeDefaultSimulationParameters();
 
-void usage(QTextStream& out);
-
+#ifndef FET_COMMAND_LINE
 void setLanguage(QApplication& qapplication, QWidget* parent);
+#else
+void setLanguage(QCoreApplication& qapplication, QWidget* parent);
+#endif
 
 /**
 The main function.

@@ -62,9 +62,9 @@ using namespace std;
 
 #include <QHash>
 
-#include <QDesktopWidget>
+//#include <QDesktopWidget>
 
-#include <QMessageBox>
+#include "messageboxes.h"
 
 #include <QLocale>
 #include <QTime>
@@ -712,7 +712,7 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const QString& filena
 
 	QFile file(s);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(s));
 		return;
 		assert(0);
@@ -744,7 +744,7 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const QString& filena
 	}
 	
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(s).arg(file.error()));
 	}
 	file.close();
@@ -752,7 +752,7 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const QString& filena
 
 void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& filename){
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
-		QMessageBox::critical(parent, tr("FET - Critical"), tr("Timetable not generated - cannot save it - this should not happen (please report bug)"));
+		IrreconcilableCriticalMessage::critical(parent, tr("FET - Critical"), tr("Timetable not generated - cannot save it - this should not happen (please report bug)"));
 		return;	
 	}
 
@@ -762,13 +762,13 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 		//Activity* act=&gt.rules.internalActivitiesList[ai];
 		int time=tc->times[ai];
 		if(time==UNALLOCATED_TIME){
-			QMessageBox::critical(parent, tr("FET - Critical"), tr("Incomplete timetable - this should not happen - please report bug"));
+			IrreconcilableCriticalMessage::critical(parent, tr("FET - Critical"), tr("Incomplete timetable - this should not happen - please report bug"));
 			return;	
 		}
 		
 		int ri=tc->rooms[ai];
 		if(ri==UNALLOCATED_SPACE){
-			QMessageBox::critical(parent, tr("FET - Critical"), tr("Incomplete timetable - this should not happen - please report bug"));
+			IrreconcilableCriticalMessage::critical(parent, tr("FET - Critical"), tr("Incomplete timetable - this should not happen - please report bug"));
 			return;	
 		}
 	}
@@ -845,10 +845,10 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 			if(report){
 				int k;
 				if(t)
-					k=QMessageBox::information(parent, tr("FET information"), s,
+					k=TimetableExportMessage::information(parent, tr("FET information"), s,
 				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 				else
-					k=QMessageBox::warning(parent, tr("FET warning"), s,
+					k=TimetableExportMessage::warning(parent, tr("FET warning"), s,
 				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 		 		if(k==0)
 					report=false;
@@ -879,10 +879,10 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 			if(report){
 				int k;
 				if(t)
-					k=QMessageBox::information(parent, tr("FET information"), s,
+					k=TimetableExportMessage::information(parent, tr("FET information"), s,
 				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 				else
-					k=QMessageBox::warning(parent, tr("FET warning"), s,
+					k=TimetableExportMessage::warning(parent, tr("FET warning"), s,
 					 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 				if(k==0)
 					report=false;
@@ -927,7 +927,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	rules2.spaceConstraintsList.clear();
 	
 	if(!result){
-		QMessageBox::critical(parent, tr("FET critical"), tr("Could not save the data + timetable file on the hard disk - maybe hard disk is full"));
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"), tr("Could not save the data + timetable file on the hard disk - maybe hard disk is full"));
 	}
 }
 
@@ -1449,7 +1449,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 
 	QFile file(filename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
 		return;
 		assert(0);
@@ -1489,7 +1489,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 	}
 	
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(filename).arg(file.error()));
 	}
 	file.close();
@@ -1502,7 +1502,7 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 	//Now we print the results to an XML file
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
 		assert(0);
@@ -1549,7 +1549,7 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 	tos << "</" << protect(STUDENTS_TIMETABLE_TAG) << ">\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1562,7 +1562,7 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 	//Writing the timetable in xml format
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
 		assert(0);
@@ -1607,7 +1607,7 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 	tos << "</" << protect(TEACHERS_TIMETABLE_TAG) << ">\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1620,7 +1620,7 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 	//Writing the timetable in xml format
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
 		assert(0);
@@ -1663,7 +1663,7 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 	tos << "</" << protect(ACTIVITIES_TIMETABLE_TAG) << ">\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1677,7 +1677,7 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1795,7 +1795,7 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1818,7 +1818,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 	//Now we print the results to an CSS file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -1965,7 +1965,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& htmlfil
 	tos<<"/* "<<TimetableExport::tr("End of file.")<<" */\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -1979,7 +1979,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2015,7 +2015,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2029,7 +2029,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2066,7 +2066,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2080,7 +2080,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2097,7 +2097,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}	
 	file.close();
@@ -2111,7 +2111,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2128,7 +2128,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2142,7 +2142,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2163,7 +2163,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}	
 	file.close();
@@ -2177,7 +2177,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2197,7 +2197,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2212,7 +2212,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2251,7 +2251,7 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2265,7 +2265,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2304,7 +2304,7 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2318,7 +2318,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2341,7 +2341,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2355,7 +2355,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2377,7 +2377,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2391,7 +2391,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2417,7 +2417,7 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2431,7 +2431,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2457,7 +2457,7 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2473,7 +2473,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2507,7 +2507,7 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2521,7 +2521,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2555,7 +2555,7 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2569,7 +2569,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2592,7 +2592,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2606,7 +2606,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2629,7 +2629,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2643,7 +2643,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2669,7 +2669,7 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2683,7 +2683,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2709,7 +2709,7 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2725,7 +2725,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2739,7 +2739,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2753,7 +2753,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2767,7 +2767,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2781,7 +2781,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2797,7 +2797,7 @@ tos<<singleAllActivitiesTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2811,7 +2811,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2827,7 +2827,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2841,7 +2841,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2860,7 +2860,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2874,7 +2874,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2895,7 +2895,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2911,7 +2911,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2938,7 +2938,7 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2952,7 +2952,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -2978,7 +2978,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -2992,7 +2992,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3007,7 +3007,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3021,7 +3021,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3036,7 +3036,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3050,7 +3050,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3070,7 +3070,7 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3084,7 +3084,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3105,7 +3105,7 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3119,7 +3119,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3149,7 +3149,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3163,7 +3163,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 
@@ -3194,7 +3194,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3208,7 +3208,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3228,7 +3228,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3242,7 +3242,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3263,7 +3263,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3277,7 +3277,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3302,7 +3302,7 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3316,7 +3316,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3342,7 +3342,7 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3358,7 +3358,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3386,7 +3386,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3400,7 +3400,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3427,7 +3427,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3441,7 +3441,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3457,7 +3457,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3471,7 +3471,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3488,7 +3488,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3502,7 +3502,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3524,7 +3524,7 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3538,7 +3538,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3559,7 +3559,7 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3573,7 +3573,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3611,7 +3611,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();
@@ -3625,7 +3625,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
 		assert(0);
@@ -3664,7 +3664,7 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
-		QMessageBox::critical(parent, tr("FET critical"),
+		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
 	}
 	file.close();

@@ -21,6 +21,8 @@
 // Code contributed by Volker Dirr ( http://www.timetabling.de/ )
 // Many thanks to Liviu Lalescu. He told me some speed optimizations.
 
+#include <QtGlobal>
+
 #include "activityplanningform.h"
 
 #include "timetable.h"
@@ -28,7 +30,11 @@
 
 // BE CAREFUL: DON'T USE INTERNAL VARIABLES HERE, because maybe computeInternalStructure() is not done!
 
+#if QT_VERSION >= 0x050000
+#include <QtWidgets>
+#else
 #include <QtGui>
+#endif
 
 #include <QInputDialog>
 

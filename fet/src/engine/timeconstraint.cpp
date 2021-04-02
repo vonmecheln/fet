@@ -36,7 +36,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <QString>
 
-#include <QMessageBox>
+#include "messageboxes.h"
 
 #include <QSet>
 
@@ -185,7 +185,7 @@ QString ConstraintBasicCompulsoryTime::getDescription(Rules& r)
 	if(!comments.isEmpty())
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
-	return begin+tr("Basic compulsory constraints (time)") + ", " + tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage))+end;
+	return begin+tr("Basic compulsory constraints (time)") + ", " + tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage))+end;
 }
 
 QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
@@ -195,7 +195,7 @@ QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
 	QString s=tr("These are the basic compulsory constraints (referring to time allocation) for any timetable");
 	s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("The basic time constraints try to avoid:");s+="\n";
 	s+=QString("- ");s+=tr("teachers assigned to more than one activity simultaneously");s+="\n";
 	s+=QString("- ");s+=tr("students assigned to more than one activity simultaneously");s+="\n";
@@ -556,7 +556,7 @@ QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s=tr("Teacher not available");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacher);s+=", ";
 
 	s+=tr("NA at:", "Not available at");
@@ -580,7 +580,7 @@ QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r){
 QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher is not available");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacher);s+="\n";
 
 	s+=tr("Not available at:");
@@ -615,7 +615,7 @@ bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(QWidget* paren
 	this->teacher_ID=r.searchTeacher(this->teacher);
 
 	if(this->teacher_ID<0){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher not available times is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -625,14 +625,14 @@ bool ConstraintTeacherNotAvailableTimes::computeInternalStructure(QWidget* paren
 	assert(days.count()==hours.count());
 	for(int k=0; k<days.count(); k++){
 		if(this->days.at(k) >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint teacher not available times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
 		if(this->hours.at(k) >= r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint teacher not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -811,7 +811,7 @@ bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* p
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set not available is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -821,14 +821,14 @@ bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* p
 	assert(days.count()==hours.count());
 	for(int k=0; k<days.count(); k++){
 		if(this->days.at(k) >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint students set not available times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
 		if(this->hours.at(k) >= r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint students set not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -918,7 +918,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r){
 		
 	QString s;
 	s=tr("Students set not available");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students").arg(this->students);s+=", ";
 
 	s+=tr("NA at:", "Not available at");
@@ -942,7 +942,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r){
 QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set is not available");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
@@ -1147,7 +1147,7 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -1221,7 +1221,7 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r){
 
 	QString s;
 	s+=tr("Activities same starting time");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
@@ -1237,7 +1237,7 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
 	
 	s=tr("Time constraint");s+="\n";
 	s+=tr("Activities must have the same starting time");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity").arg(this->activitiesId[i]).arg(getActivityDetailedDescription(r, this->activitiesId[i]));
@@ -1445,7 +1445,7 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -1519,7 +1519,7 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Activities not overlapping");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
@@ -1533,7 +1533,7 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r){
 QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities must not overlap");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
@@ -1781,7 +1781,7 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -1857,7 +1857,7 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Min days between activities");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
@@ -1871,7 +1871,7 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r){
 QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Minimum number of days between activities");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
@@ -2119,7 +2119,7 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -2194,7 +2194,7 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Max days between activities");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
@@ -2207,7 +2207,7 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r){
 QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Maximum number of days between activities");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
@@ -2446,7 +2446,7 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -2521,7 +2521,7 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Min gaps between activities");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
@@ -2534,7 +2534,7 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r){
 QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Minimum gaps between activities (if activities on the same day)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
@@ -2751,7 +2751,7 @@ QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teachers max hours daily"), s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -2762,7 +2762,7 @@ QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
@@ -2969,7 +2969,7 @@ QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teacher max hours daily");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("MH:%1", "Maximum hours (daily)").arg(this->maxHoursDaily);
 
@@ -2981,7 +2981,7 @@ QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
@@ -3184,7 +3184,7 @@ QString ConstraintTeachersMaxHoursContinuously::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teachers max hours continuously");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MH:%1", "Maximum hours (continuously)").arg(this->maxHoursContinuously);
 
 	return begin+s+end;
@@ -3195,7 +3195,7 @@ QString ConstraintTeachersMaxHoursContinuously::getDetailedDescription(Rules& r)
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of hours continuously");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
@@ -3411,7 +3411,7 @@ QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teacher max hours continuously");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("MH:%1", "Maximum hours continuously").arg(this->maxHoursContinuously);
 
@@ -3423,7 +3423,7 @@ QString ConstraintTeacherMaxHoursContinuously::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of hours continuously");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
@@ -3656,7 +3656,7 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDescription(Rules&
 		
 	QString s;
 	s+=tr("Teachers for activity tag %1 have max %2 hours continuously").arg(this->activityTagName).arg(this->maxHoursContinuously);s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -3666,7 +3666,7 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDetailedDescriptio
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the maximum number of hours continuously");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName); s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously); s+="\n";
 
@@ -3924,7 +3924,7 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDescription(Rules& 
 		
 	QString s;
 	s+=tr("Teacher %1 for activity tag %2 has max %3 hours continuously").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursContinuously);s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -3934,7 +3934,7 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDetailedDescription
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher for an activity tag must respect the maximum number of hours continuously");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously); s+="\n";
@@ -4171,7 +4171,7 @@ QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s=tr("Teacher max days per week");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("MD:%1", "Max days (per week)").arg(this->maxDaysPerWeek);
 
@@ -4183,7 +4183,7 @@ QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the maximum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
@@ -4406,7 +4406,7 @@ QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s=tr("Teachers max days per week");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MD:%1", "Max days (per week)").arg(this->maxDaysPerWeek);
 
 	return begin+s+end;
@@ -4417,7 +4417,7 @@ QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
@@ -4650,7 +4650,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teachers max gaps per week");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per week)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -4663,7 +4663,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("All teachers must respect the maximum number of gaps per week");s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
@@ -4857,7 +4857,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teacher max gaps per week");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
 	s+=tr("MG:%1", "Max gaps (per week").arg(this->maxGaps);
 
@@ -4870,7 +4870,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per week"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
 	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps); s+="\n";
 
@@ -5062,7 +5062,7 @@ QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teachers max gaps per day");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -5074,7 +5074,7 @@ QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the maximum gaps per day");s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum gaps per day=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
@@ -5268,7 +5268,7 @@ QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teacher max gaps per day");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);
 
@@ -5281,7 +5281,7 @@ QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint"); s+="\n";
 	s+=tr("A teacher must respect the maximum number of gaps per day"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
 	s+=tr("Maximum gaps per day=%1").arg(this->maxGaps); s+="\n";
 
@@ -5474,7 +5474,7 @@ QString ConstraintBreakTimes::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Break times");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 
 	s+=tr("B at:", "Break at");
 	s+=" ";
@@ -5497,7 +5497,7 @@ QString ConstraintBreakTimes::getDescription(Rules& r){
 QString ConstraintBreakTimes::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Break times");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Break at:"); s+="\n";
 	assert(days.count()==hours.count());
@@ -5533,14 +5533,14 @@ bool ConstraintBreakTimes::computeInternalStructure(QWidget* parent, Rules& r)
 	assert(days.count()==hours.count());
 	for(int k=0; k<days.count(); k++){
 		if(this->days.at(k) >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint break times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
 		if(this->hours.at(k) >= r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint break times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -5751,7 +5751,7 @@ QString ConstraintStudentsMaxGapsPerWeek::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Students max gaps per week");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per week)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -5764,7 +5764,7 @@ QString ConstraintStudentsMaxGapsPerWeek::getDetailedDescription(Rules& r)
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per week");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps);s+="\n";
 	
 	if(!active){
@@ -5927,7 +5927,7 @@ bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(QWidget* pare
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max gaps per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -6010,7 +6010,7 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Students set max gaps per week"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
 	s+=tr("MG:%1", "Max gaps (per week)").arg(this->maxGaps);s+=", ";
 	s+=tr("St:%1", "Students").arg(this->students);
 
@@ -6223,7 +6223,7 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& 
 	s+=tr("Students must arrive early, respecting maximum %1 arrivals at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -6236,7 +6236,7 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDetailedDescription
 	s+=tr("All students must begin their courses early, respecting maximum %1 later arrivals, at second hour")
 	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
@@ -6428,7 +6428,7 @@ bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructu
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set early is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -6514,7 +6514,7 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDescription(Rule
 
 	s+=tr("Students set must arrive early, respecting maximum %1 arrivals at second hour")
 	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students set").arg(this->students);
 
 	return begin+s+end;
@@ -6528,7 +6528,7 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDetailedDescript
 
 	s+=tr("A students set must begin its courses early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students); s+="\n";
 	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
@@ -6756,7 +6756,7 @@ QString ConstraintStudentsMaxHoursDaily::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Students max hours daily");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
 	return begin+s+end;
@@ -6768,7 +6768,7 @@ QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r)
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
@@ -6951,7 +6951,7 @@ QString ConstraintStudentsSetMaxHoursDaily::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Students set max hours daily");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students (set)").arg(this->students); s+=", ";
 	s+=tr("MH:%1", "Max hours (daily)").arg(this->maxHoursDaily);
 
@@ -6964,7 +6964,7 @@ QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
@@ -6985,7 +6985,7 @@ bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(QWidget* paren
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -7211,7 +7211,7 @@ QString ConstraintStudentsMaxHoursContinuously::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Students max hours continuously");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MH:%1", "Max hours (continuously)").arg(this->maxHoursContinuously);
 
 	return begin+s+end;
@@ -7223,7 +7223,7 @@ QString ConstraintStudentsMaxHoursContinuously::getDetailedDescription(Rules& r)
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students must respect the maximum number of hours continuously");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
@@ -7431,7 +7431,7 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDescription(Rules& r)
 		
 	QString s;
 	s+=tr("Students set max hours continuously");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
 	s+=tr("MH:%1", "Max hours (continuously)").arg(this->maxHoursContinuously);
 
@@ -7444,7 +7444,7 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDetailedDescription(Rules&
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set must respect the maximum number of hours continuously");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
@@ -7465,7 +7465,7 @@ bool ConstraintStudentsSetMaxHoursContinuously::computeInternalStructure(QWidget
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours continuously is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -7738,7 +7738,7 @@ QString ConstraintStudentsActivityTagMaxHoursContinuously::getDescription(Rules&
 	QString s;
 	s+=tr("Students for activity tag %1 have max %2 hours continuously")
 		.arg(this->activityTagName).arg(this->maxHoursContinuously); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -7749,7 +7749,7 @@ QString ConstraintStudentsActivityTagMaxHoursContinuously::getDetailedDescriptio
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students, for an activity tag, must respect the maximum number of hours continuously"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
@@ -7983,7 +7983,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDescription(Rul
 	QString s;
 	s+=tr("Students set %1 for activity tag %2 has max %3 hours continuously").arg(this->students).arg(this->activityTagName).arg(this->maxHoursContinuously);
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -7994,7 +7994,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDetailedDescrip
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the maximum number of hours continuously"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
@@ -8019,7 +8019,7 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStruct
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours continuously is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -8320,7 +8320,7 @@ QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
 	if(this->allowEmptyDays)
 		s+="! ";
 	s+=tr("Students min hours daily");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
@@ -8337,7 +8337,7 @@ QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	s+=tr("All students must respect the minimum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily);s+="\n";
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
@@ -8539,7 +8539,7 @@ QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
 	if(this->allowEmptyDays)
 		s+="! ";
 	s+=tr("Students set min hours daily");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
 	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
@@ -8557,7 +8557,7 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	s+=tr("A students set must respect the minimum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily);s+="\n";
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
@@ -8579,7 +8579,7 @@ bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(QWidget* paren
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -8796,27 +8796,27 @@ bool ConstraintActivityPreferredStartingTime::computeInternalStructure(QWidget* 
 	
 	if(i==r.nInternalActivities){
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	if(this->day >= r.nDaysPerWeek){
-		QMessageBox::information(parent, tr("FET information"),
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 		 tr("Constraint activity preferred time is wrong because it refers to removed day. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
 	}
 	if(this->hour == r.nHoursPerDay){
-		QMessageBox::information(parent, tr("FET information"),
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 		 tr("Constraint activity preferred time is wrong because preferred hour is too late (after the last acceptable slot). Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
 	}
 	if(this->hour > r.nHoursPerDay){
-		QMessageBox::information(parent, tr("FET information"),
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 		 tr("Constraint activity preferred time is wrong because it refers to removed hour. Please correct"
 		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -8872,7 +8872,7 @@ QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 
 	s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 	s+=", ";
 	s+=tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
 
@@ -8894,7 +8894,7 @@ QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r
 	s+=tr("Hour=%1").arg(r.hoursOfTheDay[this->hour]);
 	s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	if(this->permanentlyLocked){
 		s+=tr("This activity is permanently locked, which means you cannot unlock it from the 'Timetable' menu"
 		" (you can unlock this activity by removing the constraint from the constraints dialog or by setting the 'permanently"
@@ -9055,7 +9055,7 @@ bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* par
 	}
 
 	if(i==r.nInternalActivities){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -9063,21 +9063,21 @@ bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* par
 
 	for(int k=0; k<p_nPreferredTimeSlots_L; k++){
 		if(this->p_days_L[k] >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
 		if(this->p_hours_L[k] == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->p_hours_L[k] > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -9085,7 +9085,7 @@ bool ConstraintActivityPreferredTimeSlots::computeInternalStructure(QWidget* par
 		}
 
 		if(this->p_hours_L[k]<0 || this->p_days_L[k]<0){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred time slots is wrong because it has hour or day not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -9155,7 +9155,7 @@ QString ConstraintActivityPreferredTimeSlots::getDescription(Rules& r)
 	}
 	s+=", ";
 
-	s+=tr("WP:%1", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -9183,7 +9183,7 @@ QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r)
 	}
 	s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
@@ -9415,28 +9415,28 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(QWidget* p
 	//////////////////////	
 	for(int k=0; k<p_nPreferredTimeSlots_L; k++){
 		if(this->p_days_L[k] >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->p_hours_L[k] == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->p_hours_L[k] > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->p_hours_L[k]<0 || this->p_days_L[k]<0){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -9448,7 +9448,7 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(QWidget* p
 	if(this->p_nActivities>0)
 		return true;
 	else{
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -9579,7 +9579,7 @@ QString ConstraintActivitiesPreferredTimeSlots::getDescription(Rules& r)
 	}
 	s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -9894,28 +9894,28 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(QWidget
 	//////////////////////	
 	for(int k=0; k<p_nPreferredTimeSlots_L; k++){
 		if(this->p_days_L[k] >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->p_hours_L[k] == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->p_hours_L[k] > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->p_hours_L[k]<0 || this->p_days_L[k]<0){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -9927,7 +9927,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(QWidget
 	if(this->p_nActivities>0)
 		return true;
 	else{
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -10063,7 +10063,7 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getDescription(Rules& r)
 	}
 	s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -10343,28 +10343,28 @@ bool ConstraintActivityPreferredStartingTimes::computeInternalStructure(QWidget*
 	}
 
 	if(i==r.nInternalActivities){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct it (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	for(int k=0; k<nPreferredStartingTimes_L; k++){
 		if(this->days_L[k] >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred starting times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
 		if(this->hours_L[k] == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->hours_L[k] > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activity preferred starting times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -10434,7 +10434,7 @@ QString ConstraintActivityPreferredStartingTimes::getDescription(Rules& r)
 	}
 	s+=", ";
 
-	s+=tr("WP:%1", "Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -10462,7 +10462,7 @@ QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& 
 	}
 	s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
@@ -10689,21 +10689,21 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(QWidge
 	//////////////////////	
 	for(int k=0; k<nPreferredStartingTimes_L; k++){
 		if(this->days_L[k] >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred starting times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->hours_L[k] == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->hours_L[k] > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities preferred starting times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -10715,7 +10715,7 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(QWidge
 	if(this->nActivities>0)
 		return true;
 	else{
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -10845,7 +10845,7 @@ QString ConstraintActivitiesPreferredStartingTimes::getDescription(Rules& r)
 	}
 	s+=", ";
 	
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -11155,21 +11155,21 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(QWi
 	//////////////////////	
 	for(int k=0; k<nPreferredStartingTimes_L; k++){
 		if(this->days_L[k] >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred starting times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->hours_L[k] == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred starting times is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->hours_L[k] > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint subactivities preferred starting times is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -11181,7 +11181,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(QWi
 	if(this->nActivities>0)
 		return true;
 	else{
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -11316,7 +11316,7 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getDescription(Rules& r)
 	}
 	s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -11597,7 +11597,7 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(QWidget* par
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -11671,7 +11671,7 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Activities same starting hour");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
@@ -11687,7 +11687,7 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
 	
 	s=tr("Time constraint");s+="\n";
 	s+=tr("Activities must have the same starting hour");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
@@ -11895,7 +11895,7 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 	this->_n_activities=this->_activities.count();
 	
 	if(this->_n_activities<=1){
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
@@ -11969,7 +11969,7 @@ QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Activities same starting day");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
@@ -11985,7 +11985,7 @@ QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r){
 	
 	s=tr("Time constraint");s+="\n";
 	s+=tr("Activities must have the same starting day");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
@@ -12176,7 +12176,7 @@ bool ConstraintTwoActivitiesConsecutive::computeInternalStructure(QWidget* paren
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12193,7 +12193,7 @@ bool ConstraintTwoActivitiesConsecutive::computeInternalStructure(QWidget* paren
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12202,7 +12202,7 @@ bool ConstraintTwoActivitiesConsecutive::computeInternalStructure(QWidget* paren
 	
 	if(firstActivityIndex==secondActivityIndex){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12255,7 +12255,7 @@ QString ConstraintTwoActivitiesConsecutive::getDescription(Rules& r)
 	s+=", ";
 	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -12266,7 +12266,7 @@ QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r)
 	s+=tr("Constraint two activities consecutive (second activity must be placed immediately after the first"
 	 " activity, in the same day, possibly separated by breaks)"); s+="\n";
 	
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
 		.arg(this->firstActivityId)
@@ -12445,7 +12445,7 @@ bool ConstraintTwoActivitiesGrouped::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12462,7 +12462,7 @@ bool ConstraintTwoActivitiesGrouped::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12471,7 +12471,7 @@ bool ConstraintTwoActivitiesGrouped::computeInternalStructure(QWidget* parent, R
 	
 	if(firstActivityIndex==secondActivityIndex){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12524,7 +12524,7 @@ QString ConstraintTwoActivitiesGrouped::getDescription(Rules& r)
 	s+=", ";
 	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -12535,7 +12535,7 @@ QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r)
 	s+=tr("Constraint two activities grouped (the activities must be placed in the same day, "
 	 "one immediately following the other, in any order, possibly separated by breaks)"); s+="\n";
 	
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
 		.arg(this->firstActivityId)
@@ -12728,7 +12728,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12745,7 +12745,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12762,7 +12762,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12771,7 +12771,7 @@ bool ConstraintThreeActivitiesGrouped::computeInternalStructure(QWidget* parent,
 	
 	if(firstActivityIndex==secondActivityIndex || firstActivityIndex==thirdActivityIndex || secondActivityIndex==thirdActivityIndex){
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -12829,7 +12829,7 @@ QString ConstraintThreeActivitiesGrouped::getDescription(Rules& r)
 	s+=", ";
 	s+=tr("third act. id: %1", "act.=activity").arg(this->thirdActivityId);
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -12840,7 +12840,7 @@ QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r)
 	s+=tr("Constraint three activities grouped (the activities must be placed in the same day, "
 	 "one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)"); s+="\n";
 	
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
 		.arg(this->firstActivityId)
@@ -13090,7 +13090,7 @@ bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13107,7 +13107,7 @@ bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, R
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13116,7 +13116,7 @@ bool ConstraintTwoActivitiesOrdered::computeInternalStructure(QWidget* parent, R
 	
 	if(firstActivityIndex==secondActivityIndex){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13169,7 +13169,7 @@ QString ConstraintTwoActivitiesOrdered::getDescription(Rules& r)
 	s+=", ";
 	s+=tr("second act. id: %1", "act.=activity").arg(this->secondActivityId);
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -13180,7 +13180,7 @@ QString ConstraintTwoActivitiesOrdered::getDetailedDescription(Rules& r)
 	s+=tr("Constraint two activities ordered (second activity must be placed at any time in the week after the first"
 	 " activity)"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("First activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
 		.arg(this->firstActivityId)
@@ -13344,7 +13344,7 @@ bool ConstraintActivityEndsStudentsDay::computeInternalStructure(QWidget* parent
 	
 	if(i==r.nInternalActivities){	
 		//assert(0);
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (because it refers to invalid activity id. Please correct (maybe removing it is a solution)):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -13390,7 +13390,7 @@ QString ConstraintActivityEndsStudentsDay::getDescription(Rules& r)
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -13399,7 +13399,7 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
 {
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activity must end students' day");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
 		.arg(this->activityId)
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
@@ -13559,7 +13559,7 @@ bool ConstraintTeachersMinHoursDaily::computeInternalStructure(QWidget* parent, 
 			" so that it allows empty days. If you need a facility like that, please use constraint teachers min days per week");
 		s+="\n\n";
 		s+=tr("Constraint is:")+"\n"+this->getDetailedDescription(r);
-		QMessageBox::warning(parent, tr("FET warning"), s);
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"), s);
 		
 		return false;
 	}
@@ -13602,7 +13602,7 @@ QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teachers min hours daily");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("mH:%1", "Min hours (daily)").arg(this->minHoursDaily);s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
 
@@ -13614,7 +13614,7 @@ QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of hours daily"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily);s+="\n";
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
@@ -13798,7 +13798,7 @@ bool ConstraintTeacherMinHoursDaily::computeInternalStructure(QWidget* parent, R
 			" so that it allows empty days. If you need a facility like that, please use constraint teacher min days per week");
 		s+="\n\n";
 		s+=tr("Constraint is:")+"\n"+this->getDetailedDescription(r);
-		QMessageBox::warning(parent, tr("FET warning"), s);
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"), s);
 		
 		return false;
 	}
@@ -13842,7 +13842,7 @@ QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teacher min hours daily");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("mH:%1", "Minimum hours (daily)").arg(this->minHoursDaily);s+=", ";
 	s+=tr("AED:%1", "Allow empty days").arg(yesNoTranslated(this->allowEmptyDays));
@@ -13855,7 +13855,7 @@ QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Minimum hours daily=%1").arg(this->minHoursDaily);s+="\n";
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
@@ -14066,7 +14066,7 @@ QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teacher min days per week");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
 	s+=tr("mD:%1", "Minimum days per week").arg(this->minDaysPerWeek);
 
@@ -14078,7 +14078,7 @@ QString ConstraintTeacherMinDaysPerWeek::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher must respect the minimum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Minimum days per week=%1").arg(this->minDaysPerWeek);s+="\n";
 
@@ -14266,7 +14266,7 @@ QString ConstraintTeachersMinDaysPerWeek::getDescription(Rules& r){
 		
 	QString s;
 	s+=tr("Teachers min days per week");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("mD:%1", "Minimum days per week").arg(this->minDaysPerWeek);
 
 	return begin+s+end;
@@ -14277,7 +14277,7 @@ QString ConstraintTeachersMinDaysPerWeek::getDetailedDescription(Rules& r){
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers must respect the minimum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Minimum days per week=%1").arg(this->minDaysPerWeek);s+="\n";
 
 	if(!active){
@@ -14436,21 +14436,21 @@ bool ConstraintTeacherIntervalMaxDaysPerWeek::computeInternalStructure(QWidget* 
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	assert(this->teacher_ID>=0);
 	if(this->startHour>=this->endHour){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour >= end hour."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->startHour<0){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->endHour>r.nHoursPerDay){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because end hour > number of hours per day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
@@ -14499,7 +14499,7 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s=tr("Teacher interval max days per week");s+=", ";
-	s+=tr("WP:%1\%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("T:%1", "Abbreviation for teacher").arg(this->teacherName);s+=", ";
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);s+=", ";
 	if(this->endHour<r.nHoursPerDay)
@@ -14517,7 +14517,7 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher respects working in an hourly interval a maximum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Interval start hour=%1").arg(r.hoursOfTheDay[this->startHour]);s+="\n";
 
@@ -14689,21 +14689,21 @@ ConstraintTeachersIntervalMaxDaysPerWeek::ConstraintTeachersIntervalMaxDaysPerWe
 bool ConstraintTeachersIntervalMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	if(this->startHour>=this->endHour){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour >= end hour."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->startHour<0){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->endHour>r.nHoursPerDay){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because end hour > number of hours per day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
@@ -14751,7 +14751,7 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s=tr("Teachers interval max days per week");s+=", ";
-	s+=tr("WP:%1\%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
 	s+=", ";
 	if(this->endHour<r.nHoursPerDay)
@@ -14769,7 +14769,7 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDetailedDescription(Rules& 
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All teachers respect working in an hourly interval a maximum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Interval start hour=%1").arg(r.hoursOfTheDay[this->startHour]);s+="\n";
 
 	if(this->endHour<r.nHoursPerDay)
@@ -14940,21 +14940,21 @@ ConstraintStudentsSetIntervalMaxDaysPerWeek::ConstraintStudentsSetIntervalMaxDay
 bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	if(this->startHour>=this->endHour){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour >= end hour."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->startHour<0){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->endHour>r.nHoursPerDay){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because end hour > number of hours per day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
@@ -14965,7 +14965,7 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidg
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set interval max days per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -15056,7 +15056,7 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s=tr("Students set interval max days per week");s+=", ";
-	s+=tr("WP:%1\%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("St:%1", "Abbreviation for students (sets)").arg(this->students);s+=", ";
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
 	s+=", ";
@@ -15075,7 +15075,7 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDetailedDescription(Rule
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set respects working in an hourly interval a maximum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
 	s+=tr("Interval start hour=%1").arg(r.hoursOfTheDay[this->startHour]);s+="\n";
 
@@ -15244,21 +15244,21 @@ ConstraintStudentsIntervalMaxDaysPerWeek::ConstraintStudentsIntervalMaxDaysPerWe
 bool ConstraintStudentsIntervalMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	if(this->startHour>=this->endHour){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour >= end hour."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->startHour<0){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because start hour < first hour or the day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
 	}
 	if(this->endHour>r.nHoursPerDay){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher interval max days per week is wrong because end hour > number of hours per day."
 		 " Please correct it. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
@@ -15307,7 +15307,7 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDescription(Rules& r){
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString s=tr("Students interval max days per week");s+=", ";
-	s+=tr("WP:%1\%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Abbreviation for weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("ISH:%1", "Abbreviation for interval start hour").arg(r.hoursOfTheDay[this->startHour]);
 	s+=", ";
 	if(this->endHour<r.nHoursPerDay)
@@ -15325,7 +15325,7 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDetailedDescription(Rules& 
 
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("All students respect working in an hourly interval a maximum number of days per week");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Interval start hour=%1").arg(r.hoursOfTheDay[this->startHour]);s+="\n";
 
 	if(this->endHour<r.nHoursPerDay)
@@ -15540,7 +15540,7 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(QWidget* paren
 	if(this->nActivities>0)
 		return true;
 	else{
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -15607,7 +15607,7 @@ QString ConstraintActivitiesEndStudentsDay::getDescription(Rules& r)
 
 	s+=", ";
 
-	s+=tr("WP:%1\%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -15877,7 +15877,7 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r){
 	QString s;
 	s+="! ";
 	s+=tr("Teachers for activity tag %1 have max %2 hours daily").arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -15888,7 +15888,7 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All teachers, for an activity tag, must respect the maximum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName); s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily); s+="\n";
 
@@ -16115,7 +16115,7 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r){
 	QString s;
 	s+="! ";
 	s+=tr("Teacher %1 for activity tag %2 has max %3 hours daily").arg(this->teacherName).arg(this->activityTagName).arg(this->maxHoursDaily);s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -16126,7 +16126,7 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules&
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A teacher for an activity tag must respect the maximum number of hours daily");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily); s+="\n";
@@ -16357,7 +16357,7 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDescription(Rules& r)
 	s+="! ";
 	s+=tr("Students for activity tag %1 have max %2 hours daily")
 		.arg(this->activityTagName).arg(this->maxHoursDaily); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -16369,7 +16369,7 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDetailedDescription(Rules
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students, for an activity tag, must respect the maximum number of hours daily"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
@@ -16571,7 +16571,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDescription(Rules& r)
 	s+="! ";
 	s+=tr("Students set %1 for activity tag %2 has max %3 hours daily").arg(this->students).arg(this->activityTagName).arg(this->maxHoursDaily);
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 
 	return begin+s+end;
 }
@@ -16583,7 +16583,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDetailedDescription(Ru
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set, for an activity tag, must respect the maximum number of hours daily"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Students set=%1").arg(this->students);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
@@ -16608,7 +16608,7 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWi
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 	
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -16864,7 +16864,7 @@ QString ConstraintStudentsMaxGapsPerDay::getDescription(Rules& r)
 	QString s;
 	s+="! ";
 	s+=tr("Students max gaps per day");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);
 
 	return begin+s+end;
@@ -16878,7 +16878,7 @@ QString ConstraintStudentsMaxGapsPerDay::getDetailedDescription(Rules& r)
 	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("All students must respect the maximum number of gaps per day");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum gaps per day=%1").arg(this->maxGaps);s+="\n";
 
 	if(!active){
@@ -17043,7 +17043,7 @@ bool ConstraintStudentsSetMaxGapsPerDay::computeInternalStructure(QWidget* paren
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
 
 	if(ss==NULL){
-		QMessageBox::warning(parent, tr("FET warning"),
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max gaps per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -17127,7 +17127,7 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r){
 	QString s;
 	s+="! ";
 	s+=tr("Students set max gaps per day"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage)); s+=", ";
 	s+=tr("MG:%1", "Max gaps (per day)").arg(this->maxGaps);s+=", ";
 	s+=tr("St:%1", "Students").arg(this->students);
 
@@ -17325,28 +17325,28 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::computeInternalStructu
 	
 	for(int k=0; k<this->selectedDays.count(); k++){
 		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->selectedHours.at(k) == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->selectedHours.at(k) > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities occupy max time slots from selection is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -17358,7 +17358,7 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::computeInternalStructu
 	if(this->_activitiesIndices.count()>0)
 		return true;
 	else{
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -17683,28 +17683,28 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::computeInternalStru
 	
 	for(int k=0; k<this->selectedDays.count(); k++){
 		if(this->selectedDays.at(k) >= r.nDaysPerWeek){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->selectedHours.at(k) == r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because a preferred hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->selectedHours.at(k) > r.nHoursPerDay){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because it refers to removed hour. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}
 		if(this->selectedDays.at(k)<0 || this->selectedHours.at(k)<0){
-			QMessageBox::information(parent, tr("FET information"),
+			TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
 			 tr("Constraint activities max simultaneous in selected time slots is wrong because hour or day is not specified for a slot (-1). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -17716,7 +17716,7 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::computeInternalStru
 	if(this->_activitiesIndices.count()>0)
 		return true;
 	else{
-		QMessageBox::warning(parent, tr("FET error in data"), 
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}

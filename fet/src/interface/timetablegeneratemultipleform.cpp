@@ -190,11 +190,11 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	
 	simulation_running_multi=false;
 
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	closePushButton->setEnabled(TRUE);
-	minutesGroupBox->setEnabled(TRUE);
-	timetablesGroupBox->setEnabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	closePushButton->setEnabled(true);
+	minutesGroupBox->setEnabled(true);
+	timetablesGroupBox->setEnabled(true);
 
 	connect(&generateMultipleThread, SIGNAL(timetableGenerated(int, const QString&, bool)),
 		this, SLOT(timetableGenerated(int, const QString&, bool)));
@@ -296,11 +296,11 @@ void TimetableGenerateMultipleForm::start(){
 		return;
 	}
 
-	startPushButton->setDisabled(TRUE);
-	stopPushButton->setEnabled(TRUE);
-	minutesGroupBox->setDisabled(TRUE);
-	timetablesGroupBox->setDisabled(TRUE);
-	closePushButton->setDisabled(TRUE);
+	startPushButton->setDisabled(true);
+	stopPushButton->setEnabled(true);
+	minutesGroupBox->setDisabled(true);
+	timetablesGroupBox->setDisabled(true);
+	closePushButton->setDisabled(true);
 
 	simulation_running_multi=true;
 
@@ -390,11 +390,11 @@ void TimetableGenerateMultipleForm::stop()
 	
 	QMessageBox::information(this, tr("FET information"), s);
 
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	minutesGroupBox->setEnabled(TRUE);
-	timetablesGroupBox->setEnabled(TRUE);
-	closePushButton->setEnabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	minutesGroupBox->setEnabled(true);
+	timetablesGroupBox->setEnabled(true);
+	closePushButton->setEnabled(true);
 }
 
 void TimetableGenerateMultipleForm::finished()
@@ -433,11 +433,11 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	ms+=TimetableGenerateMultipleForm::tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s);
 	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
 	
-	startPushButton->setEnabled(TRUE);
-	stopPushButton->setDisabled(TRUE);
-	minutesGroupBox->setEnabled(TRUE);
-	timetablesGroupBox->setEnabled(TRUE);
-	closePushButton->setEnabled(TRUE);
+	startPushButton->setEnabled(true);
+	stopPushButton->setDisabled(true);
+	minutesGroupBox->setEnabled(true);
+	timetablesGroupBox->setEnabled(true);
+	closePushButton->setEnabled(true);
 }
 
 void TimetableGenerateMultipleForm::activityPlaced(int na)

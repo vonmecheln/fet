@@ -19,6 +19,7 @@ SOURCES += \
 	engine/generate.cpp \
 	engine/statisticsexport.cpp \
 	engine/lockunlock.cpp \
+	engine/messageboxes.cpp \
 	\
 	interface/fet.cpp \
 	interface/helpaboutform.cpp \
@@ -435,6 +436,7 @@ HEADERS += \
 	engine/statisticsexport.h \
 	engine/lockunlock.h \
 	engine/matrix.h \
+	engine/messageboxes.h \
 	\
 	interface/fet.h \
 	interface/helpaboutform.h \
@@ -1247,13 +1249,18 @@ TEMPLATE = app
 CONFIG += release warn_on thread
 QT += xml network
 
+greaterThan(QT_MAJOR_VERSION, 4){
+	QT += widgets
+	!isEmpty(QT.printsupport.name): QT += printsupport
+}
+
 DESTDIR = ..
 TARGET = fet
 
-OBJECTS_DIR = ../tmp
-UI_DIR = ../tmp
-MOC_DIR = ../tmp
-RCC_DIR = ../tmp
+OBJECTS_DIR = ../tmp/gui
+UI_DIR = ../tmp/gui
+MOC_DIR = ../tmp/gui
+RCC_DIR = ../tmp/gui
 
 INCLUDEPATH += engine interface
 DEPENDPATH += engine interface
