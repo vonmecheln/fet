@@ -326,7 +326,8 @@ TRANSLATIONS += ../../translations/fet_ro.ts \
                 ../../translations/fet_nl.ts \
                 ../../translations/fet_de.ts \
                 ../../translations/fet_mk.ts \
-                ../../translations/fet_hu.ts 
+                ../../translations/fet_hu.ts \
+				../../translations/fet_es.ts
 FORMS+=  fetmainform_template.ui \
 	helpaboutform_template.ui \
 	teachersstatisticsform_template.ui \

@@ -121,6 +121,7 @@ public slots:
 	void on_languageGermanAction_activated();
 	void on_languageHungarianAction_activated();
 	void on_languageMacedonianAction_activated();
+	void on_languageSpanishAction_activated();
 	
 	void on_checkForUpdatesAction_toggled();
 	

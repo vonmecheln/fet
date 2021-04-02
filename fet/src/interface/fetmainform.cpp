@@ -150,6 +150,7 @@ FetMainForm::FetMainForm()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 	if(FET_LANGUAGE=="en_GB")
 		languageMenu->setItemChecked(languageMenu->idAt(0), true);
 	else if(FET_LANGUAGE=="fr")
@@ -172,6 +173,8 @@ FetMainForm::FetMainForm()
 		languageMenu->setItemChecked(languageMenu->idAt(9), true);
 	else if(FET_LANGUAGE=="mk")
 		languageMenu->setItemChecked(languageMenu->idAt(10), true);
+	else if(FET_LANGUAGE=="es")
+		languageMenu->setItemChecked(languageMenu->idAt(11), true);
 
 	//new data
 	if(gt.rules.initialized)
@@ -1118,6 +1121,7 @@ void FetMainForm::on_languageEnglishAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageFrenchAction_activated()
@@ -1138,6 +1142,7 @@ void FetMainForm::on_languageFrenchAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageCatalanAction_activated()
@@ -1158,6 +1163,7 @@ void FetMainForm::on_languageCatalanAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageRomanianAction_activated()
@@ -1178,6 +1184,7 @@ void FetMainForm::on_languageRomanianAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageMalayAction_activated()
@@ -1198,6 +1205,7 @@ void FetMainForm::on_languageMalayAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languagePolishAction_activated()
@@ -1218,6 +1226,7 @@ void FetMainForm::on_languagePolishAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageTurkishAction_activated()
@@ -1238,6 +1247,7 @@ void FetMainForm::on_languageTurkishAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageDutchAction_activated()
@@ -1258,6 +1268,7 @@ void FetMainForm::on_languageDutchAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageGermanAction_activated()
@@ -1278,6 +1289,7 @@ void FetMainForm::on_languageGermanAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), true);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageHungarianAction_activated()
@@ -1298,6 +1310,7 @@ void FetMainForm::on_languageHungarianAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), true);
 	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
 void FetMainForm::on_languageMacedonianAction_activated()
@@ -1318,5 +1331,26 @@ void FetMainForm::on_languageMacedonianAction_activated()
 	languageMenu->setItemChecked(languageMenu->idAt(8), false);
 	languageMenu->setItemChecked(languageMenu->idAt(9), false);
 	languageMenu->setItemChecked(languageMenu->idAt(10), true);
+	languageMenu->setItemChecked(languageMenu->idAt(11), false);
 }
 
+void FetMainForm::on_languageSpanishAction_activated()
+{
+	QMessageBox::information(this, QObject::tr("FET information"), 
+	 QObject::tr("Please exit and restart FET to activate language change"));
+	
+	FET_LANGUAGE="es";
+	
+	languageMenu->setItemChecked(languageMenu->idAt(0), false);
+	languageMenu->setItemChecked(languageMenu->idAt(1), false);
+	languageMenu->setItemChecked(languageMenu->idAt(2), false);
+	languageMenu->setItemChecked(languageMenu->idAt(3), false);
+	languageMenu->setItemChecked(languageMenu->idAt(4), false);
+	languageMenu->setItemChecked(languageMenu->idAt(5), false);
+	languageMenu->setItemChecked(languageMenu->idAt(6), false);
+	languageMenu->setItemChecked(languageMenu->idAt(7), false);
+	languageMenu->setItemChecked(languageMenu->idAt(8), false);
+	languageMenu->setItemChecked(languageMenu->idAt(9), false);
+	languageMenu->setItemChecked(languageMenu->idAt(10), false);
+	languageMenu->setItemChecked(languageMenu->idAt(11), true);
+}

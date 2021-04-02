@@ -177,8 +177,8 @@
       <string>Language</string>
      </property>
      <addaction name="languageEnglishAction" />
-     <addaction name="languageCatalanAction" />
      <addaction name="languageFrenchAction" />
+     <addaction name="languageCatalanAction" />
      <addaction name="languageRomanianAction" />
      <addaction name="languageMalayAction" />
      <addaction name="languagePolishAction" />
@@ -187,6 +187,7 @@
      <addaction name="languageGermanAction" />
      <addaction name="languageHungarianAction" />
      <addaction name="languageMacedonianAction" />
+     <addaction name="languageSpanishAction" />
     </widget>
     <addaction name="checkForUpdatesAction" />
     <addaction name="separator" />
@@ -767,7 +768,7 @@
     <bool>true</bool>
    </property>
    <property name="text" >
-    <string>&amp;mk (Macedonian)</string>
+    <string>m&amp;k (Macedonian)</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTeachersMaxGapsPerWeekAction" >
@@ -858,6 +859,14 @@
   <action name="dataTimeConstraintsActivityEndsStudentsDayAction" >
    <property name="text" >
     <string>Activity ends students day</string>
+   </property>
+  </action>
+  <action name="languageSpanishAction" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>e&amp;s (Spanish)</string>
    </property>
   </action>
  </widget>

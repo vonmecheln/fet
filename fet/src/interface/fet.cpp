@@ -201,6 +201,12 @@ int main(int argc, char **argv){
 		else
 			translator.load("fet_mk", "translations");
 	}
+	else if(FET_LANGUAGE=="es"){
+		if(d.exists())
+			translator.load("fet_es", "/usr/share/fet/translations");
+		else
+			translator.load("fet_es", "translations");
+	}
 	else{
 		assert(FET_LANGUAGE=="en_GB");
 	}
