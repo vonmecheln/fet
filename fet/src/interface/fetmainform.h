@@ -137,6 +137,8 @@ public slots:
 	void on_timetableShowConflictsAction_activated();
 	void on_timetableViewRoomsAction_activated();
 	void on_timetableGenerateMultipleAction_activated();
+
+	void on_timetableSaveTimetableAsAction_activated();
 	
 	void on_languageEnglishAction_activated();
 	void on_languageFrenchAction_activated();

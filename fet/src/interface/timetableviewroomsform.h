@@ -21,6 +21,8 @@
 #include "timetableviewroomsform_template.h"
 
 class TimetableViewRoomsForm : public TimetableViewRoomsForm_template  {
+	Q_OBJECT
+
 public:
 	TimetableViewRoomsForm();
 	~TimetableViewRoomsForm();

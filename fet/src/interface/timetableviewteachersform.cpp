@@ -213,6 +213,10 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 	int i=gt.rules.searchTeacher(teachername);
 
 	Solution* tc=&best_solution;
+	
+	bool report=true;
+	
+	int added=0, duplicates=0;
 
 	//lock selected activities
 	for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -229,13 +233,32 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 					if(lockTime){
 						ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
 						bool t=gt.rules.addTimeConstraint(ctr);
+						
 						if(t)
-							QMessageBox::information(this, QObject::tr("FET information"), 
-							 QObject::tr("Added the following constraint:\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+							added++;
+						else
+							duplicates++;
+
+						QString s;
+						
+						if(t)
+							s=tr("Added the following constraint:")+"\n"+ctr->getDetailedDescription(gt.rules);
 						else{
-							QMessageBox::warning(this, QObject::tr("FET information"), 
-							 QObject::tr("Constraint\n%1 NOT added - duplicate").arg(ctr->getDetailedDescription(gt.rules)));
+							s=tr("Constraint\n%1 NOT added - duplicate").arg(ctr->getDetailedDescription(gt.rules));
 							delete ctr;
+						}
+						
+						if(report){
+							int k;
+							if(t)
+								k=QMessageBox::information(this, tr("FET information"), s,
+							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+							else
+								k=QMessageBox::warning(this, tr("FET warning"), s,
+							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+																			 				 	
+		 					if(k==0)
+								report=false;
 						}
 					}
 					
@@ -243,17 +266,38 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 					if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && lockSpace){
 						ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name);
 						bool t=gt.rules.addSpaceConstraint(ctr);
+
+						QString s;
+						
 						if(t)
-							QMessageBox::information(this, QObject::tr("FET information"), 
-							 QObject::tr("Added the following constraint:\n"+ctr->getDetailedDescription(gt.rules)));
+							added++;
+						else
+							duplicates++;
+
+						if(t)
+							s=tr("Added the following constraint:")+"\n"+ctr->getDetailedDescription(gt.rules);
 						else{
-							QMessageBox::warning(this, QObject::tr("FET information"), 
-							 QObject::tr("Constraint\n%1 NOT added - duplicate").arg(ctr->getDetailedDescription(gt.rules)));
+							s=tr("Constraint\n%1 NOT added - duplicate").arg(ctr->getDetailedDescription(gt.rules));
 							delete ctr;
+						}
+						
+						if(report){
+							int k;
+							if(t)
+								k=QMessageBox::information(this, tr("FET information"), s,
+							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+							else
+								k=QMessageBox::warning(this, tr("FET warning"), s,
+							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+																			 				 	
+		 					if(k==0)
+								report=false;
 						}
 					}
 				}
 			}
 		}
 	}
+	
+	QMessageBox::information(this, tr("FET information"), tr("Added %1 locking constraints, ignored %2 duplicates").arg(added).arg(duplicates));
 }

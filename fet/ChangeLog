@@ -1166,4 +1166,9 @@ Versions 5.5.0 - 5.5.x
 	subject or same subject+activity tag) - suggested by Volker Dirr.
 	- Improved Romanian translation.
 	- Small improvements in the interface.
+- Version 5.5.2
+	- Small improvements in the interface.
+	- Updated German translation.
+	- Possibility to save current timetable in .fet form, with activities locked on their places
+	(suggested by Horatiu Halmajan)
 	

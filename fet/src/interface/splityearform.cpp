@@ -765,7 +765,7 @@ void SplitYearForm::help()
 	s+=SplitYearForm::tr("Please choose a number of categories and in each category the number of divisions. You can choose for instance"
 	 " 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls,"
 	 " and 3 divisions for the third: English, German and French."
-	 " You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions"
+	 " You can select 1, 2 or 3 categories, first with 2 to 12 divisions and the second and third ones each with 2 to 6 divisions."
 	 " If you need 4 categories, you may apply this trick: consider 9a a year, 9b another year, ..., and divide them by 3 categories (more details below)"
 	 ". For more values (very unlikely case) you will have to manually"
 	 " add the groups and subgroups");

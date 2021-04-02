@@ -3782,7 +3782,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 											s+="\n\n";
 											s+=QObject::tr("For more details, join the mailing list or email the author.");
 											int t=QMessageBox::information(NULL, QObject::tr("FET information"), s,
-											 QObject::tr("Skip rest of such warnings"), QObject::tr("See next such warning"), QString(),
+											 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 											 1, 0 );
 				 	
 											if(t==0)
@@ -3828,7 +3828,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 													s+="\n\n";
 													s+=QObject::tr("For more details, join the mailing list or email the author.");
 													int t=QMessageBox::information(NULL, QObject::tr("FET information"), s,
-													 QObject::tr("Skip rest of such warnings"), QObject::tr("See next such warning"), QString(),
+													 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 													 1, 0 );
 				 	
 													if(t==0)
@@ -4209,7 +4209,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint teacher not available times (a matrix)."),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportTeacherNotAvailableChange=false;
 					}
@@ -4460,7 +4460,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint students set not available times (a matrix)."),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportStudentsSetNotAvailableChange=false;
 					}
@@ -4890,7 +4890,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				 
 				 	int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint teachers max hours continuously - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -5095,7 +5095,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				 || elem3.tagName()=="ConstraintTeachersSubgroupsNoMoreThanXHoursDaily") && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint teachers subgroups max hours daily - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -5142,7 +5142,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="ConstraintStudentsNHoursDaily" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint students n hours daily - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -5192,7 +5192,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="ConstraintStudentsSetNHoursDaily" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint students set n hours daily - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -5541,7 +5541,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="ConstraintActivityEndsDay" && !skipDeprecatedConstraints ){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint activity ends day - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -5687,7 +5687,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint break times (a matrix)."),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportBreakChange=false;
 					}
@@ -6150,7 +6150,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						 " to the similar constraint of this type, constraint students max gaps per week,"
 						 " with max gaps=0. If you like, you can modify this constraint to allow"
 						 " more gaps per week (normally not accepted in schools)"),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportMaxGapsChange=false;
 					}
@@ -6199,7 +6199,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						 " to the similar constraint of this type, constraint students set max gaps per week,"
 						 " with max gaps=0. If you like, you can modify this constraint to allow"
 						 " more gaps per week (normally not accepted in schools)"),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportMaxGapsChange=false;
 					}
@@ -6340,7 +6340,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						 " to the similar constraint of this type, constraint students early max beginnings at second hour,"
 						 " with max beginnings=0. If you like, you can modify this constraint to allow"
 						 " more beginnings at second available hour (above 0 - this will make the timetable easier)"),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
  						if(t==0)
 							reportMaxBeginningsAtSecondHourChange=false;
 					}
@@ -6426,7 +6426,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						 " to the similar constraint of this type, constraint students set early max beginnings at second hour,"
 						 " with max beginnings=0. If you like, you can modify this constraint to allow"
 						 " more beginnings at second available hour (above 0 - this will make the timetable easier)"),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportMaxBeginningsAtSecondHourChange=false;
 					}
@@ -6512,7 +6512,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="ConstraintStudentsSetIntervalMaxDaysPerWeek" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint students set interval max days per week - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -6578,7 +6578,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="ConstraintTeacherIntervalMaxDaysPerWeek" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint teacher interval max days per week - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -6643,7 +6643,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="Constraint2ActivitiesOrdered" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint 2 activities ordered - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -6693,7 +6693,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="Constraint2ActivitiesGrouped" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint 2 activities grouped - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -6869,7 +6869,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="ConstraintTeachersSubjectTagsMaxHoursContinuously" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint teachers subject tags max hours continuously - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -6916,7 +6916,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				else if(elem3.tagName()=="ConstraintTeachersSubjectTagMaxHoursContinuously" && !skipDeprecatedConstraints){
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint teachers subject tag max hours continuously - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 													 
 					if(t==0)
@@ -7048,7 +7048,7 @@ corruptConstraintTime:
 						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
 						 QObject::tr("File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted"
 						 " to the similar constraint of this type, constraint room not available times (a matrix)."),
-						  QObject::tr("Skip rest of such information"), QObject::tr("See next improved constraint"), QString(), 1, 0 );
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
 						if(t==0)
 							reportRoomNotAvailableChange=false;
 					}
@@ -7353,7 +7353,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint room type not allowed subjects - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -7397,7 +7397,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint subject requires equipments - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -7441,7 +7441,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint subject tag requires equipments - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -7489,7 +7489,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint teacher requires room - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -7534,7 +7534,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint teacher subject require room - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -7582,7 +7582,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint minimize number of rooms for students - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -7618,7 +7618,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint minimize number of rooms for teachers - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -7771,7 +7771,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint activities same room - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -8211,7 +8211,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint max building changes per day for teachers - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -8251,7 +8251,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint max building changes per day for students - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -8291,7 +8291,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint max room changes per day for teachers - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -8331,7 +8331,7 @@ corruptConstraintTime:
 				
 					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 					 QObject::tr("File contains deprecated constraint max room changes per day for students - will be ignored\n"),
-					 QObject::tr("Skip rest of deprecated constraints"), QObject::tr("See next deprecated constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0);
 					 
 					if(t==0)
@@ -8671,7 +8671,7 @@ corruptConstraintSpace:
 	return true;
 }
 
-void Rules::write(const QString& filename)
+bool Rules::write(const QString& filename)
 {
 	assert(this->initialized);
 
@@ -8682,7 +8682,7 @@ void Rules::write(const QString& filename)
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 QObject::tr("Cannot open filename for writing ... please check your disk free space. Saving of file aborted"));
 		 
-		return;
+		return false;
 	
 		assert(0);
 		exit(1);
@@ -8793,7 +8793,11 @@ void Rules::write(const QString& filename)
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 QObject::tr("Saved file gave error code %1, which means saving is compromised. Please check your disk free space")
 		 .arg(file.error()));
+		 
+		return false;
 	}
+	
+	return true;
 }
 
 int Rules::activateTeacher(const QString& teacherName)

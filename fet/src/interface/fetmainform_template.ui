@@ -58,6 +58,8 @@
     <addaction name="timetableShowConflictsAction" />
     <addaction name="separator" />
     <addaction name="timetableGenerateMultipleAction" />
+    <addaction name="separator" />
+    <addaction name="timetableSaveTimetableAsAction" />
    </widget>
    <widget class="QMenu" name="menuStatistics" >
     <property name="title" >
@@ -1154,6 +1156,11 @@
   <action name="dataTimeConstraintsActivitiesSameStartingDayAction" >
    <property name="text" >
     <string>A set of activities has same starting day (any hours)</string>
+   </property>
+  </action>
+  <action name="timetableSaveTimetableAsAction" >
+   <property name="text" >
+    <string>Save data+timetable as...</string>
    </property>
   </action>
  </widget>

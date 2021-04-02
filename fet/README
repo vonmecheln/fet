@@ -141,7 +141,11 @@ Running FET:
 	Microsoft Windows:
 	Run the executable fet.exe
 	
-	NEW: Command line, no GUI, just run "fet inputfile.fet [timelimitseconds] [timetablehtmllevel (0..5)]".
+	NEW: Command line, no GUI, just run "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]",
+	where	x is the input file, for instance "inputfile.fet"
+			y is integer (seconds)
+			z is integer from 0 to 5 and represents the detaliation level for html timetables
+			t is one of en_GB, ar, ca, de, el, es, fr, hu, id, it, mk, ms, nl, pl, ro, tr
 
 	
 Documentation:

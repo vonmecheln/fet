@@ -229,7 +229,8 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 		  " not to obtain an impossible timetable (if your teachers/students are constrained on gaps"
 		  " or early gaps and if you leave a not allowed slot between 2 allowed slots or"
 		  " a not allowed slot early in the day and more allowed slots after it,"
-		  " this possible gap might be counted in teachers' and students' timetable)"),
+		  " this possible gap might be counted in teachers' and students' timetable)")
+		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)
@@ -245,7 +246,8 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 		  " If you need weight under 100%, then you can use this constraint, but be careful"
 		  " not to obtain an impossible timetable (if your teacher is constrained on gaps"
 		  " and if you leave a not allowed slot between 2 allowed slots, this possible"
-		  " gap might be counted in teacher's timetable)"),
+		  " gap might be counted in teacher's timetable)")
+		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)
@@ -261,7 +263,8 @@ void ModifyConstraintActivitiesPreferredTimesForm::ok()
 		  " If you need weight under 100%, then you can use this constraint, but be careful"
 		  " not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps"
 		  " and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible"
-		  " gap might be counted in students' timetable)"),
+		  " gap might be counted in students' timetable)")
+		  +"\n\n"+tr("Do you want to add current constraint?"),
 		 QMessageBox::Yes, QMessageBox::Cancel);
 						 
 		if(t==QMessageBox::Cancel)

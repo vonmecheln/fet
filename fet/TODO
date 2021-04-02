@@ -1,3 +1,43 @@
+From Volker Dirr
+
+>> we have:
+>>
+>> 1. category: 3-4 classes
+>> 2. category: 5 courses
+>> 3. category: 4 religions (always same time, so i didn't enter it)
+>> 4. category: several working groups (after noon lesson, so i add them
+>> manualy)
+>>
+>> know have a closer look:
+>> 4 classes * 5 courses * 4 religion is already 80 subgroubs.
+>> so if i also add working groups (lets say 5, but there are more!)
+>> then we have total 400 subgroups.
+>>
+>> that is stupid, because i have only around 100 students in a year!
+>>
+>> i think in that case it is wise to enetr data not in groups, add
+>> students
+>> individual.
+>>
+>> that is like high school do it.
+>>
+>> - add a year.
+>> - add groups (NOT with split year, but same names)
+>> - add a group ALL STUDENTS.
+>> - add subgroup with all students names into ALL STUDENTS.
+>>
+>> - now we need a table to every year:
+>>    - horizontal are the division names (must not be group names, but
+>> can)
+>>    - vertical must be the student names
+>> - every cell is a bool checkbox
+>>
+>> no the timetablemaker can check every single student. of yourse by
+>> checking the studentsname must be added as subgroup into that group.
+>
+
+--------------------------------------------------------------------------------
+
 from Maciej Deorowicz:
 
 > I have idea for two features. First: possibility to disable contraint
@@ -5,7 +45,7 @@ from Maciej Deorowicz:
 
 --------------------------------------------------------------------------------
 
-to save results in a format that can reload and modify later.
+to save results in a format that can reload and modify later. - partially done
 
 --------------------------------------------------------------------------------
 

@@ -120,40 +120,8 @@ void writeSimulationParameters(){
 	settings.setValue("timetable-html-level", TIMETABLE_HTML_LEVEL);
 }
 
-/**
-FET starts here
-*/
-int main(int argc, char **argv){
-
-	//srand(unsigned(time(NULL)));
-	initRandomKnuth();
-
-	bool t=true;
-
-	if(argc==1){
-		QDir dir;
-	
-		//make sure that the output directory exists
-		if(!dir.exists(OUTPUT_DIR))
-			t=dir.mkdir(OUTPUT_DIR);
-	}
-
-	readSimulationParameters();
-	
-	students_schedule_ready=0;
-	teachers_schedule_ready=0;
-	rooms_schedule_ready=0;
-
-	QApplication qapplication(argc, argv);
-	
-	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
-	
-	if(!t){
-		QMessageBox::critical(NULL, QObject::tr("FET critical"), QObject::tr("Cannot create or use %1 directory - FET will now abort").arg(OUTPUT_DIR));
-		assert(0);
-		exit(1);
-	}
-
+void setLanguage(QApplication& qapplication)
+{
 	//translator stuff
 	QDir d("/usr/share/fet/translations");
 	
@@ -199,8 +167,12 @@ int main(int argc, char **argv){
 		LANGUAGE_FOR_HTML="zh-Hans";
 	else if(FET_LANGUAGE=="zh_TW")
 		LANGUAGE_FOR_HTML="zh-Hant";
-	else
-		LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
+	else{
+		if(FET_LANGUAGE=="en_GB")
+			LANGUAGE_FOR_HTML=FET_LANGUAGE.left(2);
+		else
+			LANGUAGE_FOR_HTML=FET_LANGUAGE;
+	}
 		
 	qapplication.installTranslator(&translator);	
 	
@@ -209,7 +181,42 @@ int main(int argc, char **argv){
 	qapplication.installTranslator(&qtTranslator);*/
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
 		qapplication.setLayoutDirection(Qt::RightToLeft);
+}
+
+/**
+FET starts here
+*/
+int main(int argc, char **argv){
+
+	//srand(unsigned(time(NULL)));
+	initRandomKnuth();
+
+	bool t=true;
+
+	if(argc==1){
+		QDir dir;
 	
+		//make sure that the output directory exists
+		if(!dir.exists(OUTPUT_DIR))
+			t=dir.mkdir(OUTPUT_DIR);
+	}
+
+	readSimulationParameters();
+	
+	students_schedule_ready=0;
+	teachers_schedule_ready=0;
+	rooms_schedule_ready=0;
+
+	QApplication qapplication(argc, argv);
+	
+	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
+	
+	if(!t){
+		QMessageBox::critical(NULL, QObject::tr("FET critical"), QObject::tr("Cannot create or use %1 directory - FET will now abort").arg(OUTPUT_DIR));
+		assert(0);
+		exit(1);
+	}
+
 	if(checkForUpdates==-1){
 		/*int t=QMessageBox::question(NULL, QObject::tr("FET question"),
 		 QObject::tr("Would you like FET to inform you of available new version by checking the FET web page?\n\n"
@@ -234,23 +241,55 @@ int main(int argc, char **argv){
 	/////////////////////////////////////////////////
 	//begin command line
 	if(argc>1){
-		if(argc>=5){
+		/*if(argc>=5){
 			cout<<"Usage: fet inputfile.fet [timelimitseconds] [timetablehtmllevel (0..5)]"<<endl;
 			return 1;
-		}
+		}*/
 		
 		INPUT_FILENAME_XML="";
-	
-		QString filename=argv[1];
+		
+		QString filename="";
 		
 		int secondsLimit=2000000000;
 		
-		if(argc>=3)
-			sscanf(argv[2], "%d", &secondsLimit);
-			
 		TIMETABLE_HTML_LEVEL=2;
-		if(argc>=4)
-			sscanf(argv[3], "%d", &TIMETABLE_HTML_LEVEL);
+		
+		FET_LANGUAGE="en_GB";
+
+		for(int i=1; i<argc; i++){
+			QString s=argv[i];
+			
+			if(s.left(12)=="--inputfile=")
+				filename=s.right(s.length()-12);
+			else if(s.left(19)=="--timelimitseconds=")
+				secondsLimit=s.right(s.length()-19).toInt();
+			else if(s.left(21)=="--timetablehtmllevel=")
+				TIMETABLE_HTML_LEVEL=s.right(s.length()-21).toInt();
+			else if(s.left(11)=="--language=")
+				FET_LANGUAGE=s.right(s.length()-11);
+		}
+		
+		if(filename==""){
+			cout<<"Incorrect parameters (input file not specified). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
+			return 1;
+		}	
+		if(secondsLimit==0){
+			cout<<"Incorrect parameters (time limit is 0 seconds). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
+			return 1;
+		}	
+		if(TIMETABLE_HTML_LEVEL>5 || TIMETABLE_HTML_LEVEL<0){
+			cout<<"Incorrect parameters (timetable html level 0, 1, 2, 3, 4 or 5). Please see README for usage (basically,\n"
+			 "fet --inputfile=x [--timelimitseconds=y] [--timetablehtmllevel=z] [--language=t]\n"
+			 "where z is from 0 to 5 and language is en_GB, de, ro or other implemented language in FET)"<<endl;
+			return 1;
+		}	
+		
+		setLanguage(qapplication);
+		
 		if(TIMETABLE_HTML_LEVEL>5 || TIMETABLE_HTML_LEVEL<0)
 			TIMETABLE_HTML_LEVEL=2;
 	
@@ -298,92 +337,8 @@ int main(int argc, char **argv){
 			TimetableExport::getStudentsTimetable(c);
 			TimetableExport::getTeachersTimetable(c);
 			TimetableExport::getRoomsTimetable(c);
-			
-			TimetableExport::writeSubgroupsTimetableXml(SUBGROUPS_TIMETABLE_FILENAME_XML);
-			TimetableExport::writeTeachersTimetableXml(TEACHERS_TIMETABLE_FILENAME_XML);
-			
-			//get the time
-			QDate dat=QDate::currentDate();
-			QTime tim=QTime::currentTime();
-			QLocale loc(FET_LANGUAGE);
-			QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
-							
-			//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
-			int na=0;
-			for(int i=0; i<gt.rules.nInternalActivities; i++)
-				if(best_solution.times[i]!=UNALLOCATED_TIME)
-					na++;
-															
-			//write the conflicts in txt mode
-			QString s=CONFLICTS_FILENAME;
-			TimetableExport::writeConflictsTxt(s, sTime, na);
-	
-			//now write the solution in html files
-			if(TIMETABLE_HTML_LEVEL>=1){
-				s="_"+STYLESHEET_CSS;
-				TimetableExport::writeStylesheetCss(s, sTime, na);
-			}
-			
-			//subgroups
-			s=SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(s, sTime, na);
-			s=SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(s, sTime, na);
-			s=SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(s, sTime, na);
-			s=SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(s, sTime, na);
-			//groups
-			s=GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeGroupsTimetableDaysHorizontalHtml(s, sTime, na);
-			s=GROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeGroupsTimetableDaysVerticalHtml(s, sTime, na);
-			s=GROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeGroupsTimetableTimeHorizontalHtml(s, sTime, na);
-			s=GROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeGroupsTimetableTimeVerticalHtml(s, sTime, na);
-			//years
-			s=YEARS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeYearsTimetableDaysHorizontalHtml(s, sTime, na);
-			s=YEARS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeYearsTimetableDaysVerticalHtml(s, sTime, na);
-			s=YEARS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeYearsTimetableTimeHorizontalHtml(s, sTime, na);
-			s=YEARS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeYearsTimetableTimeVerticalHtml(s, sTime, na);
-			//teachers
-			s=TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeTeachersTimetableDaysHorizontalHtml(s, sTime, na);
-			s=TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeTeachersTimetableDaysVerticalHtml(s, sTime, na);
-			s=TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeTeachersTimetableTimeHorizontalHtml(s, sTime, na);
-			s=TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeTeachersTimetableTimeVerticalHtml(s, sTime, na);
-			//rooms
-			s=ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeRoomsTimetableDaysHorizontalHtml(s, sTime, na);
-			s=ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeRoomsTimetableDaysVerticalHtml(s, sTime, na);
-			s=ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeRoomsTimetableTimeHorizontalHtml(s, sTime, na);
-			s=ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeRoomsTimetableTimeVerticalHtml(s, sTime, na);
-			//subjects
-			s=SUBJECTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(s, sTime, na);
-			s=SUBJECTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeSubjectsTimetableDaysVerticalHtml(s, sTime, na);
-			s=SUBJECTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(s, sTime, na);
-			s=SUBJECTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeSubjectsTimetableTimeVerticalHtml(s, sTime, na);
-	
-			//teachers free periods
-			s=TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-			TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(s, sTime, na);
-			s=TEACHERS_FREE_PERIODS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-			TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(s, sTime, na);
+
+			TimetableExport::writeSimulationResultsCommandLine();			
 		}
 	
 		return 0;
@@ -391,7 +346,7 @@ int main(int argc, char **argv){
 	//end command line
 	/////////////////////////////////////////////////
 
-
+	setLanguage(qapplication);
 
 	pqapplication=&qapplication;
 	FetMainForm fetMainForm;

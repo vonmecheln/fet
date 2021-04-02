@@ -630,7 +630,7 @@ public:
 	/**
 	Write the rules to the xml input file "inputfile".
 	*/
-	void write(const QString& filename);
+	bool write(const QString& filename);
 	
 	int activateTeacher(const QString& teacherName);
 	

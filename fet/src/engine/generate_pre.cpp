@@ -405,7 +405,7 @@ bool computeSubgroupsMaxHoursDaily()
 						 " Please modify your data accordingly and try again.\n\n"
 						 " For more details, join the mailing list or email the author")
 						 .arg(gt.rules.internalSubgroupsList[sb]->name),
-						 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 						 1, 0 );
 				 	
 						if(t==0)
@@ -457,7 +457,7 @@ bool computeSubgroupsMaxHoursDaily()
 						 " Please modify your data accordingly and try again."
 						 " For more details, join the mailing list or email the author")
 						 .arg(gt.rules.internalSubgroupsList[sb]->name),
-						 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 						 1, 0 );
 
 						if(t==0)
@@ -498,7 +498,7 @@ bool computeSubgroupsMaxHoursDaily()
 				 ". For more details, join the mailing list or email the author");
 	
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
-				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -537,7 +537,7 @@ bool computeSubgroupsMaxHoursDaily()
 				 ". For more details, join the mailing list or email the author");
 	
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
-				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -570,7 +570,7 @@ bool computeSubgroupsMinHoursDaily()
 				 " has no 100% weight"
 				 ". Please modify your data accordingly and try again"
 				 ". For more details, join the mailing list or email the author"),
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -589,7 +589,7 @@ bool computeSubgroupsMinHoursDaily()
 				 ". Please modify your data accordingly and try again"
 				 ". For more details, join the mailing list or email the author")
 				 .arg(smd->students),
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -627,7 +627,7 @@ bool computeSubgroupsMinHoursDaily()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalSubgroupsList[sb]->name),
-					 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 				 	
 					if(t==0)
@@ -661,7 +661,7 @@ bool computeSubgroupsMinHoursDaily()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalSubgroupsList[sb]->name),
-					 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 				 	
 					if(t==0)
@@ -697,11 +697,11 @@ bool computeSubgroupsMinHoursDaily()
 				 QObject::tr("For subgroup %1 you have too little activities to respect the constraint"
 				 " of type min hours daily. Please modify your data accordingly and try again"
 				 ". A possible situation is that you have unneeded groups like 'year1 WHOLE YEAR' and subgroups with name like 'year1 WHOLE YEAR WHOLE GROUP'"
-				 ". You might need to remove such dummy groups and subgroups (they are generated if you start allocation"
+				 ". You might need to remove such dummy groups and subgroups (they were generated with old versions if you started allocation"
 				 " with incomplete students data). FET cannot automatically remove such dummy groups and subgroups"
 				 ". For more details, join the mailing list or email the author")
 				 .arg(gt.rules.internalSubgroupsList[i]->name),
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -726,7 +726,7 @@ bool computeSubgroupsMinHoursDaily()
 					 "Please modify your data accordingly and try again")
 					 .arg(gt.rules.internalSubgroupsList[i]->name)
 					 .arg(gt.rules.daysOfTheWeek[j]),
-					 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 				 	
 					if(t==0)
@@ -808,7 +808,7 @@ bool computeTeachersMaxHoursDaily()
 					 " Please modify your data accordingly and try again."
 					 " For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalTeachersList[tmd->teacher_ID]->name),
-					 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 				 	
 					if(t==0)
@@ -872,7 +872,7 @@ bool computeTeachersMaxHoursDaily()
 						 " Please modify your data accordingly and try again."
 						 " For more details, join the mailing list or email the author")
 						 .arg(gt.rules.internalTeachersList[tch]->name),
-						 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 						 1, 0 );
 
 						if(t==0)
@@ -938,7 +938,7 @@ bool computeTeachersMaxHoursDaily()
 				 ". For more details, join the mailing list or email the author");
 	
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
-				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -1002,7 +1002,7 @@ bool computeTeachersMaxHoursDaily()
 				 ". For more details, join the mailing list or email the author");
 	
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
-				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -1037,7 +1037,7 @@ bool computeTeachersMinHoursDaily()
 				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again")
 				 .arg(tmd->teacherName),
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1055,7 +1055,7 @@ bool computeTeachersMinHoursDaily()
 				 .arg(tmd->teacherName)
 				 .arg(tmd->minHoursDaily)
 				 .arg(gt.rules.nHoursPerDay),
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1079,7 +1079,7 @@ bool computeTeachersMinHoursDaily()
 				 QObject::tr("Cannot optimize, because you have constraint teachers min hours daily with"
 				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1096,7 +1096,7 @@ bool computeTeachersMinHoursDaily()
 				 " %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again")
 				 .arg(tmd->minHoursDaily)
 				 .arg(gt.rules.nHoursPerDay),
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1125,7 +1125,7 @@ bool computeTeachersMinHoursDaily()
 				 .arg(gt.rules.internalTeachersList[tc]->name)
 				 .arg(nHoursPerTeacher[tc])
 				 ,
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1141,7 +1141,7 @@ bool computeTeachersMinHoursDaily()
 				 .arg(teachersMinHoursDailyMinHours[tc])
 				 .arg(gt.rules.internalTeachersList[tc]->name)
 				 ,
-				 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1309,13 +1309,12 @@ bool computeNHoursPerTeacher()
 
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2 "
-			  " and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number"
-			  " of hours per day (probably you misunderstood FET hours notation)")
+			  " and you have only %3 days x %4 hours in a week.")
 			 .arg(gt.rules.internalTeachersList[i]->name)
 			 .arg(nHoursPerTeacher[i])
 			 .arg(gt.rules.nDaysPerWeek)
 			 .arg(gt.rules.nHoursPerDay),
-			 QObject::tr("Skip rest of teachers problems"), QObject::tr("See next teacher problem"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 		 	
 			if(t==0)
@@ -1338,7 +1337,7 @@ bool computeNHoursPerTeacher()
 			 .arg(gt.rules.internalTeachersList[i]->name)
 			 .arg(nHoursPerTeacher[i])
 			 .arg(freeSlots),
-			 QObject::tr("Skip rest of teach. not avail. problems"), QObject::tr("See next teach. not avail. problem"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 		 	
 			if(t==0)
@@ -1361,7 +1360,7 @@ bool computeNHoursPerTeacher()
 				 .arg(nHoursPerTeacher[i])
 				 .arg(nd)
 				 .arg(gt.rules.nHoursPerDay),
-				 QObject::tr("Skip rest of teachers problems"), QObject::tr("See next teacher problem"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 		 	
 				if(t==0)
@@ -1422,7 +1421,7 @@ bool computeNHoursPerTeacher()
 			 ". For more details, join the mailing list or email the author");
 	
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
-			 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 				 	
 			if(t==0)
@@ -1452,7 +1451,7 @@ bool computeTeachersMaxGapsPerWeekPercentage()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because you have constraint teachers max gaps per week with"
 				 " weight (percentage) below 100. Please make weight 100% and try again"),
-				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1470,7 +1469,7 @@ bool computeTeachersMaxGapsPerWeekPercentage()
 				 QObject::tr("Cannot optimize, because you have constraint teacher max gaps per week with"
 				 " weight (percentage) below 100 for teacher %1. Please make weight 100% and try again")
 				 .arg(tg->teacherName),
-				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1503,7 +1502,7 @@ bool computeTeachersMaxGapsPerWeekPercentage()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalTeachersList[j]->name),
-					 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 			 	
 					if(t==0)
@@ -1534,7 +1533,7 @@ bool computeTeachersMaxGapsPerWeekPercentage()
 				 ". Please modify your data accordingly and try again"
 				 ". For more details, join the mailing list or email the author")
 				 .arg(gt.rules.internalTeachersList[j]->name),
-				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 		 	
 				if(t==0)
@@ -1565,7 +1564,7 @@ bool computeTeachersMaxGapsPerDayPercentage()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because you have constraint teachers max gaps per day with"
 				 " weight (percentage) below 100. Please make weight 100% and try again"),
-				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1583,7 +1582,7 @@ bool computeTeachersMaxGapsPerDayPercentage()
 				 QObject::tr("Cannot optimize, because you have constraint teacher max gaps per day with"
 				 " weight (percentage) below 100 for teacher %1. Please make weight 100% and try again")
 				 .arg(tg->teacherName),
-				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1616,7 +1615,7 @@ bool computeTeachersMaxGapsPerDayPercentage()
 					 ". Please modify your data accordingly and try again"
 					 ". For more details, join the mailing list or email the author")
 					 .arg(gt.rules.internalTeachersList[j]->name),
-					 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 			 	
 					if(t==0)
@@ -1647,7 +1646,7 @@ bool computeTeachersMaxGapsPerDayPercentage()
 				 ". Please modify your data accordingly and try again"
 				 ". For more details, join the mailing list or email the author")
 				 .arg(gt.rules.internalTeachersList[j]->name),
-				 QObject::tr("Skip rest of max gaps problems"), QObject::tr("See next incompatibility max gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 		 	
 				if(t==0)
@@ -1682,13 +1681,12 @@ bool computeNHoursPerSubgroup()
 
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 "
-			  " and you have only %3 days x %4 hours in a week. Probably you need to increase with 1 the number"
-			  " of hours per day (probably you misunderstood FET hours notation)")
+			  " and you have only %3 days x %4 hours in a week.")
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
 			 .arg(nHoursPerSubgroup[i])
 			 .arg(gt.rules.nDaysPerWeek)
 			 .arg(gt.rules.nHoursPerDay),
-			 QObject::tr("Skip rest of students problems"), QObject::tr("See next students problem"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 		 	
 			if(t==0)
@@ -1711,7 +1709,7 @@ bool computeNHoursPerSubgroup()
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
 			 .arg(nHoursPerSubgroup[i])
 			 .arg(freeSlots),
-			 QObject::tr("Skip rest of stud. not avail. problems"), QObject::tr("See next stud. not avail. problem"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 		 	
 			if(t==0)
@@ -1743,7 +1741,7 @@ bool computeMaxDaysPerWeekForTeachers()
 				 " weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible"
 				 " to use 100% weight for such constraints. Please make weight 100% and try again")
 				 .arg(tn->teacherName),
-				 QObject::tr("Skip rest of max days problems"), QObject::tr("See next incompatibility max days"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 	
 				if(t==0)
@@ -1762,7 +1760,7 @@ bool computeMaxDaysPerWeekForTeachers()
 				 ". Please modify your data correspondingly (leave maximum one constraint of type"
 				 " constraint teacher max days per week for each teacher) and try again")
 				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
-				 QObject::tr("Skip rest of max days per week problems"), QObject::tr("See next incompatibility max days per week"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 			 
 				if(t==0)
@@ -1881,7 +1879,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages() //st no gaps & early - part 2
 			 " optimize with not existing constraint max gaps or existing with 100% weight for it"
 			 ". Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
-			 QObject::tr("Skip rest of early - no gaps problems"), QObject::tr("See next incompatibility no gaps - early"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 			 
 			if(t==0)
@@ -1897,7 +1895,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages() //st no gaps & early - part 2
 			 " optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it"
 			 ". Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalSubgroupsList[i]->name),
-			 QObject::tr("Skip rest of early - no gaps problems"), QObject::tr("See next incompatibility no gaps - early"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 			 
 			if(t==0)
@@ -1955,7 +1953,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages() //st no gaps & early - part 2
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
 			 .arg(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]).
 			 arg(gt.rules.nDaysPerWeek),
-			 QObject::tr("Skip rest of early - no gaps problems"), QObject::tr("See next incompatibility no gaps - early"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 			 
 			if(t==0)
@@ -2163,7 +2161,7 @@ bool computeNotAllowedTimesPercentages()
 					 "activity preferred time with no day nor hour selected (for activity with id==%1). "
 					 "Please modify your data accordingly (remove or edit constraint) and try again.")
 					 .arg(gt.rules.internalActivitiesList[ap->activityIndex].id),
-					 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next incorrect constraint"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					1, 0 );
 
 					if(t==0)
@@ -2504,7 +2502,7 @@ bool computeActivityEndsStudentsDayPercentages()
 				 "Constraint activity ends students day can only have weight percentage 100%. "
 				 "Please modify your data accordingly (remove or edit constraint) and try again.")
 				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
-				 QObject::tr("Skip rest of constraints problems"), QObject::tr("See next incorrect constraint"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				1, 0 );
 				
 				if(t==0)
@@ -2604,7 +2602,7 @@ bool checkMinNDays100Percent()
 						 .arg(daysTeacherIsAvailable[tc]);
 
 						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
-						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 						 1, 0 );
 					
 						if(t==0)
@@ -2627,7 +2625,7 @@ bool checkMinNDays100Percent()
 						 .arg(daysSubgroupIsAvailable[sb]);
 
 						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
-						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 						 1, 0 );
 					
 						if(t==0)
@@ -2717,7 +2715,7 @@ bool checkMinNDaysConsecutiveIfSameDay()
 						 .arg(daysTeacherIsAvailable[tc]);
 	
 						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
-						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 						 1, 0 );
 						
 						if(t==0)
@@ -2753,7 +2751,7 @@ bool checkMinNDaysConsecutiveIfSameDay()
 						 .arg(daysSubgroupIsAvailable[sb]);
 
 						int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s, 
-						 QObject::tr("Skip rest of min n days problems"), QObject::tr("See next incorrect constraint"), QString(),
+						 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 						 1, 0 );
 					
 						if(t==0)
@@ -3010,7 +3008,7 @@ bool computeActivitiesRoomsPreferences()
 				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "students set home room(s) for students set %1. Please leave only one of them")
 				 .arg(spr->studentsName),
-				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 	
 				if(t==0)
@@ -3048,7 +3046,7 @@ bool computeActivitiesRoomsPreferences()
 				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "students set home room(s) for students set %1. Please leave only one of them")
 				 .arg(spr->studentsName),
-				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 	
 				if(t==0)
@@ -3093,7 +3091,7 @@ bool computeActivitiesRoomsPreferences()
 				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "teacher home room(s) for teacher %1. Please leave only one of them")
 				 .arg(spr->teacherName),
-				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 	
 				if(t==0)
@@ -3131,7 +3129,7 @@ bool computeActivitiesRoomsPreferences()
 				 QObject::tr("Cannot generate timetable, because you have more than one constraint of type "
 				 "teacher home room(s) for teacher %1. Please leave only one of them")
 				 .arg(spr->teacherName),
-				 QObject::tr("Skip rest of such problems"), QObject::tr("See next problem"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 	
 				if(t==0)
@@ -3497,7 +3495,7 @@ bool computeActivitiesRoomsPreferences()
 				 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
 				 "you have no allowed home room (from constraints students set home room(s) and teacher home room(s))")
 				 .arg(gt.rules.internalActivitiesList[i].id),
-				 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 	
 				if(t==0)
@@ -3522,7 +3520,7 @@ bool computeActivitiesRoomsPreferences()
 					 "This means that a constraint preferred room(s) hos 0 rooms in it. "
 					 "This should not happen. Please report possible bug.")
 					 .arg(gt.rules.internalActivitiesList[i].id),
-					 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 	
 					if(t==0)
@@ -3543,7 +3541,7 @@ bool computeActivitiesRoomsPreferences()
 					 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
 					 "you have no allowed preferred room (from the allowed number of students)")
 					 .arg(gt.rules.internalActivitiesList[i].id),
-					 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
+					 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 					 1, 0 );
 	
 					if(t==0)
@@ -3593,7 +3591,7 @@ jumpOverPrefRoomsNStudents:
 				 QObject::tr("Cannot generate timetable, because for activity with id==%1 "
 				 "you have no allowed home room (from the allowed number of students)")
 				 .arg(gt.rules.internalActivitiesList[i].id),
-				 QObject::tr("Skip rest of activities without rooms"), QObject::tr("See next problem"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 	
 				if(t==0)
@@ -3625,7 +3623,7 @@ bool computeMaxBuildingChangesPerDayForStudents()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint students set max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per day problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3649,7 +3647,7 @@ bool computeMaxBuildingChangesPerDayForStudents()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint students max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per day problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3688,7 +3686,7 @@ bool computeMaxBuildingChangesPerWeekForStudents()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint students set max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per week problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3712,7 +3710,7 @@ bool computeMaxBuildingChangesPerWeekForStudents()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint students max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per week problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3751,7 +3749,7 @@ bool computeMinGapsBetweenBuildingChangesForStudents()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint students set min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of min gaps"), QObject::tr("See next incompatibility min gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3775,7 +3773,7 @@ bool computeMinGapsBetweenBuildingChangesForStudents()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint students min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of min gaps"), QObject::tr("See next incompatibility min gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3815,7 +3813,7 @@ bool computeMaxBuildingChangesPerDayForTeachers()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint teacher max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per day problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3837,7 +3835,7 @@ bool computeMaxBuildingChangesPerDayForTeachers()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint teachers max building changes per day"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per day problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3876,7 +3874,7 @@ bool computeMaxBuildingChangesPerWeekForTeachers()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint teacher max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per week problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3898,7 +3896,7 @@ bool computeMaxBuildingChangesPerWeekForTeachers()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint teachers max building changes per week"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of max changes per week problems"), QObject::tr("See next incompatibility changes"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3937,7 +3935,7 @@ bool computeMinGapsBetweenBuildingChangesForTeachers()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint teacher min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of min gaps problems"), QObject::tr("See next incompatibility min gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -3959,7 +3957,7 @@ bool computeMinGapsBetweenBuildingChangesForTeachers()
 				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 				 QObject::tr("Cannot optimize, because there is a space constraint teachers min gaps between building changes"
 				 " with weight under 100%. Please correct and try again"),
-				 QObject::tr("Skip rest of min gaps problems"), QObject::tr("See next incompatibility min gaps"), QString(),
+				 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 				 1, 0 );
 				 	
 				if(t==0)
@@ -4045,7 +4043,7 @@ bool computeFixedActivities()
 		if(notAllowedSlots==gt.rules.nHoursPerWeek){
 			QString s=QObject::tr("Activity with id=%1 has no allowed slot - please correct that").arg(gt.rules.internalActivitiesList[ai].id);
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
-			 QObject::tr("Skip rest of such problems"), QObject::tr("See next incompatibility"), QString(),
+			 QObject::tr("Skip rest"), QObject::tr("See next"), QString(),
 			 1, 0 );
 				 	
 			if(t==0)

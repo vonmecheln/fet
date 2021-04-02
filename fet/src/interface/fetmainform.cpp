@@ -114,7 +114,8 @@ using namespace std;
 #include "settingstimetablehtmllevelform.h"
 
 #include <qmessagebox.h>
-#include <q3filedialog.h>
+//#include <q3filedialog.h>
+#include <QFileDialog>
 #include <qstring.h>
 #include <qdir.h>
 #include <q3popupmenu.h>
@@ -144,6 +145,8 @@ extern QApplication* pqapplication;
 #include <QSettings>
 
 static HttpGet getter;
+
+Rules rules2;
 
 static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
 
@@ -387,8 +390,10 @@ void FetMainForm::on_fileOpenAction_activated()
 	int confirm=1;
 
 	if(confirm){
-		QString s = Q3FileDialog::getOpenFileName(WORKING_DIRECTORY, tr("FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)", "Comment for translators (do not translate this comment): This field is for File/Open dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"),
-			this, tr("open file dialog"), tr("Choose a file"));
+		QString s = QFileDialog::getOpenFileName(this, tr("Choose a file"),
+			WORKING_DIRECTORY, 
+			tr("FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)", 
+			"Comment for translators (do not translate this comment): This field is for File/Open dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"));
 		if(s.isNull())
 			return;
 
@@ -440,9 +445,9 @@ void FetMainForm::on_fileOpenAction_activated()
 
 void FetMainForm::on_fileSaveAsAction_activated()
 {
-	QString s = Q3FileDialog::getSaveFileName(
+	QString s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under"),
 		INPUT_FILENAME_XML, tr("FET xml files (*.fet);;All files (*)", "Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"),
-		this, tr("Save file dialog"), tr("Choose a filename to save under" ));
+		0, QFileDialog::DontConfirmOverwrite);
 	if(s==QString::null)
 		return;
 
@@ -483,6 +488,276 @@ void FetMainForm::on_fileSaveAsAction_activated()
 	setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
 	
 	gt.rules.write(INPUT_FILENAME_XML);
+}
+
+void FetMainForm::on_timetableSaveTimetableAsAction_activated()
+{
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+		QMessageBox::warning(this, tr("FET - Warning"), tr("You have not yet generated a timetable - please generate firstly"));
+		return;	
+	}
+
+	Solution* tc=&best_solution;
+	
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		int time=tc->times[ai];
+		if(time==UNALLOCATED_TIME){
+			QMessageBox::warning(this, tr("FET - Warning"), tr("It seems that you have an incomplete timetable."
+			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable")
+			 .arg(act->id));
+			return;	
+		}
+		
+		int ri=tc->rooms[ai];
+		if(ri==UNALLOCATED_SPACE){
+			QMessageBox::warning(this, tr("FET - Warning"), tr("It seems that you have an incomplete timetable."
+			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable")
+			 .arg(act->id));
+			return;	
+		}
+	}
+
+	QString t=tr("Please read this important information before proceeding:");
+	
+	t+="\n\n";
+	
+	t+=tr("This option is only useful if you need to lock current timetable into a file."
+		" Locking means that there will be added constraints activity preferred time and"
+		" activity preferred room with 100% importance for each activity to fix it at current place in current timetable."
+		" You can save this timetable as an ordinary .fet file; when you'll open it, you'll see all old inputted data (activities, teachers, etc.)" 
+		" and the locking constraints as the last time/space constraints."
+		" You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again"
+		" and the remaining locking constraints will be respected.");
+		
+	t+="\n\n";
+	
+	t+=tr("This option is useful for institutions where you obtain a timetable, then some small changes appear,"
+		" and you need to regenerate timetable, but respecting in a large proportion the old timetable");
+
+	t+="\n\n";
+	
+	t+=tr("Current data file will not be affected by anything, locking constraints will only be added to the file you select to save"
+		" (you can save current datafile and open saved timetable file after that to check it)");
+		
+	t+="\n\n";
+	
+	t+=tr("If you need more information, contact author or mailing list");
+
+	QMessageBox::information(this, tr("FET - information about saving a timetable as"), t);
+	
+	QString s;
+
+	for(;;){
+		s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under" ), 
+			INPUT_FILENAME_XML, tr("FET xml files (*.fet);;All files (*)", "Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"),
+			0, QFileDialog::DontConfirmOverwrite);
+		if(s==QString::null)
+			return;
+
+		int tmp2=s.findRev("/");
+		QString s2=s.right(s.length()-tmp2-1);
+			
+		if(s2.indexOf("\"") >= 0){
+			QMessageBox::warning(this, tr("FET info"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
+			return;
+		}
+		if(s2.indexOf(";") >= 0){
+			QMessageBox::warning(this, tr("FET info"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
+			return;
+		}
+		if(s2.indexOf("#") >= 0){
+			QMessageBox::warning(this, tr("FET info"), tr("Please do not use # in filename, the html css code does not work"));
+			return;
+		}
+		/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
+			QMessageBox::information(this, tr("FET info"), tr("Please do not use parentheses () in filename, the html css code does not work"));
+			return;
+		}*/
+			
+		if(s.right(4)!=".fet")
+			s+=".fet";
+
+		int tmp=s.findRev("/");
+		WORKING_DIRECTORY=s.left(tmp+1);
+
+		if(QFile::exists(s)){
+			t=tr("File exists");
+			t+="\n\n";
+			t+=tr("For safety (so you don't lose work), it is not allowed to overwrite an existing file with"
+				" locking and saving a current data+timetable");
+			t+="\n\n";
+			t+=tr("Please choose a non-existing name");
+	
+			QMessageBox::warning( this, tr("FET warning"), t);
+		}
+		else
+			break;
+	}
+			
+	//INPUT_FILENAME_XML = s; - do NOT add this
+	
+	//setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
+	
+	rules2.initialized=true;
+	
+	rules2.institutionName=gt.rules.institutionName;
+	rules2.comments=gt.rules.comments;
+	
+	rules2.nHoursPerDay=gt.rules.nHoursPerDay;
+	for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
+
+	rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
+	for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+		rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
+		
+	rules2.yearsList=gt.rules.yearsList;
+	
+	rules2.teachersList=gt.rules.teachersList;
+	
+	rules2.subjectsList=gt.rules.subjectsList;
+	
+	rules2.activityTagsList=gt.rules.activityTagsList;
+
+	rules2.activitiesList=gt.rules.activitiesList;
+
+	rules2.buildingsList=gt.rules.buildingsList;
+
+	rules2.roomsList=gt.rules.roomsList;
+
+	rules2.timeConstraintsList=gt.rules.timeConstraintsList;
+	
+	rules2.spaceConstraintsList=gt.rules.spaceConstraintsList;
+
+
+	//add locking constraints
+	TimeConstraintsList lockTimeConstraintsList;
+	SpaceConstraintsList lockSpaceConstraintsList;
+
+
+
+	bool report=true;
+	
+	int addedTime=0, duplicatesTime=0;
+	int addedSpace=0, duplicatesSpace=0;
+
+	//lock selected activities
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		Activity* act=&gt.rules.internalActivitiesList[ai];
+		int time=tc->times[ai];
+		if(time>=0 && time<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay){
+			int hour=time/gt.rules.nDaysPerWeek;
+			int day=time%gt.rules.nDaysPerWeek;
+
+			ConstraintActivityPreferredTime* ctr=new ConstraintActivityPreferredTime(100.0, act->id, day, hour);
+			bool t=rules2.addTimeConstraint(ctr);
+						
+			if(t){
+				addedTime++;
+				lockTimeConstraintsList.append(ctr);
+			}
+			else
+				duplicatesTime++;
+
+			QString s;
+						
+			if(t)
+				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);
+			else{
+				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
+				delete ctr;
+			}
+						
+			if(report){
+				int k;
+				if(t)
+					k=QMessageBox::information(this, tr("FET information"), s,
+				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+				else
+					k=QMessageBox::warning(this, tr("FET warning"), s,
+				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+																			 				 	
+		 		if(k==0)
+					report=false;
+			}
+		}
+					
+		int ri=tc->rooms[ai];
+		if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
+			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name);
+			bool t=rules2.addSpaceConstraint(ctr);
+
+			QString s;
+						
+			if(t){
+				addedSpace++;
+				lockSpaceConstraintsList.append(ctr);
+			}
+			else
+				duplicatesSpace++;
+
+			if(t)
+				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);
+			else{
+				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
+				delete ctr;
+			}
+						
+			if(report){
+				int k;
+				if(t)
+					k=QMessageBox::information(this, tr("FET information"), s,
+				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+				else
+					k=QMessageBox::warning(this, tr("FET warning"), s,
+					 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+																			 				 	
+				if(k==0)
+					report=false;
+			}
+		}
+	}
+
+	QMessageBox::information(this, tr("FET information"), tr("Added %1 locking time constraints and %2 locking space constraints to saved file,"
+	 " ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space").arg(addedTime).arg(addedSpace).arg(duplicatesTime).arg(duplicatesSpace));
+		
+	bool result=rules2.write(s);
+	
+	while(!lockTimeConstraintsList.isEmpty())
+		delete lockTimeConstraintsList.takeFirst();
+	while(!lockSpaceConstraintsList.isEmpty())
+		delete lockSpaceConstraintsList.takeFirst();
+	/*foreach(TimeConstraint* tc, lockTimeConstraintsList)
+		delete tc;
+	foreach(SpaceConstraint* sc, lockSpaceConstraintsList)
+		delete sc;*/
+
+	if(result)	
+		QMessageBox::information(this, tr("FET information"),
+			tr("File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints),"
+			" so you can save it also, or generate different timetables."));
+
+	rules2.nHoursPerDay=0;
+	rules2.nDaysPerWeek=0;
+
+	rules2.yearsList.clear();
+	
+	rules2.teachersList.clear();
+	
+	rules2.subjectsList.clear();
+	
+	rules2.activityTagsList.clear();
+
+	rules2.activitiesList.clear();
+
+	rules2.buildingsList.clear();
+
+	rules2.roomsList.clear();
+
+	rules2.timeConstraintsList.clear();
+	
+	rules2.spaceConstraintsList.clear();
 }
 
 void FetMainForm::on_fileSaveAction_activated()
