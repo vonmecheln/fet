@@ -97,6 +97,10 @@ QList<int> activitiesSameStartingTimePercentages[MAX_ACTIVITIES];
 QList<int> activitiesSameStartingHourActivities[MAX_ACTIVITIES];
 QList<int> activitiesSameStartingHourPercentages[MAX_ACTIVITIES];
 
+//activities not overlapping
+QList<int> activitiesNotOverlappingActivities[MAX_ACTIVITIES];
+QList<int> activitiesNotOverlappingPercentages[MAX_ACTIVITIES];
+
 
 bool processTimeConstraints()
 {
@@ -146,6 +150,8 @@ bool processTimeConstraints()
 	computeActivitiesSameStartingTime();
 
 	computeActivitiesSameStartingHour();
+	
+	computeActivitiesNotOverlapping();
 	
 	//check for not implemented constraints in FET 5
 	bool ok=true;
@@ -224,6 +230,7 @@ bool processTimeConstraints()
 			if(t==0)
 				break;
 		}
+		/*
 		else if(tc->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
 			ok=false;
 			
@@ -235,7 +242,7 @@ bool processTimeConstraints()
 
 			if(t==0)
 				break;
-		}
+		}*/
 		else if(tc->type==CONSTRAINT_ACTIVITY_ENDS_DAY){
 			ok=false;
 			
@@ -335,6 +342,38 @@ bool processTimeConstraints()
 	}
 	
 	return ok;
+}
+
+void computeActivitiesNotOverlapping()
+{
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		activitiesNotOverlappingActivities[i].clear();
+		activitiesNotOverlappingPercentages[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
+			ConstraintActivitiesNotOverlapping* no=(ConstraintActivitiesNotOverlapping*)gt.rules.internalTimeConstraintsList[i];
+
+			for(int j=0; j<no->_n_activities; j++){
+				int ai1=no->_activities[j];
+				for(int k=0; k<no->_n_activities; k++){
+					int ai2=no->_activities[k];
+					if(ai1!=ai2){
+						int t=activitiesNotOverlappingActivities[ai1].indexOf(ai2);
+						if(t>=0){
+							if(activitiesNotOverlappingPercentages[ai1].at(t) < no->weightPercentage){
+								activitiesNotOverlappingPercentages[ai1][t]=int(no->weightPercentage);
+							}
+						}
+						else{
+							activitiesNotOverlappingPercentages[ai1].append(int(no->weightPercentage));
+							activitiesNotOverlappingActivities[ai1].append(ai2);
+						}
+					}
+				}
+			}
+		}
 }
 
 void computeActivitiesSameStartingTime()

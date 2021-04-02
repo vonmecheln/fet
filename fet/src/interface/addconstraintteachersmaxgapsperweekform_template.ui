@@ -91,7 +91,11 @@
             </property>
             <property name="text">
                 <string>It is necessary to use only one constraint
-of this type for the optimization to be possible</string>
+of this type for the optimization to be possible
+Please try to use weight percentage 100%, because
+otherwise you will get poor timetables. Try to fix firstly
+a rather large value for max gaps per week and
+lower it as you find new timetables.</string>
             </property>
         </widget>
         <widget class="QSpinBox" row="1" column="1">

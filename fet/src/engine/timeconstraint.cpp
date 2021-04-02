@@ -1273,6 +1273,24 @@ double ConstraintActivitiesNotOverlapping::fitness(TimeChromosome& c, Rules& r, 
 						nbroken+=tmp;
 
 						if(tt>0 && conflictsString!=NULL){
+							QString ss;
+							ss=QObject::tr("activity with id=%1 overlaps with activity with id=%2 on a number of %3 periods")
+							 .arg(this->activitiesId[i])
+							 .arg(this->activitiesId[j])
+							 .arg(tt);
+							cout<<qPrintable(ss)<<endl;
+							cout<<"activity1: id=="<<r.internalActivitiesList[this->activitiesId[i]].id;
+							cout<<", duration=="<<r.internalActivitiesList[this->activitiesId[i]].duration;
+							cout<<", day=="<<qPrintable(r.daysOfTheWeek[day1]);
+							cout<<", hour=="<<qPrintable(r.hoursOfTheDay[hour1]);
+							cout<<endl;
+							cout<<"activity2: id=="<<r.internalActivitiesList[this->activitiesId[j]].id;
+							cout<<", duration=="<<r.internalActivitiesList[this->activitiesId[j]].duration;
+							cout<<", day=="<<qPrintable(r.daysOfTheWeek[day2]);
+							cout<<", hour=="<<qPrintable(r.hoursOfTheDay[hour2]);
+							cout<<endl;
+														
+
 							QString s=QObject::tr("Time constraint activities not overlapping");
 							s+=" ";
 							s+=QObject::tr("broken:");

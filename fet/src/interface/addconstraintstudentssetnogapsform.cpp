@@ -36,6 +36,8 @@ AddConstraintStudentsSetNoGapsForm::AddConstraintStudentsSetNoGapsForm()
 	move(xx, yy);
 
 	updateStudentsSetComboBox();
+	
+	constraintChanged();
 }
 
 AddConstraintStudentsSetNoGapsForm::~AddConstraintStudentsSetNoGapsForm()

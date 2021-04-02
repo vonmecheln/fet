@@ -4047,15 +4047,7 @@ bool Rules::read(const QString& filename)
 					assert(n_act==cn->n_activities);
 					crt_constraint=cn;
 				}
-				if(elem3.tagName()=="ConstraintActivitiesNotOverlapping" && !skipDeprecatedConstraints){
-					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
-					 QObject::tr("File contains deprecated constraint activities not overlapping - will be ignored\n"),
-					 "Skip rest of deprecated constraints", "See next deprecated constraint", QString(),
-					 1, 0 );
-													 
-					if(t==0)
-						skipDeprecatedConstraints=true;
-				/*
+				if(elem3.tagName()=="ConstraintActivitiesNotOverlapping"){
 					ConstraintActivitiesNotOverlapping* cn=new ConstraintActivitiesNotOverlapping();
 					int n_act=0;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
@@ -4097,8 +4089,7 @@ bool Rules::read(const QString& filename)
 						}
 					}
 					assert(n_act==cn->n_activities);
-					crt_constraint=cn;*/
-					crt_constraint=NULL;
+					crt_constraint=cn;
 				}
 				if(elem3.tagName()=="ConstraintActivitiesSameStartingTime"){
 					ConstraintActivitiesSameStartingTime* cn=new ConstraintActivitiesSameStartingTime();

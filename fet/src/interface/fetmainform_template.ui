@@ -28,6 +28,43 @@
      <height>29</height>
     </rect>
    </property>
+   <widget class="QMenu" name="helpMenu" >
+    <property name="title" >
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="helpFAQAction" />
+    <addaction name="helpTimeConstraintsAction" />
+    <addaction name="helpTimeConstraintsSubtagsAction" />
+    <addaction name="separator" />
+    <addaction name="helpAboutAction" />
+   </widget>
+   <widget class="QMenu" name="fileMenu" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="fileNewAction" />
+    <addaction name="fileOpenAction" />
+    <addaction name="fileSaveAction" />
+    <addaction name="fileSaveAsAction" />
+    <addaction name="separator" />
+    <addaction name="fileExitAction" />
+   </widget>
+   <widget class="QMenu" name="languageMenu" >
+    <property name="title" >
+     <string>&amp;Language</string>
+    </property>
+    <addaction name="languageEnglishAction" />
+    <addaction name="languageFrenchAction" />
+    <addaction name="languageCatalanAction" />
+    <addaction name="languageRomanianAction" />
+    <addaction name="languageMalayAction" />
+    <addaction name="languagePolishAction" />
+    <addaction name="languageTurkishAction" />
+    <addaction name="languageDutchAction" />
+    <addaction name="languageGermanAction" />
+    <addaction name="languageHungarianAction" />
+    <addaction name="languageMacedonianAction" />
+   </widget>
    <widget class="QMenu" name="timetableMenu" >
     <property name="title" >
      <string>&amp;Timetable</string>
@@ -65,32 +102,6 @@
     <addaction name="timetableExportXmlHtmlAction" />
     <addaction name="PopupMenuEditor_105" />
    </widget>
-   <widget class="QMenu" name="languageMenu" >
-    <property name="title" >
-     <string>&amp;Language</string>
-    </property>
-    <addaction name="languageEnglishAction" />
-    <addaction name="languageFrenchAction" />
-    <addaction name="languageCatalanAction" />
-    <addaction name="languageRomanianAction" />
-    <addaction name="languageMalayAction" />
-    <addaction name="languagePolishAction" />
-    <addaction name="languageTurkishAction" />
-    <addaction name="languageDutchAction" />
-    <addaction name="languageGermanAction" />
-    <addaction name="languageHungarianAction" />
-    <addaction name="languageMacedonianAction" />
-   </widget>
-   <widget class="QMenu" name="helpMenu" >
-    <property name="title" >
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="helpFAQAction" />
-    <addaction name="helpTimeConstraintsAction" />
-    <addaction name="helpTimeConstraintsSubtagsAction" />
-    <addaction name="separator" />
-    <addaction name="helpAboutAction" />
-   </widget>
    <widget class="QMenu" name="menuStatistics" >
     <property name="title" >
      <string>Statistics</string>
@@ -98,17 +109,6 @@
     <addaction name="dataTeachersStatisticsAction" />
     <addaction name="dataSubjectsStatisticsAction" />
     <addaction name="dataStudentsStatisticsAction" />
-   </widget>
-   <widget class="QMenu" name="fileMenu" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <addaction name="fileNewAction" />
-    <addaction name="fileOpenAction" />
-    <addaction name="fileSaveAction" />
-    <addaction name="fileSaveAsAction" />
-    <addaction name="separator" />
-    <addaction name="fileExitAction" />
    </widget>
    <widget class="QMenu" name="dataMenu" >
     <property name="title" >
@@ -172,6 +172,7 @@
      <property name="title" >
       <string>Time constraints (activities)</string>
      </property>
+     <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction" />
      <addaction name="dataTimeConstraintsActivitiesPreferredTimesAction" />
      <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction" />
      <addaction name="dataTimeConstraintsActivitiesSameStartingTimeAction" />
@@ -677,7 +678,7 @@
   </action>
   <action name="dataTimeConstraintsActivitiesNotOverlappingAction" >
    <property name="text" >
-    <string>Activities not overlapping - NOT WORKING</string>
+    <string>Activities not overlapping</string>
    </property>
    <property name="iconText" >
     <string>Activities not overlapping</string>

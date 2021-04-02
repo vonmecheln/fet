@@ -34,6 +34,8 @@ AddConstraintStudentsNoGapsForm::AddConstraintStudentsNoGapsForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 	//setWindowFlags(Qt::Window);
+	
+	constraintChanged();
 }
 
 AddConstraintStudentsNoGapsForm::~AddConstraintStudentsNoGapsForm()

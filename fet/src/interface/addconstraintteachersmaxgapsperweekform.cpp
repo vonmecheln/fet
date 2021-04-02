@@ -39,6 +39,8 @@ AddConstraintTeachersMaxGapsPerWeekForm::AddConstraintTeachersMaxGapsPerWeekForm
 	//maxGapsSpinBox->setMaxValue(gt.rules.nHoursPerWeek);
 	maxGapsSpinBox->setMaxValue(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxGapsSpinBox->setValue(3);
+	
+	constraintChanged();
 }
 
 AddConstraintTeachersMaxGapsPerWeekForm::~AddConstraintTeachersMaxGapsPerWeekForm()

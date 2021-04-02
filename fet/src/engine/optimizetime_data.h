@@ -125,6 +125,13 @@ void computeActivitiesSameStartingHour();
 ////////END   activities same starting hour
 
 
+////////BEGIN activities not overlapping
+extern QList<int> activitiesNotOverlappingActivities[MAX_ACTIVITIES];
+extern QList<int> activitiesNotOverlappingPercentages[MAX_ACTIVITIES];
+void computeActivitiesNotOverlapping();
+////////END   activities not overlapping
+
+
 //QSet<int> sharedSubgroups[MAX_ACTIVITIES][MAX_ACTIVITIES];
 
 //void computeSharedSubgroups();

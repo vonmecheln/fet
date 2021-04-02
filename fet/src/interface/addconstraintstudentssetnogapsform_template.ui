@@ -124,7 +124,10 @@
                 <string>Please note that in order to run the optimization algorithm,
 for each subgroup, you must have:
 	1. only no gaps or 
-	2. no gaps and early, with the same weight percentage</string>
+	2. no gaps and early, with the same weight percentage
+
+Please try to use weight percentage 100%, because
+otherwise you will get poor timetables.</string>
             </property>
         </widget>
     </grid>

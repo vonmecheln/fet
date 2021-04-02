@@ -1013,6 +1013,32 @@ void OptimizeTime::randomswap(int ai, int level){
 			continue;
 		}
 		
+		//allowed from not overlapping
+		bool oknotoverlapping=true;
+		for(int i=0; i<activitiesNotOverlappingActivities[ai].count(); i++){
+		//foreach(int ai2, activitiesNotOverlapping[ai])
+			int ai2=activitiesNotOverlappingActivities[ai].at(i);
+			int perc=activitiesNotOverlappingPercentages[ai].at(i);
+			if(c.times[ai2]!=UNALLOCATED_TIME){
+				int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+				//int h2=c.times[ai2]/gt.rules.nDaysPerWeek;
+				if(d==d2){
+					int st=newtime;
+					int en=st+gt.rules.nDaysPerWeek*act->duration;
+					int st2=c.times[ai2];
+					int en2=st2+gt.rules.nDaysPerWeek*gt.rules.internalActivitiesList[ai2].duration;
+					if(!(en<=st2 || en2<=st) && !skipRandom(perc)){
+						oknotoverlapping=false;
+						break;
+					}
+				}
+			}
+		}
+		if(!oknotoverlapping){
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
 		//allowed for students (set) n hours daily
 		int k;
 		/*for(k=0; k<act->nSubgroups; k++){
@@ -1079,6 +1105,7 @@ void OptimizeTime::randomswap(int ai, int level){
 				if(cntfinal==0){
 				}
 				else if(nHoursScheduledForTeacher[tc]+cntfinal<=nHoursPerTeacher[tc]+teachersMaxGapsMaxGaps){
+				//if(nHoursScheduledForTeacher[tc]+cntfinal<=nHoursPerTeacher[tc]+teachersMaxGapsMaxGaps){
 				}
 				else if(skipRandom(teachersMaxGapsPercentage)){
 				}

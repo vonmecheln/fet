@@ -19,39 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="2" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout4</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>weightTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Weight percentage (recommended: 0%-100%)</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit">
-                    <property name="name">
-                        <cstring>weightLineEdit</cstring>
-                    </property>
-                    <property name="text">
-                        <string>100</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="4">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -77,7 +45,33 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="QLayoutWidget" row="1" column="1">
+            <property name="name">
+                <cstring>layout12</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>removePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Remove</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
                 <cstring>layout10</cstring>
             </property>
@@ -114,33 +108,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout12</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>addPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Add</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>removePushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Remove</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="3">
+        <widget class="QLayoutWidget" row="1" column="2">
             <property name="name">
                 <cstring>layout9</cstring>
             </property>
@@ -173,6 +141,50 @@
                     </item>
                     <property name="name">
                         <cstring>notOverlappingActivitiesListBox</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>This constraint means that the activities should not be placed in
+common timeslots. You don't need to add this constraint for
+activities sharing a teacher or students set. Only add this constraint
+if you really want the activities to be non-simultaneous. If FET fails to find
+a timetable, maybe you can try optimizing first without these constraints</string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>layout4</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>weightTextLabel</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="text">
+                        <string>Weight percentage (recommended: 0%-100%)</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>weightLineEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>100</string>
                     </property>
                 </widget>
             </vbox>

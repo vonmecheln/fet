@@ -833,3 +833,6 @@ Versions 5.0.0 -
 	- Improvements in the optimization - optimizetime.cpp
 - Version 5.0.0-preview7
 	- Bug fix in ConstraintBreak
+- Version 5.0.0-preview8
+	- Made possible again ConstraintActivitiesNotOverlapping
+	
