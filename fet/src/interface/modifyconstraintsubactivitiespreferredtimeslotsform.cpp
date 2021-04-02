@@ -74,7 +74,7 @@ ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ModifyConstraintSubactiviti
 	updateActivityTagsComboBox();
 	
 	componentNumberSpinBox->setMinValue(1);
-	componentNumberSpinBox->setMaxValue(10);
+	componentNumberSpinBox->setMaxValue(MAX_SPLIT_OF_AN_ACTIVITY);
 	componentNumberSpinBox->setValue(this->_ctr->componentNumber);
 	
 	preferredTimesTable->setRowCount(gt.rules.nHoursPerDay);

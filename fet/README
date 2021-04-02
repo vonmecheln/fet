@@ -1,4 +1,4 @@
-This is FET version 5.14.1
+This is FET version 5.14.2
 
 
 Program description:
@@ -53,10 +53,14 @@ Getting - compiling - installing GNU tools: make, gcc and g++ (or gcc-g++, or gc
 
 Getting - compiling - installing Qt by Nokia:
 
+	Note: Currently (21 September 2010), the latest Qt version available for download is Qt 4.7.0 [2010.05 SDK]. This
+	latest version of Qt probably works well with FET, but it is not fully tested. FET is thoroughly tested with
+	Qt 4.6.3 [2010.03 SDK] under GNU/Linux and Mac OS and with Qt 4.6.2 [2010.02.1 SDK] under Windows.
+
 	Note NQt463BugWin: Under some Windows versions, Qt 4.6.3 [2010.03 SDK] has a bug, FET will start slow sometimes
-	(this bug is not critical and it seems that there are no other bugs). So, please use other Qt version (the previous
-	Qt is 4.6.2 [2010.02.1 SDK], which works well). Currently (17 June 2010), the latest Qt available for download is 4.6.3 [2010.03 SDK],
-	so you may need to search the Qt page for the older Qt for Windows version, 4.6.2 [2010.02.1 SDK].
+	(this bug is not critical and it seems that there are no other bugs). So, please use other Qt version (use the previous
+	Qt version 4.6.2 [2010.02.1 SDK], which works well, or use the latest Qt currently (21 September 2010) available for download,
+	Qt 4.7.0 [2010.05 SDK], which probably works well, but is not fully tested).
 
 	You will need Qt 4.6.3 or compatible to compile FET (see note NQt463BugWin - Qt 4.6.3 has a bug under Windows).
 	You can get the corresponding version of Qt with your package manager or from http://qt.nokia.com/

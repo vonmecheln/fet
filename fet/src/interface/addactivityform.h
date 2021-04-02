@@ -24,10 +24,20 @@
 #include "timetable.h"
 #include "fet.h"
 
+#include <QList>
+
 class AddActivityForm : public QDialog, Ui::AddActivityForm_template  {
 	Q_OBJECT
+	
+private:
+	QList<QSpinBox*> durList;
+	QList<QCheckBox*> activList;
 
-public: 
+	//QWidget* subTab(int i);
+	QSpinBox* dur(int i);
+	QCheckBox* activ(int i);
+
+public:
 	QList<QString> canonicalStudentsSetsNames;
 
 	AddActivityForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName);

@@ -28,8 +28,8 @@
 
 extern Timetable gt;
 
-QLineEdit* daysNames[35];
-int nDays;
+static QLineEdit* daysNames[35];
+static int nDays;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;

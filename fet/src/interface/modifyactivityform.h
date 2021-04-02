@@ -24,8 +24,18 @@
 #include "timetable.h"
 #include "fet.h"
 
+#include <QList>
+
 class ModifyActivityForm : public QDialog, Ui::ModifyActivityForm_template  {
 	Q_OBJECT
+
+private:
+	QList<QSpinBox*> durList;
+	QList<QCheckBox*> activList;
+
+	//QWidget* subTab(int i);
+	QSpinBox* dur(int i);
+	QCheckBox* activ(int i);
 
 public:
 	QList<QString> canonicalStudentsSetsNames;

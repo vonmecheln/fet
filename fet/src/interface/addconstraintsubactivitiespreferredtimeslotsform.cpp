@@ -100,7 +100,7 @@ AddConstraintSubactivitiesPreferredTimeSlotsForm::AddConstraintSubactivitiesPref
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 			
 	componentNumberSpinBox->setMinValue(1);
-	componentNumberSpinBox->setMaxValue(10);
+	componentNumberSpinBox->setMaxValue(MAX_SPLIT_OF_AN_ACTIVITY);
 	componentNumberSpinBox->setValue(1);
 
 	tableWidgetUpdateBug(preferredTimesTable);

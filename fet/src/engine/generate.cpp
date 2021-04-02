@@ -47,67 +47,67 @@ using namespace std;
 
 #include <QDateTime>
 
-extern QMutex mutex; //timetablegenerateform.cpp
-
 #include <QList>
 #include <QSet>
 
 #include <QSemaphore>
+
+extern QMutex mutex; //timetablegenerateform.cpp
 
 extern QSemaphore semaphorePlacedActivity;
 extern QSemaphore finishedSemaphore;
 
 extern Timetable gt;
 
-bool swappedActivities[MAX_ACTIVITIES];
+static bool swappedActivities[MAX_ACTIVITIES];
 
-bool foundGoodSwap;
+static bool foundGoodSwap;
 
 //not sure, it might be necessary 2*... or even more
-int restoreActIndex[4*MAX_ACTIVITIES]; //the index of the act. to restore
-int restoreTime[4*MAX_ACTIVITIES]; //the time when to restore
-int restoreRoom[4*MAX_ACTIVITIES]; //the time when to restore
-int nRestore;
+static int restoreActIndex[4*MAX_ACTIVITIES]; //the index of the act. to restore
+static int restoreTime[4*MAX_ACTIVITIES]; //the time when to restore
+static int restoreRoom[4*MAX_ACTIVITIES]; //the time when to restore
+static int nRestore;
 
-int limitcallsrandomswap;
+static int limitcallsrandomswap;
 
 const int MAX_LEVEL=31;
 
 const int LEVEL_STOP_CONFLICTS_CALCULATION=MAX_LEVEL;
 
-int level_limit;
+static int level_limit;
 
-int ncallsrandomswap;
-int maxncallsrandomswap;
+static int ncallsrandomswap;
+static int maxncallsrandomswap;
 
 Solution highestStageSolution;
 
 
 //if level==0, choose best position with lowest number
 //of conflicting activities
-QList<int> conflActivitiesTimeSlot;
-int timeSlot;
-int roomSlot;
+static QList<int> conflActivitiesTimeSlot;
+static int timeSlot;
+static int roomSlot;
 
 
 //int triedRemovals[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
-Matrix2D<int> triedRemovals;
+static Matrix2D<int> triedRemovals;
 
-int impossibleActivity;
+static bool impossibleActivity;
 
-int invPermutation[MAX_ACTIVITIES];
+static int invPermutation[MAX_ACTIVITIES];
 
 const int INF=2000000000;
 
 
 ////////tabu list of tried removals (circular)
 //const int MAX_TABU=MAX_ACTIVITIES*MAX_HOURS_PER_WEEK;
-int tabu_size;
-int crt_tabu_index;
+static int tabu_size;
+static int crt_tabu_index;
 /*qint16 tabu_activities[MAX_TABU];
 qint16 tabu_times[MAX_TABU];*/
-Matrix1D<qint16> tabu_activities;
-Matrix1D<qint16> tabu_times;
+static Matrix1D<qint16> tabu_activities;
+static Matrix1D<qint16> tabu_times;
 ////////////
 
 /*static qint16 teachersTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -176,12 +176,17 @@ int maxActivitiesPlaced;
 QDateTime generationStartDateTime;
 QDateTime generationHighestStageDateTime;
 
-const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=300000;
+const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=400000;
+
+//used at level 0
+static Matrix1D<int> l0nWrong;
+static Matrix1D<int> l0minWrong;
+static Matrix1D<int> l0minIndexAct;
 
 
 inline int max(qint16 a, int b){
-	if(a>=b)
-		return a;
+	if(int(a)>=b)
+		return int(a);
 	else
 		return b;
 }
@@ -1815,6 +1820,7 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 		return true;
 	}
 		
+	//I would like to get rid of these large static variables, but making them dynamic slows down ~33% for a sample from Timisoara Economics
 	int weekBuildings[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], weekActivities[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 	for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 		for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
@@ -2265,6 +2271,10 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
+	l0nWrong.resize(gt.rules.nHoursPerWeek);
+	l0minWrong.resize(gt.rules.nHoursPerWeek);
+	l0minIndexAct.resize(gt.rules.nHoursPerWeek);
+
 	teachersTimetable.resize(gt.rules.nInternalTeachers, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	subgroupsTimetable.resize(gt.rules.nInternalSubgroups, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	roomsTimetable.resize(gt.rules.nInternalRooms, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
@@ -3003,12 +3013,13 @@ static int roomSlotsL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 
 static int currentLevel;
 
-inline bool compareFunction(int i, int j)
+inline bool compareFunctionGenerate(int i, int j)
 {
 	if(nConflActivitiesL[currentLevel][i] < nConflActivitiesL[currentLevel][j] ||
 	 (nConflActivitiesL[currentLevel][i] == nConflActivitiesL[currentLevel][j] &&
 	 nMinDaysBrokenL[currentLevel][i] < nMinDaysBrokenL[currentLevel][j]))
 		return true;
+	
 	return false;
 }
 
@@ -8227,7 +8238,7 @@ skip_here_if_already_allocated_in_time:
 			
 	//O(n*log(n)) stable sorting
 	currentLevel=level;
-	qStableSort(perm+0, perm+gt.rules.nHoursPerWeek, compareFunction);
+	qStableSort(perm+0, perm+gt.rules.nHoursPerWeek, compareFunctionGenerate);
 			
 	/*cout<<"perm[i]: ";
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
@@ -8268,13 +8279,21 @@ skip_here_if_already_allocated_in_time:
 	}
 		
 	if(level==0){
-		int nWrong[MAX_HOURS_PER_WEEK];
+		/*Matrix1D<int> l0nWrong;
+		Matrix1D<int> l0minWrong;
+		Matrix1D<int> l0minIndexAct;
+		l0nWrong.resize(gt.rules.nHoursPerWeek);
+		l0minWrong.resize(gt.rules.nHoursPerWeek);
+		l0minIndexAct.resize(gt.rules.nHoursPerWeek);*/
+		
+		/*int nWrong[MAX_HOURS_PER_WEEK];
 		int minWrong[MAX_HOURS_PER_WEEK];
-		int minIndexAct[MAX_HOURS_PER_WEEK];
+		int minIndexAct[MAX_HOURS_PER_WEEK];*/
+
 		for(int i=0; i<gt.rules.nHoursPerWeek; i++){
-			nWrong[i]=INF;
-			minWrong[i]=INF;
-			minIndexAct[i]=gt.rules.nInternalActivities;
+			l0nWrong[i]=INF;
+			l0minWrong[i]=INF;
+			l0minIndexAct[i]=gt.rules.nInternalActivities;
 		}
 		
 		QList<int> tim;
@@ -8296,15 +8315,15 @@ skip_here_if_already_allocated_in_time:
 					if(triedRemovals(aii,c.times[aii])>0)
 						cnt+=triedRemovals(aii,c.times[aii]);
 						
-					if(minWrong[i]>triedRemovals(aii,c.times[aii]))
-						minWrong[i]=triedRemovals(aii,c.times[aii]);
+					if(l0minWrong[i]>triedRemovals(aii,c.times[aii]))
+						l0minWrong[i]=triedRemovals(aii,c.times[aii]);
 						
 					int j=invPermutation[aii];
 					if(m>j)
 						m=j;
 				}
-				nWrong[i]=cnt;
-				minIndexAct[i]=m;
+				l0nWrong[i]=cnt;
+				l0minIndexAct[i]=m;
 			}
 			
 			int optMinIndex=gt.rules.nInternalActivities;
@@ -8317,24 +8336,14 @@ skip_here_if_already_allocated_in_time:
 			
 			foreach(int i, tim){
 				//choose a random time out of these with minimum number of wrongly replaced activities
-/*#if 1
-				if(optNWrong>nWrong[i]
-				 || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]
-				 || optNWrong==nWrong[i] && minIndexAct[i]<optMinIndex && optNConflActs==nConflActivities[i]){
-#endif*/
-#if 1
-				if(optMinWrong>minWrong[i]
-				 || (optMinWrong==minWrong[i] && optNWrong>nWrong[i])
-				 || (optMinWrong==minWrong[i] && optNWrong==nWrong[i] && optNConflActs>nConflActivities[i])
-				 || (optMinWrong==minWrong[i] && optNWrong==nWrong[i] && optNConflActs==nConflActivities[i] && optMinIndex>minIndexAct[i])){
-#endif
-/*#if 1
-				if(optNWrong>nWrong[i]){
-#endif*/
-					optNWrong=nWrong[i];
-					optMinWrong=minWrong[i];
+				if(optMinWrong>l0minWrong[i]
+				 || (optMinWrong==l0minWrong[i] && optNWrong>l0nWrong[i])
+				 || (optMinWrong==l0minWrong[i] && optNWrong==l0nWrong[i] && optNConflActs>nConflActivities[i])
+				 || (optMinWrong==l0minWrong[i] && optNWrong==l0nWrong[i] && optNConflActs==nConflActivities[i] && optMinIndex>l0minIndexAct[i])){
+					optNWrong=l0nWrong[i];
+					optMinWrong=l0minWrong[i];
 					optNConflActs=nConflActivities[i];
-					optMinIndex=minIndexAct[i];
+					optMinIndex=l0minIndexAct[i];
 					j=i;
 				}
 			}
@@ -8342,7 +8351,7 @@ skip_here_if_already_allocated_in_time:
 			assert(j>=0);
 			QList<int> tim2;
 			foreach(int i, tim)
-				if(optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i] && optMinIndex==minIndexAct[i])
+				if(optNWrong==l0nWrong[i] && l0minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i] && optMinIndex==l0minIndexAct[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
 			int rnd=randomKnuth(tim2.count());

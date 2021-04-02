@@ -51,7 +51,7 @@ ModifyConstraintTeacherMaxBuildingChangesPerWeekForm::ModifyConstraintTeacherMax
 	updateTeachersComboBox();
 
 	maxChangesSpinBox->setMinValue(0);
-	maxChangesSpinBox->setMaxValue(100);
+	maxChangesSpinBox->setMaxValue(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerWeek);	
 		
 	constraintChanged();

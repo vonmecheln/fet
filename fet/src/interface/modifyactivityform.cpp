@@ -24,54 +24,114 @@
 
 #include <QMessageBox>
 
-#define subTab(i)	subactivitiesTabWidget->page(i)
-#define dur(i)		(i==0?duration1SpinBox:			\
-			(i==1?duration2SpinBox:					\
-			(i==2?duration3SpinBox:					\
-			(i==3?duration4SpinBox:					\
-			(i==4?duration5SpinBox:					\
-			(i==5?duration6SpinBox:					\
-			(i==6?duration7SpinBox:					\
-			(i==7?duration8SpinBox:					\
-			(i==8?duration9SpinBox:					\
-			(duration10SpinBox))))))))))
-#define activ(i)		(i==0?active1CheckBox:			\
-			(i==1?active2CheckBox:					\
-			(i==2?active3CheckBox:					\
-			(i==3?active4CheckBox:					\
-			(i==4?active5CheckBox:					\
-			(i==5?active6CheckBox:					\
-			(i==6?active7CheckBox:					\
-			(i==7?active8CheckBox:					\
-			(i==8?active9CheckBox:					\
-			(active10CheckBox))))))))))
+#include <QList>
+
+/*QWidget* ModifyActivityForm::subTab(int i)
+{
+	assert(i>=0 && i<subactivitiesTabWidget->count());
+	return subactivitiesTabWidget->widget(i);
+}*/
+
+QSpinBox* ModifyActivityForm::dur(int i)
+{
+	assert(i>=0 && i<durList.count());
+	assert(i<MAX_SPLIT_OF_AN_ACTIVITY);
+	return durList.at(i);
+}
+
+QCheckBox* ModifyActivityForm::activ(int i)
+{
+	assert(i>=0 && i<activList.count());
+	assert(i<MAX_SPLIT_OF_AN_ACTIVITY);
+	return activList.at(i);
+}
 
 ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 {
     setupUi(this);
 
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ModifyActivityForm_template*/, SLOT(subjectChanged(QString)));
+	durList.clear();
+	durList.append(duration1SpinBox);
+	durList.append(duration2SpinBox);
+	durList.append(duration3SpinBox);
+	durList.append(duration4SpinBox);
+	durList.append(duration5SpinBox);
+	durList.append(duration6SpinBox);
+	durList.append(duration7SpinBox);
+	durList.append(duration8SpinBox);
+	durList.append(duration9SpinBox);
+	durList.append(duration10SpinBox);
+	durList.append(duration11SpinBox);
+	durList.append(duration12SpinBox);
+	durList.append(duration13SpinBox);
+	durList.append(duration14SpinBox);
+	durList.append(duration15SpinBox);
+	durList.append(duration16SpinBox);
+	durList.append(duration17SpinBox);
+	durList.append(duration18SpinBox);
+	durList.append(duration19SpinBox);
+	durList.append(duration20SpinBox);
+	durList.append(duration21SpinBox);
+	durList.append(duration22SpinBox);
+	durList.append(duration23SpinBox);
+	durList.append(duration24SpinBox);
+	durList.append(duration25SpinBox);
+	durList.append(duration26SpinBox);
+	durList.append(duration27SpinBox);
+	durList.append(duration28SpinBox);
+	durList.append(duration29SpinBox);
+	durList.append(duration30SpinBox);
+	durList.append(duration31SpinBox);
+	durList.append(duration32SpinBox);
+	durList.append(duration33SpinBox);
+	durList.append(duration34SpinBox);
+	durList.append(duration35SpinBox);
+	
+	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
+		dur(i)->setMaxValue(gt.rules.nHoursPerDay);
+	
+	activList.clear();
+	activList.append(active1CheckBox);
+	activList.append(active2CheckBox);
+	activList.append(active3CheckBox);
+	activList.append(active4CheckBox);
+	activList.append(active5CheckBox);
+	activList.append(active6CheckBox);
+	activList.append(active7CheckBox);
+	activList.append(active8CheckBox);
+	activList.append(active9CheckBox);
+	activList.append(active10CheckBox);
+	activList.append(active11CheckBox);
+	activList.append(active12CheckBox);
+	activList.append(active13CheckBox);
+	activList.append(active14CheckBox);
+	activList.append(active15CheckBox);
+	activList.append(active16CheckBox);
+	activList.append(active17CheckBox);
+	activList.append(active18CheckBox);
+	activList.append(active19CheckBox);
+	activList.append(active20CheckBox);
+	activList.append(active21CheckBox);
+	activList.append(active22CheckBox);
+	activList.append(active23CheckBox);
+	activList.append(active24CheckBox);
+	activList.append(active25CheckBox);
+	activList.append(active26CheckBox);
+	activList.append(active27CheckBox);
+	activList.append(active28CheckBox);
+	activList.append(active29CheckBox);
+	activList.append(active30CheckBox);
+	activList.append(active31CheckBox);
+	activList.append(active32CheckBox);
+	activList.append(active33CheckBox);
+	activList.append(active34CheckBox);
+	activList.append(active35CheckBox);
+
+    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(subjectChanged(QString)));
     connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
     connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
     connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
     connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
-//    connect(nStudentsSpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active8CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration8SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active7CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration7SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active6CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration6SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active5CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration5SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active4CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration4SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active3CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration3SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active2CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration2SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active1CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration1SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
     connect(allTeachersListBox, SIGNAL(selected(QString)), this, SLOT(addTeacher()));
     connect(selectedTeachersListBox, SIGNAL(selected(QString)), this, SLOT(removeTeacher()));
     connect(allStudentsListBox, SIGNAL(selected(QString)), this, SLOT(addStudents()));
@@ -115,16 +175,12 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 		for(int i=0; i<gt.rules.activitiesList.size(); i++){
 			Activity* act=gt.rules.activitiesList[i];
 			if(act->activityGroupId==this->_activityGroupId){
-				if(nSplit>=10){
-					//QMessageBox::warning(this, tr("FET warning"), tr("FET has met a problem - the activity is split into more than %1 components. "
-					//	"FET will continue operation, so that you can work with your file").arg(10));
-					//return;
+				if(nSplit>=MAX_SPLIT_OF_AN_ACTIVITY){
 					assert(0);
 				}
 				else{
 					if(this->_id==act->id)
-						subactivitiesTabWidget->setCurrentPage(nSplit);
-					//par(nSplit)->setChecked(act->parity==PARITY_FORTNIGHTLY);
+						subactivitiesTabWidget->setCurrentIndex(nSplit);
 					dur(nSplit)->setValue(act->duration);
 					activ(nSplit)->setChecked(act->active);
 					nSplit++;
@@ -134,21 +190,15 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	}
 	else{
 		nSplit=1;
-		//par(0)->setChecked(this->_activity->parity==PARITY_FORTNIGHTLY);
 		dur(0)->setValue(this->_activity->duration);
 		activ(0)->setChecked(this->_activity->active);
-		subactivitiesTabWidget->setCurrentPage(0);
+		subactivitiesTabWidget->setCurrentIndex(0);
 	}
 
 	splitSpinBox->setMinValue(nSplit);
 	splitSpinBox->setMaxValue(nSplit);	
 	splitSpinBox->setValue(nSplit);	
 	
-/*	if(nSplit==1)
-		currentActivityTextLabel->setText(tr("Current activity"));
-	else
-		currentActivityTextLabel->setText(tr("Current activities"));
-*/	
 	nStudentsSpinBox->setMinValue(-1);
 	nStudentsSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
 	nStudentsSpinBox->setValue(-1);
@@ -165,11 +215,11 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	for(QStringList::Iterator it=this->_students.begin(); it!=this->_students.end(); it++)
 		selectedStudentsListBox->insertItem(*it);
 
-	for(int i=0; i<10; i++)
+	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
 		if(i<nSplit)
-			subTab(i)->setEnabled(true);
+			subactivitiesTabWidget->setTabEnabled(i, true);
 		else
-			subTab(i)->setDisabled(true);
+			subactivitiesTabWidget->setTabEnabled(i, false);
 			
 	okPushButton->setDefault(true);
 	okPushButton->setFocus();
@@ -520,17 +570,13 @@ void ModifyActivityForm::ok()
 	}
 
 	int totalduration;
-	int durations[10];
-	//int parities[8];
-	bool active[10];
+	int durations[MAX_SPLIT_OF_AN_ACTIVITY];
+	bool active[MAX_SPLIT_OF_AN_ACTIVITY];
 	int nsplit=splitSpinBox->value();
 
 	totalduration=0;
 	for(int i=0; i<nsplit; i++){
 		durations[i]=dur(i)->value();
-		//parities[i]=PARITY_WEEKLY;
-		//if(par(i)->isChecked())
-		//	parities[i]=PARITY_FORTNIGHTLY;
 		active[i]=activ(i)->isChecked();
 
 		totalduration+=durations[i];
@@ -569,7 +615,3 @@ void ModifyActivityForm::clearActivityTags()
 	selectedActivityTagsListBox->clear();
 	activityChanged();
 }
-
-#undef subTab
-#undef activ
-#undef dur

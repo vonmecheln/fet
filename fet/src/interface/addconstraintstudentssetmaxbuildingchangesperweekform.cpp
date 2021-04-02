@@ -48,7 +48,7 @@ AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::AddConstraintStudentsSetM
 	Q_UNUSED(tmp2);
 
 	maxChangesSpinBox->setMinValue(0);
-	maxChangesSpinBox->setMaxValue(10);
+	maxChangesSpinBox->setMaxValue(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(3);
 
 	updateStudentsSetComboBox();

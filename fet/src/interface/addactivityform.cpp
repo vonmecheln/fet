@@ -37,56 +37,116 @@
 #include <QAbstractItemView>
 #include <QModelIndex>
 
-#define subTab(i)	subactivitiesTabWidget->page(i)
-#define dur(i)		(i==0?duration1SpinBox:					\
-			(i==1?duration2SpinBox:					\
-			(i==2?duration3SpinBox:					\
-			(i==3?duration4SpinBox:					\
-			(i==4?duration5SpinBox:					\
-			(i==5?duration6SpinBox:					\
-			(i==6?duration7SpinBox:					\
-			(i==7?duration8SpinBox:					\
-			(i==8?duration9SpinBox:					\
-			(duration10SpinBox))))))))))
-#define activ(i)		(i==0?active1CheckBox:					\
-			(i==1?active2CheckBox:					\
-			(i==2?active3CheckBox:					\
-			(i==3?active4CheckBox:					\
-			(i==4?active5CheckBox:					\
-			(i==5?active6CheckBox:					\
-			(i==6?active7CheckBox:					\
-			(i==7?active8CheckBox:					\
-			(i==8?active9CheckBox:					\
-			(active10CheckBox))))))))))
+#include <QList>
+
+/*QWidget* AddActivityForm::subTab(int i)
+{
+	assert(i>=0 && i<subactivitiesTabWidget->count());
+	return subactivitiesTabWidget->widget(i);
+}*/
+
+QSpinBox* AddActivityForm::dur(int i)
+{
+	assert(i>=0 && i<durList.count());
+	assert(i<MAX_SPLIT_OF_AN_ACTIVITY);
+	return durList.at(i);
+}
+
+QCheckBox* AddActivityForm::activ(int i)
+{
+	assert(i>=0 && i<activList.count());
+	assert(i<MAX_SPLIT_OF_AN_ACTIVITY);
+	return activList.at(i);
+}
 
 AddActivityForm::AddActivityForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName)
 {
     setupUi(this);
 
-//    connect(forceAdjacentCheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(nStudentsSpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active8CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(active7CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(active6CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(active5CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(active4CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(active3CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(active2CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(active1CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
+	splitSpinBox->setMaxValue(MAX_SPLIT_OF_AN_ACTIVITY);
+
+	durList.clear();
+	durList.append(duration1SpinBox);
+	durList.append(duration2SpinBox);
+	durList.append(duration3SpinBox);
+	durList.append(duration4SpinBox);
+	durList.append(duration5SpinBox);
+	durList.append(duration6SpinBox);
+	durList.append(duration7SpinBox);
+	durList.append(duration8SpinBox);
+	durList.append(duration9SpinBox);
+	durList.append(duration10SpinBox);
+	durList.append(duration11SpinBox);
+	durList.append(duration12SpinBox);
+	durList.append(duration13SpinBox);
+	durList.append(duration14SpinBox);
+	durList.append(duration15SpinBox);
+	durList.append(duration16SpinBox);
+	durList.append(duration17SpinBox);
+	durList.append(duration18SpinBox);
+	durList.append(duration19SpinBox);
+	durList.append(duration20SpinBox);
+	durList.append(duration21SpinBox);
+	durList.append(duration22SpinBox);
+	durList.append(duration23SpinBox);
+	durList.append(duration24SpinBox);
+	durList.append(duration25SpinBox);
+	durList.append(duration26SpinBox);
+	durList.append(duration27SpinBox);
+	durList.append(duration28SpinBox);
+	durList.append(duration29SpinBox);
+	durList.append(duration30SpinBox);
+	durList.append(duration31SpinBox);
+	durList.append(duration32SpinBox);
+	durList.append(duration33SpinBox);
+	durList.append(duration34SpinBox);
+	durList.append(duration35SpinBox);
+	
+	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
+		dur(i)->setMaxValue(gt.rules.nHoursPerDay);
+
+	activList.clear();
+	activList.append(active1CheckBox);
+	activList.append(active2CheckBox);
+	activList.append(active3CheckBox);
+	activList.append(active4CheckBox);
+	activList.append(active5CheckBox);
+	activList.append(active6CheckBox);
+	activList.append(active7CheckBox);
+	activList.append(active8CheckBox);
+	activList.append(active9CheckBox);
+	activList.append(active10CheckBox);
+	activList.append(active11CheckBox);
+	activList.append(active12CheckBox);
+	activList.append(active13CheckBox);
+	activList.append(active14CheckBox);
+	activList.append(active15CheckBox);
+	activList.append(active16CheckBox);
+	activList.append(active17CheckBox);
+	activList.append(active18CheckBox);
+	activList.append(active19CheckBox);
+	activList.append(active20CheckBox);
+	activList.append(active21CheckBox);
+	activList.append(active22CheckBox);
+	activList.append(active23CheckBox);
+	activList.append(active24CheckBox);
+	activList.append(active25CheckBox);
+	activList.append(active26CheckBox);
+	activList.append(active27CheckBox);
+	activList.append(active28CheckBox);
+	activList.append(active29CheckBox);
+	activList.append(active30CheckBox);
+	activList.append(active31CheckBox);
+	activList.append(active32CheckBox);
+	activList.append(active33CheckBox);
+	activList.append(active34CheckBox);
+	activList.append(active35CheckBox);
+
     connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
     connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
     connect(subgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
     connect(groupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
     connect(yearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
-//    connect(duration8SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(duration7SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(duration6SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(duration5SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(duration4SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(duration3SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(duration2SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(duration1SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(minDayDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
     connect(splitSpinBox, SIGNAL(valueChanged(int)), this, SLOT(splitChanged()));
     connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(subjectChanged(QString)));
     connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
@@ -99,10 +159,6 @@ AddActivityForm::AddActivityForm(const QString& teacherName, const QString& stud
     connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
     connect(allActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(addActivityTag()));
     connect(selectedActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(removeActivityTag()));
-//    connect(duration9SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active9CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
-//    connect(duration10SpinBox, SIGNAL(valueChanged(int)), this, SLOT(activityChanged()));
-//    connect(active10CheckBox, SIGNAL(toggled(bool)), this, SLOT(activityChanged()));
     connect(minDayDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
 
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -126,13 +182,13 @@ AddActivityForm::AddActivityForm(const QString& teacherName, const QString& stud
 	minDayDistanceSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
 	minDayDistanceSpinBox->setMinValue(0);
 	minDayDistanceSpinBox->setValue(1);
-
+	
 	int nSplit=splitSpinBox->value();
-	for(int i=0; i<10; i++)
+	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
 		if(i<nSplit)
-			subTab(i)->setEnabled(true);
+			subactivitiesTabWidget->setTabEnabled(i, true);
 		else
-			subTab(i)->setDisabled(true);
+			subactivitiesTabWidget->setTabEnabled(i, false);
 			
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
@@ -419,18 +475,18 @@ void AddActivityForm::splitChanged()
 {
 	int nSplit=splitSpinBox->value();
 	
-	if(nSplit>=2){
+	//if(nSplit>=2){
 		//addActivityPushButton->setText(tr("Add current activities"));
 		//addActivityPushButton->setText(tr("Add activities"));
 		//addActivityPushButton->setText(tr("Add"));
 		//currentActivityTextLabel->setText(tr("Current activities"));
-	}
-	else{
+	//}
+	//else{
 		//addActivityPushButton->setText(tr("Add current activity"));
 		//addActivityPushButton->setText(tr("Add activity"));
 		//addActivityPushButton->setText(tr("Add"));
 		//currentActivityTextLabel->setText(tr("Current activity"));
-	}
+	//}
 
 	//minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	//minDayDistanceSpinBox->setEnabled(nSplit>=2);
@@ -442,11 +498,11 @@ void AddActivityForm::splitChanged()
 	percentTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 	forceAdjacentCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 
-	for(int i=0; i<10; i++)
+	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
 		if(i<nSplit)
-			subTab(i)->setEnabled(true);
+			subactivitiesTabWidget->setTabEnabled(i, true);
 		else
-			subTab(i)->setDisabled(true);
+			subactivitiesTabWidget->setTabEnabled(i, false);
 
 	activityChanged();
 }
@@ -795,11 +851,11 @@ void AddActivityForm::addActivity()
 		}
 
 		int totalduration;
-		int durations[10];
+		int durations[MAX_SPLIT_OF_AN_ACTIVITY];
 		//int parities[8];
 		//int preferred_days[8];
 		//int preferred_hours[8];
-		bool active[10];
+		bool active[MAX_SPLIT_OF_AN_ACTIVITY];
 		int nsplit=splitSpinBox->value();
 
 		totalduration=0;
@@ -1080,7 +1136,3 @@ void AddActivityForm::minDaysChanged()
 	percentTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
 	forceAdjacentCheckBox->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
 }
-
-#undef subTab
-#undef activ
-#undef dur

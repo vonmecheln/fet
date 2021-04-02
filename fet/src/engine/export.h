@@ -58,8 +58,6 @@ private:
 	static bool exportCSVTeachers(QString& lastWarnings, const QString textquote, const bool head, const QString setSeparator, QMessageBox::StandardButton& msgBoxButton);
 	static bool exportCSVStudents(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, const QString setSeparator, QMessageBox::StandardButton& msgBoxButton);
 	static bool exportCSVTimetable(QString& lastWarnings, const QString textquote, const QString fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton);
-
-	static bool exportSchILD(QString& lastWarnings);
 };
 
 class LastWarningsDialogE: public QDialog{

@@ -29,8 +29,8 @@
 
 extern Timetable gt;
 
-QLineEdit* hoursNames[60];
-int nHours;
+static QLineEdit* hoursNames[60];
+static int nHours;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;

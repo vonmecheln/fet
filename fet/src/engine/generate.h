@@ -36,7 +36,7 @@ class Activity;
 bool skipRandom(double weightPercentage);
 
 //for sorting slots in ascending order of potential conflicts
-bool compareFunction(int i, int j);
+bool compareFunctionGenerate(int i, int j);
 
 /**
 This class represents the solving of time

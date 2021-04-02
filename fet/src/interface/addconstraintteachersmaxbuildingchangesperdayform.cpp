@@ -44,7 +44,7 @@ AddConstraintTeachersMaxBuildingChangesPerDayForm::AddConstraintTeachersMaxBuild
 	centerWidgetOnScreen(this);
 	
 	maxChangesSpinBox->setMinValue(0);
-	maxChangesSpinBox->setMaxValue(10);
+	maxChangesSpinBox->setMaxValue(gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(1);
 }
 

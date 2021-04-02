@@ -45,8 +45,8 @@ ModifyConstraintStudentsMaxBuildingChangesPerWeekForm::ModifyConstraintStudentsM
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
 	
 	maxChangesSpinBox->setMinValue(0);
-	maxChangesSpinBox->setMaxValue(10);
-	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerWeek);	
+	maxChangesSpinBox->setMaxValue(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerWeek);
 		
 	constraintChanged();
 }

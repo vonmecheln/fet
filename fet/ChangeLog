@@ -1102,31 +1102,31 @@ Versions 5.4.0 - 5.4.18
 	and is viable). This can be considered important bug fix
 	- Greek translation by Dimitrios Ropokis
 - Version 5.4.11
-	- Arabic translation (partial), by Hatim Ali
+	- Arabic translation (partial), by Silver
 	- Small bug fixes in export to html by Volker Dirr
 - Version 5.4.12
 	- Greek translation update by Dimitrios Ropokis
 	- Arabic better support
-	- Arabic translation update by Hatim Ali
+	- Arabic translation update by Silver
 	- Code cleanup
 	- Switched to Qt 4.3.2
 - Version 5.4.13
 	- Small bug fixes in html generated timetable by Volker Dirr
 	- Indonesian translation by Nirwan Yus
 	- Italian translation by Marco Barsotti
-	- Arabic translation update by Hatim Ali
+	- Arabic translation update by Silver
 - Version 5.4.14
 	- Minor interface improvement - in add rooms dialog, pressing Enter now works better, it adds a room,
 	not displays Help
 - Version 5.4.15
-	- Added an Arabic sample file by Hatim Ali
+	- Added an Arabic sample file by Silver
 	- Various translations updates
 	- Update of README file
 	- MAX_ACTIVITIES is now 5000
 - Version 5.4.16
 	- Groups and years timetables contain dashed lines in cells which contain more activities 
-	(suggested by Hatim Ali, done by Volker Dirr)
-	- Arabic translation update by Hatim Ali
+	(suggested by Silver, done by Volker Dirr)
+	- Arabic translation update by Silver
 - Version 5.4.17
 	- Faster precomputation
 	- Significant speed improvement in saving html timetables by Liviu Lalescu
@@ -1195,7 +1195,7 @@ Versions 5.5.0 - 5.5.9
 	- Arabic, Romanian, Spanish, Italian translations update.
 	- Added an option to select all slots available or not available for constraints break, not available and preferred times
 	(suggested by didit).
-	- Added another Arabic sample by Hatim Alahmadi
+	- Added another Arabic sample by Silver
 - Version 5.5.7
 	- Added 2 samples from Namibia (by Bobby Wise).
 	- Added 1 sample from Namibia (by Willy Henckert).
@@ -1237,7 +1237,7 @@ Versions 5.6.0 - 5.6.4
 	- Indonesian, Romanian, Italian, German translations updates.
 - Version 5.6.2
 	- Added constraint teacher(s) and students (set) interval max days per week, to specify an hourly interval
-	and the maximum number of days per week for teachers (students) to work in this interval (suggested by Hatim Alahmadi).
+	and the maximum number of days per week for teachers (students) to work in this interval (suggested by Silver).
 	This constraint is very useful, for instance specify that teachers and students must not work more than 2
 	times per week in the last hour of the day.
 	- Added constraint a set of activities end students day - to specify for a group of activities that they
@@ -1274,7 +1274,7 @@ Versions 5.7.0 - 5.7.7
 	- Modified a bit the spreading activities dialog, now the activities split into 2 and 3 not in consecutive days
 	is by default NOT checked, because this might lead to impossible timetables for difficult files. If you want
 	spreading for these activities, you need to manually select this option.
-	- Arabic translation update by Hatim Alahmadi
+	- Arabic translation update by Silver
 - Version 5.7.4
 	- Minor bug fix - if searching for updates at startup is enabled, it gave segmentation fault when exiting FET, under GNU/Linux.
 	Probably unnoticed bug.
@@ -1332,7 +1332,7 @@ Versions 5.9.0 - 5.9.4
 	- Added multiple activity tags for a single activity.
 	- It is now possible to edit a single subactivity.
 	- Added constraints teacher(s) or students (set) activity tag max hours continuously (to specify that
-	a teacher or a students set must have maximum n hours continuously for an activity tag) - suggested by Hatim Ali,
+	a teacher or a students set must have maximum n hours continuously for an activity tag) - suggested by Silver,
 	George Miliotis and Volker Dirr.
 	- Improved a bit the memory consumption.
 	- To avoid Windows problems with very large filenames, the sample file names were shortened.
@@ -1528,8 +1528,15 @@ Versions 5.14.0 - 5.14.x
 	See the README file for the new command line parameters for specifying the random seed.
 	- Improved memory consumption on constraints activity/activities/subactivities preferred starting times/preferred time slots.
 	- Minor interface improvements.
-	- Updates in the Arabic translation, by Hatim Alahmadi.
+	- Updates in the Arabic translation, by Silver.
 - Version 5.14.1
 	- Speed improvement in the generation algorithm (this speed improvement is better observable as the number of hours per week is larger).
 	- Added a partial Hebrew translation, by Yotam Medini (only the main menu).
-	
+- Version 5.14.2
+	- A rare possible problem is improved (not completely solved). This problem was reported by Marco Barsotti: for some fixed timetables the generation
+	may report incorrectly an impossible timetable. This problem cannot be solved perfectly, only patched, and this will hopefully solve the problem
+	in all practical situations.
+	- An activity can now be split into 35 (it was previously only 10) - suggested by mohd on the forum.
+	- Improved a bit the add/modify activity dialogs (inactive tabs for the components of a subactivity are disabled).
+	- Updated the Slovak translation, by Ondrej Gregor.
+	- Added a new sample file, by Marco Barsotti.

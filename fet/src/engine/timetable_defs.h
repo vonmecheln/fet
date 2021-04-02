@@ -101,6 +101,10 @@ IMPORTANT: must be qint16 (max 32767), because we are using qint16 for each acti
 */
 const int MAX_ACTIVITIES=30000;
 
+//if you want to increase this, you also need to modify the add/modify activity dialogs, to permit larger values
+//(add more pages in the subactivities tab).
+const int MAX_SPLIT_OF_AN_ACTIVITY=35;
+
 /**
 The maximum number of rooms
 IMPORTANT: max_rooms+1 must be qint16 (max 32766 for max_rooms), because we are using qint16 for each room index and for unallocated space = max_rooms and for unspecified room = max_rooms+1

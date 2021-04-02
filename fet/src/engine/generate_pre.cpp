@@ -38,6 +38,8 @@ using namespace std;
 
 #include "longtextmessagebox.h"
 
+#include <QtAlgorithms>
+
 #include <QPair>
 #include <QSet>
 #include <QHash>
@@ -360,6 +362,7 @@ static int nHoursAvailableForRoom[MAX_ROOMS];
 
 /////////used only in sortActivities
 static int nIncompatible[MAX_ACTIVITIES];
+static double nMinDaysConstraintsBroken[MAX_ACTIVITIES];
 static int nRoomsIncompat[MAX_ROOMS];
 static double nHoursForRoom[MAX_ROOMS];
 static Matrix1D<PreferredRoomsItem> maxPercentagePrefRooms;
@@ -370,6 +373,16 @@ static int reprNInc[MAX_ACTIVITIES];
 
 
 ///#define max(x,y)		((x)>=(y)?(x):(y))
+
+inline bool compareFunctionGeneratePre(int i, int j)
+{
+	if(nIncompatible[i]>nIncompatible[j] ||
+	 (nIncompatible[i]==nIncompatible[j] &&
+	 nMinDaysConstraintsBroken[i]>nMinDaysConstraintsBroken[j]))
+		return true;
+	
+	return false;
+}
 
 
 bool processTimeSpaceConstraints(QTextStream* initialOrderStream)
@@ -7557,6 +7570,54 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 	}
 	
 	
+	QHash<int, int> allowedSlotForFixedActivity;
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		if(fixedTimeActivity[i]){
+			int cnt=0;
+			int allowed;
+			for(int s=0; s<gt.rules.nHoursPerWeek; s++){
+				if(notAllowedTimesPercentages[i][s]<100.0){
+					allowed=s;
+					cnt++;
+				}
+			}
+			assert(cnt==1);
+			allowedSlotForFixedActivity.insert(i, allowed);
+		}
+	}
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		nMinDaysConstraintsBroken[i]=1.0;
+		
+		if(fixedTimeActivity[i]){
+			assert(allowedSlotForFixedActivity.contains(i));
+			int si=allowedSlotForFixedActivity.value(i);
+			int di=si%gt.rules.nDaysPerWeek;
+		
+			for(int d=0; d<minDaysListOfActivities[i].count(); d++){
+				int j=minDaysListOfActivities[i].at(d);
+				if(!fixedTimeActivity[j])
+					continue;
+				int m=minDaysListOfMinDays[i].at(d);
+				double w=minDaysListOfWeightPercentages[i].at(d)/100.0;
+				
+				assert(allowedSlotForFixedActivity.contains(j));
+				int sj=allowedSlotForFixedActivity.value(j);
+				int dj=sj%gt.rules.nDaysPerWeek;
+				
+				int dist=abs(di-dj);
+				if(dist<m){
+					//careful, don't assert weight is <100.0, because the data may be impossible and we get assert failed
+					nMinDaysConstraintsBroken[i]*=(1.0-w);
+				}
+			}
+		}
+		
+		nMinDaysConstraintsBroken[i]=1.0-nMinDaysConstraintsBroken[i];
+		//the resultant weight of all broken constraints
+		//(the probability that after one try, we are not OK)
+	}
+	
+	//DEPRECATED
 	//Sort activities in in-creasing order of number of the other activities with which
 	//this activity does not conflict
 	//Selection sort, based on a permutation
@@ -7564,29 +7625,49 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		permutation[i]=i;
 		
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
+	/*for(int i=0; i<gt.rules.nInternalActivities; i++){
 		for(int j=i+1; j<gt.rules.nInternalActivities; j++){
-			if(nIncompatible[permutation[i]]<nIncompatible[permutation[j]]){
+			if(nIncompatible[permutation[i]]<nIncompatible[permutation[j]] ||
+			 (nIncompatible[permutation[i]]==nIncompatible[permutation[j]] && nMinDaysConstraintsBroken[permutation[i]]<nMinDaysConstraintsBroken[permutation[j]])){
 				int t=permutation[i];
 				permutation[i]=permutation[j];
 				permutation[j]=t;
 			}
 		}
+	}*/
+	
+	//descending by nIncompatible, then by nMinDaysConstraintsBroken
+	//(by nMinDaysConstraintsBroken to alleviate an 'impossible to generate' bug if generating for a fixed timetable).
+	qStableSort(permutation+0, permutation+gt.rules.nInternalActivities, compareFunctionGeneratePre);
+	
+	for(int i=1; i<gt.rules.nInternalActivities; i++){
+		//don't assert nMinDaysConstraintsBroken is descending (if nIncompatible is equal), because it is a double number and we may get rounding errors
+		assert(nIncompatible[permutation[i-1]]>=nIncompatible[permutation[i]]);
 	}
 	
 	cout<<"The order of activities (id-s):"<<endl;
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		cout<<"No: "<<i+1<<", nIncompatible[permutation[i]]=="<<nIncompatible[permutation[i]]<<", ";
+		if(nMinDaysConstraintsBroken[permutation[i]]>0.0)
+			cout<<"nMinDaysConstraintsBroken[permutation[i]]=="<<nMinDaysConstraintsBroken[permutation[i]]<<", ";
 	
 		Activity* act=&gt.rules.internalActivitiesList[permutation[i]];
 		cout<<"id=="<<act->id;
 		cout<<", teachers: ";
-		foreach(QString s, act->teachersNames)
-			cout<<qPrintable(s)<<" ";
-		cout<<", subj=="<<qPrintable(act->subjectName);
+		QString tj=act->teachersNames.join(" ");
+		//foreach(QString s, act->teachersNames)
+		//	cout<<qPrintable(s)<<" ";
+		cout<<qPrintable(tj);
+		cout<<", subject: "<<qPrintable(act->subjectName);
+		if(act->activityTagsNames.count()>0){
+			QString atj=act->activityTagsNames.join(" ");
+			cout<<", activity tags: "<<qPrintable(atj);
+		}
 		cout<<", students: ";
-		foreach(QString s, act->studentsNames)
-			cout<<qPrintable(s)<<" ";
+		QString sj=act->studentsNames.join(" ");
+		//foreach(QString s, act->studentsNames)
+		//	cout<<qPrintable(s)<<" ";
+		cout<<qPrintable(sj);
 		cout<<endl;
 	}
 	cout<<"End - the order of activities (id-s):"<<endl;
@@ -7613,7 +7694,7 @@ void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<in
 		s+=GeneratePreTranslate::tr("Subject: %1").arg(act->subjectName);
 		s+=", ";
 		//if(act->activityTagsNames.count()>0)
-			s+=GeneratePreTranslate::tr("Activity tags: %1").arg(act->activityTagsNames.join(", "));
+		s+=GeneratePreTranslate::tr("Activity tags: %1").arg(act->activityTagsNames.join(", "));
 		s+=", ";
 		s+=GeneratePreTranslate::tr("Students: %1").arg(act->studentsNames.join(", "));
 		

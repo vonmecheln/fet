@@ -973,214 +973,214 @@
 <context>
     <name>AddActivityForm</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="659"/>
-        <location filename="../src/interface/addactivityform.cpp" line="685"/>
-        <location filename="../src/interface/addactivityform.cpp" line="724"/>
-        <location filename="../src/interface/addactivityform.cpp" line="766"/>
-        <location filename="../src/interface/addactivityform.cpp" line="768"/>
-        <location filename="../src/interface/addactivityform.cpp" line="903"/>
-        <location filename="../src/interface/addactivityform.cpp" line="908"/>
+        <location filename="../src/interface/addactivityform.cpp" line="715"/>
+        <location filename="../src/interface/addactivityform.cpp" line="741"/>
+        <location filename="../src/interface/addactivityform.cpp" line="780"/>
+        <location filename="../src/interface/addactivityform.cpp" line="822"/>
+        <location filename="../src/interface/addactivityform.cpp" line="824"/>
+        <location filename="../src/interface/addactivityform.cpp" line="959"/>
+        <location filename="../src/interface/addactivityform.cpp" line="964"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="660"/>
+        <location filename="../src/interface/addactivityform.cpp" line="716"/>
         <source>Invalid weight (percentage) for added constraint min days between activities</source>
         <translation>Peso percentuale non valido per il vincolo di Numero minimo di giorni tra due attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="667"/>
-        <location filename="../src/interface/addactivityform.cpp" line="707"/>
-        <location filename="../src/interface/addactivityform.cpp" line="751"/>
+        <location filename="../src/interface/addactivityform.cpp" line="723"/>
+        <location filename="../src/interface/addactivityform.cpp" line="763"/>
+        <location filename="../src/interface/addactivityform.cpp" line="807"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="686"/>
+        <location filename="../src/interface/addactivityform.cpp" line="742"/>
         <source>Invalid subject</source>
         <translation>Materia non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="668"/>
+        <location filename="../src/interface/addactivityform.cpp" line="724"/>
         <source>Do you really want to add an activity without teacher(s)?</source>
         <translation>Vuoi davvero inserire una attività senza insegnante?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="708"/>
+        <location filename="../src/interface/addactivityform.cpp" line="764"/>
         <source>Do you really want to add an activity without student set(s)?</source>
         <translation>Vuoi davvero inserire una attività senza studenti?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="725"/>
+        <location filename="../src/interface/addactivityform.cpp" line="781"/>
         <source>Invalid duration</source>
         <translation>Durata non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="754"/>
-        <location filename="../src/interface/addactivityform.cpp" line="791"/>
+        <location filename="../src/interface/addactivityform.cpp" line="810"/>
+        <location filename="../src/interface/addactivityform.cpp" line="847"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="754"/>
-        <location filename="../src/interface/addactivityform.cpp" line="791"/>
+        <location filename="../src/interface/addactivityform.cpp" line="810"/>
+        <location filename="../src/interface/addactivityform.cpp" line="847"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="766"/>
+        <location filename="../src/interface/addactivityform.cpp" line="822"/>
         <source>Activity added</source>
         <translation>Attività inserita</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="768"/>
+        <location filename="../src/interface/addactivityform.cpp" line="824"/>
         <source>Activity NOT added - please report error</source>
         <translation>Attività NON inserita - Si prega di segnalare l&apos;errore</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="774"/>
+        <location filename="../src/interface/addactivityform.cpp" line="830"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translation>Vuoi aggiungere un insieme di attività suddivise in numero di giorni maggiore di quelli per settimana e aggiungere anche il numero minimo di giorni tra attività. Questa è una pessima idea per il modo in cui funziona l&apos;algoritmo (si rallenta la generazione ed è più difficile risolvere l&apos;orario).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="779"/>
+        <location filename="../src/interface/addactivityform.cpp" line="835"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
         <translation>1. Se selezioni &apos;forza consecutive se stesso giorno&apos;,  allora accoppia più attività per ottenere un numero di lezioni uguale al numero di giorni a settimana. Esempio: 7 attività di durata 1 in una settimana di 5 giorni possono diventare 5 attività di durata 2,2,1,1,1 così da aggiungere un singolo insieme di attività con queste 5 componenti (possibilmente aumentando il peso del vincolo Numero minimo di giorni tra attività fino al 100%) </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="783"/>
+        <location filename="../src/interface/addactivityform.cpp" line="839"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translation>2. Se non selezioni &apos;forza consecutive se stesso giorno&apos;, allora aggiungi un contenitore contenente un numero di subattività uguale al numero di giorni per settimana e ulteriori subattività previste, in un altro contenitore di subattività. Per esempio supponi di avere 7 subattività di durata 1 in una settimana di 5 giorni. Aggiungi 2 contenitori di subattività più ampi, il primo suddiviso in 5 subattività di durata 1 e il secondo diviso in 2 subattività di durata 1 (aumentando il peso del vincolo Numero minimo di giorni tra attività per ciascuno dei 2 contenitori fino al 100% senza problemi)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="903"/>
+        <location filename="../src/interface/addactivityform.cpp" line="959"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
         <translation>Subattività aggiunte. FET attualmente non può rilevare duplicati quando aggiunge attività suddivise. Controlla il menu Statistica dopo aver inserito tutte le attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="908"/>
+        <location filename="../src/interface/addactivityform.cpp" line="964"/>
         <source>Split activity NOT added - error???</source>
         <translation>Attività suddivise NON aggiunte - errore?!?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="936"/>
+        <location filename="../src/interface/addactivityform.cpp" line="992"/>
         <source>This help by Liviu Lalescu, modified 25 September 2008</source>
         <translation>Aiuto di Liviu Lalescu, modificato il  25 settembre 2008</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="940"/>
+        <location filename="../src/interface/addactivityform.cpp" line="996"/>
         <source>Comment added on 25 September 2008:</source>
         <translation>Commento aggiunto il 25 settembre 2008:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="942"/>
+        <location filename="../src/interface/addactivityform.cpp" line="998"/>
         <source>A first notice, because many users didn&apos;t care about it: If you use a 5 days week: when adding an activity split into only 2 components per week, the best practice is to add min days between activities to be 2. If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008</source>
         <translation>Una prima osservazione, troppo spesso trascurata dagli utenti: se usi una settimana di 5 giorni, quando aggiungi una attività suddivisa in due componenti è buona norma aggiungere il vincolo di Numero minimo di giorni tra subattività pari a 2. Se suddividi una attività in 3 componenti, leggi la domanda n.1 (5 settembre 2008) tra le FAQ </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="949"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1005"/>
         <source>You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then double click it or press Enter to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.</source>
         <translation>Puoi selezionare un insegnante fra tutti gli insegnanti tramite il mouse o tramite la tastiera (tasti tab / su / giù), quindi un doppio click o premi Invio per aggiungerlo tra gli insegnanti selezionati per la corrente attività. Puoi decidere di rimuovere un insegnante tra quelli selezionati. Puoi evidenziarlo con i tasti su / giù o con il mouse, quindi un doppio click o premi Invio per rimuovere l&apos;insegnante dalla lista degli insegnanti selezionati.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="956"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1012"/>
         <source>The same procedure (double click or Enter) applies to adding a students set or removing a students set.</source>
         <translation>La stessa procedura (doppio click o Invio) si applica per aggiungere - o rimuovere - insiemi di studenti.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="960"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1016"/>
         <source>You can check/uncheck show years, show groups or show subgroups.</source>
         <translation>Puoi selezionare / deselezionare mostra anni, mostra classi o mostra sottogruppi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="963"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1019"/>
         <source>If you split a larger activity into more activities per week, you have a multitude of choices:
 You can choose the minimum distance in days between each pair of activities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday to Wednesday for instance is 2 days), etc.</source>
         <translation>Se vuoi suddividere una più grande attività in più subattività per settimana, puoi farlo in diversi modi:
 puoi scegliere la distanza minima in giorni tra ciascun paio di subattività. Si noti che una distanza minima di 1 significa che le subattività non devono cadere lo stesso giorno; una distanza minima di 2 significa che le subattività devono essere separate da un giorno (la distanza tra lunedì e mercoledì è, per esempio, di 2 giorni), ecc.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="971"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1027"/>
         <source>Modification on 14 June 2008:</source>
         <translation>Modifica del 14 giugno 2008:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="973"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1029"/>
         <source>If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% (or higher). If you want also to ensure that activities will be separated by at least one day, you can use this feature: add a constraint min days with minimum days 2 and weight 95% or lower, and after that you&apos;ll get the possibility to add another constraint with min 1 days and weight 95% or higher. It works if you first select in the dialog the min days &gt;= 2 and click Add activities. Or you can add manually the constraints (difficult this way). Important: it is best practice to consider both constraints to have 95% weight. The combination assures that the resultant is 99.75% weight</source>
         <translation>Se hai per esempio una attività con 2 lezioni a settimana e desideri che siano separate almeno da 2 giorni di distanza, è possibile aggiungere un vincolo Numero minimo di giorni = 2 e peso del 95% (o maggiore). Se vuoi anche garantire che le subattività siano separate da almeno un giorno, puoi utilizzare questa caratteristica: aggiungere un vincolo Numero minimo di giorni =  2 e peso 95% o meno, e dopo potrai aggiungere un altro vincolo con minimo 1 giorno e di pesodel 95% (o più). Funzionerà se prima selezioni nella finestra di dialogo Numero minimo di giorni&gt; = 2 e poi fai clic su Aggiungi attività. O puoi aggiungere manualmente i vincoli (più difficile in questo modo). Importante: è buona norma che entrambi i vincoli abbiano il 95% di peso. La loro combinazione assicura che ne risulti il 99,75% di peso</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="986"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1042"/>
         <source>Please note that the min days distance is a time constraint and you can only see/modify it in the time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints for each activity in the details text box of each activity</source>
         <translation>Si noti che il minimo numero di giorni di distanza è un vincolo di tempo e si può vedere / modificare solo tra le finestre di dialogo dei vincoli di tempo, non nella finestra di dialogo di modifica dell&apos;attività. Inoltre, è possibile vedere i vincoli per ogni attività tra i dettagli nella casella di testo di ogni attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="992"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1048"/>
         <source>If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min days between activities dialog.</source>
         <translation>Se si sceglie un valore maggiore o uguale a 1 per numero minimo di giorni, un vincolo di min n giorni fra attività verrà aggiunto automaticamente (si può vedere questo vincolo nell&apos;elenco dei vincoli di tempo oppure si può vedere questo vincolo nella descrizione dettagliata della attività). È possibile selezionare un peso percentuale per tale vincolo. Se si seleziona il 100%, la limitazione deve essere rispettata in ogni momento. Se si seleziona il 95%, c&apos;è una piccola probabilità che l&apos;orario non rispetti questo vincolo. Valori raccomandati vanno da 95,0% a 100,0% (potreste provare con il 95%, 99,75%, o addirittura 100,0%, ma il tempo di generazione potrebbe essere maggiorne). In generale 99,75% potrebbe essere un buon valore. Nota: Se si inserisce un valore inferiore al 100% e il vincolo è troppo difficile, FET è in grado di determinare che questo vincolo è impossibile, e la necessità di non rispettarlo e avere un conflitto lieve. 99,75% potrebbe essere migliore rispetto al 95% ma, eventualmente, più lento. La percentuale è soggettiva (se si pone il 95% è possibile ottenere 6 conflitti lievi e se si pone 99,75% potreste ottenere 3 conflitti lievi). A partire da FET-5.3.6, è possibile modificare questo valore per tutti i vincoli con un click, nella finestra di dialogo del vincolo min n giorni tra attività.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1006"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1062"/>
         <source>There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive.</source>
         <translation>Vi è un&apos;altra opzione, se le attività sono nello stesso giorno, che permette di forzare attività consecutive. È possibile selezionare questa opzione per esempio se si dispone di 5 lezioni di matematica in 5 giorni, e non c&apos;è nessun orario che rispetti pienamente i giorni di separazione. Quindi, è possibile impostare il peso percentuale del vincolo min n giorni al 95% e aggiungere consecutive se stesso giorno. Si avrà come risultato, diciamo, 3 lezioni con durata 1 ora e 2 ore di lezione in un altro giorno. Fate attenzione: se le attività sono lo stesso giorno, anche se il vincolo ha 0% di peso, dovranno essere consecutive.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1015"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1071"/>
         <source>Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases. If you encounter such cases, please contact the author, I&apos;ll try to fix this problem).</source>
         <translation>L&apos;attuale algoritmo non può programmare 3 attività nello stesso giorno, se è selezionato il vincolo di consecutive, in modo che non avrete alcuna soluzione in tali casi estremi (ad esempio, se si dispone di 3 lezioni con un insegnante che lavora solo 1 giorno a settimana, e si seleziona &apos;consecutivei se stesso giorno&apos;, si otterrà un orario impossibile. Questi sono casi estremamente improbabili. Se si dovesse verificare, si prega di contattare l&apos;autore, che cercherà di risolvere il problema).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1022"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1078"/>
         <source>Note: You cannot add &apos;consecutive if same day&apos; with min days=0. If you want this, you have to add min days at least 1 (and any weight percentage).</source>
         <translation>Nota: non è possibile aggiungere &apos;consecutive se stesso giorno&apos; con min n = 0 giorni. Se si desidera questo, si dovrebbe aggiungere min giorni almeno 1 (con qualsiasi peso percentuale).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1027"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1083"/>
         <source>Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translation>A partire dalla versione 5.0.0, è possibile aggiungere attività senza selezionare studenti o insegnanti</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1031"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1087"/>
         <source>Addition 14 June 2008:</source>
         <translation>Aggiunta del 14 giugno 2008:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1033"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1089"/>
         <source>If you select a number of min days above 1, you will get the possibility to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click Add activities</source>
         <translation>Se si seleziona un numero minimo di giorni superiore ad 1, avrete la possibilità di aggiungere un secondo vincolo di min n giorni tra attività, con numero minimo di giorni pari ad 1 e una percentuale a vostra scelta. Basta fare clic su Aggiungi attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1040"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1096"/>
         <source>FET - help on adding activity(ies)</source>
         <translation>FET - suggerimenti sull&apos;aggiunta di attività</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1046"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1102"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="789"/>
+        <location filename="../src/interface/addactivityform.cpp" line="845"/>
         <source>Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?</source>
         <translation>Vuoi aggiungere le attività correnti così come sono (non raccomandato) o annullare e modificarle come suggerito?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="777"/>
+        <location filename="../src/interface/addactivityform.cpp" line="833"/>
         <source>The best way to add the activities would be:</source>
         <translation>Il miglior modo di aggiungere attività dovrebbe essere:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="753"/>
+        <location filename="../src/interface/addactivityform.cpp" line="809"/>
         <source>A similar activity already exists. Do you want to insert current activity?</source>
         <translation>Una attività simile esiste già. Sicuro di voler aggiungere anche questa attività?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="772"/>
+        <location filename="../src/interface/addactivityform.cpp" line="828"/>
         <source>FET confirmation</source>
         <translation>FET - Conferma</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="773"/>
+        <location filename="../src/interface/addactivityform.cpp" line="829"/>
         <source>Possible incorrect setting. Are you sure you want to add current activity? See details below:</source>
         <translation>Possibili impostazioni errate. Sei sicuro di voler aggiungere l&apos;attività corrente? Vedi i seguenti dettagli:</translation>
     </message>
@@ -1262,6 +1262,31 @@ puoi scegliere la distanza minima in giorni tra ciascun paio di subattività. Si
         <location filename="../src/interface/addactivityform_template.ui" line="689"/>
         <location filename="../src/interface/addactivityform_template.ui" line="732"/>
         <location filename="../src/interface/addactivityform_template.ui" line="762"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="805"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="848"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="891"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="934"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="977"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1020"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1063"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1149"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1192"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1235"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1278"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1321"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1364"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1407"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1450"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1493"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1536"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1579"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1622"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1665"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1708"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1751"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1794"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1837"/>
         <source>Active</source>
         <translation>Attiva</translation>
     </message>
@@ -1276,6 +1301,31 @@ puoi scegliere la distanza minima in giorni tra ciascun paio di subattività. Si
         <location filename="../src/interface/addactivityform_template.ui" line="666"/>
         <location filename="../src/interface/addactivityform_template.ui" line="719"/>
         <location filename="../src/interface/addactivityform_template.ui" line="775"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="818"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="861"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="904"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="947"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="990"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1033"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1076"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1119"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1162"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1205"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1248"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1291"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1334"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1377"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1420"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1463"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1506"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1549"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1592"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1635"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1678"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1721"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1764"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1807"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1850"/>
         <source>Duration</source>
         <translation>Durata</translation>
     </message>
@@ -1325,12 +1375,137 @@ puoi scegliere la distanza minima in giorni tra ciascun paio di subattività. Si
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="823"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
+        <source>11</source>
+        <translation>11</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="829"/>
+        <source>12</source>
+        <translation>12</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="872"/>
+        <source>13</source>
+        <translation>13</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="915"/>
+        <source>14</source>
+        <translation>14</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="958"/>
+        <source>15</source>
+        <translation>15</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1001"/>
+        <source>16</source>
+        <translation>16</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1044"/>
+        <source>17</source>
+        <translation>17</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1087"/>
+        <source>18</source>
+        <translation>18</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1130"/>
+        <source>19</source>
+        <translation>19</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1173"/>
+        <source>20</source>
+        <translation>20</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1216"/>
+        <source>21</source>
+        <translation>21</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1259"/>
+        <source>22</source>
+        <translation>22</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1302"/>
+        <source>23</source>
+        <translation>23</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1345"/>
+        <source>24</source>
+        <translation>24</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1388"/>
+        <source>25</source>
+        <translation>25</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1431"/>
+        <source>26</source>
+        <translation>26</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1474"/>
+        <source>27</source>
+        <translation>27</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1517"/>
+        <source>28</source>
+        <translation>28</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1560"/>
+        <source>29</source>
+        <translation>29</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1603"/>
+        <source>30</source>
+        <translation>30</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1646"/>
+        <source>31</source>
+        <translation>31</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1689"/>
+        <source>32</source>
+        <translation>32</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1732"/>
+        <source>33</source>
+        <translation>33</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1775"/>
+        <source>34</source>
+        <translation>34</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1818"/>
+        <source>35</source>
+        <translation>35</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1898"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="835"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1910"/>
         <source>If activities on 
 same day, force
 consecutive?</source>
@@ -1339,12 +1514,12 @@ consecutive se
 nello stesso giorno?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="867"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1942"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="874"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1949"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
@@ -1363,7 +1538,7 @@ richiesto tra ogni paio
 di subattività </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="796"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1871"/>
         <source>Percentage of 
 added constraint
  (min days between 
@@ -1378,7 +1553,7 @@ Raccomandato:
 95.0%-100.0%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="813"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1888"/>
         <source>95</source>
         <translation>95</translation>
     </message>
@@ -1405,7 +1580,7 @@ Raccomandato:
         <translation>Numero di studenti (-1 per calcolo automatico)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="860"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1935"/>
         <source>Add</source>
         <translation>Aggiungi</translation>
     </message>
@@ -14449,11 +14624,11 @@ Interrompi l&apos;elaborazione per poter procedere</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="284"/>
-        <source>Please make sure that the selected activities are not forced to be consecutive by other constraint min days between activities (with consecutive if same day true) or by a constraint 2 activities consecutive</source>
-        <translation>Accerta che le attività selezionate non siano forzate ad essere consecutive a causa di altri vincoli di Numero minimo di giorni tra attività (con flag Consecutive se stesso giorno settato) ovvero da un vincolo di 2 attività consecutive</translation>
+        <source>Please make sure that the selected activities are not forced to be consecutive by some other constraint &apos;min days between activities&apos; (with &apos;consecutive if same day&apos; true), by a constraint &apos;two activities consecutive&apos;, or by a constraint &apos;two activities grouped&apos; (also, if you have a constraint &apos;three activities grouped&apos; related to the selected activities, make sure that the constraints do not contradict).</source>
+        <translation>Accertati che le attività selezionate non siano forzate ad essere consecutive da qualche altro vincolo &apos;Numero minimo di giorni tra subattività&apos; (con &apos;Consecutive se stesso giorno&apos; vero), da un vincolo &apos;Due attività sono consecutive&apos;, oppure da un vincolo &apos;Due attività sono contigue&apos; (inoltre, se hai un vincolo &apos;Tre attività sono contigue&apos; relativo alle attività selezionate, assicurati che i vincoli non si contraddicano).</translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="288"/>
+        <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="291"/>
         <source>FET help</source>
         <translation>FET - Aiuto</translation>
     </message>
@@ -25375,10 +25550,6 @@ Interrompi l&apos;elaborazione per poter procedere</translation>
         <location filename="../src/engine/export.cpp" line="706"/>
         <location filename="../src/engine/export.cpp" line="974"/>
         <location filename="../src/engine/export.cpp" line="1055"/>
-        <location filename="../src/engine/export.cpp" line="1178"/>
-        <location filename="../src/engine/export.cpp" line="1188"/>
-        <location filename="../src/engine/export.cpp" line="1198"/>
-        <location filename="../src/engine/export.cpp" line="1208"/>
         <source>FET critical. Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>FET errore critico. Impossibile aprire il file %1 in uscita. Controllare lo spazio libero nel disco. Salvataggio di %1 interrotto.</translation>
     </message>
@@ -25396,10 +25567,6 @@ Interrompi l&apos;elaborazione per poter procedere</translation>
         <location filename="../src/engine/export.cpp" line="946"/>
         <location filename="../src/engine/export.cpp" line="1028"/>
         <location filename="../src/engine/export.cpp" line="1137"/>
-        <location filename="../src/engine/export.cpp" line="1386"/>
-        <location filename="../src/engine/export.cpp" line="1392"/>
-        <location filename="../src/engine/export.cpp" line="1398"/>
-        <location filename="../src/engine/export.cpp" line="1404"/>
         <source>FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>FET errore critico. La scrittura di %1 ha dato codice di errore %2. Salvataggio compromesso. Controllare lo spazio libero nel disco.</translation>
     </message>
@@ -25491,16 +25658,6 @@ Interrompi l&apos;elaborazione per poter procedere</translation>
         <translation>%1 attività esportate.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1410"/>
-        <source>FET information</source>
-        <translation>FET - Informazione</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/export.cpp" line="1411"/>
-        <source>User abort export</source>
-        <translation>Esportazione interrotta dall&apos;utente</translation>
-    </message>
-    <message>
         <location filename="../src/engine/export.cpp" line="313"/>
         <source>Please specify the content of the first line:</source>
         <translation>Specificare il contenuto della prima riga:</translation>
@@ -25551,7 +25708,6 @@ Importare i dati sarà più semplice con questi valori.</translation>
     <message>
         <location filename="../src/engine/export.cpp" line="86"/>
         <location filename="../src/engine/export.cpp" line="940"/>
-        <location filename="../src/engine/export.cpp" line="1411"/>
         <source>FET warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
@@ -28316,7 +28472,7 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="2751"/>
+        <location filename="../src/engine/generate.cpp" line="2761"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>Dopo %1 o %2 m %3 s, FET ha piazzato %4 attività</translation>
@@ -28343,384 +28499,384 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
 <context>
     <name>GeneratePreTranslate</name>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="688"/>
-        <location filename="../src/engine/generate_pre.cpp" line="705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="759"/>
-        <location filename="../src/engine/generate_pre.cpp" line="810"/>
-        <location filename="../src/engine/generate_pre.cpp" line="860"/>
-        <location filename="../src/engine/generate_pre.cpp" line="898"/>
-        <location filename="../src/engine/generate_pre.cpp" line="953"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1004"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1061"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1146"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1227"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1279"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1450"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1494"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1509"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1528"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1544"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1581"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1617"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1646"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1665"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1702"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1778"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1841"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1916"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1979"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2114"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2132"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2217"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2298"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2350"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2440"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2583"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2609"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2625"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2651"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2669"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2747"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2788"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2833"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2883"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2966"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2984"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3078"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3202"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3225"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3247"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3314"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3342"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3359"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3388"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3453"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3470"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3499"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3529"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3569"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3592"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3626"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3664"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3802"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3818"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3874"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3946"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4089"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4132"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4181"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4514"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4622"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5002"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5027"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5117"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5161"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5184"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5274"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5310"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5516"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5549"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5600"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5646"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5680"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5735"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5768"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5844"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5927"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5965"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6365"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6388"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6411"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6495"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6531"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6555"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6618"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6657"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6743"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6782"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6804"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6843"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6865"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6980"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7153"/>
+        <location filename="../src/engine/generate_pre.cpp" line="701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="873"/>
+        <location filename="../src/engine/generate_pre.cpp" line="911"/>
+        <location filename="../src/engine/generate_pre.cpp" line="966"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1017"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1074"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1159"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1240"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1292"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1463"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1507"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1522"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1541"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1557"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1594"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1630"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1659"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1678"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1715"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1854"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1929"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1992"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2230"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2363"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2579"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2622"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2638"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2664"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2760"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2896"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2979"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2997"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3238"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3327"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3372"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3466"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3483"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3512"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3542"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3582"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3605"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3639"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3831"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4102"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4635"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5015"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5040"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5174"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5197"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5287"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5323"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5529"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5562"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5580"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5613"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5659"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5693"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5712"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5748"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5857"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5895"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5940"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5978"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6378"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6424"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6508"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6544"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6607"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6631"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6795"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6817"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6856"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6878"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7166"/>
         <source>FET warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="770"/>
-        <location filename="../src/engine/generate_pre.cpp" line="821"/>
-        <location filename="../src/engine/generate_pre.cpp" line="861"/>
-        <location filename="../src/engine/generate_pre.cpp" line="899"/>
-        <location filename="../src/engine/generate_pre.cpp" line="964"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1015"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1044"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1062"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1157"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1238"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1284"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1380"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1498"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1514"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1533"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1550"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1588"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1624"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1650"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1671"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1692"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1789"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1852"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1980"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2090"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2133"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2228"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2309"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2532"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2589"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2613"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2630"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2659"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2709"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2750"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2767"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2816"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2840"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2967"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2985"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3209"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3232"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3255"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3345"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3363"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3395"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3425"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3474"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3824"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3952"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4186"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4454"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4517"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4585"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5008"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5118"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5275"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5311"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5554"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5605"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5651"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5685"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5740"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5848"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5886"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5969"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6394"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6415"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6534"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6558"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6597"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6724"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6746"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6785"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6846"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6981"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="834"/>
+        <location filename="../src/engine/generate_pre.cpp" line="874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1057"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1170"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1393"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1511"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1563"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1684"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1802"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1865"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1930"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2103"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2128"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2146"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2241"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2322"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2368"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2602"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2672"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2740"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2780"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2808"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2829"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2853"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2998"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3408"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3469"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3549"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3589"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3837"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3895"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3965"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4199"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5021"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5131"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5198"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5324"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5664"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5753"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5861"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6428"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6478"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6513"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6547"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6634"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6673"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6737"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6759"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6798"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7167"/>
         <source>Skip rest</source>
         <translation>Salta gli altri avvisi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="770"/>
-        <location filename="../src/engine/generate_pre.cpp" line="821"/>
-        <location filename="../src/engine/generate_pre.cpp" line="861"/>
-        <location filename="../src/engine/generate_pre.cpp" line="899"/>
-        <location filename="../src/engine/generate_pre.cpp" line="964"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1015"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1044"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1062"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1157"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1238"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1284"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1380"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1498"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1514"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1533"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1550"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1588"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1624"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1650"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1671"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1692"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1789"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1852"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1980"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2090"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2133"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2228"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2309"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2532"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2589"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2613"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2630"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2659"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2709"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2750"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2767"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2816"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2840"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2967"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2985"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3209"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3232"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3255"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3345"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3363"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3395"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3425"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3474"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3824"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3952"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4186"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4454"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4517"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4585"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5008"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5118"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5275"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5311"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5554"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5605"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5651"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5685"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5740"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5848"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5886"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5969"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6394"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6415"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6534"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6558"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6597"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6724"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6746"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6785"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6846"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6981"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="834"/>
+        <location filename="../src/engine/generate_pre.cpp" line="874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1057"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1170"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1393"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1511"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1563"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1684"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1802"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1865"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1930"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2103"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2128"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2146"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2241"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2322"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2368"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2602"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2672"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2740"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2780"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2808"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2829"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2853"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2998"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3408"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3469"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3549"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3589"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3837"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3895"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3965"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4199"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5021"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5131"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5198"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5324"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5664"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5753"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5861"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6428"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6478"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6513"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6547"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6634"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6673"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6737"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6759"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6798"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7167"/>
         <source>See next</source>
         <translation>Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="849"/>
-        <location filename="../src/engine/generate_pre.cpp" line="887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="900"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perché c&apos;è un vincolo del tipo numero massimo %2 ore al giorno con il 100% di peso che non può essere rispettato a causa del numero di giorni per settimana, numero di ore per giorno, classi non disponibili e/o interruzioni. Il numero totale di ore per questo sottogruppo è %3 che devono trovare posto in un numero di ore disponibili, considerato il numero massimo di ore al giorno e altri vincoli, pari a %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1034"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1052"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1047"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1065"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo = %2 ore consecutive per il sottogruppo %1 non può essere rispettato a causa dell&apos;attività con id %3 (che ha durata %4).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1147"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1228"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1160"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1241"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28733,31 +28889,31 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1647"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1660"/>
         <source>For subgroup %1 you have too little activities to respect the constraint(s) of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.</source>
         <translatorcomment>Per il sottogruppo %1 si hanno troppo poche attività per poter rispettare i vincoli del tipo Numero minimo di ore al giorno (i vincoli non permettono di avere giorni vuoti). Correggi i dati e riprova.</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1666"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1679"/>
         <source>For subgroup %1 cannot respect the constraint(s) of type min hours daily (the constraint(s) do not allow empty days) on day %2, because of students set not available and/or break. Please modify your data accordingly and try again</source>
         <translation>Per il sottogruppo %1 è impossibile rispettare i vincoli del tipo Numero minimo di ore al giorno (i vincoli non permettono giorni vuoti) nel giorno %2, a causa di un insieme di studenti non disponibile e/o interruzioni. Correggi i dati e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1904"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1967"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1980"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perché c&apos;è un vincolo del tipo numero massimo %2 ore al giorno con il 100% di peso che non può essere rispettato a causa del numero di giorni per settimana, numero di ore per giorno, numero massimo di giorni a settimana per insegnante, insegnante non disponibili e/o interruzioni. Il numero totale di ore per questo insegnante è %3 che devono trovare posto in un numero di ore disponibili, considerato il numero massimo di ore al giorno e altri vincoli, pari a %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2105"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2123"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2136"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo = %2 ore consecutive per l&apos;insegnante %1 non può essere rispettato a causa dell&apos;attività con id %3 (che ha durata %4).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2218"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2299"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2231"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2312"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28770,148 +28926,148 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
  Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2580"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di numero minimo di ore al giorno per l&apos;insegnante %1 con peso percentuale sotto 100%. A partire dalla versione 5.4.0 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2597"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per l&apos;insegnante %1 con %2 ore minime al giorno ma il numero di ore lavorative al giorno è solo %3. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2623"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per insegnanti con peso percentuale inferiore a 100%. A partire dalla versione 5.4.0 di FET è possibile usare solo il 100% per questi vincoli. Inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2639"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minomo di ore al giorno per insegnanti con %1 minimo di ore al giorno ma il numero di ore lavorative giornaliere è solo %2. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2706"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2719"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero minimo di giorni a settimana per l&apos;insegnante %1 ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2735"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with %2 min days per week, and the number of working days per week is only %3. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè hai il vincolo Numero minimo %2 giorni a settimana per l&apos;insegnante %1 e il numero di giorni lavorativi a settimana è solo%3.Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2748"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2761"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero minimo di giorni a settimana per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2776"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with %1 min days per week, and the number of working days per week is only %2. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minomo di giorni a settimana per insegnanti con %1 minimo di giorni a settimana ma il numero di giorni lavorativi settimanali è solo %2. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2789"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2802"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and he has only %3 activities - impossible. Please correct and try again.</source>
         <translation>Impossibile ottimizzare perchè per l&apos;insegnante %1 si ha il vincolo Numero minimo %2 giorni a settimana mentre ha solo %3 attività: impossibile. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2809"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2822"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and min hours daily %3 and he has only %4 working hours - impossible. Please correct and try again.</source>
         <translation>Impossibile ottimizzare perchè per l&apos;insegnante %1 si ha il vincolo Numero minimo %2 giorni a settimana e minimo %3 ore al giorno mentre ha solo %4 ore di attività: impossibile. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2834"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2847"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 &gt; max days per week %3 - impossible (min days must be &lt;= max days). Please correct and try again.</source>
         <translation>Impossibile ottimizzare perchè per l&apos;insegnante %1 si ha il vincolo Numero minimo %2 giorni a settimana &gt; Numero massimo di giorni a settimana %3: impossibile (numero minimo di giorni deve essere &lt;= numero massimo di giotni; Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2882"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available and min hours daily for this teacher. Please correct and try again.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè hai il vincolo Numero minimo %2 giorni a settimana e solo %3 giorni a settimana considerate interruzioni, ore non disponibili e Numero minimo di ore al giorno per questo insegnante. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2889"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available for this teacher. Please correct and try again.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè hai il vincolo Numero minimo %2 giorni a settimana e solo %3 giorni a settimana considerate interruzioni, ore non disponibili e Numero minimo di ore al giorno per questo insegnante. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2971"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, because the weight of this constraint is below 100.0%, but anyway most probably you have made a mistake in this constraint, so it is recommended to modify it.</source>
         <translation>E&apos; impossibile rispettare il vincolo perchè le attività con id %1 e %2 contrastano una con l&apos;altra, avendo in comune insiemi di studenti o insegnanti o non potendo cadere contemporaneamente. FET continuerà l&apos;elaborazione perchè il peso di questo vincolo è inferiore a 100.0%, ma con ogni probabilità hai commesso un errore in questo vincolo e quindi ti conviene verificarlo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2978"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2991"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, so your timetable is impossible. Please correct this constraint.</source>
         <translation>E&apos; impossibile rispettare il vincolo perchè le attività con id %1 e %2 contrastano una con l&apos;altra, avendo in comune insiemi di studenti o insegnanti o non potendo cadere contemporaneamente. Il peso di questo vincolo è 100,0% e quindi l&apos;orario è impossibile. Correggi questo vincolo e rilancia la ricerca.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3085"/>
         <source>You have a set of impossible constraints activities same starting time, considering all the indirect links between activities same starting time constraints</source>
         <translation>Hai un insieme di vincoli impossibili, per attività con inizio alla stessa ora, tenuto conto di tutti i collegamenti indiretti tra i vincoli per attività con inizio alla stessa ora</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3088"/>
         <source>The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping</source>
         <translation>Le attività con id %1 e %2 dovrebbero svolgersi simultaneamente (necessità determinata indirettamente), ma esse hanno insegnanti e/o studenti in comune o non possono cadere contemporaneamente</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3248"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3261"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè il numero di ore per l&apos;insegnante è %2  e si hanno solo %3 giorni disponibili per il vicnolo numero massimo di giorni per settimana x %4 ore al giorno per insegnante. Sembra che ci sia un errore nei dati</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3304"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3317"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 a causa di troppi vincoli di numero massimo di giorni a settimana per insegnante, insegnanti non disponibili e/o interruzioni. Il numero totale di ore per questo insegnante è %2 e il numero di ore disponibile è %3, tenuto conto del numero massimo di giorni a settimana e degli altri vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3343"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3356"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3360"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3373"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche per l&apos;insegnante %1 ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3467"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche giornaliere per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3471"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3484"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche giornaliere per l&apos;insegnante %1 ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4642"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5788"/>
         <source>Explanation:</source>
         <translation>Chiarimento:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5777"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5790"/>
         <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
         <translatorcomment>Ogni volta che crei un nuovo file, esso conterrà un vincolo di questo tipo aggiunto automaticamente.</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5550"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5563"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5614"/>
         <source>Cannot optimize for teacher %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint teacher(s) interval max days per week for each teacher) and try again</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè ci sono più di tre vincoli di Numero massimo di giorni a settimana con lezione in intervallo. Modifica i dati indicati (lascia al massimo tre vincoli del tipo numero massimo di ore in intervallo a settimana per ciascun insegnante) e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5736"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5749"/>
         <source>Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint students (set) interval max days per week for each subgroup) and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè ci sono più di tre vincoli di Numero massimo di giorni a settimana con lezioni in intervallo. Modifica i dati indicati (lascia al massimo tre vincoli del tipo numero massimo di ore in intervallo a settimana per ciascun sottogruppo) e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="760"/>
-        <location filename="../src/engine/generate_pre.cpp" line="811"/>
+        <location filename="../src/engine/generate_pre.cpp" line="773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="824"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28924,21 +29080,21 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="858"/>
-        <location filename="../src/engine/generate_pre.cpp" line="896"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1041"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1059"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1914"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1977"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2112"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2130"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="871"/>
+        <location filename="../src/engine/generate_pre.cpp" line="909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1054"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1927"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3325"/>
         <source>Please modify your data accordingly and try again</source>
         <translation>Modifica i tuoi dati secondo le istruzioni e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="954"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1005"/>
+        <location filename="../src/engine/generate_pre.cpp" line="967"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1018"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28951,8 +29107,8 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1370"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1451"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1464"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28965,24 +29121,24 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1495"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1508"/>
         <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per gli studenti, perchè il vincolo del tipo numero minimo di ore al giorno relativo agli studenti non ha peso del 100%. Modifica i tuoi dati di coseguenza e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1529"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1542"/>
         <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per l&apos;insieme di studenti %1, perchè il vincolo del tipo Numero minimo di ore al giorno relativo ad esso non ha peso 100%. Modifica i dati di coseguenza e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1631"/>
         <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perché ci sono due vincoli del tipo Numero minimo di ore al giorno a esso riferiti, ed il peso percentuale è più alto nel vincolo con numero minimo più basso. E&apos; possibile avere per ciascun sottogruppo il vincolo più importante con il maggior peso percentuale e numero minimo più alto di ore al giorno consentito.Modifica i dati e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1779"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1842"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1792"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1855"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28995,8 +29151,8 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2033"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2080"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2093"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29009,48 +29165,48 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1280"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1293"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satifisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè c&apos;è un vincolo N massimo %3 ore al giorno di attività con chiave %2, con peso percentuale del 100% che non può essere soddisfatto, considerato il numero di ore disponibili (%4) e la durata totale di attività con quella chiave (%5). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="693"/>
         <source>Your data contains constraints students max gaps per day and/or activity tag max hours daily.</source>
         <translatorcomment>I tuoi dati contengono vincoli N massimo di ore buche al giorno per studenti e / o di ore al giorno di attività con chiave.</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="714"/>
         <source>It is recommended to use such constraints with caution.</source>
         <translation>Si consiglia di usare quel genere di vincoli con cautela.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="695"/>
         <source>These constraints are good, but they are not perfectly optimized for speed. You may obtain a long generation time or even impossible timetables.</source>
         <translation>Questi vincoli sono validi, ma non perfettamente ottimizzati per la velocità. Potresti ottenere tempi di esecuzione particolarmente lunghi o addirittura orari impossibili.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="686"/>
-        <location filename="../src/engine/generate_pre.cpp" line="703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="699"/>
+        <location filename="../src/engine/generate_pre.cpp" line="716"/>
         <source>Are you sure you want to continue?</source>
         <translation>Sei sicuro di voler continuare?</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1716"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 and the constraint allows empty days. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per il sottogruppo di studenti %2 e il vincolo permette giorni vuoti. Il numero minimo di ore al giorno dovrebbe essere almeno 2 per avere un vincolo non banale. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2351"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2364"/>
         <source>Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satifisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè c&apos;è un vincolo N massimo %3 ore al giorno di attività con chiave %2, con peso percentuale del 100% che non può essere soddisfatto, considerato il numero di ore disponibili (%4) e la durata totale di attività con quella chiave (%5). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2441"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2522"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2535"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29063,414 +29219,414 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
   Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3389"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3419"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3402"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3432"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perché ci sono due vincoli del tipo Numero massimo di ore buche settimanali riferiti a lui ed il peso percentuale è più alto per il vincolo con più ore buche permesse. E&apos; consentito avere per ciascun insegnante il vincolo più importante con il maggior peso percentuale e il minore numero di ore buche consentito. Modifica i dati secondo le indicazioni e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3513"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3543"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perché ci sono due vincoli del tipo Numero massimo di ore buche al giorno riferiti a lui ed il peso percentuale è più alto per il vincolo con più ore buche permesse. E&apos; consentito avere per ciascun insegnante il vincolo più importante con il maggior peso percentuale e il minore numero di ore buche consentito. Modifica i dati secondo le indicazioni e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3640"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di numero massimo di giorni a settimana per insegnante %1 con peso percentuale sotto 100%. A partire dalla versione 5.2.17 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3678"/>
         <source>Cannot optimize, because you have constraint teachers max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di giorni a settimana per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3803"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3947"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3960"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè hai un vincolo di Numero massimo di ore buche con peso percentuale sotto il 100%. Attualmente FET può ottimizzare solo se i vincoli di Numero massimo di ore buche o non ci sono o hanno peso 100%. Modifica i dati e prova di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3819"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3832"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè hai un vincolo di Numero massimo di inizi alla seconda ora con peso percentuale sotto il 100%. Attualmente FET può ottimizzare solo se i vincoli di Numero massimo di inizi alla seconda ora o non ci sono o hanno peso 100%. Modifica i dati e prova di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3875"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3888"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè hai un vincolo di Numero massimo di inizi alla seconda ora pari a %2 ed il numero di giorni a settimana è %3 ovvero di meno. Bisogna che il Numero massimo di inizi alla seconda ora sia inferiore o (tutt&apos;al più) uguale al numero di giorni a settimana.
 Modifica i dati e prova di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4044"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4057"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo insegnante non disponibile con peso percentuale sotto il 100% per l&apos;insegnante %1. Attualmente FET può ottimizzare solo se i vincoli per insegnante non disponibile hanno peso 100% (o niente vincolo). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4090"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4103"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo studenti non disponibili con peso percentuale sotto il 100% per l&apos;insieme di studenti %1. Attualmente FET può ottimizzare solo se i vincoli per studenti non disponibili hanno peso 100% (o niente vincolo). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4133"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4146"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo interruzione con peso percentuale sotto il 100%. Attualmente FET può ottimizzare solo se i vincoli di interruzione hanno peso 100% (o niente vincolo). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4182"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4195"/>
         <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo di orario preferenziale di inizio per attività senza giorno nè ora selezionate (per l&apos;attività con id==%1). Modifica i dati (rimuovi o completa il vincolo) e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4465"/>
         <source>Cannot optimize, because you have a constraint min days with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Impossibile ottimizzare perchè hai un vincolo N minimo di giorni con attività duplicate. Il vincolo è: %1. Correggi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4515"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4528"/>
         <source>Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Impossibile ottimizzare perchè hai un vincolo di Numero massimo di ore frapposte tra attività duplicate. Il vincolo è: %1. Correggi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4596"/>
         <source>Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Impossibile ottimizzare perchè hai un vincolo di Numero minimo di ore frapposte con attività duplicate. Il vincolo è: %1. Correggi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4656"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4669"/>
         <source>Precomputing ... please wait</source>
         <translation>Inizio elaborazione ... attendi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4679"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4694"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4679"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4694"/>
         <source>Canceled</source>
         <translation>Annullato</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5003"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5016"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Impossibile ottimizzare perche hai il vincolo per attività di fine giornata impostato per l&apos;attività con id==%1 con peso percentuale sotto 100%. Il vincolo per attività di fine giornata può avere solo peso del 100%. Modifica i dati (o rimuovi il vincolo) e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5041"/>
         <source>Cannot optimize, because you have constraints of type activity activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Impossibile ottimizzare perche hai il vincolo Attività che chiude la giornata degli studenti con peso percentuale sotto 100%. Il vincolo Attività che chiude la giornata degli studenti può avere solo il peso del 100%. Modifica i dati (o rimuovi il vincolo) e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5530"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezione in intervallo per insegnante %1 con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5581"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezioni in intervallo per insegnanti con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5647"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5660"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezioni in intervallo per insieme di studenti %1 con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5700"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5713"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezioni in intervallo per studenti con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5845"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5883"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5858"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5896"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation>Impossibile generare un orario perchè esiste più di un vincolo di aula principale per insieme di studenti per gli studenti %1. Correggi e lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5928"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5966"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5941"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5979"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation>Impossibile generare un orario perchè esiste più di un vincolo di aula principale per l&apos;insegnante %1. Correggi e lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6366"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6379"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation>Impossibile generare un orario perchè per l&apos;attività con id==%1 non ci sono aule disponibili (a causa dei vincoli di aula principale per studenti ed insegnanti)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6389"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6402"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints). This means that a constraint preferred room(s) has 0 rooms in it. This should not happen. Please report possible bug.</source>
         <translation>Impossibile generare l&apos;orario perchè l&apos;attività con id==%1 non ha disponibile alcuna aula preferenziale (per vincoli di aula preferenziale). Ciò significa che un vincolo di aula/e preferenziale/i ha zero aule specificate. Non dovrebbe accadere. Segnala il possibile bug, grazie.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6425"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
         <translation>Impossibile generare un orario perchè per l&apos;attività con id==%1 non ci sono aule preferenziali disponibili (a causa del numero di studenti consentitoe dei vincoli di aula/e preferenziale)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7622"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7703"/>
         <source>End - the order of activities (id-s)</source>
         <translatorcomment>Fine - ordine delle attività (id)</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6462"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6475"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation>Impossibile generare un orario perchè mancano aule disponibili per l&apos;attività con id==%1 (a causa del numero di studenti consentito)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="696"/>
+        <location filename="../src/engine/generate_pre.cpp" line="709"/>
         <source>Your data contains constraints students min hours daily which allow empty days.</source>
         <translation>I tuoi dati contengono vincoli di numero minimo di ore al giorno per studenti che permettono giorni vuoti.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="711"/>
         <source>These constraints are non-standard. They are recommended only if the students can have free days and a solution with free days for students exists. Otherwise the solution might be impossible for FET to find.</source>
         <translation>Tali vincoli sono non-standard. Sono da utilizzare solo se gli studenti possono avere giorni liberi e una soluzione con giorni liberi per studenti esiste. Altrimenti un orario potrebbe risultare impossibile da trovare per FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1523"/>
         <source>Cannot optimize, because you have constraint students min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per studenti con %1 minimo di ore al giorno ma il numero di ore lavorative giornaliere è solo %2. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1558"/>
         <source>Cannot optimize, because you have constraint students set min hours daily for students set %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per insieme di studenti %1 con %2 ore minime al giorno ma il numero di ore lavorative al giorno è solo %3. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1698"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 (the constraint allows empty days). This subgroup has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per il sottogruppo di studenti %2 (il vincolo consente giorni vuoti). Questo sottogruppo ha in totale solo %3 ore a settimana, perciò il vincolo è impossibile. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2652"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2665"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per l&apos;insegnante %2 (il vincolo consente giorni vuoti). Questo insegnante ha in totale solo %3 ore a settimana, perciò il vincolo è impossibile. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2683"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per l&apos;insegnante %2 (il vincolo permette giorni vuoti). Il numero minimo di ore al giorno dovrebbe essere almeno 2 per avere un vincolo non banale. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3203"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3216"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè il numero di ore dell&apos;insegnante è %2, ma si hanno solo %3 giorni x %4 ore in una settimana.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3239"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè il numero di ore per l&apos;insegnante è %2  e si hanno solo %3 ore disponibili a causa dei vincoli insegnante non disponibile e/o interruzioni. Forse hai inserito vincoli sbagliati per insegnante non disponibile o interruzioni o il numero di ore al giorno è inferiore a causa di un malinteso</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3570"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3583"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè il numero di ore del sottogruppo è %2, ma si hanno solo %3 giorni x %4 ore in una settimana.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3606"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation>Impossibile ottimizzare il sottogruppo %1 perchè il numero di ore per il sottogruppo è %2  e si hanno solo %3 ore disponibili a causa dei vincoli studenti non disponibili e/o interruzioni. Forse hai inserito vincoli sbagliati per studenti non disponibili o interruzioni o il numero di ore al giorno è inferiore a causa di un malinteso</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4623"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4636"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.</source>
         <translation>Impossibile generare, perchè manca un vincolo di tempo di base obbligatorio, oppure esiste, ma ha un peso inferiore al 100%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4625"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5771"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4638"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5784"/>
         <source>Please add a constraint of this type with weight 100%.</source>
         <translation>Aggiungi un vincolo di questo tipo con peso del 100%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4640"/>
         <source>You can add this constraint from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Puoi aggiungere un vincolo di questo tipo dal menu Dati / Vincoli di tempo / Vari / Vincoli di tempo obbligatori.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4633"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5779"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4646"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5792"/>
         <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
         <translation>Per la massima flessibilità è consentito rimuoverlo (anche se è una mossa sbagliata).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4635"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5794"/>
         <source>Maybe you removed it by mistake from your file.</source>
         <translation>Forse lo hai rimosso per errore dal tuo file.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4637"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4650"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5796"/>
         <source>By adding it again, everything should be all right.</source>
         <translation>Aggiungendolo di nuovo, tutto tornerà a posto.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4655"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4668"/>
         <source>Precomputing</source>
         <comment>Title of a progress dialog</comment>
         <translation>Inizio elaborazione</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5106"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5119"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 non può essere rispettato perchè contiene %2 attività, ha peso 100% ed ha Numero minimo di giorni tra attività = %3. Il numero minimo di giorni a settimana necessario perciò dovrebbe essere (N.Attiv. - 1) * n.min.giorni + 1 = %4, ma abbiamo solo %5 giorni a settimana - impossibile. Correggi il vincolo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5149"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5162"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 non può essere rispettato perchè l&apos;insegnante %2 ha al più %3 giorni disponibili a causa dei vincoli di indisponibilità, interruzioni e numero massimo di giorni a settimana. Abbassa il peso di questo vincolo sotto il 100% (dipende dalla situazione, se 0% è troppo poco, prova con 90%, 95% o anche 99,75%. Anche un peso alto non rallenterà l&apos;elaborazione. Una situazione dove sia necessario porlo sopra lo 0% è ad esempio se hai 5 attività con 4 giorni possibili. Meglio distribuire 2+1+1+1 anziché 2+2+1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5172"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5185"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 non può essere rispettato perchè il sottogruppo %2 ha al più %3 giorni disponibili a causa dei vincoli di indisponibilità studenti, interruzioni. Abbassa il peso di questo vincolo sotto il 100% (dipende dalla situazione, se 0% è troppo poco, prova con 90%, 05% o anche 99,75%. Un peso particolarmente alto non rallenterà l&apos;elaborazione. Una situazione dove sia necessario porlo sopra lo 0% è ad esempio se hai 5 attività con 4 giorni possibili. Meglio distribuire 1, 1, 1 e 2, piuttosto che 2, 2 e 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5262"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5275"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>Il vincolo %1 non può essere rispettato perchè l&apos;insegnante %2 ha al più %3 giorni disponibili. Hai specificato per questo vincolo consecutive se stesso giorno. Attualmente FET non può collocare più di due attività nello stesso giorno se è stato scelto Consecutive se stesso giorno. Hai 2* giorni disponibili [number di attività in questo vincolo]. Questa è una situazione molto improbabile, ed è per questo che l&apos;autore non l&apos;ha molto curata. Se si incontra il caso occorre modificare il file dei dati (non selezionare consecutive se stesso giorno o aggiungere altre attività di maggiore durata) o far presente all&apos;autore.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5311"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>Il vincolo %1 non può essere rispettato perchè il sottogruppo %2 ha al più %3 giorni disponibili. Hai specificato per questo vincolo consecutive se stesso giorno. Attualmente FET non può collocare più di due attività nello stesso giorno se è stato scelto consecutive se stesso giorno. Hai 2* giorni disponibili [number di attività in questo vincolo]. Questa è una situazione molto improbabile, ed è per questo che l&apos;autore non l&apos;ha molto curata. Se si incontra il caso occorre modificare il file dei dati (non selezionare consecutive se stesso giorno o aggiungere altre attività di maggiore durata) o far presente all&apos;autore.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5769"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5782"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.</source>
         <translation>Impossibile generare, perchè manca un vincolo di spazio di base obbligatorio, oppure esiste, ma ha un peso inferiore al 100%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5786"/>
         <source>You can add this constraint from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Puoi aggiungere un vincolo di questo tipo dal menu Dati / Vincoli di spazio / Vari / Vincoli di spazio obbligatori.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6496"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6509"/>
         <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation>Impossibile generare un orario perchè per l&apos;attività con id==%1 non ci sono aule preferenziali disponibili (a causa della capacità delle aule e di vincoli di aula/e preferenziale con peso del 100%)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6532"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6545"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6569"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per studenti al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6608"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambio di edificio per insieme di studenti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6632"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per studenti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6658"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6671"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6695"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6735"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnante al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6757"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnanti al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6796"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnante a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6818"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnanti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6844"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6857"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insegnante con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6866"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6879"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insegnanti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6979"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6992"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation>L&apos;attività con id= %1 non ha ore possibili - correggi la situazione</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7164"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation>L&apos;aula %1 non ha ore sufficienti per i vincoli di Aule principali (necessarie %2, disponibili %3) - verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7676"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation>Questo è l&apos;ordine iniziale di valutazione delle attività computate da FET. Se la generazione si blocca dopo un certo numero di attività, controlla l&apos;attività corrispondente a questo numero + 1. Dovresti riscontrare un errore tra i dati in ingresso.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7599"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7680"/>
         <source>The initial order of activities (id-s):</source>
         <translation>Ordine iniziale delle attività (id):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7604"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7685"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7608"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7689"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation>Id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7611"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7692"/>
         <source>Teachers: %1</source>
         <translation>Insegnanti: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7613"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7694"/>
         <source>Subject: %1</source>
         <translation>Materia: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7697"/>
         <source>Activity tags: %1</source>
         <translation>Chiavi dell&apos;attività: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7699"/>
         <source>Students: %1</source>
         <translation>Studenti: %1</translation>
     </message>
@@ -29628,19 +29784,19 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.14.1 (August 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.14.2 (September 2010).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). To contact Liviu Lalescu visit the webpage http://lalescu.ro/liviu/&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also the Contributors and the Translators tabs.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be appreciated.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29690,7 +29846,95 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="263"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="136"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../src/interface/helpaboutform_template.ui" line="264"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -29807,7 +30051,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Silver - Arabic translation, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -29914,6 +30158,8 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;DT - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Yotam Medini - Hebrew translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mohd - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29923,7 +30169,7 @@ p, li { white-space: pre-wrap; }
         <translation>Traduttori</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="226"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
         <source>References</source>
         <translation>Riferimenti</translation>
     </message>
@@ -29932,95 +30178,8 @@ p, li { white-space: pre-wrap; }
         <source>Authors</source>
         <translation>Autori</translation>
     </message>
-    <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="136"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hatim Alahmadi (dr.hatim AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="238"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="239"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -30030,7 +30189,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="251"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="252"/>
         <source>Thanks to</source>
         <translation>Si ringrazia</translation>
     </message>
@@ -32563,28 +32722,28 @@ Interrompi la simulazione prima di riprovare</translation>
 <context>
     <name>ModifyActivityForm</name>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="469"/>
-        <location filename="../src/interface/modifyactivityform.cpp" line="502"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="519"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="552"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="470"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="520"/>
         <source>Do you really want to have the activity without teacher(s)?</source>
         <translation>Vuoi veramente una attività senza insegnanti?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="487"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="537"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="488"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="538"/>
         <source>Invalid subject</source>
         <translation>Materia non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="503"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="553"/>
         <source>Do you really want to have the activity without student set(s)?</source>
         <translation>Vuoi veramente una attività senza studenti?</translation>
     </message>
@@ -32607,6 +32766,31 @@ Interrompi la simulazione prima di riprovare</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="648"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="704"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="734"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="777"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="820"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="863"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="906"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="949"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="992"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1035"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1078"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1121"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1164"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1207"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1250"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1293"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1336"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1379"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1422"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1465"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1508"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1551"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1594"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1637"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1680"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1723"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1766"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1809"/>
         <source>Duration</source>
         <translation>Durata</translation>
     </message>
@@ -32621,6 +32805,31 @@ Interrompi la simulazione prima di riprovare</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="671"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="691"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="757"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="800"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="843"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="886"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="929"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="972"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1015"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1058"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1101"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1144"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1187"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1230"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1273"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1316"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1359"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1402"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1445"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1488"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1531"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1574"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1617"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1660"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1703"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1746"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1789"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1832"/>
         <source>Active</source>
         <translation>Attiva</translation>
     </message>
@@ -32670,12 +32879,137 @@ Interrompi la simulazione prima di riprovare</translation>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="773"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="768"/>
+        <source>11</source>
+        <translation>11</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="811"/>
+        <source>12</source>
+        <translation>12</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="854"/>
+        <source>13</source>
+        <translation>13</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="897"/>
+        <source>14</source>
+        <translation>14</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="940"/>
+        <source>15</source>
+        <translation>15</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="983"/>
+        <source>16</source>
+        <translation>16</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1026"/>
+        <source>17</source>
+        <translation>17</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1069"/>
+        <source>18</source>
+        <translation>18</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1112"/>
+        <source>19</source>
+        <translation>19</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1155"/>
+        <source>20</source>
+        <translation>20</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1198"/>
+        <source>21</source>
+        <translation>21</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1241"/>
+        <source>22</source>
+        <translation>22</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1284"/>
+        <source>23</source>
+        <translation>23</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1327"/>
+        <source>24</source>
+        <translation>24</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1370"/>
+        <source>25</source>
+        <translation>25</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1413"/>
+        <source>26</source>
+        <translation>26</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1456"/>
+        <source>27</source>
+        <translation>27</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1499"/>
+        <source>28</source>
+        <translation>28</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1542"/>
+        <source>29</source>
+        <translation>29</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1585"/>
+        <source>30</source>
+        <translation>30</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1628"/>
+        <source>31</source>
+        <translation>31</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1671"/>
+        <source>32</source>
+        <translation>32</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1714"/>
+        <source>33</source>
+        <translation>33</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1757"/>
+        <source>34</source>
+        <translation>34</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1800"/>
+        <source>35</source>
+        <translation>35</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1848"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="780"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1855"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
@@ -39602,28 +39936,28 @@ Nota: insegnanti non disponibili e interruzioni non sono ore buche.</translation
 <context>
     <name>ModifySubactivityForm</name>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="443"/>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="490"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="444"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="491"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="444"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="445"/>
         <source>Do you really want to have the subactivity without teacher(s)?</source>
         <translation>Vuoi veramente una subattività senza insegnanti?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="468"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="469"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="469"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="470"/>
         <source>Invalid subject</source>
         <translation>Materia non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="491"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="492"/>
         <source>Do you really want to have the subactivity without student set(s)?</source>
         <translation>Vuoi veramente una subattività senza studenti?</translation>
     </message>
@@ -41281,47 +41615,47 @@ not added - must be a duplicate</source>
 <context>
     <name>SecondMinDaysDialog</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="586"/>
+        <location filename="../src/interface/addactivityform.cpp" line="642"/>
         <source>Add a second constraint or not?</source>
         <translation>Vuoi aggiungere un secondo vincolo o no?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="599"/>
+        <location filename="../src/interface/addactivityform.cpp" line="655"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="602"/>
+        <location filename="../src/interface/addactivityform.cpp" line="658"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="645"/>
+        <location filename="../src/interface/addactivityform.cpp" line="701"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="646"/>
+        <location filename="../src/interface/addactivityform.cpp" line="702"/>
         <source>Invalid weight (percentage) - must be &gt;=0 and &lt;=100.0</source>
         <translation>Peso percentuale non valido - deve essere &gt;= 0 e &lt;= 100.0</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="566"/>
+        <location filename="../src/interface/addactivityform.cpp" line="622"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
         <translation>Si è selezionato numero minimo di giorni tra attività %1 (maggiore di 1) e peso %2 (inferiore a 100,0). Vuoi aggiungere anche un secondo vincolo al fine di garantire che quasi certamente la distanza tra le attività sia di almeno %3 (%1-1) giorni? Se sì, seleziona il peso (raccomandato tra 95.0% a100.0%) e clicca  Sì. Se no, clicca No (verrà aggiunto un solo vincolo)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="583"/>
+        <location filename="../src/interface/addactivityform.cpp" line="639"/>
         <source>Recommended answer is Yes, 95% (or higher).</source>
         <translation>La risposta consigliata è Si, 95% (o più).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="572"/>
+        <location filename="../src/interface/addactivityform.cpp" line="628"/>
         <source>(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. If you say Yes, you will have 2 constraints min days added for current activities. Adding the second constraint might lead to impossible timetables if the condition is too tight, but you can remove the second constraint at any time).</source>
         <translation>(Sì significa aggiungere un ulteriore vincolo min %1 giorno/i tra le attività, peso tra 0.0% e100.0%. Dicendo Sì, avrai 2 vincoli di numero minimo di giorni aggiunti per le attività in esame. Aggiungere il secondo vincolo potrebbe condurre ad orari impossibili se la condizione è troppo difficile, ma è possibile rimuovere il secondo vincolo in qualsiasi momento).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="577"/>
+        <location filename="../src/interface/addactivityform.cpp" line="633"/>
         <source>Note: 95% is usually enough for min days constraints referring to same activities. The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95% (say min n days and min n-1 days), the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with probability 0.25%=5%*5%, so you&apos;ll get in 99.75% cases the min n-1 days constraint respected.</source>
         <translation>Nota: il 95% è di solito appropriato per i vincoli di Numero minimo di giorni in riferimento alla stessa attività. I pesi sono cumulati se ci si riferisce alle stesse attività. Se si dispone di 2 vincoli del 95% (per esempio minimo n giorni e minimo n-1 giorni), il vincolo minimo n giorni è saltato con probabilità del 5%, quindi il vincolo minimo n-1 giorni è saltato con probabilità 0,25% = 5% * 5%, così avrai nel 99,75% dei casi il vincolo numero minimo n-1 giorni rispettato.</translation>
     </message>

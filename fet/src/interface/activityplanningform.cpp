@@ -996,10 +996,10 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 							if(_computeNTotalStudents!=act2->computeNTotalStudents)
 								_diffComputeNTotalStudents=true;
 						}
-						if(nSplit>10){
+						if(nSplit>MAX_SPLIT_OF_AN_ACTIVITY){
 							QMessageBox::warning(this, tr("FET information"),
 								tr("Cannot modify this large activity, because it contains more than %1 activities. "
-								"If you really need that, please talk to the author").arg(10));
+								"If you really need that, please talk to the author").arg(MAX_SPLIT_OF_AN_ACTIVITY));
 							return;
 						}
 					}

@@ -971,233 +971,233 @@
 <context>
     <name>AddActivityForm</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="659"/>
-        <location filename="../src/interface/addactivityform.cpp" line="685"/>
-        <location filename="../src/interface/addactivityform.cpp" line="724"/>
-        <location filename="../src/interface/addactivityform.cpp" line="766"/>
-        <location filename="../src/interface/addactivityform.cpp" line="768"/>
-        <location filename="../src/interface/addactivityform.cpp" line="903"/>
-        <location filename="../src/interface/addactivityform.cpp" line="908"/>
+        <location filename="../src/interface/addactivityform.cpp" line="715"/>
+        <location filename="../src/interface/addactivityform.cpp" line="741"/>
+        <location filename="../src/interface/addactivityform.cpp" line="780"/>
+        <location filename="../src/interface/addactivityform.cpp" line="822"/>
+        <location filename="../src/interface/addactivityform.cpp" line="824"/>
+        <location filename="../src/interface/addactivityform.cpp" line="959"/>
+        <location filename="../src/interface/addactivityform.cpp" line="964"/>
         <source>FET information</source>
         <translation>FET informácia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="660"/>
+        <location filename="../src/interface/addactivityform.cpp" line="716"/>
         <source>Invalid weight (percentage) for added constraint min days between activities</source>
         <translation>Neplatná váha (percentáž) pre pridané obmedzenie min days between activities</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="667"/>
-        <location filename="../src/interface/addactivityform.cpp" line="707"/>
-        <location filename="../src/interface/addactivityform.cpp" line="751"/>
+        <location filename="../src/interface/addactivityform.cpp" line="723"/>
+        <location filename="../src/interface/addactivityform.cpp" line="763"/>
+        <location filename="../src/interface/addactivityform.cpp" line="807"/>
         <source>FET question</source>
         <translation>FET otázka</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="686"/>
+        <location filename="../src/interface/addactivityform.cpp" line="742"/>
         <source>Invalid subject</source>
         <translation>Neplatný predmet</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="725"/>
+        <location filename="../src/interface/addactivityform.cpp" line="781"/>
         <source>Invalid duration</source>
         <translation>Neplatná doba trvania</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="754"/>
-        <location filename="../src/interface/addactivityform.cpp" line="791"/>
+        <location filename="../src/interface/addactivityform.cpp" line="810"/>
+        <location filename="../src/interface/addactivityform.cpp" line="847"/>
         <source>Yes</source>
         <translation>Áno</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="754"/>
-        <location filename="../src/interface/addactivityform.cpp" line="791"/>
+        <location filename="../src/interface/addactivityform.cpp" line="810"/>
+        <location filename="../src/interface/addactivityform.cpp" line="847"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="766"/>
+        <location filename="../src/interface/addactivityform.cpp" line="822"/>
         <source>Activity added</source>
         <translation>Aktivita bola pridaná</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="768"/>
+        <location filename="../src/interface/addactivityform.cpp" line="824"/>
         <source>Activity NOT added - please report error</source>
         <translation>Aktivita NEBOLA pridaná - prosím oznámte chybu</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="774"/>
+        <location filename="../src/interface/addactivityform.cpp" line="830"/>
         <source>You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="779"/>
+        <location filename="../src/interface/addactivityform.cpp" line="835"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="783"/>
+        <location filename="../src/interface/addactivityform.cpp" line="839"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="903"/>
+        <location filename="../src/interface/addactivityform.cpp" line="959"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="908"/>
+        <location filename="../src/interface/addactivityform.cpp" line="964"/>
         <source>Split activity NOT added - error???</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="936"/>
+        <location filename="../src/interface/addactivityform.cpp" line="992"/>
         <source>This help by Liviu Lalescu, modified 25 September 2008</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="940"/>
+        <location filename="../src/interface/addactivityform.cpp" line="996"/>
         <source>Comment added on 25 September 2008:</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="942"/>
+        <location filename="../src/interface/addactivityform.cpp" line="998"/>
         <source>A first notice, because many users didn&apos;t care about it: If you use a 5 days week: when adding an activity split into only 2 components per week, the best practice is to add min days between activities to be 2. If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="949"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1005"/>
         <source>You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then double click it or press Enter to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="956"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1012"/>
         <source>The same procedure (double click or Enter) applies to adding a students set or removing a students set.</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="960"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1016"/>
         <source>You can check/uncheck show years, show groups or show subgroups.</source>
         <translation>Môžete zaškrtnúť/odškrtnúť zobrazenie ročníkov, skupín alebo podskupín.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="963"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1019"/>
         <source>If you split a larger activity into more activities per week, you have a multitude of choices:
 You can choose the minimum distance in days between each pair of activities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday to Wednesday for instance is 2 days), etc.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="971"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1027"/>
         <source>Modification on 14 June 2008:</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="973"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1029"/>
         <source>If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% (or higher). If you want also to ensure that activities will be separated by at least one day, you can use this feature: add a constraint min days with minimum days 2 and weight 95% or lower, and after that you&apos;ll get the possibility to add another constraint with min 1 days and weight 95% or higher. It works if you first select in the dialog the min days &gt;= 2 and click Add activities. Or you can add manually the constraints (difficult this way). Important: it is best practice to consider both constraints to have 95% weight. The combination assures that the resultant is 99.75% weight</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="986"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1042"/>
         <source>Please note that the min days distance is a time constraint and you can only see/modify it in the time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints for each activity in the details text box of each activity</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="992"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1048"/>
         <source>If you choose a value greater or equal with 1 for min days, a time constraint min days between activities will be added automatically (you can see this constraint in the time constraints list or you can see this constraint in the detailed description of the activity). You can select a weight percentage for this constraint. If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance that the timetable will not respect this constraint. Recommended values are 95.0%-100.0% (maybe you could try with 95%, then 99.75%, or even 100.0%, but the generation time might be larger). Generally, 99.75% might be a good value. Note: if you put a value less than 100% and the constraint is too tough, FET is able to find that this constraint is impossible and will break it. 99.75% might be better than 95% but possibly slower. The percentage is subjective (if you put 95% you may get 6 soft conflicts and if you put 99.75% you may get 3 soft conflicts). Starting with FET-5.3.6, it is possible to change this value for all constraints in one click, in constraint min days between activities dialog.</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1006"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1062"/>
         <source>There is another option, if the activities are in the same day, force consecutive activities. You can select this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be consecutive.</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1015"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1071"/>
         <source>Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases. If you encounter such cases, please contact the author, I&apos;ll try to fix this problem).</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1022"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1078"/>
         <source>Note: You cannot add &apos;consecutive if same day&apos; with min days=0. If you want this, you have to add min days at least 1 (and any weight percentage).</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1027"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1083"/>
         <source>Starting with version 5.0.0, it is possible to add activities with no students or no teachers</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1031"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1087"/>
         <source>Addition 14 June 2008:</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1033"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1089"/>
         <source>If you select a number of min days above 1, you will get the possibility to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click Add activities</source>
         <translatorcomment>nepreložené</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1040"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1096"/>
         <source>FET - help on adding activity(ies)</source>
         <translation>FET - pomoc pre pridávanie aktivít</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="1046"/>
+        <location filename="../src/interface/addactivityform.cpp" line="1102"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="789"/>
+        <location filename="../src/interface/addactivityform.cpp" line="845"/>
         <source>Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?</source>
         <translation>Chcete pridať tieto aktivity také aké sú? (nedoporučené) alebo zrušiť a upraviť ich podľa návodu?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="777"/>
+        <location filename="../src/interface/addactivityform.cpp" line="833"/>
         <source>The best way to add the activities would be:</source>
         <translation>Najlepší spôsob ako pridať aktivity by bol:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="753"/>
+        <location filename="../src/interface/addactivityform.cpp" line="809"/>
         <source>A similar activity already exists. Do you want to insert current activity?</source>
         <translation>Už existuje rovnaká aktivita. Prajete si vložiť túto aktivitu?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="668"/>
+        <location filename="../src/interface/addactivityform.cpp" line="724"/>
         <source>Do you really want to add an activity without teacher(s)?</source>
         <translation>Naozaj si prajete vložiť aktivitu bez učiteľa(ov)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="708"/>
+        <location filename="../src/interface/addactivityform.cpp" line="764"/>
         <source>Do you really want to add an activity without student set(s)?</source>
         <translation>Naozaj chcete pridať aktivitu bez skupiny/skupín študentov?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="772"/>
+        <location filename="../src/interface/addactivityform.cpp" line="828"/>
         <source>FET confirmation</source>
         <translation>FET potvrdenie</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="773"/>
+        <location filename="../src/interface/addactivityform.cpp" line="829"/>
         <source>Possible incorrect setting. Are you sure you want to add current activity? See details below:</source>
         <translation>Možné nesprávne nastavenie. Naozaj chcete pridať aktuálnu aktivitu? Pozrite detaily dole:</translation>
     </message>
@@ -1256,17 +1256,17 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="176"/>
         <source>Years</source>
-        <translation type="unfinished">Ročníky</translation>
+        <translation>Ročníky</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="186"/>
         <source>Groups</source>
-        <translation type="unfinished">Skupiny</translation>
+        <translation>Skupiny</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="196"/>
         <source>Subgroups</source>
-        <translation type="unfinished">Podskupiny</translation>
+        <translation>Podskupiny</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="328"/>
@@ -1293,6 +1293,31 @@ každým párom aktivít</translation>
         <location filename="../src/interface/addactivityform_template.ui" line="689"/>
         <location filename="../src/interface/addactivityform_template.ui" line="732"/>
         <location filename="../src/interface/addactivityform_template.ui" line="762"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="805"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="848"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="891"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="934"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="977"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1020"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1063"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1106"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1149"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1192"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1235"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1278"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1321"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1364"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1407"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1450"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1493"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1536"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1579"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1622"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1665"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1708"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1751"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1794"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1837"/>
         <source>Active</source>
         <translation>Aktívne</translation>
     </message>
@@ -1307,6 +1332,31 @@ každým párom aktivít</translation>
         <location filename="../src/interface/addactivityform_template.ui" line="666"/>
         <location filename="../src/interface/addactivityform_template.ui" line="719"/>
         <location filename="../src/interface/addactivityform_template.ui" line="775"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="818"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="861"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="904"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="947"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="990"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1033"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1076"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1119"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1162"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1205"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1248"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1291"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1334"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1377"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1420"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1463"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1506"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1549"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1592"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1635"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1678"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1721"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1764"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1807"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1850"/>
         <source>Duration</source>
         <translation>Trvanie</translation>
     </message>
@@ -1356,7 +1406,132 @@ každým párom aktivít</translation>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="796"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="786"/>
+        <source>11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="829"/>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="872"/>
+        <source>13</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="915"/>
+        <source>14</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="958"/>
+        <source>15</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1001"/>
+        <source>16</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1044"/>
+        <source>17</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1087"/>
+        <source>18</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1130"/>
+        <source>19</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1173"/>
+        <source>20</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1216"/>
+        <source>21</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1259"/>
+        <source>22</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1302"/>
+        <source>23</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1345"/>
+        <source>24</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1388"/>
+        <source>25</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1431"/>
+        <source>26</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1474"/>
+        <source>27</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1517"/>
+        <source>28</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1560"/>
+        <source>29</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1603"/>
+        <source>30</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1646"/>
+        <source>31</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1689"/>
+        <source>32</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1732"/>
+        <source>33</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1775"/>
+        <source>34</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1818"/>
+        <source>35</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="1871"/>
         <source>Percentage of 
 added constraint
  (min days between 
@@ -1370,30 +1545,31 @@ Doporučené:
 95.0%-100.0%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="813"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1888"/>
         <source>95</source>
         <translation>95</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="823"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1898"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="835"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1910"/>
         <source>If activities on 
 same day, force
 consecutive?</source>
         <translation>Vynútiť následnosť,
-ak sú aktivity v rovnaký deň?</translation>
+ak sú aktivity v
+rovnaký deň?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="867"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1942"/>
         <source>Help</source>
         <translation>Pomoc</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="874"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1949"/>
         <source>Close</source>
         <translation>Zatvoriť</translation>
     </message>
@@ -1420,7 +1596,7 @@ ak sú aktivity v rovnaký deň?</translation>
         <translation>Počet študentov (-1 pre automatický)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="860"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1935"/>
         <source>Add</source>
         <translation>Pridať</translation>
     </message>
@@ -4673,7 +4849,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="45"/>
         <source>Advanced usage: enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšírené používanie: aktivované</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="47"/>
@@ -4703,7 +4879,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="101"/>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="106"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET varovanie</translation>
+        <translation>FET varovanie</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="101"/>
@@ -4739,7 +4915,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="143"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Použite opatrne.</translation>
+        <translation>Použite opatrne.</translation>
     </message>
 </context>
 <context>
@@ -4752,7 +4928,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="95"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Povoliť prázdne dni</translation>
+        <translation>Povoliť prázdne dni</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="111"/>
@@ -5839,12 +6015,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="48"/>
         <source>Advanced usage: enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšírené používanie: aktivované</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="50"/>
         <source>Advanced usage: not enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšírené používanie: neaktivované</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="119"/>
@@ -5870,7 +6046,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="130"/>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="135"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET varovanie</translation>
+        <translation>FET varovanie</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="130"/>
@@ -5911,7 +6087,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="178"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Použite opatrne.</translation>
+        <translation>Použite opatrne.</translation>
     </message>
 </context>
 <context>
@@ -5940,7 +6116,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="127"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Povoliť prázdne dni</translation>
+        <translation>Povoliť prázdne dni</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="143"/>
@@ -7815,7 +7991,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform.cpp" line="121"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Povoliť, že check box prázdnych dní musí byť označený. Ak potrebujete zakázať prázdne dni pre učiteľa, prosím použite obmedzenie &quot;minimum dní za týždeň pre učiteľa&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform.cpp" line="133"/>
@@ -7830,7 +8006,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform.cpp" line="147"/>
         <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento check box musí zostať označený. Ak naozaj potrebujete zakázať prázdne dni pre učiteľa, prosím použite obmedzenie &quot;minimum dní za týždeň pre učiteľa&quot;</translation>
     </message>
 </context>
 <context>
@@ -7838,7 +8014,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="32"/>
         <source>It is recommended to start with 2 min hours and strenghen them as you find new timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je doporučené začať s minimom 2 hodiny a posilniť ich keď nájdete nový rozvrh.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="93"/>
@@ -7858,7 +8034,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="133"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Povoliť prázdne dni</translation>
+        <translation>Povoliť prázdne dni</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="145"/>
@@ -14447,11 +14623,11 @@ Please stop simulation before this</source>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="284"/>
-        <source>Please make sure that the selected activities are not forced to be consecutive by other constraint min days between activities (with consecutive if same day true) or by a constraint 2 activities consecutive</source>
-        <translation>Prosím uistite sa, že vybrté aktivity nie sú donútené k súslednosti iným obmedzením minima dní medzi aktivitami (s true hodnotou súslednosti ak sú v rovnaký deň) alebo obmedzením 2 aktivity posebe</translation>
+        <source>Please make sure that the selected activities are not forced to be consecutive by some other constraint &apos;min days between activities&apos; (with &apos;consecutive if same day&apos; true), by a constraint &apos;two activities consecutive&apos;, or by a constraint &apos;two activities grouped&apos; (also, if you have a constraint &apos;three activities grouped&apos; related to the selected activities, make sure that the constraints do not contradict).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="288"/>
+        <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="291"/>
         <source>FET help</source>
         <translation>FET pomoc</translation>
     </message>
@@ -25412,10 +25588,6 @@ Please stop simulation before this</source>
         <location filename="../src/engine/export.cpp" line="706"/>
         <location filename="../src/engine/export.cpp" line="974"/>
         <location filename="../src/engine/export.cpp" line="1055"/>
-        <location filename="../src/engine/export.cpp" line="1178"/>
-        <location filename="../src/engine/export.cpp" line="1188"/>
-        <location filename="../src/engine/export.cpp" line="1198"/>
-        <location filename="../src/engine/export.cpp" line="1208"/>
         <source>FET critical. Cannot open file %1 for writing. Please check your disk&apos;s free space. Saving of %1 aborted.</source>
         <translation>FET kritické. Nemožno otvoriť súbor %1 pre zapisovanie. Prosím, skontrolujte váš voľný priestor na disku. Ukladannie %1 prerušené.</translation>
     </message>
@@ -25433,10 +25605,6 @@ Please stop simulation before this</source>
         <location filename="../src/engine/export.cpp" line="946"/>
         <location filename="../src/engine/export.cpp" line="1028"/>
         <location filename="../src/engine/export.cpp" line="1137"/>
-        <location filename="../src/engine/export.cpp" line="1386"/>
-        <location filename="../src/engine/export.cpp" line="1392"/>
-        <location filename="../src/engine/export.cpp" line="1398"/>
-        <location filename="../src/engine/export.cpp" line="1404"/>
         <source>FET critical. Writing %1 gave error code %2, which means saving is compromised. Please check your disk&apos;s free space.</source>
         <translation>FET kritické. Zapisovanie %1 vyvolalo chybný kód %2, čo znamená obmedzené ukladanie. Prosím skontrolujte voľný priestor na disku.</translation>
     </message>
@@ -25530,16 +25698,6 @@ Please stop simulation before this</source>
         <translation>Exportovaných %1 aktívnych štatistík aktivít.</translation>
     </message>
     <message>
-        <location filename="../src/engine/export.cpp" line="1410"/>
-        <source>FET information</source>
-        <translation>FET informácia</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/export.cpp" line="1411"/>
-        <source>User abort export</source>
-        <translation>Používateľom prerušený export</translation>
-    </message>
-    <message>
         <location filename="../src/engine/export.cpp" line="313"/>
         <source>Please specify the content of the first line:</source>
         <translation>Prosím, uveďte obsah prvého riadku:</translation>
@@ -25589,7 +25747,6 @@ Import of data will be easier with these settings.</source>
     <message>
         <location filename="../src/engine/export.cpp" line="86"/>
         <location filename="../src/engine/export.cpp" line="940"/>
-        <location filename="../src/engine/export.cpp" line="1411"/>
         <source>FET warning</source>
         <translation>FET varovanie</translation>
     </message>
@@ -28363,7 +28520,7 @@ Having a subgroup with too little working hours per week means that you inputted
 <context>
     <name>Generate</name>
     <message>
-        <location filename="../src/engine/generate.cpp" line="2751"/>
+        <location filename="../src/engine/generate.cpp" line="2761"/>
         <source>At time %1 h %2 m %3 s, FET reached %4 activities placed</source>
         <comment>h=hours, m=minutes, s=seconds. Please leave spaces between &apos;time&apos;, %1, h, %2, m, %3, s, so they are visible</comment>
         <translation>V čase %1 h %2 m %3 s, FET umiestnil tento počet aktivít: %4</translation>
@@ -28390,384 +28547,384 @@ Having a subgroup with too little working hours per week means that you inputted
 <context>
     <name>GeneratePreTranslate</name>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="688"/>
-        <location filename="../src/engine/generate_pre.cpp" line="705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="759"/>
-        <location filename="../src/engine/generate_pre.cpp" line="810"/>
-        <location filename="../src/engine/generate_pre.cpp" line="860"/>
-        <location filename="../src/engine/generate_pre.cpp" line="898"/>
-        <location filename="../src/engine/generate_pre.cpp" line="953"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1004"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1061"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1146"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1227"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1279"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1450"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1494"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1509"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1528"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1544"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1581"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1617"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1646"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1665"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1702"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1778"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1841"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1916"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1979"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2114"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2132"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2217"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2298"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2350"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2440"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2583"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2609"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2625"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2651"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2669"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2747"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2788"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2833"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2883"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2966"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2984"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3078"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3202"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3225"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3247"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3314"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3342"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3359"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3388"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3453"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3470"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3499"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3529"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3569"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3592"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3626"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3664"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3802"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3818"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3874"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3946"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4089"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4132"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4181"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4514"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4622"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5002"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5027"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5117"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5161"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5184"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5274"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5310"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5516"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5549"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5600"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5646"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5680"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5735"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5768"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5844"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5927"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5965"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6365"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6388"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6411"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6495"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6531"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6555"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6618"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6657"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6743"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6782"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6804"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6843"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6865"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6980"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7153"/>
+        <location filename="../src/engine/generate_pre.cpp" line="701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="873"/>
+        <location filename="../src/engine/generate_pre.cpp" line="911"/>
+        <location filename="../src/engine/generate_pre.cpp" line="966"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1017"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1074"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1159"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1240"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1292"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1463"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1507"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1522"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1541"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1557"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1594"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1630"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1659"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1678"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1715"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1854"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1929"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1992"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2230"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2363"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2579"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2596"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2622"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2638"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2664"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2760"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2801"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2846"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2896"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2979"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2997"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3238"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3327"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3372"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3466"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3483"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3512"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3542"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3582"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3605"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3639"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3677"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3831"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4102"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4635"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5015"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5040"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5174"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5197"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5287"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5323"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5529"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5562"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5580"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5613"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5659"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5693"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5712"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5748"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5857"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5895"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5940"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5978"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6378"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6424"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6508"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6544"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6607"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6631"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6795"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6817"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6856"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6878"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7166"/>
         <source>FET warning</source>
         <translation>FET varovanie</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="770"/>
-        <location filename="../src/engine/generate_pre.cpp" line="821"/>
-        <location filename="../src/engine/generate_pre.cpp" line="861"/>
-        <location filename="../src/engine/generate_pre.cpp" line="899"/>
-        <location filename="../src/engine/generate_pre.cpp" line="964"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1015"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1044"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1062"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1157"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1238"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1284"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1380"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1498"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1514"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1533"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1550"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1588"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1624"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1650"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1671"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1692"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1789"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1852"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1980"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2090"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2133"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2228"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2309"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2532"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2589"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2613"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2630"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2659"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2709"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2750"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2767"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2816"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2840"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2967"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2985"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3209"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3232"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3255"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3345"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3363"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3395"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3425"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3474"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3824"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3952"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4186"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4454"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4517"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4585"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5008"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5118"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5275"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5311"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5554"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5605"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5651"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5685"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5740"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5848"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5886"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5969"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6394"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6415"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6534"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6558"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6597"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6724"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6746"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6785"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6846"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6981"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="834"/>
+        <location filename="../src/engine/generate_pre.cpp" line="874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1057"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1170"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1393"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1511"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1563"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1684"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1802"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1865"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1930"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2103"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2128"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2146"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2241"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2322"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2368"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2602"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2672"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2740"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2780"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2808"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2829"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2853"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2998"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3408"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3469"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3549"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3589"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3837"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3895"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3965"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4199"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5021"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5131"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5198"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5324"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5664"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5753"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5861"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6428"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6478"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6513"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6547"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6634"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6673"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6737"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6759"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6798"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7167"/>
         <source>Skip rest</source>
         <translation>Preskočiť ostatné</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="770"/>
-        <location filename="../src/engine/generate_pre.cpp" line="821"/>
-        <location filename="../src/engine/generate_pre.cpp" line="861"/>
-        <location filename="../src/engine/generate_pre.cpp" line="899"/>
-        <location filename="../src/engine/generate_pre.cpp" line="964"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1015"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1044"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1062"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1157"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1238"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1284"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1380"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1461"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1498"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1514"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1533"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1550"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1588"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1624"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1650"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1671"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1692"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1708"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1789"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1852"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1980"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2043"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2090"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2133"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2228"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2309"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2532"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2589"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2613"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2630"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2659"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2675"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2709"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2750"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2767"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2816"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2840"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2884"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2967"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2985"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3209"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3232"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3255"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3345"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3363"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3395"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3425"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3456"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3474"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3599"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3808"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3824"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3952"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4186"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4454"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4517"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4585"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5008"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5118"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5185"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5275"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5311"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5521"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5554"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5571"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5605"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5651"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5685"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5740"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5848"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5886"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5969"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6394"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6415"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6534"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6558"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6597"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6724"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6746"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6785"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6846"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6981"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7154"/>
+        <location filename="../src/engine/generate_pre.cpp" line="783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="834"/>
+        <location filename="../src/engine/generate_pre.cpp" line="874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1057"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1170"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1393"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1511"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1546"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1563"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1663"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1684"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1721"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1802"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1865"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1930"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2056"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2103"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2128"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2146"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2241"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2322"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2368"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2602"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2672"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2740"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2780"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2808"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2829"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2853"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2998"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3408"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3438"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3469"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3519"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3549"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3589"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3821"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3837"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3895"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3965"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4199"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5021"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5131"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5198"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5324"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5664"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5753"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5861"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6428"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6478"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6513"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6547"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6571"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6634"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6673"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6737"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6759"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6798"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6859"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6881"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7167"/>
         <source>See next</source>
         <translation>Zobraziť ďalšie</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="849"/>
-        <location filename="../src/engine/generate_pre.cpp" line="887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="900"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1034"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1052"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1047"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1065"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1147"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1228"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1160"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1241"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28776,36 +28933,36 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1280"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1293"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satifisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1647"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1660"/>
         <source>For subgroup %1 you have too little activities to respect the constraint(s) of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1666"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1679"/>
         <source>For subgroup %1 cannot respect the constraint(s) of type min hours daily (the constraint(s) do not allow empty days) on day %2, because of students set not available and/or break. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1904"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1967"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1980"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2105"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2123"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2136"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2218"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2299"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2231"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2312"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -28814,203 +28971,203 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2351"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2364"/>
         <source>Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satifisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2567"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2580"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2597"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2623"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2639"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2706"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2719"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2735"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with %2 min days per week, and the number of working days per week is only %3. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2748"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2761"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2763"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2776"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with %1 min days per week, and the number of working days per week is only %2. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2789"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2802"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and he has only %3 activities - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2809"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2822"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and min hours daily %3 and he has only %4 working hours - impossible. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2834"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2847"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 &gt; max days per week %3 - impossible (min days must be &lt;= max days). Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2882"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available and min hours daily for this teacher. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2889"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available for this teacher. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2971"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, because the weight of this constraint is below 100.0%, but anyway most probably you have made a mistake in this constraint, so it is recommended to modify it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2978"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2991"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, so your timetable is impossible. Please correct this constraint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3085"/>
         <source>You have a set of impossible constraints activities same starting time, considering all the indirect links between activities same starting time constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3088"/>
         <source>The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3248"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3261"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3304"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3317"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3343"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3356"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3360"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3373"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3467"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3471"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3484"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4623"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4636"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4625"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5771"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4638"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5784"/>
         <source>Please add a constraint of this type with weight 100%.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4640"/>
         <source>You can add this constraint from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4633"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5779"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4646"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5792"/>
         <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4635"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5781"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5794"/>
         <source>Maybe you removed it by mistake from your file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4637"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4650"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5796"/>
         <source>By adding it again, everything should be all right.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5106"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5119"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5149"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5162"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5172"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5185"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5262"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5275"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5311"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration) or contact author/mailing list.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5769"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5782"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5786"/>
         <source>You can add this constraint from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="760"/>
-        <location filename="../src/engine/generate_pre.cpp" line="811"/>
+        <location filename="../src/engine/generate_pre.cpp" line="773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="824"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29019,53 +29176,53 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="680"/>
+        <location filename="../src/engine/generate_pre.cpp" line="693"/>
         <source>Your data contains constraints students max gaps per day and/or activity tag max hours daily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="714"/>
         <source>It is recommended to use such constraints with caution.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="695"/>
         <source>These constraints are good, but they are not perfectly optimized for speed. You may obtain a long generation time or even impossible timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="686"/>
-        <location filename="../src/engine/generate_pre.cpp" line="703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="699"/>
+        <location filename="../src/engine/generate_pre.cpp" line="716"/>
         <source>Are you sure you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="696"/>
+        <location filename="../src/engine/generate_pre.cpp" line="709"/>
         <source>Your data contains constraints students min hours daily which allow empty days.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="711"/>
         <source>These constraints are non-standard. They are recommended only if the students can have free days and a solution with free days for students exists. Otherwise the solution might be impossible for FET to find.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="858"/>
-        <location filename="../src/engine/generate_pre.cpp" line="896"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1041"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1059"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1914"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1977"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2112"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2130"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="871"/>
+        <location filename="../src/engine/generate_pre.cpp" line="909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1054"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1927"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3325"/>
         <source>Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="954"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1005"/>
+        <location filename="../src/engine/generate_pre.cpp" line="967"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1018"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29074,8 +29231,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1370"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1451"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1464"/>
         <source>Cannot optimize for subgroup %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29084,34 +29241,34 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1495"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1508"/>
         <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1523"/>
         <source>Cannot optimize, because you have constraint students min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1529"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1542"/>
         <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1545"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1558"/>
         <source>Cannot optimize, because you have constraint students set min hours daily for students set %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1631"/>
         <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1779"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1842"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1792"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1855"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29120,8 +29277,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2033"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2080"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2046"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2093"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29130,8 +29287,8 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2441"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2522"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2535"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -29140,347 +29297,347 @@ Having a subgroup with too little working hours per week means that you inputted
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3389"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3419"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3402"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3432"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3513"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3543"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3640"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3665"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3678"/>
         <source>Cannot optimize, because you have constraint teachers max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3803"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3947"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3960"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3819"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3832"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3875"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3888"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4044"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4057"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4090"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4103"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4133"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4146"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4182"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4195"/>
         <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id==%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4452"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4465"/>
         <source>Cannot optimize, because you have a constraint min days with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4515"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4528"/>
         <source>Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4596"/>
         <source>Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4629"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5775"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4642"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5788"/>
         <source>Explanation:</source>
         <translation>Vysvetlenie:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5777"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5790"/>
         <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4656"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4669"/>
         <source>Precomputing ... please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4679"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4694"/>
         <source>FET information</source>
         <translation>FET informácia</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4679"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4694"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zrušené</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5003"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5016"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id==%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5041"/>
         <source>Cannot optimize, because you have constraints of type activity activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5530"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5581"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5647"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5660"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1698"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 (the constraint allows empty days). This subgroup has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1716"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 and the constraint allows empty days. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2652"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2665"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2670"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2683"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3203"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3216"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3239"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3570"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3583"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3606"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per week is less because of a misunderstanding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4655"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4668"/>
         <source>Precomputing</source>
         <comment>Title of a progress dialog</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5550"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5563"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5614"/>
         <source>Cannot optimize for teacher %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint teacher(s) interval max days per week for each teacher) and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5681"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5736"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5694"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5749"/>
         <source>Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint students (set) interval max days per week for each subgroup) and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5700"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5713"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5845"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5883"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5858"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5896"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5928"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5966"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5941"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5979"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6366"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6379"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6389"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6402"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from preferred room(s) constraints). This means that a constraint preferred room(s) has 0 rooms in it. This should not happen. Please report possible bug.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6425"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6462"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6475"/>
         <source>Cannot generate timetable, because for activity with id==%1 you have no allowed home room (from the allowed number of students)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6496"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6509"/>
         <source>Cannot generate the timetable, because for activity with id==%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6532"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6545"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6569"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6608"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6632"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6658"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6671"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6695"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6735"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6744"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6757"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6783"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6796"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6818"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6844"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6857"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6866"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6879"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6979"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6992"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7164"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7676"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7599"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7680"/>
         <source>The initial order of activities (id-s):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7604"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7685"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7608"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7689"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7611"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7692"/>
         <source>Teachers: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7613"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7694"/>
         <source>Subject: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7697"/>
         <source>Activity tags: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7699"/>
         <source>Students: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7622"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7703"/>
         <source>End - the order of activities (id-s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29631,6 +29788,11 @@ Please modify your data correspondingly and try again</source>
         <translation>O programe FET - voľnom rozvrhovacom softvéri</translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="30"/>
+        <source>Authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="42"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -29638,26 +29800,21 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Copyright (C) 2002-2010 Liviu Lalescu.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.14.1 (August 2010)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Version: 5.14.2 (September 2010).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Author: Liviu Lalescu (timetable generation algorithm, data structures). To contact Liviu Lalescu visit the webpage http://lalescu.ro/liviu/&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also Contributors and Translators tabs.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Please see also the Contributors and the Translators tabs.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be greatly appreciated.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;This project is open source. You are invited to contribute to this software and your feed-back would be appreciated.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
-        <source>Contributors</source>
-        <translation>Prispievatelia</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="81"/>
@@ -29700,7 +29857,105 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="263"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="136"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="239"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../src/interface/helpaboutform_template.ui" line="264"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -29817,7 +30072,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Marco Barsotti - Italian translation, testing.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Hatim Alahmadi - Arabic translation, sample file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Silver - Arabic translation, sample file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;kdsayang - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
@@ -29924,8 +30179,15 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;DT - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Yotam Medini - Hebrew translation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mohd - suggestions.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="69"/>
+        <source>Contributors</source>
+        <translation>Prispievatelia</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="124"/>
@@ -29933,114 +30195,12 @@ p, li { white-space: pre-wrap; }
         <translation>Prekladatelia</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="226"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="227"/>
         <source>References</source>
         <translation>Odporúčania</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="30"/>
-        <source>Authors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="../src/interface/helpaboutform_template.ui" line="136"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Hatim Alahmadi (dr.hatim AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Jerome Durand (fetfr AT free.fr).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	in particular you can find here the e-mail address).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	updated by: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="238"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;You may find references for the algorithms and techniques used in this program on the FET documentation web page, &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/doc/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/doc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="251"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="252"/>
         <source>Thanks to</source>
         <translation>Poďakovanie</translation>
     </message>
@@ -32014,11 +32174,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/import.cpp" line="1156"/>
-        <source>There is no usable data in the file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/engine/import.cpp" line="1165"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
@@ -32246,6 +32401,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/engine/import.cpp" line="1080"/>
         <source>Line %1 is: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/import.cpp" line="1156"/>
+        <source>There is no usable data in the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -32572,28 +32732,28 @@ Prosím, zastavte predtým simuláciu</translation>
 <context>
     <name>ModifyActivityForm</name>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="469"/>
-        <location filename="../src/interface/modifyactivityform.cpp" line="502"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="519"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="552"/>
         <source>FET question</source>
         <translation>FET otázka</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="470"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="520"/>
         <source>Do you really want to have the activity without teacher(s)?</source>
         <translation>Naozaj chcete mať aktivitu bez učiteľa(ov)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="487"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="537"/>
         <source>FET information</source>
         <translation>FET informácia</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="488"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="538"/>
         <source>Invalid subject</source>
         <translation>Neplatný predmet</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform.cpp" line="503"/>
+        <location filename="../src/interface/modifyactivityform.cpp" line="553"/>
         <source>Do you really want to have the activity without student set(s)?</source>
         <translation>Naozaj chcete mať aktivitu bez skupiny/skupín študentov?</translation>
     </message>
@@ -32630,6 +32790,31 @@ a pridajte novú rozdeľovaciu aktivitu</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="648"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="704"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="734"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="777"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="820"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="863"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="906"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="949"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="992"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1035"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1078"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1121"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1164"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1207"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1250"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1293"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1336"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1379"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1422"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1465"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1508"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1551"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1594"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1637"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1680"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1723"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1766"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1809"/>
         <source>Duration</source>
         <translation>Trvanie</translation>
     </message>
@@ -32644,6 +32829,31 @@ a pridajte novú rozdeľovaciu aktivitu</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="671"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="691"/>
         <location filename="../src/interface/modifyactivityform_template.ui" line="757"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="800"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="843"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="886"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="929"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="972"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1015"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1058"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1101"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1144"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1187"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1230"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1273"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1316"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1359"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1402"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1445"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1488"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1531"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1574"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1617"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1660"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1703"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1746"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1789"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1832"/>
         <source>Active</source>
         <translation>Aktívne</translation>
     </message>
@@ -32693,12 +32903,137 @@ a pridajte novú rozdeľovaciu aktivitu</translation>
         <translation>10</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="773"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="768"/>
+        <source>11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="811"/>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="854"/>
+        <source>13</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="897"/>
+        <source>14</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="940"/>
+        <source>15</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="983"/>
+        <source>16</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1026"/>
+        <source>17</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1069"/>
+        <source>18</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1112"/>
+        <source>19</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1155"/>
+        <source>20</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1198"/>
+        <source>21</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1241"/>
+        <source>22</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1284"/>
+        <source>23</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1327"/>
+        <source>24</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1370"/>
+        <source>25</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1413"/>
+        <source>26</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1456"/>
+        <source>27</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1499"/>
+        <source>28</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1542"/>
+        <source>29</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1585"/>
+        <source>30</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1628"/>
+        <source>31</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1671"/>
+        <source>32</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1714"/>
+        <source>33</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1757"/>
+        <source>34</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1800"/>
+        <source>35</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1848"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyactivityform_template.ui" line="780"/>
+        <location filename="../src/interface/modifyactivityform_template.ui" line="1855"/>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>
@@ -35466,7 +35801,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum medzier medzi zmenami budov študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -35499,12 +35834,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="53"/>
         <source>Advanced usage: enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšírené používanie: aktivované</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="55"/>
         <source>Advanced usage: not enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšírené používanie: neaktivované</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="93"/>
@@ -35516,18 +35851,18 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="94"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="99"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="104"/>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="109"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET varovanie</translation>
+        <translation>FET varovanie</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="104"/>
@@ -35553,7 +35888,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="146"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Použite opatrne.</translation>
+        <translation>Použite opatrne.</translation>
     </message>
 </context>
 <context>
@@ -35561,33 +35896,33 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="49"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="39"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="14"/>
         <source>Modify students min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum hodín denne pre študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="62"/>
         <source>Min hours</source>
-        <translation type="unfinished">Minimum hodín</translation>
+        <translation>Min hodín</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="95"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Povoliť prázdne dni</translation>
+        <translation>Povoliť prázdne dni</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="110"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="117"/>
@@ -35607,17 +35942,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="147"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="155"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="162"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Neplatný druh aktivity</translation>
+        <translation>Neplatný druh aktivity</translation>
     </message>
 </context>
 <context>
@@ -35635,12 +35970,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="123"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="153"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">Maximum hodín posebe</translation>
+        <translation>Maximum hodín posebe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -35651,7 +35986,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín posebe pre druh aktivity skupiny študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
@@ -35662,7 +35997,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="112"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -35677,17 +36012,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform.cpp" line="127"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform.cpp" line="135"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform.cpp" line="142"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Neplatný druh aktivity</translation>
+        <translation>Neplatný druh aktivity</translation>
     </message>
 </context>
 <context>
@@ -35696,7 +36031,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín denne pre druh aktivity skupiny študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -35712,17 +36047,17 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="112"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="123"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="153"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Max hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="183"/>
@@ -35747,17 +36082,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="118"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="123"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform.cpp" line="131"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -35765,7 +36100,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="154"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
@@ -35776,12 +36111,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Modify students set early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum skorých začiatkov v druhú hodinu pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="164"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="173"/>
@@ -35796,7 +36131,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="103"/>
         <source>Max beginnings at second hour (per week)</source>
-        <translation type="unfinished">Maximum začiatkov v druhú hodinu (za týždeň)</translation>
+        <translation>Maximum začiatkov v druhú hodinu (za týždeň)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="70"/>
@@ -35821,12 +36156,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform.cpp" line="115"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform.cpp" line="125"/>
         <source>Invalid room</source>
-        <translation type="unfinished">Neplatná miestnosť</translation>
+        <translation>Neplatná miestnosť</translation>
     </message>
 </context>
 <context>
@@ -35835,7 +36170,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Modify students set home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť domovskú miestnosť skupiny študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="20"/>
@@ -35850,17 +36185,17 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="40"/>
         <source>Room</source>
-        <translation type="unfinished">Miestnosť</translation>
+        <translation>Miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="56"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="69"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="98"/>
@@ -35880,17 +36215,17 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform.cpp" line="124"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform.cpp" line="130"/>
         <source>Empty list of selected rooms</source>
-        <translation type="unfinished">Prázdny zoznam vybraných miestností</translation>
+        <translation>Prázdny zoznam vybraných miestností</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform.cpp" line="135"/>
         <source>Only one selected room - please use constraint students set home room if you want a single room</source>
-        <translation type="unfinished">Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;students set home room&quot; ak chcete jedinú miestnosť</translation>
+        <translation>Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;domovská miestnosť skupiny študentov&quot; ak chcete jedinú miestnosť</translation>
     </message>
 </context>
 <context>
@@ -35898,12 +36233,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="106"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="116"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="127"/>
@@ -35919,7 +36254,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Modify students set home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť domovské miestnosti skupiny študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="41"/>
@@ -35954,7 +36289,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="72"/>
         <source>End of day</source>
-        <translation type="unfinished">Koniec dňa</translation>
+        <translation>Koniec dňa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="152"/>
@@ -35969,32 +36304,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="153"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="158"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="172"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="180"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished">Neplatná začiatočná hodina</translation>
+        <translation>Neplatná začiatočná hodina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="185"/>
         <source>End hour invalid</source>
-        <translation type="unfinished">Neplatná konečná hodina</translation>
+        <translation>Neplatná konečná hodina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform.cpp" line="190"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished">Začiatočná hodina nemôže byť väčšia alebo rovná konečnej hodine</translation>
+        <translation>Začiatočná hodina nemôže byť väčšia alebo rovná konečnej hodine</translation>
     </message>
 </context>
 <context>
@@ -36003,7 +36338,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students set interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť interval maxima dní za týždeň pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -36023,27 +36358,27 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="92"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="109"/>
         <source>Interval start hour</source>
-        <translation type="unfinished">Interval začiatočná hodina</translation>
+        <translation>Začiatočná hodina intervalu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="145"/>
         <source>Interval end hour</source>
-        <translation type="unfinished">Interval konečná hodina</translation>
+        <translation>Konečná hodina intervalu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="229"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Maximum dní za týždeň</translation>
+        <translation>Maximum dní za týždeň</translation>
     </message>
 </context>
 <context>
@@ -36057,12 +36392,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform.cpp" line="124"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform.cpp" line="132"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -36071,7 +36406,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify students set max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum zmien budov za deň pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -36081,12 +36416,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="90"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="101"/>
@@ -36101,7 +36436,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="119"/>
         <source>Max building changes per day</source>
-        <translation type="unfinished">Maximum zmien budov za deň</translation>
+        <translation>Maximum zmien budov za deň</translation>
     </message>
 </context>
 <context>
@@ -36115,12 +36450,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="124"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform.cpp" line="132"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -36129,7 +36464,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify students set max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum zmien budov za týždeň pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -36139,12 +36474,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="90"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="101"/>
@@ -36159,7 +36494,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="119"/>
         <source>Max building changes per week</source>
-        <translation type="unfinished">Maximum zmien budov za týždeň</translation>
+        <translation>Maximum zmien budov za týždeň</translation>
     </message>
 </context>
 <context>
@@ -36174,17 +36509,17 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform.cpp" line="126"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform.cpp" line="131"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform.cpp" line="139"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -36193,12 +36528,12 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="14"/>
         <source>Modify students set max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum medzier za deň pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="22"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="44"/>
@@ -36211,12 +36546,12 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="57"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished">Maximum medzier za deň</translation>
+        <translation>Maximum medzier za deň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="105"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="121"/>
@@ -36246,17 +36581,17 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform.cpp" line="126"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform.cpp" line="131"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform.cpp" line="139"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -36274,23 +36609,23 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="22"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify students set max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum medzier za týždeň pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="55"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished">Maximum medzier za týždeň</translation>
+        <translation>Max medzier za týždeň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="103"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="119"/>
@@ -36315,12 +36650,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform.cpp" line="127"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform.cpp" line="144"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -36328,7 +36663,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="88"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -36339,12 +36674,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students set max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín posebe pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="118"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">Maximum hodín posebe</translation>
+        <translation>Maximum hodín posebe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="155"/>
@@ -36360,7 +36695,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -36374,12 +36709,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="127"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform.cpp" line="144"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -36387,7 +36722,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="88"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="28"/>
@@ -36398,7 +36733,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students set max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín denne pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="155"/>
@@ -36413,13 +36748,13 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Maximum hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -36433,12 +36768,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="124"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform.cpp" line="132"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
 </context>
 <context>
@@ -36447,7 +36782,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students set min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum medzier medzi zmenami budov skupiny študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -36457,12 +36792,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="90"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="101"/>
@@ -36477,7 +36812,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="119"/>
         <source>Min gaps between building changes</source>
-        <translation type="unfinished">Minimum medzier medzi zmenami budov</translation>
+        <translation>Minimum medzier medzi zmenami budov</translation>
     </message>
 </context>
 <context>
@@ -36485,12 +36820,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="57"/>
         <source>Advanced usage: enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšírené používanie: aktivované</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="59"/>
         <source>Advanced usage: not enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozšírené používanie: neaktivované</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="135"/>
@@ -36503,18 +36838,18 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="136"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="141"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="146"/>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="151"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET varovanie</translation>
+        <translation>FET varovanie</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="146"/>
@@ -36529,7 +36864,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="163"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="191"/>
@@ -36545,7 +36880,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="197"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Použite opatrne.</translation>
+        <translation>Použite opatrne.</translation>
     </message>
 </context>
 <context>
@@ -36553,18 +36888,18 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="50"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="43"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="14"/>
         <source>Modify students set min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum hodín denne pre skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="33"/>
@@ -36574,17 +36909,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="57"/>
         <source>Min hours</source>
-        <translation type="unfinished">Minimum hodín</translation>
+        <translation>Minimum hodín</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="87"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Povoliť prázdne dni</translation>
+        <translation>Povoliť prázdne dni</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="96"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="103"/>
@@ -36604,17 +36939,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="256"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="264"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Neplatná skupina študentov</translation>
+        <translation>Neplatná skupina študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="273"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
-        <translation type="unfinished"></translation>
+        <translation>Obmedzenie tohoto typu už existuje pre rovnakú skupinu študentov - nemožno pokračovať</translation>
     </message>
 </context>
 <context>
@@ -36627,28 +36962,28 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="96"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="106"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
-        <translation type="unfinished">Nastaviť všetko povolené</translation>
+        <translation>Nastaviť všetko povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished">X=nepovolené, prázdne=povolené</translation>
+        <translation>X=nepovolené, prázdne=povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
-        <translation type="unfinished">Nastaviť všetko nepovolené</translation>
+        <translation>Nastaviť všetko nepovolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -36664,12 +36999,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="14"/>
         <source>Modify students set not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť nedostupné časy skupiny študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
         <source>This constraint does not induce gaps (or early not respected) for students. If a students set has lessons before and after this not available period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Toto obmedzenie neznamená medzery pre študentov. Ak má predtým skupina študentov hodiny a potom nedostupné obdobie, nebudú tu počítané žiadne medzery</translation>
     </message>
 </context>
 <context>
@@ -36682,7 +37017,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="329"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="409"/>
@@ -36692,7 +37027,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="410"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Varovanie: Vybraných 0 pozícií. Ste si istý?</translation>
     </message>
 </context>
 <context>
@@ -36701,23 +37036,23 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify subactivities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť preferované začiatočné časy subaktivít</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="124"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="134"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished">X=nepovolené, prázdne=povolené</translation>
+        <translation>X=nepovolené, prázdne=povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="166"/>
@@ -36752,17 +37087,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
         <source>Set all not allowed</source>
-        <translation type="unfinished">Nastaviť všetko nepovolené</translation>
+        <translation>Nastaviť všetko nepovolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
         <source>Set all allowed</source>
-        <translation type="unfinished">Nastaviť všetko povolené</translation>
+        <translation>Nastaviť všetko povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="22"/>
         <source>Component number (split index)</source>
-        <translation type="unfinished">Počet komponentov (deliaci index)</translation>
+        <translation>Počet komponentov (deliaci index)</translation>
     </message>
 </context>
 <context>
@@ -36775,7 +37110,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="329"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="409"/>
@@ -36785,7 +37120,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="410"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Varovanie: Nebola vybraná žiadna pozícia/blok. Ste si istý?</translation>
     </message>
 </context>
 <context>
@@ -36794,7 +37129,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Modify subactivities preferred time slots</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť preferované časové bloky subaktivít</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="166"/>
@@ -36809,12 +37144,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="124"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="134"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="68"/>
@@ -36840,22 +37175,22 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="152"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished">X=nepovolené, prázdne=povolené</translation>
+        <translation>X=nepovolené, prázdne=povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
         <source>Set all not allowed</source>
-        <translation type="unfinished">Nastaviť všetko nepovolené</translation>
+        <translation>Nastaviť všetko nepovolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Set all allowed</source>
-        <translation type="unfinished">Nastaviť všetko povolené</translation>
+        <translation>Nastaviť všetko povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="22"/>
         <source>Component number (split index)</source>
-        <translation type="unfinished">Počet komponentov (deliaci index)</translation>
+        <translation>Počet komponentov (deliaci index)</translation>
     </message>
 </context>
 <context>
@@ -36871,22 +37206,22 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform.cpp" line="120"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform.cpp" line="131"/>
         <source>Invalid subject</source>
-        <translation type="unfinished">Neplatný predmet</translation>
+        <translation>Neplatný predmet</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform.cpp" line="139"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Neplatný druh aktivity</translation>
+        <translation>Neplatný druh aktivity</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform.cpp" line="147"/>
         <source>Invalid room</source>
-        <translation type="unfinished">Neplatná miestnosť</translation>
+        <translation>Neplatná miestnosť</translation>
     </message>
 </context>
 <context>
@@ -36899,12 +37234,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="83"/>
         <source>Room</source>
-        <translation type="unfinished">Miestnosť</translation>
+        <translation>Miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="105"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="129"/>
@@ -36920,12 +37255,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť preferovanú miestnosť pre druh aktivity predmetu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="115"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="48"/>
@@ -36947,17 +37282,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="112"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="122"/>
         <source>Empty list of selected rooms</source>
-        <translation type="unfinished">Prázdny zoznam vybraných miestností</translation>
+        <translation>Prázdny zoznam vybraných miestností</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="127"/>
         <source>Only one selected room - please use constraint subject activity tag preferred room if you want a single room</source>
-        <translation type="unfinished">Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;subject activity tag preferred room&quot; ak chcete jedinú miestnosť</translation>
+        <translation>Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;preferovaná miestnosť druhu aktivity predmetu&quot; ak chcete jedinú miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="133"/>
@@ -36967,7 +37302,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="140"/>
         <source>Invalid selected activity tag</source>
-        <translation type="unfinished">Vybraný neplatný druh aktivity</translation>
+        <translation>Vybraný neplatný druh aktivity</translation>
     </message>
 </context>
 <context>
@@ -36975,12 +37310,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="119"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="129"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="140"/>
@@ -37001,7 +37336,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť preferované miestnosti druhu aktivity predmetu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="65"/>
@@ -37043,17 +37378,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform.cpp" line="102"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform.cpp" line="113"/>
         <source>Invalid subject</source>
-        <translation type="unfinished">Neplatný predmet</translation>
+        <translation>Neplatný predmet</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform.cpp" line="121"/>
         <source>Invalid room</source>
-        <translation type="unfinished">Neplatná miestnosť</translation>
+        <translation>Neplatná miestnosť</translation>
     </message>
 </context>
 <context>
@@ -37071,13 +37406,13 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="50"/>
         <source>Room</source>
-        <translation type="unfinished">Miestnosť</translation>
+        <translation>Miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="14"/>
         <source>Modify subject preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť preferovanú miestnosť predmetu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="28"/>
@@ -37087,12 +37422,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="87"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="97"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
 </context>
 <context>
@@ -37108,17 +37443,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="95"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="105"/>
         <source>Empty list of selected rooms</source>
-        <translation type="unfinished">Prázdny zoznam vybraných miestností</translation>
+        <translation>Prázdny zoznam vybraných miestností</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="110"/>
         <source>Only one selected room - please use constraint subject preferred room if you want a single room</source>
-        <translation type="unfinished">Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;subject preferred room&quot; ak chcete jedinú miestnosť</translation>
+        <translation>Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;preferovaná miestnosť predmetu&quot; ak chcete jedinú miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform.cpp" line="116"/>
@@ -37131,12 +37466,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="106"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="116"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="127"/>
@@ -37152,7 +37487,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="14"/>
         <source>Modify subject preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť preferované miestnosti predmetu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
@@ -37192,7 +37527,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="127"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="136"/>
@@ -37203,12 +37538,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="137"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="144"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Neplatný druh aktivity</translation>
+        <translation>Neplatný druh aktivity</translation>
     </message>
 </context>
 <context>
@@ -37226,12 +37561,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="153"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">Maximum hodín posebe</translation>
+        <translation>Maximum hodín posebe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="123"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -37242,7 +37577,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teacher activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín posebe pre druh aktivity učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="60"/>
@@ -37253,7 +37588,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="112"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -37266,7 +37601,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform.cpp" line="104"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform.cpp" line="113"/>
@@ -37277,12 +37612,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform.cpp" line="114"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform.cpp" line="121"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Neplatný druh aktivity</translation>
+        <translation>Neplatný druh aktivity</translation>
     </message>
 </context>
 <context>
@@ -37291,7 +37626,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín denne pre druh aktivity učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -37307,17 +37642,17 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="112"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="123"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="153"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Maximum hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="183"/>
@@ -37341,12 +37676,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform.cpp" line="100"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform.cpp" line="110"/>
         <source>Invalid room</source>
-        <translation type="unfinished">Neplatná miestnosť</translation>
+        <translation>Neplatná miestnosť</translation>
     </message>
 </context>
 <context>
@@ -37355,7 +37690,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="14"/>
         <source>Modify teacher home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť domovskú miestnosť učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="20"/>
@@ -37370,17 +37705,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="40"/>
         <source>Room</source>
-        <translation type="unfinished">Miestnosť</translation>
+        <translation>Miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="56"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="69"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="98"/>
@@ -37400,17 +37735,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform.cpp" line="95"/>
         <source>Invalid weight</source>
-        <translation type="unfinished">Neplatná váha</translation>
+        <translation>Neplatná váha</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform.cpp" line="101"/>
         <source>Empty list of selected rooms</source>
-        <translation type="unfinished">Prázdny zoznam vybraných miestností</translation>
+        <translation>Prázdny zoznam vybraných miestností</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform.cpp" line="106"/>
         <source>Only one selected room - please use constraint teacher home room if you want a single room</source>
-        <translation type="unfinished">Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;teacher home room&quot; ak chcete jedinú miestnosť</translation>
+        <translation>Vybraná iba jedna miestnosť - prosím použite obmedzenie &quot;domovská miestnosť učiteľa&quot; ak chcete jedinú miestnosť</translation>
     </message>
 </context>
 <context>
@@ -37418,12 +37753,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="106"/>
         <source>Weight percentage (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="116"/>
         <source>-1</source>
-        <translation type="unfinished">-1</translation>
+        <translation>-1</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="127"/>
@@ -37439,7 +37774,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="14"/>
         <source>Modify teacher home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť domovské miestnosti učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="41"/>
@@ -37474,7 +37809,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="72"/>
         <source>End of day</source>
-        <translation type="unfinished">Koniec dňa</translation>
+        <translation>Koniec dňa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="137"/>
@@ -37489,32 +37824,32 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="138"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="143"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="157"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="165"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished">Neplatná začiatočná hodina</translation>
+        <translation>Neplatná začiatočná hodina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="170"/>
         <source>End hour invalid</source>
-        <translation type="unfinished">Neplatná konečná hodina</translation>
+        <translation>Neplatná konečná hodina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform.cpp" line="175"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished">Začiatočná hodina nemôže byť väčšia alebo rovná konečnej hodine</translation>
+        <translation>Začiatočná hodina nemôže byť väčšia alebo rovná konečnej hodine</translation>
     </message>
 </context>
 <context>
@@ -37523,7 +37858,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teacher interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť interval maxima dní za týždeň pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -37543,27 +37878,27 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="82"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="92"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="109"/>
         <source>Interval start hour</source>
-        <translation type="unfinished">Interval začiatočná hodina</translation>
+        <translation>Začiatočná hodina intervalu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="145"/>
         <source>Interval end hour</source>
-        <translation type="unfinished">Interval konečná hodina</translation>
+        <translation>Konečná hodina intervalu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="229"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Maximum dní za týždeň</translation>
+        <translation>Maximum dní za týždeň</translation>
     </message>
 </context>
 <context>
@@ -37577,12 +37912,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform.cpp" line="110"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform.cpp" line="118"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -37591,7 +37926,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify teacher max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum zmien budov za deň pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -37601,12 +37936,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="90"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="101"/>
@@ -37621,7 +37956,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="119"/>
         <source>Max building changes per day</source>
-        <translation type="unfinished">Maximum zmien budov za deň</translation>
+        <translation>Maximum zmien budov za deň</translation>
     </message>
 </context>
 <context>
@@ -37635,12 +37970,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="110"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž). Musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform.cpp" line="118"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -37649,7 +37984,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify teacher max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum zmien budov za týždeň pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -37659,12 +37994,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="90"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="101"/>
@@ -37679,7 +38014,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="119"/>
         <source>Max building changes per week</source>
-        <translation type="unfinished">Maximum zmien budov za týždeň</translation>
+        <translation>Maximum zmien budov za týždeň</translation>
     </message>
 </context>
 <context>
@@ -37694,17 +38029,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="114"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="119"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform.cpp" line="133"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -37722,13 +38057,13 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="87"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teacher max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum dní za týždeň pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="28"/>
@@ -37738,12 +38073,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="77"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="117"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Maximum dní za týždeň</translation>
+        <translation>Maximum dní za týždeň</translation>
     </message>
 </context>
 <context>
@@ -37758,17 +38093,17 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform.cpp" line="105"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform.cpp" line="110"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform.cpp" line="122"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -37792,22 +38127,22 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="14"/>
         <source>Modify teacher max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum medzier za deň pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="120"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="110"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="91"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished">Maximum medzier za deň</translation>
+        <translation>Maximum medzier za deň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="32"/>
@@ -37828,17 +38163,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform.cpp" line="105"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform.cpp" line="110"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform.cpp" line="122"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -37847,7 +38182,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Modify teacher max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum medzier za týždeň pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="22"/>
@@ -37867,17 +38202,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="98"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="111"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="137"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished">Maximum medzier za týždeň</translation>
+        <translation>Maximum medzier za týždeň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="55"/>
@@ -37897,12 +38232,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform.cpp" line="111"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform.cpp" line="130"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -37920,18 +38255,18 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="88"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teacher max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín posebe pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="118"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">Maximum hodín posebe</translation>
+        <translation>Maximum hodín posebe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="28"/>
@@ -37942,7 +38277,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -37956,12 +38291,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="111"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform.cpp" line="130"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -37979,18 +38314,18 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="88"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín denne pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="118"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Maximum hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="28"/>
@@ -38001,7 +38336,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="77"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -38016,17 +38351,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform.cpp" line="91"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform.cpp" line="96"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform.cpp" line="110"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -38035,7 +38370,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="14"/>
         <source>Modify teacher min days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum dní za týždeň pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="26"/>
@@ -38045,17 +38380,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="71"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="81"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="94"/>
         <source>Min days per week</source>
-        <translation type="unfinished">Minimum dní za týždeň</translation>
+        <translation>Minimum dní za týždeň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="109"/>
@@ -38079,12 +38414,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="110"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž). Musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform.cpp" line="118"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
 </context>
 <context>
@@ -38093,7 +38428,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify teacher min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum medzier medzi zmenami budov pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -38103,12 +38438,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="80"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="90"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="101"/>
@@ -38123,7 +38458,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="119"/>
         <source>Min gaps between building changes</source>
-        <translation type="unfinished">Minimum medzier medzi zmenami budov</translation>
+        <translation>Minimum medzier medzi zmenami budov</translation>
     </message>
 </context>
 <context>
@@ -38140,27 +38475,27 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="115"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="120"/>
         <source>Invalid weight (percentage) - must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="125"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for a teacher, please use the constraint teacher min days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Povoliť, že check box prázdnych dní musí byť označený. Ak potrebujete zakázať prázdne dni pre učiteľa, prosím použite obmedzenie &quot;minimum dní za týždeň pre učiteľa&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="136"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform.cpp" line="162"/>
         <source>This check box must remain checked. If you really need to not allow empty days for this teacher, please use constraint teacher min days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento check box musí zostať označený. Ak naozaj potrebujete zakázať prázdne dni pre učiteľa, prosím použite obmedzenie &quot;minimum dní za týždeň pre učiteľa&quot;</translation>
     </message>
 </context>
 <context>
@@ -38168,12 +38503,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="103"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="116"/>
         <source>Min hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Maximum hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="148"/>
@@ -38189,27 +38524,27 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum hodín denne pre učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="32"/>
         <source>It is recommended to start with 2 min hours and strenghen them as you find new timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je doporučené začať s minimom 2 hodiny a posilniť ich keď nájdete nový rozvrh.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="93"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Povoliť prázdne dni</translation>
+        <translation>Povoliť prázdne dni</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="141"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -38224,17 +38559,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="241"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž). Musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="249"/>
         <source>Invalid teacher</source>
-        <translation type="unfinished">Neplatný učiteľ</translation>
+        <translation>Neplatný učiteľ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="258"/>
         <source>A constraint of this type exists for the same teacher - cannot proceed</source>
-        <translation type="unfinished"></translation>
+        <translation>Obmedzenie tohoto typu už existuje pre rovnakého učiteľa - nemožno pokračovať</translation>
     </message>
 </context>
 <context>
@@ -38247,18 +38582,18 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="96"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="106"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="127"/>
         <source>X=not allowed, empty=allowed</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished">X=nepovolené, prázdne=povolené</translation>
+        <translation>X=nepovolené, prázdne=povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="141"/>
@@ -38268,12 +38603,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
-        <translation type="unfinished">Nastaviť všetko nepovolené</translation>
+        <translation>Nastaviť všetko nepovolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
-        <translation type="unfinished">Nastaviť všetko povolené</translation>
+        <translation>Nastaviť všetko povolené</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="148"/>
@@ -38284,12 +38619,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="14"/>
         <source>Modify teacher not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť nedostupné časy učiteľa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="26"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has lessons before and after this not available period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Toto obmedzenie neznamená medzery pre učiteľov. Ak má učiteľ predtým hodiny a potom nedostupné obdobie, nebudú tu počítané žiadne medzery</translation>
     </message>
 </context>
 <context>
@@ -38302,7 +38637,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="110"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="119"/>
@@ -38312,7 +38647,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="119"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Neplatný druh aktivity</translation>
+        <translation>Neplatný druh aktivity</translation>
     </message>
 </context>
 <context>
@@ -38330,18 +38665,18 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">Maximum hodín posebe</translation>
+        <translation>Maximum hodín posebe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín posebe pre druh aktivity učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="91"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -38352,7 +38687,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="80"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -38365,7 +38700,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform.cpp" line="90"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform.cpp" line="99"/>
@@ -38375,7 +38710,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform.cpp" line="99"/>
         <source>Invalid activity tag</source>
-        <translation type="unfinished">Neplatný druh aktivity</translation>
+        <translation>Neplatný druh aktivity</translation>
     </message>
 </context>
 <context>
@@ -38384,7 +38719,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín denne pre druh aktivity učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -38395,17 +38730,17 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="80"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="91"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="121"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Maximum hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="151"/>
@@ -38423,7 +38758,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="66"/>
         <source>End of day</source>
-        <translation type="unfinished">Koniec dňa</translation>
+        <translation>Koniec dňa</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="114"/>
@@ -38437,27 +38772,27 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="115"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="120"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="134"/>
         <source>Start hour invalid</source>
-        <translation type="unfinished">Neplatná začiatočná hodina</translation>
+        <translation>Neplatná začiatočná hodina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="139"/>
         <source>End hour invalid</source>
-        <translation type="unfinished">Neplatná konečná hodina</translation>
+        <translation>Neplatná konečná hodina</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform.cpp" line="144"/>
         <source>Start hour cannot be greater or equal than end hour</source>
-        <translation type="unfinished">Začiatočná hodina nemôže byť väčšia alebo rovná konečnej hodine</translation>
+        <translation>Začiatočná hodina nemôže byť väčšia alebo rovná konečnej hodine</translation>
     </message>
 </context>
 <context>
@@ -38466,7 +38801,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teachers interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť interval maxima dní za týždeň pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -38481,27 +38816,27 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="56"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="73"/>
         <source>Interval start hour</source>
-        <translation type="unfinished">Interval začiatočná hodina</translation>
+        <translation>Začiatočná hodina intervalu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="109"/>
         <source>Interval end hour</source>
-        <translation type="unfinished">Interval konečná hodina</translation>
+        <translation>Konečná hodina intervalu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="177"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Maximum dní za týždeň</translation>
+        <translation>Maximum dní za týždeň</translation>
     </message>
 </context>
 <context>
@@ -38514,7 +38849,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform.cpp" line="86"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž). Musí byť 100%</translation>
     </message>
 </context>
 <context>
@@ -38523,12 +38858,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify teachers max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum zmien budov za deň pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="39"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="50"/>
@@ -38543,13 +38878,13 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="68"/>
         <source>Max building changes per day</source>
-        <translation type="unfinished">Maximum zmien budov za deň</translation>
+        <translation>Maximum zmien budov za deň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="28"/>
         <source>Weight percentage
 (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
 </context>
 <context>
@@ -38562,7 +38897,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform.cpp" line="86"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž). Musí byť 100%</translation>
     </message>
 </context>
 <context>
@@ -38571,12 +38906,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify teachers max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum zmien budov za týždeň pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="39"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="50"/>
@@ -38591,13 +38926,13 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="68"/>
         <source>Max building changes per week</source>
-        <translation type="unfinished">Maximum zmien budov za týždeň</translation>
+        <translation>Maximum zmien budov za týždeň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="28"/>
         <source>Weight percentage
 (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
 </context>
 <context>
@@ -38611,12 +38946,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform.cpp" line="111"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform.cpp" line="116"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
 </context>
 <context>
@@ -38634,24 +38969,24 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="39"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teachers max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum dní za týždeň pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="56"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Maximum dní za týždeň</translation>
+        <translation>Maximum dní za týždeň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="28"/>
         <source>Weight percentage
 (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
 </context>
 <context>
@@ -38665,12 +39000,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform.cpp" line="85"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform.cpp" line="90"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
 </context>
 <context>
@@ -38679,7 +39014,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Modify teachers max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum medzier za deň pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="22"/>
@@ -38694,17 +39029,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="69"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="79"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="86"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished">Maximum medzier za deň</translation>
+        <translation>Maximum medzier za deň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="52"/>
@@ -38724,12 +39059,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="85"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform.cpp" line="90"/>
         <source>Invalid weight (percentage) - it must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
 </context>
 <context>
@@ -38738,7 +39073,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify teachers max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum medzier za týždeň pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="22"/>
@@ -38753,17 +39088,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="69"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="79"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="86"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished">Maximum medzier za týždeň</translation>
+        <translation>Maximum medzier za týždeň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="52"/>
@@ -38782,7 +39117,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform.cpp" line="90"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
 </context>
 <context>
@@ -38800,24 +39135,24 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="39"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teachers max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín posebe pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="56"/>
         <source>Max hours continuously</source>
-        <translation type="unfinished">Maximum hodín posebe</translation>
+        <translation>Maximum hodín posebe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -38830,7 +39165,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform.cpp" line="90"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
 </context>
 <context>
@@ -38848,24 +39183,24 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="39"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť maximum hodín denne pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="56"/>
         <source>Max hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Maximum hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="28"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
 </context>
 <context>
@@ -38879,12 +39214,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform.cpp" line="88"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform.cpp" line="93"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
 </context>
 <context>
@@ -38893,23 +39228,23 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform_template.ui" line="14"/>
         <source>Modify teachers min days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum dní za týždeň pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform_template.ui" line="28"/>
         <source>Weight percentage
 (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform_template.ui" line="39"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform_template.ui" line="56"/>
         <source>Min days per week</source>
-        <translation type="unfinished">Minimum dní za týždeň</translation>
+        <translation>Minimum dní za týždeň</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform_template.ui" line="73"/>
@@ -38932,7 +39267,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform.cpp" line="86"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž). Musí byť 100%</translation>
     </message>
 </context>
 <context>
@@ -38941,17 +39276,17 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify teachers min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum medzier medzi zmenami budov pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="28"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="38"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="49"/>
@@ -38966,7 +39301,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="67"/>
         <source>Min gaps between building changes</source>
-        <translation type="unfinished">Minimum medzier medzi zmenami budov</translation>
+        <translation>Minimum medzier medzi zmenami budov</translation>
     </message>
 </context>
 <context>
@@ -38982,12 +39317,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="93"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="98"/>
         <source>Invalid weight (percentage) - must be 100%</source>
-        <translation type="unfinished">Neplatná váha (percentáž) - musí byť 100%</translation>
+        <translation>Neplatná váha (percentáž) - musí byť 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="103"/>
@@ -39005,13 +39340,13 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="84"/>
         <source>Min hours daily</source>
-        <translation type="unfinished">Maximum hodín denne</translation>
+        <translation>Min hodín denne</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť minimum hodín denne pre učiteľov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="32"/>
@@ -39021,17 +39356,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="61"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Weight percentage (nevyhnutná: 100%)</translation>
+        <translation>Weight percentage (nevyhnutná: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="97"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Povoliť prázdne dni</translation>
+        <translation>Povoliť prázdne dni</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="109"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="116"/>
@@ -39041,7 +39376,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="71"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
 </context>
 <context>
@@ -39058,27 +39393,27 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform.cpp" line="209"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform.cpp" line="218"/>
         <source>Invalid first activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform.cpp" line="228"/>
         <source>Invalid second activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná druhá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform.cpp" line="238"/>
         <source>Invalid third activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná tretia aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform.cpp" line="245"/>
         <source>Same activities - impossible</source>
-        <translation type="unfinished">Rovnaké aktivity - nemožné</translation>
+        <translation>Rovnaké aktivity - nemožné</translation>
     </message>
 </context>
 <context>
@@ -39087,33 +39422,33 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="14"/>
         <source>Modify three activities grouped</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť tri zoskupené aktivity</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="28"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="39"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="56"/>
         <source>First activity</source>
-        <translation type="unfinished">Prvá aktivita</translation>
+        <translation>Prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="98"/>
         <source>Second activity</source>
-        <translation type="unfinished">Druhá aktivita</translation>
+        <translation>Druhá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="140"/>
         <source>Third activity</source>
-        <translation type="unfinished">Tretia aktivita</translation>
+        <translation>Tretia aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="192"/>
@@ -39139,22 +39474,22 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform.cpp" line="176"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform.cpp" line="185"/>
         <source>Invalid first activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform.cpp" line="195"/>
         <source>Invalid second activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná druhá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform.cpp" line="202"/>
         <source>Same activities - impossible</source>
-        <translation type="unfinished">Rovnaké aktivity - nemožné</translation>
+        <translation>Rovnaké aktivity - nemožné</translation>
     </message>
 </context>
 <context>
@@ -39162,7 +39497,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="14"/>
         <source>Modify two activities consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť dve súsledné aktivity</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="22"/>
@@ -39178,22 +39513,22 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="46"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="90"/>
         <source>First activity</source>
-        <translation type="unfinished">Prvá aktivita</translation>
+        <translation>Prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="132"/>
         <source>Second activity</source>
-        <translation type="unfinished">Druhá aktivita</translation>
+        <translation>Druhá aktivita</translation>
     </message>
 </context>
 <context>
@@ -39209,22 +39544,22 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform.cpp" line="176"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform.cpp" line="185"/>
         <source>Invalid first activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform.cpp" line="195"/>
         <source>Invalid second activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná druhá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform.cpp" line="202"/>
         <source>Same activities - impossible</source>
-        <translation type="unfinished">Rovnaké aktivity - nemožné</translation>
+        <translation>Rovnaké aktivity - nemožné</translation>
     </message>
 </context>
 <context>
@@ -39233,7 +39568,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="14"/>
         <source>Modify two activities grouped</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť dve zoskupené aktivity</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="22"/>
@@ -39249,22 +39584,22 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="46"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="90"/>
         <source>First activity</source>
-        <translation type="unfinished">Prvá aktivita</translation>
+        <translation>Prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="132"/>
         <source>Second activity</source>
-        <translation type="unfinished">Druhá aktivita</translation>
+        <translation>Druhá aktivita</translation>
     </message>
 </context>
 <context>
@@ -39280,22 +39615,22 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="176"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Neplatná váha (percentáž)</translation>
+        <translation>Neplatná váha (percentáž)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="185"/>
         <source>Invalid first activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="195"/>
         <source>Invalid second activity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná druhá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform.cpp" line="202"/>
         <source>Same activities - impossible</source>
-        <translation type="unfinished">Rovnaké aktivity - nemožné</translation>
+        <translation>Rovnaké aktivity - nemožné</translation>
     </message>
 </context>
 <context>
@@ -39304,7 +39639,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="14"/>
         <source>Modify two activities ordered</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť dve aktivity utriedene</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="22"/>
@@ -39320,22 +39655,22 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="46"/>
         <source>Weight percentage
 (recommended: 0.0%-100.0%)</source>
-        <translation type="unfinished">Weight percentage (doporučená: 0.0%-100.0%)</translation>
+        <translation>Weight percentage (doporučená: 0.0%-100.0%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="57"/>
         <source>100</source>
-        <translation type="unfinished">100</translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="90"/>
         <source>First activity</source>
-        <translation type="unfinished">Prvá aktivita</translation>
+        <translation>Prvá aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="132"/>
         <source>Second activity</source>
-        <translation type="unfinished">Druhá aktivita</translation>
+        <translation>Druhá aktivita</translation>
     </message>
 </context>
 <context>
@@ -39350,17 +39685,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyroomform.cpp" line="104"/>
         <source>Incorrect name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesprávny názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform.cpp" line="112"/>
         <source>Incorrect building</source>
-        <translation type="unfinished">Nesprávna budova</translation>
+        <translation>Nesprávna budova</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform.cpp" line="116"/>
         <source>Name existing - please choose another</source>
-        <translation type="unfinished">Názov už existuje - prosím, zvoľte iný</translation>
+        <translation>Názov už existuje - prosím, zvoľte iný</translation>
     </message>
 </context>
 <context>
@@ -39368,7 +39703,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="84"/>
         <source>Name</source>
-        <translation type="unfinished">Názov</translation>
+        <translation>Názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="22"/>
@@ -39379,12 +39714,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyroomform_template.ui" line="14"/>
         <source>Modify room</source>
         <extracomment>The name of themodify room dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="40"/>
         <source>Capacity</source>
-        <translation type="unfinished">Kapacita</translation>
+        <translation>Kapacita</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyroomform_template.ui" line="29"/>
@@ -39408,7 +39743,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsgroupform.cpp" line="63"/>
         <source>Incorrect name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesprávny názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform.cpp" line="71"/>
@@ -39421,7 +39756,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="49"/>
         <source>Name</source>
-        <translation type="unfinished">Názov</translation>
+        <translation>Názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="22"/>
@@ -39432,7 +39767,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="14"/>
         <source>Modify students group</source>
         <extracomment>The dialog to modify a students group</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť skupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="93"/>
@@ -39442,7 +39777,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="66"/>
         <source>Number of students</source>
-        <translation type="unfinished">Počet študentov</translation>
+        <translation>Počet študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="100"/>
@@ -39461,7 +39796,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform.cpp" line="67"/>
         <source>Incorrect name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesprávny názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform.cpp" line="76"/>
@@ -39479,18 +39814,18 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="81"/>
         <source>Number of students</source>
-        <translation type="unfinished">Počet študentov</translation>
+        <translation>Počet študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="64"/>
         <source>Name</source>
-        <translation type="unfinished">Názov</translation>
+        <translation>Názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="14"/>
         <source>Modify students subgroup</source>
         <extracomment>Title of the dialog to modify a students subgroup</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť podskupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="43"/>
@@ -39519,12 +39854,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="62"/>
         <source>Incorrect name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesprávny názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="66"/>
         <source>Name existing - please choose another</source>
-        <translation type="unfinished">Názov už existuje - prosím, zvoľte iný</translation>
+        <translation>Názov už existuje - prosím, zvoľte iný</translation>
     </message>
 </context>
 <context>
@@ -39532,18 +39867,18 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="39"/>
         <source>Number of students</source>
-        <translation type="unfinished">Počet študentov</translation>
+        <translation>Počet študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="22"/>
         <source>Name</source>
-        <translation type="unfinished">Názov</translation>
+        <translation>Názov</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="14"/>
         <source>Modify students year</source>
         <extracomment>Title of dialog to modify a students year</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť študentský ročník</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="66"/>
@@ -39559,40 +39894,40 @@ Note: teacher not available and break are not counted as gaps.</source>
 <context>
     <name>ModifySubactivityForm</name>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="443"/>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="490"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="444"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="491"/>
         <source>FET question</source>
         <translation>FET otázka</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="444"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="445"/>
         <source>Do you really want to have the subactivity without teacher(s)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Naozaj chcete mať subaktivitu bez učiteľa(ov)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="468"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="469"/>
         <source>FET information</source>
         <translation>FET informácia</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="469"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="470"/>
         <source>Invalid subject</source>
-        <translation type="unfinished">Neplatný predmet</translation>
+        <translation>Neplatný predmet</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifysubactivityform.cpp" line="491"/>
+        <location filename="../src/interface/modifysubactivityform.cpp" line="492"/>
         <source>Do you really want to have the subactivity without student set(s)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Naozaj chcete mať subaktivitu bez skupiny/skupín študentov?</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="82"/>
         <source>Current subactivity has split index %1 out of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuálna subaktivita má rozdeľovací index %1 spomedzi %2</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="83"/>
         <source>The current data applies only to this subactivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuálne dáta sa týkajú iba tejto subaktivity</translation>
     </message>
 </context>
 <context>
@@ -39675,7 +40010,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="14"/>
         <source>Modify subactivity</source>
         <extracomment>Title of dialog to modify a subactivity</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Upraviť subaktivitu</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="49"/>
@@ -39702,7 +40037,8 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="371"/>
         <source>Current subactivity has split index i out of j
 The current data applies only to this subactivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuálna subaktivita má rozdeľovací index i spomedzi j
+Aktuálne dáta sa týkajú iba tejto subaktivity</translation>
     </message>
 </context>
 <context>
@@ -39711,12 +40047,12 @@ The current data applies only to this subactivity</source>
         <location filename="../src/interface/fetmainform.cpp" line="295"/>
         <location filename="../src/interface/fetmainform.cpp" line="296"/>
         <source>Allowed minimum %1 to maximum %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolené minimum %1 do maxima %2</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="284"/>
         <source>Random seed</source>
-        <translation type="unfinished"></translation>
+        <translation>Náhodná násada</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="286"/>
@@ -39753,7 +40089,7 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="342"/>
         <source>You can control the random behaviour of FET with this function</source>
-        <translation type="unfinished"></translation>
+        <translation>S touto funkciou môžete kontrolovať náhodné správanie FET</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="343"/>
@@ -39860,12 +40196,12 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform_template.ui" line="14"/>
         <source>Instructions and confirmation of remove redundant constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Inštrukcie a potvrdenie odstránenia nadbytočných obmedzení</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform_template.ui" line="36"/>
         <source>Continue</source>
-        <translation type="unfinished">Pokračovať</translation>
+        <translation>Pokračovať</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform_template.ui" line="43"/>
@@ -39878,17 +40214,17 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="207"/>
         <source>Last confirmation needed</source>
-        <translation type="unfinished">Potrebné posledné potvrdenie</translation>
+        <translation>Potrebné posledné potvrdenie</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="211"/>
         <source>Operations that will be done:</source>
-        <translation type="unfinished"></translation>
+        <translation>Operácia, ktorá bude vykonaná:</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="214"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Akceptovať</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="215"/>
@@ -39903,17 +40239,17 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="293"/>
         <source>This box must remain checked, so that you can remove redundant constraints of type min days between activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Toto políčko musí byť označené, aby ste mohli odstrániť nadbytočné obmedzenia typu &quot;min dní medzi aktivitami&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="226"/>
         <source>The following time constraints will be inactivated (their weight will be made 0%):</source>
-        <translation type="unfinished"></translation>
+        <translation>Budú deaktivované nasledovné časové obmedzenia (ich váha bude urobená na 0%):</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="232"/>
         <source>will be inactivated, by making its weight 0%</source>
-        <translation type="unfinished"></translation>
+        <translation>budú deaktivované znížením váhy na 0%</translation>
     </message>
 </context>
 <context>
@@ -39921,22 +40257,22 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="14"/>
         <source>Remove redundant constraints</source>
-        <translation type="unfinished">Odstrániť nadbytočné obmedzenia</translation>
+        <translation>Odstrániť nadbytočné obmedzenia</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="26"/>
         <source>This function will try to improve your timetable data by removing redundant constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Táto funkcia sa pokúsi zlepšiť dáta vášho rozvrhu odstránením nadbytočných obmedzení</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="46"/>
         <source>Min days between activities</source>
-        <translation type="unfinished">Minimum dní medzi aktivitami</translation>
+        <translation>Minimum dní medzi aktivitami</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="52"/>
         <source>Remove redundant min days constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrániť nadbytočné obmedzenia minima dní</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="68"/>
@@ -39946,7 +40282,7 @@ The current data applies only to this subactivity</source>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="84"/>
         <source>Here, removing means making the weights of the constraints equal to 0.0%</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu odstránenie znamená zníženie váhy obmedzení na 0.0%</translation>
     </message>
 </context>
 <context>
@@ -40111,13 +40447,13 @@ The current data applies only to this subactivity</source>
         <location filename="../src/engine/rules.cpp" line="123"/>
         <location filename="../src/engine/rules.cpp" line="5372"/>
         <source>Default institution</source>
-        <translation type="unfinished"></translation>
+        <translation>Prednastavená inštitúcia</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="124"/>
         <location filename="../src/engine/rules.cpp" line="5373"/>
         <source>Default comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Prednastavené komentáre</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="148"/>
@@ -40224,66 +40560,74 @@ The current data applies only to this subactivity</source>
         <location filename="../src/engine/rules.cpp" line="149"/>
         <source>You have too many teachers.
 Please talk to the author or increase variable MAX_TEACHERS</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa učiteľov.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_TEACHERS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="154"/>
         <source>You have too many subjects.
 Please talk to the author or increase variable MAX_SUBJECTS</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa predmetov.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_SUBJECTS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="285"/>
         <source>You have too many total subgroups.
 Please talk to the author or increase variable MAX_TOTAL_SUBGROUPS. Currently MAX_TOTAL_SUBGROUPS=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa celkových podskupín.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_TOTAL_SUBGROUPS. Aktuálnne je MAX_TOTAL_SUBGROUPS=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="299"/>
         <source>You have too many active activities.
 Please talk to the author or increase variable MAX_ACTIVITIES</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa aktivít.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_ACTIVITIES</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="305"/>
         <source>You have too many buildings.
 Please talk to the author or increase variable MAX_BUILDINGS</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa budov.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_BUILDINGS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="311"/>
         <source>You have too many rooms.
 Please talk to the author or increase variable MAX_ROOMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa miestností.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_ROOMS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="317"/>
         <source>You have too many time constraints.
 Please talk to the author or increase variable MAX_TIME_CONSTRAINTS</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa časových obmedzení.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_TIME_CONSTRAINTS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="323"/>
         <source>You have too many space constraints.
 Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
-        <translation type="unfinished"></translation>
+        <translation>Máte príliš veľa priestorových obmedzení.
+Prosím kontaktujte autora alebo zvýšte premennú MAX_SPACE_CONSTRAINTS</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="438"/>
         <source>Processing internally the activities ... please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Spracováva vnútorne aktivity ... prosím počkajte</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="454"/>
         <location filename="../src/engine/rules.cpp" line="578"/>
         <location filename="../src/engine/rules.cpp" line="653"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Zrušené</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="547"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasledujúce časové obmedzenie je ignorované, pretože odkazuje na neaktívne aktivity:</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="552"/>
@@ -40329,7 +40673,7 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <location filename="../src/engine/rules.cpp" line="9918"/>
         <location filename="../src/engine/rules.cpp" line="12504"/>
         <source>Skip rest</source>
-        <translation type="unfinished">Preskočiť ostatné</translation>
+        <translation>Preskočiť ostatné</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="552"/>
@@ -40375,22 +40719,22 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <location filename="../src/engine/rules.cpp" line="9918"/>
         <location filename="../src/engine/rules.cpp" line="12504"/>
         <source>See next</source>
-        <translation type="unfinished"></translation>
+        <translation>Preskočiť nasledujúce</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="567"/>
         <source>Processing internally the time constraints ... please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Spracováva vnútorne časové obmedzenia ... prosím počkajte</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="622"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasledujúce priestorové obmedzenie je ignorované, pretože odkazuje na neaktívne aktivity:</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="642"/>
         <source>Processing internally the space constraints ... please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Spracováva vnútorne priestorové obmedzenia ... prosím počkajte</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4529"/>
@@ -40402,7 +40746,9 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <source>The constraint
 %1 will be modified into constraint
 %2 because there is only one room left in the constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Obmedzenie
+%1 bude upravené na obmedzenie
+%2 pretože v obmedzení zostala už iba jena miestnosť</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5140"/>
@@ -40459,20 +40805,21 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="5140"/>
         <source>Could not open file - not existing or in use</source>
-        <translation type="unfinished"></translation>
+        <translation>Nemožno otvoriť súbor - neexistuje alebo sa práve používa</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5152"/>
         <source>Could not read file - XML parse error at line %1, column %2:
 %3</source>
         <comment>The error description is %3</comment>
-        <translation type="unfinished"></translation>
+        <translation>Nemožno čítať súbor - XML parse error v riadku %1, stĺpci %2:
+%3</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5171"/>
         <location filename="../src/engine/rules.cpp" line="5182"/>
         <source>Cannot create or use directory %1 - cannot continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Nemožno vytvoriť alebo použiť priečinok %1 - nemožno pokračovať</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5221"/>
@@ -40495,21 +40842,11 @@ Please talk to the author or increase variable MAX_SPACE_CONSTRAINTS</source>
         <location filename="../src/engine/rules.cpp" line="7027"/>
         <location filename="../src/engine/rules.cpp" line="7140"/>
         <source>FET critical</source>
-        <translation type="unfinished">FET kritické</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5270"/>
-        <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
-        <translation type="unfinished"></translation>
+        <translation>FET kritické</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5273"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/engine/rules.cpp" line="5293"/>
-        <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -40616,6 +40953,16 @@ Please note that the default weight percentage of constraints min days between a
         <location filename="../src/engine/rules.cpp" line="437"/>
         <source>Computing internal structure</source>
         <comment>Title of a progress dialog</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5270"/>
+        <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/rules.cpp" line="5293"/>
+        <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -41204,47 +41551,47 @@ not added - must be a duplicate</source>
 <context>
     <name>SecondMinDaysDialog</name>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="586"/>
+        <location filename="../src/interface/addactivityform.cpp" line="642"/>
         <source>Add a second constraint or not?</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať druhé obmedzenie alebo nie?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="599"/>
+        <location filename="../src/interface/addactivityform.cpp" line="655"/>
         <source>Yes</source>
         <translation>Áno</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="602"/>
+        <location filename="../src/interface/addactivityform.cpp" line="658"/>
         <source>No</source>
         <translation>Nie</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="645"/>
+        <location filename="../src/interface/addactivityform.cpp" line="701"/>
         <source>FET information</source>
         <translation>FET informácia</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="646"/>
+        <location filename="../src/interface/addactivityform.cpp" line="702"/>
         <source>Invalid weight (percentage) - must be &gt;=0 and &lt;=100.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná váha (percentáž) - musí byť &gt;=0 a &lt;=100.0</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="566"/>
+        <location filename="../src/interface/addactivityform.cpp" line="622"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="583"/>
+        <location filename="../src/interface/addactivityform.cpp" line="639"/>
         <source>Recommended answer is Yes, 95% (or higher).</source>
-        <translation type="unfinished"></translation>
+        <translation>Doporučená odpoveď je Áno, 95% (alebo vyššie).</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="572"/>
+        <location filename="../src/interface/addactivityform.cpp" line="628"/>
         <source>(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. If you say Yes, you will have 2 constraints min days added for current activities. Adding the second constraint might lead to impossible timetables if the condition is too tight, but you can remove the second constraint at any time).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="577"/>
+        <location filename="../src/interface/addactivityform.cpp" line="633"/>
         <source>Note: 95% is usually enough for min days constraints referring to same activities. The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95% (say min n days and min n-1 days), the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with probability 0.25%=5%*5%, so you&apos;ll get in 99.75% cases the min n-1 days constraint respected.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41259,7 +41606,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="77"/>
         <source>No level selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie je vybraná žiadna úroveň</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="84"/>
@@ -41269,7 +41616,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform.cpp" line="84"/>
         <source>This level might generate very large timetables, maybe 1 MB per file and 20 MB for all files of a timetable or even more. Are you sure you have enough disk space?</source>
-        <translation type="unfinished"></translation>
+        <translation>Táto úroveň môže generovať veľmi rozsiahle rozvrhy, možno 1 MB na súbor a 20 MB na všetky súbory rozvrhu alebo ešte viac. Ste si istý, že máte dosť priestoru na disku?</translation>
     </message>
 </context>
 <context>
@@ -41277,14 +41624,14 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="20"/>
         <source>The html level for generated timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Html úroveň pre generované rozvrhy</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="26"/>
         <source>Level 0 - no css
 - smallest filesize
 - no css file</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň 0 - žiadne css - menšia veľkosť súboru - žiaden css súbor</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="129"/>
@@ -41302,19 +41649,24 @@ not added - must be a duplicate</source>
 - less then 1 kb larger filesize than level 0
 - css file created to style elements table, caption, thead, tfoot, tbody, th and td
 - page-break after every or every second timetable (useful if you print timetables)</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň 1 - základný css
+- menej ako 1 kb väčšia veľkosť súboru ako úroveň 0
+- css súbor vytvorený na štýl prvkov table, caption, thead, tfoot, tbody, th a td
+- zlom strany po každom alebo každom druhom rozvrhu (užitočné, ak tlačíte rozvrhy)</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="14"/>
         <source>Settings - html level of timetables dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavenia - dialóg nastavenia úrovne html rozvrhov</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="45"/>
         <source>Level 2 - normal css (default)
 - all features of level 1 with around 5% larger filesize than level 1
 - style x-axis and y-axis of tablehead (useful to style width and height of the activity cells)</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň 2 - normálny css (prednastavený)
+- všetky vlastnosti prvej úrovne s okolo 5% väčšou veľkosťou súboru ako úroveň 1
+- štýl x-ovej osi a y-ovej osi hlavičky tabuľky (užitočné na štylizovanie šírky a výšky buniek aktivít)</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="54"/>
@@ -41322,14 +41674,19 @@ not added - must be a duplicate</source>
 - all features of level 2 with around 2 times larger filesize than level 2
 - style (or hide) all subjects, activity tags, teachers, students sets and rooms
 - style (or hide) line 1, line 2 and line 3 of the activity cells</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň 3 - rozšírené css
+- všetky vlastnosti druhej úrovne s okolo 2-krát väčšou veľkosťou súboru ako úroveň 2
+- štylizovať (alebo skryť) všetky predmety, druhy aktivít, učiteľov, skupiny študentov a miestnosti
+- štylizovať (alebo skryť) prvý, druhý a tretí riadok buniek aktivít</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="70"/>
         <source>Level 4 - full css
 - all features of level 3 with around 2.5 times larger filesize than level 2
 - style every single subject, activity tag, teacher, students set and room</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň 4 - plný css
+- všetky vlastnosti tretej úrovne s okolo 2,5-krát väčšou veľkosťou súboru ako úroveň 2
+- štylizovať každý jeden predmet, druh aktivity, učiteľa, skupiny študentov a miestnosť</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="85"/>
@@ -41337,7 +41694,10 @@ not added - must be a duplicate</source>
 - all features of level 4 with around 3.5 times larger filesize than level 2
 - highlighting of same subjects, activity tags, teachers, students sets and rooms
   (needs JavaScript - just move mouse over a word and wait a little bit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň 5 - JavaScript
+- všetky vlastnosti štvrtej úrovne s okolo 3,5-krát väčším súborom ako úroveň 2
+- zvýraznenie rovnakých predmetov, druhov aktivít, učiteľov, skupín študentov a miestností
+  (potreba JavaScript - stačí posunúť kurzor myši nad slovo a chvíľu počkať)</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="101"/>
@@ -41345,7 +41705,10 @@ not added - must be a duplicate</source>
 - all features of level 5 with around 4 times larger filesize than level 2
 - style the cell of every single subject, activity tag, teacher or student
 (also useful to hide activities with special activity tags)</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň 6 - preťažený css
+- všetky vlastnosti piatej úrovne s okolo 4-krát väčším súborom ako na úrovni 2
+- štylizovanie bunky každého jedného predmetu, druhu aktivity, učiteľa alebo študenta
+(tiež užitočné pre skrytie aktivít s určitým druhom aktivity)</translation>
     </message>
 </context>
 <context>
@@ -41368,7 +41731,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="85"/>
         <source>Splitting year: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozdeľuje sa ročník: %1</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="257"/>
@@ -41456,14 +41819,14 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="498"/>
         <source>Year %1 will be emptied. This means that all constraints and activities referring to groups/subgroups in year %1 will be removed. Are you absolutely sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ročník %1 bude vyprázdnený. Toto znamená, že všetky obmedzenia a aktivity vzťahujúce sa na skupiny/podskupiny v ročníku %1 budú odstránené. Ste si naozaj istý?</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="516"/>
         <location filename="../src/interface/splityearform.cpp" line="525"/>
         <location filename="../src/interface/splityearform.cpp" line="534"/>
         <source>Duplicate names not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie sú povolené duplicitné názvy</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="550"/>
@@ -41473,17 +41836,17 @@ not added - must be a duplicate</source>
         <location filename="../src/interface/splityearform.cpp" line="645"/>
         <location filename="../src/interface/splityearform.cpp" line="703"/>
         <source>Cannot add group %1, because a set with same name exists. Please choose another name or remove old group</source>
-        <translation type="unfinished"></translation>
+        <translation>Nemožno pridať skupinu %1, pretože už existuje skupina s rovnakým názvom. Prosím zvoľte iný názov alebo odstráňte starú skupinu</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="719"/>
         <source>Split of year complete, please check the groups and subgroups of year to make sure everything is OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozdelenie ročníka kompletné, prosím pre istotu skontrolujte skupiny a podskupiny ročníka</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="766"/>
         <source>This help by Liviu Lalescu, last modified 1 Oct. 2007</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento help vytvoril Liviu Lalescu, naposledy upravené 1. Októbra 2007</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="770"/>
@@ -41513,12 +41876,12 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="816"/>
         <source>Separator character(s) is of your choice (default is space)</source>
-        <translation type="unfinished"></translation>
+        <translation>Znak(y) oddeľovača nie je vami voliteľný (prednastavená je medzera)</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="823"/>
         <source>FET - help on dividing a year</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - help pre rozdelenie ročníka</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="829"/>
@@ -41529,7 +41892,7 @@ not added - must be a duplicate</source>
         <location filename="../src/interface/splityearform.cpp" line="568"/>
         <location filename="../src/interface/splityearform.cpp" line="651"/>
         <source>Cannot add subgroup %1, because a set with same name exists. Please choose another name or remove old subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Nemožno pridať podskupinu %1, pretože už existuje skupina s rovnakým názvom. Prosím zvoľte iný názov alebo odstráňte starú podskupinu</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="778"/>
@@ -41542,22 +41905,22 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="14"/>
         <source>Split year dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialóg rozdelenia ročníka</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="22"/>
         <source>Number of categories (you can select 1-3 categories)</source>
-        <translation type="unfinished"></translation>
+        <translation>Počet kategórií (môžete vybrať -3 kategórie)</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="78"/>
         <source>Splitting year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozdeľovaný ročník:</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="88"/>
         <source>Category 3 (you can select 2-6 divisions)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategória 3 (môžete vybrať 2-6 rozdelení)</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="151"/>
@@ -41577,22 +41940,22 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="172"/>
         <source>Reset</source>
-        <translation type="unfinished">Vynulovanie</translation>
+        <translation>Vynulovanie</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="213"/>
         <source>Category 2 (you can select 2-6 divisions)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategória 2 (môžete vybrať 2-6 rozdelení)</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="274"/>
         <source>Separator character(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Znak(y) oddeľovača</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform_template.ui" line="322"/>
         <source>Category 1 (you can select 2-12 divisions)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategória 1 (môžete vybrať 2-12 rozdelení)</translation>
     </message>
 </context>
 <context>
@@ -41638,7 +42001,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="36"/>
         <source>Continue</source>
-        <translation type="unfinished">Pokračovať</translation>
+        <translation>Pokračovať</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform_template.ui" line="43"/>
@@ -41701,17 +42064,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="297"/>
         <source>Last confirmation needed</source>
-        <translation type="unfinished">Potrebné posledné potvrdenie</translation>
+        <translation>Potrebné posledné potvrdenie</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="301"/>
         <source>Operations that will be done:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operácia, ktorá bude vykonaná:</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="304"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akceptovať</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="305"/>
@@ -41863,17 +42226,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="253"/>
         <source>1 </source>
-        <translation type="unfinished"></translation>
+        <translation>1 </translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="269"/>
         <source>3</source>
-        <translation type="unfinished">3</translation>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="282"/>
         <source>2</source>
-        <translation type="unfinished">2</translation>
+        <translation>2</translation>
     </message>
 </context>
 <context>
@@ -41916,7 +42279,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="1804"/>
         <location filename="../src/engine/statisticsexport.cpp" line="2005"/>
         <source>FET critical</source>
-        <translation type="unfinished">FET kritické</translation>
+        <translation>FET kritické</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="409"/>
@@ -41955,17 +42318,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="575"/>
         <source>Institution name</source>
-        <translation type="unfinished">Názov Inštitúcie</translation>
+        <translation>Názov Inštitúcie</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="576"/>
         <source>Comments</source>
-        <translation type="unfinished">Komentáre</translation>
+        <translation>Komentáre</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="580"/>
         <source>Statistics</source>
-        <translation type="unfinished">Štatistiky</translation>
+        <translation>Štatistiky</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="582"/>
@@ -41993,7 +42356,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="600"/>
         <location filename="../src/engine/statisticsexport.cpp" line="601"/>
         <source>view</source>
-        <translation type="unfinished"></translation>
+        <translation>pohľad</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="689"/>
@@ -42106,7 +42469,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="1657"/>
         <location filename="../src/engine/statisticsexport.cpp" line="1885"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zrušené</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="941"/>
@@ -42189,7 +42552,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="147"/>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zrušené</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="313"/>
@@ -42199,7 +42562,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="314"/>
         <source>No. of activities</source>
-        <translation type="unfinished">Počet aktivít</translation>
+        <translation>Počet aktivít</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="315"/>
@@ -42209,7 +42572,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="424"/>
         <source>Show duplicates</source>
-        <translation type="unfinished">Zobraziť duplicity</translation>
+        <translation>Zobraziť duplicity</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="427"/>
@@ -42264,12 +42627,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="14"/>
         <source>Students statistics</source>
         <extracomment>Title of dialog to see the students statistics</extracomment>
-        <translation type="unfinished">Štatistiky študentov</translation>
-    </message>
-    <message>
-        <location filename="../src/interface/studentsstatisticsform_template.ui" line="29"/>
-        <source>Show years</source>
-        <translation>Zobraziť ročníky</translation>
+        <translation>Štatistiky študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="117"/>
@@ -42279,12 +42637,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="23"/>
         <source>Options</source>
-        <translation type="unfinished">Možnosti</translation>
+        <translation>Možnosti</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/studentsstatisticsform_template.ui" line="29"/>
+        <source>Show years</source>
+        <translation type="unfinished">Zobraziť ročníky</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="66"/>
         <source>Show duplicates</source>
-        <translation type="unfinished">Zobraziť duplicity</translation>
+        <translation>Zobraziť duplicity</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform_template.ui" line="110"/>
@@ -42378,13 +42741,13 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subactivitiesform.cpp" line="297"/>
         <source>No: %1 / %2</source>
         <comment>No means number, %1 is the number of active activities, %2 is the number of total activities.Please leave space between fields, so that they are better visible</comment>
-        <translation type="unfinished">Počet: %1 / %2</translation>
+        <translation>Poč: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="299"/>
         <source>Dur: %1 / %2</source>
         <comment>Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities.Please leave space between fields, so that they are better visible</comment>
-        <translation type="unfinished">Trvanie: %1 / %2</translation>
+        <translation>Trv: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="312"/>
@@ -42394,18 +42757,18 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="312"/>
         <source>Invalid selected subactivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraná neplatná subaktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="351"/>
         <location filename="../src/interface/subactivitiesform.cpp" line="355"/>
         <source>Invalid activity</source>
-        <translation type="unfinished">Neplatná aktivita</translation>
+        <translation>Neplatná aktivita</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="371"/>
         <source>Useful instructions/tips:</source>
-        <translation type="unfinished">Užitočné inštrukcie/tipy:</translation>
+        <translation>Užitočné inštrukcie/tipy:</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="374"/>
@@ -42430,12 +42793,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="390"/>
         <source>The activities which are inactive:</source>
-        <translation type="unfinished">Neaktívne aktivity:</translation>
+        <translation>Neaktívne aktivity:</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="399"/>
         <source>if you use colors in interface (see Settings/Interface menu), they will appear with different background color.</source>
-        <translation type="unfinished">ak použijete farby v interfejse (pozrite menu Nastavenia/Interfejs), zobrazia sa v rozdielnej farbe pozadia.</translation>
+        <translation>ak použijete farby v interfejse (pozrite menu Nastavenia/Interfejs), zobrazia sa v rozdielnej farbe pozadia.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="401"/>
@@ -42480,7 +42843,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subactivitiesform_template.ui" line="22"/>
         <location filename="../src/interface/subactivitiesform_template.ui" line="35"/>
         <source>5000</source>
-        <translation type="unfinished">5000</translation>
+        <translation>5000</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="50"/>
@@ -42515,7 +42878,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="99"/>
         <source>Show related</source>
-        <translation type="unfinished">Ukáž súvisiace</translation>
+        <translation>Ukáž súvisiace</translation>
     </message>
 </context>
 <context>
@@ -42552,7 +42915,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform.cpp" line="301"/>
         <location filename="../src/interface/subgroupsform.cpp" line="329"/>
         <source>Invalid selected year</source>
-        <translation type="unfinished">Vybraný neplatný ročník</translation>
+        <translation>Vybraný neplatný ročník</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="89"/>
@@ -42562,7 +42925,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform.cpp" line="309"/>
         <location filename="../src/interface/subgroupsform.cpp" line="337"/>
         <source>Invalid selected group</source>
-        <translation type="unfinished">Vybraná neplatná skupina</translation>
+        <translation>Vybraná neplatná skupina</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="129"/>
@@ -42572,7 +42935,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform.cpp" line="317"/>
         <location filename="../src/interface/subgroupsform.cpp" line="345"/>
         <source>Invalid selected subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraná neplatná podskupina</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="139"/>
@@ -42583,7 +42946,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="140"/>
         <source>Are you sure you want to delete subgroup %1 and all related activities and constraints?</source>
-        <translation type="unfinished"></translation>
+        <translation>Naozaj chcete vymazať podskupinu %1 a všetky s ňou súvisiace aktivity a obmedzenia?</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="141"/>
@@ -42598,7 +42961,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="150"/>
         <source>This subgroup still exists into another group. The related activities and constraints were not removed</source>
-        <translation type="unfinished"></translation>
+        <translation>Táto podskupina stále existuje v inej skupine. Súvisiace aktivity a obmedzenia neboli odobraté</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="323"/>
@@ -42617,7 +42980,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subgroupsform_template.ui" line="14"/>
         <source>Subgroups of students</source>
         <extracomment>The name of the dialog which lists the subgroups of students</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Podskupiny študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="20"/>
@@ -42639,12 +43002,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="40"/>
         <source>Subgroup</source>
-        <translation type="unfinished">Podskupina</translation>
+        <translation>Podskupina</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="50"/>
         <source>Details</source>
-        <translation type="unfinished">Detaily</translation>
+        <translation>Detaily</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="98"/>
@@ -42664,17 +43027,17 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="128"/>
         <source>Activate all activities for selected students subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivovať všetky aktivity pre vybranú podskupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="135"/>
         <source>De-activate all activities for selected students subgroup</source>
-        <translation type="unfinished"></translation>
+        <translation>De-aktivovať všetky aktivity pre vybranú podskupinu študentov</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="121"/>
         <source>Sort current subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation>Usporiadať aktuálne podskupiny</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform_template.ui" line="142"/>
@@ -42834,12 +43197,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="63"/>
         <source>Activate all activities for selected subject</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivovať všetky aktivity pre vybraný predmet</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform_template.ui" line="70"/>
         <source>De-activate all activities for selected subject</source>
-        <translation type="unfinished"></translation>
+        <translation>Deaktivovať všetky aktivity pre vybraný predmet</translation>
     </message>
 </context>
 <context>
@@ -42852,7 +43215,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/subjectsstatisticsform.cpp" line="52"/>
         <source>No. of activities</source>
-        <translation type="unfinished">Počet aktivít</translation>
+        <translation>Počet aktivít</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsstatisticsform.cpp" line="53"/>
@@ -42866,7 +43229,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="14"/>
         <source>Subjects statistics</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished">Štatistiky predmetov</translation>
+        <translation>Štatistiky predmetov</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsstatisticsform_template.ui" line="50"/>
@@ -43219,12 +43582,12 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="6632"/>
         <source>Institution name</source>
-        <translation type="unfinished">Názov Inštitúcie</translation>
+        <translation>Názov Inštitúcie</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="6633"/>
         <source>Comments</source>
-        <translation type="unfinished">Komentáre</translation>
+        <translation>Komentáre</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2025"/>
@@ -43627,14 +43990,14 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="832"/>
         <location filename="../src/engine/timetableexport.cpp" line="866"/>
         <source>Added the following constraint to saved file:</source>
-        <translation type="unfinished">Nasledujúce obmedzenie pridané k uloženému súboru:</translation>
+        <translation>Nasledujúce obmedzenie pridané k uloženému súboru:</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="834"/>
         <location filename="../src/engine/timetableexport.cpp" line="868"/>
         <source>Constraint
 %1 NOT added to saved file - duplicate</source>
-        <translation type="unfinished">Obmedzenie %1 NEBOLO pridané k uloženému súboru - duplicita</translation>
+        <translation>Obmedzenie %1 NEBOLO pridané k uloženému súboru - duplicita</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="841"/>
@@ -43648,7 +44011,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="876"/>
         <location filename="../src/engine/timetableexport.cpp" line="879"/>
         <source>Skip information</source>
-        <translation type="unfinished"></translation>
+        <translation>Preskočiť informácie</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="842"/>
@@ -43656,7 +44019,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="876"/>
         <location filename="../src/engine/timetableexport.cpp" line="879"/>
         <source>See next</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozrieť ďalšie</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="844"/>
@@ -43769,7 +44132,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="6279"/>
         <location filename="../src/engine/timetableexport.cpp" line="6417"/>
         <source>FET critical</source>
-        <translation type="unfinished">FET kritické</translation>
+        <translation>FET kritické</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="732"/>
@@ -43785,32 +44148,32 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1749"/>
         <source>Timetables</source>
-        <translation type="unfinished">Rozvrhy</translation>
+        <translation>Rozvrhy</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1751"/>
         <source>Days Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Dni horizonálne</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1751"/>
         <source>Days Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Dni vertikálne</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1751"/>
         <source>Time Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas horizontálne</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1751"/>
         <source>Time Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas vertikálne</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1757"/>
         <source>Subgroups</source>
-        <translation type="unfinished">Podskupiny</translation>
+        <translation>Podskupiny</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1758"/>
@@ -43844,17 +44207,17 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="1809"/>
         <location filename="../src/engine/timetableexport.cpp" line="1810"/>
         <source>view</source>
-        <translation type="unfinished"></translation>
+        <translation>pohľad</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1764"/>
         <source>Groups</source>
-        <translation type="unfinished">Skupiny</translation>
+        <translation>Skupiny</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1771"/>
         <source>Years</source>
-        <translation type="unfinished">Ročníky</translation>
+        <translation>Ročníky</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1778"/>
@@ -43884,7 +44247,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1806"/>
         <source>Activities</source>
-        <translation type="unfinished">Aktivity</translation>
+        <translation>Aktivity</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="3966"/>
@@ -43894,12 +44257,12 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/timetableexport.cpp" line="4264"/>
         <location filename="../src/engine/timetableexport.cpp" line="4355"/>
         <source>All Activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Všetky aktivity</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1737"/>
         <source>activities</source>
-        <translation type="unfinished">aktivity</translation>
+        <translation>aktivity</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1738"/>
@@ -43909,14 +44272,14 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1739"/>
         <source>subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation>podskupiny</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1476"/>
         <location filename="../src/engine/timetableexport.cpp" line="1490"/>
         <location filename="../src/engine/timetableexport.cpp" line="1858"/>
         <source>unnamed</source>
-        <translation type="unfinished"></translation>
+        <translation>nepomenované</translation>
     </message>
 </context>
 <context>
@@ -44132,7 +44495,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <location filename="../src/interface/timetablegenerateform.cpp" line="849"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
-        <translation type="unfinished">Konflikty</translation>
+        <translation>Konflikty</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="264"/>
@@ -44175,7 +44538,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <location filename="../src/interface/timetablegenerateform.cpp" line="651"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Soft konflikty</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="657"/>
@@ -44299,7 +44662,7 @@ Simulation results should be now written. You may check now Timetable/View. The 
     <message>
         <location filename="../src/interface/timetablegenerateform_template.ui" line="118"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Začať</translation>
     </message>
 </context>
 <context>
@@ -44398,7 +44761,7 @@ For more information you can join the mailing list or write to author</source>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="216"/>
         <source>Limit for each timetable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Limit pre každý rozvrh</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="216"/>
@@ -44409,7 +44772,7 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="337"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Soft konflikty</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="343"/>
@@ -44440,28 +44803,28 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="39"/>
         <source>Limit for each timetable</source>
         <extracomment>In fact this is the time limit for search of each timetable, but I keep length short</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Limit pre každý rozvrh</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="64"/>
         <source>minutes</source>
         <extracomment>This is a label with the measure of time limit units for each timetable</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>minúty</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="74"/>
         <source>Number of timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Počet rozvrhov</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="98"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Začať</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="108"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Zastaviť</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="122"/>
@@ -44477,12 +44840,12 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="14"/>
         <source>Generate multiple timetables</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Generovať viacero rozvrhov</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="20"/>
         <source>Current timetable: 0 out of 0 activities placed</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuálny rozvrh: 0 z 0 umiestnených aktivít</translation>
     </message>
 </context>
 <context>
@@ -44491,7 +44854,7 @@ For more information you can join the mailing list or write to author</source>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="14"/>
         <source>Soft conflicts</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Soft konflikty</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableshowconflictsform_template.ui" line="33"/>
@@ -45114,25 +45477,25 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="60"/>
         <source>Lock/unlock</source>
         <extracomment>This is a group box for locking/unlocking buttons</extracomment>
-        <translation type="unfinished">Zamknúť/odomknúť</translation>
+        <translation>Zamknúť/odomknúť</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="68"/>
         <source>Time</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Čas</translation>
+        <translation>Čas</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="75"/>
         <source>Space</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Priestor</translation>
+        <translation>Priestor</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="84"/>
         <source>Both</source>
         <extracomment>This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).</extracomment>
-        <translation type="unfinished">Oboje</translation>
+        <translation>Oboje</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="106"/>
@@ -45142,12 +45505,12 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="138"/>
         <source>Class name</source>
-        <translation type="unfinished"></translation>
+        <translation>Názov triedy</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="168"/>
         <source>Details</source>
-        <translation type="unfinished">Detaily</translation>
+        <translation>Detaily</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="113"/>
@@ -45158,7 +45521,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewstudentsform_template.ui" line="14"/>
         <source>View students timetable</source>
         <extracomment>Title of dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť rozvrh študentov</translation>
     </message>
 </context>
 <context>
@@ -45232,14 +45595,14 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="165"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">Nemožno zobraziť rozvrh, pretože ste pridali alebo odstránili niektorých učiteľov. Prosím, generujte rozvrh znovu a potom si ho pozrite</translation>
+        <translation>Nemožno zobraziť rozvrh, pretože ste pridali alebo odstránili niektorých učiteľov. Prosím, generujte rozvrh znovu a potom si ho pozrite</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="224"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="364"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="475"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
-        <translation type="unfinished">Nemožno zobraziť rozvrh, pretože ste pridali alebo odstránili niektoré miestnosti. Prosím, generujte rozvrh znovu a potom si ho pozrite</translation>
+        <translation>Nemožno zobraziť rozvrh, pretože ste pridali alebo odstránili niektoré miestnosti. Prosím, generujte rozvrh znovu a potom si ho pozrite</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
@@ -45250,7 +45613,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="464"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
-        <translation type="unfinished">Prebieha alokácia. Prosím, zastavte predtým simuláciu.</translation>
+        <translation>Prebieha alokácia. Prosím, zastavte predtým simuláciu.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="563"/>

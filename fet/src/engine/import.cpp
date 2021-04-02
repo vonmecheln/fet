@@ -950,7 +950,7 @@ int Import::readFields(){
 								if(!itemOfField[FIELD_TOTAL_DURATION].isEmpty()){
 									int totalInt=itemOfField[FIELD_TOTAL_DURATION].toInt(&ok, 10);
 									if(ok && totalInt>=1){
-										if(totalInt<=10){							// TODO: make 10 a global variable?!
+										if(totalInt<=MAX_SPLIT_OF_AN_ACTIVITY){
 											QString tmpString;
 											for(int n=0; n<totalInt; n++){
 												if(n!=0)
@@ -972,7 +972,7 @@ int Import::readFields(){
 								}
 							} else {
 								QStringList splittedList;
-								if(itemOfField[FIELD_SPLIT_DURATION].count("+")<10){					// TODO: make 10 a global variable?!
+								if(itemOfField[FIELD_SPLIT_DURATION].count("+")<MAX_SPLIT_OF_AN_ACTIVITY){
 									splittedList = itemOfField[FIELD_SPLIT_DURATION].split("+");
 									int tmpInt=0;
 									QString splitted;
@@ -2253,8 +2253,8 @@ void Import::importCSVActivities(){
 		}
 		else{ //split activity
 			int totalduration;
-			int durations[10];						// TODO: make 10 a global variable?! AND do it the same in addactivityfor.cpp
-			bool active[10];						// TODO: make 10 a global variable?! AND do it the same in addactivityfor.cpp
+			int durations[MAX_SPLIT_OF_AN_ACTIVITY];
+			bool active[MAX_SPLIT_OF_AN_ACTIVITY];
 	
 			totalduration=0;
 			for(int s=0; s<nsplit; s++){

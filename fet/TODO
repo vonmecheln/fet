@@ -1,5 +1,15 @@
 TODO:
 
+In the Help of constraints min gaps between activities, besides warn if min days with consecutive if same day
+and 2 activities consecutive, add warn about 2 activities grouped.
+
+---------------------------------------------------------------
+
+In generate.cpp, improve the stack memory for variables using int[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]
+and int[MAX_HOURS_PER_WEEK].
+
+---------------------------------------------------------------
+
 In the initial order, in nIncompatible, put also teacher(students)intervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
 
 ---------------------------------------------------------------
@@ -348,7 +358,7 @@ Multiple processor - split multiple timetable generation on multiple processors
 
 --------------------------------------------------------------------------------
 
-From Hatim Ali:
+From Silver:
 
 > Dear all
 > please can you add "A set teachers has same timetabe (day+hour)" to make 2
@@ -1681,3 +1691,359 @@ From Jason (on guestbook):
 Ask for new feature:
 
 - Auto generated after allow user to manual adjust timetable (Drag and Drop in view timetable)
+
+58---------------------------------------------------------
+From Zsolt Udvari (on forum):
+
+If I de-activity all activities of a whole year (student set), FET will not ignore "min hours daily" constraint.
+So I've two suggestion immedi:
+- when FET checks this (and similar) constraints, would tolerate this
+- can deactivite the students set (and related activities, constraints, etc.)
+
+59---------------------------------------------------------
+From Zsolt Udvari (on forum):
+
+It would be nice when can filter in activities list by "no teacher" and "no students".
+
+60---------------------------------------------------------
+From Zsolt Udvari (on forum):
+
+Activity planning? Hm, this is a very good and useful feature Smiley
+Only a suggestion to this: save the checkboxes state (I should click every time on "Swap axes", "Add activity",...). 
+
+61---------------------------------------------------------
+From Zsolt Udvari (on forum):
+
+It would be nice when can pair teachers with his/her subjects and can filter in the activity dialog.
+So, what do I think? I'm teaching Math and Phisycs. So to my name can add these subjects and when I add a new activity and select Literature, my name will not shown, only those teachers who teaches Literature. 
+
+62---------------------------------------------------------
+From Zsolt Udvari (on forum):
+
+Teacher must work at specified time
+
+Can I do this? So e.g. TeacherA should have monday first hour. This is irrelevant, which activity. 
+
+63---------------------------------------------------------
+From alfaromeo (on forum):
+
+Clone activities or constraints:
+
+Is it possible to clone activities for one student set to another?
+Last year, Year 1S had 3 student sets
+Now Two new student sets have been added
+Student sets from same year have same activities and of course same time constraints
+So how it is possible to do an activities Clone from 1S03 to both 1S04 and 1S05 with or without assigned teachers ? 
+
+64---------------------------------------------------------
+From alfaromeo (on forum):
+
+Filter "Modify multiple constraints at once":
+
+For Min days between activities constraint, there is a button for Modify multiple constraints at once
+Is it possible to have a filter by Subject, teacher, ...
+The most important filter is the nunmber of subactivities
+For example an activities splitted into 2 have 3 days Min
+an activities splitted into 3 should have 2 days Min
+activities from Subject Gymnastics should have 2 days Min..etc 
+
+65---------------------------------------------------------
+From Zsolt Udvari (on forum):
+
+Default settings per subject:
+
+Is there any chance to make it? In my school the all "English" subject is 4 per week (and there are more similar subjects). So it would be nice, when I don't should set these settings (activities per week, tags).
+
+66---------------------------------------------------------
+From nomad (on forum):
+
+Constraint a set of activities have the same room (he wants to use it to schedule the timetable for two weeks, with fortnightly activities).
+
+67---------------------------------------------------------
+From alfaromeo (on forum):
+
+Save button on Activity Planing Window:
+
+For users working with Activity Planing windiw, thy will^probabely  spend most of the time on it
+But this Window is lacking a save button, so users have to close it from time to time to get access to FET main window to save work
+Can a save button be added to Activity planing window?
+
+68---------------------------------------------------------
+From alfaromeo (on forum):
+
+About constraint min gaps between a set of activities:
+
+Now, how about applying this contraint globally? I mean every activities with subject (or tag) Math sould be 2 hours apart from an activity with subject (or tag) Physics?
+Entering all activities, one by one is tedious
+How it is easy/possible to add: Min gaps between a set of activites with a tag ?
+
+or better:
+Min gaps between two subjects/tag
+
+69---------------------------------------------------------
+From alfaromeo (on forum):
+
+Filter for Modify multiple constraints at once:
+
+In the Min days between activities window
+there is an option for: Modify multiple constraints at once
+Is it possible to add a standart filter: teacher, student set, sunject, tag ?
+So I can multi-change only those activities with a given subject or techer...etc?
+
+70---------------------------------------------------------
+From alfaromeo (on forum):
+
+Filter teachers:
+
+Students are easily filtered because they are grouped using years then groups
+So at Students set not available time window, we can, for example, apply unvailability to only one year, thus affecting  groups under that year
+We can also apply unvailability to group, thus affecting  Subgroups under that group.
+
+Unfortunately , teachers are treated either indivdually or totally (constraints for ALL teachers): ONE or ALL
+Zsolt Udvari already wrote:
+http://lalescu.ro/liviu/fet/forum/YaBB.pl?num=1282207824 :
+Quote:
+It would be nice when can pair teachers with his/her subjects and can filter in the activity dialog.
+So, what do I think? I'm teaching Math and Phisycs. So to my name can add these subjects and when I add a new activity and select Literature, my name will not shown, only those teachers who teaches Literature
+.
+
+So it would be very practicall, less time consuming, to treat teachers per groups based on
+- Home subject
+or
+- any other artificial tag like :
+-part_time_teachers,
+- team teachers,
+-..etc 
+
+71---------------------------------------------------------
+From alfaromeo (on forum):
+
+More statistics after generation:
+
+FET has a stastics menu
+What about adding statistics after generation accessible from statistics menu
+(for teachers and students sets as well)
+- Total free days
+- Total working days
+- Total gaps
+
+Because the quality of a timetable depends on overall total of free days and gap
+
+72---------------------------------------------------------
+From Massimo Mancini:
+
+When I inspect the generated timetable by teacher or by students, would be possible to highligh
+all the occourences of the same students group in teacher's week and of the
+same subject in student's week,  to have an immediate glance on distribution of lessons? 
+If I remember this is a style option of html timetable. Perhaps it is
+possible in QT4 also...
+
+73---------------------------------------------------------
+From Valdo (on forum):
+
+Details: he has many teachers, and almost all should have max 2 gaps per week, with 2 exceptions, who may have more gaps. He
+does not want to add manually that many constraints. So, he suggests that FET should add constraints for all teachers,
+with a selected number of max gaps per week, and then the user can modify each one by hand.
+
+74---------------------------------------------------------
+From Massimo Mancini:
+
+1. Constraint hours not avalaible teacher
+2. I put a name in filter and I see there's any constraint of this kind on
+that teacher
+3. Then I press Add .  I expect the teacher field filled with the name I used in
+filter...but currently FET propose always the first teacher in list.
+
+75---------------------------------------------------------
+From Massimo Mancini:
+
+Consider this:
+
+1. the max num of hours for day is 5 for ALL teachers, the max num for teacher X is 3: this
+works
+
+2. the max num of hours for day is 4 for ALL teachers, the max num for teacher X is 5: this
+NOT works as expected. FET simply refuse the exception. The exception does
+not override the global in any case. 
+
+I remember we discussed this "strange" logic (imho an exception is an
+exception and always override a global condition) last year, it seems that
+the workaround is to manage this scenario using only individual constraints
+(isn't it?), very tedious. If so I suggest a button in the form of global
+constraint to automatically generate all the individual constraints one
+needs.
+
+From alfaromeo (same subject):
+
+My suggestion was not only about adding a teacher one by one
+It is about get rid of double menu entries
+For example, for Teachers and students, and for every constaint, FET has double entry like this:
+-Max days per week for a teacher
+-Max days per week for all teachers
+-Min days per week for a teacher
+-Main days per week for all teachers
+...etc
+My idea is to make a single entry for any constraint like this :
+-Max days per week for teacher (s)
+
+-Min days per week for teacher (s)
+
+This has another advantage:
+user will be presented by a window like described in my screenshot, where he can press Add all button
+Now suppose, like user X, that I have 50 teachers or 50 student sets
+I can easily add them all into Min days per week =5
+then on the right pan double click on 5 teachers to deselect them before clicking Add constraint
+Then add another Min days per week =3 for those 5 teachers !!
+If we have tags for teachers (and rooms) it will even more easier
+
+This concept is already used in FET in two places:
+- Set all available, Set all not available
+- subject has a set of prefered rooms 
+
+76---------------------------------------------------------
+From Massimo Mancini:
+
+many forms (constraints list and timetable views by example) popups with
+insufficient size, can you create an option for this to modify the default?
+
+Also consider the form that lists the constraint "teacher non avalaible",
+the list is useless if you does not enlarge the window. To avoid it enough
+change the line format from DESC CONSTRAINT + TEACHER'S NAME to
+TEACHER+CONSTRAINT or, better, codify desc constraint using some string of
+fixed size like so:
+
+HTNA - NAME .....
+
+I know the problem of translation (you may omit the desc at all, it is
+useful only when you display ALL constraints), but I think that a code is less boring
+than a long and incomplete description repeated at beginning of all lines.
+
+77---------------------------------------------------------
+From Andres Chandia (on forum):
+
+Is there a way to tag teachers, for different purposes like, a group of teachers can only work in the morning, or an activity can only be given by a teacher of certain group, etc.
+
+78---------------------------------------------------------
+From Massimo Mancini:
+
+a problem that we discussed in the past is about the description of
+constraints (specially in the list of constraints or in the list of
+conflicts): they are too long and meaningless if displayed in the window of
+default size. The modality of windows forces to expand them repeatedly (with
+non modal windows the sit could appear different, but Liviu answered this
+is a very difficult thing. 
+You must well understand that the unlucky timetable maker need to see the
+troubles at a glance: reading long sentences with absolutely redundant
+parts is very difficult and time consuming.
+This is a problem in english but the solution can be achieved also and only in
+translations... (a buon intenditor...;-)
+
+So in attachement you will find an example of that I think is a good list.
+Of course is only my opinion. But, trust me, is a useful one
+
+---
+
+Attachment:
+
+----- NOW --------------------------------------------------
+
+Conflitti lievi totali: 13.7
+Elenco dei conflitti leggeri (in ordine decrescente):
+Vincolo di tempo infranto Numero minimo di giorni tra attività: l'attività con id= 290 (I:PANS, M:FRA, S:AMM_1 B) è in conflitto con l'attività con id= 289 (I:PANS, M:FRA, S:AMM_1 B), essendo 1 giorni troppo vicine, nei giorni Martedì e Martedì, incremento dei conflitti= 0.99. Le attività sono collocate consecutive nell'orario, perchè hai scelto questa opzione nel caso che esse capitassero nello stesso giorno
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante DIRU il giorno Mercoledì durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante GADO il giorno Sabato durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante MALG il giorno Sabato durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante MESS il giorno Sabato durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante OSIO il giorno Lunedì durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante POLE il giorno Venerdì durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante PULI il giorno Mercoledì durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante RAPE il giorno Sabato durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo numero massimo 4 ore consecutive infranto per l'insegnante xAZ1 il giorno Sabato durata=5.  Questo incrementa la conflittualità di 0.99
+Vincolo di tempo infranto Numero minimo di giorni tra attività: l'attività con id= 416 (I:LUCH, M:DIR, S:IGE_2 C) è in conflitto con l'attività con id= 415 (I:LUCH, M:DIR, S:IGE_2 C), essendo 1 giorni troppo vicine, nei giorni Sabato e Sabato, incremento dei conflitti= 0.95. Le attività sono collocate consecutive nell'orario, perchè hai scelto questa opzione nel caso che esse capitassero nello stesso giorno
+Vincolo di tempo infranto Numero minimo di giorni tra attività: l'attività con id= 521 (I:LUZZ, M:EAZ, S:IGE_5 A) è in conflitto con l'attività con id= 517 (I:LUZZ, M:EAZ, S:IGE_5 A), essendo 1 giorni troppo vicine, nei giorni Martedì e Martedì, incremento dei conflitti= 0.95. Le attività sono collocate consecutive nell'orario, perchè hai scelto questa opzione nel caso che esse capitassero nello stesso giorno
+Vincolo di tempo infranto Numero minimo di giorni tra attività: l'attività con id= 617 (I:xAZ2, M:EAZ, S:IGE_3 B) è in conflitto con l'attività con id= 615 (I:xAZ2, M:EAZ, S:IGE_3 B), essendo 1 giorni troppo vicine, nei giorni Sabato e Sabato, incremento dei conflitti= 0.95. Le attività sono collocate consecutive nell'orario, perchè hai scelto questa opzione nel caso che esse capitassero nello stesso giorno
+Vincolo di tempo infranto Numero minimo di giorni tra attività: l'attività con id= 718 (I:CARU, M:COS_DIS, S:GEO_3 A) è in conflitto con l'attività con id= 715 (I:CARU, M:COS_DIS, ChA:info4, S:GEO_3 A), essendo 1 giorni troppo vicine, nei giorni Sabato e Sabato, incremento dei conflitti= 0.95. Le attività sono collocate consecutive nell'orario, perchè hai scelto questa opzione nel caso che esse capitassero nello stesso giorno
+
+----TOMORROW I HOPE ()IMHO)-------------------------------------------------
+
+Conflitti lievi totali: 13.7
+Elenco dei conflitti leggeri (in ordine decrescente):
+VT: Num.min.gg, tra attiv.: AttID= 290 (I:PANS, M:FRA, S:AMM_1 B) vs. AttID= 289 (I:PANS, M:FRA, S:AMM_1 B): +1 Mar -Mar : +0.99
+VT: Num.max. 4 h consec. :  DIRU : Mer : 5 : +0.99
+VT: Num.max. 4 h consec. :  GADO : Sab : 5 : +0.99
+VT: Num.max. 4 h consec. :  MALG : Sab : 5 : +0.99
+VT: Num.max. 4 h consec. :  MESS : Sab : 5 : +0.99
+VT: Num.max. 4 h consec. :  OSIO : Lun : 5 : +0.99
+VT: Num.max. 4 h consec. :  POLE : Ven : 5 : +0.99
+VT: Num.max. 4 h consec. :  PULI : Mer : 5 : +0.99
+VT: Num.max. 4 h consec. :  RAPE : Sab : 5 : +0.99
+VT: Num.max. 4 h consec. :  xAZ1 : Sab : 5 : +0.99
+VT: Num.min.gg, tra attiv.: id.416 (I:LUCH, M:DIR, S:IGE_2 C) / id.415 (I:LUCH, M:DIR, S:IGE_2 C): +1 Sab-Sab : +0.95
+VT: Num.min.gg, tra attiv.: id.521 (I:LUZZ, M:EAZ, S:IGE_5 A) / id.517 (I:LUZZ, M:EAZ, S:IGE_5 A): +1 Mar-Mar : +0.95
+VT: Num.min.gg, tra attiv.: id.617 (I:xAZ2, M:EAZ, S:IGE_3 B) / id.615 (I:xAZ2, M:EAZ, S:IGE_3 B): +1 Sab-Sab : +0.95
+VT: Num.min.gg, tra attiv.: id.718 (I:CARU, M:COS_DIS, S:GEO_3 A) / id.715 (I:CARU, M:COS_DIS, ChA:info4, S:GEO_3 A): +1 Sab-Sab : +0.95
+
+79---------------------------------------------------------
+From Volker Dirr:
+
+students set max gaps per week
+and
+students set begins early
+
+need a filter/checkbox show only O year O group O subgroup
+because there are so many students (subgroups) and it is usefull to add
+that counstraints for lower years. but the list is so long, so it is very
+difficult to find the years.
+
+that filter is also usefull for students set not available.
+
+80---------------------------------------------------------
+From Paolo (on forum):
+
+Well, for me it would be very very (very) important thinking over the constraints while fet is working.
+
+So i ask, kindly, if it is possible getting a print function of all constraints (at least of time constraints).
+
+Temporary solution: open two FET-s :-)
+
+81---------------------------------------------------------
+From alfaromeo (on forum):
+
+What about adding filter feature to the command: Modify Multiple Constraints at once
+For example, I would like to change Min days value for all  activities, not glolabally,  but form one subjct only (e.g Physical education)
+of all ctivities from one or to teachers ..etc or from a given tag...
+
+82---------------------------------------------------------
+From daviodan:
+
+Possibility to edit the timetable after generation, drag-drop of activities.
+
+83---------------------------------------------------------
+From Yush Yuen:
+
+Sometimes we have 3 teachers available to teach the same "kind" of
+class. For example, Teacher A, B C may teach either one of Math for
+7A, 7B, and 7C. It is possible that one combination may yield a
+timetable that is easier than another. So, it would be nice if we can
+have an option to generate "alternative" scenarios with the different
+combination.
+
+A possible way to do that may be:
+- adding a "teachers-activities pool" dialogue.
+- activities of the same pool may swap teacher
+- each pool may be enabled or disabled at timetable generating time
+(you may not need all combination all the time)
+- all generation time, make an option for "generating alternatives"
+and save each alternative in a different folder or something
+
+Or:
+- activities are created without teachers
+- adding a "teacher can teach: activity tag" dialogue
+- at generation time, teachers are assigned to activities based on
+which teacher has the right "teacher can teach tag"
+
+Or, another way of doing this (perhaps a more elegant way) is to make
+a "preferred teacher" constraint like the preferred room constraint.
+However, also add an "same room/teacher" option. That is, room/teacher
+may be selected from list of preferred rooms/teachers, however, the
+same room/teachers must be assigned to the same activities.
