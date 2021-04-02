@@ -53,6 +53,8 @@ public:
 	Function writing the teachers' timetable in xml format
 	*/
 	static void writeTeachersTimetableXml(const QString& xmlfilename);
+
+	static void writeActivitiesTimetableXml(const QString& xmlfilename);
 		
 	/**
 	Function writing conflicts.txt

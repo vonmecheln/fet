@@ -11,21 +11,18 @@ PLEASE FOLLOW THE ENGLISH WORDS AND DO NOT TRANSLATE A SINGLE
 TERM INCOMPLETELY. EITHER TRANSLATE IT OR NOT, BUT NOT PARTIALLY.
 
 
-STEP 1.
+STEP 1: You can use the fet_untranslated.ts file, just rename it
+fet_**.ts (** means your language).
 
+(alternative procedure: 
 Modify the file "fet-x.x.x/src/interface/interface.pro", by adding a line
 in the TRANSLATIONS section for each language (for instance, adding
 a backslash after the last translation and then "fet_it.ts" for italian).
 
-STEP 2.
-
 Enter the directory "fet-x.x.x/src/interface/" and type "lupdate interface.pro".
-This will create the needed file, named "fet-x.x.x/translations/fet_**.ts".
+This will create the needed file, named "fet-x.x.x/translations/fet_**.ts")
 
-ALTERNATIVE STEPS 1&2: You can use the fet_untranslated.ts file, just rename it
-fet_**.ts (** means your language).
-
-STEP 3.
+STEP 2.
 
 Open the file "fet-x.x.x/translations/fet_**.ts" (for example, fet_it.ts)
 with the Qt Linguist and edit it, then save it.
@@ -37,17 +34,16 @@ on a separate file, as text, html or OpenOffice.org document and send it to me.
 It will be put in doc/ directory and a notice will be put in Help - Menu "Help in other languages"
 
 There are a few comments in the translation file, they are not to be translated, they just help you.
-You can see that for instace in the "fet files (*.fet);;..." field.
+You can see that for instance in the "fet files (*.fet)..." field.
 
-STEP 4.
+STEP 3.
 
 From Qt Linguist, release the translation as "fet-x.x.x/translations/fet_**.qm"
 (for instance, fet_it.qm).
 
-STEP 5.
+STEP 4.
 
-Send all the three modified files to the author. You will be added 
-as a translator, of course.
+Send all the three modified files to the author.
 
 
 Of course, anyone can redo/improve current translations. The best variants will be chosen.
@@ -57,15 +53,12 @@ Some other details follow:
 
  First of all, you need a version of Qt Linguist.
  
- For GNU/Linux it is available if you type "linguist" (usually, Qt
- is installed. If not, you can download and install it from trolltech.com,
- the open source version). For Windows, you will have to download
+ For GNU/Linux it is available if you type "linguist" (this is part of Qt,
+probably in package libqt4-devel - probably you can install from your package manage,
+or you need to get Qt from trolltech.com, the open source version).
+For Windows, you will have to download
  the latest Qt from trolltech.com, the latest open source version,
  preferably the self extracting precompiled version for mingw.
- 
- An alternative solution for Windows is to download:
- http://prdownloads.sourceforge.net/psi/qtlinguist-3.0.4.zip?download
- But this is not the latest version of the linguist.
  
  fet_**.ts: You will have to open this file using Qt 
  Linguist. The most useful keys are: Ctrl+Enter (activates current translation 
@@ -84,13 +77,20 @@ Some other details follow:
  teacher and teachers, students and students set, time (day+hour) and hour (alone). These 
  are very important differences in constraints.
  
- Important: indications for abbreviations: T means teacher, S subject, ST subject tag, St students, 
- D duration, TD total duration, A activity or active, depending on context (please check your translation
- in the FET program if unsure). Also StN means students names. AGId means activity
- group id.
+New, added 10 January 2009:
+ Important: indications for abbreviations: IN TimetableGenerateForm: TN - teacher name, SN - subject name, StN - students name
+ AT - activity tag, IN QObject: R - room, A - activity, T - teacher, S - subject, St - students, Yn - year name, No - number,
+Gn - group name, Sgn - subgroup name, NA - number of activities, N - number, CSD - consecutive if same day, TN - teacher name,
+MD - max days, MG - max gaps, MH - max hours, mH - min hours, WP - weight percentage, MC - max consecutive I think, 
+ISH - interval start hour, IEH - interval end hour.
  
- Maybe try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
- to a minimum, otherwise they will look too big.
+ Please try to keep the length of large fields (the ones relating to constraints) in FetMainForm_template
+ to a minimum, otherwise they will look too big. This is the main menu.
+ This way, the main menu will look good in your language
+ (please check the main menu of FET with your translation).
+ Also, in the FetMainForm_template there appear some terms like: &Help. This means that Help has
+ as accelerator the letter H. You can translate in your language like: &Ajutor, preferably take care of this:
+ in the same menu (like File menu) there should be unique accelerators.
  
  Please try to follow the original (English) line arrangement. That is, if you 
  meet: "Current activity's <lf>
@@ -101,6 +101,9 @@ Some other details follow:
  	curente"
 	
  sp means space, please leave a space in your translation when seeing it, at the corresponding position.
+ 
+New, added 10 Jan 2009:
+ new line means you need to put a new line character (press Enter).
  
  Please take care to punctuation, because Linguist requires it. You have to end 
  each translation with the same punctuation mark as the English one. For 
@@ -116,8 +119,8 @@ Some other details follow:
  You will have to save the file (in Qt Linguist) after you have done the 
  modifications (I usually save it every 10 minutes).
  
- It would be a good idea to send me the fet_**.ts file after only a few 
- modifications, so I can check it if it works, so your work is not wasted. If 
+ It would be a good idea to send me the fet_**.ts file after only a few
+ modifications, so I can check it if it works, so your work is not wasted. If
  that goes well, I will tell you so that you can continue working on it.
  
  Please tell me if you do not want me to put your e-mail address in the 

@@ -21,6 +21,8 @@
 
 #include <QDesktopWidget>
 
+#include "lockunlock.h"
+
 ConstraintActivityPreferredStartingTimeForm::ConstraintActivityPreferredStartingTimeForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -211,6 +213,10 @@ void ConstraintActivityPreferredStartingTimeForm::removeConstraint()
 		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
+		
+		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+		LockUnlock::increaseCommunicationSpinBox();
+		
 		filterChanged();
 		break;
 	case 1: // The user clicked the Cancel or pressed Escape

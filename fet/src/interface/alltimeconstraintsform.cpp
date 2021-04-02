@@ -76,6 +76,8 @@
 
 #include <QDesktopWidget>
 
+#include "lockunlock.h"
+
 AllTimeConstraintsForm::AllTimeConstraintsForm()
 {
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -127,13 +129,28 @@ void AllTimeConstraintsForm::removeConstraint()
 	s+=QObject::tr("\nAre you sure?");
 	
 	bool t;
+	
+	bool recompute;
 
 	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
 		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+			recompute=true;
+		}
+		else{
+			recompute=false;
+		}
+		
 		t=gt.rules.removeTimeConstraint(ctr);
 		assert(t);
 		constraintsListBox->removeItem(constraintsListBox->currentItem());
+		
+		if(recompute){
+			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+			LockUnlock::increaseCommunicationSpinBox();
+		}
+		
 		break;
 	case 1: // The user clicked the Cancel or pressed Escape
 		break;

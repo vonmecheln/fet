@@ -27,12 +27,25 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.7.7";
+const QString FET_VERSION="5.8.0";
 
 /**
 FET language
 */
 QString FET_LANGUAGE="en_GB";
+
+/**
+The output directory. Please be careful when editing it,
+because the functions add a FILE_SEP sign at the end of it
+and then the name of a file. If you make OUTPUT_DIR="",
+there will be problems.
+*/
+#ifdef Q_OS_WIN
+const QString OUTPUT_DIR="results";
+#else
+const QString OUTPUT_DIR=QDir::homePath()+FILE_SEP+"fet-results";
+#endif
+
 
 bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 

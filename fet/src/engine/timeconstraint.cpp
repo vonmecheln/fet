@@ -40,6 +40,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 using namespace std;
 
 #define yesNo(x)				((x)==0?"no":"yes")
+#define trueFalse(x)			((x)==0?"false":"true")
 #define yesNoTranslated(x)		((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
 #define minimu(x,y)	((x)<(y)?(x):(y))
@@ -6957,13 +6958,14 @@ ConstraintActivityPreferredStartingTime::ConstraintActivityPreferredStartingTime
 	this->type = CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME;
 }
 
-ConstraintActivityPreferredStartingTime::ConstraintActivityPreferredStartingTime(double wp, int actId, int d, int h)
+ConstraintActivityPreferredStartingTime::ConstraintActivityPreferredStartingTime(double wp, int actId, int d, int h, bool perm)
 	: TimeConstraint(wp)
 {
 	this->activityId = actId;
 	this->day = d;
 	this->hour = h;
 	this->type = CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME;
+	this->permanentlyLocked=perm;
 }
 
 bool ConstraintActivityPreferredStartingTime::operator==(ConstraintActivityPreferredStartingTime& c){
@@ -6977,6 +6979,7 @@ bool ConstraintActivityPreferredStartingTime::operator==(ConstraintActivityPrefe
 	//	return false;
 	if(this->weightPercentage!=c.weightPercentage)
 		return false;
+	//no need to care about permanently locked
 	return true;
 }
 
@@ -7045,6 +7048,7 @@ QString ConstraintActivityPreferredStartingTime::getXmlDescription(Rules& r)
 		s+="	<Preferred_Day>"+protect(r.daysOfTheWeek[this->day])+"</Preferred_Day>\n";
 	if(this->hour>=0)
 		s+="	<Preferred_Hour>"+protect(r.hoursOfTheDay[this->hour])+"</Preferred_Hour>\n";
+	s+="	<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
 	s+="</ConstraintActivityPreferredStartingTime>\n";
 	return s;
 }
@@ -7112,6 +7116,9 @@ QString ConstraintActivityPreferredStartingTime::getDescription(Rules& r)
 
 	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));//s+=", ";
 	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));
+	
+	s+=", ";
+	s+=QObject::tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
 
 	return s;
 }
@@ -7175,6 +7182,15 @@ QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r
 
 	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
 	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	if(this->permanentlyLocked){
+		s+=QObject::tr("This activity is permanently locked, which means you cannot unlock it from the 'Timetable' menu"
+		" (you can unlock this activity by removing the constraint from the constraints dialog or by setting the 'permanently"
+		" locked' attribute false when editing this constraint)");
+	}
+	else{
+		s+=QObject::tr("This activity is not permanently locked, which means you can unlock it from the 'Timetable' menu");
+	}
+	s+="\n";
 
 	return s;
 }

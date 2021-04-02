@@ -314,7 +314,9 @@ SOURCES += fet.cpp \
 		   spreadconfirmationform.cpp \
 \
 		   removeredundantform.cpp \
-		   removeredundantconfirmationform.cpp
+		   removeredundantconfirmationform.cpp \
+\
+			lockunlock.cpp
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
@@ -627,7 +629,9 @@ HEADERS += fet.h \
 		   spreadconfirmationform.h \
 \
 		   removeredundantform.h \
-		   removeredundantconfirmationform.h
+		   removeredundantconfirmationform.h \
+\
+			lockunlock.h
 TRANSLATIONS += ../../translations/fet_ro.ts \
 				../../translations/fet_ca.ts \
                 ../../translations/fet_fr.ts \

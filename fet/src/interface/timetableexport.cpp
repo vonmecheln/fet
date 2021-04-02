@@ -1005,8 +1005,6 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, QString saveTi
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
-//	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n";
-//	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
 		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
@@ -1042,8 +1040,8 @@ void TimetableExport::writeIndexHtml(const QString& htmlfilename, QString saveTi
 	tos<<"    <p>\n";
 
 	tos<<"      <a href=\""<<s2+bar+CONFLICTS_FILENAME<<"\" target=\"_new\">"<<tr("View the soft conflicts list.")<<"</a><br />\n";
-//	tos<<"    </p>\n";
-//	tos<<"    <p>\n";
+	//tos<<"    </p>\n";
+	//tos<<"    <p>\n";
 
 	QString tmp1="<a href=\""+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML+"\" target=\"_new\">"+tr("activities")+"</a>";
 	QString tmp2="<a href=\""+s2+bar+TEACHERS_TIMETABLE_FILENAME_XML+"\" target=\"_new\">"+tr("teachers")+"</a>";

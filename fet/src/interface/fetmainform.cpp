@@ -142,6 +142,8 @@ using namespace std;
 #include "removeredundantconfirmationform.h"
 #include "removeredundantform.h"
 
+#include "lockunlock.h"
+
 #include <qmessagebox.h>
 //#include <q3filedialog.h>
 #include <QFileDialog>
@@ -212,6 +214,11 @@ const int LANGUAGE_TR_POSITION=16;
 
 const int STATUS_BAR_MILLISECONDS=2500;
 
+QSpinBox* pcommunicationSpinBox;	//needed to sync the view table forms
+QSet <int> idsOfLockedTime;		//care about locked activities in view forms
+QSet <int> idsOfLockedSpace;		//care about locked activities in view forms
+QSet <int> idsOfPermanentlyLockedTime;	//care about locked activities in view forms
+QSet <int> idsOfPermanentlyLockedSpace;	//care about locked activities in view forms
 
 FetMainForm::FetMainForm()
 {
@@ -319,6 +326,14 @@ FetMainForm::FetMainForm()
 	
 	settingsPrintNotAvailableSlotsAction->setCheckable(true);
 	settingsPrintNotAvailableSlotsAction->setChecked(PRINT_NOT_AVAILABLE_TIME_SLOTS);
+
+	//needed to sync the view table forms
+	pcommunicationSpinBox=&communicationSpinBox;
+	pcommunicationSpinBox->setRange(0, 9);
+	pcommunicationSpinBox->setValue(0);
+
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
 }
 
 void FetMainForm::on_checkForUpdatesAction_toggled()
@@ -442,6 +457,9 @@ void FetMainForm::on_fileNewAction_activated()
 		teachers_schedule_ready=false;
 		rooms_schedule_ready=false;
 
+		LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+		LockUnlock::increaseCommunicationSpinBox();
+
 		statusBar()->showMessage(tr("New file generated"), STATUS_BAR_MILLISECONDS);
 	}
 }
@@ -459,8 +477,10 @@ void FetMainForm::on_fileOpenAction_activated()
 	if(confirm){
 		QString s = QFileDialog::getOpenFileName(this, tr("Choose a file"),
 			WORKING_DIRECTORY, 
-			tr("FET xml files (*.fet);;Old FET xml files (*.xml);;All files (*)", 
-			"Comment for translators (do not translate this comment): This field is for File/Open dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"));
+			tr("FET xml files (*.fet)\nAll files (*)",
+			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
+			"2 separate lines, so make sure you have a 'new line' character after the first filter "
+			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."));
 		if(s.isNull())
 			return;
 
@@ -496,7 +516,10 @@ void FetMainForm::on_fileOpenAction_activated()
 				rooms_schedule_ready=false;
 
 				INPUT_FILENAME_XML = s;
-
+				
+				LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+				LockUnlock::increaseCommunicationSpinBox();
+				
 				statusBar()->showMessage(tr("File opened"), STATUS_BAR_MILLISECONDS);
 			}
 			else{
@@ -515,7 +538,10 @@ void FetMainForm::on_fileOpenAction_activated()
 void FetMainForm::on_fileSaveAsAction_activated()
 {
 	QString s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under"),
-		INPUT_FILENAME_XML, tr("FET xml files (*.fet);;All files (*)", "Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"),
+		INPUT_FILENAME_XML, tr("FET xml files (*.fet)\nAll files (*)",
+			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
+			"2 separate lines, so make sure you have a 'new line' character after the first filter "
+			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),
 		0, QFileDialog::DontConfirmOverwrite);
 	if(s==QString::null)
 		return;
@@ -596,6 +622,12 @@ void FetMainForm::on_fileImportCSVActivitiesAction_activated(){
 		return;
 	}
 	Import::importCSVActivities();
+
+	//TODO: if the import takes care of locked activities, then we need
+	//to do:
+	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	//LockUnlock::increaseCommunicationSpinBox();
+	//after the importing
 }
 
 void FetMainForm::on_fileImportCSVActivityTagsAction_activated(){
@@ -668,6 +700,12 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 		
 	t+="\n\n";
 	
+	t+=tr("NEW, 25 December 2008:");
+	t+=" ";
+	t+=tr("The added constraints will have the 'permanently locked' tag set to false, so you can also unlock the activities from the "
+		"'Timetable' menu, without interfering with the initial constraints which are made by you 'permanently locked'");
+	t+="\n\n";
+	
 	t+=tr("This option is useful for institutions where you obtain a timetable, then some small changes appear,"
 		" and you need to regenerate timetable, but respecting in a large proportion the old timetable");
 
@@ -686,7 +724,10 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 
 	for(;;){
 		s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under" ), 
-			INPUT_FILENAME_XML, tr("FET xml files (*.fet);;All files (*)", "Comment for translators (do not translate this comment): This field is for File/Save as dialog. Please keep ;; without spaces before, between and after (it is a separator), and consider that the first must be *.fet. In special right to left languages, you might need to leave this field untranslated"),
+			INPUT_FILENAME_XML, tr("FET xml files (*.fet)\nAll files (*)",
+			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
+			"2 separate lines, so make sure you have a 'new line' character after the first filter "
+			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),
 			0, QFileDialog::DontConfirmOverwrite);
 		if(s==QString::null)
 			return;
@@ -786,7 +827,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 			int hour=time/gt.rules.nDaysPerWeek;
 			int day=time%gt.rules.nDaysPerWeek;
 
-			ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour);
+			ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour, false); //permanently locked is false
 			bool t=rules2.addTimeConstraint(ctr);
 						
 			if(t){
@@ -821,7 +862,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 					
 		int ri=tc->rooms[ai];
 		if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
-			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name);
+			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, false); //false means not permanently locked
 			bool t=rules2.addSpaceConstraint(ctr);
 
 			QString s;
@@ -2071,7 +2112,7 @@ void FetMainForm::on_helpInstructionsAction_activated()
 
 void FetMainForm::on_helpManualAction_activated()
 {
-	QString s=tr("You can read a contributed user's manual in the doc/manual/ directory of FET.");
+	QString s=tr("You can read a contributed user's manual in the %1 directory of FET.").arg(QDir::toNativeSeparators("doc/manual/"));
 	s+="\n\n";
 	s+=tr("This manual is contributed by Volker Dirr (timetabling.de).");
 	s+="\n\n";
@@ -2112,7 +2153,7 @@ void FetMainForm::on_helpManualAction_activated()
 
 void FetMainForm::on_helpInOtherLanguagesAction_activated()
 {
-	QString s=tr("You can see help translated into other languages in the directory doc/ of FET");
+	QString s=tr("You can see help translated into other languages in the directory %1 of FET").arg(QDir::toNativeSeparators("doc/international/"));
 	s+="\n\n";	
 	s+=tr("Currently (17 July 2008), there are:");	
 	s+="\n\n";	
@@ -2176,6 +2217,9 @@ void FetMainForm::on_timetableGenerateAction_activated()
 	}
 	TimetableGenerateForm *form=new TimetableGenerateForm();
 	form->exec();
+	
+	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
 }
 
 void FetMainForm::on_timetableGenerateMultipleAction_activated()
@@ -2206,6 +2250,9 @@ void FetMainForm::on_timetableGenerateMultipleAction_activated()
 	}
 	TimetableGenerateMultipleForm *form=new TimetableGenerateMultipleForm();
 	form->exec();
+
+	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
 }
 
 void FetMainForm::on_timetableViewStudentsAction_activated()
@@ -2216,6 +2263,7 @@ void FetMainForm::on_timetableViewStudentsAction_activated()
 	}
 
 	TimetableViewStudentsForm *form=new TimetableViewStudentsForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
 
@@ -2227,6 +2275,7 @@ void FetMainForm::on_timetableViewTeachersAction_activated()
 	}
 
 	TimetableViewTeachersForm *form=new TimetableViewTeachersForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
 
@@ -2249,8 +2298,71 @@ void FetMainForm::on_timetableViewRoomsAction_activated()
 	}
 
 	TimetableViewRoomsForm* form=new TimetableViewRoomsForm();
+	form->setAttribute(Qt::WA_DeleteOnClose);
 	form->show();
 }
+
+
+void FetMainForm::on_timetableLockAllActivitiesAction_activated()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	LockUnlock::lockAll();
+}
+
+void FetMainForm::on_timetableUnlockAllActivitiesAction_activated()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	LockUnlock::unlockAll();
+}
+
+void FetMainForm::on_timetableLockActivitiesDayAction_activated()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	LockUnlock::lockDay();
+}
+
+void FetMainForm::on_timetableUnlockActivitiesDayAction_activated()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	LockUnlock::unlockDay();
+}
+
+void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_activated()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	LockUnlock::lockEndStudentsDay();
+}
+
+void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_activated()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	LockUnlock::unlockEndStudentsDay();
+}
+
 
 void FetMainForm::on_languageEnglishAction_activated()
 {
@@ -2473,7 +2585,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+="\n";
 	s+=tr("5. Html level of the timetables will be 2");
 	s+="\n";
-	s+=tr("6. Import directory will be %1").arg(OUTPUT_DIR);
+	s+=tr("6. Import directory will be %1").arg(QDir::toNativeSeparators(OUTPUT_DIR));
 	s+="\n";
 	s+=tr("7. Mark not available slots with -x- in timetables will be true");
 	s+="\n";

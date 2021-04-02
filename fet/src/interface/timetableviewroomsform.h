@@ -29,7 +29,6 @@ public:
 
 	void roomChanged(const QString& roomName);
 
-	void updateRoomsTimetableTable();
 
 	void detailActivity(int row, int col);
 	
@@ -37,6 +36,8 @@ public:
 	void lock(bool lockTime, bool lockSpace);
 	void lockTime();
 	void lockSpace();
+public slots:
+	void updateRoomsTimetableTable();
 };
 
 #endif

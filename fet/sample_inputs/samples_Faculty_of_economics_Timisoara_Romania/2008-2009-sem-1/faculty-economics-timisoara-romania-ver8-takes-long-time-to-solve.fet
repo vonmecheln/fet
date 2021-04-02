@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.7.4">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Facultatea de Economie si de Administrare a Afacerilor</Institution_Name>
 
@@ -29400,6 +29400,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>386</Activity_Id>
 	<Room>ADM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintTeacherMinGapsBetweenBuildingChanges>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -29447,11 +29448,13 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>51</Activity_Id>
 	<Room>ADM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>57</Activity_Id>
 	<Room>ADM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -29950,41 +29953,49 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>994</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>997</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>998</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>979</Activity_Id>
 	<Room>004 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>980</Activity_Id>
 	<Room>004 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>981</Activity_Id>
 	<Room>004 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>982</Activity_Id>
 	<Room>004 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>983</Activity_Id>
 	<Room>004 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -30144,191 +30155,229 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>920</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>921</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>922</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>917</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>918</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>919</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>923</Activity_Id>
 	<Room>002 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>926</Activity_Id>
 	<Room>002 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>927</Activity_Id>
 	<Room>002 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>935</Activity_Id>
 	<Room>D12</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>936</Activity_Id>
 	<Room>D12</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>937</Activity_Id>
 	<Room>D12</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>938</Activity_Id>
 	<Room>D12</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>939</Activity_Id>
 	<Room>D12</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>940</Activity_Id>
 	<Room>D12</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>911</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>912</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>913</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>914</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>915</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>916</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>947</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>948</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>949</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>950</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>951</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>952</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>924</Activity_Id>
 	<Room>002 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>925</Activity_Id>
 	<Room>002 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>928</Activity_Id>
 	<Room>002 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>905</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>910</Activity_Id>
 	<Room>001 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>941</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>942</Activity_Id>
 	<Room>005 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>943</Activity_Id>
 	<Room>003 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>944</Activity_Id>
 	<Room>003 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>945</Activity_Id>
 	<Room>003 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>946</Activity_Id>
 	<Room>003 UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintRoomNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -34032,6 +34081,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>648</Activity_Id>
 	<Room>AM UVT</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -34179,6 +34229,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>703</Activity_Id>
 	<Room>ADM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -35249,11 +35300,13 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>171</Activity_Id>
 	<Room>ADM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>172</Activity_Id>
 	<Room>ADM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>

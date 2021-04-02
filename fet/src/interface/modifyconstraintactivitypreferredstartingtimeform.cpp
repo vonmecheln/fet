@@ -26,6 +26,8 @@
 
 #define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
+#include "lockunlock.h"
+
 ModifyConstraintActivityPreferredStartingTimeForm::ModifyConstraintActivityPreferredStartingTimeForm(ConstraintActivityPreferredStartingTime* ctr)
 {
 	//setWindowFlags(Qt::Window);
@@ -35,6 +37,8 @@ ModifyConstraintActivityPreferredStartingTimeForm::ModifyConstraintActivityPrefe
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	//permTextLabel->setWordWrap(true);
 	
 	this->_ctr=ctr;
 	
@@ -82,7 +86,9 @@ ModifyConstraintActivityPreferredStartingTimeForm::ModifyConstraintActivityPrefe
 
 	dayComboBox->setCurrentItem(ctr->day+1);
 	startHourComboBox->setCurrentItem(ctr->hour+1);
-
+	
+	permLockedCheckBox->setChecked(this->_ctr->permanentlyLocked);
+	
 	constraintChanged();
 }
 
@@ -225,6 +231,14 @@ void ModifyConstraintActivityPreferredStartingTimeForm::constraintChanged()
 		s+=QObject::tr("Start hour:%1").arg(startHourComboBox->currentText());
 		s+="\n";
 	}
+	
+	if(permLockedCheckBox->isChecked()){
+		s+=QObject::tr("Permanently locked (cannot be unlocked from the 'Timetable' menu)");
+	}
+	else{
+		s+=QObject::tr("Not permanently locked (can be unlocked from the 'Timetable' menu)");
+	}
+	s+="\n";
 
 	currentConstraintTextEdit->setText(s);
 }
@@ -291,7 +305,12 @@ void ModifyConstraintActivityPreferredStartingTimeForm::ok()
 	this->_ctr->hour=startHour-1;
 	this->_ctr->activityId=id;
 	
+	this->_ctr->permanentlyLocked=permLockedCheckBox->isChecked();
+	
 	gt.rules.internalStructureComputed=false;
+	
+	LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+	LockUnlock::increaseCommunicationSpinBox();
 
 	this->close();
 }

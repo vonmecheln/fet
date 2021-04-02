@@ -99,7 +99,7 @@ void Export::exportCSV(){
 			ok=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head);
 		if(ok)
 			ok=exportCSVTimetable(lastWarnings, textquote, fieldSeparator, head);
-		lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(DIRECTORY_CSV)+"\n");
+		lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(QDir::toNativeSeparators(DIRECTORY_CSV))+"\n");
 		if(ok)
 			lastWarnings.insert(0,Export::tr("Exported complete")+"\n");
 		else

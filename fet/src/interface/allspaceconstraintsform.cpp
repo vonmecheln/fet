@@ -53,6 +53,8 @@ using namespace std;
 
 #include <QDesktopWidget>
 
+#include "lockunlock.h"
+
 AllSpaceConstraintsForm::AllSpaceConstraintsForm()
 {
 	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
@@ -267,11 +269,26 @@ void AllSpaceConstraintsForm::removeConstraint()
 	s=QObject::tr("Removing constraint:\n");
 	s+=ctr->getDetailedDescription(gt.rules);
 	s+=QObject::tr("\nAre you sure?");
+	
+	bool recompute;
 
 	switch( QMessageBox::warning( this, QObject::tr("FET warning"),
 		s, QObject::tr("OK"), QObject::tr("Cancel"), 0, 0, 1 ) ){
 	case 0: // The user clicked the OK again button or pressed Enter
+		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			recompute=true;
+		}
+		else{
+			recompute=false;
+		}
+	
 		gt.rules.removeSpaceConstraint(ctr);
+		
+		if(recompute){
+			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+			LockUnlock::increaseCommunicationSpinBox();
+		}
+		
 		filterChanged();
 		break;
 	case 1: // The user clicked the Cancel or pressed Escape

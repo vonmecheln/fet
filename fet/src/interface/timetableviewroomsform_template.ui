@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>757</width>
-            <height>530</height>
+            <width>828</width>
+            <height>537</height>
         </rect>
     </property>
     <property name="caption">
@@ -25,15 +25,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>roomsTextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Room</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QLabel" row="5" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>roomNameTextLabel</cstring>
             </property>
@@ -41,7 +33,7 @@
                 <string>Room's name</string>
             </property>
         </widget>
-        <widget class="QTable" row="4" column="0" rowspan="1" colspan="2">
+        <widget class="QTable" row="6" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>roomsTimetableTable</cstring>
             </property>
@@ -55,25 +47,45 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="1">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
+        <widget class="QPushButton" row="0" column="2" rowspan="2" colspan="1">
             <property name="name">
-                <cstring>roomsListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="1" column="1">
-            <property name="name">
-                <cstring>detailsTextLabel</cstring>
+                <cstring>lockTimePushButton</cstring>
             </property>
             <property name="text">
-                <string>Details</string>
+                <string>Toggle lock/unlock selected
+activities (only time)</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="2" column="1">
+        <widget class="QPushButton" row="2" column="2">
+            <property name="name">
+                <cstring>lockSpacePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Toggle lock/unlock selected
+activities (only space)</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="2">
+            <property name="name">
+                <cstring>lockPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Toggle lock/unlock selected
+activities (time and space)</string>
+            </property>
+            <property name="accel">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="2">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="1" rowspan="4" colspan="1">
             <property name="name">
                 <cstring>detailsTextEdit</cstring>
             </property>
@@ -84,36 +96,30 @@
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QPushButton" row="6" column="0">
+        <widget class="QLabel" row="0" column="1">
             <property name="name">
-                <cstring>lockPushButton</cstring>
+                <cstring>detailsTextLabel</cstring>
             </property>
             <property name="text">
-                <string>Lock selected activities</string>
+                <string>Details</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="6" column="1">
+        <widget class="QListBox" row="1" column="0" rowspan="4" colspan="1">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
             <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
+                <cstring>roomsListBox</cstring>
             </property>
         </widget>
-        <widget class="QPushButton" row="5" column="1">
+        <widget class="QLabel" row="0" column="0">
             <property name="name">
-                <cstring>lockSpacePushButton</cstring>
+                <cstring>roomsTextLabel</cstring>
             </property>
             <property name="text">
-                <string>Lock selected activities (space)</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="5" column="0">
-            <property name="name">
-                <cstring>lockTimePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Lock selected activities (time)</string>
+                <string>Room</string>
             </property>
         </widget>
     </grid>

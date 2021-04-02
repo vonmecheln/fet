@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -814,21 +814,25 @@
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>18</Activity_Id>
 	<Preferred_Hour>13.30 - 14.30</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>19</Activity_Id>
 	<Preferred_Hour>14.40 - 15.40</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>20</Activity_Id>
 	<Preferred_Hour>15.50 - 16.50</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>0</Weight_Percentage>
 	<Activity_Id>21</Activity_Id>
 	<Preferred_Hour>17.00 - 18.00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 </Time_Constraints_List>
 

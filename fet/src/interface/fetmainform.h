@@ -25,12 +25,17 @@
 
 #include "httpget.h"
 
+#include <QSpinBox>
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
 class FetMainForm:public QMainWindow, Ui::FetMainForm_template
 {
 	Q_OBJECT
+	
+private:
+	QSpinBox communicationSpinBox;
 
 public:
 	HttpGet getter;
@@ -176,6 +181,13 @@ public slots:
 	void on_timetableShowConflictsAction_activated();
 	void on_timetableViewRoomsAction_activated();
 	void on_timetableGenerateMultipleAction_activated();
+
+	void on_timetableLockAllActivitiesAction_activated();
+	void on_timetableUnlockAllActivitiesAction_activated();
+	void on_timetableLockActivitiesDayAction_activated();
+	void on_timetableUnlockActivitiesDayAction_activated();
+	void on_timetableLockActivitiesEndStudentsDayAction_activated();
+	void on_timetableUnlockActivitiesEndStudentsDayAction_activated();
 
 	void on_timetableSaveTimetableAsAction_activated();
 	

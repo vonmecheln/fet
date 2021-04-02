@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Bethlen Gábor Református Gimnázium</Institution_Name>
 
@@ -20957,120 +20957,140 @@
 	<Activity_Id>956</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>957</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>958</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>959</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>960</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>961</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>962</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>963</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>964</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>965</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>966</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>967</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>968</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>969</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>970</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>971</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>9.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>972</Activity_Id>
 	<Preferred_Day>Kedd</Preferred_Day>
 	<Preferred_Hour>1.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>973</Activity_Id>
 	<Preferred_Day>Szerda</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>974</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>7.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>975</Activity_Id>
 	<Preferred_Day>Csütörtök</Preferred_Day>
 	<Preferred_Hour>8.</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintStudentsMinHoursDaily>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -22170,11 +22190,13 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>310</Activity_Id>
 	<Room>KÉM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>311</Activity_Id>
 	<Room>KÉM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRooms>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -22208,11 +22230,13 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>304</Activity_Id>
 	<Room>KÉM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>305</Activity_Id>
 	<Room>KÉM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>60</Weight_Percentage>
@@ -22230,16 +22254,19 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>463</Activity_Id>
 	<Room>KÉM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>464</Activity_Id>
 	<Room>KÉM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>465</Activity_Id>
 	<Room>KÉM</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>

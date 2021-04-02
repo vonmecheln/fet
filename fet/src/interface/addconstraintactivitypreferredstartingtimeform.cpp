@@ -26,6 +26,11 @@
 
 #define yesNo(x)	((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
+#include <QSet>
+#include "lockunlock.h"
+extern QSet<int> idsOfLockedTime;
+extern QSet<int> idsOfPermanentlyLockedTime;
+
 AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredStartingTimeForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -35,6 +40,8 @@ AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredSt
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	//permTextLabel->setWordWrap(true);
 	
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -210,6 +217,14 @@ void AddConstraintActivityPreferredStartingTimeForm::constraintChanged()
 		s+="\n";
 	}
 	
+	if(permLockedCheckBox->isChecked()){
+		s+=QObject::tr("Permanently locked (cannot be unlocked from the 'Timetable' menu)");
+	}
+	else{
+		s+=QObject::tr("Not permanently locked (can be unlocked from the 'Timetable' menu)");
+	}
+	s+="\n";
+	
 	currentConstraintTextEdit->setText(s);
 }
 
@@ -261,12 +276,24 @@ void AddConstraintActivityPreferredStartingTimeForm::addCurrentConstraint()
 	else
 		id=activitiesList.at(tmp2);
 	
-	ctr=new ConstraintActivityPreferredStartingTime(weight, /*compulsory,*/ id, day-1, startHour-1);
+	ctr=new ConstraintActivityPreferredStartingTime(weight, /*compulsory,*/ id, day-1, startHour-1, permLockedCheckBox->isChecked());
 
 	bool tmp3=gt.rules.addTimeConstraint(ctr);
-	if(tmp3)
+	if(tmp3){
 		QMessageBox::information(this, QObject::tr("FET information"),
 			QObject::tr("Constraint added"));
+			
+		/*
+		if(day-1>=0 && startHour-1>=0){
+			if(permLockedCheckBox->isChecked())
+				idsOfPermanentlyLockedTime.insert(id);
+			else
+				idsOfLockedTime.insert(id);
+			LockUnlock::increaseCommunicationSpinBox();
+		} wrong, must take care also of weight==100.0 */
+		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+		LockUnlock::increaseCommunicationSpinBox();
+	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
 			QObject::tr("Constraint NOT added - duplicate"));

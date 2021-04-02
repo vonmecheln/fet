@@ -179,7 +179,7 @@ void TimetableGenerateMultipleForm::help()
 	 " %1 to be emptied+deleted before proceeeding.\n\nPlease note that, for large data, each timetable might occupy more"
 	 " megabytes of hard disk space,"
 	 " so make sure you have enough space (you can check the dimension of a single timetable as a precaution).")
-	 .arg(destDir)
+	 .arg(QDir::toNativeSeparators(destDir))
 	 +"\n\n"
 	 +tr("NEW: There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later")
 	 +"\n\n"
@@ -200,7 +200,7 @@ void TimetableGenerateMultipleForm::start(){
 		QMessageBox::warning(this, tr("FET information"), tr("Directory %1 exists and might not be empty,"
 		 " (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)"
 		 " and then you can generate multiple timetables")
-		 .arg(destDir));
+		 .arg(QDir::toNativeSeparators(destDir)));
 		 
 		return;
 	}
@@ -314,7 +314,7 @@ void TimetableGenerateMultipleForm::stop()
 	sec%=60;
 
 	s+=TimetableGenerateMultipleForm::tr("The results for the generated timetables are saved in the directory %1 in html and xml mode"
-	 " and the soft conflicts in txt mode").arg(destDir);
+	 " and the soft conflicts in txt mode").arg(QDir::toNativeSeparators(destDir));
 	 
 	s+="\n\n"+tr("The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that");
 	 
@@ -359,7 +359,7 @@ void TimetableGenerateMultipleForm::simulationFinished()
 
 	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
 		TimetableGenerateMultipleForm::tr("Simulation terminated successfully. The results are saved in directory %1 in html"
-		" and xml mode and the soft conflicts in txt mode.").arg(destDir)+"\n\n"
+		" and xml mode and the soft conflicts in txt mode.").arg(QDir::toNativeSeparators(destDir))+"\n\n"
 		+tr("The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that")
 		+"\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s));
 

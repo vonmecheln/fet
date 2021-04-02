@@ -1258,7 +1258,7 @@ Versions 5.6.0 - 5.6.4
 	- Added all activities timetables by Volker Dirr (suggested by kdsayang)
 	- Added exporting of timetable in csv form by Volker Dirr
 ---------------------------------------------------------------------------------
-Versions 5.7.0 - 5.7.x
+Versions 5.7.0 - 5.7.7
 - Version 5.7.0
 	- Added an advanced command to spread better the divided activities in a week - very useful for schools, probably.
 	- Minor interface improvement (in report duplicate activities routine)
@@ -1297,3 +1297,23 @@ Versions 5.7.0 - 5.7.x
 - Version 5.7.7
 	- Minor improvements (the settings are now saved in a file which does not contain spaces under GNU/Linux,
 	added a better #define Q_OS_WIN for detecting Windows in compilation).
+---------------------------------------------------------------------------------
+Versions 5.8.0 - 5.8.x
+- Version 5.8.0
+	- Added the possibility to view locked activities in the timetables and toggle lock/unlock activities in the timetable
+	(suggested by Azu Boba, implemented by Liviu Lalescu and Volker Dirr).
+	- Added the possibility to lock/unlock the activities of a certain day
+	(suggested by Azu Boba, implemented by Liviu Lalescu and Volker Dirr).
+	- Added the possibility to lock/unlock the activities which end students day
+	(suggested by Volker Dirr, implemented by Liviu Lalescu).
+	- The constraints activity preferred starting time and activity preferred room have now an attribute, which
+	can mean that some constraints are added permanently by the human operator and cannot be unlocked from the view timetable
+	form (suggested by Azu Boba, done by Liviu Lalescu and Volker Dirr).
+	- Minor bug fixes (very rare crashes).
+	- Minor improvements - when viewing the timetable, the detailed activity view is updated correctly
+	(suggested by Jose Cesar Fernandez Lopez).
+	- Other minor interface improvements.
+	- Minor improvement: the directories under Windows contain now the correct back-slash, instead of forward slash.
+	- Repaired the Turkish translation (by Liviu Lalescu), but it is still old and incomplete.
+	- Added the output of activities timetable as xml
+	

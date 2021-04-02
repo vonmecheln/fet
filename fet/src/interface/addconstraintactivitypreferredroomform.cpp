@@ -25,6 +25,11 @@
 
 #include <QDesktopWidget>
 
+#include <QSet>
+#include "lockunlock.h"
+extern QSet<int> idsOfLockedSpace;
+extern QSet<int> idsOfPermanentlyLockedSpace;
+
 AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
 {
 	//setWindowFlags(Qt::Window);
@@ -34,6 +39,8 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	
+	//permTextLabel->setWordWrap(true);
 	
 	teachersComboBox->insertItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -191,7 +198,7 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	}
 	QString room=roomsComboBox->currentText();
 
-	ctr=new ConstraintActivityPreferredRoom(weight, id, room);
+	ctr=new ConstraintActivityPreferredRoom(weight, id, room, permLockedCheckBox->isChecked());
 
 	bool tmp3=gt.rules.addSpaceConstraint(ctr);
 	if(tmp3){
@@ -199,6 +206,13 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 		s+="\n";
 		s+=ctr->getDetailedDescription(gt.rules);
 		QMessageBox::information(this, QObject::tr("FET information"), s);
+		
+		/*if(permLockedCheckBox->isChecked()) wrong, must take care of weight==100.0
+			idsOfPermanentlyLockedSpace.insert(id);
+		else
+			idsOfLockedSpace.insert(id);*/
+		LockUnlock::computeLockedUnlockedActivitiesOnlySpace(); //safer
+		LockUnlock::increaseCommunicationSpinBox();
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),

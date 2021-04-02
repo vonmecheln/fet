@@ -3645,7 +3645,7 @@ bool Rules::removeRoom(const QString& roomName)
 				this->removeSpaceConstraint(ctr);
 			else if(t==1 && c->roomsNames.count()==1){
 				ConstraintActivityPreferredRoom* c2=new ConstraintActivityPreferredRoom
-				 (c->weightPercentage, c->activityId, c->roomsNames.at(0));
+				 (c->weightPercentage, c->activityId, c->roomsNames.at(0), true); //true means permanently locked
 
 				QMessageBox::information(NULL, QObject::tr("FET information"), 
 				 QObject::tr("The constraint\n%1 will be modified into constraint\n%2 because"
@@ -4183,7 +4183,7 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 		if(!dir.exists(OUTPUT_DIR))
 			t=dir.mkdir(OUTPUT_DIR);
 		if(!t){
-			QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(OUTPUT_DIR));
+			QMessageBox::warning(NULL, QObject::tr("FET warning"), QObject::tr("Cannot create or use directory %1 - cannot continue").arg(QDir::toNativeSeparators(OUTPUT_DIR)));
 			return false;
 		}
 		assert(t);
@@ -5028,6 +5028,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 			
 			bool reportActivityPreferredTimesChange=true;
 			bool reportActivitiesPreferredTimesChange=true;
+			
+			bool reportUnspecifiedPermanentlyLockedTime=true;
 			
 #if 0&0&0
 			bool reportIncorrectMinNDays=true;
@@ -6836,6 +6838,8 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 				
 					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
 					cn->day = cn->hour = -1;
+					cn->permanentlyLocked=false; //default not locked
+					bool foundLocked=false;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6863,6 +6867,17 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
 								cn->weightPercentage=0;
 							}
+						}
+						else if(elem4.tagName()=="Permanently_Locked"){
+							if(elem4.text()=="true"){
+								xmlReadingLog+="    Permanently locked\n";
+								cn->permanentlyLocked=true;
+							}
+							else{
+								xmlReadingLog+="    Not permanently locked\n";
+								cn->permanentlyLocked=false;
+							}
+							foundLocked=true;
 						}
 						else if(elem4.tagName()=="Activity_Id"){
 							cn->activityId=elem4.text().toInt();
@@ -6902,10 +6917,33 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						}
 					}
 					crt_constraint=cn;
+
+					if(!foundLocked && reportUnspecifiedPermanentlyLockedTime){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
+						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
+						 " by editing the constraint in the 'Data' menu")+"\n\n"
+						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
+						 " activity preferred starting time has"
+						 " a new tag, 'permanently locked' (true or false)."
+						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
+						 " need to be not modifiable from the 'Timetable' menu"
+						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
+						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
+						 " This way, when viewing the timetable"
+						 " and locking/unlocking some activities, you will not unlock the constraints which"
+						 " need to be locked all the time."
+						 ),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportUnspecifiedPermanentlyLockedTime=false;
+					}
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredStartingTime"){
 					ConstraintActivityPreferredStartingTime* cn=new ConstraintActivityPreferredStartingTime();
 					cn->day = cn->hour = -1;
+					cn->permanentlyLocked=false; //default false
+					bool foundLocked=false;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -6933,6 +6971,17 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 								xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
 								cn->weightPercentage=0;
 							}
+						}
+						else if(elem4.tagName()=="Permanently_Locked"){
+							if(elem4.text()=="true"){
+								xmlReadingLog+="    Permanently locked\n";
+								cn->permanentlyLocked=true;
+							}
+							else{
+								xmlReadingLog+="    Not permanently locked\n";
+								cn->permanentlyLocked=false;
+							}
+							foundLocked=true;
 						}
 						else if(elem4.tagName()=="Activity_Id"){
 							cn->activityId=elem4.text().toInt();
@@ -6972,6 +7021,27 @@ bool Rules::read(const QString& filename, bool logIntoCurrentDirectory)
 						}
 					}
 					crt_constraint=cn;
+
+					if(!foundLocked && reportUnspecifiedPermanentlyLockedTime){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Found constraint activity preferred starting time, with unspecified tag"
+						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
+						 " by editing the constraint in the 'Data' menu")+"\n\n"
+						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
+						 " activity preferred starting time has"
+						 " a new tag, 'permanently locked' (true or false)."
+						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
+						 " need to be not modifiable from the 'Timetable' menu"
+						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
+						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
+						 " This way, when viewing the timetable"
+						 " and locking/unlocking some activities, you will not unlock the constraints which"
+						 " need to be locked all the time."
+						 ),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportUnspecifiedPermanentlyLockedTime=false;
+					}
 				}
 				else if(elem3.tagName()=="ConstraintActivityEndsStudentsDay"){
 					ConstraintActivityEndsStudentsDay* cn=new ConstraintActivityEndsStudentsDay();
@@ -9159,6 +9229,8 @@ corruptConstraintTime:
 		else if(elem2.tagName()=="Space_Constraints_List"){
 			bool reportRoomNotAvailableChange=true;
 
+			bool reportUnspecifiedPermanentlyLockedSpace=true;
+
 			int nc=0;
 			SpaceConstraint *crt_constraint;
 			for(QDomNode node3=elem2.firstChild(); !node3.isNull(); node3=node3.nextSibling()){
@@ -9827,6 +9899,8 @@ corruptConstraintTime:
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredRoom"){
 					ConstraintActivityPreferredRoom* cn=new ConstraintActivityPreferredRoom();
+					cn->permanentlyLocked=false; //default
+					bool foundLocked=false;
 					for(QDomNode node4=elem3.firstChild(); !node4.isNull(); node4=node4.nextSibling()){
 						QDomElement elem4=node4.toElement();
 						if(elem4.isNull()){
@@ -9855,6 +9929,18 @@ corruptConstraintTime:
 								cn->weightPercentage=0;
 							}
 						}
+						else if(elem4.tagName()=="Permanently_Locked"){
+							if(elem4.text()=="true"){
+								xmlReadingLog+="    Permanently locked\n";
+								cn->permanentlyLocked=true;
+							}
+							else{
+								xmlReadingLog+="    Not permanently locked\n";
+								cn->permanentlyLocked=false;
+							}
+							foundLocked=true;
+						}
+
 						/*if(elem4.tagName()=="Weight"){
 							cn->weight=elem4.text().toDouble();
 							xmlReadingLog+="    Adding weight="+QString::number(cn->weight)+"\n";
@@ -9879,6 +9965,27 @@ corruptConstraintTime:
 						}
 					}
 					crt_constraint=cn;
+
+					if(!foundLocked && reportUnspecifiedPermanentlyLockedSpace){
+						int t=QMessageBox::information(NULL, QObject::tr("FET information"),
+						 QObject::tr("Found constraint activity preferred room, with unspecified tag"
+						 " 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
+						 " by editing the constraint in the 'Data' menu")+"\n\n"
+						 +QObject::tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
+						 " activity preferred room has"
+						 " a new tag, 'permanently locked' (true or false)."
+						 " It is recommended to make the tag 'permanently locked' true for the constraints you"
+						 " need to be not modifiable from the 'Timetable' menu"
+						 " and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
+						 " (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
+						 " This way, when viewing the timetable"
+						 " and locking/unlocking some activities, you will not unlock the constraints which"
+						 " need to be locked all the time."
+						 ),
+						  QObject::tr("Skip rest"), QObject::tr("See next"), QString(), 1, 0 );
+						if(t==0)
+							reportUnspecifiedPermanentlyLockedSpace=false;
+					}
 				}
 				else if(elem3.tagName()=="ConstraintActivityPreferredRooms"){
 					int _n_preferred_rooms=0;

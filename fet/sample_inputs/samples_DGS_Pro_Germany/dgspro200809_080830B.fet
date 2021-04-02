@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.6.3">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>DGS Probsteierhagen</Institution_Name>
 
@@ -7671,16 +7671,19 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>363</Activity_Id>
 	<Room>NaW</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>284</Activity_Id>
 	<Room>SHG</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>305</Activity_Id>
 	<Room>SHG</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintSubjectPreferredRoom>
 	<Weight_Percentage>5</Weight_Percentage>

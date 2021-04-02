@@ -83,11 +83,26 @@
     <property name="title" >
      <string>&amp;Timetable</string>
     </property>
+    <widget class="QMenu" name="menuAdvanced" >
+     <property name="title" >
+      <string>Advanced lock/unlock</string>
+     </property>
+     <addaction name="timetableLockAllActivitiesAction" />
+     <addaction name="timetableUnlockAllActivitiesAction" />
+     <addaction name="separator" />
+     <addaction name="timetableLockActivitiesDayAction" />
+     <addaction name="timetableUnlockActivitiesDayAction" />
+     <addaction name="separator" />
+     <addaction name="timetableLockActivitiesEndStudentsDayAction" />
+     <addaction name="timetableUnlockActivitiesEndStudentsDayAction" />
+    </widget>
     <addaction name="timetableGenerateAction" />
+    <addaction name="separator" />
     <addaction name="timetableViewTeachersAction" />
     <addaction name="timetableViewStudentsAction" />
     <addaction name="timetableViewRoomsAction" />
     <addaction name="timetableShowConflictsAction" />
+    <addaction name="menuAdvanced" />
     <addaction name="separator" />
     <addaction name="timetableSaveTimetableAsAction" />
     <addaction name="separator" />
@@ -1401,6 +1416,36 @@
   <action name="dataTimeConstraints2ActivitiesGroupedAction" >
    <property name="text" >
     <string>2 activities are grouped</string>
+   </property>
+  </action>
+  <action name="timetableLockActivitiesDayAction" >
+   <property name="text" >
+    <string>Lock all activities of a specified day</string>
+   </property>
+  </action>
+  <action name="timetableUnlockActivitiesDayAction" >
+   <property name="text" >
+    <string>Unlock all activities of a specified day</string>
+   </property>
+  </action>
+  <action name="timetableLockActivitiesEndStudentsDayAction" >
+   <property name="text" >
+    <string>Lock all activities which end students day</string>
+   </property>
+  </action>
+  <action name="timetableUnlockActivitiesEndStudentsDayAction" >
+   <property name="text" >
+    <string>Unlock all activities which end students day</string>
+   </property>
+  </action>
+  <action name="timetableLockAllActivitiesAction" >
+   <property name="text" >
+    <string>Lock all activities of the current timetable</string>
+   </property>
+  </action>
+  <action name="timetableUnlockAllActivitiesAction" >
+   <property name="text" >
+    <string>Unlock all activities of the current timetable</string>
    </property>
   </action>
  </widget>

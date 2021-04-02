@@ -25,6 +25,8 @@
 
 #include <QDesktopWidget>
 
+#include "lockunlock.h"
+
 ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoomForm(ConstraintActivityPreferredRoom* ctr)
 {
 	//setWindowFlags(Qt::Window);
@@ -35,10 +37,14 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 	move(xx, yy);*/
 	centerWidgetOnScreen(this);
 	
+	//permTextLabel->setWordWrap(true);
+	
 	this->_ctr=ctr;
 	
 	//compulsoryCheckBox->setChecked(ctr->compulsory);
 	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	
+	permLockedCheckBox->setChecked(this->_ctr->permanentlyLocked);
 
 	updateActivitiesComboBox();
 	updateRoomsComboBox();
@@ -118,8 +124,13 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 //	this->_ctr->compulsory=compulsory;
 	this->_ctr->roomName=room;
 	this->_ctr->activityId=act->id;
+	
+	this->_ctr->permanentlyLocked=permLockedCheckBox->isChecked();
 
 	gt.rules.internalStructureComputed=false;
+	
+	LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+	LockUnlock::increaseCommunicationSpinBox();
 	
 	this->close();
 }

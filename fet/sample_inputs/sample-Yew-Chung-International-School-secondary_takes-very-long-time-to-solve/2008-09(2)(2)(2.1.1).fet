@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Yew Chung Internation School - Secondary</Institution_Name>
 
@@ -18480,11 +18480,13 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1096</Activity_Id>
 	<Room>Roof</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintActivityPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1097</Activity_Id>
 	<Room>Roof</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 </Space_Constraints_List>
 

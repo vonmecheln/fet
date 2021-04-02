@@ -258,6 +258,8 @@ The XML tag used for identification of the output file
 */
 const QString TEACHERS_TIMETABLE_TAG="Teachers_Timetable";
 
+const QString ACTIVITIES_TIMETABLE_TAG="Activities_Timetable";
+
 /**
 The XML tag used for identification of the output file
 "Rooms's Timetable"
@@ -296,11 +298,12 @@ because the functions add a FILE_SEP sign at the end of it
 and then the name of a file. If you make OUTPUT_DIR="",
 there will be problems.
 */
-#ifdef Q_OS_WIN
+extern const QString OUTPUT_DIR;
+/*#ifdef Q_OS_WIN
 const QString OUTPUT_DIR="results";
 #else
 const QString OUTPUT_DIR=QDir::homeDirPath()+"/fet-results";
-#endif
+#endif*/
 
 /**
 An output file containing the timetable for each subgroup,
@@ -313,6 +316,8 @@ An output file containing the timetable for each teacher,
 arranged in xml format
 */
 const QString TEACHERS_TIMETABLE_FILENAME_XML="teachers_timetable.xml";
+
+const QString ACTIVITIES_TIMETABLE_FILENAME_XML="activities_timetable.xml";
 
 /**
 An output file containing the timetable for each room,

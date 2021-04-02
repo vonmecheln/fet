@@ -28,8 +28,6 @@ public:
 
 	void teacherChanged(const QString& teacherName);
 
-	void updateTeachersTimetableTable();
-	
 	void detailActivity(int row, int col);
 	
 	void lock(bool lockTime, bool lockSpace);
@@ -37,6 +35,7 @@ public slots:
 	void lockTime();
 	void lockSpace();
 	void lockTimeSpace();
+	void updateTeachersTimetableTable();
 };
 
 #endif

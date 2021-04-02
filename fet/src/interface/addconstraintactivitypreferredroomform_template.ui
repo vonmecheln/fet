@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>665</width>
-            <height>370</height>
+            <width>648</width>
+            <height>497</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,15 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QPushButton" row="7" column="1">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="4" column="0" rowspan="1" colspan="2">
+        <widget class="QComboBox" row="4" column="0">
             <property name="name">
                 <cstring>roomsComboBox</cstring>
             </property>
@@ -49,15 +41,7 @@
                 <cstring>roomsComboBox</cstring>
             </property>
         </widget>
-        <widget class="QPushButton" row="7" column="0">
-            <property name="name">
-                <cstring>addConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Add constraint</string>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QComboBox" row="2" column="0">
             <property name="name">
                 <cstring>activitiesComboBox</cstring>
             </property>
@@ -66,20 +50,6 @@
                     <width>1600</width>
                     <height>32767</height>
                 </size>
-            </property>
-        </widget>
-        <widget class="QLabel" row="5" column="1">
-            <property name="name">
-                <cstring>weightTextLabel</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Plain</enum>
-            </property>
-            <property name="text">
-                <string>Weight percentage (recommended: 0.0%-100.0%)</string>
             </property>
         </widget>
         <widget class="QLabel" row="3" column="0">
@@ -99,15 +69,7 @@
                 <cstring>roomsComboBox</cstring>
             </property>
         </widget>
-        <widget class="QLineEdit" row="6" column="1">
-            <property name="name">
-                <cstring>weightLineEdit</cstring>
-            </property>
-            <property name="text">
-                <string>100</string>
-            </property>
-        </widget>
-        <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QGroupBox" row="0" column="0">
             <property name="name">
                 <cstring>periodGroupBox_2</cstring>
             </property>
@@ -172,6 +134,104 @@
                 </widget>
             </grid>
         </widget>
+        <widget class="QLineEdit" row="6" column="0">
+            <property name="name">
+                <cstring>weightLineEdit</cstring>
+            </property>
+            <property name="text">
+                <string>100</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="5" column="0">
+            <property name="name">
+                <cstring>weightTextLabel</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>Weight percentage (recommended: 0.0%-100.0%)</string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="10" column="0">
+            <property name="name">
+                <cstring>layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>addConstraintPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add constraint</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>closePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLabel" row="9" column="0">
+            <property name="name">
+                <cstring>permTextLabel</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>1</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>Select this if you want this constraint not to be unlockable from the
+'Timetable' menu (recommended). You can always remove this
+constraint from the constraints dialogs or uncheck "permanently
+locked" checkbox by editing this constraint</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QCheckBox" row="8" column="0">
+            <property name="name">
+                <cstring>permLockedCheckBox</cstring>
+            </property>
+            <property name="text">
+                <string>Permanently locked</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <spacer row="7" column="0">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>41</height>
+                </size>
+            </property>
+        </spacer>
     </grid>
 </widget>
 <connections>
@@ -220,6 +280,7 @@
     <tabstop>activitiesComboBox</tabstop>
     <tabstop>roomsComboBox</tabstop>
     <tabstop>weightLineEdit</tabstop>
+    <tabstop>permLockedCheckBox</tabstop>
     <tabstop>addConstraintPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>

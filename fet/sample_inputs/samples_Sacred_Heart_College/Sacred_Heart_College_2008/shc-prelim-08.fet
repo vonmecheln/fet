@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Sacred Heart College</Institution_Name>
 
@@ -10953,6 +10953,7 @@
 	<Activity_Id>72115</Activity_Id>
 	<Preferred_Day>E</Preferred_Day>
 	<Preferred_Hour>08:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesSameStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -11529,12 +11530,14 @@
 	<Activity_Id>1</Activity_Id>
 	<Preferred_Day>B</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>72114</Activity_Id>
 	<Preferred_Day>D</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -11694,6 +11697,7 @@
 	<Activity_Id>42121</Activity_Id>
 	<Preferred_Day>A</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesSameStartingDay>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -12159,6 +12163,7 @@
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>46081</Activity_Id>
 	<Room>Physics Lab</Room>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredRoom>
 <ConstraintSubjectActivityTagPreferredRoom>
 	<Weight_Percentage>100</Weight_Percentage>

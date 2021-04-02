@@ -21,11 +21,7 @@
 // Code contributed by Volker Dirr ( http://www.timetabling.de/ )
 // Many thanks to Liviu Lalescu. He told me some speed optimizations.
 
-//TODO: check if all integer values exported like this: tosExport<<qPrintable(QString::number(actiNext->duration))
-//TODO: check if all strings are protected
-
 #include "timetable_defs.h"		//needed, because of QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
-//#include "timetable.h"		//needed?
 #include "statisticsexport.h"
 
 #include <QMessageBox>
@@ -83,7 +79,7 @@ void StatisticsExport::exportStatistics(){
 	PREFIX_STATISTICS=DIRECTORY_STATISTICS+FILE_SEP;
 	
 	int ok=QMessageBox::question(NULL, QObject::tr("FET Question"),
-		 StatisticsExport::tr("Do you want to export detailed statistic files into directory %1 as html files?").arg(DIRECTORY_STATISTICS), QMessageBox::Yes | QMessageBox::No);
+		 StatisticsExport::tr("Do you want to export detailed statistic files into directory %1 as html files?").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)), QMessageBox::Yes | QMessageBox::No);
 	if(ok==QMessageBox::No)
 		return;
 
@@ -248,7 +244,7 @@ void StatisticsExport::exportStatistics(){
 
 	if(ok){
 		QMessageBox::information(NULL, QObject::tr("FET Information"),
-		 StatisticsExport::tr("Statistic files were exported to directory %1 as html files.").arg(DIRECTORY_STATISTICS));
+		 StatisticsExport::tr("Statistic files were exported to directory %1 as html files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
 	} else {
 		QMessageBox::critical(NULL, QObject::tr("FET critical"),
 		 StatisticsExport::tr("Statistic export incomplete")+"\n");
@@ -566,9 +562,9 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 					else
 						tos<<"<td>";
 					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\" onmouseover=\"highlight('duration_"<<qPrintable(QString::number(act->totalDuration))<<"')\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						default: tos<<qPrintable(QString::number(act->totalDuration)); break;
+						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						default: tos<<QString::number(act->totalDuration); break;
 					}
 					tos<<"</td>";	
 				}
@@ -600,9 +596,9 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 			}
 		}
 		tos<<"          <th>";
-		tos<<qPrintable(QString::number(subjectsTotalNumberOfHours.value(subjects)));
+		tos<<QString::number(subjectsTotalNumberOfHours.value(subjects));
 		if(subjectsTotalNumberOfHours.value(subjects)!=subjectsTotalNumberOfHours4.value(subjects))
-			tos<<"<br />("<<qPrintable(QString::number(subjectsTotalNumberOfHours4.value(subjects)))<<")";
+			tos<<"<br />("<<QString::number(subjectsTotalNumberOfHours4.value(subjects))<<")";
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
@@ -613,9 +609,9 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QString saveTime){
 		tos<<"          <th>";
 	tos<<protect2(tr("Sum"))<<"</th>\n";
 	foreach(QString teachers, allTeachersNames){
-		tos<<"          <th>"<<qPrintable(QString::number(teachersTotalNumberOfHours.value(teachers)));
+		tos<<"          <th>"<<QString::number(teachersTotalNumberOfHours.value(teachers));
 		if(teachersTotalNumberOfHours.value(teachers)!=teachersTotalNumberOfHours2.value(teachers))
-			tos<<"<br />("<<qPrintable(QString::number(teachersTotalNumberOfHours2.value(teachers)))<<")";
+			tos<<"<br />("<<QString::number(teachersTotalNumberOfHours2.value(teachers))<<")";
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
@@ -747,9 +743,9 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 					else
 						tos<<"<td>";
 					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\" onmouseover=\"highlight('duration_"<<qPrintable(QString::number(act->totalDuration))<<"')\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						default: tos<<qPrintable(QString::number(act->totalDuration)); break;
+						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						default: tos<<QString::number(act->totalDuration); break;
 					}
 					tos<<"</td>";	
 				}
@@ -781,9 +777,9 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 			}
 		}
 		tos<<"          <th>";
-		tos<<qPrintable(QString::number(teachersTotalNumberOfHours.value(teachers)));
+		tos<<QString::number(teachersTotalNumberOfHours.value(teachers));
 		if(teachersTotalNumberOfHours.value(teachers)!=teachersTotalNumberOfHours2.value(teachers))
-			tos<<"<br />("<<qPrintable(QString::number(teachersTotalNumberOfHours2.value(teachers)))<<")";
+			tos<<"<br />("<<QString::number(teachersTotalNumberOfHours2.value(teachers))<<")";
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
@@ -794,9 +790,9 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QString saveTime){
 		tos<<"          <th>";
 	tos<<protect2(tr("Sum"))<<"</th>\n";
 	foreach(QString subjects, allSubjectsNames){
-		tos<<"          <th>"<<qPrintable(QString::number(subjectsTotalNumberOfHours.value(subjects)));
+		tos<<"          <th>"<<QString::number(subjectsTotalNumberOfHours.value(subjects));
 		if(subjectsTotalNumberOfHours.value(subjects)!=subjectsTotalNumberOfHours4.value(subjects))
-			tos<<"<br />("<<qPrintable(QString::number(subjectsTotalNumberOfHours4.value(subjects)))<<")";
+			tos<<"<br />("<<QString::number(subjectsTotalNumberOfHours4.value(subjects))<<")";
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
@@ -930,9 +926,9 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 					else
 						tos<<"<td>";
 					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\" onmouseover=\"highlight('duration_"<<qPrintable(QString::number(act->totalDuration))<<"')\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						default: tos<<qPrintable(QString::number(act->totalDuration)); break;
+						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						default: tos<<QString::number(act->totalDuration); break;
 					}
 					tos<<"</td>";	
 				}
@@ -969,9 +965,9 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 			}
 		}
 		tos<<"          <th>";
-		tos<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)));
+		tos<<QString::number(studentsTotalNumberOfHours.value(students));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
-			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours2.value(students)))<<")";
+			tos<<"<br />("<<QString::number(studentsTotalNumberOfHours2.value(students))<<")";
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
@@ -982,9 +978,9 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QString saveTime){
 		tos<<"          <th>";
 	tos<<protect2(tr("Sum"))<<"</th>\n";
 	foreach(QString teachers, allTeachersNames){
-		tos<<"          <th>"<<qPrintable(QString::number(teachersTotalNumberOfHours.value(teachers)));
+		tos<<"          <th>"<<QString::number(teachersTotalNumberOfHours.value(teachers));
 		if(teachersTotalNumberOfHours.value(teachers)!=teachersTotalNumberOfHours2.value(teachers))
-			tos<<"<br />("<<qPrintable(QString::number(teachersTotalNumberOfHours2.value(teachers)))<<")";
+			tos<<"<br />("<<QString::number(teachersTotalNumberOfHours2.value(teachers))<<")";
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
@@ -1118,9 +1114,9 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 					else
 						tos<<"<td>";
 					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\" onmouseover=\"highlight('duration_"<<qPrintable(QString::number(act->totalDuration))<<"')\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						default: tos<<qPrintable(QString::number(act->totalDuration)); break;
+						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						default: tos<<QString::number(act->totalDuration); break;
 					}
 					tos<<"</td>";	
 				}
@@ -1157,9 +1153,9 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 			}
 		}
 		tos<<"          <th>";
-		tos<<qPrintable(QString::number(teachersTotalNumberOfHours.value(teachers)));
+		tos<<QString::number(teachersTotalNumberOfHours.value(teachers));
 		if(teachersTotalNumberOfHours.value(teachers)!=teachersTotalNumberOfHours2.value(teachers))
-			tos<<"<br />("<<qPrintable(QString::number(teachersTotalNumberOfHours2.value(teachers)))<<")";
+			tos<<"<br />("<<QString::number(teachersTotalNumberOfHours2.value(teachers))<<")";
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
@@ -1170,9 +1166,9 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QString saveTime){
 		tos<<"          <th>";
 	tos<<protect2(tr("Sum"))<<"</th>\n";
 	foreach(QString students, allStudentsNames){
-		tos<<"          <th>"<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)));
+		tos<<"          <th>"<<QString::number(studentsTotalNumberOfHours.value(students));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
-			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours2.value(students)))<<")";
+			tos<<"<br />("<<QString::number(studentsTotalNumberOfHours2.value(students))<<")";
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
@@ -1304,9 +1300,9 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 					else
 						tos<<"<td>";
 					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\" onmouseover=\"highlight('duration_"<<qPrintable(QString::number(act->totalDuration))<<"')\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						default: tos<<qPrintable(QString::number(act->totalDuration)); break;
+						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						default: tos<<QString::number(act->totalDuration); break;
 					}
 					tos<<"</td>";	
 				}
@@ -1338,9 +1334,9 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 			}
 		}
 		tos<<"          <th>";
-		tos<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)));
+		tos<<QString::number(studentsTotalNumberOfHours.value(students));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
-			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours2.value(students)))<<")";
+			tos<<"<br />("<<QString::number(studentsTotalNumberOfHours2.value(students))<<")";
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
@@ -1351,9 +1347,9 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QString saveTime){
 		tos<<"          <th>";
 	tos<<protect2(tr("Sum"))<<"</th>\n";
 	foreach(QString subjects, allSubjectsNames){
-		tos<<"          <th>"<<qPrintable(QString::number(subjectsTotalNumberOfHours.value(subjects)));
+		tos<<"          <th>"<<QString::number(subjectsTotalNumberOfHours.value(subjects));
 		if(subjectsTotalNumberOfHours.value(subjects)!=subjectsTotalNumberOfHours4.value(subjects))
-			tos<<"<br />("<<qPrintable(QString::number(subjectsTotalNumberOfHours4.value(subjects)))<<")";
+			tos<<"<br />("<<QString::number(subjectsTotalNumberOfHours4.value(subjects))<<")";
 		tos<<"</th>\n";
 	}
 	tos<<"          <th></th>\n        </tr>\n";
@@ -1487,9 +1483,9 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 					else
 						tos<<"<td>";
 					switch(TIMETABLE_HTML_LEVEL){
-						case 4 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						case 5 : tos<<"<span class=\"duration_"<<qPrintable(QString::number(act->totalDuration))<<"\" onmouseover=\"highlight('duration_"<<qPrintable(QString::number(act->totalDuration))<<"')\">"<<qPrintable(QString::number(act->totalDuration))<<"</span>"; break;
-						default: tos<<qPrintable(QString::number(act->totalDuration)); break;
+						case 4 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						case 5 : tos<<"<span class=\"duration_"<<QString::number(act->totalDuration)<<"\" onmouseover=\"highlight('duration_"<<QString::number(act->totalDuration)<<"')\">"<<QString::number(act->totalDuration)<<"</span>"; break;
+						default: tos<<QString::number(act->totalDuration); break;
 					}
 					tos<<"</td>";	
 				}
@@ -1521,9 +1517,9 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 			}
 		}
 		tos<<"          <th>";
-		tos<<qPrintable(QString::number(subjectsTotalNumberOfHours.value(subjects)));
+		tos<<QString::number(subjectsTotalNumberOfHours.value(subjects));
 		if(subjectsTotalNumberOfHours.value(subjects)!=subjectsTotalNumberOfHours4.value(subjects))
-			tos<<"<br />("<<qPrintable(QString::number(subjectsTotalNumberOfHours4.value(subjects)))<<")";
+			tos<<"<br />("<<QString::number(subjectsTotalNumberOfHours4.value(subjects))<<")";
 		tos<<"</th>\n";
 		tos<<"        </tr>\n";
 	}
@@ -1534,9 +1530,9 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QString saveTime){
 		tos<<"          <th>";
 	tos<<protect2(tr("Sum"))<<"</th>\n";
 	foreach(QString students, allStudentsNames){
-		tos<<"          <th>"<<qPrintable(QString::number(studentsTotalNumberOfHours.value(students)));
+		tos<<"          <th>"<<QString::number(studentsTotalNumberOfHours.value(students));
 		if(studentsTotalNumberOfHours.value(students)!=studentsTotalNumberOfHours2.value(students))
-			tos<<"<br />("<<qPrintable(QString::number(studentsTotalNumberOfHours2.value(students)))<<")";
+			tos<<"<br />("<<QString::number(studentsTotalNumberOfHours2.value(students))<<")";
 		tos<<"</th>\n";	
 	}
 	tos<<"          <th></th>\n        </tr>\n";

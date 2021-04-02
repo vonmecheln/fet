@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>german secondary school</Institution_Name>
 
@@ -9316,6 +9316,7 @@ The teachersnames are replaced by other random names.
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>624</Activity_Id>
 	<Preferred_Hour>6</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -9329,6 +9330,7 @@ The teachersnames are replaced by other random names.
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>626</Activity_Id>
 	<Preferred_Hour>6</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -9342,6 +9344,7 @@ The teachersnames are replaced by other random names.
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>628</Activity_Id>
 	<Preferred_Hour>6</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
@@ -9355,11 +9358,13 @@ The teachersnames are replaced by other random names.
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>630</Activity_Id>
 	<Preferred_Hour>6</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>631</Activity_Id>
 	<Preferred_Hour>6</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -9395,6 +9400,7 @@ The teachersnames are replaced by other random names.
 	<Activity_Id>478</Activity_Id>
 	<Preferred_Day>Thursday</Preferred_Day>
 	<Preferred_Hour>5</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>

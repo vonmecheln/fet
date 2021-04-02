@@ -30,8 +30,6 @@ public:
 	void groupChanged(const QString& groupName);
 	void subgroupChanged(const QString& subgroupName);
 
-	void updateStudentsTimetableTable();
-	
 	void detailActivity(int row, int col);
 
 	void lock(bool lockTime, bool lockSpace);	
@@ -39,6 +37,7 @@ public slots:
 	void lockTime();
 	void lockSpace();
 	void lockTimeSpace();
+	void updateStudentsTimetableTable();
 };
 
 #endif

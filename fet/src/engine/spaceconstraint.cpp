@@ -47,6 +47,7 @@ using namespace std;
 //static Rules* crt_rules=NULL;
 
 #define yesNo(x)				((x)==0?"no":"yes")
+#define trueFalse(x)			((x)==0?"false":"true")
 #define yesNoTranslated(x)		((x)==0?QObject::tr("no"):QObject::tr("yes"))
 
 #include "generate_pre.h"
@@ -673,12 +674,13 @@ ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom()
 	this->type=CONSTRAINT_ACTIVITY_PREFERRED_ROOM;
 }
 
-ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom(double wp, int aid, const QString& room)
+ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom(double wp, int aid, const QString& room, bool perm)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_ACTIVITY_PREFERRED_ROOM;
 	this->activityId=aid;
 	this->roomName=room;
+	this->permanentlyLocked=perm;
 }
 
 bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom& c){
@@ -688,6 +690,7 @@ bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom
 		return false;
 	if(this->weightPercentage!=c.weightPercentage)
 		return false;
+	//no need to care about permanently locked
 	return true;
 }
 
@@ -738,6 +741,8 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Id>"+QString::number(this->activityId)+"</Activity_Id>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
+	
+	s+="	<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
 		
 	s+="</ConstraintActivityPreferredRoom>\n";
 
@@ -794,6 +799,9 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
 	s+=", ";
 
 	s+=QObject::tr("R:%1").arg(this->roomName);
+	
+	s+=", ";
+	s+=QObject::tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
 
 	return s;
 }
@@ -850,6 +858,16 @@ QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r){
 	s+="\n";
 	
 	s+=QObject::tr("Room=%1").arg(this->roomName);s+="\n";
+	
+	if(this->permanentlyLocked){
+		s+=QObject::tr("This activity is permanently locked, which means you cannot unlock it from the 'Timetable' menu"
+		" (you can unlock this activity by removing the constraint from the constraints dialog or by setting the 'permanently"
+		" locked' attribute false when editing this constraint)");
+	}
+	else{
+		s+=QObject::tr("This activity is not permanently locked, which means you can unlock it from the 'Timetable' menu");
+	}
+	s+="\n";
 
 	return s;
 }

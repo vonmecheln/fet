@@ -271,10 +271,12 @@ public:
 	int activityId;
 
 	QString roomName;
+	
+	bool permanentlyLocked;
 
 	ConstraintActivityPreferredRoom();
 
-	ConstraintActivityPreferredRoom(double wp, int aid, const QString& room);
+	ConstraintActivityPreferredRoom(double wp, int aid, const QString& room, bool perm);
 	
 	/**
 	Comparison operator - to be sure we do not introduce duplicates

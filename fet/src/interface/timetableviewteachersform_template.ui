@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>757</width>
-            <height>518</height>
+            <width>811</width>
+            <height>521</height>
         </rect>
     </property>
     <property name="caption">
@@ -97,8 +97,8 @@
                 <cstring>lockSpacePushButton</cstring>
             </property>
             <property name="text">
-                <string>Lock selected activities
-(only space)</string>
+                <string>Toggle lock/unlock selected
+activities (only space)</string>
             </property>
         </widget>
         <widget class="QPushButton" row="0" column="2" rowspan="2" colspan="1">
@@ -106,8 +106,8 @@
                 <cstring>lockTimePushButton</cstring>
             </property>
             <property name="text">
-                <string>Lock selected activities
-(only time)</string>
+                <string>Toggle lock/unlock selected
+activities (only time)</string>
             </property>
         </widget>
         <widget class="QPushButton" row="3" column="2">
@@ -115,8 +115,8 @@
                 <cstring>lockTimeSpacePushButton</cstring>
             </property>
             <property name="text">
-                <string>Lock selected activities
-(time&amp;&amp;space)</string>
+                <string>Toggle lock/unlock selected
+activities (time and space)</string>
             </property>
             <property name="accel">
                 <string></string>

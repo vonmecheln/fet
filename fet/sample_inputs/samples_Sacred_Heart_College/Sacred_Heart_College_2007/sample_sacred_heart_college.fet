@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Sacred Heart College</Institution_Name>
 
@@ -17264,12 +17264,14 @@
 	<Activity_Id>1032</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>91</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesNotOverlapping>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -17818,60 +17820,70 @@
 	<Activity_Id>90</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1033</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>03:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1159</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1160</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1164</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1165</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1162</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1163</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1157</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>1158</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivitiesPreferredStartingTimes>
 	<Weight_Percentage>100</Weight_Percentage>
@@ -17910,24 +17922,28 @@
 	<Activity_Id>26</Activity_Id>
 	<Preferred_Day>A1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>27</Activity_Id>
 	<Preferred_Day>A2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>28</Activity_Id>
 	<Preferred_Day>B2</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>29</Activity_Id>
 	<Preferred_Day>B1</Preferred_Day>
 	<Preferred_Hour>01:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintStudentsMaxGapsPerWeek>
 	<Weight_Percentage>100</Weight_Percentage>

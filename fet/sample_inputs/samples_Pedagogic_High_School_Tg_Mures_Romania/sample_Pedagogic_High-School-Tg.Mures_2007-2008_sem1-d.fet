@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Liceul Pedagogic &quot;Mihai Eminescu&quot; Tg Mures</Institution_Name>
 
@@ -13928,12 +13928,14 @@
 	<Activity_Id>721</Activity_Id>
 	<Preferred_Day>Marti</Preferred_Day>
 	<Preferred_Hour>8</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintActivityPreferredStartingTime>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Activity_Id>722</Activity_Id>
 	<Preferred_Day>Miercuri</Preferred_Day>
 	<Preferred_Hour>8</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintStudentsSetNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>

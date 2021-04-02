@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE FET><FET version="5.5.9">
+<!DOCTYPE FET><FET version="5.8.0">
 
 <Institution_Name>Pioneers Boys School</Institution_Name>
 
@@ -16318,6 +16318,7 @@
 	<Activity_Id>1</Activity_Id>
 	<Preferred_Day>Day1</Preferred_Day>
 	<Preferred_Hour>Period 4</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
 </ConstraintActivityPreferredStartingTime>
 <ConstraintMinNDaysBetweenActivities>
 	<Weight_Percentage>95</Weight_Percentage>
