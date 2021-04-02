@@ -56,8 +56,7 @@ Getting - compiling - installing Qt by Nokia:
 	You can get the corresponding version of Qt with your package manager or from http://qt.nokia.com/
 	Qt can be downloaded with LGPL (open source) or commercial license, complete SDK or Framework only. Any variant should work.
 	
-	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get
-	your version of Qt, pre-compiled.
+	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get your version of Qt, pre-compiled.
 	Or you can download, compile and install Qt from http://qt.nokia.com/ .
 	On my OpenSUSE GNU/Linux, which has pre-compiled packages on the internet, I need to install the packages
 	libqt4 and libqt4-devel (libqt4 is installed by default, I think) - to compile+run FET.
@@ -68,16 +67,29 @@ Getting - compiling - installing Qt by Nokia:
 	sudo apt-get build-dep libqt4-dev
 	
 	Windows - Download latest Qt from http://qt.nokia.com/
-	For LGPL MinGW version: get Qt LGPL complete SDK and let Qt install also MinGW, or get Qt LGPL Framework only
+	The following instructions are for the LGPL MinGW version: get Qt LGPL complete SDK and let Qt install also MinGW, or get Qt LGPL Framework only
 	and download and install MinGW from MinGW homepage.
-	Please make sure, after installing Qt and MinGW, that you have in the PATH environmental variable
-	the path to qmake.exe (for 4.6.1 it is: C:\Qt\2010.01\qt\bin) and for mingw (C:\Qt\2010.01\mingw\bin).
-	You may need also to set an environment variable QMAKESPEC = win32-g++
-	You may use the Qt command prompt, in which case you don't need to care about the details above
-	(PATH and QMAKESPEC), but this command prompt may be more difficult to use.
+	If you use the Windows command prompt:
+	Please make sure, after installing Qt and MinGW, that you have in the PATH environment variable
+	the path to qmake.exe (for Qt 4.6.1 SDK it is: C:\Qt\2010.01\qt\bin) and for mingw (C:\Qt\2010.01\mingw\bin).
+	Additionally (if you get a message that the platform or QMAKESPEC is not set), you may need to set an environment variable QMAKESPEC = win32-g++
+	(in this case see also the note below about QMAKESPEC environment variable).
+	If the above is not enough, you may need to add an environment variable QTDIR = C:\Qt\2010.01\qt
+	If this is again not sufficient, you may need to add in the PATH the directory C:\Qt\2010.01\bin (this step is unverified).
+	You may want to use the Qt command prompt, in which case you don't need to care about the details above (PATH, QMAKESPEC and QTDIR).
 	
 	Mac OS X:
-	Maybe you can get pre-compiled packages for Mac. If not, get Qt from http://qt.nokia.com/
+	Maybe you can get pre-compiled Qt packages for Mac. If not, get Qt from http://qt.nokia.com/
+
+	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
+	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
+	something like: linux-g++, macx-g++ or win32-g++ (platform-compiler). You can find all the supported platforms in the directory "mkspecs" of Qt
+	(some usual locations are /usr/share/qt4/mkspecs or /usr/lib/qt4/mkspecs on GNU/Linux or C:\Qt\2010.01\qt\mkspecs on Windows).
+	It seems that Qt automatically finds the platform (there is a default configuration in the "default" subdirectory of the "mkspecs" directory,
+	which is created automatically when you install Qt). If the default configuration is not working or is wrong, you may need to set the
+	correct QMAKESPEC variable for your platform. Under Windows, you can create an environment variable QMAKESPEC equal to win32-g++
+	(if you are using MinGW), under other platforms create an environment variable named QMAKESPEC equal with the correct platform-compiler
+	you are working on (for instance macx-g++ or linux-g++).
 
 
 Compiling FET:

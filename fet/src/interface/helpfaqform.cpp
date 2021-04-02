@@ -37,7 +37,8 @@ HelpFaqForm::HelpFaqForm()
 	
 	s+=tr("FET FAQ:");
 	s+="\n\n";
-	s+=tr("This documentation by Liviu Lalescu, reviewed and modified - 29 January 2010 (new additions are written with date, most are at the end)");
+	s+=tr("This documentation by Liviu Lalescu, reviewed and modified on %1 (new additions are written with date, most are at the end)", "%1 is the date of last modification")
+		.arg(tr("29 January 2010", "Date of modification of FAQ"));
 	s+="\n\n";
 	s+="--------";
 	s+="\n\n";

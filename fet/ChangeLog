@@ -1476,3 +1476,5 @@ Versions 5.12.0 - 5.12.x
 	- Minor interface improvement: since a person reported he accidentally removed the basic constraints, it was added additional user confirmation for this, and more user information.
 	- Corrected a possible compiling crash bug under MinGW (this is not a FET bug, it is a MinGW bug). It was made a hack to overpass this bug.
 	- Improved export of timetable as CSV, by adding the id-s of the activities (suggested by m).
+- Version 5.12.3
+	- Crash bug fix for a rare situation, in which you have constraints (sub)activities preferred starting times or time slots and they refer to no activity (reported by George Miliotis).

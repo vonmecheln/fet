@@ -52,10 +52,10 @@ First of all, you need a version of Qt Linguist.
 
 For GNU/Linux it is available if you type "linguist" (this is part of Qt,
 probably in package libqt4-devel - probably you can install from your package manager,
-or you need to get Qt from qt.nokia.com, the LGPL version).
-For Windows, you will have to download
-the latest Qt from qt.nokia.com, the latest LGPL version,
-preferably the self extracting precompiled version for MinGW.
+or you need to get Qt from http://qt.nokia.com ).
+Note for Ubuntu GNU/Linux: a translator reported that Qt Linguist may be found in
+the package qt4-dev-tools .
+For Windows, you will have to download the latest Qt from http://qt.nokia.com .
 
 fet_**.ts: You will have to open this file using Qt
 Linguist. The most useful keys are: Ctrl+Enter (activates current translation

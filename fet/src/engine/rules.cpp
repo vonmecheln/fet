@@ -561,7 +561,6 @@ bool Rules::computeInternalStructure()
 		if(toSkipTime[tctrindex])
 			continue;
 		
-		//if the activities which refer to this constraints are not active
 		if(!tctr->computeInternalStructure(*this)){
 			//assert(0);
 			ok=false;
@@ -573,7 +572,9 @@ bool Rules::computeInternalStructure()
 	progress.setValue(timeConstraintsList.size());
 
 	this->nInternalTimeConstraints=tctri;
-	assert(_c==nInternalTimeConstraints);
+	cout<<_c<<" time constraints after first pass (after removing inactive ones)"<<endl;
+	cout<<"  "<<this->nInternalTimeConstraints<<" time constraints after second pass (after removing wrong ones)"<<endl;
+	assert(_c>=this->nInternalTimeConstraints); //because some constraints may have toSkipTime false, but computeInternalStructure also false
 	assert(this->nInternalTimeConstraints<=MAX_TIME_CONSTRAINTS);
 	
 	//space constraints
@@ -646,7 +647,9 @@ bool Rules::computeInternalStructure()
 	progress.setValue(spaceConstraintsList.size());
 
 	this->nInternalSpaceConstraints=sctri;
-	assert(_c==this->nInternalSpaceConstraints);
+	cout<<_c<<" space constraints after first pass (after removing inactive ones)"<<endl;
+	cout<<"  "<<this->nInternalSpaceConstraints<<" space constraints after second pass (after removing wrong ones)"<<endl;
+	assert(_c>=this->nInternalSpaceConstraints); //because some constraints may have toSkipSpace false, but computeInternalStructure also false
 	assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
 
 	//done.

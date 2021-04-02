@@ -1,1 +1,3 @@
-please see file fet-x.x.x/src/engine/generate.cpp
+Please see file fet-x.x.x/src/engine/generate.cpp from the sources package of FET.
+
+You can download the FET sources from the FET homepage, http://lalescu.ro/liviu/fet/

@@ -1454,3 +1454,50 @@ instead of the individual venues.
 Now that I think again I doubt if it will be possible, because FET has to make a distiction between
 general activity tags and "room" activity tags as the room activity tags must also appear in the rooms
 list so that it can be selected. How will FET know this.
+
+44---------------------------------------------------------
+From Volker Dirr:
+
+an other usefull feature is:
+modifing in settings the default min n day constraint (for add activity).
+
+because we nearly always use 100%, not 95%.
+
+modifing later all to 100% isn't the best, because there are a few
+activities with min n day = 0%.
+
+45---------------------------------------------------------
+From Volker Dirr:
+
+i saw there is a small problem in our new timetable this year. (but we
+have luck. it is very easy to fix without regenerating.)
+but i currently think about to avoid this bug next time.
+
+like you know we use teacher rooms and some teachers need to share a room.
+and of course some special rooms like gym, physics, ...
+
+the bug was this:
+the timetable maker add 2 more team teaching activities. (so 2 teachers in
+a single activity).
+but he forgot that the home room constraint doesn't "work" to that
+activities.
+
+if you check the timetable, then it look nice, because nearly all
+activities have room. just 2 haven't. that is hard to see manualy.
+
+so my idea is this:
+
+add in the settings an option with:
+"check if each activity has a room".
+
+if that is checked, then you will get before (or maybe after) generating a
+warning with all activities that will (or might) not get a room.
+
+what do you thing about that?
+i think it is not to difficult to write and it is good/needed to all
+schools that set rooms to every activity.
+
+Answer Liviu:
+1) a trick to check that: lock the timetable. Check all space constraints, filter
+for activity preferred room, 100%. The number of constraints should be = with the number of activities.
+2) a better trick, to get each activity without room: check activities.xml for <Room></Room>
