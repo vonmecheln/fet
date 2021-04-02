@@ -567,7 +567,9 @@ void AddActivityForm::addActivity()
 			/*parities,*/ active, minD, percentageSpinBox->value(), forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
-			QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Split activity added"));
+			QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Split activity added."
+			 " Please note that FET currently cannot check for duplicates when adding split activities"
+			 ". It is advisable to check the statistics after adding all the activities"));
 		else
 			QMessageBox::critical(this, QObject::tr("FET information"), QObject::tr("Split activity NOT added - error???"));
 	}

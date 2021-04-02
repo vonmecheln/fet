@@ -506,7 +506,7 @@ int main(int argc, char **argv){
 	 "space allocation implemented yet. I hope to implement that in the near future "
 	 "Also the space constraints are let in the old format.\n\n"
 	 "Please keep backups of your input files. "
-	 "Please excuse eventual bugs, this is a new not thoroughly tested version "
+	 "Please excuse eventual bugs, this is a new not thoroughly tested version. "
 	 "Please report bugs to the author, they will be corrected"));
 	
 	pqapplication=&qapplication;

@@ -448,12 +448,12 @@ void TimetableAllocateHoursForm::simulationFinished()
 
 	QMessageBox::information(this, QObject::tr("FET information"),
 		QObject::tr("Allocation terminated successfully, remaining %1 weighted"
-		"\nconflicts from constraints with weight percentage lower than 100%"
-		"\n(see menu Timetable/Show conflicts (time) or the text file in"
-		"\nthe output directory for details)"
-		"\nSimulation results should be now written. You may check now Timetable/View"
-		"\nThe results are also saved in the directory %2 in"
-		"\nhtml and xml mode and the conflicts in txt mode").arg(c.conflictsTotal).arg(OUTPUT_DIR));
+		" conflicts from constraints with weight percentage lower than 100%"
+		" (see menu Timetable/Show conflicts (time) or the text file in"
+		" the output directory for details)."
+		"\nSimulation results should be now written. You may check now Timetable/View."
+		" The results are also saved in the directory %2 in"
+		" html and xml mode and the conflicts in txt mode").arg(c.conflictsTotal).arg(OUTPUT_DIR));
 
 	simulation_running=false;
 
@@ -554,9 +554,9 @@ void TimetableAllocateHoursForm::write(){
 	mutex.unlock();
 
 	QMessageBox::information(this, QObject::tr("FET information"),
-		QObject::tr("Simulation results should be now written. You may check now Timetable/View"
-		"\nThe results are also saved in the directory %1 in html and xml mode"
-		"\n and the conflicts in txt mode").arg(OUTPUT_DIR));
+		QObject::tr("Simulation results should be now written. You may check now Timetable/View. "
+		"The results are also saved in the directory %1 in html and xml mode"
+		" and the conflicts in txt mode").arg(OUTPUT_DIR));
 }
 
 void TimetableAllocateHoursForm::closePressed()

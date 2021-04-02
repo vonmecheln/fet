@@ -863,3 +863,5 @@ Versions 5.0.0 -
 	- Improvements in add/modify constraints not overlapping, same starting hour/time,
 	min n days between activities (suggested by Constantin Romulus).
 	- Bug fix - when pressing Esc in the allocation of hours.
+- Version 5.0.0-preview18
+	- Very small improvements.
