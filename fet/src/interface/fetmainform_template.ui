@@ -325,10 +325,10 @@
   </action>
   <action name="timetableGenerateAction" >
    <property name="text" >
-    <string>&amp;Generate</string>
+    <string>&amp;Generate new</string>
    </property>
    <property name="iconText" >
-    <string>Generate</string>
+    <string>Generate new</string>
    </property>
   </action>
   <action name="timetableViewStudentsAction" >
@@ -349,7 +349,7 @@
   </action>
   <action name="timetableShowConflictsAction" >
    <property name="text" >
-    <string>Show conflicts</string>
+    <string>Show soft conflicts</string>
    </property>
    <property name="iconText" >
     <string>Show conflicts (time)</string>
@@ -843,7 +843,10 @@
   </action>
   <action name="timetableGenerateMultipleAction" >
    <property name="text" >
-    <string>Generate &amp;multiple (on hard disk)</string>
+    <string>Generate &amp;multiple variants</string>
+   </property>
+   <property name="iconText" >
+    <string>Generate multiple variants</string>
    </property>
   </action>
   <action name="dataTimeConstraints2ActivitiesConsecutiveAction" >

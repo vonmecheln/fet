@@ -4313,21 +4313,6 @@ lower it as you find new timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="328"/>
-        <source>&amp;Generate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="331"/>
-        <source>Generate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="352"/>
-        <source>Show conflicts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/fetmainform_template.ui" line="769"/>
         <source>&amp;mk (Macedonian)</source>
         <translation type="unfinished"></translation>
@@ -4398,13 +4383,33 @@ lower it as you find new timetables.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="846"/>
-        <source>Generate &amp;multiple (on hard disk)</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="854"/>
+        <source>2 activities consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/fetmainform_template.ui" line="851"/>
-        <source>2 activities consecutive</source>
+        <location filename="../src/interface/fetmainform_template.ui" line="352"/>
+        <source>Show soft conflicts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="328"/>
+        <source>&amp;Generate new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="331"/>
+        <source>Generate new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="846"/>
+        <source>Generate &amp;multiple variants</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/fetmainform_template.ui" line="849"/>
+        <source>Generate multiple variants</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4422,7 +4427,7 @@ lower it as you find new timetables.</source>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="106"/>
-        <source>Timetable has %1 conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds</source>
+        <source>Timetable has %1 soft conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5004,7 +5009,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.5 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.2.6 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -10699,68 +10704,73 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
 <context>
     <name>TimetableExport</name>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="283"/>
+        <location filename="../src/engine/timetableexport.cpp" line="294"/>
         <source>Conflicts of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1666"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1677"/>
         <source>Warning! Only %1 out of %2 activities placed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="286"/>
+        <location filename="../src/engine/timetableexport.cpp" line="296"/>
         <source>Generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="292"/>
+        <location filename="../src/engine/timetableexport.cpp" line="302"/>
         <source>End of file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="459"/>
+        <location filename="../src/engine/timetableexport.cpp" line="470"/>
         <source>CSS Stylesheet of %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="462"/>
+        <location filename="../src/engine/timetableexport.cpp" line="473"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="464"/>
+        <location filename="../src/engine/timetableexport.cpp" line="475"/>
         <source>To do a page-break only after every second timetable, cut line %1 and paste it into line %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1461"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1472"/>
         <source>Table of content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="638"/>
+        <location filename="../src/engine/timetableexport.cpp" line="649"/>
         <source>Year</source>
         <translation type="unfinished">Година</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="641"/>
+        <location filename="../src/engine/timetableexport.cpp" line="652"/>
         <source>Group</source>
         <translation type="unfinished">Група</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1685"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1696"/>
         <source>Timetable generated with FET %1 on %2</source>
         <translation type="unfinished">Распоредот е генериран со FET %1 на %2</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1531"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1542"/>
         <source>back to the top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="1669"/>
+        <location filename="../src/engine/timetableexport.cpp" line="1680"/>
         <source>No rooms recorded in fet for %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/timetableexport.cpp" line="284"/>
+        <source>Soft conflicts of %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10777,7 +10787,7 @@ home rooms are not needed (teachers&apos; or students&apos; rooms)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="517"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="519"/>
         <source>FET information</source>
         <translation type="unfinished">FET информации</translation>
     </message>
@@ -10803,7 +10813,7 @@ For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="508"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="510"/>
         <source>Conflicts listing (in decreasing order):
 </source>
         <translation type="unfinished"></translation>
@@ -10892,12 +10902,6 @@ For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="436"/>
-        <source>Allocation terminated successfully, remaining %1 weighted conflicts from constraints with weight percentage lower than 100% (see menu Timetable/Show conflicts (time) or the text file in the output directory for details).
-Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %2 in html and xml mode and the conflicts in txt mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/timetablegenerateform.cpp" line="453"/>
         <source>%1 out of %2 activities placed</source>
         <translation type="unfinished"></translation>
@@ -10923,17 +10927,17 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="472"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="481"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="475"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="484"/>
         <source>Usually, there is no need to stop and restart the search, even if the algorithm seems stucked. Please report to author contrary cases</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="478"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="487"/>
         <source>It is recommended to strengthen the constraints step by step (for intance min n days or teachers max gaps), as you obtain feasible timetables.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10943,18 +10947,31 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="519"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="521"/>
         <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="470"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="479"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="481"/>
-        <source>For very difficult timetables, the time of generation might be larger. I am not sure if stop+restart might help sometimes for such timetables</source>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="420"/>
+        <source>Soft conflicts listing (in decreasing order):
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="436"/>
+        <source>Allocation terminated successfully, remaining %1 weighted soft conflicts from constraints with weight percentage lower than 100% (see menu Timetable/Show soft conflicts or the text file in the output directory for details).
+
+Simulation results should be now written. You may check now Timetable/View. The results are also saved in the directory %2 in html and xml mode and the soft conflicts in txt mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="489"/>
+        <source>FET help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10966,115 +10983,120 @@ Simulation results should be now written. You may check now Timetable/View. The 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="46"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="74"/>
         <source>Close</source>
         <translation type="unfinished">Затвори</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="81"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="33"/>
         <source>Current stage:</source>
         <translation type="unfinished">Сегашна состојба:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="57"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="114"/>
         <source>Stop and see impossible activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="65"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="103"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform_template.ui" line="36"/>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="85"/>
         <source>Write (save, update) the results on hard disk, without 
 stopping the simulation. You can see the partial 
 timetable on the hard disk, in xml and html formats.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegenerateform_template.ui" line="95"/>
+        <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="312"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="313"/>
         <source>FET information</source>
         <translation type="unfinished">FET информации</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="188"/>
         <source>FET warning</source>
         <translation type="unfinished">FET предупредување</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="187"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="188"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="194"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="195"/>
         <source>You have entered simulation with uninitialized rules or 0 activities...aborting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="206"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="207"/>
         <source>Cannot optimize - please modify your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="211"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="212"/>
         <source>Your data cannot be processed - please modify it as instructed
 For more information you can join the mailing list or write to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="230"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="231"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="249"/>
-        <source>Conflicts listing (in decreasing order):
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="263"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="264"/>
         <source>Simulation stopped but the simulation is not running. This should not happen. Maybe you aborted simulation previously. Please report possible bug to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="274"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="275"/>
         <source>Simulation interrupted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="281"/>
-        <source>The results for the generated timetables are saved in the directory %1 in html and xml mode and the conflicts in txt mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="302"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="303"/>
         <source>Simulation finished but the simulation is not running. This should not happen. Maybe you aborted simulation previously. Please report possible bug to author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="314"/>
-        <source>Simulation terminated successfully. The results are saved in directory %1 in html and xml mode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="180"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="181"/>
         <source>Cannot proceeed, directory %1 exists and might not be empty, (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="336"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="337"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="165"/>
-        <source>Notice: you can only see generated timetables on the hard disk, in html or xml format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding.
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="250"/>
+        <source>Soft conflicts listing (in decreasing order):
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="282"/>
+        <source>The results for the generated timetables are saved in the directory %1 in html and xml mode and the soft conflicts in txt mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="315"/>
+        <source>Simulation terminated successfully. The results are saved in directory %1 in html and xml mode and the soft conflicts in txt mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="166"/>
+        <source>Notice: you can only see generated timetables on the hard disk, in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu. It is needed that the directory %1 to be emptied+deleted before proceeeding.
 
 Please note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
         <translation type="unfinished"></translation>
@@ -11088,37 +11110,37 @@ Please note that, for large data, each timetable might occupy more megabytes of 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="31"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="27"/>
         <source>Time limit for each timetable (minutes)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="66"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="54"/>
         <source>Number of timetables</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="101"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="81"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="120"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="92"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="136"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="100"/>
         <source>Close</source>
         <translation type="unfinished">Затвори</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="152"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="108"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="168"/>
+        <location filename="../src/interface/timetablegeneratemultipleform_template.ui" line="116"/>
         <source>Current timetable: 0 out of 0 activities placed</source>
         <translation type="unfinished"></translation>
     </message>

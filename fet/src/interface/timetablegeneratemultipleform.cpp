@@ -102,7 +102,7 @@ void GenerateMultipleThread::run()
 			QString tmp;
 			genMulti.c.fitness(gt.rules, &tmp);
 			
-			s=tr("Timetable has %1 conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds")
+			s=tr("Timetable has %1 soft conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds")
 			 .arg(genMulti.c.conflictsTotal)
 			 .arg(hours)
 			 .arg(minutes)
@@ -158,7 +158,8 @@ void TimetableGenerateMultipleForm::help()
 	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
 
 	QMessageBox::information(this, tr("FET information"), tr("Notice: you can only see generated timetables on the hard disk,"
-	 " in html or xml format, or latest timetable in the FET Timetable/View menu. It is needed that the directory"
+	 " in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu."
+	 " It is needed that the directory"
 	 " %1 to be emptied+deleted before proceeeding.\n\nPlease note that, for large data, each timetable might occupy more"
 	 " megabytes of hard disk space,"
 	 " so make sure you have enough space (you can check the dimension of a single timetable as a precaution).")
@@ -243,10 +244,10 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 
 	//update the string representing the conflicts
 	conflictsString = "";
-	conflictsString+="Total conflicts: ";
+	conflictsString+="Total soft conflicts: ";
 	conflictsString+=QString::number(best_solution.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += tr("Conflicts listing (in decreasing order):\n");
+	conflictsString += tr("Soft conflicts listing (in decreasing order):\n");
 
 	foreach(QString t, best_solution.conflictsDescriptionList)
 		conflictsString+=t+"\n";
@@ -278,7 +279,7 @@ void TimetableGenerateMultipleForm::stop()
 	QString destDir=OUTPUT_DIR+FILE_SEP+s2;
 
 	s+=TimetableGenerateMultipleForm::tr("The results for the generated timetables are saved in the directory %1 in html and xml mode"
-	 " and the conflicts in txt mode").arg(destDir);
+	 " and the soft conflicts in txt mode").arg(destDir);
 	 
 	QMessageBox::information(this, tr("FET information"), s);
 
@@ -311,7 +312,7 @@ void TimetableGenerateMultipleForm::simulationFinished()
 
 	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
 		TimetableGenerateMultipleForm::tr("Simulation terminated successfully. The results are saved in directory %1 in html"
-		" and xml mode.").arg(destDir));
+		" and xml mode and the soft conflicts in txt mode.").arg(destDir));
 
 	simulation_running_multi=false;
 

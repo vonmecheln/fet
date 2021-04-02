@@ -15,7 +15,7 @@
     <property name="caption">
         <string>Automatically generate</string>
     </property>
-    <grid>
+    <vbox>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
@@ -25,55 +25,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>writeResultsPushButton</cstring>
-            </property>
-            <property name="enabled">
-                <bool>false</bool>
-            </property>
-            <property name="text">
-                <string>Write (save, update) the results on hard disk, without 
-stopping the simulation. You can see the partial 
-timetable on the hard disk, in xml and html formats.</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="4" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>closePushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Close</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="2">
-            <property name="name">
-                <cstring>stopPushButton</cstring>
-            </property>
-            <property name="enabled">
-                <bool>false</bool>
-            </property>
-            <property name="text">
-                <string>Stop and see impossible activities</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>startPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Start</string>
-            </property>
-        </widget>
-        <widget class="QTextEdit" row="1" column="0" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>currentResultsTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0">
+        <widget class="QLabel">
             <property name="name">
                 <cstring>textLabel1</cstring>
             </property>
@@ -81,7 +33,90 @@ timetable on the hard disk, in xml and html formats.</string>
                 <string>Current stage:</string>
             </property>
         </widget>
-    </grid>
+        <widget class="QTextEdit">
+            <property name="name">
+                <cstring>currentResultsTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <spacer>
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>120</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout1</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton" row="2" column="1">
+                    <property name="name">
+                        <cstring>closePushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Close</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>writeResultsPushButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Write (save, update) the results on hard disk, without 
+stopping the simulation. You can see the partial 
+timetable on the hard disk, in xml and html formats.</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="2" column="0">
+                    <property name="name">
+                        <cstring>helpPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Help</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="0" column="0">
+                    <property name="name">
+                        <cstring>startPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Start</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="0" column="1">
+                    <property name="name">
+                        <cstring>stopPushButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Stop and see impossible activities</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </vbox>
 </widget>
 <connections>
     <connection>
@@ -108,12 +143,19 @@ timetable on the hard disk, in xml and html formats.</string>
         <receiver>TimetableGenerateForm_template</receiver>
         <slot>closePressed()</slot>
     </connection>
+    <connection>
+        <sender>helpPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TimetableGenerateForm_template</receiver>
+        <slot>help()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>currentResultsTextEdit</tabstop>
     <tabstop>startPushButton</tabstop>
     <tabstop>stopPushButton</tabstop>
     <tabstop>writeResultsPushButton</tabstop>
+    <tabstop>helpPushButton</tabstop>
     <tabstop>closePushButton</tabstop>
 </tabstops>
 <slots>
@@ -126,6 +168,7 @@ timetable on the hard disk, in xml and html formats.</string>
     <slot>initializeRandomly()</slot>
     <slot>initializeUnallocated()</slot>
     <slot>closePressed()</slot>
+    <slot>help()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

@@ -429,7 +429,7 @@ const QString XML_PARSING_LOG_FILENAME="xmlreadinglog.txt";
 /**
 A file containing the time conflicts
 */
-const QString CONFLICTS_FILENAME="conflicts.txt";
+const QString CONFLICTS_FILENAME="soft_conflicts.txt";
 
 
 /**

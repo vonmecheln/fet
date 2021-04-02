@@ -984,4 +984,7 @@ Versions 5.2.0 - 5.2.
 	- Small interface improvement (now the add activity dialog has default show subgroups unchecked)
 - Version 5.2.5
 	- Small instructions improvements
+- Version 5.2.6
+	- Minor interface improvements (the conflicts are now named soft conflicts, as they should)
+	- Small speed improvement, by changing the timetable generate dialog
 	

@@ -279,17 +279,28 @@ void TimetableExport::writeConflictsTxt(const QString& filename, QString saveTim
 	//tos.setCodec("UTF-8");
 	//tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
+	
+	if(placedActivities==gt.rules.nInternalActivities){
+		tos<<TimetableExport::tr("Soft conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
-	tos<<TimetableExport::tr("Conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
-	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"Total soft conflicts: "<<best_solution.conflictsTotal<<endl<<endl;
+		tos<<"Soft conflicts list (in decreasing order):"<<endl<<endl;
+		foreach(QString t, best_solution.conflictsDescriptionList)
+			tos<<t<<endl;
+		tos<<endl<<TimetableExport::tr("End of file.");
+	}
+	else{
+		tos<<TimetableExport::tr("Conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
 		tos<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
-	tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
+		tos<<TimetableExport::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
 
-	tos<<"Total conflicts: "<<best_solution.conflictsTotal<<endl<<endl;
-	tos<<"Conflicts list (in decreasing order):"<<endl<<endl;
-	foreach(QString t, best_solution.conflictsDescriptionList)
-		tos<<t<<endl;
-	tos<<endl<<TimetableExport::tr("End of file.");
+		tos<<"Total conflicts: "<<best_solution.conflictsTotal<<endl<<endl;
+		tos<<"Conflicts list (in decreasing order):"<<endl<<endl;
+		foreach(QString t, best_solution.conflictsDescriptionList)
+			tos<<t<<endl;
+		tos<<endl<<TimetableExport::tr("End of file.");
+	}
 	file.close();
 }
 

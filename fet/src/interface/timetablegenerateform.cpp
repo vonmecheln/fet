@@ -414,10 +414,10 @@ void TimetableGenerateForm::simulationFinished()
 
 	//update the string representing the conflicts
 	conflictsString = "";
-	conflictsString+="Total conflicts: ";
+	conflictsString+="Total soft conflicts: ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString += TimetableGenerateForm::tr("Soft conflicts listing (in decreasing order):\n");
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
@@ -428,12 +428,12 @@ void TimetableGenerateForm::simulationFinished()
 
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
 		TimetableGenerateForm::tr("Allocation terminated successfully, remaining %1 weighted"
-		" conflicts from constraints with weight percentage lower than 100%"
-		" (see menu Timetable/Show conflicts (time) or the text file in"
+		" soft conflicts from constraints with weight percentage lower than 100%"
+		" (see menu Timetable/Show soft conflicts or the text file in"
 		" the output directory for details)."
-		"\nSimulation results should be now written. You may check now Timetable/View."
+		"\n\nSimulation results should be now written. You may check now Timetable/View."
 		" The results are also saved in the directory %2 in"
-		" html and xml mode and the conflicts in txt mode").arg(c.conflictsTotal).arg(OUTPUT_DIR));
+		" html and xml mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(OUTPUT_DIR));
 
 	simulation_running=false;
 
@@ -464,9 +464,18 @@ void TimetableGenerateForm::activityPlaced(int na){
 	t=t%60;
 	if(t>0)
 		s+=TimetableGenerateForm::tr(" %1 s").arg(t);
-	s+="\n";
 
-	s+="\n";
+	mutex.unlock();
+
+	currentResultsTextEdit->setText(s);
+
+	semaphorePlacedActivity.release();
+}
+
+void TimetableGenerateForm::help()
+{
+	QString s="";
+	
 	s+=TimetableGenerateForm::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
 	s+=TimetableGenerateForm::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
@@ -476,15 +485,8 @@ void TimetableGenerateForm::activityPlaced(int na){
 	s+="\n";
 	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
 	 " intance min n days or teachers max gaps), as you obtain feasible timetables.");
-	s+="\n";
-	s+=TimetableGenerateForm::tr("For very difficult timetables, the time of generation might be larger."
-	 " I am not sure if stop+restart might help sometimes for such timetables");
-
-	mutex.unlock();
-
-	currentResultsTextEdit->setText(s);
-
-	semaphorePlacedActivity.release();
+	 
+	QMessageBox::information(this, tr("FET help"), s);
 }
 
 void TimetableGenerateForm::write(){

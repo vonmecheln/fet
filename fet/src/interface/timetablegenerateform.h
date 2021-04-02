@@ -51,6 +51,8 @@ public:
 	void write();
 
 	void closePressed();
+	
+	void help();
 
 	void generationLogging(int generation);
 

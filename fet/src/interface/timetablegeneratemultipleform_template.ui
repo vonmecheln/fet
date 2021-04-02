@@ -15,175 +15,116 @@
     <property name="caption">
         <string>Automatically generate multiple timetables</string>
     </property>
-    <widget class="QGroupBox">
+    <grid>
         <property name="name">
-            <cstring>minutesGroupBox</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>380</y>
-                <width>271</width>
-                <height>54</height>
-            </rect>
-        </property>
-        <property name="title">
-            <string>Time limit for each timetable (minutes)</string>
-        </property>
-        <grid>
+        <widget class="QGroupBox" row="2" column="0">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>minutesGroupBox</cstring>
             </property>
-            <widget class="QSpinBox" row="0" column="0">
+            <property name="title">
+                <string>Time limit for each timetable (minutes)</string>
+            </property>
+            <grid>
                 <property name="name">
-                    <cstring>minutesSpinBox</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="maxValue">
-                    <number>600</number>
-                </property>
-                <property name="minValue">
-                    <number>1</number>
-                </property>
-                <property name="value">
-                    <number>240</number>
-                </property>
-            </widget>
-        </grid>
-    </widget>
-    <widget class="QGroupBox">
-        <property name="name">
-            <cstring>timetablesGroupBox</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>288</x>
-                <y>380</y>
-                <width>271</width>
-                <height>54</height>
-            </rect>
-        </property>
-        <property name="title">
-            <string>Number of timetables</string>
-        </property>
-        <grid>
+                <widget class="QSpinBox" row="0" column="0">
+                    <property name="name">
+                        <cstring>minutesSpinBox</cstring>
+                    </property>
+                    <property name="maxValue">
+                        <number>600</number>
+                    </property>
+                    <property name="minValue">
+                        <number>1</number>
+                    </property>
+                    <property name="value">
+                        <number>240</number>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QGroupBox" row="2" column="1">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>timetablesGroupBox</cstring>
             </property>
-            <widget class="QSpinBox" row="0" column="0">
+            <property name="title">
+                <string>Number of timetables</string>
+            </property>
+            <grid>
                 <property name="name">
-                    <cstring>timetablesSpinBox</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="maxValue">
-                    <number>100</number>
-                </property>
-                <property name="minValue">
-                    <number>1</number>
-                </property>
-                <property name="value">
-                    <number>10</number>
-                </property>
-            </widget>
-        </grid>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>startPushButton</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>440</y>
-                <width>271</width>
-                <height>24</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Start</string>
-        </property>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>stopPushButton</cstring>
-        </property>
-        <property name="enabled">
-            <bool>false</bool>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>288</x>
-                <y>440</y>
-                <width>271</width>
-                <height>24</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Stop</string>
-        </property>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>closePushButton</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>288</x>
-                <y>470</y>
-                <width>271</width>
-                <height>24</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Close</string>
-        </property>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>pushButton4</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>470</y>
-                <width>271</width>
-                <height>24</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Help</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>11</y>
-                <width>540</width>
-                <height>16</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Current timetable: 0 out of 0 activities placed</string>
-        </property>
-    </widget>
-    <widget class="QTextEdit">
-        <property name="name">
-            <cstring>currentResultsTextEdit</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>34</y>
-                <width>548</width>
-                <height>340</height>
-            </rect>
-        </property>
-        <property name="readOnly">
-            <bool>true</bool>
-        </property>
-    </widget>
+                <widget class="QSpinBox" row="0" column="0">
+                    <property name="name">
+                        <cstring>timetablesSpinBox</cstring>
+                    </property>
+                    <property name="maxValue">
+                        <number>100</number>
+                    </property>
+                    <property name="minValue">
+                        <number>1</number>
+                    </property>
+                    <property name="value">
+                        <number>10</number>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QPushButton" row="3" column="0">
+            <property name="name">
+                <cstring>startPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Start</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="1">
+            <property name="name">
+                <cstring>stopPushButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string>Stop</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="1">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="0">
+            <property name="name">
+                <cstring>pushButton4</cstring>
+            </property>
+            <property name="text">
+                <string>Help</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>textLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Current timetable: 0 out of 0 activities placed</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentResultsTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </grid>
 </widget>
 <connections>
     <connection>
