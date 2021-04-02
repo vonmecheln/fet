@@ -331,10 +331,13 @@ void TimetableAllocateHoursForm::simulationFinished()
 	//mutex.unlock();
 
 	QMessageBox::information(this, QObject::tr("FET information"),
-		QObject::tr("Allocation terminated successfully"
+		QObject::tr("Allocation terminated successfully, remaining %1 weighted"
+		"\nconflicts from constraints with weight percentage lower than 100%"
+		"\n(see menu Timetable/Show conflicts (time) or the text file in"
+		"\nthe output directory for details)"
 		"\nSimulation results should be now written. You may check now Timetable/View"
-		"\nThe results are also saved in the directory %1 in html and xml mode"
-		"\n and the conflicts in txt mode").arg(OUTPUT_DIR));
+		"\nThe results are also saved in the directory %2 in"
+		"\nhtml and xml mode and the conflicts in txt mode").arg(c.conflictsTotal).arg(OUTPUT_DIR));
 
 	simulation_running=false;
 
@@ -351,18 +354,34 @@ void TimetableAllocateHoursForm::activityPlaced(int na){
 	mutex.lock();
 
 	//TimeChromosome& c=gt.timePopulation.bestChromosome(gt.rules);
-	TimeChromosome& c=ot.c;
+	//TimeChromosome& c=ot.c;
 
 	//write to the Qt interface
 	QString s;
 	//s = QObject::tr("Population number:"); s+=QString::number(gt.timePopulation.n); s+="\n";
 	//s += QObject::tr("Generation:"); s+=QString::number(generation+1)+"\n";
 	s+=QObject::tr("%1 out of %2 activities placed").arg(na).arg(gt.rules.nInternalActivities)+"\n";
-	double d1=c.fitness(gt.rules);
+	
+	/*double d1=c.fitness(gt.rules);
 	double d2 = d1 - floor(d1/10000)*10000;
-	s+=QObject::tr("Constraints conflicts (without unallocated):"); s+=QString::number(d2)+"\n";
+	s+=QObject::tr("Constraints conflicts (without unallocated):"); s+=QString::number(d2)+"\n";*/
 	//s+=QObject::tr("Non-compulsory constraints conflicts:"); s+=QString::number(c.softFitness(gt.rules))+"\n";
-	s+=QObject::tr("Elapsed time: %1 seconds").arg(ot.searchTime); s+="\n";
+
+	//s+=QObject::tr("Elapsed time: %1 seconds").arg(ot.searchTime); s+="\n";
+	s+=QObject::tr("Elapsed time:");
+	int t=ot.searchTime; //seconds
+	int h=t/3600;
+	if(h>0)
+		s+=QObject::tr(" %1 h").arg(h);
+	t=t%3600;
+	int m=t/60;
+	if(m>0)
+		s+=QObject::tr(" %1 m").arg(m);
+	t=t%60;
+	if(t>0)
+		s+=QObject::tr(" %1 s").arg(t);
+	s+="\n";
+
 	s+="\n";
 	s+=QObject::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
 	s+=QObject::tr("Activities are placed in order, firstly the most difficult ones, "
@@ -370,6 +389,8 @@ void TimetableAllocateHoursForm::activityPlaced(int na){
 	 " activities are analysed to try to make space for the new activity")+"\n";
 	s+=QObject::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
+	s+="\n";
+	s+=QObject::tr("There is no need to stop and restart the search, even if the algorithm seems stucked");
 
 	mutex.unlock();
 

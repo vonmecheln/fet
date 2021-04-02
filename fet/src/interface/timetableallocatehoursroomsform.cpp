@@ -275,6 +275,10 @@ void TimetableAllocateHoursRoomsForm::loadPosition()
 
 void TimetableAllocateHoursRoomsForm::initializeUnallocated()
 {
+	QMessageBox::critical(this, QObject::tr("FET information"),
+		QObject::tr("Not implemented yet"));
+	return;
+
 	if(!gt.rules.initialized){
 		QMessageBox::critical(this, QObject::tr("FET information"),
 			QObject::tr("You have entered simulation with uninitialized rules...aborting"));
@@ -310,6 +314,10 @@ void TimetableAllocateHoursRoomsForm::initializeUnallocated()
 
 void TimetableAllocateHoursRoomsForm::initializeRandomly()
 {
+	QMessageBox::critical(this, QObject::tr("FET information"),
+		QObject::tr("Not implemented yet"));
+	return;
+
 	if(!gt.rules.initialized){
 		QMessageBox::critical(this, QObject::tr("FET information"),
 			QObject::tr("You have entered simulation with uninitialized rules...aborting"));

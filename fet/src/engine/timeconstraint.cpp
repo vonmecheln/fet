@@ -1635,6 +1635,13 @@ double ConstraintMinNDaysBetweenActivities::fitness(TimeChromosome& c, Rules& r,
 							s+=", ";
 							s+=(QObject::tr("conflicts factor increase=%1").arg(tmp*weightPercentage/100));
 							//s+="\n";
+							s+=".";
+							
+							if(this->adjacentIfBroken){
+								s+=" ";
+								s+=QObject::tr("The activities are placed adjacent in the timetable, because you selected this option"
+								 " in case the constraint is broken");
+							}
 							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);

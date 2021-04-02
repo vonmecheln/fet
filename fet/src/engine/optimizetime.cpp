@@ -165,9 +165,9 @@ void OptimizeTime::optimize()
 
 		start_search_ticks=clock();
 
-		double ftn;
+		/*double ftn;
 		ftn=c.fitness(gt.rules);
-		cout<<"line 168 - fitness=="<<ftn<<endl;
+		cout<<"line 168 - fitness=="<<ftn<<endl;*/
 
 		for(int i=0; i<=added_act; i++)
 			swappedActivities[permutation[i]]=false;
@@ -382,6 +382,11 @@ void OptimizeTime::optimize()
 			}
 				
 			if(pred_pos==-1){
+				//////////added in version 5.0.0-preview5
+				for(int k=0; k<gt.rules.nInternalActivities; k++)
+					pred[permutation[k]]=-1;
+				/////////////////////////////////////////
+			
 				//compute pred
 				int j=added_act;
 				for(;;){
@@ -447,6 +452,8 @@ void OptimizeTime::optimize()
 		}
 
 		else{ //if foundGoodSwap==true
+			nPlacedActivities=added_act+1;
+	
 			mutex.unlock();
 			//cout<<"mutex unlocked - optimizetime 382"<<endl;
 			emit(activityPlaced(added_act+1));
@@ -454,14 +461,13 @@ void OptimizeTime::optimize()
 			mutex.lock();
 			//cout<<"mutex locked - optimizetime 386"<<endl;
 			
-			cout<<"Found good swap:"<<endl;
+			/*cout<<"Found good swap:"<<endl;*/
 			
-			nPlacedActivities=added_act+1;
-	
-			QString str;
-			cout<<"Fitness of current chromosome=="<<(ftn=c.fitness(gt.rules, &str))<<endl;
+			/*QString str;
+			cout<<"Fitness of current chromosome=="<<(ftn=c.fitness(gt.rules, &str))<<endl;*/
 			//cout<<"str==------------------------"<<endl<<qPrintable(str)<<endl;
-			if(ftn==0 || added_act==gt.rules.nInternalActivities && foundGoodSwap){
+			/*if(ftn==0 || added_act==gt.rules.nInternalActivities && foundGoodSwap){*/
+			if(added_act==gt.rules.nInternalActivities && foundGoodSwap){
 				mutex.unlock();
 				//cout<<"mutex unlocked - optimizetime 397"<<endl;
 				break;
