@@ -1041,3 +1041,8 @@ Versions 5.3.0 - 5.3.
 	- Constraint activity ends students day
 - Version 5.3.4
 	- Spanish translation by Jose Cesar Fernandez Lopez
+- Version 5.3.5
+	- Added additional tests to see if max hours daily for teachers/students can be respected
+	- Added additional test to see if max days per week for teachers and teacher not available
+	are not impossible
+	

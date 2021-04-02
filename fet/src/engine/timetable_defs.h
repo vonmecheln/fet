@@ -50,6 +50,9 @@ The language
 */
 extern QString FET_LANGUAGE;
 
+//English has to be counted also
+extern const int NUMBER_OF_LANGUAGES;
+
 /**
 The maximum number of different years of students
 */

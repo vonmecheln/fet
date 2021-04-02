@@ -27,7 +27,9 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.3.4";
+const QString FET_VERSION="5.3.5";
+
+const int NUMBER_OF_LANGUAGES=12;
 
 /**
 FET language
@@ -90,6 +92,7 @@ QString protect2id(const QString& str) //used for html
 	p.replace("<", "&lt;");
 	//p.replace("'", "&apos;");
 	p.replace(" ", "_");		// id must be a single token
+	p.replace(",", "_");		// looks like this makes trouble
 	return p;
 }
 

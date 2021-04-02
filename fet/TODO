@@ -6,6 +6,30 @@ and constraint students min gaps between building changes.
 
 ----------------------------------------------------------------------------------
 
+From Volker Dirr (16 September 2007):
+
+> i saw at les timetable, that he call hour==period.
+> also at wikipedia itÂ´s called period. (compare
+> http://en.wikipedia.org/wiki/School_timetables   chapter terminilogy)
+>
+> i am not sure about that. in german we have the also the word "peridode",
+> but we donÂ´t use it for timetables. we say hour.
+> but maybe thatÂ´s just colloquial language. this colloquial language is ok,
+> because the schools have 1 schoolhour (45 minutes) or 2 schoolhours (90
+> minutes).
+>
+> but maybe itÂ´s better to use also the word periode, because by this
+> schools with 60 minutes activities (2 periods) and 90 minutes activities
+> (3 periods) donÂ´t get trouble with the word hour (because it entrap /
+> ensnare /
+>  inveigle so write 1 hour and 1,5 hour. but "hour" is an integer values!
+>
+> but on the other hand people (maybe) will not understand immediately th
+> word periode.
+>
+> so maybe we should write "period (hour)".
+----------------------------------------------------------------------------------
+
 From Volker Dirr (28 August 2007):
 
 1. add a constraint. then remoce the constarint. now the constraintlist is
@@ -283,9 +307,9 @@ At a recent excursion, it was one teacher per 10 students.  Hope that helps :)
 
 You could always autogenerate the students...
 "Quick-Build Students"
- [Properties]
- [Number]
- (Build)
+ï¿½[Properties]
+ï¿½[Number]
+ï¿½(Build)
 
 And it will generate students with name: AutoGen-11231, ID: 11231, and the like.
 
@@ -310,12 +334,12 @@ by several users simultaneously.
 
 6---------------------------------------------------------
 From Scott Sweeting:
-I have come up with another idea for FET.  You currently have a timetable - both 
-individual and compiled - for rooms, students and teachers.  How about have another 
-one for subjects?  This would be in both forms - individual and compiled - and would 
-contain the teacher(s), group(s) and room(s) for each activity.  This would allow 
+I have come up with another idea for FET. ï¿½You currently have a timetable - both 
+individual and compiled - for rooms, students and teachers. ï¿½How about have another 
+one for subjects? ï¿½This would be in both forms - individual and compiled - and would 
+contain the teacher(s), group(s) and room(s) for each activity. ï¿½This would allow 
 you to see when a subject is being taught, which is handy for school and university 
-environments.  This would allow you to cover all four areas - rooms, students, 
+environments. ï¿½This would allow you to cover all four areas - rooms, students, 
 teachers and subjects.
 
 7----------------------------------------------------------
@@ -326,7 +350,7 @@ software ?
 
 8---------------------------------------------------------
 From Volker Dirr:
-If you think that other people don´t like this default constaint how about
+If you think that other people donï¿½t like this default constaint how about
 making a menu "default settings". there you can add "langurage" and my
 defalut wish. maybe there are other parameters, that can be set in this
 settings. i guess that there a people who want set duration to 2 or 4 by
@@ -338,10 +362,10 @@ it would be nice to have something like "time constraints (subjects) - max n hou
 so compulsory min n days between activities is nearly similar to compulsory max n hours per day the same subject (except subjects with duration 2 and more)
 but non-compulsory min n days between activities is somhing very diffrent then non-compulsory max n hours per day the same subject.
 i look forwad to a option like "non-compulsory max n hours per day the same subject".
-because it isn´t not to bad if it happen (having a lesson twice a day" only a few times.
+because it isnï¿½t not to bad if it happen (having a lesson twice a day" only a few times.
 
 or do something like "time constraints (activities) - max n activities with same subject per day"
-or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. is´t nonsens to subactivities, it has just sense with activities.)
+or "time constraints (activities) - max n (grouped) activities with same subject per day". (but he have to differ between activities and subactivities. isï¿½t nonsens to subactivities, it has just sense with activities.)
 
 9---------------------------------------------------------
 From Joseph M Fontana:
@@ -360,19 +384,19 @@ surprise FET asked me to allocate the rooms again (message saying:
 From fsh_felix
 I hope you can enhance the software with an IMPORT utility to read 
 text files for (in the order of:)
-(a)  Subjects
-(b)  Teachers
-(c)  Class groups and subgroups
-(d)  Rooms
-(e)  Activities in the form of
-     Subject1
-     Teacher1, Class groups1 or subgroups1, hours of lesson
-     Teacher2, Class groups2 or subgroups2, hours of lesson
-     ...
-     Subject2   
-     Teacher1, Class groups1 or subgroups1, hours of lesson
-     Teacher2, Class groups2 or subgroups2, hours of lesson
-     ...
+(a) ï¿½Subjects
+(b) ï¿½Teachers
+(c) ï¿½Class groups and subgroups
+(d) ï¿½Rooms
+(e) ï¿½Activities in the form of
+ï¿½ ï¿½ ï¿½Subject1
+ï¿½ ï¿½ ï¿½Teacher1, Class groups1 or subgroups1, hours of lesson
+ï¿½ ï¿½ ï¿½Teacher2, Class groups2 or subgroups2, hours of lesson
+ï¿½ ï¿½ ï¿½...
+ï¿½ ï¿½ ï¿½Subject2 ï¿½ 
+ï¿½ ï¿½ ï¿½Teacher1, Class groups1 or subgroups1, hours of lesson
+ï¿½ ï¿½ ï¿½Teacher2, Class groups2 or subgroups2, hours of lesson
+ï¿½ ï¿½ ï¿½...
 
 The above files allow different course timetabling planners to plan 
 and write their requirements in text files or excel files (which can 

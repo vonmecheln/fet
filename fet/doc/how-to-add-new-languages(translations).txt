@@ -2,7 +2,8 @@ FET - How to add new translations (languages)
 ---------------------------------------------
 
 PLEASE E-MAIL THE AUTHOR OR THE MAILING LIST IF YOU WANT TO
-TRANSLATE FET INTO YOUR LANGUAGE.
+TRANSLATE FET INTO YOUR LANGUAGE. ANOTHER PERSON MIGHT WORK
+ON THE SAME TRANSLATION AS YOU AND TIME MIGHT BE WASTED.
 
 
 
@@ -58,7 +59,8 @@ Some other details follow:
  and jumps to the next untranslated phrase),Ctrl+1, Ctrl+2 (first or second 
  suggestion). You can skip the large fields, like the FAQ and others. You can 
  skip also fields you cannot translate, they will remain in English. But let them
- marked as untranslated.
+ marked as untranslated (do NOT press Ctrl+Enter on an unfinished/untranslated field,
+ skip it with the mouse)
  
  Please try to follow the original (English) line arrangement. That is, if you 
  meet: "Current activity's <lf>

@@ -198,11 +198,13 @@ bool processTimeConstraints()
 	computeActivitiesSameStartingHour();
 	
 	computeActivitiesNotOverlapping();
-	
+
+	//must be after allowed times, after n hours per teacher and after max days per week
 	t=computeTeachersMaxHoursDaily();
 	if(!t)
 		return false;
 	
+	//must be after allowed times and after n hours per subgroup
 	t=computeSubgroupsMaxHoursDaily();
 	if(!t)
 		return false;
@@ -236,6 +238,7 @@ bool processTimeConstraints()
 	return ok;
 }
 
+//must be after allowed times and after n hours per subgroup
 bool computeSubgroupsMaxHoursDaily()
 {
 	bool ok=true;
@@ -345,6 +348,45 @@ bool computeSubgroupsMaxHoursDaily()
 					if(t==0)
 						return false;
 				}
+			}
+		}
+	}
+	
+	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+		if(subgroupsMaxHoursDailyPercentages[sb]==100){
+			int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				nAllowedSlotsPerDay[d]=0;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h])
+						nAllowedSlotsPerDay[d]++;
+				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],subgroupsMaxHoursDailyMaxHours[sb]);
+			}
+			int total=0;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				total+=nAllowedSlotsPerDay[d];
+			if(total<nHoursPerSubgroup[sb]){
+				ok=false;
+				
+				QString s;
+				s=QObject::tr("Cannot optimize for subgroup %1, because there is a constraint of type"
+				 " max %2 hours daily with 100% weight which cannot be respected because of number of days per week,"
+				 " number of hours per day, students set not available and/or breaks. The number of total hours for this subgroup is"
+				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
+				 .arg(gt.rules.internalSubgroupsList[sb]->name)
+				 .arg(subgroupsMaxHoursDailyMaxHours[sb])
+				 .arg(nHoursPerSubgroup[sb])
+				 .arg(total);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
 			}
 		}
 	}
@@ -524,7 +566,7 @@ bool computeSubgroupsMinHoursDaily()
 	return ok;
 }
 	
-
+//must be after allowed times, after n hours per teacher and after max days per week
 bool computeTeachersMaxHoursDaily()
 {
 	bool ok=true;
@@ -634,6 +676,70 @@ bool computeTeachersMaxHoursDaily()
 		}
 	}
 	
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		if(teachersMaxHoursDailyPercentages[tc]==100){
+			int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				nAllowedSlotsPerDay[d]=0;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h])
+						nAllowedSlotsPerDay[d]++;
+				nAllowedSlotsPerDay[d]=min(nAllowedSlotsPerDay[d],teachersMaxHoursDailyMaxHours[tc]);
+			}
+			
+			int dayAvailable[MAX_DAYS_PER_WEEK];
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				dayAvailable[d]=1;
+			if(teachersMaxDaysPerWeekMaxDays[tc]>=0){
+				//n days per week has 100% weight
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					dayAvailable[d]=0;
+				assert(teachersMaxDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek);
+				for(int k=0; k<teachersMaxDaysPerWeekMaxDays[tc]; k++){
+					int maxPos=-1, maxVal=-1;
+					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+						if(dayAvailable[d]==0)
+							if(maxVal<nAllowedSlotsPerDay[d]){
+								maxVal=nAllowedSlotsPerDay[d];
+								maxPos=d;
+							}
+					assert(maxPos>=0);
+					assert(dayAvailable[maxPos]==0);
+					dayAvailable[maxPos]=1;
+				}
+			}
+			
+			int total=0;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				if(dayAvailable[d]==1)
+					total+=nAllowedSlotsPerDay[d];
+			if(total<nHoursPerTeacher[tc]){
+				ok=false;
+				
+				QString s;
+				s=QObject::tr("Cannot optimize for teacher %1, because there is a constraint of type"
+				 " max %2 hours daily with 100% weight which cannot be respected because of number of days per week,"
+				 " number of hours per day, teacher max days per week, teacher not available and/or breaks."
+				 " The number of total hours for this teacher is"
+				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
+				 .arg(gt.rules.internalTeachersList[tc]->name)
+				 .arg(teachersMaxHoursDailyMaxHours[tc])
+				 .arg(nHoursPerTeacher[tc])
+				 .arg(total);
+				s+="\n\n";
+				s+=QObject::tr("Please modify your data accordingly and try again"
+				 ". For more details, join the mailing list or email the author");
+	
+				int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+				 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
 	return ok;
 }
 
@@ -738,6 +844,7 @@ void computeActivitiesSameStartingHour()
 }
 
 ////////////teachers' no gaps
+//important also for other purposes
 bool computeNHoursPerTeacher()
 {
 	for(int i=0; i<gt.rules.nInternalTeachers; i++)
@@ -795,6 +902,7 @@ bool computeNHoursPerTeacher()
 		}
 	}
 	
+	//n days per week has 100% weight
 	for(int i=0; i<gt.rules.nInternalTeachers; i++)
 		if(teachersMaxDaysPerWeekMaxDays[i]>=0){
 			int nd=teachersMaxDaysPerWeekMaxDays[i];
@@ -816,6 +924,67 @@ bool computeNHoursPerTeacher()
 					return ok;
 			}
 		}
+		
+	//n days per week has 100% weight
+	//check n days per week together with not available and breaks
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		int nAllowedSlotsPerDay[MAX_DAYS_PER_WEEK];
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			nAllowedSlotsPerDay[d]=0;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h])
+					nAllowedSlotsPerDay[d]++;
+		}
+
+		int dayAvailable[MAX_DAYS_PER_WEEK];
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+			dayAvailable[d]=1;
+		if(teachersMaxDaysPerWeekMaxDays[tc]>=0){
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				dayAvailable[d]=0;
+		
+			assert(teachersMaxDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek);
+			for(int k=0; k<teachersMaxDaysPerWeekMaxDays[tc]; k++){
+				int maxPos=-1, maxVal=-1;
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					if(dayAvailable[d]==0)
+						if(maxVal<nAllowedSlotsPerDay[d]){
+							maxVal=nAllowedSlotsPerDay[d];
+							maxPos=d;
+						}
+				assert(maxPos>=0);
+				assert(dayAvailable[maxPos]==0);
+				dayAvailable[maxPos]=1;
+			}
+		}
+			
+		int total=0;
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+			if(dayAvailable[d]==1)
+				total+=nAllowedSlotsPerDay[d];
+		if(total<nHoursPerTeacher[tc]){
+			ok=false;
+				
+			QString s;
+			s=QObject::tr("Cannot optimize for teacher %1, because of too constrained"
+			 " teacher max days per week, teacher not available and/or breaks."
+			 " The number of total hours for this teacher is"
+			 " %2 and the number of available slots is, considering max days per week and all other constraints, %3.")
+			 .arg(gt.rules.internalTeachersList[tc]->name)
+			 .arg(nHoursPerTeacher[tc])
+			 .arg(total);
+			s+="\n\n";
+			s+=QObject::tr("Please modify your data accordingly and try again"
+			 ". For more details, join the mailing list or email the author");
+	
+			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"), s,
+			 QObject::tr("Skip rest of max hours problems"), QObject::tr("See next incompatibility max hours"), QString(),
+			 1, 0 );
+				 	
+			if(t==0)
+				return false;
+		}
+	}
 	
 	return ok;
 }
@@ -936,6 +1105,7 @@ bool computeTeachersMaxGapsPercentage()
 
 
 ///////students' no gaps and early (part 1)
+//important also for other purposes
 bool computeNHoursPerSubgroup()
 {
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
