@@ -76,7 +76,7 @@ private:
 public:
 	QString year;
 	
-	SplitYearForm(QWidget* parent, const QString year);
+	SplitYearForm(QWidget* parent, const QString& _year);
 	~SplitYearForm();
 	
 public slots:

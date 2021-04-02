@@ -666,7 +666,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 
 	QGroupBox* textquoteGroupBox = new QGroupBox(Import::tr("Please specify the used text quote of text fields:"));
 	QComboBox* textquoteCB=NULL;
-	if(separators.size()>1){
+	if(textquotes.size()>1){
 		QHBoxLayout* textquoteBoxChoose=new QHBoxLayout();
 		textquoteCB=new QComboBox();
 		

@@ -3859,15 +3859,9 @@ bool Rules::addSplitActivity(
 
 	acts.clear();
 	for(int i=0; i<_nSplits; i++){
-		Activity *act;
-		if(i==0)
-			act=new Activity(*this, _firstActivityId+i, _activityGroupId,
-				_teachersNames, _subjectName, _activityTagsNames, _studentsNames,
-				_durations[i], _totalDuration, _active[i], _computeNTotalStudents, _nTotalStudents);
-		else
-			act=new Activity(*this, _firstActivityId+i, _activityGroupId,
-				_teachersNames, _subjectName, _activityTagsNames, _studentsNames,
-				_durations[i], _totalDuration, _active[i], _computeNTotalStudents, _nTotalStudents);
+		Activity *act=new Activity(*this, _firstActivityId+i, _activityGroupId,
+		 _teachersNames, _subjectName, _activityTagsNames, _studentsNames,
+		 _durations[i], _totalDuration, _active[i], _computeNTotalStudents, _nTotalStudents);
 
 		this->activitiesList << act; //append
 

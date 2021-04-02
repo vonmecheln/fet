@@ -435,11 +435,11 @@ int Solution::getRoomsMatrix(
 
 	for(i=0; i<r.nInternalActivities; i++){
 		int room=this->rooms[i];
-		int hour=times[i]/r.nDaysPerWeek;
-		int day=times[i]%r.nDaysPerWeek;
-		//int hour = hours[i];
-		//int day = days[i];
-		if(room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM && hour!=UNALLOCATED_TIME && day!=UNALLOCATED_TIME) {
+		
+		if(times[i]!=UNALLOCATED_TIME && room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM) {
+			int hour=times[i]/r.nDaysPerWeek;
+			int day=times[i]%r.nDaysPerWeek;
+			
 			Activity* act=&r.internalActivitiesList[i];
 			for(int dd=0; dd<act->duration && hour+dd<r.nHoursPerDay; dd++){
 				int tmp=a[room][day][hour+dd];
@@ -473,9 +473,11 @@ void Solution::getRoomsTimetable(
 	for(i=0; i<r.nInternalActivities; i++){
 		act=&r.internalActivitiesList[i];
 		int room=this->rooms[i];
-		int hour=times[i]/r.nDaysPerWeek;
-		int day=times[i]%r.nDaysPerWeek;
-		if(room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM && day!=UNALLOCATED_TIME && hour!=UNALLOCATED_TIME){
+		
+		if(times[i]!=UNALLOCATED_TIME && room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM){
+			int hour=times[i]/r.nDaysPerWeek;
+			int day=times[i]%r.nDaysPerWeek;
+		
 			for(int dd=0; dd < act->duration; dd++){
 				assert(hour+dd<r.nHoursPerDay);
 			

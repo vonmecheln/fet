@@ -315,7 +315,7 @@ bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, Q
 
 	QGroupBox* textquoteGroupBox = new QGroupBox(Export::tr("Please specify the text quote of text fields:"));
 	QComboBox* textquoteCB=NULL;
-	if(separators.size()>1){
+	if(textquotes.size()>1){
 		QHBoxLayout* textquoteBoxChoose=new QHBoxLayout();
 		textquoteCB=new QComboBox();
 		

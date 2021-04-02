@@ -34,7 +34,7 @@
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
-SplitYearForm::SplitYearForm(QWidget* parent, const QString _year): QDialog(parent)
+SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(parent)
 {
 	setupUi(this);
 	

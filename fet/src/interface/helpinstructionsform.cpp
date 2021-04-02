@@ -132,7 +132,7 @@ void HelpInstructionsForm::setText()
 		"obtain better timetables this way.");
 	s+="\n\n";
 	s+=tr("10) If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. "
-		"It might help in constraints like min days, preferred rooms or max hours daily.");
+		"It might help in constraints like min days between activities, preferred rooms or max hours daily.");
 	s+="\n\n";
 	s+=tr("11) Each room can host a single activity at the same time. If you have a large room which can host more "
 		"activities at the same time, you need to use a small trick. You can add more rooms representing this large room "
@@ -145,14 +145,15 @@ void HelpInstructionsForm::setText()
 	s+=tr("13) If you have for instance 7 hours of Maths on a 5 days week (more lessons than days), "
 		"please respect the correct way to add these as a split activity. See question Q-1-27-March-2008 from FAQ. It is important!");
 	s+="\n\n";
-	s+=tr("14) It is recommended to remove redundant min days constraints after adding constraints same starting day or time (read Help/Important tips).");
+	s+=tr("14) It is recommended to remove redundant min days between activities constraints after adding constraints same starting day or time "
+		"(read Help/Important tips).");
 	s+="\n\n";
 	s+=tr("15) If you want for instance teachers (or students) not to have more than 2 times per week "
-		"activities in the last hours, you have to use new constraint teacher(s) or students (set) hourly interval "
+		"activities in the last hours, you have to use the constraint teacher(s) or students (set) hourly interval "
 		"max days per week. Please read FAQ for more details.");
 	s+="\n\n";
 	s+=tr("16) If you have activities which you want to put in the last slots of a day (like say "
-		"the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day).");
+		"the meetings with the class master), please use the constraint a set of activities end students day (or singular activity ends students day).");
 	s+="\n\n";
 	s+=tr("17) If you have activities split into 3 activities per week and need them to be not "
 		"in 3 consecutive days, there is an entry in the FAQ explaining how to specify this (question Q1-5-September-2008).");

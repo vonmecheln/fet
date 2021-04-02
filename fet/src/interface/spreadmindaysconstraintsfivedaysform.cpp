@@ -233,6 +233,8 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			}
 			else{
 				QMessageBox::information(this, tr("FET information"), tr("Please select the isolated component"));
+				assert(c1!=NULL);
+				delete c1;
 				return;
 			}
 				

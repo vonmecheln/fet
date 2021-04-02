@@ -46,7 +46,7 @@ void HelpFaqForm::setText()
 	
 	s+=tr("Frequently asked questions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("1 June 2013"));
+	s+=tr("Last modified on %1.").arg(tr("28 September 2013"));
 	
 	s+="\n\n";
 	s+="--------------------";
@@ -806,14 +806,6 @@ void HelpFaqForm::setText()
 		" are placed in descending order of the sum of the number of teachers and subgroups) and a locked activity is never rescheduled. "
 		"So, FET puts A1 first, then A2, A3, A4 and A5. Since it retries more times separately for each activity, it is able to find a timetable easily.\n\n"
 		"Practical solution to case 2)? Reduce weights of constraints which have weight below 100% or lock (to a corresponding slot) the activity which corresponds to A1 in your data file.");
-	
-	s+="\n\n";
-	s+="--------------------";
-	s+="\n\n";
-
-	s+=tr("Q: I need constraint students (set) max days per week, similar to existing teacher(s) max days per week constraint.");
-	s+="\n\n";
-	s+=tr("A: Maybe it will be implemented in the future. Until then, please use constraint students (set) interval max days per week, interval = whole day.");
 	
 	s+="\n\n";
 	s+="--------------------";

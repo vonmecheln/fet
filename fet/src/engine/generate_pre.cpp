@@ -2782,9 +2782,10 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 			}
 			//////////
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
-				if(teachersMinHoursDailyMinHours[tch]==-1 || teachersMinHoursDailyMinHours[tch]<tmd->minHoursDaily)
+				if(teachersMinHoursDailyMinHours[tch]==-1 || teachersMinHoursDailyMinHours[tch]<tmd->minHoursDaily){
 					teachersMinHoursDailyMinHours[tch]=tmd->minHoursDaily;
 					teachersMinHoursDailyPercentages[tch]=100;
+				}
 			}
 		}
 	}
@@ -2919,9 +2920,10 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 			}
 			//////////
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
-				if(teachersMinDaysPerWeekMinDays[tch]==-1 || teachersMinDaysPerWeekMinDays[tch]<tmd->minDaysPerWeek)
+				if(teachersMinDaysPerWeekMinDays[tch]==-1 || teachersMinDaysPerWeekMinDays[tch]<tmd->minDaysPerWeek){
 					teachersMinDaysPerWeekMinDays[tch]=tmd->minDaysPerWeek;
 					teachersMinDaysPerWeekPercentages[tch]=100;
+				}
 			}
 		}
 	}

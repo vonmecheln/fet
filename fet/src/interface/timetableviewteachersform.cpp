@@ -606,13 +606,9 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 						
 						if(report){
 							int k;
-							if(t)
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-							else
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-																			 				 	
+							k=QMessageBox::information(this, tr("FET information"), s,
+							 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+
 		 					if(k==0)
 								report=false;
 						}
@@ -684,14 +680,10 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 						
 						if(report){
 							int k;
-							if(t)
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-							else
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+							k=QMessageBox::information(this, tr("FET information"), s,
+							 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 								
-		 					if(k==0)
+							if(k==0)
 								report=false;
 						}
 					}

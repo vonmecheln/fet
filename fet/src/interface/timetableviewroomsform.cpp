@@ -605,14 +605,10 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 						
 						if(report){
 							int k;
-							if(t)
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-							else
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-																			 				 	
-		 					if(k==0)
+							k=QMessageBox::information(this, tr("FET information"), s,
+							 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+							
+							if(k==0)
 								report=false;
 						}
 					}
@@ -682,12 +678,8 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 						}  //modified by Volker Dirr, so you can also unlock (end)
 
 						if(report){
-							if(t)
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-							else
-								k=QMessageBox::information(this, tr("FET information"), s,
-							 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+							k=QMessageBox::information(this, tr("FET information"), s,
+						 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 								
 		 					if(k==0)
 								report=false;

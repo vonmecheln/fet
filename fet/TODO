@@ -63,7 +63,7 @@ the last activity for the teacher's day. So, there is a chance that the
 teacher would end up with only one gap.
 
 Which leads me to a suggestion: An activity end (or starts) a teacher's day.
-Similar to "an activity ends students's day)
+Similar to "an activity ends students's day".
 
 5----------------------------------------------------------
 From daviodan:
@@ -73,7 +73,7 @@ I will refer to sample_Brazil_more_difficult_max_2_gaps_for_teachers.fet
 1. In the FET activities dialog there exist more filters after the teacher, group, etc.
 If we choose for instance the subject "Math" and we do the filtering also after the name of 
 the teacher, then the list of the filter should contain only the name: Bruna,Silvania,Wellington,
-because only these teache Maths. In the present moment the filter contains the list of all teachers.
+because only these teach Maths. In the present moment the filter contains the list of all teachers.
 The same for all the other filters.
 
 2. In the teachers' statistics dialog, when we click a teacher, there should appear in the right
@@ -218,7 +218,7 @@ that is like high school do it.
 no the timetablemaker can check every single student. of yourse by
 checking the studentsname must be added as subgroup into that group.
 
-13---------------------------------------------------------
+13-------------------------DONE----------------------------
 From Maciej Deorowicz:
 
 DONE --> Possibility to disable contraint without removing it.
@@ -319,7 +319,7 @@ From Volker Dirr:
 I saw at Les's timetable, that he called hour==period.
 also at wikipedia it´s called period. (see School_timetables chapter, terminology)
 
-I am not sure about that. in German we have the also the word "peridode",
+I am not sure about that. in German we have the also the word "periode",
 but we don´t use it for timetables. we say hour.
 but maybe that´s just colloquial language. this colloquial language is ok,
 because the schools have 1 schoolhour (45 minutes) or 2 schoolhours (90
@@ -428,10 +428,10 @@ first. even including the word teacher is a much longer phrases than in
 english. it will be much easier and nice, if we don't write teacher here.
 maybe the same problem in other languages.
 
-24---------------------------------------------------------
+24-------------------------DONE----------------------------
 From Volker Dirr:
 
-how about this:
+DONE ---> how about this:
 if you go to data->activities
 the you have 4 different filters where you can choose something.
 
@@ -442,7 +442,7 @@ subject should be default if i press add.
 
 so the function should have four parameters (the four filters),
 defaultsetting in the data->activities->add screen should have be the
-filters of data->activities.
+filters of data->activities. <--- DONE
 
 25---------------------------------------------------------
 From Volker Dirr:
@@ -514,7 +514,7 @@ In the HSC year here, it's about one teacher per 26 students (or something like 
 At a recent excursion, it was one teacher per 10 students.  Hope that helps :)
 
 Liviu Lalescu: Of course, you can add each student. I could have implemented this solution.
-But I doubt that the user has such patience :-)
+But I doubt that the user has such patience.
 
 You could always autogenerate the students...
 "Quick-Build Students"
@@ -548,7 +548,7 @@ From Volker Dirr:
 
 If you think that other people don't like this default constaint how about
 making a menu "default settings". there you can add "language" and my
-defautt wish. maybe there are other parameters, that can be set in this
+default wish. maybe there are other parameters, that can be set in this
 settings. I guess that there a people who want set duration to 2 or 4 by
 default.
 
@@ -816,7 +816,7 @@ activities.
 if 2 activities are consecutive, turn of min n day.
 if 2 activitives have same starting time, turn of min n day.
 
-or the opposit, bedending on what has a higher weight.
+or the opposite, bedending on what has a higher weight.
 
 maybe instead of turning of maybe just warn the user that this two
 constraints are not acceptable at the same time and tell him he should
@@ -1125,7 +1125,7 @@ From Frans:
 
 DONE --> I came across the following:
 
-Let say one define the number of FET hours per day as 11. Now I enter preffered starting slots, not available constraints etc. and set the timetable.
+Let say one define the number of FET hours per day as 11. Now I enter prefered starting slots, not available constraints etc. and set the timetable.
 
 Next I change the number of FET hours per day from 11 to 10 and try to generate again. A timetable is now impossible.
 
@@ -1250,7 +1250,7 @@ From Zsolt Udvari (on forum):
 If I de-activity all activities of a whole year (student set), FET will not ignore "min hours daily" constraint.
 So I've two suggestion immedi:
 - when FET checks this (and similar) constraints, would tolerate this
-- can deactivite the students set (and related activities, constraints, etc.)
+- can deactivate the students set (and related activities, constraints, etc.)
 
 73---------------------------------------------------------
 From Zsolt Udvari (on forum):
@@ -1321,7 +1321,7 @@ Students are easily filtered because they are grouped using years then groups
 So at Students set not available time window, we can, for example, apply unvailability to only one year, thus affecting  groups under that year
 We can also apply unvailability to group, thus affecting  Subgroups under that group.
 
-Unfortunately , teachers are treated either indivdually or totally (constraints for ALL teachers): ONE or ALL
+Unfortunately , teachers are treated either individually or totally (constraints for ALL teachers): ONE or ALL
 Zsolt Udvari already wrote:
 Quote:
 It would be nice when can pair teachers with his/her subjects and can filter in the activity dialog.
@@ -1885,7 +1885,7 @@ are necessary and not very time-consuming.
 
 3) The user is advised to help FET towards a solution. The user needs
 to collaborate with FET. (Of course, not necessarily us. We want to
-push its limits :-)
+push its limits )
 
 4) This is the most important reason. Say I solve this problem for a
 single preferred room for teacher A. But this is not everything. A user
@@ -2077,7 +2077,7 @@ i am not sure if it is a problem.
 
 it was more an information to you.
 
-i was able to proove that the desturcor is doing his job, but to slow. the
+i was able to proove that the destructor is doing his job, but to slow. the
 destructor isn't ready if the function go back to the main programm.
 if i add a delay in the main programm and check if the destructor have
 done his work, then it is ok. but without that delay it isn't ok. so
@@ -2653,8 +2653,8 @@ In Italy, the work contract for a teacher is often tethered to a specific number
 Why not add a "Number of workdays per week for a teacher"?
 In the interface I am glad to see a button that add all teacher and set every single-type constraint to the same value so to be individually modified later.
 
-169---------------------------------------------------------
-From agemagician (on forum):
+169-------------------------DONE----------------------------
+DONE ---> From agemagician (on forum):
 
 I have small problem now.
 
@@ -2672,7 +2672,7 @@ I can't mark all subjects for each student set to be placed in 1 room because we
 
 So is there any automated solution ?
 
-Liviu: So, a constraint: a set of activities, if consecutive, get same room. Maybe, ConstraintActivitiesSameRoomIfConsecutive?
+Liviu: So, a constraint: a set of activities, if consecutive, get same room. Maybe, ConstraintActivitiesSameRoomIfConsecutive? <--- DONE
 
 170---------------------------------------------------------
 From agemagician (on forum):

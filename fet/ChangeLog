@@ -1665,3 +1665,6 @@ Versions 5.20.0 - 5.20.v
 	- Added constraints students (set) max days per week (suggested by more users).
 	- Bug fix in constraint activities occupy max different rooms (not noticeable).
 	- Added a new sample file, by rapsy.
+- Version 5.20.1
+	- Minor improvements and bug fixes.
+	
