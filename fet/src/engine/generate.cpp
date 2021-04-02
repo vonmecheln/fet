@@ -104,7 +104,7 @@ const int INF=2000000000;
 
 
 ////////tabu list of tried removals (circular)
-const int MAX_TABU=200;
+const int MAX_TABU=400; //400
 int crt_tabu_index;
 int tabu_activities[MAX_TABU];
 int tabu_times[MAX_TABU];
@@ -1923,19 +1923,20 @@ impossiblestudentsmaxhoursdaily:
 									break;
 								}
 								
-								int m=-1;
+								//chose earliest placed activity, to avoid cycling
+								int m=gt.rules.nInternalActivities;
 								int mpos=-1;
 								for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									if(nRem[d2]>0){
 										if(conflAct[d2]==-1)
 											break;
-										else if(conflAct[d2]>=0 && m<invPermutation[conflAct[d2]]){
+										else if(conflAct[d2]>=0 && m>invPermutation[conflAct[d2]]){
 											m=invPermutation[conflAct[d2]];
 											mpos=d2;
 										}
 									}
 								}
-								assert(m>=0 && mpos>=0 || d2<gt.rules.nDaysPerWeek);
+								assert(m>=0 && m<gt.rules.nInternalActivities && mpos>=0 || d2<gt.rules.nDaysPerWeek);
 								if(d2==gt.rules.nDaysPerWeek)
 									d2=mpos;
 								
@@ -2090,20 +2091,21 @@ impossiblestudentsmaxhoursdaily:
 								
 								int chooseStart=-1;
 								int bestD=-1;
-								int m=-1;
+								//chose earliest placed activity, to avoid cycling
+								int m=gt.rules.nInternalActivities;
 								int mpos=-1;
 								if(foundEnd){
 									for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 										if(nRem[d2]>0){
 											if(conflActEnd[d2]==-1)
 												break;
-											else if(conflActEnd[d2]>=0 && m<invPermutation[conflActEnd[d2]]){
+											else if(conflActEnd[d2]>=0 && m>invPermutation[conflActEnd[d2]]){
 												m=invPermutation[conflActEnd[d2]];
 												mpos=d2;
 											}
 										}
 									}
-									assert(m>=0 && mpos>=0 || d2<gt.rules.nDaysPerWeek);
+									assert(m>=0 && m<gt.rules.nInternalActivities && mpos>=0 || d2<gt.rules.nDaysPerWeek);
 									if(d2==gt.rules.nDaysPerWeek)
 										d2=mpos;
 									chooseStart=false;
@@ -2115,19 +2117,19 @@ impossiblestudentsmaxhoursdaily:
 										if(nRem[d2]>0){
 											if(conflActStart[d2]==-1)
 												break;
-											else if(conflActStart[d2]>=0 && m<invPermutation[conflActStart[d2]]){
+											else if(conflActStart[d2]>=0 && m>invPermutation[conflActStart[d2]]){
 												m=invPermutation[conflActStart[d2]];
 												mpos=d2;
 											}
 										}
 									}
-									assert(m>=0 && mpos>=0 || d2<gt.rules.nDaysPerWeek);
+									assert(m>=0 && m<gt.rules.nInternalActivities && mpos>=0 || d2<gt.rules.nDaysPerWeek);
 									if(d2<gt.rules.nDaysPerWeek){
 										bestD=d2;
 										chooseStart=true;
 									}
 									else if(oldm!=m){
-										assert(oldm<m);
+										assert(oldm>m);
 									
 										d2=mpos;
 										bestD=d2;
@@ -2230,7 +2232,8 @@ impossiblestudentsmaxhoursdaily:
 										
 											if(!breakDayHour[d2][h2] &&!subgroupNotAvailableDayHour[sb][d2][h2] && !(d2==d && h2>=h && h2<h+act->duration) ){
 												if(subgroupsTimetable[sb][d2][h2]>=0 && !swappedActivities[subgroupsTimetable[sb][d2][h2]]){
-													if(conflAct==-2 || conflAct>=0 && invPermutation[conflAct]<invPermutation[subgroupsTimetable[sb][d2][h2]]){
+													//choose conflAct as earlier placed as possible, to avoid cycles
+													if(conflAct==-2 || conflAct>=0 && invPermutation[conflAct]>invPermutation[subgroupsTimetable[sb][d2][h2]]){
 														found=true;
 														conflAct=subgroupsTimetable[sb][d2][h2];
 														selDay=d2;
@@ -4086,18 +4089,29 @@ impossibleroomnotavailable:
 				nWrong[i]=cnt;
 			}
 			
-			int optMinIndex=-1;
+			//int optMinIndex=-1;
+			int optMinIndex=gt.rules.nInternalActivities;
 			int optNWrong=INF;
 			int optMinWrong=INF;
 			int optNConflActs=gt.rules.nInternalActivities;
 			int j=-1;
+			
+			//bool chooseRandom = (randomKnuth()%20 == 0);
+			
 			foreach(int i, tim){
 				//choose a random time out of these with minimum number of wrongly replaced activities
 #if 1
 				if(optNWrong>nWrong[i]
 				 || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]
-				 || optNWrong==nWrong[i] && minIndexAct[i]>optMinIndex && optNConflActs==nConflActivities[i]){
+				 || optNWrong==nWrong[i] && minIndexAct[i]<optMinIndex && optNConflActs==nConflActivities[i]){
 #endif
+/*#if 1
+				if(!chooseRandom && (optNWrong>nWrong[i] || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i])
+				 || chooseRandom && optNWrong>nWrong[i]){
+#endif*/
+/*#if 1
+				if(optNWrong>nWrong[i]){
+#endif*/
 					optNWrong=nWrong[i];
 					optMinWrong=minWrong[i];
 					optMinIndex=minIndexAct[i];
@@ -4109,7 +4123,8 @@ impossibleroomnotavailable:
 			assert(j>=0);
 			QList<int> tim2;
 			foreach(int i, tim)
-				if(optNWrong==nWrong[i] && /*minWrong[i]==optMinWrong*/ minIndexAct[i]==optMinIndex && optNConflActs==nConflActivities[i])
+				if(optNWrong==nWrong[i] /*&& minWrong[i]==optMinWrong*/ && minIndexAct[i]==optMinIndex && optNConflActs==nConflActivities[i])
+				//if(!chooseRandom && optNWrong==nWrong[i] && optNConflActs==nConflActivities[i] || chooseRandom && optNWrong==nWrong[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
 			int rnd=randomKnuth()%tim2.count();
@@ -4173,7 +4188,7 @@ impossibleroomnotavailable:
 		
 			//sort activities in decreasing order of difficulty.
 			//if the index of the activity in "permutation" is smaller, the act. is more difficult
-			QList<int> sorted;
+			/*QList<int> sorted;
 			QList<int> conflActs=conflActivities[newtime];
 			while(conflActs.count()>0){
 				int m=gt.rules.nInternalActivities;
@@ -4186,13 +4201,16 @@ impossibleroomnotavailable:
 					}
 				}
 				assert(j>=0);
+				
+				j=0; //no more considering permutation order
+				
 				sorted.append(conflActs.at(j));
 				int a=conflActs.at(j);
 				int t=conflActs.removeAll(a);
 				assert(t==1);
 			}
 			assert(sorted.count()==conflActivities[newtime].count());
-			conflActivities[newtime]=sorted;
+			conflActivities[newtime]=sorted;*/
 		
 			int ok=true;
 			//cout<<"LEVEL=="<<level<<", for activity ai with id=="<<gt.rules.internalActivitiesList[ai].id<<", list of conflActivities ids: ";

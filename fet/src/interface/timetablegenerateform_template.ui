@@ -25,7 +25,7 @@
         <property name="spacing">
             <number>6</number>
         </property>
-        <widget class="QPushButton" row="2" column="0" rowspan="1" colspan="3">
+        <widget class="QPushButton" row="3" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>writeResultsPushButton</cstring>
             </property>
@@ -38,7 +38,7 @@ simulation. You can use timetable/view  in the same
 time with the automatic generation</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="3" column="1" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -46,7 +46,26 @@ time with the automatic generation</string>
                 <string>Close</string>
             </property>
         </widget>
-        <widget class="QTextEdit" row="0" column="1" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="2" column="2">
+            <property name="name">
+                <cstring>stopPushButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string>Stop and see impossible activities</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>startPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Start</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="1" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>currentResultsTextEdit</cstring>
             </property>
@@ -60,25 +79,6 @@ time with the automatic generation</string>
             </property>
             <property name="text">
                 <string>Current stage:</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="2">
-            <property name="name">
-                <cstring>stopPushButton</cstring>
-            </property>
-            <property name="enabled">
-                <bool>false</bool>
-            </property>
-            <property name="text">
-                <string>Stop and see impossible activities</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="1" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>startPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Start</string>
             </property>
         </widget>
     </grid>

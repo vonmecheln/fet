@@ -548,14 +548,20 @@ void TimetableGenerateForm::activityPlaced(int na){
 
 	s+="\n";
 	s+=TimetableGenerateForm::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
-	s+=TimetableGenerateForm::tr("Activities are placed in order, firstly the most difficult ones, "
+	/*s+=TimetableGenerateForm::tr("Activities are placed in order, firstly the most difficult ones, "
 	 "backtracking and swapping order when stucked. When trying to place a new activity, possible swaps of already placed"
-	 " activities are analysed to try to make space for the new activity")+"\n";
+	 " activities are analysed to try to make space for the new activity")+"\n";*/
 	s+=TimetableGenerateForm::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
 	s+="\n";
 	s+=TimetableGenerateForm::tr("Usually, there is no need to stop and restart the search, even if the algorithm seems stucked."
 	 " Please report to author contrary cases");
+	s+="\n";
+	s+=TimetableGenerateForm::tr("It is recommended to strengthen (highten the weight) of the constraints step by step (for"
+	 " intance min n days or teachers max gaps), as you obtain feasible timetables.");
+	s+="\n";
+	s+=TimetableGenerateForm::tr("For nearly impossible timetables, the time of generation might be measured in hours."
+	 " I encountered such extreme cases when trying to make a timetable with only 1 gap for teachers. Stop/restart might help sometimes");
 
 	mutex.unlock();
 
@@ -939,10 +945,6 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
-	QString onlyfilename=htmlfilename;
-	int t=onlyfilename.lastIndexOf("/");
-	onlyfilename.remove(0, t+1);
-
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
@@ -969,7 +971,7 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 			tos<<"          <li>\n            "<<TimetableGenerateForm::tr("Group")<<" "<<protect2(stg->name)<<": \n";
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				tos<<"              <a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
+				tos<<"              <a href=\""<<"#table_"<<protect2id(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
 			}
 			tos<<"          </li>\n";
 		}
@@ -1024,18 +1026,18 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
 		tos<<"      </tbody>\n";
 		if(subgroup!=gt.rules.nInternalSubgroups-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 	tos<<"  </body>\n</html>\n";
@@ -1063,10 +1065,6 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
-    QString onlyfilename=htmlfilename;
-    int t=onlyfilename.lastIndexOf("/");
-    onlyfilename.remove(0, t+1);
-
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
@@ -1093,7 +1091,7 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 			tos<<"          <li>\n            "<<TimetableGenerateForm::tr("Group")<<" "<<protect2(stg->name)<<": \n";
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				tos<<"              <a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
+				tos<<"              <a href=\""<<"#table_"<<protect2id(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
 			}
 			tos<<"          </li>\n";
 		}
@@ -1149,18 +1147,18 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 						tos<<"          <!-- span -->\n";
 				}
 				else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
 		tos<<"      </tbody>\n";
 		if(subgroup!=gt.rules.nInternalSubgroups-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 
@@ -1251,7 +1249,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1343,7 +1341,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QStri
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 		}
 		tos<<"        </tr>\n";
@@ -1375,10 +1373,6 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
-    QString onlyfilename=htmlfilename;
-    int t=onlyfilename.lastIndexOf("/");
-    onlyfilename.remove(0, t+1);
-
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
@@ -1399,7 +1393,7 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
-		tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</a></li>\n";
+		tos<<"      <li><a href=\""<<"#table_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</a></li>\n";
 	}
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
@@ -1451,18 +1445,18 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
 		tos<<"      </tbody>\n";
 		if(teacher!=gt.rules.nInternalTeachers-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 	tos<<"  </body>\n</html>\n";
@@ -1489,10 +1483,6 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
-    QString onlyfilename=htmlfilename;
-    int t=onlyfilename.lastIndexOf("/");
-    onlyfilename.remove(0, t+1);
-
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
@@ -1513,7 +1503,7 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
-		tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</a></li>\n";
+		tos<<"      <li><a href=\""<<"#table_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</a></li>\n";
 	}
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
@@ -1567,18 +1557,18 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 						tos<<"          <!-- span -->\n";
 				}
 				else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
 		tos<<"      </tbody>\n";
 		if(teacher!=gt.rules.nInternalTeachers-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 	tos<<"  </body>\n</html>\n";
@@ -1665,7 +1655,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1758,7 +1748,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QStri
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td>---</td>\n";
+					tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 			}
 		}
 		tos<<"        </tr>\n";
@@ -1786,10 +1776,6 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
-    QString onlyfilename=htmlfilename;
-    int t=onlyfilename.lastIndexOf("/");
-    onlyfilename.remove(0, t+1);
-
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
@@ -1813,7 +1799,7 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 		tos<<"    <ul>\n";
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
-			tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(room_name)<<"\">"<<protect2(room_name)<<"</a></li>\n";
+			tos<<"      <li><a href=\""<<"#table_"<<protect2id(room_name)<<"\">"<<protect2(room_name)<<"</a></li>\n";
 		}
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
@@ -1866,18 +1852,18 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 						} else
 							tos<<"          <!-- span -->\n";
 					} else
-						tos<<"          <td>---</td>\n";
+						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 				}
 				tos<<"        </tr>\n";
 			}
 			tos<<"      </tbody>\n";
 			if(room!=gt.rules.nInternalRooms-1){
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 				tos<<"    <p>&nbsp;</p>\n\n";
 			} else {
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			}
 		}
 	}
@@ -1903,10 +1889,6 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
-    QString onlyfilename=htmlfilename;
-    int t=onlyfilename.lastIndexOf("/");
-    onlyfilename.remove(0, t+1);
-
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
@@ -1930,7 +1912,7 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 		tos<<"    <ul>\n";
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
-			tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(room_name)<<"\">"<<protect2(room_name)<<"</a></li>\n";
+			tos<<"      <li><a href=\""<<"#table_"<<protect2id(room_name)<<"\">"<<protect2(room_name)<<"</a></li>\n";
 		}
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
@@ -1985,18 +1967,18 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 							tos<<"          <!-- span -->\n";
 					}
 					else
-						tos<<"          <td>---</td>\n";
+						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 				}
 				tos<<"        </tr>\n";
 			}
 			tos<<"      </tbody>\n";
 			if(room!=gt.rules.nInternalRooms-1){
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 				tos<<"    <p>&nbsp;</p>\n\n";
 			} else {
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			}
 		}
 	}
@@ -2087,7 +2069,7 @@ void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& h
 						} else
 							tos<<"          <!-- span -->\n";
 					} else
-						tos<<"          <td>---</td>\n";
+						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 				}
 				tos<<"        </tr>\n";
 			}
@@ -2185,7 +2167,7 @@ void TimetableGenerateForm::writeRoomsTimetableTimeHorizontalHtml(const QString&
 						} else
 							tos<<"          <!-- span -->\n";
 					} else
-						tos<<"          <td>---</td>\n";
+						tos<<"          <td>&nbsp;<br />---<br />&nbsp;</td>\n";
 				}
 			}
 			tos<<"        </tr>\n";

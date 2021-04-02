@@ -1,0 +1,59 @@
+> i only joined this group around four days ago and downloaded FET 5.1.6
+> and started analyzing its code, but i am afraid i will lose the way
+> since you are releasing versions daily, even twice a day ^_^ wish you
+> a good luck and keep on.
+>
+> if you were using CVS, it will be easy to track versions and changes.
+>
+>
+> i will be very thankful if you send me any document about the methods
+> you are using in FET (the engine, optimization function...) or any
+> diagrams. i really want to understand it. because i am thinking to
+> translate it to java if i get enough time. but i am a little afraid
+> about its speed comparing to c++
+>
+> also the UI, is not good and i don't want to do it in c++, java will
+> be better.
+>
+> another suggestion is to use "int id;" as identifier and not String
+> names, it will increase the speed while searching, passing as param or
+> comparison (...), like that, it will be easier for someone to
+> translate the core functions and critic loops in assembler.
+
+The internal structure uses integers. There is the initial structure (using 
+mostly QStrings) and the internal structure, using integer indices.
+
+I hope you will not lose the way. I only made minor changes in generate.cpp 
+and generate_pre.cpp, minor changes but which may bring better results.
+
+I am not releasing 2-3 versions a day each time. I guess the average is a 
+release once at 10 days. There was 4.2.8 which lasted for more months (maybe 
+3 months).
+
+The structure of the solution is an array of times[MAX_ACTIVITIES] and 
+rooms[MAX_ACTIVITIES], I hope you understand why. I begin with unallocated. I 
+sort the activities, most difficult ones first. Sorting is done in 
+generate_pre.cpp. In generate_pre.cpp I also compute various matrices which 
+are faster to use than the internal constraints list. Generation is 
+recursive. Suppose we are at activity no. permutation[added_act] (added_act 
+from 0 to gt.rules.nInternalActivities - permutation[i] keeps the activities 
+in order, most difficult ones first, and this order will possibly change in 
+allocation). We scan each slot and for each slot record the activities which 
+conflict with permutation[added_act]. We then order them, the emptiest slots 
+first. Then, for the first, second, ... last slot: unallocate 
+the activities in this slot, place permutation[added_act] and try to place 
+the remaining activities recursively with the same procedure. The max level of 
+recursion is 14 (humans use 10, but I found that sometimes 14 is better) and 
+the total number of calls for this routine, random_swap(act, level) is 2000 
+(found practically - might not be the best).
+
+If I cannot place activity permutation[added_act] this way (the 2000 limit is 
+reached), then I choose the best slot, place permutation[added_act] in this 
+slot and pull out the other conflicting activities from this slot and add 
+them to the list of unallocated activities. added_act might decrease this 
+way. Now I keep track of old tried removals and avoid them (they are in the 
+tabu list - with size 200 now) - to avoid cycles.
+
+I hope enough material for today. I'll add parts of this email to FET doc. 
+Just ask me for more and I'll answer.
+
