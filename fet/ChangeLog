@@ -1689,3 +1689,6 @@ Versions 5.21.0 - 5.21.x
 	- Minor interface improvements.
 - Version 5.21.2
 	- Corrected a bug in two of the Brazil examples (the bug was introduced in the previous version).
+- Version 5.21.3
+	- Updated the Windows version to Qt 5.2.1.
+	

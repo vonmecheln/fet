@@ -1,4 +1,4 @@
-This is FET version 5.21.2
+This is FET version 5.21.3
 
 
 Program description:
@@ -15,7 +15,7 @@ Program description:
 Requirements:
 
 	FET is created in the following environment: openSUSE 13.1 GNU/Linux distribution, Linux 3.11.10, Xfce 4.10,
-	Midnight Commander 4.8.10, KDiff3 0.9.97, Qt 5.2.0, gcc 4.8.1, g++ 4.8.1, make 3.82, Valgrind 3.8.1, other great free tools.
+	Midnight Commander 4.8.10, KDiff3 0.9.97, Qt 5.2.1, gcc 4.8.1, g++ 4.8.1, make 3.82, Valgrind 3.8.1, other great free tools.
 	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
 
 	GNU/Linux, Mac OS X:
@@ -23,11 +23,10 @@ Requirements:
 		make 3.82 or similar (GNU Make)
 		gcc 4.8.1 or similar
 		g++ 4.8.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package)
-		Qt 5.2.0 or compatible (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
+		Qt 5.2.1 or compatible (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
 
 	Windows:
-	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls). The Windows precompiled
-	package is based on Qt 4.8.5 for now, because of various problems of Qt 5 under Windows.
+	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
 	For compiling, you need Qt and a compatible C++ compiler (MinGW is a possibility).
 
 
@@ -45,7 +44,7 @@ Getting - compiling - installing GNU tools: make, gcc and g++ (or gcc-g++, or gc
 	"g++ --version".
 
 	Windows: you need a Qt compatible C++ compiler.
-	Maybe an easy option is the MinGW compiler, available inside the Qt SDK or on the Qt download page. You may
+	Maybe an easy option is the MinGW compiler, available inside the Qt or on the Qt download page. You may
 	alternatively download MinGW from its homepage.
 
 
@@ -53,27 +52,16 @@ Getting - compiling - installing Qt:
 
 	Qt homepage: http://qt-project.org/
 
-	You will need Qt 5.2.0 or compatible to compile FET (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
+	You will need Qt 5.2.1 or compatible to compile FET (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
 	You can get the corresponding version of Qt with your package manager or from the Qt homepage.
-	Qt can be used with the LGPL, GPL or commercial license. You may choose between the Libraries or SDK versions.
-	Any variant should work.
+	Qt can be used with the LGPL, GPL or commercial license.
 
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get your version of Qt, pre-compiled.
 	Or you can download, (possibly) compile and install Qt from its homepage.
 	A possible name for the precompiled package is libqt5.
 
 	Windows - Download latest Qt from its homepage. Usually, you can get a precompiled Qt version for your C++ compiler, but sometimes
-	you may need to compile Qt from its sources. For the moment, the authors use the older Qt 4.8.5, because of various problems with Qt 5 under Windows.
-	If you choose the LGPL Qt for MinGW:
-		For the Framework version, you need to install firstly a compatible C++ compiler (see above section "Getting - compiling - installing GNU tools").
-		The SDK includes the MinGW C++ compiler.
-	The following instructions are for Qt LGPL Framework for MinGW:
-	You may want to use the Qt command prompt, in which case you do not need to care about the environment variables below.
-	If you want to use the Windows command prompt:
-		Set QTDIR environment variable to C:\Qt\4.8.5
-		Add in the PATH environment variable these directories: C:\Qt\4.8.5\bin and C:\mingw\bin
-		Set QMAKESPEC environment variable to win32-g++
-		(these are the default directories, but you may have chosen different ones, so use them instead).
+	you may need to compile Qt from its sources.
 
 	Mac OS X:
 	Maybe you can get pre-compiled Qt packages for Mac OS X. If not, get Qt from its homepage.
@@ -81,7 +69,7 @@ Getting - compiling - installing Qt:
 	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
 	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
 	something like: linux-g++, macx-g++ or win32-g++ (platform-compiler). You can find all the supported platforms in the directory "mkspecs" of Qt
-	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\5.2.0\mkspecs on Windows).
+	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\5.2.1\mkspecs on Windows).
 	It seems that Qt automatically finds the platform (there is a default configuration in the "default" subdirectory of the "mkspecs" directory,
 	which is created automatically when you install Qt). If the default configuration is not working or is wrong, you may need to set the
 	correct QMAKESPEC variable for your platform. Under Windows, you can create an environment variable QMAKESPEC equal to win32-g++
@@ -115,14 +103,14 @@ Compiling FET:
 	Note NMkJobs: advice from a user: if you have a multiple core computer, you may be able to split the compilation into more threads, with the -j option for the
 	make command, so that the compilation is faster. This option creates a number of compilation threads equal with the number specified along with the -j option.
 	Under GNU/Linux or Mac OS X, just write "make -j 2" if you have dual core or "make -j 4" if you have quad core (in case you have quad core and you want
-	to keep a core free for other tasks, write "make -j 3"). This is proven to work under GNU/Linux and Mac OS X, but seems not to work under Windows
-	(using mingw32-make, the -j argument seems to be ignored, for the time being).
+	to keep a core free for other tasks, write "make -j 3"). This is proven to work under GNU/Linux and Mac OS X. Under Windows it depends on the C++ compiler (you
+	may try it to see if it works).
 
-	Currently FET can be compiled with a C++ compiler, using Qt version 5.2.0 or compatible.
+	Currently FET can be compiled with a C++ compiler, using Qt version 5.2.1 or compatible.
 
 
 	GNU/Linux:
-	- You will need Qt 5.2.0 or compatible to compile this program.
+	- You will need Qt 5.2.1 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 5 series, which on some systems
 	might be named qmake-qt5 (this command is executed very fast, so don't worry if you get immediate return from it)
 	- type "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above.
@@ -133,7 +121,7 @@ Compiling FET:
 	2 Variants:
 
 	1. First variant, if you use gcc compiler:
-	- You will need Qt 5.2.0 or compatible to compile this program.
+	- You will need Qt 5.2.1 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 5 series.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro" 
@@ -149,8 +137,7 @@ Compiling FET:
 	http://lists.trolltech.com/qt-interest/2007-04/thread01126-0.html
 
 
-	Windows: MinGW C++ compiler: you need Qt 4.8.5 (or the new 5.2.0) or compatible, and MinGW.
-	The authors use the older Qt 4.8.5 because of various problems of Qt 5.2.0 under Windows.
+	Windows: MinGW C++ compiler: you need Qt 5.2.1 or compatible, and MinGW.
 	You might use other compilers if you want, please see the Qt homepage.
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
@@ -158,11 +145,7 @@ Compiling FET:
 	in a command line in the FET directory. See also note NMkJobs above.
 	(You can use the command line prompt of Windows or the Qt command line prompt shortcut in the Qt shortcuts menu.)
 	Then, you can remove the directories "src" and "tmp", to save up space, if you want.
-	For MinGW: you need to copy these 6 files into the FET directory (in the same place as fet.exe):
-	(QTDIR is an abbreviation for C:\Qt\4.8.5 if you use Qt 4.8.5)
-	QTDIR\bin\mingwm10.dll, QTDIR\bin\libgcc_s_dw2-1.dll,
-	QTDIR\bin\QtCore4.dll, QTDIR\bin\QtGui4.dll, QTDIR\bin\QtNetwork4.dll, QTDIR\bin\QtXml4.dll.
-	For fet-cl.exe you don't need QTDIR\bin\QtGui4.dll and QTDIR\bin\QtNetwork4.dll.
+	You will need to copy the dll's in the same directories as in the official FET archive for Windows.
 
 
 Installing FET:

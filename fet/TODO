@@ -2858,3 +2858,19 @@ There should be comment to the teachers, rooms, students and activities.
 (Maybe even instead of using the activity constraints). These comments
 should be visible (or accessible by a pushbutton) in the constraints
 dialogs.
+
+186---------------------------------------------------------
+From plaldw (on forum):
+
+Max building changes in a time interval.
+
+187---------------------------------------------------------
+From llbuenoo (on forum):
+
+I would like to generate a report that show the teachers and theirs restrictions (mainly the "Teachers not available times") and Activities related to the years (with its Groups and subgroups), in a way that I can better manage the distribution of the teachers activities according to their availability.
+
+I have been making this by hand, but it generates a lot of work on each manual iteration on the timetable. As the data is stored on the FET database, it could be generated directly by the program.
+
+I think in a pair of tables per year, one with the teachers and their activities in that year and another with the "teachers not available time" for that year.
+
+With this table it could be simpler to redistribute Activities or teachers.
