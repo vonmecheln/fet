@@ -144,7 +144,7 @@
         <location filename="../src/interface/activitiesform.cpp" line="545"/>
         <source>The activities which are inactive:</source>
         <comment>This is the help for activities which are inactive, after this field there come explanations for how inactive activities are displayed.</comment>
-        <translation type="unfinished">Aktivitäten, die deaktiviert sind:</translation>
+        <translation>Aktivitäten, die deaktiviert sind:</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="548"/>
@@ -1410,7 +1410,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
-        <translation type="unfinished">Aktiv</translation>
+        <translation>Aktiv</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="351"/>
@@ -1823,7 +1823,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="14"/>
         <source>Add activities max simultaneous in selected time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl simultaner Aktivitäten in ausgesuchten Zeitfeldern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="24"/>
@@ -1869,7 +1869,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitfelder</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
@@ -1881,13 +1881,13 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle auswählen</translation>
+        <translation>Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle abwählen</translation>
+        <translation>Alle abwählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
@@ -1999,7 +1999,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
         <source>Add activities not overlapping</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von nicht überlappenden Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="120"/>
@@ -2067,7 +2067,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="14"/>
         <source>Add activities occupy max different rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Aktivitäten, die eine maximale Anzahl verschiedener Räume nutzt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="20"/>
@@ -2169,7 +2169,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="14"/>
         <source>Add activities occupy max time slots from selection</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl Aktivitäten in ausgesuchten Zeitfeldern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="24"/>
@@ -2215,7 +2215,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitfelder</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
@@ -2227,13 +2227,13 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle auswählen</translation>
+        <translation>Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle abwählen</translation>
+        <translation>Alle abwählen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -2360,7 +2360,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="124"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="131"/>
@@ -2372,7 +2372,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="138"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="145"/>
@@ -2388,7 +2388,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Add activities preferred starting times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen bevorzugter Startzeiten für Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="26"/>
@@ -2479,7 +2479,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="138"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="152"/>
@@ -2490,7 +2490,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Add activities preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Aktivitäten mit bevorzugten Zeitfeldern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="38"/>
@@ -2516,7 +2516,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="124"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="131"/>
@@ -2578,7 +2578,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="14"/>
         <source>Add activities same room if consecutive</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Aktivitäten mit gleichen Räumen, wenn sie aneinanderhängen sind</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="20"/>
@@ -2737,7 +2737,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="14"/>
         <source>Add activities same starting day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Aktivitäten mit gleichem Tag</translation>
     </message>
 </context>
 <context>
@@ -2870,7 +2870,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="215"/>
         <source>Empty list of simultaneous activities</source>
-        <translation type="unfinished">Leere Liste von gleichzeitigen Aktivitäten</translation>
+        <translation>Leere Liste von gleichzeitigen Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="220"/>
@@ -2931,7 +2931,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="14"/>
         <source>Add activities same starting time</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Aktivitäten mit gleicher Startzeit (Tag und Stunde)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="36"/>
@@ -3049,7 +3049,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="14"/>
         <source>Add activity ends students day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Aktivitöäten, die einen Schülertag beenden</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="162"/>
@@ -3160,7 +3160,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="14"/>
         <source>Add activity preferred room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von einem bevorzugten Raum für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="36"/>
@@ -3262,7 +3262,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="14"/>
         <source>Add activity preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von bevorzugten Räumen für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="20"/>
@@ -3400,7 +3400,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="14"/>
         <source>Add activity preferred starting time</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen einer bevorzugter Startzeit für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="52"/>
@@ -3510,7 +3510,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
@@ -3522,7 +3522,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
@@ -3538,7 +3538,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="14"/>
         <source>Add activity preferred starting times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von bevorzugten Startzeiten für eine Aktivität</translation>
     </message>
 </context>
 <context>
@@ -3623,7 +3623,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
@@ -3635,7 +3635,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -3651,7 +3651,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="14"/>
         <source>Add activity preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von bevorzugten Zeitfeldern für eine Aktivität</translation>
     </message>
 </context>
 <context>
@@ -3712,7 +3712,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Add activity tag preferred room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen eines bevorzugten Raumes für eine Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="110"/>
@@ -3789,7 +3789,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Add activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von bevorzugten Räumen für eine Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="41"/>
@@ -3841,7 +3841,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform.cpp" line="74"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkung nicht hinzugefügt. Es gibt eine andere Einschränkung von diesem Typ. Bitte ändere diese</translation>
     </message>
 </context>
 <context>
@@ -3850,7 +3850,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="14"/>
         <source>Add basic compulsory space</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von grundlegenden verpflichtenden Einschränkungen von Räumen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsoryspaceform_template.ui" line="57"/>
@@ -3898,7 +3898,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform.cpp" line="74"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkung nicht hinzugefügt. Es gibt eine andere Einschränkung von diesem Typ. Bitte ändere diese</translation>
     </message>
 </context>
 <context>
@@ -3907,7 +3907,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="14"/>
         <source>Add basic compulsory time</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von grundlegenden verpflichtenden Einschränkungen von Zeiten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbasiccompulsorytimeform_template.ui" line="57"/>
@@ -3949,7 +3949,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="204"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkung nicht hinzugefügt. Es gibt eine andere Einschränkung von diesem Typ. Bitte ändere diese</translation>
     </message>
 </context>
 <context>
@@ -3963,7 +3963,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="75"/>
@@ -3975,7 +3975,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
         <source>Set all break</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;Pause&quot;</translation>
+        <translation>Setze alle auf &quot;Pause&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="89"/>
@@ -3991,7 +3991,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="14"/>
         <source>Add break times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Pausenzeiten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="26"/>
@@ -4093,7 +4093,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="121"/>
@@ -4110,7 +4110,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
         <source>Add max days between activities</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl an Tagen zwischen Aktivitäten</translation>
     </message>
 </context>
 <context>
@@ -4132,7 +4132,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="193"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished">Keine Aktivitäten ausgewählt</translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="198"/>
@@ -4186,7 +4186,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="14"/>
         <source>Add min days between activities</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von minimaler Anzahl an Tagen zwischen Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="20"/>
@@ -4222,7 +4222,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="121"/>
@@ -4359,7 +4359,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="121"/>
@@ -4376,7 +4376,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="14"/>
         <source>Add min gaps between activities</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von minimaler Anzahl an Freistunden zwischen Aktivitäten</translation>
     </message>
 </context>
 <context>
@@ -4427,13 +4427,13 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="109"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
@@ -4449,7 +4449,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="14"/>
         <source>Add room not available times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Einschränkungen für nicht verfügbaren Raum</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="70"/>
@@ -4500,7 +4500,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Einschränkungen für die maximale Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -4571,7 +4571,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl an Stunden pro Tag für eine Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -4643,7 +4643,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Add students early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von frühem Unterrichtsbeginn für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="122"/>
@@ -4737,7 +4737,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Add students interval max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen einer Schülergrupp, die in einem Intervall nur an einer begrenztzen Anzahl an Tagen pro Woche arbeitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -4803,7 +4803,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Add students max building changes per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Gebäudewechsel pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="22"/>
@@ -4859,7 +4859,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Add students max building changes per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximale Anzahl an Gebäudewechsel pro Woche für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="22"/>
@@ -4978,7 +4978,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentsmaxgapsperdayform_template.ui" line="14"/>
         <source>Add students max gaps per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximale Anzahl an Freistunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperdayform_template.ui" line="32"/>
@@ -5061,7 +5061,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="14"/>
         <source>Add students max gaps per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Freistunden pro Woche für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperweekform_template.ui" line="32"/>
@@ -5106,7 +5106,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler aufeinanderfolgender Stundenanzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhourscontinuouslyform_template.ui" line="73"/>
@@ -5162,7 +5162,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler täglicher Stundenzahl für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxhoursdailyform_template.ui" line="73"/>
@@ -5223,7 +5223,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Add students min gaps between building changes</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler Anzahl an Freistunden nach einem Gebäudewechsel für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="50"/>
@@ -5278,7 +5278,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="75"/>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="80"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="75"/>
@@ -5309,7 +5309,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="111"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Benutze es daher nur mir Vorsicht.</translation>
+        <translation>Benutze es nur mir Vorsicht.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="108"/>
@@ -5323,7 +5323,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="14"/>
         <source>Add students min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler täglicher Stundenzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform_template.ui" line="39"/>
@@ -5398,7 +5398,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung einer Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -5480,7 +5480,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl an Stunden pro Tag für einer Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -5578,7 +5578,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Add students set early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von frühem Unterrichtsbeginn für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
@@ -5634,7 +5634,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Add students set home room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen eines Klassenraumes von Schülern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomform_template.ui" line="45"/>
@@ -5720,7 +5720,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Add students set home rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Klassenräumen von Schülern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssethomeroomsform_template.ui" line="41"/>
@@ -5815,7 +5815,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Add students set interval max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen eines Intervall einer Schülergruppe, die nur an einer begrenztzen Anzahl an Tagen pro Woche arbeitet</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="58"/>
@@ -5890,7 +5890,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Add students set max building changes per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Gebäudewechsel pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="22"/>
@@ -5955,7 +5955,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Add students set max building changes per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Gebäudewechsel pro Tag für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="22"/>
@@ -6092,7 +6092,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="14"/>
         <source>Add students set max gaps per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximale Anzahl an Freistunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperdayform_template.ui" line="32"/>
@@ -6191,7 +6191,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="14"/>
         <source>Add students set max gaps per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Freistunden pro Woche für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxgapsperweekform_template.ui" line="129"/>
@@ -6242,7 +6242,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students set max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximale aufeinanderfolgender Stundenanzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="148"/>
@@ -6309,7 +6309,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students set max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler täglicher Stundenzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxhoursdailyform_template.ui" line="148"/>
@@ -6381,7 +6381,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Add students set min gaps between building changes</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler Anzahl an Freistunden nach einem Gebäudewechsel für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="22"/>
@@ -6440,7 +6440,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="99"/>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="104"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="99"/>
@@ -6476,7 +6476,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="143"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Benutze es daher nur mir Vorsicht.</translation>
+        <translation>Benutze es nur mir Vorsicht.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="140"/>
@@ -6494,7 +6494,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="127"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="143"/>
@@ -6510,7 +6510,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="14"/>
         <source>Add students set min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler täglichen Stundenzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform_template.ui" line="71"/>
@@ -6602,13 +6602,13 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -6667,19 +6667,19 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Add subactivities preferred starting times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen einer bevorzugte Startzeit für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="177"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="191"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="205"/>
@@ -6779,13 +6779,13 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Add subactivities preferred time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von bevorzugten Zeitfeldern für Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="191"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="198"/>
@@ -6826,7 +6826,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="177"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="184"/>
@@ -6919,7 +6919,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Add subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von einem Raum für Fach und Aktivitätskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="130"/>
@@ -7007,7 +7007,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Add subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Räumen für Fach und Aktivitätskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
@@ -7089,7 +7089,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="14"/>
         <source>Add subject preferred room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen eines bevorzugten Raumes eines Unterrichtfaches</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="28"/>
@@ -7166,7 +7166,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="14"/>
         <source>Add subject preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen bevorzugter Räume eines Unterrichtfaches</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="94"/>
@@ -7237,7 +7237,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teacher activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung eines Lehrers</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="150"/>
@@ -7319,7 +7319,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl an Stunden pro Tag für eine Unterrichtskennzeichnung eines Lehrers</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -7391,7 +7391,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacherhomeroomform_template.ui" line="14"/>
         <source>Add teacher home room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen eines Lehrerraumes</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomform_template.ui" line="28"/>
@@ -7482,7 +7482,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="14"/>
         <source>Add teacher home rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Lehrerräumen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherhomeroomsform_template.ui" line="41"/>
@@ -7572,7 +7572,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Add teacher interval max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen einer begrenzte Anzahl an Tagen in einem Intervall für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherintervalmaxdaysperweekform_template.ui" line="58"/>
@@ -7647,7 +7647,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Add teacher max building changes per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximale Anzahl an Gebäudewechsel pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperdayform_template.ui" line="22"/>
@@ -7712,7 +7712,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Add teacher max building changes per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximale Anzahl an Gebäudewechsel pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxbuildingchangesperweekform_template.ui" line="22"/>
@@ -7783,7 +7783,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Add teacher max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Tagen pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="28"/>
@@ -7861,7 +7861,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="14"/>
         <source>Add teacher max gaps per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Freistunden pro Tagen für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="91"/>
@@ -7938,7 +7938,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Add teacher max gaps per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="65"/>
@@ -7999,7 +7999,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teacher max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler aufeinanderfolgender Stundenanzahl für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhourscontinuouslyform_template.ui" line="148"/>
@@ -8066,7 +8066,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Add teacher max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxhoursdailyform_template.ui" line="148"/>
@@ -8139,7 +8139,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="14"/>
         <source>Add teacher min days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen mainimaler Anzahl an Tagen pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermindaysperweekform_template.ui" line="28"/>
@@ -8211,7 +8211,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Add teacher min gaps between building changes</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler Anzahl an Freistunden nach einem Gebäudewechsel für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="22"/>
@@ -8294,7 +8294,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="14"/>
         <source>Add teacher min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="32"/>
@@ -8309,7 +8309,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="133"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacherminhoursdailyform_template.ui" line="145"/>
@@ -8389,7 +8389,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="131"/>
@@ -8401,7 +8401,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="138"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="145"/>
@@ -8422,7 +8422,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="14"/>
         <source>Add teacher not available times</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen nicht verfügbare Zeiten eines Lehrers</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="26"/>
@@ -8471,7 +8471,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung von Lehrern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="121"/>
@@ -8542,7 +8542,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von maximaler Anzahl an Stunden pro Tag für eine Unterrichtskennzeichnung von Lehrern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -8632,7 +8632,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Add teachers interval max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen einer begrenzte Anzahl an Tagen in einem Intervall von Lehrern</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -8701,7 +8701,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Add teachers max building changes per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Gebäudewechsel pro Tag für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperdayform_template.ui" line="22"/>
@@ -8755,7 +8755,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Add teachers max building changes per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Gebäudewechsel pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxbuildingchangesperweekform_template.ui" line="22"/>
@@ -8820,7 +8820,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmaxdaysperweekform_template.ui" line="14"/>
         <source>Add teachers max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Tagen pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxdaysperweekform_template.ui" line="55"/>
@@ -8886,7 +8886,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Add teachers max gaps per day</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Freistunden pro Tagen für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="105"/>
@@ -8941,7 +8941,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Add teachers max gaps per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Freistunden pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="105"/>
@@ -8996,7 +8996,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teachers max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler aufeinanderfolgender Stundenanzahl für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhourscontinuouslyform_template.ui" line="73"/>
@@ -9052,7 +9052,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Add teachers max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen maximaler Anzahl an Stunden pro Tag für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxhoursdailyform_template.ui" line="73"/>
@@ -9114,7 +9114,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmindaysperweekform_template.ui" line="14"/>
         <source>Add teachers min days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen mainimaler Anzahl an Tagen pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmindaysperweekform_template.ui" line="28"/>
@@ -9173,7 +9173,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Add teachers min gaps between building changes</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler Anzahl an Freistunden nach einem Gebäudewechsel für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="22"/>
@@ -9255,7 +9255,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="14"/>
         <source>Add teachers min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen minimaler Anzahl an Stunden pro Tag für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="32"/>
@@ -9270,7 +9270,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform_template.ui" line="101"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
 </context>
 <context>
@@ -9320,7 +9320,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="14"/>
         <source>Add three activities grouped</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von 3 Aktivitäten, die gruppiert sind</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="89"/>
@@ -9437,7 +9437,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="14"/>
         <source>Add two activities consecutive</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von 2 Aktivitäten direkt hintereinander folgen</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="199"/>
@@ -9537,7 +9537,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="14"/>
         <source>Add two activities grouped</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von 2 Aktivitäten, die gruppiert sind</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="199"/>
@@ -9637,7 +9637,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="14"/>
         <source>Add two activities ordered</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von 2 Aktivitäten, sind geordnet sind</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="199"/>
@@ -9687,22 +9687,22 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="182"/>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="223"/>
         <source>FET information</source>
-        <translation type="unfinished">FET Information</translation>
+        <translation>FET Information</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="178"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished">Keine Aktivitäten ausgewählt</translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="183"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">Nur eine Aktivität wurde ausgewählt</translation>
+        <translation>Nur eine Aktivität wurde ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="220"/>
         <source>Added group activities in initial order item</source>
-        <translation type="unfinished"></translation>
+        <translation>Zusammenfassen von Aktivitäten für die Anfangsordnung wurde hinzugefügt</translation>
     </message>
 </context>
 <context>
@@ -9711,64 +9711,64 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="14"/>
         <source>Add group activities in initial order item</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen von Zusammenfassung von Aktivitäten für die Anfangsordnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="46"/>
         <source>Subject</source>
-        <translation type="unfinished">Unterrichtsfach</translation>
+        <translation>Unterrichtsfach</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Aktivitätskennzeichnung</translation>
+        <translation>Aktivitätskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="91"/>
         <source>Activities</source>
-        <translation type="unfinished">Aktivitäten</translation>
+        <translation>Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="121"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activities</comment>
-        <translation type="unfinished">Ausgewählte</translation>
+        <translation>Ausgewählte</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished">Alles Löschen</translation>
+        <translation>Alles Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="154"/>
         <source>Add item</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="161"/>
         <source>Close</source>
-        <translation type="unfinished">Schließen</translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -9831,7 +9831,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="39"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/addroomform_template.ui" line="49"/>
@@ -9942,7 +9942,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="14"/>
         <source>Add students group</source>
         <extracomment>This is the title of the dialog to add a students group</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen einer Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform_template.ui" line="43"/>
@@ -10057,7 +10057,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="14"/>
         <source>Add students subgroup</source>
         <extracomment>The title of the dialog to add a students subgroup</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen einer Schülerteilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform_template.ui" line="43"/>
@@ -10449,12 +10449,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1688"/>
         <source>FET - Unlock all activities without a generated timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>FET - Entsperre alle Aktivitäten ohne generiertem Stundenplan</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1694"/>
         <source>All activities will be unlocked (those which are not permanently locked)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Aktivitäten werden entsperrt, wenn sie nicht permanent gesperrt sind</translation>
     </message>
 </context>
 <context>
@@ -10560,12 +10560,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="715"/>
         <source>Are you sure you want to continue?</source>
-        <translation type="unfinished">Möchten Sie fortfahren?</translation>
+        <translation>Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="743"/>
         <source>Constraint comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentar der Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/allspaceconstraintsform.cpp" line="745"/>
@@ -10742,12 +10742,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="994"/>
         <source>Are you sure you want to continue?</source>
-        <translation type="unfinished">Möchten Sie fortfahren?</translation>
+        <translation>Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1022"/>
         <source>Constraint comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentar der Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform.cpp" line="1024"/>
@@ -11394,12 +11394,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17950"/>
         <source>Selected time slots: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte Zeitfelder: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17951"/>
         <source>Maximum number of simultaneous activities in each selected time slot=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an gleichzeitigen Aktivitäten pro ausgewähltem Zeitfeld=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17954"/>
@@ -11489,7 +11489,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="14"/>
         <source>Constraints activities max simultaneous in selected time slots</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkungen für Maximum an gleichzeitigen Aktivitäten während ausgewählter Zeiten</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="26"/>
@@ -12021,7 +12021,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17572"/>
         <source>Activities occupy max time slots from selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl von Aktivitäten in ausgesuchten Zeitfeldern</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17573"/>
@@ -12042,12 +12042,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17581"/>
         <source>Selected time slots: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte Zeitfelder: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17582"/>
         <source>Maximum number of occupied slots from selection=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an belegten Feldern von ausgewählten Zeitfeldern=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17585"/>
@@ -12132,7 +12132,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="14"/>
         <source>Constraints activities occupy max time slots from selection</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkungen für maximale Anzahl an Feldern von ausgesuchten Zeitfeldern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="26"/>
@@ -12739,12 +12739,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7304"/>
         <source>Space constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Raumeinschränkung</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7305"/>
         <source>Activities same room if consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitäten mit gleichen Räumen, wenn sie aneinanderhängen sind</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7306"/>
@@ -12781,7 +12781,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7369"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dies erhöht die Anzahl an Konfliken um %1</translation>
     </message>
 </context>
 <context>
@@ -12825,12 +12825,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="14"/>
         <source>Constraints activities same room if consecutive</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkungen von Aktivitäten mit gleichen Räumen, wenn sie aneinanderhängen sind</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkungen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="43"/>
@@ -13145,7 +13145,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11777"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Kommentare=%1</translation>
+        <translation>Kommentare=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11841"/>
@@ -14283,7 +14283,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10504"/>
         <source>WP:%1%</source>
         <comment>Weight Percentage</comment>
-        <translation type="unfinished">Gew:%1%</translation>
+        <translation>Gew:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10511"/>
@@ -14485,7 +14485,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9223"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">Gew:%1%</translation>
+        <translation>Gew:%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9230"/>
@@ -15092,12 +15092,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="158"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
-        <translation type="unfinished">Möchten Sie wirklich die grundlegende Raumeinschränkung löschen?</translation>
+        <translation>Möchten Sie wirklich die grundlegende Raumeinschränkung löschen?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="160"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished">Sie können keinen Stundenplan ohne diese Einschränkung erstellen.</translation>
+        <translation>Sie können keinen Stundenplan ohne diese Einschränkung erstellen.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="162"/>
@@ -15282,12 +15282,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="160"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
-        <translation type="unfinished">Möchten Sie wirklich die grundlegende Zeiteinschränkung löschen?</translation>
+        <translation>Möchten Sie wirklich die grundlegende Zeiteinschränkung löschen?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="162"/>
         <source>You cannot generate a timetable without this constraint.</source>
-        <translation type="unfinished">Sie können keinen Stundenplan ohne diese Einschränkung erstellen.</translation>
+        <translation>Sie können keinen Stundenplan ohne diese Einschränkung erstellen.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="164"/>
@@ -15297,7 +15297,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="167"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
 </context>
 <context>
@@ -16282,7 +16282,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="521"/>
         <source>Not available at:</source>
         <comment>It refers to a room</comment>
-        <translation type="unfinished">Nicht verfügbar um:</translation>
+        <translation>Nicht verfügbar um:</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="538"/>
@@ -17356,7 +17356,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18434"/>
         <source>Students max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Tagen pro Woche für Schüler</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18435"/>
@@ -17453,7 +17453,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Tagen pro Woche für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="28"/>
@@ -18323,7 +18323,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="14"/>
         <source>Constraints students min hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die minimale Anzahl an Stunden pro Tag für Schüler</translation>
+        <translation>Einschränkungen für die minimale Anzahl an Stunden pro Tag für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="26"/>
@@ -18338,7 +18338,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="99"/>
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="106"/>
@@ -19898,42 +19898,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students set max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Einschrängung für die maximale Anzahl an Tagen pro Woche für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Einschränkungen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">Aktuelle Einschränkung</translation>
+        <translation>Aktuelle Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">Verändern</translation>
+        <translation>Verändern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">Schließen</translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -20930,7 +20930,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="14"/>
         <source>Constraints students set min hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die minimale Anzahl an Stunden pro Tag für Schüler</translation>
+        <translation>Einschränkungen für die minimale Anzahl an Stunden pro Tag für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="26"/>
@@ -20945,7 +20945,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="111"/>
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetminhoursdailyform_template.ui" line="118"/>
@@ -21062,7 +21062,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="960"/>
         <source>Not available at:</source>
         <comment>It refers to a students set</comment>
-        <translation type="unfinished">Nicht verfügbar um:</translation>
+        <translation>Nicht verfügbar um:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="977"/>
@@ -23460,7 +23460,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints teacher max building changes per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für einen Lehrer für maximale Gebäudewechsel pro Tag</translation>
+        <translation>Einschränkungen für einen Lehrer für maximale Gebäudewechsel pro Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -23785,7 +23785,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teacher max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Tagen pro Woche für einen Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Tagen pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="28"/>
@@ -23942,7 +23942,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints teacher max gaps per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Freistunden pro Tag für einen Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Freistunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperdayform_template.ui" line="28"/>
@@ -24099,7 +24099,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teacher max gaps per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="28"/>
@@ -24415,7 +24415,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxhoursdailyform_template.ui" line="95"/>
@@ -24572,7 +24572,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="14"/>
         <source>Constraints teacher min days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die minimale Anzahl an Tagen pro Woche für einen Lehrer</translation>
+        <translation>Einschränkungen für die minimale Anzahl an Tagen pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermindaysperweekform_template.ui" line="28"/>
@@ -24804,7 +24804,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13902"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13942"/>
@@ -24923,7 +24923,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher min hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die minimale Anzahl an Stunden pro Tag für einen Lehrer</translation>
+        <translation>Einschränkungen für die minimale Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacherminhoursdailyform_template.ui" line="95"/>
@@ -24972,7 +24972,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="567"/>
         <source>Teacher not available</source>
-        <translation type="unfinished">Nicht verfügbarer Lehrer</translation>
+        <translation>Nicht verfügbarer Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="568"/>
@@ -25016,7 +25016,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="595"/>
         <source>Not available at:</source>
         <comment>It refers to a teacher</comment>
-        <translation type="unfinished">Nicht verfügbar um:</translation>
+        <translation>Nicht verfügbar um:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="612"/>
@@ -25061,7 +25061,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="698"/>
         <source>Time constraint teacher not available</source>
-        <translation type="unfinished">Zeiteinschränkung für einen nicht verfügbaren Lehrer</translation>
+        <translation>Zeiteinschränkung für einen nicht verfügbaren Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="700"/>
@@ -25115,7 +25115,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="14"/>
         <source>Constraints teacher not available times</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für einen nicht verfügbaren Lehrer</translation>
+        <translation>Einschränkungen für einen nicht verfügbaren Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachernotavailabletimesform_template.ui" line="28"/>
@@ -25164,7 +25164,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3706"/>
         <source>Teachers for activity tag %1 have max %2 hours continuously</source>
-        <translation type="unfinished">Alle Lehrer haben maximal %2 Stunden ununterrochen Aktivitäten mit der Kennzeichnung %1</translation>
+        <translation>Alle Lehrer haben maximal %2 Stunden ununterbrochen Aktivitäten mit der Kennzeichnung %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3707"/>
@@ -25267,7 +25267,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung aller Lehrers</translation>
+        <translation>Einschränkungen für die maximale Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung aller Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="90"/>
@@ -25316,7 +25316,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15984"/>
         <source>Teachers for activity tag %1 have max %2 hours daily</source>
-        <translation type="unfinished">Alle Lehrer haben maximal %2 Stunden täglich die Unterrichtskennzeichnung %1</translation>
+        <translation>Alle Lehrer haben maximal %2 Stunden täglich die Unterrichtskennzeichnung %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15980"/>
@@ -25418,7 +25418,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an täglichen Stunden für eine Unterrichtskennzeichnung von allen Lehrern</translation>
+        <translation>Einschränkungen für die maximale Anzahl an täglichen Stunden für eine Unterrichtskennzeichnung von allen Lehrern</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="26"/>
@@ -25634,7 +25634,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers interval max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Tagen eines bestimmten Intervalls für alle Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Tagen in einem bestimmten Intervalls für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersintervalmaxdaysperweekform_template.ui" line="28"/>
@@ -25678,7 +25678,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5731"/>
         <source>Teachers max building changes per day</source>
-        <translation type="unfinished">Maximale Anzahl an Gebäudewechsel pro Tag für alle Lehrer</translation>
+        <translation>Maximale Anzahl an Gebäudewechsel pro Tag für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5733"/>
@@ -25700,7 +25700,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5746"/>
         <source>Teachers maximum building changes per day</source>
-        <translation type="unfinished">Maximale Anzahl an Gebäudewechsel pro Tag für alle Lehrer</translation>
+        <translation>Maximale Anzahl an Gebäudewechsel pro Tag für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5748"/>
@@ -25775,7 +25775,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für maximale Gebäudewechsel pro Tag für alle Lehrer</translation>
+        <translation>Einschränkungen für maximale Anzahl an Gebäudewechsel pro Tag für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperdayform_template.ui" line="28"/>
@@ -25819,7 +25819,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6219"/>
         <source>Teachers max building changes per week</source>
-        <translation type="unfinished">Maximale Anzahl an Gebäudewechsel pro Woche für alle Lehrer</translation>
+        <translation>Maximale Anzahl an Gebäudewechsel pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6221"/>
@@ -25841,7 +25841,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6234"/>
         <source>Teachers maximum building changes per week</source>
-        <translation type="unfinished">Maximale Anzahl an Gebäudewechsel pro Woche für alle Lehrer</translation>
+        <translation>Maximale Anzahl an Gebäudewechsel pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6236"/>
@@ -25916,7 +25916,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Constraints teachers max building changes per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für maximale Gebäudewechsel pro Woche aller Lehrer</translation>
+        <translation>Einschränkungen für maximale Anzahl an Gebäudewechsel pro Woche aller Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -25960,7 +25960,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4459"/>
         <source>Teachers max days per week</source>
-        <translation type="unfinished">Maximale Anzahl an Tagen pro Woche für alle Lehrer</translation>
+        <translation>Maximale Anzahl an Tagen pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4460"/>
@@ -26057,7 +26057,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Tagen pro Woche für alle Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Tagen pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxdaysperweekform_template.ui" line="28"/>
@@ -26101,7 +26101,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5116"/>
         <source>Teachers max gaps per day</source>
-        <translation type="unfinished">Maximale Anzahl an Freistunden pro Tag für alle Lehrer</translation>
+        <translation>Maximale Anzahl an Freistunden pro Tag für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5117"/>
@@ -26198,7 +26198,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per day</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Freistunden pro Tag für alle Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Freistunden pro Tag für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperdayform_template.ui" line="28"/>
@@ -26242,7 +26242,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4703"/>
         <source>Teachers max gaps per week</source>
-        <translation type="unfinished">Maximale Anzahl an Freistunden pro Woche für alle Lehrer</translation>
+        <translation>Maximale Anzahl an Freistunden pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4704"/>
@@ -26339,7 +26339,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teachers max gaps per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Freistunden pro Woche für alle Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Freistunden pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxgapsperweekform_template.ui" line="28"/>
@@ -26383,7 +26383,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3232"/>
         <source>Teachers max hours continuously</source>
-        <translation type="unfinished">Maximale aufeinanderfolgende Stundenanzahl für alle Lehrer</translation>
+        <translation>Maximale aufeinanderfolgende Stundenanzahl für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="3233"/>
@@ -26482,7 +26482,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teachers max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an direkt aufeinanderfolgenden Stunden für alle Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an direkt aufeinanderfolgenden Stunden für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhourscontinuouslyform_template.ui" line="83"/>
@@ -26526,7 +26526,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2798"/>
         <source>Teachers max hours daily</source>
-        <translation type="unfinished">Maximale tägliche Stundenanzahl für alle Lehrer</translation>
+        <translation>Maximale tägliche Stundenanzahl für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2799"/>
@@ -26623,7 +26623,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die maximale Anzahl an Stunden pro Tag für alle Lehrer</translation>
+        <translation>Einschränkungen für die maximale Anzahl an Stunden pro Tag für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmaxhoursdailyform_template.ui" line="83"/>
@@ -26666,7 +26666,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14370"/>
         <source>Teachers min days per week</source>
-        <translation type="unfinished">Minimale Anzahl an Tagen pro Woche für alle Lehrer</translation>
+        <translation>Minimale Anzahl an Tagen pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14367"/>
@@ -26764,7 +26764,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="14"/>
         <source>Constraints teachers min days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die minimale Anzahl an Tagen pro Woche für alle Lehrer</translation>
+        <translation>Einschränkungen für die minimale Anzahl an Tagen pro Woche für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmindaysperweekform_template.ui" line="28"/>
@@ -26808,7 +26808,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6719"/>
         <source>Teachers min gaps between building changes</source>
-        <translation type="unfinished">Minimale Anzahl an Freistunden nach einem Gebäudewechsel für alle Lehrer</translation>
+        <translation>Minimale Anzahl an Freistunden nach einem Gebäudewechsel für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6721"/>
@@ -26830,7 +26830,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6734"/>
         <source>Teachers minimum gaps between building changes</source>
-        <translation type="unfinished">Minimale Anzahl an Freistunden nach einem Gebäudewechsel für alle Lehrer</translation>
+        <translation>Minimale Anzahl an Freistunden nach einem Gebäudewechsel für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6736"/>
@@ -26905,7 +26905,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Constraints teachers min gaps between building changes</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die minimale Anzahl an Freistunden nach einem Gebäudewechsel für alle Lehrer</translation>
+        <translation>Einschränkungen für die minimale Anzahl an Freistunden nach einem Gebäudewechsel für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -26953,7 +26953,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13662"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13701"/>
@@ -27072,7 +27072,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers min hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation type="unfinished">Einschränkungen für die minimale Anzahl an Stunden pro Tag für alle Lehrer</translation>
+        <translation>Einschränkungen für die minimale Anzahl an Stunden pro Tag für alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersminhoursdailyform_template.ui" line="83"/>
@@ -29251,7 +29251,7 @@ Bitte stoppe vorher die Berechnung.</translation>
         <location filename="../src/interface/fetmainform.cpp" line="3650"/>
         <source>Mark not available slots with -x- in timetables will be %1</source>
         <comment>%1 is true or false. Lowercase -x-</comment>
-        <translation type="unfinished">Markiere Zellen von nicht verfügbare Zeiten mit -x- in den Stundenplänen wird %1 sein</translation>
+        <translation type="unfinished">Markierte Zellen von nicht verfügbaren Zeiten mit -x- in den Stundenplänen wird %1 sein</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3653"/>
@@ -31121,7 +31121,7 @@ Bitte stoppe vorher die Berechnung.</translation>
     <message>
         <location filename="../src/interface/fet.cpp" line="624"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Um FET im grafischen Modus zu starten dürfen keine Parameter der ausführbaren Datei übergeben werden</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="820"/>
@@ -31912,7 +31912,7 @@ Bitte stoppe vorher die Berechnung.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="808"/>
         <location filename="../src/engine/generate_pre.cpp" line="831"/>
         <source>Are you sure you want to continue?</source>
-        <translation type="unfinished">Möchten Sie fortfahren?</translation>
+        <translation>Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="788"/>
@@ -31946,7 +31946,7 @@ Bitte stoppe vorher die Berechnung.</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="829"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Benutze es daher nur mir Vorsicht.</translation>
+        <translation>Benutze es mit Vorsicht.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1007"/>
@@ -32826,24 +32826,6 @@ Please modify your data correspondingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2014 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.23.0 (July 2014).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="90"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -33362,6 +33344,24 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2014 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.23.1 (July 2014).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="283"/>
         <source>Thanks to</source>
         <translation>Dank an</translation>
@@ -33369,7 +33369,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="681"/>
         <source>Close</source>
-        <translation type="unfinished">Schließen</translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -36181,7 +36181,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyactivityform_template.ui" line="2515"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
-        <translation type="unfinished">Aktiv</translation>
+        <translation>Aktiv</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="864"/>
@@ -36298,7 +36298,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="14"/>
         <source>Modify activities end students day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Aktivitäten, die einen Tag des Schülers beenden</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="52"/>
@@ -36347,7 +36347,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="14"/>
         <source>Modify activities max simultaneous in selected time slots</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von maximaler Anzahl simultaner Aktivitäten in ausgesuchten Zeitfeldern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="24"/>
@@ -36393,36 +36393,36 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitfelder</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished">X=ausgewählt, leer=nicht ausgewählt</translation>
+        <translation>X=ausgewählt, leer=nicht ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle auswählen</translation>
+        <translation>Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle abwählen</translation>
+        <translation>Alle abwählen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
         <source>Max simultaneous</source>
         <comment>It refers to the max number of simultaneous activities</comment>
-        <translation type="unfinished">Max gleichzeitig</translation>
+        <translation>Max gleichzeitig</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="199"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="220"/>
@@ -36486,7 +36486,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="14"/>
         <source>Modify activities not overlapping</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von nicht überlappenden Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="72"/>
@@ -36657,7 +36657,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="14"/>
         <source>Modify activities occupy max time slots from selection</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von maximaler Anzahl Aktivitäten in ausgesuchten Zeitfeldern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="24"/>
@@ -36703,36 +36703,36 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="124"/>
         <source>Time slots</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitfelder</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="137"/>
         <source>X=selected, empty=not selected</source>
         <extracomment>This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed</extracomment>
-        <translation type="unfinished">X=ausgewählt, leer=nicht ausgewählt</translation>
+        <translation>X=ausgewählt, leer=nicht ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle auswählen</translation>
+        <translation>Alle auswählen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Alle abwählen</translation>
+        <translation>Alle abwählen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
         <source>Max occupied</source>
         <comment>It refers to the max number of occupied time slots</comment>
-        <translation type="unfinished">Max besetzt</translation>
+        <translation>Max besetzt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="199"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozentuale Gewichtung (muss 100% sein)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="220"/>
@@ -36836,13 +36836,13 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="108"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify activities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern einer bevorzugteb Startzeit für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="115"/>
@@ -36854,7 +36854,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="129"/>
@@ -36958,19 +36958,19 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Modify activities preferred time slots</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von bevorzugten Zeitfeldern für Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="108"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="115"/>
@@ -37020,7 +37020,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="14"/>
         <source>Modify activities same room if consecutive</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Aktivitäten mit gleichen Räumen, wenn sie aneinanderhängen sind</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="20"/>
@@ -37125,7 +37125,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="14"/>
         <source>Modify activities same starting day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Aktivitäten mit gleichem Tag</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="56"/>
@@ -37156,7 +37156,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="121"/>
@@ -37317,7 +37317,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="14"/>
         <source>Modify activities same starting time</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Aktivitäten mit gleicher Startzeit (Tag und Stunde)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="56"/>
@@ -37393,7 +37393,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="14"/>
         <source>Modify activity ends students day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Aktivitöäten, die einen Schülertag beenden</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="20"/>
@@ -37494,7 +37494,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="14"/>
         <source>Modify activity preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern eines bevorzugten Raumes für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="77"/>
@@ -37559,7 +37559,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="14"/>
         <source>Modify activity preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von bevorzugten Räumen für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="20"/>
@@ -37670,7 +37670,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="14"/>
         <source>Modify activity preferred starting time</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern bevorzugter Startzeiten für Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="163"/>
@@ -37738,13 +37738,13 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
@@ -37760,7 +37760,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify activity preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern bevorzugter Startzeiten für Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="20"/>
@@ -37855,7 +37855,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="14"/>
         <source>Modify activity preferred time slots</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von bevorzugten Zeitfeldern für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="20"/>
@@ -37891,13 +37891,13 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
 </context>
 <context>
@@ -37951,7 +37951,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Modify activity tag preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern eines bevorzugten Raumes für eine Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="28"/>
@@ -38011,7 +38011,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Modify activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von bevorzugten Räumen für eine Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="41"/>
@@ -38149,7 +38149,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="75"/>
@@ -38161,7 +38161,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="82"/>
         <source>Set all break</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;Pause&quot;</translation>
+        <translation>Setze alle auf &quot;Pause&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="89"/>
@@ -38236,7 +38236,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="14"/>
         <source>Modify max days between activities</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Tagen zwischen Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="56"/>
@@ -38267,7 +38267,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="121"/>
@@ -38354,7 +38354,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="14"/>
         <source>Modify min days between activities</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen Anzahl an Tagen zwischen Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="20"/>
@@ -38390,7 +38390,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="121"/>
@@ -38484,7 +38484,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="14"/>
         <source>Modify min gaps between activities</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen Anzahl an Freistunden zwischen Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="56"/>
@@ -38515,7 +38515,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="121"/>
@@ -38565,13 +38565,13 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="14"/>
         <source>Modify room not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von nicht verfügbaren Zeiten für einen Raum</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="102"/>
@@ -38583,7 +38583,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="116"/>
@@ -38628,7 +38628,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung von Schülern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="151"/>
@@ -38683,7 +38683,7 @@ sie nicht am gleichen Tag stattfinden können</translation>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Stunden pro Tag für einer Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -38764,7 +38764,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Modify students early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von frühem Unterrichtsbeginn für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
@@ -38820,7 +38820,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern eines Intervall einer Schülergruppe, die nur an einer begrenztzen Anzahl an Tagen pro Woche arbeitet</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -38872,7 +38872,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify students max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximaler Anzahl an Gebäudewechsel pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperdayform_template.ui" line="50"/>
@@ -38916,7 +38916,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify students max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Gebäudewechsel pro Woche für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxbuildingchangesperweekform_template.ui" line="28"/>
@@ -38945,17 +38945,17 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="66"/>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="71"/>
         <source>FET information</source>
-        <translation type="unfinished">FET Information</translation>
+        <translation>FET Information</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="67"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Ungültige Gewichtung</translation>
+        <translation>Ungültige Gewichtung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="72"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Ungültige Gewichtung - es muss 100% sein</translation>
+        <translation>Ungültige Gewichtung - es muss 100% sein</translation>
     </message>
 </context>
 <context>
@@ -39012,7 +39012,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="14"/>
         <source>Modify students max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="90"/>
@@ -39068,7 +39068,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify students max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Woche für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="105"/>
@@ -39131,7 +39131,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify constraint students max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -39160,7 +39160,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen täglicher Stundenzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxhoursdailyform_template.ui" line="80"/>
@@ -39204,7 +39204,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen Anzahl an Freistunden nach einem Gebäudewechsel für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -39260,7 +39260,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="79"/>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="84"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="79"/>
@@ -39281,7 +39281,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="116"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Benutze es daher nur mir Vorsicht.</translation>
+        <translation>Benutze es mit Vorsicht.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="113"/>
@@ -39299,12 +39299,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="95"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="110"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="117"/>
@@ -39315,7 +39315,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="14"/>
         <source>Modify students min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen täglichen Stundenzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform_template.ui" line="39"/>
@@ -39369,7 +39369,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung einer Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -39420,7 +39420,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Stunden pro Tag für einer Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -39496,7 +39496,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="14"/>
         <source>Modify students set early max beginnings at second hour</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von frühem Unterrichtsbeginn für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="173"/>
@@ -39550,7 +39550,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="14"/>
         <source>Modify students set home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern eines Klassenraumes von Schülern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomform_template.ui" line="20"/>
@@ -39624,7 +39624,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="14"/>
         <source>Modify students set home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Klassenräumen von Schülern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssethomeroomsform_template.ui" line="41"/>
@@ -39702,7 +39702,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students set interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern eines Intervalls einer Schülergruppe, die nur an einer begrenztzen Anzahl an Tagen pro Woche arbeitet</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -39770,7 +39770,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify students set max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Gebäudewechsel pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperdayform_template.ui" line="80"/>
@@ -39823,7 +39823,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify students set max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Gebäudewechsel pro Woche für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxbuildingchangesperweekform_template.ui" line="80"/>
@@ -39877,7 +39877,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students set max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Tagen pro Woche für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="28"/>
@@ -39936,7 +39936,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="14"/>
         <source>Modify students set max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Tag für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="32"/>
@@ -40013,7 +40013,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify students set max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Woche für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="124"/>
@@ -40082,7 +40082,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students set max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximale aufeinanderfolgenden Stundenanzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhourscontinuouslyform_template.ui" line="77"/>
@@ -40122,7 +40122,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students set max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximal täglicher Stundenzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxhoursdailyform_template.ui" line="155"/>
@@ -40177,7 +40177,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify students set min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen Anzahl an Freistunden nach einem Gebäudewechsel für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenbuildingchangesform_template.ui" line="80"/>
@@ -40234,7 +40234,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="116"/>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="121"/>
         <source>FET warning</source>
-        <translation type="unfinished">FET Warnung</translation>
+        <translation>FET Warnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="116"/>
@@ -40260,7 +40260,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="162"/>
         <source>Use with caution.</source>
-        <translation type="unfinished">Benutze es daher nur mir Vorsicht.</translation>
+        <translation>Benutze es mit Vorsicht.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="159"/>
@@ -40279,7 +40279,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="14"/>
         <source>Modify students set min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen täglichen Stundenzahl für eine Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="57"/>
@@ -40289,12 +40289,12 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="87"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="96"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform_template.ui" line="103"/>
@@ -40348,13 +40348,13 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
@@ -40376,7 +40376,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="14"/>
         <source>Modify students set not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von nicht verfügbaren Zeiten für Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
@@ -40413,7 +40413,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="14"/>
         <source>Modify subactivities preferred starting times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern einer bevorzugte Startzeit für eine Aktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="124"/>
@@ -40424,7 +40424,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="166"/>
@@ -40460,7 +40460,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="152"/>
@@ -40503,13 +40503,13 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="14"/>
         <source>Modify subactivities preferred time slots</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von bevorzugten Zeitfeldern für Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="166"/>
@@ -40550,7 +40550,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="152"/>
@@ -40626,7 +40626,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von einem Raum für Fach und Aktivitätskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="48"/>
@@ -40697,7 +40697,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Räumen für Fach und Aktivitätskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
@@ -40767,7 +40767,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="14"/>
         <source>Modify subject preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von bevorzugten Räume eines Unterrichtfaches</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="28"/>
@@ -40827,7 +40827,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="14"/>
         <source>Modify subject preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von bevorzugten Räumen eines Unterrichtfaches</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="20"/>
@@ -40906,7 +40906,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teacher activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung von Lehrern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -40961,7 +40961,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Stunden pro Tag für eine Unterrichtskennzeichnung eines Lehrers</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -41021,7 +41021,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="14"/>
         <source>Modify teacher home room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern des Lehrerraumes</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomform_template.ui" line="20"/>
@@ -41095,7 +41095,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="14"/>
         <source>Modify teacher home rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der Lehrerräume</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherhomeroomsform_template.ui" line="41"/>
@@ -41173,7 +41173,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teacher interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der begrenzten Anzahl an Tagen in einem Intervall für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -41241,7 +41241,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify teacher max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Gebäudewechsel pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperdayform_template.ui" line="80"/>
@@ -41294,7 +41294,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify teacher max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Gebäudewechsel pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxbuildingchangesperweekform_template.ui" line="80"/>
@@ -41368,7 +41368,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teacher max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Tagen pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="77"/>
@@ -41427,7 +41427,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="14"/>
         <source>Modify teacher max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Tagen für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="97"/>
@@ -41472,7 +41472,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Modify teacher max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="141"/>
@@ -41551,7 +41551,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teacher max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximal aufeinanderfolgender Stundenanzahl für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhourscontinuouslyform_template.ui" line="77"/>
@@ -41586,7 +41586,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxhoursdailyform_template.ui" line="148"/>
@@ -41647,7 +41647,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="14"/>
         <source>Modify teacher min days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimaler Anzahl an Tagen pro Woche für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermindaysperweekform_template.ui" line="26"/>
@@ -41705,7 +41705,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify teacher min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen Anzahl an Freistunden nach einem Gebäudewechsel für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenbuildingchangesform_template.ui" line="80"/>
@@ -41771,7 +41771,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimaler Anzahl an Stunden pro Tag für einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="32"/>
@@ -41786,12 +41786,12 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="129"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="141"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacherminhoursdailyform_template.ui" line="148"/>
@@ -41850,7 +41850,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="127"/>
@@ -41862,7 +41862,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Setze alle auf &quot;nicht erlaubt&quot;</translation>
+        <translation>Setze alle auf &quot;nicht erlaubt&quot;</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="141"/>
@@ -41878,7 +41878,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="14"/>
         <source>Modify teacher not available times</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der nicht verfügbare Zeiten eines Lehrers</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="26"/>
@@ -41930,7 +41930,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an direkt aufeinanderfolgenden Stunden für eine Unterrichtskennzeichnung von Lehrern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -41974,7 +41974,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Stunden pro Tag für eine Unterrichtskennzeichnung von Lehrern</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -42052,7 +42052,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teachers interval max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der begrenzten Anzahl an Tagen in einem Intervall für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersintervalmaxdaysperweekform_template.ui" line="22"/>
@@ -42104,7 +42104,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="14"/>
         <source>Modify teachers max building changes per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Gebäudewechsel pro Tag für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperdayform_template.ui" line="50"/>
@@ -42148,7 +42148,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="14"/>
         <source>Modify teachers max building changes per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Gebäudewechsel pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxbuildingchangesperweekform_template.ui" line="50"/>
@@ -42198,7 +42198,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teachers max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Tagen pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxdaysperweekform_template.ui" line="73"/>
@@ -42258,7 +42258,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="14"/>
         <source>Modify teachers max gaps per day</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Tagen für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="84"/>
@@ -42302,7 +42302,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="14"/>
         <source>Modify teachers max gaps per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Freistunden pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="105"/>
@@ -42350,7 +42350,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teachers max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximal aufeinanderfolgender Stundenanzahl für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhourscontinuouslyform_template.ui" line="73"/>
@@ -42394,7 +42394,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der maximalen Anzahl an Stunden pro Tag für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmaxhoursdailyform_template.ui" line="73"/>
@@ -42444,7 +42444,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform_template.ui" line="14"/>
         <source>Modify teachers min days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen Anzahl an Tagen pro Woche für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmindaysperweekform_template.ui" line="28"/>
@@ -42488,7 +42488,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="14"/>
         <source>Modify teachers min gaps between building changes</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimalen Anzahl an Freistunden nach einem Gebäudewechsel für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui" line="28"/>
@@ -42553,7 +42553,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern der minimaler Anzahl an Stunden pro Tag für Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="32"/>
@@ -42568,7 +42568,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="97"/>
         <source>Allow empty days</source>
-        <translation type="unfinished">Erlaube freie (leere) Tage</translation>
+        <translation>Erlaube freie (leere) Tage</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform_template.ui" line="109"/>
@@ -42624,7 +42624,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="14"/>
         <source>Modify three activities grouped</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von 3 Aktivitäten, die gruppiert sind</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintthreeactivitiesgroupedform_template.ui" line="28"/>
@@ -42705,7 +42705,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="14"/>
         <source>Modify two activities consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von 2 Aktivitäten, die direkt hintereinander folgen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesconsecutiveform_template.ui" line="46"/>
@@ -42772,7 +42772,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="14"/>
         <source>Modify two activities grouped</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von 2 Aktivitäten, die gruppiert sind</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesgroupedform_template.ui" line="46"/>
@@ -42839,7 +42839,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="14"/>
         <source>Modify two activities ordered</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von 2 Aktivitäten, sind geordnet sind</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstrainttwoactivitiesorderedform_template.ui" line="46"/>
@@ -42865,17 +42865,17 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="187"/>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="192"/>
         <source>FET information</source>
-        <translation type="unfinished">FET Information</translation>
+        <translation>FET Information</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="188"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished">Keine Aktivitäten ausgewählt</translation>
+        <translation>Keine Aktivitäten ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="193"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">Nur eine Aktivität wurde ausgewählt</translation>
+        <translation>Nur eine Aktivität wurde ausgewählt</translation>
     </message>
 </context>
 <context>
@@ -42884,64 +42884,64 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="14"/>
         <source>Modify group activities in initial order item</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Zusammenfassung von Aktivitäten für die Anfangsordnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished">Filter</translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished">Schülergruppe</translation>
+        <translation>Schülergruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="46"/>
         <source>Subject</source>
-        <translation type="unfinished">Unterrichtsfach</translation>
+        <translation>Unterrichtsfach</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Aktivitätskennzeichnung</translation>
+        <translation>Aktivitätskennzeichnung</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="91"/>
         <source>Activities</source>
-        <translation type="unfinished">Aktivitäten</translation>
+        <translation>Aktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished">Alle</translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="121"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activities</comment>
-        <translation type="unfinished">Ausgewählte</translation>
+        <translation>Ausgewählte</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished">Alles Löschen</translation>
+        <translation>Alles Löschen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="154"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="161"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -43038,7 +43038,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="14"/>
         <source>Modify students group</source>
         <extracomment>The dialog to modify a students group</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern einer Schülerteilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsgroupform_template.ui" line="93"/>
@@ -43096,7 +43096,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="14"/>
         <source>Modify students subgroup</source>
         <extracomment>Title of the dialog to modify a students subgroup</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern einer Schülerteilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform_template.ui" line="43"/>
@@ -43149,7 +43149,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="14"/>
         <source>Modify students year</source>
         <extracomment>Title of dialog to modify a students year</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändern von Jahrgängen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform_template.ui" line="66"/>
@@ -43208,7 +43208,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="424"/>
         <source>OK</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform.cpp" line="87"/>
@@ -43239,7 +43239,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="74"/>
         <source>Students</source>
         <comment>This refers to sets of students, but I want to keep the string short</comment>
-        <translation type="unfinished">Schüler</translation>
+        <translation>Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="207"/>
@@ -43249,17 +43249,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="117"/>
         <source>Years</source>
-        <translation type="unfinished">Jahrgänge</translation>
+        <translation>Jahrgänge</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="127"/>
         <source>Groups</source>
-        <translation type="unfinished">Gruppen</translation>
+        <translation>Gruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="137"/>
         <source>Subgroups</source>
-        <translation type="unfinished">Teilgruppen</translation>
+        <translation>Teilgruppen</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="174"/>
@@ -43271,13 +43271,13 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="236"/>
         <source>Students</source>
         <comment>This refers to the number of students, but I want to keep string short</comment>
-        <translation type="unfinished">Schüler</translation>
+        <translation>Schüler</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
-        <translation type="unfinished">Aktiv</translation>
+        <translation>Aktiv</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="372"/>
@@ -43287,7 +43287,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="379"/>
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="386"/>
@@ -43303,7 +43303,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="14"/>
         <source>Modify subactivity</source>
         <extracomment>Title of dialog to modify a subactivity</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ändere Teilaktivität</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="46"/>
@@ -47466,8 +47466,8 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="3603"/>
         <location filename="../src/engine/timetableexport.cpp" line="3654"/>
         <location filename="../src/engine/timetableexport.cpp" line="3909"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7391"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7502"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7413"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7524"/>
         <source>Detailed</source>
         <translation>ausführlich</translation>
     </message>
@@ -47479,8 +47479,8 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="3604"/>
         <location filename="../src/engine/timetableexport.cpp" line="3655"/>
         <location filename="../src/engine/timetableexport.cpp" line="3911"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7392"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7503"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7414"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7525"/>
         <source>Less detailed</source>
         <translation>weniger ausführlich</translation>
     </message>
@@ -47646,50 +47646,50 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1848"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4486"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4544"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4611"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4674"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4739"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4801"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4872"/>
-        <location filename="../src/engine/timetableexport.cpp" line="4943"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5024"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5104"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5183"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5259"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5333"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5409"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5496"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5581"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5668"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5749"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5800"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5851"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5902"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5959"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6010"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6064"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6123"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6184"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6250"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6312"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6377"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6439"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6498"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6558"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6624"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6687"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6753"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6814"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6906"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6999"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7092"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7190"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7278"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7373"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7484"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7594"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4508"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4566"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4633"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4696"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4761"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4823"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4894"/>
+        <location filename="../src/engine/timetableexport.cpp" line="4965"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5046"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5126"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5205"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5281"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5355"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5431"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5518"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5603"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5690"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5771"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5822"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5873"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5924"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5981"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6032"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6086"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6145"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6206"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6272"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6334"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6399"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6461"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6520"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6580"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6646"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6709"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6775"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6836"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6928"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7021"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7114"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7212"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7300"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7395"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7506"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7616"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
         <translation>Stundenplanerstellung mit FET %1 am %2</translation>
@@ -47733,10 +47733,10 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="3604"/>
         <location filename="../src/engine/timetableexport.cpp" line="3654"/>
         <location filename="../src/engine/timetableexport.cpp" line="3655"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7391"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7392"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7502"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7503"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7413"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7414"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7524"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7525"/>
         <source>Teachers&apos; Free Periods</source>
         <translation>Freistunden von Lehrern</translation>
     </message>
@@ -47795,61 +47795,61 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <translation>Lehrer ist nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7430"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7541"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7452"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7563"/>
         <source>Single gap</source>
         <translation>Einzelne Freistunde</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7431"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7542"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7453"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7564"/>
         <source>Border gap</source>
         <translation>Randfreistunde</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7432"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7543"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7454"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7565"/>
         <source>Big gap</source>
         <translation>Große Freistunde</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7433"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7544"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7455"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7566"/>
         <source>Must come earlier</source>
         <translation>Muss eher kommen</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7434"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7545"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7456"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7567"/>
         <source>Must stay longer</source>
         <translation>Muss länger bleiben</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7435"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7546"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7457"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7568"/>
         <source>Must come much earlier</source>
         <translation>Muss viel eher kommen</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7436"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7547"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7458"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7569"/>
         <source>Must stay much longer</source>
         <translation>Muss viel länger bleiben</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7437"/>
-        <location filename="../src/engine/timetableexport.cpp" line="7548"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7459"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7570"/>
         <source>Free day</source>
         <translation>Freier Tag</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7438"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7460"/>
         <source>Not available</source>
         <comment>It refers to a teacher</comment>
         <translation>Nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="7549"/>
+        <location filename="../src/engine/timetableexport.cpp" line="7571"/>
         <source>Not available</source>
         <translation>Nicht verfügbar</translation>
     </message>
@@ -48136,14 +48136,14 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <translation>Aktivitäten</translation>
     </message>
     <message>
-        <location filename="../src/engine/timetableexport.cpp" line="5761"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5812"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5869"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5940"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5955"/>
-        <location filename="../src/engine/timetableexport.cpp" line="5978"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6047"/>
-        <location filename="../src/engine/timetableexport.cpp" line="6060"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5783"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5834"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5891"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5962"/>
+        <location filename="../src/engine/timetableexport.cpp" line="5977"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6000"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6069"/>
+        <location filename="../src/engine/timetableexport.cpp" line="6082"/>
         <source>All Activities</source>
         <translation>Alle Aktivitäten</translation>
     </message>
@@ -49233,164 +49233,164 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <name>TimetableViewForm</name>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="435"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="528"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="438"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="534"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="448"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
         <translation>permanent gesperrte Zeit</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="439"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="532"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="442"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="538"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="452"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
         <translation>gesperrte Zeit</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="443"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="536"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="446"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="542"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="456"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
         <translation>permanent gesperrter Raum</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="446"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="449"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="545"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="459"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
         <translation>gesperrter Raum</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="698"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="805"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="700"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="811"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="710"/>
         <source>Added %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Zeiteinschränkungen hinzugefügt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="704"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="811"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="706"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="817"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="716"/>
         <source>Added %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Raumeinschränkungen hinzugefügt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="710"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="817"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="712"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="823"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="722"/>
         <source>Removed %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Zeiteinschränkungen entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="716"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="823"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="718"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="829"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="728"/>
         <source>Removed %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Raumeinschränkungen entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="727"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="834"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="729"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="840"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="739"/>
         <source>No locking constraints added or removed.</source>
         <translation>Es wurden keine Einschränkungen hinzugefügt oder entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="760"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="867"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="762"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="873"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="772"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation>Sperren/Entsperren: Sie können eine oder mehrere Aktivitäten in dem Plan auswählen und zwischen gesperrten und ungesperrtem Zustand hin und her zu wechseln. Dies gilt für die Zeit, den Raum und beide.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="762"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="869"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="764"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="875"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="774"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation>Es werden für die ausgewählten Aktivitäten Einschränkungen für feste Zeiten hinzugefügt/entfernt. Es kann nur entsperrt werden, wenn sie nicht permanent fest sind.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="318"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="314"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="398"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="324"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PGZ</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="324"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="398"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="320"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="404"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="330"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>GZ</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="330"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="404"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="326"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="410"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="336"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PGR</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="335"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="409"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="331"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="415"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="341"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>GR</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="696"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="803"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="698"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="809"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="708"/>
         <source>Added 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Zeiteinschränkung hinzugefügt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="702"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="809"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="815"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="714"/>
         <source>Added 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Raumeinschränkung hinzugefügt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="708"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="815"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="710"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="821"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="720"/>
         <source>Removed 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Zeiteinschränkung entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="714"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="821"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="827"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="726"/>
         <source>Removed 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Raumeinschränkung entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="764"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="871"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="766"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="877"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="776"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation>Sperrende Zeiteinschränkungen sind Einschänkungen vom Typ &quot;Eine Aktivität hat eine bevorzugte Startzeit&quot;. Sperrende Raumeinschränkungen sind vom Typ &quot;Eine Aktivität hat einen bevorzugten Raum&quot;. Sie können diese Einschränkungen in den entsprechenden Dialogen sehen und bearbeiten. Neue Einschränkungen werden immer am Ende der List hinzugefügt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="767"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="874"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="769"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="779"/>
         <source>If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space) or LS (locked space).</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>Wenn eine Aktivität (permanent) in Zeit oder Raum gesetzt ist, dann können folgende Abkürzungen angezeigt werden: PGZ (permanent gesperrte Zeit),  GZ (gesperrte Zeit), PGR (permanent gesperrter Raum), GR (gesperrter Raum).</translation>
@@ -49624,31 +49624,31 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
 <context>
     <name>TimetableViewStudentsForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="659"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="732"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="665"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="738"/>
         <source>Added the following constraint:</source>
         <translation>Folgende Einschränkung hinzugefügt:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="602"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="606"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="610"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="714"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="787"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="835"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="586"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="608"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="612"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="616"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="720"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="793"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="841"/>
         <source>FET information</source>
         <translation>FET Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="715"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="788"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="721"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="794"/>
         <source>Skip information</source>
         <translation>Überspringe Informationen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="715"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="788"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="721"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="794"/>
         <source>See next</source>
         <translation>Zeige die Nächste</translation>
     </message>
@@ -49661,46 +49661,46 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="307"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="314"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="335"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="459"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="465"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="471"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="587"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="477"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="499"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="593"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="622"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="674"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="686"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="699"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="747"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="759"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="772"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="599"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="628"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="680"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="692"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="705"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="753"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="765"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="778"/>
         <source>FET warning</source>
         <translation>FET Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="550"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="556"/>
         <source>Students subgroup is not available 100% in this slot</source>
         <translation>Die Teilgruppe ist mit einer Gewichtung von 100% nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="554"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="560"/>
         <source>Break with weight 100% in this slot</source>
         <translation>Pause mit 100% Gewichtung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="522"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="528"/>
         <source>Room: %1</source>
         <translation>Raum: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="581"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="587"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Berechnung läuft.
 Bitte stoppe vorher die Berechnung.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="878"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="884"/>
         <source>FET help</source>
         <translation>FET Hilfe</translation>
     </message>
@@ -49710,57 +49710,57 @@ Bitte stoppe vorher die Berechnung.</translation>
         <translation>Sie haben eine alte Stundenplanansicht von Schülern geöffnet. Bitte schließen jenes Fenster</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="702"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="775"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="708"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="781"/>
         <source>The following constraint will be deleted:</source>
         <translation>Die folgende Einschränkungen werden gelöscht:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="681"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="754"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="687"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="760"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation>Einschränkung %1 wird nicht entfernt, weil es permanent gesperrt ist. Wenn Sie es entsperren wollen, dann müssen Sie ins Menue Daten-&gt;Einschränkungen gehen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="676"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="688"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="749"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="761"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="682"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="694"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="755"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="767"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation>Ein mögliches Problem könnte Asynchronität sein. Versuchen Sie daher einfach die Stundenplanansichtsfenter zu schließen und wieder zu öffnen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="674"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="686"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="747"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="759"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="680"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="692"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="753"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="765"/>
         <source>Small problem detected</source>
         <translation>Kleines Pronlem entdeckt</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="675"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="687"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="681"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="693"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Ein mögliches Problem könnte sein, dass Sie 2 oder mehr Einschränkungen des Types bevorzugte Startzeit (Zeit+Tag) mit einer Gewichtung von 100% für Aktivität ID %1 vergeben haben.
 Bitte reduzieren Sie dies auf eine Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="677"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="689"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="750"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="762"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="683"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="695"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="756"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="768"/>
         <source>Please report possible bug</source>
         <translation>Bitte teilen Sie diesen möglichen Feher mit</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="699"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="772"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="705"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="778"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="748"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="760"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="754"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="766"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Ein mögliches Problem könnte sein, dass Sie 2 oder mehr Einschränkungen des Types bevorzugte Raum mit einer Gewichtung von 100% für Aktivität ID %1 vergeben haben.
 Bitte reduzieren Sie dies auf eine Einschränkung</translation>
@@ -49772,8 +49772,8 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
         <translation>Ungültiger Jahrgang - Bitte schließen Sie den Dialog und öffnen Sie die Schüleransicht erneut</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="622"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="499"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="628"/>
         <source>Invalid students set - please close this dialog and open a new view students timetable dialog</source>
         <translation>Ungültige Schülergruppe - Bitte schließen Sie den Dialog und öffnen Sie die Schüleransicht erneut</translation>
     </message>
@@ -49789,37 +49789,37 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="314"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="471"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="593"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="477"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="599"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Der Stundenplan kann nicht angezeigt werden, weil Räume hinzugefügt oder gelöscht wurden. Bitte (re-)generieren Sie zuerst einen Plan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="602"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="608"/>
         <source>Please select a year</source>
         <translation>Wähle einen Jahrgang</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="606"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="612"/>
         <source>Please select a group</source>
         <translation>Wähle eine Gruppe</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="610"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="616"/>
         <source>Please select a subgroup</source>
         <translation>Wähle eine Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="225"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="256"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="465"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="587"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="471"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="593"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation>Plan kann nicht angezeigt werden - Bitte generieren Sie einen neuen Plan</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="307"/>
-        <location filename="../src/interface/timetableviewstudentsform.cpp" line="459"/>
+        <location filename="../src/interface/timetableviewstudentsform.cpp" line="465"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation>Plan nicht verfügbar. Bitte erstllen Sie einen neuen Plan oder öffnen Sie diesen Dialog erneut</translation>
     </message>
@@ -49880,30 +49880,30 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
 <context>
     <name>TimetableViewTeachersForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="554"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="626"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="564"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="636"/>
         <source>Added the following constraint:</source>
         <translation>Folgende Einschränkung hinzugefügt:</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="274"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="493"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="513"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="608"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="682"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="730"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="503"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="523"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="618"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="692"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="740"/>
         <source>FET information</source>
         <translation>FET Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="609"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="683"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="619"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="693"/>
         <source>Skip information</source>
         <translation>Überspringe Informationen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="609"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="683"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="619"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="693"/>
         <source>See next</source>
         <translation>Zeige die Nächste</translation>
     </message>
@@ -49914,51 +49914,51 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="257"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="388"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="394"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="412"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="499"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="505"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="521"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="568"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="593"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="642"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="654"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="667"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="398"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="404"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="422"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="509"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="515"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="531"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="590"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="603"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="652"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="664"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="677"/>
         <source>FET warning</source>
         <translation>FET Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="460"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="470"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation>Lehrer ist mit einer Gewichtung von 100% nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="464"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="474"/>
         <source>Break with weight 100% in this slot</source>
         <translation>Pause mit 100% Gewichtung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="412"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="422"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation>Ungültiger Lehrer - Bitte schließen Sie den Dialog und öffnen Sie die Lehreransicht erneut</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="432"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="442"/>
         <source>Room: %1</source>
         <translation>Raum: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="494"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="504"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Berechnung läuft.
 Bitte stoppe vorher die Berechnung.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="773"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="783"/>
         <source>FET help</source>
         <translation>FET Hilfe</translation>
     </message>
@@ -49968,30 +49968,30 @@ Bitte stoppe vorher die Berechnung.</translation>
         <translation>Sie haben eine alte Stundenplanansicht von Lehrern geöffnet. Bitte schließen jenes Fenster</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="596"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="670"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="606"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="680"/>
         <source>The following constraint will be deleted:</source>
         <translation>Die folgende Einschränkungen werden gelöscht:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="575"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="649"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="585"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="659"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation>Einschränkung %1 wird nicht entfernt, weil es permanent gesperrt ist. Wenn Sie es entsperren wollen, dann müssen Sie ins Menue Daten-&gt;Einschränkungen gehen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="570"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="582"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="644"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="656"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="592"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="654"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="666"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation>Ein mögliches Problem könnte Asynchronität sein. Versuchen Sie daher einfach die Stundenplanansichtsfenter zu schließen und wieder zu öffnen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="568"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="642"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="654"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="578"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="590"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="652"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="664"/>
         <source>Small problem detected</source>
         <translation>Kleines Pronlem entdeckt</translation>
     </message>
@@ -50002,8 +50002,8 @@ Bitte stoppe vorher die Berechnung.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="394"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="505"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="404"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="515"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Der Stundenplan kann nicht angezeigt werden, weil Räume hinzugefügt oder gelöscht wurden. Bitte (re-)generieren Sie zuerst einen Plan</translation>
     </message>
@@ -50013,54 +50013,54 @@ Bitte stoppe vorher die Berechnung.</translation>
         <translation>Der Lehrerplan kann nicht ausgegeben werden, weil der Lehrer ungültig ist</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="569"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="581"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="579"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="591"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Ein mögliches Problem könnte sein, dass Sie 2 oder mehr Einschränkungen des Types bevorzugte Startzeit (Zeit+Tag) mit einer Gewichtung von 100% für Aktivität ID %1 vergeben haben.
 Bitte reduzieren Sie dies auf eine Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="571"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="583"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="645"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="657"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="581"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="593"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="667"/>
         <source>Please report possible bug</source>
         <translation>Bitte teilen Sie diesen möglichen Feher mit</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="593"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="667"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="603"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="677"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="643"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="653"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="665"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Ein mögliches Problem könnte sein, dass Sie 2 oder mehr Einschränkungen des Types bevorzugte Raum mit einer Gewichtung von 100% für Aktivität ID %1 vergeben haben.
 Bitte reduzieren Sie dies auf eine Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="228"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="521"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="531"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation>Ungültiger Lehrer - Bitte schließen Sie den Dialog und öffnen Sie die Lehreransicht erneut</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="513"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="523"/>
         <source>Please select a teacher</source>
         <translation>Wähle einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="218"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="388"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="499"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="398"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="509"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation>Plan kann nicht angezeigt werden - Bitte generieren Sie einen neuen Plan</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="382"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation>Plan nicht verfügbar. Bitte erstllen Sie einen neuen Plan oder öffnen Sie diesen Dialog erneut</translation>
     </message>

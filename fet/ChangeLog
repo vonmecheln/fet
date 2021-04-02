@@ -1709,3 +1709,7 @@ Versions 5.23.0 - 5.23.v
 	occupy max time slots from selection, or if you want to change the initial order of the activities by bringing some activities
 	into front.
 	- Improved the timetable shortcuts tab, by adding the print, locking and advanced push buttons.
+- Version 5.23.1
+	- The teachers' timetables now show the list of teachers for team teaching; also the students' timetables now show the list
+	of students sets for team teaching or show the students set of the activity if it is different from the currently selected
+	students set (suggested and implemented by Volker Dirr).
