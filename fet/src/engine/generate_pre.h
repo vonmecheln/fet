@@ -29,9 +29,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "timetable.h"
 
 extern int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
-//(in-de)creasing order of number of compatible activities
+//decreasing difficulty order
 
 bool processTimeConstraints();
+
+
+extern qint16 subgroupsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern qint16 teachersTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+extern qint16 roomsTimetable[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 
 ////////BEGIN BASIC TIME CONSTRAINTS
@@ -78,7 +83,7 @@ bool computeSubgroupsEarlyAndNoGapsPercentages();
 extern double subgroupsEarlyPercentage[MAX_TOTAL_SUBGROUPS];
 extern double subgroupsNoGapsPercentage[MAX_TOTAL_SUBGROUPS];
 
-extern int nHoursPerSubgroup[MAX_TOTAL_SUBGROUPS];
+extern int nHoursPerSubgroup[MAX_TOTAL_SUBGROUPS]; //used also for students min hours daily
 ////////END   students no gaps and early
 
 
@@ -132,7 +137,6 @@ extern int teachersMaxHoursDailyMaxHours[MAX_TEACHERS];
 extern int teachersGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 extern int teachersRealGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 extern int teachersNHoursPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
-extern qint16 teachersTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 bool computeTeachersMaxHoursDaily();
 ////////END   teacher(s) max hours daily
 
@@ -140,17 +144,19 @@ bool computeTeachersMaxHoursDaily();
 ////////BEGIN students (set) max hours daily
 extern double subgroupsMaxHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMaxHoursDailyMaxHours[MAX_TOTAL_SUBGROUPS];
-//extern int subgroupsGapsPerDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
-//extern int subgroupsNHoursPerDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
-extern qint16 subgroupsTimetable[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 bool computeSubgroupsMaxHoursDaily();
 ////////END   students (set) max hours daily
 
 
+////////BEGIN students (set) min hours daily
+extern double subgroupsMinHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
+extern int subgroupsMinHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
+bool computeSubgroupsMinHoursDaily();
+////////END   students (set) min hours daily
+
+
 ////////BEGIN rooms
 bool computeBasicSpace();
-
-extern qint16 roomsTimetable[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 extern double allowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 bool computeAllowedRoomTimePercentages();

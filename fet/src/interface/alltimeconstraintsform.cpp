@@ -42,6 +42,8 @@
 #include "modifyconstraintstudentssetearlyform.h"
 #include "modifyconstraintstudentssetmaxhoursdailyform.h"
 #include "modifyconstraintstudentsmaxhoursdailyform.h"
+#include "modifyconstraintstudentssetminhoursdailyform.h"
+#include "modifyconstraintstudentsminhoursdailyform.h"
 
 #include <QDesktopWidget>
 
@@ -219,6 +221,16 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY){
 		ModifyConstraintStudentsMaxHoursDailyForm* form=
 		 new ModifyConstraintStudentsMaxHoursDailyForm((ConstraintStudentsMaxHoursDaily*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+		ModifyConstraintStudentsSetMinHoursDailyForm* form=
+		 new ModifyConstraintStudentsSetMinHoursDailyForm((ConstraintStudentsSetMinHoursDaily*)ctr);
+		form->exec();
+	}
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_DAILY){
+		ModifyConstraintStudentsMinHoursDailyForm* form=
+		 new ModifyConstraintStudentsMinHoursDailyForm((ConstraintStudentsMinHoursDaily*)ctr);
 		form->exec();
 	}
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){

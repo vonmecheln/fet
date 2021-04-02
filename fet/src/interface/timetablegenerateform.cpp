@@ -235,14 +235,6 @@ void TimetableGenerateForm::stop()
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
-	//update the string representing the conflicts
-//	conflictsString = "";
-//	conflictsString += TimetableGenerateForm::tr("CONSTRAINTS CONFLICTS:\n");
-//	c.fitness(gt.rules, &conflictsString);
-	/*conflictsString += "\n--------------------------\n\n";
-	conflictsString += TimetableGenerateForm::tr("NON-COMPULSORY CONSTRAINTS CONFLICTS (less important):\n");
-	c.softFitness(gt.rules, &conflictsString);*/
-
 	writeSimulationResults(c);
 
 	QString s=TimetableGenerateForm::tr("Simulation interrupted. FET could not find a perfect timetable. "
@@ -345,6 +337,32 @@ void TimetableGenerateForm::impossibleToSolve()
 	simulation_running=false;
 
 	mutex.lock();
+
+
+
+	Solution& c=ot.c;
+
+	getStudentsTimetable(c);
+	getTeachersTimetable(c);
+	getRoomsTimetable(c);
+
+	//needed to find the conflicts strings
+	QString tmp;
+	c.fitness(gt.rules, &tmp);
+
+	//update the string representing the conflicts
+	conflictsString = "";
+	conflictsString+="Total conflicts: ";
+	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+="\n";
+	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+
+	foreach(QString t, c.conflictsDescriptionList)
+		conflictsString+=t+"\n";
+
+	writeSimulationResults(c);
+
+
 
 	QString s=TimetableGenerateForm::tr("FET could not find a timetable. "
 	 "Maybe you can consider lowering the constraints.");
@@ -608,23 +626,8 @@ void TimetableGenerateForm::writeSimulationResults(Solution &c){
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
 	QString s;
-
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
 
-	//write the time conflicts - in txt mode
-	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TIME_CONFLICTS_FILENAME;
-	QFile file(s);
-	if(!file.open(QIODevice::WriteOnly))
-		assert(0);
-	QTextStream tos(&file);
-
-	tos<<"Total conflicts: "<<c.conflictsTotal<<endl<<endl;
-	tos<<"Conflicts list (in decreasing order):"<<endl<<endl;
-	foreach(QString t, c.conflictsDescriptionList)
-		tos<<t<<endl;
-	//tos<<conflictsString<<endl;
-
-	file.close();
 	//now write the solution in xml files
 	//students
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STUDENTS_TIMETABLE_FILENAME_XML;
@@ -633,36 +636,52 @@ void TimetableGenerateForm::writeSimulationResults(Solution &c){
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_FILENAME_XML;
 	writeTeachersTimetableXml(s);
 
+	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
+	time_t ltime;
+	tzset();
+	time(&ltime);
+	QString sTime=ctime(&ltime);
+
+	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
+	int na=0;
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		if(best_solution.times[i]!=UNALLOCATED_TIME)
+		na++;
+	
+	//write the conflicts in txt mode
+	s=OUTPUT_DIR+FILE_SEP+s2+"_"+CONFLICTS_FILENAME;
+	writeConflictsTxt(s, sTime, na);
+	
 	//now write the solution in html files
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STYLESHEET_CSS;
-	writeStylesheetCss(s);
+	writeStylesheetCss(s, sTime, na);
 	//students
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STUDENTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-	writeStudentsTimetableDaysHorizontalHtml(s);
+	writeStudentsTimetableDaysHorizontalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STUDENTS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-	writeStudentsTimetableDaysVerticalHtml(s);
+	writeStudentsTimetableDaysVerticalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STUDENTS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-	writeStudentsTimetableTimeHorizontalHtml(s);
+	writeStudentsTimetableTimeHorizontalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STUDENTS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-	writeStudentsTimetableTimeVerticalHtml(s);
+	writeStudentsTimetableTimeVerticalHtml(s, sTime, na);
 	//teachers
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-	writeTeachersTimetableDaysHorizontalHtml(s);
+	writeTeachersTimetableDaysHorizontalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-	writeTeachersTimetableDaysVerticalHtml(s);
+	writeTeachersTimetableDaysVerticalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-	writeTeachersTimetableTimeHorizontalHtml(s);
+	writeTeachersTimetableTimeHorizontalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+TEACHERS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-	writeTeachersTimetableTimeVerticalHtml(s);
+	writeTeachersTimetableTimeVerticalHtml(s, sTime, na);
 	//rooms
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-	writeRoomsTimetableDaysHorizontalHtml(s);
+	writeRoomsTimetableDaysHorizontalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-	writeRoomsTimetableDaysVerticalHtml(s);
+	writeRoomsTimetableDaysVerticalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-	writeRoomsTimetableTimeHorizontalHtml(s);
+	writeRoomsTimetableTimeHorizontalHtml(s, sTime, na);
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-	writeRoomsTimetableTimeVerticalHtml(s);
+	writeRoomsTimetableTimeVerticalHtml(s, sTime, na);
 	
 	cout<<"Writing simulation results to disk completed successfully"<<endl;
 }
@@ -695,6 +714,38 @@ void TimetableGenerateForm::getRoomsTimetable(Solution &c){
 	c.getRoomsTimetable(gt.rules, rooms_timetable_weekly);
 	best_solution.copy(gt.rules, c);
 	rooms_schedule_ready=true;
+}
+
+/**
+Function writing the conflicts to txt file
+modified by Volker Dirr (timetabling.de) from old code by Liviu Lalescu
+*/
+
+void TimetableGenerateForm::writeConflictsTxt(const QString& filename, QString saveTime, int placedActivities){
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	//assert(gt.timePopulation.initialized);
+	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
+
+	//Now we print the results to an CSS file
+	QFile file(filename);
+	if(!file.open(QIODevice::WriteOnly))
+		assert(0);
+	QTextStream tos(&file);
+	//tos.setCodec("UTF-8");
+	//tos.setGenerateByteOrderMark(true);
+	//tos.setEncoding(QTextStream::UnicodeUTF8);
+
+	tos<<TimetableGenerateForm::tr("Conflicts of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
+	tos<<TimetableGenerateForm::tr("Generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"\n\n";
+
+	tos<<"Total conflicts: "<<ot.c.conflictsTotal<<endl<<endl;
+	tos<<"Conflicts list (in decreasing order):"<<endl<<endl;
+	foreach(QString t, ot.c.conflictsDescriptionList)
+		tos<<t<<endl;
+	tos<<endl<<TimetableGenerateForm::tr("End of file.");
+	file.close();
 }
 
 /**
@@ -835,7 +886,7 @@ void TimetableGenerateForm::writeTeachersTimetableXml(const QString& xmlfilename
 /**
 Function writing the stylesheet in css format to a file by Volker Dirr.
 */
-void TimetableGenerateForm::writeStylesheetCss(const QString& htmlfilename){
+void TimetableGenerateForm::writeStylesheetCss(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -849,12 +900,10 @@ void TimetableGenerateForm::writeStylesheetCss(const QString& htmlfilename){
 	tos.setGenerateByteOrderMark(true);
 	//tos.setEncoding(QTextStream::UnicodeUTF8);
 
-	time_t ltime;
-	tzset();
-	time(&ltime);
-
 	tos<<"/* "<<TimetableGenerateForm::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
-	tos<<"   "<<TimetableGenerateForm::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<" */\n\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"   "<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
+	tos<<"   "<<TimetableGenerateForm::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
 
 	tos<<"/* "<<TimetableGenerateForm::tr("To do a page-break only after every second timetiable, cut line %1 and paste it into line %2.").arg(7).arg(14)<<" */\n";
 	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n  border: 1px outset black;\n}\n\n\n";
@@ -876,17 +925,10 @@ void TimetableGenerateForm::writeStylesheetCss(const QString& htmlfilename){
 Function writing the students' timetable in html format to a file.
 Days horizontal
 */
-void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -914,8 +956,8 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 
 	tos<<"  <body id=\"top\">\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
@@ -935,10 +977,6 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 	}
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
-	time_t ltime;
-	tzset();
-	time(&ltime);
-
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
 		tos<<"    <table id=\"table_"<<protect2id(subgroup_name)<<"\" border=\"1\"";
@@ -954,7 +992,7 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -1011,17 +1049,10 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 Function writing the students' timetable in html format to a file.
 Days vertical
 */
-void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1049,8 +1080,8 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 
 	tos<<"  <body id=\"top\">\n\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
@@ -1070,10 +1101,6 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 	}
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n";
 
-	time_t ltime;
-	tzset();
-	time(&ltime);
-
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
 		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
 		tos<<"    <table id=\"table_"<<protect2id(subgroup_name)<<"\" border=\"1\"";
@@ -1089,7 +1116,7 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1150,17 +1177,10 @@ Function writing the students' timetable html format to a file
 Time vertical
 */
 
-void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1184,12 +1204,8 @@ void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString
 
 	tos<<"  <body>\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
-
-	time_t ltime;
-	tzset();
-	time(&ltime);
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <table border=\"1\">\n";
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -1199,7 +1215,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString
 		tos << "<th>" << gt.rules.internalSubgroupsList[i]->name << "</th>";
 	tos<<"</tr>\n      </thead>\n";
 
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1251,17 +1267,10 @@ void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString
 Function writing the students' timetable in html format to a file.
 Time horizontal
 */
-void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1285,12 +1294,8 @@ void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QStri
 
 	tos<<"  <body>\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
-
-	time_t ltime;
-	tzset();
-	time(&ltime);
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <table border=\"1\">\n";
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -1306,7 +1311,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QStri
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
@@ -1356,17 +1361,10 @@ void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QStri
 Function writing the teachers' timetable html format to a file.
 Days horizontal.
 */
-void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1394,8 +1392,8 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 
 	tos<<"  <body id=\"top\">\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
@@ -1404,10 +1402,6 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 		tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</a></li>\n";
 	}
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
-
-	time_t ltime;
-	tzset();
-	time(&ltime);
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
@@ -1424,7 +1418,7 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -1481,17 +1475,10 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 Function writing the teachers' timetable html format to a file.
 Days vertical.
 */
-void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-			na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1519,8 +1506,8 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 
 	tos<<"  <body id=\"top\">\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1> "<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1> "<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
@@ -1529,10 +1516,6 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 		tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(teacher_name)<<"\">"<<protect2(teacher_name)<<"</a></li>\n";
 	}
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
-
-	time_t ltime;
-	tzset();
-	time(&ltime);
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
@@ -1550,7 +1533,7 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1608,17 +1591,10 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 Function writing the teachers' timetable html format to a file
 Time vertical
 */
-void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1642,12 +1618,8 @@ void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString
 
 	tos<<"  <body>\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
-
-	time_t ltime;
-	tzset();
-	time(&ltime);
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <table border=\"1\">\n";
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -1657,7 +1629,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString
 		tos << "<th>" << gt.rules.internalTeachersList[i]->name << "</th>";
 	tos<<"</tr>\n      </thead>\n";
 
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1709,17 +1681,10 @@ void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString
 Function writing the teachers' timetable html format to a file.
 Time horizontal
 */
-void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1743,12 +1708,8 @@ void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QStri
 
 	tos<<"  <body>\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
-
-	time_t ltime;
-	tzset();
-	time(&ltime);
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	tos<<"    <table border=\"1\">\n";
 	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
@@ -1764,7 +1725,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QStri
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
@@ -1811,17 +1772,10 @@ void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QStri
 Function writing the rooms' timetable html format to a file by Volker Dirr
 Days horizontal.
 */
-void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1849,8 +1803,8 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 
 	tos<<"  <body id=\"top\">\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
@@ -1862,10 +1816,6 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 			tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(room_name)<<"\">"<<protect2(room_name)<<"</a></li>\n";
 		}
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
-
-		time_t ltime;
-		tzset();
-		time(&ltime);
 
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
@@ -1882,7 +1832,7 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			tos<<"      <tbody>\n";
 
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -1939,17 +1889,10 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 Function writing the rooms' timetable html format to a file by Volker Dirr
 Days vertical.
 */
-void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-			na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -1977,8 +1920,8 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 
 	tos<<"  <body id=\"top\">\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1> "<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1> "<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
@@ -1990,10 +1933,6 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 			tos<<"      <li><a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(room_name)<<"\">"<<protect2(room_name)<<"</a></li>\n";
 		}
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
-
-		time_t ltime;
-		tzset();
-		time(&ltime);
 
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
@@ -2011,7 +1950,7 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 			tos<<"      <tbody>\n";
 
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -2070,17 +2009,10 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 Function writing the rooms' timetable html format to a file by Volker Dirr
 Time vertical.
 */
-void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -2104,15 +2036,11 @@ void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& h
 
 	tos<<"  <body>\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		time_t ltime;
-		tzset();
-		time(&ltime);
-
 		tos<<"    <table border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
@@ -2121,7 +2049,7 @@ void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& h
 			tos << "<th>" << gt.rules.internalRoomsList[i]->name << "</th>";
 		tos<<"</tr>\n      </thead>\n";
 
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -2175,17 +2103,10 @@ void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& h
 Function writing the rooms' timetable html format to a file by Volker Dirr
 Time vertical.
 */
-void TimetableGenerateForm::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlfilename){
+void TimetableGenerateForm::writeRoomsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	//assert(gt.timePopulation.initialized);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
-
-	//maybe wrote a function for this, because i do this in every xhtml output-file!!!
-	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-		na++;
-	//*********************************************************************************
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
@@ -2209,16 +2130,12 @@ void TimetableGenerateForm::writeRoomsTimetableTimeHorizontalHtml(const QString&
 
 	tos<<"  <body>\n";
 
-	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+	if(placedActivities!=gt.rules.nInternalActivities)
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		time_t ltime;
-		tzset();
-		time(&ltime);
-
 		tos<<"    <table border=\"1\">\n";
 		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
 
@@ -2233,7 +2150,7 @@ void TimetableGenerateForm::writeRoomsTimetableTimeHorizontalHtml(const QString&
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int i=0; i<gt.rules.nInternalRooms; i++){

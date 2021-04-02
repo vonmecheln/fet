@@ -38,7 +38,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>Weight percentage (recommended: 95%-100%)</string>
+                        <string>Weight percentage (recommended: 90%-100%)</string>
                     </property>
                 </widget>
                 <widget class="QLineEdit">

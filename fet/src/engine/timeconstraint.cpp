@@ -3847,7 +3847,7 @@ double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					//OLD COMMENT
 					//Here we want to see if we have a weekly activity or a 2 weeks activity
 					//We don't do tmp+=subgroupsMatrix[i][j][k] because we already counted this as a hard hitness
-					if(subgroupsMatrix[i][j][k]==1)
+					if(subgroupsMatrix[i][j][k]>=1)
 						tmp++;
 				}
 				if(this->maxHoursDaily>=0 && tmp > this->maxHoursDaily){ //we would like no more than maxHoursDaily hours per day.
@@ -3866,7 +3866,7 @@ double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					//OLD COMMENT
 					//Here we want to see if we have a weekly activity or a 2 weeks activity
 					//We don't do tmp+=subgroupsMatrix[i][j][k] because we already counted this as a hard hitness
-					if(subgroupsMatrix[i][j][k]==1)
+					if(subgroupsMatrix[i][j][k]>=1)
 						tmp++;
 				}
 				if(this->maxHoursDaily>=0 && tmp > this->maxHoursDaily){ //we would like no more than maxHoursDaily hours per day.
@@ -4097,7 +4097,7 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 				for(int k=0; k<r.nHoursPerDay; k++){
 					//Here we want to see if we have a weekly activity or a 2 weeks activity
 					//We don't do tmp+=subgroupsMatrix[i][j][k] because we already counted this as a hard hitness
-					if(subgroupsMatrix[i][j][k]==1)
+					if(subgroupsMatrix[i][j][k]>=1)
 						tmp++;
 				}
 				if(this->maxHoursDaily>=0 && tmp > this->maxHoursDaily){ //we would like no more than max_hours_daily hours per day.
@@ -4117,7 +4117,7 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 				for(int k=0; k<r.nHoursPerDay; k++){
 					//Here we want to see if we have a weekly activity or a 2 weeks activity
 					//We don't do tmp+=subgroupsMatrix[i][j][k] because we already counted this as a hard hitness
-					if(subgroupsMatrix[i][j][k]==1)
+					if(subgroupsMatrix[i][j][k]>=1)
 						tmp++;
 				}
 				if(this->maxHoursDaily>=0 && tmp > this->maxHoursDaily){ //we would like no more than max_hours_daily hours per day.
@@ -4180,6 +4180,404 @@ bool ConstraintStudentsSetMaxHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
 }
 
 bool ConstraintStudentsSetMaxHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.studentsSetsRelated(this->students, s->name);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMinHoursDaily::ConstraintStudentsMinHoursDaily()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_MIN_HOURS_DAILY;
+	this->minHoursDaily = -1;
+}
+
+ConstraintStudentsMinHoursDaily::ConstraintStudentsMinHoursDaily(double wp, int minnh)
+	: TimeConstraint(wp)
+{
+	this->minHoursDaily = minnh;
+	this->type = CONSTRAINT_STUDENTS_MIN_HOURS_DAILY;
+}
+
+bool ConstraintStudentsMinHoursDaily::computeInternalStructure(Rules& r)
+{
+	if(&r!=NULL)
+		;
+
+	/*do nothing*/
+	
+	return true;
+}
+
+QString ConstraintStudentsMinHoursDaily::getXmlDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s="<ConstraintStudentsMinHoursDaily>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	if(this->minHoursDaily>=0)
+		s+="	<Minimum_Hours_Daily>"+QString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
+	else
+		assert(0);
+	s+="</ConstraintStudentsMinHoursDaily>\n";
+	return s;
+}
+
+QString ConstraintStudentsMinHoursDaily::getDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s;
+	s+=QObject::tr("Students min hours daily");s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
+	if(this->minHoursDaily>=0)
+		s+=(QObject::tr("mH:%1").arg(this->minHoursDaily));
+	else
+		assert(0);
+
+	return s;
+}
+
+QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("All students sets must have the minimum number of hours daily");s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	if(this->minHoursDaily>=0){
+		s+=(QObject::tr("Minimum recommended hours daily=%1").arg(this->minHoursDaily));
+		s+="\n";
+	}
+	else
+		assert(0);
+
+	return s;
+}
+
+//critical function here - must be optimized for speed
+double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int tmp;
+	int too_little;
+	
+	assert(this->minHoursDaily>=0);
+
+	too_little=0;
+	for(int i=0; i<r.nInternalSubgroups; i++)
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			tmp=0;
+			for(int k=0; k<r.nHoursPerDay; k++){
+				if(subgroupsMatrix[i][j][k]>=1)
+					tmp++;
+			}
+			if(this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no more than maxHoursDaily hours per day.
+				too_little += - tmp + this->minHoursDaily;
+
+				if(conflictsString!=NULL){
+					QString s=QObject::tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[j])
+					 .arg(QString::number(tmp))
+					 .arg(weightPercentage/100*(-tmp+this->minHoursDaily));
+						 
+					dl.append(s);
+					cl.append(weightPercentage/100*(-tmp+this->minHoursDaily));
+					
+					*conflictsString+= s+"\n";
+				}
+			}
+		}
+
+	assert(too_little>=0);
+	//if(weightPercentage==100) does not work for partial solutions
+	//	assert(too_little==0);
+	return too_little * weightPercentage/100;
+}
+
+bool ConstraintStudentsMinHoursDaily::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursDaily::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursDaily::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	if(s)
+		;
+	if(&r)
+		;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMinHoursDaily::ConstraintStudentsSetMinHoursDaily()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY;
+	this->minHoursDaily = -1;
+}
+
+ConstraintStudentsSetMinHoursDaily::ConstraintStudentsSetMinHoursDaily(double wp, int minnh, QString s)
+	: TimeConstraint(wp)
+{
+	this->minHoursDaily = minnh;
+	this->students = s;
+	this->type = CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY;
+}
+
+QString ConstraintStudentsSetMinHoursDaily::getXmlDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s="<ConstraintStudentsSetMinHoursDaily>\n";
+	s+="	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	//s+="	<Compulsory>";s+=yesNo(this->compulsory);s+="</Compulsory>\n";
+	s+="	<Minimum_Hours_Daily>"+QString::number(this->minHoursDaily)+"</Minimum_Hours_Daily>\n";
+	//s+="	<MinHoursDaily>"+QString::number(this->minHoursDaily)+"</MinHoursDaily>\n";
+	s+="	<Students>"+protect(this->students)+"</Students>\n";
+	s+="</ConstraintStudentsSetMinHoursDaily>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMinHoursDaily::getDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s;
+	s+=QObject::tr("Students set min hours daily");s+=", ";
+	s+=(QObject::tr("WP:%1\%").arg(this->weightPercentage));s+=", ";
+	//s+=(QObject::tr("C:%1").arg(yesNoTranslated(this->compulsory)));s+=", ";
+	if(this->minHoursDaily>=0)
+		s+=(QObject::tr("mH:%1").arg(this->minHoursDaily));
+	else
+		assert(0);
+	//if(this->minHoursDaily>=0)
+	//	s+=(QObject::tr("mH:%1").arg(this->minHoursDaily));
+	s+=(QObject::tr("St:%1").arg(this->students));
+
+	return s;
+}
+
+QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
+{
+	//to avoid non-used parameter warning
+	if(&r==NULL)
+		;
+
+	QString s=QObject::tr("Time constraint");s+="\n";
+	s+=QObject::tr("Students set must respect the minimum number of hours daily");s+="\n";
+	s+=(QObject::tr("Weight (percentage)=%1\%").arg(this->weightPercentage));s+="\n";
+	//s+=(QObject::tr("Compulsory=%1").arg(yesNoTranslated(this->compulsory)));s+="\n";
+	if(this->minHoursDaily>=0){
+		s+=QObject::tr("Minimum recommended hours daily=%1").arg(this->minHoursDaily);s+="\n";
+	}
+	else
+		assert(0);
+	//if(this->minHoursDaily>=0)
+	//	s+=(QObject::tr("Minimum recommended hours daily=%1").arg(this->minHoursDaily));s+="\n";
+	s+=(QObject::tr("Students set=%1").arg(this->students));s+="\n";
+
+	return s;
+}
+
+bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(Rules &r)
+{
+	StudentsSet* ss=r.searchStudentsSet(this->students);
+	assert(ss);
+
+	this->nSubgroups=0;
+	if(ss->type==STUDENTS_SUBGROUP){
+		int tmp;
+		for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+			if(r.internalSubgroupsList[tmp]->name == ss->name)
+				break;
+		assert(tmp<r.nInternalSubgroups);
+		assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+		this->subgroups[this->nSubgroups++]=tmp;
+	}
+	else if(ss->type==STUDENTS_GROUP){
+		StudentsGroup* stg=(StudentsGroup*)ss;
+		for(int i=0; i<stg->subgroupsList.size(); i++){
+			StudentsSubgroup* sts=stg->subgroupsList[i];
+			int tmp;
+			for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+				if(r.internalSubgroupsList[tmp]->name == sts->name)
+					break;
+			assert(tmp<r.nInternalSubgroups);
+			assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+			this->subgroups[this->nSubgroups++]=tmp;
+		}
+	}
+	else if(ss->type==STUDENTS_YEAR){
+		StudentsYear* sty=(StudentsYear*)ss;
+		for(int i=0; i<sty->groupsList.size(); i++){
+			StudentsGroup* stg=sty->groupsList[i];
+			for(int j=0; j<stg->subgroupsList.size(); j++){
+				StudentsSubgroup* sts=stg->subgroupsList[j];
+				int tmp;
+				for(tmp=0; tmp<=r.nInternalSubgroups; tmp++)
+					if(r.internalSubgroupsList[tmp]->name == sts->name)
+						break;
+				assert(tmp<r.nInternalSubgroups);
+				assert(this->nSubgroups<MAX_SUBGROUPS_PER_CONSTRAINT);
+				this->subgroups[this->nSubgroups++]=tmp;
+			}
+		}
+	}
+	else
+		assert(0);
+		
+	return true;
+}
+
+//critical function here - must be optimized for speed
+double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+	//if(crt_chrom!=&c || crt_rules!=&r || subgroups_conflicts<0 || teachers_conflicts<0 || c.changedForMatrixCalculation){
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		//crt_chrom=&c;
+		//crt_rules=&r;
+		
+		c.changedForMatrixCalculation=false;
+	}
+
+	int tmp;
+	int too_little;
+	
+	assert(this->minHoursDaily>=0);
+
+	too_little=0;
+	for(int sg=0; sg<this->nSubgroups; sg++){
+		int i=subgroups[sg];
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			tmp=0;
+			for(int k=0; k<r.nHoursPerDay; k++){
+				if(subgroupsMatrix[i][j][k]>=1)
+					tmp++;
+			}
+			if(this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no more than max_hours_daily hours per day.
+				too_little += - tmp + this->minHoursDaily;
+
+				if(conflictsString!=NULL){
+					QString s=QObject::tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4")
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[j])
+					 .arg(QString::number(tmp))
+					 .arg((-tmp+this->minHoursDaily)*weightPercentage/100);
+						 
+					dl.append(s);
+					cl.append((-tmp+this->minHoursDaily)*weightPercentage/100);
+					
+					*conflictsString+= s+"\n";
+				}
+			}
+		}
+	}
+	
+	assert(too_little>=0);
+	//if(weightPercentage==100) does not work for partial solutions
+	//	assert(too_much==0);
+	return too_little * weightPercentage;
+}
+
+bool ConstraintStudentsSetMinHoursDaily::isRelatedToActivity(Activity* a)
+{
+	if(a)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursDaily::isRelatedToTeacher(Teacher* t)
+{
+	if(t)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursDaily::isRelatedToSubject(Subject* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursDaily::isRelatedToSubjectTag(SubjectTag* s)
+{
+	if(s)
+		;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursDaily::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
 {
 	return r.studentsSetsRelated(this->students, s->name);
 }

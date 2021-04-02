@@ -99,12 +99,12 @@
         <translation>Ders</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1080"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1074"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1047"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1041"/>
         <source>Add current activity</source>
         <translation>Ders Ekle
 </translation>
@@ -194,7 +194,7 @@
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1006"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1000"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
@@ -241,16 +241,21 @@ Recommended:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1072"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1066"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform_template.ui" line="1016"/>
+        <location filename="../src/interface/addactivityform_template.ui" line="1010"/>
         <source>If activities on 
 same day, force
 consecutive?</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform_template.ui" line="989"/>
+        <source>95.0</source>
+        <translation type="unfinished">95.0</translation>
     </message>
 </context>
 <context>
@@ -509,11 +514,16 @@ tuple)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="27"/>
         <source>99</source>
-        <translation type="unfinished">99</translation>
+        <translation type="obsolete">99</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="27"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -566,14 +576,19 @@ tuple)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="49"/>
+        <source>99</source>
+        <translation type="obsolete">99</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="49"/>
-        <source>99</source>
-        <translation type="unfinished">99</translation>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
     </message>
 </context>
 <context>
@@ -897,7 +912,7 @@ force activities consecutive</source>
     </message>
     <message>
         <location filename="../src/interface/addconstraintminndaysbetweenactivitiesform_template.ui" line="147"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1334,11 +1349,16 @@ constraint).</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="27"/>
         <source>99</source>
-        <translation type="unfinished">99</translation>
+        <translation type="obsolete">99</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="27"/>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1391,14 +1411,19 @@ constraint).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="49"/>
+        <source>99</source>
+        <translation type="obsolete">99</translation>
+    </message>
+    <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectpreferredroomsform_template.ui" line="49"/>
-        <source>99</source>
-        <translation type="unfinished">99</translation>
+        <source>100</source>
+        <translation type="unfinished">100</translation>
     </message>
 </context>
 <context>
@@ -4976,7 +5001,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(c) Liviu Lalescu 2002-2007&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.0.2 (August 2007)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 5.0.3 (August 2007)&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Licensed under GNU/GPL.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
@@ -5781,7 +5806,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="101"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5840,7 +5865,7 @@ a timetable, maybe you can try optimizing first without these constraints</sourc
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6160,14 +6185,14 @@ not induce gaps for teachers or students</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="138"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="156"/>
         <source>If activities on same day,
 force activities consecutive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintminndaysbetweenactivitiesform_template.ui" line="138"/>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6600,7 +6625,7 @@ constraint).</source>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomform_template.ui" line="93"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6660,7 +6685,7 @@ constraint).</source>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectpreferredroomsform_template.ui" line="41"/>
-        <source>Weight percentage (recommended: 95%-100%)</source>
+        <source>Weight percentage (recommended: 90%-100%)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7175,7 +7200,7 @@ Aynı Bölünmüş Dersten de kaldırılacak
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="378"/>
+        <location filename="../src/interface/addactivityform.cpp" line="354"/>
         <source>The distance between any pair of subactivities must be at least %1 days</source>
         <translation>İki Alt-Etkinlik Arası En Az Gün Sayısı %1
 </translation>
@@ -7206,7 +7231,7 @@ Maksimum %1.
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="494"/>
+        <location filename="../src/interface/addactivityform.cpp" line="479"/>
         <source>Invalid duration</source>
         <translation>Süre Geçersiz
 </translation>
@@ -7218,7 +7243,7 @@ Maksimum %1.
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="537"/>
+        <location filename="../src/interface/addactivityform.cpp" line="522"/>
         <source>This activity already exists. Insert it again?</source>
         <translation>Bu Ders Mevcut. Tekrar Eklensin Mi?
 </translation>
@@ -7234,19 +7259,19 @@ Maksimum %1.
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="550"/>
+        <location filename="../src/interface/addactivityform.cpp" line="535"/>
         <source>Activity added</source>
         <translation>Ders Eklendi
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="552"/>
+        <location filename="../src/interface/addactivityform.cpp" line="537"/>
         <source>Activity NOT added - please report error</source>
         <translation>Ders Eklenmedi - Lütfen Hatayı İletiniz
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="599"/>
+        <location filename="../src/interface/addactivityform.cpp" line="584"/>
         <source>Split activity NOT added - error???</source>
         <translation>Bölünebilen Ders Eklenemedi - Hata???
 </translation>
@@ -9230,7 +9255,7 @@ Güncellenemez
 </translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="341"/>
+        <location filename="../src/interface/addactivityform.cpp" line="317"/>
         <source>Number of students: automatically computed from component students sets</source>
         <translation>Hesaplanan Öğrenci Sayısı
 </translation>
@@ -9485,7 +9510,7 @@ referring to this activity before proceeding</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="381"/>
+        <location filename="../src/interface/addactivityform.cpp" line="357"/>
         <source>Weight percentage of added min n days constraint: %1%</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9649,12 +9674,12 @@ Değişiklik Yapılamaz
  {10 ?}</translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="597"/>
+        <location filename="../src/interface/addactivityform.cpp" line="582"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="673"/>
+        <location filename="../src/interface/addactivityform.cpp" line="658"/>
         <source>FET - help on adding activity(ies)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9669,7 +9694,7 @@ Değişiklik Yapılamaz
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="385"/>
+        <location filename="../src/interface/addactivityform.cpp" line="361"/>
         <source>If activities on same day, then place activities consecutive, in a bigger duration lesson</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9985,17 +10010,17 @@ You can choose to disable automatic search for updates in the Settings menu</sou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="435"/>
+        <location filename="../src/interface/addactivityform.cpp" line="420"/>
         <source>Do you really want to add activity with no teacher(s)?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="477"/>
+        <location filename="../src/interface/addactivityform.cpp" line="462"/>
         <source>Do you really want to add activity with no student set(s)?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addactivityform.cpp" line="668"/>
+        <location filename="../src/interface/addactivityform.cpp" line="653"/>
         <source>You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then double click it or press Enter to add it to the selected teachers for current activity. You can then choose to remove a teacher from the selected teachers. You can highlight it with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.
 
 The same procedure (double click or Enter) applies to adding a students set or removing a students set.
@@ -10076,6 +10101,11 @@ It is advisable to generate the timetable without the rooms, then, if a solution
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1291"/>
         <source>Cannot optimize, because you have no basic space constraints or weight percentage lower than 100.0%. Please add a basic space constraint with 100% weight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addactivityform.cpp" line="412"/>
+        <source>Invalid weight (percentage) for added constraint min n days between activities</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

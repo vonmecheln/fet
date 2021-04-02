@@ -54,13 +54,9 @@ If FET cannot find a good timetable for your school, make sure to write to the a
 
 4) If you have a course lesson with say 4 activities per week, difficult lessons, which you would like to schedule in the beginning of the day (say 3 out of 4 need to be in the first half of the day), you can add constraint activity preferred times for the first three activities, with preferred times in the first half of the day. This approach worked with the sample German high-school data.
 
-5) A real case: for the sample German file, FET usually finds a solution fast. I tried the following: increased the day from 6 to 12 hours, and let the students begin hours at any time (removed students early). I kept the constraint teachers max gaps per week to 3. But to my surprise, even if the data was less constrained, FET failed to find a solution. The reason is that the teachers have a larger possible palette of options, and FET is not able anymore to optimize their timetable so not to have more than 3 gaps per week.
+5) You can input non integer weights, like 96.75%. It should work, although I didn't test enough floating point weights.
 
-The advice is to help FET to have the data as a human timetabler would have it, helping him by not letting him with a very large palette of options for each activity and on the other hand constraining him with max gaps for instance. Try firstly to see if the timetable can be generated without teachers max gaps per week, and lower the max gaps limit afterwards.
-
-6) You can input non integer weights, like 96.75%. It should work, although I didn't test enough floating point weights.
-
-7) Please only input the special rooms with constraints. Home rooms are not necessary (teachers' or students' rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.</string>
+6) Please only input the special rooms with constraints. Home rooms are not necessary (teachers' or students' rooms). You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.</string>
             </property>
         </widget>
     </grid>

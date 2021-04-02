@@ -54,7 +54,6 @@ const int CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK							=6;
 const int CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK							=7;
 const int CONSTRAINT_TEACHER_MAX_HOURS_DAILY							=8;
 
-
 const int CONSTRAINT_STUDENTS_EARLY										=9;
 const int CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE							=10;
 const int CONSTRAINT_STUDENTS_NO_GAPS									=11;
@@ -62,14 +61,16 @@ const int CONSTRAINT_STUDENTS_SET_NO_GAPS								=12;
 const int CONSTRAINT_STUDENTS_SET_EARLY									=13;
 const int CONSTRAINT_STUDENTS_MAX_HOURS_DAILY							=14;
 const int CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY						=15;
+const int CONSTRAINT_STUDENTS_MIN_HOURS_DAILY							=16;
+const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY						=17;
 
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIME							=16;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME						=17;
-const int CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING							=18;
-const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=19;
-const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=20;
-const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=21;
-const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=22;
+const int CONSTRAINT_ACTIVITY_PREFERRED_TIME							=18;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME						=19;
+const int CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING							=20;
+const int CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES						=21;
+const int CONSTRAINT_ACTIVITY_PREFERRED_TIMES							=22;
+const int CONSTRAINT_ACTIVITIES_PREFERRED_TIMES							=23;
+const int CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR						=24;
 
 
 /**
@@ -972,6 +973,81 @@ public:
 	ConstraintStudentsSetMaxHoursDaily();
 
 	ConstraintStudentsSetMaxHoursDaily(double wp, int maxnh, QString s);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsMinHoursDaily: public TimeConstraint{
+public:
+	int minHoursDaily;
+
+	ConstraintStudentsMinHoursDaily();
+
+	ConstraintStudentsMinHoursDaily(double wp, int minnh);
+
+	bool computeInternalStructure(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString=NULL);
+
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToSubjectTag(SubjectTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+};
+
+class ConstraintStudentsSetMinHoursDaily: public TimeConstraint{
+public:
+	int minHoursDaily;
+
+	/**
+	The students set name
+	*/
+	QString students;
+
+	//internal variables
+
+	/**
+	The number of subgroups
+	*/
+	int nSubgroups;
+
+	/**
+	The subgroups
+	*/
+	int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
+
+	ConstraintStudentsSetMinHoursDaily();
+
+	ConstraintStudentsSetMinHoursDaily(double wp, int minnh, QString s);
 
 	bool computeInternalStructure(Rules& r);
 

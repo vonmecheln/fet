@@ -71,6 +71,8 @@ using namespace std;
 #include "constraintstudentssetearlyform.h"
 #include "constraintstudentssetmaxhoursdailyform.h"
 #include "constraintstudentsmaxhoursdailyform.h"
+#include "constraintstudentssetminhoursdailyform.h"
+#include "constraintstudentsminhoursdailyform.h"
 #include "constraintactivitiesnotoverlappingform.h"
 #include "constraintminndaysbetweenactivitiesform.h"
 #include "constraintactivitypreferredtimesform.h"
@@ -864,6 +866,30 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated()
 	}
 
 	ConstraintStudentsMaxHoursDailyForm* form=new ConstraintStudentsMaxHoursDailyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinHoursDailyForm* form=new ConstraintStudentsSetMinHoursDailyForm();
+	form->exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, QObject::tr("FET information"),
+			QObject::tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinHoursDailyForm* form=new ConstraintStudentsMinHoursDailyForm();
 	form->exec();
 }
 

@@ -57,10 +57,6 @@ public:
 	
 	void optimize();
 	
-	//bool timesUp();
-	
-	////////////////////
-	
 	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom);
 	
 	void randomswap(int ai, int level);

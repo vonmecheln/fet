@@ -91,6 +91,8 @@ public slots:
 	void on_dataTimeConstraintsStudentsSetEarlyAction_activated();
 	void on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated();
 	void on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsMinHoursDailyAction_activated();
+	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated();
 
 
 	void on_helpAboutAction_activated();

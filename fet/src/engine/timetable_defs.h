@@ -51,11 +51,6 @@ The language
 extern QString FET_LANGUAGE;
 
 /**
-The maximum dimension of the population
-*/
-const int MAX_POPULATION_SIZE=1;
-
-/**
 The maximum number of different years of students
 */
 const int MAX_YEARS=100;
@@ -108,21 +103,6 @@ const int MAX_SUBJECTS=1000;
 The maximum number of activities
 */
 const int MAX_ACTIVITIES=2000;
-
-/**
-The maximum number of equipments
-*/
-const int MAX_EQUIPMENTS=300;
-
-/**
-The maximum number of equipments for a constraint subject requires equipments
-*/
-const int MAX_EQUIPMENTS_FOR_A_CONSTRAINT=50;
-
-/**
-The maximum number of buildings
-*/
-const int MAX_BUILDINGS=100;
 
 /**
 The maximum number of rooms
@@ -245,13 +225,6 @@ ConstraintSubjectPreferredRooms
 const int MAX_CONSTRAINT_SUBJECT_PREFERRED_ROOMS=50;
 
 /**
-The maximum number of rooms for a single
-constraint of type
-ConstraintSubjectSubjectTagPreferredRooms
-*/
-const int MAX_CONSTRAINT_SUBJECT_SUBJECT_TAG_PREFERRED_ROOMS=20;
-
-/**
 The maximum number of activities for a single
 constraint of type
 ConstraintActivitiesSameRoom
@@ -269,13 +242,6 @@ The maximum number of activities which share the same teacher name.
 This constant is used (for now) in ConstraintTeacherRequiresRoom.
 */
 const int MAX_ACTIVITIES_FOR_A_TEACHER=200;
-
-/**
-The maximum number of activities which share the same teacher name
-and subject name. This constant is used (for now) in
-ConstraintTeacherSubjectRequireRoom.
-*/
-const int MAX_ACTIVITIES_FOR_A_TEACHER_AND_SUBJECT=200;
 
 
 /**
@@ -339,21 +305,6 @@ const QString OUTPUT_DIR="results";
 #else
 const QString OUTPUT_DIR=QDir::homeDirPath()+"/fet-results";
 #endif
-
-/**
-A log of the time simulation.
-*/
-const QString TIME_LOG_FILENAME_TXT="time_log.txt";
-
-/**
-A log of the space simulation.
-*/
-const QString SPACE_LOG_FILENAME_TXT="space_log.txt";
-
-/**
-A log of the time and space simulation.
-*/
-const QString TIME_SPACE_LOG_FILENAME_TXT="time_space_log.txt";
 
 /**
 An output file containing the timetable for each subgroup,
@@ -455,81 +406,6 @@ Time vertical version.
 const QString ROOMS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML="roomstimetabletimevertical.html";
 
 /**
-An output file containing the timetable for each room,
-arranged in html format. Version 1 - flyers for each room.
-Days horizontal.
-*/
-const QString ROOMS_TIMETABLE_1_DAYS_HORIZONTAL_FILENAME_HTML="roomstimetable1dayshorizontal.html";
-
-/**
-An output file containing the timetable for each room,
-arranged in html format. Version 1 - flyers for each room.
-Days vertical.
-*/
-const QString ROOMS_TIMETABLE_1_DAYS_VERTICAL_FILENAME_HTML="roomstimetable1daysvertical.html";
-
-/**
-An output file containing the timetable for each room,
-arranged in html format. Version 2 - overall.
-*/
-const QString ROOMS_TIMETABLE_2_FILENAME_HTML="roomstimetable2.html";
-
-/**
-An output file containing the timetable (with rooms) for each subgroup,
-arranged in html format. Version 1 - flyers for each subgroup.
-Days horizontal version.
-*/
-const QString STUDENTS_TIMETABLE_WITH_ROOMS_1_DAYS_HORIZONTAL_FILENAME_HTML="studentstimetablewithrooms1dayshorizontal.html";
-
-/**
-An output file containing the timetable (with rooms) for each subgroup,
-arranged in html format. Version 1 - flyers for each subgroup.
-Days vertical version.
-*/
-const QString STUDENTS_TIMETABLE_WITH_ROOMS_1_DAYS_VERTICAL_FILENAME_HTML="studentstimetablewithrooms1daysvertical.html";
-
-/**
-An output file containing the timetable (with rooms) for each subgroup,
-arranged in html format. Version 2 - overall.
-Days horizontal version.
-*/
-const QString STUDENTS_TIMETABLE_WITH_ROOMS_2_FILENAME_HTML="studentstimetablewithrooms2.html";
-
-/**
-An output file containing the timetable (with rooms) for each subgroup,
-arranged in html format.
-Days horizontal version.
-*/
-const QString STUDENTS_TIMETABLE_WITH_ROOMS_DAYS_HORIZONTAL_FILENAME_HTML="studentstimetablewithroomsdayshorizontal.html";
-
-/**
-An output file containing the timetable (with rooms) for each subgroup,
-arranged in html format.
-Days vertical version.
-*/
-const QString STUDENTS_TIMETABLE_WITH_ROOMS_DAYS_VERTICAL_FILENAME_HTML="studentstimetablewithroomsdaysvertical.html";
-
-/**
-An output file containing the timetable for each teacher (with rooms),
-arranged in html format. Version 1 - flyers for each teacher.
-Days horizontal version.
-*/
-const QString TEACHERS_TIMETABLE_WITH_ROOMS_1_DAYS_HORIZONTAL_FILENAME_HTML="teacherstimetablewithrooms1dayshorizontal.html";
-
-/**
-An output file containing the timetable for each teacher (with rooms),
-arranged in html format. Version 1 - flyers for each teacher.
-Days vertical version.
-*/
-const QString TEACHERS_TIMETABLE_WITH_ROOMS_1_DAYS_VERTICAL_FILENAME_HTML="teacherstimetablewithrooms1daysvertical.html";
-
-/**
-An output file containing the timetable for each teacher (with rooms),
-arranged in html format. Version 2 - overall
-*/
-const QString TEACHERS_TIMETABLE_WITH_ROOMS_2_FILENAME_HTML="teacherstimetablewithrooms2.html";
-
-/**
 A log file explaining how the xml input file was parsed
 */
 const QString XML_PARSING_LOG_FILENAME="xmlreadinglog.txt";
@@ -537,52 +413,8 @@ const QString XML_PARSING_LOG_FILENAME="xmlreadinglog.txt";
 /**
 A file containing the time conflicts
 */
-const QString TIME_CONFLICTS_FILENAME="time_conflicts.txt";
+const QString CONFLICTS_FILENAME="conflicts.txt";
 
-/**
-A file containing the space conflicts
-*/
-const QString SPACE_CONFLICTS_FILENAME="space_conflicts.txt";
-
-/**
-A file containing the time&space conflicts
-*/
-const QString TIME_SPACE_CONFLICTS_FILENAME="time_space_conflicts.txt";
-
-/**
-Probability for Evolution1 Crossover, in percents
-*/
-extern int METHOD1_CROSSOVER_PROBABILITY;
-
-/**
-Probability for Evolution1 Mutation1, in percents
-*/
-extern int METHOD1_MUTATION1_PROBABILITY;
-
-/**
-Probability for Evolution1 Mutation2, in percents
-*/
-extern int METHOD1_MUTATION2_PROBABILITY;
-
-/**
-Probability for Evolution2 Crossover, in percents
-*/
-extern int METHOD2_CROSSOVER_PROBABILITY;
-
-/**
-Probability for Evolution2 Mutation1, in percents
-*/
-extern int METHOD2_MUTATION1_PROBABILITY;
-
-/**
-Probability for Evolution2 Mutation2, in percents
-*/
-extern int METHOD2_MUTATION2_PROBABILITY;
-
-/**
-Probability for Evolution2 propagation, in percents
-*/
-extern int METHOD2_PROPAGATION_PROBABILITY;
 
 /**
 A function used in xml saving

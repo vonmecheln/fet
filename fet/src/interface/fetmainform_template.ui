@@ -103,9 +103,11 @@
      </property>
      <addaction name="dataTimeConstraintsStudentsEarlyAction" />
      <addaction name="dataTimeConstraintsStudentsMaxHoursDailyAction" />
+     <addaction name="dataTimeConstraintsStudentsMinHoursDailyAction" />
      <addaction name="dataTimeConstraintsStudentsNoGapsAction" />
      <addaction name="dataTimeConstraintsStudentsSetEarlyAction" />
      <addaction name="dataTimeConstraintsStudentsSetMaxHoursDailyAction" />
+     <addaction name="dataTimeConstraintsStudentsSetMinHoursDailyAction" />
      <addaction name="dataTimeConstraintsStudentsSetNoGapsAction" />
      <addaction name="dataTimeConstraintsStudentsSetNotAvailableAction" />
     </widget>
@@ -1169,6 +1171,16 @@
    </property>
    <property name="text" >
     <string>Search for updates on startup</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsMinHoursDailyAction" >
+   <property name="text" >
+    <string>Students min hours daily</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetMinHoursDailyAction" >
+   <property name="text" >
+    <string>Students set min hours daily</string>
    </property>
   </action>
  </widget>

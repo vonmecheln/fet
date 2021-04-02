@@ -1,7 +1,7 @@
 Bibliography:
 -------------
 
-Backtracking swapping algorithm:
+Ideas for the backtracking swapping algorithm:
 
 [1] Michael Marte - Models And Algorithms For School Timetabling - 
 A Constraint Programming Approach - (free, on the internet, I lost the link)
@@ -27,6 +27,3 @@ Proc. of the 3rd Annual Nat.Symp.on Computational Science and Engineering. Bangk
 Springer-Verlag, 1994 (not free. I cannot say whether it is worth the money, but it 
 helped me understand some important concepts. This was a borrowed book and I never had the
 opportunity to read other expensive books on genetic algorithms, to compare them).
-
-I will have to add here other great free sources of information I found on the web,
-but these were the most useful ones.

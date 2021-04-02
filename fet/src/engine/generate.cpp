@@ -43,7 +43,6 @@ extern QMutex mutex; //timetableallocatehoursform.cpp
 #include <QSemaphore>
 
 extern QSemaphore semaphoreTime;
-//extern QSemaphore stopSemaphore;
 extern QSemaphore finishedSemaphore;
 
 extern Timetable gt;
@@ -60,8 +59,6 @@ int restoreTime[10*MAX_ACTIVITIES]; //the time when to restore
 int restoreRoom[10*MAX_ACTIVITIES]; //the time when to restore
 int nRestore;
 
-//static int pred[MAX_ACTIVITIES];
-
 //static clock_t start_search_ticks;
 
 int limitcallsrandomswap;
@@ -75,8 +72,6 @@ int level_limit;
 int ncallsrandomswap;
 int maxncallsrandomswap;
 
-//int minNDaysBrokenAllowancePercentage;
-
 //for checking the no gaps and early for students
 int nHoursScheduledForSubgroup[MAX_TOTAL_SUBGROUPS];
 QList<int> activitiesForSubgroup[MAX_TOTAL_SUBGROUPS][MAX_HOURS_PER_WEEK];
@@ -86,17 +81,19 @@ int nHoursScheduledForTeacher[MAX_TEACHERS];
 QList<int> activitiesForTeacher[MAX_TEACHERS][MAX_HOURS_PER_WEEK];
 
 
+
+//for checking the students (set) min hours daily
+int nHoursScheduledForSubgroupForDay[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK];
+
+
+
 //if level==0, choose best position with lowest number
 //of conflicting activities
 QList<int> conflActivitiesTimeSlot;
 int timeSlot;
 int roomSlot;
 
-//static bool fixedActivity[MAX_ACTIVITIES];
 
-//static QList<int> triedTimes[MAX_ACTIVITIES];
-
-//static QSet<int> triedRemovals[MAX_ACTIVITIES];
 int triedRemovals[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
 
 int impossibleActivity;
@@ -106,8 +103,8 @@ int invPermutation[MAX_ACTIVITIES];
 const int INF=2000000000;
 
 
-////////tabu
-const int MAX_TABU=300;
+////////tabu list of tried removals (circular)
+const int MAX_TABU=200;
 int crt_tabu_index;
 int tabu_activities[MAX_TABU];
 int tabu_times[MAX_TABU];
@@ -127,7 +124,7 @@ inline bool skipRandom(double weightPercentage)
 	assert(tt>=0 && tt<=MM);
 						
 	int r=randomKnuth();
-	assert(r>=0 && r<MM);
+	assert(r>0 && r<MM); //r cannot be 0
 	if(tt<=r)
 		return true;
 	else
@@ -155,19 +152,6 @@ Generate::Generate()
 Generate::~Generate()
 {
 }
-
-/*bool OptimizeTime::timesUp()
-{
-	mutex.lock();
-	
-	if(abortOptimization){
-		mutex.unlock();
-		return true;
-	}
-	
-	mutex.unlock();
-	return false;
-}*/
 
 bool Generate::precompute()
 {
@@ -288,7 +272,7 @@ void Generate::optimize()
 		///////////////////////////////
 				
 		///////////////care for student (set) max hours daily
-		//timetable is important for other purposes
+		//timetable is also important for other purposes
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 			for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 				for(int k=0; k<gt.rules.nHoursPerDay; k++)
@@ -304,6 +288,51 @@ void Generate::optimize()
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(subgroupsTimetable[sb][day][hour+dd]==-1);
 					subgroupsTimetable[sb][day][hour+dd]=i;
+				}
+			}
+		}
+
+		//care for students (set) min hours daily
+		for(int sg=0; sg<gt.rules.nInternalSubgroups; sg++){
+			if(subgroupsMinHoursDailyMinHours[sg]>=0){
+				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+					nHoursScheduledForSubgroupForDay[sg][d2]=0;
+				
+					if(subgroupsEarlyPercentage[sg]>=0 && subgroupsNoGapsPercentage[sg]>=0){ //early+no gaps
+						int h2;
+						for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+							if(subgroupsTimetable[sg][d2][h2]>=0){
+								assert(!breakDayHour[d2][h2]);
+								break;
+							}
+						for(; h2>=0; h2--)
+							if(!breakDayHour[d2][h2]) //breaks are not counted as gaps or lessons
+								nHoursScheduledForSubgroupForDay[sg][d2]++;
+					}
+					else if(subgroupsNoGapsPercentage[sg]>=0){ //only no gaps
+						int h2;
+						for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+							if(subgroupsTimetable[sg][d2][h2]>=0){
+								assert(!breakDayHour[d2][h2]);
+								break;
+							}
+						int cnt=0;
+						for(; h2>=0; h2--)
+							if(!breakDayHour[d2][h2]){
+								if(subgroupsTimetable[sg][d2][h2]>=0){
+									nHoursScheduledForSubgroupForDay[sg][d2]+=cnt+1;
+									cnt=0;
+								}
+								else
+									cnt++;
+							}
+					}
+					else{ //students have no "no gaps" or "early" constraints
+						for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
+							if(!breakDayHour[d2][h2])
+								if(subgroupsTimetable[sg][d2][h2]>=0)
+									nHoursScheduledForSubgroupForDay[sg][d2]++;
+					}
 				}
 			}
 		}
@@ -720,10 +749,9 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		}*/
 
 		//update for students (set) max hours daily
-		//careful: timetable is used for other purposes
+		//careful: timetable is also used for other purposes
 		for(int q=0; q<act->nSubgroups; q++){
 			int sb=act->subgroups[q];	
-			//if(1 || subgroupsMaxHoursDailyMaxHours[sb]>=0){
 			if(1){
 			//the timetable must be computed also for other purposes
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
@@ -731,29 +759,52 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 					assert(subgroupsTimetable[sb][d][h+dd]==ai);
 					subgroupsTimetable[sb][d][h+dd]=-1;
 				}
-			
-				/*subgroupsNHoursPerDay[sb][d]=0;
-				//subgroupsGapsPerDay[sb][d]=0;
+			}
+		}
 
-				int hh;
+		//update for students (set) min hours daily
+		for(int q=0; q<act->nSubgroups; q++){
+			int sg=act->subgroups[q];
+			if(subgroupsMinHoursDailyMinHours[sg]>=0){
+				int d2=d;
 
-				for(hh=gt.rules.nHoursPerDay-1; hh>=0; hh--)
-					if(subgroupsTimetable[sb][d][hh]>=0)
-						break;
-						
-				int cnt=0;
-				for( ; hh>=0; hh--){
-					if(subgroupsTimetable[sb][d][hh]>=0){
-						subgroupsNHoursPerDay[sb][d]++;
-						//subgroupsGapsPerDay[sb][d]+=cnt;
-						cnt=0;
-					}
-					else
-						cnt++;
-				}*/
+				nHoursScheduledForSubgroupForDay[sg][d2]=0;
 				
-				//if(subgroupsEarlyPercentage[sb]>=0)
-				//	subgroupsGapsPerDay[sb][d]+=cnt;
+				if(subgroupsEarlyPercentage[sg]>=0 && subgroupsNoGapsPercentage[sg]>=0){ //early+no gaps
+					int h2;
+					for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+						if(subgroupsTimetable[sg][d2][h2]>=0){
+							assert(!breakDayHour[d2][h2]);
+							break;
+						}
+					for(; h2>=0; h2--)
+						if(!breakDayHour[d2][h2]) //breaks are not counted as gaps or lessons
+							nHoursScheduledForSubgroupForDay[sg][d2]++;
+				}
+				else if(subgroupsNoGapsPercentage[sg]>=0){ //only no gaps
+					int h2;
+					for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+						if(subgroupsTimetable[sg][d2][h2]>=0){
+							assert(!breakDayHour[d2][h2]);
+							break;
+						}
+					int cnt=0;
+					for(; h2>=0; h2--)
+						if(!breakDayHour[d2][h2]){
+							if(subgroupsTimetable[sg][d2][h2]>=0){
+								nHoursScheduledForSubgroupForDay[sg][d2]+=cnt+1;
+								cnt=0;
+							}
+							else
+								cnt++;
+						}
+				}
+				else{ //students have no "no gaps" or "early" constraints
+					for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
+						if(!breakDayHour[d2][h2])
+							if(subgroupsTimetable[sg][d2][h2]>=0)
+								nHoursScheduledForSubgroupForDay[sg][d2]++;
+				}
 			}
 		}
 
@@ -979,13 +1030,58 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		//update for students (set) max hours daily
 		for(int q=0; q<act->nSubgroups; q++){
 			int sb=act->subgroups[q];
-			//if(1 || subgroupsMaxHoursDailyMaxHours[sb]>=0){
 			//the timetable must be computed also for other purposes
 			if(1){
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 					assert(dd+h<gt.rules.nHoursPerDay);
 					assert(subgroupsTimetable[sb][d][h+dd]==-1);
 					subgroupsTimetable[sb][d][h+dd]=ai;
+				}
+			}
+		}
+
+		//update for students (set) min hours daily
+		for(int q=0; q<act->nSubgroups; q++){
+			int sg=act->subgroups[q];
+			if(subgroupsMinHoursDailyMinHours[sg]>=0){
+				int d2=d;
+
+				nHoursScheduledForSubgroupForDay[sg][d2]=0;
+				
+				if(subgroupsEarlyPercentage[sg]>=0 && subgroupsNoGapsPercentage[sg]>=0){ //early+no gaps
+					int h2;
+					for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+						if(subgroupsTimetable[sg][d2][h2]>=0){
+							assert(!breakDayHour[d2][h2]);
+							break;
+						}
+					for(; h2>=0; h2--)
+						if(!breakDayHour[d2][h2]) //breaks are not counted as gaps or lessons
+							nHoursScheduledForSubgroupForDay[sg][d2]++;
+				}
+				else if(subgroupsNoGapsPercentage[sg]>=0){ //only no gaps
+					int h2;
+					for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+						if(subgroupsTimetable[sg][d2][h2]>=0){
+							assert(!breakDayHour[d2][h2]);
+							break;
+						}
+					int cnt=0;
+					for(; h2>=0; h2--)
+						if(!breakDayHour[d2][h2]){
+							if(subgroupsTimetable[sg][d2][h2]>=0){
+								nHoursScheduledForSubgroupForDay[sg][d2]+=cnt+1;
+								cnt=0;
+							}
+							else
+								cnt++;
+						}
+				}
+				else{ //students have no "no gaps" or "early" constraints
+					for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
+						if(!breakDayHour[d2][h2])
+							if(subgroupsTimetable[sg][d2][h2]>=0)
+								nHoursScheduledForSubgroupForDay[sg][d2]++;
 				}
 			}
 		}
@@ -1680,6 +1776,514 @@ impossiblestudentsmaxhoursdaily:
 		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//allowed from students (set) min hours daily
+		bool okstudentsminhoursdaily=true;
+		for(int q=0; q<act->nSubgroups; q++){
+			int sb=act->subgroups[q];
+			if(subgroupsMinHoursDailyMinHours[sb]>=0){
+				/*int nhinit=0;
+				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+					nhinit+=nHoursScheduledForSubgroupForDay[sb][d2];*/
+					
+				int nhday=0;
+
+				if(subgroupsEarlyPercentage[sb]>=0 && subgroupsNoGapsPercentage[sb]>=0){ //early+no gaps
+					int h2;
+					for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+						if(subgroupsTimetable[sb][d][h2]>=0 || h2>=h && h2<h+act->duration){
+							assert(!breakDayHour[d][h2]);
+							break;
+						}
+					for(; h2>=0; h2--)
+						if(!breakDayHour[d][h2]) //breaks are not counted as gaps or lessons
+							nhday++;
+				}
+				else if(subgroupsNoGapsPercentage[sb]>=0){ //only no gaps
+					int h2;
+					for(h2=gt.rules.nHoursPerDay-1; h2>=0; h2--)
+						if(subgroupsTimetable[sb][d][h2]>=0 || h2>=h && h2<h+act->duration){
+							assert(!breakDayHour[d][h2]);
+							break;
+						}
+					int cnt=0;
+					for(; h2>=0; h2--)
+						if(!breakDayHour[d][h2]){
+							if(subgroupsTimetable[sb][d][h2]>=0 || h2>=h && h2<h+act->duration){
+								nhday+=cnt+1;
+								cnt=0;
+							}
+							else
+								cnt++;
+						}
+				}
+				else{ //students have no "no gaps" or "early" constraints
+					for(int h2=0; h2<gt.rules.nHoursPerDay; h2++)
+						if(!breakDayHour[d][h2])
+							if(subgroupsTimetable[sb][d][h2]>=0 || h2>=h && h2<h+act->duration)
+								nhday++;
+				}
+				
+				//int nhfinal=nhinit+nhday-nHoursScheduledForSubgroupForDay[sb][d];
+				
+				int nrequested=0;
+				int nold=0;
+				for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+					if(d2!=d)
+						nrequested+=max(subgroupsMinHoursDailyMinHours[sb], nHoursScheduledForSubgroupForDay[sb][d2]);
+					else
+						nrequested+=max(subgroupsMinHoursDailyMinHours[sb], nhday);
+						
+					nold+=max(subgroupsMinHoursDailyMinHours[sb], nHoursScheduledForSubgroupForDay[sb][d2]);
+				}
+				
+				assert(subgroupsMinHoursDailyPercentages[sb]==100);
+						
+				if(subgroupsMinHoursDailyPercentages[sb]==100)
+					assert(nold<=nHoursPerSubgroup[sb]);
+				
+				if(nrequested>nHoursPerSubgroup[sb]){
+					assert(subgroupsMinHoursDailyPercentages[sb]==100);
+					if(subgroupsMinHoursDailyPercentages[sb]==100)
+						assert(nhday>subgroupsMinHoursDailyMinHours[sb] && nhday>nHoursScheduledForSubgroupForDay[sb][d]);
+						
+					if(!skipRandom(subgroupsMinHoursDailyPercentages[sb])){
+						/////////////EARLY+NO GAPS
+						if(subgroupsEarlyPercentage[sb]>=0 && subgroupsNoGapsPercentage[sb]>=0){ //early+no gaps
+							int dayEnd[MAX_DAYS_PER_WEEK];
+							int nRem[MAX_DAYS_PER_WEEK];
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								if(d2!=d){
+									dayEnd[d2]=gt.rules.nHoursPerDay-1;
+									while(dayEnd[d2]>=0 && (breakDayHour[d2][dayEnd[d2]] || subgroupsTimetable[sb][d2][dayEnd[d2]]==-1))
+										dayEnd[d2]--;
+								}
+								else
+									dayEnd[d2]=-1;
+									
+								nRem[d2]=nHoursScheduledForSubgroupForDay[sb][d2]-subgroupsMinHoursDailyMinHours[sb];
+							}
+							
+							int excess=nrequested-nHoursPerSubgroup[sb];
+							
+							QList<int> conflActs;
+							
+							bool ok=false;
+							
+							for(;;){
+								int d2;
+								bool found=false;
+								int conflAct[MAX_DAYS_PER_WEEK];
+								for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									conflAct[d2]=-2; //impossible
+									while(dayEnd[d2]>=0 && breakDayHour[d2][dayEnd[d2]])
+										dayEnd[d2]--;
+									if(dayEnd[d2]>=0 && nRem[d2]>0 && 
+									 (subgroupsTimetable[sb][d2][dayEnd[d2]]==-1
+									 || subgroupsTimetable[sb][d2][dayEnd[d2]]>=0 && !swappedActivities[subgroupsTimetable[sb][d2][dayEnd[d2]]])){
+										found=true;
+										if(conflActivities[newtime].indexOf(subgroupsTimetable[sb][d2][dayEnd[d2]])==-1
+										 && conflActs.indexOf(subgroupsTimetable[sb][d2][dayEnd[d2]])==-1)
+											conflAct[d2]=subgroupsTimetable[sb][d2][dayEnd[d2]];
+										else
+											conflAct[d2]=-1;
+									}
+								}
+								if(!found){
+									ok=false;
+									break;
+								}
+								
+								int m=-1;
+								int mpos=-1;
+								for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									if(nRem[d2]>0){
+										if(conflAct[d2]==-1)
+											break;
+										else if(conflAct[d2]>=0 && m<invPermutation[conflAct[d2]]){
+											m=invPermutation[conflAct[d2]];
+											mpos=d2;
+										}
+									}
+								}
+								assert(m>=0 && mpos>=0 || d2<gt.rules.nDaysPerWeek);
+								if(d2==gt.rules.nDaysPerWeek)
+									d2=mpos;
+								
+								assert(nRem[d2]>0);
+								nRem[d2]--;
+								excess--;
+								dayEnd[d2]--;
+								
+								assert(conflAct[d2]>=-1);
+								if(conflActs.indexOf(conflAct[d2])==-1 && conflAct[d2]>=0)
+									conflActs.append(conflAct[d2]);
+								
+								if(excess==0){
+									ok=true;
+									break;
+								}
+							}
+							
+							if(ok){
+								foreach(int ai2, conflActs){
+									assert(conflActivities[newtime].indexOf(ai2)==-1);
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else{
+								/*cout<<"generate.cpp line 1933 - no slots found"<<endl;
+								cout<<"d=="<<d<<", h=="<<h<<", newtime=="<<newtime<<endl;
+								cout<<"nhday=="<<nhday<<", subgroupsMinHoursDailyMinHours[sb]=="<<subgroupsMinHoursDailyMinHours[sb]<<endl;*/
+		
+								okstudentsminhoursdaily=false;
+								goto impossiblestudentsminhoursdaily;
+							}
+						}
+						/////////////ONLY NO GAPS
+						else if(subgroupsNoGapsPercentage[sb]>=0){ //only no gaps
+							int dayEnd[MAX_DAYS_PER_WEEK];
+							int dayStart[MAX_DAYS_PER_WEEK];
+							int nRem[MAX_DAYS_PER_WEEK];
+							
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								if(d2!=d){
+									dayEnd[d2]=gt.rules.nHoursPerDay-1;
+									while(dayEnd[d2]>=0 && (breakDayHour[d2][dayEnd[d2]] || subgroupsTimetable[sb][d2][dayEnd[d2]]==-1))
+										dayEnd[d2]--;
+								}
+								else{
+									dayEnd[d2]=gt.rules.nHoursPerDay-1;
+									while(dayEnd[d2]>=0 && 
+									 (breakDayHour[d2][dayEnd[d2]] || (subgroupsTimetable[sb][d2][dayEnd[d2]]==-1 && !(dayEnd[d2]>=h && dayEnd[d2]<h+act->duration))))
+										dayEnd[d2]--;
+									
+									//dayEnd[d2]=-1;
+								}
+								
+								if(d2!=d){
+									dayStart[d2]=0;
+									while(dayStart[d2]<gt.rules.nHoursPerDay && (breakDayHour[d2][dayStart[d2]] || subgroupsTimetable[sb][d2][dayStart[d2]]==-1))
+										dayStart[d2]++;
+								}
+								else{
+									dayStart[d2]=0;
+									while(dayStart[d2]<gt.rules.nHoursPerDay && 
+									 (breakDayHour[d2][dayStart[d2]] || (subgroupsTimetable[sb][d2][dayStart[d2]]==-1 && !(dayStart[d2]>=h && dayStart[d2]<h+act->duration))))
+										dayStart[d2]++;
+									
+									//dayStart[d2]=gt.rules.nHoursPerDay;
+								}
+									
+								if(d2!=d)
+									nRem[d2]=nHoursScheduledForSubgroupForDay[sb][d2]-subgroupsMinHoursDailyMinHours[sb];
+								else{
+									nRem[d2]=nhday-subgroupsMinHoursDailyMinHours[sb]/*-act->duration*/;
+									assert(nRem[d2]==dayEnd[d2]-dayStart[d2]+1-subgroupsMinHoursDailyMinHours[sb]/*-act->duration*/);
+									//cout<<"nRem[d]=="<<nRem[d]<<endl;
+								}
+							}
+							
+							int excess=nrequested-nHoursPerSubgroup[sb];
+							
+							QList<int> conflActs;
+							
+							bool ok=false;
+							
+							for(;;){
+								int d2;
+								bool foundEnd=false;
+								bool foundStart=false;
+								int conflActEnd[MAX_DAYS_PER_WEEK];
+								int conflActStart[MAX_DAYS_PER_WEEK];
+								for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									conflActEnd[d2]=-2; //impossible
+									while(dayEnd[d2]>=0 && breakDayHour[d2][dayEnd[d2]])
+										dayEnd[d2]--;
+
+									conflActStart[d2]=-2; //impossible
+									while(dayStart[d2]<gt.rules.nHoursPerDay && breakDayHour[d2][dayStart[d2]])
+										dayStart[d2]++;
+
+									if(d2!=d){
+										if(dayEnd[d2]>=0 && dayEnd[d2]>=dayStart[d2] && nRem[d2]>0 && 
+										 (subgroupsTimetable[sb][d2][dayEnd[d2]]==-1
+										 || subgroupsTimetable[sb][d2][dayEnd[d2]]>=0 && !swappedActivities[subgroupsTimetable[sb][d2][dayEnd[d2]]])){
+											foundEnd=true;
+											if(conflActivities[newtime].indexOf(subgroupsTimetable[sb][d2][dayEnd[d2]])==-1
+											 && conflActs.indexOf(subgroupsTimetable[sb][d2][dayEnd[d2]])==-1)
+												conflActEnd[d2]=subgroupsTimetable[sb][d2][dayEnd[d2]];
+											else
+												conflActEnd[d2]=-1;
+										}
+									}
+									else{
+										if(dayEnd[d2]>=0 && dayEnd[d2]>=dayStart[d2] && nRem[d2]>0
+										 && !(dayEnd[d2]>=h && dayEnd[d2]<h+act->duration)
+										 && (subgroupsTimetable[sb][d2][dayEnd[d2]]==-1
+										 || subgroupsTimetable[sb][d2][dayEnd[d2]]>=0 && !swappedActivities[subgroupsTimetable[sb][d2][dayEnd[d2]]])){
+											foundEnd=true;
+											if(conflActivities[newtime].indexOf(subgroupsTimetable[sb][d2][dayEnd[d2]])==-1
+											 && conflActs.indexOf(subgroupsTimetable[sb][d2][dayEnd[d2]])==-1)
+												conflActEnd[d2]=subgroupsTimetable[sb][d2][dayEnd[d2]];
+											else
+												conflActEnd[d2]=-1;
+										}
+									}
+
+									if(d2!=d){
+										if(dayStart[d2]<gt.rules.nHoursPerDay && dayEnd[d2]>=dayStart[d2] && nRem[d2]>0 && 
+										 (subgroupsTimetable[sb][d2][dayStart[d2]]==-1
+										 || subgroupsTimetable[sb][d2][dayStart[d2]]>=0 && !swappedActivities[subgroupsTimetable[sb][d2][dayStart[d2]]])){
+											foundStart=true;
+											if(conflActivities[newtime].indexOf(subgroupsTimetable[sb][d2][dayStart[d2]])==-1
+											 && conflActs.indexOf(subgroupsTimetable[sb][d2][dayStart[d2]])==-1)
+												conflActStart[d2]=subgroupsTimetable[sb][d2][dayStart[d2]];
+											else
+												conflActStart[d2]=-1;
+										}
+									}
+									else{
+										if(dayStart[d2]<gt.rules.nHoursPerDay && dayEnd[d2]>=dayStart[d2] && nRem[d2]>0
+										 && !(dayStart[d2]>=h && dayStart[d2]<h+act->duration)
+										 && (subgroupsTimetable[sb][d2][dayStart[d2]]==-1
+										 || subgroupsTimetable[sb][d2][dayStart[d2]]>=0 && !swappedActivities[subgroupsTimetable[sb][d2][dayStart[d2]]])){
+											foundStart=true;
+											if(conflActivities[newtime].indexOf(subgroupsTimetable[sb][d2][dayStart[d2]])==-1
+											 && conflActs.indexOf(subgroupsTimetable[sb][d2][dayStart[d2]])==-1)
+												conflActStart[d2]=subgroupsTimetable[sb][d2][dayStart[d2]];
+											else
+												conflActStart[d2]=-1;
+										}
+									}
+								}
+								if(!foundEnd && !foundStart){
+									ok=false;
+									break;
+								}
+								
+								int chooseStart=-1;
+								int bestD=-1;
+								int m=-1;
+								int mpos=-1;
+								if(foundEnd){
+									for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+										if(nRem[d2]>0){
+											if(conflActEnd[d2]==-1)
+												break;
+											else if(conflActEnd[d2]>=0 && m<invPermutation[conflActEnd[d2]]){
+												m=invPermutation[conflActEnd[d2]];
+												mpos=d2;
+											}
+										}
+									}
+									assert(m>=0 && mpos>=0 || d2<gt.rules.nDaysPerWeek);
+									if(d2==gt.rules.nDaysPerWeek)
+										d2=mpos;
+									chooseStart=false;
+									bestD=d2;
+								}
+								if(foundStart){
+									int oldm=m;
+									for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+										if(nRem[d2]>0){
+											if(conflActStart[d2]==-1)
+												break;
+											else if(conflActStart[d2]>=0 && m<invPermutation[conflActStart[d2]]){
+												m=invPermutation[conflActStart[d2]];
+												mpos=d2;
+											}
+										}
+									}
+									assert(m>=0 && mpos>=0 || d2<gt.rules.nDaysPerWeek);
+									if(d2<gt.rules.nDaysPerWeek){
+										bestD=d2;
+										chooseStart=true;
+									}
+									else if(oldm!=m){
+										assert(oldm<m);
+									
+										d2=mpos;
+										bestD=d2;
+										chooseStart=true;
+									}
+								}
+								
+								assert(chooseStart>=0);
+									
+								assert(bestD>=0);
+								d2=bestD;
+								
+								assert(nRem[d2]>0);
+								nRem[d2]--;
+								excess--;
+								
+								if(chooseStart){
+									dayStart[d2]++;
+
+									assert(conflActStart[d2]>=-1);
+									if(conflActs.indexOf(conflActStart[d2])==-1 && conflActStart[d2]>=0)
+										conflActs.append(conflActStart[d2]);
+								}
+								else{
+									dayEnd[d2]--;
+			
+									assert(conflActEnd[d2]>=-1);
+									if(conflActs.indexOf(conflActEnd[d2])==-1 && conflActEnd[d2]>=0)
+										conflActs.append(conflActEnd[d2]);								
+								}
+								
+								if(excess==0){
+									ok=true;
+									break;
+								}
+							}
+							
+							if(ok){
+								foreach(int ai2, conflActs){
+									assert(conflActivities[newtime].indexOf(ai2)==-1);
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else{
+								if(level==0){
+									cout<<"WARNING: level==0 and: "<<endl;
+									cout<<"generate.cpp line 2152 - no slots found"<<endl;
+									cout<<"d=="<<d<<", h=="<<h<<", newtime=="<<newtime<<endl;
+									cout<<"nhday=="<<nhday<<", subgroupsMinHoursDailyMinHours[sb]=="<<subgroupsMinHoursDailyMinHours[sb]<<endl;
+									cout<<endl;
+								}
+		
+								okstudentsminhoursdaily=false;
+								goto impossiblestudentsminhoursdaily;
+							}
+						}
+						/////////////NOTHING (early and no gaps not present)
+						else{
+							int nRem[MAX_DAYS_PER_WEEK];
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								if(d2!=d)
+									nRem[d2]=nHoursScheduledForSubgroupForDay[sb][d2]-subgroupsMinHoursDailyMinHours[sb];
+								else{
+									nRem[d2]=nhday-subgroupsMinHoursDailyMinHours[sb];
+									//NOT ALWAYS TRUE: assert(nRem[d2]==nHoursScheduledForSubgroupForDay[sb][d2]-subgroupsMinHoursDailyMinHours[sb]+act->duration);
+									//(for superimposed act over old activities)
+								}
+							}
+							
+							int excess=nrequested-nHoursPerSubgroup[sb];
+							
+							QList<int> conflActs;
+							
+							bool ok=false;
+							
+							QList<int> triedDays;
+							QList<int> triedHours;
+							
+							for(;;){
+								int d2;
+								bool found=false;
+								int conflAct=-2;
+								int selDay=-1;
+								int selHour=-1;
+								
+								for(d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									if(nRem[d2]>0){
+										for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+											bool alreadyTried=false;
+											assert(triedDays.count()==triedHours.count());
+											for(int k=0; k<triedDays.count(); k++)
+												if(triedDays.at(k)==d2 && triedHours.at(k)==h2){
+													alreadyTried=true;
+													break;
+												}
+												
+											if(alreadyTried)
+												continue;
+										
+											if(!breakDayHour[d2][h2] && !(d2==d && h2>=h && h2<h+act->duration) ){
+												if(subgroupsTimetable[sb][d2][h2]>=0 && !swappedActivities[subgroupsTimetable[sb][d2][h2]]){
+													if(conflAct==-2 || conflAct>=0 && invPermutation[conflAct]<invPermutation[subgroupsTimetable[sb][d2][h2]]){
+														found=true;
+														conflAct=subgroupsTimetable[sb][d2][h2];
+														selDay=d2;
+														selHour=h2;
+														
+														if(conflActs.indexOf(conflAct)>=0 || conflActivities[newtime].indexOf(conflAct)>=0){ //already in, do not count it again
+															conflAct=-1;
+															goto alreadyIn;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+								
+alreadyIn:
+								
+								if(!found){
+									ok=false;
+									break;
+								}
+								
+								assert(selDay>=0);
+								assert(selDay<gt.rules.nDaysPerWeek);
+								assert(selHour>=0);
+								assert(selHour<gt.rules.nHoursPerDay);
+								
+								triedDays.append(selDay);
+								triedHours.append(selHour);
+								
+								d2=selDay;
+								assert(nRem[d2]>0);
+								nRem[d2]--;
+								excess--;
+								
+								assert(conflAct>=-1);
+								if(conflAct!=-1 && conflActs.indexOf(conflAct)==-1)
+									conflActs.append(conflAct);
+								
+								if(excess==0){
+									ok=true;
+									break;
+								}
+							}
+							
+							if(ok){
+								foreach(int ai2, conflActs){
+									assert(conflActivities[newtime].indexOf(ai2)==-1);
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else{
+								if(level==0){
+									cout<<"generate.cpp line 2227 - no slots found"<<endl;
+									cout<<"d=="<<d<<", h=="<<h<<", newtime=="<<newtime<<endl;
+									cout<<"nhday=="<<nhday<<", subgroupsMinHoursDailyMinHours[sb]=="<<subgroupsMinHoursDailyMinHours[sb]<<endl;
+								}
+		
+								okstudentsminhoursdaily=false;
+								goto impossiblestudentsminhoursdaily;
+							}
+						}
+					}
+				}
+			}
+		}
+impossiblestudentsminhoursdaily:
+		if(!okstudentsminhoursdaily){
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+		/*foreach(int ai2, conflActivities[newtime])
+			assert(!swappedActivities[ai2]);*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		//allowed from teachers max hours daily
 		bool okteachersmaxhoursdaily=true;
 		for(int q=0; q<act->nTeachers; q++){
@@ -1933,20 +2537,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 								if(optNConflActs>conflActs1[d2].count()){
 #endif
-#if 0
+/*#if 0
 								if(optNWrong>nWrong1[d2]
 								 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 								if(optNWrong>nWrong1[d2]
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 								if(minWrong1[d2]<optMinWrong
 								 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
+#endif*/
 									optNWrong=nWrong1[d2];
 									optMinWrong=minWrong1[d2];
 									optNConflActs=conflActs1[d2].count();
@@ -1995,20 +2599,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 								if(optNConflActs>conflActs1[d2].count()){
 #endif
-#if 0
+/*#if 0
 								if(optNWrong>nWrong1[d2]
 								 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 								if(optNWrong>nWrong1[d2]
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 								if(minWrong1[d2]<optMinWrong
 								 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
+#endif*/
 									optNWrong=nWrong1[d2];
 									optMinWrong=minWrong1[d2];
 									optNConflActs=conflActs1[d2].count();
@@ -2073,20 +2677,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 								if(optNConflActs>conflActs2[d2].count()){
 #endif
-#if 0
+/*#if 0
 								if(optNWrong>nWrong2[d2]
 								 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 								if(optNWrong>nWrong2[d2]
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 								if(minWrong2[d2]<optMinWrong
 								 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
+#endif*/
 									optNWrong=nWrong2[d2];
 									optMinWrong=minWrong2[d2];
 									optNConflActs=conflActs2[d2].count();
@@ -2135,20 +2739,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 								if(optNConflActs>conflActs2[d2].count()){
 #endif
-#if 0
+/*#if 0
 								if(optNWrong>nWrong2[d2]
 								 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 								if(optNWrong>nWrong2[d2]
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 								if(minWrong2[d2]<optMinWrong
 								 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
+#endif*/
 									optNWrong=nWrong2[d2];
 									optMinWrong=minWrong2[d2];
 									optNConflActs=conflActs2[d2].count();
@@ -2200,9 +2804,9 @@ impossibleteachersmaxhoursdaily:
 #if 1
 								if(optNConflActs==conflActs1[d2].count()){
 #endif
-#if 0
+/*#if 0
 								if(optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs==conflActs1[d2].count()){
-#endif
+#endif*/
 									optDays.append(d2);
 									where.append(1);
 								}
@@ -2211,9 +2815,9 @@ impossibleteachersmaxhoursdaily:
 #if 1
 								if(optNConflActs==conflActs2[d2].count()){
 #endif
-#if 0
+/*#if 0
 								if(optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs==conflActs2[d2].count()){
-#endif
+#endif*/
 									optDays.append(d2);
 									where.append(2);
 								}
@@ -2384,20 +2988,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 										if(optNConflActs>conflActs[d2].count()){
 #endif
-#if 0
+/*#if 0
 										if(optNWrong>nWrong[d2]
 										 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 										if(optNWrong>nWrong[d2]
 										 || optNWrong==nWrong[d2] && minWrong[d2]<optMinWrong
 										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 										if(minWrong[d2]<optMinWrong
 										 || optNWrong>nWrong[d2] && minWrong[d2]==optMinWrong
 										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
-#endif
+#endif*/
 											optNWrong=nWrong[d2];
 											optMinWrong=minWrong[d2];
 											optNConflActs=conflActs[d2].count();
@@ -2439,20 +3043,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 										if(optNConflActs>conflActs[d2].count()){
 #endif
-#if 0
+/*#if 0
 										if(optNWrong>nWrong[d2]
 										 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 										if(optNWrong>nWrong[d2]
 										 || optNWrong==nWrong[d2] && minWrong[d2]<optMinWrong
 										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 										if(minWrong[d2]<optMinWrong
 										 || optNWrong>nWrong[d2] && minWrong[d2]==optMinWrong
 										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
-#endif
+#endif*/
 											optNWrong=nWrong[d2];
 											optMinWrong=minWrong[d2];
 											optNConflActs=conflActs[d2].count();
@@ -2463,7 +3067,7 @@ impossibleteachersmaxhoursdaily:
 		
 							if(optNWrong==INF || optNWrong==-1){
 								if(level==0)
-									cout<<"WARNING - unlikely case, optimizetime.cpp line 2153"<<endl;
+									cout<<"WARNING - unlikely case, optimizetime.cpp line 3070"<<endl;
 								break; //impossible slot
 							}
 							assert(optNWrong<INF);
@@ -2475,9 +3079,9 @@ impossibleteachersmaxhoursdaily:
 #if 1
 									if(optNConflActs==conflActs[d2].count())
 #endif
-#if 0
+/*#if 0
 									if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
-#endif
+#endif*/
 										optDays.append(d2);
 							assert(optDays.count()>0);
 							int rnd=randomKnuth()%optDays.count();
@@ -2642,20 +3246,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 										if(optNConflActs>conflActs1[d2].count()){
 #endif
-#if 0
+/*#if 0
 										if(optNWrong>nWrong1[d2]
 										 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 										if(optNWrong>nWrong1[d2]
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 										if(minWrong1[d2]<optMinWrong
 										 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
+#endif*/
 											optNWrong=nWrong1[d2];
 											optMinWrong=minWrong1[d2];
 											optNConflActs=conflActs1[d2].count();
@@ -2703,20 +3307,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 										if(optNConflActs>conflActs1[d2].count()){
 #endif
-#if 0
+/*#if 0
 										if(optNWrong>nWrong1[d2]
 										 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 										if(optNWrong>nWrong1[d2]
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 										if(minWrong1[d2]<optMinWrong
 										 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
-#endif
+#endif*/
 											optNWrong=nWrong1[d2];
 											optMinWrong=minWrong1[d2];
 											optNConflActs=conflActs1[d2].count();
@@ -2780,20 +3384,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 										if(optNConflActs>conflActs2[d2].count()){
 #endif
-#if 0
+/*#if 0
 										if(optNWrong>nWrong2[d2]
 										 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 										if(optNWrong>nWrong2[d2]
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 										if(minWrong2[d2]<optMinWrong
 										 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
+#endif*/
 											optNWrong=nWrong2[d2];
 											optMinWrong=minWrong2[d2];
 											optNConflActs=conflActs2[d2].count();
@@ -2841,20 +3445,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 										if(optNConflActs>conflActs2[d2].count()){
 #endif
-#if 0
+/*#if 0
 										if(optNWrong>nWrong2[d2]
 										 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 										if(optNWrong>nWrong2[d2]
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 										if(minWrong2[d2]<optMinWrong
 										 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
-#endif
+#endif*/
 											optNWrong=nWrong2[d2];
 											optMinWrong=minWrong2[d2];
 											optNConflActs=conflActs2[d2].count();
@@ -2887,9 +3491,9 @@ impossibleteachersmaxhoursdaily:
 #if 1
 									if(optNConflActs==conflActs1[d2].count()){
 #endif
-#if 0
+/*#if 0
 									if(optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs==conflActs1[d2].count()){
-#endif
+#endif*/
 										optDays.append(d2);
 										where.append(1);
 									}
@@ -2898,9 +3502,9 @@ impossibleteachersmaxhoursdaily:
 #if 1
 									if(optNConflActs==conflActs2[d2].count()){
 #endif
-#if 0
+/*#if 0
 									if(optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs==conflActs2[d2].count()){
-#endif
+#endif*/
 										optDays.append(d2);
 										where.append(2);
 									}
@@ -3042,20 +3646,20 @@ impossibleteachersmaxhoursdaily:
 #if 1
 								if(optNConflActs>conflActs[d2].count()){
 #endif
-#if 0
+/*#if 0
 								if(optNWrong>nWrong[d2]
 								 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
-#endif
-#if 1&0
+#endif*/
+/*#if 1&0
 								if(optNWrong>nWrong[d2]
 								 || optNWrong==nWrong[d2] && minWrong[d2]<optMinWrong
 								 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
-#endif
-#if 0
+#endif*/
+/*#if 0
 								if(minWrong[d2]<optMinWrong
 								 || optNWrong>nWrong[d2] && minWrong[d2]==optMinWrong
 								 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
-#endif
+#endif*/
 									optNWrong=nWrong[d2];
 									optMinWrong=minWrong[d2];
 									optNConflActs=conflActs[d2].count();
@@ -3078,9 +3682,9 @@ impossibleteachersmaxhoursdaily:
 #if 1
 							if(optNConflActs==conflActs[d2].count())
 #endif
-#if 0
+/*#if 0
 							if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
-#endif
+#endif*/
 								optDays.append(d2);
 					assert(optDays.count()>0);
 					int rnd=randomKnuth()%optDays.count();
@@ -3291,17 +3895,6 @@ impossibleroomnotavailable:
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		conflPerm[perm[i]]=perm[i];
 		
-		
-		
-	////////////////
-	int nWr[MAX_HOURS_PER_WEEK];
-	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
-		foreach(int ai2, conflActivities[i])
-			nWr[i]+=triedRemovals[ai2][c.times[ai2]];
-	////////////////
-		
-		
-		
 	//sorting - stable (not needed?) - O(n^2) - should be improved?
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		for(int j=i+1; j<gt.rules.nHoursPerWeek; j++)
@@ -3417,7 +4010,7 @@ impossibleroomnotavailable:
 		}
 	}
 
-	int nExplored=0;
+	//int nExplored=0;
 	
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 		int newtime=conflPerm[perm[i]]; //the considered time
@@ -3449,7 +4042,7 @@ impossibleroomnotavailable:
 			/*foreach(int ai2, conflActivities[newtime])
 				assert(!swappedActivities[ai2]);*/
 				
-			nExplored++;
+			//nExplored++;
 			
 			//if(nExplored>=4)
 			//	return;

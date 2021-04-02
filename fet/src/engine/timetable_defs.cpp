@@ -27,47 +27,12 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.0.2";
+const QString FET_VERSION="5.1.0";
 
 /**
 FET language
 */
 QString FET_LANGUAGE="en_GB";
-
-/**
-Probability for Evolution1 Crossover, in percents
-*/
-int METHOD1_CROSSOVER_PROBABILITY;
-
-/**
-Probability for Evolution1 Mutation1, in percents
-*/
-int METHOD1_MUTATION1_PROBABILITY;
-
-/**
-Probability for Evolution1 Mutation2, in percents
-*/
-int METHOD1_MUTATION2_PROBABILITY;
-
-/**
-Probability for Evolution2 Crossover, in percents
-*/
-int METHOD2_CROSSOVER_PROBABILITY;
-
-/**
-Probability for Evolution2 Mutation1, in percents
-*/
-int METHOD2_MUTATION1_PROBABILITY;
-
-/**
-Probability for Evolution2 Mutation2, in percents
-*/
-int METHOD2_MUTATION2_PROBABILITY;
-
-/**
-Probability for Evolution2 propagation, in percents
-*/
-int METHOD2_PROPAGATION_PROBABILITY;
 
 QString protect(const QString& str) //used for xml
 {

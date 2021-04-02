@@ -48,8 +48,6 @@ void writeDefaultSimulationParameters();
 
 QTranslator translator;
 
-bool firstTimeRun;
-
 /**
 The one and only instantiation of the main class.
 */
@@ -70,34 +68,6 @@ The working directory
 */
 QString WORKING_DIRECTORY;
 
-
-/***The simulation parameters***/
-
-/**
-Simulation parameter, read from the fet.ini file
-*/
-time_t timelimit;
-
-/**
-Simulation parameter, read from the fet.ini file
-*/
-int population_number;
-
-/**
-Simulation parameter, read from the fet.ini file
-*/
-int evolution_method;
-
-/**
-Simulation parameter, read from the fet.ini file
-*/
-int init_method;
-
-/**
-Simulation parameter, read from the file "fet.ini"
-It represents the maximum allowed number of generations to iterate
-*/
-int max_generations;
 
 qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -127,123 +97,7 @@ void readSimulationParameters(){
 	WORKING_DIRECTORY=settings.value("working-directory", "sample_inputs").toString();
 	checkForUpdates=settings.value("check-for-updates", "-1").toInt();
 	QString ver=settings.value("version", "-1").toString();
-	int major=ver.left(ver.indexOf(".")).toInt();
-	if(major<5)
-		firstTimeRun=true;
-	else
-		firstTimeRun=false;
-	
 	cout<<"Settings read"<<endl;
-		
-	/*if(!QFile::exists(INI_FILENAME)){
-		cout<<"File "<<(const char*)(INI_FILENAME)<<" not found...making a new one\n";
-		writeDefaultSimulationParameters();
-	}
-
-	ifstream in(INI_FILENAME);*/
-	//char s[256];
-
-	//cout<<"Initializing parameters...reading file "<<(const char*)(INI_FILENAME)<<endl;
-
-	//read main parameters of the simulation
-	/*int tmp=fetch_line(in, s);
-	assert(tmp==1);
-	WORKING_DIRECTORY=s;
-	//cout<<"Read: working directory="<<s<<endl;
-
-	/*tmp=fetch_line(in, s);
-	assert(tmp==1);
-	int tmp2;
-	tmp=sscanf(s, "%d", &tmp2);
-	assert(tmp==1);
-	timelimit=tmp2;
-	cout<<"Read: timelimit="<<timelimit<<" seconds (the maximum time the simulation is allowed to run)"<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &tmp2);
-	assert(tmp==1);
-	max_generations=tmp2;
-	cout<<"Read: max_generations the simulation is allowed to run="<<max_generations<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &population_number);
-	assert(tmp==1);
-	if(population_number>MAX_POPULATION_SIZE){
-		population_number=MAX_POPULATION_SIZE;
-		cout<<"Population too large ("<<population_number<<"), making it MAX_POPULATION_SIZE="<<MAX_POPULATION_SIZE<<endl;
-	}
-	assert(population_number>0 && population_number<=MAX_POPULATION_SIZE);
-	cout<<"Read: population number for the simulation="<<population_number<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &evolution_method);
-	assert(evolution_method==1 || evolution_method==2);
-	cout<<"Read: simulation evolution method="<<evolution_method<<endl;
-
-	//method 1 probabilities
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &METHOD1_MUTATION1_PROBABILITY);
-	cout<<"Read: method1 mutation1 probability="<<METHOD1_MUTATION1_PROBABILITY<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &METHOD1_MUTATION2_PROBABILITY);
-	cout<<"Read: method1 mutation2 probability="<<METHOD1_MUTATION2_PROBABILITY<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &METHOD1_CROSSOVER_PROBABILITY);
-	cout<<"Read: method1 crossover probability="<<METHOD1_CROSSOVER_PROBABILITY<<endl;
-
-	assert(METHOD1_MUTATION1_PROBABILITY+METHOD1_MUTATION2_PROBABILITY+METHOD1_CROSSOVER_PROBABILITY==100);
-
-	//method 2 probabilities
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &METHOD2_MUTATION1_PROBABILITY);
-	cout<<"Read: method2 mutation1 probability="<<METHOD2_MUTATION1_PROBABILITY<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &METHOD2_MUTATION2_PROBABILITY);
-	cout<<"Read: method2 mutation2 probability="<<METHOD2_MUTATION2_PROBABILITY<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &METHOD2_CROSSOVER_PROBABILITY);
-	cout<<"Read: method2 crossover probability="<<METHOD2_CROSSOVER_PROBABILITY<<endl;
-
-	tmp=fetch_line(in, s);
-	assert(tmp==1);
-	tmp=sscanf(s, "%d", &METHOD2_PROPAGATION_PROBABILITY);
-	cout<<"Read: method2 propagation probability="<<METHOD2_PROPAGATION_PROBABILITY<<endl;
-
-	assert(METHOD2_MUTATION1_PROBABILITY+METHOD2_MUTATION2_PROBABILITY+METHOD2_CROSSOVER_PROBABILITY+METHOD2_PROPAGATION_PROBABILITY==100);
-	
-	tmp=fetch_line(in, s);
-	if(tmp!=1){
-		//older than version 3.12.21 - has no language saved
-		FET_LANGUAGE="en_GB";
-	}
-	else{
-		char ss[100];
-		sscanf(s, "%s", ss);
-		FET_LANGUAGE=ss;
-		cout<<"Read: language="<<(const char*)(FET_LANGUAGE)<<endl;
-		if(FET_LANGUAGE!="en_GB" && FET_LANGUAGE!="fr" 
-		 && FET_LANGUAGE!="ro" && FET_LANGUAGE!="ca" 
-		 && FET_LANGUAGE!="ms" && FET_LANGUAGE!="pl"
-		 && FET_LANGUAGE!="tr" && FET_LANGUAGE!="nl"
-		 && FET_LANGUAGE!="de" && FET_LANGUAGE!="hu"
-		 && FET_LANGUAGE!="mk"){
-			cout<<"Invalid language - making it english"<<endl;
-			FET_LANGUAGE="en_GB";
-		}
-	}*/
 }
 
 void writeSimulationParameters(){
@@ -265,17 +119,6 @@ int main(int argc, char **argv){
 	QDir dir;
 	
 	bool t=true;
-
-	//make sure that the input directory exists - only for GNU/Linux
-	//For Windows, I make a "fet.ini" in the current working directory
-/*#ifndef WIN32
-	if(!dir.exists(QDir::homeDirPath()+"/.fet"))
-		t=dir.mkdir(QDir::homeDirPath()+"/.fet");
-	if(!t){
-		assert(0);
-		exit(1);
-	}
-#endif*/
 
 	//make sure that the output directory exists
 	if(!dir.exists(OUTPUT_DIR))
@@ -383,26 +226,6 @@ int main(int argc, char **argv){
 		checkForUpdates=0;
 	}
 
-	//end translator stuff
-	
-	/*if(firstTimeRun)
-		QMessageBox::information(NULL, QObject::tr("FET important information"),
-		 QObject::tr("Seems that you are running a FET 5 or above version for the first time "
-		 "Please take care that it will open older files, but the parity of all "
-		 "activities will be weekly and the weight of each time constraint "
-		 "will be made automatically a percent, from 0% to 100%, specifying its satisfaction "
-		 "requirement, based on the type of constraint and not on the specified old weight. "
-		 "Of course, you can modify the weight percentage by hand afterwards."));*/
-
-	/*QMessageBox::information(NULL, QObject::tr("FET important information"),
-	 QObject::tr("Please take care that this is a preview version, which has time (hours) allocation but does not have "
-	 "rooms allocation implemented yet (that is why rooms related data is disabled in the menu)."
-	 " I hope to implement that in the near future, so make sure to check for updates.\n\n"
-	 "It is recommended to keep backups of your input files. "
-	 "Please excuse eventual bugs, this is a new version. "
-	 "Please report bugs to the author, they will be corrected"));*/
-	// "\n\nMake sure to revisit web page http://lalescu.ro/liviu/fet/ often and get the updated versions"));
-	
 	pqapplication=&qapplication;
 	FetMainForm fetMainForm;
 	//qapplication.setMainWidget(&fetMainForm);

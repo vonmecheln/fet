@@ -76,83 +76,88 @@ public:
 	Function writing the teachers' timetable in xml format
 	*/
 	void writeTeachersTimetableXml(const QString& xmlfilename);
+		
+	/**
+	Function writing conflicts.txt
+	*/
+	void writeConflictsTxt(const QString& filename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing css stylesheet for each html-file
 	*/
-	void writeStylesheetCss(const QString& htmlfilename);
+	void writeStylesheetCss(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the students' timetable html format, to a file
 	Days horizontal version.
 	*/
-	void writeStudentsTimetableDaysHorizontalHtml(const QString& htmlfilename);
+	void writeStudentsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the students' timetable html format, to a file
 	Days vertical version.
 	*/
-	void writeStudentsTimetableDaysVerticalHtml(const QString& htmlfilename);
+	void writeStudentsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the students' timetable html format, to a file
 	Time horizontal version.
 	*/
-	void writeStudentsTimetableTimeHorizontalHtml(const QString& htmlfilename);
+	void writeStudentsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the students' timetable html format, to a file
 	Time vertical version.
 	*/
-	void writeStudentsTimetableTimeVerticalHtml(const QString& htmlfilename);
+	void writeStudentsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the teachers' timetable in html format
 	Days horizontal version
 	*/
-	void writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename);
+	void writeTeachersTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the teachers' timetable in html format
 	Days vertical version
 	*/
-	void writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename);
+	void writeTeachersTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the teachers' timetable in html format
 	Time horizontal version.
 	*/
-	void writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename);
+	void writeTeachersTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the teachers' timetable in html format
 	Time vertical version.
 	*/
-	void writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename);
+	void writeTeachersTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the rooms' timetable in html format
 	Days horizontal version
 	*/
-	void writeRoomsTimetableDaysHorizontalHtml(const QString& htmlfilename);
+	void writeRoomsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the rooms' timetable in html format
 	Days vertical version
 	*/
-	void writeRoomsTimetableDaysVerticalHtml(const QString& htmlfilename);
+	void writeRoomsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 	
 	/**
 	Function writing the rooms' timetable in html format
 	Time horizontal version
 	*/
-	void writeRoomsTimetableTimeHorizontalHtml(const QString& htmlfilename);
+	void writeRoomsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
 	Function writing the rooms' timetable in html format
 	Time vertical version
 	*/
-	void writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename);
+	void writeRoomsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	
 	

@@ -124,6 +124,12 @@ SOURCES += fet.cpp \
 		   constraintstudentsmaxhoursdailyform.cpp \
 		   addconstraintstudentsmaxhoursdailyform.cpp \
 		   modifyconstraintstudentsmaxhoursdailyform.cpp \
+		   constraintstudentssetminhoursdailyform.cpp \
+		   addconstraintstudentssetminhoursdailyform.cpp \
+		   modifyconstraintstudentssetminhoursdailyform.cpp \
+		   constraintstudentsminhoursdailyform.cpp \
+		   addconstraintstudentsminhoursdailyform.cpp \
+		   modifyconstraintstudentsminhoursdailyform.cpp \
 		   constraintactivitiesnotoverlappingform.cpp \
 		   addconstraintactivitiesnotoverlappingform.cpp \
 		   modifyconstraintactivitiesnotoverlappingform.cpp \
@@ -259,6 +265,12 @@ HEADERS += fet.h \
 		   constraintstudentsmaxhoursdailyform.h \
 		   addconstraintstudentsmaxhoursdailyform.h \
 		   modifyconstraintstudentsmaxhoursdailyform.h \
+		   constraintstudentssetminhoursdailyform.h \
+		   addconstraintstudentssetminhoursdailyform.h \
+		   modifyconstraintstudentssetminhoursdailyform.h \
+		   constraintstudentsminhoursdailyform.h \
+		   addconstraintstudentsminhoursdailyform.h \
+		   modifyconstraintstudentsminhoursdailyform.h \
 		   constraintactivitiesnotoverlappingform.h \
 		   addconstraintactivitiesnotoverlappingform.h \
 		   modifyconstraintactivitiesnotoverlappingform.h \
@@ -393,6 +405,12 @@ FORMS3 += helpfaqform_template.ui \
 		   constraintstudentsmaxhoursdailyform_template.ui \
 		   addconstraintstudentsmaxhoursdailyform_template.ui \
 		   modifyconstraintstudentsmaxhoursdailyform_template.ui \
+		   constraintstudentssetminhoursdailyform_template.ui \
+		   addconstraintstudentssetminhoursdailyform_template.ui \
+		   modifyconstraintstudentssetminhoursdailyform_template.ui \
+		   constraintstudentsminhoursdailyform_template.ui \
+		   addconstraintstudentsminhoursdailyform_template.ui \
+		   modifyconstraintstudentsminhoursdailyform_template.ui \
 		   constraintactivitiesnotoverlappingform_template.ui \
 		   addconstraintactivitiesnotoverlappingform_template.ui \
 		   modifyconstraintactivitiesnotoverlappingform_template.ui \
