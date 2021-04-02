@@ -44,6 +44,20 @@
 #include "modifyconstraintteachermingapsbetweenbuildingchangesform.h"
 #include "modifyconstraintteachersmingapsbetweenbuildingchangesform.h"
 
+#include "modifyconstraintstudentssetmaxroomchangesperdayform.h"
+#include "modifyconstraintstudentsmaxroomchangesperdayform.h"
+#include "modifyconstraintstudentssetmaxroomchangesperweekform.h"
+#include "modifyconstraintstudentsmaxroomchangesperweekform.h"
+#include "modifyconstraintstudentssetmingapsbetweenroomchangesform.h"
+#include "modifyconstraintstudentsmingapsbetweenroomchangesform.h"
+
+#include "modifyconstraintteachermaxroomchangesperdayform.h"
+#include "modifyconstraintteachersmaxroomchangesperdayform.h"
+#include "modifyconstraintteachermaxroomchangesperweekform.h"
+#include "modifyconstraintteachersmaxroomchangesperweekform.h"
+#include "modifyconstraintteachermingapsbetweenroomchangesform.h"
+#include "modifyconstraintteachersmingapsbetweenroomchangesform.h"
+
 #include "modifyconstraintsubjectpreferredroomform.h"
 #include "modifyconstraintsubjectpreferredroomsform.h"
 #include "modifyconstraintsubjectactivitytagpreferredroomform.h"
@@ -623,6 +637,79 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	//28
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
 		ModifyConstraintActivitiesSameRoomIfConsecutiveForm form(this, (ConstraintActivitiesSameRoomIfConsecutive*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//2019-11-14
+	//29
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY){
+		ModifyConstraintStudentsSetMaxRoomChangesPerDayForm form(this, (ConstraintStudentsSetMaxRoomChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//30
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY){
+		ModifyConstraintStudentsMaxRoomChangesPerDayForm form(this, (ConstraintStudentsMaxRoomChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//31
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK){
+		ModifyConstraintStudentsSetMaxRoomChangesPerWeekForm form(this, (ConstraintStudentsSetMaxRoomChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//32
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK){
+		ModifyConstraintStudentsMaxRoomChangesPerWeekForm form(this, (ConstraintStudentsMaxRoomChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//33
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+		ModifyConstraintStudentsSetMinGapsBetweenRoomChangesForm form(this, (ConstraintStudentsSetMinGapsBetweenRoomChanges*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//34
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+		ModifyConstraintStudentsMinGapsBetweenRoomChangesForm form(this, (ConstraintStudentsMinGapsBetweenRoomChanges*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//35
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY){
+		ModifyConstraintTeacherMaxRoomChangesPerDayForm form(this, (ConstraintTeacherMaxRoomChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//36
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY){
+		ModifyConstraintTeachersMaxRoomChangesPerDayForm form(this, (ConstraintTeachersMaxRoomChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//37
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK){
+		ModifyConstraintTeacherMaxRoomChangesPerWeekForm form(this, (ConstraintTeacherMaxRoomChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//38
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK){
+		ModifyConstraintTeachersMaxRoomChangesPerWeekForm form(this, (ConstraintTeachersMaxRoomChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//39
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+		ModifyConstraintTeacherMinGapsBetweenRoomChangesForm form(this, (ConstraintTeacherMinGapsBetweenRoomChanges*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//40
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+		ModifyConstraintTeachersMinGapsBetweenRoomChangesForm form(this, (ConstraintTeachersMinGapsBetweenRoomChanges*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

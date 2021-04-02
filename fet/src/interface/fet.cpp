@@ -25,6 +25,8 @@ File fet.cpp - this is where the program FET starts
 
 #include "messageboxes.h"
 
+#include "rules.h"
+
 #ifndef FET_COMMAND_LINE
 #include <QMessageBox>
 
@@ -401,6 +403,7 @@ void readSimulationParameters()
 /////////
 
 	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=newSettings.value("enable-activity-tag-max-hours-daily", "false").toBool();
+	ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY=newSettings.value("enable-activity-tag-min-hours-daily", "false").toBool();
 	ENABLE_STUDENTS_MAX_GAPS_PER_DAY=newSettings.value("enable-students-max-gaps-per-day", "false").toBool();
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=newSettings.value("warn-if-using-not-perfect-constraints", "true").toBool();
 	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=newSettings.value("warn-subgroups-with-the-same-activities", "true").toBool();
@@ -481,6 +484,7 @@ void writeSimulationParameters()
 ///////////
 
 	settings.setValue("enable-activity-tag-max-hours-daily", ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	settings.setValue("enable-activity-tag-min-hours-daily", ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
 	settings.setValue("enable-students-max-gaps-per-day", ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	settings.setValue("warn-if-using-not-perfect-constraints", SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 	settings.setValue("warn-subgroups-with-the-same-activities", SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
@@ -1401,7 +1405,7 @@ int main(int argc, char **argv)
 			Solution& cc=gen.c;
 
 			//needed to find the conflicts strings
-			QString tmp;
+			FakeString tmp;
 			cc.fitness(gt.rules, &tmp);
 
 			TimetableExport::getStudentsTimetable(cc);
@@ -1460,7 +1464,7 @@ int main(int argc, char **argv)
 			Solution& ch=highestStageSolution;
 
 			//needed to find the conflicts strings
-			QString tmp2;
+			FakeString tmp2;
 			ch.fitness(gt.rules, &tmp2);
 
 			TimetableExport::getStudentsTimetable(ch);
@@ -1506,7 +1510,7 @@ int main(int argc, char **argv)
 			Solution& cc=gen.c;
 
 			//needed to find the conflicts strings
-			QString tmp;
+			FakeString tmp;
 			cc.fitness(gt.rules, &tmp);
 
 			TimetableExport::getStudentsTimetable(cc);
@@ -1584,7 +1588,7 @@ int main(int argc, char **argv)
 			Solution& ch=highestStageSolution;
 
 			//needed to find the conflicts strings
-			QString tmp2;
+			FakeString tmp2;
 			ch.fitness(gt.rules, &tmp2);
 
 			TimetableExport::getStudentsTimetable(ch);
@@ -1620,7 +1624,7 @@ int main(int argc, char **argv)
 			Solution& c=gen.c;
 
 			//needed to find the conflicts strings
-			QString tmp;
+			FakeString tmp;
 			c.fitness(gt.rules, &tmp);
 			
 			TimetableExport::getStudentsTimetable(c);

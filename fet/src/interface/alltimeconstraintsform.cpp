@@ -72,6 +72,9 @@
 #include "modifyconstraintteachersactivitytagmaxhoursdailyform.h"
 #include "modifyconstraintteacheractivitytagmaxhoursdailyform.h"
 
+#include "modifyconstraintteachersactivitytagminhoursdailyform.h"
+#include "modifyconstraintteacheractivitytagminhoursdailyform.h"
+
 #include "modifyconstraintstudentssetnotavailabletimesform.h"
 #include "modifyconstraintstudentssetmaxgapsperweekform.h"
 #include "modifyconstraintstudentsmaxgapsperweekform.h"
@@ -99,6 +102,9 @@
 #include "modifyconstraintstudentssetactivitytagmaxhoursdailyform.h"
 #include "modifyconstraintstudentsactivitytagmaxhoursdailyform.h"
 
+#include "modifyconstraintstudentssetactivitytagminhoursdailyform.h"
+#include "modifyconstraintstudentsactivitytagminhoursdailyform.h"
+
 #include "modifyconstraintteacherintervalmaxdaysperweekform.h"
 #include "modifyconstraintteachersintervalmaxdaysperweekform.h"
 
@@ -106,7 +112,9 @@
 #include "modifyconstraintstudentsintervalmaxdaysperweekform.h"
 
 #include "modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.h"
+#include "modifyconstraintactivitiesoccupymintimeslotsfromselectionform.h"
 #include "modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h"
+#include "modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.h"
 
 #include "modifyconstraintstudentssetmaxdaysperweekform.h"
 #include "modifyconstraintstudentsmaxdaysperweekform.h"
@@ -1002,6 +1010,43 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//80
 	else if(ctr->type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
 		ModifyConstraintActivityTagsNotOverlappingForm form(this, (ConstraintActivityTagsNotOverlapping*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//81
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION){
+		ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm form(this, (ConstraintActivitiesOccupyMinTimeSlotsFromSelection*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//82
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+		ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm form(this, (ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//83
+	else if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+		ModifyConstraintTeachersActivityTagMinHoursDailyForm form(this, (ConstraintTeachersActivityTagMinHoursDaily*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//84
+	else if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY){
+		ModifyConstraintTeacherActivityTagMinHoursDailyForm form(this, (ConstraintTeacherActivityTagMinHoursDaily*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//85
+	else if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+		ModifyConstraintStudentsActivityTagMinHoursDailyForm form(this, (ConstraintStudentsActivityTagMinHoursDaily*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//86
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY){
+		ModifyConstraintStudentsSetActivityTagMinHoursDailyForm form(this, (ConstraintStudentsSetActivityTagMinHoursDaily*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-
-
 #include "modifyconstraintteachersmingapsbetweenbuildingchangesform.h"
 #include "spaceconstraint.h"
 

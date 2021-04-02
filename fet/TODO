@@ -1125,7 +1125,7 @@ By the way, is it really necessary to have two dialogs? I could imagine a check 
 66---------------------------------------------------------
 From Chafik Graiguer and Pietro (see also items #145 and #248):
 
--Min hours daily with an activity tag (to count real activities only leaving pseudo activities out of count)
+DONE since FET-5.41.0 - 2019-11-20 --> -Min hours daily with an activity tag (to count real activities only leaving pseudo activities out of count) <-- DONE
 -Min hours continuously with an activity tag
 
 67---------------------------------------------------------
@@ -1224,7 +1224,6 @@ From Zsolt Udvari (on forum):
 It would be nice when can filter in activities list by "no teacher" and "no students".
 
 74---------------------------DONE--------------------------
-From Zsolt Udvari (on forum):
 
 75---------------------------------------------------------
 From Chafik Graiguer (on forum):
@@ -2267,13 +2266,7 @@ Add "start student day" for activity, like "end student day"
 Liviu Lalescu: I'll add this in the TODO. But if students begin at first hour,
 add preferred times for the activities in the first hours.
 
-145---------------------------------------------------------
-From Pietro (on forum) (see also items #66 and #248):
-
-Do you think it is possible to have a "MIN hours daily with activity tag" constraint?
-
-It would be very useful for me because I have pseudo activities and I want to avoid to
-have teachers with only one real hour per day followed or preceeded by one pseudo-activity.
+145------------DONE since FET-5.41.0 - 2019-11-20-----------
 
 146---------------------------------------------------------
 From Frans (on forum):
@@ -3922,7 +3915,6 @@ I think you should clarify it in the interface: In FET you call it only
 "start at beginning of hour" and "end at end of hour" (or "until end of hour").
 
 230---------------------------DONE--------------------------
-From Maouhoub:
 
 231---------------------------------------------------------
 From Davide Cottignoli (on forum):
@@ -4240,35 +4232,7 @@ same order of the conflicting activities, as they are added. So I could
 add a QSet and a QList together. But this will require more memory
 allocation and operation. I am not sure.
 
-248---------------------------------------------------------
-From Vangelis Karafillidis (on forum) (see also items #66 and #145):
-
-Is there ANY way to achieve a constraint like: "Min hours daily with an activity tag for a students set"? The polar
-opposite (max hours) is available in FET, but what about MIN HOURS? I was thinking of the equivalent of inserting
-for each day the constraint "a set of activities occupies max time slots from selection", but this might severely
-slow down the whole process...
-
-Liviu:
-
-On each day, or only on non-empty days?
-
-If on each day: Please try with activities occupy max time slots from selection; it will not slow down the process.
-This constraint is highly optimized.
-
-Also from Benahmed Abdelkrim, on forum: I suggest adding the following constraint: min hours daily whith an activity tag.
-It allows to impose a minimum of daily hours with a tag. Especially to distinguish real and pseudo-activities in several cases.
-
-Also from s.lanore, on forum:
-
-I have 5 lunch activities with preferred time slots for each student. One for each day of the week.
-
-My issue is that I would like to use the ConstraintStudentsSetMinHoursDaily and that I don't have a way to ignore my lunch activities with this constraint.
-Meaning that if fet finds a timetable with a day off (which is allowed) the ConstraintStudentsSetMinHoursDaily will make it impossible because there will
-be the lunch activity no matter what. Indeed, if we have a day with only the 30 min lunch activity for the student and the minHoursdaily constraint is set
-to 1 hours it won't be good..
-
-One way to solve it would be to have a ConstraintStudentsSetMinHoursDaily with an activity_tag and i'd add an activity_tag to all my activities except
-the lunch ones.
+248--------------DONE since FET-5.41.0 on 2019-11-20--------
 
 249---------------------------------------------------------
 From Handaya:
@@ -4741,12 +4705,7 @@ bool computeFixedActivities(QWidget* parent)
 }
 ...
 
-283---------------------------------------------------------
-From flauta (on forum):
-
-Three teachers must guarantee presence of 1 or more of them in each hour of the timetable (medicine subminstration in emergency case)
-
-Liviu: There might be possible a new constraint, activities occupy min time slots.
+283--------------DONE since FET-5.41.0 (2019-11-16)---------
 
 284---------------------------------------------------------
 From alienglow (on forum):
@@ -5158,9 +5117,9 @@ Teacher(s) min gaps per day;
 Teacher(s) min gaps per week;
 A set of activities has min common time slots with another set of activities.
 
-Min simultaneous activities from a set.
+DONE SINCE FET 5.41.0 on 2019-11-16: Min simultaneous activities from a set in selected time slots.
 
-A set of activities occupies MIN time slots from a selection.
+DONE SINCE FET 5.41.0 on 2019-11-16: A set of activities occupies min time slots from a selection.
 
 Also suggested by auriolar, on forum: Teacher(s) max span per week.
 
@@ -6359,14 +6318,7 @@ From Volker Dirr and Liviu Lalescu:
 
 Volker has a private file which sometimes is solvable, but sometimes may cycle. We tried to improve the code, but it runs much slower on other files.
 
-366---------------------------------------------------------
-From Benahmed Abdelkrim (on forum):
-
-My idea concerns this particular case and I fear that it can not be generalized because of the problem of specialized rooms and activities of 1 hour duration.
-
-This idea is feasible for a limited number of student sets that do not have fixed rooms, and when teachers have to move from one building to another.
-
-The following space constraint is very useful for very particular cases like the one mentioned above: min gaps between room changes for a students sets
+366---------------DONE since FET-5.40.1 2019-11-14----------
 
 367---------------------------------------------------------
 From Anthony Siaudeau:
@@ -6684,6 +6636,35 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0
 Add an option like in the custom FET for Morocco, in the Add activity dialog, a check box "Separately" for the selected students,
 so that FET will add multiple activities, one for each selected students set.
 
-From Zafar Allah Askar (on forum):
+393-------DONE since FET-5.41.0 - 2019-11-18----------------
 
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0
+394---------------------------------------------------------
+From math (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4343.0
+
+I was wondering if it may be possible to introduce an active flag to teacher configuration (i.e. Data -> Teachers).
+
+Background: beside a core team of permanent teachers we have a large team of external teachers and contracted students. If somebody participates
+in teaching for the first time, I'm adding him/her to the fet configuration as teacher. For the sake of laziness I'm only adding, but never removing,
+because it happens quite often that external teachers return in later semesters. Even permanent staff is inactive from time to time, e.g. during
+sabbaticals or visiting reasearch at other universities. And in fact, I do not only have to enter the name to the FET configuration but also the
+internal ID from our SAP system. So I just want to omit the overhead of adding this information each and every semester again.
+
+But the downside of this approach is that my teacher listboxes grow in size quite fast. When defining activities or setting filters, I have to search
+in a large list of teachers that might be significantly smaller, if only I would remove inactive teachers.
+
+Having an active flag would allow me to quickly toggle the status of all teachers at the beginning of the semester. If a teacher is toggled inactive,
+he/she would not be added to listboxes. He/she would be also omitted in the schedule generation, i.e. no schedule is generated for this person.
+
+The only difficuly I see is how to handle this situation: what happens if a teachers gets toggled inactive while there are activities on his name?
+I would suggest the following:
+- When a teacher gets toggled inactive, FET checks whether there are activities for him/her. If yes, a warning dialog is displayed saying "There are
+activities for this teacher. Are you sure?" If "no" is pressed, the teacher remains active. If "yes" is pressed, the teacher gets toggled inactive.
+- If FET discoveres an inactive teacher at schedule generation time, it displays a warning ("Activity 1234 has been assigned to an inactive teachers),
+but ignores the inactive teacher. (i.e. it schedules the activity as if the inactive teacher wouldn't have been assigned to the activiy).
+
+This behaviour would be beneficial for community activities, e.g. jour fixe meetings. I simply add all relevant teachers to the activity, not caring
+if they are actually teaching this semester or not. By analyzing the active flag, FET would only schedule active teachers to these activities.
+
+The other option to handle this situation would be to reject toggling a teacher as inactive while he/she has activities.

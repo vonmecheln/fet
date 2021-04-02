@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.1">
+<fet version="5.41.0">
 
 <Institution_Name>Liceul Pedagogic &quot;Mihai Eminescu&quot; Tg Mures</Institution_Name>
 
@@ -8457,12 +8457,14 @@
 	<Name>Lab Info</Name>
 	<Building></Building>
 	<Capacity>10</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Sala sport</Name>
 	<Building></Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>
@@ -14920,6 +14922,7 @@
 <ConstraintTeachersMaxSpanPerDay>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Max_Span>8</Max_Span>
+	<Allow_One_Day_Exception_of_Plus_One>false</Allow_One_Day_Exception_of_Plus_One>
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeachersMaxSpanPerDay>

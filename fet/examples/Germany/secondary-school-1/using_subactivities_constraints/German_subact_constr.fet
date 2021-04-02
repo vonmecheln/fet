@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.1">
+<fet version="5.41.0">
 
 <Institution_Name>German Secondary School</Institution_Name>
 
@@ -8015,204 +8015,238 @@ The teachers&apos; names are replaced by other random names.
 	<Name>001</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>002</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>003</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>101</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>102</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>103</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>104</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>105</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>161</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>162</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>165</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>166</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>201</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>202</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>203</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>207</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>210</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>211</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>301</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>302</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>303</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>304</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>401</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>403</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>501</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>503</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>504</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>505</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>506</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>507</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>508</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>H1</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>H2</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>H3</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

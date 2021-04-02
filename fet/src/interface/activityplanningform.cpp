@@ -81,7 +81,9 @@ const QString RBSubactivityState="/subactivity-radio-button-state";
 const QString RBAddState="/add-activity-radio-button-state";
 const QString RBModifyState="/modify-activity-radio-button-state";
 const QString RBDeleteState="/delete-activities-radio-button-state";
-const QString RBSwapTeacherState="/swap-teacher-radio-button-state";
+const QString RBChangeTeacherState="/change-teacher-radio-button-state";
+const QString RBSwapTeachersState="/swap-teachers-radio-button-state";
+const QString RBSwapStudentsState="/swap-students-radio-button-state";
 ////
 const QString CBActiveState="/active-combo-box-state";
 ////
@@ -226,6 +228,9 @@ void StartActivityPlanning::startActivityPlanning(QWidget* parent){
 // this is very similar to statisticsexport.cpp. so please also check there if you change something here!
 ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 {
+	storeStudentsForSwap=-1;
+	storeSubjectForSwap=-1;
+	
 	this->setWindowTitle(tr("Activity Planning Dialog"));
 	
 	QHBoxLayout* wholeDialog=new QHBoxLayout(this);
@@ -246,25 +251,29 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 
 	QVBoxLayout* rightDialog=new QVBoxLayout();
 	
-	/*QGroupBox**/ actionsBox=new QGroupBox(tr("Action", "It means the kind of action the user selects"));
+	QGroupBox* actionsBox=new QGroupBox();
 	QVBoxLayout* actionsBoxVertical=new QVBoxLayout();
 	RBActivity= new QRadioButton(tr("Activities", "Please keep translation short"));
 	RBSubactivity= new QRadioButton(tr("Subactivities", "Please keep translation short"));
 	RBAdd= new QRadioButton(tr("Add activity", "Please keep translation short"));
 	RBModify= new QRadioButton(tr("Modify activity", "Please keep translation short"));
 	RBDelete= new QRadioButton(tr("Delete activities", "Please keep translation short"));
-	RBSwapTeacher= new QRadioButton(tr("Swap teachers", "Please keep translation short"));
+	RBChangeTeacher= new QRadioButton(tr("Change teacher", "Please keep translation short"));
+	RBSwapTeachers= new QRadioButton(tr("Swap teachers", "Please keep translation short"));
+	RBSwapStudents= new QRadioButton(tr("Swap students", "Please keep translation short"));
 
 	actionsBoxVertical->addWidget(RBActivity);
 	actionsBoxVertical->addWidget(RBSubactivity);
 	actionsBoxVertical->addWidget(RBAdd);
 	actionsBoxVertical->addWidget(RBModify);
 	actionsBoxVertical->addWidget(RBDelete);
-	actionsBoxVertical->addWidget(RBSwapTeacher);
+	actionsBoxVertical->addWidget(RBChangeTeacher);
+	actionsBoxVertical->addWidget(RBSwapTeachers);
+	actionsBoxVertical->addWidget(RBSwapStudents);
 	RBActivity->setChecked(true);
 	actionsBox->setLayout(actionsBoxVertical);
 	
-	/*QGroupBox**/ optionsBox=new QGroupBox(tr("Options"));
+	QGroupBox* optionsBox=new QGroupBox();
 	QVBoxLayout* optionsBoxVertical=new QVBoxLayout();
 	QStringList activeStrings;
 	//please do not modify order for these below, as the current combobox index is saved in settings and restored
@@ -326,12 +335,17 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	//optionsBoxVertical->addWidget(pbPseudoActivities);
 	optionsBox->setLayout(optionsBoxVertical);
 	
-	rightDialog->addWidget(actionsBox);
-	rightDialog->addWidget(optionsBox);
+	actionsOptionsTabWidget = new QTabWidget;
+	actionsOptionsTabWidget->addTab(actionsBox, tr("Actions"));
+	actionsOptionsTabWidget->addTab(optionsBox, tr("Options"));
+	actionsOptionsTabWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	
+	rightDialog->addWidget(actionsOptionsTabWidget);
+	rightDialog->addStretch();
 	rightDialog->addWidget(pbPseudoActivities);
-	rightDialog->addStretch();
+	//rightDialog->addStretch();
 	rightDialog->addWidget(pbDeleteAll);
-	rightDialog->addStretch();
+	//rightDialog->addStretch();
 	//rightDialog->addWidget(pbHelp);
 	rightDialog->addWidget(showHideButton);
 	rightDialog->addStretch();
@@ -386,8 +400,12 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 		RBModify->setChecked(settings.value(this->metaObject()->className()+RBModifyState).toBool());
 	if(settings.contains(this->metaObject()->className()+RBDeleteState))
 		RBDelete->setChecked(settings.value(this->metaObject()->className()+RBDeleteState).toBool());
-	if(settings.contains(this->metaObject()->className()+RBSwapTeacherState))
-		RBSwapTeacher->setChecked(settings.value(this->metaObject()->className()+RBSwapTeacherState).toBool());
+	if(settings.contains(this->metaObject()->className()+RBChangeTeacherState))
+		RBChangeTeacher->setChecked(settings.value(this->metaObject()->className()+RBChangeTeacherState).toBool());
+	if(settings.contains(this->metaObject()->className()+RBSwapTeachersState))
+		RBSwapTeachers->setChecked(settings.value(this->metaObject()->className()+RBSwapTeachersState).toBool());
+	if(settings.contains(this->metaObject()->className()+RBSwapStudentsState))
+		RBSwapStudents->setChecked(settings.value(this->metaObject()->className()+RBSwapStudentsState).toBool());
 	//
 	if(settings.contains(this->metaObject()->className()+CBActiveState))
 		CBActive->setCurrentIndex(settings.value(this->metaObject()->className()+CBActiveState).toInt());
@@ -470,7 +488,9 @@ ActivityPlanningForm::~ActivityPlanningForm()
 	settings.setValue(this->metaObject()->className()+RBAddState, RBAdd->isChecked());
 	settings.setValue(this->metaObject()->className()+RBModifyState, RBModify->isChecked());
 	settings.setValue(this->metaObject()->className()+RBDeleteState, RBDelete->isChecked());
-	settings.setValue(this->metaObject()->className()+RBSwapTeacherState, RBSwapTeacher->isChecked());
+	settings.setValue(this->metaObject()->className()+RBChangeTeacherState, RBChangeTeacher->isChecked());
+	settings.setValue(this->metaObject()->className()+RBSwapTeachersState, RBSwapTeachers->isChecked());
+	settings.setValue(this->metaObject()->className()+RBSwapStudentsState, RBSwapStudents->isChecked());
 	//
 	settings.setValue(this->metaObject()->className()+CBActiveState, CBActive->currentIndex());
 	//
@@ -500,8 +520,7 @@ void ActivityPlanningForm::showHide()
 			" We need this 'B' button to be very small, so keep translation abbreviated to the initial only"));
 		pbClose->hide();
 		
-		optionsBox->hide();
-		actionsBox->hide();
+		actionsOptionsTabWidget->hide();
 
 		showHideButton->setSizePolicy(origShowHideSizePolicy);
 		
@@ -513,14 +532,14 @@ void ActivityPlanningForm::showHide()
 		showHideButton->setText(tr("Hide buttons", "Please keep translation short. This is an option to hide some buttons in the planning activity dialog, so that the tables are more visible."));
 		pbClose->show();
 
-		optionsBox->show();
-		actionsBox->show();
+		actionsOptionsTabWidget->show();
 
 		showHideButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
 		buttonsVisible=true;
 	}
 }
+
 
 void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherName, const QString& studentsSetName, const QString& subjectName,
 	const QList<int>& tmpID, const QList<int>& tmpGroupID,
@@ -765,6 +784,502 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 	assert(_idsToBeModified.count()==_affectOtherSubjectsToBeModified.count());
 }
 
+void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivity1, int studentsActivity2, int subjectActivity2){
+	//care about set 1
+	//bool affectOtherStudents=false;
+	QList<int> aiList;
+	QList<int> tmpID;
+	QList<int> tmpGroupID;
+	//QStringList tmpIdentify;
+	QSet<int> tmpIdentifySet;
+	//QList<bool> tmpAffectOtherStudents;
+	Activity* act;
+	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+		act=gt.rules.activitiesList[ai];
+		int tmpCurrentIndex=CBActive->currentIndex();
+		if( ((act->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+			|| ((!act->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+			|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+			if(act->subjectName==statisticValues.allSubjectsNames[subjectActivity1]){
+				for(const QString& st : qAsConst(act->studentsNames)){
+					if(st==statisticValues.allStudentsNames[studentsActivity1]){
+						//QString tmpIdent=CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+						//if(!tmpIdentify.contains(tmpIdent)){
+						if(!tmpIdentifySet.contains(act->id)){
+							aiList<<ai;
+							tmpID<<act->id;
+							tmpGroupID<<act->activityGroupId;
+							//tmpIdentify<<CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+							tmpIdentifySet.insert(act->id);
+							/*if(act->studentsNames.size()>1){
+								tmpAffectOtherStudents<<true;
+								affectOtherStudents=true;
+							} else {
+								tmpAffectOtherStudents<<false;
+							}*/
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+	assert(tmpID.count()==tmpIdentifySet.size());
+	assert(tmpGroupID.count()==tmpIdentifySet.size());
+	//assert(tmpAffectOtherStudents.count()==tmpIdentifySet.size());
+	
+	//care about set 2
+	//bool affectOtherStudents2=false;
+	QList<int> aiList2;
+	QList<int> tmpID2;
+	QList<int> tmpGroupID2;
+	//QStringList tmpIdentify2;
+	QSet<int> tmpIdentifySet2;
+	//QList<bool> tmpAffectOtherStudents2;
+	Activity* act2;
+	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+		act2=gt.rules.activitiesList[ai];
+		int tmpCurrentIndex=CBActive->currentIndex();
+		if( ((act2->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+			|| ((!act2->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+			|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+			if(act2->subjectName==statisticValues.allSubjectsNames[subjectActivity2]){
+				for(const QString& st : qAsConst(act2->studentsNames)){
+					if(st==statisticValues.allStudentsNames[studentsActivity2]){
+						//QString tmpIdent=CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+						//if(!tmpIdentify2.contains(tmpIdent)){
+						if(!tmpIdentifySet2.contains(act2->id)){
+							aiList2<<ai;
+							tmpID2<<act2->id;
+							tmpGroupID2<<act2->activityGroupId;
+							//tmpIdentify2<<CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+							tmpIdentifySet2.insert(act2->id);
+							/*if(act2->studentsNames.size()>1){
+								tmpAffectOtherStudents2<<true;
+								affectOtherStudents2=true;
+							} else {
+								tmpAffectOtherStudents2<<false;
+							}*/
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+	assert(tmpID2.count()==tmpIdentifySet2.size());
+	assert(tmpGroupID2.count()==tmpIdentifySet2.size());
+	//assert(tmpAffectOtherStudents2.count()==tmpIdentifySet2.size());
+	
+	//check if same teachers
+	QSet<QString> teacherSet1;
+	if(aiList.count()>0){
+		act=gt.rules.activitiesList[aiList.at(0)];
+		//for(const QString& t : qAsConst(act->teachersNames)){
+		for(QString t : qAsConst(act->teachersNames)){
+			teacherSet1<<t;
+		}
+	}
+	for(int tmp : qAsConst(aiList)){
+		act=gt.rules.activitiesList[tmp];
+		QSet<QString> tmpSet;
+		//for(const QString& t : qAsConst(act->teachersNames)){
+		for(QString t : qAsConst(act->teachersNames)){
+			tmpSet<<t;
+		}
+		if(tmpSet!=teacherSet1){
+			QMessageBox::warning(this, tr("FET information"),
+							 tr("Cannot change teachers, because there are different teachers in %1 %2.", "%1 is a students set name, %2 is a subject name.").arg(statisticValues.allStudentsNames[studentsActivity1]).arg(statisticValues.allSubjectsNames[subjectActivity1]));
+			return;
+		}
+	}
+	QSet<QString> teacherSet2;
+	if(aiList2.count()>0){
+		act2=gt.rules.activitiesList[aiList2.at(0)];
+		for(const QString& t : qAsConst(act2->teachersNames)){
+			teacherSet2<<t;
+		}
+	}
+	for(int tmp : qAsConst(aiList2)){
+		act2=gt.rules.activitiesList[tmp];
+		QSet<QString> tmpSet;
+		for(const QString& t : qAsConst(act2->teachersNames)){
+			tmpSet<<t;
+		}
+		if(tmpSet!=teacherSet2){
+			QMessageBox::warning(this, tr("FET information"),
+							 tr("Cannot change teachers, because there are different teachers in %1 %2.", "%1 is a students set name, %2 is a subject name.").arg(statisticValues.allStudentsNames[studentsActivity2]).arg(statisticValues.allSubjectsNames[subjectActivity2]));
+			return;
+		}
+	}
+	
+	
+	if(!tmpIdentifySet.isEmpty() || !tmpIdentifySet2.isEmpty()){
+		//activities1
+		int nTotalActsModified;
+		QList<int> _idsToBeModified;
+		QList<int> _agidsToBeModified;
+
+		QList<bool> _affectOtherTeachersToBeModified;
+		bool _affectOtherTeachersOverall;
+		QList<bool> _affectOtherStudentsToBeModified;
+		bool _affectOtherStudentsOverall;
+		QList<bool> _affectOtherSubjectsToBeModified;
+		bool _affectOtherSubjectsOverall;
+
+		computeActivitiesForModification("", statisticValues.allStudentsNames[studentsActivity1], statisticValues.allSubjectsNames[subjectActivity1],
+			tmpID, tmpGroupID,
+			nTotalActsModified,
+			_idsToBeModified, _agidsToBeModified,
+			_affectOtherTeachersToBeModified, _affectOtherTeachersOverall,
+			_affectOtherStudentsToBeModified, _affectOtherStudentsOverall,
+			_affectOtherSubjectsToBeModified, _affectOtherSubjectsOverall);
+
+		/*QString s=tr("Modify %1 activities of %2 %3?", "%1 is a number, %2 is a students set name, %3 is a subject name.").arg(tmpIdentifySet.size()).arg(statisticValues.allStudentsNames[studentsActivity1]).arg(statisticValues.allSubjectsNames[subjectActivity1]);
+		assert(nTotalActsModified>=tmpIdentifySet.size());
+		if(nTotalActsModified>tmpIdentifySet.size()){
+			s+="\n";	//TODO check the following string
+			s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+				"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified-tmpIdentifySet.size());
+		}*/
+		
+		//activities2
+		int nTotalActsModified2;
+		QList<int> _idsToBeModified2;
+		QList<int> _agidsToBeModified2;
+
+		QList<bool> _affectOtherTeachersToBeModified2;
+		bool _affectOtherTeachersOverall2;
+		QList<bool> _affectOtherStudentsToBeModified2;
+		bool _affectOtherStudentsOverall2;
+		QList<bool> _affectOtherSubjectsToBeModified2;
+		bool _affectOtherSubjectsOverall2;
+
+		computeActivitiesForModification("", statisticValues.allStudentsNames[studentsActivity2], statisticValues.allSubjectsNames[subjectActivity2],
+			tmpID2, tmpGroupID2,
+			nTotalActsModified2,
+			_idsToBeModified2, _agidsToBeModified2,
+			_affectOtherTeachersToBeModified2, _affectOtherTeachersOverall2,
+			_affectOtherStudentsToBeModified2, _affectOtherStudentsOverall2,
+			_affectOtherSubjectsToBeModified2, _affectOtherSubjectsOverall2);
+
+		/*s+="\n";
+		s+=tr("Modify %1 activities of %2 %3?", "%1 is a number, %2 is a students set name, %3 is a subject name.").arg(tmpIdentifySet2.size()).arg(statisticValues.allStudentsNames[studentsActivity2]).arg(statisticValues.allSubjectsNames[subjectActivity2]);
+		assert(nTotalActsModified2>=tmpIdentifySet2.size());
+		if(nTotalActsModified2>tmpIdentifySet2.size()){
+			s+="\n";	//TODO check the following string
+			s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+				"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified2-tmpIdentifySet2.size());
+		}*/
+		
+		//int ret=QMessageBox::question(this, tr("Modify multiple?", "It refers to activities"), s, QMessageBox::Yes | QMessageBox::No);
+				
+		if(true/*ret==QMessageBox::Yes*/){
+			/*int ret2=QMessageBox::No;
+			if(_affectOtherStudentsOverall){
+				ret2=QMessageBox::question(this, tr("Modify related?", "It refers to activities"), tr("Should the related activities also be modified?"),
+					QMessageBox::Yes | QMessageBox::No);
+			}*/
+
+			for(int i=0; i<_idsToBeModified.count(); i++){
+				if(true /*(_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)*/){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
+					if(act==NULL){
+						assert(0==1);	//TODO: maybe just a warning
+						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						break;
+					}
+					
+					//QStringList teachers_names=act->teachersNames;
+					QStringList teachers_names=teachers_names.fromSet(teacherSet2);
+					QString subject_name=act->subjectName;
+					QStringList activity_tags_names=act->activityTagsNames;
+					QStringList students_names=act->studentsNames;
+					int duration=act->duration;
+					bool active=act->active;
+					bool computeNTotalStudents=act->computeNTotalStudents;
+					int nTotalStudents=act->nTotalStudents;
+
+					gt.rules.modifySubactivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+					//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+				}
+			}
+			//modify2
+			for(int i=0; i<_idsToBeModified2.count(); i++){
+				if(true /*(_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)*/){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
+					if(act==NULL){
+						assert(0==1);	//TODO: maybe just a warning
+						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						break;
+					}
+					
+					//QStringList teachers_names=act->teachersNames;
+					QStringList teachers_names=teachers_names.fromSet(teacherSet1);
+					QString subject_name=act->subjectName;
+					QStringList activity_tags_names=act->activityTagsNames;
+					QStringList students_names=act->studentsNames;
+					int duration=act->duration;
+					bool active=act->active;
+					bool computeNTotalStudents=act->computeNTotalStudents;
+					int nTotalStudents=act->nTotalStudents;
+
+					gt.rules.modifySubactivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+					//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+				}
+			}
+		}
+	}
+}
+
+void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivity1, int studentsActivity2, int subjectActivity2){
+	//this is very similar to swap teachers. So do the same changes there. Maybe i can even merge both funtions into a single one?
+	//care about set 1
+	//bool affectOtherStudents=false;
+	QList<int> aiList;
+	QList<int> tmpID;
+	QList<int> tmpGroupID;
+	//QStringList tmpIdentify;
+	QSet<int> tmpIdentifySet;
+	//QList<bool> tmpAffectOtherStudents;
+	Activity* act;
+	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+		act=gt.rules.activitiesList[ai];
+		int tmpCurrentIndex=CBActive->currentIndex();
+		if( ((act->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+			|| ((!act->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+			|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+			if(act->subjectName==statisticValues.allSubjectsNames[subjectActivity1]){
+				for(const QString& st : qAsConst(act->studentsNames)){
+					if(st==statisticValues.allStudentsNames[studentsActivity1]){
+						//QString tmpIdent=CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+						//if(!tmpIdentify.contains(tmpIdent)){
+						if(!tmpIdentifySet.contains(act->id)){
+							aiList<<ai;
+							tmpID<<act->id;
+							tmpGroupID<<act->activityGroupId;
+							//tmpIdentify<<CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+							tmpIdentifySet.insert(act->id);
+							/*if(act->studentsNames.size()>1){
+								tmpAffectOtherStudents<<true;
+								affectOtherStudents=true;
+							} else {
+								tmpAffectOtherStudents<<false;
+							}*/
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+	assert(tmpID.count()==tmpIdentifySet.size());
+	assert(tmpGroupID.count()==tmpIdentifySet.size());
+	//assert(tmpAffectOtherStudents.count()==tmpIdentifySet.size());
+	
+	//care about set 2
+	//bool affectOtherStudents2=false;
+	QList<int> aiList2;
+	QList<int> tmpID2;
+	QList<int> tmpGroupID2;
+	//QStringList tmpIdentify2;
+	QSet<int> tmpIdentifySet2;
+	//QList<bool> tmpAffectOtherStudents2;
+	Activity* act2;
+	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+		act2=gt.rules.activitiesList[ai];
+		int tmpCurrentIndex=CBActive->currentIndex();
+		if( ((act2->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+			|| ((!act2->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+			|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+			if(act2->subjectName==statisticValues.allSubjectsNames[subjectActivity2]){
+				for(const QString& st : qAsConst(act2->studentsNames)){
+					if(st==statisticValues.allStudentsNames[studentsActivity2]){
+						//QString tmpIdent=CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+						//if(!tmpIdentify2.contains(tmpIdent)){
+						if(!tmpIdentifySet2.contains(act2->id)){
+							aiList2<<ai;
+							tmpID2<<act2->id;
+							tmpGroupID2<<act2->activityGroupId;
+							//tmpIdentify2<<CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+							tmpIdentifySet2.insert(act2->id);
+							/*if(act2->studentsNames.size()>1){
+								tmpAffectOtherStudents2<<true;
+								affectOtherStudents2=true;
+							} else {
+								tmpAffectOtherStudents2<<false;
+							}*/
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+	assert(tmpID2.count()==tmpIdentifySet2.size());
+	assert(tmpGroupID2.count()==tmpIdentifySet2.size());
+	//assert(tmpAffectOtherStudents2.count()==tmpIdentifySet2.size());
+	
+	//check if same students
+	QSet<QString> studentsSet1;
+	if(aiList.count()>0){
+		act=gt.rules.activitiesList[aiList.at(0)];
+		//for(const QString& t : qAsConst(act->studentsNames)){
+		for(QString t : qAsConst(act->studentsNames)){
+			studentsSet1<<t;
+		}
+	}
+	for(int tmp : qAsConst(aiList)){
+		act=gt.rules.activitiesList[tmp];
+		QSet<QString> tmpSet;
+		//for(const QString& t : qAsConst(act->studentsNames)){
+		for(QString t : qAsConst(act->studentsNames)){
+			tmpSet<<t;
+		}
+		if(tmpSet!=studentsSet1){
+			QMessageBox::warning(this, tr("FET information"),
+							 tr("Cannot change students, because there are different students in %1 %2.", "%1 is a students set name. %2 is a subject name.").arg(statisticValues.allStudentsNames[studentsActivity1]).arg(statisticValues.allSubjectsNames[subjectActivity1]));
+			return;
+		}
+	}
+	QSet<QString> studentsSet2;
+	if(aiList2.count()>0){
+		act2=gt.rules.activitiesList[aiList2.at(0)];
+		for(const QString& t : qAsConst(act2->studentsNames)){
+			studentsSet2<<t;
+		}
+	}
+	for(int tmp : qAsConst(aiList2)){
+		act2=gt.rules.activitiesList[tmp];
+		QSet<QString> tmpSet;
+		for(const QString& t : qAsConst(act2->studentsNames)){
+			tmpSet<<t;
+		}
+		if(tmpSet!=studentsSet2){
+			QMessageBox::warning(this, tr("FET information"),
+							 tr("Cannot change students, because there are different students in %1 %2.", "%1 is a students set name. %2 is a subject name.").arg(statisticValues.allStudentsNames[studentsActivity2]).arg(statisticValues.allSubjectsNames[subjectActivity2]));
+			return;
+		}
+	}
+	
+	
+	if(!tmpIdentifySet.isEmpty() || !tmpIdentifySet2.isEmpty()){
+		//activities1
+		int nTotalActsModified;
+		QList<int> _idsToBeModified;
+		QList<int> _agidsToBeModified;
+
+		QList<bool> _affectOtherTeachersToBeModified;
+		bool _affectOtherTeachersOverall;
+		QList<bool> _affectOtherStudentsToBeModified;
+		bool _affectOtherStudentsOverall;
+		QList<bool> _affectOtherSubjectsToBeModified;
+		bool _affectOtherSubjectsOverall;
+
+		computeActivitiesForModification("", statisticValues.allStudentsNames[studentsActivity1], statisticValues.allSubjectsNames[subjectActivity1],
+			tmpID, tmpGroupID,
+			nTotalActsModified,
+			_idsToBeModified, _agidsToBeModified,
+			_affectOtherTeachersToBeModified, _affectOtherTeachersOverall,
+			_affectOtherStudentsToBeModified, _affectOtherStudentsOverall,
+			_affectOtherSubjectsToBeModified, _affectOtherSubjectsOverall);
+
+		/*QString s=tr("Modify %1 activities of %2 %3?", "%1 is a number, %2 is a students set name, %3 is a subject name.").arg(tmpIdentifySet.size()).arg(statisticValues.allStudentsNames[studentsActivity1]).arg(statisticValues.allSubjectsNames[subjectActivity1]);
+		assert(nTotalActsModified>=tmpIdentifySet.size());
+		if(nTotalActsModified>tmpIdentifySet.size()){
+			s+="\n";	//TODO check the following string
+			s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+				"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified-tmpIdentifySet.size());
+		}*/
+		
+		//activities2
+		int nTotalActsModified2;
+		QList<int> _idsToBeModified2;
+		QList<int> _agidsToBeModified2;
+
+		QList<bool> _affectOtherTeachersToBeModified2;
+		bool _affectOtherTeachersOverall2;
+		QList<bool> _affectOtherStudentsToBeModified2;
+		bool _affectOtherStudentsOverall2;
+		QList<bool> _affectOtherSubjectsToBeModified2;
+		bool _affectOtherSubjectsOverall2;
+
+		computeActivitiesForModification("", statisticValues.allStudentsNames[studentsActivity2], statisticValues.allSubjectsNames[subjectActivity2],
+			tmpID2, tmpGroupID2,
+			nTotalActsModified2,
+			_idsToBeModified2, _agidsToBeModified2,
+			_affectOtherTeachersToBeModified2, _affectOtherTeachersOverall2,
+			_affectOtherStudentsToBeModified2, _affectOtherStudentsOverall2,
+			_affectOtherSubjectsToBeModified2, _affectOtherSubjectsOverall2);
+
+		/*s+="\n";
+		s+=tr("Modify %1 activities of %2 %3?", "%1 is a number, %2 is a students set name, %3 is a subject name.").arg(tmpIdentifySet2.size()).arg(statisticValues.allStudentsNames[studentsActivity2]).arg(statisticValues.allSubjectsNames[subjectActivity2]);
+		assert(nTotalActsModified2>=tmpIdentifySet2.size());
+		if(nTotalActsModified2>tmpIdentifySet2.size()){
+			s+="\n";	//TODO check the following string
+			s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+				"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified2-tmpIdentifySet2.size());
+		}*/
+		
+		//int ret=QMessageBox::question(this, tr("Modify multiple?", "It refers to activities"), s, QMessageBox::Yes | QMessageBox::No);
+				
+		if(true/*ret==QMessageBox::Yes*/){
+			/*int ret2=QMessageBox::No;
+			if(_affectOtherStudentsOverall){
+				ret2=QMessageBox::question(this, tr("Modify related?", "It refers to activities"), tr("Should the related activities also be modified?"),
+					QMessageBox::Yes | QMessageBox::No);
+			}*/
+
+			for(int i=0; i<_idsToBeModified.count(); i++){
+				if(true/*(_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)*/){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
+					if(act==NULL){
+						assert(0==1);	//TODO: maybe just a warning
+						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						break;
+					}
+					
+					QStringList students_names=students_names.fromSet(studentsSet2);
+					QString subject_name=act->subjectName;		//TODO rethink: maybe it is better to swap also the subject here? i am not sure. but then the name of the function is also wrong
+					QStringList activity_tags_names=act->activityTagsNames;
+					QStringList teachers_names=act->teachersNames;
+					int duration=act->duration;
+					bool active=act->active;
+					bool computeNTotalStudents=act->computeNTotalStudents;
+					int nTotalStudents=act->nTotalStudents;
+
+					gt.rules.modifySubactivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+					//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+				}
+			}
+			//modify2
+			for(int i=0; i<_idsToBeModified2.count(); i++){
+				if(true/*(_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)*/){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
+					if(act==NULL){
+						assert(0==1);	//TODO: maybe just a warning
+						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						break;
+					}
+					
+					QStringList students_names=students_names.fromSet(studentsSet1);
+					QString subject_name=act->subjectName;		//TODO rethink: maybe it is better to swap also the subject here? i am not sure. but then the name of the function is also wrong
+					QStringList activity_tags_names=act->activityTagsNames;
+					QStringList teachers_names=act->teachersNames;
+					int duration=act->duration;
+					bool active=act->active;
+					bool computeNTotalStudents=act->computeNTotalStudents;
+					int nTotalStudents=act->nTotalStudents;
+
+					gt.rules.modifySubactivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+					//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
+				}
+			}
+		}
+	}
+}
+
+
 void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 	if(swapAxis->checkState()==Qt::Checked){
 		if(column<0 || column>=statisticValues.allStudentsNames.count()){
@@ -946,7 +1461,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 				}
 			}
 		}
-	} else if(RBSwapTeacher->isChecked()) {
+	} else if(RBChangeTeacher->isChecked()) {
 		//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too
 		int students=-1;
 		int subject=column;
@@ -1036,15 +1551,34 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 				s+=tr("Please choose a new teacher:");
 				QString item = QInputDialog::getItem(this, tr("FET - Select new teacher dialog"), s, items, 0, false, &ok);
 				if (ok) {
-					int ret2=QMessageBox::No;
-					if(_affectOtherStudentsOverall){
-						ret2=QMessageBox::question(this, tr("Modify related?", "It refers to activities"), tr("There are activities affecting other students sets. Should the related activities also be modified?"),
-							QMessageBox::Yes | QMessageBox::No);
-					}
-				
+					int ret2=QMessageBox::Yes;
+					//int ret2=QMessageBox::No;
+					//if(_affectOtherSubjectsOverall){
+					//	ret2=QMessageBox::question(this, tr("Modify related?", "It refers to activities"), tr("There are activities affecting other subjects. Should the related activities also be modified?"), QMessageBox::Yes | QMessageBox::No);
+					//}
+					
 					for(int i=0; i<_idsToBeModified.count(); i++){
-						if((_affectOtherStudentsToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-							gt.rules.removeActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i));
+						if((_affectOtherSubjectsToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
+							if(act==NULL){
+								assert(0==1);	//TODO: maybe just a warning
+								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								break;
+							}
+							
+							//QStringList teachers_names=act->teachersNames;
+							QStringList teachers_names;
+							teachers_names<<item;
+							QString subject_name=act->subjectName;
+							QStringList activity_tags_names=act->activityTagsNames;
+							QStringList students_names=act->studentsNames;
+							int duration=act->duration;
+							bool active=act->active;
+							bool computeNTotalStudents=act->computeNTotalStudents;
+							int nTotalStudents=act->nTotalStudents;
+		
+							gt.rules.modifySubactivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+							//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 						}
 					}
 					PlanningChanged::increasePlanningCommunicationSpinBox();
@@ -1113,6 +1647,55 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
+		}
+	} else if(RBSwapTeachers->isChecked()) {
+		if(swapAxis->checkState()==Qt::Checked){
+			bool ok;
+			QStringList items=statisticValues.allStudentsNames;
+			QString s=tr("You have selected %1. Please select other students to swap teachers.", "%1 is a students set name.").arg(statisticValues.allStudentsNames[column]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap teachers"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allSubjectsNames.count(); i++){
+					swapTeachers(column, i, statisticValues.allStudentsNames.indexOf(item), i);
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
+			}
+		} else {
+			bool ok;
+			QStringList items=statisticValues.allSubjectsNames;
+			QString s=tr("You have selected %1. Please select other subject to swap teachers.", "%1 is a subject name.").arg(statisticValues.allSubjectsNames[column]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap teachers"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allStudentsNames.count(); i++){
+					swapTeachers(i, column, i, statisticValues.allSubjectsNames.indexOf(item));
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
+			}
+		}
+	} else if(RBSwapStudents->isChecked()) {
+		if(swapAxis->checkState()==Qt::Checked){
+			bool ok;
+			QStringList items=statisticValues.allStudentsNames;
+			QString s=tr("You have selected %1. Please select other students to swap students.", "%1 is a students set name.").arg(statisticValues.allStudentsNames[column]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap students"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allSubjectsNames.count(); i++){
+					swapStudents(column, i, statisticValues.allStudentsNames.indexOf(item), i);
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
+			}
+		} else {
+			//no function. following code is unneeded, since the students are always the same; so no need to swap
+			/*bool ok;
+			QStringList items=statisticValues.allSubjectsNames;
+			QString s=tr("You have selected %1. Please select other subject to swap students.", "%1 is a subject set name.").arg(statisticValues.allSubjectsNames[column]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap students"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allStudentsNames.count(); i++){
+					swapStudents(i, column, i, statisticValues.allSubjectsNames.indexOf(item));
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
+			}*/
 		}
 	} else assert(0==1);
 }
@@ -1298,7 +1881,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 				}
 			}
 		}
-	} else if(RBSwapTeacher->isChecked()) {
+	} else if(RBChangeTeacher->isChecked()) {
 		//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too.
 		int students=row;
 		int subject=-1;
@@ -1342,7 +1925,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 				}
 			}
 		}
-
+		
 		assert(tmpID.count()==tmpIdentifySet.size());
 		assert(tmpGroupID.count()==tmpIdentifySet.size());
 		//assert(tmpAffectOtherStudents.count()==tmpIdentifySet.size());
@@ -1483,6 +2066,55 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 					}
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
+			}
+		}
+	} else if(RBSwapTeachers->isChecked()) {
+		if(swapAxis->checkState()==Qt::Checked){
+			bool ok;
+			QStringList items=statisticValues.allSubjectsNames;
+			QString s=tr("You have selected %1. Please select other subject to swap teachers.", "%1 is a subject name.").arg(statisticValues.allSubjectsNames[row]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap teachers"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allStudentsNames.count(); i++){
+					swapTeachers(i, row, i, statisticValues.allSubjectsNames.indexOf(item));
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
+			}
+		} else {
+			bool ok;
+			QStringList items=statisticValues.allStudentsNames;
+			QString s=tr("You have selected %1. Please select other students to swap teachers.", "%1 is a students set name.").arg(statisticValues.allStudentsNames[row]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap teachers"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allSubjectsNames.count(); i++){
+					swapTeachers(row, i, statisticValues.allStudentsNames.indexOf(item), i);
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
+			}
+		}
+	} else if(RBSwapStudents->isChecked()) {
+		if(swapAxis->checkState()==Qt::Checked){
+			//no function. following code is unneeded, since the students are always the same; so no need to swap
+			/*bool ok;
+			QStringList items=statisticValues.allSubjectsNames;
+			QString s=tr("You have selected %1. Please select other subject to swap students.", "%1 is a subject name.").arg(statisticValues.allSubjectsNames[row]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap students"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allStudentsNames.count(); i++){
+					swapStudents(i, row, i, statisticValues.allSubjectsNames.indexOf(item));
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
+			}*/
+		} else {
+			bool ok;
+			QStringList items=statisticValues.allStudentsNames;
+			QString s=tr("You have selected %1. Please select other students to swap students.", "%1 is a students set name.").arg(statisticValues.allStudentsNames[row]);
+			QString item = QInputDialog::getItem(this, tr("FET - Swap students"), s, items, 0, false, &ok);
+			if(ok){
+				for(int i=0; i<statisticValues.allSubjectsNames.count(); i++){
+					swapStudents(row, i, statisticValues.allStudentsNames.indexOf(item), i);
+				}
+				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
 	} else assert(0==1);
@@ -1760,7 +2392,6 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 					_affectOtherStudentsToBeRemoved, _affectOtherStudentsOverall,
 					_affectOtherSubjectsToBeRemoved, _affectOtherSubjectsOverall);
 
-
 				s=tr("Delete %1 activities from selected cell?").arg(tmpIdentifySet.size());
 				s+=" (";
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[row]);
@@ -1799,7 +2430,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
-	} else if(RBSwapTeacher->isChecked()) {
+	} else if(RBChangeTeacher->isChecked()) {
 		//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too.
 		QList<int> tmpID;
 		QList<int> tmpGroupID;
@@ -1886,7 +2517,6 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 					_affectOtherStudentsToBeModified, _affectOtherStudentsOverall,
 					_affectOtherSubjectsToBeModified, _affectOtherSubjectsOverall);
 
-
 				s=tr("Modify %1 activities from selected cell?").arg(tmpIdentifySet.size());
 				s+="\n(";
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[row]);
@@ -1955,6 +2585,58 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				}
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
+		}
+	} else if(RBSwapTeachers->isChecked()) {
+		if(storeStudentsForSwap==-1){
+			if(swapAxis->checkState()==Qt::Checked){
+				storeStudentsForSwap=column;
+				storeSubjectForSwap=row;
+			} else {
+				storeStudentsForSwap=row;
+				storeSubjectForSwap=column;
+			}
+			int ret=QMessageBox::question(this,
+					tr("Swap teachers"),
+						tr("You have selected %1 %2.\nPlease select another cell to swap teachers.", "%1 is a subject name, %2 is a students set name.").arg(statisticValues.allSubjectsNames[storeSubjectForSwap]).arg(statisticValues.allStudentsNames[storeStudentsForSwap]), QMessageBox::Ok | QMessageBox::Cancel);
+			if(ret!=QMessageBox::Ok){
+				storeStudentsForSwap=-1;
+				storeSubjectForSwap=-1;
+			}
+		} else {
+			if(swapAxis->checkState()==Qt::Checked){
+				swapTeachers(storeStudentsForSwap, storeSubjectForSwap, column, row);
+			} else {
+				swapTeachers(storeStudentsForSwap, storeSubjectForSwap, row, column);
+			}
+			storeStudentsForSwap=-1;
+			storeSubjectForSwap=-1;
+			PlanningChanged::increasePlanningCommunicationSpinBox();
+		}
+	} else if(RBSwapStudents->isChecked()) {
+		if(storeStudentsForSwap==-1){
+			if(swapAxis->checkState()==Qt::Checked){
+				storeStudentsForSwap=column;
+				storeSubjectForSwap=row;
+			} else {
+				storeStudentsForSwap=row;
+				storeSubjectForSwap=column;
+			}
+			int ret=QMessageBox::question(this,
+					tr("Swap students"),
+						tr("You have selected %1 %2.\nPlease select another cell to swap students.", "%1 is a subject name, %2 is a students set name").arg(statisticValues.allSubjectsNames[storeSubjectForSwap]).arg(statisticValues.allStudentsNames[storeStudentsForSwap]), QMessageBox::Ok | QMessageBox::Cancel);
+			if(ret!=QMessageBox::Ok){
+				storeStudentsForSwap=-1;
+				storeSubjectForSwap=-1;
+			}
+		} else {
+			if(swapAxis->checkState()==Qt::Checked){
+				swapStudents(storeStudentsForSwap, storeSubjectForSwap, column, row);
+			} else {
+				swapStudents(storeStudentsForSwap, storeSubjectForSwap, row, column);
+			}
+			storeStudentsForSwap=-1;
+			storeSubjectForSwap=-1;
+			PlanningChanged::increasePlanningCommunicationSpinBox();
 		}
 	} else assert(0==1);
 }
@@ -2073,7 +2755,7 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
-	} else if(RBSwapTeacher->isChecked()) {
+	} else if(RBChangeTeacher->isChecked()) {
 		//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too.
 		//bool affectOtherTeachers=false;
 		QList<int> tmpID;
@@ -2185,7 +2867,214 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
-	} else assert(0==1);
+	} else if(RBSwapTeachers->isChecked()) {
+		//TODO: warnings are not nice; recheck them
+		//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too.
+		//bool affectOtherTeachers=false;
+		QList<int> tmpID;
+		QList<int> tmpGroupID;
+		//QStringList tmpIdentify;
+		QSet<int> tmpIdentifySet;
+		//QList<bool> tmpAffectOtherTeachers;
+		Activity* act;
+		for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+			act=gt.rules.activitiesList[ai];
+			int tmpCurrentIndex=CBActive->currentIndex();
+			if( ((act->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+				|| ((!act->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+				|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+					for(const QString& t : qAsConst(act->teachersNames)){
+						if(t==statisticValues.allTeachersNames[column]){
+							//QString tmpIdent=CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+							//if(!tmpIdentify.contains(tmpIdent)){
+							if(!tmpIdentifySet.contains(act->id)){
+								tmpID<<act->id;
+								tmpGroupID<<act->activityGroupId;
+								//tmpIdentify<<CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+								tmpIdentifySet.insert(act->id);
+								/*if(act->teachersNames.size()>1){
+									tmpAffectOtherTeachers<<true;
+									affectOtherTeachers=true;
+								} else {
+									tmpAffectOtherTeachers<<false;
+								}*/
+							}
+							break;
+						}
+					}
+			}
+		}
+		assert(tmpID.count()==tmpIdentifySet.size());
+		assert(tmpGroupID.count()==tmpIdentifySet.size());
+		//assert(tmpAffectOtherTeachers.count()==tmpIdentifySet.size());
+
+		if(!tmpIdentifySet.isEmpty()){
+			int nTotalActsModified;
+			QList<int> _idsToBeModified;
+			QList<int> _agidsToBeModified;
+
+			QList<bool> _affectOtherTeachersToBeModified;
+			bool _affectOtherTeachersOverall;
+			QList<bool> _affectOtherStudentsToBeModified;
+			bool _affectOtherStudentsOverall;
+			QList<bool> _affectOtherSubjectsToBeModified;
+			bool _affectOtherSubjectsOverall;
+
+			computeActivitiesForModification(statisticValues.allTeachersNames[column], "", "",
+				tmpID, tmpGroupID,
+				nTotalActsModified,
+				_idsToBeModified, _agidsToBeModified,
+				_affectOtherTeachersToBeModified, _affectOtherTeachersOverall,
+				_affectOtherStudentsToBeModified, _affectOtherStudentsOverall,
+				_affectOtherSubjectsToBeModified, _affectOtherSubjectsOverall);
+
+			QString s=tr("Modify %1 activities of teacher %2?").arg(tmpIdentifySet.size()).arg(statisticValues.allTeachersNames[column]);
+			assert(nTotalActsModified>=tmpIdentifySet.size());
+			if(nTotalActsModified>tmpIdentifySet.size()){
+				s+="\n\n";
+				s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+					"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified-tmpIdentifySet.size());
+			}
+			bool ok;
+			QStringList items;
+			//items=subjectListWithQualifiedTeachers.at(subject);
+		
+			//if(items.count()<1){
+			//	QMessageBox::information(this, tr("FET - Information"), tr("There is no teacher qualified for this subject. You should set teachers qualified subjects in FET -> Data -> Teachers."));
+				items=statisticValues.allTeachersNames;
+			//}
+			s+="\n\n";
+			s+=tr("Please choose teacher for swap:");
+			QString teacher2 = QInputDialog::getItem(this, tr("FET - Select teacher for swap dialog"), s, items, 0, false, &ok);
+			if (ok) {
+				//care about activities of teacher2 (start)
+				QList<int> tmpID2;
+				QList<int> tmpGroupID2;
+				//QStringList tmpIdentify;
+				QSet<int> tmpIdentifySet2;
+				//QList<bool> tmpAffectOtherTeachers;
+				Activity* act2;
+				for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+					act2=gt.rules.activitiesList[ai];
+					int tmpCurrentIndex=CBActive->currentIndex();
+					if( ((act2->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+						|| ((!act2->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+						|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+							for(const QString& t : qAsConst(act2->teachersNames)){
+								if(t==teacher2){
+									//QString tmpIdent=CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+									//if(!tmpIdentify.contains(tmpIdent)){
+									if(!tmpIdentifySet2.contains(act2->id)){
+										tmpID2<<act2->id;
+										tmpGroupID2<<act2->activityGroupId;
+										//tmpIdentify<<CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+										tmpIdentifySet2.insert(act2->id);
+										/*if(act2->teachersNames.size()>1){
+											tmpAffectOtherTeachers<<true;
+											affectOtherTeachers=true;
+										} else {
+											tmpAffectOtherTeachers<<false;
+										}*/
+									}
+									break;
+								}
+							}
+					}
+				}
+				assert(tmpID2.count()==tmpIdentifySet2.size());
+				assert(tmpGroupID2.count()==tmpIdentifySet2.size());
+				//assert(tmpAffectOtherTeachers2.count()==tmpIdentifySet2.size());
+		
+				if(!tmpIdentifySet2.isEmpty()){
+					int nTotalActsModified2;
+					QList<int> _idsToBeModified2;
+					QList<int> _agidsToBeModified2;
+
+					QList<bool> _affectOtherTeachersToBeModified2;
+					bool _affectOtherTeachersOverall2;
+					QList<bool> _affectOtherStudentsToBeModified2;
+					bool _affectOtherStudentsOverall2;
+					QList<bool> _affectOtherSubjectsToBeModified2;
+					bool _affectOtherSubjectsOverall2;
+		
+					computeActivitiesForModification(teacher2, "", "",
+						tmpID2, tmpGroupID2,
+						nTotalActsModified2,
+						_idsToBeModified2, _agidsToBeModified2,
+						_affectOtherTeachersToBeModified2, _affectOtherTeachersOverall2,
+						_affectOtherStudentsToBeModified2, _affectOtherStudentsOverall2,
+						_affectOtherSubjectsToBeModified2, _affectOtherSubjectsOverall2);
+
+					QString s=tr("Modify %1 activities of teacher %2?").arg(tmpIdentifySet.size()).arg(teacher2);
+					s+=tr("Modify %1 activities of teacher %2?").arg(tmpIdentifySet2.size()).arg(statisticValues.allTeachersNames[column]);
+					assert(nTotalActsModified>=tmpIdentifySet.size());
+					if(nTotalActsModified>tmpIdentifySet.size()){
+						s+="\n\n";
+						s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+							"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified-tmpIdentifySet.size());
+					}
+					//care about activities of teacher2 (end)
+				
+					int ret2=QMessageBox::No;
+					if(_affectOtherTeachersOverall){
+						ret2=QMessageBox::question(this, tr("Modify related?", "It refers to activities"), tr("There are activities affecting other teachers. Should the related activities also be modified?"), QMessageBox::Yes | QMessageBox::No);
+					}
+					
+					for(int i=0; i<_idsToBeModified.count(); i++){
+						if((_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
+							if(act==NULL){
+								assert(0==1);	//TODO: maybe just a warning
+								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								break;
+							}
+							
+							//QStringList teachers_names=act->teachersNames;
+							QStringList teachers_names;
+							teachers_names<<teacher2;
+							QString subject_name=act->subjectName;
+							QStringList activity_tags_names=act->activityTagsNames;
+							QStringList students_names=act->studentsNames;
+							int duration=act->duration;
+							bool active=act->active;
+							bool computeNTotalStudents=act->computeNTotalStudents;
+							int nTotalStudents=act->nTotalStudents;
+		
+							gt.rules.modifySubactivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+							//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+						}
+					}
+					for(int i=0; i<_idsToBeModified2.count(); i++){
+						if((_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
+							if(act==NULL){
+								assert(0==1);	//TODO: maybe just a warning
+								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								break;
+							}
+							
+							//QStringList teachers_names=act->teachersNames;
+							QStringList teachers_names;
+							teachers_names<<statisticValues.allTeachersNames[column];
+							QString subject_name=act->subjectName;
+							QStringList activity_tags_names=act->activityTagsNames;
+							QStringList students_names=act->studentsNames;
+							int duration=act->duration;
+							bool active=act->active;
+							bool computeNTotalStudents=act->computeNTotalStudents;
+							int nTotalStudents=act->nTotalStudents;
+		
+							gt.rules.modifySubactivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+							//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+						}
+					}
+					PlanningChanged::increasePlanningCommunicationSpinBox();
+				}
+			}
+		}
+	} else if(RBSwapStudents->isChecked()) {
+		//no function
+	}else assert(0==1);
 }
 
 void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
@@ -2327,7 +3216,7 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
-		} else if(RBSwapTeacher->isChecked()) {
+		} else if(RBChangeTeacher->isChecked()) {
 			//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too.
 			//bool affectOtherTeachers=false;
 			QList<int> tmpID;
@@ -2438,6 +3327,212 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
+		} else if(RBSwapTeachers->isChecked()) {
+			//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too.
+			//bool affectOtherTeachers=false;
+			QList<int> tmpID;
+			QList<int> tmpGroupID;
+			//QStringList tmpIdentify;
+			QSet<int> tmpIdentifySet;
+			//QList<bool> tmpAffectOtherTeachers;
+			Activity* act;
+			for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+				act=gt.rules.activitiesList[ai];
+				int tmpCurrentIndex=CBActive->currentIndex();
+				if( ((act->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+					|| ((!act->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+					|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+						for(const QString& t : qAsConst(act->teachersNames)){
+							if(t==statisticValues.allTeachersNames[itcol]){
+								//QString tmpIdent=CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+								//if(!tmpIdentify.contains(tmpIdent)){
+								if(!tmpIdentifySet.contains(act->id)){
+									tmpID<<act->id;
+									tmpGroupID<<act->activityGroupId;
+									//tmpIdentify<<CustomFETString::number(act->id)+" "+CustomFETString::number(act->activityGroupId);
+									tmpIdentifySet.insert(act->id);
+									/*if(act->teachersNames.size()>1){
+										tmpAffectOtherTeachers<<true;
+										affectOtherTeachers=true;
+									} else {
+										tmpAffectOtherTeachers<<false;
+									}*/
+								}
+								break;
+							}
+						}
+				}
+			}
+			assert(tmpID.count()==tmpIdentifySet.size());
+			assert(tmpGroupID.count()==tmpIdentifySet.size());
+			//assert(tmpAffectOtherTeachers.count()==tmpIdentifySet.size());
+
+			if(!tmpIdentifySet.isEmpty()){
+				int nTotalActsModified;
+				QList<int> _idsToBeModified;
+				QList<int> _agidsToBeModified;
+
+				QList<bool> _affectOtherTeachersToBeModified;
+				bool _affectOtherTeachersOverall;
+				QList<bool> _affectOtherStudentsToBeModified;
+				bool _affectOtherStudentsOverall;
+				QList<bool> _affectOtherSubjectsToBeModified;
+				bool _affectOtherSubjectsOverall;
+	
+				computeActivitiesForModification(statisticValues.allTeachersNames[itcol], "", "",
+					tmpID, tmpGroupID,
+					nTotalActsModified,
+					_idsToBeModified, _agidsToBeModified,
+					_affectOtherTeachersToBeModified, _affectOtherTeachersOverall,
+					_affectOtherStudentsToBeModified, _affectOtherStudentsOverall,
+					_affectOtherSubjectsToBeModified, _affectOtherSubjectsOverall);
+
+				QString s=tr("Modify %1 activities of teacher %2?").arg(tmpIdentifySet.size()).arg(statisticValues.allTeachersNames[itcol]);
+				assert(nTotalActsModified>=tmpIdentifySet.size());
+				if(nTotalActsModified>tmpIdentifySet.size()){
+					s+="\n\n";
+					s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+						"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified-tmpIdentifySet.size());
+				}
+				bool ok;
+				QStringList items;
+				//items=subjectListWithQualifiedTeachers.at(subject);
+			
+				//if(items.count()<1){
+				//	QMessageBox::information(this, tr("FET - Information"), tr("There is no teacher qualified for this subject. You should set teachers qualified subjects in FET -> Data -> Teachers."));
+					items=statisticValues.allTeachersNames;
+				//}
+				s+="\n\n";
+				s+=tr("Please choose teacher for swap:");
+				QString teacher2 = QInputDialog::getItem(this, tr("FET - Select teacher for swap dialog"), s, items, 0, false, &ok);
+				if (ok) {
+					//care about activities of teacher2 (start)
+					QList<int> tmpID2;
+					QList<int> tmpGroupID2;
+					//QStringList tmpIdentify;
+					QSet<int> tmpIdentifySet2;
+					//QList<bool> tmpAffectOtherTeachers;
+					Activity* act2;
+					for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
+						act2=gt.rules.activitiesList[ai];
+						int tmpCurrentIndex=CBActive->currentIndex();
+						if( ((act2->active) && (tmpCurrentIndex==ACTIVE_ONLY))
+							|| ((!act2->active) && (tmpCurrentIndex==INACTIVE_ONLY))
+							|| (tmpCurrentIndex==ACTIVE_OR_INACTIVE)){
+								for(const QString& t : qAsConst(act2->teachersNames)){
+									if(t==teacher2){
+										//QString tmpIdent=CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+										//if(!tmpIdentify.contains(tmpIdent)){
+										if(!tmpIdentifySet2.contains(act2->id)){
+											tmpID2<<act2->id;
+											tmpGroupID2<<act2->activityGroupId;
+											//tmpIdentify<<CustomFETString::number(act2->id)+" "+CustomFETString::number(act2->activityGroupId);
+											tmpIdentifySet2.insert(act2->id);
+											/*if(act2->teachersNames.size()>1){
+												tmpAffectOtherTeachers<<true;
+												affectOtherTeachers=true;
+											} else {
+												tmpAffectOtherTeachers<<false;
+											}*/
+										}
+										break;
+									}
+								}
+						}
+					}
+					assert(tmpID2.count()==tmpIdentifySet2.size());
+					assert(tmpGroupID2.count()==tmpIdentifySet2.size());
+					//assert(tmpAffectOtherTeachers2.count()==tmpIdentifySet2.size());
+			
+					if(!tmpIdentifySet2.isEmpty()){
+						int nTotalActsModified2;
+						QList<int> _idsToBeModified2;
+						QList<int> _agidsToBeModified2;
+
+						QList<bool> _affectOtherTeachersToBeModified2;
+						bool _affectOtherTeachersOverall2;
+						QList<bool> _affectOtherStudentsToBeModified2;
+						bool _affectOtherStudentsOverall2;
+						QList<bool> _affectOtherSubjectsToBeModified2;
+						bool _affectOtherSubjectsOverall2;
+			
+						computeActivitiesForModification(teacher2, "", "",
+							tmpID2, tmpGroupID2,
+							nTotalActsModified2,
+							_idsToBeModified2, _agidsToBeModified2,
+							_affectOtherTeachersToBeModified2, _affectOtherTeachersOverall2,
+							_affectOtherStudentsToBeModified2, _affectOtherStudentsOverall2,
+							_affectOtherSubjectsToBeModified2, _affectOtherSubjectsOverall2);
+
+						QString s=tr("Modify %1 activities of teacher %2?").arg(tmpIdentifySet.size()).arg(teacher2);
+						s+=tr("Modify %1 activities of teacher %2?").arg(tmpIdentifySet2.size()).arg(statisticValues.allTeachersNames[itcol]);
+						assert(nTotalActsModified>=tmpIdentifySet.size());
+						if(nTotalActsModified>tmpIdentifySet.size()){
+							s+="\n\n";
+							s+=tr("Because you have individually modified the components,\nthere won't be modified an additional number "
+								"of %1 activities\n(which are in the same larger split activities as the selected activities).").arg(nTotalActsModified-tmpIdentifySet.size());
+						}
+						//care about activities of teacher2 (end)
+					
+						int ret2=QMessageBox::No;
+						if(_affectOtherTeachersOverall){
+							ret2=QMessageBox::question(this, tr("Modify related?", "It refers to activities"), tr("There are activities affecting other teachers. Should the related activities also be modified?"), QMessageBox::Yes | QMessageBox::No);
+						}
+						
+						for(int i=0; i<_idsToBeModified.count(); i++){
+							if((_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
+								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
+								if(act==NULL){
+									assert(0==1);	//TODO: maybe just a warning
+									//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+									break;
+								}
+								
+								//QStringList teachers_names=act->teachersNames;
+								QStringList teachers_names;
+								teachers_names<<teacher2;
+								QString subject_name=act->subjectName;
+								QStringList activity_tags_names=act->activityTagsNames;
+								QStringList students_names=act->studentsNames;
+								int duration=act->duration;
+								bool active=act->active;
+								bool computeNTotalStudents=act->computeNTotalStudents;
+								int nTotalStudents=act->nTotalStudents;
+			
+								gt.rules.modifySubactivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+								//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+							}
+						}
+						for(int i=0; i<_idsToBeModified2.count(); i++){
+							if((_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)){
+								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
+								if(act==NULL){
+									assert(0==1);	//TODO: maybe just a warning
+									//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+									break;
+								}
+								
+								//QStringList teachers_names=act->teachersNames;
+								QStringList teachers_names;
+								teachers_names<<statisticValues.allTeachersNames[itcol];
+								QString subject_name=act->subjectName;
+								QStringList activity_tags_names=act->activityTagsNames;
+								QStringList students_names=act->studentsNames;
+								int duration=act->duration;
+								bool active=act->active;
+								bool computeNTotalStudents=act->computeNTotalStudents;
+								int nTotalStudents=act->nTotalStudents;
+			
+								gt.rules.modifySubactivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+								//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
+							}
+						}
+						PlanningChanged::increasePlanningCommunicationSpinBox();
+					}
+				}
+			}
+		} else if(RBSwapStudents->isChecked()) {
+			//no function
 		} else assert(0==1);
 	}
 }

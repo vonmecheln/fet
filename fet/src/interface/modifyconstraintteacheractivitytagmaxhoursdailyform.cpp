@@ -77,7 +77,7 @@ ModifyConstraintTeacherActivityTagMaxHoursDailyForm::~ModifyConstraintTeacherAct
 
 void ModifyConstraintTeacherActivityTagMaxHoursDailyForm::updateMaxHoursSpinBox(){
 	maxHoursSpinBox->setMinimum(1);
-	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);	
+	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 }
 
 void ModifyConstraintTeacherActivityTagMaxHoursDailyForm::constraintChanged()

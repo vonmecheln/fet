@@ -2143,7 +2143,7 @@ Version 5.39.0
 	- Added a new type of constraint: activity tags not overlapping (suggested by Henrique Belo).
 	- Speed improvement in the pre-generation routine, if the data file contains constraints of type activities not overlapping.
 ---------------------------------------------------------------------------------
-Versions 5.40.0 - 5.40.v
+Versions 5.40.0 - 5.40.3
 - Version 5.40.0
 	- Updated to Qt 5.13.1.
 	- Added virtual rooms, which give the possibility for the user to specify more rooms for an activity, or to choose between a large room or more smaller
@@ -2170,3 +2170,24 @@ Versions 5.40.0 - 5.40.v
 	- Updated to Qt 5.13.2.
 	- Code cleanup.
 	- Added two new example files from Syria, by Zafar Allah Askar.
+---------------------------------------------------------------------------------
+Versions 5.41.0 - 5.41.v
+- Version 5.41.0
+	- Implemented these types of constraints: teacher(s)/students (set) activity tag min hours daily (suggested by Chafik Graiguer, Pietro,
+	Vangelis Karafillidis, Benahmed Abdelkrim, s.lanore, and maybe other users). These constraints types are not perfect and must be enabled
+	from the settings menu.
+	- Implemented the constraint type activities occupy min time slots from selection (suggested by flauta, Vangelis Karafillidis, and math).
+	- Implemented the constraint type activities min simultaneous in selected time slots (suggested by Vangelis Karafillidis).
+	- Implemented these types of constraints: teacher(s)/students (set) max room changes per day/week, and teacher(s)/students (set) min gaps
+	between room changes (suggested by Benahmed Abdelkrim, abdeljalil elghazoui, otman hashem, Ahmed El Hawary, Abdellah Sabri, khatou1973,
+	nachrach111, Omar Ben Ali, forstera, and maybe other users).
+	- Code improvements in the generation code of the constraints of type teacher(s) max span per day when allowing a one day exception of
+	max span plus one.
+	- Code improvements in the generation code of the constraints of type activities occupy max time slots from selection
+	and activities max simultaneous in selected time slots.
+	- Improved the activity planning dialog, by Volker Dirr (one improvement - to swap the students sets - was suggested by uni_instructor).
+	- The activity planning dialog is now accessible by a keyboard shortcut (Ctrl+A in English, maybe other letters in other languages)
+	(suggested by uni_instructor).
+	- Removed a useless computation that was done after the generation (suggested by Marco Diego Aurélio Mesquita).
+	- Various other code improvements/cleanup.
+	- Added a new example file from Algeria, by Lysso.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Медицинский коллеж</Institution_Name>
 
@@ -8877,150 +8877,175 @@
 	<Name>1 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>4 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>5 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>6 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>8 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>9 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>13 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>21 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>22 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>23 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>18 К</Name>
 	<Building>Колледж</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1 Б</Name>
 	<Building>Больница</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>2 Б</Name>
 	<Building>Больница</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>3 Б</Name>
 	<Building>Больница</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>4 Б</Name>
 	<Building>Больница</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>5 Б</Name>
 	<Building>Больница</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>6 Б</Name>
 	<Building>Больница</Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>7 Б</Name>
 	<Building>Больница</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1 Ц</Name>
 	<Building>Центр</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>2 Ц</Name>
 	<Building>Центр</Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>3 Ц</Name>
 	<Building>Центр</Building>
 	<Capacity>10</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>4 Ц</Name>
 	<Building>Центр</Building>
 	<Capacity>10</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>5 Ц</Name>
 	<Building>Центр</Building>
 	<Capacity>10</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Р</Name>
 	<Building>Больница</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Д</Name>
 	<Building>Больница</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

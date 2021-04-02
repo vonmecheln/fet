@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>REVA UNIVERSITY, SCHOOL OF ECE</Institution_Name>
 
@@ -23514,6 +23514,7 @@
 	<Name>R.No.426</Name>
 	<Building>MAIN BUILDING</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

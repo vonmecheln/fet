@@ -181,6 +181,7 @@ public slots:
 	void showWarningForActivitiesNotLockedTimeLockedSpaceVirtualRealRoomsToggled(bool checked);
 	
 	void enableActivityTagMaxHoursDailyToggled(bool checked);
+	void enableActivityTagMinHoursDailyToggled(bool checked);
 	void enableStudentsMaxGapsPerDayToggled(bool checked);
 	void showWarningForNotPerfectConstraintsToggled(bool checked);
 
@@ -224,6 +225,20 @@ public slots:
 	void on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered();
 	void on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered();
 	
+	void on_dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction_triggered();
+	void on_dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_triggered();
+
+	void on_dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_triggered();
+	void on_dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_triggered();
+	void on_dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_triggered();
+	void on_dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered();
+	
 	void on_dataSpaceConstraintsSubjectPreferredRoomAction_triggered();
 	void on_dataSpaceConstraintsSubjectPreferredRoomsAction_triggered();
 	void on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered();
@@ -254,7 +269,9 @@ public slots:
 	void on_dataTimeConstraintsActivitiesSameStartingHourAction_triggered();
 	void on_dataTimeConstraintsActivitiesSameStartingDayAction_triggered();
 	void on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered();
+	void on_dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered();
 	void on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered();
+	void on_dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction_triggered();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_triggered();
 	void on_dataTimeConstraintsActivityTagsNotOverlappingAction_triggered();
 	void on_dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered();
@@ -280,6 +297,9 @@ public slots:
 
 	void on_dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered();
 	void on_dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered();
+
+	void on_dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_triggered();
+	void on_dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_triggered();
 
 	void on_dataTimeConstraintsTeachersMinHoursDailyAction_triggered();
 	void on_dataTimeConstraintsTeacherMinHoursDailyAction_triggered();
@@ -315,6 +335,9 @@ public slots:
 
 	void on_dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered();
 	void on_dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered();
+
+	void on_dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_triggered();
+	void on_dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_triggered();
 
 	void on_dataTimeConstraintsStudentsMinHoursDailyAction_triggered();
 	void on_dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered();

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>DEPARTMENT OF CHEMICAL ENGINEERING</Institution_Name>
 
@@ -2567,96 +2567,112 @@ ANNA UNIVERSITY CHENNAI</Comments>
 	<Name>316</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>TAL</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FML</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>302</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PSL</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>301</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>CRL</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>208</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PAL</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>209</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IAL</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>111</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>317</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>EEL</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>201</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>312</Name>
 	<Building>ACT CAMPUS</Building>
 	<Capacity>150</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

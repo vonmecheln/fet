@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>8ο Γυμνάσιο Πειραιά</Institution_Name>
 
@@ -5358,96 +5358,112 @@
 	<Name>Θ</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Φ1</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Φ2</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Φ3</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Φ4</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Μ1</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Μ2</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΦΕ1</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΦΕ2</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΞΓ1</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΞΓ2</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΚΕ</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΑ</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΠΛ</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΤΕΧ</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΥΛΗ</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

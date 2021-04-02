@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>ISTITUTO TECNICO COMMERCIALE E PER GEOMETRI</Institution_Name>
 
@@ -7180,24 +7180,28 @@
 	<Name>palestra</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>info3</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>info4</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>info1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

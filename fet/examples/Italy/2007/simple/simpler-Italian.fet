@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Liceo Scientifico Mazzini - Ancona</Institution_Name>
 
@@ -5976,48 +5976,56 @@
 	<Name>Palestra</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Palestra Via fiorani</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Lab.Informatica 1</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Lab.Informatica 2</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Lab.Fisica</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Lab.Chimica</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Lab.Lingue</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Palasport</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

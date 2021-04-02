@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.40.0">
+<fet version="5.41.0">
 
 <Institution_Name>Default institution</Institution_Name>
 
@@ -1833,6 +1833,101 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivityTagsNotOverlapping>
+<ConstraintActivitiesOccupyMinTimeSlotsFromSelection>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>5</Number_of_Activities>
+	<Activity_Id>1</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>5</Activity_Id>
+	<Number_of_Selected_Time_Slots>6</Number_of_Selected_Time_Slots>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday</Selected_Day>
+		<Selected_Hour>08:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday</Selected_Day>
+		<Selected_Hour>09:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday</Selected_Day>
+		<Selected_Hour>10:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Tuesday</Selected_Day>
+		<Selected_Hour>08:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Tuesday</Selected_Day>
+		<Selected_Hour>09:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Tuesday</Selected_Day>
+		<Selected_Hour>10:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Min_Number_of_Occupied_Time_Slots>3</Min_Number_of_Occupied_Time_Slots>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesOccupyMinTimeSlotsFromSelection>
+<ConstraintActivitiesMinSimultaneousInSelectedTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>1</Activity_Id>
+	<Activity_Id>9</Activity_Id>
+	<Activity_Id>8</Activity_Id>
+	<Number_of_Selected_Time_Slots>3</Number_of_Selected_Time_Slots>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday</Selected_Day>
+		<Selected_Hour>08:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Tuesday</Selected_Day>
+		<Selected_Hour>08:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Wednesday</Selected_Day>
+		<Selected_Hour>08:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Min_Number_of_Simultaneous_Activities>2</Min_Number_of_Simultaneous_Activities>
+	<Allow_Empty_Slots>true</Allow_Empty_Slots>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesMinSimultaneousInSelectedTimeSlots>
+<ConstraintTeacherActivityTagMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherActivityTagMinHoursDaily>
+<ConstraintTeachersActivityTagMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersActivityTagMinHoursDaily>
+<ConstraintStudentsSetActivityTagMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Students>y1</Students>
+	<Activity_Tag>at1</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetActivityTagMinHoursDaily>
+<ConstraintStudentsActivityTagMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<Minimum_Hours_Daily>1</Minimum_Hours_Daily>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsActivityTagMinHoursDaily>
 </Time_Constraints_List>
 
 <Space_Constraints_List>
@@ -2053,6 +2148,84 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesSameRoomIfConsecutive>
+<ConstraintTeacherMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Max_Room_Changes_Per_Day>2</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRoomChangesPerDay>
+<ConstraintTeacherMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRoomChangesPerWeek>
+<ConstraintTeacherMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenRoomChanges>
+<ConstraintTeachersMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRoomChangesPerDay>
+<ConstraintTeachersMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRoomChangesPerWeek>
+<ConstraintTeachersMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Gaps_Between_Room_Changes>2</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenRoomChanges>
+<ConstraintStudentsSetMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRoomChangesPerDay>
+<ConstraintStudentsSetMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1 a</Students>
+	<Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRoomChangesPerWeek>
+<ConstraintStudentsSetMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1 a en</Students>
+	<Min_Gaps_Between_Room_Changes>2</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenRoomChanges>
+<ConstraintStudentsMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRoomChangesPerDay>
+<ConstraintStudentsMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRoomChangesPerWeek>
+<ConstraintStudentsMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Gaps_Between_Room_Changes>2</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenRoomChanges>
 </Space_Constraints_List>
 
 <Timetable_Generation_Options_List>

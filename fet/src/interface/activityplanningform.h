@@ -63,12 +63,20 @@ private:
 	QSplitter* leftSplitter;
 	SparseTableView* activitiesTableView;
 	SparseTableView* teachersTableView;
+	
+	int storeStudentsForSwap;
+	int storeSubjectForSwap;
+	void swapTeachers(int studentsActivity1, int subjectActivity1, int studentsActivity2, int subjectActivity2);
+	void swapStudents(int studentsActivity1, int subjectActivity1, int studentsActivity2, int subjectActivity2);
+	
 	QRadioButton* RBActivity;
 	QRadioButton* RBSubactivity;
 	QRadioButton* RBAdd;
 	QRadioButton* RBModify;
 	QRadioButton* RBDelete;
-	QRadioButton* RBSwapTeacher;
+	QRadioButton* RBChangeTeacher;
+	QRadioButton* RBSwapTeachers;
+	QRadioButton* RBSwapStudents;
 	QComboBox* CBActive;
 	QCheckBox* showDuplicates;
 	QCheckBox* showYears;
@@ -89,8 +97,7 @@ private:
 	QPushButton* pbClose;
 	QCheckBox* changedActivities;
 	
-	QGroupBox* actionsBox;
-	QGroupBox* optionsBox;
+	QTabWidget *actionsOptionsTabWidget;
 	
 	void computeActivitiesForDeletion(const QString& teacherName, const QString& studentsSetName, const QString& subjectName,
 		const QList<int>& tmpID, const QList<int>& tmpGroupID,

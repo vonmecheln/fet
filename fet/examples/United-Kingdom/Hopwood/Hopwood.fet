@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Hopwood ESOL</Institution_Name>
 
@@ -2454,192 +2454,224 @@
 	<Name>A103</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A208</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A213</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A217</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ASH113 (Midd)</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ASH212 (Midd)</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B114</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B225</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B301</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B302</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B303</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B305</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B305A</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B306</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B309</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B310</Name>
 	<Building></Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B311</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B312</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B313A</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B314</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>B318</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Bolton</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Crescent Partnership</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>HW32 (Midd)</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Hebron</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>L301 (Midd)</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Middleton</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Middleton1</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Middleton2</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Pringle St</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Sparth Comm Centre</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Stansfield</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

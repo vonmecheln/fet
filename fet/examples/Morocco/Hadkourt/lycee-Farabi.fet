@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.1">
+<fet version="5.41.0">
 
 <Institution_Name>ثانوية الفارابي-حد كورت</Institution_Name>
 
@@ -7145,102 +7145,119 @@
 	<Name>ق01</Name>
 	<Building>1</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق02</Name>
 	<Building>2</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق03</Name>
 	<Building>3</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق04</Name>
 	<Building>4</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق05</Name>
 	<Building>5</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق06</Name>
 	<Building>6</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>قءاعل</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق07</Name>
 	<Building>7</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق08</Name>
 	<Building>8</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ق09</Name>
 	<Building>9</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>عط2</Name>
 	<Building>عط2</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>فك1</Name>
 	<Building>فك1</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ر1</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ر2</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>قءإعل</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>عط1</Name>
 	<Building>عط1</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>فك2</Name>
 	<Building>فك2</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

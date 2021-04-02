@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Scoala &quot;Constantin Brancusi&quot; Medgidia</Institution_Name>
 
@@ -5160,6 +5160,7 @@
 	<Name>Lab.fiz</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

@@ -42,6 +42,8 @@ class Building;
 class Room;
 class Solution;
 
+class FakeString;
+
 class QWidget;
 
 typedef QList<SpaceConstraint*> SpaceConstraintsList;
@@ -84,6 +86,21 @@ const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS						=1026;
 
 const int CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS				=1027;
 const int CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE				=1028;
+
+//2019-11-14
+const int CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY					=1029;
+const int CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY				=1030;
+const int CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK					=1031;
+const int CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK				=1032;
+const int CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES				=1033;
+const int CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES			=1034;
+
+const int CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY					=1035;
+const int CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY					=1036;
+const int CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK					=1037;
+const int CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK					=1038;
+const int CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES				=1039;
+const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES				=1040;
 
 /**
 This class represents a space constraint
@@ -129,7 +146,7 @@ public:
 	If conflictsString!=NULL,
 	it will be initialized with a text explaining where this restriction is broken.
 	*/
-	virtual double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL)=0;
+	virtual double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL)=0;
 
 	/**
 	Returns an XML description of this constraint
@@ -210,7 +227,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -261,7 +278,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -327,8 +344,8 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], QString* conflictsString=NULL);
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], FakeString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -383,7 +400,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -432,7 +449,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -483,7 +500,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -532,7 +549,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -583,7 +600,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -636,8 +653,8 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], QString* conflictsString=NULL);
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], FakeString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -689,8 +706,8 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], QString* conflictsString=NULL);
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], FakeString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -745,8 +762,8 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], QString* conflictsString=NULL);
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	//int fitness(Solution& c, Rules& r, const int days[/*MAX_ACTIVITIES*/], const int hours[/*MAX_ACTIVITIES*/], FakeString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -800,7 +817,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -850,7 +867,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -898,7 +915,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -945,7 +962,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -985,7 +1002,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1031,7 +1048,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1071,7 +1088,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1117,7 +1134,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1157,7 +1174,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1203,7 +1220,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1243,7 +1260,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1289,7 +1306,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1329,7 +1346,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1375,7 +1392,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1415,7 +1432,524 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+//2019-11-14
+class ConstraintStudentsSetMaxRoomChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxRoomChangesPerDay)
+
+public:
+	//internal variables
+	QList<int> iSubgroupsList;
+
+public:
+
+	int maxRoomChangesPerDay;
+
+	QString studentsName;
+
+	ConstraintStudentsSetMaxRoomChangesPerDay();
+
+	ConstraintStudentsSetMaxRoomChangesPerDay(double wp, const QString& st, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsMaxRoomChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxRoomChangesPerDay)
+
+public:
+
+	int maxRoomChangesPerDay;
+
+	ConstraintStudentsMaxRoomChangesPerDay();
+
+	ConstraintStudentsMaxRoomChangesPerDay(double wp, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsSetMaxRoomChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxRoomChangesPerWeek)
+
+public:
+	//internal variables
+	QList<int> iSubgroupsList;
+
+public:
+
+	int maxRoomChangesPerWeek;
+
+	QString studentsName;
+
+	ConstraintStudentsSetMaxRoomChangesPerWeek();
+
+	ConstraintStudentsSetMaxRoomChangesPerWeek(double wp, const QString& st, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsMaxRoomChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxRoomChangesPerWeek)
+
+public:
+
+	int maxRoomChangesPerWeek;
+
+	ConstraintStudentsMaxRoomChangesPerWeek();
+
+	ConstraintStudentsMaxRoomChangesPerWeek(double wp, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsSetMinGapsBetweenRoomChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMinGapsBetweenRoomChanges)
+
+public:
+	//internal variables
+	QList<int> iSubgroupsList;
+
+public:
+
+	int minGapsBetweenRoomChanges;
+
+	QString studentsName;
+
+	ConstraintStudentsSetMinGapsBetweenRoomChanges();
+
+	ConstraintStudentsSetMinGapsBetweenRoomChanges(double wp, const QString& st, int mg);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsMinGapsBetweenRoomChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMinGapsBetweenRoomChanges)
+
+public:
+
+	int minGapsBetweenRoomChanges;
+
+	ConstraintStudentsMinGapsBetweenRoomChanges();
+
+	ConstraintStudentsMinGapsBetweenRoomChanges(double wp, int mg);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherMaxRoomChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxRoomChangesPerDay)
+
+public:
+	//internal variables
+	int teacher_ID;
+
+public:
+
+	int maxRoomChangesPerDay;
+
+	QString teacherName;
+
+	ConstraintTeacherMaxRoomChangesPerDay();
+
+	ConstraintTeacherMaxRoomChangesPerDay(double wp, const QString& tc, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMaxRoomChangesPerDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxRoomChangesPerDay)
+
+public:
+
+	int maxRoomChangesPerDay;
+
+	ConstraintTeachersMaxRoomChangesPerDay();
+
+	ConstraintTeachersMaxRoomChangesPerDay(double wp, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherMaxRoomChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxRoomChangesPerWeek)
+
+public:
+	//internal variables
+	int teacher_ID;
+
+public:
+
+	int maxRoomChangesPerWeek;
+
+	QString teacherName;
+
+	ConstraintTeacherMaxRoomChangesPerWeek();
+
+	ConstraintTeacherMaxRoomChangesPerWeek(double wp, const QString& tc, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMaxRoomChangesPerWeek: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxRoomChangesPerWeek)
+
+public:
+
+	int maxRoomChangesPerWeek;
+
+	ConstraintTeachersMaxRoomChangesPerWeek();
+
+	ConstraintTeachersMaxRoomChangesPerWeek(double wp, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherMinGapsBetweenRoomChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMinGapsBetweenRoomChanges)
+
+public:
+	//internal variables
+	int teacher_ID;
+
+public:
+
+	int minGapsBetweenRoomChanges;
+
+	QString teacherName;
+
+	ConstraintTeacherMinGapsBetweenRoomChanges();
+
+	ConstraintTeacherMinGapsBetweenRoomChanges(double wp, const QString& tc, int mg);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	
+	bool isRelatedToActivity(Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMinGapsBetweenRoomChanges: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMinGapsBetweenRoomChanges)
+
+public:
+
+	int minGapsBetweenRoomChanges;
+
+	ConstraintTeachersMinGapsBetweenRoomChanges();
+
+	ConstraintTeachersMinGapsBetweenRoomChanges(double wp, int mg);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+	
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 	
 	bool isRelatedToActivity(Activity* a);
 	
@@ -1459,7 +1993,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 
 	void removeUseless(Rules& r);
 
@@ -1503,7 +2037,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, QString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
 
 	void removeUseless(Rules& r);
 

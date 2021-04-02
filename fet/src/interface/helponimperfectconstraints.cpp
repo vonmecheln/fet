@@ -21,13 +21,13 @@
 
 #include <QApplication>
 
-void HelpOnImperfectConstraints::help(QWidget* parent)
+void HelpOnImperfectConstraints::help(QWidget* parent, bool activityTagMinHoursDaily)
 {
 	QString s=tr("Important information about imperfect constraints:");
 	
 	s+="\n\n";
 	
-	s+=tr("The imperfect constraints are 6: students (set) max gaps per day and teacher(s) or students (set) activity tag max hours daily.");
+	s+=tr("The imperfect constraints are 10: students (set) max gaps per day and teacher(s) or students (set) activity tag max/min hours daily.");
 
 	s+="\n\n";
 	
@@ -36,7 +36,7 @@ void HelpOnImperfectConstraints::help(QWidget* parent)
 	
 	s+="\n\n";
 	
-	s+=tr("Notation: ATS = affected students set or teacher - the teacher or students specified in an imperfect constraint.");
+	s+=tr("Notation: ATS = affected teacher or students set - the teacher or students specified in an imperfect constraint.");
 
 	s+="\n\n";
 	
@@ -46,12 +46,18 @@ void HelpOnImperfectConstraints::help(QWidget* parent)
 	
 	s+="\n\n";
 	
-	s+=tr("Activity tag max hours daily: it is not fully optimized for this situation: if the ATS have max gaps constraints and the number of total available slots per week"
+	s+=tr("Activity tag max/min hours daily: it is not fully optimized for this situation: if the ATS have max gaps constraints and the number of total available slots per week"
 	 " for the ATS is much larger than the working hours per week and the ATS has many activities with the specified activity tag (more than 0.5-0.75 of total hours)"
-	 ". In such cases, a remedy may be to add constraint ATS max hours daily (without specifying an activity tag).");
+	 ". In such cases, a remedy may be to add constraint ATS max/min hours daily (without specifying an activity tag).", "ATS means affected teacher or students set.");
 	
 	s+="\n\n";
-	s+=tr("Read FAQ question 1/25 September 2009 for some more details about activity tag max hours daily constraint.");
+	s+=tr("Read FAQ question 1/25 September 2009 for some more details about activity tag max/min hours daily constraint.");
 
+	if(activityTagMinHoursDaily){
+		s+="\n\n";
+		s+=tr("IMPORTANT NOTE: If you need a solution without empty days or if a solution with empty days does not exist, please leave the option 'Allow"
+		 " empty days' unselected, because the generation is more efficient this way.");
+	}
+	
 	LongTextMessageBox::largeInformation(parent, tr("FET information"), s);
 }

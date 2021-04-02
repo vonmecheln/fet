@@ -24,7 +24,7 @@ class HelpOnImperfectConstraints{
 	Q_DECLARE_TR_FUNCTIONS(HelpOnImperfectConstraints);
 	
 public:
-	static void help(QWidget* parent);
+	static void help(QWidget* parent, bool activityTagMinHoursDaily=false);
 };
 
 #endif

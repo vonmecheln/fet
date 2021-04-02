@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Engineering College</Institution_Name>
 
@@ -12526,228 +12526,266 @@
 	<Name>IV-307</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-308</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-309</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-310</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-204</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-405</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-205</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-201-A</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-201-B</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-109-A</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-109-B</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-211</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-316</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-317</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-209</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-210</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>W/S</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>EE Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Graphics Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>EM Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PC Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>CP Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PHY Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>CHEM Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-108</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-107</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-104</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IV-208</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>GBS-107</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>GBS-302</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>MS Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>TD lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FM Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>DOM Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mfg. Sc. Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>HMT Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>CAD Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AE Lab</Name>
 	<Building>BLOCK-IV</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>INSTITUT</Institution_Name>
 
@@ -6588,234 +6588,273 @@
 	<Name>A-1</Name>
 	<Building>CENTRE</Building>
 	<Capacity>90</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-2</Name>
 	<Building>CENTRE</Building>
 	<Capacity>90</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-3</Name>
 	<Building>CENTRE</Building>
 	<Capacity>90</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-4</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-5</Name>
 	<Building>CENTRE</Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-6</Name>
 	<Building>CENTRE</Building>
 	<Capacity>90</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-7</Name>
 	<Building>CENTRE</Building>
 	<Capacity>90</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-8</Name>
 	<Building>CENTRE</Building>
 	<Capacity>90</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-9</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-10</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-11</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-12</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-13</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-14</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-15</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-16</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-17</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-18</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-19</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-20</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-21</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-22</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-23</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-24</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A-25</Name>
 	<Building>CENTRE</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>GIM</Name>
 	<Building>GIMNÀS</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PISTA</Name>
 	<Building>PATI</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ACTES</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IDIOMES</Name>
 	<Building>CENTRE</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>MÚSICA</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>DIBUIX</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AUDIO</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>INF1</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>INF2</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>TEC1</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>TEC2</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>BIO</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FIS</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>QUI</Name>
 	<Building>CENTRE</Building>
 	<Capacity>120</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

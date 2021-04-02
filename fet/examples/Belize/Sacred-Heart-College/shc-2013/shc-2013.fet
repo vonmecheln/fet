@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Sacred Heart College</Institution_Name>
 
@@ -12443,42 +12443,49 @@
 	<Name>CLab1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>CLab2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>CLab3</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Art</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>TD</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Phy/SC Lab</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Bio/Chem Lab</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

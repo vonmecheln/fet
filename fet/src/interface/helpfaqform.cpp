@@ -46,7 +46,7 @@ void HelpFaqForm::setText()
 	
 	s+=tr("Frequently asked questions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("24 July 2019"));
+	s+=tr("Last modified on %1.").arg(tr("21 November 2019"));
 	
 	s+="\n\n";
 	s+="--------------------";
@@ -710,6 +710,8 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
+	s+=tr("(This FAQ entry applies also to the constraints of type activity tag min hours daily:)");
+	s+=" ";
 	s+=tr("Question 1/25 September 2009: An observation for constraint teacher(s) or students (set) activity tag max hours daily:\n\n"
 		"This constraint is implemented correctly and is working good, but it is not perfect, which means that in unusual, extreme cases the "
 		"time needed to generate a timetable might be longer or much longer than really necessary. You should give FET a hand in these extreme "
@@ -762,6 +764,8 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 	
+	s+=tr("(This FAQ entry applies also to the constraints of type activity tag min hours daily:)");
+	s+=" ";
 	s+=tr("Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?");
 	s+="\n\n";
 	s+=tr("A: These 6 constraints (4 for activity tag and 2 for students max gaps per day) are the only ones which are not perfectly optimized"
@@ -882,8 +886,10 @@ void HelpFaqForm::setText()
 
 	s+=tr("Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.");
 	s+="\n\n";
-	s+=tr("A: Please use constraint activities occupy max time slots from selection (the exact menu entry is 'A set of activities occupies max"
-	 " time slots from selection'. See that constraint's Help button for more details.");
+	s+=tr("A: You can use a constraint of type activities occupy min time slots from selection or use in an inverted way a constraint of type activities"
+	 " occupy max time slots from selection (the exact menu entries are 'A set of activities occupies min/max time slots from selection')."
+	 " It is not known exactly if the inverted constraint with 'max' is more efficient than the direct constraint with 'min'."
+	 " Press these constraints' Help buttons for more details.");
 
 	s+="\n\n";
 	s+="--------------------";

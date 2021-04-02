@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>المنشأة الافتراضية</Institution_Name>
 
@@ -7345,204 +7345,238 @@
 	<Name>401</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>402</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>403</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>301</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>302</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>303</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>201</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>202</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>203</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>204</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>205</Name>
 	<Building>ب2</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>101</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>102</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>103</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>104</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>105</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>106</Name>
 	<Building>ب1</Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>W</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>م1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>م2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Bib</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Inf</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>C2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap1</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap3</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap4</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap5</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap6</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap7</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap8</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap9</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>gap10</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

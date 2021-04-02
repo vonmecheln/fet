@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.1">
+<fet version="5.41.0">
 
 <Institution_Name>Liceo scientifico</Institution_Name>
 
@@ -7166,18 +7166,21 @@
 	<Name>palestra</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>palestra palazzetto</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>palazzetto 2</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

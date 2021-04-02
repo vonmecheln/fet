@@ -23,6 +23,8 @@
 #include "fet.h"
 #include "timetableexport.h"
 
+#include "rules.h"
+
 #include <QString>
 
 #include <QPlainTextEdit>
@@ -202,7 +204,7 @@ void TimetableGenerateForm::stop()
 	Solution& c=gen.c;
 
 	//needed to find the conflicts strings
-	QString tmp;
+	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
 	TimetableExport::getStudentsTimetable(c);
@@ -357,7 +359,7 @@ void TimetableGenerateForm::stopHighest()
 	Solution& c=highestStageSolution;
 
 	//needed to find the conflicts strings
-	QString tmp;
+	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
 	TimetableExport::getStudentsTimetable(c);
@@ -486,11 +488,10 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	myMutex.lock();
 
-
 	Solution& c=gen.c;
 
 	//needed to find the conflicts strings
-	QString tmp;
+	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
 	TimetableExport::getStudentsTimetable(c);
@@ -614,7 +615,7 @@ void TimetableGenerateForm::simulationFinished()
 	Solution& c=gen.c;
 
 	//needed to find the conflicts strings
-	QString tmp;
+	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
 	TimetableExport::getStudentsTimetable(c);
@@ -674,7 +675,7 @@ void TimetableGenerateForm::simulationFinished()
 	s+=QString("\n");
 	s+=tr("Weighted soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal));
 	s+=QString("\n\n");
-	s+=tr("Results were saved in the directory %1").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	s+=tr("The results were saved in the directory %1").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
 #ifndef Q_WS_QWS
 	QApplication::beep();
@@ -799,7 +800,7 @@ void TimetableGenerateForm::write(){
 	Solution& c=gen.c;
 
 	//needed to find the conflicts strings
-	QString tmp;
+	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
 	TimetableExport::getStudentsTimetable(c);
@@ -850,7 +851,7 @@ void TimetableGenerateForm::writeHighestStage(){
 	Solution& c=highestStageSolution;
 
 	//needed to find the conflicts strings
-	QString tmp;
+	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
 	TimetableExport::getStudentsTimetable(c);

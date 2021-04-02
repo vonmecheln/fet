@@ -113,6 +113,44 @@ SOURCES += \
 	interface/constraintteachersmingapsbetweenbuildingchangesform.cpp \
 	interface/modifyconstraintteachersmingapsbetweenbuildingchangesform.cpp \
 	\
+	interface/addconstraintstudentssetmaxroomchangesperdayform.cpp \
+	interface/constraintstudentssetmaxroomchangesperdayform.cpp \
+	interface/modifyconstraintstudentssetmaxroomchangesperdayform.cpp \
+	interface/addconstraintstudentsmaxroomchangesperdayform.cpp \
+	interface/constraintstudentsmaxroomchangesperdayform.cpp \
+	interface/modifyconstraintstudentsmaxroomchangesperdayform.cpp \
+	interface/addconstraintstudentssetmaxroomchangesperweekform.cpp \
+	interface/constraintstudentssetmaxroomchangesperweekform.cpp \
+	interface/modifyconstraintstudentssetmaxroomchangesperweekform.cpp \
+	interface/addconstraintstudentsmaxroomchangesperweekform.cpp \
+	interface/constraintstudentsmaxroomchangesperweekform.cpp \
+	interface/modifyconstraintstudentsmaxroomchangesperweekform.cpp \
+	interface/addconstraintstudentssetmingapsbetweenroomchangesform.cpp \
+	interface/constraintstudentssetmingapsbetweenroomchangesform.cpp \
+	interface/modifyconstraintstudentssetmingapsbetweenroomchangesform.cpp \
+	interface/addconstraintstudentsmingapsbetweenroomchangesform.cpp \
+	interface/constraintstudentsmingapsbetweenroomchangesform.cpp \
+	interface/modifyconstraintstudentsmingapsbetweenroomchangesform.cpp \
+	\
+	interface/addconstraintteachermaxroomchangesperdayform.cpp \
+	interface/constraintteachermaxroomchangesperdayform.cpp \
+	interface/modifyconstraintteachermaxroomchangesperdayform.cpp \
+	interface/addconstraintteachersmaxroomchangesperdayform.cpp \
+	interface/constraintteachersmaxroomchangesperdayform.cpp \
+	interface/modifyconstraintteachersmaxroomchangesperdayform.cpp \
+	interface/addconstraintteachermaxroomchangesperweekform.cpp \
+	interface/constraintteachermaxroomchangesperweekform.cpp \
+	interface/modifyconstraintteachermaxroomchangesperweekform.cpp \
+	interface/addconstraintteachersmaxroomchangesperweekform.cpp \
+	interface/constraintteachersmaxroomchangesperweekform.cpp \
+	interface/modifyconstraintteachersmaxroomchangesperweekform.cpp \
+	interface/addconstraintteachermingapsbetweenroomchangesform.cpp \
+	interface/constraintteachermingapsbetweenroomchangesform.cpp \
+	interface/modifyconstraintteachermingapsbetweenroomchangesform.cpp \
+	interface/addconstraintteachersmingapsbetweenroomchangesform.cpp \
+	interface/constraintteachersmingapsbetweenroomchangesform.cpp \
+	interface/modifyconstraintteachersmingapsbetweenroomchangesform.cpp \
+	\
 	interface/constraintstudentssethomeroomform.cpp \
 	interface/modifyconstraintstudentssethomeroomform.cpp \
 	interface/addconstraintstudentssethomeroomsform.cpp \
@@ -263,6 +301,13 @@ SOURCES += \
 	interface/addconstraintteacheractivitytagmaxhoursdailyform.cpp \
 	interface/modifyconstraintteacheractivitytagmaxhoursdailyform.cpp \
 	\
+	interface/constraintteachersactivitytagminhoursdailyform.cpp \
+	interface/addconstraintteachersactivitytagminhoursdailyform.cpp \
+	interface/modifyconstraintteachersactivitytagminhoursdailyform.cpp \
+	interface/constraintteacheractivitytagminhoursdailyform.cpp \
+	interface/addconstraintteacheractivitytagminhoursdailyform.cpp \
+	interface/modifyconstraintteacheractivitytagminhoursdailyform.cpp \
+	\
 	interface/constraintteachersminhoursdailyform.cpp \
 	interface/addconstraintteachersminhoursdailyform.cpp \
 	interface/modifyconstraintteachersminhoursdailyform.cpp \
@@ -341,6 +386,13 @@ SOURCES += \
 	interface/addconstraintstudentsactivitytagmaxhoursdailyform.cpp \
 	interface/modifyconstraintstudentsactivitytagmaxhoursdailyform.cpp \
 	\
+	interface/constraintstudentssetactivitytagminhoursdailyform.cpp \
+	interface/addconstraintstudentssetactivitytagminhoursdailyform.cpp \
+	interface/modifyconstraintstudentssetactivitytagminhoursdailyform.cpp \
+	interface/constraintstudentsactivitytagminhoursdailyform.cpp \
+	interface/addconstraintstudentsactivitytagminhoursdailyform.cpp \
+	interface/modifyconstraintstudentsactivitytagminhoursdailyform.cpp \
+	\
 	interface/constraintstudentssetminhoursdailyform.cpp \
 	interface/addconstraintstudentssetminhoursdailyform.cpp \
 	interface/modifyconstraintstudentssetminhoursdailyform.cpp \
@@ -359,9 +411,17 @@ SOURCES += \
 	interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp \
 	interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp \
 	\
+	interface/constraintactivitiesoccupymintimeslotsfromselectionform.cpp \
+	interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp \
+	interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp \
+	\
 	interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp \
 	interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp \
 	interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp \
+	\
+	interface/constraintactivitiesminsimultaneousinselectedtimeslotsform.cpp \
+	interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp \
+	interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp \
 	\
 	interface/constraintactivitiesoccupymaxdifferentroomsform.cpp \
 	interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp \
@@ -612,6 +672,44 @@ HEADERS += \
 	interface/constraintteachersmingapsbetweenbuildingchangesform.h \
 	interface/modifyconstraintteachersmingapsbetweenbuildingchangesform.h \
 	\
+	interface/addconstraintstudentssetmaxroomchangesperdayform.h \
+	interface/constraintstudentssetmaxroomchangesperdayform.h \
+	interface/modifyconstraintstudentssetmaxroomchangesperdayform.h \
+	interface/addconstraintstudentsmaxroomchangesperdayform.h \
+	interface/constraintstudentsmaxroomchangesperdayform.h \
+	interface/modifyconstraintstudentsmaxroomchangesperdayform.h \
+	interface/addconstraintstudentssetmaxroomchangesperweekform.h \
+	interface/constraintstudentssetmaxroomchangesperweekform.h \
+	interface/modifyconstraintstudentssetmaxroomchangesperweekform.h \
+	interface/addconstraintstudentsmaxroomchangesperweekform.h \
+	interface/constraintstudentsmaxroomchangesperweekform.h \
+	interface/modifyconstraintstudentsmaxroomchangesperweekform.h \
+	interface/addconstraintstudentssetmingapsbetweenroomchangesform.h \
+	interface/constraintstudentssetmingapsbetweenroomchangesform.h \
+	interface/modifyconstraintstudentssetmingapsbetweenroomchangesform.h \
+	interface/addconstraintstudentsmingapsbetweenroomchangesform.h \
+	interface/constraintstudentsmingapsbetweenroomchangesform.h \
+	interface/modifyconstraintstudentsmingapsbetweenroomchangesform.h \
+	\
+	interface/addconstraintteachermaxroomchangesperdayform.h \
+	interface/constraintteachermaxroomchangesperdayform.h \
+	interface/modifyconstraintteachermaxroomchangesperdayform.h \
+	interface/addconstraintteachersmaxroomchangesperdayform.h \
+	interface/constraintteachersmaxroomchangesperdayform.h \
+	interface/modifyconstraintteachersmaxroomchangesperdayform.h \
+	interface/addconstraintteachermaxroomchangesperweekform.h \
+	interface/constraintteachermaxroomchangesperweekform.h \
+	interface/modifyconstraintteachermaxroomchangesperweekform.h \
+	interface/addconstraintteachersmaxroomchangesperweekform.h \
+	interface/constraintteachersmaxroomchangesperweekform.h \
+	interface/modifyconstraintteachersmaxroomchangesperweekform.h \
+	interface/addconstraintteachermingapsbetweenroomchangesform.h \
+	interface/constraintteachermingapsbetweenroomchangesform.h \
+	interface/modifyconstraintteachermingapsbetweenroomchangesform.h \
+	interface/addconstraintteachersmingapsbetweenroomchangesform.h \
+	interface/constraintteachersmingapsbetweenroomchangesform.h \
+	interface/modifyconstraintteachersmingapsbetweenroomchangesform.h \
+	\
 	interface/addconstraintteacherhomeroomform.h \
 	interface/constraintteacherhomeroomform.h \
 	interface/modifyconstraintteacherhomeroomform.h \
@@ -754,6 +852,13 @@ HEADERS += \
 	interface/addconstraintteacheractivitytagmaxhoursdailyform.h \
 	interface/modifyconstraintteacheractivitytagmaxhoursdailyform.h \
 	\
+	interface/constraintteachersactivitytagminhoursdailyform.h \
+	interface/addconstraintteachersactivitytagminhoursdailyform.h \
+	interface/modifyconstraintteachersactivitytagminhoursdailyform.h \
+	interface/constraintteacheractivitytagminhoursdailyform.h \
+	interface/addconstraintteacheractivitytagminhoursdailyform.h \
+	interface/modifyconstraintteacheractivitytagminhoursdailyform.h \
+	\
 	interface/constraintteachersminhoursdailyform.h \
 	interface/addconstraintteachersminhoursdailyform.h \
 	interface/modifyconstraintteachersminhoursdailyform.h \
@@ -832,6 +937,13 @@ HEADERS += \
 	interface/addconstraintstudentsactivitytagmaxhoursdailyform.h \
 	interface/modifyconstraintstudentsactivitytagmaxhoursdailyform.h \
 	\
+	interface/constraintstudentssetactivitytagminhoursdailyform.h \
+	interface/addconstraintstudentssetactivitytagminhoursdailyform.h \
+	interface/modifyconstraintstudentssetactivitytagminhoursdailyform.h \
+	interface/constraintstudentsactivitytagminhoursdailyform.h \
+	interface/addconstraintstudentsactivitytagminhoursdailyform.h \
+	interface/modifyconstraintstudentsactivitytagminhoursdailyform.h \
+	\
 	interface/constraintstudentssetminhoursdailyform.h \
 	interface/addconstraintstudentssetminhoursdailyform.h \
 	interface/modifyconstraintstudentssetminhoursdailyform.h \
@@ -850,9 +962,17 @@ HEADERS += \
 	interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.h \
 	interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.h \
 	\
+	interface/constraintactivitiesoccupymintimeslotsfromselectionform.h \
+	interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.h \
+	interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.h \
+	\
 	interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.h \
 	interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h \
 	interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h \
+	\
+	interface/constraintactivitiesminsimultaneousinselectedtimeslotsform.h \
+	interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.h \
+	interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.h \
 	\
 	interface/constraintactivitiesoccupymaxdifferentroomsform.h \
 	interface/addconstraintactivitiesoccupymaxdifferentroomsform.h \
@@ -1100,6 +1220,44 @@ FORMS += \
 	interface/constraintteachersmingapsbetweenbuildingchangesform_template.ui \
 	interface/modifyconstraintteachersmingapsbetweenbuildingchangesform_template.ui \
 	\
+	interface/addconstraintstudentssetmaxroomchangesperdayform_template.ui \
+	interface/constraintstudentssetmaxroomchangesperdayform_template.ui \
+	interface/modifyconstraintstudentssetmaxroomchangesperdayform_template.ui \
+	interface/addconstraintstudentsmaxroomchangesperdayform_template.ui \
+	interface/constraintstudentsmaxroomchangesperdayform_template.ui \
+	interface/modifyconstraintstudentsmaxroomchangesperdayform_template.ui \
+	interface/addconstraintstudentssetmaxroomchangesperweekform_template.ui \
+	interface/constraintstudentssetmaxroomchangesperweekform_template.ui \
+	interface/modifyconstraintstudentssetmaxroomchangesperweekform_template.ui \
+	interface/addconstraintstudentsmaxroomchangesperweekform_template.ui \
+	interface/constraintstudentsmaxroomchangesperweekform_template.ui \
+	interface/modifyconstraintstudentsmaxroomchangesperweekform_template.ui \
+	interface/addconstraintstudentssetmingapsbetweenroomchangesform_template.ui \
+	interface/constraintstudentssetmingapsbetweenroomchangesform_template.ui \
+	interface/modifyconstraintstudentssetmingapsbetweenroomchangesform_template.ui \
+	interface/addconstraintstudentsmingapsbetweenroomchangesform_template.ui \
+	interface/constraintstudentsmingapsbetweenroomchangesform_template.ui \
+	interface/modifyconstraintstudentsmingapsbetweenroomchangesform_template.ui \
+	\
+	interface/addconstraintteachermaxroomchangesperdayform_template.ui \
+	interface/constraintteachermaxroomchangesperdayform_template.ui \
+	interface/modifyconstraintteachermaxroomchangesperdayform_template.ui \
+	interface/addconstraintteachersmaxroomchangesperdayform_template.ui \
+	interface/constraintteachersmaxroomchangesperdayform_template.ui \
+	interface/modifyconstraintteachersmaxroomchangesperdayform_template.ui \
+	interface/addconstraintteachermaxroomchangesperweekform_template.ui \
+	interface/constraintteachermaxroomchangesperweekform_template.ui \
+	interface/modifyconstraintteachermaxroomchangesperweekform_template.ui \
+	interface/addconstraintteachersmaxroomchangesperweekform_template.ui \
+	interface/constraintteachersmaxroomchangesperweekform_template.ui \
+	interface/modifyconstraintteachersmaxroomchangesperweekform_template.ui \
+	interface/addconstraintteachermingapsbetweenroomchangesform_template.ui \
+	interface/constraintteachermingapsbetweenroomchangesform_template.ui \
+	interface/modifyconstraintteachermingapsbetweenroomchangesform_template.ui \
+	interface/addconstraintteachersmingapsbetweenroomchangesform_template.ui \
+	interface/constraintteachersmingapsbetweenroomchangesform_template.ui \
+	interface/modifyconstraintteachersmingapsbetweenroomchangesform_template.ui \
+	\
 	interface/addconstraintteacherhomeroomform_template.ui \
 	interface/constraintteacherhomeroomform_template.ui \
 	interface/modifyconstraintteacherhomeroomform_template.ui \
@@ -1236,6 +1394,13 @@ FORMS += \
 	interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui \
 	interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui \
 	\
+	interface/constraintteachersactivitytagminhoursdailyform_template.ui \
+	interface/addconstraintteachersactivitytagminhoursdailyform_template.ui \
+	interface/modifyconstraintteachersactivitytagminhoursdailyform_template.ui \
+	interface/constraintteacheractivitytagminhoursdailyform_template.ui \
+	interface/addconstraintteacheractivitytagminhoursdailyform_template.ui \
+	interface/modifyconstraintteacheractivitytagminhoursdailyform_template.ui \
+	\
 	interface/constraintteachersminhoursdailyform_template.ui \
 	interface/addconstraintteachersminhoursdailyform_template.ui \
 	interface/modifyconstraintteachersminhoursdailyform_template.ui \
@@ -1314,6 +1479,13 @@ FORMS += \
 	interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui \
 	interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui \
 	\
+	interface/constraintstudentssetactivitytagminhoursdailyform_template.ui \
+	interface/addconstraintstudentssetactivitytagminhoursdailyform_template.ui \
+	interface/modifyconstraintstudentssetactivitytagminhoursdailyform_template.ui \
+	interface/constraintstudentsactivitytagminhoursdailyform_template.ui \
+	interface/addconstraintstudentsactivitytagminhoursdailyform_template.ui \
+	interface/modifyconstraintstudentsactivitytagminhoursdailyform_template.ui \
+	\
 	interface/constraintstudentssetminhoursdailyform_template.ui \
 	interface/addconstraintstudentssetminhoursdailyform_template.ui \
 	interface/modifyconstraintstudentssetminhoursdailyform_template.ui \
@@ -1332,9 +1504,17 @@ FORMS += \
 	interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui \
 	interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui \
 	\
+	interface/constraintactivitiesoccupymintimeslotsfromselectionform_template.ui \
+	interface/addconstraintactivitiesoccupymintimeslotsfromselectionform_template.ui \
+	interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform_template.ui \
+	\
 	interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui \
 	interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui \
 	interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui \
+	\
+	interface/constraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui \
+	interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui \
+	interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui \
 	\
 	interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui \
 	interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui \

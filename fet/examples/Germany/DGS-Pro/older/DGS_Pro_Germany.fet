@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>DGS Pro</Institution_Name>
 
@@ -4210,66 +4210,77 @@ Stand 23.07.2008/13.15 - wdj</Comments>
 	<Name>HaW</Name>
 	<Building></Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>KlG</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LSt</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mus</Name>
 	<Building></Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>NaW</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PCr</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SHG</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SHK</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Tec</Name>
 	<Building></Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Tex</Name>
 	<Building></Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Leg</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

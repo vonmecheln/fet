@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Instituto San José Ñ12</Institution_Name>
 
@@ -1683,36 +1683,42 @@
 	<Name>1º A</Name>
 	<Building>Instituto San José Ñ12</Building>
 	<Capacity>35</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1º B</Name>
 	<Building>Instituto San José Ñ12</Building>
 	<Capacity>35</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>2º A</Name>
 	<Building>Instituto San José Ñ12</Building>
 	<Capacity>35</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>2º B</Name>
 	<Building>Instituto San José Ñ12</Building>
 	<Capacity>35</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>3º A</Name>
 	<Building>Instituto San José Ñ12</Building>
 	<Capacity>35</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>3º B</Name>
 	<Building>Instituto San José Ñ12</Building>
 	<Capacity>35</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

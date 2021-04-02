@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Lycée qualifiant Mohamed V - Goulmima - ثانوية محمد الخامس التاهيلية -كلميمة</Institution_Name>
 
@@ -16718,330 +16718,385 @@
 	<Name>SalleA1</Name>
 	<Building>BlocA</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleA2</Name>
 	<Building>BlocA</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleA3</Name>
 	<Building>BlocA</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleA4</Name>
 	<Building>BlocA</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleA5</Name>
 	<Building>BlocA</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleA6</Name>
 	<Building>BlocA</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB7</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB8</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB9</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB10</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB11</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB12</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB13</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB14</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB15</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleB16</Name>
 	<Building>BlocB</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC1Orientation</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC18</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC19</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC20</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC21</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC22</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC23</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC24</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC25</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC26</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC27</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleC28</Name>
 	<Building>BlocC</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleD29</Name>
 	<Building>BlocD</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleD30</Name>
 	<Building>BlocD</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleD31</Name>
 	<Building>BlocD</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleD32</Name>
 	<Building>BlocD</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleD33</Name>
 	<Building>BlocD</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleE44</Name>
 	<Building>BlocE</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleE45</Name>
 	<Building>BlocE</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleE43</Name>
 	<Building>BlocE</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleE42</Name>
 	<Building>BlocE</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleE40</Name>
 	<Building>BlocE</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleE39</Name>
 	<Building>BlocE</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleF46</Name>
 	<Building>BlocF</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleF47</Name>
 	<Building>BlocF</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleF48</Name>
 	<Building>BlocF</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleF49</Name>
 	<Building>BlocF</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleF50</Name>
 	<Building>BlocF</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleF51</Name>
 	<Building>BlocF</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleG52</Name>
 	<Building>BlocG</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleG53</Name>
 	<Building>BlocG</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleG54</Name>
 	<Building>BlocG</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SalleG55</Name>
 	<Building>BlocG</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>T1</Name>
 	<Building>Terrain</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>T2</Name>
 	<Building>Terrain</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>T3</Name>
 	<Building>Terrain</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>T4</Name>
 	<Building>Terrain</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>T5</Name>
 	<Building>Terrain</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>T6</Name>
 	<Building>Terrain</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Instituto de Educación Secundaria</Institution_Name>
 
@@ -16581,276 +16581,322 @@ Por ejemplo:
 	<Name>Aula Educ Especial</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º BACH A</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º BACH B		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º ESO A		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º ESO B		</Name>
 	<Building>Instituto</Building>
 	<Capacity>2000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º ESO C		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º ESO D		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º ESO E		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 1º ESO F</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 2º BACH A </Name>
 	<Building>Instituto</Building>
 	<Capacity>2000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 2º BACH B 		</Name>
 	<Building>Instituto</Building>
 	<Capacity>2000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 2º ESO A		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 2º ESO B		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 2º ESO C		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 2º ESO D		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 3º ESO A		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 3º ESO B		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 3º ESO C		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 3º ESO D		</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 4º ESO A</Name>
 	<Building>Instituto</Building>
 	<Capacity>2000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: 4º ESO B</Name>
 	<Building>Instituto</Building>
 	<Capacity>2000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Apoyo 1</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Apoyo 2</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Biblioteca</Name>
 	<Building>Instituto</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Comercio</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Desdoble 1</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Desdoble 2</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Desdoble 3</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Dpto. CCSS</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Dpto. Comercio</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Dpto. Filosof.</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Dpto. Idiomas</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Dpto. Orient.</Name>
 	<Building>Instituto</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Dpto. de Latín y Griego</Name>
 	<Building>Instituto</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: EPV</Name>
 	<Building>Instituto</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Inform. Comercio</Name>
 	<Building>Instituto</Building>
 	<Capacity>2000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Inform. Pl. 1ª</Name>
 	<Building>Instituto</Building>
 	<Capacity>2000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Inform. Pl. Baja</Name>
 	<Building></Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Lab. Biología</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Lab. Idiomas</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Lab. Química</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Música</Name>
 	<Building>Instituto</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: PCPI</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Taller Tecnología</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Talleres</Name>
 	<Building>Instituto</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Aula: Vídeo 2</Name>
 	<Building>Instituto</Building>
 	<Capacity>500</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

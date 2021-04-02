@@ -134,7 +134,7 @@
            <item row="0" column="0" colspan="2">
             <widget class="QLabel" name="label">
              <property name="text">
-              <string extracomment="This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is not allowed, and an empty cell means that the slot is allowed">X=selected, empty=not selected</string>
+              <string extracomment="This is an explanation in a dialog for a constraint. It says that symbol X means that this slot is selected, and an empty cell means that the slot is not selected">X=selected, empty=not selected</string>
              </property>
             </widget>
            </item>

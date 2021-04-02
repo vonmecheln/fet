@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Facultatea de Stiinte Economice</Institution_Name>
 
@@ -17580,240 +17580,280 @@ Anul universitar 2007-2008</Comments>
 	<Name>102</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>104</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>105</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>106</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>108</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>111</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>202</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>203</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>204</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>205</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>206</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>208</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>211</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>302</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>303</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>304</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>305</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>306</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>308</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>311</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A1 Drept</Name>
 	<Building>Drept</Building>
 	<Capacity>2520</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A127 Mecanica</Name>
 	<Building>Mecanica</Building>
 	<Capacity>1800</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A138 Mecanica</Name>
 	<Building>Mecanica</Building>
 	<Capacity>1800</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>A31 UVT</Name>
 	<Building>UVT</Building>
 	<Capacity>1590</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ADM FSE</Name>
 	<Building>FSE</Building>
 	<Capacity>1840</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AVV Constructii</Name>
 	<Building>Constructii</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D02</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D03</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D04</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D05</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D06</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D12</Name>
 	<Building>FSE</Building>
 	<Capacity>300</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>D13</Name>
 	<Building>FSE</Building>
 	<Capacity>300</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>P02</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>P03</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>P04</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>P05</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>P06</Name>
 	<Building>FSE</Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>P08</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>P11</Name>
 	<Building>FSE</Building>
 	<Capacity>400</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

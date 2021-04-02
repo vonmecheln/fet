@@ -1024,6 +1024,7 @@
       <addaction name="dataTimeConstraintsTeacherMaxSpanPerDayAction"/>
       <addaction name="dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction"/>
       <addaction name="dataTimeConstraintsTeacherMinHoursDailyAction"/>
+      <addaction name="dataTimeConstraintsTeacherActivityTagMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsTeacherMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction"/>
@@ -1038,6 +1039,7 @@
       <addaction name="dataTimeConstraintsTeachersMaxSpanPerDayAction"/>
       <addaction name="dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction"/>
       <addaction name="dataTimeConstraintsTeachersMinHoursDailyAction"/>
+      <addaction name="dataTimeConstraintsTeachersActivityTagMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsTeachersMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction"/>
@@ -1058,6 +1060,7 @@
       <addaction name="dataTimeConstraintsStudentsSetMaxSpanPerDayAction"/>
       <addaction name="dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction"/>
       <addaction name="dataTimeConstraintsStudentsSetMinHoursDailyAction"/>
+      <addaction name="dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction"/>
@@ -1072,6 +1075,7 @@
       <addaction name="dataTimeConstraintsStudentsMaxSpanPerDayAction"/>
       <addaction name="dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction"/>
       <addaction name="dataTimeConstraintsStudentsMinHoursDailyAction"/>
+      <addaction name="dataTimeConstraintsStudentsActivityTagMinHoursDailyAction"/>
       <addaction name="dataTimeConstraintsStudentsMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction"/>
       <addaction name="dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction"/>
@@ -1103,6 +1107,7 @@
       <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction"/>
+      <addaction name="dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsTwoActivitiesOrderedAction"/>
       <addaction name="dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction"/>
@@ -1114,6 +1119,7 @@
       <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction"/>
       <addaction name="dataTimeConstraintsActivityTagsNotOverlappingAction"/>
       <addaction name="dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction"/>
+      <addaction name="dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsMinGapsBetweenActivitiesAction"/>
      </widget>
@@ -1169,9 +1175,17 @@
       <addaction name="dataSpaceConstraintsStudentsSetHomeRoomAction"/>
       <addaction name="dataSpaceConstraintsStudentsSetHomeRoomsAction"/>
       <addaction name="separator"/>
+      <addaction name="dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction"/>
+      <addaction name="dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction"/>
+      <addaction name="dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction"/>
+      <addaction name="separator"/>
       <addaction name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction"/>
       <addaction name="dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction"/>
       <addaction name="dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction"/>
+      <addaction name="separator"/>
+      <addaction name="dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction"/>
+      <addaction name="dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction"/>
+      <addaction name="dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction"/>
       <addaction name="separator"/>
       <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction"/>
       <addaction name="dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction"/>
@@ -1184,9 +1198,17 @@
       <addaction name="dataSpaceConstraintsTeacherHomeRoomAction"/>
       <addaction name="dataSpaceConstraintsTeacherHomeRoomsAction"/>
       <addaction name="separator"/>
+      <addaction name="dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction"/>
+      <addaction name="dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction"/>
+      <addaction name="dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction"/>
+      <addaction name="separator"/>
       <addaction name="dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction"/>
       <addaction name="dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction"/>
       <addaction name="dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction"/>
+      <addaction name="separator"/>
+      <addaction name="dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction"/>
+      <addaction name="dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction"/>
+      <addaction name="dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction"/>
       <addaction name="separator"/>
       <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction"/>
       <addaction name="dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction"/>
@@ -1264,6 +1286,7 @@
      <addaction name="showWarningForSubgroupsWithTheSameActivitiesAction"/>
      <addaction name="separator"/>
      <addaction name="enableActivityTagMaxHoursDailyAction"/>
+     <addaction name="enableActivityTagMinHoursDailyAction"/>
      <addaction name="enableStudentsMaxGapsPerDayAction"/>
      <addaction name="showWarningForNotPerfectConstraintsAction"/>
      <addaction name="separator"/>
@@ -1365,7 +1388,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;New</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+N', the same as the English original, to keep things standard.">Ctrl+N</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+N', the same as the English original, to keep things standard.">Ctrl+N</string>
    </property>
   </action>
   <action name="fileOpenAction">
@@ -1373,7 +1396,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Open...</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+O', the same as the English original, to keep things standard.">Ctrl+O</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+O', the same as the English original, to keep things standard.">Ctrl+O</string>
    </property>
   </action>
   <action name="fileSaveAction">
@@ -1381,7 +1404,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Save</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+S', the same as the English original, to keep things standard.">Ctrl+S</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+S', the same as the English original, to keep things standard.">Ctrl+S</string>
    </property>
   </action>
   <action name="fileSaveAsAction">
@@ -1397,7 +1420,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Quit</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
    </property>
   </action>
   <action name="helpFAQAction">
@@ -1451,7 +1474,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different">&amp;Generate new</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+G', the same as the English original, to keep things standard.">Ctrl+G</string>
+    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+G', the same as the English original, to keep things standard.">Ctrl+G</string>
    </property>
   </action>
   <action name="timetableShowConflictsAction">
@@ -1492,9 +1515,19 @@
     <string extracomment="It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of slots from those selected which can be occupied by the selected activities">A set of activities occupies max time slots from selection</string>
    </property>
   </action>
+  <action name="dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction">
+   <property name="text">
+    <string extracomment="It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a minimum number of slots from those selected which can be occupied by the selected activities">A set of activities occupies min time slots from selection</string>
+   </property>
+  </action>
   <action name="dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction">
    <property name="text">
     <string extracomment="It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of activities from those selected which can be simultaneous in each selected time slot">Max simultaneous activities from a set in selected time slots</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction">
+   <property name="text">
+    <string extracomment="It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a minimum number of activities from those selected which can be simultaneous in each selected time slot">Min simultaneous activities from a set in selected time slots</string>
    </property>
   </action>
   <action name="dataAllTimeConstraintsAction">
@@ -1901,6 +1934,66 @@
     <string>Min gaps between building changes for all teachers</string>
    </property>
   </action>
+  <action name="dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction">
+   <property name="text">
+    <string>Max room changes per day for a students set</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction">
+   <property name="text">
+    <string>Max room changes per day for all students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction">
+   <property name="text">
+    <string>Max room changes per week for a students set</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction">
+   <property name="text">
+    <string>Max room changes per week for all students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction">
+   <property name="text">
+    <string>Min gaps between room changes for a students set</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction">
+   <property name="text">
+    <string>Min gaps between room changes for all students</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction">
+   <property name="text">
+    <string>Max room changes per day for a teacher</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction">
+   <property name="text">
+    <string>Max room changes per day for all teachers</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction">
+   <property name="text">
+    <string>Max room changes per week for a teacher</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction">
+   <property name="text">
+    <string>Max room changes per week for all teachers</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction">
+   <property name="text">
+    <string>Min gaps between room changes for a teacher</string>
+   </property>
+  </action>
+  <action name="dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction">
+   <property name="text">
+    <string>Min gaps between room changes for all teachers</string>
+   </property>
+  </action>
   <action name="dataTimeConstraintsActivitiesSameStartingDayAction">
    <property name="text">
     <string>A set of activities has same starting day (any hours)</string>
@@ -2242,6 +2335,38 @@
     <string>Max hours daily with an activity tag for all students</string>
    </property>
   </action>
+  <action name="dataTimeConstraintsTeacherActivityTagMinHoursDailyAction">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Min hours daily with an activity tag for a teacher</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsTeachersActivityTagMinHoursDailyAction">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Min hours daily with an activity tag for all teachers</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Min hours daily with an activity tag for a students set</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsStudentsActivityTagMinHoursDailyAction">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Min hours daily with an activity tag for all students</string>
+   </property>
+  </action>
   <action name="dataTimeConstraintsStudentsSetMaxGapsPerDayAction">
    <property name="enabled">
     <bool>true</bool>
@@ -2278,6 +2403,17 @@
    </property>
    <property name="text">
     <string>Enable activity tag max hours daily</string>
+   </property>
+  </action>
+  <action name="enableActivityTagMinHoursDailyAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enable activity tag min hours daily</string>
    </property>
   </action>
   <action name="showWarningForNotPerfectConstraintsAction">
@@ -2362,6 +2498,9 @@
    <property name="text">
     <string>Activity planning</string>
    </property>
+   <property name="shortcut">
+    <string extracomment="This is the shortcut for menu item Advanced-&gt;Activity planning. It is recommended to translate with Ctrl+A, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+A', the same as the English original, to keep things standard.">Ctrl+A</string>
+   </property>
   </action>
   <action name="settingsConfirmActivityPlanningAction">
    <property name="checkable">
@@ -2422,7 +2561,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different">&amp;Print</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+P', the same as the English original, to keep things standard.">Ctrl+P</string>
+    <string extracomment="This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+P', the same as the English original, to keep things standard.">Ctrl+P</string>
    </property>
   </action>
   <action name="dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction">

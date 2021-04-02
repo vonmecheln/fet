@@ -103,14 +103,14 @@
      <item>
       <widget class="QPushButton" name="makeRealPushButton">
        <property name="text">
-        <string>Make real</string>
+        <string comment="It refers to a room. It means making (setting) this room real.">Make real</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="makeEditVirtualPushButton">
        <property name="text">
-        <string>Make/edit virtual</string>
+        <string comment="It refers to a room. It means making (setting) this room virtual.">Make/edit virtual</string>
        </property>
       </widget>
      </item>

@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-
-
 #include "modifyconstraintteachersmaxbuildingchangesperdayform.h"
 #include "spaceconstraint.h"
 

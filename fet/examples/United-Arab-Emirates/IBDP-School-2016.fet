@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>School X</Institution_Name>
 
@@ -27758,612 +27758,714 @@
 	<Name>Arabic &amp; Islamic 01</Name>
 	<Building></Building>
 	<Capacity>10</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 02</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 03</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 04</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 05</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 06</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 07</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 08</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 09</Name>
 	<Building></Building>
 	<Capacity>18</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 10</Name>
 	<Building></Building>
 	<Capacity>18</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic 11</Name>
 	<Building></Building>
 	<Capacity>18</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic &amp; Islamic Prayer Room</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Arabic Office</Name>
 	<Building></Building>
 	<Capacity>4</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Art 1</Name>
 	<Building></Building>
 	<Capacity>12</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Art 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Art 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Art 4</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Art 5</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Business &amp; Economics 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Business &amp; Economics 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Business &amp; Economics 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Business &amp; Economics 4</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Dance Studio</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Design Technology 1</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Design Technology 2</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Design Technology 3</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Design Technology 4</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Design Technology 5</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Design Technology 6</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Design Technology 7</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Drama Studio 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Drama Studio 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 01</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 02</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 03</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 04</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 05</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 06</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 07</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 08</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 09</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 10</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>English 11</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Geography 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Geography 2</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Geography 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Geography 4</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>History 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>History 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>History 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>History 4</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IT 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IT 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>IT 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Islamic Studies Office</Name>
 	<Building></Building>
 	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Languages 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Languages 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Languages 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Languages 4</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Learning Support 1</Name>
 	<Building></Building>
 	<Capacity>12</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Learning Support 2</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Learning Support 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Learning Support Office</Name>
 	<Building></Building>
 	<Capacity>3</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 01</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 02</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 03</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 04</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 05</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 06</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 07</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 08</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 09</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 10</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 11</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Mathematics 12</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Music 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Music 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PE 1</Name>
 	<Building></Building>
 	<Capacity>22</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PE Space 1</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PE Space 2</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PE Space 3</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PE Space 4</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PE Space 5</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PE Space 6</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PSP 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>PSP 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science 11</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science 12</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 01</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 02</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 03</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 04</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 05</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 06</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 07</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 08</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 09</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Science Lab 10</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Senior School Office</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Social Studies 1</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Social Studies 2</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Social Studies 3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

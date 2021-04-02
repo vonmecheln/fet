@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>دانشکده مهندسی کامپیوتر دانشگاه صنعتی شریف</Institution_Name>
 
@@ -2284,54 +2284,63 @@
 	<Name>007</Name>
 	<Building>دانشکده</Building>
 	<Capacity>22</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>103</Name>
 	<Building>دانشکده</Building>
 	<Capacity>52</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>203</Name>
 	<Building>دانشکده</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>202</Name>
 	<Building>دانشکده</Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>201</Name>
 	<Building>دانشکده</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>402</Name>
 	<Building>دانشکده</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>404</Name>
 	<Building>دانشکده</Building>
 	<Capacity>95</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>406</Name>
 	<Building>دانشکده</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>726</Name>
 	<Building>دانشکده</Building>
 	<Capacity>45</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

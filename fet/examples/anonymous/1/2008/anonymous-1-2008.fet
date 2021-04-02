@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Anonymous institution 1</Institution_Name>
 
@@ -2933,48 +2933,56 @@
 	<Name>Room 1</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Room 2</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Room 3</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Room 4</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Room 5</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Room 6</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Room 7</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Room 8</Name>
 	<Building></Building>
 	<Capacity>1000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

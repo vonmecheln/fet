@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.1">
+<fet version="5.41.0">
 
 <Institution_Name>Klikks SLP</Institution_Name>
 
@@ -26916,336 +26916,392 @@
 	<Name>R1</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R2</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R3</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R4</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R5</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R6</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R7</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R8</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R9</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R10</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R11</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R12</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R13</Name>
 	<Building>B2</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R14</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R15</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R16</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R17</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R18</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R19</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R20</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R21</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R22</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R23</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R24</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R25</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R26</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R27</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R28</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R29</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R30</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R31</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R32</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R33</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R34</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R35</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R36</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R37</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R38</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R39</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R40</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R41</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R42</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R43</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R44</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R45</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R46</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R47</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R48</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R49</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R50</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R51</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R52</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R53</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R54</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R55</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R56</Name>
 	<Building>B1</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

@@ -32,6 +32,8 @@ File solution.h
 
 class Rules;
 
+class FakeString;
+
 /**
 This class represents a solution (time and space allocation for the activities).
 */
@@ -97,7 +99,7 @@ public:
 	If conflictsString is not null, then this function will
 	append at this string an explanation of the conflicts.
 	*/
-	double fitness(Rules& r, QString* conflictsString=NULL);
+	double fitness(Rules& r, FakeString* conflictsString=NULL);
 
 	void getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int> >& b);
 	//return value is the number of conflicts, which must be 0

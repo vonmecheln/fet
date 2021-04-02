@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Bethlen Gábor Református Gimnázium</Institution_Name>
 
@@ -17275,186 +17275,217 @@
 	<Name>1E1</Name>
 	<Building></Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1E3</Name>
 	<Building></Building>
 	<Capacity>34</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1E4</Name>
 	<Building></Building>
 	<Capacity>28</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1E5</Name>
 	<Building></Building>
 	<Capacity>38</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1E6</Name>
 	<Building></Building>
 	<Capacity>22</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1UD</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1UT</Name>
 	<Building></Building>
 	<Capacity>34</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>BIE</Name>
 	<Building></Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>BIL</Name>
 	<Building></Building>
 	<Capacity>24</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>BOD</Name>
 	<Building></Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F1</Name>
 	<Building></Building>
 	<Capacity>32</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F2</Name>
 	<Building></Building>
 	<Capacity>38</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F3</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F4</Name>
 	<Building></Building>
 	<Capacity>28</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F5</Name>
 	<Building></Building>
 	<Capacity>38</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>F6</Name>
 	<Building></Building>
 	<Capacity>24</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FIE</Name>
 	<Building></Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FIL</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FIT</Name>
 	<Building></Building>
 	<Capacity>12</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FUD</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>FUT</Name>
 	<Building></Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>KTK</Name>
 	<Building></Building>
 	<Capacity>8</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>KÉM</Name>
 	<Building></Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>MÉD</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>N1</Name>
 	<Building></Building>
 	<Capacity>21</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>N2</Name>
 	<Building></Building>
 	<Capacity>16</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>OLV</Name>
 	<Building></Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SZB</Name>
 	<Building></Building>
 	<Capacity>18</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SZJ</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>SZÁM</Name>
 	<Building></Building>
 	<Capacity>43</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ZEN</Name>
 	<Building></Building>
 	<Capacity>36</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

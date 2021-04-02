@@ -781,6 +781,9 @@ private:
 	TimeConstraint* readTeacherActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeacherActivityTagMinHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersActivityTagMinHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readTeachersMinHoursDaily(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherMinHoursDaily(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -792,6 +795,9 @@ private:
 
 	TimeConstraint* readStudentsSetActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetActivityTagMinHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsActivityTagMinHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readStudentsMinHoursDaily(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetMinHoursDaily(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -856,7 +862,9 @@ private:
 	TimeConstraint* readSubactivitiesPreferredStartingTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readTeacherMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -901,6 +909,20 @@ private:
 	SpaceConstraint* readStudentsMaxBuildingChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsSetMinGapsBetweenBuildingChanges(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsMinGapsBetweenBuildingChanges(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readTeacherMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeachersMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeacherMaxRoomChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeachersMaxRoomChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeacherMinGapsBetweenRoomChanges(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeachersMinGapsBetweenRoomChanges(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readStudentsSetMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsSetMaxRoomChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsMaxRoomChangesPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsSetMinGapsBetweenRoomChanges(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsMinGapsBetweenRoomChanges(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	SpaceConstraint* readActivitiesOccupyMaxDifferentRooms(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readActivitiesSameRoomIfConsecutive(QXmlStreamReader& xml, FakeString& xmlReadingLog);

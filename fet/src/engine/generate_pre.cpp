@@ -379,6 +379,33 @@ int maxBuildingChangesPerWeekForTeachersMaxChanges[MAX_TEACHERS];
 ////////END   buildings
 
 
+////////BEGIN rooms
+double maxRoomChangesPerDayForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
+int maxRoomChangesPerDayForStudentsMaxChanges[MAX_TOTAL_SUBGROUPS];
+//bool computeMaxRoomChangesPerDayForStudents();
+
+double minGapsBetweenRoomChangesForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
+int minGapsBetweenRoomChangesForStudentsMinGaps[MAX_TOTAL_SUBGROUPS];
+//bool computeMinGapsBetweenRoomChangesForStudents();
+
+double maxRoomChangesPerDayForTeachersPercentages[MAX_TEACHERS];
+int maxRoomChangesPerDayForTeachersMaxChanges[MAX_TEACHERS];
+//bool computeMaxRoomChangesPerDayForTeachers();
+
+double minGapsBetweenRoomChangesForTeachersPercentages[MAX_TEACHERS];
+int minGapsBetweenRoomChangesForTeachersMinGaps[MAX_TEACHERS];
+//bool computeMinGapsBetweenRoomChangesForTeachers();
+
+double maxRoomChangesPerWeekForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
+int maxRoomChangesPerWeekForStudentsMaxChanges[MAX_TOTAL_SUBGROUPS];
+//bool computeMaxRoomChangesPerWeekForStudents();
+
+double maxRoomChangesPerWeekForTeachersPercentages[MAX_TEACHERS];
+int maxRoomChangesPerWeekForTeachersMaxChanges[MAX_TEACHERS];
+//bool computeMaxRoomChangesPerWeekForTeachers();
+////////END   rooms
+
+
 Matrix1D<QList<int> > mustComputeTimetableSubgroups;
 Matrix1D<QList<int> > mustComputeTimetableTeachers;
 bool mustComputeTimetableSubgroup[MAX_TOTAL_SUBGROUPS];
@@ -392,12 +419,26 @@ QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
 Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsListForActivity;
 //bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
 
+//2019-11-16 - Constraint activities occupy min time slots from selection
+QList<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
+Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*> > aomintsListForActivity;
+//bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent);
+
 //2011-09-30 - Constraint activities max simultaneous in selected time slots
 QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
 Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsListForActivity;
 //bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
 
-bool haveActivitiesOccupyOrSimultaneousConstraints;
+//2019-11-16 - Constraint activities min simultaneous in selected time slots
+QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
+Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*> > aminsistsListForActivity;
+//bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
+
+bool haveActivitiesOccupyMaxConstraints;
+bool activityHasOccupyMaxConstraints[MAX_ACTIVITIES];
+
+bool haveActivitiesMaxSimultaneousConstraints;
+bool activityHasMaxSimultaneousConstraints[MAX_ACTIVITIES];
 
 //2019-06-08 - Constraint students (set) min gaps between ordered pair of activity tags
 QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
@@ -419,6 +460,17 @@ QList<ActivitiesSameRoomIfConsecutive_item> asricList;
 Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
 //bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
 
+//2019-11-20
+QList<SubgroupActivityTagMinHoursDaily_item> satmhdList;
+Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*> > satmhdListForSubgroup;
+bool haveStudentsActivityTagMinHoursDaily;
+//bool computeStudentsActivityTagMinHoursDaily(QWidget* parent);
+
+//2019-11-20
+QList<TeacherActivityTagMinHoursDaily_item> tatmhdList;
+Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*> > tatmhdListForTeacher;
+bool haveTeachersActivityTagMinHoursDaily;
+//bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
 
 #ifndef FET_COMMAND_LINE
 extern QString initialOrderOfActivities;
@@ -674,10 +726,17 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsActivityTagMaxHoursContinuouslyActivityTag.resize(gt.rules.nInternalSubgroups);
 	subgroupsActivityTagMaxHoursContinuouslyPercentage.resize(gt.rules.nInternalSubgroups);
 	
+	satmhdListForSubgroup.resize(gt.rules.nInternalSubgroups);
+	tatmhdListForTeacher.resize(gt.rules.nInternalTeachers);
+	
 	//2011-09-25
 	aomtsListForActivity.resize(gt.rules.nInternalActivities);
+	//2019-11-16
+	aomintsListForActivity.resize(gt.rules.nInternalActivities);
 	//2011-09-30
 	amsistsListForActivity.resize(gt.rules.nInternalActivities);
+	//2019-11-16
+	aminsistsListForActivity.resize(gt.rules.nInternalActivities);
 	
 	//2019-06-08
 	smgbopoatListForActivity.resize(gt.rules.nInternalActivities);
@@ -828,6 +887,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 		
+	t=computeStudentsActivityTagMinHoursDaily(parent);
+	if(!t)
+		return false;
+		
+	t=computeTeachersActivityTagMinHoursDaily(parent);
+	if(!t)
+		return false;
+		
 	computeConstrTwoActivitiesConsecutive();
 	
 	computeConstrTwoActivitiesGrouped();
@@ -878,15 +945,25 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 
 	////////////////
-	haveActivitiesOccupyOrSimultaneousConstraints=false;
-
 	//2011-09-25
 	t=computeActivitiesOccupyMaxTimeSlotsFromSelection(parent);
 	if(!t)
 		return false;
 	
+	////////////////
+	//2019-11-16
+	t=computeActivitiesOccupyMinTimeSlotsFromSelection(parent);
+	if(!t)
+		return false;
+	
 	//2011-09-30
 	t=computeActivitiesMaxSimultaneousInSelectedTimeSlots(parent);
+	if(!t)
+		return false;
+	////////////////
+
+	//2019-11-16
+	t=computeActivitiesMinSimultaneousInSelectedTimeSlots(parent);
 	if(!t)
 		return false;
 	////////////////
@@ -952,6 +1029,28 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 	//////////////////
 	
+	/////////rooms
+	t=computeMaxRoomChangesPerDayForStudents(parent);
+	if(!t)
+		return false;
+	t=computeMaxRoomChangesPerWeekForStudents(parent);
+	if(!t)
+		return false;
+	t=computeMinGapsBetweenRoomChangesForStudents(parent);
+	if(!t)
+		return false;
+
+	t=computeMaxRoomChangesPerDayForTeachers(parent);
+	if(!t)
+		return false;
+	t=computeMaxRoomChangesPerWeekForTeachers(parent);
+	if(!t)
+		return false;
+	t=computeMinGapsBetweenRoomChangesForTeachers(parent);
+	if(!t)
+		return false;
+	//////////////////
+	
 	t=homeRoomsAreOk(parent);
 	if(!t)
 		return false;
@@ -968,8 +1067,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	sortActivities(parent, reprSameStartingTime, reprSameActivitiesSet, initialOrderStream);
 	
 	if(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS){
-		if(haveStudentsMaxGapsPerDay || haveTeachersActivityTagMaxHoursDaily || haveStudentsActivityTagMaxHoursDaily){
-			QString s=GeneratePreTranslate::tr("Your data contains constraints students max gaps per day and/or activity tag max hours daily.");
+		if(haveStudentsMaxGapsPerDay || haveTeachersActivityTagMaxHoursDaily || haveStudentsActivityTagMaxHoursDaily
+		 || haveTeachersActivityTagMinHoursDaily || haveStudentsActivityTagMinHoursDaily){
+			QString s=GeneratePreTranslate::tr("Your data contains constraints students max gaps per day and/or activity tag max/min hours daily.");
 			s+="\n\n";
 			s+=GeneratePreTranslate::tr("These constraints are good, but they are not perfectly optimized for speed. You may obtain a long generation time or even impossible timetables.");
 			s+=" ";
@@ -2546,7 +2646,148 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 	
 	return ok;
 }
+
+bool computeStudentsActivityTagMinHoursDaily(QWidget* parent)
+{
+	haveStudentsActivityTagMinHoursDaily=false;
 	
+	bool ok=true;
+	
+	satmhdList.clear();
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
+		satmhdListForSubgroup[i].clear();
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			haveStudentsActivityTagMinHoursDaily=true;
+			ConstraintStudentsActivityTagMinHoursDaily* smd=(ConstraintStudentsActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(smd->weightPercentage!=100){
+				ok=false;
+	
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			haveStudentsActivityTagMinHoursDaily=true;
+			ConstraintStudentsSetActivityTagMinHoursDaily* smd=(ConstraintStudentsSetActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(smd->weightPercentage!=100){
+				ok=false;
+	
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students set %1"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again").arg(smd->students),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	if(haveStudentsActivityTagMinHoursDaily){
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+				ConstraintStudentsActivityTagMinHoursDaily* smd=(ConstraintStudentsActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+				
+				for(int sbg : qAsConst(smd->canonicalSubgroupsList)){
+					SubgroupActivityTagMinHoursDaily_item item;
+					item.durationOfActivitiesWithActivityTagForSubgroup=0;
+					
+					for(int ai : gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup){
+						Activity* act=&gt.rules.internalActivitiesList[ai];
+						if(act->iActivityTagsSet.contains(smd->activityTagIndex))
+							item.durationOfActivitiesWithActivityTagForSubgroup+=act->duration;
+					}
+					
+					if(item.durationOfActivitiesWithActivityTagForSubgroup>0){
+						item.activityTag=smd->activityTagIndex;
+						item.minHoursDaily=smd->minHoursDaily;
+						item.allowEmptyDays=smd->allowEmptyDays;
+						
+						satmhdList.append(item);
+						satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
+						
+						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForSubgroup<gt.rules.nDaysPerWeek*item.minHoursDaily){
+							ok=false;
+				
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to subgroup %3"
+							 " requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours"
+							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 .arg(smd->activityTagName).arg(smd->minHoursDaily).arg(gt.rules.internalSubgroupsList[sbg]->name)
+							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup),
+							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							 1, 0 );
+							 	
+							if(t==0)
+								return false;
+						}
+					}
+					else{
+						assert(0);
+					}
+				}
+			}
+			else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY){
+				ConstraintStudentsSetActivityTagMinHoursDaily* smd=(ConstraintStudentsSetActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+				
+				for(int sbg : qAsConst(smd->canonicalSubgroupsList)){
+					SubgroupActivityTagMinHoursDaily_item item;
+					item.durationOfActivitiesWithActivityTagForSubgroup=0;
+					
+					for(int ai : gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup){
+						Activity* act=&gt.rules.internalActivitiesList[ai];
+						if(act->iActivityTagsSet.contains(smd->activityTagIndex))
+							item.durationOfActivitiesWithActivityTagForSubgroup+=act->duration;
+					}
+					
+					if(item.durationOfActivitiesWithActivityTagForSubgroup>0){
+						item.activityTag=smd->activityTagIndex;
+						item.minHoursDaily=smd->minHoursDaily;
+						item.allowEmptyDays=smd->allowEmptyDays;
+						
+						satmhdList.append(item);
+						satmhdListForSubgroup[sbg].append(&satmhdList[satmhdList.count()-1]);
+						
+						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForSubgroup<gt.rules.nDaysPerWeek*item.minHoursDaily){
+							ok=false;
+				
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to subgroup %3"
+							 " requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours"
+							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 .arg(smd->activityTagName).arg(smd->minHoursDaily).arg(gt.rules.internalSubgroupsList[sbg]->name)
+							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForSubgroup),
+							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							 1, 0 );
+							 	
+							if(t==0)
+								return false;
+						}
+					}
+					else{
+						assert(0);
+					}
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
 //must be after allowed times, after n hours per teacher and after max days per week for teachers
 bool computeTeachersMaxHoursDaily(QWidget* parent)
 {
@@ -3684,6 +3925,147 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 	return ok;
 }
 
+bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
+{
+	haveTeachersActivityTagMinHoursDaily=false;
+	
+	bool ok=true;
+	
+	tatmhdList.clear();
+	for(int i=0; i<gt.rules.nInternalTeachers; i++)
+		tatmhdListForTeacher[i].clear();
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			haveTeachersActivityTagMinHoursDaily=true;
+			ConstraintTeachersActivityTagMinHoursDaily* tmd=(ConstraintTeachersActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tmd->weightPercentage!=100){
+				ok=false;
+	
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teachers"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			haveTeachersActivityTagMinHoursDaily=true;
+			ConstraintTeacherActivityTagMinHoursDaily* tmd=(ConstraintTeacherActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(tmd->weightPercentage!=100){
+				ok=false;
+	
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teacher %1"
+				 " has no 100% weight"
+				 ". Please modify your data accordingly and try again").arg(tmd->teacherName),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+
+	if(haveTeachersActivityTagMinHoursDaily){
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+				ConstraintTeachersActivityTagMinHoursDaily* tmd=(ConstraintTeachersActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+				
+				for(int tch : qAsConst(tmd->canonicalTeachersList)){
+					TeacherActivityTagMinHoursDaily_item item;
+					item.durationOfActivitiesWithActivityTagForTeacher=0;
+					
+					for(int ai : gt.rules.internalTeachersList[tch]->activitiesForTeacher){
+						Activity* act=&gt.rules.internalActivitiesList[ai];
+						if(act->iActivityTagsSet.contains(tmd->activityTagIndex))
+							item.durationOfActivitiesWithActivityTagForTeacher+=act->duration;
+					}
+					
+					if(item.durationOfActivitiesWithActivityTagForTeacher>0){
+						item.activityTag=tmd->activityTagIndex;
+						item.minHoursDaily=tmd->minHoursDaily;
+						item.allowEmptyDays=tmd->allowEmptyDays;
+						
+						tatmhdList.append(item);
+						tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
+						
+						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForTeacher<gt.rules.nDaysPerWeek*item.minHoursDaily){
+							ok=false;
+				
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to teacher %3"
+							 " requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours"
+							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 .arg(tmd->activityTagName).arg(tmd->minHoursDaily).arg(gt.rules.internalTeachersList[tch]->name)
+							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher),
+							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							 1, 0 );
+							 	
+							if(t==0)
+								return false;
+						}
+					}
+					else{
+						assert(0);
+					}
+				}
+			}
+			else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY){
+				ConstraintTeacherActivityTagMinHoursDaily* tmd=(ConstraintTeacherActivityTagMinHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+				
+				for(int tch : qAsConst(tmd->canonicalTeachersList)){
+					TeacherActivityTagMinHoursDaily_item item;
+					item.durationOfActivitiesWithActivityTagForTeacher=0;
+					
+					for(int ai : gt.rules.internalTeachersList[tch]->activitiesForTeacher){
+						Activity* act=&gt.rules.internalActivitiesList[ai];
+						if(act->iActivityTagsSet.contains(tmd->activityTagIndex))
+							item.durationOfActivitiesWithActivityTagForTeacher+=act->duration;
+					}
+					
+					if(item.durationOfActivitiesWithActivityTagForTeacher>0){
+						item.activityTag=tmd->activityTagIndex;
+						item.minHoursDaily=tmd->minHoursDaily;
+						item.allowEmptyDays=tmd->allowEmptyDays;
+						
+						tatmhdList.append(item);
+						tatmhdListForTeacher[tch].append(&tatmhdList[tatmhdList.count()-1]);
+						
+						if(!item.allowEmptyDays && item.durationOfActivitiesWithActivityTagForTeacher<gt.rules.nDaysPerWeek*item.minHoursDaily){
+							ok=false;
+				
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+							 GeneratePreTranslate::tr("Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to teacher %3"
+							 " requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours"
+							 " per week (the constraint does not allow empty days). Please correct and try again")
+							 .arg(tmd->activityTagName).arg(tmd->minHoursDaily).arg(gt.rules.internalTeachersList[tch]->name)
+							 .arg(gt.rules.nDaysPerWeek*item.minHoursDaily).arg(item.durationOfActivitiesWithActivityTagForTeacher),
+							 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							 1, 0 );
+							 	
+							if(t==0)
+								return false;
+						}
+					}
+					else{
+						assert(0);
+					}
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
 //must be after min hours for teachers
 bool computeTeachersMinDaysPerWeek(QWidget* parent)
 {
@@ -3823,7 +4205,6 @@ bool computeTeachersMinDaysPerWeek(QWidget* parent)
 			}
 		}
 	}
-
 
 	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
 		if(teachersMinDaysPerWeekMinDays[tc]>=0){
@@ -7110,16 +7491,20 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 //2011-09-25
 bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 {
+	haveActivitiesOccupyMaxConstraints=false;
+
 	bool ok=true;
 	
 	aomtsList.clear();
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		aomtsListForActivity[i].clear();
+		activityHasOccupyMaxConstraints[i]=false;
+	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION){
-			if(!haveActivitiesOccupyOrSimultaneousConstraints)
-				haveActivitiesOccupyOrSimultaneousConstraints=true;
+			if(!haveActivitiesOccupyMaxConstraints)
+				haveActivitiesOccupyMaxConstraints=true;
 
 			ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* cn=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*)gt.rules.internalTimeConstraintsList[i];
 
@@ -7147,8 +7532,96 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 			
 			aomtsList.append(item);
 			ActivitiesOccupyMaxTimeSlotsFromSelection_item* p_item=&aomtsList[aomtsList.count()-1];
-			for(int ai : qAsConst(cn->_activitiesIndices))
+			for(int ai : qAsConst(cn->_activitiesIndices)){
 				aomtsListForActivity[ai].append(p_item);
+				
+				if(activityHasOccupyMaxConstraints[ai]==false)
+					activityHasOccupyMaxConstraints[ai]=true;
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2019-11-16
+bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent)
+{
+	bool ok=true;
+	
+	aomintsList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		aomintsListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION){
+			ConstraintActivitiesOccupyMinTimeSlotsFromSelection* cn=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities occupy min time slots from selection'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->selectedDays.count() < cn->minOccupiedTimeSlots){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'activities occupy min time slots from selection'"
+				 " with the number of selected slots being %1, but the number of requested minimum slots is %2, which is greater - impossible. The constraint is:\n"
+				 "%3\nPlease correct and try again.")
+				 .arg(cn->selectedDays.count())
+				 .arg(cn->minOccupiedTimeSlots)
+				 .arg(cn->getDetailedDescription(gt.rules))
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			int totalDuration=0;
+			for(int ai : qAsConst(cn->_activitiesIndices))
+				totalDuration+=gt.rules.internalActivitiesList[ai].duration;
+			if(totalDuration < cn->minOccupiedTimeSlots){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'activities occupy min time slots from selection'"
+				 " with the total duration of the selected activities being %1, but the number of requested minimum slots is %2, which is greater - impossible."
+				 " The constraint is:\n%3\nPlease correct and try again.")
+				 .arg(totalDuration)
+				 .arg(cn->minOccupiedTimeSlots)
+				 .arg(cn->getDetailedDescription(gt.rules))
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			ActivitiesOccupyMinTimeSlotsFromSelection_item item;
+			item.activitiesList=cn->_activitiesIndices;
+			item.activitiesSet=item.activitiesList.toSet();
+			item.minOccupiedTimeSlots=cn->minOccupiedTimeSlots;
+			for(int t=0; t < cn->selectedDays.count(); t++)
+				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
+			
+			aomintsList.append(item);
+			ActivitiesOccupyMinTimeSlotsFromSelection_item* p_item=&aomintsList[aomintsList.count()-1];
+			for(int ai : qAsConst(cn->_activitiesIndices))
+				aomintsListForActivity[ai].append(p_item);
 		}
 	}
 	
@@ -7158,16 +7631,20 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 //2011-09-30
 bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 {
+	haveActivitiesMaxSimultaneousConstraints=false;
+
 	bool ok=true;
 	
 	amsistsList.clear();
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		amsistsListForActivity[i].clear();
+		activityHasMaxSimultaneousConstraints[i]=false;
+	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
-			if(!haveActivitiesOccupyOrSimultaneousConstraints)
-				haveActivitiesOccupyOrSimultaneousConstraints=true;
+			if(!haveActivitiesMaxSimultaneousConstraints)
+				haveActivitiesMaxSimultaneousConstraints=true;
 			
 			ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* cn=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 
@@ -7195,8 +7672,84 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 			
 			amsistsList.append(item);
 			ActivitiesMaxSimultaneousInSelectedTimeSlots_item* p_item=&amsistsList[amsistsList.count()-1];
-			for(int ai : qAsConst(cn->_activitiesIndices))
+			for(int ai : qAsConst(cn->_activitiesIndices)){
 				amsistsListForActivity[ai].append(p_item);
+				
+				if(activityHasMaxSimultaneousConstraints[ai]==false)
+					activityHasMaxSimultaneousConstraints[ai]=true;
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2019-11-16
+bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent)
+{
+	bool ok=true;
+	
+	aminsistsList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		aminsistsListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+			ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* cn=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities min simultaneous in selected time slots'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(!cn->allowEmptySlots){
+				int totalDuration=0;
+				for(int ai : qAsConst(cn->_activitiesIndices))
+					totalDuration+=gt.rules.internalActivitiesList[ai].duration;
+				if(totalDuration < cn->minSimultaneous*cn->selectedDays.count()){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'activities min simultaneous in selected time slots'"
+					 " with the total duration of the selected activities being %1, but the required number of occupying slots is"
+					 " %2 (minimum simultaneous) x %3 (selected slots) = %4, which is greater - impossible (the constraint does not allow empty slots)."
+					 " The constraint is:\n%5\nPlease correct and try again.")
+					 .arg(totalDuration)
+					 .arg(cn->minSimultaneous)
+					 .arg(cn->selectedDays.count())
+					 .arg(cn->minSimultaneous*cn->selectedDays.count())
+					 .arg(cn->getDetailedDescription(gt.rules))
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+				 	
+					if(t==0)
+						return false;
+				}
+			}
+			
+			ActivitiesMinSimultaneousInSelectedTimeSlots_item item;
+			item.activitiesList=cn->_activitiesIndices;
+			item.activitiesSet=item.activitiesList.toSet();
+			item.minSimultaneous=cn->minSimultaneous;
+			for(int t=0; t < cn->selectedDays.count(); t++)
+				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
+			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
+			item.allowEmptySlots=cn->allowEmptySlots;
+			
+			aminsistsList.append(item);
+			ActivitiesMinSimultaneousInSelectedTimeSlots_item* p_item=&aminsistsList[aminsistsList.count()-1];
+			for(int ai : qAsConst(cn->_activitiesIndices))
+				aminsistsListForActivity[ai].append(p_item);
 		}
 	}
 	
@@ -8719,7 +9272,6 @@ bool computeMinGapsBetweenBuildingChangesForStudents(QWidget* parent)
 	return ok;
 }
 
-
 bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent)
 {
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
@@ -8903,6 +9455,378 @@ bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent)
 	return ok;
 }
 
+bool computeMaxRoomChangesPerDayForStudents(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		maxRoomChangesPerDayForStudentsPercentages[i]=-1;
+		maxRoomChangesPerDayForStudentsMaxChanges[i]=-1;
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintStudentsSetMaxRoomChangesPerDay* spr=(ConstraintStudentsSetMaxRoomChangesPerDay*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max room changes per day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : qAsConst(spr->iSubgroupsList)){
+				maxRoomChangesPerDayForStudentsPercentages[sbg]=100;
+				if(maxRoomChangesPerDayForStudentsMaxChanges[sbg]<0)
+					maxRoomChangesPerDayForStudentsMaxChanges[sbg]=spr->maxRoomChangesPerDay;
+				else
+					maxRoomChangesPerDayForStudentsMaxChanges[sbg]=min(maxRoomChangesPerDayForStudentsMaxChanges[sbg], spr->maxRoomChangesPerDay);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintStudentsMaxRoomChangesPerDay* spr=(ConstraintStudentsMaxRoomChangesPerDay*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max room changes per day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				maxRoomChangesPerDayForStudentsPercentages[sbg]=100;
+				if(maxRoomChangesPerDayForStudentsMaxChanges[sbg]<0)
+					maxRoomChangesPerDayForStudentsMaxChanges[sbg]=spr->maxRoomChangesPerDay;
+				else
+					maxRoomChangesPerDayForStudentsMaxChanges[sbg]=min(maxRoomChangesPerDayForStudentsMaxChanges[sbg], spr->maxRoomChangesPerDay);
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeMaxRoomChangesPerWeekForStudents(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		maxRoomChangesPerWeekForStudentsPercentages[i]=-1;
+		maxRoomChangesPerWeekForStudentsMaxChanges[i]=-1;
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintStudentsSetMaxRoomChangesPerWeek* spr=(ConstraintStudentsSetMaxRoomChangesPerWeek*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max room changes per week"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : qAsConst(spr->iSubgroupsList)){
+				maxRoomChangesPerWeekForStudentsPercentages[sbg]=100;
+				if(maxRoomChangesPerWeekForStudentsMaxChanges[sbg]<0)
+					maxRoomChangesPerWeekForStudentsMaxChanges[sbg]=spr->maxRoomChangesPerWeek;
+				else
+					maxRoomChangesPerWeekForStudentsMaxChanges[sbg]=min(maxRoomChangesPerWeekForStudentsMaxChanges[sbg], spr->maxRoomChangesPerWeek);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintStudentsMaxRoomChangesPerWeek* spr=(ConstraintStudentsMaxRoomChangesPerWeek*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max room changes per week"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				maxRoomChangesPerWeekForStudentsPercentages[sbg]=100;
+				if(maxRoomChangesPerWeekForStudentsMaxChanges[sbg]<0)
+					maxRoomChangesPerWeekForStudentsMaxChanges[sbg]=spr->maxRoomChangesPerWeek;
+				else
+					maxRoomChangesPerWeekForStudentsMaxChanges[sbg]=min(maxRoomChangesPerWeekForStudentsMaxChanges[sbg], spr->maxRoomChangesPerWeek);
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeMinGapsBetweenRoomChangesForStudents(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		minGapsBetweenRoomChangesForStudentsPercentages[i]=-1;
+		minGapsBetweenRoomChangesForStudentsMinGaps[i]=-1;
+	}
+
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintStudentsSetMinGapsBetweenRoomChanges* spr=(ConstraintStudentsSetMinGapsBetweenRoomChanges*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set min gaps between room changes"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg : qAsConst(spr->iSubgroupsList)){
+				minGapsBetweenRoomChangesForStudentsPercentages[sbg]=100;
+				if(minGapsBetweenRoomChangesForStudentsMinGaps[sbg]<0)
+					minGapsBetweenRoomChangesForStudentsMinGaps[sbg]=spr->minGapsBetweenRoomChanges;
+				else
+					minGapsBetweenRoomChangesForStudentsMinGaps[sbg]=max(minGapsBetweenRoomChangesForStudentsMinGaps[sbg], spr->minGapsBetweenRoomChanges);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintStudentsMinGapsBetweenRoomChanges* spr=(ConstraintStudentsMinGapsBetweenRoomChanges*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students min gaps between room changes"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				minGapsBetweenRoomChangesForStudentsPercentages[sbg]=100;
+				if(minGapsBetweenRoomChangesForStudentsMinGaps[sbg]<0)
+					minGapsBetweenRoomChangesForStudentsMinGaps[sbg]=spr->minGapsBetweenRoomChanges;
+				else
+					minGapsBetweenRoomChangesForStudentsMinGaps[sbg]=max(minGapsBetweenRoomChangesForStudentsMinGaps[sbg], spr->minGapsBetweenRoomChanges);
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeMaxRoomChangesPerDayForTeachers(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		maxRoomChangesPerDayForTeachersPercentages[i]=-1;
+		maxRoomChangesPerDayForTeachersMaxChanges[i]=-1;
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintTeacherMaxRoomChangesPerDay* spr=(ConstraintTeacherMaxRoomChangesPerDay*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max room changes per day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			maxRoomChangesPerDayForTeachersPercentages[spr->teacher_ID]=100;
+			if(maxRoomChangesPerDayForTeachersMaxChanges[spr->teacher_ID]<0)
+				maxRoomChangesPerDayForTeachersMaxChanges[spr->teacher_ID]=spr->maxRoomChangesPerDay;
+			else
+				maxRoomChangesPerDayForTeachersMaxChanges[spr->teacher_ID]=min(maxRoomChangesPerDayForTeachersMaxChanges[spr->teacher_ID], spr->maxRoomChangesPerDay);
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintTeachersMaxRoomChangesPerDay* spr=(ConstraintTeachersMaxRoomChangesPerDay*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max room changes per day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				maxRoomChangesPerDayForTeachersPercentages[tch]=100;
+				if(maxRoomChangesPerDayForTeachersMaxChanges[tch]<0)
+					maxRoomChangesPerDayForTeachersMaxChanges[tch]=spr->maxRoomChangesPerDay;
+				else
+					maxRoomChangesPerDayForTeachersMaxChanges[tch]=min(maxRoomChangesPerDayForTeachersMaxChanges[tch], spr->maxRoomChangesPerDay);
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeMaxRoomChangesPerWeekForTeachers(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		maxRoomChangesPerWeekForTeachersPercentages[i]=-1;
+		maxRoomChangesPerWeekForTeachersMaxChanges[i]=-1;
+	}
+	
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintTeacherMaxRoomChangesPerWeek* spr=(ConstraintTeacherMaxRoomChangesPerWeek*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max room changes per week"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			maxRoomChangesPerWeekForTeachersPercentages[spr->teacher_ID]=100;
+			if(maxRoomChangesPerWeekForTeachersMaxChanges[spr->teacher_ID]<0)
+				maxRoomChangesPerWeekForTeachersMaxChanges[spr->teacher_ID]=spr->maxRoomChangesPerWeek;
+			else
+				maxRoomChangesPerWeekForTeachersMaxChanges[spr->teacher_ID]=min(maxRoomChangesPerWeekForTeachersMaxChanges[spr->teacher_ID], spr->maxRoomChangesPerWeek);
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintTeachersMaxRoomChangesPerWeek* spr=(ConstraintTeachersMaxRoomChangesPerWeek*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max room changes per week"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){			
+				maxRoomChangesPerWeekForTeachersPercentages[tch]=100;
+				if(maxRoomChangesPerWeekForTeachersMaxChanges[tch]<0)
+					maxRoomChangesPerWeekForTeachersMaxChanges[tch]=spr->maxRoomChangesPerWeek;
+				else
+					maxRoomChangesPerWeekForTeachersMaxChanges[tch]=min(maxRoomChangesPerWeekForTeachersMaxChanges[tch], spr->maxRoomChangesPerWeek);
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeMinGapsBetweenRoomChangesForTeachers(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		minGapsBetweenRoomChangesForTeachersPercentages[i]=-1;
+		minGapsBetweenRoomChangesForTeachersMinGaps[i]=-1;
+	}
+
+	bool ok=true;
+	
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintTeacherMinGapsBetweenRoomChanges* spr=(ConstraintTeacherMinGapsBetweenRoomChanges*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher min gaps between room changes"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			minGapsBetweenRoomChangesForTeachersPercentages[spr->teacher_ID]=100;
+			if(minGapsBetweenRoomChangesForTeachersMinGaps[spr->teacher_ID]<0)
+				minGapsBetweenRoomChangesForTeachersMinGaps[spr->teacher_ID]=spr->minGapsBetweenRoomChanges;
+			else
+				minGapsBetweenRoomChangesForTeachersMinGaps[spr->teacher_ID]=max(minGapsBetweenRoomChangesForTeachersMinGaps[spr->teacher_ID], spr->minGapsBetweenRoomChanges);
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintTeachersMinGapsBetweenRoomChanges* spr=(ConstraintTeachersMinGapsBetweenRoomChanges*)gt.rules.internalSpaceConstraintsList[i];
+			
+			if(spr->weightPercentage!=100){
+				ok=false;
+		
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers min gaps between room changes"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+				 	
+				if(t==0)
+					return false;
+			}
+			
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				minGapsBetweenRoomChangesForTeachersPercentages[tch]=100;
+				if(minGapsBetweenRoomChangesForTeachersMinGaps[tch]<0)
+					minGapsBetweenRoomChangesForTeachersMinGaps[tch]=spr->minGapsBetweenRoomChanges;
+				else
+					minGapsBetweenRoomChangesForTeachersMinGaps[tch]=max(minGapsBetweenRoomChangesForTeachersMinGaps[tch], spr->minGapsBetweenRoomChanges);
+			}
+		}
+	}
+	
+	return ok;
+}
+
 void computeMustComputeTimetableSubgroups()
 {
 	for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++)
@@ -8935,8 +9859,13 @@ void computeMustComputeTimetableSubgroups()
 			  maxBuildingChangesPerWeekForStudentsPercentages[sbg]>=0 ||
 			  minGapsBetweenBuildingChangesForStudentsPercentages[sbg]>=0 ||
 			  
+			  maxRoomChangesPerDayForStudentsPercentages[sbg]>=0 ||
+			  maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0 ||
+			  minGapsBetweenRoomChangesForStudentsPercentages[sbg]>=0 ||
+			  
 			  subgroupsActivityTagMaxHoursContinuouslyPercentage[sbg].count()>0 ||
-			  subgroupsActivityTagMaxHoursDailyPercentage[sbg].count()>0
+			  subgroupsActivityTagMaxHoursDailyPercentage[sbg].count()>0 ||
+			  satmhdListForSubgroup[sbg].count()>0
 			  //no need to consider constraints students (set) min gaps between ordered pair of activity tags
 			  ){
 			  
@@ -8979,8 +9908,13 @@ void computeMustComputeTimetableTeachers()
 			  maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0 ||
 			  minGapsBetweenBuildingChangesForTeachersPercentages[tch]>=0 ||
 			  
+			  maxRoomChangesPerDayForTeachersPercentages[tch]>=0 ||
+			  maxRoomChangesPerWeekForTeachersPercentages[tch]>=0 ||
+			  minGapsBetweenRoomChangesForTeachersPercentages[tch]>=0 ||
+			  
 			  teachersActivityTagMaxHoursContinuouslyPercentage[tch].count()>0 ||
-			  teachersActivityTagMaxHoursDailyPercentage[tch].count()>0
+			  teachersActivityTagMaxHoursDailyPercentage[tch].count()>0 ||
+			  tatmhdListForTeacher[tch].count()>0
 			  //no need to consider constraints teacher(s) min gaps between ordered pair of activity tags
 			  ){
 			  

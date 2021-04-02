@@ -505,6 +505,33 @@ bool computeMaxBuildingChangesPerWeekForTeachers(QWidget* parent);
 ////////END   buildings
 
 
+////////BEGIN rooms
+extern double maxRoomChangesPerDayForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
+extern int maxRoomChangesPerDayForStudentsMaxChanges[MAX_TOTAL_SUBGROUPS];
+bool computeMaxRoomChangesPerDayForStudents(QWidget* parent);
+
+extern double minGapsBetweenRoomChangesForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
+extern int minGapsBetweenRoomChangesForStudentsMinGaps[MAX_TOTAL_SUBGROUPS];
+bool computeMinGapsBetweenRoomChangesForStudents(QWidget* parent);
+
+extern double maxRoomChangesPerDayForTeachersPercentages[MAX_TEACHERS];
+extern int maxRoomChangesPerDayForTeachersMaxChanges[MAX_TEACHERS];
+bool computeMaxRoomChangesPerDayForTeachers(QWidget* parent);
+
+extern double minGapsBetweenRoomChangesForTeachersPercentages[MAX_TEACHERS];
+extern int minGapsBetweenRoomChangesForTeachersMinGaps[MAX_TEACHERS];
+bool computeMinGapsBetweenRoomChangesForTeachers(QWidget* parent);
+
+extern double maxRoomChangesPerWeekForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
+extern int maxRoomChangesPerWeekForStudentsMaxChanges[MAX_TOTAL_SUBGROUPS];
+bool computeMaxRoomChangesPerWeekForStudents(QWidget* parent);
+
+extern double maxRoomChangesPerWeekForTeachersPercentages[MAX_TEACHERS];
+extern int maxRoomChangesPerWeekForTeachersMaxChanges[MAX_TEACHERS];
+bool computeMaxRoomChangesPerWeekForTeachers(QWidget* parent);
+////////END   rooms
+
+
 extern Matrix1D<QList<int> > mustComputeTimetableSubgroups;
 extern Matrix1D<QList<int> > mustComputeTimetableTeachers;
 extern bool mustComputeTimetableSubgroup[MAX_TOTAL_SUBGROUPS];
@@ -535,6 +562,24 @@ extern Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsLi
 
 bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
 
+//2019-11-16 - Constraint activities occupy min time slots from selection
+
+class ActivitiesOccupyMinTimeSlotsFromSelection_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	QSet<int> activitiesSet;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+	int minOccupiedTimeSlots;
+};
+
+extern QList<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
+extern Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*> > aomintsListForActivity;
+
+bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent);
+
 //2011-09-30 - Constraint activities max simultaneous in selected time slots
 
 class ActivitiesMaxSimultaneousInSelectedTimeSlots_item
@@ -553,7 +598,31 @@ extern Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsi
 
 bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
 
-extern bool haveActivitiesOccupyOrSimultaneousConstraints;
+//2019-11-16 - Constraint activities min simultaneous in selected time slots
+
+class ActivitiesMinSimultaneousInSelectedTimeSlots_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	QSet<int> activitiesSet;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+	int minSimultaneous;
+	
+	bool allowEmptySlots;
+};
+
+extern QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
+extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*> > aminsistsListForActivity;
+
+bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
+
+extern bool haveActivitiesOccupyMaxConstraints;
+extern bool activityHasOccupyMaxConstraints[MAX_ACTIVITIES];
+
+extern bool haveActivitiesMaxSimultaneousConstraints;
+extern bool activityHasMaxSimultaneousConstraints[MAX_ACTIVITIES];
 
 //2019-06-08 - Constraint students (set) min gaps between ordered pair of activity tags
 
@@ -617,6 +686,40 @@ extern QList<ActivitiesSameRoomIfConsecutive_item> asricList;
 extern Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
 
 bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
+
+/////////////////////////////////////////////////////////////////////////
+
+//2019-11-20
+class SubgroupActivityTagMinHoursDaily_item
+{
+public:
+	int activityTag;
+	int minHoursDaily;
+	bool allowEmptyDays;
+	int durationOfActivitiesWithActivityTagForSubgroup;
+};
+
+extern QList<SubgroupActivityTagMinHoursDaily_item> satmhdList;
+extern Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*> > satmhdListForSubgroup;
+extern bool haveStudentsActivityTagMinHoursDaily;
+
+bool computeStudentsActivityTagMinHoursDaily(QWidget* parent);
+
+//2019-11-20
+class TeacherActivityTagMinHoursDaily_item
+{
+public:
+	int activityTag;
+	int minHoursDaily;
+	bool allowEmptyDays;
+	int durationOfActivitiesWithActivityTagForTeacher;
+};
+
+extern QList<TeacherActivityTagMinHoursDaily_item> tatmhdList;
+extern Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*> > tatmhdListForTeacher;
+extern bool haveTeachersActivityTagMinHoursDaily;
+
+bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
 
 /////////////////////////////////////////////////////////////////////////
 

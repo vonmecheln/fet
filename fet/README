@@ -1,4 +1,4 @@
-This is FET version 5.40.3
+This is FET version 5.41.0
 
 
 Program description:
@@ -14,10 +14,12 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.3.7, Xfce 4.14,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.3.12, Xfce 4.14,
 	Midnight Commander 4.8.23, KDiff3 0.9.98, Qt 5.13.2, gcc 9.2.1, g++ 9.2.1, make 4.2.1, sed 4.7,
 	Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.89, other great free tools.
-	FET can be run on any platform supported by the free software Qt (GNU/Linux, Windows, Mac OS X).
+
+	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
+	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).
 
 	You will need a C++11 compliant C++ compiler to compile FET.
 
@@ -27,11 +29,11 @@ Requirements:
 		gcc 9.2.1 or similar.
 		g++ 9.2.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
 		Qt 5.13.2 or compatible (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
-		
+
 		Note: You need a C++11 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of gcc and g++.
 
 	Windows:
-	For running, you need only the archive of FET compiled for Windows (which contains the MinGW and Qt dlls).
+	For running, you need only the archive of FET compiled for Windows (which contains the GNU (L)GPL licensed MinGW and Qt dll-s).
 	For compiling, you need Qt and a compatible C++ compiler complying with the C++11 standard (MinGW is a possibility).
 
 
@@ -40,7 +42,7 @@ Download:
 	You can download the latest version from the FET homepage, https://lalescu.ro/liviu/fet/
 
 
-Getting - compiling - installing GNU tools: make, gcc and g++ (or gcc-g++, or gcc-c++):
+Getting - compiling - installing the GNU tools: make, gcc and g++ (or gcc-g++, or gcc-c++):
 
 	GNU/Linux, maybe Mac OS X: Most probably, your platform has these installed by default or available on the internet
 	as precompiled packages. If you don't have them, please install them using YaST (on openSUSE), Adept Manager
@@ -48,13 +50,13 @@ Getting - compiling - installing GNU tools: make, gcc and g++ (or gcc-g++, or gc
 	To verify that you have the correct packages, write "make --version", "gcc --version" and
 	"g++ --version".
 	Advice from a user on Ubuntu: "sudo apt-get install build-essential" installs build libraries commonly used.
-	
+
 	Maybe Mac OS X from a user: Install Xcode (current version is 7.3.1) from the Mac App Store.
 	(Once installed, I think you'll need to open the Xcode app to finish the installation.)
 
 	Windows: you need a Qt compatible C++ compiler.
-	Maybe an easy option is the MinGW compiler, available inside the Qt or on the Qt download page. You may
-	alternatively download MinGW from its homepage.
+	Maybe an easy option is the MinGW compiler, available optionally with the Qt distribution or on the Qt download page.
+	(You might also download MinGW from the internet. There might be more variants, but we are not sure which are working correctly with Qt.)
 
 
 Getting - compiling - installing Qt:
@@ -63,7 +65,7 @@ Getting - compiling - installing Qt:
 
 	You will need Qt 5.13.2 or compatible to compile FET (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
 	You can get the corresponding version of Qt with your package manager or from the Qt homepage.
-	Qt can be used with the GNU LGPL or commercial license.
+	Qt can be used with the GNU (L)GPL or commercial license (The authors chose the GNU (L)GPL license).
 
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get your version of Qt, pre-compiled.
 	Or you can download, (possibly) compile and install Qt from its homepage.
@@ -204,7 +206,7 @@ Compiling FET:
 	See also note NMkJobs above.
 	(You can use the command line prompt of Windows or the Qt command line prompt shortcut in the Qt shortcuts menu.)
 	Then, you can remove the directories "src" and "tmp", to save up space, if you want.
-	You will need to copy the dll's in the same directories as in the official FET archive for Windows.
+	You will need to copy the dll-s in the same directories as in the official FET archive for Windows.
 
 
 Installing FET:
@@ -322,7 +324,7 @@ Running FET:
 	
 	If you want to be completely independent from Qt, using only standard C++, you can remove all the Qt includes and
 	reimplement the used Qt classes QString, QList, QSet, and others (only the member functions which are necessary). Or just get the corresponding
-	code from Qt (Please review the Qt licensing options, in this case. Currently, they include GNU LGPL and commercial).
+	code from Qt (Please review the Qt licensing options, in this case. Currently, they include GNU (L)GPL and commercial).
 	The program should have independence of a particular implementation of QSet and QHash so, if you reimplement these two containers,
 	any order of elements should lead to the same generation results. Contrary behavior should be reported as a bug.
 

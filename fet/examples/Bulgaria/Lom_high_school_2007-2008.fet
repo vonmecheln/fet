@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>ПГ &quot;Найден Геров&quot; - Лом</Institution_Name>
 
@@ -6137,174 +6137,203 @@
 	<Name>101</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>106</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>109</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>110</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>111</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>112</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>201</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>202</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>205</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>206</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>207</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>209</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>211</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>212</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>301</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>302</Name>
 	<Building></Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>303</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>304</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>305</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>306</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>307</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>308</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>309</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>310</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>311</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>001</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>002</Name>
 	<Building></Building>
 	<Capacity>40</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>108</Name>
 	<Building></Building>
 	<Capacity>80</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>игрище</Name>
 	<Building></Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

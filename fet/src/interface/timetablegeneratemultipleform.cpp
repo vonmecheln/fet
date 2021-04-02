@@ -25,6 +25,8 @@
 #include "fet.h"
 #include "timetableexport.h"
 
+#include "rules.h"
+
 #include <ctime>
 
 #include <QMessageBox>
@@ -154,7 +156,7 @@ void GenerateMultipleThread::run()
 			int minutes=seconds/60;
 			seconds%=60;
 			
-			QString tmp;
+			FakeString tmp;
 			genMulti.c.fitness(gt.rules, &tmp);
 			
 			s=tr("Timetable breaks %1 soft constraints, has %2 soft conflicts total, and was generated in %3 hours, %4 minutes and %5 seconds.")
@@ -339,7 +341,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 
 	if(ok){
 		//needed to get the conflicts string
-		QString tmp;
+		FakeString tmp;
 		genMulti.c.fitness(gt.rules, &tmp);
 	
 		TimetableExport::getStudentsTimetable(genMulti.c);

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Nile Theological College, Khartoum North - Bahri</Institution_Name>
 
@@ -1526,54 +1526,63 @@
 	<Name>R1</Name>
 	<Building></Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R2</Name>
 	<Building></Building>
 	<Capacity>24</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R3</Name>
 	<Building></Building>
 	<Capacity>23</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>R4</Name>
 	<Building></Building>
 	<Capacity>22</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Chapel</Name>
 	<Building></Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Rak</Name>
 	<Building></Building>
 	<Capacity>12</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Office Reg</Name>
 	<Building></Building>
 	<Capacity>4</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Staffroom</Name>
 	<Building></Building>
 	<Capacity>3</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Lab</Name>
 	<Building></Building>
 	<Capacity>15</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

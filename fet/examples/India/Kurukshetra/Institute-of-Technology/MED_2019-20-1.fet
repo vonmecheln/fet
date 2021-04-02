@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.38.0">
+<fet version="5.41.0">
 
 <Institution_Name>Department of Mechanical Engineering</Institution_Name>
 
@@ -9502,102 +9502,119 @@
 	<Name>LHC-101</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-102</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-103</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-104</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-105</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-106</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-107</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-108</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AB-101</Name>
 	<Building>AB Block</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AB-102</Name>
 	<Building>AB Block</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AB-103</Name>
 	<Building>AB Block</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AB-104</Name>
 	<Building>AB Block</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>AB-105</Name>
 	<Building>AB Block</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-109</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-110</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-111</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>LHC-112</Name>
 	<Building>LHC</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

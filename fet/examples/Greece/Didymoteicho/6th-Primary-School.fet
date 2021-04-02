@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>6ο Δημοτικό Σχολείο Διδυμοτείχου</Institution_Name>
 
@@ -4551,102 +4551,119 @@
 	<Name>ΑΙΘ.ΜΟΥΣΙΚΗΣ</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>50</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Α1</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Α2</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Β1</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Β2</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Γ1</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Γ2</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Δ1</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Δ2</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Ε1</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.Ε2</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.ΣΤ1</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.ΣΤ2</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.ΠΛΗΡΟΦΟΡΙΚΗΣ</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>25</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΙΘ.ΥΠΟΔΟΧΗΣ</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>8</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΓΥΜΝΑΣΤΗΡΙΟ</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>300</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>ΑΜΦΙΘΕΑΤΡΟ</Name>
 	<Building>ΝΕΟ ΚΤΙΡΙΟ</Building>
 	<Capacity>200</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.37.0">
+<fet version="5.41.0">
 
 <Institution_Name>Ιόνιο Πανεπιστήμιο - Τμήμα Τεχνών Ήχου &amp; Εικόνας</Institution_Name>
 
@@ -2023,78 +2023,91 @@
 	<Name>Αίθουσα 3</Name>
 	<Building>Αρεταίος</Building>
 	<Capacity>58</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Κοινό Εργαστήριο Η/Υ</Name>
 	<Building>Αρεταίος</Building>
 	<Capacity>30</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Εργαστήριο MAC</Name>
 	<Building>Κτήριο Γραμματειών</Building>
 	<Capacity>20</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Αμφιθέατρο</Name>
 	<Building>Πρώην Τμήμα Ιστορίας</Building>
 	<Capacity>46</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Αίθουσα 4</Name>
 	<Building>Κτήριο Γραμματειών</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Εργαστήριο Σχεδιου</Name>
 	<Building>Κτήριο Γραμματειών</Building>
 	<Capacity>60</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Εργαστήριο Φωτογραφίας</Name>
 	<Building>Κτήριο Γραμματειών</Building>
 	<Capacity>10</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Αίθουσα 1</Name>
 	<Building>Αρεταίος</Building>
 	<Capacity>45</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Αίθουσα 2</Name>
 	<Building>Αρεταίος</Building>
 	<Capacity>45</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Υπολογιστικό Κέντρο ΤΠ</Name>
 	<Building>Κτήριο Γραμματειών</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>1ος όροφος παλαιό ιστορίας</Name>
 	<Building>Πρώην Τμήμα Ιστορίας</Building>
 	<Capacity>100</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Εργαστηριο Πολυμεσων</Name>
 	<Building>Αρεταίος</Building>
 	<Capacity>6</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 <Room>
 	<Name>Γραφείο Αρτέμη</Name>
 	<Building>Ανάκτορα</Building>
 	<Capacity>15000</Capacity>
+	<Virtual>false</Virtual>
 	<Comments></Comments>
 </Room>
 </Rooms_List>

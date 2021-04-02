@@ -309,6 +309,9 @@ void ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::help()
 	 "we would like him to have activities Monday and Tuesday on the first two hours. Add a constraint of this type, with the set of activities "
 	 "being all the activities of teacher T, selected time slots being the remaining 30-2*2=26 slots of the week, and the maximum number of "
 	 "selected time slots which can be occupied by these activities being 20-2*2=16.");
+	s+=QString(" ");
+	s+=tr("Please note that more recently it was added the constraint of type activities occupy min time slots from selection. This permits to specify "
+	 "easier/directly the times when a teacher should have activities.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

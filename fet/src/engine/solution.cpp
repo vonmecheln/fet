@@ -97,7 +97,7 @@ void Solution::makeUnallocated(Rules& r){
 	this->changedForMatrixCalculation=true;
 }
 
-double Solution::fitness(Rules& r, QString* conflictsString){
+double Solution::fitness(Rules& r, FakeString* conflictsString){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
